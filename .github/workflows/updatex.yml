@@ -36,6 +36,7 @@ jobs:
           TAG_TO_INFO = {
               'ytl-ipa':                   ("YoutubePlus (YTLite)",  "YTLite",       "dayanch96"),
               'ytkp-ipa':                  ("YTKillerPlus",          "YTKillerPlus", "iKarwan"),
+              'ytkace-ipa':                ("YTKACE",                "YTKACE",       "itzzace0"),
               'youproextra-ipa':           ("YouPro",                "YouProExtra",  "alibusut"),
               'youproextra-customdeb-ipa': ("YouMod",                "YouMod",       "Tonwalter888"),
           }
@@ -74,7 +75,7 @@ jobs:
           with open('apps.json', 'r') as f:
               data = json.load(f)
 
-          order = ["YoutubePlus (YTLite)", "YTKillerPlus", "YouPro", "YouMod"]
+          order = ["YoutubePlus (YTLite)", "YTKillerPlus", "YTKACE", "YouPro", "YouMod"]
 
           for matched_prefix, release in best.items():
               tag                          = release['tag_name']
