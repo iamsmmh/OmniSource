@@ -82,15 +82,20 @@ jobs:
 
           all_releases = fetch_all_releases(SOURCE_REPO)
           published = [r for r in all_releases if not r['draft'] and not r['prerelease']]
+          ytlite_candidates = [r for r in all_releases if not r['draft']]
 
           best = {}
           ytlite_releases = []
+          for release in ytlite_candidates:
+              tag = release['tag_name']
+              if tag.startswith(YTLITE_TAG_PREFIX):
+                  ytlite_releases.append(release)
+
           for release in published:
               tag = release['tag_name']
               if tag.startswith('youproextra-noytlite-ipa'):
                   continue
               if tag.startswith(YTLITE_TAG_PREFIX):
-                  ytlite_releases.append(release)
                   continue
               for prefix, key in TAG_MAP.items():
                   if tag.startswith(prefix) and key not in best:
