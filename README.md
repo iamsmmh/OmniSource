@@ -23,6 +23,10 @@ https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/youpro.json
 ```
 https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/youmod.json
 ```
+### YTKACE
+```
+https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json
+```
 ### YTMusicUltimate
 ```
 https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytmusic.json
