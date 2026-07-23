@@ -64,9 +64,23 @@ jobs:
                   print(f"::error::API request failed (HTTP {code}): {msg}")
                   sys.exit(1)
 
-          all_releases = fetch_json(
-              f'https://api.github.com/repos/{SOURCE_REPO}/releases?per_page=20'
-          )
+          def fetch_all_releases(repo, max_pages=10):
+              """Paginate through releases so older tags (e.g. ytl-ipa0/1)
+              aren't missed just because newer tags from other mods pushed
+              them off the first page."""
+              results = []
+              for page in range(1, max_pages + 1):
+                  batch = fetch_json(
+                      f'https://api.github.com/repos/{repo}/releases?per_page=100&page={page}'
+                  )
+                  if not batch:
+                      break
+                  results.extend(batch)
+                  if len(batch) < 100:
+                      break
+              return results
+
+          all_releases = fetch_all_releases(SOURCE_REPO)
           published = [r for r in all_releases if not r['draft'] and not r['prerelease']]
 
           best = {}
@@ -86,6 +100,10 @@ jobs:
           if not best and not ytlite_releases:
               print("No matching releases found.")
               sys.exit(0)
+
+          if ytlite_releases:
+              found_tags = sorted(r['tag_name'] for r in ytlite_releases)
+              print(f"Found {len(ytlite_releases)} ytl-ipa release(s): {found_tags}")
 
           for app_key, release in best.items():
               tag          = release['tag_name']
