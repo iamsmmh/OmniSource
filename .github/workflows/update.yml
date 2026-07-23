@@ -36,18 +36,19 @@ jobs:
           TAG_MAP = {
               'youproextra-customdeb-ipa': 'youmod',
               'youproextra-ipa':           'youpro',
-              'ytl-ipa':                  'ytlite',
               'ytkp-ipa':                 'ytkp',
               'ytkace-ipa':               'ytkace',
           }
 
           FILES = {
-              'ytlite': 'ytlite.json',
               'ytkp':   'ytkp.json',
               'youpro': 'youpro.json',
               'youmod': 'youmod.json',
               'ytkace': 'ytkace.json',
           }
+
+          YTLITE_TAG_PREFIX = 'ytl-ipa'
+          YTLITE_FILE       = 'ytlite.json'
 
           def fetch_json(url):
               headers = {'User-Agent': 'github-actions/altstore-sync'}
@@ -69,16 +70,20 @@ jobs:
           published = [r for r in all_releases if not r['draft'] and not r['prerelease']]
 
           best = {}
+          ytlite_releases = []
           for release in published:
               tag = release['tag_name']
               if tag.startswith('youproextra-noytlite-ipa'):
+                  continue
+              if tag.startswith(YTLITE_TAG_PREFIX):
+                  ytlite_releases.append(release)
                   continue
               for prefix, key in TAG_MAP.items():
                   if tag.startswith(prefix) and key not in best:
                       best[key] = release
                       break
 
-          if not best:
+          if not best and not ytlite_releases:
               print("No matching releases found.")
               sys.exit(0)
 
@@ -144,6 +149,94 @@ jobs:
                   f.write('\n')
 
               print(f"Updated {filename}: '{app['name']}' → YouTube {yt_version} ({tag})")
+
+          if ytlite_releases:
+              def ytlite_tag_num(release):
+                  m = re.search(r'ytl-ipa(\d+)', release['tag_name'])
+                  return int(m.group(1)) if m else -1
+
+              YTLITE_MIN_OS = {
+                  0: "14.0",
+                  1: "15.0",
+              }
+              YTLITE_MIN_OS_DEFAULT = "16.0"
+
+              ytlite_releases.sort(key=ytlite_tag_num, reverse=True)
+
+              entries = []
+              for release in ytlite_releases:
+                  tag          = release['tag_name']
+                  tag_num      = ytlite_tag_num(release)
+                  min_os       = YTLITE_MIN_OS.get(tag_num, YTLITE_MIN_OS_DEFAULT)
+                  published_at = release.get('published_at', '')
+                  date_str     = published_at[:10] if published_at else datetime.now(timezone.utc).strftime('%Y-%m-%d')
+                  release_body = (release.get('body') or '').strip()
+
+                  ipa_asset = next(
+                      (a for a in release.get('assets', []) if a['name'].endswith('.ipa')),
+                      None
+                  )
+                  if not ipa_asset:
+                      print(f"No .ipa asset for {tag} — skipping.")
+                      continue
+
+                  download_url = ipa_asset['browser_download_url']
+                  size         = ipa_asset['size']
+                  ipa_name     = ipa_asset['name']
+
+                  matches = re.findall(r'(\d+\.\d+\.\d+)', ipa_name)
+                  if not matches:
+                      print(f"::warning::Could not parse version from '{ipa_name}' — skipping.")
+                      continue
+                  yt_version = matches[0]
+
+                  ipa_label   = ipa_name.replace('.ipa', '')
+                  description = (
+                      f"YouTube {yt_version} | {ipa_label}\n\n{release_body}"
+                      if release_body else
+                      f"YouTube {yt_version} | {ipa_label}"
+                  )
+
+                  entries.append({
+                      "version":              yt_version,
+                      "date":                 date_str,
+                      "localizedDescription": description,
+                      "downloadURL":          download_url,
+                      "size":                 size,
+                      "minOSVersion":         min_os,
+                      "_tag":                 tag,
+                  })
+
+              if not entries:
+                  print("No usable ytl-ipa releases found — skipping ytlite.json.")
+              else:
+                  with open(YTLITE_FILE, 'r') as f:
+                      ytlite_source = json.load(f)
+
+                  ytlite_app = ytlite_source['apps'][0]
+
+                  existing_urls = [v.get('downloadURL') for v in ytlite_app.get('versions', [])]
+                  new_urls      = [e['downloadURL'] for e in entries]
+
+                  if existing_urls == new_urls:
+                      print(f"{YTLITE_FILE} already up to date ({len(entries)} versions).")
+                  else:
+                      newest = entries[0]
+                      for e in entries:
+                          e.pop('_tag', None)
+
+                      ytlite_app['versions']           = entries
+                      ytlite_app['version']            = newest['version']
+                      ytlite_app['versionDate']        = newest['date']
+                      ytlite_app['versionDescription'] = newest['localizedDescription']
+                      ytlite_app['downloadURL']        = newest['downloadURL']
+                      ytlite_app['size']                = newest['size']
+
+                      with open(YTLITE_FILE, 'w') as f:
+                          json.dump(ytlite_source, f, indent=2, ensure_ascii=False)
+                          f.write('\n')
+
+                      print(f"Updated {YTLITE_FILE}: {len(entries)} versions kept (newest: YouTube {newest['version']})")
           PYEOF
 
       - name: Fetch YTMusicUltimate Latest Release
