@@ -38,7 +38,7 @@ jobs:
               'ytkp-ipa':                  ("YTKillerPlus",          "YTKillerPlus", "iKarwan"),
               'ytkace-ipa':                ("YTKACE",                "YTKACE",       "itzzace0"),
               'youproextra-ipa':           ("YouPro",                "YouProExtra",  "alibusut"),
-              'youproextra-customdeb-ipa': ("YouMod",                "YouMod",       "Tonwalter888"),
+              'youmod-ipa':                ("YouMod",                "YouMod",       "Tonwalter888"),
           }
 
           def fetch_json(url):
