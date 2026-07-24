@@ -34,10 +34,10 @@ jobs:
           GH_TOKEN    = os.environ.get('GH_TOKEN', '')
 
           TAG_MAP = {
-              'youproextra-customdeb-ipa': 'youmod',
+              'youmod-ipa':                'youmod',
               'youproextra-ipa':           'youpro',
-              'ytkp-ipa':                 'ytkp',
-              'ytkace-ipa':               'ytkace',
+              'ytkp-ipa':                  'ytkp',
+              'ytkace-ipa':                'ytkace',
           }
 
           FILES = {
