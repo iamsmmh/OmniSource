@@ -360,15 +360,107 @@ jobs:
           print(f"ytmusic.json updated: YTMusicUltimate {tweak_version} → YTMusic {ytm_version} ({tag})")
           PYEOF
 
+      - name: Fetch SpotiFLAC Mobile Latest Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 << 'PYEOF'
+          import json, urllib.request, urllib.error, os, re, sys
+          from datetime import datetime, timezone
+
+          SPOTIFLAC_REPO = 'spotiflacapp/SpotiFLAC-Mobile'
+          GH_TOKEN       = os.environ.get('GH_TOKEN', '')
+
+          def fetch_json(url):
+              headers = {'User-Agent': 'github-actions/altstore-sync'}
+              if GH_TOKEN:
+                  headers['Authorization'] = f'token {GH_TOKEN}'
+              req = urllib.request.Request(url, headers=headers)
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as resp:
+                      return json.loads(resp.read().decode())
+              except urllib.error.URLError as e:
+                  msg  = e.reason if hasattr(e, 'reason') else str(e)
+                  code = e.code   if hasattr(e, 'code')   else 'N/A'
+                  print(f"::error::SpotiFLAC API request failed (HTTP {code}): {msg}")
+                  sys.exit(1)
+
+          releases = fetch_json(
+              f'https://api.github.com/repos/{SPOTIFLAC_REPO}/releases?per_page=5'
+          )
+          release = next(
+              (r for r in releases if not r['draft'] and not r['prerelease']),
+              None
+          )
+          if release is None:
+              print("No published release found for SpotiFLAC — skipping.")
+              sys.exit(0)
+
+          ipa_asset = next(
+              (a for a in release.get('assets', []) if a['name'].endswith('.ipa')),
+              None
+          )
+          if not ipa_asset:
+              print("No .ipa asset found for SpotiFLAC — skipping.")
+              sys.exit(0)
+
+          download_url = ipa_asset['browser_download_url']
+          size         = ipa_asset['size']
+          ipa_name     = ipa_asset['name']
+          published_at = release.get('published_at', '')
+          date_str     = published_at[:10] if published_at else datetime.now(timezone.utc).strftime('%Y-%m-%d')
+          release_body = (release.get('body') or '').strip()
+          tag          = release['tag_name']
+
+          with open('spotiflac.json', 'r') as f:
+              sf_data = json.load(f)
+
+          sf_app = sf_data['apps'][0]
+
+          if sf_app.get('downloadURL') == download_url:
+              print(f"spotiflac.json already up to date: {download_url}")
+              sys.exit(0)
+
+          matches = re.findall(r'(\d+\.\d+(?:\.\d+)?)', ipa_name)
+          sf_version = matches[0] if matches else tag.lstrip('v')
+
+          ipa_label   = ipa_name.replace('.ipa', '')
+          description = f"SpotiFLAC Mobile {sf_version} | {ipa_label}"
+          if release_body:
+              description += f"\n\n{release_body}"
+
+          new_entry = {
+              "version":              sf_version,
+              "date":                 date_str,
+              "localizedDescription": description,
+              "downloadURL":          download_url,
+              "size":                 size,
+              "minOSVersion":         "14.0"
+          }
+
+          sf_app['versions']           = [new_entry]
+          sf_app['version']            = sf_version
+          sf_app['versionDate']        = date_str
+          sf_app['versionDescription'] = description
+          sf_app['downloadURL']        = download_url
+          sf_app['size']               = size
+
+          with open('spotiflac.json', 'w') as f:
+              json.dump(sf_data, f, indent=2, ensure_ascii=False)
+              f.write('\n')
+
+          print(f"spotiflac.json updated: SpotiFLAC Mobile {sf_version} ({tag})")
+          PYEOF
+
       - name: Commit and Push changed source files
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ytlite.json ytkp.json youpro.json youmod.json ytkace.json ytmusic.json
+          git add ytlite.json ytkp.json youpro.json youmod.json ytkace.json ytmusic.json spotiflac.json
           if git diff --staged --quiet; then
             echo "No changes — nothing to commit."
           else
-            git commit -m "chore(altstore): sync latest release from YouProEXTRA & YTMusicUltimate"
+            git commit -m "chore(altstore): sync latest release from YouProEXTRA, YTMusicUltimate & SpotiFLAC Mobile"
             git pull --rebase
             git push
             echo "Source files committed and pushed."
