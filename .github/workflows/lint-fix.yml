@@ -1,0 +1,50 @@
+name: Auto Fix YAML Formatting
+
+on:
+  push:
+    paths:
+      - ".github/workflows/*.yml"
+      - ".github/workflows/*.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  format-and-fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install Prettier Linting Utility
+        run: npm install -g prettier
+
+      - name: Auto-Format and Repair YAML Files
+        run: |
+          npx prettier --write ".github/workflows/*.{yml,yaml}"
+
+      - name: Commit and Push Structural Changes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add .github/workflows/ || true
+
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "Auto-format workflows [skip ci]"
+            git push "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git" HEAD:${BRANCH}
+          else
+            echo "No formatting changes detected. Skipping push."
+          fi
