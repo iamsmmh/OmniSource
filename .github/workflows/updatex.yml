@@ -2,7 +2,7 @@ name: Check for Updates AIO
 
 on:
   schedule:
-    - cron: '0 */13 * * *'
+    - cron: "0 */13 * * *"
   workflow_dispatch:
 
 concurrency:
