@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://github.com/iamsmmh/OmniSource">
-  <img src="assets/OmniSource.png" width="130" alt="OmniSource Logo">
+  <img src="assets/OmniSource.png" width="180" alt="OmniSource Logo">
 </a>
 
 # 🌐 OmniSource
@@ -9,36 +9,56 @@
 **Automated iOS Sideloading Feed Repository**
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/iamsmmh/OmniSource/main.yml?style=flat-square&logo=github-actions&logoColor=white)](https://github.com/iamsmmh/OmniSource/actions)
-[![License](https://img.shields.io/github/license/iamsmmh/OmniSource?style=flat-square)](https://github.com/iamsmmh/OmniSource/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/iamsmmh/OmniSource?style=flat-square)](LICENSE)
 [![Stars](https://img.shields.io/github/stars/iamsmmh/OmniSource?style=flat-square&color=FFD700)](https://github.com/iamsmmh/OmniSource/stargazers)
 [![Issues](https://img.shields.io/github/issues/iamsmmh/OmniSource?style=flat-square&color=FF6B6B)](https://github.com/iamsmmh/OmniSource/issues)
 
-A centralized, automated collection of application feeds and manifests maintained via GitHub Actions.
+**Unified • Automated • Organized**
+
+A centralized repository of curated AltStore-compatible feeds maintained through GitHub Actions and distributed across multiple iOS sideloading platforms.
 
 </div>
 
 ---
 
-## 🚀 Feeds & Installation
+## 🚀 Supported Clients
 
-Tap **Add to AltStore** on iOS to import automatically, or copy any raw feed URL below into your preferred sideloading client.
+<div align="center">
 
-| App | Platform | Add Source | Manifest |
-|------|:--------:|:----------:|----------|
-| <img src="assets/OmniSource.png" width="22"> **OmniSource Master** | All-in-One | [Add to AltStore](https://altstore.io/source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json) | [apps.json](https://github.com/iamsmmh/OmniSource/blob/main/apps.json) |
-| <img src="assets/SpotiFLAC.png" width="22"> **SpotiFLAC Mobile** | iOS | [Add to AltStore](https://altstore.io/source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json) | [spotiflac.json](https://github.com/iamsmmh/OmniSource/blob/main/spotiflac.json) |
-| <img src="assets/YouTube.png" width="22"> **YTLite** | iOS | [Add to AltStore](https://altstore.io/source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json) | [ytlite.json](https://github.com/iamsmmh/OmniSource/blob/main/ytlite.json) |
-| <img src="assets/YouTube.png" width="22"> **YTKillerPlus** | iOS | [Add to AltStore](https://altstore.io/source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json) | [ytkp.json](https://github.com/iamsmmh/OmniSource/blob/main/ytkp.json) |
-| <img src="assets/YouTube.png" width="22"> **YouPro** | iOS | [Add to AltStore](https://altstore.io/source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json) | [youpro.json](https://github.com/iamsmmh/OmniSource/blob/main/youpro.json) |
-| <img src="assets/YouTube.png" width="22"> **YouMod** | iOS | [Add to AltStore](https://altstore.io/source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json) | [youmod.json](https://github.com/iamsmmh/OmniSource/blob/main/youmod.json) |
-| <img src="assets/YouTube.png" width="22"> **YTKACE** | iOS | [Add to AltStore](https://altstore.io/source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json) | [ytkace.json](https://github.com/iamsmmh/OmniSource/blob/main/ytkace.json) |
-| <img src="assets/YouTubeMusic.png" width="22"> **YTMusicUltimate** | iOS | [Add to AltStore](https://altstore.io/source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json) | [ytmusic.json](https://github.com/iamsmmh/OmniSource/blob/main/ytmusic.json) |
+| Client | Logo | Supported |
+|----------|----------|:----------:|
+| AltStore | <img src="assets/AltStore.png" width="28"> | ✅ |
+| SideStore | <img src="assets/SideStore.png" width="28"> | ✅ |
+| LiveContainer | <img src="assets/LiveContainer.png" width="28"> | ✅ |
+| Feather | <img src="assets/Feather.png" width="28"> | ✅ |
+| ESign | <img src="assets/ESign.png" width="28"> | ✅ |
+| Signulous | <img src="assets/Signulous.png" width="28"> | ✅ |
+
+</div>
+
+> [!TIP]
+> Tap **Add to AltStore** for automatic import in AltStore or SideStore. If automatic import does not work, copy the **Raw Repository URL** and add it manually in your preferred client.
 
 ---
 
-## 📋 Direct Copyable Raw Feed URLs
+## 📦 Available Sources
 
-### 🌐 OmniSource Master Feed
+| App | Platform | Auto Import | Raw Repository URL |
+|------|----------|----------|----------|
+| <img src="assets/OmniSource.png" width="22"> **OmniSource Master** | All Apps | [📲 Add to AltStore](https://altstore.io/source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fapps.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json` |
+| <img src="assets/SpotiFLAC.png" width="22"> **SpotiFLAC Mobile** | iOS | [📲 Add to AltStore](https://altstore.io/source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fspotiflac.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json` |
+| <img src="assets/YouTube.png" width="22"> **YTLite** | iOS | [📲 Add to AltStore](https://altstore.io/source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytlite.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json` |
+| <img src="assets/YouTube.png" width="22"> **YTKillerPlus** | iOS | [📲 Add to AltStore](https://altstore.io/source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytkp.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json` |
+| <img src="assets/YouTube.png" width="22"> **YouPro** | iOS | [📲 Add to AltStore](https://altstore.io/source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fyoupro.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json` |
+| <img src="assets/YouTube.png" width="22"> **YouMod** | iOS | [📲 Add to AltStore](https://altstore.io/source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fyoumod.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json` |
+| <img src="assets/YouTube.png" width="22"> **YTKACE** | iOS | [📲 Add to AltStore](https://altstore.io/source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytkace.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json` |
+| <img src="assets/YouTubeMusic.png" width="22"> **YTMusicUltimate** | iOS | [📲 Add to AltStore](https://altstore.io/source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytmusic.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json` |
+
+---
+
+## 📋 Direct Feed URLs
+
+### 🌐 OmniSource Master
 ```text
 https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json
 ```
@@ -80,64 +100,100 @@ https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json
 
 ---
 
-## 📥 Setup Instructions
+## 📲 Installation Guide
 
-### AltStore
-1. Tap **Add to AltStore** from the table above.
-2. AltStore will open automatically and import the source.
+### <img src="assets/AltStore.png" width="18"> AltStore
+1. Tap **Add to AltStore**.
+2. AltStore opens automatically.
+3. Confirm source installation.
 
-### SideStore / Feather / ESign / LiveContainer / Signulous
-1. Copy any feed URL above.
-2. Open your sideloading application.
-3. Navigate to **Sources / Repositories**.
-4. Tap **+ Add Source**.
-5. Paste the URL and save.
+### <img src="assets/SideStore.png" width="18"> SideStore
+1. Tap **Add to AltStore** or copy the repository URL.
+2. Open Sources.
+3. Add the repository.
+
+### <img src="assets/LiveContainer.png" width="18"> LiveContainer
+1. Open Repositories.
+2. Select Add Repository.
+3. Paste the desired feed URL.
+4. Refresh repositories.
+
+### <img src="assets/Feather.png" width="18"> Feather
+1. Open Sources.
+2. Tap Add Source.
+3. Paste the repository URL.
+4. Save and refresh.
+
+### <img src="assets/ESign.png" width="18"> ESign
+1. Open App Sources.
+2. Tap Add Source.
+3. Paste the repository URL.
+4. Refresh.
+
+### <img src="assets/Signulous.png" width="18"> Signulous
+1. Open Repositories.
+2. Add Repository.
+3. Paste the repository URL.
+4. Save and refresh.
 
 ---
 
 > [!WARNING]
-> **YouTube Bundle Identifier Conflicts**
+> ### YouTube Bundle Identifier Conflicts
 >
-> All modified YouTube variants use the same bundle identifier (`com.google.ios.youtube`).
-> Completely uninstall any existing YouTube variant before installing another version to avoid update and signing conflicts.
+> All modified YouTube variants use the same bundle identifier:
+>
+> `com.google.ios.youtube`
+>
+> Completely uninstall any existing YouTube variant before installing a different version to avoid update conflicts, signing issues, and installation failures.
+
+---
 
 > [!NOTE]
-> Missing entitlement warnings may appear depending on your signing environment. Proceed if your sideloading setup supports the required entitlements.
+> Some applications may display entitlement warnings depending on your signing method. This is expected in certain sideloading environments.
 
 ---
 
 ## ⚙️ Automation Pipeline
 
 ```text
-Upstream Feeds
-       │
-       ▼
-GitHub Actions
-       │
-       ▼
-Process & Validate
-       │
-       ▼
-OmniSource Feeds
-       │
-       ▼
-Client Sideloaders
+Upstream Sources
+        │
+        ▼
+ GitHub Actions
+        │
+        ▼
+ Process & Validate
+        │
+        ▼
+ OmniSource Feeds
+        │
+        ▼
+ AltStore / SideStore
+ LiveContainer
+ Feather
+ ESign
+ Signulous
 ```
-
-### Resources
-
-- 📂 Browse Feed Assets
-- ⚙️ View GitHub Workflows
-- 📜 View License
 
 ---
 
-## 🙌 Credits & Acknowledgments
+## 📂 Repository Resources
 
-- 🐧 MountainofPenguin — Repository architecture and structure inspiration.
-- 🛡️ HakujouSan — Testing, feedback, and community insights.
-- 🛠️ Avieshek — Manifest parsing, debugging, and JSON assistance.
-- ⚙️ S M Mahbub Hossain — Core development, automation workflows, and feed infrastructure.
+- 📦 Feed Manifests
+- ⚙️ GitHub Actions Workflows
+- 📜 License Information
+- 🐛 Issue Tracker
+- ⭐ Repository Stars
+
+---
+
+## 🙌 Credits
+
+- 🐧 MountainofPenguin — Repository structure inspiration.
+- 🛡️ HakujouSan — Community feedback and testing.
+- 🛠️ Avieshek — Manifest parsing and debugging assistance.
+- ⚙️ S M Mahbub Hossain — OmniSource development, automation, maintenance, and infrastructure.
 
 ---
 
@@ -145,7 +201,9 @@ Client Sideloaders
 
 OmniSource is an independent community project.
 
-All third-party product names, logos, trademarks, and copyrighted materials belong to their respective owners. OmniSource does not host application binaries directly and does not claim ownership of cataloged applications. Users are solely responsible for complying with applicable laws, platform policies, and software license terms.
+All trademarks, logos, product names, and copyrighted materials belong to their respective owners. OmniSource does not host application binaries directly and does not claim ownership of third-party software referenced by repository feeds.
+
+Users are solely responsible for complying with applicable laws, software licenses, and platform policies.
 
 ---
 
@@ -158,4 +216,3 @@ All third-party product names, logos, trademarks, and copyrighted materials belo
 ⭐ Star the repository if you find it useful.
 
 </div>
-
