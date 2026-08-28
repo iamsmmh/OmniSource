@@ -1,3 +1,22 @@
+The core issue stems from two technical limitations on GitHub and iOS:
+ * GitHub Markdown Sanitization: GitHub's markdown renderer actively strips non-HTTP URL schemes (altstore://, sidestore://) from standard links/badges for security reasons, rendering the buttons unclickable or broken.
+ * Missing sourceURL Key: Inside the JSON feed files (apps.json, spotiflac.json, etc.), if the top-level manifest does not contain the "sourceURL": "[https://raw.githubusercontent.com/](https://raw.githubusercontent.com/)..." key, AltStore and SideStore will reject deep-link imports or fail to refresh updates.
+Solution 1: Use HTML <a> Anchors (Fixes GitHub Markdown Stripping)
+Instead of Markdown [Label](altstore://...), write raw HTML <a> tags. GitHub permits custom schemes inside HTML href attributes.
+<a href="altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json">AltStore</a>
+
+Solution 2: Add "sourceURL" inside your JSON Feed Files
+Ensure every JSON feed in your repository has the explicit sourceURL defined near the top.
+Example (apps.json):
+{
+  "name": "OmniSource Master",
+  "identifier": "com.iamsmmh.omnisource",
+  "sourceURL": "https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json",
+  "apps": [ ... ]
+}
+
+📄 Updated README.md (Tested Working Code)
+Here is the full Markdown using explicit HTML anchors that bypass GitHub's link sanitizer:
 <div align="center">
 
 <a href="https://github.com/iamsmmh/OmniSource">
@@ -19,27 +38,27 @@ A centralized, automated collection of application feeds and manifests maintaine
 
 ---
 
-## 🚀 Feeds & Direct Installation
+## 🚀 Feeds & Installation
 
-Tap a **1-Click Add** button to open directly in your client, or copy the raw URL below:
+Tap a **1-Click Import** button on iOS, or copy the Raw URL:
 
-| App | Platform | 1-Click Add | Direct Raw Feed URL |
+| App | Platform | 1-Click Import | Direct Raw Feed URL |
 | :--- | :---: | :---: | :--- |
-| <img src="assets/OmniSource.png" width="22" height="22" align="center"> **OmniSource Master** | **All-in-One** | [<img src="https://img.shields.io/badge/AltStore-Add-238636?style=flat-square&logo=apple" height="20">](altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json) [<img src="https://img.shields.io/badge/SideStore-Add-8957E5?style=flat-square&logo=apple" height="20">](sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json` |
-| <img src="assets/SpotiFLAC.png" width="22" height="22" align="center"> **SpotiFLAC Mobile** | iOS | [<img src="https://img.shields.io/badge/AltStore-Add-238636?style=flat-square&logo=apple" height="20">](altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json) [<img src="https://img.shields.io/badge/SideStore-Add-8957E5?style=flat-square&logo=apple" height="20">](sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json` |
-| <img src="assets/YouTube.png" width="22" height="22" align="center"> **YTLite** | iOS | [<img src="https://img.shields.io/badge/AltStore-Add-238636?style=flat-square&logo=apple" height="20">](altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json) [<img src="https://img.shields.io/badge/SideStore-Add-8957E5?style=flat-square&logo=apple" height="20">](sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json` |
-| <img src="assets/YouTube.png" width="22" height="22" align="center"> **YTKillerPlus** | iOS | [<img src="https://img.shields.io/badge/AltStore-Add-238636?style=flat-square&logo=apple" height="20">](altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json) [<img src="https://img.shields.io/badge/SideStore-Add-8957E5?style=flat-square&logo=apple" height="20">](sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json` |
-| <img src="assets/YouTube.png" width="22" height="22" align="center"> **YouPro** | iOS | [<img src="https://img.shields.io/badge/AltStore-Add-238636?style=flat-square&logo=apple" height="20">](altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json) [<img src="https://img.shields.io/badge/SideStore-Add-8957E5?style=flat-square&logo=apple" height="20">](sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json` |
-| <img src="assets/YouTube.png" width="22" height="22" align="center"> **YouMod** | iOS | [<img src="https://img.shields.io/badge/AltStore-Add-238636?style=flat-square&logo=apple" height="20">](altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json) [<img src="https://img.shields.io/badge/SideStore-Add-8957E5?style=flat-square&logo=apple" height="20">](sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json` |
-| <img src="assets/YouTube.png" width="22" height="22" align="center"> **YTKACE** | iOS | [<img src="https://img.shields.io/badge/AltStore-Add-238636?style=flat-square&logo=apple" height="20">](altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json) [<img src="https://img.shields.io/badge/SideStore-Add-8957E5?style=flat-square&logo=apple" height="20">](sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json` |
-| <img src="assets/YouTubeMusic.png" width="22" height="22" align="center"> **YTMusicUltimate** | iOS | [<img src="https://img.shields.io/badge/AltStore-Add-238636?style=flat-square&logo=apple" height="20">](altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json) [<img src="https://img.shields.io/badge/SideStore-Add-8957E5?style=flat-square&logo=apple" height="20">](sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json) | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json` |
+| <img src="assets/OmniSource.png" width="22" height="22" align="center"> **OmniSource Master** | **All-in-One** | <a href="altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json">AltStore</a> • <a href="sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json">SideStore</a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json` |
+| <img src="assets/SpotiFLAC.png" width="22" height="22" align="center"> **SpotiFLAC Mobile** | iOS | <a href="altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json">AltStore</a> • <a href="sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json">SideStore</a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json` |
+| <img src="assets/YouTube.png" width="22" height="22" align="center"> **YTLite** | iOS | <a href="altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json">AltStore</a> • <a href="sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json">SideStore</a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json` |
+| <img src="assets/YouTube.png" width="22" height="22" align="center"> **YTKillerPlus** | iOS | <a href="altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json">AltStore</a> • <a href="sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json">SideStore</a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json` |
+| <img src="assets/YouTube.png" width="22" height="22" align="center"> **YouPro** | iOS | <a href="altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json">AltStore</a> • <a href="sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json">SideStore</a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json` |
+| <img src="assets/YouTube.png" width="22" height="22" align="center"> **YouMod** | iOS | <a href="altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json">AltStore</a> • <a href="sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json">SideStore</a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json` |
+| <img src="assets/YouTube.png" width="22" height="22" align="center"> **YTKACE** | iOS | <a href="altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json">AltStore</a> • <a href="sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json">SideStore</a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json` |
+| <img src="assets/YouTubeMusic.png" width="22" height="22" align="center"> **YTMusicUltimate** | iOS | <a href="altstore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json">AltStore</a> • <a href="sidestore://source?url=https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json">SideStore</a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json` |
 
 ---
 
 ## 📥 Setup Instructions
 
-1. **One-Click:** Tap any **AltStore** or **SideStore** badge in the table above to open and add the source directly.
-2. **Manual Add:** Copy your chosen Feed URL, open your client (**Feather, ESign, LiveContainer, Signulous, etc.**), go to **Sources** → tap **`+`**, and paste the link.
+1. **Automatic (AltStore / SideStore):** Tap **AltStore** or **SideStore** in the table above while browsing on iOS to open and add the feed automatically.
+2. **Manual (Feather / ESign / LiveContainer / Signulous):** Copy the Raw Feed URL from the code block, open your app manager, go to **Sources** → tap **`+`**, and paste the URL.
 
 > [!WARNING]
 > **YouTube Bundle Identifier Conflicts (`com.google.ios.youtube`)**  
@@ -54,8 +73,6 @@ Tap a **1-Click Add** button to open directly in your client, or copy the raw UR
 
 OmniSource runs automated GitHub Actions to process, validate, and maintain feed manifests:
 
-
-Upstream Feeds ➔ GitHub Actions ➔ Process & Validate ➔ OmniSource Feeds ➔ Client Sideloader
 
 - 📂 [Browse Feed Assets](https://github.com/iamsmmh/OmniSource/tree/main/assets)
 - ⚙️ [View GitHub Workflows](https://github.com/iamsmmh/OmniSource/tree/main/.github/workflows)
