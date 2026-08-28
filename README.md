@@ -39,18 +39,18 @@ A centralized collection of application feeds and manifests maintained with GitH
 
 | App | Source |
 |---|---|
-| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YTLite** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json` |
-| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YTKillerPlus** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json` |
-| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YouPro** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json` |
-| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YouMod** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json` |
-| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YTKACE** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json` |
-| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTubeMusic.png" width="32" height="32" align="absmiddle"> **YTMusicUltimate** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json` |
-| 🎵 **Spotiflac** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YTLite** | ```https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json``` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YTKillerPlus** | ```https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json``` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YouPro** | ```https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json``` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YouMod** | ```https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json``` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YTKACE** | ```https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json``` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTubeMusic.png" width="32" height="32" align="absmiddle"> **YTMusicUltimate** | ```https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json``` |
+| 🎵 **Spotiflac** | ```https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json``` |
 
 ### 📦 OmniSource — All Apps
 
 **ESign users:**  
-`https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json`
+```https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json```
 
 The apps will appear under **Browse** → tap **Get** to install.
 
