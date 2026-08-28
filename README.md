@@ -31,29 +31,36 @@ A centralized collection of application feeds and manifests maintained with GitH
 
 ---
 
-## ⚡ Master Source
+## 📥 How to Add OmniSource
 
-### 📲 Add to AltStore / SideStore
+1. Open **AltStore / ESign / Feather / SideStore / LiveContainer**.
+2. Go to **Sources / Repos** → tap **+**.
+3. Add the source you want:
 
-<a href="https://github.com/iamsmmh/OmniSource/blob/main/apps.json">
-<img src="https://img.shields.io/badge/📦_Master_Feed-apps.json-845EC2?style=for-the-badge" alt="Master Feed">
-</a>
+| App | Source |
+|---|---|
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YTLite** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YTKillerPlus** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YouPro** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YouMod** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="32" height="32" align="absmiddle"> **YTKACE** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json` |
+| <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTubeMusic.png" width="32" height="32" align="absmiddle"> **YTMusicUltimate** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json` |
+| 🎵 **Spotiflac** | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json` |
 
-<a href="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json">
-<img src="https://img.shields.io/badge/🔗_Raw_Feed-Open-007AFF?style=for-the-badge" alt="Raw Feed">
-</a>
+### 📦 OmniSource — All Apps
 
-<a href="altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fapps.json">
-<img src="https://img.shields.io/badge/➕_Add_to-AltStore-00C9A7?style=for-the-badge" alt="Add to AltStore">
-</a>
+**ESign users:**  
+`https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json`
 
-<a href="sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fapps.json">
-<img src="https://img.shields.io/badge/➕_Add_to-SideStore-845EC2?style=for-the-badge" alt="Add to SideStore">
-</a>
+The apps will appear under **Browse** → tap **Get** to install.
 
-> 💡 The Master Feed is the recommended source.
+> ⚠️ A compatible signing method is required, such as **AltStore, SideStore, Feather, ESign, or Signulous**.
 
----
+> ⚠️ If you receive a missing permissions/entitlements warning, proceed with installation.
+
+> 🔄 **Existing users:** If you already have a YouTube variant installed from another source or direct IPA, delete it first and install the desired version from **OmniSource**. All YouTube variants use `com.google.ios.youtube`, so cross-source updating may install the wrong variant.
+
+Once installed from **OmniSource**, future updates can be tracked normally by your sideloader.
 
 ## 🚀 Available Feeds
 
