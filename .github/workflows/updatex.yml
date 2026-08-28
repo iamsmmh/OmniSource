@@ -24,7 +24,7 @@ jobs:
 
       - name: Fetch YouProEXTRA Latest Release and Update apps.json
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python3 << 'PYEOF'
           import json, urllib.request, urllib.error, os, re, sys
