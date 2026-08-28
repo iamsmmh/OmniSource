@@ -11,25 +11,27 @@
 
 A centralized collection of application feeds and manifests maintained with GitHub Actions.
 
+[⭐ Star](https://github.com/iamsmmh/OmniSource/stargazers) ·
+[🐛 Issues](https://github.com/iamsmmh/OmniSource/issues) ·
+[⚙️ Actions](https://github.com/iamsmmh/OmniSource/actions)
+
 </div>
 
 ---
 
 ## ⚡ Master Source
 
-**Raw Feed**
+### 📲 Add to AltStore / SideStore
 
-https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json
+**Master Feed:** [📦 Open apps.json](https://github.com/iamsmmh/OmniSource/blob/main/apps.json)
 
-**AltStore**
+**Raw Feed:** [🔗 Open Raw JSON](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json)
 
-[➕ Add OmniSource to AltStore](altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fapps.json)
+**AltStore:** [➕ Add to AltStore](altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fapps.json)
 
-**SideStore**
+**SideStore:** [➕ Add to SideStore](sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fapps.json)
 
-[➕ Add OmniSource to SideStore](sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fapps.json)
-
-> 💡 The Master Feed is the recommended source.
+> 💡 The Master Feed is the recommended source for accessing the collection.
 
 ---
 
@@ -37,29 +39,29 @@ https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json
 
 | Logo | Feed | Platform | Manifest |
 |:---:|:---|:---:|:---:|
-| <img src="assets/YouTube.png" width="40" alt="YouTube"> | **YouPro** | iOS | [youpro.json](https://github.com/iamsmmh/OmniSource/blob/main/youpro.json) |
-| <img src="assets/YouTube.png" width="40" alt="YouTube"> | **YTLite** | iOS | [ytlite.json](https://github.com/iamsmmh/OmniSource/blob/main/ytlite.json) |
-| <img src="assets/YouTube.png" width="40" alt="YouTube"> | **YTKillerPlus** | iOS | [ytkp.json](https://github.com/iamsmmh/OmniSource/blob/main/ytkp.json) |
-| <img src="assets/YouTube.png" width="40" alt="YouTube"> | **YouMod** | iOS | [youmod.json](https://github.com/iamsmmh/OmniSource/blob/main/youmod.json) |
-| <img src="assets/YouTube.png" width="40" alt="YouTube"> | **YTKACE** | iOS | [ytkace.json](https://github.com/iamsmmh/OmniSource/blob/main/ytkace.json) |
-| <img src="assets/YouTubeMusic.png" width="40" alt="YouTube Music"> | **YTMusicUltimate** | iOS | [ytmusic.json](https://github.com/iamsmmh/OmniSource/blob/main/ytmusic.json) |
-| <img src="assets/SpotiFLAC.png" width="40" alt="SpotiFLAC"> | **SpotiFLAC Mobile** | iOS | [spotiflac.json](https://github.com/iamsmmh/OmniSource/blob/main/spotiflac.json) |
-| <img src="assets/OmniSource.png" width="40" alt="OmniSource"> | **OmniSource Master** | Unified | [apps.json](https://github.com/iamsmmh/OmniSource/blob/main/apps.json) |
+| <img src="assets/YouTube.png" width="40" alt="YouTube"> | **YouPro** | iOS | [📄 JSON](https://github.com/iamsmmh/OmniSource/blob/main/youpro.json) · [🔗 Raw](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json) |
+| <img src="assets/YouTube.png" width="40" alt="YouTube"> | **YTLite** | iOS | [📄 JSON](https://github.com/iamsmmh/OmniSource/blob/main/ytlite.json) · [🔗 Raw](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json) |
+| <img src="assets/YouTube.png" width="40" alt="YouTube"> | **YTKillerPlus** | iOS | [📄 JSON](https://github.com/iamsmmh/OmniSource/blob/main/ytkp.json) · [🔗 Raw](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json) |
+| <img src="assets/YouTube.png" width="40" alt="YouTube"> | **YouMod** | iOS | [📄 JSON](https://github.com/iamsmmh/OmniSource/blob/main/youmod.json) · [🔗 Raw](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json) |
+| <img src="assets/YouTube.png" width="40" alt="YouTube"> | **YTKACE** | iOS | [📄 JSON](https://github.com/iamsmmh/OmniSource/blob/main/ytkace.json) · [🔗 Raw](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json) |
+| <img src="assets/YouTubeMusic.png" width="40" alt="YouTube Music"> | **YTMusicUltimate** | iOS | [📄 JSON](https://github.com/iamsmmh/OmniSource/blob/main/ytmusic.json) · [🔗 Raw](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json) |
+| <img src="assets/SpotiFLAC.png" width="40" alt="SpotiFLAC"> | **SpotiFLAC Mobile** | iOS | [📄 JSON](https://github.com/iamsmmh/OmniSource/blob/main/spotiflac.json) · [🔗 Raw](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json) |
+| <img src="assets/OmniSource.png" width="40" alt="OmniSource"> | **OmniSource Master** | Unified | [📄 apps.json](https://github.com/iamsmmh/OmniSource/blob/main/apps.json) · [🔗 Raw](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json) |
 
 ---
 
-## 🔗 Direct Raw Feeds
+## 🖼️ App Logos
 
-| Feed | Raw JSON |
-|:---|:---|
-| 🌐 Master | https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json |
-| 🔴 YouPro | https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json |
-| 🔴 YTLite | https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json |
-| 🔴 YTKillerPlus | https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json |
-| 🔴 YouMod | https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json |
-| 🔴 YTKACE | https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json |
-| 🎵 YTMusicUltimate | https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json |
-| 🎵 SpotiFLAC Mobile | https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json |
+| Application | Logo |
+|:---|:---:|
+| YouPro | <img src="assets/YouTube.png" width="45" alt="YouPro"> |
+| YTLite | <img src="assets/YouTube.png" width="45" alt="YTLite"> |
+| YTKillerPlus | <img src="assets/YouTube.png" width="45" alt="YTKillerPlus"> |
+| YouMod | <img src="assets/YouTube.png" width="45" alt="YouMod"> |
+| YTKACE | <img src="assets/YouTube.png" width="45" alt="YTKACE"> |
+| YTMusicUltimate | <img src="assets/YouTubeMusic.png" width="45" alt="YTMusicUltimate"> |
+| SpotiFLAC Mobile | <img src="assets/SpotiFLAC.png" width="45" alt="SpotiFLAC Mobile"> |
+| OmniSource | <img src="assets/OmniSource.png" width="45" alt="OmniSource"> |
 
 ---
 
@@ -67,13 +69,12 @@ https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json
 
 1. Open **AltStore, SideStore, Feather, ESign, or another compatible client**.
 2. Open **Sources / Repositories**.
-3. Tap **+**.
-4. Add the Master Feed:
-   https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json
+3. Tap **`+`**.
+4. Add [🌐 OmniSource Master Feed](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json).
 5. Refresh the source.
 6. Select and install the desired application.
 
-> 🔐 A valid signing or sideloading setup may be required.
+> 🔐 A valid signing/sideloading setup may be required.
 
 ---
 
@@ -81,25 +82,18 @@ https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json
 
 OmniSource uses **GitHub Actions** to process and maintain supported feeds.
 
-**Source → GitHub Actions → Process → Validate → Update Manifest → OmniSource → Client**
+**Sources → GitHub Actions → Process → Validate → Update Manifests → OmniSource → Client**
 
-[⚙️ View Actions](https://github.com/iamsmmh/OmniSource/actions)
+[⚙️ View Workflow Runs](https://github.com/iamsmmh/OmniSource/actions)
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repository
 
-- `apps.json` — Master feed
-- `youpro.json` — YouPro feed
-- `ytlite.json` — YTLite feed
-- `ytkp.json` — YTKillerPlus feed
-- `youmod.json` — YouMod feed
-- `ytkace.json` — YTKACE feed
-- `ytmusic.json` — YTMusicUltimate feed
-- `spotiflac.json` — SpotiFLAC Mobile feed
-- `assets/` — Application and repository logos
-- `.github/workflows/` — GitHub Actions automation
-- `README.md` — Documentation
+- [📄 Master Feed — apps.json](https://github.com/iamsmmh/OmniSource/blob/main/apps.json)
+- [📁 Assets](https://github.com/iamsmmh/OmniSource/tree/main/assets)
+- [📁 GitHub Workflows](https://github.com/iamsmmh/OmniSource/tree/main/.github/workflows)
+- [📄 License](https://github.com/iamsmmh/OmniSource/blob/main/LICENSE)
 
 ---
 
@@ -119,17 +113,10 @@ Switching between different modified YouTube variants may cause installation or 
 
 OmniSource is built with inspiration, feedback, and technical contributions from the wider sideloading community.
 
-- 🐧 **MountainofPenguin** — Repository framework and architecture inspiration  
-  https://github.com/MountainofPenguin
-
-- 🛡️ **HakujouSan** — Community feedback and testing insights  
-  https://www.reddit.com/user/HakujouSan/
-
-- 🛠️ **Avieshek** — JSON, manifest, debugging, and development assistance  
-  https://code.forgejo.org/avieshek/
-
-- ⚙️ **S M Mahbub Hossain** — OmniSource development, automation, feed infrastructure, maintenance, and optimization  
-  https://github.com/iamsmmh
+- 🐧 **[MountainofPenguin](https://github.com/MountainofPenguin)** — Repository framework and architecture inspiration
+- 🛡️ **[HakujouSan](https://www.reddit.com/user/HakujouSan/)** — Community feedback and testing insights
+- 🛠️ **[Avieshek](https://code.forgejo.org/avieshek/)** — JSON, manifest, debugging, and development assistance
+- ⚙️ **[S M Mahbub Hossain](https://github.com/iamsmmh)** — OmniSource development, automation, feed infrastructure, maintenance, and optimization
 
 ---
 
@@ -153,6 +140,6 @@ The presence of a project or application in OmniSource does not imply endorsemen
 
 *Automated • Organized • Unified*
 
-⭐ **If you find OmniSource useful, consider starring the repository.**
+[⭐ Star Repository](https://github.com/iamsmmh/OmniSource)
 
 </div>
