@@ -48,7 +48,7 @@
     </text>
   </svg>
 
-  <br>
+  <br><br>
 
   <p align="center">
     <strong>The next-generation, automated repository engine for iOS sideloading & Android mods.</strong><br>
@@ -57,7 +57,7 @@
 
   <p align="center">
     <a href="https://altstore.io"><img src="https://img.shields.io/badge/AltStore-Compatible-00C9A7?style=for-the-badge&logo=altstore&logoColor=white" alt="AltStore"></a>
-    <a href="https://sidestore.io"><img src="https://img.shields.io/badge/SideStore-Compatible-845EC2?style=for-the-badge&logo=iOS&logoColor=white" alt="SideStore"></a>
+    <a href="https://sidestore.io"><img src="https://img.shields.io/badge/SideStore-Compatible-845EC2?style=for-the-badge&logo=apple&logoColor=white" alt="SideStore"></a>
     <a href="https://github.com"><img src="https://img.shields.io/badge/GitHub_Actions-Automated-D65DB1?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions"></a>
     <a href="https://github.com"><img src="https://img.shields.io/badge/Maintained%3F-Yes-FF6F91?style=for-the-badge" alt="Maintained"></a>
   </p>
@@ -68,7 +68,7 @@
 
 ## ⚡ Quick Add to Sideload Manager
 
-Tap the quick-add link or paste the raw source manifest URL directly into **AltStore**, **SideStore**, or **TrollStore**:
+Tap a quick-add button or copy the raw source URL directly into **AltStore**, **SideStore**, or **TrollStore**:
 
 ```text
 [https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json](https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json)
