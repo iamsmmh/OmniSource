@@ -25,9 +25,7 @@ jobs:
 
       - name: Set up Theos Environment
         run: |
-          if [ ! -d "/opt/theos/.git" ]; then
-            git clone --recursive https://github.com/theos/theos.git /opt/theos
-          fi
+          [ ! -d "/opt/theos/.git" ] && git clone --recursive https://github.com/theos/theos.git /opt/theos
           rm -rf /opt/theos/sdks
           git clone --depth=1 https://github.com/theos/sdks.git /opt/theos/sdks
 
@@ -41,304 +39,74 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           THEOS: /opt/theos
         run: |
-          python3 -c "
-          import json, urllib.request, urllib.error, os, datetime, subprocess
+          python3 -c '
+          import json, urllib.request, urllib.error, os, datetime
 
-          source_owner = 'iamsmmh'
-          base_url = 'https://' + source_owner + '.github.io/OmniSource'
+          so, bu = "iamsmmh", "https://iamsmmh.github.io/OmniSource"
+          h = {"User-Agent": "Mozilla/5.0"}
+          if t := os.environ.get("GH_TOKEN"): h["Authorization"] = f"token {t}"
 
-          headers = {'User-Agent': 'Mozilla/5.0'}
-          token = os.environ.get('GH_TOKEN')
-          if token:
-              headers['Authorization'] = 'token ' + token
+          ma = []
+          si = f"{bu}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{bu}/assets/icon.png"
+          bn = f"{bu}/assets/banner.png" if os.path.exists("assets/banner.png") else si
 
-          master_apps = []
+          def fetch(url):
+              try:
+                  with urllib.request.urlopen(urllib.request.Request(url, headers=h)) as r:
+                      return json.loads(r.read().decode())
+              except Exception as e:
+                  print(f"Error fetching {url}: {e}")
+              return None
 
-          # Configure custom source icon and banner paths using OmniSource.png
-          source_icon_url = base_url + '/assets/OmniSource.png' if os.path.exists(os.path.join('assets', 'OmniSource.png')) else base_url + '/assets/icon.png'
-          banner_url = base_url + '/assets/banner.png' if os.path.exists(os.path.join('assets', 'banner.png')) else source_icon_url
+          # Part 1: uYouEnhanced via Upstream Feed
+          yc = {"json_file": "uyouenhanced.json", "bundleIdentifier": "com.google.ios.youtube", "name": "uYouEnhanced", "developerName": "arichornlover & Various Contributors", "subtitle": "uYou Extended with Modern Fixes & iSponsorBlock", "tintColor": "FF0000", "icon_filename": "uYouEnhanched.png"}
+          alt_data = fetch("https://raw.githubusercontent.com/arichornlover/arichornlover.github.io/main/apps.json") or {}
+          ta = next((a for a in alt_data.get("apps", []) if "youtube" in a.get("bundleIdentifier", "").lower() or "uyou" in a.get("name", "").lower()), None)
 
-          # =========================================================================
-          # PART 1: Handle uYouEnhanced
-          # =========================================================================
-          uyou_config = {
-              'json_file': 'uyouenhanced.json',
-              'bundleIdentifier': 'com.google.ios.youtube',
-              'name': 'uYouEnhanced',
-              'developerName': 'arichornlover & Various Contributors',
-              'subtitle': 'uYou Extended with Modern Fixes & iSponsorBlock',
-              'tintColor': 'FF0000',
-              'icon_filename': 'uYouEnhanched.png'
-          }
+          if ta:
+              tag, pd, desc, ipa, sz = ta.get("version", "3.0.4"), ta.get("versionDate", datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")), ta.get("localizedDescription", "uYouEnhanced official community release."), ta.get("downloadURL", ""), int(ta.get("size", 120000000))
+              icu = f"{bu}/assets/{yc[\"icon_filename\"]}" if os.path.exists(f"assets/{yc[\"icon_filename\"]}") else si
+              ad = {"name": yc["name"], "bundleIdentifier": yc["bundleIdentifier"], "developerName": yc["developerName"], "subtitle": yc["subtitle"], "localizedDescription": desc, "iconURL": icu, "tintColor": yc["tintColor"], "version": tag, "versionDate": pd, "versionDescription": desc, "downloadURL": ipa, "size": sz, "versions": ta.get("versions", [{"version": tag, "date": pd, "localizedDescription": desc, "downloadURL": ipa, "size": sz}])}
+              with open(yc["json_file"], "w", encoding="utf-8") as f:
+                  json.dump({"name": "OmniSource - uYouEnhanced", "identifier": f"com.{so.lower()}.omnisource.uyouenhanced", "subtitle": "uYouEnhanced Standalone Feed", "description": f"Standalone source for uYouEnhanced. Developed by {yc[\"developerName\"]}. Maintained by {so}.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
+              ma.append(ad)
 
-          target_app = None
-          try:
-              alt_source_url = 'https://raw.githubusercontent.com/arichornlover/arichornlover.github.io/main/apps.json'
-              req = urllib.request.Request(alt_source_url, headers=headers)
-              with urllib.request.urlopen(req) as resp:
-                  alt_data = json.loads(resp.read().decode())
-                  
-              for app in alt_data.get('apps', []):
-                  if 'youtube' in app.get('bundleIdentifier', '').lower() or 'uyou' in app.get('name', '').lower():
-                      target_app = app
-                      break
-          except Exception as e:
-              print('Warning: Upstream AltStore feed query failed: ' + str(e))
-
-          if target_app:
-              tag = target_app.get('version', '3.0.4')
-              pub_date = target_app.get('versionDate', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
-              body = target_app.get('localizedDescription', 'uYouEnhanced official community release.')
-              ipa_url = target_app.get('downloadURL', '')
-              asset_size = target_app.get('size', 120000000)
-
-              icon_url = base_url + '/assets/' + uyou_config['icon_filename'] if os.path.exists(os.path.join('assets', uyou_config['icon_filename'])) else source_icon_url
-
-              app_data = {
-                  'name': uyou_config['name'],
-                  'bundleIdentifier': uyou_config['bundleIdentifier'],
-                  'developerName': uyou_config['developerName'],
-                  'subtitle': uyou_config['subtitle'],
-                  'localizedDescription': body,
-                  'iconURL': icon_url,
-                  'tintColor': uyou_config['tintColor'],
-                  'version': tag,
-                  'versionDate': pub_date,
-                  'versionDescription': body,
-                  'downloadURL': ipa_url,
-                  'size': int(asset_size),
-                  'versions': target_app.get('versions', [{
-                      'version': tag,
-                      'date': pub_date,
-                      'localizedDescription': body,
-                      'downloadURL': ipa_url,
-                      'size': int(asset_size)
-                  }])
-              }
-
-              standalone_source = {
-                  'name': 'OmniSource - uYouEnhanced',
-                  'identifier': 'com.' + source_owner.lower() + '.omnisource.uyouenhanced',
-                  'subtitle': 'uYouEnhanced Standalone Feed',
-                  'description': 'Standalone source for uYouEnhanced. Developed by ' + uyou_config['developerName'] + '. Maintained by ' + source_owner + '.',
-                  'iconURL': source_icon_url,
-                  'bannerURL': banner_url,
-                  'website': base_url,
-                  'apps': [app_data]
-              }
-
-              with open(uyou_config['json_file'], 'w', encoding='utf-8') as f:
-                  json.dump(standalone_source, f, indent=2, ensure_ascii=False)
-              print('Successfully processed: uyouenhanced.json')
-              master_apps.append(app_data)
-
-          # =========================================================================
-          # PART 2: Fetch remaining apps (SpotiFLAC & YouProEXTRA suite) via GitHub API
-          # =========================================================================
-          apps_config = [
-              {
-                  'repo_owner': 'spotiflacapp',
-                  'repo_name': 'SpotiFLAC-Mobile',
-                  'json_file': 'spotiflac.json',
-                  'bundleIdentifier': 'com.zarzet.spotiflac',
-                  'name': 'SpotiFLAC Mobile',
-                  'developerName': 'zarzet',
-                  'subtitle': 'FLAC Downloader for iOS',
-                  'tintColor': '1DB954',
-                  'icon_url_fallback': 'https://raw.githubusercontent.com/spotiflacapp/SpotiFLAC-Mobile/main/assets/images/logo.png',
-                  'asset_keyword': 'spotiflac'
-              },
-              {
-                  'repo_owner': 'mrdrvt99',
-                  'repo_name': 'YouProEXTRA',
-                  'json_file': 'ytkace.json',
-                  'bundleIdentifier': 'com.google.ios.youtube',
-                  'name': 'YTKACE',
-                  'developerName': 'itzzace',
-                  'subtitle': 'Open-Source YouTube Enhancer with SponsorBlock',
-                  'tintColor': 'FF0000',
-                  'icon_filename': 'YouTube.png',
-                  'asset_keyword': 'ytkace'
-              },
-              {
-                  'repo_owner': 'mrdrvt99',
-                  'repo_name': 'YouProEXTRA',
-                  'json_file': 'youpro.json',
-                  'bundleIdentifier': 'com.google.ios.youtube',
-                  'name': 'YouPro',
-                  'developerName': 'Alibusut',
-                  'subtitle': 'YouTube Mod with Premium Features & Downloader',
-                  'tintColor': 'FF0000',
-                  'icon_filename': 'YouTube.png',
-                  'asset_keyword': 'youpro'
-              },
-              {
-                  'repo_owner': 'mrdrvt99',
-                  'repo_name': 'YouProEXTRA',
-                  'json_file': 'ytlite.json',
-                  'bundleIdentifier': 'com.google.ios.youtube',
-                  'name': 'YTLite',
-                  'developerName': 'Dayanch96',
-                  'subtitle': 'Lightweight & Highly Customizable YouTube Mod',
-                  'tintColor': 'FF0000',
-                  'icon_filename': 'YouTube.png',
-                  'asset_keyword': 'ytlite'
-              },
-              {
-                  'repo_owner': 'mrdrvt99',
-                  'repo_name': 'YouProEXTRA',
-                  'json_file': 'ytkp.json',
-                  'bundleIdentifier': 'com.google.ios.youtube',
-                  'name': 'YTKillerPlus',
-                  'developerName': 'IKillerApp',
-                  'subtitle': 'All-in-One YouTube Downloader & Tweak Suite',
-                  'tintColor': 'FF0000',
-                  'icon_filename': 'YouTube.png',
-                  'asset_keyword': 'ytkiller'
-              },
-              {
-                  'repo_owner': 'mrdrvt99',
-                  'repo_name': 'YTMusicUltimate',
-                  'json_file': 'ytmusic.json',
-                  'bundleIdentifier': 'com.google.ios.youtubemusic',
-                  'name': 'YTMusicUltimate',
-                  'developerName': 'Dayanch96',
-                  'subtitle': 'YouTube Music with Background Play & No Ads',
-                  'tintColor': 'FF0000',
-                  'icon_filename': 'YouTubeMusic.png',
-                  'asset_keyword': 'ytmusic'
-              }
+          # Part 2: Remaining Apps via GitHub API
+          cfgs = [
+              {"repo_owner": "spotiflacapp", "repo_name": "SpotiFLAC-Mobile", "json_file": "spotiflac.json", "bundleIdentifier": "com.zarzet.spotiflac", "name": "SpotiFLAC Mobile", "developerName": "zarzet", "subtitle": "FLAC Downloader for iOS", "tintColor": "1DB954", "icon_url_fallback": "https://raw.githubusercontent.com/spotiflacapp/SpotiFLAC-Mobile/main/assets/images/logo.png", "asset_keyword": "spotiflac"},
+              {"repo_owner": "mrdrvt99", "repo_name": "YouProEXTRA", "json_file": "ytkace.json", "bundleIdentifier": "com.google.ios.youtube", "name": "YTKACE", "developerName": "itzzace", "subtitle": "Open-Source YouTube Enhancer with SponsorBlock", "tintColor": "FF0000", "icon_filename": "YouTube.png", "asset_keyword": "ytkace"},
+              {"repo_owner": "mrdrvt99", "repo_name": "YouProEXTRA", "json_file": "youpro.json", "bundleIdentifier": "com.google.ios.youtube", "name": "YouPro", "developerName": "Alibusut", "subtitle": "YouTube Mod with Premium Features & Downloader", "tintColor": "FF0000", "icon_filename": "YouTube.png", "asset_keyword": "youpro"},
+              {"repo_owner": "mrdrvt99", "repo_name": "YouProEXTRA", "json_file": "ytlite.json", "bundleIdentifier": "com.google.ios.youtube", "name": "YTLite", "developerName": "Dayanch96", "subtitle": "Lightweight & Highly Customizable YouTube Mod", "tintColor": "FF0000", "icon_filename": "YouTube.png", "asset_keyword": "ytlite"},
+              {"repo_owner": "mrdrvt99", "repo_name": "YouProEXTRA", "json_file": "ytkp.json", "bundleIdentifier": "com.google.ios.youtube", "name": "YTKillerPlus", "developerName": "IKillerApp", "subtitle": "All-in-One YouTube Downloader & Tweak Suite", "tintColor": "FF0000", "icon_filename": "YouTube.png", "asset_keyword": "ytkiller"},
+              {"repo_owner": "mrdrvt99", "repo_name": "YTMusicUltimate", "json_file": "ytmusic.json", "bundleIdentifier": "com.google.ios.youtubemusic", "name": "YTMusicUltimate", "developerName": "Dayanch96", "subtitle": "YouTube Music with Background Play & No Ads", "tintColor": "FF0000", "icon_filename": "YouTubeMusic.png", "asset_keyword": "ytmusic"}
           ]
 
-          for config in apps_config:
-              owner = config['repo_owner']
-              repo = config['repo_name']
-              json_file = config['json_file']
-              keyword = config.get('asset_keyword', '').lower()
+          for c in cfgs:
+              ro, rn, jf, kw = c["repo_owner"], c["repo_name"], c["json_file"], c.get("asset_keyword", "").lower()
+              rel = fetch(f"https://api.github.com/repos/{ro}/{rn}/releases/latest") or next((r for r in (fetch(f"https://api.github.com/repos/{ro}/{rn}/releases") or [])), None)
+              if not rel: continue
+
+              tag = rel.get("tag_name", "1.0.0").lstrip("v")
+              pd = rel.get("published_at", datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+              desc = rel.get("body", f"Official release maintained by {c[\"developerName\"]}.")
               
-              url = 'https://api.github.com/repos/' + owner + '/' + repo + '/releases/latest'
-              release = None
+              assets = rel.get("assets", [])
+              matched = next((a for a in assets if (n := a.get("name", "").lower()).endswith((".ipa", ".tipa")) and (not kw or kw in n)), None) or next((a for a in assets if a.get("name", "").lower().endswith((".ipa", ".tipa"))), None)
+              if not matched: continue
 
-              try:
-                  req = urllib.request.Request(url, headers=headers)
-                  with urllib.request.urlopen(req) as response:
-                      release = json.loads(response.read().decode())
-              except urllib.error.HTTPError as err:
-                  if err.code == 404:
-                      fallback_url = 'https://api.github.com/repos/' + owner + '/' + repo + '/releases'
-                      try:
-                          req = urllib.request.Request(fallback_url, headers=headers)
-                          with urllib.request.urlopen(req) as response:
-                              releases = json.loads(response.read().decode())
-                              if releases and isinstance(releases, list):
-                                  release = releases[0]
-                      except Exception as e:
-                          print('Fallback release query failed for ' + repo + ': ' + str(e))
-              except Exception as e:
-                  print('Failed to query GitHub API for ' + repo + ': ' + str(e))
+              ipa, sz = matched.get("browser_download_url", ""), int(matched.get("size", 35967116))
+              icu = c.get("icon_url_fallback", f"{bu}/assets/{c[\"icon_filename\"]}" if c.get("icon_filename") and os.path.exists(f"assets/{c[\"icon_filename\"]}") else si)
+              cn = c["name"].lower().replace(" ", "")
 
-              if not release:
-                  print('Skipping ' + config['name'] + ': Release metadata unavailable.')
-                  continue
+              ad = {"name": c["name"], "bundleIdentifier": c["bundleIdentifier"], "developerName": c["developerName"], "subtitle": c["subtitle"], "localizedDescription": desc, "iconURL": icu, "tintColor": c["tintColor"], "version": tag, "versionDate": pd, "versionDescription": desc, "downloadURL": ipa, "size": sz, "versions": [{"version": tag, "date": pd, "localizedDescription": desc, "downloadURL": ipa, "size": sz}]}
+              with open(jf, "w", encoding="utf-8") as f:
+                  json.dump({"name": f"OmniSource - {c[\"name\"]}", "identifier": f"com.{so.lower()}.omnisource.{cn}", "subtitle": f"{c[\"name\"]} Standalone Feed", "description": f"Standalone source for {c[\"name\"]}. Developed by {c[\"developerName\"]}. Maintained by {so}.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
+              ma.append(ad)
 
-              raw_tag = release.get('tag_name', '1.0.0')
-              tag = raw_tag.lstrip('v')
-              pub_date = release.get('published_at', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
-              body = release.get('body', 'Official release maintained by ' + config['developerName'] + '.')
-              
-              ipa_url = ''
-              asset_size = 35967116
-              assets = release.get('assets', [])
-
-              for asset in assets:
-                  name = asset.get('name', '').lower()
-                  if (name.endswith('.ipa') or name.endswith('.tipa')) and (not keyword or keyword in name):
-                      ipa_url = asset.get('browser_download_url', '')
-                      asset_size = asset.get('size', asset_size)
-                      break
-
-              if not ipa_url:
-                  for asset in assets:
-                      name = asset.get('name', '').lower()
-                      if name.endswith('.ipa') or name.endswith('.tipa'):
-                          ipa_url = asset.get('browser_download_url', '')
-                          asset_size = asset.get('size', asset_size)
-                          break
-
-              if not ipa_url:
-                  print('Skipping ' + config['name'] + ': No IPA binary found.')
-                  continue
-
-              if 'icon_url_fallback' in config:
-                  icon_url = config['icon_url_fallback']
-              else:
-                  icon_file = config.get('icon_filename', '')
-                  if icon_file and os.path.exists(os.path.join('assets', icon_file)):
-                      icon_url = base_url + '/assets/' + icon_file
-                  else:
-                      icon_url = source_icon_url
-
-              clean_name = config['name'].lower().replace(' ', '')
-
-              app_data = {
-                  'name': config['name'],
-                  'bundleIdentifier': config['bundleIdentifier'],
-                  'developerName': config['developerName'],
-                  'subtitle': config['subtitle'],
-                  'localizedDescription': body,
-                  'iconURL': icon_url,
-                  'tintColor': config['tintColor'],
-                  'version': tag,
-                  'versionDate': pub_date,
-                  'versionDescription': body,
-                  'downloadURL': ipa_url,
-                  'size': int(asset_size),
-                  'versions': [
-                      {
-                          'version': tag,
-                          'date': pub_date,
-                          'localizedDescription': body,
-                          'downloadURL': ipa_url,
-                          'size': int(asset_size)
-                      }
-                  ]
-              }
-
-              standalone_source = {
-                  'name': 'OmniSource - ' + config['name'],
-                  'identifier': 'com.' + source_owner.lower() + '.omnisource.' + clean_name,
-                  'subtitle': config['name'] + ' Standalone Feed',
-                  'description': 'Standalone source for ' + config['name'] + '. Developed by ' + config['developerName'] + '. Maintained by ' + source_owner + '.',
-                  'iconURL': source_icon_url,
-                  'bannerURL': banner_url,
-                  'website': base_url,
-                  'apps': [app_data]
-              }
-
-              try:
-                  with open(json_file, 'w', encoding='utf-8') as f:
-                      json.dump(standalone_source, f, indent=2, ensure_ascii=False)
-                  print('Successfully updated: ' + json_file)
-              except Exception as e:
-                  print('Failed writing ' + json_file + ': ' + str(e))
-
-              master_apps.append(app_data)
-
-          if master_apps:
-              master_source = {
-                  'name': 'OmniSource',
-                  'identifier': 'com.' + source_owner.lower() + '.omnisource',
-                  'subtitle': 'Consolidated iOS Applications & Tweaks Repository',
-                  'description': 'Master AltStore / SideStore source curated by ' + source_owner + '. Full credit to original developers.',
-                  'iconURL': source_icon_url,
-                  'bannerURL': banner_url,
-                  'website': base_url,
-                  'apps': master_apps
-              }
-              with open('apps.json', 'w', encoding='utf-8') as f:
-                  json.dump(master_source, f, indent=2, ensure_ascii=False)
-              print('Successfully updated: apps.json')
-          "
+          if ma:
+              with open("apps.json", "w", encoding="utf-8") as f:
+                  json.dump({"name": "OmniSource", "identifier": f"com.{so.lower()}.omnisource", "subtitle": "Consolidated iOS Applications & Tweaks Repository", "description": f"Master AltStore / SideStore source curated by {so}. Full credit to original developers.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": ma}, f, indent=2, ensure_ascii=False)
+          '
 
       - name: Commit and Push Changes
         env:
@@ -346,8 +114,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           git add *.json
-
           git commit -m "chore(feed): configure OmniSource.png as source icon [skip ci]" || echo "No changes to commit"
           git push origin HEAD:${{ github.ref_name }}
