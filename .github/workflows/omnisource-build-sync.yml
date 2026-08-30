@@ -63,12 +63,12 @@ jobs:
           # =========================================================================
           uyou_config = {
               'json_file': 'uyouenhanced.json',
-              'bundleIdentifier': 'com.google.ios.youtube.uyouenhanced',
+              'bundleIdentifier': 'com.google.ios.youtube',
               'name': 'uYouEnhanced',
               'developerName': 'arichornlover & Various Contributors',
-              'subtitle': 'uYou Extended with Modern Fixes & SponsorBlock',
+              'subtitle': 'uYou Extended with Modern Fixes & iSponsorBlock',
               'tintColor': 'FF0000',
-              'icon_filename': 'YouTube.png'
+              'icon_filename': 'uYouEnhanched.png'
           }
 
           target_app = None
@@ -152,7 +152,7 @@ jobs:
                   'repo_owner': 'mrdrvt99',
                   'repo_name': 'YouProEXTRA',
                   'json_file': 'ytkace.json',
-                  'bundleIdentifier': 'com.google.ios.youtube.ytkace',
+                  'bundleIdentifier': 'com.google.ios.youtube',
                   'name': 'YTKACE',
                   'developerName': 'itzzace',
                   'subtitle': 'Open-Source YouTube Enhancer with SponsorBlock',
@@ -164,7 +164,7 @@ jobs:
                   'repo_owner': 'mrdrvt99',
                   'repo_name': 'YouProEXTRA',
                   'json_file': 'youpro.json',
-                  'bundleIdentifier': 'com.google.ios.youtube.youpro',
+                  'bundleIdentifier': 'com.google.ios.youtube',
                   'name': 'YouPro',
                   'developerName': 'Alibusut',
                   'subtitle': 'YouTube Mod with Premium Features & Downloader',
@@ -176,7 +176,7 @@ jobs:
                   'repo_owner': 'mrdrvt99',
                   'repo_name': 'YouProEXTRA',
                   'json_file': 'ytlite.json',
-                  'bundleIdentifier': 'com.google.ios.youtube.ytlite',
+                  'bundleIdentifier': 'com.google.ios.youtube',
                   'name': 'YTLite',
                   'developerName': 'Dayanch96',
                   'subtitle': 'Lightweight & Highly Customizable YouTube Mod',
@@ -188,7 +188,7 @@ jobs:
                   'repo_owner': 'mrdrvt99',
                   'repo_name': 'YouProEXTRA',
                   'json_file': 'ytkp.json',
-                  'bundleIdentifier': 'com.google.ios.youtube.ytkp',
+                  'bundleIdentifier': 'com.google.ios.youtube',
                   'name': 'YTKillerPlus',
                   'developerName': 'IKillerApp',
                   'subtitle': 'All-in-One YouTube Downloader & Tweak Suite',
