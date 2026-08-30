@@ -6,28 +6,21 @@
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/icon.png",
   "website": "https://iamsmmh.github.io/OmniSource",
   "apps": [
+ {
+  "name": "SpotiFLAC Mobile Source",
+  "identifier": "com.zarzet.spotiflac.source",
+  "subtitle": "FLAC Downloader for iOS",
+  "apps": [
     {
       "name": "SpotiFLAC Mobile",
-      "bundleIdentifier": "com.spotiflac.mobile",
-      "developerName": "spotiflacapp",
-      "subtitle": "Lossless FLAC Music Downloader & Player",
-      "localizedDescription": "Official release maintained by spotiflacapp.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SpotiFLAC.png",
-      "tintColor": "1DB954",
-      "version": "1.0.0",
-      "versionDate": "2026-08-30T08:10:28Z",
-      "versionDescription": "Official release maintained by spotiflacapp.",
-      "downloadURL": "https://github.com/iamsmmh/SpotiFLAC-Mobile-Repo/releases",
-      "size": 120000000,
-      "versions": [
-        {
-          "version": "1.0.0",
-          "date": "2026-08-30T08:10:28Z",
-          "localizedDescription": "Official release maintained by spotiflacapp.",
-          "downloadURL": "https://github.com/iamsmmh/SpotiFLAC-Mobile-Repo/releases",
-          "size": 120000000
-        }
-      ]
+      "bundleIdentifier": "com.zarzet.spotiflac",
+      "developerName": "zarzet",
+      "version": "4.9.0",
+      "versionDate": "2026-08-24",
+      "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.0/SpotiFLAC-v4.9.0-ios-unsigned.ipa",
+      "localizedDescription": "SpotiFLAC Mobile is written in Flutter and uses installable extensions for metadata and audio downloads.",
+      "iconURL": "https://raw.githubusercontent.com/spotiflacapp/SpotiFLAC-Mobile/main/assets/images/logo.png",
+      "size": 35967116
     }
   ]
 }
