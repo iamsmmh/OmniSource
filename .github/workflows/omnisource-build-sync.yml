@@ -31,7 +31,7 @@ jobs:
 
           so, bu = "iamsmmh", "https://iamsmmh.github.io/OmniSource"
           master_apps = []
-          
+
           site_icon = f"{bu}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{bu}/assets/icon.png"
           banner_icon = f"{bu}/assets/banner.png" if os.path.exists("assets/banner.png") else site_icon
 
