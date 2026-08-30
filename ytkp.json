@@ -1,16 +1,16 @@
 {
-  "name": "OmniSource",
+  "name": "OmniSource - YTKillerPlus",
   "identifier": "com.mrdrvt99.ytkp",
   "apiVersion": "v2",
   "subtitle": "Automated YTKillerPlus IPA builds",
-  "description": "AltStore/Feather/SideStore/LiveContainer source for YTKillerPlus. No ads, background playback, downloads, SponsorBlock, PiP, and more.",
+  "description": "Standalone distribution feed for YTKillerPlus, curated within OmniSource.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
   "website": "https://iamsmmh.github.io/OmniSource/",
   "sourceURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkp.json",
   "apps": [
     {
       "name": "YTKillerPlus",
-      "bundleIdentifier": "com.google.ios.youtube",
+      "bundleIdentifier": "com.ytkp.youtube",
       "developerName": "OmniSource",
       "subtitle": "YTKP",
       "category": "photo-video",

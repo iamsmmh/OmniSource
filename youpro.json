@@ -1,16 +1,16 @@
 {
-  "name": "OmniSource",
+  "name": "OmniSource - YouPro",
   "identifier": "com.mrdrvt99.youpro",
   "apiVersion": "v2",
   "subtitle": "Automated YouPro IPA builds",
-  "description": "AltStore/Feather/SideStore/LiveContainer source for YouPro. No ads, background playback, downloads, SponsorBlock, PiP, and more.",
+  "description": "Standalone distribution feed for YouPro, curated within OmniSource.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
   "website": "https://iamsmmh.github.io/OmniSource/",
   "sourceURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/youpro.json",
   "apps": [
     {
       "name": "YouPro",
-      "bundleIdentifier": "com.google.ios.youtube",
+      "bundleIdentifier": "com.youpro.youtube",
       "developerName": "OmniSource",
       "subtitle": "YouPro",
       "category": "photo-video",

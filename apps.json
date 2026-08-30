@@ -2,7 +2,7 @@
   "name": "OmniSource",
   "identifier": "com.iamsmmh.omnisource",
   "subtitle": "Consolidated iOS Applications & Tweaks Repository",
-  "description": "Master AltStore and SideStore repository compiled and managed by OmniSource.",
+  "description": "Master AltStore and SideStore repository compiled and managed under OmniSource.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
   "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
   "website": "https://iamsmmh.github.io/OmniSource/",
@@ -18,7 +18,7 @@
       "versionDescription": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
       "downloadURL": "https://tinyurl.com/4wck29a8",
       "localizedDescription": "uYou is the best tweak for the YouTube app. uYouEnhanced is a modified version of qnblackcat's uYouPlus & MiRO92's uYou with even more features. Additional features include skipping sponsorships in videos, more PiP options, unlocking higher resolutions, disabling overlays, removing upsell alerts, dimming the UI, enabling the miniplayer, preventing notch issues, configuring A/B settings, and adding a timestamp button.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/uYouEnhanced.png",
       "tintColor": "#e81e8a",
       "category": "photo-video",
       "size": 118022104,
@@ -101,7 +101,7 @@
     },
     {
       "name": "YTKACE",
-      "bundleIdentifier": "com.google.ios.youtube",
+      "bundleIdentifier": "com.ytkace.youtube",
       "developerName": "OmniSource",
       "subtitle": "YTKACE",
       "category": "photo-video",
@@ -152,7 +152,7 @@
     },
     {
       "name": "YouPro",
-      "bundleIdentifier": "com.google.ios.youtube",
+      "bundleIdentifier": "com.youpro.youtube",
       "developerName": "OmniSource",
       "subtitle": "YouPro",
       "category": "photo-video",
@@ -203,7 +203,7 @@
     },
     {
       "name": "YouTubePlus",
-      "bundleIdentifier": "com.google.ios.youtube",
+      "bundleIdentifier": "com.ytlite.youtube",
       "developerName": "OmniSource",
       "subtitle": "YTLite",
       "category": "photo-video",
@@ -270,7 +270,7 @@
     },
     {
       "name": "YTKillerPlus",
-      "bundleIdentifier": "com.google.ios.youtube",
+      "bundleIdentifier": "com.ytkp.youtube",
       "developerName": "OmniSource",
       "subtitle": "YTKP",
       "category": "photo-video",

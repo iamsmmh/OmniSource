@@ -1,16 +1,16 @@
 {
-  "name": "OmniSource",
+  "name": "OmniSource - YouTubePlus",
   "identifier": "com.mrdrvt99.ytlite",
   "apiVersion": "v2",
   "subtitle": "Automated YTLite IPA builds",
-  "description": "AltStore/Feather/SideStore/LiveContainer source for YouTubePlus (YTLite). No ads, background playback, downloads, SponsorBlock, PiP, and more.",
+  "description": "Standalone distribution feed for YouTubePlus, curated within OmniSource.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
   "website": "https://iamsmmh.github.io/OmniSource/",
   "sourceURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytlite.json",
   "apps": [
     {
       "name": "YouTubePlus",
-      "bundleIdentifier": "com.google.ios.youtube",
+      "bundleIdentifier": "com.ytlite.youtube",
       "developerName": "OmniSource",
       "subtitle": "YTLite",
       "category": "photo-video",
