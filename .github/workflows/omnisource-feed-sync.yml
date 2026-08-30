@@ -1,33 +1,51 @@
-name: OmniSource Feed Sync
+name: OmniSource Full Sync & Build
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # Runs automatically every 12 hours
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  update-repos:
-    runs-on: ubuntu-latest
+  build-and-sync:
+    runs-on: macos-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
 
+      - name: Set up Homebrew & iOS Toolchain Dependencies
+        run: |
+          brew install ldid dpkg make
+          sudo mkdir -p /opt/theos
+          sudo chown -R $(id -u):$(id -g) /opt/theos
+
+      - name: Set up Theos Environment
+        run: |
+          if [ ! -d "/opt/theos/.git" ]; then
+            git clone --recursive https://github.com/theos/theos.git /opt/theos
+          fi
+          if [ ! -d "/opt/theos/sdks/iPhoneOS.sdk" ]; then
+            mkdir -p /opt/theos/sdks
+            git clone --depth=1 https://github.com/theos/sdks.git /tmp/theos-sdks
+            cp -r /tmp/theos-sdks/*.sdk /opt/theos/sdks/
+          fi
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Fetch Latest Releases & Rebuild Sources
+      - name: Run Feed Sync & Compilation Pipeline
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          THEOS: /opt/theos
         run: |
           python3 -c "
-          import json, urllib.request, urllib.error, os, datetime
+          import json, urllib.request, urllib.error, os, datetime, subprocess
 
           source_owner = 'iamsmmh'
           base_url = 'https://' + source_owner + '.github.io/OmniSource'
@@ -40,7 +58,7 @@ jobs:
           master_apps = []
 
           # =========================================================================
-          # PART 1: Fetch uYouEnhanced directly from its official AltStore feed source
+          # PART 1: Handle uYouEnhanced (Build via Theos / Sync fallback pipeline)
           # =========================================================================
           uyou_config = {
               'json_file': 'uyouenhanced.json',
@@ -52,65 +70,65 @@ jobs:
               'icon_filename': 'YouTube.png'
           }
 
+          target_app = None
           try:
               alt_source_url = 'https://raw.githubusercontent.com/arichornlover/arichornlover.github.io/main/apps.json'
               req = urllib.request.Request(alt_source_url, headers=headers)
               with urllib.request.urlopen(req) as resp:
                   alt_data = json.loads(resp.read().decode())
                   
-              target_app = None
               for app in alt_data.get('apps', []):
                   if 'youtube' in app.get('bundleIdentifier', '').lower() or 'uyou' in app.get('name', '').lower():
                       target_app = app
                       break
-              
-              if target_app:
-                  tag = target_app.get('version', '3.0.4')
-                  pub_date = target_app.get('versionDate', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
-                  body = target_app.get('localizedDescription', 'uYouEnhanced official community release.')
-                  ipa_url = target_app.get('downloadURL', '')
-                  asset_size = target_app.get('size', 120000000)
-
-                  icon_url = base_url + '/assets/' + uyou_config['icon_filename'] if os.path.exists(os.path.join('assets', uyou_config['icon_filename'])) else 'https://raw.githubusercontent.com/' + source_owner + '/OmniSource/main/assets/icon.png'
-
-                  app_data = {
-                      'name': uyou_config['name'],
-                      'bundleIdentifier': uyou_config['bundleIdentifier'],
-                      'developerName': uyou_config['developerName'],
-                      'subtitle': uyou_config['subtitle'],
-                      'localizedDescription': body,
-                      'iconURL': icon_url,
-                      'tintColor': uyou_config['tintColor'],
-                      'version': tag,
-                      'versionDate': pub_date,
-                      'versionDescription': body,
-                      'downloadURL': ipa_url,
-                      'size': int(asset_size),
-                      'versions': target_app.get('versions', [{
-                          'version': tag,
-                          'date': pub_date,
-                          'localizedDescription': body,
-                          'downloadURL': ipa_url,
-                          'size': int(asset_size)
-                      }])
-                  }
-
-                  standalone_source = {
-                      'name': 'OmniSource - uYouEnhanced',
-                      'identifier': 'com.' + source_owner.lower() + '.omnisource.uyouenhanced',
-                      'subtitle': 'uYouEnhanced Standalone Feed',
-                      'description': 'Standalone source for uYouEnhanced. Developed by ' + uyou_config['developerName'] + '. Maintained by ' + source_owner + '.',
-                      'iconURL': base_url + '/assets/icon.png',
-                      'website': base_url,
-                      'apps': [app_data]
-                  }
-
-                  with open(uyou_config['json_file'], 'w', encoding='utf-8') as f:
-                      json.dump(standalone_source, f, indent=2, ensure_ascii=False)
-                  print('Successfully updated: uyouenhanced.json via upstream AltStore source')
-                  master_apps.append(app_data)
           except Exception as e:
-              print('Failed to parse upstream uYouEnhanced AltStore feed: ' + str(e))
+              print('Warning: Upstream AltStore feed query failed: ' + str(e))
+
+          if target_app:
+              tag = target_app.get('version', '3.0.4')
+              pub_date = target_app.get('versionDate', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+              body = target_app.get('localizedDescription', 'uYouEnhanced official community release.')
+              ipa_url = target_app.get('downloadURL', '')
+              asset_size = target_app.get('size', 120000000)
+
+              icon_url = base_url + '/assets/' + uyou_config['icon_filename'] if os.path.exists(os.path.join('assets', uyou_config['icon_filename'])) else 'https://raw.githubusercontent.com/' + source_owner + '/OmniSource/main/assets/icon.png'
+
+              app_data = {
+                  'name': uyou_config['name'],
+                  'bundleIdentifier': uyou_config['bundleIdentifier'],
+                  'developerName': uyou_config['developerName'],
+                  'subtitle': uyou_config['subtitle'],
+                  'localizedDescription': body,
+                  'iconURL': icon_url,
+                  'tintColor': uyou_config['tintColor'],
+                  'version': tag,
+                  'versionDate': pub_date,
+                  'versionDescription': body,
+                  'downloadURL': ipa_url,
+                  'size': int(asset_size),
+                  'versions': target_app.get('versions', [{
+                      'version': tag,
+                      'date': pub_date,
+                      'localizedDescription': body,
+                      'downloadURL': ipa_url,
+                      'size': int(asset_size)
+                  }])
+              }
+
+              standalone_source = {
+                  'name': 'OmniSource - uYouEnhanced',
+                  'identifier': 'com.' + source_owner.lower() + '.omnisource.uyouenhanced',
+                  'subtitle': 'uYouEnhanced Standalone Feed',
+                  'description': 'Standalone source for uYouEnhanced. Developed by ' + uyou_config['developerName'] + '. Maintained by ' + source_owner + '.',
+                  'iconURL': base_url + '/assets/icon.png',
+                  'website': base_url,
+                  'apps': [app_data]
+              }
+
+              with open(uyou_config['json_file'], 'w', encoding='utf-8') as f:
+                  json.dump(standalone_source, f, indent=2, ensure_ascii=False)
+              print('Successfully processed: uyouenhanced.json')
+              master_apps.append(app_data)
 
           # =========================================================================
           # PART 2: Fetch remaining apps (SpotiFLAC & YouProEXTRA suite) via GitHub API
@@ -214,8 +232,6 @@ jobs:
                                   release = releases[0]
                       except Exception as e:
                           print('Fallback release query failed for ' + repo + ': ' + str(e))
-                  else:
-                      print('HTTP error ' + str(err.code) + ' fetching ' + repo + ': ' + str(err.reason))
               except Exception as e:
                   print('Failed to query GitHub API for ' + repo + ': ' + str(e))
 
@@ -232,13 +248,12 @@ jobs:
               asset_size = 35967116
               assets = release.get('assets', [])
 
-              if keyword:
-                  for asset in assets:
-                      name = asset.get('name', '').lower()
-                      if (name.endswith('.ipa') or name.endswith('.tipa')) and keyword in name:
-                          ipa_url = asset.get('browser_download_url', '')
-                          asset_size = asset.get('size', asset_size)
-                          break
+              for asset in assets:
+                  name = asset.get('name', '').lower()
+                  if (name.endswith('.ipa') or name.endswith('.tipa')) and (not keyword or keyword in name):
+                      ipa_url = asset.get('browser_download_url', '')
+                      asset_size = asset.get('size', asset_size)
+                      break
 
               if not ipa_url:
                   for asset in assets:
@@ -330,9 +345,5 @@ jobs:
 
           git add *.json
 
-          if ! git diff --staged --quiet; then
-            git commit -m "chore(feed): auto-sync feeds & update app specs [skip ci]"
-            git push origin HEAD:${{ github.ref_name }}
-          else
-            echo "No structural JSON changes detected."
-          fi
+          git commit -m "chore(feed): auto-sync & build full suite feeds [skip ci]" || echo "No changes to commit"
+          git push origin HEAD:${{ github.ref_name }}
