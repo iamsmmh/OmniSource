@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: '3.x'
 
       - name: Fetch Latest Releases & Rebuild Sources
         env:
@@ -41,7 +41,8 @@ jobs:
                   'name': 'SpotiFLAC Mobile',
                   'developerName': 'spotiflacapp',
                   'subtitle': 'Lossless FLAC Music Downloader & Player',
-                  'tintColor': '1DB954'
+                  'tintColor': '1DB954',
+                  'icon_filename': 'SpotiFLAC.png'
               },
               {
                   'repo_owner': 'arichornlover',
@@ -51,7 +52,8 @@ jobs:
                   'name': 'uYouEnhanced',
                   'developerName': 'arichornlover & MiRO92',
                   'subtitle': 'uYou Extended with Modern Fixes & SponsorBlock',
-                  'tintColor': 'FF0000'
+                  'tintColor': 'FF0000',
+                  'icon_filename': 'YouTube.png'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -61,7 +63,8 @@ jobs:
                   'name': 'YTKACE',
                   'developerName': 'itzzace & mrdrvt99',
                   'subtitle': 'Open-Source YouTube Enhancer with SponsorBlock',
-                  'tintColor': 'FF0000'
+                  'tintColor': 'FF0000',
+                  'icon_filename': 'YouTube.png'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -71,7 +74,8 @@ jobs:
                   'name': 'YouPro',
                   'developerName': 'Alibusut & mrdrvt99',
                   'subtitle': 'YouTube Mod with Premium Features & Downloader',
-                  'tintColor': 'FF0000'
+                  'tintColor': 'FF0000',
+                  'icon_filename': 'YouTube.png'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -81,7 +85,8 @@ jobs:
                   'name': 'YTLite',
                   'developerName': 'Dayanch96 & mrdrvt99',
                   'subtitle': 'Lightweight & Highly Customizable YouTube Mod',
-                  'tintColor': 'FF0000'
+                  'tintColor': 'FF0000',
+                  'icon_filename': 'YouTube.png'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -91,7 +96,8 @@ jobs:
                   'name': 'YTKillerPlus',
                   'developerName': 'IKillerApp & mrdrvt99',
                   'subtitle': 'All-in-One YouTube Downloader & Tweak Suite',
-                  'tintColor': 'FF0000'
+                  'tintColor': 'FF0000',
+                  'icon_filename': 'YouTube.png'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -101,7 +107,8 @@ jobs:
                   'name': 'YTMusicUltimate',
                   'developerName': 'Dayanch96 & mrdrvt99',
                   'subtitle': 'YouTube Music with Background Play & No Ads',
-                  'tintColor': 'FF0000'
+                  'tintColor': 'FF0000',
+                  'icon_filename': 'YouTubeMusic.png'
               }
           ]
 
@@ -163,14 +170,15 @@ jobs:
                   ipa_url = f'https://github.com/{owner}/{repo}/releases'
                   asset_size = 120000000
 
-              clean_name = config['name'].lower().replace(' ', '')
-              icon_filename = f\"{clean_name}.png\"
-              if os.path.exists(os.path.join('assets', icon_filename)):
-                  icon_url = f'{base_url}/assets/{icon_filename}'
+              icon_file = config.get('icon_filename', '')
+              if icon_file and os.path.exists(os.path.join('assets', icon_file)):
+                  icon_url = f'{base_url}/assets/{icon_file}'
               elif os.path.exists('assets/icon.png'):
                   icon_url = f'{base_url}/assets/icon.png'
               else:
                   icon_url = f'https://raw.githubusercontent.com/{source_owner}/OmniSource/main/assets/icon.png'
+
+              clean_name = config['name'].lower().replace(' ', '')
 
               app_data = {
                   'name': config['name'],
@@ -236,9 +244,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
+          
           git add *.json
-
+          
           if ! git diff --staged --quiet; then
             git commit -m "chore(feed): sync update apps JSON files [skip ci]"
             git push origin HEAD:${{ github.ref_name }}
