@@ -17,121 +17,98 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
 
-      - name: Set up Homebrew & iOS Toolchain Dependencies
-        run: |
-          brew install ldid dpkg make
-          sudo mkdir -p /opt/theos
-          sudo chown -R $(id -u):$(id -g) /opt/theos
-
-      - name: Set up Theos Environment
-        run: |
-          [ ! -d "/opt/theos/.git" ] && git clone --recursive https://github.com/theos/theos.git /opt/theos
-          rm -rf /opt/theos/sdks
-          git clone --depth=1 https://github.com/theos/sdks.git /opt/theos/sdks
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Run Feed Sync & Compilation Pipeline
+      - name: Run Robust Local Feed Verification & Master Compilation Pipeline
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          THEOS: /opt/theos
         run: |
           python3 -c '
-          import json, urllib.request, urllib.error, os, datetime
+          import json, os, datetime
 
           so, bu = "iamsmmh", "https://iamsmmh.github.io/OmniSource"
-          h = {"User-Agent": "Mozilla/5.0"}
-          if t := os.environ.get("GH_TOKEN"): h["Authorization"] = f"token {t}"
-
           ma = []
           si = f"{bu}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{bu}/assets/icon.png"
           bn = f"{bu}/assets/banner.png" if os.path.exists("assets/banner.png") else si
 
-          def fetch(url):
-              try:
-                  with urllib.request.urlopen(urllib.request.Request(url, headers=h)) as r:
-                      return json.loads(r.read().decode())
-              except Exception as e:
-                  print(f"Error fetching {url}: {e}")
-              return None
-
-          # Part 1: uYouEnhanced via Upstream Feed
-          yc = {"json_file": "uyouenhanced.json", "bundleIdentifier": "com.google.ios.youtube", "name": "uYouEnhanced", "developerName": "arichornlover & Various Contributors", "subtitle": "uYou Extended with Modern Fixes & iSponsorBlock", "tintColor": "FF0000"}
-          alt_data = fetch("https://raw.githubusercontent.com/arichornlover/arichornlover.github.io/main/apps.json") or {}
-          ta = next((a for a in alt_data.get("apps", []) if "youtube" in a.get("bundleIdentifier", "").lower() or "uyou" in a.get("name", "").lower()), None)
-
-          if ta:
-              tag = ta.get("version", "3.0.4")
-              pd = ta.get("versionDate", datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
-              desc = ta.get("localizedDescription", "uYouEnhanced official community release.")
-              ipa = ta.get("downloadURL", "")
-              sz = int(ta.get("size", 120000000))
-              
-              icu = ta.get("iconURL") or si
-              
-              ad = {"name": yc["name"], "bundleIdentifier": yc["bundleIdentifier"], "developerName": yc["developerName"], "subtitle": yc["subtitle"], "localizedDescription": desc, "iconURL": icu, "tintColor": yc["tintColor"], "version": tag, "versionDate": pd, "versionDescription": desc, "downloadURL": ipa, "size": sz, "versions": ta.get("versions", [{"version": tag, "date": pd, "localizedDescription": desc, "downloadURL": ipa, "size": sz}])}
-              dev_name = yc["developerName"]
-              with open(yc["json_file"], "w", encoding="utf-8") as f:
-                  json.dump({"name": "OmniSource - uYouEnhanced", "identifier": f"com.{so.lower()}.omnisource.uyouenhanced", "subtitle": "uYouEnhanced Standalone Feed", "description": f"Standalone source for uYouEnhanced. Developed by {dev_name}. Maintained by {so}.", "iconURL": icu, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
-              ma.append(ad)
-
-          # Part 2: Remaining Apps via AltStore Feeds / GitHub API
-          cfgs = [
-              {"json_file": "spotiflac.json", "repo_owner": "spotiflacapp", "repo_name": "SpotiFLAC-Mobile", "bundleIdentifier": "com.zarzet.spotiflac", "name": "SpotiFLAC Mobile", "developerName": "zarzet", "subtitle": "FLAC Downloader for iOS", "tintColor": "1DB954", "icon_url_fallback": "https://raw.githubusercontent.com/spotiflacapp/SpotiFLAC-Mobile/main/assets/images/logo.png", "asset_keyword": "spotiflac"},
-              {"json_file": "ytkace.json", "source_url": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json"},
-              {"json_file": "youpro.json", "source_url": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/youpro.json"},
-              {"json_file": "ytlite.json", "source_url": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytlite.json"},
-              {"json_file": "ytkp.json", "source_url": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkp.json"},
-              {"json_file": "ytmusic.json", "source_url": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytmusic.json"}
+          # List of local standalone JSON files managed in your repository
+          local_files = [
+              "uyouenhanced.json", 
+              "spotiflac.json", 
+              "ytkace.json", 
+              "youpro.json", 
+              "ytlite.json", 
+              "ytkp.json", 
+              "ytmusic.json"
           ]
 
-          for c in cfgs:
-              jf = c["json_file"]
-              if "source_url" in c:
-                  source_data = fetch(c["source_url"])
-                  if source_data and source_data.get("apps"):
-                      app_item = source_data["apps"][0]
-                      ma.append(app_item)
-                      with open(jf, "w", encoding="utf-8") as f:
-                          json.dump(source_data, f, indent=2, ensure_ascii=False)
+          for jf in local_files:
+              if os.path.exists(jf):
+                  try:
+                      with open(jf, "r", encoding="utf-8") as f:
+                          data = json.load(f)
+                      
+                      apps = data.get("apps", [])
+                      for app in apps:
+                          name_lower = app.get("name", "").lower()
+                          id_lower = app.get("bundleIdentifier", "").lower()
+
+                          # Enforce proper official/unique bundle alignment based on user preference
+                          if "music" in name_lower or "youtubemusic" in id_lower:
+                              app["bundleIdentifier"] = "com.google.ios.youtubemusic"
+                          elif "spotiflac" in name_lower or "zarzet" in id_lower:
+                              app["bundleIdentifier"] = "com.zarzet.spotiflac"
+                          else:
+                              # Standard YouTube variant default
+                              app["bundleIdentifier"] = "com.google.ios.youtube"
+
+                          # Validate essential AltStore/SideStore keys to prevent client parsing errors
+                          if not app.get("versionDate"):
+                              app["versionDate"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+                          if not app.get("versions") and app.get("version") and app.get("downloadURL"):
+                              app["versions"] = [{
+                                  "version": app.get("version"),
+                                  "date": app.get("versionDate"),
+                                  "localizedDescription": app.get("localizedDescription", "Stable release."),
+                                  "downloadURL": app.get("downloadURL"),
+                                  "size": app.get("size", 120000000)
+                              }]
+
+                          ma.append(app)
+                      print(f"Successfully validated and loaded entries from: {jf}")
+                  except Exception as e:
+                      print(f"Malformed JSON syntax or read error in {jf}: {e}")
               else:
-                  ro, rn, kw = c["repo_owner"], c["repo_name"], c.get("asset_keyword", "").lower()
-                  rel = fetch(f"https://api.github.com/repos/{ro}/{rn}/releases/latest") or next((r for r in (fetch(f"https://api.github.com/repos/{ro}/{rn}/releases") or [])), None)
-                  if not rel: continue
+                  print(f"Warning: Standalone file not found in repo root: {jf}")
 
-                  tag = rel.get("tag_name", "1.0.0").lstrip("v")
-                  pd = rel.get("published_at", datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
-                  c_dev = c["developerName"]
-                  desc = rel.get("body", f"Official release maintained by {c_dev}.")
-                  
-                  assets = rel.get("assets", [])
-                  matched = next((a for a in assets if (n := a.get("name", "").lower()).endswith((".ipa", ".tipa")) and (not kw or kw in n)), None) or next((a for a in assets if a.get("name", "").lower().endswith((".ipa", ".tipa"))), None)
-                  if not matched: continue
-
-                  ipa, sz = matched.get("browser_download_url", ""), int(matched.get("size", 35967116))
-                  icu = c.get("icon_url_fallback", si)
-
-                  cn = c["name"].lower().replace(" ", "")
-                  ad = {"name": c["name"], "bundleIdentifier": c["bundleIdentifier"], "developerName": c["developerName"], "subtitle": c["subtitle"], "localizedDescription": desc, "iconURL": icu, "tintColor": c["tintColor"], "version": tag, "versionDate": pd, "versionDescription": desc, "downloadURL": ipa, "size": sz, "versions": [{"version": tag, "date": pd, "localizedDescription": desc, "downloadURL": ipa, "size": sz}]}
-                  c_name = c["name"]
-                  with open(jf, "w", encoding="utf-8") as f:
-                      json.dump({"name": f"OmniSource - {c_name}", "identifier": f"com.{so.lower()}.omnisource.{cn}", "subtitle": f"{c_name} Standalone Feed", "description": f"Standalone source for {c_name}. Developed by {c_dev}. Maintained by {so}.", "iconURL": icu, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
-                  ma.append(ad)
-
+          # Build and write clean master apps.json feed
           if ma:
+              master_data = {
+                  "name": "OmniSource",
+                  "identifier": f"com.{so.lower()}.omnisource",
+                  "subtitle": "Consolidated iOS Applications & Tweaks Repository",
+                  "description": f"Master AltStore / SideStore source curated by {so}.",
+                  "iconURL": si,
+                  "bannerURL": bn,
+                  "website": bu,
+                  "apps": ma
+              }
               with open("apps.json", "w", encoding="utf-8") as f:
-                  json.dump({"name": "OmniSource", "identifier": f"com.{so.lower()}.omnisource", "subtitle": "Consolidated iOS Applications & Tweaks Repository", "description": f"Master AltStore / SideStore source curated by {so}. Full credit to original developers.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": ma}, f, indent=2, ensure_ascii=False)
+                  json.dump(master_data, f, indent=2, ensure_ascii=False)
+              print("Master apps.json compiled successfully with zero syntax gaps.")
+          else:
+              print("Error: No valid application configurations discovered across local JSON files.")
           '
 
-      - name: Commit and Push Changes
+      - name: Commit and Push Feed Updates
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add *.json
-          git commit -m "chore(feed): update stable standalone and master feeds [skip ci]" || echo "No changes to commit"
+          git add apps.json *.json
+          git commit -m "fix(feed): validate syntax structures and compile clean master apps.json [skip ci]" || echo "No changes to commit"
           git push origin HEAD:${{ github.ref_name }}
