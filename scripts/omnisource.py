@@ -19,11 +19,10 @@ PRIMARY_SOURCE = "https://github.com/iamsmmh/OmniSource"
 PRIMARY_LOGO = "OmniSource.png"
 YOU_PRO_EXTRA = "mrdrvt99/YouProEXTRA"
 YTMUSIC_REPO = "mrdrvt99/YTMusicUltimate"
-# Added standalone sources
 UYOU_REPO = "arichornlover/uYouEnhanced"
 SPOTIFLAC_REPO = "spotiflacapp/SpotiFLAC-Mobile"
 # ============================================================
-# Individual app metadata
+# Individual app metadata — unchanged
 # ============================================================
 FILE_CONFIG: dict[str, tuple[str, str, str]] = {
     "uyouenhanced.json": (
@@ -79,9 +78,19 @@ MANIFESTS = {
     "ytkp": "ytkp.json",
     "ytkace": "ytkace.json",
 }
-IPA_RE = re.compile(r"(\d+\.\d+\.\d+)")
-VERSION_RE = re.compile(r"(\d+\.\d+(?:\.\d+)?)")
-# Authenticated headers: GitHub API ONLY.
+# ============================================================
+# Version patterns
+# ============================================================
+THREE_PART_VERSION_RE = re.compile(
+    r"(\d+\.\d+\.\d+)"
+)
+VERSION_RE = re.compile(
+    r"(\d+\.\d+(?:\.\d+)?)"
+)
+# ============================================================
+# GitHub API headers
+# GH_TOKEN is used ONLY for GitHub API requests.
+# ============================================================
 API_HEADERS = {
     "User-Agent": "OmniSource-GitHub-Actions",
     "Accept": "application/vnd.github+json",
@@ -89,11 +98,10 @@ API_HEADERS = {
 if GH_TOKEN:
     API_HEADERS["Authorization"] = f"Bearer {GH_TOKEN}"
 # ============================================================
-# HTTP helpers
+# HTTP / GitHub API
 # ============================================================
 def api_request(
     url: str,
-    *,
     timeout: int = 30,
     retries: int = 3,
 ) -> bytes | None:
@@ -110,9 +118,6 @@ def api_request(
             ) as response:
                 return response.read()
         except urllib.error.HTTPError as error:
-            retryable = error.code in {
-                408, 429, 500, 502, 503, 504
-            }
             if error.code == 403:
                 remaining = error.headers.get(
                     "X-RateLimit-Remaining"
@@ -134,9 +139,18 @@ def api_request(
                     )
                     time.sleep(wait)
                     continue
+            retryable = error.code in {
+                408,
+                429,
+                500,
+                502,
+                503,
+                504,
+            }
             if not retryable or attempt == retries:
                 print(
-                    f"::error::GitHub API HTTP {error.code}: {url}"
+                    f"::error::GitHub API HTTP "
+                    f"{error.code}: {url}"
                 )
                 return None
             wait = min(60, 2 ** attempt)
@@ -151,7 +165,8 @@ def api_request(
         ) as error:
             if attempt == retries:
                 print(
-                    f"::error::GitHub API request failed: {error}"
+                    f"::error::GitHub API request failed: "
+                    f"{error}"
                 )
                 return None
             wait = min(60, 2 ** attempt)
@@ -162,6 +177,7 @@ def api_request(
             time.sleep(wait)
     return None
 def fetch_json(url: str) -> Any:
+    """Fetch JSON from GitHub API."""
     raw = api_request(url)
     if raw is None:
         sys.exit(1)
@@ -178,19 +194,17 @@ def fetch_json(url: str) -> Any:
         )
         sys.exit(1)
 # ============================================================
-# Public URL validation
+# Public download URL validation
+# IMPORTANT: NO GH_TOKEN
 # ============================================================
 def url_alive(url: str) -> bool:
-    """
-    Validate public IPA/download URLs WITHOUT GH_TOKEN.
-    GitHub release assets may redirect to a CDN. HEAD is tried
-    first; a one-byte Range request is used as fallback.
-    """
+    """Check a public download URL without authentication."""
     if not url:
         return False
     headers = {
         "User-Agent": "OmniSource-GitHub-Actions",
     }
+    # First try HEAD.
     try:
         request = urllib.request.Request(
             url,
@@ -210,8 +224,7 @@ def url_alive(url: str) -> bool:
         TimeoutError,
     ):
         pass
-    # Fallback without authentication and without
-    # downloading the entire IPA.
+    # Fallback: request only one byte.
     try:
         request = urllib.request.Request(
             url,
@@ -224,7 +237,10 @@ def url_alive(url: str) -> bool:
             request,
             timeout=15,
         ) as response:
-            return response.status in {200, 206}
+            return response.status in {
+                200,
+                206,
+            }
     except (
         urllib.error.HTTPError,
         urllib.error.URLError,
@@ -260,7 +276,8 @@ def read_json(
         ValueError,
     ) as error:
         print(
-            f"::error::Invalid manifest {path}: {error}"
+            f"::error::Invalid manifest {path}: "
+            f"{error}"
         )
         return None
 def write_json(
@@ -281,7 +298,7 @@ def write_json(
                 ensure_ascii=False,
             )
             file.write("\n")
-        # Validate before replacing original.
+        # Validate before replacement.
         with open(
             tmp,
             "r",
@@ -293,7 +310,8 @@ def write_json(
         if os.path.exists(tmp):
             os.remove(tmp)
         print(
-            f"::error::Failed writing {path}: {error}"
+            f"::error::Failed writing {path}: "
+            f"{error}"
         )
         sys.exit(1)
 # ============================================================
@@ -303,7 +321,7 @@ def published_releases(
     repo: str,
     pages: int = 10,
 ) -> list[dict[str, Any]]:
-    result: list[dict[str, Any]] = []
+    releases: list[dict[str, Any]] = []
     for page in range(1, pages + 1):
         data = fetch_json(
             f"{GITHUB_API}/repos/{repo}/releases"
@@ -311,7 +329,7 @@ def published_releases(
         )
         if not isinstance(data, list) or not data:
             break
-        result.extend(
+        releases.extend(
             release
             for release in data
             if not release.get("draft")
@@ -319,14 +337,14 @@ def published_releases(
         )
         if len(data) < 100:
             break
-    result.sort(
+    releases.sort(
         key=lambda release: (
             release.get("published_at") or "",
             release.get("created_at") or "",
         ),
         reverse=True,
     )
-    return result
+    return releases
 def ipa_asset(
     release: dict[str, Any],
 ) -> dict[str, Any] | None:
@@ -341,100 +359,18 @@ def ipa_asset(
         None,
     )
 # ============================================================
-# Generic standalone release sync
-# ============================================================
-def sync_latest_ipa(
-    repo: str,
-    filename: str,
-    description_prefix: str,
-    version_pattern: re.Pattern[str],
-) -> None:
-    manifest = read_json(filename)
-    if not manifest:
-        return
-    release = next(
-        iter(published_releases(repo, pages=1)),
-        None,
-    )
-    if not release:
-        print(
-            f"::warning::No published release for {repo}"
-        )
-        return
-    asset = ipa_asset(release)
-    if not asset:
-        print(
-            f"::warning::No IPA asset for {repo}"
-        )
-        return
-    apps = manifest.get("apps")
-    if not isinstance(apps, list) or not apps:
-        print(
-            f"::warning::No apps found in {filename}"
-        )
-        return
-    app = apps[0]
-    if not isinstance(app, dict):
-        return
-    name = asset.get("name", "")
-    matches = version_pattern.findall(name)
-    if matches:
-        version = matches[0]
-    else:
-        version = (
-            release.get("tag_name", "")
-            .lstrip("v")
-        )
-    date = (
-        release.get("published_at") or ""
-    )[:10]
-    description = (
-        f"{description_prefix} {version} | "
-        f"{name.removesuffix('.ipa')}"
-    )
-    body = (
-        release.get("body") or ""
-    ).strip()
-    if body:
-        description += f"\n\n{body}"
-    entry = {
-        "version": version,
-        "date": date,
-        "localizedDescription": description,
-        "downloadURL": asset["browser_download_url"],
-        "size": asset["size"],
-        "minOSVersion": "16.0",
-    }
-    updated = {
-        **app,
-        "versions": [entry],
-        "version": version,
-        "versionDate": date,
-        "versionDescription": description,
-        "downloadURL": asset["browser_download_url"],
-        "size": asset["size"],
-    }
-    if updated == app:
-        print(
-            f"::notice::{filename} already up to date"
-        )
-        return
-    apps[0] = updated
-    write_json(filename, manifest)
-    print(
-        f"::notice::{filename} → {version}"
-    )
-# ============================================================
-# YouProEXTRA Sync
+# YouProEXTRA
 # ============================================================
 def sync_youproextra() -> None:
     print("==> Syncing YouProEXTRA")
     best: dict[str, dict[str, Any]] = {}
     for release in published_releases(
-        YOU_PRO_EXTRA,
+        YOU_PRO_EXTRA
     ):
-        tag = release.get("tag_name", "")
-        # Keep original exclusions.
+        tag = release.get(
+            "tag_name",
+            "",
+        )
         if (
             tag.startswith(
                 "youproextra-noytlite-ipa"
@@ -464,8 +400,10 @@ def sync_youproextra() -> None:
         if not isinstance(apps, list) or not apps:
             continue
         app = apps[0]
+        if not isinstance(app, dict):
+            continue
         name = asset.get("name", "")
-        match = IPA_RE.search(name)
+        match = THREE_PART_VERSION_RE.search(name)
         if not match:
             print(
                 f"::warning::No version found in {name}"
@@ -505,44 +443,266 @@ def sync_youproextra() -> None:
             ],
             "size": asset["size"],
         }
-        if updated != app:
-            apps[0] = updated
-            write_json(filename, data)
-            print(
-                f"::notice::{filename} → {version}"
-            )
+        if updated == app:
+            continue
+        apps[0] = updated
+        write_json(filename, data)
+        print(
+            f"::notice::{filename} → {version}"
+        )
 # ============================================================
 # YTMusicUltimate
 # ============================================================
 def sync_ytmusic() -> None:
     print("==> Syncing YTMusicUltimate")
-    sync_latest_ipa(
-        YTMUSIC_REPO,
-        "ytmusic.json",
-        "YTMusicUltimate",
-        YTMUSIC_VERSION_RE,
+    filename = "ytmusic.json"
+    data = read_json(filename)
+    if not data:
+        return
+    release = next(
+        iter(
+            published_releases(
+                YTMUSIC_REPO,
+                pages=1,
+            )
+        ),
+        None,
+    )
+    if not release:
+        print(
+            "::warning::No YTMusic release found"
+        )
+        return
+    asset = ipa_asset(release)
+    if not asset:
+        print(
+            "::warning::No YTMusic IPA found"
+        )
+        return
+    apps = data.get("apps")
+    if not isinstance(apps, list) or not apps:
+        return
+    app = apps[0]
+    if not isinstance(app, dict):
+        return
+    matches = VERSION_RE.findall(
+        asset.get("name", "")
+    )
+    if len(matches) >= 2:
+        tweak_version = matches[0]
+        ytm_version = matches[-1]
+    elif len(matches) == 1:
+        tweak_version = ytm_version = matches[0]
+    else:
+        tweak_version = ytm_version = (
+            release.get("tag_name", "")
+            .lstrip("v")
+        )
+    date = (
+        release.get("published_at") or ""
+    )[:10]
+    description = (
+        f"YTMusicUltimate {tweak_version} | "
+        f"YTMusic {ytm_version} | "
+        f"{asset['name'].removesuffix('.ipa')}"
+    )
+    entry = {
+        "version": tweak_version,
+        "date": date,
+        "localizedDescription": description,
+        "downloadURL": asset[
+            "browser_download_url"
+        ],
+        "size": asset["size"],
+        "minOSVersion": "16.0",
+    }
+    updated = {
+        **app,
+        "versions": [entry],
+        "version": tweak_version,
+        "versionDate": date,
+        "versionDescription": description,
+        "downloadURL": asset[
+            "browser_download_url"
+        ],
+        "size": asset["size"],
+    }
+    if updated == app:
+        return
+    apps[0] = updated
+    write_json(filename, data)
+    print(
+        f"::notice::{filename} → {tweak_version}"
     )
 # ============================================================
 # uYouEnhanced
 # ============================================================
 def sync_uyouenhanced() -> None:
     print("==> Syncing uYouEnhanced")
-    sync_latest_ipa(
-        UYOU_REPO,
-        "uyouenhanced.json",
-        "uYouEnhanced",
-        VERSION_RE,
+    filename = "uyouenhanced.json"
+    data = read_json(filename)
+    if not data:
+        return
+    release = next(
+        iter(
+            published_releases(
+                UYOU_REPO,
+                pages=1,
+            )
+        ),
+        None,
+    )
+    if not release:
+        print(
+            "::warning::No uYouEnhanced release found"
+        )
+        return
+    asset = ipa_asset(release)
+    if not asset:
+        print(
+            "::warning::No uYouEnhanced IPA found"
+        )
+        return
+    apps = data.get("apps")
+    if not isinstance(apps, list) or not apps:
+        return
+    app = apps[0]
+    if not isinstance(app, dict):
+        return
+    name = asset.get("name", "")
+    matches = VERSION_RE.findall(name)
+    version = (
+        matches[0]
+        if matches
+        else release.get(
+            "tag_name",
+            "",
+        ).lstrip("v")
+    )
+    date = (
+        release.get("published_at") or ""
+    )[:10]
+    description = (
+        f"uYouEnhanced {version} | "
+        f"{name.removesuffix('.ipa')}"
+    )
+    body = (
+        release.get("body") or ""
+    ).strip()
+    if body:
+        description += f"\n\n{body}"
+    entry = {
+        "version": version,
+        "date": date,
+        "localizedDescription": description,
+        "downloadURL": asset[
+            "browser_download_url"
+        ],
+        "size": asset["size"],
+        "minOSVersion": "16.0",
+    }
+    updated = {
+        **app,
+        "versions": [entry],
+        "version": version,
+        "versionDate": date,
+        "versionDescription": description,
+        "downloadURL": asset[
+            "browser_download_url"
+        ],
+        "size": asset["size"],
+    }
+    if updated == app:
+        return
+    apps[0] = updated
+    write_json(filename, data)
+    print(
+        f"::notice::{filename} → {version}"
     )
 # ============================================================
 # SpotiFLAC
 # ============================================================
 def sync_spotiflac() -> None:
     print("==> Syncing SpotiFLAC")
-    sync_latest_ipa(
-        SPOTIFLAC_REPO,
-        "spotiflac.json",
-        "SpotiFLAC",
-        VERSION_RE,
+    filename = "spotiflac.json"
+    data = read_json(filename)
+    if not data:
+        return
+    release = next(
+        iter(
+            published_releases(
+                SPOTIFLAC_REPO,
+                pages=1,
+            )
+        ),
+        None,
+    )
+    if not release:
+        print(
+            "::warning::No SpotiFLAC release found"
+        )
+        return
+    asset = ipa_asset(release)
+    if not asset:
+        print(
+            "::warning::No SpotiFLAC IPA found"
+        )
+        return
+    apps = data.get("apps")
+    if not isinstance(apps, list) or not apps:
+        return
+    app = apps[0]
+    if not isinstance(app, dict):
+        return
+    name = asset.get("name", "")
+    matches = VERSION_RE.findall(name)
+    version = (
+        matches[0]
+        if matches
+        else release.get(
+            "tag_name",
+            "",
+        ).lstrip("v")
+    )
+    date = (
+        release.get("published_at") or ""
+    )[:10]
+    description = (
+        f"SpotiFLAC {version} | "
+        f"{name.removesuffix('.ipa')}"
+    )
+    body = (
+        release.get("body") or ""
+    ).strip()
+    if body:
+        description += f"\n\n{body}"
+    entry = {
+        "version": version,
+        "date": date,
+        "localizedDescription": description,
+        "downloadURL": asset[
+            "browser_download_url"
+        ],
+        "size": asset["size"],
+        "minOSVersion": "16.0",
+    }
+    updated = {
+        **app,
+        "versions": [entry],
+        "version": version,
+        "versionDate": date,
+        "versionDescription": description,
+        "downloadURL": asset[
+            "browser_download_url"
+        ],
+        "size": asset["size"],
+    }
+    if updated == app:
+        return
+    apps[0] = updated
+    write_json(filename, data)
+    print(
+        f"::notice::{filename} → {version}"
     )
 # ============================================================
 # Feed Builder
@@ -565,8 +725,8 @@ def build_feed() -> None:
                 "downloadURL",
                 "",
             )
-            # IMPORTANT:
-            # This request does NOT use GH_TOKEN.
+            # Public URL check.
+            # GH_TOKEN is intentionally NOT used.
             if not url_alive(download_url):
                 print(
                     f"::warning::Unavailable public "
@@ -612,7 +772,7 @@ def main() -> None:
     sync_spotiflac()
     build_feed()
     print("========================================")
-    print(" OmniSource sync completed")
+    print(" OmniSource sync completed successfully")
     print("========================================")
 if __name__ == "__main__":
     main()
