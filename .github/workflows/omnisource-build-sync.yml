@@ -31,7 +31,7 @@ jobs:
 
           so, bu = "iamsmmh", "https://iamsmmh.github.io/OmniSource"
           master_apps = []
-
+          
           site_icon = f"{bu}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{bu}/assets/icon.png"
           banner_icon = f"{bu}/assets/banner.png" if os.path.exists("assets/banner.png") else site_icon
 
@@ -53,7 +53,7 @@ jobs:
               assigned_icon, target_bundle_id = resolve_local_assets_and_bundle(name_key, id_key)
               app["bundleIdentifier"] = target_bundle_id
               app["iconURL"] = assigned_icon
-              app["developerName"] = "OmniSource"
+              # developerName is intentionally preserved and left untouched per configuration
 
               if not app.get("versionDate"):
                   app["versionDate"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
