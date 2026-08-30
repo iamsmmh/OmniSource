@@ -41,7 +41,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python3 <<'PYEOF'
-          import json, os, sys, datetime
+          import json, os, sys, datetime, glob, urllib.request, urllib.error
 
           SOURCE_OWNER = "iamsmmh"
           BASE_URL = "https://iamsmmh.github.io/OmniSource"
@@ -49,7 +49,7 @@ jobs:
           site_icon = f"{BASE_URL}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{BASE_URL}/assets/icon.png"
           banner_icon = f"{BASE_URL}/assets/banner.png" if os.path.exists("assets/banner.png") else site_icon
 
-          # Explicit per-file config: filename -> (icon filename, bundle id, developer name)
+          # filename (lowercase, as expected) -> (icon filename, bundle id, developer name)
           FILE_CONFIG = {
               "uyouenhanced.json": ("uYouEnhanced.png", "com.google.ios.youtube",      "arichornlover"),
               "spotiflac.json":    ("SpotiFLAC.png",    "com.zarzet.spotiflac",        "Zarzet"),
@@ -59,6 +59,35 @@ jobs:
               "ytkp.json":         ("YouTube.png",      "com.google.ios.youtube",      "ikghd"),
               "ytmusic.json":      ("YouTubeMusic.png", "com.google.ios.youtubemusic", "dayanch96"),
           }
+
+          def check_url_alive(url, timeout=10):
+              """Returns True if the URL responds successfully to a HEAD (falls back to GET)."""
+              if not url:
+                  return False
+              req = urllib.request.Request(url, method="HEAD")
+              try:
+                  with urllib.request.urlopen(req, timeout=timeout) as resp:
+                      return 200 <= resp.status < 400
+              except urllib.error.HTTPError as e:
+                  if e.code == 405:  # some hosts reject HEAD, retry with GET
+                      try:
+                          req2 = urllib.request.Request(url, method="GET")
+                          with urllib.request.urlopen(req2, timeout=timeout) as resp2:
+                              return 200 <= resp2.status < 400
+                      except Exception:
+                          return False
+                  return False
+              except Exception:
+                  return False
+
+          # --- Diagnostic: show exactly what JSON files actually exist in repo root ---
+          actual_files = sorted(glob.glob("*.json"))
+          print("::group::Repo root JSON files detected")
+          for f in actual_files:
+              print(f"  - {f}")
+          print("::endgroup::")
+
+          actual_files_lower = {f.lower(): f for f in actual_files}
 
           def standardize_app_metadata(app, icon_url, bundle_id, developer_name):
               app["bundleIdentifier"] = bundle_id
@@ -80,23 +109,33 @@ jobs:
 
           master_apps = []
           had_errors = False
+          skipped_dead_links = []
 
-          for filepath, (icon_name, bundle_id, developer_name) in FILE_CONFIG.items():
-              if not os.path.exists(filepath):
-                  print(f"::warning::Source file not found, skipping: {filepath}")
+          for expected_name, (icon_name, bundle_id, developer_name) in FILE_CONFIG.items():
+              real_filepath = actual_files_lower.get(expected_name.lower())
+
+              if real_filepath is None:
+                  print(f"::error::Expected '{expected_name}' not found in repo root. "
+                        f"Files present: {actual_files}. Check for typos, casing, or subfolder placement.")
+                  had_errors = True
                   continue
 
+              if real_filepath != expected_name:
+                  print(f"::warning::Matched '{expected_name}' to on-disk file '{real_filepath}' "
+                        f"(case mismatch) — consider renaming for consistency.")
+
               try:
-                  with open(filepath, "r", encoding="utf-8") as f:
+                  with open(real_filepath, "r", encoding="utf-8") as f:
                       repo_data = json.load(f)
               except (json.JSONDecodeError, OSError) as err:
-                  print(f"::error::Failed to parse {filepath}: {err}")
+                  print(f"::error::Failed to parse {real_filepath}: {err}")
                   had_errors = True
                   continue
 
               apps_in_file = repo_data.get("apps", [])
               if not apps_in_file:
-                  print(f"::warning::No apps array found in {filepath}, skipping")
+                  print(f"::error::'{real_filepath}' has no valid 'apps' array (found keys: {list(repo_data.keys())}).")
+                  had_errors = True
                   continue
 
               app_name = apps_in_file[0].get("name", "Application")
@@ -108,15 +147,31 @@ jobs:
               repo_data["iconURL"] = icon_url
               repo_data["bannerURL"] = banner_icon
 
+              kept_apps = []
               for app_entry in apps_in_file:
-                  master_apps.append(standardize_app_metadata(app_entry, icon_url, bundle_id, developer_name))
+                  dl_url = app_entry.get("downloadURL", "")
+                  print(f"Checking download link for '{app_entry.get('name', app_name)}'...")
+                  if check_url_alive(dl_url):
+                      print(f"  ✓ Link OK: {dl_url}")
+                      kept_apps.append(standardize_app_metadata(app_entry, icon_url, bundle_id, developer_name))
+                  else:
+                      print(f"::warning::Dead or unreachable downloadURL for '{app_entry.get('name', app_name)}' "
+                            f"in {real_filepath}: {dl_url} — excluding from feed.")
+                      skipped_dead_links.append(f"{real_filepath} -> {app_entry.get('name', app_name)}")
+
+              if not kept_apps:
+                  print(f"::warning::All apps in '{real_filepath}' had dead links — file will not appear in feed this run.")
+                  continue
+
+              repo_data["apps"] = kept_apps
+              master_apps.extend(kept_apps)
 
               try:
-                  with open(filepath, "w", encoding="utf-8") as f:
+                  with open(real_filepath, "w", encoding="utf-8") as f:
                       json.dump(repo_data, f, indent=2, ensure_ascii=False)
-                  print(f"Synchronized: {filepath}")
+                  print(f"Synchronized: {real_filepath} ({len(kept_apps)} app(s) with live links)")
               except OSError as err:
-                  print(f"::error::Failed to write {filepath}: {err}")
+                  print(f"::error::Failed to write {real_filepath}: {err}")
                   had_errors = True
 
           if not master_apps:
@@ -137,10 +192,16 @@ jobs:
           with open("apps.json", "w", encoding="utf-8") as f:
               json.dump(master_feed_payload, f, indent=2, ensure_ascii=False)
 
-          print(f"Master feed generated with {len(master_apps)} app definitions.")
+          print(f"Master feed generated with {len(master_apps)} app definitions (expected up to 7).")
+
+          if skipped_dead_links:
+              print("::warning::Apps excluded this run due to dead links:")
+              for item in skipped_dead_links:
+                  print(f"  - {item}")
 
           if had_errors:
-              print("::warning::Completed with one or more non-fatal errors — check log above.")
+              print("::error::Completed with structural errors — see annotations above.")
+              sys.exit(1)
           PYEOF
 
       - name: Commit and Push Repository Updates
@@ -158,7 +219,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "build(omnisource): sync app naming, asset routing, developer attribution, and master feed [skip ci]"
+          git commit -m "build(omnisource): sync app naming, asset routing, developer attribution, link validation, and master feed [skip ci]"
 
           git pull origin ${{ github.ref_name }} --rebase
           git push origin HEAD:${{ github.ref_name }}
