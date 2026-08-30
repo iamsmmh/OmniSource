@@ -1,4 +1,4 @@
-name: OmniSource Build & Feed Sync
+name: OmniSource Feed Sync
 
 on:
   schedule:
@@ -9,66 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  # =========================================================================
-  # JOB 1: Build uYouEnhanced IPA from Upstream Source & Publish Release
-  # =========================================================================
-  build-uyouenhanced:
-    runs-on: macos-14
-    outputs:
-      release_tag: ${{ steps.build.outputs.TAG_NAME }}
-    steps:
-      - name: Checkout uYouEnhanced Upstream
-        uses: actions/checkout@v4
-        with:
-          repository: arichornlover/uYouEnhanced
-          submodules: recursive
-
-      - name: Setup Xcode
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: latest
-
-      - name: Setup Dependencies
-        run: |
-          brew install theos
-          pip3 install pyyaml
-
-      - name: Fetch Decrypted YouTube IPA & Build
-        id: build
-        run: |
-          # Retrieve latest upstream tag
-          TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v3.0.4")
-          echo "TAG_NAME=${TAG}" >> $GITHUB_OUTPUT
-
-          # Fetch decrypted YouTube base IPA (Mirror maintained for automated builds)
-          curl -sL "https://archive.org/download/YouTube_Decrypted_Base/YouTube_Decrypted.ipa" -o YouTube.ipa
-
-          # Compile tweaked IPA using Theos
-          make clean
-          make package FINALPACKAGE=1 IPA=YouTube.ipa
-
-          # Identify generated package
-          IPA_PATH=$(find packages -name "*.ipa" | head -n 1)
-          echo "OUTPUT_IPA=${IPA_PATH}" >> $GITHUB_ENV
-
-      - name: Create / Update GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: ${{ steps.build.outputs.TAG_NAME }}
-          name: "uYouEnhanced ${{ steps.build.outputs.TAG_NAME }}"
-          body: "Automated uYouEnhanced build compiled from official upstream repository `arichornlover/uYouEnhanced`."
-          files: ${{ env.OUTPUT_IPA }}
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
-  # =========================================================================
-  # JOB 2: Generate & Update AltStore / SideStore JSON Feed Repositories
-  # =========================================================================
   update-repos:
-    needs: build-uyouenhanced
-    if: always() # Runs even if build step is skipped
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -91,32 +32,101 @@ jobs:
           source_owner = 'iamsmmh'
           base_url = f'https://{source_owner}.github.io/OmniSource'
 
+          headers = {'User-Agent': 'Mozilla/5.0'}
+          token = os.environ.get('GH_TOKEN')
+          if token:
+              headers['Authorization'] = f'token {token}'
+
+          master_apps = []
+
+          # =========================================================================
+          # PART 1: Fetch uYouEnhanced directly from its official AltStore feed source
+          # =========================================================================
+          uyou_config = {
+              'json_file': 'uyouenhanced.json',
+              'bundleIdentifier': 'com.google.ios.youtube.uyouenhanced',
+              'name': 'uYouEnhanced',
+              'developerName': 'arichornlover & MiRO92',
+              'subtitle': 'uYou Extended with Modern Fixes & SponsorBlock',
+              'tintColor': 'FF0000',
+              'icon_filename': 'YouTube.png'
+          }
+
+          try:
+              alt_source_url = 'https://raw.githubusercontent.com/arichornlover/arichornlover.github.io/main/apps.json'
+              req = urllib.request.Request(alt_source_url, headers=headers)
+              with urllib.request.urlopen(req) as resp:
+                  alt_data = json.loads(resp.read().decode())
+                  
+              target_app = None
+              for app in alt_data.get('apps', []):
+                  if 'youtube' in app.get('bundleIdentifier', '').lower() or 'uyou' in app.get('name', '').lower():
+                      target_app = app
+                      break
+              
+              if target_app:
+                  tag = target_app.get('version', '3.0.4')
+                  pub_date = target_app.get('versionDate', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+                  body = target_app.get('localizedDescription', 'uYouEnhanced official community release.')
+                  ipa_url = target_app.get('downloadURL', '')
+                  asset_size = target_app.get('size', 120000000)
+
+                  icon_url = f'{base_url}/assets/{uyou_config[\"icon_filename\"]}' if os.path.exists(os.path.join('assets', uyou_config['icon_filename'])) else f'https://raw.githubusercontent.com/{source_owner}/OmniSource/main/assets/icon.png'
+
+                  app_data = {
+                      'name': uyou_config['name'],
+                      'bundleIdentifier': uyou_config['bundleIdentifier'],
+                      'developerName': uyou_config['developerName'],
+                      'subtitle': uyou_config['subtitle'],
+                      'localizedDescription': body,
+                      'iconURL': icon_url,
+                      'tintColor': uyou_config['tintColor'],
+                      'version': tag,
+                      'versionDate': pub_date,
+                      'versionDescription': body,
+                      'downloadURL': ipa_url,
+                      'size': int(asset_size),
+                      'versions': target_app.get('versions', [{
+                          'version': tag,
+                          'date': pub_date,
+                          'localizedDescription': body,
+                          'downloadURL': ipa_url,
+                          'size': int(asset_size)
+                      }])
+                  }
+
+                  standalone_source = {
+                      'name': 'OmniSource - uYouEnhanced',
+                      'identifier': f'com.{source_owner.lower()}.omnisource.uyouenhanced',
+                      'subtitle': 'uYouEnhanced Standalone Feed',
+                      'description': f'Standalone source for uYouEnhanced. Developed by {uyou_config[\"developerName\"]}. Maintained by {source_owner}.',
+                      'iconURL': f'{base_url}/assets/icon.png',
+                      'website': base_url,
+                      'apps': [app_data]
+                  }
+
+                  with open(uyou_config['json_file'], 'w', encoding='utf-8') as f:
+                      json.dump(standalone_source, f, indent=2, ensure_ascii=False)
+                  print('Successfully updated: uyouenhanced.json via upstream AltStore source')
+                  master_apps.append(app_data)
+          except Exception as e:
+              print(f'Failed to parse upstream uYouEnhanced AltStore feed: {e}')
+
+          # =========================================================================
+          # PART 2: Fetch remaining apps (SpotiFLAC & YouProEXTRA suite) via GitHub API
+          # =========================================================================
           apps_config = [
               {
                   'repo_owner': 'spotiflacapp',
                   'repo_name': 'SpotiFLAC-Mobile',
                   'json_file': 'spotiflac.json',
-                  'bundleIdentifier': 'com.spotiflac.mobile',
+                  'bundleIdentifier': 'com.zarzet.spotiflac',
                   'name': 'SpotiFLAC Mobile',
-                  'developerName': 'spotiflacapp',
-                  'subtitle': 'Lossless FLAC Music Downloader & Player',
+                  'developerName': 'zarzet',
+                  'subtitle': 'FLAC Downloader for iOS',
                   'tintColor': '1DB954',
-                  'icon_filename': 'SpotiFLAC.png',
+                  'icon_url_fallback': 'https://raw.githubusercontent.com/spotiflacapp/SpotiFLAC-Mobile/main/assets/images/logo.png',
                   'asset_keyword': 'spotiflac'
-              },
-              {
-                  'repo_owner': 'arichornlover',
-                  'repo_name': 'uYouEnhanced',
-                  'json_file': 'uyouenhanced.json',
-                  'bundleIdentifier': 'com.google.ios.youtube.uyouenhanced',
-                  'name': 'uYouEnhanced',
-                  'developerName': 'arichornlover & MiRO92',
-                  'subtitle': 'uYou Extended with Modern Fixes & SponsorBlock',
-                  'tintColor': 'FF0000',
-                  'icon_filename': 'YouTube.png',
-                  'asset_keyword': 'uyouenhanced',
-                  # Direct fallback pointing to your automated compiled build release assets
-                  'fallback_ipa_pattern': f'https://github.com/{source_owner}/uYouEnhanced-Builds/releases/download/{{raw_tag}}/uYouEnhanced_{{raw_tag}}.ipa'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -180,13 +190,6 @@ jobs:
               }
           ]
 
-          headers = {'User-Agent': 'Mozilla/5.0'}
-          token = os.environ.get('GH_TOKEN')
-          if token:
-              headers['Authorization'] = f'token {token}'
-
-          master_apps = []
-
           for config in apps_config:
               owner = config['repo_owner']
               repo = config['repo_name']
@@ -216,53 +219,47 @@ jobs:
               except Exception as e:
                   print(f'Failed to query GitHub API for {repo}: {e}')
 
-              if release:
-                  raw_tag = release.get('tag_name', '1.0.0')
-                  tag = raw_tag.lstrip('v')
-                  pub_date = release.get('published_at', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
-                  body = release.get('body', f"Official release maintained by {config['developerName']}.")
-                  
-                  ipa_url = ''
-                  asset_size = 120000000
-                  assets = release.get('assets', [])
-
-                  # Step 1: Match keyword in multi-asset releases
-                  if keyword:
-                      for asset in assets:
-                          name = asset.get('name', '').lower()
-                          if (name.endswith('.ipa') or name.endswith('.tipa')) and keyword in name:
-                              ipa_url = asset.get('browser_download_url', '')
-                              asset_size = asset.get('size', asset_size)
-                              break
-
-                  # Step 2: Grab primary attached .ipa or .tipa file
-                  if not ipa_url:
-                      for asset in assets:
-                          name = asset.get('name', '').lower()
-                          if name.endswith('.ipa') or name.endswith('.tipa'):
-                              ipa_url = asset.get('browser_download_url', '')
-                              asset_size = asset.get('size', asset_size)
-                              break
-
-                  # Step 3: Handle upstream source repos without attached binaries (e.g. uYouEnhanced)
-                  if not ipa_url and 'fallback_ipa_pattern' in config:
-                      ipa_url = config['fallback_ipa_pattern'].format(tag=tag, raw_tag=raw_tag)
-                      print(f"Using constructed fallback IPA link for {config['name']}: {ipa_url}")
-
-                  if not ipa_url:
-                      print(f"Skipping {config['name']}: No IPA binary found.")
-                      continue
-              else:
-                  print(f"Skipping {config['name']}: Release metadata unavailable.")
+              if not release:
+                  print(f'Skipping {config[\"name\"]}: Release metadata unavailable.')
                   continue
 
-              icon_file = config.get('icon_filename', '')
-              if icon_file and os.path.exists(os.path.join('assets', icon_file)):
-                  icon_url = f'{base_url}/assets/{icon_file}'
-              elif os.path.exists('assets/icon.png'):
-                  icon_url = f'{base_url}/assets/icon.png'
+              raw_tag = release.get('tag_name', '1.0.0')
+              tag = raw_tag.lstrip('v')
+              pub_date = release.get('published_at', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+              body = release.get('body', f'Official release maintained by {config[\"developerName\"]}.')
+              
+              ipa_url = ''
+              asset_size = 35967116
+              assets = release.get('assets', [])
+
+              if keyword:
+                  for asset in assets:
+                      name = asset.get('name', '').lower()
+                      if (name.endswith('.ipa') or name.endswith('.tipa')) and keyword in name:
+                          ipa_url = asset.get('browser_download_url', '')
+                          asset_size = asset.get('size', asset_size)
+                          break
+
+              if not ipa_url:
+                  for asset in assets:
+                      name = asset.get('name', '').lower()
+                      if name.endswith('.ipa') or name.endswith('.tipa'):
+                          ipa_url = asset.get('browser_download_url', '')
+                          asset_size = asset.get('size', asset_size)
+                          break
+
+              if not ipa_url:
+                  print(f'Skipping {config[\"name\"]}: No IPA binary found.')
+                  continue
+
+              if 'icon_url_fallback' in config:
+                  icon_url = config['icon_url_fallback']
               else:
-                  icon_url = f'https://raw.githubusercontent.com/{source_owner}/OmniSource/main/assets/icon.png'
+                  icon_file = config.get('icon_filename', '')
+                  if icon_file and os.path.exists(os.path.join('assets', icon_file)):
+                      icon_url = f'{base_url}/assets/{icon_file}'
+                  else:
+                      icon_url = f'https://raw.githubusercontent.com/{source_owner}/OmniSource/main/assets/icon.png'
 
               clean_name = config['name'].lower().replace(' ', '')
 
@@ -291,11 +288,11 @@ jobs:
               }
 
               standalone_source = {
-                  'name': 'OmniSource',
-                  'identifier': f"com.{source_owner.lower()}.omnisource.{clean_name}",
-                  'subtitle': f"{config['name']} Feed",
-                  'description': f"Feed for {config['name']}. Developed by {config['developerName']}. Maintained by {source_owner}.",
-                  'iconURL': f"{base_url}/assets/icon.png",
+                  'name': f"OmniSource - {config['name']}",
+                  'identifier': f'com.{source_owner.lower()}.omnisource.{clean_name}',
+                  'subtitle': f"{config['name']} Standalone Feed",
+                  'description': f'Standalone source for {config["name"]}. Developed by {config["developerName"]}. Maintained by {source_owner}.',
+                  'iconURL': icon_url,
                   'website': base_url,
                   'apps': [app_data]
               }
