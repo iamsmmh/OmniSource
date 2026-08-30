@@ -1,0 +1,33 @@
+{
+  "name": "OmniSource - uYouEnhanced",
+  "identifier": "com.iamsmmh.omnisource.uyouenhanced",
+  "subtitle": "uYouEnhanced Standalone Feed",
+  "description": "Standalone source for uYouEnhanced. Developed by arichornlover & MiRO92. Consolidated by iamsmmh.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/icon.png",
+  "website": "https://iamsmmh.github.io/OmniSource",
+  "apps": [
+    {
+      "name": "uYouEnhanced",
+      "bundleIdentifier": "com.google.ios.youtube.uyouenhanced",
+      "developerName": "arichornlover & MiRO92",
+      "subtitle": "uYou Extended with Modern Fixes & SponsorBlock",
+      "localizedDescription": "• Updated YouTube base to v21.14.4\n• uYou rebranded to 3.0.5 (Unofficial) with download fixes\n• Fixed startup crash on modern iOS builds\n• Fixed infinite Downloading progress state\n• Updated App Version Spoofer",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/uyouenhanced.png",
+      "tintColor": "FF0000",
+      "version": "21.14.4-3.0.5",
+      "versionDate": "2026-08-25T12:00:00Z",
+      "versionDescription": "• Updated YouTube base to v21.14.4\n• uYou rebranded to 3.0.5 (Unofficial) with download fixes\n• Fixed startup crash on modern iOS builds\n• Fixed infinite Downloading progress state\n• Updated App Version Spoofer",
+      "downloadURL": "https://github.com/arichornlover/uYouEnhanced/releases/download/v21.14.4-3.0.5/uYouEnhanced_21.14.4_3.0.5.ipa",
+      "size": 128450112,
+      "versions": [
+        {
+          "version": "21.14.4-3.0.5",
+          "date": "2026-08-25T12:00:00Z",
+          "localizedDescription": "• Updated YouTube base to v21.14.4\n• uYou rebranded to 3.0.5 (Unofficial) with download fixes\n• Fixed startup crash on modern iOS builds\n• Fixed infinite Downloading progress state\n• Updated App Version Spoofer",
+          "downloadURL": "https://github.com/arichornlover/uYouEnhanced/releases/download/v21.14.4-3.0.5/uYouEnhanced_21.14.4_3.0.5.ipa",
+          "size": 128450112
+        }
+      ]
+    }
+  ]
+}
