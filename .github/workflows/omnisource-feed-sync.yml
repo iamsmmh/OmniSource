@@ -54,8 +54,12 @@ jobs:
 
           master_apps = []
 
+          # Configure custom source icon and banner paths using OmniSource.png
+          source_icon_url = base_url + '/assets/OmniSource.png' if os.path.exists(os.path.join('assets', 'OmniSource.png')) else base_url + '/assets/icon.png'
+          banner_url = base_url + '/assets/banner.png' if os.path.exists(os.path.join('assets', 'banner.png')) else source_icon_url
+
           # =========================================================================
-          # PART 1: Handle uYouEnhanced (Build via Theos / Sync fallback pipeline)
+          # PART 1: Handle uYouEnhanced
           # =========================================================================
           uyou_config = {
               'json_file': 'uyouenhanced.json',
@@ -88,7 +92,7 @@ jobs:
               ipa_url = target_app.get('downloadURL', '')
               asset_size = target_app.get('size', 120000000)
 
-              icon_url = base_url + '/assets/' + uyou_config['icon_filename'] if os.path.exists(os.path.join('assets', uyou_config['icon_filename'])) else 'https://raw.githubusercontent.com/' + source_owner + '/OmniSource/main/assets/icon.png'
+              icon_url = base_url + '/assets/' + uyou_config['icon_filename'] if os.path.exists(os.path.join('assets', uyou_config['icon_filename'])) else source_icon_url
 
               app_data = {
                   'name': uyou_config['name'],
@@ -117,7 +121,8 @@ jobs:
                   'identifier': 'com.' + source_owner.lower() + '.omnisource.uyouenhanced',
                   'subtitle': 'uYouEnhanced Standalone Feed',
                   'description': 'Standalone source for uYouEnhanced. Developed by ' + uyou_config['developerName'] + '. Maintained by ' + source_owner + '.',
-                  'iconURL': base_url + '/assets/icon.png',
+                  'iconURL': source_icon_url,
+                  'bannerURL': banner_url,
                   'website': base_url,
                   'apps': [app_data]
               }
@@ -271,7 +276,7 @@ jobs:
                   if icon_file and os.path.exists(os.path.join('assets', icon_file)):
                       icon_url = base_url + '/assets/' + icon_file
                   else:
-                      icon_url = 'https://raw.githubusercontent.com/' + source_owner + '/OmniSource/main/assets/icon.png'
+                      icon_url = source_icon_url
 
               clean_name = config['name'].lower().replace(' ', '')
 
@@ -304,7 +309,8 @@ jobs:
                   'identifier': 'com.' + source_owner.lower() + '.omnisource.' + clean_name,
                   'subtitle': config['name'] + ' Standalone Feed',
                   'description': 'Standalone source for ' + config['name'] + '. Developed by ' + config['developerName'] + '. Maintained by ' + source_owner + '.',
-                  'iconURL': icon_url,
+                  'iconURL': source_icon_url,
+                  'bannerURL': banner_url,
                   'website': base_url,
                   'apps': [app_data]
               }
@@ -324,7 +330,8 @@ jobs:
                   'identifier': 'com.' + source_owner.lower() + '.omnisource',
                   'subtitle': 'Consolidated iOS Applications & Tweaks Repository',
                   'description': 'Master AltStore / SideStore source curated by ' + source_owner + '. Full credit to original developers.',
-                  'iconURL': base_url + '/assets/icon.png',
+                  'iconURL': source_icon_url,
+                  'bannerURL': banner_url,
                   'website': base_url,
                   'apps': master_apps
               }
@@ -342,5 +349,5 @@ jobs:
 
           git add *.json
 
-          git commit -m "chore(feed): auto-sync & build full suite feeds [skip ci]" || echo "No changes to commit"
+          git commit -m "chore(feed): configure OmniSource.png as source icon [skip ci]" || echo "No changes to commit"
           git push origin HEAD:${{ github.ref_name }}
