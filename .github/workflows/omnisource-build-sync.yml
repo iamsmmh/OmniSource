@@ -79,47 +79,54 @@ jobs:
                   json.dump({"name": "OmniSource - uYouEnhanced", "identifier": f"com.{so.lower()}.omnisource.uyouenhanced", "subtitle": "uYouEnhanced Standalone Feed", "description": f"Standalone source for uYouEnhanced. Developed by {dev_name}. Maintained by {so}.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
               ma.append(ad)
 
-          # Part 2: Remaining Apps via GitHub API
+          # Part 2: Pulling from AltStore Repository JSON feeds directly to bypass missing individual build assets
           cfgs = [
-              {"repo_owner": "spotiflacapp", "repo_name": "SpotiFLAC-Mobile", "json_file": "spotiflac.json", "bundleIdentifier": "com.zarzet.spotiflac", "name": "SpotiFLAC Mobile", "developerName": "zarzet", "subtitle": "FLAC Downloader for iOS", "tintColor": "1DB954", "icon_url_fallback": "https://raw.githubusercontent.com/spotiflacapp/SpotiFLAC-Mobile/main/assets/images/logo.png", "asset_keyword": "spotiflac"},
-              {"repo_owner": "mrdrvt99", "repo_name": "YouProEXTRA", "json_file": "ytkace.json", "bundleIdentifier": "com.google.ios.youtube", "name": "YTKACE", "developerName": "itzzace", "subtitle": "Open-Source YouTube Enhancer with SponsorBlock", "tintColor": "FF0000", "icon_filename": "YouTube.png", "asset_keyword": "ytkace"},
-              {"repo_owner": "mrdrvt99", "repo_name": "YouProEXTRA", "json_file": "youpro.json", "bundleIdentifier": "com.google.ios.youtube", "name": "YouPro", "developerName": "Alibusut", "subtitle": "YouTube Mod with Premium Features & Downloader", "tintColor": "FF0000", "icon_filename": "YouTube.png", "asset_keyword": "youpro"},
-              {"repo_owner": "mrdrvt99", "repo_name": "YouProEXTRA", "json_file": "ytlite.json", "bundleIdentifier": "com.google.ios.youtube", "name": "YTLite", "developerName": "Dayanch96", "subtitle": "Lightweight & Highly Customizable YouTube Mod", "tintColor": "FF0000", "icon_filename": "YouTube.png", "asset_keyword": "ytlite"},
-              {"repo_owner": "mrdrvt99", "repo_name": "YouProEXTRA", "json_file": "ytkp.json", "bundleIdentifier": "com.google.ios.youtube", "name": "YTKillerPlus", "developerName": "IKillerApp", "subtitle": "All-in-One YouTube Downloader & Tweak Suite", "tintColor": "FF0000", "icon_filename": "YouTube.png", "asset_keyword": "ytkiller"},
-              {"repo_owner": "mrdrvt99", "repo_name": "YTMusicUltimate", "json_file": "ytmusic.json", "bundleIdentifier": "com.google.ios.youtubemusic", "name": "YTMusicUltimate", "developerName": "Dayanch96", "subtitle": "YouTube Music with Background Play & No Ads", "tintColor": "FF0000", "icon_filename": "YouTubeMusic.png", "asset_keyword": "ytmusic"}
+              {"json_file": "spotiflac.json", "repo_owner": "spotiflacapp", "repo_name": "SpotiFLAC-Mobile", "bundleIdentifier": "com.zarzet.spotiflac", "name": "SpotiFLAC Mobile", "developerName": "zarzet", "subtitle": "FLAC Downloader for iOS", "tintColor": "1DB954", "icon_url_fallback": "https://raw.githubusercontent.com/spotiflacapp/SpotiFLAC-Mobile/main/assets/images/logo.png", "asset_keyword": "spotiflac"},
+              {"json_file": "ytkace.json", "source_url": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json"},
+              {"json_file": "youpro.json", "source_url": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/youpro.json"},
+              {"json_file": "ytlite.json", "source_url": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytlite.json"},
+              {"json_file": "ytkp.json", "source_url": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkp.json"},
+              {"json_file": "ytmusic.json", "source_url": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytmusic.json"}
           ]
 
           for c in cfgs:
-              ro, rn, jf, kw = c["repo_owner"], c["repo_name"], c["json_file"], c.get("asset_keyword", "").lower()
-              rel = fetch(f"https://api.github.com/repos/{ro}/{rn}/releases/latest") or next((r for r in (fetch(f"https://api.github.com/repos/{ro}/{rn}/releases") or [])), None)
-              if not rel: continue
-
-              tag = rel.get("tag_name", "1.0.0").lstrip("v")
-              pd = rel.get("published_at", datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
-              c_dev = c["developerName"]
-              desc = rel.get("body", f"Official release maintained by {c_dev}.")
-              
-              assets = rel.get("assets", [])
-              matched = next((a for a in assets if (n := a.get("name", "").lower()).endswith((".ipa", ".tipa")) and (not kw or kw in n)), None) or next((a for a in assets if a.get("name", "").lower().endswith((".ipa", ".tipa"))), None)
-              if not matched: continue
-
-              ipa, sz = matched.get("browser_download_url", ""), int(matched.get("size", 35967116))
-              
-              c_icon = c.get("icon_filename", "")
-              if "icon_url_fallback" in c:
-                  icu = c["icon_url_fallback"]
-              elif c_icon and os.path.exists(f"assets/{c_icon}"):
-                  icu = f"{bu}/assets/{c_icon}"
+              jf = c["json_file"]
+              if "source_url" in c:
+                  source_data = fetch(c["source_url"])
+                  if source_data and source_data.get("apps"):
+                      app_item = source_data["apps"][0]
+                      ma.append(app_item)
+                      with open(jf, "w", encoding="utf-8") as f:
+                          json.dump(source_data, f, indent=2, ensure_ascii=False)
               else:
-                  icu = si
+                  ro, rn, kw = c["repo_owner"], c["repo_name"], c.get("asset_keyword", "").lower()
+                  rel = fetch(f"https://api.github.com/repos/{ro}/{rn}/releases/latest") or next((r for r in (fetch(f"https://api.github.com/repos/{ro}/{rn}/releases") or [])), None)
+                  if not rel: continue
 
-              cn = c["name"].lower().replace(" ", "")
+                  tag = rel.get("tag_name", "1.0.0").lstrip("v")
+                  pd = rel.get("published_at", datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+                  c_dev = c["developerName"]
+                  desc = rel.get("body", f"Official release maintained by {c_dev}.")
+                  
+                  assets = rel.get("assets", [])
+                  matched = next((a for a in assets if (n := a.get("name", "").lower()).endswith((".ipa", ".tipa")) and (not kw or kw in n)), None) or next((a for a in assets if a.get("name", "").lower().endswith((".ipa", ".tipa"))), None)
+                  if not matched: continue
 
-              ad = {"name": c["name"], "bundleIdentifier": c["bundleIdentifier"], "developerName": c["developerName"], "subtitle": c["subtitle"], "localizedDescription": desc, "iconURL": icu, "tintColor": c["tintColor"], "version": tag, "versionDate": pd, "versionDescription": desc, "downloadURL": ipa, "size": sz, "versions": [{"version": tag, "date": pd, "localizedDescription": desc, "downloadURL": ipa, "size": sz}]}
-              c_name = c["name"]
-              with open(jf, "w", encoding="utf-8") as f:
-                  json.dump({"name": f"OmniSource - {c_name}", "identifier": f"com.{so.lower()}.omnisource.{cn}", "subtitle": f"{c_name} Standalone Feed", "description": f"Standalone source for {c_name}. Developed by {c_dev}. Maintained by {so}.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
-              ma.append(ad)
+                  ipa, sz = matched.get("browser_download_url", ""), int(matched.get("size", 35967116))
+                  c_icon = c.get("icon_filename", "")
+                  if "icon_url_fallback" in c:
+                      icu = c["icon_url_fallback"]
+                  elif c_icon and os.path.exists(f"assets/{c_icon}"):
+                      icu = f"{bu}/assets/{c_icon}"
+                  else:
+                      icu = si
+
+                  cn = c["name"].lower().replace(" ", "")
+                  ad = {"name": c["name"], "bundleIdentifier": c["bundleIdentifier"], "developerName": c["developerName"], "subtitle": c["subtitle"], "localizedDescription": desc, "iconURL": icu, "tintColor": c["tintColor"], "version": tag, "versionDate": pd, "versionDescription": desc, "downloadURL": ipa, "size": sz, "versions": [{"version": tag, "date": pd, "localizedDescription": desc, "downloadURL": ipa, "size": sz}]}
+                  c_name = c["name"]
+                  with open(jf, "w", encoding="utf-8") as f:
+                      json.dump({"name": f"OmniSource - {c_name}", "identifier": f"com.{so.lower()}.omnisource.{cn}", "subtitle": f"{c_name} Standalone Feed", "description": f"Standalone source for {c_name}. Developed by {c_dev}. Maintained by {so}.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
+                  ma.append(ad)
 
           if ma:
               with open("apps.json", "w", encoding="utf-8") as f:
@@ -133,5 +140,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add *.json
-          git commit -m "chore(feed): configure OmniSource.png as source icon [skip ci]" || echo "No changes to commit"
+          git commit -m "chore(feed): fix tracking feeds for YouTube tweaks suite [skip ci]" || echo "No changes to commit"
           git push origin HEAD:${{ github.ref_name }}
