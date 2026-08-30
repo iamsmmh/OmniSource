@@ -103,15 +103,28 @@ Upstream Sources → GitHub Actions → Validate → JSON Feeds → GitHub Pages
 
 ## 🙌 Credits
 
-**Upstream projects**
+### Upstream Projects
 
-[SpotiFLAC Mobile](https://github.com/spotiflacapp) · [uYouEnhanced](https://github.com/arichornlover/uYouEnhanced) · [YTKACE](https://github.com/itzzace/YTKACE) · [YouPro](https://github.com/Alibusut/YouPro) · [YTLite](https://github.com/Dayanch96/YTLite) · [YTKillerPlus](https://github.com/IKillerApp/YTKillerPlus) · [YouMod](https://github.com/mrdrvt99/YouMod) · [YTMusicUltimate](https://github.com/Dayanch96/YTMusicUltimate)
+| Project | Author(s) |
+|:---|:---|
+| [SpotiFLAC Mobile](https://github.com/spotiflacapp) | [@spotiflacapp](https://github.com/spotiflacapp) |
+| [uYouEnhanced](https://github.com/arichornlover/uYouEnhanced) | [@arichornlover](https://github.com/arichornlover), [@MiRO92](https://github.com/MiRO92) |
+| [YTKACE](https://github.com/itzzace/YTKACE) | [@itzzace](https://github.com/itzzace), [@mrdrvt99](https://github.com/mrdrvt99) |
+| [YouPro](https://github.com/Alibusut/YouPro) | [@Alibusut](https://github.com/Alibusut), [@mrdrvt99](https://github.com/mrdrvt99) |
+| [YTLite](https://github.com/Dayanch96/YTLite) | [@Dayanch96](https://github.com/Dayanch96), [@mrdrvt99](https://github.com/mrdrvt99) |
+| [YTKillerPlus](https://github.com/IKillerApp/YTKillerPlus) | [@IKillerApp](https://github.com/IKillerApp), [@mrdrvt99](https://github.com/mrdrvt99) |
+| [YouMod](https://github.com/mrdrvt99/YouMod) | [@mrdrvt99](https://github.com/mrdrvt99) |
+| [YTMusicUltimate](https://github.com/Dayanch96/YTMusicUltimate) | [@Dayanch96](https://github.com/Dayanch96), [@mrdrvt99](https://github.com/mrdrvt99) |
 
-Built by [spotiflacapp](https://github.com/spotiflacapp), [arichornlover](https://github.com/arichornlover), [MiRO92](https://github.com/MiRO92), [itzzace](https://github.com/itzzace), [Alibusut](https://github.com/Alibusut), [Dayanch96](https://github.com/Dayanch96), [IKillerApp](https://github.com/IKillerApp), and [mrdrvt99](https://github.com/mrdrvt99).
+### OmniSource Team
 
-**OmniSource team**
+| Contributor | Role |
+|:---|:---|
+| [@iamsmmh](https://github.com/iamsmmh) | Development & automation |
+| [@MountainofPenguin](https://github.com/MountainofPenguin) | Architecture inspiration |
+| [@HakujouSan](https://github.com/HakujouSan) | Testing & feedback |
+| [@Avieshek](https://github.com/Avieshek) | Manifest & JSON assistance |
 
-[S M Mahbub Hossain](https://github.com/iamsmmh) — development & automation · [MountainofPenguin](https://github.com/MountainofPenguin) — architecture · [HakujouSan](https://github.com/HakujouSan) — testing · [Avieshek](https://github.com/Avieshek) — manifest assistance
 
 ---
 
