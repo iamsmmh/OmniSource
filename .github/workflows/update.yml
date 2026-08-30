@@ -20,19 +20,18 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: '3.x'
 
       - name: Fetch Latest Releases & Rebuild Sources
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python3 -c "
-          import json, urllib.request, os, datetime
+          import json, urllib.request, urllib.error, os, datetime
 
           source_owner = 'iamsmmh'
           base_url = f'https://{source_owner}.github.io/OmniSource'
 
-          # Official upstream configurations matching latest builds & developer attributions
           apps_config = [
               {
                   'repo_owner': 'iamsmmh',
@@ -107,8 +106,9 @@ jobs:
           ]
 
           headers = {'User-Agent': 'Mozilla/5.0'}
-          if os.environ.get('GH_TOKEN'):
-              headers['Authorization'] = f\"token {os.environ.get('GH_TOKEN')}\"
+          token = os.environ.get('GH_TOKEN')
+          if token:
+              headers['Authorization'] = f'token {token}'
 
           master_apps = []
 
@@ -116,17 +116,35 @@ jobs:
               owner = config['repo_owner']
               repo = config['repo_name']
               json_file = config['json_file']
+              
               url = f'https://api.github.com/repos/{owner}/{repo}/releases/latest'
+              release = None
 
               try:
                   req = urllib.request.Request(url, headers=headers)
                   with urllib.request.urlopen(req) as response:
                       release = json.loads(response.read().decode())
+              except urllib.error.HTTPError as err:
+                  if err.code == 404:
+                      fallback_url = f'https://api.github.com/repos/{owner}/{repo}/releases'
+                      try:
+                          req = urllib.request.Request(fallback_url, headers=headers)
+                          with urllib.request.urlopen(req) as response:
+                              releases = json.loads(response.read().decode())
+                              if releases and isinstance(releases, list):
+                                  release = releases[0]
+                      except Exception as e:
+                          print(f'Fallback fetch failed for {repo}: {e}')
+                  else:
+                      print(f'HTTP error {err.code} fetching {repo}: {err.reason}')
+              except Exception as e:
+                  print(f'Failed to query API for {repo}: {e}')
 
+              if release:
                   tag = release.get('tag_name', '1.0.0').lstrip('v')
                   pub_date = release.get('published_at', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
                   body = release.get('body', f\"Official release maintained by {config['developerName']}.\")
-
+                  
                   ipa_url = ''
                   asset_size = 120000000
                   for asset in release.get('assets', []):
@@ -138,58 +156,64 @@ jobs:
 
                   if not ipa_url:
                       ipa_url = f'https://github.com/{owner}/{repo}/releases'
+              else:
+                  tag = '1.0.0'
+                  pub_date = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+                  body = f\"Official release maintained by {config['developerName']}.\"
+                  ipa_url = f'https://github.com/{owner}/{repo}/releases'
+                  asset_size = 120000000
 
-                  clean_name = config['name'].lower().replace(' ', '')
-                  icon_filename = f\"{clean_name}.png\"
-                  if os.path.exists(os.path.join('assets', icon_filename)):
-                      icon_url = f'{base_url}/assets/{icon_filename}'
-                  elif os.path.exists('assets/icon.png'):
-                      icon_url = f'{base_url}/assets/icon.png'
-                  else:
-                      icon_url = f'https://raw.githubusercontent.com/{source_owner}/OmniSource/main/assets/icon.png'
+              clean_name = config['name'].lower().replace(' ', '')
+              icon_filename = f\"{clean_name}.png\"
+              if os.path.exists(os.path.join('assets', icon_filename)):
+                  icon_url = f'{base_url}/assets/{icon_filename}'
+              elif os.path.exists('assets/icon.png'):
+                  icon_url = f'{base_url}/assets/icon.png'
+              else:
+                  icon_url = f'https://raw.githubusercontent.com/{source_owner}/OmniSource/main/assets/icon.png'
 
-                  app_data = {
-                      'name': config['name'],
-                      'bundleIdentifier': config['bundleIdentifier'],
-                      'developerName': config['developerName'],
-                      'subtitle': config['subtitle'],
-                      'localizedDescription': body,
-                      'iconURL': icon_url,
-                      'tintColor': config['tintColor'],
-                      'version': tag,
-                      'versionDate': pub_date,
-                      'versionDescription': body,
-                      'downloadURL': ipa_url,
-                      'size': int(asset_size),
-                      'versions': [
-                          {
-                              'version': tag,
-                              'date': pub_date,
-                              'localizedDescription': body,
-                              'downloadURL': ipa_url,
-                              'size': int(asset_size)
-                          }
-                      ]
-                  }
+              app_data = {
+                  'name': config['name'],
+                  'bundleIdentifier': config['bundleIdentifier'],
+                  'developerName': config['developerName'],
+                  'subtitle': config['subtitle'],
+                  'localizedDescription': body,
+                  'iconURL': icon_url,
+                  'tintColor': config['tintColor'],
+                  'version': tag,
+                  'versionDate': pub_date,
+                  'versionDescription': body,
+                  'downloadURL': ipa_url,
+                  'size': int(asset_size),
+                  'versions': [
+                      {
+                          'version': tag,
+                          'date': pub_date,
+                          'localizedDescription': body,
+                          'downloadURL': ipa_url,
+                          'size': int(asset_size)
+                      }
+                  ]
+              }
 
-                  standalone_source = {
-                      'name': f\"OmniSource - {config['name']}\",
-                      'identifier': f\"com.{source_owner.lower()}.omnisource.{clean_name}\",
-                      'subtitle': f\"{config['name']} Standalone Feed\",
-                      'description': f\"Standalone source for {config['name']}. Developed by {config['developerName']}. Maintained by {source_owner}.\",
-                      'iconURL': f\"{base_url}/assets/icon.png\",
-                      'website': base_url,
-                      'apps': [app_data]
-                  }
+              standalone_source = {
+                  'name': f\"OmniSource - {config['name']}\",
+                  'identifier': f\"com.{source_owner.lower()}.omnisource.{clean_name}\",
+                  'subtitle': f\"{config['name']} Standalone Feed\",
+                  'description': f\"Standalone source for {config['name']}. Developed by {config['developerName']}. Maintained by {source_owner}.\",
+                  'iconURL': f\"{base_url}/assets/icon.png\",
+                  'website': base_url,
+                  'apps': [app_data]
+              }
 
+              try:
                   with open(json_file, 'w', encoding='utf-8') as f:
                       json.dump(standalone_source, f, indent=2, ensure_ascii=False)
                   print(f'Successfully updated: {json_file}')
-
-                  master_apps.append(app_data)
-
               except Exception as e:
-                  print(f'Failed to process {repo} ({config[\"name\"]}): {e}')
+                  print(f'Failed writing {json_file}: {e}')
+
+              master_apps.append(app_data)
 
           if master_apps:
               master_source = {
@@ -212,9 +236,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
+          
           git add *.json
-
+          
           if ! git diff --staged --quiet; then
             git commit -m "chore(feed): sync update apps JSON files [skip ci]"
             git push origin HEAD:${{ github.ref_name }}
