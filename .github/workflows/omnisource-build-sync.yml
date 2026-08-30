@@ -64,11 +64,19 @@ jobs:
           ta = next((a for a in alt_data.get("apps", []) if "youtube" in a.get("bundleIdentifier", "").lower() or "uyou" in a.get("name", "").lower()), None)
 
           if ta:
-              tag, pd, desc, ipa, sz = ta.get("version", "3.0.4"), ta.get("versionDate", datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")), ta.get("localizedDescription", "uYouEnhanced official community release."), ta.get("downloadURL", ""), int(ta.get("size", 120000000))
-              icu = f"{bu}/assets/{yc[\"icon_filename\"]}" if os.path.exists(f"assets/{yc[\"icon_filename\"]}") else si
+              tag = ta.get("version", "3.0.4")
+              pd = ta.get("versionDate", datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+              desc = ta.get("localizedDescription", "uYouEnhanced official community release.")
+              ipa = ta.get("downloadURL", "")
+              sz = int(ta.get("size", 120000000))
+              
+              icon_fn = yc["icon_filename"]
+              icu = f"{bu}/assets/{icon_fn}" if os.path.exists(f"assets/{icon_fn}") else si
+              
               ad = {"name": yc["name"], "bundleIdentifier": yc["bundleIdentifier"], "developerName": yc["developerName"], "subtitle": yc["subtitle"], "localizedDescription": desc, "iconURL": icu, "tintColor": yc["tintColor"], "version": tag, "versionDate": pd, "versionDescription": desc, "downloadURL": ipa, "size": sz, "versions": ta.get("versions", [{"version": tag, "date": pd, "localizedDescription": desc, "downloadURL": ipa, "size": sz}])}
+              dev_name = yc["developerName"]
               with open(yc["json_file"], "w", encoding="utf-8") as f:
-                  json.dump({"name": "OmniSource - uYouEnhanced", "identifier": f"com.{so.lower()}.omnisource.uyouenhanced", "subtitle": "uYouEnhanced Standalone Feed", "description": f"Standalone source for uYouEnhanced. Developed by {yc[\"developerName\"]}. Maintained by {so}.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
+                  json.dump({"name": "OmniSource - uYouEnhanced", "identifier": f"com.{so.lower()}.omnisource.uyouenhanced", "subtitle": "uYouEnhanced Standalone Feed", "description": f"Standalone source for uYouEnhanced. Developed by {dev_name}. Maintained by {so}.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
               ma.append(ad)
 
           # Part 2: Remaining Apps via GitHub API
@@ -88,19 +96,29 @@ jobs:
 
               tag = rel.get("tag_name", "1.0.0").lstrip("v")
               pd = rel.get("published_at", datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
-              desc = rel.get("body", f"Official release maintained by {c[\"developerName\"]}.")
+              c_dev = c["developerName"]
+              desc = rel.get("body", f"Official release maintained by {c_dev}.")
               
               assets = rel.get("assets", [])
               matched = next((a for a in assets if (n := a.get("name", "").lower()).endswith((".ipa", ".tipa")) and (not kw or kw in n)), None) or next((a for a in assets if a.get("name", "").lower().endswith((".ipa", ".tipa"))), None)
               if not matched: continue
 
               ipa, sz = matched.get("browser_download_url", ""), int(matched.get("size", 35967116))
-              icu = c.get("icon_url_fallback", f"{bu}/assets/{c[\"icon_filename\"]}" if c.get("icon_filename") and os.path.exists(f"assets/{c[\"icon_filename\"]}") else si)
+              
+              c_icon = c.get("icon_filename", "")
+              if "icon_url_fallback" in c:
+                  icu = c["icon_url_fallback"]
+              elif c_icon and os.path.exists(f"assets/{c_icon}"):
+                  icu = f"{bu}/assets/{c_icon}"
+              else:
+                  icu = si
+
               cn = c["name"].lower().replace(" ", "")
 
               ad = {"name": c["name"], "bundleIdentifier": c["bundleIdentifier"], "developerName": c["developerName"], "subtitle": c["subtitle"], "localizedDescription": desc, "iconURL": icu, "tintColor": c["tintColor"], "version": tag, "versionDate": pd, "versionDescription": desc, "downloadURL": ipa, "size": sz, "versions": [{"version": tag, "date": pd, "localizedDescription": desc, "downloadURL": ipa, "size": sz}]}
+              c_name = c["name"]
               with open(jf, "w", encoding="utf-8") as f:
-                  json.dump({"name": f"OmniSource - {c[\"name\"]}", "identifier": f"com.{so.lower()}.omnisource.{cn}", "subtitle": f"{c[\"name\"]} Standalone Feed", "description": f"Standalone source for {c[\"name\"]}. Developed by {c[\"developerName\"]}. Maintained by {so}.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
+                  json.dump({"name": f"OmniSource - {c_name}", "identifier": f"com.{so.lower()}.omnisource.{cn}", "subtitle": f"{c_name} Standalone Feed", "description": f"Standalone source for {c_name}. Developed by {c_dev}. Maintained by {so}.", "iconURL": si, "bannerURL": bn, "website": bu, "apps": [ad]}, f, indent=2, ensure_ascii=False)
               ma.append(ad)
 
           if ma:
