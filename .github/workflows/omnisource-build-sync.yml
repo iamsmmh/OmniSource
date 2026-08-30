@@ -20,12 +20,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GH_TOKEN }}
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
@@ -33,32 +34,30 @@ jobs:
       - name: Run OmniSource
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          python scripts/omnisource.py
+        run: python scripts/omnisource.py
 
-      - name: Check changes
-        id: changes
-        run: |
-          if git diff --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Commit and push
-        if: steps.changes.outputs.changed == 'true'
+      - name: Commit and Push
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add \
             apps.json \
-            youmod.json \
-            youpro.json \
-            ytkp.json \
+            uyouenhanced.json \
+            spotiflac.json \
             ytkace.json \
+            youpro.json \
             ytlite.json \
-            ytmusic.json
+            ytkp.json \
+            ytmusic.json \
+            youmod.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
 
           git commit -m "chore: update OmniSource feeds"
           git push
