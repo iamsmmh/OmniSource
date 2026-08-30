@@ -5,50 +5,58 @@ on:
     - cron: "0 */12 * * *"
   workflow_dispatch:
 
+concurrency:
+  group: omnisource-build-sync
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
 jobs:
   build-and-sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      - name: Sync With Remote Before Build
+      - name: Configure Git Identity
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull origin ${{ github.ref_name }} --rebase || echo "No rebase needed"
 
-      - name: Execute Enterprise-Grade Feed Compilation & Asset Routing Pipeline
+      - name: Sync With Remote Before Build
+        run: git pull origin ${{ github.ref_name }} --rebase || echo "No rebase needed"
+
+      - name: Execute Feed Compilation & Asset Routing Pipeline
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          python3 -c '
-          import json, os, datetime
+          python3 <<'PYEOF'
+          import json, os, sys, datetime
 
-          so, bu = "iamsmmh", "https://iamsmmh.github.io/OmniSource"
-          master_apps = []
+          SOURCE_OWNER = "iamsmmh"
+          BASE_URL = "https://iamsmmh.github.io/OmniSource"
 
-          site_icon = f"{bu}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{bu}/assets/icon.png"
-          banner_icon = f"{bu}/assets/banner.png" if os.path.exists("assets/banner.png") else site_icon
+          site_icon = f"{BASE_URL}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{BASE_URL}/assets/icon.png"
+          banner_icon = f"{BASE_URL}/assets/banner.png" if os.path.exists("assets/banner.png") else site_icon
 
           # Explicit per-file config: filename -> (icon filename, bundle id)
           FILE_CONFIG = {
               "uyouenhanced.json": ("uYouEnhanced.png", "com.google.ios.youtube"),
               "spotiflac.json":    ("SpotiFLAC.png",    "com.zarzet.spotiflac"),
-              "ytkace.json":       ("YouTube.png",      "com.ytkace.youtube"),
-              "youpro.json":       ("YouTube.png",      "com.youpro.youtube"),
-              "ytlite.json":       ("YouTube.png",      "com.ytlite.youtube"),
-              "ytkp.json":         ("YouTube.png",      "com.ytkp.youtube"),
+              "ytkace.json":       ("YouTube.png",      "com.google.ios.youtube"),
+              "youpro.json":       ("YouTube.png",      "com.google.ios.youtube"),
+              "ytlite.json":       ("YouTube.png",      "com.google.ios.youtube"),
+              "ytkp.json":         ("YouTube.png",      "com.google.ios.youtube"),
               "ytmusic.json":      ("YouTubeMusic.png", "com.google.ios.youtubemusic"),
           }
 
@@ -69,64 +77,90 @@ jobs:
                   }]
               return app
 
-          local_source_files = list(FILE_CONFIG.keys())
+          master_apps = []
+          changed_files = []
+          had_errors = False
 
-          for filepath in local_source_files:
+          for filepath, (icon_name, bundle_id) in FILE_CONFIG.items():
               if not os.path.exists(filepath):
-                  print(f"Notice: Standalone file path not detected in workspace: {filepath}")
+                  print(f"::warning::Source file not found, skipping: {filepath}")
                   continue
+
               try:
-                  with open(filepath, "r", encoding="utf-8") as file_in:
-                      repo_data = json.load(file_in)
+                  with open(filepath, "r", encoding="utf-8") as f:
+                      repo_data = json.load(f)
+              except (json.JSONDecodeError, OSError) as err:
+                  print(f"::error::Failed to parse {filepath}: {err}")
+                  had_errors = True
+                  continue
 
-                  icon_name, bundle_id = FILE_CONFIG[filepath]
-                  icon_url = f"{bu}/assets/{icon_name}"
+              apps_in_file = repo_data.get("apps", [])
+              if not apps_in_file:
+                  print(f"::warning::No apps array found in {filepath}, skipping")
+                  continue
 
-                  apps_in_file = repo_data.get("apps", [])
-                  app_name = apps_in_file[0].get("name", "Application") if apps_in_file else "Application"
+              app_name = apps_in_file[0].get("name", "Application")
+              icon_url = f"{BASE_URL}/assets/{icon_name}"
 
-                  repo_data["name"] = f"OmniSource - {app_name}"
-                  repo_data["website"] = f"{bu}/"
-                  repo_data["description"] = f"Standalone distribution feed for {app_name}, curated within OmniSource."
+              repo_data["name"] = f"OmniSource - {app_name}"
+              repo_data["website"] = f"{BASE_URL}/"
+              repo_data["description"] = f"Standalone distribution feed for {app_name}, curated within OmniSource."
+              repo_data["iconURL"] = icon_url
+              repo_data["bannerURL"] = banner_icon
 
-                  for app_entry in apps_in_file:
-                      validated_app = standardize_app_metadata(app_entry, icon_url, bundle_id)
-                      master_apps.append(validated_app)
+              for app_entry in apps_in_file:
+                  master_apps.append(standardize_app_metadata(app_entry, icon_url, bundle_id))
 
-                  if apps_in_file:
-                      repo_data["apps"][0]["iconURL"] = icon_url
-                      repo_data["iconURL"] = icon_url
-                      repo_data["bannerURL"] = banner_icon
+              try:
+                  with open(filepath, "w", encoding="utf-8") as f:
+                      json.dump(repo_data, f, indent=2, ensure_ascii=False)
+                  changed_files.append(filepath)
+                  print(f"Synchronized: {filepath}")
+              except OSError as err:
+                  print(f"::error::Failed to write {filepath}: {err}")
+                  had_errors = True
 
-                      with open(filepath, "w", encoding="utf-8") as file_out:
-                          json.dump(repo_data, file_out, indent=2, ensure_ascii=False)
+          if not master_apps:
+              print("::error::No valid application definitions identified. Aborting master feed write.")
+              sys.exit(1)
 
-                  print(f"Successfully compiled and synchronized standalone manifest: {filepath}")
-              except Exception as err:
-                  print(f"Parsing error encountered on local manifest {filepath}: {err}")
+          master_feed_payload = {
+              "name": "OmniSource",
+              "identifier": f"com.{SOURCE_OWNER.lower()}.omnisource",
+              "subtitle": "Consolidated iOS Applications & Tweaks Repository",
+              "description": "Master AltStore and SideStore repository compiled and managed under OmniSource.",
+              "iconURL": site_icon,
+              "bannerURL": banner_icon,
+              "website": f"{BASE_URL}/",
+              "apps": master_apps
+          }
 
-          if master_apps:
-              master_feed_payload = {
-                  "name": "OmniSource",
-                  "identifier": f"com.{so.lower()}.omnisource",
-                  "subtitle": "Consolidated iOS Applications & Tweaks Repository",
-                  "description": "Master AltStore and SideStore repository compiled and managed under OmniSource.",
-                  "iconURL": site_icon,
-                  "bannerURL": banner_icon,
-                  "website": f"{bu}/",
-                  "apps": master_apps
-              }
-              with open("apps.json", "w", encoding="utf-8") as master_file:
-                  json.dump(master_feed_payload, master_file, indent=2, ensure_ascii=False)
-              print(f"Master feed successfully generated containing {len(master_apps)} application definitions.")
-          else:
-              print("Error: Compilation halted. No valid application definitions identified.")
-          '
+          with open("apps.json", "w", encoding="utf-8") as f:
+              json.dump(master_feed_payload, f, indent=2, ensure_ascii=False)
+
+          print(f"Master feed generated with {len(master_apps)} app definitions.")
+
+          if had_errors:
+              print("::warning::Completed with one or more non-fatal errors — check log above.")
+          PYEOF
 
       - name: Commit and Push Repository Updates
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git add apps.json uyouenhanced.json spotiflac.json ytkace.json youpro.json ytlite.json ytkp.json ytmusic.json
-          git commit -m "build(omnisource): enforce distinct app naming, asset routing, and master feed compilation [skip ci]" || echo "No repository changes pending commit"
+          FILES="apps.json uyouenhanced.json spotiflac.json ytkace.json youpro.json ytlite.json ytkp.json ytmusic.json"
+
+          for f in $FILES; do
+            [ -f "$f" ] && git add "$f"
+          done
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "build(omnisource): sync app naming, asset routing, and master feed [skip ci]"
+
+          # Re-sync in case remote moved during the build step, then push
+          git pull origin ${{ github.ref_name }} --rebase
           git push origin HEAD:${{ github.ref_name }}
