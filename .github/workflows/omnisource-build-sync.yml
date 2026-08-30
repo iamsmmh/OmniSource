@@ -49,20 +49,21 @@ jobs:
           site_icon = f"{BASE_URL}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{BASE_URL}/assets/icon.png"
           banner_icon = f"{BASE_URL}/assets/banner.png" if os.path.exists("assets/banner.png") else site_icon
 
-          # Explicit per-file config: filename -> (icon filename, bundle id)
+          # Explicit per-file config: filename -> (icon filename, bundle id, developer name)
           FILE_CONFIG = {
-              "uyouenhanced.json": ("uYouEnhanced.png", "com.google.ios.youtube"),
-              "spotiflac.json":    ("SpotiFLAC.png",    "com.zarzet.spotiflac"),
-              "ytkace.json":       ("YouTube.png",      "com.google.ios.youtube"),
-              "youpro.json":       ("YouTube.png",      "com.google.ios.youtube"),
-              "ytlite.json":       ("YouTube.png",      "com.google.ios.youtube"),
-              "ytkp.json":         ("YouTube.png",      "com.google.ios.youtube"),
-              "ytmusic.json":      ("YouTubeMusic.png", "com.google.ios.youtubemusic"),
+              "uyouenhanced.json": ("uYouEnhanced.png", "com.google.ios.youtube",      "arichornlover"),
+              "spotiflac.json":    ("SpotiFLAC.png",    "com.zarzet.spotiflac",        "Zarzet"),
+              "ytkace.json":       ("YouTube.png",      "com.google.ios.youtube",      "itzzace"),
+              "youpro.json":       ("YouTube.png",      "com.google.ios.youtube",      "alibusut"),
+              "ytlite.json":       ("YouTube.png",      "com.google.ios.youtube",      "dayanch96"),
+              "ytkp.json":         ("YouTube.png",      "com.google.ios.youtube",      "ikghd"),
+              "ytmusic.json":      ("YouTubeMusic.png", "com.google.ios.youtubemusic", "dayanch96"),
           }
 
-          def standardize_app_metadata(app, icon_url, bundle_id):
+          def standardize_app_metadata(app, icon_url, bundle_id, developer_name):
               app["bundleIdentifier"] = bundle_id
               app["iconURL"] = icon_url
+              app["developerName"] = developer_name
 
               if not app.get("versionDate"):
                   app["versionDate"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -78,10 +79,9 @@ jobs:
               return app
 
           master_apps = []
-          changed_files = []
           had_errors = False
 
-          for filepath, (icon_name, bundle_id) in FILE_CONFIG.items():
+          for filepath, (icon_name, bundle_id, developer_name) in FILE_CONFIG.items():
               if not os.path.exists(filepath):
                   print(f"::warning::Source file not found, skipping: {filepath}")
                   continue
@@ -109,12 +109,11 @@ jobs:
               repo_data["bannerURL"] = banner_icon
 
               for app_entry in apps_in_file:
-                  master_apps.append(standardize_app_metadata(app_entry, icon_url, bundle_id))
+                  master_apps.append(standardize_app_metadata(app_entry, icon_url, bundle_id, developer_name))
 
               try:
                   with open(filepath, "w", encoding="utf-8") as f:
                       json.dump(repo_data, f, indent=2, ensure_ascii=False)
-                  changed_files.append(filepath)
                   print(f"Synchronized: {filepath}")
               except OSError as err:
                   print(f"::error::Failed to write {filepath}: {err}")
@@ -159,8 +158,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "build(omnisource): sync app naming, asset routing, and master feed [skip ci]"
+          git commit -m "build(omnisource): sync app naming, asset routing, developer attribution, and master feed [skip ci]"
 
-          # Re-sync in case remote moved during the build step, then push
           git pull origin ${{ github.ref_name }} --rebase
           git push origin HEAD:${{ github.ref_name }}
