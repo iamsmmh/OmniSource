@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/YouTube.png" width="110" alt="OmniSource">
+<img src="assets/OmniSource.png" width="110" alt="OmniSource">
 
 # 🌐 OmniSource
 
