@@ -31,7 +31,7 @@ jobs:
 
           so, bu = "iamsmmh", "https://iamsmmh.github.io/OmniSource"
           master_apps = []
-
+          
           site_icon = f"{bu}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{bu}/assets/icon.png"
           banner_icon = f"{bu}/assets/banner.png" if os.path.exists("assets/banner.png") else site_icon
 
@@ -53,6 +53,7 @@ jobs:
               assigned_icon, target_bundle_id = resolve_local_assets_and_bundle(name_key, id_key)
               app["bundleIdentifier"] = target_bundle_id
               app["iconURL"] = assigned_icon
+              app["developerName"] = "OmniSource"
 
               if not app.get("versionDate"):
                   app["versionDate"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -84,12 +85,14 @@ jobs:
                       with open(filepath, "r", encoding="utf-8") as file_in:
                           repo_data = json.load(file_in)
                       
+                      repo_data["name"] = "OmniSource"
+                      repo_data["website"] = f"{bu}/"
+                      
                       apps_in_file = repo_data.get("apps", [])
                       for app_entry in apps_in_file:
                           validated_app = standardize_app_metadata(app_entry)
                           master_apps.append(validated_app)
 
-                      # Synchronize standalone manifest metadata headers with local assets
                       if apps_in_file:
                           primary_icon = apps_in_file[0]["iconURL"]
                           repo_data["apps"][0]["iconURL"] = primary_icon
@@ -105,16 +108,15 @@ jobs:
               else:
                   print(f"Notice: Standalone file path not detected in workspace: {filepath}")
 
-          # Compile and write out the comprehensive unified master apps.json feed
           if master_apps:
               master_feed_payload = {
                   "name": "OmniSource",
                   "identifier": f"com.{so.lower()}.omnisource",
                   "subtitle": "Consolidated iOS Applications & Tweaks Repository",
-                  "description": f"Master AltStore and SideStore repository compiled and managed by {so}.",
+                  "description": f"Master AltStore and SideStore repository compiled and managed by OmniSource.",
                   "iconURL": site_icon,
                   "bannerURL": banner_icon,
-                  "website": bu,
+                  "website": f"{bu}/",
                   "apps": master_apps
               }
               with open("apps.json", "w", encoding="utf-8") as master_file:
@@ -132,5 +134,5 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull origin ${{ github.ref_name }} --rebase || echo "No rebase needed"
           git add apps.json *.json
-          git commit -m "build(omnisource): enforce local repository assets, bundle standards, and compile master feed [skip ci]" || echo "No repository changes pending commit"
+          git commit -m "build(omnisource): brand repository feeds, enforce assets, and compile master manifest [skip ci]" || echo "No repository changes pending commit"
           git push origin HEAD:${{ github.ref_name }}
