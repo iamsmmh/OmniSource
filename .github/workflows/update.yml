@@ -2,7 +2,7 @@ name: Sync & Update OmniSource Repositories
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Automatically run every 6 hours
+    - cron: "0 */6 * * *" # Automatically run every 6 hours
   workflow_dispatch:
 
 permissions:
@@ -26,7 +26,7 @@ jobs:
 
           source_owner = 'iamsmmh'
           base_url = f'https://{source_owner}.github.io/OmniSource'
-          
+
           # Official upstream configurations matching latest builds & developer attributions
           apps_config = [
               {
