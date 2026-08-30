@@ -60,7 +60,7 @@ jobs:
       - name: Create Pull Request with AI Changes
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           commit-message: "feat(ai): automated code modification from comment trigger"
           branch: "ai-auto-fixes-${{ github.event.issue.number }}"
           title: "AI Auto-Fix for Issue #${{ github.event.issue.number }}"
