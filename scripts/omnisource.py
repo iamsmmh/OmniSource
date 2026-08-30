@@ -1,72 +1,121 @@
-# OmniSource consolidated script
-# Generated from common.py + sync_youproextra.py + sync_ytmusic.py + build_feed.py
+# scripts/omnisource.py
+# OmniSource — https://github.com/iamsmmh/OmniSource
 
-import json, os, sys, time, re, glob, datetime, urllib.request, urllib.error
-from datetime import timezone
+import json
+import os
+import re
+import sys
+import time
+import urllib.error
+import urllib.request
 
-GH_TOKEN = os.environ.get("GH_TOKEN", "")
+GH_TOKEN = os.getenv("GH_TOKEN", "")
+
+# =========================
+# Primary OmniSource
+# =========================
+
+BASE_URL = "https://iamsmmh.github.io/OmniSource"
+PRIMARY_SOURCE = "https://github.com/iamsmmh/OmniSource"
+PRIMARY_LOGO = "OmniSource.png"
 
 # =========================
 # Utilities
 # =========================
 
-def fetch_json(url, max_retries=3):
-    headers = {"User-Agent": "github-actions/omnisource-sync"}
+def fetch_json(url, retries=3):
+    headers = {
+        "User-Agent": "github-actions/omnisource-sync",
+        "Accept": "application/vnd.github+json",
+    }
     if GH_TOKEN:
-        headers["Authorization"] = f"token {GH_TOKEN}"
-    req = urllib.request.Request(url, headers=headers)
+        headers["Authorization"] = f"Bearer {GH_TOKEN}"
 
-    for attempt in range(1, max_retries + 1):
+    for attempt in range(1, retries + 1):
         try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                return json.loads(resp.read().decode())
-        except urllib.error.URLError as e:
-            if attempt == max_retries:
-                print(f"::error::API request failed after {max_retries} attempts: {e}")
+            req = urllib.request.Request(url, headers=headers)
+            with urllib.request.urlopen(req, timeout=30) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except (urllib.error.URLError, json.JSONDecodeError) as error:
+            if attempt == retries:
+                print(f"::error::Request failed: {error}")
                 sys.exit(1)
             wait = 2 ** attempt
-            print(f"::warning::Retrying in {wait}s: {e}")
+            print(f"::warning::Retrying in {wait}s: {error}")
             time.sleep(wait)
 
-def check_url_alive(url, timeout=10, max_retries=2):
+
+def url_alive(url, retries=2):
     if not url:
         return False
-    for attempt in range(1, max_retries + 1):
+
+    headers = {"User-Agent": "github-actions/omnisource-sync"}
+
+    for attempt in range(retries):
         try:
-            with urllib.request.urlopen(
-                urllib.request.Request(url, method="HEAD"),
-                timeout=timeout
-            ) as resp:
-                return 200 <= resp.status < 400
-        except urllib.error.HTTPError as e:
-            if e.code == 405:
+            req = urllib.request.Request(
+                url,
+                method="HEAD",
+                headers=headers,
+            )
+            with urllib.request.urlopen(req, timeout=10) as response:
+                return 200 <= response.status < 400
+
+        except urllib.error.HTTPError as error:
+            if error.code == 405:
                 try:
-                    with urllib.request.urlopen(
-                        urllib.request.Request(url, method="GET"),
-                        timeout=timeout
-                    ) as r2:
-                        return 200 <= r2.status < 400
+                    req = urllib.request.Request(
+                        url,
+                        headers=headers,
+                    )
+                    with urllib.request.urlopen(req, timeout=10) as response:
+                        return 200 <= response.status < 400
                 except Exception:
                     return False
             return False
+
         except Exception:
-            if attempt < max_retries:
+            if attempt < retries - 1:
                 time.sleep(1)
+
     return False
 
-def atomic_write_json(path, data):
-    tmp = path + ".tmp"
-    with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
-        f.write("\n")
 
-    with open(tmp, "r", encoding="utf-8") as f:
-        json.load(f)
+def write_json(path, data):
+    tmp = f"{path}.tmp"
+
+    with open(tmp, "w", encoding="utf-8") as file:
+        json.dump(data, file, indent=2, ensure_ascii=False)
+        file.write("\n")
+
+    with open(tmp, "r", encoding="utf-8") as file:
+        json.load(file)
 
     os.replace(tmp, path)
 
+
+def releases(repo, pages=10):
+    result = []
+
+    for page in range(1, pages + 1):
+        batch = fetch_json(
+            f"https://api.github.com/repos/{repo}/releases"
+            f"?per_page=100&page={page}"
+        )
+
+        if not batch:
+            break
+
+        result.extend(batch)
+
+        if len(batch) < 100:
+            break
+
+    return result
+
+
 # =========================
-# YouProEXTRA Sync
+# YouProEXTRA
 # =========================
 
 SOURCE_REPO = "mrdrvt99/YouProEXTRA"
@@ -78,88 +127,73 @@ TAG_MAP = {
     "ytkace-ipa": "ytkace",
 }
 
-FILES = {
+MANIFESTS = {
     "youmod": "youmod.json",
     "youpro": "youpro.json",
     "ytkp": "ytkp.json",
     "ytkace": "ytkace.json",
 }
 
-YTLITE_PREFIX = "ytl-ipa"
-YTLITE_FILE = "ytlite.json"
 
-def fetch_all_releases(repo, max_pages=10):
-    releases = []
-    for page in range(1, max_pages + 1):
-        batch = fetch_json(
-            f"https://api.github.com/repos/{repo}/releases?per_page=100&page={page}"
-        )
-        if not batch:
-            break
-        releases.extend(batch)
-        if len(batch) < 100:
-            break
-    return releases
-
-def update_manifest(filename, download_url, size, ipa_name, date_str, body):
-    if not os.path.exists(filename):
+def update_manifest(file_name, asset, release):
+    if not os.path.exists(file_name):
         return
 
-    with open(filename, "r", encoding="utf-8") as f:
-        source = json.load(f)
+    with open(file_name, "r", encoding="utf-8") as file:
+        data = json.load(file)
 
-    apps = source.get("apps", [])
+    apps = data.get("apps", [])
     if not apps:
         return
 
-    app = apps[0]
+    name = asset["name"]
+    versions = re.findall(r"(\d+\.\d+\.\d+)", name)
 
-    matches = re.findall(r"(\d+\.\d+\.\d+)", ipa_name)
-    if not matches:
+    if not versions:
         return
 
-    version = matches[0]
-    desc = f"YouTube {version} | {ipa_name.replace('.ipa','')}"
+    version = versions[0]
+    date = (release.get("published_at") or "")[:10]
+    description = f"YouTube {version} | {name.removesuffix('.ipa')}"
+
+    body = (release.get("body") or "").strip()
     if body:
-        desc += "\n\n" + body
+        description += f"\n\n{body}"
 
     entry = {
         "version": version,
-        "date": date_str,
-        "localizedDescription": desc,
-        "downloadURL": download_url,
-        "size": size,
-        "minOSVersion": "16.0"
+        "date": date,
+        "localizedDescription": description,
+        "downloadURL": asset["browser_download_url"],
+        "size": asset["size"],
+        "minOSVersion": "16.0",
     }
 
-    app.update({
+    apps[0].update({
         "versions": [entry],
         "version": version,
-        "versionDate": date_str,
-        "versionDescription": desc,
-        "downloadURL": download_url,
-        "size": size
+        "versionDate": date,
+        "versionDescription": description,
+        "downloadURL": asset["browser_download_url"],
+        "size": asset["size"],
     })
 
-    atomic_write_json(filename, source)
+    write_json(file_name, data)
+
 
 def sync_youproextra():
-    releases = fetch_all_releases(SOURCE_REPO)
-
-    published = [
-        r for r in releases
-        if not r["draft"] and not r["prerelease"]
-    ]
-
     best = {}
 
-    for release in published:
-        tag = release["tag_name"]
-
-        if tag.startswith("youproextra-noytlite-ipa"):
+    for release in releases(SOURCE_REPO):
+        if release.get("draft") or release.get("prerelease"):
             continue
 
-        if tag.startswith(YTLITE_PREFIX):
+        tag = release.get("tag_name", "")
+
+        if (
+            tag.startswith("youproextra-noytlite-ipa")
+            or tag.startswith("ytl-ipa")
+        ):
             continue
 
         for prefix, key in TAG_MAP.items():
@@ -167,26 +201,26 @@ def sync_youproextra():
                 best[key] = release
                 break
 
-    for app_key, release in best.items():
+    for key, release in best.items():
         asset = next(
-            (a for a in release.get("assets", []) if a["name"].endswith(".ipa")),
-            None
+            (
+                asset
+                for asset in release.get("assets", [])
+                if asset.get("name", "").endswith(".ipa")
+            ),
+            None,
         )
 
-        if not asset:
-            continue
+        if asset:
+            update_manifest(
+                MANIFESTS[key],
+                asset,
+                release,
+            )
 
-        update_manifest(
-            FILES[app_key],
-            asset["browser_download_url"],
-            asset["size"],
-            asset["name"],
-            (release.get("published_at") or "")[:10],
-            (release.get("body") or "").strip()
-        )
 
 # =========================
-# YTMusic Sync
+# YTMusicUltimate
 # =========================
 
 def sync_ytmusic():
@@ -195,131 +229,190 @@ def sync_ytmusic():
     if not os.path.exists(file_name):
         return
 
-    releases = fetch_json(
-        "https://api.github.com/repos/mrdrvt99/YTMusicUltimate/releases?per_page=5"
+    data = fetch_json(
+        "https://api.github.com/repos/mrdrvt99/YTMusicUltimate/releases"
+        "?per_page=5"
     )
 
     release = next(
-        (r for r in releases if not r["draft"] and not r["prerelease"]),
-        None
+        (
+            item
+            for item in data
+            if not item.get("draft")
+            and not item.get("prerelease")
+        ),
+        None,
     )
 
     if not release:
         return
 
     asset = next(
-        (a for a in release.get("assets", []) if a["name"].endswith(".ipa")),
-        None
+        (
+            item
+            for item in release.get("assets", [])
+            if item.get("name", "").endswith(".ipa")
+        ),
+        None,
     )
 
     if not asset:
         return
 
-    with open(file_name, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    with open(file_name, "r", encoding="utf-8") as file:
+        manifest = json.load(file)
 
-    app = data["apps"][0]
+    apps = manifest.get("apps", [])
+    if not apps:
+        return
 
-    matches = re.findall(r"(\d+\.\d+(?:\.\d+)?)", asset["name"])
+    matches = re.findall(
+        r"(\d+\.\d+(?:\.\d+)?)",
+        asset["name"],
+    )
 
     if len(matches) >= 2:
-        tweak_v, ytm_v = matches[0], matches[-1]
-    elif len(matches) == 1:
-        tweak_v = ytm_v = matches[0]
+        tweak_version, ytm_version = matches[0], matches[-1]
+    elif matches:
+        tweak_version = ytm_version = matches[0]
     else:
-        tweak_v = ytm_v = release["tag_name"].lstrip("v")
+        tweak_version = ytm_version = (
+            release.get("tag_name", "").lstrip("v")
+        )
 
-    desc = (
-        f"YTMusicUltimate {tweak_v} | "
-        f"YTMusic {ytm_v} | "
-        f"{asset['name'].replace('.ipa','')}"
+    description = (
+        f"YTMusicUltimate {tweak_version} | "
+        f"YTMusic {ytm_version} | "
+        f"{asset['name'].removesuffix('.ipa')}"
     )
 
     entry = {
-        "version": tweak_v,
+        "version": tweak_version,
         "date": (release.get("published_at") or "")[:10],
-        "localizedDescription": desc,
+        "localizedDescription": description,
         "downloadURL": asset["browser_download_url"],
         "size": asset["size"],
-        "minOSVersion": "16.0"
+        "minOSVersion": "16.0",
     }
 
-    app.update({
+    apps[0].update({
         "versions": [entry],
-        "version": tweak_v,
+        "version": tweak_version,
         "versionDate": entry["date"],
-        "versionDescription": desc,
+        "versionDescription": description,
         "downloadURL": asset["browser_download_url"],
-        "size": asset["size"]
+        "size": asset["size"],
     })
 
-    atomic_write_json(file_name, data)
+    write_json(file_name, manifest)
+
 
 # =========================
 # Feed Builder
 # =========================
 
-SOURCE_OWNER = "iamsmmh"
-BASE_URL = "https://iamsmmh.github.io/OmniSource"
+# Individual app logos, bundle IDs and developer names
+# intentionally remain unchanged.
 
 FILE_CONFIG = {
-    "uyouenhanced.json": ("uYouEnhanced.png", "com.google.ios.youtube", "arichornlover"),
-    "spotiflac.json": ("SpotiFLAC.png", "com.zarzet.spotiflac", "Zarzet"),
-    "ytkace.json": ("YouTube.png", "com.google.ios.youtube", "itzzace"),
-    "youpro.json": ("YouTube.png", "com.google.ios.youtube", "alibusut"),
-    "ytlite.json": ("YouTube.png", "com.google.ios.youtube", "dayanch96"),
-    "ytkp.json": ("YouTube.png", "com.google.ios.youtube", "ikghd"),
-    "ytmusic.json": ("YouTubeMusic.png", "com.google.ios.youtubemusic", "dayanch96"),
-    "youmod.json": ("YouTube.png", "com.google.ios.youtube", "Tonwalter888"),
+    "uyouenhanced.json": (
+        "uYouEnhanced.png",
+        "com.google.ios.youtube",
+        "arichornlover",
+    ),
+    "spotiflac.json": (
+        "SpotiFLAC.png",
+        "com.zarzet.spotiflac",
+        "Zarzet",
+    ),
+    "ytkace.json": (
+        "YouTube.png",
+        "com.google.ios.youtube",
+        "itzzace",
+    ),
+    "youpro.json": (
+        "YouTube.png",
+        "com.google.ios.youtube",
+        "alibusut",
+    ),
+    "ytlite.json": (
+        "YouTube.png",
+        "com.google.ios.youtube",
+        "dayanch96",
+    ),
+    "ytkp.json": (
+        "YouTube.png",
+        "com.google.ios.youtube",
+        "ikghd",
+    ),
+    "ytmusic.json": (
+        "YouTubeMusic.png",
+        "com.google.ios.youtubemusic",
+        "dayanch96",
+    ),
+    "youmod.json": (
+        "YouTube.png",
+        "com.google.ios.youtube",
+        "Tonwalter888",
+    ),
 }
 
-def standardize(app, icon_url, bundle_id, dev_name):
-    app["bundleIdentifier"] = bundle_id
-    app["iconURL"] = icon_url
-    app["developerName"] = dev_name
-    return app
 
 def build_feed():
-    apps_out = []
+    apps = []
 
-    for file_name, cfg in FILE_CONFIG.items():
+    for file_name, (
+        icon,
+        bundle_id,
+        developer,
+    ) in FILE_CONFIG.items():
+
         if not os.path.exists(file_name):
             continue
 
-        with open(file_name, "r", encoding="utf-8") as f:
-            data = json.load(f)
-
-        icon_name, bundle_id, dev_name = cfg
+        try:
+            with open(file_name, "r", encoding="utf-8") as file:
+                data = json.load(file)
+        except (OSError, json.JSONDecodeError):
+            continue
 
         for app in data.get("apps", []):
-            if check_url_alive(app.get("downloadURL", "")):
-                apps_out.append(
-                    standardize(
-                        app,
-                        f"{BASE_URL}/assets/{icon_name}",
-                        bundle_id,
-                        dev_name
-                    )
-                )
+            if not url_alive(app.get("downloadURL", "")):
+                continue
 
-    atomic_write_json(
+            app["bundleIdentifier"] = bundle_id
+            app["iconURL"] = f"{BASE_URL}/assets/{icon}"
+            app["developerName"] = developer
+
+            apps.append(app)
+
+    write_json(
         "apps.json",
         {
             "name": "OmniSource",
             "identifier": "com.iamsmmh.omnisource",
-            "website": BASE_URL,
-            "apps": apps_out
-        }
+            "website": PRIMARY_SOURCE,
+            "iconURL": f"{BASE_URL}/assets/{PRIMARY_LOGO}",
+            "apps": apps,
+        },
     )
+
+    print(f"::notice::OmniSource feed: {len(apps)} active apps")
+
 
 # =========================
 # Main
 # =========================
 
 def main():
+    print("==> OmniSource sync started")
+
     sync_youproextra()
     sync_ytmusic()
     build_feed()
+
+    print("==> OmniSource sync completed")
+
 
 if __name__ == "__main__":
     main()
