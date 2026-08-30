@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build-and-sync:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -21,6 +21,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+
+      - name: Sync With Remote Before Build
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull origin ${{ github.ref_name }} --rebase || echo "No rebase needed"
 
       - name: Execute Enterprise-Grade Feed Compilation & Asset Routing Pipeline
         env:
@@ -35,29 +41,24 @@ jobs:
           site_icon = f"{bu}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{bu}/assets/icon.png"
           banner_icon = f"{bu}/assets/banner.png" if os.path.exists("assets/banner.png") else site_icon
 
-          def resolve_local_assets_and_bundle(name_key, id_key):
-              name_lower = name_key.lower()
-              id_lower = id_key.lower()
-              
-              if "music" in name_lower or "youtubemusic" in id_lower:
-                  return f"{bu}/assets/YouTubeMusic.png", "com.google.ios.youtubemusic"
-              elif "spotiflac" in name_lower or "zarzet" in id_lower:
-                  return f"{bu}/assets/SpotiFLAC.png", "com.zarzet.spotiflac"
-              else:
-                  return f"{bu}/assets/YouTube.png", "com.google.ios.youtube"
+          # Explicit per-file config: filename -> (icon filename, bundle id)
+          FILE_CONFIG = {
+              "uyouenhanced.json": ("uYouEnhanced.png", "com.google.ios.youtube"),
+              "spotiflac.json":    ("SpotiFLAC.png",    "com.zarzet.spotiflac"),
+              "ytkace.json":       ("YouTube.png",      "com.ytkace.youtube"),
+              "youpro.json":       ("YouTube.png",      "com.youpro.youtube"),
+              "ytlite.json":       ("YouTube.png",      "com.ytlite.youtube"),
+              "ytkp.json":         ("YouTube.png",      "com.ytkp.youtube"),
+              "ytmusic.json":      ("YouTubeMusic.png", "com.google.ios.youtubemusic"),
+          }
 
-          def standardize_app_metadata(app):
-              name_key = app.get("name", "")
-              id_key = app.get("bundleIdentifier", "")
-              
-              assigned_icon, target_bundle_id = resolve_local_assets_and_bundle(name_key, id_key)
-              app["bundleIdentifier"] = target_bundle_id
-              app["iconURL"] = assigned_icon
-              # developerName is intentionally preserved and left untouched per configuration
+          def standardize_app_metadata(app, icon_url, bundle_id):
+              app["bundleIdentifier"] = bundle_id
+              app["iconURL"] = icon_url
 
               if not app.get("versionDate"):
                   app["versionDate"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-              
+
               if not app.get("versions") and app.get("version") and app.get("downloadURL"):
                   app["versions"] = [{
                       "version": app.get("version"),
@@ -68,52 +69,48 @@ jobs:
                   }]
               return app
 
-          # Complete inventory of local standalone manifests maintained in the repository
-          local_source_files = [
-              "uyouenhanced.json", 
-              "spotiflac.json", 
-              "ytkace.json", 
-              "youpro.json", 
-              "ytlite.json", 
-              "ytkp.json", 
-              "ytmusic.json"
-          ]
+          local_source_files = list(FILE_CONFIG.keys())
 
           for filepath in local_source_files:
-              if os.path.exists(filepath):
-                  try:
-                      with open(filepath, "r", encoding="utf-8") as file_in:
-                          repo_data = json.load(file_in)
-                      
-                      repo_data["name"] = "OmniSource"
-                      repo_data["website"] = f"{bu}/"
-                      
-                      apps_in_file = repo_data.get("apps", [])
-                      for app_entry in apps_in_file:
-                          validated_app = standardize_app_metadata(app_entry)
-                          master_apps.append(validated_app)
-
-                      if apps_in_file:
-                          primary_icon = apps_in_file[0]["iconURL"]
-                          repo_data["apps"][0]["iconURL"] = primary_icon
-                          repo_data["iconURL"] = primary_icon
-                          repo_data["bannerURL"] = banner_icon
-                          
-                          with open(filepath, "w", encoding="utf-8") as file_out:
-                              json.dump(repo_data, file_out, indent=2, ensure_ascii=False)
-
-                      print(f"Successfully compiled and synchronized standalone manifest: {filepath}")
-                  except Exception as err:
-                      print(f"Parsing error encountered on local manifest {filepath}: {err}")
-              else:
+              if not os.path.exists(filepath):
                   print(f"Notice: Standalone file path not detected in workspace: {filepath}")
+                  continue
+              try:
+                  with open(filepath, "r", encoding="utf-8") as file_in:
+                      repo_data = json.load(file_in)
+
+                  icon_name, bundle_id = FILE_CONFIG[filepath]
+                  icon_url = f"{bu}/assets/{icon_name}"
+
+                  apps_in_file = repo_data.get("apps", [])
+                  app_name = apps_in_file[0].get("name", "Application") if apps_in_file else "Application"
+
+                  repo_data["name"] = f"OmniSource - {app_name}"
+                  repo_data["website"] = f"{bu}/"
+                  repo_data["description"] = f"Standalone distribution feed for {app_name}, curated within OmniSource."
+
+                  for app_entry in apps_in_file:
+                      validated_app = standardize_app_metadata(app_entry, icon_url, bundle_id)
+                      master_apps.append(validated_app)
+
+                  if apps_in_file:
+                      repo_data["apps"][0]["iconURL"] = icon_url
+                      repo_data["iconURL"] = icon_url
+                      repo_data["bannerURL"] = banner_icon
+
+                      with open(filepath, "w", encoding="utf-8") as file_out:
+                          json.dump(repo_data, file_out, indent=2, ensure_ascii=False)
+
+                  print(f"Successfully compiled and synchronized standalone manifest: {filepath}")
+              except Exception as err:
+                  print(f"Parsing error encountered on local manifest {filepath}: {err}")
 
           if master_apps:
               master_feed_payload = {
                   "name": "OmniSource",
                   "identifier": f"com.{so.lower()}.omnisource",
                   "subtitle": "Consolidated iOS Applications & Tweaks Repository",
-                  "description": f"Master AltStore and SideStore repository compiled and managed by OmniSource.",
+                  "description": "Master AltStore and SideStore repository compiled and managed under OmniSource.",
                   "iconURL": site_icon,
                   "bannerURL": banner_icon,
                   "website": f"{bu}/",
@@ -130,9 +127,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull origin ${{ github.ref_name }} --rebase || echo "No rebase needed"
-          git add apps.json *.json
-          git commit -m "build(omnisource): brand repository feeds, enforce assets, and compile master manifest [skip ci]" || echo "No repository changes pending commit"
+          git add apps.json uyouenhanced.json spotiflac.json ytkace.json youpro.json ytlite.json ytkp.json ytmusic.json
+          git commit -m "build(omnisource): enforce distinct app naming, asset routing, and master feed compilation [skip ci]" || echo "No repository changes pending commit"
           git push origin HEAD:${{ github.ref_name }}
