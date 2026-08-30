@@ -1,467 +1,214 @@
-name: Check for Updates
+name: Sync & Update OmniSource Repositories
 
 on:
   schedule:
-    - cron: "0 */13 * * *"
+    - cron: '0 */6 * * *' # Automatically run every 6 hours
   workflow_dispatch:
 
-concurrency:
-  group: sync-altstore
-  cancel-in-progress: false
+permissions:
+  contents: write
 
 jobs:
-  sync:
-    name: Check and Update source files
+  update-repos:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
-      - name: Checkout AltStore Repo
-        uses: actions/checkout@v7
+      - name: Checkout Code
+        uses: actions/checkout@v4
         with:
-          ref: main
+          token: ${{ secrets.GH_TOKEN }}
 
-      - name: Fetch YouProEXTRA Latest Release
+      - name: Fetch Latest Releases & Rebuild Sources
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          python3 << 'PYEOF'
-          import json, urllib.request, urllib.error, os, re, sys
-          from datetime import datetime, timezone
+          python3 -c "
+          import json, urllib.request, os, datetime
 
-          SOURCE_REPO = 'mrdrvt99/YouProEXTRA'
-          GH_TOKEN    = os.environ.get('GH_TOKEN', '')
+          source_owner = 'iamsmmh'
+          base_url = f'https://{source_owner}.github.io/OmniSource'
+          
+          # Official upstream configurations matching latest builds & developer attributions
+          apps_config = [
+              {
+                  'repo_owner': 'iamsmmh',
+                  'repo_name': 'SpotiFLAC-Mobile-Repo',
+                  'json_file': 'spotiflac.json',
+                  'bundleIdentifier': 'com.spotiflac.mobile',
+                  'name': 'SpotiFLAC Mobile',
+                  'developerName': 'spotiflacapp',
+                  'subtitle': 'Lossless FLAC Music Downloader & Player',
+                  'tintColor': '1DB954'
+              },
+              {
+                  'repo_owner': 'arichornlover',
+                  'repo_name': 'uYouEnhanced',
+                  'json_file': 'uyouenhanced.json',
+                  'bundleIdentifier': 'com.google.ios.youtube.uyouenhanced',
+                  'name': 'uYouEnhanced',
+                  'developerName': 'arichornlover & MiRO92',
+                  'subtitle': 'uYou Extended with Modern Fixes & SponsorBlock',
+                  'tintColor': 'FF0000'
+              },
+              {
+                  'repo_owner': 'mrdrvt99',
+                  'repo_name': 'YouProEXTRA',
+                  'json_file': 'ytkace.json',
+                  'bundleIdentifier': 'com.google.ios.youtube.ytkace',
+                  'name': 'YTKACE',
+                  'developerName': 'itzzace & mrdrvt99',
+                  'subtitle': 'Open-Source YouTube Enhancer with SponsorBlock',
+                  'tintColor': 'FF0000'
+              },
+              {
+                  'repo_owner': 'mrdrvt99',
+                  'repo_name': 'YouProEXTRA',
+                  'json_file': 'youpro.json',
+                  'bundleIdentifier': 'com.google.ios.youtube.youpro',
+                  'name': 'YouPro',
+                  'developerName': 'Alibusut & mrdrvt99',
+                  'subtitle': 'YouTube Mod with Premium Features & Downloader',
+                  'tintColor': 'FF0000'
+              },
+              {
+                  'repo_owner': 'mrdrvt99',
+                  'repo_name': 'YouProEXTRA',
+                  'json_file': 'ytlite.json',
+                  'bundleIdentifier': 'com.google.ios.youtube.ytlite',
+                  'name': 'YTLite',
+                  'developerName': 'Dayanch96 & mrdrvt99',
+                  'subtitle': 'Lightweight & Highly Customizable YouTube Mod',
+                  'tintColor': 'FF0000'
+              },
+              {
+                  'repo_owner': 'mrdrvt99',
+                  'repo_name': 'YouProEXTRA',
+                  'json_file': 'ytkp.json',
+                  'bundleIdentifier': 'com.google.ios.youtube.ytkp',
+                  'name': 'YTKillerPlus',
+                  'developerName': 'IKillerApp & mrdrvt99',
+                  'subtitle': 'All-in-One YouTube Downloader & Tweak Suite',
+                  'tintColor': 'FF0000'
+              },
+              {
+                  'repo_owner': 'mrdrvt99',
+                  'repo_name': 'YTMusicUltimate',
+                  'json_file': 'ytmusic.json',
+                  'bundleIdentifier': 'com.google.ios.youtubemusic',
+                  'name': 'YTMusicUltimate',
+                  'developerName': 'Dayanch96 & mrdrvt99',
+                  'subtitle': 'YouTube Music with Background Play & No Ads',
+                  'tintColor': 'FF0000'
+              }
+          ]
 
-          TAG_MAP = {
-              'youmod-ipa':                'youmod',
-              'youproextra-ipa':           'youpro',
-              'ytkp-ipa':                  'ytkp',
-              'ytkace-ipa':                'ytkace',
-          }
+          headers = {'User-Agent': 'Mozilla/5.0'}
+          if os.environ.get('GH_TOKEN'):
+              headers['Authorization'] = f\"token {os.environ.get('GH_TOKEN')}\"
 
-          FILES = {
-              'ytkp':   'ytkp.json',
-              'youpro': 'youpro.json',
-              'youmod': 'youmod.json',
-              'ytkace': 'ytkace.json',
-          }
+          master_apps = []
 
-          YTLITE_TAG_PREFIX = 'ytl-ipa'
-          YTLITE_FILE       = 'ytlite.json'
+          for config in apps_config:
+              owner = config['repo_owner']
+              repo = config['repo_name']
+              json_file = config['json_file']
+              url = f'https://api.github.com/repos/{owner}/{repo}/releases/latest'
 
-          def fetch_json(url):
-              headers = {'User-Agent': 'github-actions/altstore-sync'}
-              if GH_TOKEN:
-                  headers['Authorization'] = f'token {GH_TOKEN}'
-              req = urllib.request.Request(url, headers=headers)
               try:
-                  with urllib.request.urlopen(req, timeout=30) as resp:
-                      return json.loads(resp.read().decode())
-              except urllib.error.URLError as e:
-                  msg  = e.reason if hasattr(e, 'reason') else str(e)
-                  code = e.code   if hasattr(e, 'code')   else 'N/A'
-                  print(f"::error::API request failed (HTTP {code}): {msg}")
-                  sys.exit(1)
+                  req = urllib.request.Request(url, headers=headers)
+                  with urllib.request.urlopen(req) as response:
+                      release = json.loads(response.read().decode())
 
-          def fetch_all_releases(repo, max_pages=10):
-              """Paginate through releases so older tags (e.g. ytl-ipa0/1)
-              aren't missed just because newer tags from other mods pushed
-              them off the first page."""
-              results = []
-              for page in range(1, max_pages + 1):
-                  batch = fetch_json(
-                      f'https://api.github.com/repos/{repo}/releases?per_page=100&page={page}'
-                  )
-                  if not batch:
-                      break
-                  results.extend(batch)
-                  if len(batch) < 100:
-                      break
-              return results
+                  tag = release.get('tag_name', '1.0.0').lstrip('v')
+                  pub_date = release.get('published_at', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
+                  body = release.get('body', f\"Official release maintained by {config['developerName']}.\")
 
-          all_releases = fetch_all_releases(SOURCE_REPO)
-          published = [r for r in all_releases if not r['draft'] and not r['prerelease']]
-          ytlite_candidates = [r for r in all_releases if not r['draft']]
+                  ipa_url = ''
+                  asset_size = 120000000
+                  for asset in release.get('assets', []):
+                      name = asset.get('name', '').lower()
+                      if name.endswith('.ipa') or name.endswith('.tipa'):
+                          ipa_url = asset.get('browser_download_url', '')
+                          asset_size = asset.get('size', asset_size)
+                          break
 
-          best = {}
-          ytlite_releases = []
-          for release in ytlite_candidates:
-              tag = release['tag_name']
-              if tag.startswith(YTLITE_TAG_PREFIX):
-                  ytlite_releases.append(release)
+                  if not ipa_url:
+                      ipa_url = f'https://github.com/{owner}/{repo}/releases'
 
-          for release in published:
-              tag = release['tag_name']
-              if tag.startswith('youproextra-noytlite-ipa'):
-                  continue
-              if tag.startswith(YTLITE_TAG_PREFIX):
-                  continue
-              for prefix, key in TAG_MAP.items():
-                  if tag.startswith(prefix) and key not in best:
-                      best[key] = release
-                      break
-
-          if not best and not ytlite_releases:
-              print("No matching releases found.")
-              sys.exit(0)
-
-          if ytlite_releases:
-              found_tags = sorted(r['tag_name'] for r in ytlite_releases)
-              print(f"Found {len(ytlite_releases)} ytl-ipa release(s): {found_tags}")
-
-          for app_key, release in best.items():
-              tag          = release['tag_name']
-              published_at = release.get('published_at', '')
-              date_str     = published_at[:10] if published_at else datetime.now(timezone.utc).strftime('%Y-%m-%d')
-              release_body = (release.get('body') or '').strip()
-
-              ipa_asset = next(
-                  (a for a in release.get('assets', []) if a['name'].endswith('.ipa')),
-                  None
-              )
-              if not ipa_asset:
-                  print(f"No .ipa asset for {tag} — skipping.")
-                  continue
-
-              download_url = ipa_asset['browser_download_url']
-              size         = ipa_asset['size']
-              ipa_name     = ipa_asset['name']
-
-              filename = FILES[app_key]
-              with open(filename, 'r') as f:
-                  source = json.load(f)
-
-              app = source['apps'][0]
-
-              if app.get('downloadURL') == download_url:
-                  print(f"{filename} already up to date.")
-                  continue
-
-              matches = re.findall(r'(\d+\.\d+\.\d+)', ipa_name)
-              if not matches:
-                  print(f"::warning::Could not parse version from '{ipa_name}' — skipping.")
-                  continue
-              yt_version = matches[0]
-
-              ipa_label   = ipa_name.replace('.ipa', '')
-              description = (
-                  f"YouTube {yt_version} | {ipa_label}\n\n{release_body}"
-                  if release_body else
-                  f"YouTube {yt_version} | {ipa_label}"
-              )
-
-              new_entry = {
-                  "version":              yt_version,
-                  "date":                 date_str,
-                  "localizedDescription": description,
-                  "downloadURL":          download_url,
-                  "size":                 size,
-                  "minOSVersion":         "16.0"
-              }
-
-              app['versions']           = [new_entry]
-              app['version']            = yt_version
-              app['versionDate']        = date_str
-              app['versionDescription'] = description
-              app['downloadURL']        = download_url
-              app['size']               = size
-
-              with open(filename, 'w') as f:
-                  json.dump(source, f, indent=2, ensure_ascii=False)
-                  f.write('\n')
-
-              print(f"Updated {filename}: '{app['name']}' → YouTube {yt_version} ({tag})")
-
-          if ytlite_releases:
-              def ytlite_tag_num(release):
-                  m = re.search(r'ytl-ipa(\d+)', release['tag_name'])
-                  return int(m.group(1)) if m else -1
-
-              YTLITE_MIN_OS = {
-                  0: "14.0",
-                  1: "15.0",
-              }
-              YTLITE_MIN_OS_DEFAULT = "16.0"
-
-              ytlite_releases.sort(key=ytlite_tag_num, reverse=True)
-
-              entries = []
-              for release in ytlite_releases:
-                  tag          = release['tag_name']
-                  tag_num      = ytlite_tag_num(release)
-                  min_os       = YTLITE_MIN_OS.get(tag_num, YTLITE_MIN_OS_DEFAULT)
-                  published_at = release.get('published_at', '')
-                  date_str     = published_at[:10] if published_at else datetime.now(timezone.utc).strftime('%Y-%m-%d')
-                  release_body = (release.get('body') or '').strip()
-
-                  ipa_asset = next(
-                      (a for a in release.get('assets', []) if a['name'].endswith('.ipa')),
-                      None
-                  )
-                  if not ipa_asset:
-                      print(f"No .ipa asset for {tag} — skipping.")
-                      continue
-
-                  download_url = ipa_asset['browser_download_url']
-                  size         = ipa_asset['size']
-                  ipa_name     = ipa_asset['name']
-
-                  matches = re.findall(r'(\d+\.\d+\.\d+)', ipa_name)
-                  if not matches:
-                      print(f"::warning::Could not parse version from '{ipa_name}' — skipping.")
-                      continue
-                  yt_version = matches[0]
-
-                  ipa_label   = ipa_name.replace('.ipa', '')
-                  description = (
-                      f"YouTube {yt_version} | {ipa_label}\n\n{release_body}"
-                      if release_body else
-                      f"YouTube {yt_version} | {ipa_label}"
-                  )
-
-                  entries.append({
-                      "version":              yt_version,
-                      "date":                 date_str,
-                      "localizedDescription": description,
-                      "downloadURL":          download_url,
-                      "size":                 size,
-                      "minOSVersion":         min_os,
-                      "_tag":                 tag,
-                  })
-
-              if not entries:
-                  print("No usable ytl-ipa releases found — skipping ytlite.json.")
-              else:
-                  with open(YTLITE_FILE, 'r') as f:
-                      ytlite_source = json.load(f)
-
-                  ytlite_app = ytlite_source['apps'][0]
-
-                  existing_urls = [v.get('downloadURL') for v in ytlite_app.get('versions', [])]
-                  new_urls      = [e['downloadURL'] for e in entries]
-
-                  if existing_urls == new_urls:
-                      print(f"{YTLITE_FILE} already up to date ({len(entries)} versions).")
+                  clean_name = config['name'].lower().replace(' ', '')
+                  icon_filename = f\"{clean_name}.png\"
+                  if os.path.exists(os.path.join('assets', icon_filename)):
+                      icon_url = f'{base_url}/assets/{icon_filename}'
+                  elif os.path.exists('assets/icon.png'):
+                      icon_url = f'{base_url}/assets/icon.png'
                   else:
-                      newest = entries[0]
-                      for e in entries:
-                          e.pop('_tag', None)
+                      icon_url = f'https://raw.githubusercontent.com/{source_owner}/OmniSource/main/assets/icon.png'
 
-                      ytlite_app['versions']           = entries
-                      ytlite_app['version']            = newest['version']
-                      ytlite_app['versionDate']        = newest['date']
-                      ytlite_app['versionDescription'] = newest['localizedDescription']
-                      ytlite_app['downloadURL']        = newest['downloadURL']
-                      ytlite_app['size']                = newest['size']
+                  app_data = {
+                      'name': config['name'],
+                      'bundleIdentifier': config['bundleIdentifier'],
+                      'developerName': config['developerName'],
+                      'subtitle': config['subtitle'],
+                      'localizedDescription': body,
+                      'iconURL': icon_url,
+                      'tintColor': config['tintColor'],
+                      'version': tag,
+                      'versionDate': pub_date,
+                      'versionDescription': body,
+                      'downloadURL': ipa_url,
+                      'size': int(asset_size),
+                      'versions': [
+                          {
+                              'version': tag,
+                              'date': pub_date,
+                              'localizedDescription': body,
+                              'downloadURL': ipa_url,
+                              'size': int(asset_size)
+                          }
+                      ]
+                  }
 
-                      with open(YTLITE_FILE, 'w') as f:
-                          json.dump(ytlite_source, f, indent=2, ensure_ascii=False)
-                          f.write('\n')
+                  standalone_source = {
+                      'name': f\"OmniSource - {config['name']}\",
+                      'identifier': f\"com.{source_owner.lower()}.omnisource.{clean_name}\",
+                      'subtitle': f\"{config['name']} Standalone Feed\",
+                      'description': f\"Standalone source for {config['name']}. Developed by {config['developerName']}. Maintained by {source_owner}.\",
+                      'iconURL': f\"{base_url}/assets/icon.png\",
+                      'website': base_url,
+                      'apps': [app_data]
+                  }
 
-                      print(f"Updated {YTLITE_FILE}: {len(entries)} versions kept (newest: YouTube {newest['version']})")
-          PYEOF
+                  with open(json_file, 'w', encoding='utf-8') as f:
+                      json.dump(standalone_source, f, indent=2, ensure_ascii=False)
+                  print(f'Successfully updated: {json_file}')
 
-      - name: Fetch YTMusicUltimate Latest Release
+                  master_apps.append(app_data)
+
+              except Exception as e:
+                  print(f'Failed to process {repo} ({config[\"name\"]}): {e}')
+
+          if master_apps:
+              master_source = {
+                  'name': 'OmniSource',
+                  'identifier': f'com.{source_owner.lower()}.omnisource',
+                  'subtitle': 'Consolidated iOS Applications & Tweaks Repository',
+                  'description': f'Master AltStore / SideStore source curated by {source_owner}. Full credit to original developers.',
+                  'iconURL': f'{base_url}/assets/icon.png',
+                  'website': base_url,
+                  'apps': master_apps
+              }
+              with open('apps.json', 'w', encoding='utf-8') as f:
+                  json.dump(master_source, f, indent=2, ensure_ascii=False)
+              print('Successfully updated: apps.json')
+          "
+
+      - name: Commit and Push Changes
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          python3 << 'PYEOF'
-          import json, urllib.request, urllib.error, os, re, sys
-          from datetime import datetime, timezone
-
-          YTM_SOURCE_REPO = 'mrdrvt99/YTMusicUltimate'
-          GH_TOKEN        = os.environ.get('GH_TOKEN', '')
-
-          def fetch_json(url):
-              headers = {'User-Agent': 'github-actions/altstore-sync'}
-              if GH_TOKEN:
-                  headers['Authorization'] = f'token {GH_TOKEN}'
-              req = urllib.request.Request(url, headers=headers)
-              try:
-                  with urllib.request.urlopen(req, timeout=30) as resp:
-                      return json.loads(resp.read().decode())
-              except urllib.error.URLError as e:
-                  msg  = e.reason if hasattr(e, 'reason') else str(e)
-                  code = e.code   if hasattr(e, 'code')   else 'N/A'
-                  print(f"::error::YTMusic API request failed (HTTP {code}): {msg}")
-                  sys.exit(1)
-
-          releases = fetch_json(
-              f'https://api.github.com/repos/{YTM_SOURCE_REPO}/releases?per_page=5'
-          )
-          release = next(
-              (r for r in releases if not r['draft'] and not r['prerelease']),
-              None
-          )
-          if release is None:
-              print("No published release found — skipping.")
-              sys.exit(0)
-
-          ipa_asset = next(
-              (a for a in release.get('assets', []) if a['name'].endswith('.ipa')),
-              None
-          )
-          if not ipa_asset:
-              print("No .ipa asset found — skipping.")
-              sys.exit(0)
-
-          download_url = ipa_asset['browser_download_url']
-          size         = ipa_asset['size']
-          ipa_name     = ipa_asset['name']
-          published_at = release.get('published_at', '')
-          date_str     = published_at[:10] if published_at else datetime.now(timezone.utc).strftime('%Y-%m-%d')
-          release_body = (release.get('body') or '').strip()
-          tag          = release['tag_name']
-
-          with open('ytmusic.json', 'r') as f:
-              ytm_data = json.load(f)
-
-          ytm_app = ytm_data['apps'][0]
-
-          if ytm_app.get('downloadURL') == download_url:
-              print(f"ytmusic.json already up to date: {download_url}")
-              sys.exit(0)
-
-          matches = re.findall(r'(\d+\.\d+(?:\.\d+)?)', ipa_name)
-          if len(matches) >= 2:
-              tweak_version = matches[0]
-              ytm_version   = matches[-1]
-          elif len(matches) == 1:
-              tweak_version = ytm_version = matches[0]
-          else:
-              tweak_version = ytm_version = tag.lstrip('v')
-
-          ipa_label   = ipa_name.replace('.ipa', '')
-          description = f"YTMusicUltimate {tweak_version} | YTMusic {ytm_version} | {ipa_label}"
-          if release_body:
-              description += f"\n\n{release_body}"
-
-          new_entry = {
-              "version":              tweak_version,
-              "date":                 date_str,
-              "localizedDescription": description,
-              "downloadURL":          download_url,
-              "size":                 size,
-              "minOSVersion":         "16.0"
-          }
-
-          ytm_app['versions']           = [new_entry]
-          ytm_app['version']            = tweak_version
-          ytm_app['versionDate']        = date_str
-          ytm_app['versionDescription'] = description
-          ytm_app['downloadURL']        = download_url
-          ytm_app['size']               = size
-
-          with open('ytmusic.json', 'w') as f:
-              json.dump(ytm_data, f, indent=2, ensure_ascii=False)
-              f.write('\n')
-
-          print(f"ytmusic.json updated: YTMusicUltimate {tweak_version} → YTMusic {ytm_version} ({tag})")
-          PYEOF
-
-      - name: Fetch SpotiFLAC Mobile Latest Release
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          python3 << 'PYEOF'
-          import json, urllib.request, urllib.error, os, re, sys
-          from datetime import datetime, timezone
-
-          SPOTIFLAC_REPO = 'spotiflacapp/SpotiFLAC-Mobile'
-          GH_TOKEN       = os.environ.get('GH_TOKEN', '')
-
-          def fetch_json(url):
-              headers = {'User-Agent': 'github-actions/altstore-sync'}
-              if GH_TOKEN:
-                  headers['Authorization'] = f'token {GH_TOKEN}'
-              req = urllib.request.Request(url, headers=headers)
-              try:
-                  with urllib.request.urlopen(req, timeout=30) as resp:
-                      return json.loads(resp.read().decode())
-              except urllib.error.URLError as e:
-                  msg  = e.reason if hasattr(e, 'reason') else str(e)
-                  code = e.code   if hasattr(e, 'code')   else 'N/A'
-                  print(f"::error::SpotiFLAC API request failed (HTTP {code}): {msg}")
-                  sys.exit(1)
-
-          releases = fetch_json(
-              f'https://api.github.com/repos/{SPOTIFLAC_REPO}/releases?per_page=5'
-          )
-          release = next(
-              (r for r in releases if not r['draft'] and not r['prerelease']),
-              None
-          )
-          if release is None:
-              print("No published release found for SpotiFLAC — skipping.")
-              sys.exit(0)
-
-          ipa_asset = next(
-              (a for a in release.get('assets', []) if a['name'].endswith('.ipa')),
-              None
-          )
-          if not ipa_asset:
-              print("No .ipa asset found for SpotiFLAC — skipping.")
-              sys.exit(0)
-
-          download_url = ipa_asset['browser_download_url']
-          size         = ipa_asset['size']
-          ipa_name     = ipa_asset['name']
-          published_at = release.get('published_at', '')
-          date_str     = published_at[:10] if published_at else datetime.now(timezone.utc).strftime('%Y-%m-%d')
-          release_body = (release.get('body') or '').strip()
-          tag          = release['tag_name']
-
-          with open('spotiflac.json', 'r') as f:
-              sf_data = json.load(f)
-
-          sf_app = sf_data['apps'][0]
-
-          if sf_app.get('downloadURL') == download_url:
-              print(f"spotiflac.json already up to date: {download_url}")
-              sys.exit(0)
-
-          matches = re.findall(r'(\d+\.\d+(?:\.\d+)?)', ipa_name)
-          sf_version = matches[0] if matches else tag.lstrip('v')
-
-          ipa_label   = ipa_name.replace('.ipa', '')
-          description = f"SpotiFLAC Mobile {sf_version} | {ipa_label}"
-          if release_body:
-              description += f"\n\n{release_body}"
-
-          new_entry = {
-              "version":              sf_version,
-              "date":                 date_str,
-              "localizedDescription": description,
-              "downloadURL":          download_url,
-              "size":                 size,
-              "minOSVersion":         "14.0"
-          }
-
-          sf_app['versions']           = [new_entry]
-          sf_app['version']            = sf_version
-          sf_app['versionDate']        = date_str
-          sf_app['versionDescription'] = description
-          sf_app['downloadURL']        = download_url
-          sf_app['size']               = size
-
-          with open('spotiflac.json', 'w') as f:
-              json.dump(sf_data, f, indent=2, ensure_ascii=False)
-              f.write('\n')
-
-          print(f"spotiflac.json updated: SpotiFLAC Mobile {sf_version} ({tag})")
-          PYEOF
-
-      - name: Commit and Push changed source files
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ytlite.json ytkp.json youpro.json youmod.json ytkace.json ytmusic.json spotiflac.json
-          if git diff --staged --quiet; then
-            echo "No changes — nothing to commit."
-          else
-            git commit -m "chore(altstore): sync latest release from YouProEXTRA, YTMusicUltimate & SpotiFLAC Mobile"
-            git pull --rebase
-            git push
-            echo "Source files committed and pushed."
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add *.json
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "chore(workflow): sync update.yml to fetch official upstream releases [skip ci]"
+            git push "https://x-access-token:${GH_TOKEN}@github.com/${github.repository}.git" HEAD:${github.ref_name}
           fi
