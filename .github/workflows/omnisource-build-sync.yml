@@ -59,7 +59,7 @@ jobs:
               return None
 
           # Part 1: uYouEnhanced via Upstream Feed
-          yc = {"json_file": "uyouenhanced.json", "bundleIdentifier": "com.google.ios.youtube", "name": "uYouEnhanced", "developerName": "arichornlover & Various Contributors", "subtitle": "uYou Extended with Modern Fixes & iSponsorBlock", "tintColor": "FF0000", "icon_filename": "uYouEnhanched.png"}
+          yc = {"json_file": "uyouenhanced.json", "bundleIdentifier": "com.google.ios.youtube", "name": "uYouEnhanced", "developerName": "arichornlover & Various Contributors", "subtitle": "uYou Extended with Modern Fixes & iSponsorBlock", "tintColor": "FF0000"}
           alt_data = fetch("https://raw.githubusercontent.com/arichornlover/arichornlover.github.io/main/apps.json") or {}
           ta = next((a for a in alt_data.get("apps", []) if "youtube" in a.get("bundleIdentifier", "").lower() or "uyou" in a.get("name", "").lower()), None)
 
@@ -70,14 +70,7 @@ jobs:
               ipa = ta.get("downloadURL", "")
               sz = int(ta.get("size", 120000000))
               
-              icon_fn = yc["icon_filename"]
-              local_icon_path = os.path.join("assets", icon_fn)
-              if os.path.exists(local_icon_path):
-                  icu = f"{bu}/assets/{icon_fn}"
-              elif ta.get("iconURL"):
-                  icu = ta.get("iconURL")
-              else:
-                  icu = si
+              icu = ta.get("iconURL") or si
               
               ad = {"name": yc["name"], "bundleIdentifier": yc["bundleIdentifier"], "developerName": yc["developerName"], "subtitle": yc["subtitle"], "localizedDescription": desc, "iconURL": icu, "tintColor": yc["tintColor"], "version": tag, "versionDate": pd, "versionDescription": desc, "downloadURL": ipa, "size": sz, "versions": ta.get("versions", [{"version": tag, "date": pd, "localizedDescription": desc, "downloadURL": ipa, "size": sz}])}
               dev_name = yc["developerName"]
@@ -119,13 +112,7 @@ jobs:
                   if not matched: continue
 
                   ipa, sz = matched.get("browser_download_url", ""), int(matched.get("size", 35967116))
-                  c_icon = c.get("icon_filename", "")
-                  if "icon_url_fallback" in c:
-                      icu = c["icon_url_fallback"]
-                  elif c_icon and os.path.exists(os.path.join("assets", c_icon)):
-                      icu = f"{bu}/assets/{c_icon}"
-                  else:
-                      icu = si
+                  icu = c.get("icon_url_fallback", si)
 
                   cn = c["name"].lower().replace(" ", "")
                   ad = {"name": c["name"], "bundleIdentifier": c["bundleIdentifier"], "developerName": c["developerName"], "subtitle": c["subtitle"], "localizedDescription": desc, "iconURL": icu, "tintColor": c["tintColor"], "version": tag, "versionDate": pd, "versionDescription": desc, "downloadURL": ipa, "size": sz, "versions": [{"version": tag, "date": pd, "localizedDescription": desc, "downloadURL": ipa, "size": sz}]}
@@ -146,5 +133,5 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add *.json
-          git commit -m "chore(feed): preserve upstream app icons for uYouEnhanced and individual feeds [skip ci]" || echo "No changes to commit"
+          git commit -m "chore(feed): update stable standalone and master feeds [skip ci]" || echo "No changes to commit"
           git push origin HEAD:${{ github.ref_name }}
