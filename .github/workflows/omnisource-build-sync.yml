@@ -22,35 +22,41 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Execute Feed Compilation & Upstream Synchronization Pipeline
+      - name: Execute Enterprise-Grade Feed Compilation & Asset Routing Pipeline
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python3 -c '
-          import json, urllib.request, os, datetime
+          import json, os, datetime
 
           so, bu = "iamsmmh", "https://iamsmmh.github.io/OmniSource"
-          headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-          if token := os.environ.get("GH_TOKEN"):
-              headers["Authorization"] = f"token {token}"
-
           master_apps = []
+          
           site_icon = f"{bu}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{bu}/assets/icon.png"
           banner_icon = f"{bu}/assets/banner.png" if os.path.exists("assets/banner.png") else site_icon
 
-          def fetch_json(url):
-              try:
-                  req = urllib.request.Request(url, headers=headers)
-                  with urllib.request.urlopen(req) as response:
-                      return json.loads(response.read().decode("utf-8"))
-              except Exception as err:
-                  print(f"Network error querying {url}: {err}")
-              return None
+          def resolve_local_assets_and_bundle(name_key, id_key):
+              name_lower = name_key.lower()
+              id_lower = id_key.lower()
+              
+              if "music" in name_lower or "youtubemusic" in id_lower:
+                  return f"{bu}/assets/YouTubeMusic.png", "com.google.ios.youtubemusic"
+              elif "spotiflac" in name_lower or "zarzet" in id_lower:
+                  return f"{bu}/assets/SpotiFLAC.png", "com.zarzet.spotiflac"
+              else:
+                  return f"{bu}/assets/YouTube.png", "com.google.ios.youtube"
 
-          def standardize_app_metadata(app, target_bundle_id):
+          def standardize_app_metadata(app):
+              name_key = app.get("name", "")
+              id_key = app.get("bundleIdentifier", "")
+              
+              assigned_icon, target_bundle_id = resolve_local_assets_and_bundle(name_key, id_key)
               app["bundleIdentifier"] = target_bundle_id
+              app["iconURL"] = assigned_icon
+
               if not app.get("versionDate"):
                   app["versionDate"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+              
               if not app.get("versions") and app.get("version") and app.get("downloadURL"):
                   app["versions"] = [{
                       "version": app.get("version"),
@@ -61,61 +67,45 @@ jobs:
                   }]
               return app
 
-          # 1. Dynamically sync uYouEnhanced from its upstream distribution source
-          print("Synchronizing uYouEnhanced metadata from official upstream source...")
-          upstream_data = fetch_json("https://raw.githubusercontent.com/arichornlover/arichornlover.github.io/main/apps.json") or {}
-          uyou_candidate = next((item for item in upstream_data.get("apps", []) if "youtube" in item.get("bundleIdentifier", "").lower() or "uyou" in item.get("name", "").lower()), None)
-
-          if uyou_candidate:
-              processed_uyou = standardize_app_metadata(uyou_candidate, "com.google.ios.youtube")
-              master_apps.append(processed_uyou)
-              
-              standalone_uyou = {
-                  "name": "OmniSource - uYouEnhanced",
-                  "identifier": f"com.{so.lower()}.omnisource.uyouenhanced",
-                  "subtitle": "uYouEnhanced Standalone Feed",
-                  "description": f"Dedicated standalone distribution feed for uYouEnhanced, maintained by {so}.",
-                  "iconURL": processed_uyou.get("iconURL", site_icon),
-                  "bannerURL": banner_icon,
-                  "website": bu,
-                  "apps": [processed_uyou]
-              }
-              with open("uyouenhanced.json", "w", encoding="utf-8") as file_out:
-                  json.dump(standalone_uyou, file_out, indent=2, ensure_ascii=False)
-              print("uYouEnhanced synchronization successful.")
-          else:
-              print("Warning: Failed to retrieve uYouEnhanced record from upstream source.")
-
-          # 2. Process and validate all remaining local repository JSON source files
-          local_source_files = ["spotiflac.json", "ytkace.json", "youpro.json", "ytlite.json", "ytkp.json", "ytmusic.json"]
+          # Complete inventory of local standalone manifests maintained in the repository
+          local_source_files = [
+              "uyouenhanced.json", 
+              "spotiflac.json", 
+              "ytkace.json", 
+              "youpro.json", 
+              "ytlite.json", 
+              "ytkp.json", 
+              "ytmusic.json"
+          ]
 
           for filepath in local_source_files:
               if os.path.exists(filepath):
                   try:
                       with open(filepath, "r", encoding="utf-8") as file_in:
-                        repo_data = json.load(file_in)
+                          repo_data = json.load(file_in)
                       
-                      for app_entry in repo_data.get("apps", []):
-                          name_key = app_entry.get("name", "").lower()
-                          id_key = app_entry.get("bundleIdentifier", "").lower()
-
-                          # Enforce appropriate uniform bundle routing for SideStore compatibility
-                          if "music" in name_key or "youtubemusic" in id_key:
-                              target_id = "com.google.ios.youtubemusic"
-                          elif "spotiflac" in name_key or "zarzet" in id_key:
-                              target_id = "com.zarzet.spotiflac"
-                          else:
-                              target_id = "com.google.ios.youtube"
-
-                          validated_app = standardize_app_metadata(app_entry, target_id)
+                      apps_in_file = repo_data.get("apps", [])
+                      for app_entry in apps_in_file:
+                          validated_app = standardize_app_metadata(app_entry)
                           master_apps.append(validated_app)
-                      print(f"Processed local standalone manifest: {filepath}")
-                  except Exception as err:
-                      print(f"Error parsing local manifest {filepath}: {err}")
-              else:
-                  print(f"Notice: Local file not detected in workspace root: {filepath}")
 
-          # 3. Aggregate entries into a unified, standard-compliant master apps.json feed
+                      # Synchronize standalone manifest metadata headers with local assets
+                      if apps_in_file:
+                          primary_icon = apps_in_file[0]["iconURL"]
+                          repo_data["apps"][0]["iconURL"] = primary_icon
+                          repo_data["iconURL"] = primary_icon
+                          repo_data["bannerURL"] = banner_icon
+                          
+                          with open(filepath, "w", encoding="utf-8") as file_out:
+                              json.dump(repo_data, file_out, indent=2, ensure_ascii=False)
+
+                      print(f"Successfully compiled and synchronized standalone manifest: {filepath}")
+                  except Exception as err:
+                      print(f"Parsing error encountered on local manifest {filepath}: {err}")
+              else:
+                  print(f"Notice: Standalone file path not detected in workspace: {filepath}")
+
+          # Compile and write out the comprehensive unified master apps.json feed
           if master_apps:
               master_feed_payload = {
                   "name": "OmniSource",
@@ -129,9 +119,9 @@ jobs:
               }
               with open("apps.json", "w", encoding="utf-8") as master_file:
                   json.dump(master_feed_payload, master_file, indent=2, ensure_ascii=False)
-              print(f"Master feed compiled successfully with total records: {len(master_apps)}")
+              print(f"Master feed successfully generated containing {len(master_apps)} application definitions.")
           else:
-              print("Error: Compilation aborted. No valid application definitions found.")
+              print("Error: Compilation halted. No valid application definitions identified.")
           '
 
       - name: Commit and Push Repository Updates
@@ -140,6 +130,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add apps.json uyouenhanced.json *.json
-          git commit -m "build(omnisource): synchronize feeds, enforce bundle standards, and compile master manifest [skip ci]" || echo "No repository changes pending commit"
+          git add apps.json *.json
+          git commit -m "build(omnisource): enforce local repository assets, bundle standards, and compile master feed [skip ci]" || echo "No repository changes pending commit"
           git push origin HEAD:${{ github.ref_name }}
