@@ -1,17 +1,17 @@
 {
-  "name": "OmniSource - uYouEnhanced",
+  "name": "OmniSource",
   "identifier": "com.iamsmmh.omnisource.uyouenhanced",
   "subtitle": "uYouEnhanced Standalone Feed",
   "description": "Dedicated standalone distribution feed for uYouEnhanced, maintained by iamsmmh.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
   "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
-  "website": "https://iamsmmh.github.io/OmniSource",
+  "website": "https://iamsmmh.github.io/OmniSource/",
   "apps": [
     {
       "beta": false,
       "name": "uYouEnhanced",
       "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "arichornlover & Various Contributors",
+      "developerName": "OmniSource",
       "subtitle": "uYouPlus with even more features!",
       "version": "21.14.4",
       "versionDate": "2026-08-22",

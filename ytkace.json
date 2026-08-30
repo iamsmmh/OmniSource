@@ -1,17 +1,17 @@
 {
-  "name": "YTKACE",
+  "name": "OmniSource",
   "identifier": "com.mrdrvt99.ytkace",
   "apiVersion": "v2",
   "subtitle": "Automated YTKACE IPA builds",
   "description": "AltStore/Feather/SideStore/LiveContainer source for YTKACE. No ads, background playback, downloads, SponsorBlock, PiP, and more.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
-  "website": "https://github.com/mrdrvt99/Altstore-Repository",
+  "website": "https://iamsmmh.github.io/OmniSource/",
   "sourceURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json",
   "apps": [
     {
       "name": "YTKACE",
       "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "itzzace0",
+      "developerName": "OmniSource",
       "subtitle": "YTKACE",
       "category": "photo-video",
       "version": "21.34.3",

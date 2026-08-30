@@ -1,17 +1,17 @@
 {
-  "name": "YTMusicUltimate",
+  "name": "OmniSource",
   "identifier": "com.mrdrvt99.ytm",
   "apiVersion": "v2",
   "subtitle": "Automated YTMusicUltimate IPA builds",
   "description": "AltStore/SideStore/Feather source for YTMusicUltimate. No ads, background playback, and more.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTubeMusic.png",
-  "website": "https://github.com/mrdrvt99/Altstore-Repository",
+  "website": "https://iamsmmh.github.io/OmniSource/",
   "sourceURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytmusic.json",
   "apps": [
     {
       "name": "YTMusicUltimate",
       "bundleIdentifier": "com.google.ios.youtubemusic",
-      "developerName": "dayanch96",
+      "developerName": "OmniSource",
       "subtitle": "YTMusicUltimate",
       "category": "music",
       "version": "9.34.4",
