@@ -38,6 +38,51 @@ Add this URL to any AltStore-compatible client to get the full OmniSource collec
 | <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="28"> | YouMod | [Feed](https://iamsmmh.github.io/OmniSource/youmod.json) |
 | <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTubeMusic.png" width="28"> | YTMusicUltimate | [Feed](https://iamsmmh.github.io/OmniSource/ytmusicultimate.json) |
 
+<details>
+<summary><b>📋 Direct feed links (click to expand)</b></summary>
+
+**SpotiFLAC Mobile**
+```
+https://iamsmmh.github.io/OmniSource/spotiflac.json
+```
+
+**uYouEnhanced**
+```
+https://iamsmmh.github.io/OmniSource/uyouenhanced.json
+```
+
+**YTKACE**
+```
+https://iamsmmh.github.io/OmniSource/ytkace.json
+```
+
+**YouPro**
+```
+https://iamsmmh.github.io/OmniSource/youpro.json
+```
+
+**YTLite**
+```
+https://iamsmmh.github.io/OmniSource/ytlite.json
+```
+
+**YTKillerPlus**
+```
+https://iamsmmh.github.io/OmniSource/ytkillerplus.json
+```
+
+**YouMod**
+```
+https://iamsmmh.github.io/OmniSource/youmod.json
+```
+
+**YTMusicUltimate**
+```
+https://iamsmmh.github.io/OmniSource/ytmusicultimate.json
+```
+
+</details>
+
 ---
 
 ## 📱 Supported Clients
@@ -74,9 +119,27 @@ Upstream Sources → GitHub Actions → Validate → JSON Feeds → GitHub Pages
 
 ## 🙌 Credits
 
-**Upstream projects:** SpotiFLAC Mobile (spotiflacapp) · uYouEnhanced (arichornlover, MiRO92) · YTKACE (itzzace, mrdrvt99) · YouPro (Alibusut, mrdrvt99) · YTLite (Dayanch96, mrdrvt99) · YTKillerPlus (IKillerApp, mrdrvt99) · YouMod (mrdrvt99) · YTMusicUltimate (Dayanch96, mrdrvt99)
+**Upstream projects**
 
-**OmniSource team:** S M Mahbub Hossain — development & automation · MountainofPenguin — architecture · HakujouSan — testing · Avieshek — manifest assistance
+| Project | Author(s) |
+|:---|:---|
+| [SpotiFLAC Mobile](https://github.com/spotiflacapp) | [spotiflacapp](https://github.com/spotiflacapp) |
+| [uYouEnhanced](https://github.com/arichornlover/uYouEnhanced) | [arichornlover](https://github.com/arichornlover) & [MiRO92](https://github.com/MiRO92) |
+| [YTKACE](https://github.com/itzzace/YTKACE) | [itzzace](https://github.com/itzzace) & [mrdrvt99](https://github.com/mrdrvt99) |
+| [YouPro](https://github.com/Alibusut/YouPro) | [Alibusut](https://github.com/Alibusut) & [mrdrvt99](https://github.com/mrdrvt99) |
+| [YTLite](https://github.com/Dayanch96/YTLite) | [Dayanch96](https://github.com/Dayanch96) & [mrdrvt99](https://github.com/mrdrvt99) |
+| [YTKillerPlus](https://github.com/IKillerApp/YTKillerPlus) | [IKillerApp](https://github.com/IKillerApp) & [mrdrvt99](https://github.com/mrdrvt99) |
+| [YouMod](https://github.com/mrdrvt99/YouMod) | [mrdrvt99](https://github.com/mrdrvt99) |
+| [YTMusicUltimate](https://github.com/Dayanch96/YTMusicUltimate) | [Dayanch96](https://github.com/Dayanch96) & [mrdrvt99](https://github.com/mrdrvt99) |
+
+**OmniSource team**
+
+| Contributor | Role |
+|:---|:---|
+| [S M Mahbub Hossain](https://github.com/iamsmmh) | Development & automation |
+| [MountainofPenguin](https://github.com/MountainofPenguin) | Architecture |
+| [HakujouSan](https://github.com/HakujouSan) | Testing |
+| [Avieshek](https://github.com/Avieshek) | Manifest assistance |
 
 ---
 
