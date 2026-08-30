@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: '3.x'
 
       - name: Fetch Latest Releases & Rebuild Sources
         env:
@@ -42,7 +42,8 @@ jobs:
                   'developerName': 'spotiflacapp',
                   'subtitle': 'Lossless FLAC Music Downloader & Player',
                   'tintColor': '1DB954',
-                  'icon_filename': 'SpotiFLAC.png'
+                  'icon_filename': 'SpotiFLAC.png',
+                  'asset_keyword': 'spotiflac'
               },
               {
                   'repo_owner': 'arichornlover',
@@ -53,7 +54,8 @@ jobs:
                   'developerName': 'arichornlover & MiRO92',
                   'subtitle': 'uYou Extended with Modern Fixes & SponsorBlock',
                   'tintColor': 'FF0000',
-                  'icon_filename': 'YouTube.png'
+                  'icon_filename': 'YouTube.png',
+                  'asset_keyword': 'uyouenhanced'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -64,7 +66,8 @@ jobs:
                   'developerName': 'itzzace & mrdrvt99',
                   'subtitle': 'Open-Source YouTube Enhancer with SponsorBlock',
                   'tintColor': 'FF0000',
-                  'icon_filename': 'YouTube.png'
+                  'icon_filename': 'YouTube.png',
+                  'asset_keyword': 'ytkace'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -75,7 +78,8 @@ jobs:
                   'developerName': 'Alibusut & mrdrvt99',
                   'subtitle': 'YouTube Mod with Premium Features & Downloader',
                   'tintColor': 'FF0000',
-                  'icon_filename': 'YouTube.png'
+                  'icon_filename': 'YouTube.png',
+                  'asset_keyword': 'youpro'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -86,7 +90,8 @@ jobs:
                   'developerName': 'Dayanch96 & mrdrvt99',
                   'subtitle': 'Lightweight & Highly Customizable YouTube Mod',
                   'tintColor': 'FF0000',
-                  'icon_filename': 'YouTube.png'
+                  'icon_filename': 'YouTube.png',
+                  'asset_keyword': 'ytlite'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -97,7 +102,8 @@ jobs:
                   'developerName': 'IKillerApp & mrdrvt99',
                   'subtitle': 'All-in-One YouTube Downloader & Tweak Suite',
                   'tintColor': 'FF0000',
-                  'icon_filename': 'YouTube.png'
+                  'icon_filename': 'YouTube.png',
+                  'asset_keyword': 'ytkiller'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -108,7 +114,8 @@ jobs:
                   'developerName': 'Dayanch96 & mrdrvt99',
                   'subtitle': 'YouTube Music with Background Play & No Ads',
                   'tintColor': 'FF0000',
-                  'icon_filename': 'YouTubeMusic.png'
+                  'icon_filename': 'YouTubeMusic.png',
+                  'asset_keyword': 'ytmusic'
               }
           ]
 
@@ -123,6 +130,7 @@ jobs:
               owner = config['repo_owner']
               repo = config['repo_name']
               json_file = config['json_file']
+              keyword = config.get('asset_keyword', '').lower()
               
               url = f'https://api.github.com/repos/{owner}/{repo}/releases/latest'
               release = None
@@ -154,21 +162,33 @@ jobs:
                   
                   ipa_url = ''
                   asset_size = 120000000
-                  for asset in release.get('assets', []):
-                      name = asset.get('name', '').lower()
-                      if name.endswith('.ipa') or name.endswith('.tipa'):
-                          ipa_url = asset.get('browser_download_url', '')
-                          asset_size = asset.get('size', asset_size)
-                          break
+                  assets = release.get('assets', [])
 
+                  # Step 1: Match keyword in multi-IPA releases
+                  if keyword:
+                      for asset in assets:
+                          name = asset.get('name', '').lower()
+                          if (name.endswith('.ipa') or name.endswith('.tipa')) and keyword in name:
+                              ipa_url = asset.get('browser_download_url', '')
+                              asset_size = asset.get('size', asset_size)
+                              break
+
+                  # Step 2: Fallback to first available .ipa/.tipa
                   if not ipa_url:
-                      ipa_url = f'https://github.com/{owner}/{repo}/releases'
+                      for asset in assets:
+                          name = asset.get('name', '').lower()
+                          if name.endswith('.ipa') or name.endswith('.tipa'):
+                              ipa_url = asset.get('browser_download_url', '')
+                              asset_size = asset.get('size', asset_size)
+                              break
+
+                  # Skip app entry if no direct IPA exists to prevent SideStore error
+                  if not ipa_url:
+                      print(f\"Skipping {config['name']}: No matching IPA asset found in release.\")
+                      continue
               else:
-                  tag = '1.0.0'
-                  pub_date = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-                  body = f\"Official release maintained by {config['developerName']}.\"
-                  ipa_url = f'https://github.com/{owner}/{repo}/releases'
-                  asset_size = 120000000
+                  print(f\"Skipping {config['name']}: No release found.\")
+                  continue
 
               icon_file = config.get('icon_filename', '')
               if icon_file and os.path.exists(os.path.join('assets', icon_file)):
@@ -204,11 +224,12 @@ jobs:
                   ]
               }
 
+              # Standalone source with uniform "OmniSource" branding
               standalone_source = {
-                  'name': f\"OmniSource - {config['name']}\",
+                  'name': 'OmniSource',
                   'identifier': f\"com.{source_owner.lower()}.omnisource.{clean_name}\",
-                  'subtitle': f\"{config['name']} Standalone Feed\",
-                  'description': f\"Standalone source for {config['name']}. Developed by {config['developerName']}. Maintained by {source_owner}.\",
+                  'subtitle': f\"{config['name']} Feed\",
+                  'description': f\"Feed for {config['name']}. Developed by {config['developerName']}. Maintained by {source_owner}.\",
                   'iconURL': f\"{base_url}/assets/icon.png\",
                   'website': base_url,
                   'apps': [app_data]
@@ -244,9 +265,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
+          
           git add *.json
-
+          
           if ! git diff --staged --quiet; then
             git commit -m "chore(feed): sync update apps JSON files [skip ci]"
             git push origin HEAD:${{ github.ref_name }}
