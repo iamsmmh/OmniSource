@@ -1,148 +1,221 @@
-<div align="center">
+🌐 OmniSource
 
+<div align="center">
 <a href="https://github.com/iamsmmh/OmniSource">
-  <img src="assets/OmniSource.png" width="180" alt="OmniSource Logo">
+<img src="assets/OmniSource.png" width="180" alt="OmniSource Logo">
 </a>
 
-# 🌐 OmniSource
+Automated iOS Sideloading Feed Repository
 
-**Automated iOS Sideloading Feed Repository**
-
-[![Build Status](https://img.shields.io/github/actions/workflow/status/iamsmmh/OmniSource/main.yml?style=flat-square&logo=github-actions&logoColor=white)](https://github.com/iamsmmh/OmniSource/actions)
-[![License](https://img.shields.io/github/license/iamsmmh/OmniSource?style=flat-square)](LICENSE)
-[![Stars](https://img.shields.io/github/stars/iamsmmh/OmniSource?style=flat-square&color=FFD700)](https://github.com/iamsmmh/OmniSource/stargazers)
-[![Issues](https://img.shields.io/github/issues/iamsmmh/OmniSource?style=flat-square&color=FF6B6B)](https://github.com/iamsmmh/OmniSource/issues)
-
-**Unified • Automated • Organized**
+Unified • Automated • Organized
 
 A centralized collection of curated application feeds maintained through GitHub Actions and distributed across multiple iOS sideloading platforms.
 
 </div>
 
----
+⸻
 
-## 🚀 Supported Clients
+📱 Quick Add
 
 <div align="center">
-
-| Client | Logo | Support |
-|:------|:----:|:-------:|
-| **AltStore** | <img src="https://altstore.io/favicon.ico" width="28" alt="AltStore"> | ✅ |
-| **SideStore** | <img src="https://sidestore.io/favicon.ico" width="28" alt="SideStore"> | ✅ |
-| **LiveContainer** | <img src="https://livecontainer.github.io/LiveContainer/assets/icon.png" width="28" alt="LiveContainer"> | ✅ |
-| **Feather** | <img src="https://feather.so/favicon.ico" width="28" alt="Feather"> | ✅ |
-| **ESign** | <img src="https://esign.yyyue.xyz/favicon.ico" width="28" alt="ESign"> | ✅ |
-| **Signulous** | <img src="https://signulous.com/favicon.ico" width="28" alt="Signulous"> | ✅ |
-
 </div>
 
-> [!TIP]
-> **AltStore** and **SideStore** support direct one-tap source import. **LiveContainer, Feather, ESign, and Signulous** can use the Raw Feed URL through their source/repository manager.
+🌐 Master Feed URL
 
----
+https://iamsmmh.github.io/OmniSource/apps.json
 
-## 📦 Available Sources
+⸻
 
-| App | AltStore | SideStore | LiveContainer | Feather | Raw Feed |
-|:------|:------:|:------:|:------:|:------:|:------|
-| <img src="assets/OmniSource.png" width="22" alt="OmniSource"> **OmniSource Master** | <a href="altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fapps.json"><img src="https://altstore.io/favicon.ico" width="28" alt="Add to AltStore"></a> | <a href="sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fapps.json"><img src="https://sidestore.io/favicon.ico" width="28" alt="Add to SideStore"></a> | <img src="https://livecontainer.github.io/LiveContainer/assets/icon.png" width="28" alt="LiveContainer"> | <a href="feather://source/https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fapps.json"><img src="https://feather.so/favicon.ico" width="28" alt="Add to Feather"></a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/apps.json` |
-| <img src="assets/SpotiFLAC.png" width="22" alt="SpotiFLAC"> **SpotiFLAC Mobile** | <a href="altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fspotiflac.json"><img src="https://altstore.io/favicon.ico" width="28" alt="Add to AltStore"></a> | <a href="sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fspotiflac.json"><img src="https://sidestore.io/favicon.ico" width="28" alt="Add to SideStore"></a> | <img src="https://livecontainer.github.io/LiveContainer/assets/icon.png" width="28" alt="LiveContainer"> | <a href="feather://source/https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fspotiflac.json"><img src="https://feather.so/favicon.ico" width="28" alt="Add to Feather"></a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/spotiflac.json` |
-| <img src="assets/YouTube.png" width="22" alt="YouTube"> **YTLite** | <a href="altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytlite.json"><img src="https://altstore.io/favicon.ico" width="28" alt="Add to AltStore"></a> | <a href="sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytlite.json"><img src="https://sidestore.io/favicon.ico" width="28" alt="Add to SideStore"></a> | <img src="https://livecontainer.github.io/LiveContainer/assets/icon.png" width="28" alt="LiveContainer"> | <a href="feather://source/https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytlite.json"><img src="https://feather.so/favicon.ico" width="28" alt="Add to Feather"></a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytlite.json` |
-| <img src="assets/YouTube.png" width="22" alt="YouTube"> **YTKillerPlus** | <a href="altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytkp.json"><img src="https://altstore.io/favicon.ico" width="28" alt="Add to AltStore"></a> | <a href="sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytkp.json"><img src="https://sidestore.io/favicon.ico" width="28" alt="Add to SideStore"></a> | <img src="https://livecontainer.github.io/LiveContainer/assets/icon.png" width="28" alt="LiveContainer"> | <a href="feather://source/https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytkp.json"><img src="https://feather.so/favicon.ico" width="28" alt="Add to Feather"></a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkp.json` |
-| <img src="assets/YouTube.png" width="22" alt="YouTube"> **YouPro** | <a href="altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fyoupro.json"><img src="https://altstore.io/favicon.ico" width="28" alt="Add to AltStore"></a> | <a href="sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fyoupro.json"><img src="https://sidestore.io/favicon.ico" width="28" alt="Add to SideStore"></a> | <img src="https://livecontainer.github.io/LiveContainer/assets/icon.png" width="28" alt="LiveContainer"> | <a href="feather://source/https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fyoupro.json"><img src="https://feather.so/favicon.ico" width="28" alt="Add to Feather"></a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youpro.json` |
-| <img src="assets/YouTube.png" width="22" alt="YouTube"> **YouMod** | <a href="altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fyoumod.json"><img src="https://altstore.io/favicon.ico" width="28" alt="Add to AltStore"></a> | <a href="sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fyoumod.json"><img src="https://sidestore.io/favicon.ico" width="28" alt="Add to SideStore"></a> | <img src="https://livecontainer.github.io/LiveContainer/assets/icon.png" width="28" alt="LiveContainer"> | <a href="feather://source/https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fyoumod.json"><img src="https://feather.so/favicon.ico" width="28" alt="Add to Feather"></a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/youmod.json` |
-| <img src="assets/YouTube.png" width="22" alt="YouTube"> **YTKACE** | <a href="altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytkace.json"><img src="https://altstore.io/favicon.ico" width="28" alt="Add to AltStore"></a> | <a href="sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytkace.json"><img src="https://sidestore.io/favicon.ico" width="28" alt="Add to SideStore"></a> | <img src="https://livecontainer.github.io/LiveContainer/assets/icon.png" width="28" alt="LiveContainer"> | <a href="feather://source/https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytkace.json"><img src="https://feather.so/favicon.ico" width="28" alt="Add to Feather"></a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytkace.json` |
-| <img src="assets/YouTubeMusic.png" width="22" alt="YouTube Music"> **YTMusicUltimate** | <a href="altstore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytmusic.json"><img src="https://altstore.io/favicon.ico" width="28" alt="Add to AltStore"></a> | <a href="sidestore://source?url=https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytmusic.json"><img src="https://sidestore.io/favicon.ico" width="28" alt="Add to SideStore"></a> | <img src="https://livecontainer.github.io/LiveContainer/assets/icon.png" width="28" alt="LiveContainer"> | <a href="feather://source/https%3A%2F%2Fraw.githubusercontent.com%2Fiamsmmh%2FOmniSource%2Fmain%2Fytmusic.json"><img src="https://feather.so/favicon.ico" width="28" alt="Add to Feather"></a> | `https://raw.githubusercontent.com/iamsmmh/OmniSource/main/ytmusic.json` |
+🚀 Supported Clients
 
-> **Tap a client logo to use its import action.**
+Client	Status
+AltStore	✅ Direct Import
+SideStore	✅ Direct Import
+LiveContainer	✅ Manual Feed
+Feather	✅ Feed Support
+ESign	✅ Manual Feed
+Signulous	✅ Manual Feed
 
-> [!NOTE]
-> **LiveContainer:** use the Raw Feed URL from the table if the installed LiveContainer build does not register a source URL scheme.
->
-> **ESign / Signulous:** use the Raw Feed URL through the client's repository/source manager.
+⸻
 
----
+📦 Available Sources
 
-## 📲 Installation
+Application	Description	Feed URL
+🌐 OmniSource Master	Complete feed containing all applications	apps.json
+🎧 SpotiFLAC Mobile	Lossless FLAC music downloader and offline player	spotiflac.json
+▶️ uYouEnhanced	Extended uYou+ continuation with SponsorBlock support	uyouenhanced.json
+▶️ YTLite	Lightweight YouTube enhancement client	ytlite.json
+▶️ YTKillerPlus	Advanced YouTube download and playback suite	ytkp.json
+▶️ YouPro	Premium YouTube enhancement package	youpro.json
+▶️ YTKACE	Feature-rich YouTube enhancement client	ytkace.json
+🎵 YTMusicUltimate	Enhanced YouTube Music experience	ytmusic.json
 
-1. **AltStore:** Tap the AltStore logo.
-2. **SideStore:** Tap the SideStore logo.
-3. **Feather:** Tap the Feather logo when supported, or copy the Raw Feed URL.
-4. **LiveContainer / ESign / Signulous:** Copy the Raw Feed URL and add it manually.
-5. Refresh the source and install the desired application.
+⸻
 
-> [!TIP]
-> **OmniSource Master** contains all available applications and is recommended for a complete feed.
+📋 Direct Feed URLs
 
----
+OmniSource Master
 
-> [!WARNING]
-> ### YouTube Bundle Identifier Conflicts
->
-> All modified YouTube variants use:
->
-> `com.google.ios.youtube`
->
-> Completely uninstall any existing YouTube variant before installing another variant to avoid bundle identifier, update, or signing conflicts.
+https://iamsmmh.github.io/OmniSource/apps.json
 
----
+SpotiFLAC Mobile
 
-## ⚙️ Automation Pipeline
+https://iamsmmh.github.io/OmniSource/spotiflac.json
 
-```text
-Upstream Sources
-       │
-       ▼
+uYouEnhanced
+
+https://iamsmmh.github.io/OmniSource/uyouenhanced.json
+
+YTLite
+
+https://iamsmmh.github.io/OmniSource/ytlite.json
+
+YTKillerPlus
+
+https://iamsmmh.github.io/OmniSource/ytkp.json
+
+YouPro
+
+https://iamsmmh.github.io/OmniSource/youpro.json
+
+YTKACE
+
+https://iamsmmh.github.io/OmniSource/ytkace.json
+
+YTMusicUltimate
+
+https://iamsmmh.github.io/OmniSource/ytmusic.json
+
+⸻
+
+📲 Installation
+
+AltStore
+
+1. Tap Add to AltStore
+2. Approve the import
+3. Refresh sources
+
+SideStore
+
+1. Tap Add to SideStore
+2. Approve the import
+3. Refresh sources
+
+LiveContainer, Feather, ESign & Signulous
+
+1. Copy the desired feed URL
+2. Open your repository/source manager
+3. Add a new source
+4. Paste the URL
+5. Refresh sources
+
+[!TIP]
+The OmniSource Master Feed is recommended for most users because it automatically includes all available applications.
+
+⸻
+
+[!WARNING]
+
+YouTube Bundle Identifier Conflicts
+
+Most modified YouTube applications use:
+
+com.google.ios.youtube
+
+Completely uninstall any existing YouTube variant before installing another version to prevent update, signing, or bundle identifier conflicts.
+
+⸻
+
+[!NOTE]
+Some applications may display entitlement or signing warnings depending on the sideloading environment. This behavior is expected and varies by signing method.
+
+⸻
+
+⚙️ Automated Sync Pipeline
+
+OmniSource automatically rebuilds feeds through GitHub Actions every few hours.
+
+Upstream Releases
+        │
+        ▼
  GitHub Actions
-       │
-       ▼
+        │
+        ▼
  Process & Validate
-       │
-       ▼
- OmniSource Feeds
-       │
-       ▼
-AltStore • SideStore • LiveContainer
-Feather • ESign • Signulous
-```
+        │
+        ▼
+ Generate Feeds
+        │
+        ▼
+ OmniSource Repository
+        │
+        ▼
+ AltStore • SideStore
+ LiveContainer • Feather
+ ESign • Signulous
 
----
+Workflow Features
 
-## 📂 Repository Resources
+* Automatic upstream release tracking
+* JSON manifest generation
+* Feed validation
+* Metadata processing
+* Scheduled updates
+* Standalone feed generation
+* Master feed generation
 
-- 📦 [Feed Manifests](https://github.com/iamsmmh/OmniSource/tree/main)
-- ⚙️ [GitHub Actions](https://github.com/iamsmmh/OmniSource/actions)
-- 📜 [License](https://github.com/iamsmmh/OmniSource/blob/main/LICENSE)
-- 🐛 [Issues](https://github.com/iamsmmh/OmniSource/issues)
-- ⭐ [Star Repository](https://github.com/iamsmmh/OmniSource)
+⸻
 
----
+📂 Repository Resources
 
-## 🙌 Credits
+* 📦 Feed Repository
+* ⚙️ GitHub Actions
+* 📜 License
+* 🐛 Issue Tracker
+* ⭐ Star Repository
 
-- 🐧 [MountainofPenguin](https://github.com/MountainofPenguin) — Repository architecture and structure inspiration.
-- 🛡️ [HakujouSan](https://www.reddit.com/user/HakujouSan/) — Testing, feedback, and community insights.
-- 🛠️ [Avieshek](https://code.forgejo.org/avieshek) — Manifest parsing, debugging, and JSON assistance.
-- ⚙️ [S M Mahbub Hossain](https://github.com/iamsmmh) — Core development, automation workflows, and feed infrastructure.
+⸻
 
----
+🙌 Credits & Acknowledgments
 
-## ⚖️ Disclaimer
+This repository serves as a consolidated distribution feed. Full credit for application development, tweaks, maintenance, and original source code belongs to their respective developers.
+
+Upstream Developers
+
+* 🎧 SpotiFLAC Mobile — spotiflacapp
+* ▶️ uYouEnhanced — arichornlover & MiRO92
+* ▶️ YTLite — Dayanch96 & mrdrvt99
+* ▶️ YouPro — Alibusut & mrdrvt99
+* ▶️ YTKACE — itzzace & mrdrvt99
+* ▶️ YTKillerPlus — IKillerApp & mrdrvt99
+* 🎵 YTMusicUltimate — Dayanch96 & mrdrvt99
+
+Special Thanks
+
+* 🐧 MountainofPenguin
+* 🛡️ HakujouSan
+* 🛠️ Avieshek
+* ⚙️ S M Mahbub Hossain
+
+⸻
+
+⚖️ Disclaimer
 
 OmniSource is an independent community project.
 
-All third-party product names, logos, trademarks, and copyrighted materials belong to their respective owners. OmniSource does not host application binaries directly and does not claim ownership of third-party applications referenced by its feeds.
+All third-party trademarks, logos, application names, and copyrighted materials belong to their respective owners. OmniSource does not host application binaries directly and does not claim ownership of any third-party software referenced by repository feeds.
 
-Users are solely responsible for complying with applicable laws, software licenses, and platform policies.
+Users are solely responsible for complying with applicable laws, software licenses, and platform policies within their jurisdiction.
 
----
+⸻
 
 <div align="center">
 
-### 🌐 OmniSource
+🌐 OmniSource
 
-**Automated • Organized • Unified**
+Automated • Organized • Unified
 
-⭐ [Star the Repository](https://github.com/iamsmmh/OmniSource)
+⭐ Star the repository if you find it useful.
 
 </div>
