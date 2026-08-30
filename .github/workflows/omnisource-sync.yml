@@ -1,15 +1,74 @@
-name: Sync & Update OmniSource Repositories
+name: OmniSource Build & Feed Sync
 
 on:
   schedule:
-    - cron: "0 */6 * * *" # Automatically run every 6 hours
+    - cron: "0 */12 * * *" # Runs automatically every 12 hours
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
+  # =========================================================================
+  # JOB 1: Build uYouEnhanced IPA from Upstream Source & Publish Release
+  # =========================================================================
+  build-uyouenhanced:
+    runs-on: macos-14
+    outputs:
+      release_tag: ${{ steps.build.outputs.TAG_NAME }}
+    steps:
+      - name: Checkout uYouEnhanced Upstream
+        uses: actions/checkout@v4
+        with:
+          repository: arichornlover/uYouEnhanced
+          submodules: recursive
+
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest
+
+      - name: Setup Dependencies
+        run: |
+          brew install theos
+          pip3 install pyyaml
+
+      - name: Fetch Decrypted YouTube IPA & Build
+        id: build
+        run: |
+          # Retrieve latest upstream tag
+          TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v3.0.4")
+          echo "TAG_NAME=${TAG}" >> $GITHUB_OUTPUT
+
+          # Fetch decrypted YouTube base IPA (Mirror maintained for automated builds)
+          curl -sL "https://archive.org/download/YouTube_Decrypted_Base/YouTube_Decrypted.ipa" -o YouTube.ipa
+
+          # Compile tweaked IPA using Theos
+          make clean
+          make package FINALPACKAGE=1 IPA=YouTube.ipa
+
+          # Identify generated package
+          IPA_PATH=$(find packages -name "*.ipa" | head -n 1)
+          echo "OUTPUT_IPA=${IPA_PATH}" >> $GITHUB_ENV
+
+      - name: Create / Update GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.build.outputs.TAG_NAME }}
+          name: "uYouEnhanced ${{ steps.build.outputs.TAG_NAME }}"
+          body: "Automated uYouEnhanced build compiled from official upstream repository `arichornlover/uYouEnhanced`."
+          files: ${{ env.OUTPUT_IPA }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  # =========================================================================
+  # JOB 2: Generate & Update AltStore / SideStore JSON Feed Repositories
+  # =========================================================================
   update-repos:
+    needs: build-uyouenhanced
+    if: always() # Runs even if build step is skipped
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -34,8 +93,8 @@ jobs:
 
           apps_config = [
               {
-                  'repo_owner': 'iamsmmh',
-                  'repo_name': 'SpotiFLAC-Mobile-Repo',
+                  'repo_owner': 'spotiflacapp',
+                  'repo_name': 'SpotiFLAC-Mobile',
                   'json_file': 'spotiflac.json',
                   'bundleIdentifier': 'com.spotiflac.mobile',
                   'name': 'SpotiFLAC Mobile',
@@ -55,7 +114,9 @@ jobs:
                   'subtitle': 'uYou Extended with Modern Fixes & SponsorBlock',
                   'tintColor': 'FF0000',
                   'icon_filename': 'YouTube.png',
-                  'asset_keyword': 'uyouenhanced'
+                  'asset_keyword': 'uyouenhanced',
+                  # Direct fallback pointing to your automated compiled build release assets
+                  'fallback_ipa_pattern': f'https://github.com/{source_owner}/uYouEnhanced-Builds/releases/download/{{raw_tag}}/uYouEnhanced_{{raw_tag}}.ipa'
               },
               {
                   'repo_owner': 'mrdrvt99',
@@ -149,22 +210,23 @@ jobs:
                               if releases and isinstance(releases, list):
                                   release = releases[0]
                       except Exception as e:
-                          print(f'Fallback fetch failed for {repo}: {e}')
+                          print(f'Fallback release query failed for {repo}: {e}')
                   else:
                       print(f'HTTP error {err.code} fetching {repo}: {err.reason}')
               except Exception as e:
-                  print(f'Failed to query API for {repo}: {e}')
+                  print(f'Failed to query GitHub API for {repo}: {e}')
 
               if release:
-                  tag = release.get('tag_name', '1.0.0').lstrip('v')
+                  raw_tag = release.get('tag_name', '1.0.0')
+                  tag = raw_tag.lstrip('v')
                   pub_date = release.get('published_at', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
-                  body = release.get('body', f\"Official release maintained by {config['developerName']}.\")
+                  body = release.get('body', f"Official release maintained by {config['developerName']}.")
                   
                   ipa_url = ''
                   asset_size = 120000000
                   assets = release.get('assets', [])
 
-                  # Step 1: Match keyword in multi-IPA releases
+                  # Step 1: Match keyword in multi-asset releases
                   if keyword:
                       for asset in assets:
                           name = asset.get('name', '').lower()
@@ -173,7 +235,7 @@ jobs:
                               asset_size = asset.get('size', asset_size)
                               break
 
-                  # Step 2: Fallback to first available .ipa/.tipa
+                  # Step 2: Grab primary attached .ipa or .tipa file
                   if not ipa_url:
                       for asset in assets:
                           name = asset.get('name', '').lower()
@@ -182,12 +244,16 @@ jobs:
                               asset_size = asset.get('size', asset_size)
                               break
 
-                  # Skip app entry if no direct IPA exists to prevent SideStore error
+                  # Step 3: Handle upstream source repos without attached binaries (e.g. uYouEnhanced)
+                  if not ipa_url and 'fallback_ipa_pattern' in config:
+                      ipa_url = config['fallback_ipa_pattern'].format(tag=tag, raw_tag=raw_tag)
+                      print(f"Using constructed fallback IPA link for {config['name']}: {ipa_url}")
+
                   if not ipa_url:
-                      print(f\"Skipping {config['name']}: No matching IPA asset found in release.\")
+                      print(f"Skipping {config['name']}: No IPA binary found.")
                       continue
               else:
-                  print(f\"Skipping {config['name']}: No release found.\")
+                  print(f"Skipping {config['name']}: Release metadata unavailable.")
                   continue
 
               icon_file = config.get('icon_filename', '')
@@ -224,13 +290,12 @@ jobs:
                   ]
               }
 
-              # Standalone source with uniform "OmniSource" branding
               standalone_source = {
                   'name': 'OmniSource',
-                  'identifier': f\"com.{source_owner.lower()}.omnisource.{clean_name}\",
-                  'subtitle': f\"{config['name']} Feed\",
-                  'description': f\"Feed for {config['name']}. Developed by {config['developerName']}. Maintained by {source_owner}.\",
-                  'iconURL': f\"{base_url}/assets/icon.png\",
+                  'identifier': f"com.{source_owner.lower()}.omnisource.{clean_name}",
+                  'subtitle': f"{config['name']} Feed",
+                  'description': f"Feed for {config['name']}. Developed by {config['developerName']}. Maintained by {source_owner}.",
+                  'iconURL': f"{base_url}/assets/icon.png",
                   'website': base_url,
                   'apps': [app_data]
               }
@@ -269,8 +334,9 @@ jobs:
           git add *.json
 
           if ! git diff --staged --quiet; then
-            git commit -m "chore(feed): sync update apps JSON files [skip ci]"
+            git commit -m "chore(feed): auto-sync feeds & update app specs [skip ci]"
             git push origin HEAD:${{ github.ref_name }}
           else
-            echo "No changes detected in repository."
+            echo "No structural JSON changes detected."
           fi
+
