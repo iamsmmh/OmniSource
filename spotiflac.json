@@ -2,25 +2,32 @@
   "name": "OmniSource - SpotiFLAC Mobile",
   "identifier": "com.iamsmmh.omnisource.spotiflacmobile",
   "subtitle": "SpotiFLAC Mobile Standalone Feed",
-  "description": "Standalone source for SpotiFLAC Mobile. Developed by spotiflacapp. Maintained by iamsmmh.",
+  "description": "Standalone source for SpotiFLAC Mobile. Developed by zarzet. Maintained by iamsmmh.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/icon.png",
   "website": "https://iamsmmh.github.io/OmniSource",
-  "apps": [
- {
-  "name": "SpotiFLAC Mobile Source",
-  "identifier": "com.zarzet.spotiflac.source",
-  "subtitle": "FLAC Downloader for iOS",
   "apps": [
     {
       "name": "SpotiFLAC Mobile",
       "bundleIdentifier": "com.zarzet.spotiflac",
       "developerName": "zarzet",
+      "subtitle": "FLAC Downloader for iOS",
       "version": "4.9.0",
       "versionDate": "2026-08-24",
+      "versionDescription": "SpotiFLAC Mobile is written in Flutter and uses installable extensions for metadata and audio downloads.",
       "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.0/SpotiFLAC-v4.9.0-ios-unsigned.ipa",
       "localizedDescription": "SpotiFLAC Mobile is written in Flutter and uses installable extensions for metadata and audio downloads.",
       "iconURL": "https://raw.githubusercontent.com/spotiflacapp/SpotiFLAC-Mobile/main/assets/images/logo.png",
-      "size": 35967116
+      "size": 35967116,
+      "versions": [
+        {
+          "version": "4.9.0",
+          "date": "2026-08-24",
+          "localizedDescription": "SpotiFLAC Mobile is written in Flutter and uses installable extensions for metadata and audio downloads.",
+          "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.0/SpotiFLAC-v4.9.0-ios-unsigned.ipa",
+          "size": 35967116
+        }
+      ]
     }
   ]
 }
+
