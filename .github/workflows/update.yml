@@ -17,6 +17,11 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
       - name: Fetch Latest Releases & Rebuild Sources
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -203,12 +208,16 @@ jobs:
 
       - name: Commit and Push Changes
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
           git add *.json
-          if ! git diff-index --quiet HEAD; then
-            git commit -m "chore(workflow): sync update.yml to fetch official upstream releases [skip ci]"
-            git push "https://x-access-token:${GH_TOKEN}@github.com/${github.repository}.git" HEAD:${github.ref_name}
+          
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(feed): sync update apps JSON files [skip ci]"
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "No changes detected in repository."
           fi
