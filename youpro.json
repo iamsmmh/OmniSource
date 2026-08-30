@@ -4,7 +4,7 @@
   "apiVersion": "v2",
   "subtitle": "Automated YouPro IPA builds",
   "description": "AltStore/Feather/SideStore/LiveContainer source for YouPro. No ads, background playback, downloads, SponsorBlock, PiP, and more.",
-  "iconURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/assets/YouTube.png",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
   "website": "https://github.com/mrdrvt99/Altstore-Repository",
   "sourceURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/youpro.json",
   "apps": [
@@ -20,7 +20,7 @@
       "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
       "size": 119894440,
       "localizedDescription": "YouPro mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
-      "iconURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/assets/YouTube.png",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
       "tintColor": "FF0000",
       "screenshotURLs": [],
       "appPermissions": {
@@ -60,5 +60,6 @@
       ]
     }
   ],
-  "news": []
+  "news": [],
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png"
 }
