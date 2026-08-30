@@ -30,12 +30,12 @@ jobs:
           import json, urllib.request, urllib.error, os, datetime
 
           source_owner = 'iamsmmh'
-          base_url = f'https://{source_owner}.github.io/OmniSource'
+          base_url = 'https://' + source_owner + '.github.io/OmniSource'
 
           headers = {'User-Agent': 'Mozilla/5.0'}
           token = os.environ.get('GH_TOKEN')
           if token:
-              headers['Authorization'] = f'token {token}'
+              headers['Authorization'] = 'token ' + token
 
           master_apps = []
 
@@ -71,7 +71,7 @@ jobs:
                   ipa_url = target_app.get('downloadURL', '')
                   asset_size = target_app.get('size', 120000000)
 
-                  icon_url = f'{base_url}/assets/{uyou_config[\"icon_filename\"]}' if os.path.exists(os.path.join('assets', uyou_config['icon_filename'])) else f'https://raw.githubusercontent.com/{source_owner}/OmniSource/main/assets/icon.png'
+                  icon_url = base_url + '/assets/' + uyou_config['icon_filename'] if os.path.exists(os.path.join('assets', uyou_config['icon_filename'])) else 'https://raw.githubusercontent.com/' + source_owner + '/OmniSource/main/assets/icon.png'
 
                   app_data = {
                       'name': uyou_config['name'],
@@ -97,10 +97,10 @@ jobs:
 
                   standalone_source = {
                       'name': 'OmniSource - uYouEnhanced',
-                      'identifier': f'com.{source_owner.lower()}.omnisource.uyouenhanced',
+                      'identifier': 'com.' + source_owner.lower() + '.omnisource.uyouenhanced',
                       'subtitle': 'uYouEnhanced Standalone Feed',
-                      'description': f'Standalone source for uYouEnhanced. Developed by {uyou_config[\"developerName\"]}. Maintained by {source_owner}.',
-                      'iconURL': f'{base_url}/assets/icon.png',
+                      'description': 'Standalone source for uYouEnhanced. Developed by ' + uyou_config['developerName'] + '. Maintained by ' + source_owner + '.',
+                      'iconURL': base_url + '/assets/icon.png',
                       'website': base_url,
                       'apps': [app_data]
                   }
@@ -110,7 +110,7 @@ jobs:
                   print('Successfully updated: uyouenhanced.json via upstream AltStore source')
                   master_apps.append(app_data)
           except Exception as e:
-              print(f'Failed to parse upstream uYouEnhanced AltStore feed: {e}')
+              print('Failed to parse upstream uYouEnhanced AltStore feed: ' + str(e))
 
           # =========================================================================
           # PART 2: Fetch remaining apps (SpotiFLAC & YouProEXTRA suite) via GitHub API
@@ -196,7 +196,7 @@ jobs:
               json_file = config['json_file']
               keyword = config.get('asset_keyword', '').lower()
               
-              url = f'https://api.github.com/repos/{owner}/{repo}/releases/latest'
+              url = 'https://api.github.com/repos/' + owner + '/' + repo + '/releases/latest'
               release = None
 
               try:
@@ -205,7 +205,7 @@ jobs:
                       release = json.loads(response.read().decode())
               except urllib.error.HTTPError as err:
                   if err.code == 404:
-                      fallback_url = f'https://api.github.com/repos/{owner}/{repo}/releases'
+                      fallback_url = 'https://api.github.com/repos/' + owner + '/' + repo + '/releases'
                       try:
                           req = urllib.request.Request(fallback_url, headers=headers)
                           with urllib.request.urlopen(req) as response:
@@ -213,20 +213,20 @@ jobs:
                               if releases and isinstance(releases, list):
                                   release = releases[0]
                       except Exception as e:
-                          print(f'Fallback release query failed for {repo}: {e}')
+                          print('Fallback release query failed for ' + repo + ': ' + str(e))
                   else:
-                      print(f'HTTP error {err.code} fetching {repo}: {err.reason}')
+                      print('HTTP error ' + str(err.code) + ' fetching ' + repo + ': ' + str(err.reason))
               except Exception as e:
-                  print(f'Failed to query GitHub API for {repo}: {e}')
+                  print('Failed to query GitHub API for ' + repo + ': ' + str(e))
 
               if not release:
-                  print(f'Skipping {config[\"name\"]}: Release metadata unavailable.')
+                  print('Skipping ' + config['name'] + ': Release metadata unavailable.')
                   continue
 
               raw_tag = release.get('tag_name', '1.0.0')
               tag = raw_tag.lstrip('v')
               pub_date = release.get('published_at', datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'))
-              body = release.get('body', f'Official release maintained by {config[\"developerName\"]}.')
+              body = release.get('body', 'Official release maintained by ' + config['developerName'] + '.')
               
               ipa_url = ''
               asset_size = 35967116
@@ -249,7 +249,7 @@ jobs:
                           break
 
               if not ipa_url:
-                  print(f'Skipping {config[\"name\"]}: No IPA binary found.')
+                  print('Skipping ' + config['name'] + ': No IPA binary found.')
                   continue
 
               if 'icon_url_fallback' in config:
@@ -257,9 +257,9 @@ jobs:
               else:
                   icon_file = config.get('icon_filename', '')
                   if icon_file and os.path.exists(os.path.join('assets', icon_file)):
-                      icon_url = f'{base_url}/assets/{icon_file}'
+                      icon_url = base_url + '/assets/' + icon_file
                   else:
-                      icon_url = f'https://raw.githubusercontent.com/{source_owner}/OmniSource/main/assets/icon.png'
+                      icon_url = 'https://raw.githubusercontent.com/' + source_owner + '/OmniSource/main/assets/icon.png'
 
               clean_name = config['name'].lower().replace(' ', '')
 
@@ -288,10 +288,10 @@ jobs:
               }
 
               standalone_source = {
-                  'name': f"OmniSource - {config['name']}",
-                  'identifier': f'com.{source_owner.lower()}.omnisource.{clean_name}',
-                  'subtitle': f"{config['name']} Standalone Feed",
-                  'description': f'Standalone source for {config["name"]}. Developed by {config["developerName"]}. Maintained by {source_owner}.',
+                  'name': 'OmniSource - ' + config['name'],
+                  'identifier': 'com.' + source_owner.lower() + '.omnisource.' + clean_name,
+                  'subtitle': config['name'] + ' Standalone Feed',
+                  'description': 'Standalone source for ' + config['name'] + '. Developed by ' + config['developerName'] + '. Maintained by ' + source_owner + '.',
                   'iconURL': icon_url,
                   'website': base_url,
                   'apps': [app_data]
@@ -300,19 +300,19 @@ jobs:
               try:
                   with open(json_file, 'w', encoding='utf-8') as f:
                       json.dump(standalone_source, f, indent=2, ensure_ascii=False)
-                  print(f'Successfully updated: {json_file}')
+                  print('Successfully updated: ' + json_file)
               except Exception as e:
-                  print(f'Failed writing {json_file}: {e}')
+                  print('Failed writing ' + json_file + ': ' + str(e))
 
               master_apps.append(app_data)
 
           if master_apps:
               master_source = {
                   'name': 'OmniSource',
-                  'identifier': f'com.{source_owner.lower()}.omnisource',
+                  'identifier': 'com.' + source_owner.lower() + '.omnisource',
                   'subtitle': 'Consolidated iOS Applications & Tweaks Repository',
-                  'description': f'Master AltStore / SideStore source curated by {source_owner}. Full credit to original developers.',
-                  'iconURL': f'{base_url}/assets/icon.png',
+                  'description': 'Master AltStore / SideStore source curated by ' + source_owner + '. Full credit to original developers.',
+                  'iconURL': base_url + '/assets/icon.png',
                   'website': base_url,
                   'apps': master_apps
               }
