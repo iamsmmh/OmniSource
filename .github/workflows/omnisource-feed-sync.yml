@@ -28,11 +28,8 @@ jobs:
           if [ ! -d "/opt/theos/.git" ]; then
             git clone --recursive https://github.com/theos/theos.git /opt/theos
           fi
-          if [ ! -d "/opt/theos/sdks/iPhoneOS.sdk" ]; then
-            mkdir -p /opt/theos/sdks
-            git clone --depth=1 https://github.com/theos/sdks.git /tmp/theos-sdks
-            cp -r /tmp/theos-sdks/*.sdk /opt/theos/sdks/
-          fi
+          rm -rf /opt/theos/sdks
+          git clone --depth=1 https://github.com/theos/sdks.git /opt/theos/sdks
 
       - name: Set up Python
         uses: actions/setup-python@v5
