@@ -1,34 +1,64 @@
 {
-  "name": "OmniSource - YouPro",
-  "identifier": "com.iamsmmh.omnisource.youpro",
-  "subtitle": "YouPro Standalone Feed",
-  "description": "Standalone source for YouPro. Developed by Alibusut. Maintained by iamsmmh.",
-  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
-  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
-  "website": "https://iamsmmh.github.io/OmniSource",
+  "name": "YouPro",
+  "identifier": "com.mrdrvt99.youpro",
+  "apiVersion": "v2",
+  "subtitle": "Automated YouPro IPA builds",
+  "description": "AltStore/Feather/SideStore/LiveContainer source for YouPro. No ads, background playback, downloads, SponsorBlock, PiP, and more.",
+  "iconURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/assets/YouTube.png",
+  "website": "https://github.com/mrdrvt99/Altstore-Repository",
+  "sourceURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/youpro.json",
   "apps": [
     {
       "name": "YouPro",
       "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "Alibusut",
-      "subtitle": "YouTube Mod with Premium Features & Downloader",
-      "localizedDescription": "### Latest Stable Release, ENJOY!!\r\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\r\n\r\n> [!NOTE]\r\n> - no subscription required\r\n> - ✅ Working Download Manager, switch to overlay button before downloading.\r\n> - Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\r\n\r\n> [!WARNING]\r\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \r\n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.\".",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
+      "developerName": "alibusut",
+      "subtitle": "YouPro",
+      "category": "photo-video",
+      "version": "21.24.3",
+      "versionDate": "2026-08-16",
+      "versionDescription": "YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1\n\n### Latest Stable Release, ENJOY!!\r\n> [!NOTE]\r\n> - Bundled with **YTUHD**\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`\r\n\r\n> [!WARNING]\r\n> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
+      "size": 119894440,
+      "localizedDescription": "YouPro mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "iconURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/assets/YouTube.png",
       "tintColor": "FF0000",
-      "version": "ytl-ipa4",
-      "versionDate": "2026-08-16T21:49:43Z",
-      "versionDescription": "### Latest Stable Release, ENJOY!!\r\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\r\n\r\n> [!NOTE]\r\n> - no subscription required\r\n> - ✅ Working Download Manager, switch to overlay button before downloading.\r\n> - Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\r\n\r\n> [!WARNING]\r\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \r\n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.\".",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa4/YouTubePlus_21.24.3_5.2.2.ipa",
-      "size": 128922222,
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
       "versions": [
         {
-          "version": "ytl-ipa4",
-          "date": "2026-08-16T21:49:43Z",
-          "localizedDescription": "### Latest Stable Release, ENJOY!!\r\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\r\n\r\n> [!NOTE]\r\n> - no subscription required\r\n> - ✅ Working Download Manager, switch to overlay button before downloading.\r\n> - Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\r\n\r\n> [!WARNING]\r\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \r\n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.\".",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa4/YouTubePlus_21.24.3_5.2.2.ipa",
-          "size": 128922222
+          "version": "21.24.3",
+          "date": "2026-08-16",
+          "localizedDescription": "YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1\n\n### Latest Stable Release, ENJOY!!\r\n> [!NOTE]\r\n> - Bundled with **YTUHD**\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`\r\n\r\n> [!WARNING]\r\n> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
+          "size": 119894440,
+          "minOSVersion": "16.0"
         }
       ]
     }
-  ]
+  ],
+  "news": []
 }
