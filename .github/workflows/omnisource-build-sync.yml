@@ -130,6 +130,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull origin ${{ github.ref_name }} --rebase || echo "No rebase needed"
           git add apps.json *.json
           git commit -m "build(omnisource): enforce local repository assets, bundle standards, and compile master feed [skip ci]" || echo "No repository changes pending commit"
           git push origin HEAD:${{ github.ref_name }}
