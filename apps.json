@@ -5,35 +5,42 @@
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
   "apps": [
     {
-      "beta": false,
-      "name": "uYouEnhanced",
+      "name": "YoutubePlus (YTLite)",
       "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "arichornlover",
-      "subtitle": "uYouPlus with even more features!",
-      "version": "21.14.4",
-      "versionDate": "2026-08-22",
-      "versionDescription": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
-      "downloadURL": "https://tinyurl.com/4wck29a8",
-      "localizedDescription": "uYou is the best tweak for the YouTube app. uYouEnhanced is a modified version of qnblackcat's uYouPlus & MiRO92's uYou with even more features. Additional features include skipping sponsorships in videos, more PiP options, unlocking higher resolutions, disabling overlays, removing upsell alerts, dimming the UI, enabling the miniplayer, preventing notch issues, configuring A/B settings, and adding a timestamp button.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/uYouEnhanced.png",
-      "tintColor": "#e81e8a",
+      "developerName": "dayanch96",
+      "version": "21.24.3",
+      "versionDate": "2026-08-16T21:49:43+03:00",
+      "versionDescription": "[YTLite] YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\r\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\r\n\r\n> [!NOTE]\r\n> - no subscription required\r\n> - ✅ Working Download Manager, switch to overlay button before downloading.\r\n> - Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\r\n\r\n> [!WARNING]\r\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \r\n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.\".",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa4/YouTubePlus_21.24.3_5.2.2.ipa",
+      "localizedDescription": "Enhanced YouTube experience.",
+      "iconURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/assets/YouTube.png",
+      "tintColor": "FF0000",
+      "isLanZouCloud": 0,
+      "size": 128922222,
+      "type": 1
+    },
+    {
+      "name": "YTKillerPlus",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "ikghd",
+      "subtitle": "YTKP",
       "category": "photo-video",
-      "size": 118022104,
-      "screenshots": [
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus1.jpeg?raw=true",
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus2.jpeg?raw=true",
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus3.jpeg?raw=true",
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus4.jpeg?raw=true",
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus5.jpeg?raw=true",
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus6.jpeg?raw=true"
-      ],
+      "version": "21.35.3",
+      "versionDate": "2026-08-30",
+      "versionDescription": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\n### Latest Release, ENJOY!!\r\n\r\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\r\n\r\n> [!NOTE]\r\n> - **Sidestore is no longer supported!!.**\r\n> - **YTUHD** is not included. 4K is available for A16+ devices.\r\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\r\n\r\n> [!WARNING]\r\n> - Extra tweaks that are bundled may be unstable on newer versions.\r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
+      "size": 141939462,
+      "localizedDescription": "YTKillerPlus mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
+      "tintColor": "FF0000",
+      "screenshotURLs": [],
       "appPermissions": {
         "entitlements": [
           "com.apple.security.application-groups",
           "com.apple.developer.associated-domains",
           "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.usernotifications.time-sensitive",
-          "get-task-allow",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
           "com.apple.developer.device-information.user-assigned-device-name",
           "com.apple.developer.group-session",
           "keychain-access-groups",
@@ -43,56 +50,22 @@
           "com.apple.developer.networking.wifi-info"
         ],
         "privacy": {
-          "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
-          "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices.",
-          "NSCameraUsageDescription": "This lets you create videos using the app.",
-          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
-          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
-          "NSLocationWhenInUseUsageDescription": "Makes it easier for you to attach location information to your videos and live streams and allows for features such as improved recommendations and ads.",
-          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
-          "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created.",
-          "NSUserTrackingUsageDescription": "A message that informs the user why an app is requesting permission to use data for tracking the user or the device."
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
         }
       },
       "versions": [
         {
-          "version": "21.14.4",
-          "date": "2026-08-22T00:00:00-05:00",
-          "size": 118022104,
-          "downloadURL": "https://tinyurl.com/4wck29a8",
-          "minOSVersion": "16.0",
-          "localizedDescription": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)"
-        },
-        {
-          "version": "20.44.2",
-          "date": "2026-02-24T00:00:00-06:00",
-          "size": 118022104,
-          "downloadURL": "https://tinyurl.com/mry6h73k",
-          "minOSVersion": "16.0",
-          "localizedDescription": "Current YouTube IPA: \"20.44.2\"\nCurrent uYouEnhanced Version: \"3.0.4\"\n\nRELEASE 20.44.2 - 3.0.4: (2026-02-24)\n\n• Updated for YouTube 20.44.2\n• Updated App Version Spoofer to support versions 20.34.2–21.08.3\n• Marked older spoofer versions 19.01.1–19.20.2 as Deprecated ⚠️\n• LowContrastMode updated to 1.8.0 with reorganized code and iOS 16+ focus\n• Added new tweak: YTHidePlayerButtons 1.0.0 (improved button hiding)\n• Added new tweak: YTweaks by fosterbarnes\n• Rewritten AppIconsOptionsController functionality\n• Updated Notifications Tab icon customization\n• Updated submodules\n• Removed options: Disable Modern Buttons & Disable Modern A/B Flags"
-        }
-      ]
-    },
-    {
-      "name": "SpotiFLAC Mobile",
-      "bundleIdentifier": "com.zarzet.spotiflac",
-      "developerName": "Zarzet",
-      "subtitle": "FLAC Downloader for iOS",
-      "localizedDescription": "\n### New Features\n\n- **library**: Add bit depth quality label mode\n- **metadata**: Show explicit badges in track titles\n- **library**: Support multiple storage folders\n- **metadata**: Add download attribution to comments\n- **metadata**: Edit release tags and render UPC barcodes\n- **tagging**: Write release identity tags\n- **extensions**: Preserve provider metadata\n- **filename**: Add provider traceability tags\n- **metadata**: Show embedded cover resolution (#510)\n- **playlists**: Add play actions (#506) by [@Padma-Dev-E](https://github.com/Padma-Dev-E)\n- **library**: Add combined quality label #511\n- **metadata**: Review batch tag enrichment #511\n- **logs**: Copy selected entries #511\n- **search**: Save max-quality cover on long press #511\n- **metadata**: Show cover dimensions and size #511\n- **download**: Add automatic lossy conversion\n\n### Bug Fixes\n\n- **ios**: Handle library scan count output\n- **player**: Smooth timed lyrics highlighting\n- **library**: Show complete quality labels\n- **analysis**: Reject false low spectral cutoffs\n- **ui**: Align explicit badges with track titles\n- **metadata**: Avoid duplicate explicit indicator\n- **metadata**: Preserve explicit advisory across conversions\n- **home**: Clear recent activity permanently\n- **library**: Restore live folder scan progress\n- **library**: Open folder actions on row tap\n- **metadata**: Show readable SAF file locations\n- **analysis**: Bound spectrogram memory for large files\n- **metadata**: Preserve source release fields across providers\n- **download**: Unblock queue after verification cancel\n- **download**: Accept matching tracks across releases\n- **ui**: Align metadata and wrap track badges\n- **ui**: Update tutorial copy and library play button\n- **library**: Preserve retained files during duplicate cleanup\n- **metadata**: Keep collaboration albums grouped\n- **download**: Normalize MP4 audio extension by codec (#512)\n- **lyrics**: Use normalized Genius response (#517)\n- **download**: Treat a short clean EOF as resumable, not complete by [@A831ARD0](https://github.com/A831ARD0)\n- **playlists**: Thread the source provider id through to recent playlists by [@A831ARD0](https://github.com/A831ARD0)\n- **ios**: Stop dropping the security-scoped download folder bookmark by [@A831ARD0](https://github.com/A831ARD0)\n- **download**: Recover queue after worker timeout (#524)\n- **playlist**: Ignore container title during album verification #519\n- **metadata**: Match by primary artist and review results #511\n- **lyrics**: Respect extension provider selection #511\n- **metadata**: Honor provider priority in autofill #511\n- **metadata**: Prompt verification during autofill #511\n- **queue**: Restore user-paused downloads #511\n- **cover**: Preserve best max-quality candidate #511\n- **download**: Preserve SAF and defer background starts\n- **db**: Prevent concurrent startup locks\n- **a11y**: Label interactive controls\n\n### Performance\n\n- **library**: Stream scans and optimize queue queries\n- **history**: Batch SAF orphan inspection #511\n\n### Refactoring\n\n- **metadata**: Move cover resolution to extensions\n- **extensions**: Prioritize configurable settings\n\n### Testing\n\n- **audio**: Verify tagged PCM playback compatibility\n\n### Dependencies\n\n- **deps**: Bump locked Flutter dependencies\n- **deps**: Update Flutter and Go dependencies\n\n### Chores\n\n- Update AltStore source to v4.8.5 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- **analyzer**: Exclude platform folders from analysis\n- **release**: Bump version to 4.9.0\n\n\n### New Contributors\n* @Padma-Dev-E made their first contribution\n\n\n\n**Full Changelog**: [v4.8.5...v4.9.0](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v4.8.5...v4.9.0)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v4.9.0-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v4.9.0-arm32.apk` (older devices)\n\n#### iOS\n- **iOS**: `SpotiFLAC-v4.9.0-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA\n",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SpotiFLAC.png",
-      "tintColor": "1DB954",
-      "version": "4.9.0",
-      "versionDate": "2026-08-24",
-      "versionDescription": "SpotiFLAC 4.9.0 | SpotiFLAC-v4.9.0-ios-unsigned\n\n### New Features\n\n- **library**: Add bit depth quality label mode\n- **metadata**: Show explicit badges in track titles\n- **library**: Support multiple storage folders\n- **metadata**: Add download attribution to comments\n- **metadata**: Edit release tags and render UPC barcodes\n- **tagging**: Write release identity tags\n- **extensions**: Preserve provider metadata\n- **filename**: Add provider traceability tags\n- **metadata**: Show embedded cover resolution (#510)\n- **playlists**: Add play actions (#506) by [@Padma-Dev-E](https://github.com/Padma-Dev-E)\n- **library**: Add combined quality label #511\n- **metadata**: Review batch tag enrichment #511\n- **logs**: Copy selected entries #511\n- **search**: Save max-quality cover on long press #511\n- **metadata**: Show cover dimensions and size #511\n- **download**: Add automatic lossy conversion\n\n### Bug Fixes\n\n- **ios**: Handle library scan count output\n- **player**: Smooth timed lyrics highlighting\n- **library**: Show complete quality labels\n- **analysis**: Reject false low spectral cutoffs\n- **ui**: Align explicit badges with track titles\n- **metadata**: Avoid duplicate explicit indicator\n- **metadata**: Preserve explicit advisory across conversions\n- **home**: Clear recent activity permanently\n- **library**: Restore live folder scan progress\n- **library**: Open folder actions on row tap\n- **metadata**: Show readable SAF file locations\n- **analysis**: Bound spectrogram memory for large files\n- **metadata**: Preserve source release fields across providers\n- **download**: Unblock queue after verification cancel\n- **download**: Accept matching tracks across releases\n- **ui**: Align metadata and wrap track badges\n- **ui**: Update tutorial copy and library play button\n- **library**: Preserve retained files during duplicate cleanup\n- **metadata**: Keep collaboration albums grouped\n- **download**: Normalize MP4 audio extension by codec (#512)\n- **lyrics**: Use normalized Genius response (#517)\n- **download**: Treat a short clean EOF as resumable, not complete by [@A831ARD0](https://github.com/A831ARD0)\n- **playlists**: Thread the source provider id through to recent playlists by [@A831ARD0](https://github.com/A831ARD0)\n- **ios**: Stop dropping the security-scoped download folder bookmark by [@A831ARD0](https://github.com/A831ARD0)\n- **download**: Recover queue after worker timeout (#524)\n- **playlist**: Ignore container title during album verification #519\n- **metadata**: Match by primary artist and review results #511\n- **lyrics**: Respect extension provider selection #511\n- **metadata**: Honor provider priority in autofill #511\n- **metadata**: Prompt verification during autofill #511\n- **queue**: Restore user-paused downloads #511\n- **cover**: Preserve best max-quality candidate #511\n- **download**: Preserve SAF and defer background starts\n- **db**: Prevent concurrent startup locks\n- **a11y**: Label interactive controls\n\n### Performance\n\n- **library**: Stream scans and optimize queue queries\n- **history**: Batch SAF orphan inspection #511\n\n### Refactoring\n\n- **metadata**: Move cover resolution to extensions\n- **extensions**: Prioritize configurable settings\n\n### Testing\n\n- **audio**: Verify tagged PCM playback compatibility\n\n### Dependencies\n\n- **deps**: Bump locked Flutter dependencies\n- **deps**: Update Flutter and Go dependencies\n\n### Chores\n\n- Update AltStore source to v4.8.5 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- **analyzer**: Exclude platform folders from analysis\n- **release**: Bump version to 4.9.0\n\n\n### New Contributors\n* @Padma-Dev-E made their first contribution\n\n\n\n**Full Changelog**: [v4.8.5...v4.9.0](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v4.8.5...v4.9.0)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v4.9.0-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v4.9.0-arm32.apk` (older devices)\n\n#### iOS\n- **iOS**: `SpotiFLAC-v4.9.0-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
-      "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.0/SpotiFLAC-v4.9.0-ios-unsigned.ipa",
-      "size": 35967116,
-      "versions": [
-        {
-          "version": "4.9.0",
-          "date": "2026-08-24",
-          "localizedDescription": "SpotiFLAC 4.9.0 | SpotiFLAC-v4.9.0-ios-unsigned\n\n### New Features\n\n- **library**: Add bit depth quality label mode\n- **metadata**: Show explicit badges in track titles\n- **library**: Support multiple storage folders\n- **metadata**: Add download attribution to comments\n- **metadata**: Edit release tags and render UPC barcodes\n- **tagging**: Write release identity tags\n- **extensions**: Preserve provider metadata\n- **filename**: Add provider traceability tags\n- **metadata**: Show embedded cover resolution (#510)\n- **playlists**: Add play actions (#506) by [@Padma-Dev-E](https://github.com/Padma-Dev-E)\n- **library**: Add combined quality label #511\n- **metadata**: Review batch tag enrichment #511\n- **logs**: Copy selected entries #511\n- **search**: Save max-quality cover on long press #511\n- **metadata**: Show cover dimensions and size #511\n- **download**: Add automatic lossy conversion\n\n### Bug Fixes\n\n- **ios**: Handle library scan count output\n- **player**: Smooth timed lyrics highlighting\n- **library**: Show complete quality labels\n- **analysis**: Reject false low spectral cutoffs\n- **ui**: Align explicit badges with track titles\n- **metadata**: Avoid duplicate explicit indicator\n- **metadata**: Preserve explicit advisory across conversions\n- **home**: Clear recent activity permanently\n- **library**: Restore live folder scan progress\n- **library**: Open folder actions on row tap\n- **metadata**: Show readable SAF file locations\n- **analysis**: Bound spectrogram memory for large files\n- **metadata**: Preserve source release fields across providers\n- **download**: Unblock queue after verification cancel\n- **download**: Accept matching tracks across releases\n- **ui**: Align metadata and wrap track badges\n- **ui**: Update tutorial copy and library play button\n- **library**: Preserve retained files during duplicate cleanup\n- **metadata**: Keep collaboration albums grouped\n- **download**: Normalize MP4 audio extension by codec (#512)\n- **lyrics**: Use normalized Genius response (#517)\n- **download**: Treat a short clean EOF as resumable, not complete by [@A831ARD0](https://github.com/A831ARD0)\n- **playlists**: Thread the source provider id through to recent playlists by [@A831ARD0](https://github.com/A831ARD0)\n- **ios**: Stop dropping the security-scoped download folder bookmark by [@A831ARD0](https://github.com/A831ARD0)\n- **download**: Recover queue after worker timeout (#524)\n- **playlist**: Ignore container title during album verification #519\n- **metadata**: Match by primary artist and review results #511\n- **lyrics**: Respect extension provider selection #511\n- **metadata**: Honor provider priority in autofill #511\n- **metadata**: Prompt verification during autofill #511\n- **queue**: Restore user-paused downloads #511\n- **cover**: Preserve best max-quality candidate #511\n- **download**: Preserve SAF and defer background starts\n- **db**: Prevent concurrent startup locks\n- **a11y**: Label interactive controls\n\n### Performance\n\n- **library**: Stream scans and optimize queue queries\n- **history**: Batch SAF orphan inspection #511\n\n### Refactoring\n\n- **metadata**: Move cover resolution to extensions\n- **extensions**: Prioritize configurable settings\n\n### Testing\n\n- **audio**: Verify tagged PCM playback compatibility\n\n### Dependencies\n\n- **deps**: Bump locked Flutter dependencies\n- **deps**: Update Flutter and Go dependencies\n\n### Chores\n\n- Update AltStore source to v4.8.5 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- **analyzer**: Exclude platform folders from analysis\n- **release**: Bump version to 4.9.0\n\n\n### New Contributors\n* @Padma-Dev-E made their first contribution\n\n\n\n**Full Changelog**: [v4.8.5...v4.9.0](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v4.8.5...v4.9.0)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v4.9.0-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v4.9.0-arm32.apk` (older devices)\n\n#### iOS\n- **iOS**: `SpotiFLAC-v4.9.0-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
-          "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.0/SpotiFLAC-v4.9.0-ios-unsigned.ipa",
-          "size": 35967116,
+          "version": "21.35.3",
+          "date": "2026-08-30",
+          "localizedDescription": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\n### Latest Release, ENJOY!!\r\n\r\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\r\n\r\n> [!NOTE]\r\n> - **Sidestore is no longer supported!!.**\r\n> - **YTUHD** is not included. 4K is available for A16+ devices.\r\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\r\n\r\n> [!WARNING]\r\n> - Extra tweaks that are bundled may be unstable on newer versions.\r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
+          "size": 141939462,
           "minOSVersion": "16.0"
         }
       ]
@@ -195,166 +168,6 @@
           "localizedDescription": "YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1\n\n### Latest Stable Release, ENJOY!!\r\n> [!NOTE]\r\n> - Bundled with **YTUHD**\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`\r\n\r\n> [!WARNING]\r\n> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.",
           "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
           "size": 119894440,
-          "minOSVersion": "16.0"
-        }
-      ]
-    },
-    {
-      "name": "YouTubePlus",
-      "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "dayanch96",
-      "subtitle": "YTLite",
-      "category": "photo-video",
-      "version": "21.24.3",
-      "versionDate": "2026-08-16",
-      "versionDescription": "YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\r\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\r\n\r\n> [!NOTE]\r\n> - no subscription required\r\n> - ✅ Working Download Manager, switch to overlay button before downloading.\r\n> - Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\r\n\r\n> [!WARNING]\r\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \r\n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.\".",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa4/YouTubePlus_21.24.3_5.2.2.ipa",
-      "size": 128922222,
-      "localizedDescription": "YTLite mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
-      "tintColor": "FF0000",
-      "screenshotURLs": [],
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.security.application-groups",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.declared-age-range",
-          "com.apple.developer.storekit.request-data",
-          "com.apple.developer.device-information.user-assigned-device-name",
-          "com.apple.developer.group-session",
-          "keychain-access-groups",
-          "com.apple.developer.networking.multicast",
-          "aps-environment",
-          "com.apple.developer.siri",
-          "com.apple.developer.networking.wifi-info"
-        ],
-        "privacy": {
-          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
-          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
-          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
-          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
-          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
-          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
-        }
-      },
-      "versions": [
-        {
-          "version": "21.24.3",
-          "date": "2026-08-16",
-          "localizedDescription": "YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\r\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\r\n\r\n> [!NOTE]\r\n> - no subscription required\r\n> - ✅ Working Download Manager, switch to overlay button before downloading.\r\n> - Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\r\n\r\n> [!WARNING]\r\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \r\n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.\".",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa4/YouTubePlus_21.24.3_5.2.2.ipa",
-          "size": 128922222,
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "20.21.6",
-          "date": "2026-08-16",
-          "localizedDescription": "YouTube 20.21.6 | YouTubePlus_20.21.6_5.2.2\n\n### iOS15+ build, ENJOY!!\r\n\r\n**Cracked by** [zarzelworkshop](https://t.me/zarzelworkshop)\r\n\r\n> [!NOTE]\r\n> - VolumeBoostYT is not included. \r\n> - YTUHD has more options than latest releases. 4K60HDR full support.\r\n>\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `PleaseDontStopTheMusic`  \r\n\r\n> [!WARNING]\r\n> -  build may break in future when YT update backend.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa3/YouTubePlus_20.21.6_5.2.2.ipa",
-          "size": 115459175,
-          "minOSVersion": "16.0"
-        },
-        {
-          "version": "19.20.2",
-          "date": "2026-08-16",
-          "localizedDescription": "YouTube 19.20.2 | YouTubePlus_19.20.2_5.2.2\n\n### iOS14+ build, ENJOY!!\r\n\r\n**Cracked by** [zarzelworkshop](https://t.me/zarzelworkshop)\r\n\r\n> [!NOTE]\r\n> - VolumeBoostYT is not included. \r\n> - YTUHD has more options than latest releases. 4K60HDR full support.\r\n>\r\n> - - -\r\n> #### Extra Tweaks: \r\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \r\n\r\n> [!WARNING]\r\n> -  build may break in future when YT update backend.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa2/YouTubePlus_19.20.2_5.2.2.ipa",
-          "size": 106881641,
-          "minOSVersion": "16.0"
-        }
-      ]
-    },
-    {
-      "name": "YTKillerPlus",
-      "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "ikghd",
-      "subtitle": "YTKP",
-      "category": "photo-video",
-      "version": "21.35.3",
-      "versionDate": "2026-08-30",
-      "versionDescription": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\n### Latest Release, ENJOY!!\r\n\r\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\r\n\r\n> [!NOTE]\r\n> - **Sidestore is no longer supported!!.**\r\n> - **YTUHD** is not included. 4K is available for A16+ devices.\r\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\r\n\r\n> [!WARNING]\r\n> - Extra tweaks that are bundled may be unstable on newer versions.\r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
-      "size": 141939462,
-      "localizedDescription": "YTKillerPlus mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
-      "tintColor": "FF0000",
-      "screenshotURLs": [],
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.security.application-groups",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.declared-age-range",
-          "com.apple.developer.storekit.request-data",
-          "com.apple.developer.device-information.user-assigned-device-name",
-          "com.apple.developer.group-session",
-          "keychain-access-groups",
-          "com.apple.developer.networking.multicast",
-          "aps-environment",
-          "com.apple.developer.siri",
-          "com.apple.developer.networking.wifi-info"
-        ],
-        "privacy": {
-          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
-          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
-          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
-          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
-          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
-          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
-        }
-      },
-      "versions": [
-        {
-          "version": "21.35.3",
-          "date": "2026-08-30",
-          "localizedDescription": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\n### Latest Release, ENJOY!!\r\n\r\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\r\n\r\n> [!NOTE]\r\n> - **Sidestore is no longer supported!!.**\r\n> - **YTUHD** is not included. 4K is available for A16+ devices.\r\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\r\n> - - -\r\n> #### Extra Tweaks:\r\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\r\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\r\n\r\n> [!WARNING]\r\n> - Extra tweaks that are bundled may be unstable on newer versions.\r\n\r\n> [!WARNING]\r\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
-          "size": 141939462,
-          "minOSVersion": "16.0"
-        }
-      ]
-    },
-    {
-      "name": "YTMusicUltimate",
-      "bundleIdentifier": "com.google.ios.youtubemusic",
-      "developerName": "dayanch96",
-      "subtitle": "YTMusicUltimate",
-      "category": "music",
-      "version": "9.34.4",
-      "versionDate": "2026-08-26",
-      "versionDescription": "YTMusicUltimate 9.34.4 | YTMusic 2.4.1 | YTMusicUltimate_9.34.4_2.4.1",
-      "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa27/YTMusicUltimate_9.34.4_2.4.1.ipa",
-      "size": 102655067,
-      "localizedDescription": "YTMusicUltimate mod. Includes no ads, background playback, and more.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTubeMusic.png",
-      "tintColor": "FF0000",
-      "screenshotURLs": [],
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.security.application-groups",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.storekit.request-data",
-          "keychain-access-groups",
-          "com.apple.developer.networking.multicast",
-          "com.apple.developer.networking.wifi-info"
-        ],
-        "privacy": {
-          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth headphones and audio devices.",
-          "NSLocalNetworkUsageDescription": "Used to discover and cast audio to devices on your local network."
-        }
-      },
-      "versions": [
-        {
-          "version": "9.34.4",
-          "date": "2026-08-26",
-          "localizedDescription": "YTMusicUltimate 9.34.4 | YTMusic 2.4.1 | YTMusicUltimate_9.34.4_2.4.1",
-          "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa27/YTMusicUltimate_9.34.4_2.4.1.ipa",
-          "size": 102655067,
           "minOSVersion": "16.0"
         }
       ]
