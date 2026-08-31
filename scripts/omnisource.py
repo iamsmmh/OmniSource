@@ -364,7 +364,7 @@ BASE_URL = "https://iamsmmh.github.io/OmniSource"
 
 # filename (lowercase) -> (icon filename, bundle id, developer name)
 FILE_CONFIG = {
-    "spotiflac.json": ("SpotiFLAC.png",    "com.zarzet.spotiflac",        "spotiflacapp"),
+    "spotiflac.json": ("SpotiFLAC.png",    "com.zarzet.spotiflac",        "zarzet"),
     "ytkace.json":    ("YouTube.png",      "com.google.ios.youtube",      "itzzace"),
     "youpro.json":    ("YouTube.png",      "com.google.ios.youtube",      "alibusut"),
     "ytlite.json":    ("YouTube.png",      "com.google.ios.youtube",      "dayanch96"),
