@@ -1,778 +1,526 @@
-# scripts/omnisource.py
-# OmniSource — https://github.com/iamsmmh/OmniSource
-from __future__ import annotations
-import json
-import os
-import re
-import sys
-import time
-import urllib.error
-import urllib.request
-from typing import Any
-# ============================================================
-# Configuration
-# ============================================================
-GH_TOKEN = os.getenv("GH_TOKEN", "")
-GITHUB_API = "https://api.github.com"
-BASE_URL = "https://iamsmmh.github.io/OmniSource"
-PRIMARY_SOURCE = "https://github.com/iamsmmh/OmniSource"
-PRIMARY_LOGO = "OmniSource.png"
-YOU_PRO_EXTRA = "mrdrvt99/YouProEXTRA"
-YTMUSIC_REPO = "mrdrvt99/YTMusicUltimate"
-UYOU_REPO = "arichornlover/uYouEnhanced"
-SPOTIFLAC_REPO = "spotiflacapp/SpotiFLAC-Mobile"
-# ============================================================
-# Individual app metadata — unchanged
-# ============================================================
-FILE_CONFIG: dict[str, tuple[str, str, str]] = {
-    "uyouenhanced.json": (
-        "uYouEnhanced.png",
-        "com.google.ios.youtube",
-        "arichornlover",
-    ),
-    "spotiflac.json": (
-        "SpotiFLAC.png",
-        "com.zarzet.spotiflac",
-        "Zarzet",
-    ),
-    "ytkace.json": (
-        "YouTube.png",
-        "com.google.ios.youtube",
-        "itzzace",
-    ),
-    "youpro.json": (
-        "YouTube.png",
-        "com.google.ios.youtube",
-        "alibusut",
-    ),
-    "ytlite.json": (
-        "YouTube.png",
-        "com.google.ios.youtube",
-        "dayanch96",
-    ),
-    "ytkp.json": (
-        "YouTube.png",
-        "com.google.ios.youtube",
-        "ikghd",
-    ),
-    "ytmusic.json": (
-        "YouTubeMusic.png",
-        "com.google.ios.youtubemusic",
-        "dayanch96",
-    ),
-    "youmod.json": (
-        "YouTube.png",
-        "com.google.ios.youtube",
-        "Tonwalter888",
-    ),
-}
-TAG_MAP = {
-    "youmod-ipa": "youmod",
-    "youproextra-ipa": "youpro",
-    "ytkp-ipa": "ytkp",
-    "ytkace-ipa": "ytkace",
-}
-MANIFESTS = {
-    "youmod": "youmod.json",
-    "youpro": "youpro.json",
-    "ytkp": "ytkp.json",
-    "ytkace": "ytkace.json",
-}
-# ============================================================
-# Version patterns
-# ============================================================
-THREE_PART_VERSION_RE = re.compile(
-    r"(\d+\.\d+\.\d+)"
-)
-VERSION_RE = re.compile(
-    r"(\d+\.\d+(?:\.\d+)?)"
-)
-# ============================================================
-# GitHub API headers
-# GH_TOKEN is used ONLY for GitHub API requests.
-# ============================================================
-API_HEADERS = {
-    "User-Agent": "OmniSource-GitHub-Actions",
-    "Accept": "application/vnd.github+json",
-}
-if GH_TOKEN:
-    API_HEADERS["Authorization"] = f"Bearer {GH_TOKEN}"
-# ============================================================
-# HTTP / GitHub API
-# ============================================================
-def api_request(
-    url: str,
-    timeout: int = 30,
-    retries: int = 3,
-) -> bytes | None:
-    """Authenticated GitHub API request with retry handling."""
-    for attempt in range(1, retries + 1):
+import sys, os, json, re, time, glob
+import urllib.request, urllib.error
+from datetime import datetime as dt, timezone
+
+# =====================================================================
+# SHARED HELPERS
+# =====================================================================
+GH_TOKEN = os.environ.get('GH_TOKEN', '')
+
+def fetch_json(url, max_retries=3):
+    """GH_TOKEN is only ever attached here — this function is used
+    exclusively for api.github.com calls, never for browser_download_url."""
+    headers = {'User-Agent': 'github-actions/omnisource-sync'}
+    if GH_TOKEN:
+        headers['Authorization'] = f'token {GH_TOKEN}'
+    req = urllib.request.Request(url, headers=headers)
+    for attempt in range(1, max_retries + 1):
         try:
-            request = urllib.request.Request(
-                url,
-                headers=API_HEADERS,
-            )
-            with urllib.request.urlopen(
-                request,
-                timeout=timeout,
-            ) as response:
-                return response.read()
-        except urllib.error.HTTPError as error:
-            if error.code == 403:
-                remaining = error.headers.get(
-                    "X-RateLimit-Remaining"
-                )
-                if remaining == "0":
-                    reset = error.headers.get(
-                        "X-RateLimit-Reset"
-                    )
-                    if reset:
-                        wait = max(
-                            1,
-                            int(reset) - int(time.time()) + 1,
-                        )
-                    else:
-                        wait = min(60, 2 ** attempt)
-                    print(
-                        f"::warning::GitHub rate limit reached; "
-                        f"waiting {wait}s"
-                    )
-                    time.sleep(wait)
-                    continue
-            retryable = error.code in {
-                408,
-                429,
-                500,
-                502,
-                503,
-                504,
-            }
-            if not retryable or attempt == retries:
-                print(
-                    f"::error::GitHub API HTTP "
-                    f"{error.code}: {url}"
-                )
-                return None
-            wait = min(60, 2 ** attempt)
-            print(
-                f"::warning::HTTP {error.code}; "
-                f"retrying in {wait}s"
-            )
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return json.loads(resp.read().decode())
+        except urllib.error.URLError as e:
+            if attempt == max_retries:
+                print(f"::error::API request failed after {max_retries} attempts: {e}")
+                sys.exit(1)
+            wait = 2 ** attempt
+            print(f"::warning::Request failed (attempt {attempt}/{max_retries}), retrying in {wait}s: {e}")
             time.sleep(wait)
-        except (
-            urllib.error.URLError,
-            TimeoutError,
-        ) as error:
-            if attempt == retries:
-                print(
-                    f"::error::GitHub API request failed: "
-                    f"{error}"
-                )
-                return None
-            wait = min(60, 2 ** attempt)
-            print(
-                f"::warning::Network error; "
-                f"retrying in {wait}s"
-            )
-            time.sleep(wait)
-    return None
-def fetch_json(url: str) -> Any:
-    """Fetch JSON from GitHub API."""
-    raw = api_request(url)
-    if raw is None:
-        sys.exit(1)
-    try:
-        return json.loads(
-            raw.decode("utf-8")
-        )
-    except (
-        UnicodeDecodeError,
-        json.JSONDecodeError,
-    ) as error:
-        print(
-            f"::error::Invalid JSON from {url}: {error}"
-        )
-        sys.exit(1)
-# ============================================================
-# Public download URL validation
-# IMPORTANT: NO GH_TOKEN
-# ============================================================
-def url_alive(url: str) -> bool:
-    """Check a public download URL without authentication."""
+
+def check_url_alive(url, timeout=10, max_retries=2):
+    """No Authorization header here by design — this hits arbitrary
+    browser_download_url / CDN links, never the GitHub API."""
     if not url:
         return False
-    headers = {
-        "User-Agent": "OmniSource-GitHub-Actions",
-    }
-    # First try HEAD.
-    try:
-        request = urllib.request.Request(
-            url,
-            method="HEAD",
-            headers=headers,
-        )
-        with urllib.request.urlopen(
-            request,
-            timeout=15,
-        ) as response:
-            return 200 <= response.status < 400
-    except urllib.error.HTTPError as error:
-        if error.code not in {403, 405}:
+    valid_codes = {200, 206, 301, 302, 307, 308}
+    for attempt in range(1, max_retries + 1):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=timeout) as resp:
+                return resp.status in valid_codes
+        except urllib.error.HTTPError as e:
+            if e.code in valid_codes:
+                return True
+            if e.code == 405:
+                try:
+                    with urllib.request.urlopen(urllib.request.Request(url, method="GET"), timeout=timeout) as r2:
+                        return r2.status in valid_codes
+                except Exception:
+                    return False
             return False
-    except (
-        urllib.error.URLError,
-        TimeoutError,
-    ):
-        pass
-    # Fallback: request only one byte.
-    try:
-        request = urllib.request.Request(
-            url,
-            headers={
-                **headers,
-                "Range": "bytes=0-0",
-            },
-        )
-        with urllib.request.urlopen(
-            request,
-            timeout=15,
-        ) as response:
-            return response.status in {
-                200,
-                206,
-            }
-    except (
-        urllib.error.HTTPError,
-        urllib.error.URLError,
-        TimeoutError,
-    ):
-        return False
-# ============================================================
-# JSON helpers
-# ============================================================
-def read_json(
-    path: str,
-) -> dict[str, Any] | None:
+        except Exception:
+            if attempt < max_retries:
+                time.sleep(1)
+                continue
+            return False
+    return False
+
+def atomic_write_json(path, data):
+    tmp_path = path + ".tmp"
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+        f.write('\n')
+    with open(tmp_path, "r", encoding="utf-8") as f:
+        json.load(f)  # validate before committing
+    os.replace(tmp_path, path)
+
+def read_json_safe(path):
     if not os.path.exists(path):
-        print(
-            f"::warning::{path} not found; skipping"
-        )
         return None
     try:
-        with open(
-            path,
-            "r",
-            encoding="utf-8",
-        ) as file:
-            data = json.load(file)
-        if not isinstance(data, dict):
-            raise ValueError(
-                "JSON root must be an object"
-            )
-        return data
-    except (
-        OSError,
-        json.JSONDecodeError,
-        ValueError,
-    ) as error:
-        print(
-            f"::error::Invalid manifest {path}: "
-            f"{error}"
-        )
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, OSError):
         return None
-def write_json(
-    path: str,
-    data: dict[str, Any],
-) -> None:
-    tmp = f"{path}.tmp"
-    try:
-        with open(
-            tmp,
-            "w",
-            encoding="utf-8",
-        ) as file:
-            json.dump(
-                data,
-                file,
-                indent=2,
-                ensure_ascii=False,
-            )
-            file.write("\n")
-        # Validate before replacement.
-        with open(
-            tmp,
-            "r",
-            encoding="utf-8",
-        ) as file:
-            json.load(file)
-        os.replace(tmp, path)
-    except Exception as error:
-        if os.path.exists(tmp):
-            os.remove(tmp)
-        print(
-            f"::error::Failed writing {path}: "
-            f"{error}"
-        )
-        sys.exit(1)
-# ============================================================
-# Release helpers
-# ============================================================
-def published_releases(
-    repo: str,
-    pages: int = 10,
-) -> list[dict[str, Any]]:
-    releases: list[dict[str, Any]] = []
-    for page in range(1, pages + 1):
-        data = fetch_json(
-            f"{GITHUB_API}/repos/{repo}/releases"
-            f"?per_page=100&page={page}"
-        )
-        if not isinstance(data, list) or not data:
+
+def extract_version(ipa_name=None, tag=None, release_name=None, published_at=None):
+    """Priority: filename -> tag -> release name -> published date.
+    Never fails outright just because one source's format changed."""
+    for source in (ipa_name, tag, release_name):
+        if source:
+            matches = re.findall(r'(\d+\.\d+(?:\.\d+)?)', source)
+            if matches:
+                return matches[-1] if source is ipa_name else matches[0]
+    if published_at:
+        return published_at[:10]
+    return "unknown"
+
+
+# =====================================================================
+# STAGE 1: Sync YouProEXTRA releases (youpro, ytkp, youmod, ytkace, ytlite)
+# =====================================================================
+YOUPROEXTRA_REPO = 'mrdrvt99/YouProEXTRA'
+TAG_MAP = {'youmod-ipa': 'youmod', 'youproextra-ipa': 'youpro', 'ytkp-ipa': 'ytkp', 'ytkace-ipa': 'ytkace'}
+YOUPROEXTRA_FILES = {'ytkp': 'ytkp.json', 'youpro': 'youpro.json', 'youmod': 'youmod.json', 'ytkace': 'ytkace.json'}
+YTLITE_PREFIX, YTLITE_FILE = 'ytl-ipa', 'ytlite.json'
+
+def fetch_all_releases(repo, max_pages=10):
+    results = []
+    for page in range(1, max_pages + 1):
+        batch = fetch_json(f'https://api.github.com/repos/{repo}/releases?per_page=100&page={page}')
+        time.sleep(0.3)  # safe rate limiting between requests
+        if not batch:
             break
-        releases.extend(
-            release
-            for release in data
-            if not release.get("draft")
-            and not release.get("prerelease")
-        )
-        if len(data) < 100:
+        results.extend(batch)
+        if len(batch) < 100:
             break
-    releases.sort(
-        key=lambda release: (
-            release.get("published_at") or "",
-            release.get("created_at") or "",
-        ),
-        reverse=True,
-    )
-    return releases
-def ipa_asset(
-    release: dict[str, Any],
-) -> dict[str, Any] | None:
-    return next(
-        (
-            asset
-            for asset in release.get("assets", [])
-            if asset.get("name", "")
-            .lower()
-            .endswith(".ipa")
-        ),
-        None,
-    )
-# ============================================================
-# YouProEXTRA
-# ============================================================
-def sync_youproextra() -> None:
-    print("==> Syncing YouProEXTRA")
-    best: dict[str, dict[str, Any]] = {}
-    for release in published_releases(
-        YOU_PRO_EXTRA
-    ):
-        tag = release.get(
-            "tag_name",
-            "",
-        )
-        if (
-            tag.startswith(
-                "youproextra-noytlite-ipa"
-            )
-            or tag.startswith("ytl-ipa")
-        ):
+    return results
+
+def update_manifest(filename, download_url, size, ipa_name, tag, release_name, date_str, body):
+    if not os.path.exists(filename):
+        print(f"::error::'{filename}' not found — skipping.")
+        return
+    with open(filename, 'r', encoding='utf-8') as f:
+        source = json.load(f)
+    apps = source.get('apps', [])
+    if not apps:
+        print(f"::error::'{filename}' has no 'apps' array — skipping.")
+        return
+    app = apps[0]
+    original_app = json.loads(json.dumps(app))  # deep copy for unchanged-check
+
+    if app.get('downloadURL') == download_url:
+        print(f"{filename} already up to date.")
+        return
+
+    version = extract_version(ipa_name=ipa_name, tag=tag, release_name=release_name, published_at=date_str)
+    label = ipa_name.replace('.ipa', '') if ipa_name else tag
+    desc = f"YouTube {version} | {label}" + (f"\n\n{body}" if body else "")
+
+    entry = {"version": version, "date": date_str, "localizedDescription": desc,
+             "downloadURL": download_url, "size": size, "minOSVersion": "16.0"}
+    app.update({"versions": [entry], "version": version, "versionDate": date_str,
+                "versionDescription": desc, "downloadURL": download_url, "size": size})
+
+    if app == original_app:
+        print(f"{filename} unchanged after update — skipping write.")
+        return
+
+    atomic_write_json(filename, source)
+    print(f"Updated {filename}: '{app.get('name')}' → YouTube {version}")
+
+def sync_youproextra():
+    print("::group::Sync YouProEXTRA Releases")
+    releases = fetch_all_releases(YOUPROEXTRA_REPO)
+    published = [r for r in releases if not r['draft'] and not r['prerelease']]
+    ytlite_releases = [r for r in releases if not r['draft'] and r['tag_name'].startswith(YTLITE_PREFIX)]
+
+    best = {}
+    for r in published:
+        tag = r['tag_name']
+        if tag.startswith('youproextra-noytlite-ipa') or tag.startswith(YTLITE_PREFIX):
             continue
         for prefix, key in TAG_MAP.items():
-            if (
-                tag.startswith(prefix)
-                and key not in best
-            ):
-                best[key] = release
+            if tag.startswith(prefix) and key not in best:
+                best[key] = r
                 break
-    for key, release in best.items():
-        asset = ipa_asset(release)
+
+    if not best and not ytlite_releases:
+        print("::warning::No matching YouProEXTRA releases found.")
+
+    for app_key, release in best.items():
+        date_str = (release.get('published_at') or '')[:10] or dt.now(timezone.utc).strftime('%Y-%m-%d')
+        body = (release.get('body') or '').strip()
+        asset = next((a for a in release.get('assets', []) if a['name'].endswith('.ipa')), None)
         if not asset:
-            print(
-                f"::warning::No IPA asset for {key}"
-            )
+            print(f"::warning::No .ipa asset for {release['tag_name']} — skipping.")
             continue
-        filename = MANIFESTS[key]
-        data = read_json(filename)
-        if not data:
-            continue
-        apps = data.get("apps")
-        if not isinstance(apps, list) or not apps:
-            continue
-        app = apps[0]
-        if not isinstance(app, dict):
-            continue
-        name = asset.get("name", "")
-        match = THREE_PART_VERSION_RE.search(name)
-        if not match:
-            print(
-                f"::warning::No version found in {name}"
-            )
-            continue
-        version = match.group(1)
-        date = (
-            release.get("published_at") or ""
-        )[:10]
-        description = (
-            f"YouTube {version} | "
-            f"{name.removesuffix('.ipa')}"
+        update_manifest(
+            YOUPROEXTRA_FILES[app_key], asset['browser_download_url'], asset['size'],
+            asset['name'], release['tag_name'], release.get('name'), date_str, body
         )
-        body = (
-            release.get("body") or ""
-        ).strip()
-        if body:
-            description += f"\n\n{body}"
-        entry = {
-            "version": version,
-            "date": date,
-            "localizedDescription": description,
-            "downloadURL": asset[
-                "browser_download_url"
-            ],
-            "size": asset["size"],
-            "minOSVersion": "16.0",
-        }
-        updated = {
-            **app,
-            "versions": [entry],
-            "version": version,
-            "versionDate": date,
-            "versionDescription": description,
-            "downloadURL": asset[
-                "browser_download_url"
-            ],
-            "size": asset["size"],
-        }
-        if updated == app:
-            continue
-        apps[0] = updated
-        write_json(filename, data)
-        print(
-            f"::notice::{filename} → {version}"
-        )
-# ============================================================
-# YTMusicUltimate
-# ============================================================
-def sync_ytmusic() -> None:
-    print("==> Syncing YTMusicUltimate")
-    filename = "ytmusic.json"
-    data = read_json(filename)
-    if not data:
-        return
-    release = next(
-        iter(
-            published_releases(
-                YTMUSIC_REPO,
-                pages=1,
-            )
-        ),
-        None,
-    )
-    if not release:
-        print(
-            "::warning::No YTMusic release found"
-        )
-        return
-    asset = ipa_asset(release)
-    if not asset:
-        print(
-            "::warning::No YTMusic IPA found"
-        )
-        return
-    apps = data.get("apps")
-    if not isinstance(apps, list) or not apps:
-        return
-    app = apps[0]
-    if not isinstance(app, dict):
-        return
-    matches = VERSION_RE.findall(
-        asset.get("name", "")
-    )
-    if len(matches) >= 2:
-        tweak_version = matches[0]
-        ytm_version = matches[-1]
-    elif len(matches) == 1:
-        tweak_version = ytm_version = matches[0]
-    else:
-        tweak_version = ytm_version = (
-            release.get("tag_name", "")
-            .lstrip("v")
-        )
-    date = (
-        release.get("published_at") or ""
-    )[:10]
-    description = (
-        f"YTMusicUltimate {tweak_version} | "
-        f"YTMusic {ytm_version} | "
-        f"{asset['name'].removesuffix('.ipa')}"
-    )
-    entry = {
-        "version": tweak_version,
-        "date": date,
-        "localizedDescription": description,
-        "downloadURL": asset[
-            "browser_download_url"
-        ],
-        "size": asset["size"],
-        "minOSVersion": "16.0",
-    }
-    updated = {
-        **app,
-        "versions": [entry],
-        "version": tweak_version,
-        "versionDate": date,
-        "versionDescription": description,
-        "downloadURL": asset[
-            "browser_download_url"
-        ],
-        "size": asset["size"],
-    }
-    if updated == app:
-        return
-    apps[0] = updated
-    write_json(filename, data)
-    print(
-        f"::notice::{filename} → {tweak_version}"
-    )
-# ============================================================
-# uYouEnhanced
-# ============================================================
-def sync_uyouenhanced() -> None:
-    print("==> Syncing uYouEnhanced")
-    filename = "uyouenhanced.json"
-    data = read_json(filename)
-    if not data:
-        return
-    release = next(
-        iter(
-            published_releases(
-                UYOU_REPO,
-                pages=1,
-            )
-        ),
-        None,
-    )
-    if not release:
-        print(
-            "::warning::No uYouEnhanced release found"
-        )
-        return
-    asset = ipa_asset(release)
-    if not asset:
-        print(
-            "::warning::No uYouEnhanced IPA found"
-        )
-        return
-    apps = data.get("apps")
-    if not isinstance(apps, list) or not apps:
-        return
-    app = apps[0]
-    if not isinstance(app, dict):
-        return
-    name = asset.get("name", "")
-    matches = VERSION_RE.findall(name)
-    version = (
-        matches[0]
-        if matches
-        else release.get(
-            "tag_name",
-            "",
-        ).lstrip("v")
-    )
-    date = (
-        release.get("published_at") or ""
-    )[:10]
-    description = (
-        f"uYouEnhanced {version} | "
-        f"{name.removesuffix('.ipa')}"
-    )
-    body = (
-        release.get("body") or ""
-    ).strip()
-    if body:
-        description += f"\n\n{body}"
-    entry = {
-        "version": version,
-        "date": date,
-        "localizedDescription": description,
-        "downloadURL": asset[
-            "browser_download_url"
-        ],
-        "size": asset["size"],
-        "minOSVersion": "16.0",
-    }
-    updated = {
-        **app,
-        "versions": [entry],
-        "version": version,
-        "versionDate": date,
-        "versionDescription": description,
-        "downloadURL": asset[
-            "browser_download_url"
-        ],
-        "size": asset["size"],
-    }
-    if updated == app:
-        return
-    apps[0] = updated
-    write_json(filename, data)
-    print(
-        f"::notice::{filename} → {version}"
-    )
-# ============================================================
-# SpotiFLAC
-# ============================================================
-def sync_spotiflac() -> None:
-    print("==> Syncing SpotiFLAC")
-    filename = "spotiflac.json"
-    data = read_json(filename)
-    if not data:
-        return
-    release = next(
-        iter(
-            published_releases(
-                SPOTIFLAC_REPO,
-                pages=1,
-            )
-        ),
-        None,
-    )
-    if not release:
-        print(
-            "::warning::No SpotiFLAC release found"
-        )
-        return
-    asset = ipa_asset(release)
-    if not asset:
-        print(
-            "::warning::No SpotiFLAC IPA found"
-        )
-        return
-    apps = data.get("apps")
-    if not isinstance(apps, list) or not apps:
-        return
-    app = apps[0]
-    if not isinstance(app, dict):
-        return
-    name = asset.get("name", "")
-    matches = VERSION_RE.findall(name)
-    version = (
-        matches[0]
-        if matches
-        else release.get(
-            "tag_name",
-            "",
-        ).lstrip("v")
-    )
-    date = (
-        release.get("published_at") or ""
-    )[:10]
-    description = (
-        f"SpotiFLAC {version} | "
-        f"{name.removesuffix('.ipa')}"
-    )
-    body = (
-        release.get("body") or ""
-    ).strip()
-    if body:
-        description += f"\n\n{body}"
-    entry = {
-        "version": version,
-        "date": date,
-        "localizedDescription": description,
-        "downloadURL": asset[
-            "browser_download_url"
-        ],
-        "size": asset["size"],
-        "minOSVersion": "16.0",
-    }
-    updated = {
-        **app,
-        "versions": [entry],
-        "version": version,
-        "versionDate": date,
-        "versionDescription": description,
-        "downloadURL": asset[
-            "browser_download_url"
-        ],
-        "size": asset["size"],
-    }
-    if updated == app:
-        return
-    apps[0] = updated
-    write_json(filename, data)
-    print(
-        f"::notice::{filename} → {version}"
-    )
-# ============================================================
-# Feed Builder
-# ============================================================
-def build_feed() -> None:
-    print("==> Building OmniSource feed")
-    apps: list[dict[str, Any]] = []
-    for filename, (
-        icon,
-        bundle_id,
-        developer,
-    ) in FILE_CONFIG.items():
-        data = read_json(filename)
-        if not data:
-            continue
-        for app in data.get("apps", []):
-            if not isinstance(app, dict):
+
+    if ytlite_releases:
+        def tag_num(r):
+            m = re.search(r'ytl-ipa(\d+)', r['tag_name'])
+            return int(m.group(1)) if m else -1
+
+        min_os_map = {0: "14.0", 1: "15.0"}
+        ytlite_releases.sort(key=tag_num, reverse=True)
+        entries = []
+        for r in ytlite_releases:
+            date_str = (r.get('published_at') or '')[:10] or dt.now(timezone.utc).strftime('%Y-%m-%d')
+            body = (r.get('body') or '').strip()
+            asset = next((a for a in r.get('assets', []) if a['name'].endswith('.ipa')), None)
+            if not asset:
+                print(f"::warning::No .ipa asset for {r['tag_name']} — skipping.")
                 continue
-            download_url = app.get(
-                "downloadURL",
-                "",
-            )
-            # Public URL check.
-            # GH_TOKEN is intentionally NOT used.
-            if not url_alive(download_url):
-                print(
-                    f"::warning::Unavailable public "
-                    f"download URL in {filename}; "
-                    f"skipping"
-                )
-                continue
-            apps.append({
-                **app,
-                "bundleIdentifier": bundle_id,
-                "iconURL": (
-                    f"{BASE_URL}/assets/{icon}"
-                ),
-                "developerName": developer,
+            version = extract_version(ipa_name=asset['name'], tag=r['tag_name'], release_name=r.get('name'), published_at=date_str)
+            entries.append({
+                "version": version, "date": date_str,
+                "localizedDescription": f"YouTube {version} | {asset['name'].replace('.ipa','')}" + (f"\n\n{body}" if body else ""),
+                "downloadURL": asset['browser_download_url'], "size": asset['size'],
+                "minOSVersion": min_os_map.get(tag_num(r), "16.0"),
             })
-    feed = {
+
+        if not entries:
+            print("::warning::No usable ytl-ipa releases found — skipping ytlite.json.")
+        elif not os.path.exists(YTLITE_FILE):
+            print(f"::error::'{YTLITE_FILE}' not found.")
+        else:
+            with open(YTLITE_FILE, 'r', encoding='utf-8') as f:
+                ytlite_source = json.load(f)
+            apps = ytlite_source.get('apps', [])
+            if not apps:
+                print(f"::error::'{YTLITE_FILE}' has no 'apps' array.")
+            else:
+                app = apps[0]
+                if [v.get('downloadURL') for v in app.get('versions', [])] == [e['downloadURL'] for e in entries]:
+                    print(f"{YTLITE_FILE} already up to date ({len(entries)} versions).")
+                else:
+                    newest = entries[0]
+                    app.update({"versions": entries, "version": newest['version'], "versionDate": newest['date'],
+                                "versionDescription": newest['localizedDescription'],
+                                "downloadURL": newest['downloadURL'], "size": newest['size']})
+                    atomic_write_json(YTLITE_FILE, ytlite_source)
+                    print(f"Updated {YTLITE_FILE}: {len(entries)} versions kept (newest: {newest['version']})")
+    print("::endgroup::")
+
+
+# =====================================================================
+# STAGE 2: Sync YTMusicUltimate release
+# =====================================================================
+YTMUSIC_REPO, YTMUSIC_FILE = 'mrdrvt99/YTMusicUltimate', 'ytmusic.json'
+
+def sync_ytmusic():
+    print("::group::Sync YTMusicUltimate Release")
+    if not os.path.exists(YTMUSIC_FILE):
+        print(f"::error::'{YTMUSIC_FILE}' not found — skipping.")
+        print("::endgroup::")
+        return
+
+    releases = fetch_json(f'https://api.github.com/repos/{YTMUSIC_REPO}/releases?per_page=5')
+    time.sleep(0.3)
+    release = next((r for r in releases if not r['draft'] and not r['prerelease']), None)
+    if release is None:
+        print("::warning::No published release found — skipping.")
+        print("::endgroup::")
+        return
+
+    asset = next((a for a in release.get('assets', []) if a['name'].endswith('.ipa')), None)
+    if not asset:
+        print("::warning::No .ipa asset found — skipping.")
+        print("::endgroup::")
+        return
+
+    with open(YTMUSIC_FILE, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    apps = data.get('apps', [])
+    if not apps:
+        print(f"::error::'{YTMUSIC_FILE}' has no 'apps' array.")
+        print("::endgroup::")
+        return
+    app = apps[0]
+    original_app = json.loads(json.dumps(app))
+
+    download_url = asset['browser_download_url']
+    if app.get('downloadURL') == download_url:
+        print(f"{YTMUSIC_FILE} already up to date: {download_url}")
+        print("::endgroup::")
+        return
+
+    tag = release['tag_name']
+    matches = re.findall(r'(\d+\.\d+(?:\.\d+)?)', asset['name'])
+    if len(matches) >= 2:
+        tweak_v, ytm_v = matches[0], matches[-1]
+    elif len(matches) == 1:
+        tweak_v = ytm_v = matches[0]
+    else:
+        fallback = extract_version(tag=tag, release_name=release.get('name'),
+                                    published_at=(release.get('published_at') or '')[:10])
+        tweak_v = ytm_v = fallback
+
+    date_str = (release.get('published_at') or '')[:10] or dt.now(timezone.utc).strftime('%Y-%m-%d')
+    body = (release.get('body') or '').strip()
+    label = asset['name'].replace('.ipa', '')
+    desc = f"YTMusicUltimate {tweak_v} | YTMusic {ytm_v} | {label}" + (f"\n\n{body}" if body else "")
+
+    entry = {"version": tweak_v, "date": date_str, "localizedDescription": desc,
+             "downloadURL": download_url, "size": asset['size'], "minOSVersion": "16.0"}
+    app.update({"versions": [entry], "version": tweak_v, "versionDate": date_str,
+                "versionDescription": desc, "downloadURL": download_url, "size": asset['size']})
+
+    if app == original_app:
+        print(f"{YTMUSIC_FILE} unchanged after update — skipping write.")
+        print("::endgroup::")
+        return
+
+    atomic_write_json(YTMUSIC_FILE, data)
+    print(f"{YTMUSIC_FILE} updated: YTMusicUltimate {tweak_v} → YTMusic {ytm_v}")
+    print("::endgroup::")
+
+
+# =====================================================================
+# STAGE 3: Sync SpotiFLAC Mobile release
+# =====================================================================
+SPOTIFLAC_REPO, SPOTIFLAC_FILE = 'spotiflacapp/SpotiFLAC-Mobile', 'spotiflac.json'
+
+def sync_spotiflac():
+    print("::group::Sync SpotiFLAC Mobile Release")
+    if not os.path.exists(SPOTIFLAC_FILE):
+        print(f"::error::'{SPOTIFLAC_FILE}' not found — skipping.")
+        print("::endgroup::")
+        return
+
+    releases = fetch_json(f'https://api.github.com/repos/{SPOTIFLAC_REPO}/releases?per_page=5')
+    time.sleep(0.3)
+    release = next((r for r in releases if not r['draft'] and not r['prerelease']), None)
+    if release is None:
+        print("::warning::No published release found — skipping.")
+        print("::endgroup::")
+        return
+
+    asset = next((a for a in release.get('assets', []) if a['name'].endswith('-ios-unsigned.ipa')), None)
+    if not asset:
+        asset = next((a for a in release.get('assets', []) if a['name'].endswith('.ipa')), None)
+    if not asset:
+        print("::warning::No .ipa asset found — skipping.")
+        print("::endgroup::")
+        return
+
+    with open(SPOTIFLAC_FILE, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    apps = data.get('apps', [])
+    if not apps:
+        print(f"::error::'{SPOTIFLAC_FILE}' has no 'apps' array.")
+        print("::endgroup::")
+        return
+    app = apps[0]
+    original_app = json.loads(json.dumps(app))
+
+    download_url = asset['browser_download_url']
+    if app.get('downloadURL') == download_url:
+        print(f"{SPOTIFLAC_FILE} already up to date: {download_url}")
+        print("::endgroup::")
+        return
+
+    tag = release['tag_name']
+    date_str = (release.get('published_at') or '')[:10] or dt.now(timezone.utc).strftime('%Y-%m-%d')
+    version = extract_version(ipa_name=asset['name'], tag=tag, release_name=release.get('name'), published_at=date_str)
+
+    body = (release.get('body') or '').strip()
+    label = asset['name'].replace('.ipa', '')
+    desc = f"SpotiFLAC {version} | {label}" + (f"\n\n{body}" if body else "")
+
+    entry = {"version": version, "date": date_str, "localizedDescription": desc,
+             "downloadURL": download_url, "size": asset['size'], "minOSVersion": "16.0"}
+    app.update({"versions": [entry], "version": version, "versionDate": date_str,
+                "versionDescription": desc, "downloadURL": download_url, "size": asset['size']})
+
+    if app == original_app:
+        print(f"{SPOTIFLAC_FILE} unchanged after update — skipping write.")
+        print("::endgroup::")
+        return
+
+    atomic_write_json(SPOTIFLAC_FILE, data)
+    print(f"{SPOTIFLAC_FILE} updated: SpotiFLAC → {version} ({tag})")
+    print("::endgroup::")
+
+
+# =====================================================================
+# STAGE 4: Compile master feed with asset routing, dev names, link checks
+# =====================================================================
+SOURCE_OWNER = "iamsmmh"
+SOURCE_REPO_URL = "https://github.com/iamsmmh/OmniSource"
+BASE_URL = "https://iamsmmh.github.io/OmniSource"
+
+# filename (lowercase) -> (icon filename, bundle id, developer name)
+FILE_CONFIG = {
+    "spotiflac.json": ("SpotiFLAC.png",    "com.zarzet.spotiflac",        "spotiflacapp"),
+    "ytkace.json":    ("YouTube.png",      "com.google.ios.youtube",      "itzzace"),
+    "youpro.json":    ("YouTube.png",      "com.google.ios.youtube",      "alibusut"),
+    "ytlite.json":    ("YouTube.png",      "com.google.ios.youtube",      "dayanch96"),
+    "ytkp.json":      ("YouTube.png",      "com.google.ios.youtube",      "ikghd"),
+    "ytmusic.json":   ("YouTubeMusic.png", "com.google.ios.youtubemusic", "dayanch96"),
+    "youmod.json":    ("YouTube.png",      "com.google.ios.youtube",      "Tonwalter888"),
+}
+
+def standardize(app, icon_url, bundle_id, dev_name):
+    app["bundleIdentifier"], app["iconURL"], app["developerName"] = bundle_id, icon_url, dev_name
+    if not app.get("versionDate"):
+        app["versionDate"] = dt.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if not app.get("versions") and app.get("version") and app.get("downloadURL"):
+        app["versions"] = [{
+            "version": app.get("version"), "date": app.get("versionDate"),
+            "localizedDescription": app.get("localizedDescription", "Stable production build."),
+            "downloadURL": app.get("downloadURL"), "size": app.get("size", 120000000)
+        }]
+    return app
+
+def build_feed():
+    print("::group::Build Master Feed")
+    site_icon = f"{BASE_URL}/assets/OmniSource.png" if os.path.exists("assets/OmniSource.png") else f"{BASE_URL}/assets/icon.png"
+    banner_icon = f"{BASE_URL}/assets/banner.png" if os.path.exists("assets/banner.png") else site_icon
+
+    actual_files = {f.lower(): f for f in glob.glob("*.json")}
+    print("::group::Repo root JSON files detected")
+    for f in sorted(actual_files.values()):
+        print(f"  - {f}")
+    print("::endgroup::")
+
+    master_apps, had_errors, skipped = [], False, []
+
+    for expected, (icon_name, bundle_id, dev_name) in FILE_CONFIG.items():
+        real = actual_files.get(expected.lower())
+        if real is None:
+            print(f"::error::Expected '{expected}' not found. Files present: {sorted(actual_files.values())}")
+            had_errors = True
+            continue
+        if real != expected:
+            print(f"::warning::Matched '{expected}' to on-disk file '{real}' (case mismatch).")
+
+        try:
+            with open(real, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError) as e:
+            print(f"::error::Failed to parse {real}: {e}")
+            had_errors = True
+            continue
+
+        apps = data.get("apps", [])
+        if not apps:
+            print(f"::error::'{real}' has no 'apps' array (keys: {list(data.keys())}).")
+            had_errors = True
+            continue
+
+        app_name = apps[0].get("name", "Application")
+        icon_url = f"{BASE_URL}/assets/{icon_name}"
+        original_data = json.loads(json.dumps(data))
+
+        data.update({
+            "name": f"OmniSource - {app_name}", "website": f"{BASE_URL}/",
+            "description": f"Standalone distribution feed for {app_name}, curated within OmniSource.",
+            "iconURL": icon_url, "bannerURL": banner_icon
+        })
+
+        kept = []
+        for entry in apps:
+            url = entry.get("downloadURL", "")
+            print(f"Checking download link for '{entry.get('name', app_name)}'...")
+            if check_url_alive(url):
+                print(f"  OK: {url}")
+                kept.append(standardize(entry, icon_url, bundle_id, dev_name))
+            else:
+                print(f"::warning::Dead/unreachable downloadURL for '{entry.get('name', app_name)}' in {real}: {url}")
+                skipped.append(f"{real} -> {entry.get('name', app_name)}")
+
+        if not kept:
+            print(f"::warning::All apps in '{real}' had dead links — excluded this run.")
+            continue
+
+        data["apps"] = kept
+        master_apps.extend(kept)
+
+        if data == original_data:
+            print(f"{real} unchanged — skipping write.")
+        else:
+            try:
+                atomic_write_json(real, data)
+                print(f"Synchronized: {real} ({len(kept)} app(s))")
+            except (OSError, json.JSONDecodeError) as e:
+                print(f"::error::Failed to write {real}: {e}")
+                had_errors = True
+
+    if not master_apps:
+        print("::error::No valid application definitions identified. Aborting.")
+        print("::endgroup::")
+        sys.exit(1)
+
+    # Deterministic ordering — prevents random diffs between runs
+    master_apps.sort(key=lambda app: app.get("name", "").lower())
+
+    new_feed_body = {
         "name": "OmniSource",
-        "identifier": "com.iamsmmh.omnisource",
-        "website": PRIMARY_SOURCE,
-        "iconURL": (
-            f"{BASE_URL}/assets/{PRIMARY_LOGO}"
-        ),
-        "apps": apps,
+        "identifier": f"com.{SOURCE_OWNER.lower()}.omnisource",
+        "subtitle": "Consolidated iOS Applications & Tweaks Repository",
+        "description": "Master AltStore and SideStore repository compiled and managed under OmniSource.",
+        "sourceURL": SOURCE_REPO_URL,
+        "iconURL": site_icon,
+        "bannerURL": banner_icon,
+        "website": f"{BASE_URL}/",
+        "apps": master_apps
     }
-    write_json(
-        "apps.json",
-        feed,
-    )
-    print(
-        f"::notice::apps.json generated with "
-        f"{len(apps)} active apps"
-    )
-# ============================================================
-# Main
-# ============================================================
-def main() -> None:
-    print("========================================")
-    print(" OmniSource Production Sync")
-    print("========================================")
+
+    existing_feed = read_json_safe("apps.json")
+    existing_comparable = None
+    if existing_feed is not None:
+        existing_comparable = {k: v for k, v in existing_feed.items() if k != "generatedAt"}
+
+    if existing_comparable == new_feed_body:
+        print("apps.json unchanged — skipping write.")
+    else:
+        new_feed_body["generatedAt"] = dt.now(timezone.utc).isoformat()
+        atomic_write_json("apps.json", new_feed_body)
+        print(f"Master feed generated with {len(master_apps)} app definitions (expected up to {len(FILE_CONFIG)}).")
+
+    if skipped:
+        print("::warning::Apps excluded this run due to dead links:")
+        for item in skipped:
+            print(f"  - {item}")
+
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as f:
+            f.write("## OmniSource Build Summary\n\n")
+            f.write(f"- **Apps compiled:** {len(master_apps)} / {len(FILE_CONFIG)}\n")
+            if skipped:
+                f.write(f"- **Dead links excluded:** {len(skipped)}\n")
+                for item in skipped:
+                    f.write(f"  - `{item}`\n")
+            f.write("- ✅ No structural errors.\n" if not had_errors else "- ⚠️ Structural errors occurred — check logs.\n")
+
+    print("::endgroup::")
+    if had_errors:
+        print("::error::Completed with structural errors — see annotations above.")
+        sys.exit(1)
+
+
+# =====================================================================
+# Entry point — runs all stages in order
+# =====================================================================
+def main():
     sync_youproextra()
     sync_ytmusic()
-    sync_uyouenhanced()
     sync_spotiflac()
     build_feed()
-    print("========================================")
-    print(" OmniSource sync completed successfully")
-    print("========================================")
+
 if __name__ == "__main__":
     main()
