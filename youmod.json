@@ -1,11 +1,11 @@
 {
-  "name": "YouMod",
+  "name": "OmniSource - YouMod",
   "identifier": "com.mrdrvt99.youmod",
   "apiVersion": "v2",
   "subtitle": "Automated YouMod IPA builds",
-  "description": "AltStore/Feather/SideStore/LiveContainer source for YouMod. No ads, background playback, downloads, SponsorBlock, PiP, and more.",
-  "iconURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/assets/YouTube.png",
-  "website": "https://github.com/mrdrvt99/Altstore-Repository",
+  "description": "Standalone distribution feed for YouMod, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
+  "website": "https://iamsmmh.github.io/OmniSource/",
   "sourceURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/youmod.json",
   "apps": [
     {
@@ -20,7 +20,7 @@
       "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa5/YouMod_21.35.3_2.0.0.ipa",
       "size": 128284527,
       "localizedDescription": "YouMod mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
-      "iconURL": "https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/assets/YouTube.png",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
       "tintColor": "FF0000",
       "screenshotURLs": [],
       "appPermissions": {
@@ -60,5 +60,6 @@
       ]
     }
   ],
-  "news": []
+  "news": [],
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png"
 }
