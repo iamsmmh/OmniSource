@@ -1,0 +1,17 @@
+# Generated feeds: collapse them in diffs and exclude them from language stats.
+feeds/*.json      linguist-generated=true
+/apps.json        linguist-generated=true
+/spotiflac.json   linguist-generated=true
+/uyouenhanced.json linguist-generated=true
+/youmod.json      linguist-generated=true
+/youpro.json      linguist-generated=true
+/ytkace.json      linguist-generated=true
+/ytkp.json        linguist-generated=true
+/ytlite.json      linguist-generated=true
+/ytmusic.json     linguist-generated=true
+
+*.json text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.yml  text eol=lf
+*.png  binary

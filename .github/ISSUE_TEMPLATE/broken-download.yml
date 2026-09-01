@@ -1,0 +1,31 @@
+name: Broken download or feed
+description: A feed will not load, or an app fails to download or install.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Check the [health dashboard](https://iamsmmh.github.io/OmniSource/#/health) first — a known-down link is already tracked.
+  - type: dropdown
+    id: app
+    attributes:
+      label: Which app?
+      options: [All apps / the whole feed, SpotiFLAC Mobile, uYouEnhanced, YouTubePlus (YTLite), YouPro, YTKillerPlus, YTKACE, YouMod, YTMusicUltimate]
+    validations: { required: true }
+  - type: dropdown
+    id: client
+    attributes:
+      label: Client
+      options: [AltStore, SideStore, Feather, ESign, LiveContainer, Other]
+    validations: { required: true }
+  - type: input
+    id: ios
+    attributes:
+      label: iOS version and device
+      placeholder: "iPhone 14 Pro, iOS 18.5"
+    validations: { required: true }
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Include the exact error text and the feed URL you added.
+    validations: { required: true }

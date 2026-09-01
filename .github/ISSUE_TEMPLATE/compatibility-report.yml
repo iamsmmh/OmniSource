@@ -1,0 +1,29 @@
+name: Compatibility report
+description: Confirm (or disprove) an app/client/iOS combination.
+labels: ["compatibility"]
+body:
+  - type: input
+    id: app
+    attributes: { label: App and version }
+    validations: { required: true }
+  - type: dropdown
+    id: client
+    attributes:
+      label: Client
+      options: [AltStore, SideStore, Feather, ESign, LiveContainer]
+    validations: { required: true }
+  - type: input
+    id: device
+    attributes:
+      label: Device and iOS version
+      placeholder: "iPad Air 5, iPadOS 17.6"
+    validations: { required: true }
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options: [Works, Installs but crashes, Will not install, Partially works]
+    validations: { required: true }
+  - type: textarea
+    id: notes
+    attributes: { label: Notes }

@@ -1,5 +1,35 @@
-import glob
+#!/usr/bin/env python3
+"""OmniSource feed builder.
+
+Single entry point for the whole distribution pipeline:
+
+    catalog.json  ->  upstream sync  ->  link health  ->  feeds/  ->  root mirrors
+
+Stages
+------
+1. ``sync``    Resolve the newest upstream GitHub releases for every catalog app.
+2. ``health``  Probe every download URL concurrently and record the result.
+3. ``build``   Render AltStore-compatible feeds plus ``feeds/health.json``.
+4. ``mirror``  Copy generated feeds to the historical root-level paths.
+5. ``readme``  Refresh the generated catalog block inside README.md.
+
+Only the Python standard library is used, so the workflow needs no
+dependency installation step.
+
+Usage
+-----
+    python3 scripts/omnisource.py                 # full pipeline
+    python3 scripts/omnisource.py --no-sync       # rebuild feeds from state.json
+    python3 scripts/omnisource.py --no-health     # skip network link probing
+    python3 scripts/omnisource.py --only ytlite   # restrict sync to one app
+"""
+
+from __future__ import annotations
+
+import argparse
+import concurrent.futures
 import json
+import logging
 import os
 import re
 import sys
@@ -7,770 +37,812 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from datetime import datetime as dt, timezone
+from dataclasses import dataclass, field
+from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any, ClassVar
 
-# =====================================================================
-# SHARED HELPERS
-# =====================================================================
+REPO_ROOT = Path(__file__).resolve().parents[1]
+CATALOG_PATH = REPO_ROOT / "catalog.json"
+STATE_PATH = REPO_ROOT / "feeds" / "state.json"
+FEEDS_DIR = REPO_ROOT / "feeds"
+ASSETS_DIR = REPO_ROOT / "assets"
+README_PATH = REPO_ROOT / "README.md"
 
-def fetch_json(url, max_retries=3):
-    """Fetch a GitHub API response with bounded retries.
+USER_AGENT = "OmniSource-Sync/2.0 (+https://github.com/iamsmmh/OmniSource)"
+API_ROOT = "https://api.github.com"
+VERSION_RE = re.compile(r"(\d+\.\d+(?:\.\d+)?)")
+TAG_NUMBER_RE = re.compile(r"(\d+)\s*$")
+README_MARKERS = ("<!-- omnisource:catalog:start -->", "<!-- omnisource:catalog:end -->")
 
-    Authentication is deliberately limited to this API helper.  Download
-    URLs are third-party input and must never receive the repository token.
+# A download URL is considered reachable when the server answers with one of
+# these. 206 covers ranged GET fallbacks, 3xx covers CDN redirects.
+ALIVE_CODES = frozenset({200, 206, 301, 302, 303, 307, 308})
+RETRYABLE_CODES = frozenset({408, 425, 429, 500, 502, 503, 504})
+
+log = logging.getLogger("omnisource")
+
+
+# ---------------------------------------------------------------------------
+# GitHub Actions friendly logging
+# ---------------------------------------------------------------------------
+class ActionsFormatter(logging.Formatter):
+    """Emit ``::warning::``/``::error::`` annotations when running on Actions."""
+
+    PREFIX: ClassVar[dict[int, str]] = {
+        logging.WARNING: "::warning::",
+        logging.ERROR: "::error::",
+        logging.CRITICAL: "::error::",
+    }
+
+    def __init__(self, *, annotate: bool) -> None:
+        super().__init__("%(levelname)-7s %(message)s")
+        self.annotate = annotate
+
+    def format(self, record: logging.LogRecord) -> str:
+        message = record.getMessage()
+        if self.annotate:
+            prefix = self.PREFIX.get(record.levelno, "")
+            return f"{prefix}{message}" if prefix else message
+        return f"{record.levelname:<7} {message}"
+
+
+def configure_logging(verbose: bool) -> None:
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setFormatter(ActionsFormatter(annotate=bool(os.environ.get("GITHUB_ACTIONS"))))
+    log.addHandler(handler)
+    log.setLevel(logging.DEBUG if verbose else logging.INFO)
+    log.propagate = False
+
+
+class Group:
+    """Collapsible log group; a no-op outside GitHub Actions."""
+
+    def __init__(self, title: str) -> None:
+        self.title = title
+        self.enabled = bool(os.environ.get("GITHUB_ACTIONS"))
+
+    def __enter__(self) -> Group:
+        print(f"::group::{self.title}" if self.enabled else f"\n=== {self.title} ===", flush=True)
+        return self
+
+    def __exit__(self, *exc: object) -> None:
+        if self.enabled:
+            print("::endgroup::", flush=True)
+
+
+class SyncError(RuntimeError):
+    """Unrecoverable pipeline failure."""
+
+
+# ---------------------------------------------------------------------------
+# HTTP helpers
+# ---------------------------------------------------------------------------
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    """Stop at the first 3xx.
+
+    Release hosts answer ``302`` and point at a signed CDN URL. Following that
+    redirect proves nothing extra, costs an extra TLS handshake per app, and
+    can start streaming a 120 MB IPA into the runner. A 3xx from the origin is
+    sufficient evidence that the asset exists.
+    """
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):  # type: ignore[no-untyped-def]
+        return None
+
+
+_PROBE_OPENER = urllib.request.build_opener(_NoRedirect)
+
+
+def _request(
+    url: str,
+    *,
+    headers: dict[str, str],
+    method: str = "GET",
+    timeout: float = 30.0,
+    follow_redirects: bool = True,
+):
+    request = urllib.request.Request(url, headers=headers, method=method)
+    opener = urllib.request.urlopen if follow_redirects else _PROBE_OPENER.open
+    # Callers validate the URL scheme before reaching this point (see probe_url).
+    return opener(request, timeout=timeout)
+
+
+def fetch_json(url: str, *, retries: int = 3, token: str | None = None) -> Any:
+    """GET a GitHub API endpoint with bounded exponential backoff.
+
+    The repository token is attached here and *only* here. Third-party
+    download URLs must never receive credentials.
     """
     headers = {
         "Accept": "application/vnd.github+json",
-        "User-Agent": "github-actions/omnisource-sync",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "User-Agent": USER_AGENT,
     }
-    token = os.environ.get("GH_TOKEN", "")
     if token:
         headers["Authorization"] = f"Bearer {token}"
 
-    for attempt in range(1, max_retries + 1):
-        request = urllib.request.Request(url, headers=headers)
+    last_error: Exception | None = None
+    for attempt in range(1, retries + 1):
         try:
-            with urllib.request.urlopen(request, timeout=30) as response:
+            with _request(url, headers=headers) as response:
                 return json.loads(response.read().decode("utf-8"))
-        except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError,
-                json.JSONDecodeError) as error:
-            if attempt == max_retries:
-                print(f"::error::API request failed after {max_retries} attempts: {error}")
-                raise RuntimeError(f"Could not fetch GitHub API response: {url}") from error
-            wait = 2 ** attempt
-            print(
-                f"::warning::Request failed (attempt {attempt}/{max_retries}), "
-                f"retrying in {wait}s: {error}"
-            )
-            time.sleep(wait)
+        except urllib.error.HTTPError as error:
+            last_error = error
+            if error.code not in RETRYABLE_CODES:
+                break
+            # Honour secondary-rate-limit hints instead of hammering the API.
+            delay = float(error.headers.get("Retry-After") or 2**attempt)
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, OSError) as error:
+            last_error = error
+            delay = float(2**attempt)
+        if attempt < retries:
+            log.warning("GitHub API attempt %d/%d failed (%s); retrying in %.0fs", attempt, retries, last_error, delay)
+            time.sleep(delay)
+
+    raise SyncError(f"GitHub API request failed after {retries} attempts: {url} ({last_error})")
 
 
-def check_url_alive(url, timeout=10, max_retries=2):
-    """Check an arbitrary download URL without sending GitHub credentials.
+def probe_url(url: str, *, timeout: float = 12.0, retries: int = 2) -> tuple[bool, str]:
+    """Return ``(reachable, detail)`` for a download URL, without credentials.
 
-    Some release/CDN servers reject HEAD.  The fallback is a one-byte ranged
-    GET so a failed HEAD check never downloads an entire IPA into the runner.
-    Transient 429/5xx responses are retried; permanent failures are not.
+    Uses HEAD first; falls back to a one-byte ranged GET for hosts that reject
+    HEAD, so a probe never downloads a whole IPA into the runner.
     """
     if not isinstance(url, str) or not url:
-        return False
-    try:
-        parsed = urllib.parse.urlparse(url)
-    except ValueError:
-        return False
+        return False, "empty url"
+    parsed = urllib.parse.urlparse(url)
     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        return False, "not an http(s) url"
+
+    headers = {"User-Agent": USER_AGENT}
+    detail = "unknown"
+    for attempt in range(1, retries + 1):
+        for method, extra in (("HEAD", {}), ("GET", {"Range": "bytes=0-0"})):
+            try:
+                with _request(
+                    url,
+                    headers={**headers, **extra},
+                    method=method,
+                    timeout=timeout,
+                    follow_redirects=False,
+                ) as response:
+                    if response.status in ALIVE_CODES:
+                        return True, f"HTTP {response.status}"
+                    detail = f"HTTP {response.status}"
+            except urllib.error.HTTPError as error:
+                detail = f"HTTP {error.code}"
+                if error.code in ALIVE_CODES:
+                    return True, detail
+                if error.code in RETRYABLE_CODES:
+                    break  # transient: retry the whole attempt
+                if method == "GET":
+                    return False, detail
+                if error.code not in {403, 405, 501}:
+                    return False, detail
+            except (urllib.error.URLError, TimeoutError, OSError) as error:
+                detail = str(getattr(error, "reason", error))
+                break
+        if attempt < retries:
+            time.sleep(1.5 * attempt)
+    return False, detail
+
+
+# ---------------------------------------------------------------------------
+# File helpers
+# ---------------------------------------------------------------------------
+def read_json(path: Path) -> Any | None:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+
+def write_json(path: Path, data: Any) -> bool:
+    """Atomically write ``data``; return True when the file actually changed."""
+    payload = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+    if path.exists() and path.read_text(encoding="utf-8") == payload:
         return False
-
-    valid_codes = {200, 206, 301, 302, 307, 308}
-    headers = {"User-Agent": "github-actions/omnisource-sync"}
-    for attempt in range(1, max_retries + 1):
-        try:
-            request = urllib.request.Request(url, headers=headers, method="HEAD")
-            with urllib.request.urlopen(request, timeout=timeout) as response:
-                return response.status in valid_codes
-        except urllib.error.HTTPError as error:
-            if error.code in valid_codes:
-                return True
-            if error.code == 405:
-                try:
-                    fallback_headers = {**headers, "Range": "bytes=0-0"}
-                    request = urllib.request.Request(url, headers=fallback_headers)
-                    with urllib.request.urlopen(request, timeout=timeout) as response:
-                        return response.status in valid_codes
-                except urllib.error.HTTPError as fallback_error:
-                    if fallback_error.code not in {429, 500, 502, 503, 504}:
-                        return False
-                except (urllib.error.URLError, TimeoutError):
-                    pass
-            elif error.code not in {429, 500, 502, 503, 504}:
-                return False
-        except (urllib.error.URLError, TimeoutError):
-            pass
-
-        if attempt < max_retries:
-            time.sleep(1)
-    return False
-
-
-def atomic_write_json(path, data):
-    """Write and validate JSON before replacing the destination."""
-    tmp_path = f"{path}.tmp"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
     try:
-        with open(tmp_path, "w", encoding="utf-8") as output:
-            json.dump(data, output, indent=2, ensure_ascii=False)
-            output.write("\n")
-        with open(tmp_path, "r", encoding="utf-8") as input_file:
-            json.load(input_file)
-        os.replace(tmp_path, path)
+        tmp.write_text(payload, encoding="utf-8")
+        json.loads(tmp.read_text(encoding="utf-8"))  # never publish invalid JSON
+        tmp.replace(path)
     finally:
-        # Leave no stale temporary file after a failed write or validation.
-        try:
-            os.unlink(tmp_path)
-        except FileNotFoundError:
-            pass
+        tmp.unlink(missing_ok=True)
+    return True
 
 
-def read_json_safe(path):
-    if not os.path.exists(path):
-        return None
-    try:
-        with open(path, "r", encoding="utf-8") as input_file:
-            return json.load(input_file)
-    except (json.JSONDecodeError, OSError):
-        return None
+def utc_now() -> datetime:
+    return datetime.now(UTC)
 
 
-def extract_version(ipa_name=None, tag=None, release_name=None, published_at=None):
-    """Priority: filename -> tag -> release name -> published date.
-    Never fails outright just because one source's format changed.
-    """
-    for source in (ipa_name, tag, release_name):
-        if source:
-            matches = re.findall(r"(\d+\.\d+(?:\.\d+)?)", str(source))
-            if matches:
-                # Upstream IPA names put the host-app version first and the
-                # tweak version after it (for example, 21.24.3_5.2.2).
-                return matches[0]
-    if published_at:
-        return str(published_at)[:10]
-    return "unknown"
+def today() -> str:
+    return utc_now().strftime("%Y-%m-%d")
 
 
-def is_published_release(release):
-    return (
-        isinstance(release, dict)
-        and not release.get("draft", False)
-        and not release.get("prerelease", False)
-    )
+# ---------------------------------------------------------------------------
+# Catalog model
+# ---------------------------------------------------------------------------
+@dataclass(frozen=True)
+class Upstream:
+    repo: str
+    tag_prefix: str = ""
+    exclude_tag_prefixes: tuple[str, ...] = ()
+    asset_suffixes: tuple[str, ...] = (".ipa",)
+    max_pages: int = 3
+    keep_versions: int = 1  # 0 == keep every matching release
+    sort_by_tag_number: bool = False
+    description_template: str = "{name} {version} | {label}"
+    min_os_version: str = "16.0"
+    min_os_by_tag_number: dict[str, str] = field(default_factory=dict)
+
+    @classmethod
+    def parse(cls, raw: dict[str, Any]) -> Upstream:
+        return cls(
+            repo=raw["repo"],
+            tag_prefix=raw.get("tagPrefix", ""),
+            exclude_tag_prefixes=tuple(raw.get("excludeTagPrefixes", ())),
+            asset_suffixes=tuple(raw.get("assetSuffixes", (".ipa",))),
+            max_pages=int(raw.get("maxPages", 3)),
+            keep_versions=int(raw.get("keepVersions", 1)),
+            sort_by_tag_number=bool(raw.get("sortByTagNumber", False)),
+            description_template=raw.get("descriptionTemplate", "{name} {version} | {label}"),
+            min_os_version=raw.get("minOSVersion", "16.0"),
+            min_os_by_tag_number=dict(raw.get("minOSVersionByTagNumber", {})),
+        )
 
 
-def ipa_asset(release, suffix=None):
-    assets = release.get("assets", []) if isinstance(release, dict) else []
-    if not isinstance(assets, list):
-        return None
-    for asset in assets:
-        if not isinstance(asset, dict):
-            continue
-        name = str(asset.get("name", ""))
-        if name.lower().endswith((suffix or ".ipa").lower()):
-            return asset
+@dataclass
+class App:
+    slug: str
+    raw: dict[str, Any]
+
+    @property
+    def name(self) -> str:
+        return str(self.raw["name"])
+
+    @property
+    def icon(self) -> str:
+        return str(self.raw.get("icon", "OmniSource.png"))
+
+    @property
+    def status(self) -> str:
+        return str(self.raw.get("status", "stable"))
+
+    @property
+    def featured(self) -> bool:
+        return bool(self.raw.get("featured", False))
+
+    @property
+    def upstream(self) -> Upstream | None:
+        raw = self.raw.get("upstream")
+        return Upstream.parse(raw) if isinstance(raw, dict) else None
+
+    @property
+    def manual_release(self) -> dict[str, Any] | None:
+        raw = self.raw.get("manualRelease")
+        return dict(raw) if isinstance(raw, dict) else None
+
+
+@dataclass
+class Catalog:
+    source: dict[str, Any]
+    clients: list[dict[str, Any]]
+    apps: list[App]
+
+    @classmethod
+    def load(cls, path: Path = CATALOG_PATH) -> Catalog:
+        raw = read_json(path)
+        if not isinstance(raw, dict):
+            raise SyncError(f"{path.name} is missing or not a JSON object")
+        apps = [App(slug=entry["slug"], raw=entry) for entry in raw.get("apps", [])]
+        if not apps:
+            raise SyncError(f"{path.name} declares no apps")
+        return cls(source=raw.get("source", {}), clients=raw.get("clients", []), apps=apps)
+
+    @property
+    def base_url(self) -> str:
+        return str(self.source.get("baseURL", "")).rstrip("/")
+
+
+# ---------------------------------------------------------------------------
+# Stage 1 - upstream sync
+# ---------------------------------------------------------------------------
+def tag_number(tag: str) -> int:
+    match = TAG_NUMBER_RE.search(tag)
+    return int(match.group(1)) if match else -1
+
+
+def pick_asset(release: dict[str, Any], suffixes: tuple[str, ...]) -> dict[str, Any] | None:
+    assets = [a for a in release.get("assets", []) if isinstance(a, dict)]
+    for suffix in suffixes:
+        for asset in assets:
+            if str(asset.get("name", "")).lower().endswith(suffix.lower()):
+                return asset
     return None
 
 
-# =====================================================================
-# STAGE 1: Sync YouProEXTRA releases (youpro, ytkp, youmod, ytkace, ytlite)
-# =====================================================================
-YOUPROEXTRA_REPO = 'mrdrvt99/YouProEXTRA'
-TAG_MAP = {
-    "youmod-ipa": "youmod",
-    "youproextra-ipa": "youpro",
-    "ytkp-ipa": "ytkp",
-    "ytkace-ipa": "ytkace",
-}
-YOUPROEXTRA_FILES = {
-    "ytkp": "ytkp.json",
-    "youpro": "youpro.json",
-    "youmod": "youmod.json",
-    "ytkace": "ytkace.json",
-}
-YTLITE_PREFIX, YTLITE_FILE = 'ytl-ipa', 'ytlite.json'
+class ReleaseFetcher:
+    """Paginated release fetcher with a per-run, per-repo cache.
 
-def fetch_all_releases(repo, max_pages=10):
-    results = []
-    for page in range(1, max_pages + 1):
-        batch = fetch_json(
-            f"https://api.github.com/repos/{repo}/releases?per_page=100&page={page}"
-        )
-        if not isinstance(batch, list):
-            raise RuntimeError(f"Unexpected releases response for {repo}")
-        if not batch:
-            break
-        results.extend(batch)
-        if len(batch) < 100:
-            break
-        time.sleep(0.3)  # safe rate limiting between requests
-    return results
+    Five catalog apps share ``mrdrvt99/YouProEXTRA``; without the cache the old
+    pipeline paid for that repository's release history once per app.
+    """
 
+    def __init__(self, token: str | None) -> None:
+        self.token = token
+        self._cache: dict[tuple[str, int], list[dict[str, Any]]] = {}
+        self.requests = 0
 
-def update_manifest(filename, download_url, size, ipa_name, tag, release_name, date_str, body):
-    if not os.path.exists(filename):
-        print(f"::error::'{filename}' not found — skipping.")
-        return
-    if not isinstance(download_url, str) or not download_url:
-        print(f"::warning::No download URL for the release asset — skipping {filename}.")
-        return
-    with open(filename, "r", encoding="utf-8") as input_file:
-        source = json.load(input_file)
-    apps = source.get("apps", [])
-    if not isinstance(apps, list) or not apps or not isinstance(apps[0], dict):
-        print(f"::error::'{filename}' has no valid 'apps' array — skipping.")
-        return
-    app = apps[0]
-    original_app = json.loads(json.dumps(app))  # deep copy for unchanged-check
+    def releases(self, repo: str, max_pages: int) -> list[dict[str, Any]]:
+        cached = next((v for (r, p), v in self._cache.items() if r == repo and p >= max_pages), None)
+        if cached is not None:
+            return cached
 
-    version = extract_version(
-        ipa_name=ipa_name, tag=tag, release_name=release_name, published_at=date_str
-    )
-    label = str(ipa_name).removesuffix(".ipa") if ipa_name else tag
-    desc = f"YouTube {version} | {label}" + (f"\n\n{body}" if body else "")
-
-    entry = {
-        "version": version,
-        "date": date_str,
-        "localizedDescription": desc,
-        "downloadURL": download_url,
-        "size": size,
-        "minOSVersion": "16.0",
-    }
-    app.update(
-        {
-            "versions": [entry],
-            "version": version,
-            "versionDate": date_str,
-            "versionDescription": desc,
-            "downloadURL": download_url,
-            "size": size,
-        }
-    )
-
-    if app == original_app:
-        print(f"{filename} unchanged after update — skipping write.")
-        return
-
-    atomic_write_json(filename, source)
-    print(f"Updated {filename}: '{app.get('name')}' → YouTube {version}")
-
-def sync_youproextra():
-    print("::group::Sync YouProEXTRA Releases")
-    releases = fetch_all_releases(YOUPROEXTRA_REPO)
-    published = [r for r in releases if is_published_release(r)]
-    ytlite_releases = [
-        r for r in published if str(r.get("tag_name", "")).startswith(YTLITE_PREFIX)
-    ]
-
-    best = {}
-    for release in published:
-        tag = str(release.get("tag_name", ""))
-        if tag.startswith("youproextra-noytlite-ipa") or tag.startswith(YTLITE_PREFIX):
-            continue
-        for prefix, key in TAG_MAP.items():
-            if tag.startswith(prefix) and key not in best:
-                best[key] = release
+        collected: list[dict[str, Any]] = []
+        for page in range(1, max_pages + 1):
+            url = f"{API_ROOT}/repos/{repo}/releases?per_page=100&page={page}"
+            batch = fetch_json(url, token=self.token)
+            self.requests += 1
+            if not isinstance(batch, list):
+                raise SyncError(f"Unexpected releases payload for {repo}")
+            collected.extend(batch)
+            if len(batch) < 100:
                 break
-
-    if not best and not ytlite_releases:
-        print("::warning::No matching YouProEXTRA releases found.")
-
-    for app_key, release in best.items():
-        date_str = (release.get("published_at") or "")[:10] or dt.now(
-            timezone.utc
-        ).strftime("%Y-%m-%d")
-        body = (release.get("body") or "").strip()
-        asset = ipa_asset(release)
-        if not asset:
-            print(
-                f"::warning::No .ipa asset for "
-                f"{release.get('tag_name', 'release')} — skipping."
-            )
-            continue
-        update_manifest(
-            YOUPROEXTRA_FILES[app_key],
-            asset.get("browser_download_url"),
-            asset.get("size", 0),
-            asset.get("name", "build.ipa"),
-            release.get("tag_name"),
-            release.get("name"),
-            date_str,
-            body,
-        )
-
-    if ytlite_releases:
-        def tag_num(release):
-            match = re.search(r"ytl-ipa(\d+)", str(release.get("tag_name", "")))
-            return int(match.group(1)) if match else -1
-
-        min_os_map = {0: "14.0", 1: "15.0"}
-        # GitHub returns releases newest-first, but tags are the stable ordering
-        # for this feed.  The date tie-breaker handles malformed/un-numbered tags.
-        ytlite_releases.sort(
-            key=lambda release: (tag_num(release), release.get("published_at") or ""),
-            reverse=True,
-        )
-        entries = []
-        seen_urls = set()
-        for release in ytlite_releases:
-            date_str = (release.get("published_at") or "")[:10] or dt.now(
-                timezone.utc
-            ).strftime("%Y-%m-%d")
-            body = (release.get("body") or "").strip()
-            asset = ipa_asset(release)
-            if not asset:
-                print(
-                    f"::warning::No .ipa asset for "
-                    f"{release.get('tag_name', 'release')} — skipping."
-                )
-                continue
-            download_url = asset.get("browser_download_url")
-            if not download_url or download_url in seen_urls:
-                continue
-            seen_urls.add(download_url)
-            asset_name = str(asset.get("name", "build.ipa"))
-            version = extract_version(
-                ipa_name=asset_name,
-                tag=release.get("tag_name"),
-                release_name=release.get("name"),
-                published_at=date_str,
-            )
-            entries.append(
-                {
-                    "version": version,
-                    "date": date_str,
-                    "localizedDescription": f"YouTube {version} | {asset_name.removesuffix('.ipa')}"
-                    + (f"\n\n{body}" if body else ""),
-                    "downloadURL": download_url,
-                    "size": asset.get("size", 0),
-                    "minOSVersion": min_os_map.get(tag_num(release), "16.0"),
-                }
-            )
-
-        if not entries:
-            print("::warning::No usable ytl-ipa releases found — skipping ytlite.json.")
-        elif not os.path.exists(YTLITE_FILE):
-            print(f"::error::'{YTLITE_FILE}' not found.")
-        else:
-            with open(YTLITE_FILE, "r", encoding="utf-8") as input_file:
-                ytlite_source = json.load(input_file)
-            apps = ytlite_source.get("apps", [])
-            if not isinstance(apps, list) or not apps or not isinstance(apps[0], dict):
-                print(f"::error::'{YTLITE_FILE}' has no valid 'apps' array.")
-            else:
-                app = apps[0]
-                original_app = json.loads(json.dumps(app))
-                newest = entries[0]
-                app.update(
-                    {
-                        "versions": entries,
-                        "version": newest["version"],
-                        "versionDate": newest["date"],
-                        "versionDescription": newest["localizedDescription"],
-                        "downloadURL": newest["downloadURL"],
-                        "size": newest["size"],
-                    }
-                )
-                if app == original_app:
-                    print(f"{YTLITE_FILE} already up to date ({len(entries)} versions).")
-                else:
-                    atomic_write_json(YTLITE_FILE, ytlite_source)
-                    print(
-                        f"Updated {YTLITE_FILE}: {len(entries)} versions kept "
-                        f"(newest: {newest['version']})"
-                    )
-    print("::endgroup::")
+        published = [r for r in collected if isinstance(r, dict) and not r.get("draft") and not r.get("prerelease")]
+        self._cache[(repo, max_pages)] = published
+        log.debug("%s: %d published releases (%d API call(s))", repo, len(published), self.requests)
+        return published
 
 
-# =====================================================================
-# STAGE 2: Sync YTMusicUltimate release
-# =====================================================================
-YTMUSIC_REPO, YTMUSIC_FILE = 'mrdrvt99/YTMusicUltimate', 'ytmusic.json'
-
-def sync_ytmusic():
-    print("::group::Sync YTMusicUltimate Release")
-    if not os.path.exists(YTMUSIC_FILE):
-        print(f"::error::'{YTMUSIC_FILE}' not found — skipping.")
-        print("::endgroup::")
-        return
-
-    releases = fetch_all_releases(YTMUSIC_REPO, max_pages=3)
-    release = None
-    asset = None
-    for candidate in releases:
-        if not is_published_release(candidate):
-            continue
-        candidate_asset = ipa_asset(candidate)
-        if candidate_asset:
-            release, asset = candidate, candidate_asset
-            break
-    if release is None or asset is None:
-        print("::warning::No published release with an .ipa asset found — skipping.")
-        print("::endgroup::")
-        return
-
-    with open(YTMUSIC_FILE, "r", encoding="utf-8") as input_file:
-        data = json.load(input_file)
-    apps = data.get("apps", [])
-    if not isinstance(apps, list) or not apps or not isinstance(apps[0], dict):
-        print(f"::error::'{YTMUSIC_FILE}' has no valid 'apps' array.")
-        print("::endgroup::")
-        return
-    app = apps[0]
-    original_app = json.loads(json.dumps(app))
-
-    download_url = asset.get("browser_download_url")
-    if not download_url:
-        print("::warning::The .ipa asset has no download URL — skipping.")
-        print("::endgroup::")
-        return
-
-    tag = release.get("tag_name")
+def build_version_entry(app: App, up: Upstream, release: dict[str, Any], asset: dict[str, Any]) -> dict[str, Any]:
     asset_name = str(asset.get("name", "build.ipa"))
-    matches = re.findall(r"(\d+\.\d+(?:\.\d+)?)", asset_name)
-    if len(matches) >= 2:
-        tweak_v, ytm_v = matches[0], matches[-1]
-    elif len(matches) == 1:
-        tweak_v = ytm_v = matches[0]
-    else:
-        fallback = extract_version(
-            tag=tag,
-            release_name=release.get("name"),
-            published_at=(release.get("published_at") or "")[:10],
-        )
-        tweak_v = ytm_v = fallback
+    tag = str(release.get("tag_name", ""))
+    date = (release.get("published_at") or "")[:10] or utc_now().strftime("%Y-%m-%d")
 
-    date_str = (release.get("published_at") or "")[:10] or dt.now(timezone.utc).strftime("%Y-%m-%d")
-    body = (release.get("body") or "").strip()
+    numbers = VERSION_RE.findall(asset_name)
+    if not numbers:
+        numbers = VERSION_RE.findall(tag) or VERSION_RE.findall(str(release.get("name") or ""))
+    # Upstream IPA names put the host-app version first, the tweak version last.
+    version = numbers[0] if numbers else date
+    secondary = numbers[-1] if numbers else version
+
     label = asset_name.removesuffix(".ipa")
-    desc = f"YTMusicUltimate {tweak_v} | YTMusic {ytm_v} | {label}" + (f"\n\n{body}" if body else "")
+    description = up.description_template.format(
+        name=app.name, version=version, secondary=secondary, label=label, tag=tag, date=date
+    )
+    body = (release.get("body") or "").strip()
+    if body:
+        description = f"{description}\n\n{body}"
 
-    entry = {
-        "version": tweak_v,
-        "date": date_str,
-        "localizedDescription": desc,
-        "downloadURL": download_url,
-        "size": asset.get("size", 0),
-        "minOSVersion": "16.0",
+    min_os = up.min_os_by_tag_number.get(str(tag_number(tag)), up.min_os_version)
+    return {
+        "version": version,
+        "date": date,
+        "localizedDescription": description,
+        "downloadURL": asset.get("browser_download_url", ""),
+        "size": int(asset.get("size", 0) or 0),
+        "minOSVersion": min_os,
     }
-    app.update({
-        "versions": [entry],
-        "version": tweak_v,
-        "versionDate": date_str,
-        "versionDescription": desc,
-        "downloadURL": download_url,
-        "size": asset.get("size", 0),
-    })
-
-    if app == original_app:
-        print(f"{YTMUSIC_FILE} unchanged after update — skipping write.")
-        print("::endgroup::")
-        return
-
-    atomic_write_json(YTMUSIC_FILE, data)
-    print(f"{YTMUSIC_FILE} updated: YTMusicUltimate {tweak_v} → YTMusic {ytm_v}")
-    print("::endgroup::")
 
 
-# =====================================================================
-# STAGE 3: Sync SpotiFLAC Mobile release
-# =====================================================================
-SPOTIFLAC_REPO, SPOTIFLAC_FILE = 'spotiflacapp/SpotiFLAC-Mobile', 'spotiflac.json'
+def sync_app(app: App, fetcher: ReleaseFetcher) -> list[dict[str, Any]] | None:
+    """Return the version list for ``app`` or ``None`` when nothing changed upstream."""
+    up = app.upstream
+    manual = app.manual_release
 
-def sync_spotiflac():
-    print("::group::Sync SpotiFLAC Mobile Release")
-    if not os.path.exists(SPOTIFLAC_FILE):
-        print(f"::error::'{SPOTIFLAC_FILE}' not found — skipping.")
-        print("::endgroup::")
-        return
+    def fallback(reason: str) -> list[dict[str, Any]] | None:
+        if manual:
+            log.info("%-14s %s - using manualRelease v%s from catalog.json", app.slug, reason, manual.get("version"))
+            return [manual]
+        log.warning("%-14s %s and no manualRelease fallback exists", app.slug, reason)
+        return None
 
-    releases = fetch_all_releases(SPOTIFLAC_REPO, max_pages=3)
-    release = None
-    asset = None
-    for candidate in releases:
-        if not is_published_release(candidate):
+    if up is None:
+        return fallback("no upstream configured")
+
+    matches: list[dict[str, Any]] = []
+    for release in fetcher.releases(up.repo, up.max_pages):
+        tag = str(release.get("tag_name", ""))
+        if up.tag_prefix and not tag.startswith(up.tag_prefix):
             continue
-        candidate_asset = ipa_asset(candidate, suffix="-ios-unsigned.ipa") or ipa_asset(candidate)
-        if candidate_asset:
-            release, asset = candidate, candidate_asset
+        if any(tag.startswith(p) for p in up.exclude_tag_prefixes):
+            continue
+        asset = pick_asset(release, up.asset_suffixes)
+        if asset is None:
+            log.debug("%s: %s has no matching asset", app.slug, tag or "<untagged>")
+            continue
+        matches.append({"release": release, "asset": asset, "tag": tag})
+
+    if not matches:
+        return fallback(f"no published release with a matching asset in {up.repo}")
+
+    if up.sort_by_tag_number:
+        matches.sort(key=lambda m: (tag_number(m["tag"]), m["release"].get("published_at") or ""), reverse=True)
+
+    versions: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for match in matches:
+        entry = build_version_entry(app, up, match["release"], match["asset"])
+        if not entry["downloadURL"] or entry["downloadURL"] in seen:
+            continue
+        seen.add(entry["downloadURL"])
+        versions.append(entry)
+        if up.keep_versions and len(versions) >= up.keep_versions:
             break
-    if release is None or asset is None:
-        print("::warning::No published release with an .ipa asset found — skipping.")
-        print("::endgroup::")
-        return
 
-    with open(SPOTIFLAC_FILE, "r", encoding="utf-8") as input_file:
-        data = json.load(input_file)
-    apps = data.get("apps", [])
-    if not isinstance(apps, list) or not apps or not isinstance(apps[0], dict):
-        print(f"::error::'{SPOTIFLAC_FILE}' has no valid 'apps' array.")
-        print("::endgroup::")
-        return
-    app = apps[0]
-    original_app = json.loads(json.dumps(app))
+    if not versions:
+        return fallback("upstream produced no usable version entries")
 
-    download_url = asset.get("browser_download_url")
-    if not download_url:
-        print("::warning::The .ipa asset has no download URL — skipping.")
-        print("::endgroup::")
-        return
-
-    tag = release.get("tag_name")
-    asset_name = str(asset.get("name", "build.ipa"))
-    date_str = (release.get("published_at") or "")[:10] or dt.now(timezone.utc).strftime("%Y-%m-%d")
-    version = extract_version(
-        ipa_name=asset_name,
-        tag=tag,
-        release_name=release.get("name"),
-        published_at=date_str,
-    )
-
-    body = (release.get("body") or "").strip()
-    label = asset_name.removesuffix(".ipa")
-    desc = f"SpotiFLAC {version} | {label}" + (f"\n\n{body}" if body else "")
-
-    entry = {
-        "version": version,
-        "date": date_str,
-        "localizedDescription": desc,
-        "downloadURL": download_url,
-        "size": asset.get("size", 0),
-        "minOSVersion": "16.0",
-    }
-    app.update({
-        "versions": [entry],
-        "version": version,
-        "versionDate": date_str,
-        "versionDescription": desc,
-        "downloadURL": download_url,
-        "size": asset.get("size", 0),
-    })
-
-    if app == original_app:
-        print(f"{SPOTIFLAC_FILE} unchanged after update — skipping write.")
-        print("::endgroup::")
-        return
-
-    atomic_write_json(SPOTIFLAC_FILE, data)
-    print(f"{SPOTIFLAC_FILE} updated: SpotiFLAC → {version} ({tag})")
-    print("::endgroup::")
+    log.info("%-14s %-28s -> v%s (%d version(s))", app.slug, up.repo, versions[0]["version"], len(versions))
+    return versions
 
 
-# =====================================================================
-# STAGE 4: Compile master feed with asset routing, dev names, link checks
-# =====================================================================
-SOURCE_OWNER = "iamsmmh"
-SOURCE_REPO_URL = "https://github.com/iamsmmh/OmniSource"
-BASE_URL = "https://iamsmmh.github.io/OmniSource"
+def stage_sync(catalog: Catalog, state: dict[str, Any], only: set[str] | None) -> dict[str, Any]:
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or None
+    if not token:
+        log.warning("No GH_TOKEN/GITHUB_TOKEN set - using unauthenticated API limits (60 req/h)")
+    fetcher = ReleaseFetcher(token)
 
-# filename (lowercase) -> (icon filename, bundle id, developer name)
-FILE_CONFIG = {
-    "spotiflac.json": ("SpotiFLAC.png", "com.zarzet.spotiflac", "zarzet"),
-    "uyouenhanced.json": ("uYouEnhanced.png", "com.google.ios.youtube", "arichornlover"),
-    "ytkace.json": ("YouTube.png", "com.google.ios.youtube", "itzzace"),
-    "youpro.json": ("YouTube.png", "com.google.ios.youtube", "alibusut"),
-    "ytlite.json": ("YouTube.png", "com.google.ios.youtube", "dayanch96"),
-    "ytkp.json": ("YouTube.png", "com.google.ios.youtube", "ikghd"),
-    "ytmusic.json": ("YouTubeMusic.png", "com.google.ios.youtubemusic", "dayanch96"),
-    "youmod.json": ("YouTube.png", "com.google.ios.youtube", "Tonwalter888"),
-}
-
-
-def standardize(app, icon_url, bundle_id, dev_name):
-    """Normalize fields that must be consistent in standalone and master feeds."""
-    app["bundleIdentifier"], app["iconURL"], app["developerName"] = bundle_id, icon_url, dev_name
-    if not app.get("versionDate"):
-        app["versionDate"] = dt.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-    versions = app.get("versions")
-    if not isinstance(versions, list):
-        versions = []
-        app["versions"] = versions
-    if not versions and app.get("version") and app.get("downloadURL"):
-        versions.append(
-            {
-                "version": app["version"],
-                "date": app["versionDate"],
-                "localizedDescription": app.get(
-                    "localizedDescription", "Stable production build."
-                ),
-                "downloadURL": app["downloadURL"],
-                "size": app.get("size", 120000000),
-                "minOSVersion": "16.0",
-            }
-        )
-
-    # AltStore treats the first version as the current build.  Repair stale
-    # top-level mirrors so an upstream feed cannot leave the master manifest
-    # pointing at a different IPA than versions[0].
-    if versions and isinstance(versions[0], dict):
-        newest = versions[0]
-        for field in ("version", "downloadURL", "size"):
-            if field in newest:
-                app[field] = newest[field]
-        if not app.get("versionDescription") and newest.get("localizedDescription"):
-            app["versionDescription"] = newest["localizedDescription"]
-    return app
-
-def build_feed():
-    print("::group::Build Master Feed")
-    site_icon = (
-        f"{BASE_URL}/assets/OmniSource.png"
-        if os.path.exists("assets/OmniSource.png")
-        else f"{BASE_URL}/assets/icon.png"
-    )
-    banner_icon = (
-        f"{BASE_URL}/assets/banner.png"
-        if os.path.exists("assets/banner.png")
-        else site_icon
-    )
-
-    actual_files = {
-        os.path.basename(path).lower(): os.path.basename(path)
-        for path in glob.glob("*.json")
-        if os.path.isfile(path)
-    }
-    print("::group::Repo root JSON files detected")
-    for f in sorted(actual_files.values()):
-        print(f"  - {f}")
-    print("::endgroup::")
-
-    master_apps, had_errors, skipped = [], False, []
-
-    for expected, (icon_name, bundle_id, dev_name) in FILE_CONFIG.items():
-        real = actual_files.get(expected.lower())
-        if real is None:
-            print(f"::error::Expected '{expected}' not found. Files present: {sorted(actual_files.values())}")
-            had_errors = True
+    for app in catalog.apps:
+        if only and app.slug not in only:
             continue
-        if real != expected:
-            print(f"::warning::Matched '{expected}' to on-disk file '{real}' (case mismatch).")
-
         try:
-            with open(real, "r", encoding="utf-8") as input_file:
-                data = json.load(input_file)
-        except (json.JSONDecodeError, OSError) as error:
-            print(f"::error::Failed to parse {real}: {error}")
-            had_errors = True
+            versions = sync_app(app, fetcher)
+        except SyncError as error:
+            # One bad upstream must not sink the whole run; the previous state
+            # for this app is kept and the feed still rebuilds.
+            log.error("%s: upstream sync failed (%s) - keeping last known state", app.slug, error)
             continue
-        if not isinstance(data, dict):
-            print(f"::error::'{real}' must contain a JSON object at the root.")
-            had_errors = True
+        if not versions:
             continue
+        entry = state.setdefault(app.slug, {})
+        # Timestamps only move when content moves. Otherwise every scheduled run
+        # would produce a no-op commit and the rebuild would not be idempotent.
+        if entry.get("versions") != versions:
+            entry["versions"] = versions
+            entry["syncedAt"] = today()
 
-        apps = data.get("apps", [])
-        if not isinstance(apps, list) or not apps:
-            print(f"::error::'{real}' has no 'apps' array (keys: {list(data.keys())}).")
-            had_errors = True
-            continue
-        if not all(isinstance(entry, dict) for entry in apps):
-            print(f"::error::'{real}' contains a non-object app entry.")
-            had_errors = True
-            continue
+    log.info("Sync complete using %d GitHub API request(s)", fetcher.requests)
+    return state
 
-        app_name = apps[0].get("name", "Application")
-        icon_url = f"{BASE_URL}/assets/{icon_name}"
-        original_data = json.loads(json.dumps(data))
 
-        data.update(
-            {
-                "name": f"OmniSource - {app_name}",
-                "website": f"{BASE_URL}/",
-                "description": f"Standalone distribution feed for {app_name}, curated within OmniSource.",
-                "iconURL": icon_url,
-                "bannerURL": banner_icon,
+# ---------------------------------------------------------------------------
+# Stage 2 - link health
+# ---------------------------------------------------------------------------
+def stage_health(catalog: Catalog, state: dict[str, Any], *, enabled: bool, workers: int) -> None:
+    """Probe the newest download URL of every app concurrently.
+
+    Results are stored back into ``state`` so a rebuild without ``--no-health``
+    reproduces byte-identical feeds. ``since`` records when the current status
+    was first observed, which keeps the output stable across no-change runs.
+    """
+    targets = {
+        app.slug: state[app.slug]["versions"][0]["downloadURL"]
+        for app in catalog.apps
+        if state.get(app.slug, {}).get("versions")
+    }
+    if not enabled:
+        log.info("Link health probing disabled (--no-health); reusing stored results")
+        return
+
+    started = time.monotonic()
+    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(probe_url, url): slug for slug, url in targets.items()}
+        for future in concurrent.futures.as_completed(futures):
+            slug = futures[future]
+            reachable, detail = future.result()
+            previous = state[slug].get("health", {})
+            state[slug]["health"] = {
+                "reachable": reachable,
+                "detail": detail,
+                "since": previous.get("since", today()) if previous.get("reachable") is reachable else today(),
             }
-        )
+            (log.info if reachable else log.warning)(
+                "%-14s %s (%s)", slug, "reachable" if reachable else "UNREACHABLE", detail
+            )
+    log.info("Probed %d download URL(s) in %.1fs", len(targets), time.monotonic() - started)
 
-        normalized = [standardize(entry, icon_url, bundle_id, dev_name) for entry in apps]
-        kept = []
-        for entry in normalized:
-            url = entry.get("downloadURL", "")
-            print(f"Checking download link for '{entry.get('name', app_name)}'...")
-            if check_url_alive(url):
-                print(f"  OK: {url}")
-                kept.append(entry)
-            else:
-                print(
-                    f"::warning::Dead/unreachable downloadURL for "
-                    f"'{entry.get('name', app_name)}' in {real}: {url}"
-                )
-                skipped.append(f"{real} -> {entry.get('name', app_name)}")
 
-        # Keep standalone manifests complete, but never publish an entry that
-        # failed its link check in the master feed.  A failed check is an error
-        # so a transient outage cannot silently remove apps from a release.
-        data["apps"] = normalized
-        master_apps.extend(kept)
-        if len(kept) != len(normalized):
-            had_errors = True
-        if not kept:
-            print(f"::warning::All apps in '{real}' had dead links — excluded this run.")
-            continue
+# ---------------------------------------------------------------------------
+# Stage 3 - feed rendering
+# ---------------------------------------------------------------------------
+def render_app(catalog: Catalog, app: App, versions: list[dict[str, Any]], health: dict[str, Any]) -> dict[str, Any]:
+    base = catalog.base_url
+    newest = versions[0]
+    raw = app.raw
+    entry: dict[str, Any] = {
+        "name": app.name,
+        "bundleIdentifier": raw["bundleIdentifier"],
+        "developerName": raw["developerName"],
+        "subtitle": raw.get("subtitle", ""),
+        "localizedDescription": raw.get("localizedDescription", ""),
+        "iconURL": f"{base}/assets/{app.icon}",
+        "tintColor": str(raw.get("tintColor", "FF0000")).lstrip("#"),
+        "category": raw.get("category", "utilities"),
+        # AltStore reads versions[0]; the flat mirrors below exist for older
+        # clients and must never drift away from it.
+        "version": newest["version"],
+        "versionDate": newest["date"],
+        "versionDescription": newest["localizedDescription"],
+        "downloadURL": newest["downloadURL"],
+        "size": newest["size"],
+        "versions": versions,
+        "screenshotURLs": raw.get("screenshots", []),
+    }
+    if raw.get("appPermissions"):
+        entry["appPermissions"] = raw["appPermissions"]
 
-        if data == original_data:
-            print(f"{real} unchanged — skipping write.")
-        else:
-            try:
-                atomic_write_json(real, data)
-                print(f"Synchronized: {real} ({len(kept)} app(s))")
-            except (OSError, json.JSONDecodeError) as e:
-                print(f"::error::Failed to write {real}: {e}")
-                had_errors = True
+    # OmniSource extensions. Unknown keys are ignored by AltStore-family
+    # clients, and power the website, README and health dashboard.
+    entry["omnisource"] = {
+        "slug": app.slug,
+        "status": app.status,
+        "featured": app.featured,
+        "upstreamURL": raw.get("upstreamURL", ""),
+        "verification": raw.get("verification", {}),
+        "compatibility": raw.get("compatibility", {}),
+        "health": {
+            "downloadReachable": bool(health.get("reachable", True)),
+            "detail": health.get("detail", "not probed"),
+            "statusSince": health.get("since", newest["date"]),
+            "lastUpdatedAt": newest["date"],
+        },
+    }
+    return entry
 
-    if not master_apps:
-        print("::error::No valid application definitions identified. Aborting.")
-        print("::endgroup::")
-        sys.exit(1)
 
-    # Deterministic ordering — prevents random diffs between runs
-    master_apps.sort(key=lambda app: app.get("name", "").lower())
-
-    new_feed_body = {
-        "name": "OmniSource",
-        "identifier": f"com.{SOURCE_OWNER.lower()}.omnisource",
-        "subtitle": "Consolidated iOS Applications & Tweaks Repository",
-        "description": "Master AltStore and SideStore repository compiled and managed under OmniSource.",
-        "sourceURL": SOURCE_REPO_URL,
-        "iconURL": site_icon,
-        "bannerURL": banner_icon,
-        "website": f"{BASE_URL}/",
-        "apps": master_apps
+def feed_envelope(catalog: Catalog, *, name: str, identifier: str, subtitle: str, description: str) -> dict[str, Any]:
+    base = catalog.base_url
+    source = catalog.source
+    return {
+        "name": name,
+        "identifier": identifier,
+        "apiVersion": "v2",
+        "subtitle": subtitle,
+        "description": description,
+        "iconURL": f"{base}/assets/{source.get('icon', 'OmniSource.png')}",
+        "bannerURL": f"{base}/assets/{source.get('banner', 'OmniSource.png')}",
+        "tintColor": str(source.get("tintColor", "5B5BD6")).lstrip("#"),
+        "website": f"{base}/",
+        "sourceURL": f"{base}/apps.json",
     }
 
-    existing_feed = read_json_safe("apps.json")
-    existing_comparable = None
-    if existing_feed is not None:
-        existing_comparable = {k: v for k, v in existing_feed.items() if k != "generatedAt"}
 
-    if existing_comparable == new_feed_body:
-        print("apps.json unchanged — skipping write.")
-    else:
-        new_feed_body["generatedAt"] = dt.now(timezone.utc).isoformat()
-        atomic_write_json("apps.json", new_feed_body)
-        print(f"Master feed generated with {len(master_apps)} app definitions (expected up to {len(FILE_CONFIG)}).")
+def stage_build(catalog: Catalog, state: dict[str, Any]) -> tuple[list[Path], dict[str, Any]]:
+    written: list[Path] = []
+    rendered: list[tuple[App, dict[str, Any]]] = []
 
-    if skipped:
-        print("::warning::Apps excluded this run due to dead links:")
-        for item in skipped:
-            print(f"  - {item}")
+    for app in catalog.apps:
+        versions = state.get(app.slug, {}).get("versions")
+        if not versions:
+            log.error("%s has no known versions - excluded from this build", app.slug)
+            continue
+        rendered.append((app, render_app(catalog, app, versions, state[app.slug].get("health", {}))))
 
+    if not rendered:
+        raise SyncError("No app produced a valid feed entry")
+
+    base = catalog.base_url
+    for app, entry in rendered:
+        feed = feed_envelope(
+            catalog,
+            name=f"OmniSource - {app.name}",
+            identifier=f"{catalog.source.get('identifier', 'com.omnisource')}.{app.slug}",
+            subtitle=app.raw.get("subtitle", app.name),
+            description=f"Standalone distribution feed for {app.name}, curated within OmniSource.",
+        )
+        feed["sourceURL"] = f"{base}/{app.slug}.json"
+        feed["apps"] = [entry]
+        feed["news"] = []
+        if write_json(FEEDS_DIR / f"{app.slug}.json", feed):
+            written.append(FEEDS_DIR / f"{app.slug}.json")
+
+    master = feed_envelope(
+        catalog,
+        name=str(catalog.source.get("name", "OmniSource")),
+        identifier=str(catalog.source.get("identifier", "com.omnisource")),
+        subtitle=str(catalog.source.get("subtitle", "")),
+        description=str(catalog.source.get("description", "")),
+    )
+    master["apps"] = [entry for _, entry in sorted(rendered, key=lambda item: item[0].name.lower())]
+    master["news"] = []
+    if write_json(FEEDS_DIR / "apps.json", master):
+        written.append(FEEDS_DIR / "apps.json")
+
+    reachable = sum(1 for _, e in rendered if e["omnisource"]["health"]["downloadReachable"])
+    health_doc = {
+        # Derived from content, never from wall-clock time, so an unchanged
+        # catalogue produces an unchanged file (and therefore no commit).
+        "generatedAt": max(
+            [entry["omnisource"]["health"]["statusSince"] for _, entry in rendered]
+            + [entry["versionDate"] for _, entry in rendered]
+        ),
+        "totals": {
+            "apps": len(rendered),
+            "reachable": reachable,
+            "unreachable": len(rendered) - reachable,
+            "featured": sum(1 for _, e in rendered if e["omnisource"]["featured"]),
+        },
+        "apps": [
+            {
+                "slug": app.slug,
+                "name": app.name,
+                "status": app.status,
+                "version": entry["version"],
+                "updatedAt": entry["versionDate"],
+                "sizeBytes": entry["size"],
+                "downloadReachable": entry["omnisource"]["health"]["downloadReachable"],
+                "detail": entry["omnisource"]["health"]["detail"],
+                "statusSince": entry["omnisource"]["health"]["statusSince"],
+            }
+            for app, entry in rendered
+        ],
+    }
+    if write_json(FEEDS_DIR / "health.json", health_doc):
+        written.append(FEEDS_DIR / "health.json")
+
+    log.info("Built %d app feed(s) + master feed (%d file(s) changed)", len(rendered), len(written))
+    return written, health_doc
+
+
+# ---------------------------------------------------------------------------
+# Stage 4 - root mirrors (backwards compatibility)
+# ---------------------------------------------------------------------------
+def stage_mirror(catalog: Catalog) -> list[Path]:
+    """Copy generated feeds to their historical root paths.
+
+    Existing AltStore installs point at ``/OmniSource/<slug>.json``. Those URLs
+    must keep resolving, so ``feeds/`` is the source of truth and the root files
+    are byte-identical generated copies.
+    """
+    mirrored: list[Path] = []
+    for name in ["apps.json", *(f"{app.slug}.json" for app in catalog.apps)]:
+        source = FEEDS_DIR / name
+        target = REPO_ROOT / name
+        if not source.exists():
+            continue
+        payload = source.read_text(encoding="utf-8")
+        if not target.exists() or target.read_text(encoding="utf-8") != payload:
+            target.write_text(payload, encoding="utf-8")
+            mirrored.append(target)
+    if mirrored:
+        log.info("Refreshed %d root mirror(s)", len(mirrored))
+    return mirrored
+
+
+# ---------------------------------------------------------------------------
+# Stage 5 - README catalog block
+# ---------------------------------------------------------------------------
+def stage_readme(catalog: Catalog, health_doc: dict[str, Any]) -> bool:
+    if not README_PATH.exists():
+        return False
+    start, end = README_MARKERS
+    text = README_PATH.read_text(encoding="utf-8")
+    if start not in text or end not in text:
+        log.debug("README has no generated catalog block - skipping")
+        return False
+
+    base = catalog.base_url
+    by_slug = {item["slug"]: item for item in health_doc["apps"]}
+    status_icon = {"stable": "🟢", "beta": "🟡", "manual": "🔵", "unmaintained": "🔴"}
+
+    rows = ["| App | Version | Updated | Status | Download | Feed URL |", "| --- | --- | --- | --- | --- | --- |"]
+    for app in catalog.apps:
+        item = by_slug.get(app.slug)
+        if not item:
+            continue
+        rows.append(
+            f"| **{app.name}** | `{item['version']}` | {item['updatedAt']} | "
+            f"{status_icon.get(app.status, '⚪')} {app.status} | "
+            f"{'✅' if item['downloadReachable'] else '⚠️'} | "
+            f"`{base}/{app.slug}.json` |"
+        )
+
+    totals = health_doc["totals"]
+    block = "\n".join(
+        [
+            start,
+            "",
+            f"_Catalogue last changed {health_doc['generatedAt']} · {totals['apps']} apps · "
+            f"{totals['reachable']}/{totals['apps']} downloads reachable._",
+            "",
+            *rows,
+            "",
+            end,
+        ]
+    )
+    pattern = re.compile(re.escape(start) + ".*?" + re.escape(end), re.DOTALL)
+    updated = pattern.sub(lambda _: block, text)
+    if updated == text:
+        return False
+    README_PATH.write_text(updated, encoding="utf-8")
+    log.info("README catalog block refreshed")
+    return True
+
+
+# ---------------------------------------------------------------------------
+# Job summary
+# ---------------------------------------------------------------------------
+def write_summary(health_doc: dict[str, Any], changed: list[Path]) -> None:
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
-    if summary:
-        with open(summary, "a", encoding="utf-8") as f:
-            f.write("## OmniSource Build Summary\n\n")
-            f.write(f"- **Apps compiled:** {len(master_apps)} / {len(FILE_CONFIG)}\n")
-            if skipped:
-                f.write(f"- **Dead links excluded:** {len(skipped)}\n")
-                for item in skipped:
-                    f.write(f"  - `{item}`\n")
-            f.write("- ✅ No structural errors.\n" if not had_errors else "- ⚠️ Structural errors occurred — check logs.\n")
+    if not summary:
+        return
+    totals = health_doc["totals"]
+    lines = [
+        "## OmniSource build summary",
+        "",
+        f"- **Apps:** {totals['apps']}",
+        f"- **Downloads reachable:** {totals['reachable']}/{totals['apps']}",
+        f"- **Files changed:** {len(changed)}",
+        "",
+        "| App | Version | Updated | Download |",
+        "| --- | --- | --- | --- |",
+    ]
+    lines += [
+        f"| {item['name']} | `{item['version']}` | {item['updatedAt']} | "
+        f"{'✅' if item['downloadReachable'] else '⚠️ ' + item['detail']} |"
+        for item in health_doc["apps"]
+    ]
+    with Path(summary).open("a", encoding="utf-8") as handle:
+        handle.write("\n".join(lines) + "\n")
 
-    print("::endgroup::")
-    if had_errors:
-        print("::error::Completed with structural errors — see annotations above.")
-        sys.exit(1)
+
+# ---------------------------------------------------------------------------
+# Entry point
+# ---------------------------------------------------------------------------
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--no-sync", action="store_true", help="rebuild from feeds/state.json without hitting GitHub")
+    parser.add_argument("--no-health", action="store_true", help="skip download link probing")
+    parser.add_argument("--no-mirror", action="store_true", help="do not refresh the root-level compatibility copies")
+    parser.add_argument("--only", metavar="SLUG", action="append", help="restrict the sync stage to these app slugs")
+    parser.add_argument("--workers", type=int, default=8, help="concurrent link probes (default: 8)")
+    parser.add_argument("-v", "--verbose", action="store_true", help="debug logging")
+    return parser.parse_args(argv)
 
 
-# =====================================================================
-# Entry point — runs all stages in order
-# =====================================================================
-def main():
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
+    configure_logging(args.verbose)
+
     try:
-        sync_youproextra()
-        sync_ytmusic()
-        sync_spotiflac()
-        build_feed()
-    except RuntimeError:
-        # fetch_json already emitted a GitHub Actions annotation.
-        sys.exit(1)
+        catalog = Catalog.load()
+        state = read_json(STATE_PATH) or {}
+        known = {app.slug for app in catalog.apps}
+        state = {slug: value for slug, value in state.items() if slug in known}
+
+        if not args.no_sync:
+            with Group("Sync upstream releases"):
+                state = stage_sync(catalog, state, set(args.only) if args.only else None)
+
+        with Group("Check download health"):
+            stage_health(catalog, state, enabled=not args.no_health, workers=max(1, args.workers))
+        write_json(STATE_PATH, dict(sorted(state.items())))
+
+        with Group("Build feeds"):
+            changed, health_doc = stage_build(catalog, state)
+
+        if not args.no_mirror:
+            with Group("Mirror feeds to repository root"):
+                changed += stage_mirror(catalog)
+
+        stage_readme(catalog, health_doc)
+        write_summary(health_doc, changed)
+
+        unreachable = health_doc["totals"]["unreachable"]
+        if unreachable:
+            log.warning("%d app(s) currently have an unreachable download URL", unreachable)
+        log.info("Done. %d file(s) changed.", len(changed))
+        return 0
+    except SyncError as error:
+        log.error("%s", error)
+        return 1
+    except KeyboardInterrupt:  # pragma: no cover
+        return 130
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
