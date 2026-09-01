@@ -1,0 +1,617 @@
+# =============================================================================
+# Build uYouEnhanced IPA
+# =============================================================================
+# Manually injects the arichornlover/uYouEnhanced tweak stack into a decrypted
+# YouTube .ipa (Theos + theos-jailed, then cyan — the maintained successor to
+# Azule / pyzule) and publishes the patched IPA as a GitHub Release asset on
+# iamsmmh/OmniSource.
+#
+# How to run:
+#   Actions → "Build uYouEnhanced" → Run workflow → paste a DIRECT IPA URL.
+#
+# Direct-link hosts that work: Dropbox (?dl=1), Litterbox, archive.org,
+# GitHub Releases. Google Drive almost always fails (HTML interstitial).
+#
+# Toolchain mirrors arichornlover/uYouEnhanced .github/workflows/buildapp.yml
+# (Theos jailed package + cyan post-inject), adapted to live in OmniSource.
+# =============================================================================
+
+name: Build uYouEnhanced
+
+# Show who kicked off the run in the Actions list.
+run-name: Build uYouEnhanced (${{ github.actor }})
+
+# -----------------------------------------------------------------------------
+# Trigger — manual dispatch only. The decrypted YouTube IPA URL is required;
+# remaining inputs have the same defaults as upstream uYouEnhanced.
+# -----------------------------------------------------------------------------
+on:
+  workflow_dispatch:
+    inputs:
+      decrypted_youtube_url:
+        description: "Direct URL of the decrypted YouTube .ipa"
+        required: true
+        type: string
+        default: ""
+      sdk_version:
+        description: "iOS SDK version (must exist in aricloverALT/sdks)"
+        required: true
+        type: string
+        default: "18.6"
+      uyou_version:
+        description: "uYou .deb version to download (Makefile rebrands 3.0.4 → 3.0.5)"
+        required: true
+        type: string
+        default: "3.0.4"
+      bundle_id:
+        description: "CFBundleIdentifier for the patched app"
+        required: true
+        type: string
+        default: "com.google.ios.youtube"
+      app_name:
+        description: "CFBundleDisplayName for the patched app"
+        required: true
+        type: string
+        default: "YouTube"
+      commit_id:
+        description: "(Optional) arichornlover/uYouEnhanced commit, tag, or branch"
+        required: false
+        type: string
+        default: ""
+      include_ytuhd:
+        description: "Compile and inject YTUHD (4K)"
+        required: false
+        type: boolean
+        default: false
+      include_sponsorblock:
+        description: "Compile and inject iSponsorBlock (can crash on modern YouTube)"
+        required: false
+        type: boolean
+        default: false
+
+# Only one uYouEnhanced build at a time (macOS minutes are expensive).
+# Do not cancel an in-flight compile if someone re-triggers the workflow.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+# GITHUB_TOKEN needs write access to create the Release and upload the IPA.
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Compile, inject, and publish IPA
+    runs-on: macos-latest
+    timeout-minutes: 180
+
+    env:
+      # Theos looks up $THEOS for makefiles, SDKs, and the jailed module.
+      THEOS: ${{ github.workspace }}/theos
+      # Skip Homebrew's auto-update to keep dependency install fast.
+      HOMEBREW_NO_AUTO_UPDATE: 1
+      HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
+
+    steps:
+      # -----------------------------------------------------------------------
+      # 1. Clone arichornlover/uYouEnhanced (tweak sources + submodules)
+      #    The workflow lives in OmniSource, so we pull the upstream project
+      #    into ./uyouenhanced rather than building this repository.
+      # -----------------------------------------------------------------------
+      - name: Clone uYouEnhanced
+        uses: actions/checkout@v4
+        with:
+          repository: arichornlover/uYouEnhanced
+          path: uyouenhanced
+          ref: ${{ inputs.commit_id || 'main' }}
+          submodules: recursive
+          fetch-depth: 1
+          persist-credentials: false
+
+      - name: Record uYouEnhanced revision
+        run: |
+          set -euo pipefail
+          cd uyouenhanced
+          echo "UYOUENHANCED_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "UYOUENHANCED_SHA_SHORT=$(git rev-parse --short HEAD)" >> "$GITHUB_ENV"
+          echo "Building arichornlover/uYouEnhanced@$(git rev-parse --short HEAD)"
+
+      # -----------------------------------------------------------------------
+      # 2. Host toolchain — Xcode is preinstalled on macOS runners.
+      #    ldid     : fake-sign dylibs / the IPA (CODESIGN_IPA = 0 in Makefile)
+      #    dpkg     : extract the uYou .deb
+      #    make     : GNU make (BSD make on macOS is too old for Theos)
+      #    wget/jq  : download the IPA and parse workflow_dispatch JSON
+      #    pipx     : isolate the cyan (Azule successor) install
+      # -----------------------------------------------------------------------
+      - name: Select Xcode
+        run: |
+          set -euo pipefail
+          # GitHub images sometimes expose Xcode.app, sometimes Xcode_N.app.
+          XCODE_APP="$(ls -d /Applications/Xcode*.app 2>/dev/null | tail -n1 || true)"
+          if [ -n "$XCODE_APP" ]; then
+            sudo xcode-select -s "$XCODE_APP"
+          fi
+          xcode-select -p
+          xcodebuild -version
+
+      - name: Install Homebrew dependencies
+        run: brew install ldid dpkg make wget unzip jq pipx xz
+
+      - name: Put GNU make on PATH
+        run: echo "$(brew --prefix make)/libexec/gnubin" >> "$GITHUB_PATH"
+
+      # -----------------------------------------------------------------------
+      # 3. Theos — cross-compilation root for iOS tweaks.
+      # -----------------------------------------------------------------------
+      - name: Setup Theos
+        uses: actions/checkout@v4
+        with:
+          repository: theos/theos
+          ref: master
+          path: theos
+          submodules: recursive
+          persist-credentials: false
+
+      # Cache the patched iOS SDK (private frameworks) across runs.
+      - name: Cache iOS SDK
+        id: sdk-cache
+        uses: actions/cache@v4
+        with:
+          path: theos/sdks/
+          key: iOS-${{ inputs.sdk_version }}-SDK
+
+      - name: Download iOS SDK
+        if: steps.sdk-cache.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/aricloverALT/sdks.git sdks
+          cd sdks
+          git sparse-checkout set --no-cone "iPhoneOS${{ inputs.sdk_version }}.sdk"
+          git checkout --quiet
+          mkdir -p "$THEOS/sdks"
+          mv *.sdk "$THEOS/sdks/"
+          echo "Installed SDKs:"
+          ls -1 "$THEOS/sdks"
+
+      # -----------------------------------------------------------------------
+      # 4. theos-jailed — native "jailed" packaging (inject dylibs / bundles
+      #    into a decrypted .app). This is uYouEnhanced's build path; Azule is
+      #    no longer maintained and is not used for the primary inject.
+      # -----------------------------------------------------------------------
+      - name: Setup theos-jailed
+        uses: actions/checkout@v4
+        with:
+          repository: qnblackcat/theos-jailed
+          ref: master
+          path: theos-jailed
+          persist-credentials: false
+
+      - name: Install theos-jailed
+        run: bash ./theos-jailed/install
+
+      # Theos scripts pipe through `head`, which can SIGPIPE under `set -e`.
+      - name: Patch Theos broken-pipe (`| head`) issue
+        run: |
+          set -euo pipefail
+          find "$THEOS" \( -name "*.sh" -o -name "*.mk" \) -type f | while read -r FILE; do
+            if grep -q '| head' "$FILE" 2>/dev/null; then
+              sed -i '' 's/| head/2>\/dev\/null | head/g' "$FILE" 2>/dev/null || true
+              echo "Patched: $FILE"
+            fi
+          done
+
+      # -----------------------------------------------------------------------
+      # 5. cyan (pyzule-rw) — post-build injector used for the Safari
+      #    extension and any leftover .deb tweaks. cyan is the maintained
+      #    replacement for Azule / pyzule (`azule -i … -f …` is equivalent
+      #    to `cyan -i … -f …` for simple injects).
+      #    tbd is required by theos-jailed to stub private-framework TBDs.
+      # -----------------------------------------------------------------------
+      - name: Install cyan and tbd
+        run: |
+          set -euo pipefail
+          pipx install https://github.com/asdfzxcvbn/pyzule-rw/archive/main.zip
+          pipx ensurepath
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+          mkdir -p "$HOME/bin"
+          wget --quiet "https://github.com/inoahdev/tbd/releases/download/2.2/tbd-mac" -O "$HOME/bin/tbd"
+          chmod +x "$HOME/bin/tbd"
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+
+      # -----------------------------------------------------------------------
+      # 6. Fetch the caller-supplied decrypted YouTube IPA.
+      #    The URL is masked so it does not leak in logs (temporary / private
+      #    links are common).
+      # -----------------------------------------------------------------------
+      - name: Mask IPA URL
+        run: |
+          set -euo pipefail
+          URL_YT="$(jq -r '.inputs.decrypted_youtube_url' "$GITHUB_EVENT_PATH")"
+          if [ -z "$URL_YT" ] || [ "$URL_YT" = "null" ]; then
+            echo "::error::No decrypted YouTube IPA URL was provided."
+            exit 1
+          fi
+          echo "::add-mask::$URL_YT"
+          {
+            echo "URL_YT<<EOF"
+            echo "$URL_YT"
+            echo "EOF"
+          } >> "$GITHUB_ENV"
+
+      - name: Download and unpack YouTube IPA
+        id: prepare_youtube
+        run: |
+          set -euo pipefail
+          cd uyouenhanced
+
+          echo "Downloading decrypted YouTube IPA…"
+          wget --tries=3 --progress=dot:giga -O YouTube.ipa "$YOUTUBE_URL"
+
+          # IPA files are zip archives. Reject HTML error pages / Drive interstitials.
+          if ! unzip -t YouTube.ipa >/dev/null 2>&1; then
+            echo "::error::Downloaded file is not a valid .ipa (zip). Use a direct link (Dropbox ?dl=1, Litterbox, etc.)."
+            file YouTube.ipa || true
+            exit 1
+          fi
+
+          unzip -q YouTube.ipa
+          rm -f YouTube.ipa
+
+          APP="Payload/YouTube.app"
+          PLIST="$APP/Info.plist"
+          if [ ! -d "$APP" ] || [ ! -f "$PLIST" ]; then
+            echo "::error::IPA did not contain Payload/YouTube.app/Info.plist. Is this a decrypted YouTube IPA?"
+            ls -la Payload || true
+            exit 1
+          fi
+
+          youtube_version="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$PLIST" 2>/dev/null || true)"
+          if [ -z "$youtube_version" ]; then
+            youtube_version="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleVersion' "$PLIST")"
+          fi
+
+          echo "YouTube version: ${youtube_version}"
+          echo "YT_VERSION=${youtube_version}" >> "$GITHUB_ENV"
+          echo "youtube_version=${youtube_version}" >> "$GITHUB_OUTPUT"
+        env:
+          YOUTUBE_URL: ${{ env.URL_YT }}
+
+      # -----------------------------------------------------------------------
+      # 7. Compile tweaks and inject them into YouTube.app via Theos jailed
+      #    (`make package IPA=…`). This is the repository's native build
+      #    script path (same as ./build.sh locally).
+      # -----------------------------------------------------------------------
+      - name: Compile tweaks and package IPA
+        id: build_package
+        run: |
+          set -euo pipefail
+          cd uyouenhanced
+          make --version
+
+          # Honour workflow inputs without editing more of the Makefile than needed.
+          sed -i '' "s/^BUNDLE_ID .*/BUNDLE_ID = ${{ inputs.bundle_id }}/" Makefile || echo "BUNDLE_ID = ${{ inputs.bundle_id }}" >> Makefile
+          sed -i '' "s/^DISPLAY_NAME .*/DISPLAY_NAME = ${{ inputs.app_name }}/" Makefile || echo "DISPLAY_NAME = ${{ inputs.app_name }}" >> Makefile
+          sed -i '' "s/^export TARGET .*/export TARGET = iphone:clang:${{ inputs.sdk_version }}:16.0/" Makefile || echo "export TARGET = iphone:clang:${{ inputs.sdk_version }}:16.0" >> Makefile
+
+          if [ "${{ inputs.include_ytuhd }}" = "true" ]; then
+            echo "YTUHD_ENABLED=1" >> Makefile
+          else
+            echo "YTUHD_ENABLED=0" >> Makefile
+          fi
+
+          if [ "${{ inputs.include_sponsorblock }}" = "true" ]; then
+            echo "SPONSORBLOCK_ENABLED=1" >> Makefile
+          else
+            echo "SPONSORBLOCK_ENABLED=0" >> Makefile
+          fi
+
+          make package \
+            THEOS_PACKAGE_SCHEME=rootless \
+            IPA=Payload/YouTube.app \
+            FINALPACKAGE=1 \
+            SDK_VERSION="${{ inputs.sdk_version }}" \
+            YOUTUBE_VERSION="${YT_VERSION}" \
+            UYOU_VERSION="${{ inputs.uyou_version }}"
+
+          IPA_BUILT="$(ls -1t packages/*.ipa | head -n1)"
+          if [ -z "$IPA_BUILT" ] || [ ! -f "$IPA_BUILT" ]; then
+            echo "::error::Theos did not produce an IPA under uyouenhanced/packages/."
+            ls -la packages || true
+            exit 1
+          fi
+
+          IPA_NAME="$(basename "$IPA_BUILT")"
+          echo "Theos packaged: ${IPA_NAME}"
+          echo "package=${IPA_NAME}" >> "$GITHUB_OUTPUT"
+        env:
+          UYOU_VERSION: ${{ inputs.uyou_version }}
+
+      # -----------------------------------------------------------------------
+      # 8. Optional extras — Open-in-YouTube Safari appex + cyan inject,
+      #    then strip ExtensionKit / AppMigration bundles that SideStore
+      #    cannot resign.
+      # -----------------------------------------------------------------------
+      - name: Clone Open in YouTube Safari extension
+        run: |
+          set -euo pipefail
+          git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/BillyCurtis/OpenYouTubeSafariExtension.git OpenYouTubeSafariExtension
+          cd OpenYouTubeSafariExtension
+          git sparse-checkout set --no-cone OpenYouTubeSafariExtension.appex
+          git checkout --quiet
+          mv *.appex ..
+
+      - name: Normalize extension bundle IDs for SideStore
+        run: |
+          set -euo pipefail
+
+          PARENT_BUNDLE="${{ inputs.bundle_id }}"
+          ORIG_PREFIX="com.google.ios.youtube"
+
+          echo "Normalizing extension CFBundleIdentifier(s) to parent prefix: ${PARENT_BUNDLE}"
+
+          update_plist_id() {
+            PLIST_PATH="$1"
+            if [ ! -f "$PLIST_PATH" ]; then
+              return
+            fi
+            /usr/bin/plutil -convert xml1 "$PLIST_PATH" >/dev/null 2>&1 || true
+            CURRENT_ID="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier' "$PLIST_PATH" 2>/dev/null || true)"
+            if [ -z "$CURRENT_ID" ]; then
+              return
+            fi
+            if [[ "$CURRENT_ID" == "$ORIG_PREFIX"* ]]; then
+              SUFFIX="${CURRENT_ID#${ORIG_PREFIX}.}"
+              if [ "$SUFFIX" = "$CURRENT_ID" ]; then
+                SUFFIX="Extension"
+              fi
+              NEW_ID="${PARENT_BUNDLE}.${SUFFIX}"
+              echo "Updating $PLIST_PATH: $CURRENT_ID -> $NEW_ID"
+              /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $NEW_ID" "$PLIST_PATH" || \
+                /usr/libexec/PlistBuddy -c "Add :CFBundleIdentifier string $NEW_ID" "$PLIST_PATH" || true
+            else
+              echo "Skipping $PLIST_PATH (does not start with $ORIG_PREFIX): $CURRENT_ID"
+            fi
+          }
+
+          rewrite_prefix_in_file() {
+            local f="$1"
+            /usr/bin/plutil -convert xml1 "$f" >/dev/null 2>&1 || true
+            if grep -q "$ORIG_PREFIX" "$f" >/dev/null 2>&1; then
+              echo "Replacing occurrences in $f"
+              perl -0777 -pe "s/\Q${ORIG_PREFIX}\E/${PARENT_BUNDLE}/g" -i "$f" || true
+            fi
+          }
+
+          for appex in *.appex; do
+            if [ -d "$appex" ]; then
+              update_plist_id "$appex/Info.plist"
+              find "$appex" -type f \( -name "*.plist" -o -name "*.entitlements" \) | while read -r f; do
+                rewrite_prefix_in_file "$f"
+              done
+            fi
+          done
+
+          APP_BUNDLE_DIR="uyouenhanced/Payload/YouTube.app"
+
+          if [ -d "$APP_BUNDLE_DIR/Extensions" ]; then
+            echo "Removing ExtensionKit-style extensions (unresignable):"
+            ls -1 "$APP_BUNDLE_DIR/Extensions" || true
+            rm -rf "$APP_BUNDLE_DIR/Extensions"
+          fi
+
+          find "$APP_BUNDLE_DIR" -depth -type d -name "*AppMigration*" -print0 2>/dev/null \
+            | xargs -0 -I{} sh -c 'echo "Removing {}"; rm -rf "{}"' || true
+
+          if [ -d "$APP_BUNDLE_DIR" ]; then
+            find "$APP_BUNDLE_DIR" -type d -name "*.appex" | while read -r appex; do
+              update_plist_id "$appex/Info.plist"
+              find "$appex" -type f \( -name "*.plist" -o -name "*.entitlements" \) | while read -r f; do
+                rewrite_prefix_in_file "$f"
+              done
+            done
+
+            find "$APP_BUNDLE_DIR" -type f \( -name "*.plist" -o -name "*.entitlements" \) | while read -r f; do
+              rewrite_prefix_in_file "$f"
+            done
+          fi
+
+          echo "Normalization complete."
+
+      - name: Inject extras with cyan (Azule successor)
+        run: |
+          set -euo pipefail
+          IPA_IN="uyouenhanced/packages/${{ steps.build_package.outputs.package }}"
+          OUTNAME="uYouEnhanced_${YT_VERSION}_v${{ inputs.uyou_version }}.ipa"
+
+          tweaks="OpenYouTubeSafariExtension.appex"
+          for f in uyouenhanced/packages/*.deb; do
+            [ -f "$f" ] && tweaks="$tweaks $f"
+          done
+
+          if [ ! -e OpenYouTubeSafariExtension.appex ]; then
+            echo "::error::OpenYouTubeSafariExtension.appex was not cloned."
+            exit 1
+          fi
+          command -v cyan
+          echo "cyan inject: $IPA_IN -> $OUTNAME"
+          echo "tweaks: $tweaks"
+          cyan -i "$IPA_IN" -o "$OUTNAME" -uwef $tweaks -n "${{ inputs.app_name }}" -b "${{ inputs.bundle_id }}"
+          echo "CYAN_IPA=$OUTNAME" >> "$GITHUB_ENV"
+
+      - name: Strip unresignable extensions from final IPA
+        id: strip_ipa
+        run: |
+          set -euo pipefail
+
+          OUTNAME="${CYAN_IPA:-uYouEnhanced_${YT_VERSION}_v${{ inputs.uyou_version }}.ipa}"
+          if [ ! -f "$OUTNAME" ]; then
+            OUTNAME="$(find . -maxdepth 3 -name 'uYouEnhanced_*.ipa' -print -quit)"
+            OUTNAME="$(basename "$OUTNAME")"
+          fi
+          echo "Final IPA: $OUTNAME"
+
+          echo "--- .appex bundles contained in final IPA ---"
+          unzip -Z1 "$OUTNAME" | grep '\.appex/' | sed 's|^\(.*\.appex\)/.*|\1|' | sort -u | tee appex_list.txt || true
+
+          BAD="$(grep -v '/PlugIns/' appex_list.txt || true)"
+          if [ -n "$BAD" ]; then
+            echo "Removing unresignable extensions:"
+            printf '%s\n' "$BAD"
+            printf '%s\n' "$BAD" | while IFS= read -r d; do
+              zip -q -d "$OUTNAME" "${d}/*" || true
+            done
+          else
+            echo "All extensions are under PlugIns/ — OK for SideStore."
+          fi
+
+          mkdir -p uyouenhanced/packages
+          cp -f "$OUTNAME" "uyouenhanced/packages/$OUTNAME"
+          find uyouenhanced/packages -maxdepth 1 -name "*.ipa" ! -name "$OUTNAME" -delete || true
+          echo "final_ipa=$OUTNAME" >> "$GITHUB_OUTPUT"
+          echo "FINAL_IPA=$OUTNAME" >> "$GITHUB_ENV"
+
+      # -----------------------------------------------------------------------
+      # 9. Register alternate app icons shipped in uYouPlus.bundle.
+      # -----------------------------------------------------------------------
+      - name: Register alternate app icons
+        run: |
+          set -euo pipefail
+          IPA="${GITHUB_WORKSPACE}/uyouenhanced/packages/${FINAL_IPA}"
+          ICON_SRC="${GITHUB_WORKSPACE}/uyouenhanced/Localizations/uYouPlus.bundle/AppIcons"
+          if [ ! -d "$ICON_SRC" ]; then
+            echo "No AppIcons directory at $ICON_SRC; skipping."
+            exit 0
+          fi
+
+          rm -rf iconwork && mkdir -p iconwork && cd iconwork
+          unzip -q "$IPA" "Payload/YouTube.app/Info.plist"
+          PLIST="Payload/YouTube.app/Info.plist"
+          PB=/usr/libexec/PlistBuddy
+
+          for ROOT in CFBundleIcons "CFBundleIcons~ipad"; do
+            $PB -c "Add :$ROOT dict" "$PLIST" 2>/dev/null || true
+            $PB -c "Add :$ROOT:CFBundleAlternateIcons dict" "$PLIST" 2>/dev/null || true
+          done
+
+          shopt -s nullglob
+          for f in "$ICON_SRC"/*.png; do
+            NAME="$(basename "$f" .png)"
+            mkdir -p Payload/YouTube.app
+            cp -f "$f" "Payload/YouTube.app/$NAME.png"
+            for ROOT in CFBundleIcons "CFBundleIcons~ipad"; do
+              $PB -c "Add :$ROOT:CFBundleAlternateIcons:$NAME dict" "$PLIST" 2>/dev/null || true
+              $PB -c "Add :$ROOT:CFBundleAlternateIcons:$NAME:CFBundleIconFiles array" "$PLIST" 2>/dev/null || true
+              $PB -c "Add :$ROOT:CFBundleAlternateIcons:$NAME:CFBundleIconFiles:0 string $NAME" "$PLIST" 2>/dev/null || true
+              $PB -c "Add :$ROOT:CFBundleAlternateIcons:$NAME:CFBundleIconName string $NAME" "$PLIST" 2>/dev/null || true
+            done
+            echo "Registered alternate icon: $NAME"
+          done
+
+          zip -q "$IPA" "$PLIST" Payload/YouTube.app/*.png
+          cd .. && rm -rf iconwork
+          echo "Alternate icons registered into $(basename "$IPA")"
+
+      # Upstream Makefile rebrands the uYou dylib 3.0.4 → 3.0.5 unofficial.
+      - name: Rebrand IPA filename (3.0.4 → 3.0.5)
+        run: |
+          set -euo pipefail
+          cd uyouenhanced/packages
+          OLD="${FINAL_IPA}"
+          NEW="${OLD//3.0.4/3.0.5}"
+          if [ "$OLD" != "$NEW" ] && [ -f "$OLD" ]; then
+            mv "$OLD" "$NEW"
+            echo "Renamed: $OLD -> $NEW"
+          else
+            echo "No 3.0.4 in filename or file missing: $OLD"
+            NEW="$OLD"
+          fi
+          echo "FINAL_IPA=$NEW" >> "$GITHUB_ENV"
+
+          IPA_PATH="$(pwd)/$NEW"
+          SHA="$(shasum -a 256 "$NEW" | awk '{print $1}')"
+          SIZE="$(stat -f%z "$NEW")"
+          echo "IPA_SHA256=$SHA" >> "$GITHUB_ENV"
+          echo "IPA_SIZE=$SIZE" >> "$GITHUB_ENV"
+          echo "IPA_PATH=$IPA_PATH" >> "$GITHUB_ENV"
+          echo "SHASUM256: $SHA  $NEW ($SIZE bytes)"
+
+      # -----------------------------------------------------------------------
+      # 10. Publish — upload a workflow artifact (Actions tab) and create a
+      #     GitHub Release on iamsmmh/OmniSource with the IPA attached.
+      # -----------------------------------------------------------------------
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: uYouEnhanced_${{ env.YT_VERSION }}_${{ inputs.uyou_version }}
+          path: ${{ env.IPA_PATH }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          TAG="uyouenhanced-v${YT_VERSION}-${{ inputs.uyou_version }}-${{ github.run_number }}"
+          TITLE="uYouEnhanced ${YT_VERSION} (${{ inputs.uyou_version }})"
+          IPA_FILE="${IPA_PATH}"
+          IPA_NAME="$(basename "$IPA_FILE")"
+
+          YTUHD_LABEL="no"
+          if [ "${{ inputs.include_ytuhd }}" = "true" ]; then
+            YTUHD_LABEL="yes"
+          fi
+          SB_LABEL="no"
+          if [ "${{ inputs.include_sponsorblock }}" = "true" ]; then
+            SB_LABEL="yes"
+          fi
+
+          NOTES="$(cat <<EOF
+          Patched YouTube IPA built from [arichornlover/uYouEnhanced](https://github.com/arichornlover/uYouEnhanced) via GitHub Actions.
+
+          | Field | Value |
+          | --- | --- |
+          | YouTube | \`${YT_VERSION}\` |
+          | uYou | \`${{ inputs.uyou_version }}\` |
+          | Bundle ID | \`${{ inputs.bundle_id }}\` |
+          | Display name | \`${{ inputs.app_name }}\` |
+          | iOS SDK | \`${{ inputs.sdk_version }}\` |
+          | YTUHD | ${YTUHD_LABEL} |
+          | iSponsorBlock | ${SB_LABEL} |
+          | Source commit | [\`${UYOUENHANCED_SHA_SHORT}\`](https://github.com/arichornlover/uYouEnhanced/commit/${UYOUENHANCED_SHA}) |
+          | SHA-256 | \`${IPA_SHA256}\` |
+          | Size | ${IPA_SIZE} bytes |
+          | Workflow run | [#${{ github.run_number }}](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) |
+
+          Sideload with SideStore, AltStore, Feather, LiveContainer, or E-Sign.
+          EOF
+          )"
+
+          gh release create "$TAG" \
+            --repo "${{ github.repository }}" \
+            --title "$TITLE" \
+            --notes "$NOTES" \
+            "$IPA_FILE"
+
+          echo "Published ${IPA_NAME} as ${TAG}"
+          echo "RELEASE_TAG=$TAG" >> "$GITHUB_ENV"
+          echo "RELEASE_URL=${{ github.server_url }}/${{ github.repository }}/releases/tag/${TAG}" >> "$GITHUB_ENV"
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## uYouEnhanced build"
+            echo ""
+            echo "- **YouTube:** ${YT_VERSION:-unknown}"
+            echo "- **uYou:** ${{ inputs.uyou_version }}"
+            echo "- **IPA:** \`${FINAL_IPA:-n/a}\`"
+            echo "- **SHA-256:** \`${IPA_SHA256:-n/a}\`"
+            echo "- **uYouEnhanced:** [\`${UYOUENHANCED_SHA_SHORT:-n/a}\`](https://github.com/arichornlover/uYouEnhanced/commit/${UYOUENHANCED_SHA:-})"
+            if [ -n "${RELEASE_URL:-}" ]; then
+              echo "- **Release:** ${RELEASE_URL}"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
