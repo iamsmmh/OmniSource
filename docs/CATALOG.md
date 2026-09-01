@@ -35,6 +35,31 @@ who maintains it upstream, and how OmniSource obtains the build.
 
 Nothing is pre-signed. `codeSigned: false` on every entry means you sign with your own certificate.
 
+## Fallback mirrors
+
+Apps whose primary host is a shortener or a third-party mirror can declare one or more
+`fallbackDownloadURLs` in `catalog.json`:
+
+```json
+{
+  "slug": "example",
+  "name": "Example App",
+  "downloadURL": "https://primary.example.com/example.ipa",
+  "fallbackDownloadURLs": [
+    "https://mirror.example.com/example.ipa"
+  ]
+}
+```
+
+Mirrors are ordered — the first reachable one wins. They are probed by
+`scripts/health_check.py` (and the daily `health-check.yml` workflow) and surfaced on the website as
+alternative download links, so an app stays installable when its primary link goes down. A
+`manualRelease` may declare its own mirrors to override the app-level list for a specific build.
+
+> **Note:** the uYouEnhanced entry currently resolves through a `tinyurl.com` shortener. Its
+> `upstream` block points at this repository's own `uyouenhanced-v*` releases, so the first
+> successful *Build uYouEnhanced* run replaces the shortener with a first-party URL automatically.
+
 ## Shared apps note
 
 Five YouTube mods share the bundle identifier `com.google.ios.youtube`. iOS treats bundle IDs as

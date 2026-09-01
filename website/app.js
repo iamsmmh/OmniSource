@@ -220,6 +220,9 @@ function renderApp(slug) {
       <code>${esc(feedURL)}</code>
       <button class="btn" data-copy="${esc(feedURL)}">Copy feed URL</button>
       <a class="btn secondary" href="${esc(app.downloadURL)}">Download IPA</a>
+      ${(app.fallbackDownloadURLs ?? [])
+        .map((u, i) => `<a class="btn secondary" href="${esc(u)}">Mirror ${i + 1}</a>`)
+        .join("")}
       ${meta.upstreamURL ? `<a class="btn secondary" href="${esc(meta.upstreamURL)}">Upstream project</a>` : ""}
     </div>
 

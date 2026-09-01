@@ -60,9 +60,19 @@ It exists so that
 
 ### Generated feeds
 
-`feeds/apps.json` (master) and `feeds/<slug>.json` (per app) are standard AltStore v2 feeds with one
-addition: an `omnisource` object per app carrying status, verification, compatibility and health.
-Unknown keys are ignored by every client, so this is schema-safe.
+`feeds/apps.json` (master) and `feeds/<slug>.json` (per app) are standard AltStore v2 feeds with two
+additions: an `omnisource` object per app carrying status, verification, compatibility and health,
+and an optional `fallbackDownloadURLs` array (see below). Unknown keys are ignored by every client,
+so this is schema-safe.
+
+### Fallback mirrors
+
+Each app may declare `fallbackDownloadURLs` in `catalog.json` — an ordered list of HTTPS mirrors
+for the same build. The renderer attaches them to the newest version entry and to the app's flat
+fields; `scripts/health_check.py` probes them alongside the primary URL; and the website surfaces
+them as alternative download links. A `manualRelease` may declare build-specific mirrors that
+override the app-level list. Mirrors keep an app installable when its primary host (or a
+shortener) goes dark — without mirrors, a broken primary URL means a failed install.
 
 ### Root mirrors
 
@@ -115,17 +125,30 @@ blip could silently delete apps from everyone's client. Flagging instead of dele
 | Workflow | Trigger | Permissions | Purpose |
 | --- | --- | --- | --- |
 | `sync.yml` | schedule (6h), push to main, manual | `contents: write`, `pages: write` | Sync, validate, commit, deploy Pages |
-| `validate.yml` | pull request, push, manual | `contents: read` | Offline validation, reproducibility, lint |
+| `validate.yml` | pull request, push, manual | `contents: read` | Offline validation (Python + `jq`), reproducibility, lint |
+| `merge.yml` | `feeds/*.json` changed, manual | `contents: write` | Rebuild the root `apps.json` from the modular `feeds/` (SSOT) |
+| `health-check.yml` | schedule (daily), manual | `issues: write` | HEAD-probe every download URL + mirror, report broken links via an issue |
 | `build-uyouenhanced.yml` | manual only | `contents: write` | Compile and publish the uYouEnhanced IPA |
 
 `build-uyouenhanced.yml` publishes to this repository's releases, which the catalog then treats as
 the upstream for `uyouenhanced` — the build feeds itself back into the pipeline.
+
+### Scripts
+
+| Script | Used by | Purpose |
+| --- | --- | --- |
+| `scripts/omnisource.py` | `sync.yml` | Full pipeline: sync → health → build → mirror → README |
+| `scripts/validate.py` | `validate.yml`, `merge.yml` | Offline structural validation of catalog, feeds and mirrors |
+| `scripts/validate_jq.sh` | `validate.yml`, `merge.yml` | `jq`-only JSON lint + AltStore v2 shape checks |
+| `scripts/merge_feeds.py` | `merge.yml` | Merge `feeds/*.json` into the unified `apps.json` |
+| `scripts/health_check.py` | `health-check.yml` | HEAD-probe download URLs and mirrors, report via GitHub Issue |
 
 ## Extending
 
 | Goal | Change |
 | --- | --- |
 | Add an app | Append to `catalog.json` |
+| Add a download mirror | Add `fallbackDownloadURLs` to the app (or its `manualRelease`) in `catalog.json` |
 | Support a non-GitHub upstream | Add a resolver branch in `sync_app()` keyed on `upstream.provider` |
 | Add a metadata field | Extend `render_app()` and add a rule in `validate.py` |
 | Add a website page | Add a route to `ROUTES` in `website/app.js` |
