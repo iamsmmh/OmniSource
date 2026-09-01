@@ -1,0 +1,64 @@
+# -----------------------------------------------------------------------------
+# Validation for pull requests and direct pushes.
+#
+# Everything here is offline and read-only, so it is safe to run on forks:
+# no token, no network, no write permission.
+# -----------------------------------------------------------------------------
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Catalog, feeds, workflows
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate catalog and feeds
+        run: python3 scripts/validate.py
+
+      # Guards the invariant that feeds/ is generated, never hand-edited:
+      # a rebuild from committed state must be a no-op.
+      - name: Verify feeds are reproducible from catalog.json
+        run: |
+          set -euo pipefail
+          python3 scripts/omnisource.py --no-sync --no-health
+          if ! git diff --quiet -- '*.json'; then
+            echo "::error::feeds/ is out of date. Run 'python3 scripts/omnisource.py' and commit the result."
+            git --no-pager diff --stat -- '*.json'
+            exit 1
+          fi
+          echo "Feeds match catalog.json."
+
+      # Pinned exact versions: an unpinned linter turns an upstream release
+      # into a surprise red build on an unrelated pull request.
+      - name: Check Python style
+        run: |
+          python3 -m pip install --quiet --disable-pip-version-check "ruff==0.16.5"
+          python3 -m ruff check scripts/
+          python3 -m ruff format --check scripts/
+
+      - name: Lint workflows
+        run: |
+          docker run --rm -v "$PWD:/repo" -w /repo \
+            rhysd/actionlint:1.7.7 -color

@@ -1,20 +1,14 @@
-# Python
+# Build output
+_site/
+*.tmp
+
+# Python tooling caches
 __pycache__/
 *.py[cod]
-*.egg-info/
-build/
-dist/
-
-# Environments
-.venv/
-venv/
-.env
-
-# Tooling caches
-.mypy_cache/
-.pytest_cache/
 .ruff_cache/
-htmlcov/
-.coverage
-.coverage.*
-coverage.xml
+.mypy_cache/
+
+# Local environment
+.env
+.venv/
+.DS_Store

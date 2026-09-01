@@ -1,74 +1,30 @@
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[project]
-name = "omnisource"
-version = "0.1.0"
-description = "Resilient, async multi-source aggregation engine"
-readme = "README.md"
-requires-python = ">=3.11"
-license = { file = "LICENSE" }
-dependencies = [
-    "fastapi>=0.110",
-    "uvicorn[standard]>=0.29",
-    "pydantic>=2.6",
-    "pydantic-settings>=2.2",
-    "redis>=5.0",
-    "httpx>=0.27",
-]
-
-[project.optional-dependencies]
-dev = [
-    "pytest>=8.0",
-    "pytest-asyncio>=0.23",
-    "pytest-cov>=5.0",
-    "ruff>=0.5",
-    "mypy>=1.10",
-]
-
-[project.scripts]
-omnisource = "omnisource.__main__:main"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/omnisource"]
+# OmniSource is a data repository, not a distributable Python package.
+# This file exists solely to configure the linter/formatter used by
+# .github/workflows/validate.yml so local runs and CI agree.
 
 [tool.ruff]
-line-length = 100
+line-length = 120
 target-version = "py311"
-src = ["src", "tests"]
-# Legacy iOS-feed tooling predates this codebase and is linted by its own workflow.
-exclude = ["scripts", "docs"]
+src = ["scripts"]
 
 [tool.ruff.lint]
-select = ["E", "F", "W", "I", "N", "UP", "B", "A", "C4", "SIM", "RUF", "ASYNC"]
-# A002: `id` is part of the published BaseProvider contract.
-# ASYNC109: `timeout` is a deliberate public API knob; the engine enforces it
-#           internally with asyncio.wait_for.
-ignore = ["A002", "ASYNC109"]
+select = [
+  "E",    # pycodestyle
+  "F",    # pyflakes
+  "W",    # warnings
+  "I",    # import order
+  "UP",   # pyupgrade
+  "B",    # bugbear
+  "C4",   # comprehensions
+  "SIM",  # simplify
+  "RUF",  # ruff-specific
+  "PTH",  # prefer pathlib
+  "S",    # bandit security rules
+]
+ignore = [
+  "S310",  # URL schemes are validated before every urlopen call.
+  "S603",  # no subprocess use in this repository.
+]
 
-[tool.ruff.lint.per-file-ignores]
-"tests/*" = ["S101"]
-
-[tool.mypy]
-python_version = "3.11"
-strict = true
-packages = ["omnisource"]
-mypy_path = "src"
-warn_unreachable = true
-disallow_untyped_defs = true
-plugins = ["pydantic.mypy"]
-
-[[tool.mypy.overrides]]
-module = ["redis.*"]
-ignore_missing_imports = true
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-asyncio_mode = "auto"
-addopts = "-q --strict-markers"
-pythonpath = ["src"]
-
-[tool.coverage.run]
-source = ["src/omnisource"]
-branch = true
+[tool.ruff.format]
+quote-style = "double"

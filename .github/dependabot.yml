@@ -1,0 +1,14 @@
+# Actions are the only dependency surface in this repository: the Python
+# scripts are standard-library only and the website has no build step.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+    groups:
+      actions:
+        patterns: ["*"]

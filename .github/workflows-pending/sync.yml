@@ -1,0 +1,131 @@
+# -----------------------------------------------------------------------------
+# Primary pipeline: sync upstream releases, rebuild every feed, publish the site.
+#
+# This is the only workflow that writes to the repository. It replaces the
+# previous omnisource-build-sync.yml + updatex.yml pair, which raced each other
+# for apps.json on overlapping 12h/13h schedules.
+# -----------------------------------------------------------------------------
+name: Sync & Publish
+
+on:
+  schedule:
+    # Every 6 hours. Upstream mods usually ship within a few hours of a
+    # YouTube release; twice a day was consistently too slow.
+    - cron: "0 */6 * * *"
+  push:
+    branches: [main]
+    paths:
+      - catalog.json
+      - assets/**
+      - scripts/**
+      - website/**
+      - .github/workflows/sync.yml
+  workflow_dispatch:
+    inputs:
+      skip_sync:
+        description: "Rebuild feeds from feeds/state.json without calling the GitHub API"
+        type: boolean
+        default: false
+      skip_health:
+        description: "Skip download-link probing"
+        type: boolean
+        default: false
+
+# Never let two runs write feeds at the same time, and never cancel a run
+# midway through a commit.
+concurrency:
+  group: sync-publish
+  cancel-in-progress: false
+
+# Read-only by default; each job opts into exactly what it needs.
+permissions: {}
+
+jobs:
+  build:
+    name: Sync, validate, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # scripts/ is stdlib-only on purpose: no pip install, no lockfile drift,
+      # no third-party code executing with a write-scoped token.
+      - name: Build feeds
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/omnisource.py \
+            ${{ inputs.skip_sync && '--no-sync' || '' }} \
+            ${{ inputs.skip_health && '--no-health' || '' }}
+
+      - name: Validate output
+        run: python3 scripts/validate.py
+
+      - name: Commit changes
+        id: commit
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*.json' README.md
+
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No feed changes."
+            exit 0
+          fi
+
+          git commit -m "chore(feeds): sync upstream releases [skip ci]"
+          # Rebase instead of force-push: a concurrent human commit must survive.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Assemble Pages site
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp -r website/. _site/
+          cp -r assets _site/assets
+          cp -r feeds  _site/feeds
+          rm -f _site/feeds/state.json
+          # Historical flat URLs (https://<pages>/apps.json) must keep working.
+          cp feeds/apps.json _site/apps.json
+          for feed in feeds/*.json; do
+            name="$(basename "$feed")"
+            [ "$name" = "state.json" ] && continue
+            cp "$feed" "_site/$name"
+          done
+          cp catalog.json _site/catalog.json
+          touch _site/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

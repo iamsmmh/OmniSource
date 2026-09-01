@@ -1,0 +1,37 @@
+name: App request
+description: Suggest an app for the OmniSource catalog.
+labels: ["app-request"]
+body:
+  - type: markdown
+    attributes:
+      value: We only list free, publicly released apps that publish IPAs. See [CONTRIBUTING](https://github.com/iamsmmh/OmniSource/blob/main/docs/CONTRIBUTING.md).
+  - type: input
+    id: name
+    attributes: { label: App name }
+    validations: { required: true }
+  - type: input
+    id: upstream
+    attributes:
+      label: Upstream repository
+      placeholder: https://github.com/owner/project
+    validations: { required: true }
+  - type: input
+    id: bundle
+    attributes:
+      label: Bundle identifier
+      placeholder: com.example.app
+  - type: textarea
+    id: why
+    attributes:
+      label: Why should it be listed?
+      description: What it does, who maintains it, and how often it releases.
+    validations: { required: true }
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmations
+      options:
+        - label: The project publishes .ipa files as GitHub release assets
+          required: true
+        - label: The app is free and is not cracked or piracy-focused
+          required: true

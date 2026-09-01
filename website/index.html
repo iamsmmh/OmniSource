@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OmniSource — A curated iOS application repository</title>
+<meta name="description" content="OmniSource is a curated iOS application repository and distribution platform for AltStore, SideStore, Feather, ESign and LiveContainer.">
+<meta name="theme-color" content="#5b5bd6">
+<meta property="og:title" content="OmniSource">
+<meta property="og:description" content="A curated iOS application repository and distribution platform.">
+<meta property="og:image" content="./assets/OmniSource.png">
+<link rel="icon" href="./assets/OmniSource.png">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#/">
+      <img src="./assets/OmniSource.png" alt="" width="32" height="32">
+      <span>OmniSource</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="#/catalog" data-nav="catalog">Catalog</a>
+      <a href="#/compare" data-nav="compare">Compare</a>
+      <a href="#/compatibility" data-nav="compatibility">Compatibility</a>
+      <a href="#/health" data-nav="health">Health</a>
+      <a href="#/install" data-nav="install">Install</a>
+    </nav>
+    <button id="theme-toggle" class="ghost" type="button" aria-label="Toggle colour theme">◐</button>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div id="view" aria-live="polite">
+    <p class="muted">Loading catalog…</p>
+  </div>
+</main>
+
+<footer class="wrap footer">
+  <p>
+    <strong>OmniSource</strong> — a community project. Apps, trademarks and releases belong to their
+    respective owners. <a href="https://github.com/iamsmmh/OmniSource">Source</a> ·
+    <a href="https://github.com/iamsmmh/OmniSource/blob/main/docs/CONTRIBUTING.md">Contribute</a> ·
+    <a href="./apps.json">apps.json</a>
+  </p>
+</footer>
+
+<script src="./app.js" type="module"></script>
+</body>
+</html>
