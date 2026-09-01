@@ -38,14 +38,16 @@ FEEDS_DIR = REPO_ROOT / "feeds"
 ASSETS_DIR = REPO_ROOT / "assets"
 
 REQUIRED_APP_FIELDS = ("name", "bundleIdentifier", "developerName", "version", "versionDate", "downloadURL")
-REQUIRED_VERSION_FIELDS = ("version", "date", "downloadURL", "size")
+REQUIRED_VERSION_FIELDS = ("version", "date", "downloadURL", "size", "localizedDescription")
 REQUIRED_CATALOG_FIELDS = ("slug", "name", "bundleIdentifier", "developerName", "icon", "status", "compatibility")
 VALID_STATUSES = {"stable", "beta", "manual", "unmaintained", "deprecated"}
 VALID_VERIFICATION_METHODS = {"github-release", "manual-mirror", "self-built"}
 KNOWN_CLIENTS = {"altstore", "sidestore", "feather", "esign", "livecontainer"}
 SLUG_RE = re.compile(r"^[a-z0-9][a-z0-9-]{1,31}$")
 BUNDLE_RE = re.compile(r"^[A-Za-z0-9.-]+$")
-DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}")
+# ISO-8601: YYYY-MM-DD, optionally followed by a time and/or UTC offset.
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}(?:[Tt ]\d{2}:\d{2}(?::\d{2})?(?:\.\d+)?(?:[Zz]|[+-]\d{2}:?\d{2})?)?$")
+TINT_RE = re.compile(r"^[0-9A-Fa-f]{6}$")
 # feeds/state.json is pipeline state, not a distributable feed.
 NON_FEED_FILES = {"state.json", "health.json"}
 
@@ -146,12 +148,25 @@ def validate_catalog(catalog: Any) -> Report:
         if icon and not (ASSETS_DIR / icon).is_file():
             report.error(f"{prefix}: icon 'assets/{icon}' does not exist")
 
+        tint = app.get("tintColor")
+        if tint and not TINT_RE.match(str(tint).lstrip("#")):
+            report.error(f"{prefix}: tintColor must be a 6-digit hex string")
+
         if not app.get("localizedDescription"):
             report.warn(f"{prefix}: no localizedDescription - clients will show an empty app page")
 
         report.extend(_validate_verification(prefix, app.get("verification")))
         report.extend(_validate_compatibility(prefix, app.get("compatibility")))
         report.extend(_validate_upstream(prefix, app))
+        report.extend(_validate_fallback_urls(prefix, app.get("fallbackDownloadURLs")))
+        manual = app.get("manualRelease")
+        if isinstance(manual, dict):
+            report.extend(
+                _validate_fallback_urls(
+                    f"{prefix}.manualRelease", manual.get("fallbackDownloadURLs"), manual.get("downloadURL")
+                )
+            )
+        report.extend(_validate_permissions(prefix, app.get("appPermissions"), app.get("permissions")))
 
     return report
 
@@ -221,6 +236,57 @@ def _validate_upstream(prefix: str, app: dict[str, Any]) -> Report:
     return report
 
 
+def _validate_fallback_urls(prefix: str, value: Any, primary: str | None = None) -> Report:
+    """``fallbackDownloadURLs`` must be a de-duplicated list of HTTPS mirrors."""
+    report = Report()
+    if value is None:
+        return report
+    if not isinstance(value, list):
+        report.error(f"{prefix}: fallbackDownloadURLs must be an array of URLs")
+        return report
+    seen: set[str] = set()
+    for index, url in enumerate(value):
+        label = f"{prefix}.fallbackDownloadURLs[{index}]"
+        if not isinstance(url, str) or not is_http_url(url):
+            report.error(f"{label} must be a valid HTTP(S) URL")
+            continue
+        if not url.startswith("https://"):
+            report.warn(f"{label} is not HTTPS - mirrors should be served over TLS")
+        if url in seen:
+            report.error(f"{label} duplicates an earlier mirror")
+        if primary and url == primary:
+            report.error(f"{label} duplicates the primary downloadURL")
+        seen.add(url)
+    return report
+
+
+def _validate_permissions(prefix: str, app_permissions: Any, legacy_permissions: Any) -> Report:
+    """Permissions may be declared via ``appPermissions`` (AltStore 2.0) or ``permissions`` (legacy)."""
+    report = Report()
+    if legacy_permissions is not None:
+        if not isinstance(legacy_permissions, list):
+            report.error(f"{prefix}.permissions must be an array of {{type, usageDescription}}")
+        else:
+            for index, perm in enumerate(legacy_permissions):
+                if not isinstance(perm, dict) or not perm.get("type") or not perm.get("usageDescription"):
+                    report.error(f"{prefix}.permissions[{index}] must have 'type' and 'usageDescription'")
+    if app_permissions is not None:
+        if not isinstance(app_permissions, dict):
+            report.error(f"{prefix}.appPermissions must be an object")
+            return report
+        entitlements = app_permissions.get("entitlements")
+        if entitlements is not None and (
+            not isinstance(entitlements, list) or not all(isinstance(e, str) for e in entitlements)
+        ):
+            report.error(f"{prefix}.appPermissions.entitlements must be an array of strings")
+        privacy = app_permissions.get("privacy")
+        if privacy is not None and (
+            not isinstance(privacy, dict) or not all(isinstance(v, str) for v in privacy.values())
+        ):
+            report.error(f"{prefix}.appPermissions.privacy must be an object of string values")
+    return report
+
+
 # ---------------------------------------------------------------------------
 # feeds
 # ---------------------------------------------------------------------------
@@ -253,12 +319,18 @@ def validate_feed(path: Path, feed: Any) -> Report:
         for key in REQUIRED_APP_FIELDS:
             if not app.get(key):
                 report.error(f"{prefix} is missing '{key}'")
+        if app.get("bundleIdentifier") and not BUNDLE_RE.match(str(app["bundleIdentifier"])):
+            report.error(f"{prefix}.bundleIdentifier contains invalid characters")
         if app.get("downloadURL") and not is_http_url(app["downloadURL"]):
             report.error(f"{prefix}.downloadURL must be an HTTP(S) URL")
         if app.get("versionDate") and not DATE_RE.match(str(app["versionDate"])):
-            report.error(f"{prefix}.versionDate must start with YYYY-MM-DD")
+            report.error(f"{prefix}.versionDate must be an ISO date (YYYY-MM-DD)")
         if app.get("iconURL") and not is_http_url(app["iconURL"]):
             report.error(f"{prefix}.iconURL must be an HTTP(S) URL")
+        if app.get("tintColor") and not TINT_RE.match(str(app["tintColor"]).lstrip("#")):
+            report.error(f"{prefix}.tintColor must be a 6-digit hex string")
+        report.extend(_validate_fallback_urls(prefix, app.get("fallbackDownloadURLs"), app.get("downloadURL")))
+        report.extend(_validate_permissions(prefix, app.get("appPermissions"), app.get("permissions")))
 
         versions = app.get("versions")
         if not isinstance(versions, list) or not versions:
@@ -282,7 +354,10 @@ def validate_feed(path: Path, feed: Any) -> Report:
             elif size == 0:
                 report.warn(f"{v_prefix}.size is 0 - clients show a bogus download size")
             if version.get("date") and not DATE_RE.match(str(version["date"])):
-                report.error(f"{v_prefix}.date must start with YYYY-MM-DD")
+                report.error(f"{v_prefix}.date must be an ISO date (YYYY-MM-DD)")
+            report.extend(
+                _validate_fallback_urls(v_prefix, version.get("fallbackDownloadURLs"), version.get("downloadURL"))
+            )
             url = version.get("downloadURL")
             if url in seen:
                 report.error(f"{v_prefix}.downloadURL is duplicated within this app")
@@ -290,7 +365,12 @@ def validate_feed(path: Path, feed: Any) -> Report:
 
         newest = versions[0]
         if isinstance(newest, dict):
-            for flat, nested in (("version", "version"), ("downloadURL", "downloadURL"), ("size", "size")):
+            for flat, nested in (
+                ("version", "version"),
+                ("versionDate", "date"),
+                ("downloadURL", "downloadURL"),
+                ("size", "size"),
+            ):
                 if app.get(flat) != newest.get(nested):
                     report.error(f"{prefix}.{flat} must mirror versions[0].{nested}")
 

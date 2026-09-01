@@ -551,8 +551,20 @@ def stage_health(catalog: Catalog, state: dict[str, Any], *, enabled: bool, work
 # ---------------------------------------------------------------------------
 def render_app(catalog: Catalog, app: App, versions: list[dict[str, Any]], health: dict[str, Any]) -> dict[str, Any]:
     base = catalog.base_url
+    # Shallow-copy so fallback injection below never mutates the shared
+    # pipeline state that stage_health already persisted.
+    versions = [dict(version) for version in versions]
     newest = versions[0]
     raw = app.raw
+
+    # fallbackDownloadURLs mirror the latest build. A manualRelease may declare
+    # build-specific mirrors that override the app-level ones.
+    manual = app.manual_release
+    fallbacks = manual.get("fallbackDownloadURLs") if manual else None
+    if fallbacks is None:
+        fallbacks = raw.get("fallbackDownloadURLs") or []
+    fallbacks = [url for url in fallbacks if isinstance(url, str) and url]
+
     entry: dict[str, Any] = {
         "name": app.name,
         "bundleIdentifier": raw["bundleIdentifier"],
@@ -574,6 +586,9 @@ def render_app(catalog: Catalog, app: App, versions: list[dict[str, Any]], healt
     }
     if raw.get("appPermissions"):
         entry["appPermissions"] = raw["appPermissions"]
+    if fallbacks:
+        entry["fallbackDownloadURLs"] = list(fallbacks)
+        newest["fallbackDownloadURLs"] = list(fallbacks)
 
     # OmniSource extensions. Unknown keys are ignored by AltStore-family
     # clients, and power the website, README and health dashboard.
@@ -729,16 +744,21 @@ def stage_readme(catalog: Catalog, health_doc: dict[str, Any]) -> bool:
     by_slug = {item["slug"]: item for item in health_doc["apps"]}
     status_icon = {"stable": "🟢", "beta": "🟡", "manual": "🔵", "unmaintained": "🔴"}
 
-    rows = ["| App | Version | Updated | Status | Download | Feed URL |", "| --- | --- | --- | --- | --- | --- |"]
+    header = "| App | Bundle ID | Version | Updated | Status | Download | Install | Feed |"
+    divider = "| --- | --- | --- | --- | --- | --- | --- | --- |"
+    rows = [header, divider]
     for app in catalog.apps:
         item = by_slug.get(app.slug)
         if not item:
             continue
+        feed_url = f"{base}/{app.slug}.json"
+        bundle = str(app.raw.get("bundleIdentifier", "—"))
+        reachable = "✅" if item["downloadReachable"] else "⚠️"
+        install = f"[AltStore](altstore://source?url={feed_url}) · [SideStore](sidestore://source?url={feed_url})"
         rows.append(
-            f"| **{app.name}** | `{item['version']}` | {item['updatedAt']} | "
-            f"{status_icon.get(app.status, '⚪')} {app.status} | "
-            f"{'✅' if item['downloadReachable'] else '⚠️'} | "
-            f"`{base}/{app.slug}.json` |"
+            f"| **{app.name}** | `{bundle}` | `{item['version']}` | {item['updatedAt']} | "
+            f"{status_icon.get(app.status, '⚪')} {app.status} | {reachable} | {install} | "
+            f"[`{app.slug}.json`]({feed_url}) |"
         )
 
     totals = health_doc["totals"]

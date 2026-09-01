@@ -525,21 +525,18 @@ For review, read the diff in this order:
 | 6 | **Workflows** | `sync.yml`, `validate.yml`, `build-uyouenhanced.yml` | Permissions, concurrency, injection hardening |
 | 7 | **Docs & site** | `README.md`, `docs/`, `website/` | Accuracy of every claim |
 
-### Workflow files are staged, not installed
+### Workflow consolidation — activated
 
-The account that produced this branch is a GitHub App without the `workflows` permission, so GitHub
-rejects any push that touches `.github/workflows/`. The three finished workflow files therefore sit
-in [`.github/workflows-pending/`](../.github/workflows-pending/README.md) with a copy-paste
-activation script. This is the same platform limit that produced the original `docs/ci.yml.txt`
-(§5.1) — the difference is that these files are complete, reviewed, and come with a one-command
-install and a deletion step for the staging directory.
-
-Until they are activated, the six obsolete workflows remain live. Activating them is step 0 of the
-checklist below.
+The three replacement workflows were originally staged in `.github/workflows-pending/` because the
+GitHub App that opened the branch lacked the `workflows` permission. They have since been installed
+directly under `.github/workflows/` (`sync.yml`, `validate.yml`, `build-uyouenhanced.yml`), joined
+by `merge.yml` and `health-check.yml` — see [`.github/workflows/README.md`](../.github/workflows/README.md)
+for the current inventory. The obsolete workflows they replaced (`updatex.yml`,
+`ai-automated-committer.yml`, `copilot-agent.yml`, `copilot-setup-steps.yml`, `lint-action.yml`,
+`delete-old-workflows-run.yml`, `omnisource-build-sync.yml`) are no longer present.
 
 ### Post-merge checklist for the maintainer
 
-0. **Activate the workflows** — run the script in `.github/workflows-pending/README.md`.
 1. **Settings → Pages → Source: GitHub Actions.** Required for `sync.yml`'s deploy job. Until this
    is changed, branch-based Pages keeps serving the root mirrors, so nothing breaks — the site just
    will not appear.
