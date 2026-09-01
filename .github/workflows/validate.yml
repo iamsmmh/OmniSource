@@ -37,6 +37,10 @@ jobs:
       - name: Validate catalog and feeds
         run: python3 scripts/validate.py
 
+      # jq-only lint + AltStore v2 structural assertions. Offline and read-only.
+      - name: Lint JSON with jq
+        run: bash scripts/validate_jq.sh
+
       # Guards the invariant that feeds/ is generated, never hand-edited:
       # a rebuild from committed state must be a no-op.
       - name: Verify feeds are reproducible from catalog.json
