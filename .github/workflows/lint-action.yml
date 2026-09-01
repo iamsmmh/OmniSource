@@ -13,11 +13,12 @@ permissions:
 jobs:
   format-and-fix:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ github.token }}
 
       - name: Setup Node.js Environment
         uses: actions/setup-node@v4
@@ -33,7 +34,7 @@ jobs:
 
       - name: Commit and Push Structural Changes
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
           BRANCH: ${{ github.ref_name }}
         run: |
