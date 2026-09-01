@@ -16,11 +16,12 @@ jobs:
   sync-and-build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ github.token }}
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
@@ -31,18 +32,24 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull origin main --rebase || echo "No rebase needed"
+          git pull origin main --rebase
 
       - name: Run OmniSource Sync & Build
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: python3 scripts/omnisource.py
+
+      - name: Validate JSON Feeds
+        run: python3 scripts/validate_feeds.py
 
       - name: Commit and Push
         run: |
-          FILES="apps.json spotiflac.json youmod.json youpro.json ytkace.json ytkp.json ytlite.json ytmusic.json"
-          for f in $FILES; do [ -f "$f" ] && git add "$f"; done
-          git diff --cached --quiet && { echo "No changes."; exit 0; }
+          git add -- '*.json'
+
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+
           git commit -m "chore(omnisource): sync releases and rebuild feed [skip ci]"
-          git pull origin main --rebase
           git push origin HEAD:main
