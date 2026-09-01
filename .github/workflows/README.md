@@ -1,67 +1,40 @@
-# Pending workflows — activate in one command
+# Workflows
 
-These are the finished replacements for `.github/workflows/`. They live here for one reason: the
-automation account that opened this pull request is a GitHub App without the `workflows`
-permission, so GitHub rejects **any** push that adds, edits or deletes a file under
-`.github/workflows/`. That is a platform restriction, not a design choice — everything else in the
-refactor landed normally.
+The automation for OmniSource lives here. Every workflow starts with read-only
+permissions and opts in to exactly what it needs, never more.
 
-This directory is temporary. Delete it as soon as you have run the commands below.
+| Workflow | Trigger | Writes | Purpose |
+| --- | --- | --- | --- |
+| [`sync.yml`](sync.yml) | schedule (6 h) · push · manual | feeds, mirrors, README, Pages | Resolve upstream releases, probe links, rebuild every feed, deploy the site |
+| [`validate.yml`](validate.yml) | pull request · push · manual | nothing | Offline gate: Python + `jq` structural validation, reproducibility check, `ruff`, `actionlint` |
+| [`merge.yml`](merge.yml) | `feeds/*.json` changed · manual | `apps.json` | Rebuild the unified root `apps.json` from the modular `feeds/` (SSOT) |
+| [`health-check.yml`](health-check.yml) | schedule (daily) · manual | GitHub Issue | HEAD-probe every download URL + mirror and report broken links via an issue |
+| [`build-uyouenhanced.yml`](build-uyouenhanced.yml) | manual | Release asset | Build and publish the uYouEnhanced IPA, then trigger a feed sync |
 
-## Activate
+## How they fit together
 
-```bash
-git checkout arena/01a05ed6-omnisource
+catalog.json ──▶ sync.yml (scripts/omnisource.py) ──▶ feeds/.json ──▶ GitHub Pages
+▲ │
+│ ▼
+build-uyouenhanced.yml merge.yml (scripts/merge_feeds.py)
+(publishes uyouenhanced-v release) ──▶ apps.json (root mirror)
 
-# 1. Remove the six obsolete workflows (see docs/AUDIT.md §5.3)
-git rm .github/workflows/ai-automated-committer.yml \
-       .github/workflows/copilot-agent.yml \
-       .github/workflows/copilot-setup-steps.yml \
-       .github/workflows/lint-action.yml \
-       .github/workflows/updatex.yml \
-       .github/workflows/delete-old-workflows-run.yml \
-       .github/workflows/omnisource-build-sync.yml
 
-# 2. Install the replacements (build-uyouenhanced.yml is an in-place upgrade)
-git mv .github/workflows-pending/sync.yml               .github/workflows/sync.yml
-git mv .github/workflows-pending/validate.yml           .github/workflows/validate.yml
-git mv .github/workflows-pending/build-uyouenhanced.yml .github/workflows/build-uyouenhanced.yml
+- **`sync.yml`** is the only workflow that writes to the repository on a
+  schedule. `concurrency` prevents two runs from writing `feeds/` at once.
+- **`merge.yml`** is the safety net: if a human (or an interrupted sync) leaves
+  `feeds/` and the root `apps.json` out of step, it re-derives `apps.json` from
+  the modular feeds — `feeds/` is the single source of truth.
+- **`health-check.yml`** is independent of releases: a broken upstream link is
+  reported even when nothing new has shipped. It appends to a single open
+  `broken-link` issue rather than opening a new one each run.
+- **`validate.yml`** guards pull requests. It is read-only and network-free, so
+  it is safe on forks. The reproducibility step fails a PR that hand-edits a
+  generated feed instead of `catalog.json`.
 
-# 3. Remove this directory
-git rm -r .github/workflows-pending
+## After a fresh fork
 
-git commit -m "ci: consolidate eight workflows into three"
-git push
-```
-
-Alternatively, paste each file into **Actions → New workflow** in the web UI and delete the old
-ones there.
-
-## What you are installing
-
-| File | Replaces | Purpose |
-| --- | --- | --- |
-| `sync.yml` | `omnisource-build-sync.yml` + `updatex.yml` | Every 6 h and on push: sync upstream releases, validate, commit, deploy Pages. The two workflows it replaces both wrote `apps.json` on overlapping 12 h / 13 h schedules and raced each other |
-| `validate.yml` | `lint-action.yml`, `docs/ci.yml.txt` | Pull-request gate: offline feed validation, a reproducibility check, pinned `ruff`, pinned `actionlint`. Read-only, no token, safe on forks |
-| `build-uyouenhanced.yml` | itself | Same 617-line build, hardened: `workflow_dispatch` inputs now travel through job-level `env:` instead of being interpolated into 24 `run:` lines (shell-injection fix), plus a final step that triggers `sync.yml` so a new build becomes a feed update automatically |
-
-## Deleted workflows, briefly
-
-| Workflow | Why |
-| --- | --- |
-| `updatex.yml` | Duplicate writer for `apps.json`; raced the sync workflow; pinned `actions/checkout@v7`, which does not exist |
-| `ai-automated-committer.yml` | Any issue comment containing `@ai` sent untrusted text to an LLM and opened a PR with a PAT. The step also discarded the model's output, so it created empty PRs |
-| `copilot-agent.yml` | Depends on `github/copilot-action@v1`, which is not a published action. Every run failed |
-| `copilot-setup-steps.yml` | Installs from a `requirements.txt` that does not exist. No-op |
-| `lint-action.yml` | Force-committed Prettier formatting back to contributor branches |
-| `delete-old-workflows-run.yml` | Granted `actions: write` to a third-party action to erase run history |
-
-Full reasoning: [`docs/AUDIT.md`](../../docs/AUDIT.md) §5.3 and §9.
-
-## After activating
-
-1. **Settings → Pages → Source: GitHub Actions** — required for the deploy job in `sync.yml`.
-   Until then, branch-based Pages keeps serving the root-level feed mirrors, so nothing breaks.
-2. **Settings → Actions → Workflow permissions** — leave at read-only; every workflow now requests
-   what it needs explicitly.
-3. Delete the `GH_TOKEN` repository secret if it exists; nothing uses it any more.
+1. **Settings → Pages → Source: GitHub Actions** (required for `sync.yml` to deploy).
+2. **Settings → Actions → Workflow permissions** — leave at the default
+   *read repository contents*; each workflow requests more explicitly.
+3. No repository secrets are required — `github.token` covers every case.
