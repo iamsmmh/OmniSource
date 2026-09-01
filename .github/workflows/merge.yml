@@ -1,0 +1,66 @@
+# -----------------------------------------------------------------------------
+# Merge modular feeds into the unified root apps.json.
+#
+# feeds/ is the single source of truth for distribution. This workflow rebuilds
+# the aggregate documents (feeds/apps.json and the root-level apps.json mirror)
+# from the per-app feeds whenever feeds/*.json changes, then re-validates the
+# result. It is the safety net for direct edits and hotfixes to feeds/; the
+# full sync.yml pipeline already produces the same output on its own schedule.
+# -----------------------------------------------------------------------------
+name: Merge Feeds
+
+on:
+  pull_request:
+    paths:
+      - "feeds/*.json"
+  push:
+    branches: [main]
+    paths:
+      - "feeds/*.json"
+  workflow_dispatch:
+
+concurrency:
+  group: merge-feeds
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    name: Rebuild apps.json from feeds/
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Merge modular feeds into apps.json
+        run: python3 scripts/merge_feeds.py
+
+      - name: Validate merged feeds
+        run: |
+          python3 scripts/validate.py
+          bash scripts/validate_jq.sh
+
+      - name: Commit merged apps.json
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps.json feeds/apps.json
+
+          if git diff --cached --quiet; then
+            echo "apps.json already matches feeds/."
+            exit 0
+          fi
+
+          git commit -m "chore(feeds): merge modular feeds into apps.json [skip ci]"
+          # Rebase instead of force-push: a concurrent human commit must survive.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
