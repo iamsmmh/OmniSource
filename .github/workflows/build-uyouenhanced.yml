@@ -99,7 +99,7 @@ jobs:
       #    into ./uyouenhanced rather than building this repository.
       # -----------------------------------------------------------------------
       - name: Clone uYouEnhanced
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: arichornlover/uYouEnhanced
           path: uyouenhanced
@@ -145,7 +145,7 @@ jobs:
       # 3. Theos — cross-compilation root for iOS tweaks.
       # -----------------------------------------------------------------------
       - name: Setup Theos
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: theos/theos
           ref: master
@@ -156,7 +156,7 @@ jobs:
       # Cache the patched iOS SDK (private frameworks) across runs.
       - name: Cache iOS SDK
         id: sdk-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: theos/sdks/
           key: iOS-${{ inputs.sdk_version }}-SDK
@@ -180,7 +180,7 @@ jobs:
       #    no longer maintained and is not used for the primary inject.
       # -----------------------------------------------------------------------
       - name: Setup theos-jailed
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: qnblackcat/theos-jailed
           ref: master
@@ -542,7 +542,7 @@ jobs:
       #     GitHub Release on iamsmmh/OmniSource with the IPA attached.
       # -----------------------------------------------------------------------
       - name: Upload IPA artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: uYouEnhanced_${{ env.YT_VERSION }}_${{ inputs.uyou_version }}
           path: ${{ env.IPA_PATH }}
