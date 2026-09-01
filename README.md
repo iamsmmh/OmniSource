@@ -6,7 +6,7 @@
   # OmniSource
   ### Automated iOS Sideloading Feed Repository
 
-  [![Build](https://img.shields.io/github/actions/workflow/status/iamsmmh/OmniSource/update.yml?style=flat-square&logo=github-actions)](https://github.com/iamsmmh/OmniSource/actions)
+  [![Build](https://img.shields.io/github/actions/workflow/status/iamsmmh/OmniSource/omnisource-build-sync.yml?style=flat-square&logo=github-actions)](https://github.com/iamsmmh/OmniSource/actions)
   [![License](https://img.shields.io/github/license/iamsmmh/OmniSource?style=flat-square)](LICENSE)
   [![Stars](https://img.shields.io/github/stars/iamsmmh/OmniSource?style=flat-square)](https://github.com/iamsmmh/OmniSource/stargazers)
 
@@ -32,7 +32,7 @@ Add this URL to any AltStore-compatible client to get the full OmniSource collec
 https://iamsmmh.github.io/OmniSource/spotiflac.json
 ```
 
-<img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="20" valign="middle"> **uYouEnhanced**
+<img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/uYouEnhanced.png" width="20" valign="middle"> **uYouEnhanced**
 ```
 https://iamsmmh.github.io/OmniSource/uyouenhanced.json
 ```
@@ -54,7 +54,7 @@ https://iamsmmh.github.io/OmniSource/ytlite.json
 
 <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="20" valign="middle"> **YTKillerPlus**
 ```
-https://iamsmmh.github.io/OmniSource/ytkillerplus.json
+https://iamsmmh.github.io/OmniSource/ytkp.json
 ```
 
 <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTube.png" width="20" valign="middle"> **YouMod**
@@ -64,7 +64,7 @@ https://iamsmmh.github.io/OmniSource/youmod.json
 
 <img src="https://raw.githubusercontent.com/iamsmmh/OmniSource/main/assets/YouTubeMusic.png" width="20" valign="middle"> **YTMusicUltimate**
 ```
-https://iamsmmh.github.io/OmniSource/ytmusicultimate.json
+https://iamsmmh.github.io/OmniSource/ytmusic.json
 ```
 
 ---
@@ -90,9 +90,8 @@ Copy any feed URL above into your client's source/repository section. Uses the A
 
 | Workflow | Purpose |
 |:---|:---|
-| `update.yml` | Feed updates |
-| `updatex.yml` | Additional updates |
-| `lint-action.yml` | Workflow validation |
+| `omnisource-build-sync.yml` | Sync upstream releases and rebuild all feeds |
+| `lint-action.yml` | Workflow formatting |
 | `delete-old-workflows-run.yml` | Run cleanup |
 
 ```
