@@ -1,4 +1,5 @@
 name: Delete old workflows run
+
 on:
   workflow_dispatch:
     inputs:
@@ -13,12 +14,12 @@ on:
         default: "0"
 
       delete_workflow_pattern:
-        description: "Name or filename of the workflow (if not set, all workflows are targeted)"
+        description: "Name or filename of the workflow"
         required: false
         default: ""
 
       delete_workflow_by_state_pattern:
-        description: "Filter workflows by state: active, deleted, disabled_fork, disabled_inactivity, disabled_manually"
+        description: "Filter workflows by state"
         required: true
         default: "ALL"
         type: choice
@@ -31,7 +32,7 @@ on:
           - disabled_manually
 
       delete_run_by_conclusion_pattern:
-        description: "Remove runs based on conclusion: action_required, cancelled, failure, skipped, success"
+        description: "Remove runs based on conclusion"
         required: true
         default: "ALL"
         type: choice
@@ -60,9 +61,11 @@ jobs:
   build:
     name: Delete old workflows run
     runs-on: ubuntu-latest
+
     permissions:
       actions: write
       contents: read
+
     steps:
       - name: Delete old workflows run
         uses: Mattraks/delete-workflow-runs@v2
