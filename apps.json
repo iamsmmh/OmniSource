@@ -334,15 +334,18 @@
       "version": "21.14.4",
       "versionDate": "2026-08-22",
       "versionDescription": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
-      "downloadURL": "https://tinyurl.com/4wck29a8",
-      "size": 118022104,
+      "downloadURL": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+      "size": 135840058,
       "versions": [
         {
           "version": "21.14.4",
           "date": "2026-08-22",
           "localizedDescription": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
-          "downloadURL": "https://tinyurl.com/4wck29a8",
-          "size": 118022104,
+          "downloadURL": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+          "fallbackDownloadURLs": [
+            "https://dn720705.ca.archive.org/0/items/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
+          ],
+          "size": 135840058,
           "minOSVersion": "16.0"
         }
       ],
@@ -381,14 +384,17 @@
           "NSUserTrackingUsageDescription": "A message that informs the user why an app is requesting permission to use data for tracking the user or the device."
         }
       },
+      "fallbackDownloadURLs": [
+        "https://dn720705.ca.archive.org/0/items/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
+      ],
       "omnisource": {
         "slug": "uyouenhanced",
         "status": "manual",
         "featured": true,
         "upstreamURL": "https://github.com/arichornlover/uYouEnhanced",
         "verification": {
-          "method": "self-built",
-          "publisher": "iamsmmh/OmniSource",
+          "method": "manual-mirror",
+          "publisher": "arichornlover/uYouEnhanced via archive.org (mirrored by iamsmmh/OmniSource)",
           "codeSigned": false,
           "checksumPublished": true
         },
@@ -406,7 +412,7 @@
             "esign",
             "livecontainer"
           ],
-          "notes": "Built in-repo by the 'Build uYouEnhanced' workflow; releases carry a published SHA-256."
+          "notes": "Served from the official archive.org mirror of the upstream build until the first in-repo 'Build uYouEnhanced' release (tag uyouenhanced-v*) takes over automatically. MD5/SHA-1 are published on the archive.org item page."
         },
         "health": {
           "downloadReachable": true,
@@ -555,7 +561,7 @@
         "slug": "youpro",
         "status": "stable",
         "featured": true,
-        "upstreamURL": "https://github.com/Alibusut/YouPro",
+        "upstreamURL": "https://github.com/mrdrvt99/YouProEXTRA",
         "verification": {
           "method": "github-release",
           "publisher": "mrdrvt99/YouProEXTRA",
@@ -826,7 +832,7 @@
         "slug": "ytkp",
         "status": "stable",
         "featured": false,
-        "upstreamURL": "https://github.com/IKillerApp/YTKillerPlus",
+        "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
         "verification": {
           "method": "github-release",
           "publisher": "mrdrvt99/YouProEXTRA",

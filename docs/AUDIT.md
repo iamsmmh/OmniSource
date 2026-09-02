@@ -317,7 +317,8 @@ behind a 6-hourly cron. It earns its place.
 **`build-uyouenhanced.yml` closes the loop.** It publishes a release tagged `uyouenhanced-v*`, and
 the catalog now treats `iamsmmh/OmniSource` releases with that prefix as the app's upstream. A
 final step triggers `sync.yml`, so a build automatically becomes a feed update — and the
-`tinyurl.com` mirror (W7) retires itself on the first build.
+`tinyurl.com` mirror (W7) retires itself on the first build. (Retired early on 2026-09-02: the
+`manualRelease` now points straight at the archive.org mirror of the upstream build.)
 
 ---
 
@@ -387,7 +388,7 @@ Proposed next, in priority order:
 | S8 | Six unused runtime dependencies | Six supply-chain surfaces (and transitives) for code that never ran | Removed; pipeline is standard-library only | ✅ |
 | S9 | `validate.yml` predecessor checked out with credentials persisted | Fork PRs could reach repository state | `persist-credentials: false`, `contents: read`, no token, no network | ✅ |
 | S10 | Unpinned linter (`pipx run ruff`) in CI | An upstream release turns into a surprise red build on unrelated PRs | Pinned `ruff==0.16.5`, `actionlint:1.7.7` | ✅ |
-| S11 | `tinyurl.com` shortener as a download URL for uYouEnhanced | The destination can be changed at any time by whoever controls the link, with no signal in this repository | `uyouenhanced` now resolves from first-party `uyouenhanced-v*` releases; the shortener remains only as a `manualRelease` fallback until the first build | ⚠️ Partial |
+| S11 | `tinyurl.com` shortener as a download URL for uYouEnhanced | The destination can be changed at any time by whoever controls the link, with no signal in this repository | Shortener removed; the `manualRelease` points directly at the archive.org mirror of the upstream build until the first `uyouenhanced-v*` release replaces it | ✅ |
 | S12 | Third-party actions pinned to major tags, not SHAs | A compromised tag silently changes behaviour | Dependabot configured for monthly action updates; SHA pinning tracked in `SECURITY.md` | ⚠️ Tracked |
 | S13 | No checksum verification of upstream assets | A replaced release asset is undetectable | Tracked as roadmap item 1 | ⚠️ Tracked |
 
@@ -545,7 +546,7 @@ for the current inventory. The obsolete workflows they replaced (`updatex.yml`,
 3. **Delete the `GH_TOKEN` repository secret** if it exists. Nothing uses it; `github.token` covers
    every case.
 4. **Run `Build uYouEnhanced` once.** It publishes `uyouenhanced-v*`, `sync.yml` picks it up
-   automatically, and the `tinyurl.com` fallback (S11) retires.
+   automatically, and the archive.org mirror fallback (S11) retires.
 5. **Watch the first two scheduled runs.** The second should report `0 file(s) changed` and produce
    no commit. If it commits, idempotency has regressed.
 6. **Enable private vulnerability reporting** (Settings → Security) so `SECURITY.md` is actionable.
