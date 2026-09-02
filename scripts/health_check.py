@@ -161,6 +161,36 @@ def render_report(results: list[dict[str, Any]], broken: list[dict[str, Any]]) -
     return "\n".join(lines)
 
 
+def ensure_label(gh_bin: str, env: dict[str, str], *, repo: str, label: str) -> None:
+    """Best-effort creation of the tracking label.
+
+    ``gh issue create --label`` fails outright (HTTP 422) when the label does
+    not exist yet, which would turn a broken-link report into a broken
+    workflow. Creating a label only needs the ``issues: write`` scope the
+    workflow already grants, so the checker provisions it on demand instead of
+    assuming repository settings. Re-creating an existing label errors
+    harmlessly and is ignored.
+    """
+    subprocess.run(
+        [
+            gh_bin,
+            "label",
+            "create",
+            label,
+            "--repo",
+            repo,
+            "--color",
+            "D93F0B",
+            "--description",
+            "A download link in a published feed is unreachable",
+        ],
+        env=env,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+
 def report_issue(report: str, *, repo: str, label: str, title: str) -> None:
     """File a new issue, or append to the most recent open one with the label."""
     gh_bin = shutil.which("gh")
@@ -197,6 +227,7 @@ def report_issue(report: str, *, repo: str, label: str, title: str) -> None:
         subprocess.run([gh_bin, "issue", "comment", "--repo", repo, number, "--body", report], env=env, check=True)
         print(f"health-check: appended report to existing issue #{number}")
     else:
+        ensure_label(gh_bin, env, repo=repo, label=label)
         subprocess.run(
             [gh_bin, "issue", "create", "--repo", repo, "--title", title, "--label", label, "--body", report],
             env=env,
