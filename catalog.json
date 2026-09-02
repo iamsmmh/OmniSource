@@ -608,6 +608,80 @@
         "keepVersions": 1,
         "descriptionTemplate": "YTMusicUltimate {version} | YTMusic {secondary} | {label}"
       }
+    },
+    {
+      "slug": "utm",
+      "name": "UTM",
+      "subtitle": "Virtual machines for iOS",
+      "bundleIdentifier": "com.utmapp.UTM",
+      "developerName": "UTM Team",
+      "category": "utilities",
+      "tintColor": "7D93E0",
+      "icon": "UTM.png",
+      "localizedDescription": "Run real operating systems on your iPhone or iPad. UTM is an open-source (Apache-2.0) virtualization and emulation platform built on QEMU, capable of running Windows, Linux, classic Mac OS and dozens of other systems alongside your apps.\n\nHighlights:\n- QEMU v10.0.2 backend with support for dozens of CPU architectures (x86_64, ARM64, RISC-V, PowerPC and more)\n- Improved machine wizard with well-tested configurations such as Windows, Ubuntu, RISC-V64 Ubuntu, classic Mac OS 8.x/9.x and Windows 95/98\n- Custom keyboard shortcuts (e.g. Ctrl+Alt+Del) sent directly to the VM from the Keyboard menu\n- App Intents automation with the Shortcuts app\n- Liquid Glass design on iOS 26\n- Import and export .utm virtual machine bundles via the Files app\n- No jailbreak required; highest performance with JIT workarounds on supported iOS versions",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/utmapp/UTM",
+      "verification": {
+        "method": "github-release",
+        "publisher": "utmapp/UTM",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Universal IPA. The QEMU (SE) backend runs on any iOS 14+ device; virtualization (HV) acceleration requires a supported device plus a JIT workaround or jailbreak. 4 GB of RAM or more is recommended for usable guest performance."
+      },
+      "permissions": [
+        {
+          "type": "microphone",
+          "usageDescription": "Permission is required for any virtual machine to record from the microphone."
+        },
+        {
+          "type": "location",
+          "usageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device."
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit"
+        ],
+        "privacy": {
+          "NSMicrophoneUsageDescription": "Permission is required for any virtual machine to record from the microphone.",
+          "NSLocationWhenInUseUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSLocationAlwaysAndWhenInUseUsageDescription": "UTM requests location data periodically to ensure the system keeps the background process active. Location data will never leave the device.",
+          "NSLocalNetworkUsageDescription": "The virtual machine may access the local network. UTM may also use the network to communicate with local servers."
+        }
+      },
+      "upstream": {
+        "repo": "utmapp/UTM",
+        "tagPrefix": "",
+        "excludeTagPrefixes": [],
+        "assetSuffixes": [
+          "UTM.ipa",
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "descriptionTemplate": "{name} {version} | Universal IPA",
+        "minOSVersion": "14.0",
+        "isoDates": true
+      }
     }
   ]
 }

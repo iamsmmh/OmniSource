@@ -14,6 +14,7 @@ who maintains it upstream, and how OmniSource obtains the build.
 | YTKACE | `ytkace` | `com.google.ios.youtube` | [itzzace/YTKACE](https://github.com/itzzace/YTKACE) | `ytkace-ipa*` tags in mrdrvt99/YouProEXTRA |
 | YouMod | `youmod` | `com.google.ios.youtube` | [mrdrvt99/YouMod](https://github.com/mrdrvt99/YouMod) | `youmod-ipa*` tags in mrdrvt99/YouProEXTRA |
 | YTMusicUltimate | `ytmusic` | `com.google.ios.youtubemusic` | [Dayanch96/YTMusicUltimate](https://github.com/Dayanch96/YTMusicUltimate) | Newest published release asset |
+| UTM | `utm` | `com.utmapp.UTM` | [utmapp/UTM](https://github.com/utmapp/UTM) | Newest published release asset (`UTM.ipa`, universal build) |
 
 ## Status labels
 

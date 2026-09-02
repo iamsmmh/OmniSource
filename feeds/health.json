@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-09-01",
+  "generatedAt": "2026-09-02",
   "totals": {
-    "apps": 8,
-    "reachable": 8,
+    "apps": 9,
+    "reachable": 9,
     "unreachable": 0,
     "featured": 5
   },
@@ -94,6 +94,17 @@
       "downloadReachable": true,
       "detail": "HTTP 302",
       "statusSince": "2026-09-01"
+    },
+    {
+      "slug": "utm",
+      "name": "UTM",
+      "status": "stable",
+      "version": "4.7.5",
+      "updatedAt": "2026-01-03T17:51:54Z",
+      "sizeBytes": 130058389,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-02"
     }
   ]
 }
