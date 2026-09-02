@@ -139,9 +139,18 @@
             "tagPrefix": { "type": "string" },
             "excludeTagPrefixes": { "type": "array", "items": { "type": "string" } },
             "assetSuffixes": { "type": "array", "items": { "type": "string" } },
+            "assetNamePattern": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Regular expression an asset filename must match to be eligible."
+            },
             "maxPages": { "type": "integer", "minimum": 1 },
             "keepVersions": { "type": "integer", "minimum": 0 },
             "sortByTagNumber": { "type": "boolean" },
+            "versionFromTag": {
+              "type": "boolean",
+              "description": "Read version numbers from the release tag instead of the asset name."
+            },
             "descriptionTemplate": { "type": "string" },
             "minOSVersion": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)*$" },
             "minOSVersionByTagNumber": {

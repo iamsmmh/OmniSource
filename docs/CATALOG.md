@@ -13,7 +13,9 @@ who maintains it upstream, and how OmniSource obtains the build.
 | YTKillerPlus | `ytkp` | `com.google.ios.youtube` | [IKillerApp/YTKillerPlus](https://github.com/IKillerApp/YTKillerPlus) | `ytkp-ipa*` tags in mrdrvt99/YouProEXTRA |
 | YTKACE | `ytkace` | `com.google.ios.youtube` | [itzzace/YTKACE](https://github.com/itzzace/YTKACE) | `ytkace-ipa*` tags in mrdrvt99/YouProEXTRA |
 | YouMod | `youmod` | `com.google.ios.youtube` | [mrdrvt99/YouMod](https://github.com/mrdrvt99/YouMod) | `youmod-ipa*` tags in mrdrvt99/YouProEXTRA |
+| MaxTube | `maxtube` | `com.google.ios.youtube` | [Mark02-2012/YTPlusM](https://github.com/Mark02-2012/YTPlusM) | `YTPlusM_*` assets in Ashreq/ashstore-repo (GitHub mirror of the TubeVault build; upstream removed its own release assets) |
 | YTMusicUltimate | `ytmusic` | `com.google.ios.youtubemusic` | [Dayanch96/YTMusicUltimate](https://github.com/Dayanch96/YTMusicUltimate) | Newest published release asset |
+| MaxMusic | `maxmusic` | `com.google.ios.youtubemusic` | [Mark02-2012/YTMUltimatePLUS](https://github.com/Mark02-2012/YTMUltimatePLUS) | `MaxMusic_*` tags, full build (the `no_YMP` variant is filtered out) |
 | UTM | `utm` | `com.utmapp.UTM` | [utmapp/UTM](https://github.com/utmapp/UTM) | Newest published release asset (`UTM.ipa`, universal build) |
 
 ## Status labels
@@ -63,9 +65,11 @@ alternative download links, so an app stays installable when its primary link go
 
 ## Shared apps note
 
-Five YouTube mods share the bundle identifier `com.google.ios.youtube`. iOS treats bundle IDs as
+Seven YouTube mods share the bundle identifier `com.google.ios.youtube`. iOS treats bundle IDs as
 unique per device, so **you can only have one of them installed at a time** unless your client
 rewrites the bundle ID (Feather and LiveContainer can; AltStore and SideStore cannot by default).
+The same applies to the two YouTube Music mods (`com.google.ios.youtubemusic`): MaxMusic and
+YTMusicUltimate cannot coexist.
 
 ## Credits
 
@@ -78,6 +82,7 @@ rewrites the bundle ID (Feather and LiveContainer can; AltStore and SideStore ca
 | YouPro | [@Alibusut](https://github.com/Alibusut) |
 | YTKillerPlus | [@IKillerApp](https://github.com/IKillerApp) |
 | YouMod / release mirroring | [@mrdrvt99](https://github.com/mrdrvt99) |
+| MaxTube / MaxMusic | [@Mark02-2012](https://github.com/Mark02-2012) |
 
 OmniSource maintenance: [@iamsmmh](https://github.com/iamsmmh). Thanks to
 [@MountainofPenguin](https://github.com/MountainofPenguin), [@HakujouSan](https://github.com/HakujouSan)

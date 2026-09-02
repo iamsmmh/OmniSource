@@ -1,8 +1,8 @@
 {
   "generatedAt": "2026-09-02",
   "totals": {
-    "apps": 9,
-    "reachable": 9,
+    "apps": 11,
+    "reachable": 11,
     "unreachable": 0,
     "featured": 5
   },
@@ -85,6 +85,17 @@
       "statusSince": "2026-09-01"
     },
     {
+      "slug": "maxtube",
+      "name": "MaxTube",
+      "status": "manual",
+      "version": "21.31.3",
+      "updatedAt": "2026-08-03",
+      "sizeBytes": 133357787,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-02"
+    },
+    {
       "slug": "ytmusic",
       "name": "YTMusicUltimate",
       "status": "stable",
@@ -94,6 +105,17 @@
       "downloadReachable": true,
       "detail": "HTTP 302",
       "statusSince": "2026-09-01"
+    },
+    {
+      "slug": "maxmusic",
+      "name": "MaxMusic",
+      "status": "stable",
+      "version": "9.35.2",
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 105888307,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-02"
     },
     {
       "slug": "utm",

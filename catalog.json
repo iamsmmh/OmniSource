@@ -548,6 +548,83 @@
       }
     },
     {
+      "slug": "maxtube",
+      "name": "MaxTube",
+      "subtitle": "YTPlus with ten extra tweaks",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "Mark02-2012",
+      "category": "photo-video",
+      "tintColor": "EFA5A5",
+      "icon": "MaxTube.png",
+      "localizedDescription": "MaxTube (formerly YTPlusM) is Mark02-2012's fork of YTPlus/YTLite, the enhancer for the YouTube app on iOS. On top of the YTPlus feature set — video/audio/thumbnail downloads, SponsorBlock, PiP, YTUHD, YouQuality, Return YouTube Dislike, YTABConfig, DontEatMyContent and over 100 configurable options without a subscription — MaxTube integrates ten extra tweaks: YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, YTPlaybackFix, YouChooseQuality, YouShare and PleaseDontStopTheMusic. Settings live inside YouTube under Settings.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr1.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr2.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr3.jpg"
+      ],
+      "featured": false,
+      "status": "manual",
+      "upstreamURL": "https://github.com/Mark02-2012/YTPlusM",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Ashreq/ashstore-repo",
+        "codeSigned": false,
+        "checksumPublished": true
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "The upstream repository removed its IPA release assets for legal reasons and now publishes builds on Telegram/TubeVault, so this entry tracks the GitHub mirror of the TubeVault build (MaxTube 1.4.2, YouTube 21.31.3, YTPlus 5.2.2), which publishes a SHA-256. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "upstream": {
+        "repo": "Ashreq/ashstore-repo",
+        "assetNamePattern": "^YTPlusM_",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "descriptionTemplate": "MaxTube {version} | YTPlus {secondary} | {label}",
+        "minOSVersion": "16.0"
+      }
+    },
+    {
       "slug": "ytmusic",
       "name": "YTMusicUltimate",
       "subtitle": "YTMusicUltimate",
@@ -607,6 +684,76 @@
         "maxPages": 3,
         "keepVersions": 1,
         "descriptionTemplate": "YTMusicUltimate {version} | YTMusic {secondary} | {label}"
+      }
+    },
+    {
+      "slug": "maxmusic",
+      "name": "MaxMusic",
+      "subtitle": "YTMusicUltimate with extra tweaks",
+      "bundleIdentifier": "com.google.ios.youtubemusic",
+      "developerName": "Mark02-2012",
+      "category": "music",
+      "tintColor": "FF0033",
+      "icon": "MaxMusic.png",
+      "localizedDescription": "MaxMusic (formerly YTMUltimate+) is Mark02-2012's fork of Dayanch96's YTMusicUltimate for the YouTube Music app on iOS. It keeps everything YTMusicUltimate provides — no ads, background playback, download manager, audio quality selection — and adds Return YouTube Music Dislike, YouMusicPiP, YTMABConfig and VolumeBoostYT, plus fixed in-app downloads on newer YouTube Music versions. Settings live inside YouTube Music under Settings.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn2.png",
+        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn3.png",
+        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn4.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Mark02-2012/YTMUltimatePLUS",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Full MaxMusic build including YouMusicPiP; upstream also publishes a no-YouMusicPiP variant if PiP causes background-playback issues. Shares com.google.ios.youtubemusic with YTMusicUltimate: install one at a time."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.storekit.request-data",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used to connect to Bluetooth headphones and audio devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and cast audio to devices on your local network."
+        }
+      },
+      "upstream": {
+        "repo": "Mark02-2012/YTMUltimatePLUS",
+        "tagPrefix": "MaxMusic_",
+        "assetNamePattern": "^MaxMusic_\\d",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "MaxMusic {version} | YTMusic {secondary} | {label}",
+        "minOSVersion": "16.0"
       }
     },
     {

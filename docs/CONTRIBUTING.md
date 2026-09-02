@@ -87,9 +87,11 @@ limit. A full sync uses about four requests.
 | `tagPrefix` | `""` | Only consider tags starting with this prefix |
 | `excludeTagPrefixes` | `[]` | Skip tags starting with any of these |
 | `assetSuffixes` | `[".ipa"]` | Asset filename suffixes in priority order |
+| `assetNamePattern` | `""` | Regex an asset filename must match before suffixes are tried; picks one flavour when a repository publishes several |
 | `maxPages` | `3` | Release pages (100 per page) to scan |
 | `keepVersions` | `1` | Versions to publish; `0` keeps every match |
 | `sortByTagNumber` | `false` | Order by the trailing number in the tag instead of API order |
+| `versionFromTag` | `false` | Read the version numbers from the release tag instead of the asset name |
 | `descriptionTemplate` | — | Supports `{name} {version} {secondary} {label} {tag} {date}` |
 | `minOSVersion` | `"16.0"` | Default floor for generated version entries |
 | `minOSVersionByTagNumber` | `{}` | Per-tag-number override, e.g. `{"0": "14.0"}` |

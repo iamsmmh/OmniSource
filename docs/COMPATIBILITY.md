@@ -39,7 +39,8 @@ matrix on the [website](https://iamsmmh.github.io/OmniSource/#/compatibility).
 - **Free Apple ID:** three sideloaded apps, seven-day signature, no push notifications or
   app-group entitlements. All YouTube mods here request app groups, so some features degrade.
 - **Paid developer account:** ten apps, one-year certificate.
-- **Duplicate bundle IDs:** the five YouTube mods all use `com.google.ios.youtube`. Install one at
+- **Duplicate bundle IDs:** the seven YouTube mods all use `com.google.ios.youtube`, and MaxMusic
+  shares `com.google.ios.youtubemusic` with YTMusicUltimate. Install one of each family at
   a time, or use a client that rewrites bundle IDs.
 - **Entitlements:** entries list what the IPA requests under `appPermissions`. A client that cannot
   grant an entitlement will strip it, and the corresponding feature stops working.
