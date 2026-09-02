@@ -7,10 +7,10 @@ who maintains it upstream, and how OmniSource obtains the build.
 | App | Slug | Bundle ID | Upstream project | How OmniSource gets the build |
 | --- | --- | --- | --- | --- |
 | SpotiFLAC Mobile | `spotiflac` | `com.zarzet.spotiflac` | [spotiflacapp/SpotiFLAC-Mobile](https://github.com/spotiflacapp/SpotiFLAC-Mobile) | Newest published release asset |
-| uYouEnhanced | `uyouenhanced` | `com.google.ios.youtube` | [arichornlover/uYouEnhanced](https://github.com/arichornlover/uYouEnhanced) | Built in-repo by the *Build uYouEnhanced* workflow |
+| uYouEnhanced | `uyouenhanced` | `com.google.ios.youtube` | [arichornlover/uYouEnhanced](https://github.com/arichornlover/uYouEnhanced) | archive.org mirror of the upstream build; replaced by in-repo *Build uYouEnhanced* releases once they exist |
 | YouTubePlus (YTLite) | `ytlite` | `com.google.ios.youtube` | [Dayanch96/YTLite](https://github.com/Dayanch96/YTLite) | `ytl-ipa*` tags in mrdrvt99/YouProEXTRA |
-| YouPro | `youpro` | `com.google.ios.youtube` | [Alibusut/YouPro](https://github.com/Alibusut/YouPro) | `youproextra-ipa*` tags in mrdrvt99/YouProEXTRA |
-| YTKillerPlus | `ytkp` | `com.google.ios.youtube` | [IKillerApp/YTKillerPlus](https://github.com/IKillerApp/YTKillerPlus) | `ytkp-ipa*` tags in mrdrvt99/YouProEXTRA |
+| YouPro | `youpro` | `com.google.ios.youtube` | [mrdrvt99/YouProEXTRA](https://github.com/mrdrvt99/YouProEXTRA) (original repo [deleted]; authored by [@Alibusut](https://github.com/alibusut)) | `youproextra-ipa*` tags in mrdrvt99/YouProEXTRA |
+| YTKillerPlus | `ytkp` | `com.google.ios.youtube` | [iKarwan/YTKillerPlus](https://github.com/iKarwan/YTKillerPlus) | `ytkp-ipa*` tags in mrdrvt99/YouProEXTRA |
 | YTKACE | `ytkace` | `com.google.ios.youtube` | [itzzace/YTKACE](https://github.com/itzzace/YTKACE) | `ytkace-ipa*` tags in mrdrvt99/YouProEXTRA |
 | YouMod | `youmod` | `com.google.ios.youtube` | [mrdrvt99/YouMod](https://github.com/mrdrvt99/YouMod) | `youmod-ipa*` tags in mrdrvt99/YouProEXTRA |
 | MaxTube | `maxtube` | `com.google.ios.youtube` | [Mark02-2012/YTPlusM](https://github.com/Mark02-2012/YTPlusM) | `YTPlusM_*` assets in Ashreq/ashstore-repo (GitHub mirror of the TubeVault build; upstream removed its own release assets) |
@@ -59,9 +59,10 @@ Mirrors are ordered — the first reachable one wins. They are probed by
 alternative download links, so an app stays installable when its primary link goes down. A
 `manualRelease` may declare its own mirrors to override the app-level list for a specific build.
 
-> **Note:** the uYouEnhanced entry currently resolves through a `tinyurl.com` shortener. Its
-> `upstream` block points at this repository's own `uyouenhanced-v*` releases, so the first
-> successful *Build uYouEnhanced* run replaces the shortener with a first-party URL automatically.
+> **Note:** the uYouEnhanced entry currently resolves directly through the archive.org mirror of
+> the upstream build (no shortener in the chain). Its `upstream` block points at this repository's
+> own `uyouenhanced-v*` releases, so the first successful *Build uYouEnhanced* run swaps in a
+> first-party URL automatically.
 
 ## Shared apps note
 
@@ -79,8 +80,8 @@ YTMusicUltimate cannot coexist.
 | uYouEnhanced | [@arichornlover](https://github.com/arichornlover), [@MiRO92](https://github.com/MiRO92), [@qnblackcat](https://github.com/qnblackcat) |
 | YTLite / YTMusicUltimate | [@Dayanch96](https://github.com/Dayanch96) |
 | YTKACE | [@itzzace](https://github.com/itzzace) |
-| YouPro | [@Alibusut](https://github.com/Alibusut) |
-| YTKillerPlus | [@IKillerApp](https://github.com/IKillerApp) |
+| YouPro | [@Alibusut](https://github.com/alibusut) (repo deleted; builds via [@mrdrvt99](https://github.com/mrdrvt99)) |
+| YTKillerPlus | [@iKarwan](https://github.com/iKarwan) |
 | YouMod / release mirroring | [@mrdrvt99](https://github.com/mrdrvt99) |
 | MaxTube / MaxMusic | [@Mark02-2012](https://github.com/Mark02-2012) |
 

@@ -77,12 +77,15 @@
         "version": "21.14.4",
         "date": "2026-08-22",
         "localizedDescription": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
-        "downloadURL": "https://tinyurl.com/4wck29a8",
-        "size": 118022104,
+        "downloadURL": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+        "fallbackDownloadURLs": [
+          "https://dn720705.ca.archive.org/0/items/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
+        ],
+        "size": 135840058,
         "minOSVersion": "16.0"
       }
     ],
-    "syncedAt": "2026-09-01",
+    "syncedAt": "2026-09-02",
     "health": {
       "reachable": true,
       "detail": "HTTP 301",

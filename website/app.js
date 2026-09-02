@@ -13,7 +13,7 @@ const CLIENTS = [
   { id: "altstore", name: "AltStore", icon: "AltStore.png", url: "https://altstore.io" },
   { id: "sidestore", name: "SideStore", icon: "SideStore.png", url: "https://sidestore.io" },
   { id: "feather", name: "Feather", icon: "Feather.png", url: "https://github.com/khcrysalis/Feather" },
-  { id: "esign", name: "ESign", icon: "E-Sign.png", url: "https://github.com/esigncert/esign" },
+  { id: "esign", name: "ESign", icon: "E-Sign.png", url: null },
   { id: "livecontainer", name: "LiveContainer", icon: "LiveContainer.png", url: "https://github.com/khanhduytran0/LiveContainer" },
 ];
 const STATUS = {
@@ -137,7 +137,7 @@ function renderHome() {
         (c) => `<article class="card">
           <img src="./assets/${esc(c.icon)}" alt="" loading="lazy" width="54" height="54">
           <div class="card-body">
-            <h3><a href="${esc(c.url)}">${esc(c.name)}</a></h3>
+            <h3>${c.url ? `<a href="${esc(c.url)}">${esc(c.name)}</a>` : esc(c.name)}</h3>
             <p class="sub">${feed.apps.filter((a) => (a.omnisource?.compatibility?.clients ?? []).includes(c.id)).length} compatible apps</p>
             <div class="meta"><a class="pill accent" href="#/install">Installation guide</a></div>
           </div>
