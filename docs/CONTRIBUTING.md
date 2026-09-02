@@ -93,9 +93,14 @@ limit. A full sync uses about four requests.
 | `descriptionTemplate` | — | Supports `{name} {version} {secondary} {label} {tag} {date}` |
 | `minOSVersion` | `"16.0"` | Default floor for generated version entries |
 | `minOSVersionByTagNumber` | `{}` | Per-tag-number override, e.g. `{"0": "14.0"}` |
+| `isoDates` | `false` | Emit full ISO 8601 UTC release timestamps (`2026-01-03T17:51:54Z`) instead of date-only strings; opt-in so existing feeds stay byte-stable |
 
 Apps with no GitHub upstream use `"upstream": null` plus a `manualRelease` block. An app may have
 both: the upstream wins, and `manualRelease` is the fallback when nothing matches.
+
+An app may also declare `appPermissions` (AltStore 2.0: `entitlements` + `privacy` usage strings)
+and `permissions` (legacy array of `{type, usageDescription}` objects). Both pass straight through
+to the generated feed; copy the `NS*UsageDescription` strings verbatim from the upstream `Info.plist`.
 
 ## Removing or retiring an app
 

@@ -277,6 +277,9 @@ class Upstream:
     description_template: str = "{name} {version} | {label}"
     min_os_version: str = "16.0"
     min_os_by_tag_number: dict[str, str] = field(default_factory=dict)
+    # Emit full ISO 8601 UTC release timestamps (e.g. 2026-01-03T17:51:54Z)
+    # instead of date-only strings. Opt-in so existing feeds stay byte-stable.
+    iso_dates: bool = False
 
     @classmethod
     def parse(cls, raw: dict[str, Any]) -> Upstream:
@@ -291,6 +294,7 @@ class Upstream:
             description_template=raw.get("descriptionTemplate", "{name} {version} | {label}"),
             min_os_version=raw.get("minOSVersion", "16.0"),
             min_os_by_tag_number=dict(raw.get("minOSVersionByTagNumber", {})),
+            iso_dates=bool(raw.get("isoDates", False)),
         )
 
 
@@ -400,7 +404,16 @@ class ReleaseFetcher:
 def build_version_entry(app: App, up: Upstream, release: dict[str, Any], asset: dict[str, Any]) -> dict[str, Any]:
     asset_name = str(asset.get("name", "build.ipa"))
     tag = str(release.get("tag_name", ""))
-    date = (release.get("published_at") or "")[:10] or utc_now().strftime("%Y-%m-%d")
+    # GitHub publishes RFC 3339 timestamps (2026-01-03T17:51:54Z). Date-only is
+    # the default so historical entries stay byte-stable across rebuilds; apps
+    # may opt into full precision with upstream.isoDates.
+    published = str(release.get("published_at") or "")
+    if not published:
+        date = utc_now().strftime("%Y-%m-%d")
+    elif up.iso_dates:
+        date = published
+    else:
+        date = published[:10]
 
     numbers = VERSION_RE.findall(asset_name)
     if not numbers:
@@ -586,6 +599,8 @@ def render_app(catalog: Catalog, app: App, versions: list[dict[str, Any]], healt
     }
     if raw.get("appPermissions"):
         entry["appPermissions"] = raw["appPermissions"]
+    if raw.get("permissions"):
+        entry["permissions"] = raw["permissions"]
     if fallbacks:
         entry["fallbackDownloadURLs"] = list(fallbacks)
         newest["fallbackDownloadURLs"] = list(fallbacks)
