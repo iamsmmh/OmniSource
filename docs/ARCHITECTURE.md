@@ -47,7 +47,11 @@ three metadata blocks the AltStore schema has no place for: `verification`, `com
 
 Keeping resolution rules as *data* rather than code is the central design decision. Under the
 previous design, each app had a bespoke `sync_*()` function; adding an app meant writing Python.
-Now it means adding an object.
+Now it means adding an object. The `upstream` block carries the whole rule set — tag prefixes,
+asset suffixes and an optional `assetNamePattern` regex, version ordering (`sortByTagNumber`)
+and version source (`versionFromTag`), retention and the description template — so a repository
+that publishes several build flavours per release (MaxMusic ships a full and a no-YouMusicPiP
+IPA side by side) still resolves to exactly one entry.
 
 ### `feeds/state.json`
 

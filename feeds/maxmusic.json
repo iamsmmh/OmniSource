@@ -1,0 +1,95 @@
+{
+  "name": "OmniSource - MaxMusic",
+  "identifier": "com.iamsmmh.omnisource.maxmusic",
+  "apiVersion": "v2",
+  "subtitle": "YTMusicUltimate with extra tweaks",
+  "description": "Standalone distribution feed for MaxMusic, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/maxmusic.json",
+  "apps": [
+    {
+      "name": "MaxMusic",
+      "bundleIdentifier": "com.google.ios.youtubemusic",
+      "developerName": "Mark02-2012",
+      "subtitle": "YTMusicUltimate with extra tweaks",
+      "localizedDescription": "MaxMusic (formerly YTMUltimate+) is Mark02-2012's fork of Dayanch96's YTMusicUltimate for the YouTube Music app on iOS. It keeps everything YTMusicUltimate provides — no ads, background playback, download manager, audio quality selection — and adds Return YouTube Music Dislike, YouMusicPiP, YTMABConfig and VolumeBoostYT, plus fixed in-app downloads on newer YouTube Music versions. Settings live inside YouTube Music under Settings.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MaxMusic.png",
+      "tintColor": "FF0033",
+      "category": "music",
+      "version": "9.35.2",
+      "versionDate": "2026-09-01",
+      "versionDescription": "MaxMusic 9.35.2 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.35.2\n\n**Changed**\r\nName of my fork\r\nYTMusic version",
+      "downloadURL": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
+      "size": 105888307,
+      "versions": [
+        {
+          "version": "9.35.2",
+          "date": "2026-09-01",
+          "localizedDescription": "MaxMusic 9.35.2 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.35.2\n\n**Changed**\r\nName of my fork\r\nYTMusic version",
+          "downloadURL": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
+          "size": 105888307,
+          "minOSVersion": "16.0"
+        }
+      ],
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn2.png",
+        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn3.png",
+        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn4.png"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.storekit.request-data",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used to connect to Bluetooth headphones and audio devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and cast audio to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "maxmusic",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+        "verification": {
+          "method": "github-release",
+          "publisher": "Mark02-2012/YTMUltimatePLUS",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Full MaxMusic build including YouMusicPiP; upstream also publishes a no-YouMusicPiP variant if PiP causes background-playback issues. Shares com.google.ios.youtubemusic with YTMusicUltimate: install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-02",
+          "lastUpdatedAt": "2026-09-01"
+        }
+      }
+    }
+  ],
+  "news": []
+}

@@ -1,0 +1,104 @@
+{
+  "name": "OmniSource - MaxTube",
+  "identifier": "com.iamsmmh.omnisource.maxtube",
+  "apiVersion": "v2",
+  "subtitle": "YTPlus with ten extra tweaks",
+  "description": "Standalone distribution feed for MaxTube, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/maxtube.json",
+  "apps": [
+    {
+      "name": "MaxTube",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "Mark02-2012",
+      "subtitle": "YTPlus with ten extra tweaks",
+      "localizedDescription": "MaxTube (formerly YTPlusM) is Mark02-2012's fork of YTPlus/YTLite, the enhancer for the YouTube app on iOS. On top of the YTPlus feature set — video/audio/thumbnail downloads, SponsorBlock, PiP, YTUHD, YouQuality, Return YouTube Dislike, YTABConfig, DontEatMyContent and over 100 configurable options without a subscription — MaxTube integrates ten extra tweaks: YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, YTPlaybackFix, YouChooseQuality, YouShare and PleaseDontStopTheMusic. Settings live inside YouTube under Settings.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MaxTube.png",
+      "tintColor": "EFA5A5",
+      "category": "photo-video",
+      "version": "21.31.3",
+      "versionDate": "2026-08-03",
+      "versionDescription": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\r\n\r\nDescription: \r\nYTPlus 5.2.2 Cracked by zarzel\r\nYouTube v21.31.3\r\n\r\nVersion Description:\r\nDownloading does not work on this version of YouTube\r\nNo Bonus Tweaks\r\nSidestore is supported\r\n\r\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\r\n\r\nDescription: \r\nYTPlusM v1.4.2\r\nYouTube v21.31.3\r\n\r\nVersion Description:\r\nBonus Tweaks:\r\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
+      "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+      "size": 133357787,
+      "versions": [
+        {
+          "version": "21.31.3",
+          "date": "2026-08-03",
+          "localizedDescription": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\r\n\r\nDescription: \r\nYTPlus 5.2.2 Cracked by zarzel\r\nYouTube v21.31.3\r\n\r\nVersion Description:\r\nDownloading does not work on this version of YouTube\r\nNo Bonus Tweaks\r\nSidestore is supported\r\n\r\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\r\n\r\nDescription: \r\nYTPlusM v1.4.2\r\nYouTube v21.31.3\r\n\r\nVersion Description:\r\nBonus Tweaks:\r\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
+          "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+          "size": 133357787,
+          "minOSVersion": "16.0"
+        }
+      ],
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr1.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr2.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr3.jpg"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "maxtube",
+        "status": "manual",
+        "featured": false,
+        "upstreamURL": "https://github.com/Mark02-2012/YTPlusM",
+        "verification": {
+          "method": "github-release",
+          "publisher": "Ashreq/ashstore-repo",
+          "codeSigned": false,
+          "checksumPublished": true
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "The upstream repository removed its IPA release assets for legal reasons and now publishes builds on Telegram/TubeVault, so this entry tracks the GitHub mirror of the TubeVault build (MaxTube 1.4.2, YouTube 21.31.3, YTPlus 5.2.2), which publishes a SHA-256. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-02",
+          "lastUpdatedAt": "2026-08-03"
+        }
+      }
+    }
+  ],
+  "news": []
+}

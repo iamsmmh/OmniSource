@@ -271,9 +271,18 @@ class Upstream:
     tag_prefix: str = ""
     exclude_tag_prefixes: tuple[str, ...] = ()
     asset_suffixes: tuple[str, ...] = (".ipa",)
+    # Optional regex an asset filename must match before suffixes are tried;
+    # lets one repository publish several flavours (e.g. a ``no_YMP`` variant)
+    # while the catalog picks exactly one of them.
+    asset_name_pattern: str = ""
     max_pages: int = 3
     keep_versions: int = 1  # 0 == keep every matching release
     sort_by_tag_number: bool = False
+    # Read the version numbers from the release tag instead of the asset name.
+    # Upstreams that put the tweak version first in the filename (MaxMusic
+    # ships ``MaxMusic_2.4.1_9.35.2.ipa``) would otherwise publish the tweak
+    # version as the app version.
+    version_from_tag: bool = False
     description_template: str = "{name} {version} | {label}"
     min_os_version: str = "16.0"
     min_os_by_tag_number: dict[str, str] = field(default_factory=dict)
@@ -288,9 +297,11 @@ class Upstream:
             tag_prefix=raw.get("tagPrefix", ""),
             exclude_tag_prefixes=tuple(raw.get("excludeTagPrefixes", ())),
             asset_suffixes=tuple(raw.get("assetSuffixes", (".ipa",))),
+            asset_name_pattern=raw.get("assetNamePattern", ""),
             max_pages=int(raw.get("maxPages", 3)),
             keep_versions=int(raw.get("keepVersions", 1)),
             sort_by_tag_number=bool(raw.get("sortByTagNumber", False)),
+            version_from_tag=bool(raw.get("versionFromTag", False)),
             description_template=raw.get("descriptionTemplate", "{name} {version} | {label}"),
             min_os_version=raw.get("minOSVersion", "16.0"),
             min_os_by_tag_number=dict(raw.get("minOSVersionByTagNumber", {})),
@@ -359,8 +370,14 @@ def tag_number(tag: str) -> int:
     return int(match.group(1)) if match else -1
 
 
-def pick_asset(release: dict[str, Any], suffixes: tuple[str, ...]) -> dict[str, Any] | None:
+def pick_asset(
+    release: dict[str, Any],
+    suffixes: tuple[str, ...],
+    pattern: re.Pattern[str] | None = None,
+) -> dict[str, Any] | None:
     assets = [a for a in release.get("assets", []) if isinstance(a, dict)]
+    if pattern is not None:
+        assets = [a for a in assets if pattern.search(str(a.get("name", "")))]
     for suffix in suffixes:
         for asset in assets:
             if str(asset.get("name", "")).lower().endswith(suffix.lower()):
@@ -415,10 +432,15 @@ def build_version_entry(app: App, up: Upstream, release: dict[str, Any], asset: 
     else:
         date = published[:10]
 
-    numbers = VERSION_RE.findall(asset_name)
+    numbers: list[str] = []
+    if up.version_from_tag:
+        numbers = VERSION_RE.findall(tag)
+    if not numbers:
+        numbers = VERSION_RE.findall(asset_name)
     if not numbers:
         numbers = VERSION_RE.findall(tag) or VERSION_RE.findall(str(release.get("name") or ""))
-    # Upstream IPA names put the host-app version first, the tweak version last.
+    # Upstream IPA names usually put the host-app version first and the tweak
+    # version last; apps with ``versionFromTag`` read the pair from the tag.
     version = numbers[0] if numbers else date
     secondary = numbers[-1] if numbers else version
 
@@ -456,6 +478,13 @@ def sync_app(app: App, fetcher: ReleaseFetcher) -> list[dict[str, Any]] | None:
     if up is None:
         return fallback("no upstream configured")
 
+    pattern: re.Pattern[str] | None = None
+    if up.asset_name_pattern:
+        try:
+            pattern = re.compile(up.asset_name_pattern)
+        except re.error as error:
+            raise SyncError(f"{app.slug}: upstream.assetNamePattern does not compile: {error}") from error
+
     matches: list[dict[str, Any]] = []
     for release in fetcher.releases(up.repo, up.max_pages):
         tag = str(release.get("tag_name", ""))
@@ -463,7 +492,7 @@ def sync_app(app: App, fetcher: ReleaseFetcher) -> list[dict[str, Any]] | None:
             continue
         if any(tag.startswith(p) for p in up.exclude_tag_prefixes):
             continue
-        asset = pick_asset(release, up.asset_suffixes)
+        asset = pick_asset(release, up.asset_suffixes, pattern)
         if asset is None:
             log.debug("%s: %s has no matching asset", app.slug, tag or "<untagged>")
             continue

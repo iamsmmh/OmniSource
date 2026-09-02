@@ -233,6 +233,17 @@ def _validate_upstream(prefix: str, app: dict[str, Any]) -> Report:
         report.error(f"{prefix}: upstream.keepVersions must be >= 0 (0 means keep all)")
     if "{version}" not in str(upstream.get("descriptionTemplate", "{version}")):
         report.warn(f"{prefix}: upstream.descriptionTemplate has no {{version}} placeholder")
+    pattern = upstream.get("assetNamePattern")
+    if pattern is not None:
+        if not isinstance(pattern, str) or not pattern:
+            report.error(f"{prefix}: upstream.assetNamePattern must be a non-empty string")
+        else:
+            try:
+                re.compile(pattern)
+            except re.error as error:
+                report.error(f"{prefix}: upstream.assetNamePattern is not a valid regex ({error})")
+    if upstream.get("versionFromTag") is not None and not isinstance(upstream.get("versionFromTag"), bool):
+        report.error(f"{prefix}: upstream.versionFromTag must be a boolean")
     return report
 
 
