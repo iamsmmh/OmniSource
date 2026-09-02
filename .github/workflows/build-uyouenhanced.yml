@@ -136,7 +136,9 @@ jobs:
         run: |
           set -euo pipefail
           # GitHub images sometimes expose Xcode.app, sometimes Xcode_N.app.
-          XCODE_APP="$(ls -d /Applications/Xcode*.app 2>/dev/null | tail -n1 || true)"
+          # `find | sort | tail -n1` keeps the "pick the last one" behaviour
+          # without parsing `ls` output (SC2012).
+          XCODE_APP="$(find /Applications -maxdepth 1 -name 'Xcode*.app' -type d 2>/dev/null | sort | tail -n1)"
           if [ -n "$XCODE_APP" ]; then
             sudo xcode-select -s "$XCODE_APP"
           fi
@@ -178,7 +180,7 @@ jobs:
           git sparse-checkout set --no-cone "iPhoneOS${IN_SDK_VERSION}.sdk"
           git checkout --quiet
           mkdir -p "$THEOS/sdks"
-          mv *.sdk "$THEOS/sdks/"
+          mv ./*.sdk "$THEOS/sdks/"
           echo "Installed SDKs:"
           ls -1 "$THEOS/sdks"
 
@@ -323,7 +325,8 @@ jobs:
             YOUTUBE_VERSION="${YT_VERSION}" \
             UYOU_VERSION="${IN_UYOU_VERSION}"
 
-          IPA_BUILT="$(ls -1t packages/*.ipa | head -n1)"
+          # Newest IPA by modification time (`stat -f` is BSD/macOS syntax).
+          IPA_BUILT="$(find packages -maxdepth 1 -name '*.ipa' -type f -exec stat -f '%m %N' {} + 2>/dev/null | sort -rn | head -n1 | sed 's/^[0-9][0-9]* //')"
           if [ -z "$IPA_BUILT" ] || [ ! -f "$IPA_BUILT" ]; then
             echo "::error::Theos did not produce an IPA under uyouenhanced/packages/."
             ls -la packages || true
@@ -348,7 +351,7 @@ jobs:
           cd OpenYouTubeSafariExtension
           git sparse-checkout set --no-cone OpenYouTubeSafariExtension.appex
           git checkout --quiet
-          mv *.appex ..
+          mv ./*.appex ..
 
       - name: Normalize extension bundle IDs for SideStore
         run: |
@@ -370,7 +373,7 @@ jobs:
               return
             fi
             if [[ "$CURRENT_ID" == "$ORIG_PREFIX"* ]]; then
-              SUFFIX="${CURRENT_ID#${ORIG_PREFIX}.}"
+              SUFFIX="${CURRENT_ID#"${ORIG_PREFIX}."}"
               if [ "$SUFFIX" = "$CURRENT_ID" ]; then
                 SUFFIX="Extension"
               fi
@@ -433,9 +436,9 @@ jobs:
           IPA_IN="uyouenhanced/packages/${{ steps.build_package.outputs.package }}"
           OUTNAME="uYouEnhanced_${YT_VERSION}_v${IN_UYOU_VERSION}.ipa"
 
-          tweaks="OpenYouTubeSafariExtension.appex"
+          tweaks=(OpenYouTubeSafariExtension.appex)
           for f in uyouenhanced/packages/*.deb; do
-            [ -f "$f" ] && tweaks="$tweaks $f"
+            [ -f "$f" ] && tweaks+=("$f")
           done
 
           if [ ! -e OpenYouTubeSafariExtension.appex ]; then
@@ -444,8 +447,8 @@ jobs:
           fi
           command -v cyan
           echo "cyan inject: $IPA_IN -> $OUTNAME"
-          echo "tweaks: $tweaks"
-          cyan -i "$IPA_IN" -o "$OUTNAME" -uwef $tweaks -n "${IN_APP_NAME}" -b "${IN_BUNDLE_ID}"
+          echo "tweaks: ${tweaks[*]}"
+          cyan -i "$IPA_IN" -o "$OUTNAME" -uwef "${tweaks[@]}" -n "${IN_APP_NAME}" -b "${IN_BUNDLE_ID}"
           echo "CYAN_IPA=$OUTNAME" >> "$GITHUB_ENV"
 
       - name: Strip unresignable extensions from final IPA
@@ -540,9 +543,11 @@ jobs:
           IPA_PATH="$(pwd)/$NEW"
           SHA="$(shasum -a 256 "$NEW" | awk '{print $1}')"
           SIZE="$(stat -f%z "$NEW")"
-          echo "IPA_SHA256=$SHA" >> "$GITHUB_ENV"
-          echo "IPA_SIZE=$SIZE" >> "$GITHUB_ENV"
-          echo "IPA_PATH=$IPA_PATH" >> "$GITHUB_ENV"
+          {
+            echo "IPA_SHA256=$SHA"
+            echo "IPA_SIZE=$SIZE"
+            echo "IPA_PATH=$IPA_PATH"
+          } >> "$GITHUB_ENV"
           echo "SHASUM256: $SHA  $NEW ($SIZE bytes)"
 
       # -----------------------------------------------------------------------
@@ -562,6 +567,17 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
+
+          # Written to $GITHUB_ENV by earlier steps and exported into this
+          # step's environment. Declaring them here documents that contract and
+          # stops shellcheck (which cannot see cross-step writes) from flagging
+          # them as unassigned.
+          YT_VERSION="${YT_VERSION:?YT_VERSION is not set}"
+          UYOUENHANCED_SHA="${UYOUENHANCED_SHA:?UYOUENHANCED_SHA is not set}"
+          UYOUENHANCED_SHA_SHORT="${UYOUENHANCED_SHA_SHORT:?UYOUENHANCED_SHA_SHORT is not set}"
+          IPA_PATH="${IPA_PATH:?IPA_PATH is not set}"
+          IPA_SHA256="${IPA_SHA256:?IPA_SHA256 is not set}"
+          IPA_SIZE="${IPA_SIZE:?IPA_SIZE is not set}"
 
           TAG="uyouenhanced-v${YT_VERSION}-${IN_UYOU_VERSION}-${{ github.run_number }}"
           TITLE="uYouEnhanced ${YT_VERSION} (${IN_UYOU_VERSION})"
