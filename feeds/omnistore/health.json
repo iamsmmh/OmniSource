@@ -4,8 +4,8 @@
   "count": 11,
   "totals": {
     "apps": 11,
-    "reachable": 10,
-    "unreachable": 1
+    "reachable": 11,
+    "unreachable": 0
   },
   "apps": [
     {
@@ -42,9 +42,9 @@
     },
     {
       "appId": "uyouenhanced",
-      "status": "broken",
-      "downloadReachable": false,
-      "detail": "TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "status": "maintenance",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
       "metadataCompleteness": 1.0,
       "lastReleaseDate": "2026-08-22"
     },

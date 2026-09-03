@@ -758,8 +758,8 @@
       "downloadUrl": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
       "sha256": null,
       "size": 135840058,
-      "status": "broken",
-      "lifecycleStatus": "broken",
+      "status": "maintenance",
+      "lifecycleStatus": "maintenance",
       "legacyStatus": "manual",
       "featured": true,
       "verified": false,
@@ -811,8 +811,8 @@
         "https://dn720705.ca.archive.org/0/items/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
       ],
       "health": {
-        "downloadReachable": false,
-        "downloadDetail": "TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
         "repositoryReachable": true,
         "lastReleaseDate": "2026-08-22",
         "daysSinceRelease": 12,
@@ -821,11 +821,11 @@
           "lastSync": "2026-09-03",
           "lastSuccess": "2026-09-03"
         },
-        "brokenDownloadLinks": 1,
+        "brokenDownloadLinks": 0,
         "metadataCompleteness": 1.0,
         "integrityAvailable": false,
         "integrityVerified": null,
-        "status": "broken",
+        "status": "maintenance",
         "signalsVersion": 1,
         "statusSince": "2026-09-03"
       },

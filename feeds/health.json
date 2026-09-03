@@ -2,8 +2,8 @@
   "generatedAt": "2026-09-03",
   "totals": {
     "apps": 11,
-    "reachable": 10,
-    "unreachable": 1,
+    "reachable": 11,
+    "unreachable": 0,
     "featured": 5
   },
   "apps": [
@@ -25,8 +25,8 @@
       "version": "21.14.4",
       "updatedAt": "2026-08-22",
       "sizeBytes": 135840058,
-      "downloadReachable": false,
-      "detail": "TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
       "statusSince": "2026-09-03"
     },
     {

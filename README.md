@@ -59,12 +59,12 @@ Prefer a single app? Each app also publishes its own feed at
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-03 · 11 apps · 10/11 downloads reachable._
+_Catalogue last changed 2026-09-03 · 11 apps · 11/11 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **SpotiFLAC Mobile** | `com.zarzet.spotiflac` | `4.9.5` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/spotiflac.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/spotiflac.json) | [`spotiflac.json`](https://iamsmmh.github.io/OmniSource/spotiflac.json) |
-| **uYouEnhanced** | `com.google.ios.youtube` | `21.14.4` | 2026-08-22 | 🔵 manual | ⚠️ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/uyouenhanced.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/uyouenhanced.json) | [`uyouenhanced.json`](https://iamsmmh.github.io/OmniSource/uyouenhanced.json) |
+| **uYouEnhanced** | `com.google.ios.youtube` | `21.14.4` | 2026-08-22 | 🔵 manual | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/uyouenhanced.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/uyouenhanced.json) | [`uyouenhanced.json`](https://iamsmmh.github.io/OmniSource/uyouenhanced.json) |
 | **YouTubePlus** | `com.google.ios.youtube` | `21.24.3` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ytlite.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ytlite.json) | [`ytlite.json`](https://iamsmmh.github.io/OmniSource/ytlite.json) |
 | **YouPro** | `com.google.ios.youtube` | `21.24.3` | 2026-08-16 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/youpro.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/youpro.json) | [`youpro.json`](https://iamsmmh.github.io/OmniSource/youpro.json) |
 | **YTKillerPlus** | `com.google.ios.youtube` | `21.35.3` | 2026-08-30 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ytkp.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ytkp.json) | [`ytkp.json`](https://iamsmmh.github.io/OmniSource/ytkp.json) |

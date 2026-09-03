@@ -103,8 +103,8 @@
           "notes": "Served from the official archive.org mirror of the upstream build until the first in-repo 'Build uYouEnhanced' release (tag uyouenhanced-v*) takes over automatically. MD5/SHA-1 are published on the archive.org item page."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+          "downloadReachable": true,
+          "detail": "HTTP 302",
           "statusSince": "2026-09-03",
           "lastUpdatedAt": "2026-08-22"
         }

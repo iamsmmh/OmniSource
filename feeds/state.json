@@ -335,8 +335,8 @@
     ],
     "syncedAt": "2026-09-02",
     "health": {
-      "reachable": false,
-      "detail": "TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "reachable": true,
+      "detail": "HTTP 302",
       "since": "2026-09-03"
     },
     "retryCount": 0
