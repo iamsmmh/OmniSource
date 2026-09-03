@@ -1,26 +1,115 @@
 {
+  "id": "youpro",
   "appId": "youpro",
   "name": "YouPro",
   "developer": "alibusut",
   "description": "YouPro mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+  "shortDescription": "YouPro",
   "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
   "screenshots": [],
   "category": "photo-video",
+  "categories": [
+    "photo-video"
+  ],
+  "tags": [
+    "photo-video"
+  ],
+  "repository": "https://github.com/mrdrvt99/YouProEXTRA",
+  "repositoryUrl": "https://github.com/mrdrvt99/YouProEXTRA",
+  "sourceType": "github",
+  "homepage": "https://github.com/mrdrvt99/YouProEXTRA",
+  "documentation": null,
+  "license": null,
+  "platforms": [
+    "ios"
+  ],
+  "bundleId": "com.google.ios.youtube",
+  "bundleIdentifier": "com.google.ios.youtube",
+  "packageName": null,
+  "minimumIOSVersion": "16.0",
+  "minimumAndroidVersion": null,
+  "minimumOSVersion": "16.0",
   "version": "21.24.3",
   "buildNumber": null,
   "releaseDate": "2026-08-16",
-  "bundleId": "com.google.ios.youtube",
-  "minimumOSVersion": "16.0",
-  "sourceType": "github",
-  "repositoryUrl": "https://github.com/mrdrvt99/YouProEXTRA",
   "changelog": "YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1\n\n### Latest Stable Release, ENJOY!!\n> [!NOTE]\n> - Bundled with **YTUHD**\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`\n\n> [!WARNING]\n> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.",
   "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
   "sha256": "1989f0505d9f25246f1a3f5f02c31577ec83b0c48e153a6108bc2623e200623e",
   "size": 119894440,
-  "status": "stable",
+  "status": "active",
+  "lifecycleStatus": "active",
+  "legacyStatus": "stable",
   "featured": true,
-  "tags": [
-    "photo-video"
+  "verified": false,
+  "lastUpdated": "2026-09-03",
+  "latestVersion": "21.24.3",
+  "latestBuild": null,
+  "latestReleaseDate": "2026-08-16",
+  "latestReleaseNotes": "YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1\n\n### Latest Stable Release, ENJOY!!\n> [!NOTE]\n> - Bundled with **YTUHD**\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`\n\n> [!WARNING]\n> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.",
+  "downloadAssets": [
+    {
+      "filename": "YouProExtra_21.24.3_1.3.1.ipa",
+      "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
+      "platform": "ios",
+      "architecture": null,
+      "fileType": "IPA",
+      "size": 119894440,
+      "sha256": "1989f0505d9f25246f1a3f5f02c31577ec83b0c48e153a6108bc2623e200623e",
+      "mimeType": "application/octet-stream",
+      "installable": true
+    }
   ],
-  "fallbackDownloadUrls": []
+  "versions": [
+    {
+      "version": "21.24.3",
+      "build": null,
+      "releaseDate": "2026-08-16",
+      "releaseNotes": "YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1\n\n### Latest Stable Release, ENJOY!!\n> [!NOTE]\n> - Bundled with **YTUHD**\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`\n\n> [!WARNING]\n> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.",
+      "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2",
+      "assets": [
+        {
+          "filename": "YouProExtra_21.24.3_1.3.1.ipa",
+          "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 119894440,
+          "sha256": "1989f0505d9f25246f1a3f5f02c31577ec83b0c48e153a6108bc2623e200623e",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
+      ],
+      "source": "github",
+      "isPrerelease": false,
+      "isDraft": false,
+      "tag": null
+    }
+  ],
+  "fallbackDownloadUrls": [],
+  "health": {
+    "downloadReachable": true,
+    "downloadDetail": "HTTP 302",
+    "repositoryReachable": true,
+    "lastReleaseDate": "2026-08-16",
+    "daysSinceRelease": 18,
+    "releaseFrequencyDays": null,
+    "repositoryActivity": {
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03"
+    },
+    "brokenDownloadLinks": 0,
+    "metadataCompleteness": 1.0,
+    "integrityAvailable": true,
+    "integrityVerified": null,
+    "status": "active",
+    "signalsVersion": 1,
+    "statusSince": "2026-09-01"
+  },
+  "integrity": {
+    "sha256": "1989f0505d9f25246f1a3f5f02c31577ec83b0c48e153a6108bc2623e200623e",
+    "sha256Available": true,
+    "verified": null,
+    "trustStatement": "A digest match proves integrity of bytes, not application safety."
+  },
+  "aliases": []
 }

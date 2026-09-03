@@ -1,106 +1,116 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-01",
-  "count": 11,
+  "generatedAt": "2026-09-03",
+  "count": 7,
   "repositories": [
     {
-      "url": "https://github.com/Dayanch96/YTLite",
-      "sourceType": "github",
-      "developer": "dayanch96",
-      "appCount": 1,
-      "apps": [
-        "ytlite"
-      ]
-    },
-    {
-      "url": "https://github.com/Dayanch96/YTMusicUltimate",
-      "sourceType": "github",
-      "developer": "dayanch96",
-      "appCount": 1,
-      "apps": [
-        "ytmusic"
-      ]
-    },
-    {
-      "url": "https://github.com/Mark02-2012/YTMUltimatePLUS",
-      "sourceType": "github",
-      "developer": "Mark02-2012",
-      "appCount": 1,
-      "apps": [
-        "maxmusic"
-      ]
-    },
-    {
+      "id": "github--ashreq-ashstore-repo-861eb454",
+      "name": "Ashreq/ashstore-repo",
       "url": "https://github.com/Mark02-2012/YTPlusM",
-      "sourceType": "github",
-      "developer": "Mark02-2012",
-      "appCount": 1,
-      "apps": [
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03",
+      "lastError": null,
+      "applicationIds": [
         "maxtube"
-      ]
+      ],
+      "retryCount": 0,
+      "health": {}
     },
     {
+      "id": "github--iamsmmh-omnisource-190e45b6",
+      "name": "iamsmmh/OmniSource",
       "url": "https://github.com/arichornlover/uYouEnhanced",
-      "sourceType": "github",
-      "developer": "arichornlover",
-      "appCount": 1,
-      "apps": [
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03",
+      "lastError": null,
+      "applicationIds": [
         "uyouenhanced"
-      ]
+      ],
+      "retryCount": 0,
+      "health": {}
     },
     {
-      "url": "https://github.com/iKarwan/YTKillerPlus",
-      "sourceType": "github",
-      "developer": "ikghd",
-      "appCount": 1,
-      "apps": [
-        "ytkp"
-      ]
+      "id": "github--mark02-2012-ytmultimateplus-d33fe09c",
+      "name": "Mark02-2012/YTMUltimatePLUS",
+      "url": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03",
+      "lastError": null,
+      "applicationIds": [
+        "maxmusic"
+      ],
+      "retryCount": 0,
+      "health": {}
     },
     {
-      "url": "https://github.com/itzzace/YTKACE",
-      "sourceType": "github",
-      "developer": "itzzace",
-      "appCount": 1,
-      "apps": [
-        "ytkace"
-      ]
+      "id": "github--mrdrvt99-youproextra-532c1a56",
+      "name": "mrdrvt99/YouProEXTRA",
+      "url": "https://github.com/Dayanch96/YTLite",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03",
+      "lastError": null,
+      "applicationIds": [
+        "youmod",
+        "youpro",
+        "ytkace",
+        "ytkp",
+        "ytlite"
+      ],
+      "retryCount": 0,
+      "health": {}
     },
     {
-      "url": "https://github.com/mrdrvt99/YouMod",
-      "sourceType": "github",
-      "developer": "Tonwalter888",
-      "appCount": 1,
-      "apps": [
-        "youmod"
-      ]
+      "id": "github--mrdrvt99-ytmusicultimate-b0417fc1",
+      "name": "mrdrvt99/YTMusicUltimate",
+      "url": "https://github.com/Dayanch96/YTMusicUltimate",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03",
+      "lastError": null,
+      "applicationIds": [
+        "ytmusic"
+      ],
+      "retryCount": 0,
+      "health": {}
     },
     {
-      "url": "https://github.com/mrdrvt99/YouProEXTRA",
-      "sourceType": "github",
-      "developer": "alibusut",
-      "appCount": 1,
-      "apps": [
-        "youpro"
-      ]
-    },
-    {
+      "id": "github--spotiflacapp-spotiflac-mobile-e255a358",
+      "name": "spotiflacapp/SpotiFLAC-Mobile",
       "url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
-      "sourceType": "github",
-      "developer": "zarzet",
-      "appCount": 1,
-      "apps": [
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03",
+      "lastError": null,
+      "applicationIds": [
         "spotiflac"
-      ]
+      ],
+      "retryCount": 0,
+      "health": {}
     },
     {
+      "id": "github--utmapp-utm-53ff8384",
+      "name": "utmapp/UTM",
       "url": "https://github.com/utmapp/UTM",
-      "sourceType": "github",
-      "developer": "UTM Team",
-      "appCount": 1,
-      "apps": [
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03",
+      "lastError": null,
+      "applicationIds": [
         "utm"
-      ]
+      ],
+      "retryCount": 0,
+      "health": {}
     }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/release.schema.json",
+  "title": "OmniSource application release",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["version", "build", "releaseDate", "releaseNotes", "releaseUrl", "assets", "source", "isPrerelease", "isDraft"],
+  "properties": {
+    "version": { "type": "string", "minLength": 1 },
+    "build": { "type": ["string", "null"] },
+    "releaseDate": { "type": "string", "minLength": 1 },
+    "releaseNotes": { "type": "string" },
+    "releaseUrl": { "type": ["string", "null"], "format": "uri" },
+    "assets": { "type": "array", "items": { "$ref": "asset.schema.json" } },
+    "source": { "type": "string", "minLength": 1 },
+    "isPrerelease": { "type": "boolean" },
+    "isDraft": { "type": "boolean" },
+    "tag": { "type": ["string", "null"] }
+  }
+}

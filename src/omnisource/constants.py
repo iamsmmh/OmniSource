@@ -25,6 +25,10 @@ ALIVE_CODES = frozenset({200, 206, 301, 302, 303, 307, 308})
 RETRYABLE_CODES = frozenset({408, 425, 429, 500, 502, 503, 504})
 
 VALID_STATUSES = frozenset({"stable", "beta", "manual", "unmaintained", "deprecated"})
+LIFECYCLE_STATUSES = frozenset({"active", "maintenance", "inactive", "archived", "broken", "unknown"})
+CANONICAL_FEED_FILES = frozenset(
+    {"updates.json", "categories.json", "repositories.json", "featured.json", "trending.json", "recent.json"}
+)
 VALID_VERIFICATION_METHODS = frozenset(
     {
         "github-release",
@@ -45,7 +49,7 @@ PNG_MAGIC = b"\x89PNG\r\n\x1a\n"
 JPEG_MAGIC = b"\xff\xd8\xff"
 
 # Pipeline state and dashboard files are not distributable AltStore feeds.
-ALTSTORE_NON_FEED = frozenset({"state.json", "health.json"})
+ALTSTORE_NON_FEED = frozenset({"state.json", "health.json", *CANONICAL_FEED_FILES})
 
 OMNISTORE_SCHEMA_VERSION = 1
 API_VERSION = "v1"

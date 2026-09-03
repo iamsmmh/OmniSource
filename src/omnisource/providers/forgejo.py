@@ -6,6 +6,8 @@ Codeberg is a public Forgejo instance. Self-hosted Forgejo uses the same
 
 from __future__ import annotations
 
+import threading
+
 from omnisource.constants import CODEBERG_API_ROOT
 from omnisource.domain import (
     AppMetadata,
@@ -20,7 +22,7 @@ from omnisource.errors import ConfigurationError, ProviderError
 from omnisource.http import HttpClient
 from omnisource.logutil import log
 from omnisource.providers.base import SourceProvider
-from omnisource.tracking import extract_sha256, matches_tag_rules, pick_asset
+from omnisource.tracking import extract_sha256, pick_asset, release_is_eligible
 
 
 def _api_root(source: RepositoryRef, default_host: str) -> str:
@@ -31,7 +33,7 @@ def _api_root(source: RepositoryRef, default_host: str) -> str:
     raise ConfigurationError("forgejo provider requires upstream.host (e.g. https://git.example.com)")
 
 
-def _release_from_gitea(raw: dict) -> RemoteRelease:
+def _release_from_gitea(raw: dict, *, source_name: str = "forgejo") -> RemoteRelease:
     assets: list[RemoteAsset] = []
     for item in raw.get("assets") or []:
         if not isinstance(item, dict):
@@ -57,6 +59,8 @@ def _release_from_gitea(raw: dict) -> RemoteRelease:
         assets=tuple(assets),
         prerelease=bool(raw.get("prerelease")),
         draft=bool(raw.get("draft")),
+        release_url=str(raw.get("html_url") or raw.get("htmlURL") or "") or None,
+        source=source_name,
     )
 
 
@@ -70,6 +74,8 @@ class ForgejoReleasesProvider(SourceProvider):
     def __init__(self, http: HttpClient) -> None:
         self.http = http
         self._cache: dict[tuple[str, str, int], list[RemoteRelease]] = {}
+        self._incremental_hits: set[tuple[object, ...]] = set()
+        self._cache_lock = threading.Lock()
 
     def _root(self, source: RepositoryRef) -> str:
         return _api_root(source, self.default_api_root)
@@ -124,29 +130,45 @@ class ForgejoReleasesProvider(SourceProvider):
         incremental: bool = False,
     ) -> list[RemoteRelease]:
         key = (self._root(source), source.repo, source.max_pages)
-        if key in self._cache:
-            return self._cache[key]
-
-        collected: list[RemoteRelease] = []
-        for page in range(1, source.max_pages + 1):
-            batch = self._get(source, f"/repos/{source.repo}/releases?limit=100&page={page}")
-            if not isinstance(batch, list):
-                raise ProviderError(f"unexpected Forgejo releases payload for {source.repo}")
-            page_releases = [_release_from_gitea(item) for item in batch if isinstance(item, dict)]
-            published = [rel for rel in page_releases if rel.is_published]
-            collected.extend(published)
-            if (
-                incremental
-                and previous_latest_url
-                and page == 1
-                and _newest_url(published, source) == previous_latest_url
-            ):
-                log.debug("%s: Forgejo incremental hit", source.repo)
+        policy_key = (
+            *key,
+            source.tag_prefix,
+            source.exclude_tag_prefixes,
+            source.asset_suffixes,
+            source.include_prereleases,
+            source.include_drafts,
+        )
+        with self._cache_lock:
+            if key in self._cache:
+                return self._cache[key]
+            if incremental and previous_latest_url and policy_key in self._incremental_hits:
                 return []
-            if len(batch) < 100:
-                break
-        self._cache[key] = collected
-        return collected
+
+            collected: list[RemoteRelease] = []
+            for page in range(1, source.max_pages + 1):
+                batch = self._get(source, f"/repos/{source.repo}/releases?limit=100&page={page}")
+                if not isinstance(batch, list):
+                    raise ProviderError(f"unexpected Forgejo releases payload for {source.repo}")
+                page_releases = [
+                    _release_from_gitea(item, source_name=self.source_type.value)
+                    for item in batch
+                    if isinstance(item, dict)
+                ]
+                published = [rel for rel in page_releases if rel.is_published]
+                collected.extend(published)
+                if (
+                    incremental
+                    and previous_latest_url
+                    and page == 1
+                    and _newest_url(published, source) == previous_latest_url
+                ):
+                    log.debug("%s: Forgejo incremental hit", source.repo)
+                    self._incremental_hits.add(policy_key)
+                    return []
+                if len(batch) < 100:
+                    break
+            self._cache[key] = collected
+            return collected
 
 
 class CodebergReleasesProvider(ForgejoReleasesProvider):
@@ -157,7 +179,7 @@ class CodebergReleasesProvider(ForgejoReleasesProvider):
 
 def _newest_url(releases: list[RemoteRelease], source: RepositoryRef) -> str | None:
     for release in releases:
-        if not matches_tag_rules(release.tag, source):
+        if not release_is_eligible(release, source):
             continue
         asset = pick_asset(release, source.asset_suffixes)
         if asset:

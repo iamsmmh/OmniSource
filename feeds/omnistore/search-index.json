@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "documentCount": 11,
-  "tokenCount": 323,
+  "tokenCount": 328,
   "documents": [
     {
       "appId": "maxmusic",
@@ -11,7 +11,10 @@
       "tags": [
         "music"
       ],
-      "bundleId": "com.google.ios.youtubemusic"
+      "aliases": [],
+      "bundleId": "com.google.ios.youtubemusic",
+      "packageName": "",
+      "repository": "https://github.com/Mark02-2012/YTMUltimatePLUS"
     },
     {
       "appId": "maxtube",
@@ -21,7 +24,10 @@
       "tags": [
         "photo-video"
       ],
-      "bundleId": "com.google.ios.youtube"
+      "aliases": [],
+      "bundleId": "com.google.ios.youtube",
+      "packageName": "",
+      "repository": "https://github.com/Mark02-2012/YTPlusM"
     },
     {
       "appId": "spotiflac",
@@ -31,7 +37,10 @@
       "tags": [
         "utilities"
       ],
-      "bundleId": "com.zarzet.spotiflac"
+      "aliases": [],
+      "bundleId": "com.zarzet.spotiflac",
+      "packageName": "",
+      "repository": "https://github.com/spotiflacapp/SpotiFLAC-Mobile"
     },
     {
       "appId": "utm",
@@ -41,7 +50,10 @@
       "tags": [
         "utilities"
       ],
-      "bundleId": "com.utmapp.UTM"
+      "aliases": [],
+      "bundleId": "com.utmapp.UTM",
+      "packageName": "",
+      "repository": "https://github.com/utmapp/UTM"
     },
     {
       "appId": "uyouenhanced",
@@ -51,7 +63,10 @@
       "tags": [
         "photo-video"
       ],
-      "bundleId": "com.google.ios.youtube"
+      "aliases": [],
+      "bundleId": "com.google.ios.youtube",
+      "packageName": "",
+      "repository": "https://github.com/arichornlover/uYouEnhanced"
     },
     {
       "appId": "youmod",
@@ -61,7 +76,10 @@
       "tags": [
         "photo-video"
       ],
-      "bundleId": "com.google.ios.youtube"
+      "aliases": [],
+      "bundleId": "com.google.ios.youtube",
+      "packageName": "",
+      "repository": "https://github.com/mrdrvt99/YouMod"
     },
     {
       "appId": "youpro",
@@ -71,7 +89,10 @@
       "tags": [
         "photo-video"
       ],
-      "bundleId": "com.google.ios.youtube"
+      "aliases": [],
+      "bundleId": "com.google.ios.youtube",
+      "packageName": "",
+      "repository": "https://github.com/mrdrvt99/YouProEXTRA"
     },
     {
       "appId": "ytkace",
@@ -81,7 +102,10 @@
       "tags": [
         "photo-video"
       ],
-      "bundleId": "com.google.ios.youtube"
+      "aliases": [],
+      "bundleId": "com.google.ios.youtube",
+      "packageName": "",
+      "repository": "https://github.com/itzzace/YTKACE"
     },
     {
       "appId": "ytkp",
@@ -91,7 +115,10 @@
       "tags": [
         "photo-video"
       ],
-      "bundleId": "com.google.ios.youtube"
+      "aliases": [],
+      "bundleId": "com.google.ios.youtube",
+      "packageName": "",
+      "repository": "https://github.com/iKarwan/YTKillerPlus"
     },
     {
       "appId": "ytlite",
@@ -101,7 +128,10 @@
       "tags": [
         "photo-video"
       ],
-      "bundleId": "com.google.ios.youtube"
+      "aliases": [],
+      "bundleId": "com.google.ios.youtube",
+      "packageName": "",
+      "repository": "https://github.com/Dayanch96/YTLite"
     },
     {
       "appId": "ytmusic",
@@ -111,7 +141,10 @@
       "tags": [
         "music"
       ],
-      "bundleId": "com.google.ios.youtubemusic"
+      "aliases": [],
+      "bundleId": "com.google.ios.youtubemusic",
+      "packageName": "",
+      "repository": "https://github.com/Dayanch96/YTMusicUltimate"
     }
   ],
   "index": {
@@ -481,7 +514,17 @@
       "maxtube"
     ],
     "github": [
-      "spotiflac"
+      "maxmusic",
+      "maxtube",
+      "spotiflac",
+      "utm",
+      "uyouenhanced",
+      "youmod",
+      "youpro",
+      "ytkace",
+      "ytkp",
+      "ytlite",
+      "ytmusic"
     ],
     "glass": [
       "utm"
@@ -519,10 +562,23 @@
       "spotiflac"
     ],
     "https": [
-      "spotiflac"
+      "maxmusic",
+      "maxtube",
+      "spotiflac",
+      "utm",
+      "uyouenhanced",
+      "youmod",
+      "youpro",
+      "ytkace",
+      "ytkp",
+      "ytlite",
+      "ytmusic"
     ],
     "identity": [
       "spotiflac"
+    ],
+    "ikarwan": [
+      "ytkp"
     ],
     "ikghd": [
       "ytkp"
@@ -714,6 +770,10 @@
       "ytkp",
       "ytlite",
       "ytmusic"
+    ],
+    "mrdrvt99": [
+      "youmod",
+      "youpro"
     ],
     "multiple": [
       "spotiflac"
@@ -967,6 +1027,9 @@
     "spotiflac": [
       "spotiflac"
     ],
+    "spotiflacapp": [
+      "spotiflac"
+    ],
     "storage": [
       "spotiflac"
     ],
@@ -1153,6 +1216,9 @@
     "youpro": [
       "youpro"
     ],
+    "youproextra": [
+      "youpro"
+    ],
     "youquality": [
       "maxtube"
     ],
@@ -1202,6 +1268,9 @@
       "maxmusic"
     ],
     "ytmultimate": [
+      "maxmusic"
+    ],
+    "ytmultimateplus": [
       "maxmusic"
     ],
     "ytmusicultimate": [

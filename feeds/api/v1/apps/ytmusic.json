@@ -1,26 +1,115 @@
 {
+  "id": "ytmusic",
   "appId": "ytmusic",
   "name": "YTMusicUltimate",
   "developer": "dayanch96",
   "description": "YTMusicUltimate mod. Includes no ads, background playback, and more.",
+  "shortDescription": "YTMusicUltimate",
   "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTubeMusic.png",
   "screenshots": [],
   "category": "music",
+  "categories": [
+    "music"
+  ],
+  "tags": [
+    "music"
+  ],
+  "repository": "https://github.com/Dayanch96/YTMusicUltimate",
+  "repositoryUrl": "https://github.com/Dayanch96/YTMusicUltimate",
+  "sourceType": "github",
+  "homepage": "https://github.com/Dayanch96/YTMusicUltimate",
+  "documentation": null,
+  "license": null,
+  "platforms": [
+    "ios"
+  ],
+  "bundleId": "com.google.ios.youtubemusic",
+  "bundleIdentifier": "com.google.ios.youtubemusic",
+  "packageName": null,
+  "minimumIOSVersion": "16.0",
+  "minimumAndroidVersion": null,
+  "minimumOSVersion": "16.0",
   "version": "9.35.2",
   "buildNumber": null,
   "releaseDate": "2026-09-01",
-  "bundleId": "com.google.ios.youtubemusic",
-  "minimumOSVersion": "16.0",
-  "sourceType": "github",
-  "repositoryUrl": "https://github.com/Dayanch96/YTMusicUltimate",
   "changelog": "YTMusicUltimate 9.35.2 | YTMusic 2.4.1 | YTMusicUltimate_9.35.2_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
   "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa",
   "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a",
   "size": 104464285,
-  "status": "stable",
+  "status": "active",
+  "lifecycleStatus": "active",
+  "legacyStatus": "stable",
   "featured": true,
-  "tags": [
-    "music"
+  "verified": false,
+  "lastUpdated": "2026-09-03",
+  "latestVersion": "9.35.2",
+  "latestBuild": null,
+  "latestReleaseDate": "2026-09-01",
+  "latestReleaseNotes": "YTMusicUltimate 9.35.2 | YTMusic 2.4.1 | YTMusicUltimate_9.35.2_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
+  "downloadAssets": [
+    {
+      "filename": "YTMusicUltimate_9.35.2_2.4.1.ipa",
+      "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa",
+      "platform": "ios",
+      "architecture": null,
+      "fileType": "IPA",
+      "size": 104464285,
+      "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a",
+      "mimeType": "application/octet-stream",
+      "installable": true
+    }
   ],
-  "fallbackDownloadUrls": []
+  "versions": [
+    {
+      "version": "9.35.2",
+      "build": null,
+      "releaseDate": "2026-09-01",
+      "releaseNotes": "YTMusicUltimate 9.35.2 | YTMusic 2.4.1 | YTMusicUltimate_9.35.2_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
+      "releaseUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/tag/ytmu-ipa28",
+      "assets": [
+        {
+          "filename": "YTMusicUltimate_9.35.2_2.4.1.ipa",
+          "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 104464285,
+          "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
+      ],
+      "source": "github",
+      "isPrerelease": false,
+      "isDraft": false,
+      "tag": null
+    }
+  ],
+  "fallbackDownloadUrls": [],
+  "health": {
+    "downloadReachable": true,
+    "downloadDetail": "HTTP 302",
+    "repositoryReachable": true,
+    "lastReleaseDate": "2026-09-01",
+    "daysSinceRelease": 2,
+    "releaseFrequencyDays": null,
+    "repositoryActivity": {
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03"
+    },
+    "brokenDownloadLinks": 0,
+    "metadataCompleteness": 1.0,
+    "integrityAvailable": true,
+    "integrityVerified": null,
+    "status": "active",
+    "signalsVersion": 1,
+    "statusSince": "2026-09-01"
+  },
+  "integrity": {
+    "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a",
+    "sha256Available": true,
+    "verified": null,
+    "trustStatement": "A digest match proves integrity of bytes, not application safety."
+  },
+  "aliases": []
 }

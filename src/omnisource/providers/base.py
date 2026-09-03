@@ -9,7 +9,15 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 
-from omnisource.domain import AppMetadata, DiscoveredApp, RemoteRelease, RepositoryRef, SourceType, ValidationResult
+from omnisource.domain import (
+    AppMetadata,
+    DiscoveredApp,
+    RemoteAsset,
+    RemoteRelease,
+    RepositoryRef,
+    SourceType,
+    ValidationResult,
+)
 
 # Sentinel returned by fetch_releases when incremental sync proves nothing changed.
 INCREMENTAL_UNCHANGED: list[RemoteRelease] = []
@@ -60,6 +68,15 @@ class SourceProvider(ABC):
     def fetchMetadata(self, source: RepositoryRef) -> AppMetadata:
         return self.fetch_metadata(source)
 
+    def fetch_assets(self, source: RepositoryRef, releases: list[RemoteRelease] | None = None) -> list[RemoteAsset]:
+        """Return all discovered assets, reusing release metadata when supplied."""
+        material = releases if releases is not None else self.fetch_releases(source)
+        return [asset for release in material for asset in release.assets]
+
+    def health_check(self, source: RepositoryRef) -> ValidationResult:
+        """Run a cheap provider health check without downloading release files."""
+        return self.validate_repository(source)
+
     def fetchReleases(
         self,
         source: RepositoryRef,
@@ -68,3 +85,9 @@ class SourceProvider(ABC):
         incremental: bool = False,
     ) -> list[RemoteRelease]:
         return self.fetch_releases(source, previous_latest_url=previous_latest_url, incremental=incremental)
+
+    def fetchAssets(self, source: RepositoryRef, releases: list[RemoteRelease] | None = None) -> list[RemoteAsset]:
+        return self.fetch_assets(source, releases)
+
+    def healthCheck(self, source: RepositoryRef) -> ValidationResult:
+        return self.health_check(source)

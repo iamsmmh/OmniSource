@@ -1,0 +1,4 @@
+# OmniSource runtime uses only the Python standard library.
+# Optional local tooling (not required by GitHub Actions):
+# jsonschema>=4.0
+# pytest>=8.0

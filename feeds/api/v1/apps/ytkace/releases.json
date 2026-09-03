@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "appId": "ytkace",
+  "count": 1,
+  "releases": [
+    {
+      "version": "21.35.3",
+      "build": null,
+      "releaseDate": "2026-09-01",
+      "releaseNotes": "YouTube 21.35.3 | YTKACE_21.35.3_0.9.2\n\n### Latest Release, ENJOY!!\n#### A new free YouTube enhancer for iOS with downloads, iSponsorBlock, player controls, and interface customization.\n> [!NOTE]\n> - [Altstore source](https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json) is available now!.\n> - no YTUHD. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - [v0.9.2 release notes](https://github.com/itzzace/ytkace/releases/tag/v0.9.2)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!IMPORTANT]\n> - make sure you reapply tweak by pressing ✔ again after every sideload so background play/pip and cast work. \n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+      "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytkace-ipa4",
+      "assets": [
+        {
+          "filename": "YTKACE_21.35.3_0.9.2.ipa",
+          "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa4/YTKACE_21.35.3_0.9.2.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 129059304,
+          "sha256": "837bc909035a922e41674e0b91237fb48ba5b154d8977f2965da946bbc0094c7",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
+      ],
+      "source": "github",
+      "isPrerelease": false,
+      "isDraft": false,
+      "tag": null
+    }
+  ]
+}

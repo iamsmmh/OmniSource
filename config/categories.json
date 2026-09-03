@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "categories": [
+    {
+      "id": "audio",
+      "name": "Audio",
+      "description": "Audio players, downloaders, and production tools.",
+      "aliases": [
+        "music"
+      ]
+    },
+    {
+      "id": "video",
+      "name": "Video",
+      "description": "Video players, editors, and media tools.",
+      "aliases": [
+        "photo-video"
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social"
+    },
+    {
+      "id": "productivity",
+      "name": "Productivity"
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities"
+    },
+    {
+      "id": "developer-tools",
+      "name": "Developer Tools",
+      "aliases": [
+        "developer",
+        "devtools"
+      ]
+    },
+    {
+      "id": "education",
+      "name": "Education"
+    },
+    {
+      "id": "photography",
+      "name": "Photography"
+    },
+    {
+      "id": "games",
+      "name": "Games"
+    },
+    {
+      "id": "networking",
+      "name": "Networking"
+    },
+    {
+      "id": "customization",
+      "name": "Customization"
+    },
+    {
+      "id": "security",
+      "name": "Security"
+    },
+    {
+      "id": "other",
+      "name": "Other"
+    },
+    {
+      "id": "photo-video",
+      "name": "Photo & Video",
+      "aliases": [
+        "video"
+      ]
+    },
+    {
+      "id": "music",
+      "name": "Music",
+      "aliases": [
+        "audio"
+      ]
+    }
+  ]
+}

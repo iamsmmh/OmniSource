@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "apiVersion": "v1",
+  "syncWorkers": 8,
+  "healthWorkers": 8,
+  "requestTimeout": 30,
+  "requestRetries": 3,
+  "healthTimeout": 12,
+  "hashAssets": false,
+  "hashMaxBytes": 536870912,
+  "inspectPackages": false,
+  "maxUpdateHistory": 100,
+  "maxSearchDescription": 1500,
+  "allowHttpSources": false
+}

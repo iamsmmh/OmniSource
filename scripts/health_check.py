@@ -36,7 +36,16 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 FEEDS_DIR = REPO_ROOT / "feeds"
-NON_FEED_FILES = {"state.json", "health.json"}
+NON_FEED_FILES = {
+    "state.json",
+    "health.json",
+    "updates.json",
+    "categories.json",
+    "repositories.json",
+    "featured.json",
+    "trending.json",
+    "recent.json",
+}
 USER_AGENT = "OmniSource-HealthCheck/2.0 (+https://github.com/iamsmmh/OmniSource)"
 
 # A download URL is considered reachable when the server answers with one of

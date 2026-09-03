@@ -31,8 +31,9 @@ python3 scripts/omnisource.py --incremental      # skip pagination when the newe
 python3 scripts/validate.py --strict             # treat warnings as errors
 ```
 
-Set `GH_TOKEN` to a token with `public_repo` scope to lift the 60 requests/hour anonymous API
-limit. A full sync uses about four requests.
+Set `GH_TOKEN` (or the provider-specific token variables documented in the platform guide) to
+raise provider API limits. A full sync fetches once per unique repository release page; the current
+catalog uses eight GitHub release-page requests before cache hits.
 
 ## Adding an app
 

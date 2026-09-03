@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/repository.schema.json",
+  "title": "OmniSource monitored repository",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "name", "url", "provider", "enabled", "lastSync", "lastSuccess", "lastError", "applicationIds"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "url": { "type": "string", "format": "uri" },
+    "provider": { "type": "string", "minLength": 1 },
+    "enabled": { "type": "boolean" },
+    "lastSync": { "type": ["string", "null"] },
+    "lastSuccess": { "type": ["string", "null"] },
+    "lastError": { "type": ["string", "null"] },
+    "applicationIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "retryCount": { "type": "integer", "minimum": 0 },
+    "health": { "type": "object", "additionalProperties": true }
+  }
+}

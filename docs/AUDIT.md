@@ -4,7 +4,7 @@
 **Baseline commit:** `7022b96` ("Create build-uyouenhanced.yml")
 **Scope:** architecture, directory structure, workflows, security, documentation, feed structure,
 automation, assets, dependencies.
-**Outcome:** all findings below were implemented on branch `arena/01a05ed6-omnisource`.
+**Outcome:** all findings below were implemented in the refactor represented by this branch.
 
 ---
 
@@ -55,9 +55,10 @@ documentation guides, and a health/verification/compatibility metadata layer.
 | Testing / verification | 2/10 | 7/10 | Tests existed but only for deleted code |
 | **Overall** | **3.0/10** | **8.7/10** | |
 
-Remaining gap to 10: no checksum verification of upstream assets, third-party actions pinned to
-tags rather than SHAs, and no unit tests for the new pipeline (the CI reproducibility check
-substitutes for them today).
+Remaining gap to 10: automatic package hashing is opt-in (upstream digests are used when
+published), third-party actions are pinned to tags rather than SHAs, and no unit tests exercise
+every live provider; offline provider fixtures and pipeline integration tests cover the shipped
+paths.
 
 ---
 
@@ -214,6 +215,7 @@ def sync_spotiflac():
 ```
 
 Every behavioural quirk of the old script became a declarative option:
+`tagPrefix`, `excludeTagPrefixes`, `assetSuffixes`, `keepVersiooption:
 `tagPrefix`, `excludeTagPrefixes`, `assetSuffixes`, `keepVersions` (0 = all),
 `sortByTagNumber` (YTLite's tag-number ordering), `minOSVersionByTagNumber`
 (YTLite's `{0: "14.0", 1: "15.0"}` map), and `descriptionTemplate` with
@@ -235,7 +237,7 @@ YTMusicUltimate's "tweak version | host version" format exactly.
 | Change | Rationale |
 | --- | --- |
 | Dead links **flag** instead of **delete** | The old `build_feed()` excluded any app whose link check failed, then `sys.exit(1)`. A transient CDN failure silently removed apps from every subscriber's client. Now the app stays, `omnisource.health.downloadReachable` goes `false`, the README shows ⚠️, and the health dashboard records it |
-| Per-repo release cache | Five apps share `mrdrvt99/YouProEXTRA`. A full sync is now **4 API requests** total |
+| Per-repo release cache | Five apps share `mrdrvt99/YouProEXTRA`. Shared repositories fetch once per release page; the current catalog uses **8 release API requests** total |
 | Concurrent probing | 8-way thread pool: 8 probes in ~1.7 s versus sequential |
 | Probes stop at the first 3xx | GitHub answers 302 with a signed CDN URL. Following it costs a second TLS handshake and risks streaming a 120 MB IPA. A 302 from the origin already proves the asset exists |
 | Idempotency | No wall-clock timestamps in output; `health.json.generatedAt` is derived from content, `statusSince` moves only when a status changes. Verified: three consecutive runs → "0 file(s) changed" |
@@ -412,8 +414,9 @@ receives `api.github.com` URLs. Download probes construct their own header dict 
 | Workflow runs per day | ~4 scheduled + push-triggered lint loops | 4 scheduled | Fewer minutes, no lint/commit feedback loops |
 | Master feed size | 45.9 KB | 51.2 KB (+12% for health/verification/compatibility metadata) | Accepted: still one gzipped request; the metadata powers the site and README |
 
-**Measured** in this workspace: full sync 3.9 s wall clock (4 API calls, 8 concurrent probes,
-19 files written on first run, 0 on the second and third).
+**Measured** in this workspace on 4 September 2026: full sync 7.6 s wall clock (8 release API
+requests, 11 concurrent probes, and 40 files changed while refreshing the generated snapshots).
+The offline no-sync rebuild is content-idempotent after the generated files are current.
 
 **Rejected optimisations:**
 
@@ -496,7 +499,7 @@ $ python3 scripts/omnisource.py           # 4 API calls, 8 probes, 19 files writ
 $ python3 scripts/omnisource.py           # Done. 0 file(s) changed.      ← idempotent
 $ python3 scripts/omnisource.py --no-sync --no-health
                                           # Done. 0 file(s) changed.      ← reproducible offline
-$ python3 scripts/validate.py             # OK: 0 errors, 0 warnings
+$ python3 scripts/validate.py             # OK: 0 errors, 9 warnings (health + intentional bundle-ID variants)
 $ python3 -m ruff check scripts/          # All checks passed
 $ python3 -m ruff format --check scripts/ # 2 files already formatted
 $ node --check website/app.js             # JS OK

@@ -47,6 +47,9 @@ class SearchDocument:
     description: str
     tags: tuple[str, ...]
     bundle_id: str = ""
+    package_name: str = ""
+    repository: str = ""
+    aliases: tuple[str, ...] = ()
 
     @classmethod
     def from_app(cls, app: StandardizedApp) -> SearchDocument:
@@ -58,6 +61,9 @@ class SearchDocument:
             description=app.description,
             tags=app.tags,
             bundle_id=app.bundle_id,
+            package_name=app.package_name or "",
+            repository=app.repository_url,
+            aliases=app.aliases,
         )
 
     def field_tokens(self) -> dict[str, list[str]]:
@@ -68,6 +74,9 @@ class SearchDocument:
             "description": tokenize(self.description[:1_500]),
             "tags": tokenize(" ".join(self.tags)),
             "bundle": tokenize(self.bundle_id.replace(".", " ")),
+            "package": tokenize(self.package_name.replace(".", " ")),
+            "repository": tokenize(self.repository.replace("/", " ").replace(".", " ")),
+            "aliases": tokenize(" ".join(self.aliases)),
         }
 
 
@@ -91,7 +100,10 @@ _WEIGHTS = {
     "developer": 5.0,
     "category": 3.0,
     "tags": 4.0,
+    "aliases": 6.0,
     "bundle": 2.0,
+    "package": 2.0,
+    "repository": 2.0,
     "description": 1.0,
 }
 
@@ -122,14 +134,17 @@ class InMemoryIndex:
         scores: dict[str, float] = {}
         matched_fields: dict[str, set[str]] = {}
         for token in tokens:
-            fields = self.postings.get(token)
-            if not fields:
-                continue
-            for field_name, apps in fields.items():
-                weight = _WEIGHTS.get(field_name, 1.0)
-                for app_id, tf in apps.items():
-                    scores[app_id] = scores.get(app_id, 0.0) + weight * tf
-                    matched_fields.setdefault(app_id, set()).add(field_name)
+            # Prefix expansion keeps the index local and makes queries such as
+            # ``spot`` find ``spotiflac`` without a server-side fuzzy engine.
+            matching_tokens = [term for term in self.postings if term == token or term.startswith(token)]
+            for matched_token in matching_tokens:
+                fields = self.postings[matched_token]
+                prefix_factor = 1.0 if matched_token == token else 0.75
+                for field_name, apps in fields.items():
+                    weight = _WEIGHTS.get(field_name, 1.0) * prefix_factor
+                    for app_id, tf in apps.items():
+                        scores[app_id] = scores.get(app_id, 0.0) + weight * tf
+                        matched_fields.setdefault(app_id, set()).add(field_name)
         ranked = sorted(scores.items(), key=lambda item: (-item[1], item[0]))[:limit]
         return [
             SearchHit(app_id=app_id, score=score, fields=tuple(sorted(matched_fields.get(app_id, ()))))
@@ -160,7 +175,10 @@ class InMemoryIndex:
                     "developer": doc.developer,
                     "category": doc.category,
                     "tags": list(doc.tags),
+                    "aliases": list(doc.aliases),
                     "bundleId": doc.bundle_id,
+                    "packageName": doc.package_name,
+                    "repository": doc.repository,
                 }
                 for doc in sorted(self.documents.values(), key=lambda item: item.app_id)
             ],

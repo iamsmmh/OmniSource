@@ -36,7 +36,16 @@ CATALOG_PATH = REPO_ROOT / "catalog.json"
 FEEDS_DIR = REPO_ROOT / "feeds"
 MASTER_NAME = "apps.json"
 # Pipeline state and dashboard files are not distributable feeds.
-NON_FEED_FILES = {"state.json", "health.json"}
+NON_FEED_FILES = {
+    "state.json",
+    "health.json",
+    "updates.json",
+    "categories.json",
+    "repositories.json",
+    "featured.json",
+    "trending.json",
+    "recent.json",
+}
 
 
 def load_json(path: Path) -> Any | None:

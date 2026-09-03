@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "providers": [
+    {
+      "id": "github",
+      "name": "GitHub",
+      "enabled": true,
+      "apiBaseURL": "https://api.github.com",
+      "tokenEnvironment": "GH_TOKEN",
+      "supports": [
+        "metadata",
+        "releases",
+        "tags",
+        "assets",
+        "pagination",
+        "conditionalRequests"
+      ]
+    },
+    {
+      "id": "github-tags",
+      "name": "GitHub Tags",
+      "enabled": true,
+      "apiBaseURL": "https://api.github.com",
+      "tokenEnvironment": "GH_TOKEN",
+      "supports": [
+        "metadata",
+        "tags",
+        "assets"
+      ]
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "enabled": true,
+      "apiBaseURL": "https://gitlab.com/api/v4",
+      "tokenEnvironment": "GITLAB_TOKEN",
+      "supports": [
+        "metadata",
+        "releases",
+        "tags",
+        "assets",
+        "pagination"
+      ]
+    },
+    {
+      "id": "codeberg",
+      "name": "Codeberg",
+      "enabled": true,
+      "apiBaseURL": "https://codeberg.org/api/v1",
+      "tokenEnvironment": "CODEBERG_TOKEN",
+      "supports": [
+        "metadata",
+        "releases",
+        "tags",
+        "assets"
+      ]
+    },
+    {
+      "id": "forgejo",
+      "name": "Forgejo",
+      "enabled": true,
+      "apiBaseURL": null,
+      "tokenEnvironment": "FORGEJO_TOKEN",
+      "supports": [
+        "metadata",
+        "releases",
+        "tags",
+        "assets"
+      ]
+    },
+    {
+      "id": "json-feed",
+      "name": "Generic JSON Feed",
+      "enabled": true,
+      "apiBaseURL": null,
+      "supports": [
+        "metadata",
+        "releases",
+        "assets"
+      ]
+    },
+    {
+      "id": "altstore",
+      "name": "AltStore-compatible feed",
+      "enabled": true,
+      "apiBaseURL": null,
+      "supports": [
+        "metadata",
+        "releases",
+        "assets"
+      ]
+    },
+    {
+      "id": "feather",
+      "name": "Feather-compatible feed",
+      "enabled": true,
+      "apiBaseURL": null,
+      "supports": [
+        "metadata",
+        "releases",
+        "assets"
+      ]
+    }
+  ]
+}
