@@ -11,7 +11,7 @@ ordered work list.
 - OmniStore feeds: apps, categories, updates, featured, repositories, search-index
 - Static API snapshots + generated OpenAPI 3.1
 - Search inverted index with a `SearchBackend` seam for future FTS
-- Asset management: icon magic-bytes, screenshot URL shape, missing/unused, directory cache
+- Asset management: icon magic-bytes, screenshot URL shape, missing/unused, directory cache, optional bounded hashing/package inspection
 - Analytics interfaces (`AnalyticsSink` / `NullAnalytics`) — no tracking
 - Injectable `Paths` + `Container` (dependency injection without a framework)
 - Unit and offline integration tests in CI
@@ -22,7 +22,7 @@ ordered work list.
 
 | # | Item | Why | Effort |
 | --- | --- | --- | --- |
-| 1 | Hash-verify IPA payloads when GitHub `digest` is absent | Highest remaining supply-chain control | M |
+| 1 | Automatically enable bounded IPA/APK hash verification in a trusted build job when GitHub `digest` is absent | Highest remaining supply-chain control | M |
 | 2 | Pin Actions to commit SHAs | Tag hijack resistance | S |
 | 3 | PR comment with a rendered feed diff when `catalog.json` changes | Review quality | S |
 | 4 | LiveContainer rewritten-bundle feed (`feeds/livecontainer/apps.json`) | Five YouTube mods cannot coexist otherwise | M |

@@ -1,8 +1,10 @@
 {
+  "id": "maxtube",
   "appId": "maxtube",
   "name": "MaxTube",
   "developer": "Mark02-2012",
   "description": "MaxTube (formerly YTPlusM) is Mark02-2012's fork of YTPlus/YTLite, the enhancer for the YouTube app on iOS. On top of the YTPlus feature set — video/audio/thumbnail downloads, SponsorBlock, PiP, YTUHD, YouQuality, Return YouTube Dislike, YTABConfig, DontEatMyContent and over 100 configurable options without a subscription — MaxTube integrates ten extra tweaks: YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, YTPlaybackFix, YouChooseQuality, YouShare and PleaseDontStopTheMusic. Settings live inside YouTube under Settings.",
+  "shortDescription": "YTPlus with ten extra tweaks",
   "icon": "https://iamsmmh.github.io/OmniSource/assets/MaxTube.png",
   "screenshots": [
     "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr1.jpg",
@@ -10,21 +12,130 @@
     "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr3.jpg"
   ],
   "category": "photo-video",
+  "categories": [
+    "photo-video"
+  ],
+  "tags": [
+    "photo-video"
+  ],
+  "repository": "https://github.com/Mark02-2012/YTPlusM",
+  "repositoryUrl": "https://github.com/Mark02-2012/YTPlusM",
+  "sourceType": "github",
+  "homepage": "https://github.com/Mark02-2012/YTPlusM",
+  "documentation": null,
+  "license": null,
+  "platforms": [
+    "ios"
+  ],
+  "bundleId": "com.google.ios.youtube",
+  "bundleIdentifier": "com.google.ios.youtube",
+  "packageName": null,
+  "minimumIOSVersion": "16.0",
+  "minimumAndroidVersion": null,
+  "minimumOSVersion": "16.0",
   "version": "21.31.3",
   "buildNumber": null,
   "releaseDate": "2026-08-03",
-  "bundleId": "com.google.ios.youtube",
-  "minimumOSVersion": "16.0",
-  "sourceType": "github",
-  "repositoryUrl": "https://github.com/Mark02-2012/YTPlusM",
   "changelog": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
   "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
   "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
   "size": 133357787,
-  "status": "manual",
+  "status": "maintenance",
+  "lifecycleStatus": "maintenance",
+  "legacyStatus": "manual",
   "featured": false,
-  "tags": [
-    "photo-video"
+  "verified": false,
+  "lastUpdated": "2026-09-03",
+  "latestVersion": "21.31.3",
+  "latestBuild": null,
+  "latestReleaseDate": "2026-08-03",
+  "latestReleaseNotes": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
+  "downloadAssets": [
+    {
+      "filename": "YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault.ipa",
+      "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg%40tubevault.ipa",
+      "platform": "ios",
+      "architecture": null,
+      "fileType": "IPA",
+      "size": 142219559,
+      "sha256": "99d3847be6653d58723d1465c0fc4ab87079d341b3a80973e9c1647d4cffdb38",
+      "mimeType": "application/octet-stream",
+      "installable": true
+    },
+    {
+      "filename": "YTPlusM_21.31.3_5.2.2.tg@tubevault.ipa",
+      "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+      "platform": "ios",
+      "architecture": null,
+      "fileType": "IPA",
+      "size": 133357787,
+      "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
+      "mimeType": "application/octet-stream",
+      "installable": true
+    }
   ],
-  "fallbackDownloadUrls": []
+  "versions": [
+    {
+      "version": "21.31.3",
+      "build": null,
+      "releaseDate": "2026-08-03",
+      "releaseNotes": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
+      "releaseUrl": "https://github.com/Ashreq/ashstore-repo/releases/tag/v1.0.8",
+      "assets": [
+        {
+          "filename": "YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault.ipa",
+          "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg%40tubevault.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 142219559,
+          "sha256": "99d3847be6653d58723d1465c0fc4ab87079d341b3a80973e9c1647d4cffdb38",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "YTPlusM_21.31.3_5.2.2.tg@tubevault.ipa",
+          "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 133357787,
+          "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
+      ],
+      "source": "github",
+      "isPrerelease": false,
+      "isDraft": false,
+      "tag": null
+    }
+  ],
+  "fallbackDownloadUrls": [],
+  "health": {
+    "downloadReachable": true,
+    "downloadDetail": "HTTP 302",
+    "repositoryReachable": true,
+    "lastReleaseDate": "2026-08-03",
+    "daysSinceRelease": 31,
+    "releaseFrequencyDays": null,
+    "repositoryActivity": {
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03"
+    },
+    "brokenDownloadLinks": 0,
+    "metadataCompleteness": 1.0,
+    "integrityAvailable": true,
+    "integrityVerified": null,
+    "status": "maintenance",
+    "signalsVersion": 1,
+    "statusSince": "2026-09-02"
+  },
+  "integrity": {
+    "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
+    "sha256Available": true,
+    "verified": null,
+    "trustStatement": "A digest match proves integrity of bytes, not application safety."
+  },
+  "aliases": []
 }

@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-01",
+  "count": 11,
+  "totals": {
+    "apps": 11,
+    "reachable": 10,
+    "unreachable": 1
+  },
+  "apps": [
+    {
+      "appId": "maxmusic",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-09-01"
+    },
+    {
+      "appId": "maxtube",
+      "status": "maintenance",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-08-03"
+    },
+    {
+      "appId": "spotiflac",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-09-01"
+    },
+    {
+      "appId": "utm",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-01-03"
+    },
+    {
+      "appId": "uyouenhanced",
+      "status": "broken",
+      "downloadReachable": false,
+      "detail": "TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-08-22"
+    },
+    {
+      "appId": "youmod",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-08-30"
+    },
+    {
+      "appId": "youpro",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-08-16"
+    },
+    {
+      "appId": "ytkace",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-09-01"
+    },
+    {
+      "appId": "ytkp",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-08-30"
+    },
+    {
+      "appId": "ytlite",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-09-01"
+    },
+    {
+      "appId": "ytmusic",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-09-01"
+    }
+  ]
+}

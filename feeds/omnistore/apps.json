@@ -4,10 +4,12 @@
   "count": 11,
   "apps": [
     {
+      "id": "maxmusic",
       "appId": "maxmusic",
       "name": "MaxMusic",
       "developer": "Mark02-2012",
       "description": "MaxMusic (formerly YTMUltimate+) is Mark02-2012's fork of Dayanch96's YTMusicUltimate for the YouTube Music app on iOS. It keeps everything YTMusicUltimate provides — no ads, background playback, download manager, audio quality selection — and adds Return YouTube Music Dislike, YouMusicPiP, YTMABConfig and VolumeBoostYT, plus fixed in-app downloads on newer YouTube Music versions. Settings live inside YouTube Music under Settings.",
+      "shortDescription": "YTMusicUltimate with extra tweaks",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/MaxMusic.png",
       "screenshots": [
         "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn2.png",
@@ -15,29 +17,118 @@
         "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn4.png"
       ],
       "category": "music",
+      "categories": [
+        "music"
+      ],
+      "tags": [
+        "music"
+      ],
+      "repository": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+      "repositoryUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+      "sourceType": "github",
+      "homepage": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.google.ios.youtubemusic",
+      "bundleIdentifier": "com.google.ios.youtubemusic",
+      "packageName": null,
+      "minimumIOSVersion": "16.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "16.0",
       "version": "9.35.2",
       "buildNumber": null,
       "releaseDate": "2026-09-01",
-      "bundleId": "com.google.ios.youtubemusic",
-      "minimumOSVersion": "16.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS",
       "changelog": "MaxMusic 9.35.2 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.35.2\n\n**Changed**\nName of my fork\nYTMusic version",
       "downloadUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
       "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
       "size": 105888307,
-      "status": "stable",
+      "status": "active",
+      "lifecycleStatus": "active",
+      "legacyStatus": "stable",
       "featured": false,
-      "tags": [
-        "music"
+      "verified": false,
+      "lastUpdated": "2026-09-03",
+      "latestVersion": "9.35.2",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-09-01",
+      "latestReleaseNotes": "MaxMusic 9.35.2 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.35.2\n\n**Changed**\nName of my fork\nYTMusic version",
+      "downloadAssets": [
+        {
+          "filename": "MaxMusic_2.4.1_9.35.2.ipa",
+          "downloadUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 105888307,
+          "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
       ],
-      "fallbackDownloadUrls": []
+      "versions": [
+        {
+          "version": "9.35.2",
+          "build": null,
+          "releaseDate": "2026-09-01",
+          "releaseNotes": "MaxMusic 9.35.2 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.35.2\n\n**Changed**\nName of my fork\nYTMusic version",
+          "releaseUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/tag/MaxMusic_9.35.2_2.4.1_(87)",
+          "assets": [
+            {
+              "filename": "MaxMusic_2.4.1_9.35.2.ipa",
+              "downloadUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 105888307,
+              "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
+      ],
+      "fallbackDownloadUrls": [],
+      "health": {
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-09-01",
+        "daysSinceRelease": 2,
+        "releaseFrequencyDays": null,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 0,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": true,
+        "integrityVerified": null,
+        "status": "active",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-02"
+      },
+      "integrity": {
+        "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
+        "sha256Available": true,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     },
     {
+      "id": "maxtube",
       "appId": "maxtube",
       "name": "MaxTube",
       "developer": "Mark02-2012",
       "description": "MaxTube (formerly YTPlusM) is Mark02-2012's fork of YTPlus/YTLite, the enhancer for the YouTube app on iOS. On top of the YTPlus feature set — video/audio/thumbnail downloads, SponsorBlock, PiP, YTUHD, YouQuality, Return YouTube Dislike, YTABConfig, DontEatMyContent and over 100 configurable options without a subscription — MaxTube integrates ten extra tweaks: YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, YTPlaybackFix, YouChooseQuality, YouShare and PleaseDontStopTheMusic. Settings live inside YouTube under Settings.",
+      "shortDescription": "YTPlus with ten extra tweaks",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/MaxTube.png",
       "screenshots": [
         "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr1.jpg",
@@ -45,81 +136,590 @@
         "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr3.jpg"
       ],
       "category": "photo-video",
+      "categories": [
+        "photo-video"
+      ],
+      "tags": [
+        "photo-video"
+      ],
+      "repository": "https://github.com/Mark02-2012/YTPlusM",
+      "repositoryUrl": "https://github.com/Mark02-2012/YTPlusM",
+      "sourceType": "github",
+      "homepage": "https://github.com/Mark02-2012/YTPlusM",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.google.ios.youtube",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "packageName": null,
+      "minimumIOSVersion": "16.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "16.0",
       "version": "21.31.3",
       "buildNumber": null,
       "releaseDate": "2026-08-03",
-      "bundleId": "com.google.ios.youtube",
-      "minimumOSVersion": "16.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/Mark02-2012/YTPlusM",
       "changelog": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
       "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
       "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
       "size": 133357787,
-      "status": "manual",
+      "status": "maintenance",
+      "lifecycleStatus": "maintenance",
+      "legacyStatus": "manual",
       "featured": false,
-      "tags": [
-        "photo-video"
+      "verified": false,
+      "lastUpdated": "2026-09-03",
+      "latestVersion": "21.31.3",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-08-03",
+      "latestReleaseNotes": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
+      "downloadAssets": [
+        {
+          "filename": "YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault.ipa",
+          "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg%40tubevault.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 142219559,
+          "sha256": "99d3847be6653d58723d1465c0fc4ab87079d341b3a80973e9c1647d4cffdb38",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "YTPlusM_21.31.3_5.2.2.tg@tubevault.ipa",
+          "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 133357787,
+          "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
       ],
-      "fallbackDownloadUrls": []
+      "versions": [
+        {
+          "version": "21.31.3",
+          "build": null,
+          "releaseDate": "2026-08-03",
+          "releaseNotes": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
+          "releaseUrl": "https://github.com/Ashreq/ashstore-repo/releases/tag/v1.0.8",
+          "assets": [
+            {
+              "filename": "YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault.ipa",
+              "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg%40tubevault.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 142219559,
+              "sha256": "99d3847be6653d58723d1465c0fc4ab87079d341b3a80973e9c1647d4cffdb38",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "YTPlusM_21.31.3_5.2.2.tg@tubevault.ipa",
+              "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 133357787,
+              "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
+      ],
+      "fallbackDownloadUrls": [],
+      "health": {
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-08-03",
+        "daysSinceRelease": 31,
+        "releaseFrequencyDays": null,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 0,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": true,
+        "integrityVerified": null,
+        "status": "maintenance",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-02"
+      },
+      "integrity": {
+        "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
+        "sha256Available": true,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     },
     {
+      "id": "spotiflac",
       "appId": "spotiflac",
       "name": "SpotiFLAC Mobile",
       "developer": "zarzet",
       "description": "\n### New Features\n\n- **library**: Add bit depth quality label mode\n- **metadata**: Show explicit badges in track titles\n- **library**: Support multiple storage folders\n- **metadata**: Add download attribution to comments\n- **metadata**: Edit release tags and render UPC barcodes\n- **tagging**: Write release identity tags\n- **extensions**: Preserve provider metadata\n- **filename**: Add provider traceability tags\n- **metadata**: Show embedded cover resolution (#510)\n- **playlists**: Add play actions (#506) by [@Padma-Dev-E](https://github.com/Padma-Dev-E)\n- **library**: Add combined quality label #511\n- **metadata**: Review batch tag enrichment #511\n- **logs**: Copy selected entries #511\n- **search**: Save max-quality cover on long press #511\n- **metadata**: Show cover dimensions and size #511\n- **download**: Add automatic lossy conversion\n\n### Bug Fixes\n\n- **ios**: Handle library scan count output\n- **player**: Smooth timed lyrics highlighting\n- **library**: Show complete quality labels\n- **analysis**: Reject false low spectral cutoffs\n- **ui**: Align explicit badges with track titles\n- **metadata**: Avoid duplicate explicit indicator\n- **metadata**: Preserve explicit advisory across conversions\n- **home**: Clear recent activity permanently\n- **library**: Restore live folder scan progress\n- **library**: Open folder actions on row tap\n- **metadata**: Show readable SAF file locations\n- **analysis**: Bound spectrogram memory for large files\n- **metadata**: Preserve source release fields across providers\n- **download**: Unblock queue after verification cancel\n- **download**: Accept matching tracks across releases\n- **ui**: Align metadata and wrap track badges\n- **ui**: Update tutorial copy and library play button\n- **library**: Preserve retained files during duplicate cleanup\n- **metadata**: Keep collaboration albums grouped\n- **download**: Normalize MP4 audio extension by codec (#512)\n- **lyrics**: Use normalized Genius response (#517)\n- **download**: Treat a short clean EOF as resumable, not complete by [@A831ARD0](https://github.com/A831ARD0)\n- **playlists**: Thread the source provider id through to recent playlists by [@A831ARD0](https://github.com/A831ARD0)\n- **ios**: Stop dropping the security-scoped download folder bookmark by [@A831ARD0](https://github.com/A831ARD0)\n- **download**: Recover queue after worker timeout (#524)\n- **playlist**: Ignore container title during album verification #519\n- **metadata**: Match by primary artist and review results #511\n- **lyrics**: Respect extension provider selection #511\n- **metadata**: Honor provider priority in autofill #511\n- **metadata**: Prompt verification during autofill #511\n- **queue**: Restore user-paused downloads #511\n- **cover**: Preserve best max-quality candidate #511\n- **download**: Preserve SAF and defer background starts\n- **db**: Prevent concurrent startup locks\n- **a11y**: Label interactive controls\n\n### Performance\n\n- **library**: Stream scans and optimize queue queries\n- **history**: Batch SAF orphan inspection #511\n\n### Refactoring\n\n- **metadata**: Move cover resolution to extensions\n- **extensions**: Prioritize configurable settings\n\n### Testing\n\n- **audio**: Verify tagged PCM playback compatibility\n\n### Dependencies\n\n- **deps**: Bump locked Flutter dependencies\n- **deps**: Update Flutter and Go dependencies\n\n### Chores\n\n- Update AltStore source to v4.8.5 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- **analyzer**: Exclude platform folders from analysis\n- **release**: Bump version to 4.9.0\n\n\n### New Contributors\n* @Padma-Dev-E made their first contribution\n\n\n\n**Full Changelog**: [v4.8.5...v4.9.0](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v4.8.5...v4.9.0)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v4.9.0-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v4.9.0-arm32.apk` (older devices)\n\n#### iOS\n- **iOS**: `SpotiFLAC-v4.9.0-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA\n",
+      "shortDescription": "FLAC Downloader for iOS",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/SpotiFLAC.png",
       "screenshots": [],
       "category": "utilities",
+      "categories": [
+        "utilities"
+      ],
+      "tags": [
+        "utilities"
+      ],
+      "repository": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+      "repositoryUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+      "sourceType": "github",
+      "homepage": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.zarzet.spotiflac",
+      "bundleIdentifier": "com.zarzet.spotiflac",
+      "packageName": null,
+      "minimumIOSVersion": "16.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "16.0",
       "version": "4.9.5",
       "buildNumber": null,
       "releaseDate": "2026-09-01",
-      "bundleId": "com.zarzet.spotiflac",
-      "minimumOSVersion": "16.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
       "changelog": "SpotiFLAC 4.9.5 | SpotiFLAC-v4.9.5-ios-unsigned\n\n### New Features\n\n- **lyrics**: Use direct Kugou, QQ Music, and Genius sources\n- **backup**: Stream versioned ZIP archives\n- **updater**: Resume and verify APK downloads\n- **player**: Add sleep timer\n- **resolver**: Add cross-platform fallback chain\n- **l10n**: Merge Crowdin translation updates (#531) ([#531](https://github.com/spotiflacapp/SpotiFLAC-Mobile/pull/531))\n- **metadata**: Limit embedded cover resolution\n- Add file format library quality label\n- **library**: Add lyrics filtering and metadata actions\n- **extensions**: Add resilient transfer runtime\n\n### Bug Fixes\n\n- **ios**: Handle non-optional callback binding\n- **build**: Hide unexported lyrics search results from gomobile\n- **backup**: Use compact sflb file extension\n- **downloads**: Hide unknown byte totals in notifications\n- **resolver**: Retire unavailable resolver endpoints\n- **player**: Handle headset media controls\n- **ci**: Standardize Android ARM release build\n- **library**: Sync track playback controls\n- **download**: Throttle progress diagnostics\n- **ci**: Harden release workflow inputs and actions\n- **security**: Redact secrets from exported logs\n- **security**: Bound cover download memory usage\n- **security**: Prevent extension network sandbox bypasses\n- **security**: Sandbox extension FFmpeg execution\n- **security**: Validate extension callback state\n- **security**: Encrypt extension storage at rest\n- **download**: Restore reliable provider fallback retries\n- **download**: Preserve finalization metadata and library labels\n- **library**: Prevent pinch gesture blocking scroll\n- **database**: Cache unavailable FTS5 capability\n- **audio-analysis**: Avoid spectrogram splice noise\n- **library**: Recover transient file availability\n- **analysis**: Reject false spectral rolloff cutoffs\n- **metadata**: Preserve selected release artwork and title\n- **library**: Persist artwork previews and stabilize completion\n- **library**: Show play action for completed batch items\n- **library**: Show play actions during batch downloads\n- **extensions**: Resume metadata after verification\n- **playlists**: Remove play action from online playlists\n- **extensions**: Accept artist tracks alias\n- **ui**: Smooth metadata transitions and refine settings\n- **runtime**: Bound resources and quarantine stalled extensions\n- **storage**: Publish finalized SAF output once\n- **lints**: Await asynchronous work in guarded blocks\n- **metadata**: Remove forced download attribution\n- **extensions**: Remove Block Store dependency\n\n### Performance\n\n- **library**: Optimize CIFS scan recovery\n- **library**: Resume and parallelize SAF indexing\n- **lyrics**: Coalesce and persist provider results\n- **import**: Batch playlist metadata enrichment\n- **metadata**: Coalesce MusicBrainz ISRC lookups\n- **store**: Coalesce and condition registry requests\n- **extensions**: Refresh provider health off the download path\n- **playback**: Stream SAF tracks through descriptor leases\n- **android**: Tighten R8 keep rules\n- **download**: Reduce progress wakeups and harden retries\n- **extensions**: Coalesce signed session lifecycle\n- **extensions**: Streamline prepared download work\n- **network**: Improve connection fallback and reuse\n- Optimize library scans and extension runtime\n- Harden download and persistence lifecycle\n- Reduce queue and extension runtime overhead\n- **downloads**: Bound native queue state\n- **downloads**: Stream concurrent native queue work\n- **metadata**: Coalesce Deezer enrichment requests\n\n### Refactoring\n\n- **core**: Reduce generated and duplicate code\n\n### Dependencies\n\n- **deps**: Update Flutter and Go packages\n- **deps**: Upgrade Flutter Go and Android dependencies\n\n### Chores\n\n- Update AltStore source to v4.9.0 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- **logging**: Sanitize diagnostics and reduce noise\n- **release**: Bump version to 4.9.5\n- **release**: Bump version to 4.9.1\n\n### Build\n\n- **deps**: Add archive and crypto dependencies\n- **go**: Update toolchain to 1.26.6\n\n\n\n\n**Full Changelog**: [v4.9.0...v4.9.5](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v4.9.0...v4.9.5)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v4.9.5-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v4.9.5-arm32.apk` (older devices)\n\n#### iOS\n- **iOS**: `SpotiFLAC-v4.9.5-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
       "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-ios-unsigned.ipa",
       "sha256": "683375692c0a459fa262c8c543bfbf6467ab17e2bbf45899640a82e115c87451",
       "size": 34122124,
-      "status": "stable",
+      "status": "active",
+      "lifecycleStatus": "active",
+      "legacyStatus": "stable",
       "featured": true,
-      "tags": [
-        "utilities"
+      "verified": false,
+      "lastUpdated": "2026-09-03",
+      "latestVersion": "4.9.5",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-09-01",
+      "latestReleaseNotes": "SpotiFLAC 4.9.5 | SpotiFLAC-v4.9.5-ios-unsigned\n\n### New Features\n\n- **lyrics**: Use direct Kugou, QQ Music, and Genius sources\n- **backup**: Stream versioned ZIP archives\n- **updater**: Resume and verify APK downloads\n- **player**: Add sleep timer\n- **resolver**: Add cross-platform fallback chain\n- **l10n**: Merge Crowdin translation updates (#531) ([#531](https://github.com/spotiflacapp/SpotiFLAC-Mobile/pull/531))\n- **metadata**: Limit embedded cover resolution\n- Add file format library quality label\n- **library**: Add lyrics filtering and metadata actions\n- **extensions**: Add resilient transfer runtime\n\n### Bug Fixes\n\n- **ios**: Handle non-optional callback binding\n- **build**: Hide unexported lyrics search results from gomobile\n- **backup**: Use compact sflb file extension\n- **downloads**: Hide unknown byte totals in notifications\n- **resolver**: Retire unavailable resolver endpoints\n- **player**: Handle headset media controls\n- **ci**: Standardize Android ARM release build\n- **library**: Sync track playback controls\n- **download**: Throttle progress diagnostics\n- **ci**: Harden release workflow inputs and actions\n- **security**: Redact secrets from exported logs\n- **security**: Bound cover download memory usage\n- **security**: Prevent extension network sandbox bypasses\n- **security**: Sandbox extension FFmpeg execution\n- **security**: Validate extension callback state\n- **security**: Encrypt extension storage at rest\n- **download**: Restore reliable provider fallback retries\n- **download**: Preserve finalization metadata and library labels\n- **library**: Prevent pinch gesture blocking scroll\n- **database**: Cache unavailable FTS5 capability\n- **audio-analysis**: Avoid spectrogram splice noise\n- **library**: Recover transient file availability\n- **analysis**: Reject false spectral rolloff cutoffs\n- **metadata**: Preserve selected release artwork and title\n- **library**: Persist artwork previews and stabilize completion\n- **library**: Show play action for completed batch items\n- **library**: Show play actions during batch downloads\n- **extensions**: Resume metadata after verification\n- **playlists**: Remove play action from online playlists\n- **extensions**: Accept artist tracks alias\n- **ui**: Smooth metadata transitions and refine settings\n- **runtime**: Bound resources and quarantine stalled extensions\n- **storage**: Publish finalized SAF output once\n- **lints**: Await asynchronous work in guarded blocks\n- **metadata**: Remove forced download attribution\n- **extensions**: Remove Block Store dependency\n\n### Performance\n\n- **library**: Optimize CIFS scan recovery\n- **library**: Resume and parallelize SAF indexing\n- **lyrics**: Coalesce and persist provider results\n- **import**: Batch playlist metadata enrichment\n- **metadata**: Coalesce MusicBrainz ISRC lookups\n- **store**: Coalesce and condition registry requests\n- **extensions**: Refresh provider health off the download path\n- **playback**: Stream SAF tracks through descriptor leases\n- **android**: Tighten R8 keep rules\n- **download**: Reduce progress wakeups and harden retries\n- **extensions**: Coalesce signed session lifecycle\n- **extensions**: Streamline prepared download work\n- **network**: Improve connection fallback and reuse\n- Optimize library scans and extension runtime\n- Harden download and persistence lifecycle\n- Reduce queue and extension runtime overhead\n- **downloads**: Bound native queue state\n- **downloads**: Stream concurrent native queue work\n- **metadata**: Coalesce Deezer enrichment requests\n\n### Refactoring\n\n- **core**: Reduce generated and duplicate code\n\n### Dependencies\n\n- **deps**: Update Flutter and Go packages\n- **deps**: Upgrade Flutter Go and Android dependencies\n\n### Chores\n\n- Update AltStore source to v4.9.0 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- **logging**: Sanitize diagnostics and reduce noise\n- **release**: Bump version to 4.9.5\n- **release**: Bump version to 4.9.1\n\n### Build\n\n- **deps**: Add archive and crypto dependencies\n- **go**: Update toolchain to 1.26.6\n\n\n\n\n**Full Changelog**: [v4.9.0...v4.9.5](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v4.9.0...v4.9.5)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v4.9.5-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v4.9.5-arm32.apk` (older devices)\n\n#### iOS\n- **iOS**: `SpotiFLAC-v4.9.5-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
+      "downloadAssets": [
+        {
+          "filename": "SpotiFLAC-v4.9.5-arm32.apk",
+          "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-arm32.apk",
+          "platform": "android",
+          "architecture": "armv7",
+          "fileType": "APK",
+          "size": 102146586,
+          "sha256": "ece012470a988012c456adf6dc88f0ed76f002eab952928cefa0114590e4eef4",
+          "mimeType": "application/vnd.android.package-archive",
+          "installable": true
+        },
+        {
+          "filename": "SpotiFLAC-v4.9.5-arm64.apk",
+          "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-arm64.apk",
+          "platform": "android",
+          "architecture": "arm64",
+          "fileType": "APK",
+          "size": 81149806,
+          "sha256": "fbfe30b7ebce48eb3aa2dee315f19d2a180bb3efaec941bc1622eda1b6204258",
+          "mimeType": "application/vnd.android.package-archive",
+          "installable": true
+        },
+        {
+          "filename": "SpotiFLAC-v4.9.5-ios-unsigned.ipa",
+          "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-ios-unsigned.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 34122124,
+          "sha256": "683375692c0a459fa262c8c543bfbf6467ab17e2bbf45899640a82e115c87451",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
       ],
-      "fallbackDownloadUrls": []
+      "versions": [
+        {
+          "version": "4.9.5",
+          "build": null,
+          "releaseDate": "2026-09-01",
+          "releaseNotes": "SpotiFLAC 4.9.5 | SpotiFLAC-v4.9.5-ios-unsigned\n\n### New Features\n\n- **lyrics**: Use direct Kugou, QQ Music, and Genius sources\n- **backup**: Stream versioned ZIP archives\n- **updater**: Resume and verify APK downloads\n- **player**: Add sleep timer\n- **resolver**: Add cross-platform fallback chain\n- **l10n**: Merge Crowdin translation updates (#531) ([#531](https://github.com/spotiflacapp/SpotiFLAC-Mobile/pull/531))\n- **metadata**: Limit embedded cover resolution\n- Add file format library quality label\n- **library**: Add lyrics filtering and metadata actions\n- **extensions**: Add resilient transfer runtime\n\n### Bug Fixes\n\n- **ios**: Handle non-optional callback binding\n- **build**: Hide unexported lyrics search results from gomobile\n- **backup**: Use compact sflb file extension\n- **downloads**: Hide unknown byte totals in notifications\n- **resolver**: Retire unavailable resolver endpoints\n- **player**: Handle headset media controls\n- **ci**: Standardize Android ARM release build\n- **library**: Sync track playback controls\n- **download**: Throttle progress diagnostics\n- **ci**: Harden release workflow inputs and actions\n- **security**: Redact secrets from exported logs\n- **security**: Bound cover download memory usage\n- **security**: Prevent extension network sandbox bypasses\n- **security**: Sandbox extension FFmpeg execution\n- **security**: Validate extension callback state\n- **security**: Encrypt extension storage at rest\n- **download**: Restore reliable provider fallback retries\n- **download**: Preserve finalization metadata and library labels\n- **library**: Prevent pinch gesture blocking scroll\n- **database**: Cache unavailable FTS5 capability\n- **audio-analysis**: Avoid spectrogram splice noise\n- **library**: Recover transient file availability\n- **analysis**: Reject false spectral rolloff cutoffs\n- **metadata**: Preserve selected release artwork and title\n- **library**: Persist artwork previews and stabilize completion\n- **library**: Show play action for completed batch items\n- **library**: Show play actions during batch downloads\n- **extensions**: Resume metadata after verification\n- **playlists**: Remove play action from online playlists\n- **extensions**: Accept artist tracks alias\n- **ui**: Smooth metadata transitions and refine settings\n- **runtime**: Bound resources and quarantine stalled extensions\n- **storage**: Publish finalized SAF output once\n- **lints**: Await asynchronous work in guarded blocks\n- **metadata**: Remove forced download attribution\n- **extensions**: Remove Block Store dependency\n\n### Performance\n\n- **library**: Optimize CIFS scan recovery\n- **library**: Resume and parallelize SAF indexing\n- **lyrics**: Coalesce and persist provider results\n- **import**: Batch playlist metadata enrichment\n- **metadata**: Coalesce MusicBrainz ISRC lookups\n- **store**: Coalesce and condition registry requests\n- **extensions**: Refresh provider health off the download path\n- **playback**: Stream SAF tracks through descriptor leases\n- **android**: Tighten R8 keep rules\n- **download**: Reduce progress wakeups and harden retries\n- **extensions**: Coalesce signed session lifecycle\n- **extensions**: Streamline prepared download work\n- **network**: Improve connection fallback and reuse\n- Optimize library scans and extension runtime\n- Harden download and persistence lifecycle\n- Reduce queue and extension runtime overhead\n- **downloads**: Bound native queue state\n- **downloads**: Stream concurrent native queue work\n- **metadata**: Coalesce Deezer enrichment requests\n\n### Refactoring\n\n- **core**: Reduce generated and duplicate code\n\n### Dependencies\n\n- **deps**: Update Flutter and Go packages\n- **deps**: Upgrade Flutter Go and Android dependencies\n\n### Chores\n\n- Update AltStore source to v4.9.0 by [@github-actions[bot]](https://github.com/github-actions[bot])\n- **logging**: Sanitize diagnostics and reduce noise\n- **release**: Bump version to 4.9.5\n- **release**: Bump version to 4.9.1\n\n### Build\n\n- **deps**: Add archive and crypto dependencies\n- **go**: Update toolchain to 1.26.6\n\n\n\n\n**Full Changelog**: [v4.9.0...v4.9.5](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v4.9.0...v4.9.5)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v4.9.5-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v4.9.5-arm32.apk` (older devices)\n\n#### iOS\n- **iOS**: `SpotiFLAC-v4.9.5-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
+          "releaseUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/tag/v4.9.5",
+          "assets": [
+            {
+              "filename": "SpotiFLAC-v4.9.5-arm32.apk",
+              "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-arm32.apk",
+              "platform": "android",
+              "architecture": "armv7",
+              "fileType": "APK",
+              "size": 102146586,
+              "sha256": "ece012470a988012c456adf6dc88f0ed76f002eab952928cefa0114590e4eef4",
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "SpotiFLAC-v4.9.5-arm64.apk",
+              "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-arm64.apk",
+              "platform": "android",
+              "architecture": "arm64",
+              "fileType": "APK",
+              "size": 81149806,
+              "sha256": "fbfe30b7ebce48eb3aa2dee315f19d2a180bb3efaec941bc1622eda1b6204258",
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "SpotiFLAC-v4.9.5-ios-unsigned.ipa",
+              "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-ios-unsigned.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 34122124,
+              "sha256": "683375692c0a459fa262c8c543bfbf6467ab17e2bbf45899640a82e115c87451",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
+      ],
+      "fallbackDownloadUrls": [],
+      "health": {
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-09-01",
+        "daysSinceRelease": 2,
+        "releaseFrequencyDays": null,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 0,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": true,
+        "integrityVerified": null,
+        "status": "active",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-01"
+      },
+      "integrity": {
+        "sha256": "683375692c0a459fa262c8c543bfbf6467ab17e2bbf45899640a82e115c87451",
+        "sha256Available": true,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     },
     {
+      "id": "utm",
       "appId": "utm",
       "name": "UTM",
       "developer": "UTM Team",
       "description": "Run real operating systems on your iPhone or iPad. UTM is an open-source (Apache-2.0) virtualization and emulation platform built on QEMU, capable of running Windows, Linux, classic Mac OS and dozens of other systems alongside your apps.\n\nHighlights:\n- QEMU v10.0.2 backend with support for dozens of CPU architectures (x86_64, ARM64, RISC-V, PowerPC and more)\n- Improved machine wizard with well-tested configurations such as Windows, Ubuntu, RISC-V64 Ubuntu, classic Mac OS 8.x/9.x and Windows 95/98\n- Custom keyboard shortcuts (e.g. Ctrl+Alt+Del) sent directly to the VM from the Keyboard menu\n- App Intents automation with the Shortcuts app\n- Liquid Glass design on iOS 26\n- Import and export .utm virtual machine bundles via the Files app\n- No jailbreak required; highest performance with JIT workarounds on supported iOS versions",
+      "shortDescription": "Virtual machines for iOS",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/UTM.png",
       "screenshots": [],
       "category": "utilities",
+      "categories": [
+        "utilities"
+      ],
+      "tags": [
+        "utilities"
+      ],
+      "repository": "https://github.com/utmapp/UTM",
+      "repositoryUrl": "https://github.com/utmapp/UTM",
+      "sourceType": "github",
+      "homepage": "https://github.com/utmapp/UTM",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.utmapp.UTM",
+      "bundleIdentifier": "com.utmapp.UTM",
+      "packageName": null,
+      "minimumIOSVersion": "14.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "14.0",
       "version": "4.7.5",
       "buildNumber": null,
       "releaseDate": "2026-01-03T17:51:54Z",
-      "bundleId": "com.utmapp.UTM",
-      "minimumOSVersion": "14.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/utmapp/UTM",
       "changelog": "UTM 4.7.5 | Universal IPA\n\n## Highlights\n* **QEMU v10.0.2**: The backend has been updated to the latest upstream QEMU which brings with it a variety of bug fixes and performance improvements.\n* **Liquid Glass**: UTM adopts the Liquid Glass design on *OS 26.\n* **App Intents**: New support for automation with Shortcuts.\n* **Keyboard Shortcuts**: Define custom key combinations (such as Ctrl+Alt+Del) that can be sent to the VM from the new Keyboard menu.\n* **Improved Wizard**: Simplify the creation of emulated machines by selecting from a list of well-supported configurations. The updated wizard can create more working configurations such as RISC-V64 Ubuntu, classic Mac OS 8.x/9.x, and Windows 95/98.\n\n## Changes (v4.7.5)\n* Fixed some rare conditions that could lead to a VM fail to start and spin infinitely\n* Fixed some rare crashes that can happen after a VM stops\n* Fixed parsing of file paths with commas in the name (thanks @nikolan123)\n* ANGLE: Fixed a memory leak issue in the GLES backend (#7546) (thanks @cnnn)\n* ANGLE: Fixed a memory leak issue in the Metal backend (#4958)\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (macOS) Fixed App Intents on macOS 26 (#7412) (thanks @peterneutron)\n* (macOS) Fixed an error when file locking is disabled and a removable drive with no image selected is started (#7527)\n* (macOS) AVF: Fixed shared directory disconnecting when window is resized (#7488) (thanks @evan314159)\n* Hotfix: (1/3/25) An earlier release of v4.7.5 has an issue that prevented VMs from starting. Make sure you are on build 118.\n\n## Changes (v4.7.4)\n* (macOS) Fixed a crash on VM start when a toolbar menu was reinitialized (note v4.7.4 was re-released to address this) (#7408)\n* Home: Fixed layout issue with button titles\n* (macOS) Fixed a crash when VM exits while USB is active\n* (iOS) Support for StikDebug on iOS 26 (non-SE only)\n\n## Changes (v4.7.3)\n* Fixed a crash when starting a VM results in a block device error\n* Stop button can now be used a second time to force kill a VM if it is unresponsive after stopping for the first time\n* libusb: Fixed multiple race conditions that caused crashes when using USB capture\n* CocoaSpice: Fixed multiple race conditions that caused crashes during VM start\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (macOS) Scripting: Fixed broken commands due to name collision (#7360)\n* (macOS) Fixed crash when exiting full screen (#7377)\n\n## Changes (v4.7.2)\n* (macOS) AVF: Fixed a crash when starting any Apple Virtualization VM (#7355) (We are re-releasing v4.7.2 with build 112 due to this critical bug.)\n* Home: Display network details and active IP addresses on the home details screen (thanks @gabefair)\n* Home: Show a security warning message when importing a .utm with custom arguments (#6252)\n* Config: Option to reset UEFI without pre-loading Secure Boot keys (useful for custom TPM configurations) (#7005)\n* Config: Pre-loading Secure Boot keys will now install Microsoft UEFI 2023 certificates (#7257)\n* Config: When PS/2 device is enabled, no longer create USB mouse and keyboard devices. This allows older Windows install to work out of the box.\n* Config: Quotes in custom arguments are no longer stripped (unless the only quotes wrap the entire argument) (#6343)\n* Config: Provide a fixed serial number for VirtIO block devices (#7332)\n* QEMU: Fixed an issue which causes Windows 98 to BSoD (#7342)\n* QEMU: Do not create a default floppy drive when -nodefaults is used. UTM configuration will set up a FDC device and this is the only way to set up bootindex for floppy.\n* Wizard: Legacy Windows configurations will now use PS/2 controller by default\n* Wizard: Update OS logos to be consistent with other icons\n* Wizard: Windows + i440fx hardware will now instantiate default devices (sound, VGA, networking) that should work with Windows 95/98\n* Wizard: Add additional supported hardware configurations for running older Windows\n* Wizard: Support floppy boot for Windows configuration\n* Scripting: New input automation suite for sending keyboard and mouse input (#6462)\n* USB: Fixed a rare crash when initializing the USB devices list (#5811)\n* SPICE: Fixed an issue where monitor configuration sent to spice-vdagent contains an invalid size (#5832)\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (iOS) Toolbar: Fix foreground issue on iOS 26 beta 5 and higher\n* (macOS) Added ability to auto-connect USB devices on start (#3400)\n* (macOS) Fixed connecting USB devices from secondary windows\n* (macOS) New \"Virtual Machine\" menu which mirrors the actions accessible through the toolbar\n* (macOS) Keyboard Shortcuts toolbar icon is no longer shown by default (it can be placed on the toolbar through View -> Customize Toolbar). It is also accessible through the \"Virtual Machine\" menu.\n* (macOS) Fixed sending simultaneous mouse button presses (#7068)\n* (macOS) utmctl: Add `version` command to detect current UTM version\n* (macOS) Settings: New option to disable key swapping on ISO keyboards (#6976)\n* (macOS) Settings: New option to randomize network MAC addresses on clone (#7035)\n\n## Changes (v4.7.1)\n* New Liquid Glass icon thanks to @forcequitOS\n* Added App Intents for VM operations (#6245)\n* Added UEFI boot support for RISC-V64 and LoongArch64. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* QEMU PPC: Disable `bootindex` when `boot-device` is used in prom-env. This allows Yellow Dog Linux for PPC to work out of the box. (#6436)\n* QEMU x86_64: Fixed floppy boot order configuration for other PC models (isapc, i440fx) (#7166)\n* QEMU PPC/M68K: Includes classicvirtio drivers to support cursor input without capture and directory sharing (#6520)\n* QEMU M68K: Fixed virtio drive config (#7008)\n* Fixed a rare crash after stopping VM due to a race condition in libusb\n* Home: improve screenshot contrast in Dark Mode (#6894)\n* Config: Fixed a crash when trying to enter a large size value when creating a new drive (#7295)\n* Config: Corrected the default host IP address in port forwarding config to \"0.0.0.0\" when it incorrectly displayed \"127.0.0.1\" (#7132)\n* Keyboard Shortcuts: Create custom combinations of keyboard shortcuts from either Settings -> Input or via the Keyboard icon in the VM (press and hold on iOS/visionOS). This will allow you to easily send key commands such as Ctrl+Alt+Del or Stop+A to the VM. (#5698, #6310, #6757)\n* Wizard: New option to import an existing drive image when setting up a Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* Wizard: New option to create a serial port only Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* Wizard: Removed VHDX import option because Microsoft now provides ARM64 ISO images. Note: You can still create manually import an VHDX after creating a new VM.\n* Wizard: New template to create classic Mac OS VMs for M68K and PPC (#3504, #6890)\n* Wizard: Most common and supported machines for emulation are now listed prominently with the full list of supported QEMU architectures/targets hidden behind an \"Expert\" mode. This is necessary because most of the QEMU targets are not properly supported by the wizard anyways and does not generate a bootable config. They usually require a lot more manual tinkering. The page order of the wizard is also tweaked so the hardware config comes before the boot config now.\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (iOS SE) Fixed a crash when launching ArchLinux due to mis-handling of REV32\n* (iOS SE) Fixed a crash when the first instruction executed is a goto\n* (iOS SE) Removed ARM32, RISC-V32, and added M68K. There is little use for ARM32 and RISC-V32 as they cannot boot anything useful that cannot also be booted by the 64-bit variant (which is still included). If you have a counter example of this, please open an issue on GitHub and we can consider re-adding it back in the future. Ho…",
       "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa",
       "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
       "size": 130058389,
-      "status": "stable",
+      "status": "active",
+      "lifecycleStatus": "active",
+      "legacyStatus": "stable",
       "featured": false,
-      "tags": [
-        "utilities"
+      "verified": false,
+      "lastUpdated": "2026-09-03",
+      "latestVersion": "4.7.5",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-01-03T17:51:54Z",
+      "latestReleaseNotes": "UTM 4.7.5 | Universal IPA\n\n## Highlights\n* **QEMU v10.0.2**: The backend has been updated to the latest upstream QEMU which brings with it a variety of bug fixes and performance improvements.\n* **Liquid Glass**: UTM adopts the Liquid Glass design on *OS 26.\n* **App Intents**: New support for automation with Shortcuts.\n* **Keyboard Shortcuts**: Define custom key combinations (such as Ctrl+Alt+Del) that can be sent to the VM from the new Keyboard menu.\n* **Improved Wizard**: Simplify the creation of emulated machines by selecting from a list of well-supported configurations. The updated wizard can create more working configurations such as RISC-V64 Ubuntu, classic Mac OS 8.x/9.x, and Windows 95/98.\n\n## Changes (v4.7.5)\n* Fixed some rare conditions that could lead to a VM fail to start and spin infinitely\n* Fixed some rare crashes that can happen after a VM stops\n* Fixed parsing of file paths with commas in the name (thanks @nikolan123)\n* ANGLE: Fixed a memory leak issue in the GLES backend (#7546) (thanks @cnnn)\n* ANGLE: Fixed a memory leak issue in the Metal backend (#4958)\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (macOS) Fixed App Intents on macOS 26 (#7412) (thanks @peterneutron)\n* (macOS) Fixed an error when file locking is disabled and a removable drive with no image selected is started (#7527)\n* (macOS) AVF: Fixed shared directory disconnecting when window is resized (#7488) (thanks @evan314159)\n* Hotfix: (1/3/25) An earlier release of v4.7.5 has an issue that prevented VMs from starting. Make sure you are on build 118.\n\n## Changes (v4.7.4)\n* (macOS) Fixed a crash on VM start when a toolbar menu was reinitialized (note v4.7.4 was re-released to address this) (#7408)\n* Home: Fixed layout issue with button titles\n* (macOS) Fixed a crash when VM exits while USB is active\n* (iOS) Support for StikDebug on iOS 26 (non-SE only)\n\n## Changes (v4.7.3)\n* Fixed a crash when starting a VM results in a block device error\n* Stop button can now be used a second time to force kill a VM if it is unresponsive after stopping for the first time\n* libusb: Fixed multiple race conditions that caused crashes when using USB capture\n* CocoaSpice: Fixed multiple race conditions that caused crashes during VM start\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (macOS) Scripting: Fixed broken commands due to name collision (#7360)\n* (macOS) Fixed crash when exiting full screen (#7377)\n\n## Changes (v4.7.2)\n* (macOS) AVF: Fixed a crash when starting any Apple Virtualization VM (#7355) (We are re-releasing v4.7.2 with build 112 due to this critical bug.)\n* Home: Display network details and active IP addresses on the home details screen (thanks @gabefair)\n* Home: Show a security warning message when importing a .utm with custom arguments (#6252)\n* Config: Option to reset UEFI without pre-loading Secure Boot keys (useful for custom TPM configurations) (#7005)\n* Config: Pre-loading Secure Boot keys will now install Microsoft UEFI 2023 certificates (#7257)\n* Config: When PS/2 device is enabled, no longer create USB mouse and keyboard devices. This allows older Windows install to work out of the box.\n* Config: Quotes in custom arguments are no longer stripped (unless the only quotes wrap the entire argument) (#6343)\n* Config: Provide a fixed serial number for VirtIO block devices (#7332)\n* QEMU: Fixed an issue which causes Windows 98 to BSoD (#7342)\n* QEMU: Do not create a default floppy drive when -nodefaults is used. UTM configuration will set up a FDC device and this is the only way to set up bootindex for floppy.\n* Wizard: Legacy Windows configurations will now use PS/2 controller by default\n* Wizard: Update OS logos to be consistent with other icons\n* Wizard: Windows + i440fx hardware will now instantiate default devices (sound, VGA, networking) that should work with Windows 95/98\n* Wizard: Add additional supported hardware configurations for running older Windows\n* Wizard: Support floppy boot for Windows configuration\n* Scripting: New input automation suite for sending keyboard and mouse input (#6462)\n* USB: Fixed a rare crash when initializing the USB devices list (#5811)\n* SPICE: Fixed an issue where monitor configuration sent to spice-vdagent contains an invalid size (#5832)\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (iOS) Toolbar: Fix foreground issue on iOS 26 beta 5 and higher\n* (macOS) Added ability to auto-connect USB devices on start (#3400)\n* (macOS) Fixed connecting USB devices from secondary windows\n* (macOS) New \"Virtual Machine\" menu which mirrors the actions accessible through the toolbar\n* (macOS) Keyboard Shortcuts toolbar icon is no longer shown by default (it can be placed on the toolbar through View -> Customize Toolbar). It is also accessible through the \"Virtual Machine\" menu.\n* (macOS) Fixed sending simultaneous mouse button presses (#7068)\n* (macOS) utmctl: Add `version` command to detect current UTM version\n* (macOS) Settings: New option to disable key swapping on ISO keyboards (#6976)\n* (macOS) Settings: New option to randomize network MAC addresses on clone (#7035)\n\n## Changes (v4.7.1)\n* New Liquid Glass icon thanks to @forcequitOS\n* Added App Intents for VM operations (#6245)\n* Added UEFI boot support for RISC-V64 and LoongArch64. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* QEMU PPC: Disable `bootindex` when `boot-device` is used in prom-env. This allows Yellow Dog Linux for PPC to work out of the box. (#6436)\n* QEMU x86_64: Fixed floppy boot order configuration for other PC models (isapc, i440fx) (#7166)\n* QEMU PPC/M68K: Includes classicvirtio drivers to support cursor input without capture and directory sharing (#6520)\n* QEMU M68K: Fixed virtio drive config (#7008)\n* Fixed a rare crash after stopping VM due to a race condition in libusb\n* Home: improve screenshot contrast in Dark Mode (#6894)\n* Config: Fixed a crash when trying to enter a large size value when creating a new drive (#7295)\n* Config: Corrected the default host IP address in port forwarding config to \"0.0.0.0\" when it incorrectly displayed \"127.0.0.1\" (#7132)\n* Keyboard Shortcuts: Create custom combinations of keyboard shortcuts from either Settings -> Input or via the Keyboard icon in the VM (press and hold on iOS/visionOS). This will allow you to easily send key commands such as Ctrl+Alt+Del or Stop+A to the VM. (#5698, #6310, #6757)\n* Wizard: New option to import an existing drive image when setting up a Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* Wizard: New option to create a serial port only Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* Wizard: Removed VHDX import option because Microsoft now provides ARM64 ISO images. Note: You can still create manually import an VHDX after creating a new VM.\n* Wizard: New template to create classic Mac OS VMs for M68K and PPC (#3504, #6890)\n* Wizard: Most common and supported machines for emulation are now listed prominently with the full list of supported QEMU architectures/targets hidden behind an \"Expert\" mode. This is necessary because most of the QEMU targets are not properly supported by the wizard anyways and does not generate a bootable config. They usually require a lot more manual tinkering. The page order of the wizard is also tweaked so the hardware config comes before the boot config now.\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (iOS SE) Fixed a crash when launching ArchLinux due to mis-handling of REV32\n* (iOS SE) Fixed a crash when the first instruction executed is a goto\n* (iOS SE) Removed ARM32, RISC-V32, and added M68K. There is little use for ARM32 and RISC-V32 as they cannot boot anything useful that cannot also be booted by the 64-bit variant (which is still included). If you have a counter example of this, please open an issue on GitHub and we can consider re-adding it back in the future. Ho…",
+      "downloadAssets": [
+        {
+          "filename": "UTM-SE.ipa",
+          "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-SE.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 213878374,
+          "sha256": "ccb8529b8b8781410ff481e4ffbdf0d1b47ce5d431031e782e4b6f9601cac06d",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "UTM-visionOS.ipa",
+          "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-visionOS.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 127860014,
+          "sha256": "a5723d0c41ea3e00793e05725cfab5dd343b1fe3256aba702a91f786128b734f",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "UTM.deb",
+          "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.deb",
+          "platform": "linux",
+          "architecture": null,
+          "fileType": "DEB",
+          "size": 128648546,
+          "sha256": "1ad80ea5a85651936f67757e173cf752dc21101a2275f01f441158da90d3ca9f",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "UTM-Remote-visionOS.ipa",
+          "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-Remote-visionOS.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 32233531,
+          "sha256": "bb0e11da406f98246f011950a976da29f1769dc0852718db766142c22b4ec6f9",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "UTM.ipa",
+          "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 130058389,
+          "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "UTM-Remote.ipa",
+          "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-Remote.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 34171465,
+          "sha256": "04e238b7efaf44d4b7f55dd8e3a5b23d08b040c2a60f8a166ed72409c60aca5e",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "UTM-HV.ipa",
+          "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-HV.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 130058653,
+          "sha256": "42c568d53f12f2d594665daa7f7382af501b97880d61f58aceca73de23f17b28",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "UTM-SE-visionOS.ipa",
+          "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-SE-visionOS.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 211943162,
+          "sha256": "840bee6474b1428a48a6d331e4c3cc0b062a90416914aca794e1abb90bc99f1f",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "UTM.dmg",
+          "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.dmg",
+          "platform": "macos",
+          "architecture": null,
+          "fileType": "DMG",
+          "size": 250021057,
+          "sha256": "a8435c93cfb5f8bbfeea4b134cfad1ac66b67632b75e438c63b1a8ae043bef0e",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
       ],
-      "fallbackDownloadUrls": []
+      "versions": [
+        {
+          "version": "4.7.5",
+          "build": null,
+          "releaseDate": "2026-01-03T17:51:54Z",
+          "releaseNotes": "UTM 4.7.5 | Universal IPA\n\n## Highlights\n* **QEMU v10.0.2**: The backend has been updated to the latest upstream QEMU which brings with it a variety of bug fixes and performance improvements.\n* **Liquid Glass**: UTM adopts the Liquid Glass design on *OS 26.\n* **App Intents**: New support for automation with Shortcuts.\n* **Keyboard Shortcuts**: Define custom key combinations (such as Ctrl+Alt+Del) that can be sent to the VM from the new Keyboard menu.\n* **Improved Wizard**: Simplify the creation of emulated machines by selecting from a list of well-supported configurations. The updated wizard can create more working configurations such as RISC-V64 Ubuntu, classic Mac OS 8.x/9.x, and Windows 95/98.\n\n## Changes (v4.7.5)\n* Fixed some rare conditions that could lead to a VM fail to start and spin infinitely\n* Fixed some rare crashes that can happen after a VM stops\n* Fixed parsing of file paths with commas in the name (thanks @nikolan123)\n* ANGLE: Fixed a memory leak issue in the GLES backend (#7546) (thanks @cnnn)\n* ANGLE: Fixed a memory leak issue in the Metal backend (#4958)\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (macOS) Fixed App Intents on macOS 26 (#7412) (thanks @peterneutron)\n* (macOS) Fixed an error when file locking is disabled and a removable drive with no image selected is started (#7527)\n* (macOS) AVF: Fixed shared directory disconnecting when window is resized (#7488) (thanks @evan314159)\n* Hotfix: (1/3/25) An earlier release of v4.7.5 has an issue that prevented VMs from starting. Make sure you are on build 118.\n\n## Changes (v4.7.4)\n* (macOS) Fixed a crash on VM start when a toolbar menu was reinitialized (note v4.7.4 was re-released to address this) (#7408)\n* Home: Fixed layout issue with button titles\n* (macOS) Fixed a crash when VM exits while USB is active\n* (iOS) Support for StikDebug on iOS 26 (non-SE only)\n\n## Changes (v4.7.3)\n* Fixed a crash when starting a VM results in a block device error\n* Stop button can now be used a second time to force kill a VM if it is unresponsive after stopping for the first time\n* libusb: Fixed multiple race conditions that caused crashes when using USB capture\n* CocoaSpice: Fixed multiple race conditions that caused crashes during VM start\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (macOS) Scripting: Fixed broken commands due to name collision (#7360)\n* (macOS) Fixed crash when exiting full screen (#7377)\n\n## Changes (v4.7.2)\n* (macOS) AVF: Fixed a crash when starting any Apple Virtualization VM (#7355) (We are re-releasing v4.7.2 with build 112 due to this critical bug.)\n* Home: Display network details and active IP addresses on the home details screen (thanks @gabefair)\n* Home: Show a security warning message when importing a .utm with custom arguments (#6252)\n* Config: Option to reset UEFI without pre-loading Secure Boot keys (useful for custom TPM configurations) (#7005)\n* Config: Pre-loading Secure Boot keys will now install Microsoft UEFI 2023 certificates (#7257)\n* Config: When PS/2 device is enabled, no longer create USB mouse and keyboard devices. This allows older Windows install to work out of the box.\n* Config: Quotes in custom arguments are no longer stripped (unless the only quotes wrap the entire argument) (#6343)\n* Config: Provide a fixed serial number for VirtIO block devices (#7332)\n* QEMU: Fixed an issue which causes Windows 98 to BSoD (#7342)\n* QEMU: Do not create a default floppy drive when -nodefaults is used. UTM configuration will set up a FDC device and this is the only way to set up bootindex for floppy.\n* Wizard: Legacy Windows configurations will now use PS/2 controller by default\n* Wizard: Update OS logos to be consistent with other icons\n* Wizard: Windows + i440fx hardware will now instantiate default devices (sound, VGA, networking) that should work with Windows 95/98\n* Wizard: Add additional supported hardware configurations for running older Windows\n* Wizard: Support floppy boot for Windows configuration\n* Scripting: New input automation suite for sending keyboard and mouse input (#6462)\n* USB: Fixed a rare crash when initializing the USB devices list (#5811)\n* SPICE: Fixed an issue where monitor configuration sent to spice-vdagent contains an invalid size (#5832)\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (iOS) Toolbar: Fix foreground issue on iOS 26 beta 5 and higher\n* (macOS) Added ability to auto-connect USB devices on start (#3400)\n* (macOS) Fixed connecting USB devices from secondary windows\n* (macOS) New \"Virtual Machine\" menu which mirrors the actions accessible through the toolbar\n* (macOS) Keyboard Shortcuts toolbar icon is no longer shown by default (it can be placed on the toolbar through View -> Customize Toolbar). It is also accessible through the \"Virtual Machine\" menu.\n* (macOS) Fixed sending simultaneous mouse button presses (#7068)\n* (macOS) utmctl: Add `version` command to detect current UTM version\n* (macOS) Settings: New option to disable key swapping on ISO keyboards (#6976)\n* (macOS) Settings: New option to randomize network MAC addresses on clone (#7035)\n\n## Changes (v4.7.1)\n* New Liquid Glass icon thanks to @forcequitOS\n* Added App Intents for VM operations (#6245)\n* Added UEFI boot support for RISC-V64 and LoongArch64. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* QEMU PPC: Disable `bootindex` when `boot-device` is used in prom-env. This allows Yellow Dog Linux for PPC to work out of the box. (#6436)\n* QEMU x86_64: Fixed floppy boot order configuration for other PC models (isapc, i440fx) (#7166)\n* QEMU PPC/M68K: Includes classicvirtio drivers to support cursor input without capture and directory sharing (#6520)\n* QEMU M68K: Fixed virtio drive config (#7008)\n* Fixed a rare crash after stopping VM due to a race condition in libusb\n* Home: improve screenshot contrast in Dark Mode (#6894)\n* Config: Fixed a crash when trying to enter a large size value when creating a new drive (#7295)\n* Config: Corrected the default host IP address in port forwarding config to \"0.0.0.0\" when it incorrectly displayed \"127.0.0.1\" (#7132)\n* Keyboard Shortcuts: Create custom combinations of keyboard shortcuts from either Settings -> Input or via the Keyboard icon in the VM (press and hold on iOS/visionOS). This will allow you to easily send key commands such as Ctrl+Alt+Del or Stop+A to the VM. (#5698, #6310, #6757)\n* Wizard: New option to import an existing drive image when setting up a Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* Wizard: New option to create a serial port only Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* Wizard: Removed VHDX import option because Microsoft now provides ARM64 ISO images. Note: You can still create manually import an VHDX after creating a new VM.\n* Wizard: New template to create classic Mac OS VMs for M68K and PPC (#3504, #6890)\n* Wizard: Most common and supported machines for emulation are now listed prominently with the full list of supported QEMU architectures/targets hidden behind an \"Expert\" mode. This is necessary because most of the QEMU targets are not properly supported by the wizard anyways and does not generate a bootable config. They usually require a lot more manual tinkering. The page order of the wizard is also tweaked so the hardware config comes before the boot config now.\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (iOS SE) Fixed a crash when launching ArchLinux due to mis-handling of REV32\n* (iOS SE) Fixed a crash when the first instruction executed is a goto\n* (iOS SE) Removed ARM32, RISC-V32, and added M68K. There is little use for ARM32 and RISC-V32 as they cannot boot anything useful that cannot also be booted by the 64-bit variant (which is still included). If you have a counter example of this, please open an issue on GitHub and we can consider re-adding it back in the future. Ho…",
+          "releaseUrl": "https://github.com/utmapp/UTM/releases/tag/v4.7.5",
+          "assets": [
+            {
+              "filename": "UTM-SE.ipa",
+              "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-SE.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 213878374,
+              "sha256": "ccb8529b8b8781410ff481e4ffbdf0d1b47ce5d431031e782e4b6f9601cac06d",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "UTM-visionOS.ipa",
+              "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-visionOS.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 127860014,
+              "sha256": "a5723d0c41ea3e00793e05725cfab5dd343b1fe3256aba702a91f786128b734f",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "UTM.deb",
+              "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.deb",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "DEB",
+              "size": 128648546,
+              "sha256": "1ad80ea5a85651936f67757e173cf752dc21101a2275f01f441158da90d3ca9f",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "UTM-Remote-visionOS.ipa",
+              "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-Remote-visionOS.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 32233531,
+              "sha256": "bb0e11da406f98246f011950a976da29f1769dc0852718db766142c22b4ec6f9",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "UTM.ipa",
+              "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 130058389,
+              "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "UTM-Remote.ipa",
+              "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-Remote.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 34171465,
+              "sha256": "04e238b7efaf44d4b7f55dd8e3a5b23d08b040c2a60f8a166ed72409c60aca5e",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "UTM-HV.ipa",
+              "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-HV.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 130058653,
+              "sha256": "42c568d53f12f2d594665daa7f7382af501b97880d61f58aceca73de23f17b28",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "UTM-SE-visionOS.ipa",
+              "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM-SE-visionOS.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 211943162,
+              "sha256": "840bee6474b1428a48a6d331e4c3cc0b062a90416914aca794e1abb90bc99f1f",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "UTM.dmg",
+              "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.dmg",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "DMG",
+              "size": 250021057,
+              "sha256": "a8435c93cfb5f8bbfeea4b134cfad1ac66b67632b75e438c63b1a8ae043bef0e",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
+      ],
+      "fallbackDownloadUrls": [],
+      "health": {
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-01-03",
+        "daysSinceRelease": 243,
+        "releaseFrequencyDays": null,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 0,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": true,
+        "integrityVerified": null,
+        "status": "active",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-02"
+      },
+      "integrity": {
+        "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
+        "sha256Available": true,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     },
     {
+      "id": "uyouenhanced",
       "appId": "uyouenhanced",
       "name": "uYouEnhanced",
       "developer": "arichornlover",
       "description": "uYou is the best tweak for the YouTube app. uYouEnhanced is a modified version of qnblackcat's uYouPlus & MiRO92's uYou with even more features. Additional features include skipping sponsorships in videos, more PiP options, unlocking higher resolutions, disabling overlays, removing upsell alerts, dimming the UI, enabling the miniplayer, preventing notch issues, configuring A/B settings, and adding a timestamp button.",
+      "shortDescription": "uYouPlus with even more features!",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/uYouEnhanced.png",
       "screenshots": [
         "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus1.jpeg?raw=true",
@@ -130,181 +730,850 @@
         "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus6.jpeg?raw=true"
       ],
       "category": "photo-video",
+      "categories": [
+        "photo-video"
+      ],
+      "tags": [
+        "photo-video"
+      ],
+      "repository": "https://github.com/arichornlover/uYouEnhanced",
+      "repositoryUrl": "https://github.com/arichornlover/uYouEnhanced",
+      "sourceType": "github",
+      "homepage": "https://github.com/arichornlover/uYouEnhanced",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.google.ios.youtube",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "packageName": null,
+      "minimumIOSVersion": "16.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "16.0",
       "version": "21.14.4",
       "buildNumber": null,
       "releaseDate": "2026-08-22",
-      "bundleId": "com.google.ios.youtube",
-      "minimumOSVersion": "16.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/arichornlover/uYouEnhanced",
       "changelog": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
       "downloadUrl": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
       "sha256": null,
       "size": 135840058,
-      "status": "manual",
+      "status": "broken",
+      "lifecycleStatus": "broken",
+      "legacyStatus": "manual",
       "featured": true,
-      "tags": [
-        "photo-video"
+      "verified": false,
+      "lastUpdated": "2026-09-02",
+      "latestVersion": "21.14.4",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-08-22",
+      "latestReleaseNotes": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
+      "downloadAssets": [
+        {
+          "filename": "yt-uYE-21144-305.ipa",
+          "downloadUrl": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 135840058,
+          "sha256": null,
+          "mimeType": null,
+          "installable": true
+        }
+      ],
+      "versions": [
+        {
+          "version": "21.14.4",
+          "build": null,
+          "releaseDate": "2026-08-22",
+          "releaseNotes": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
+          "releaseUrl": "https://github.com/arichornlover/uYouEnhanced",
+          "assets": [
+            {
+              "filename": "yt-uYE-21144-305.ipa",
+              "downloadUrl": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 135840058,
+              "sha256": null,
+              "mimeType": null,
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
       ],
       "fallbackDownloadUrls": [
         "https://dn720705.ca.archive.org/0/items/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
-      ]
+      ],
+      "health": {
+        "downloadReachable": false,
+        "downloadDetail": "TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-08-22",
+        "daysSinceRelease": 12,
+        "releaseFrequencyDays": null,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 1,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": false,
+        "integrityVerified": null,
+        "status": "broken",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-03"
+      },
+      "integrity": {
+        "sha256": null,
+        "sha256Available": false,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     },
     {
+      "id": "youmod",
       "appId": "youmod",
       "name": "YouMod",
       "developer": "Tonwalter888",
       "description": "YouMod mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "shortDescription": "YouMod",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
       "screenshots": [],
       "category": "photo-video",
+      "categories": [
+        "photo-video"
+      ],
+      "tags": [
+        "photo-video"
+      ],
+      "repository": "https://github.com/mrdrvt99/YouMod",
+      "repositoryUrl": "https://github.com/mrdrvt99/YouMod",
+      "sourceType": "github",
+      "homepage": "https://github.com/mrdrvt99/YouMod",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.google.ios.youtube",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "packageName": null,
+      "minimumIOSVersion": "16.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "16.0",
       "version": "21.35.3",
       "buildNumber": null,
       "releaseDate": "2026-08-30",
-      "bundleId": "com.google.ios.youtube",
-      "minimumOSVersion": "16.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/mrdrvt99/YouMod",
       "changelog": "YouTube 21.35.3 | YouMod_21.35.3_2.0.0\n\n### Latest Release, ENJOY!!\n\n> [!NOTE]\n> - no YTUHD. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - [v2.0.0 release notes](https://github.com/Tonwalter888/YouMod/releases/tag/v2.0.0)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
       "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa5/YouMod_21.35.3_2.0.0.ipa",
       "sha256": "368bba97a2235bb88488c56e502968a4870ee281e9f4ef5906793c3416f4e6b6",
       "size": 128284527,
-      "status": "stable",
+      "status": "active",
+      "lifecycleStatus": "active",
+      "legacyStatus": "stable",
       "featured": false,
-      "tags": [
-        "photo-video"
+      "verified": false,
+      "lastUpdated": "2026-09-03",
+      "latestVersion": "21.35.3",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-08-30",
+      "latestReleaseNotes": "YouTube 21.35.3 | YouMod_21.35.3_2.0.0\n\n### Latest Release, ENJOY!!\n\n> [!NOTE]\n> - no YTUHD. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - [v2.0.0 release notes](https://github.com/Tonwalter888/YouMod/releases/tag/v2.0.0)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+      "downloadAssets": [
+        {
+          "filename": "YouMod_21.35.3_2.0.0.ipa",
+          "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa5/YouMod_21.35.3_2.0.0.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 128284527,
+          "sha256": "368bba97a2235bb88488c56e502968a4870ee281e9f4ef5906793c3416f4e6b6",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
       ],
-      "fallbackDownloadUrls": []
+      "versions": [
+        {
+          "version": "21.35.3",
+          "build": null,
+          "releaseDate": "2026-08-30",
+          "releaseNotes": "YouTube 21.35.3 | YouMod_21.35.3_2.0.0\n\n### Latest Release, ENJOY!!\n\n> [!NOTE]\n> - no YTUHD. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - [v2.0.0 release notes](https://github.com/Tonwalter888/YouMod/releases/tag/v2.0.0)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youmod-ipa5",
+          "assets": [
+            {
+              "filename": "YouMod_21.35.3_2.0.0.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa5/YouMod_21.35.3_2.0.0.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 128284527,
+              "sha256": "368bba97a2235bb88488c56e502968a4870ee281e9f4ef5906793c3416f4e6b6",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
+      ],
+      "fallbackDownloadUrls": [],
+      "health": {
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-08-30",
+        "daysSinceRelease": 4,
+        "releaseFrequencyDays": null,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 0,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": true,
+        "integrityVerified": null,
+        "status": "active",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-01"
+      },
+      "integrity": {
+        "sha256": "368bba97a2235bb88488c56e502968a4870ee281e9f4ef5906793c3416f4e6b6",
+        "sha256Available": true,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     },
     {
+      "id": "youpro",
       "appId": "youpro",
       "name": "YouPro",
       "developer": "alibusut",
       "description": "YouPro mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "shortDescription": "YouPro",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
       "screenshots": [],
       "category": "photo-video",
+      "categories": [
+        "photo-video"
+      ],
+      "tags": [
+        "photo-video"
+      ],
+      "repository": "https://github.com/mrdrvt99/YouProEXTRA",
+      "repositoryUrl": "https://github.com/mrdrvt99/YouProEXTRA",
+      "sourceType": "github",
+      "homepage": "https://github.com/mrdrvt99/YouProEXTRA",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.google.ios.youtube",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "packageName": null,
+      "minimumIOSVersion": "16.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "16.0",
       "version": "21.24.3",
       "buildNumber": null,
       "releaseDate": "2026-08-16",
-      "bundleId": "com.google.ios.youtube",
-      "minimumOSVersion": "16.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/mrdrvt99/YouProEXTRA",
       "changelog": "YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1\n\n### Latest Stable Release, ENJOY!!\n> [!NOTE]\n> - Bundled with **YTUHD**\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`\n\n> [!WARNING]\n> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.",
       "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
       "sha256": "1989f0505d9f25246f1a3f5f02c31577ec83b0c48e153a6108bc2623e200623e",
       "size": 119894440,
-      "status": "stable",
+      "status": "active",
+      "lifecycleStatus": "active",
+      "legacyStatus": "stable",
       "featured": true,
-      "tags": [
-        "photo-video"
+      "verified": false,
+      "lastUpdated": "2026-09-03",
+      "latestVersion": "21.24.3",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-08-16",
+      "latestReleaseNotes": "YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1\n\n### Latest Stable Release, ENJOY!!\n> [!NOTE]\n> - Bundled with **YTUHD**\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`\n\n> [!WARNING]\n> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.",
+      "downloadAssets": [
+        {
+          "filename": "YouProExtra_21.24.3_1.3.1.ipa",
+          "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 119894440,
+          "sha256": "1989f0505d9f25246f1a3f5f02c31577ec83b0c48e153a6108bc2623e200623e",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
       ],
-      "fallbackDownloadUrls": []
+      "versions": [
+        {
+          "version": "21.24.3",
+          "build": null,
+          "releaseDate": "2026-08-16",
+          "releaseNotes": "YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1\n\n### Latest Stable Release, ENJOY!!\n> [!NOTE]\n> - Bundled with **YTUHD**\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`\n\n> [!WARNING]\n> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa2",
+          "assets": [
+            {
+              "filename": "YouProExtra_21.24.3_1.3.1.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 119894440,
+              "sha256": "1989f0505d9f25246f1a3f5f02c31577ec83b0c48e153a6108bc2623e200623e",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
+      ],
+      "fallbackDownloadUrls": [],
+      "health": {
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-08-16",
+        "daysSinceRelease": 18,
+        "releaseFrequencyDays": null,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 0,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": true,
+        "integrityVerified": null,
+        "status": "active",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-01"
+      },
+      "integrity": {
+        "sha256": "1989f0505d9f25246f1a3f5f02c31577ec83b0c48e153a6108bc2623e200623e",
+        "sha256Available": true,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     },
     {
+      "id": "ytlite",
       "appId": "ytlite",
       "name": "YouTubePlus",
       "developer": "dayanch96",
       "description": "YTLite mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "shortDescription": "YTLite",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
       "screenshots": [],
       "category": "photo-video",
+      "categories": [
+        "photo-video"
+      ],
+      "tags": [
+        "photo-video"
+      ],
+      "repository": "https://github.com/Dayanch96/YTLite",
+      "repositoryUrl": "https://github.com/Dayanch96/YTLite",
+      "sourceType": "github",
+      "homepage": "https://github.com/Dayanch96/YTLite",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.google.ios.youtube",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "packageName": null,
+      "minimumIOSVersion": "16.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "16.0",
       "version": "21.24.3",
       "buildNumber": null,
       "releaseDate": "2026-09-01",
-      "bundleId": "com.google.ios.youtube",
-      "minimumOSVersion": "16.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/Dayanch96/YTLite",
       "changelog": "YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - :key: no subscription required\n> - ✅ Working Download Manager, switch to overlay button before downloading.\n> - 🎥 Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - 🔧 Updated YouPiP and Gonerino. \n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.",
       "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa4/YouTubePlus_21.24.3_5.2.2.ipa",
       "sha256": "ea886361d67e65ec5e6017f9f378baa7eac47ffb705769ad8ff8abb1feae7a49",
       "size": 128944853,
-      "status": "stable",
+      "status": "active",
+      "lifecycleStatus": "active",
+      "legacyStatus": "stable",
       "featured": true,
-      "tags": [
-        "photo-video"
+      "verified": false,
+      "lastUpdated": "2026-09-03",
+      "latestVersion": "21.24.3",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-09-01",
+      "latestReleaseNotes": "YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - :key: no subscription required\n> - ✅ Working Download Manager, switch to overlay button before downloading.\n> - 🎥 Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - 🔧 Updated YouPiP and Gonerino. \n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.",
+      "downloadAssets": [
+        {
+          "filename": "YouTubePlus_21.24.3_5.2.2.ipa",
+          "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa4/YouTubePlus_21.24.3_5.2.2.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 128944853,
+          "sha256": "ea886361d67e65ec5e6017f9f378baa7eac47ffb705769ad8ff8abb1feae7a49",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
       ],
-      "fallbackDownloadUrls": []
+      "versions": [
+        {
+          "version": "21.24.3",
+          "build": null,
+          "releaseDate": "2026-09-01",
+          "releaseNotes": "YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - :key: no subscription required\n> - ✅ Working Download Manager, switch to overlay button before downloading.\n> - 🎥 Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - 🔧 Updated YouPiP and Gonerino. \n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytl-ipa4",
+          "assets": [
+            {
+              "filename": "YouTubePlus_21.24.3_5.2.2.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa4/YouTubePlus_21.24.3_5.2.2.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 128944853,
+              "sha256": "ea886361d67e65ec5e6017f9f378baa7eac47ffb705769ad8ff8abb1feae7a49",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        },
+        {
+          "version": "20.21.6",
+          "build": null,
+          "releaseDate": "2026-08-16",
+          "releaseNotes": "YouTube 20.21.6 | YouTubePlus_20.21.6_5.2.2\n\n### iOS15+ build, ENJOY!!\n\n**Cracked by** [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - VolumeBoostYT is not included. \n> - YTUHD has more options than latest releases. 4K60HDR full support.\n>\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `PleaseDontStopTheMusic`  \n\n> [!WARNING]\n> -  build may break in future when YT update backend.",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytl-ipa3",
+          "assets": [
+            {
+              "filename": "YouTubePlus_20.21.6_5.2.2.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa3/YouTubePlus_20.21.6_5.2.2.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 115459175,
+              "sha256": "d4087e3a01153aab984baa451cde05158d1c4ac89b9be2d30e294d7b6ece66b2",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        },
+        {
+          "version": "19.20.2",
+          "build": null,
+          "releaseDate": "2026-09-01",
+          "releaseNotes": "YouTube 19.20.2 | YouTubePlus_19.20.2_5.2.2\n\n### iOS14+ build, ENJOY!!\n\n**Cracked by** [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - VolumeBoostYT, Gonerino and YTweaks are not included. \n> - YTUHD has more options than latest releases. 4K60HDR full support.\n>\n> - - -\n> #### Extra Tweaks: \n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality` `YouGetCaption` `YTHoldForSpeed` `YTNativeShare`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `PleaseDontStopTheMusic` \n\n> [!WARNING]\n> -  build may break in future when YT update backend.",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytl-ipa2",
+          "assets": [
+            {
+              "filename": "YouTubePlus_19.20.2_5.2.2.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa2/YouTubePlus_19.20.2_5.2.2.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 106249604,
+              "sha256": "3bd8ac2bfbcfeb59b05c4901f08a5e51cab3d34cf873a0eec218a0206f7304eb",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
+      ],
+      "fallbackDownloadUrls": [],
+      "health": {
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-09-01",
+        "daysSinceRelease": 2,
+        "releaseFrequencyDays": 16.0,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 0,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": true,
+        "integrityVerified": null,
+        "status": "active",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-01"
+      },
+      "integrity": {
+        "sha256": "ea886361d67e65ec5e6017f9f378baa7eac47ffb705769ad8ff8abb1feae7a49",
+        "sha256Available": true,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     },
     {
+      "id": "ytkace",
       "appId": "ytkace",
       "name": "YTKACE",
       "developer": "itzzace",
       "description": "YTKACE mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "shortDescription": "YTKACE",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
       "screenshots": [],
       "category": "photo-video",
+      "categories": [
+        "photo-video"
+      ],
+      "tags": [
+        "photo-video"
+      ],
+      "repository": "https://github.com/itzzace/YTKACE",
+      "repositoryUrl": "https://github.com/itzzace/YTKACE",
+      "sourceType": "github",
+      "homepage": "https://github.com/itzzace/YTKACE",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.google.ios.youtube",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "packageName": null,
+      "minimumIOSVersion": "16.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "16.0",
       "version": "21.35.3",
       "buildNumber": null,
       "releaseDate": "2026-09-01",
-      "bundleId": "com.google.ios.youtube",
-      "minimumOSVersion": "16.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/itzzace/YTKACE",
       "changelog": "YouTube 21.35.3 | YTKACE_21.35.3_0.9.2\n\n### Latest Release, ENJOY!!\n#### A new free YouTube enhancer for iOS with downloads, iSponsorBlock, player controls, and interface customization.\n> [!NOTE]\n> - [Altstore source](https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json) is available now!.\n> - no YTUHD. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - [v0.9.2 release notes](https://github.com/itzzace/ytkace/releases/tag/v0.9.2)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!IMPORTANT]\n> - make sure you reapply tweak by pressing ✔ again after every sideload so background play/pip and cast work. \n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
       "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa4/YTKACE_21.35.3_0.9.2.ipa",
       "sha256": "837bc909035a922e41674e0b91237fb48ba5b154d8977f2965da946bbc0094c7",
       "size": 129059304,
-      "status": "stable",
+      "status": "active",
+      "lifecycleStatus": "active",
+      "legacyStatus": "stable",
       "featured": false,
-      "tags": [
-        "photo-video"
+      "verified": false,
+      "lastUpdated": "2026-09-03",
+      "latestVersion": "21.35.3",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-09-01",
+      "latestReleaseNotes": "YouTube 21.35.3 | YTKACE_21.35.3_0.9.2\n\n### Latest Release, ENJOY!!\n#### A new free YouTube enhancer for iOS with downloads, iSponsorBlock, player controls, and interface customization.\n> [!NOTE]\n> - [Altstore source](https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json) is available now!.\n> - no YTUHD. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - [v0.9.2 release notes](https://github.com/itzzace/ytkace/releases/tag/v0.9.2)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!IMPORTANT]\n> - make sure you reapply tweak by pressing ✔ again after every sideload so background play/pip and cast work. \n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+      "downloadAssets": [
+        {
+          "filename": "YTKACE_21.35.3_0.9.2.ipa",
+          "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa4/YTKACE_21.35.3_0.9.2.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 129059304,
+          "sha256": "837bc909035a922e41674e0b91237fb48ba5b154d8977f2965da946bbc0094c7",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
       ],
-      "fallbackDownloadUrls": []
+      "versions": [
+        {
+          "version": "21.35.3",
+          "build": null,
+          "releaseDate": "2026-09-01",
+          "releaseNotes": "YouTube 21.35.3 | YTKACE_21.35.3_0.9.2\n\n### Latest Release, ENJOY!!\n#### A new free YouTube enhancer for iOS with downloads, iSponsorBlock, player controls, and interface customization.\n> [!NOTE]\n> - [Altstore source](https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json) is available now!.\n> - no YTUHD. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - [v0.9.2 release notes](https://github.com/itzzace/ytkace/releases/tag/v0.9.2)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!IMPORTANT]\n> - make sure you reapply tweak by pressing ✔ again after every sideload so background play/pip and cast work. \n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytkace-ipa4",
+          "assets": [
+            {
+              "filename": "YTKACE_21.35.3_0.9.2.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa4/YTKACE_21.35.3_0.9.2.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 129059304,
+              "sha256": "837bc909035a922e41674e0b91237fb48ba5b154d8977f2965da946bbc0094c7",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
+      ],
+      "fallbackDownloadUrls": [],
+      "health": {
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-09-01",
+        "daysSinceRelease": 2,
+        "releaseFrequencyDays": null,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 0,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": true,
+        "integrityVerified": null,
+        "status": "active",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-01"
+      },
+      "integrity": {
+        "sha256": "837bc909035a922e41674e0b91237fb48ba5b154d8977f2965da946bbc0094c7",
+        "sha256Available": true,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     },
     {
+      "id": "ytkp",
       "appId": "ytkp",
       "name": "YTKillerPlus",
       "developer": "ikghd",
       "description": "YTKillerPlus mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "shortDescription": "YTKP",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
       "screenshots": [],
       "category": "photo-video",
+      "categories": [
+        "photo-video"
+      ],
+      "tags": [
+        "photo-video"
+      ],
+      "repository": "https://github.com/iKarwan/YTKillerPlus",
+      "repositoryUrl": "https://github.com/iKarwan/YTKillerPlus",
+      "sourceType": "github",
+      "homepage": "https://github.com/iKarwan/YTKillerPlus",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.google.ios.youtube",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "packageName": null,
+      "minimumIOSVersion": "16.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "16.0",
       "version": "21.35.3",
       "buildNumber": null,
       "releaseDate": "2026-08-30",
-      "bundleId": "com.google.ios.youtube",
-      "minimumOSVersion": "16.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/iKarwan/YTKillerPlus",
       "changelog": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\n### Latest Release, ENJOY!!\n\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\n\n> [!NOTE]\n> - **Sidestore is no longer supported!!.**\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
       "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
       "sha256": "f275b2ed0a384e96f706420089c9b495b4ad0ff3894c3ae601f90477e95f71be",
       "size": 141939462,
-      "status": "stable",
+      "status": "active",
+      "lifecycleStatus": "active",
+      "legacyStatus": "stable",
       "featured": false,
-      "tags": [
-        "photo-video"
+      "verified": false,
+      "lastUpdated": "2026-09-03",
+      "latestVersion": "21.35.3",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-08-30",
+      "latestReleaseNotes": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\n### Latest Release, ENJOY!!\n\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\n\n> [!NOTE]\n> - **Sidestore is no longer supported!!.**\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+      "downloadAssets": [
+        {
+          "filename": "YTKillerPlus_21.35.3_6.1.ipa",
+          "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 141939462,
+          "sha256": "f275b2ed0a384e96f706420089c9b495b4ad0ff3894c3ae601f90477e95f71be",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
       ],
-      "fallbackDownloadUrls": []
+      "versions": [
+        {
+          "version": "21.35.3",
+          "build": null,
+          "releaseDate": "2026-08-30",
+          "releaseNotes": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\n### Latest Release, ENJOY!!\n\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\n\n> [!NOTE]\n> - **Sidestore is no longer supported!!.**\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytkp-ipa4",
+          "assets": [
+            {
+              "filename": "YTKillerPlus_21.35.3_6.1.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 141939462,
+              "sha256": "f275b2ed0a384e96f706420089c9b495b4ad0ff3894c3ae601f90477e95f71be",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
+      ],
+      "fallbackDownloadUrls": [],
+      "health": {
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-08-30",
+        "daysSinceRelease": 4,
+        "releaseFrequencyDays": null,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 0,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": true,
+        "integrityVerified": null,
+        "status": "active",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-01"
+      },
+      "integrity": {
+        "sha256": "f275b2ed0a384e96f706420089c9b495b4ad0ff3894c3ae601f90477e95f71be",
+        "sha256Available": true,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     },
     {
+      "id": "ytmusic",
       "appId": "ytmusic",
       "name": "YTMusicUltimate",
       "developer": "dayanch96",
       "description": "YTMusicUltimate mod. Includes no ads, background playback, and more.",
+      "shortDescription": "YTMusicUltimate",
       "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTubeMusic.png",
       "screenshots": [],
       "category": "music",
+      "categories": [
+        "music"
+      ],
+      "tags": [
+        "music"
+      ],
+      "repository": "https://github.com/Dayanch96/YTMusicUltimate",
+      "repositoryUrl": "https://github.com/Dayanch96/YTMusicUltimate",
+      "sourceType": "github",
+      "homepage": "https://github.com/Dayanch96/YTMusicUltimate",
+      "documentation": null,
+      "license": null,
+      "platforms": [
+        "ios"
+      ],
+      "bundleId": "com.google.ios.youtubemusic",
+      "bundleIdentifier": "com.google.ios.youtubemusic",
+      "packageName": null,
+      "minimumIOSVersion": "16.0",
+      "minimumAndroidVersion": null,
+      "minimumOSVersion": "16.0",
       "version": "9.35.2",
       "buildNumber": null,
       "releaseDate": "2026-09-01",
-      "bundleId": "com.google.ios.youtubemusic",
-      "minimumOSVersion": "16.0",
-      "sourceType": "github",
-      "repositoryUrl": "https://github.com/Dayanch96/YTMusicUltimate",
       "changelog": "YTMusicUltimate 9.35.2 | YTMusic 2.4.1 | YTMusicUltimate_9.35.2_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
       "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa",
       "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a",
       "size": 104464285,
-      "status": "stable",
+      "status": "active",
+      "lifecycleStatus": "active",
+      "legacyStatus": "stable",
       "featured": true,
-      "tags": [
-        "music"
+      "verified": false,
+      "lastUpdated": "2026-09-03",
+      "latestVersion": "9.35.2",
+      "latestBuild": null,
+      "latestReleaseDate": "2026-09-01",
+      "latestReleaseNotes": "YTMusicUltimate 9.35.2 | YTMusic 2.4.1 | YTMusicUltimate_9.35.2_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
+      "downloadAssets": [
+        {
+          "filename": "YTMusicUltimate_9.35.2_2.4.1.ipa",
+          "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 104464285,
+          "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
       ],
-      "fallbackDownloadUrls": []
+      "versions": [
+        {
+          "version": "9.35.2",
+          "build": null,
+          "releaseDate": "2026-09-01",
+          "releaseNotes": "YTMusicUltimate 9.35.2 | YTMusic 2.4.1 | YTMusicUltimate_9.35.2_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
+          "releaseUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/tag/ytmu-ipa28",
+          "assets": [
+            {
+              "filename": "YTMusicUltimate_9.35.2_2.4.1.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 104464285,
+              "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "tag": null
+        }
+      ],
+      "fallbackDownloadUrls": [],
+      "health": {
+        "downloadReachable": true,
+        "downloadDetail": "HTTP 302",
+        "repositoryReachable": true,
+        "lastReleaseDate": "2026-09-01",
+        "daysSinceRelease": 2,
+        "releaseFrequencyDays": null,
+        "repositoryActivity": {
+          "lastSync": "2026-09-03",
+          "lastSuccess": "2026-09-03"
+        },
+        "brokenDownloadLinks": 0,
+        "metadataCompleteness": 1.0,
+        "integrityAvailable": true,
+        "integrityVerified": null,
+        "status": "active",
+        "signalsVersion": 1,
+        "statusSince": "2026-09-01"
+      },
+      "integrity": {
+        "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a",
+        "sha256Available": true,
+        "verified": null,
+        "trustStatement": "A digest match proves integrity of bytes, not application safety."
+      },
+      "aliases": []
     }
   ]
 }

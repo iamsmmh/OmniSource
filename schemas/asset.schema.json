@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/asset.schema.json",
+  "title": "OmniSource release asset",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["filename", "downloadUrl", "platform", "architecture", "fileType", "size", "sha256"],
+  "properties": {
+    "filename": { "type": "string", "minLength": 1 },
+    "downloadUrl": { "type": "string", "format": "uri" },
+    "platform": { "type": "string", "minLength": 1 },
+    "architecture": { "type": ["string", "null"] },
+    "fileType": { "type": "string", "minLength": 1 },
+    "size": { "type": ["integer", "null"], "minimum": 0 },
+    "sha256": { "type": ["string", "null"], "pattern": "^[0-9a-fA-F]{64}$" },
+    "mimeType": { "type": ["string", "null"] },
+    "installable": { "type": "boolean" }
+  }
+}

@@ -1,6 +1,24 @@
-# OmniSource is a data repository, not a distributable Python package.
-# This file exists solely to configure the linter/formatter used by
-# .github/workflows/validate.yml so local runs and CI agree.
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omnisource"
+version = "3.0.0"
+description = "Provider-agnostic application catalog, release tracker, feeds, and read-only API"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+omnisource = "omnisource.cli:main"
+omnisource-api = "omnisource.api_server:serve"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.ruff]
 line-length = 120
@@ -9,21 +27,12 @@ src = ["src", "scripts", "tests"]
 
 [tool.ruff.lint]
 select = [
-  "E",    # pycodestyle
-  "F",    # pyflakes
-  "W",    # warnings
-  "I",    # import order
-  "UP",   # pyupgrade
-  "B",    # bugbear
-  "C4",   # comprehensions
-  "SIM",  # simplify
-  "RUF",  # ruff-specific
-  "PTH",  # prefer pathlib
-  "S",    # bandit security rules
+  "E", "F", "W", "I", "UP", "B", "C4", "SIM", "RUF", "PTH", "S",
 ]
 ignore = [
-  "S310",  # URL schemes are validated before every urlopen call.
-  "S603",  # no subprocess use in this repository.
+  "S310",  # URLs are validated before network calls.
+  "S603",  # Optional package inspection never executes archive contents.
+  "S404",  # The health reporter uses the installed gh CLI explicitly.
 ]
 
 [tool.ruff.lint.per-file-ignores]

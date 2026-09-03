@@ -7,10 +7,14 @@ selection. All functions are pure so they can be unit-tested without I/O.
 from __future__ import annotations
 
 import re
+from functools import cmp_to_key
 from typing import Any
 
 from omnisource.constants import TAG_NUMBER_RE_PATTERN, VERSION_RE_PATTERN
 from omnisource.domain import RemoteAsset, RemoteRelease, RepositoryRef
+from omnisource.utils.versioning import Version
+from omnisource.utils.versioning import compare_versions as _compare_versions
+from omnisource.utils.versioning import is_newer as _is_newer
 
 VERSION_RE = re.compile(VERSION_RE_PATTERN)
 TAG_NUMBER_RE = re.compile(TAG_NUMBER_RE_PATTERN)
@@ -19,26 +23,22 @@ DIGEST_RE = re.compile(r"^sha256:([0-9a-fA-F]{64})$")
 
 
 def parse_version(value: str) -> tuple[int, ...]:
-    """Extract a comparable numeric tuple from a free-form version string."""
-    parts = [int(part) for part in re.findall(r"\d+", value or "")]
-    return tuple(parts) if parts else (0,)
+    """Extract numeric components (compatibility API for older callers)."""
+    version = Version.parse(value)
+    return version.numbers if version.numbers else (0,)
 
 
 def compare_versions(left: str, right: str) -> int:
-    """Return ``1`` if ``left > right``, ``-1`` if ``left < right``, else ``0``."""
-    a, b = parse_version(left), parse_version(right)
-    width = max(len(a), len(b))
-    a += (0,) * (width - len(a))
-    b += (0,) * (width - len(b))
-    if a > b:
-        return 1
-    if a < b:
-        return -1
-    return 0
+    """Return ``1`` if ``left > right``, ``-1`` if ``left < right``, else ``0``.
+
+    SemVer pre-release ordering is handled by :mod:`omnisource.utils.versioning`;
+    non-SemVer release tags retain the historical numeric fallback.
+    """
+    return _compare_versions(left, right)
 
 
 def is_newer(candidate: str, current: str) -> bool:
-    return compare_versions(candidate, current) > 0
+    return _is_newer(candidate, current)
 
 
 def tag_number(tag: str) -> int:
@@ -91,6 +91,15 @@ def matches_tag_rules(tag: str, ref: RepositoryRef) -> bool:
     if ref.tag_prefix and not tag.startswith(ref.tag_prefix):
         return False
     return not any(tag.startswith(prefix) for prefix in ref.exclude_tag_prefixes)
+
+
+def release_is_eligible(release: RemoteRelease, ref: RepositoryRef) -> bool:
+    """Apply draft/pre-release and tag policy without losing source history."""
+    if release.draft and not ref.include_drafts:
+        return False
+    if release.prerelease and not ref.include_prereleases:
+        return False
+    return matches_tag_rules(release.tag, ref)
 
 
 def version_numbers(release: RemoteRelease, asset_name: str, *, from_tag: bool) -> list[str]:
@@ -151,6 +160,12 @@ def build_version_entry(
         "downloadURL": asset.download_url,
         "size": int(asset.size or 0),
         "minOSVersion": min_os,
+        # Canonical release/asset information is additive to AltStore v2.
+        "releaseUrl": release.release_url,
+        "source": release.source or ref.provider.value,
+        "isPrerelease": release.prerelease,
+        "isDraft": release.draft,
+        "assets": [item.to_dict() for item in release.assets],
     }
     sha = asset.sha256 or extract_sha256(release.body)
     if sha:
@@ -176,17 +191,32 @@ def select_versions(
     """Filter, sort and cap remote releases into AltStore version entries."""
     matches: list[tuple[RemoteRelease, RemoteAsset]] = []
     for release in releases:
-        if not release.is_published:
-            continue
-        if not matches_tag_rules(release.tag, ref):
+        if not release_is_eligible(release, ref):
             continue
         asset = pick_asset(release, ref.asset_suffixes, pattern)
         if asset is None or not asset.download_url:
             continue
         matches.append((release, asset))
 
-    if ref.sort_by_tag_number:
-        matches.sort(key=lambda item: (tag_number(item[0].tag), item[0].published_at), reverse=True)
+    def release_order(left: tuple[RemoteRelease, RemoteAsset], right: tuple[RemoteRelease, RemoteAsset]) -> int:
+        left_release, left_asset = left
+        right_release, right_asset = right
+        if ref.sort_by_tag_number:
+            tag_order = (tag_number(right_release.tag) > tag_number(left_release.tag)) - (
+                tag_number(right_release.tag) < tag_number(left_release.tag)
+            )
+            if tag_order:
+                return tag_order
+        left_version = version_numbers(left_release, left_asset.name, from_tag=ref.version_from_tag)
+        right_version = version_numbers(right_release, right_asset.name, from_tag=ref.version_from_tag)
+        version_order = compare_versions(".".join(left_version), ".".join(right_version))
+        if version_order:
+            return -version_order
+        return (right_release.published_at > left_release.published_at) - (
+            right_release.published_at < left_release.published_at
+        )
+
+    matches.sort(key=cmp_to_key(release_order))
 
     versions: list[dict[str, Any]] = []
     seen: set[str] = set()

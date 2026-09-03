@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import threading
 import urllib.parse
 
 from omnisource.constants import GITLAB_API_ROOT
@@ -18,7 +19,8 @@ from omnisource.errors import ProviderError
 from omnisource.http import HttpClient
 from omnisource.logutil import log
 from omnisource.providers.base import SourceProvider
-from omnisource.tracking import matches_tag_rules, pick_asset
+from omnisource.tracking import pick_asset, release_is_eligible
+from omnisource.utils.assets import detect_asset_metadata
 
 
 def _api_root(source: RepositoryRef) -> str:
@@ -38,6 +40,8 @@ class GitLabReleasesProvider(SourceProvider):
     def __init__(self, http: HttpClient) -> None:
         self.http = http
         self._cache: dict[tuple[str, str, int], list[RemoteRelease]] = {}
+        self._incremental_hits: set[tuple[object, ...]] = set()
+        self._cache_lock = threading.Lock()
 
     def _get(self, source: RepositoryRef, path: str) -> object:
         return self.http.get_json(f"{_api_root(source)}{path}")
@@ -90,31 +94,43 @@ class GitLabReleasesProvider(SourceProvider):
         incremental: bool = False,
     ) -> list[RemoteRelease]:
         key = (source.host, source.repo, source.max_pages)
-        if key in self._cache:
-            return self._cache[key]
-
-        collected: list[RemoteRelease] = []
-        for page in range(1, source.max_pages + 1):
-            batch = self._get(
-                source,
-                f"/projects/{_project_path(source)}/releases?per_page=100&page={page}",
-            )
-            if not isinstance(batch, list):
-                raise ProviderError(f"unexpected GitLab releases payload for {source.repo}")
-            page_releases = [_release_from_gitlab(item) for item in batch if isinstance(item, dict)]
-            collected.extend(page_releases)
-            if (
-                incremental
-                and previous_latest_url
-                and page == 1
-                and _newest_url(page_releases, source) == previous_latest_url
-            ):
-                log.debug("%s: GitLab incremental hit", source.repo)
+        policy_key = (
+            *key,
+            source.tag_prefix,
+            source.exclude_tag_prefixes,
+            source.asset_suffixes,
+            source.include_prereleases,
+            source.include_drafts,
+        )
+        with self._cache_lock:
+            if key in self._cache:
+                return self._cache[key]
+            if incremental and previous_latest_url and policy_key in self._incremental_hits:
                 return []
-            if len(batch) < 100:
-                break
-        self._cache[key] = collected
-        return collected
+
+            collected: list[RemoteRelease] = []
+            for page in range(1, source.max_pages + 1):
+                batch = self._get(
+                    source,
+                    f"/projects/{_project_path(source)}/releases?per_page=100&page={page}",
+                )
+                if not isinstance(batch, list):
+                    raise ProviderError(f"unexpected GitLab releases payload for {source.repo}")
+                page_releases = [_release_from_gitlab(item) for item in batch if isinstance(item, dict)]
+                collected.extend(page_releases)
+                if (
+                    incremental
+                    and previous_latest_url
+                    and page == 1
+                    and _newest_url(page_releases, source) == previous_latest_url
+                ):
+                    log.debug("%s: GitLab incremental hit", source.repo)
+                    self._incremental_hits.add(policy_key)
+                    return []
+                if len(batch) < 100:
+                    break
+            self._cache[key] = collected
+            return collected
 
 
 def _release_from_gitlab(raw: dict) -> RemoteRelease:
@@ -127,7 +143,19 @@ def _release_from_gitlab(raw: dict) -> RemoteRelease:
         url = str(link.get("direct_asset_url") or link.get("url") or "")
         name = str(link.get("name") or "")
         if url and name:
-            assets.append(RemoteAsset(name=name, download_url=url, size=0))
+            detected = detect_asset_metadata(name, url)
+            assets.append(
+                RemoteAsset(
+                    name=name,
+                    download_url=url,
+                    size=int(link.get("size") or 0),
+                    content_type=str(link.get("link_type") or ""),
+                    platform=str(detected["platform"]),
+                    architecture=detected["architecture"],
+                    file_type=str(detected["fileType"]),
+                    installable=bool(detected["installable"]),
+                )
+            )
     return RemoteRelease(
         tag=str(raw.get("tag_name") or ""),
         name=str(raw.get("name") or ""),
@@ -135,12 +163,14 @@ def _release_from_gitlab(raw: dict) -> RemoteRelease:
         published_at=str(raw.get("released_at") or raw.get("created_at") or ""),
         assets=tuple(assets),
         prerelease=bool(raw.get("upcoming_release")),
+        release_url=str(raw.get("_links", {}).get("self") or "") if isinstance(raw.get("_links"), dict) else None,
+        source="gitlab",
     )
 
 
 def _newest_url(releases: list[RemoteRelease], source: RepositoryRef) -> str | None:
     for release in releases:
-        if not matches_tag_rules(release.tag, source):
+        if not release_is_eligible(release, source):
             continue
         asset = pick_asset(release, source.asset_suffixes)
         if asset:

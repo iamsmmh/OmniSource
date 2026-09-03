@@ -123,7 +123,7 @@ blip could silently delete apps from everyone's client. Flagging instead of dele
 
 | Aspect | Approach |
 | --- | --- |
-| API calls | Per-repo release cache; five apps share one YouProEXTRA fetch (4 calls per full run) |
+| API calls | Thread-safe per-repository release cache; shared repositories fetch once per release page (8 release API requests for the current catalog) |
 | Link probing | 8-way thread pool, HEAD first, ranged GET fallback |
 | Redirects | Not followed during probes — a 302 from the origin proves the asset exists and avoids downloading 120 MB |
 | Dependencies | Standard library only: no `pip install` step in CI |

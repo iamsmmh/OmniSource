@@ -29,8 +29,9 @@ from omnisource.domain import App, Catalog, SyncReport, UpdateEvent, today
 from omnisource.errors import ConfigurationError, ProviderError, SyncError
 from omnisource.feeds.altstore import feed_envelope, render_altstore_app, render_health_doc
 from omnisource.feeds.omnistore import render_omnistore_bundle
-from omnisource.io import read_json, write_json
+from omnisource.io import atomic_write_many, atomic_write_text, read_json, write_json
 from omnisource.logutil import Group, log
+from omnisource.repository_registry import build_repository_registry, record_repository_result, repository_key
 from omnisource.tracking import detect_update, select_versions
 
 
@@ -114,6 +115,62 @@ def sync_app(
     return versions
 
 
+def _sync_result(
+    container: Container,
+    app: App,
+    *,
+    incremental: bool,
+    previous: dict[str, Any] | None,
+) -> tuple[str, list[dict[str, Any]] | None, str | None]:
+    """Worker boundary: one provider failure becomes one isolated result."""
+    try:
+        return app.slug, sync_app(container, app, incremental=incremental, previous=previous), None
+    except Exception as error:  # provider failures must not stop sibling apps
+        return app.slug, None, str(error)
+
+
+def _history_events(state: dict[str, Any]) -> list[UpdateEvent]:
+    raw = state.get("updateHistory", [])
+    if not isinstance(raw, list):
+        return []
+    events: list[UpdateEvent] = []
+    for item in raw:
+        if not isinstance(item, dict):
+            continue
+        try:
+            events.append(
+                UpdateEvent(
+                    app_id=str(item.get("appId") or ""),
+                    name=str(item.get("name") or ""),
+                    version=str(item.get("version") or ""),
+                    previous_version=(str(item["previousVersion"]) if item.get("previousVersion") else None),
+                    release_date=str(item.get("releaseDate") or ""),
+                    download_url=str(item.get("downloadUrl") or ""),
+                    changelog=str(item.get("changelog") or ""),
+                    kind=str(item.get("kind") or "updated"),
+                )
+            )
+        except (TypeError, ValueError):
+            continue
+    return events
+
+
+def _remember_update(state: dict[str, Any], event: UpdateEvent, *, limit: int) -> None:
+    history = state.setdefault("updateHistory", [])
+    if not isinstance(history, list):
+        history = []
+        state["updateHistory"] = history
+    key = (event.app_id, event.version, event.kind)
+    material = [
+        item
+        for item in history
+        if isinstance(item, dict) and (item.get("appId"), item.get("version"), item.get("kind")) != key
+    ]
+    material.append(event.to_json())
+    material.sort(key=lambda item: (str(item.get("releaseDate") or ""), str(item.get("appId") or "")), reverse=True)
+    state["updateHistory"] = material[: max(1, limit)]
+
+
 def stage_sync(
     container: Container,
     catalog: Catalog,
@@ -122,30 +179,64 @@ def stage_sync(
     only: set[str] | None,
     incremental: bool,
     report: SyncReport,
+    workers: int | None = None,
 ) -> dict[str, Any]:
+    """Synchronize apps independently and apply results in catalog order."""
     if not (os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")):
         log.warning("No GH_TOKEN/GITHUB_TOKEN set - using unauthenticated API limits (60 req/h)")
 
-    for app in catalog.apps:
-        if only and app.slug not in only:
-            continue
-        previous = state.get(app.slug)
-        try:
-            versions = sync_app(container, app, incremental=incremental, previous=previous)
-        except SyncError as error:
+    selected = [app for app in catalog.apps if not only or app.slug in only]
+    report.repositories_checked = len({repository_key(app) for app in selected})
+    max_workers = max(1, workers or container.settings.sync_workers)
+    previous_by_slug = {app.slug: state.get(app.slug) for app in selected}
+    results: dict[str, tuple[list[dict[str, Any]] | None, str | None]] = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(max_workers, max(1, len(selected)))) as pool:
+        futures = {
+            pool.submit(
+                _sync_result,
+                container,
+                app,
+                incremental=incremental,
+                previous=previous_by_slug[app.slug],
+            ): app
+            for app in selected
+        }
+        for future in concurrent.futures.as_completed(futures):
+            app = futures[future]
+            try:
+                slug, versions, error = future.result()
+            except Exception as error:  # executor boundary; preserve all known state
+                slug, versions, error = app.slug, None, str(error)
+            results[slug] = (versions, error)
+
+    successful_repositories: set[str] = set()
+    failed_repositories: set[str] = set()
+    for app in selected:
+        previous = previous_by_slug[app.slug]
+        versions, error = results.get(app.slug, (None, "worker returned no result"))
+        if error is not None:
             log.error("%s: upstream sync failed (%s) - keeping last known state", app.slug, error)
             report.apps_failed += 1
             report.errors.append(f"{app.slug}: {error}")
+            failed_repositories.add(repository_key(app))
+            entry = state.setdefault(app.slug, {})
+            entry["lastError"] = error
+            entry["retryCount"] = int(entry.get("retryCount") or 0) + 1
+            record_repository_result(state, app, success=False, error=error, retry_count=entry["retryCount"])
             continue
 
         report.apps_synced += 1
+        successful_repositories.add(repository_key(app))
+        record_repository_result(state, app, success=True)
+        entry = state.setdefault(app.slug, {})
+        entry.pop("lastError", None)
+        entry["retryCount"] = 0
+        previous_versions = (previous or {}).get("versions") if isinstance(previous, dict) else None
         if versions is None:
             report.apps_incremental_hit += 1
             continue
 
-        previous_versions = (previous or {}).get("versions") if isinstance(previous, dict) else None
         kind = detect_update(previous_versions if isinstance(previous_versions, list) else None, versions)
-        entry = state.setdefault(app.slug, {})
         if entry.get("versions") != versions:
             previous_version = None
             if isinstance(previous_versions, list) and previous_versions:
@@ -165,11 +256,14 @@ def stage_sync(
                     kind=kind,
                 )
                 report.updates.append(event)
+                _remember_update(state, event, limit=container.settings.max_update_history)
                 if previous_version:
                     container.analytics.record_update(app.slug, previous_version, event.version)
         elif incremental:
             report.apps_incremental_hit += 1
 
+    report.repositories_succeeded = len(successful_repositories - failed_repositories)
+    report.repositories_failed = len(failed_repositories)
     report.api_requests = container.http.requests
     log.info("Sync complete using %d HTTP request(s)", container.http.requests)
     return state
@@ -193,16 +287,25 @@ def stage_health(
         return
 
     started = time.monotonic()
+
+    def probe(url: str):
+        return container.http.probe(url, timeout=container.settings.health_timeout)
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {pool.submit(container.http.probe, url): slug for slug, url in targets.items()}
+        futures = {pool.submit(probe, url): slug for slug, url in targets.items()}
         for future in concurrent.futures.as_completed(futures):
             slug = futures[future]
-            result = future.result()
+            try:
+                result = future.result()
+            except Exception as error:  # a probe must not cancel the other apps
+                from omnisource.http import ProbeResult
+
+                result = ProbeResult(False, f"probe failed: {error}", targets[slug])
             previous = state[slug].get("health", {})
             state[slug]["health"] = {
                 "reachable": result.reachable,
                 "detail": result.detail,
-                "since": previous.get("since", today()) if previous.get("reachable") is result.reachable else today(),
+                "since": previous.get("since", today()) if previous.get("reachable") == result.reachable else today(),
             }
             container.analytics.record_health(slug, result.reachable)
             (log.info if result.reachable else log.warning)(
@@ -211,19 +314,56 @@ def stage_health(
     log.info("Probed %d download URL(s) in %.1fs", len(targets), time.monotonic() - started)
 
 
+def _validate_generated_document(path: Path, document: Any, *, root: Path) -> None:
+    """Run schema validation before a generated document can be published."""
+    from omnisource.schema import validate_file
+
+    relative = path.relative_to(root).as_posix()
+    schema_path: Path | None = None
+    if relative.endswith("/apps.json") and ("omnistore" in relative or relative.startswith("feeds/api/")):
+        schema_path = root / "schemas" / "omnistore.schema.json"
+    elif "/apps/" in relative and relative.endswith(".json") and "/releases" not in relative:
+        schema_path = root / "schemas" / "app.schema.json"
+    elif relative.endswith("/releases.json"):
+        # Validate the release list and each release with the release schema.
+        schema_path = root / "schemas" / "release.schema.json"
+        if not schema_path.exists():
+            return
+        releases = document.get("releases", []) if isinstance(document, dict) else []
+        for index, release in enumerate(releases):
+            if isinstance(release, dict):
+                problems = validate_file(release, schema_path)
+                if problems:
+                    raise SyncError(f"{relative}.releases[{index}]: {'; '.join(problems)}")
+        return
+    elif relative in {
+        "feeds/updates.json",
+        "feeds/categories.json",
+        "feeds/repositories.json",
+        "feeds/featured.json",
+        "feeds/trending.json",
+        "feeds/recent.json",
+    }:
+        schema_path = root / "schemas" / "canonical-feed.schema.json"
+    if schema_path is None or not schema_path.exists():
+        return
+    problems = validate_file(document, schema_path)
+    if problems:
+        raise SyncError(f"{relative}: {'; '.join(problems[:8])}")
+
+
 def stage_build(
     container: Container,
     catalog: Catalog,
     state: dict[str, Any],
     report: SyncReport,
 ) -> tuple[list[Path], dict[str, Any]]:
-    written: list[Path] = []
     rendered: list[tuple[App, dict[str, Any]]] = []
     versions_by_slug: dict[str, list[dict[str, Any]]] = {}
 
     for app in catalog.apps:
         versions = state.get(app.slug, {}).get("versions")
-        if not versions:
+        if not isinstance(versions, list) or not versions:
             log.error("%s has no known versions - excluded from this build", app.slug)
             continue
         versions_by_slug[app.slug] = versions
@@ -234,6 +374,7 @@ def stage_build(
 
     feeds_dir = container.paths.feeds
     base = catalog.base_url
+    documents: dict[Path, Any] = {}
     for app, entry in rendered:
         feed = feed_envelope(
             catalog,
@@ -245,9 +386,7 @@ def stage_build(
         feed["sourceURL"] = f"{base}/{app.slug}.json"
         feed["apps"] = [entry]
         feed["news"] = []
-        path = feeds_dir / f"{app.slug}.json"
-        if write_json(path, feed):
-            written.append(path)
+        documents[feeds_dir / f"{app.slug}.json"] = feed
 
     master = feed_envelope(
         catalog,
@@ -256,62 +395,90 @@ def stage_build(
         subtitle=str(catalog.source.get("subtitle", "")),
         description=str(catalog.source.get("description", "")),
     )
-    master["apps"] = [entry for _, entry in sorted(rendered, key=lambda item: item[0].name.lower())]
+    master["apps"] = [entry for _, entry in sorted(rendered, key=lambda item: item[0].name.casefold())]
     master["news"] = []
-    if write_json(feeds_dir / "apps.json", master):
-        written.append(feeds_dir / "apps.json")
+    documents[feeds_dir / "apps.json"] = master
 
     health_doc = render_health_doc(rendered)
-    if write_json(feeds_dir / "health.json", health_doc):
-        written.append(feeds_dir / "health.json")
+    documents[feeds_dir / "health.json"] = health_doc
 
-    omnistore = render_omnistore_bundle(catalog, versions_by_slug=versions_by_slug, updates=report.updates)
-    if not report.updates:
-        # Keep the last release report across no-change / --no-sync rebuilds so
-        # the file is idempotent and OmniStore still sees the most recent bump.
-        omnistore["updates.json"] = _reuse_or(container.paths.omnistore / "updates.json", omnistore["updates.json"])
+    repository_registry = build_repository_registry(catalog, state=state)
+    history = _history_events(state)
+    omnistore = render_omnistore_bundle(
+        catalog,
+        versions_by_slug=versions_by_slug,
+        updates=report.updates,
+        state_by_slug=state,
+        repository_registry=repository_registry,
+        curation=container.curation,
+        categories=container.categories,
+        update_history=history,
+    )
+    # Keep the required short feed URLs in addition to the namespaced feeds.
     for name, document in omnistore.items():
-        path = container.paths.omnistore / name
-        if write_json(path, document):
-            written.append(path)
+        documents[container.paths.omnistore / name] = document
+    for name in (
+        "updates.json",
+        "categories.json",
+        "repositories.json",
+        "featured.json",
+        "trending.json",
+        "recent.json",
+    ):
+        documents[feeds_dir / name] = omnistore[name]
 
-    api_bundle = render_api_bundle(catalog, versions_by_slug=versions_by_slug, updates=report.updates)
-    if not report.updates:
-        api_bundle["updates.json"] = _reuse_or(container.paths.api / "updates.json", api_bundle["updates.json"])
+    api_bundle = render_api_bundle(
+        catalog,
+        versions_by_slug=versions_by_slug,
+        updates=report.updates,
+        state_by_slug=state,
+        repository_registry=repository_registry,
+        curation=container.curation,
+        categories=container.categories,
+        update_history=history,
+    )
     for name, document in api_bundle.items():
-        path = container.paths.api / name
-        if write_json(path, document):
-            written.append(path)
+        documents[container.paths.api / name] = document
 
-    # Record repository popularity (analytics interface only).
-    repos: dict[str, int] = {}
-    for app in catalog.apps:
-        url = app.repository_url
-        if url:
-            repos[url] = repos.get(url, 0) + 1
-    for url, count in repos.items():
+    # Validation happens against the complete temporary document set before
+    # any production path is touched. A provider error therefore cannot leave
+    # half a catalog behind.
+    for path, document in documents.items():
+        _validate_generated_document(path, document, root=container.paths.root)
+    changed = atomic_write_many(documents)
+
+    for url, count in _repository_counts(catalog).items():
         container.analytics.record_repository_seen(url, count)
 
     log.info(
-        "Built %d app feed(s) + master + OmniStore/API (%d file(s) changed)",
+        "Built %d app feed(s) + canonical feeds + API snapshots (%d file(s) changed)",
         len(rendered),
-        len(written),
+        len(changed),
     )
-    return written, health_doc
+    return changed, health_doc
+
+
+def _repository_counts(catalog: Catalog) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for app in catalog.apps:
+        url = app.repository_url
+        if url:
+            counts[url] = counts.get(url, 0) + 1
+    return counts
 
 
 def stage_mirror(container: Container, catalog: Catalog) -> list[Path]:
-    """Copy generated AltStore feeds to their historical root paths."""
-    mirrored: list[Path] = []
+    """Publish historical root mirrors only after the feed set is valid."""
+    documents: dict[Path, Any] = {}
     for name in ["apps.json", *(f"{app.slug}.json" for app in catalog.apps)]:
         source = container.paths.feeds / name
-        target = container.paths.root / name
-        if not source.exists():
-            continue
-        payload = source.read_text(encoding="utf-8")
-        if not target.exists() or target.read_text(encoding="utf-8") != payload:
-            target.write_text(payload, encoding="utf-8")
-            mirrored.append(target)
+        if source.exists():
+            document = read_json(source)
+            if isinstance(document, dict):
+                documents[container.paths.root / name] = document
+            else:
+                log.warning("Skipping invalid mirror source %s", source)
+    mirrored = atomic_write_many(documents)
     if mirrored:
         log.info("Refreshed %d root mirror(s)", len(mirrored))
     return mirrored
@@ -365,9 +532,10 @@ def stage_readme(container: Container, catalog: Catalog, health_doc: dict[str, A
     updated = pattern.sub(lambda _: block, text)
     if updated == text:
         return False
-    readme.write_text(updated, encoding="utf-8")
-    log.info("README catalog block refreshed")
-    return True
+    changed = atomic_write_text(readme, updated)
+    if changed:
+        log.info("README catalog block refreshed")
+    return changed
 
 
 def stage_assets(container: Container, catalog: Catalog) -> None:
@@ -434,21 +602,32 @@ def run(
 ) -> tuple[int, SyncReport]:
     """Execute the pipeline. Returns ``(exit_code, report)``."""
     container = container or build_container()
-    report = SyncReport()
+    report = SyncReport(started_at=today())
 
     catalog = load_catalog(container)
     report.apps_total = len(catalog.apps)
-    state = load_state(container)
+    loaded_state = load_state(container)
     known = {app.slug for app in catalog.apps}
-    state = {slug: value for slug, value in state.items() if slug in known}
+    state = {slug: value for slug, value in loaded_state.items() if slug in known and isinstance(value, dict)}
+    # State metadata is deliberately kept outside the app slug namespace.
+    for key in ("repositories", "updateHistory", "schemaVersion"):
+        if key in loaded_state:
+            state[key] = loaded_state[key]
 
     if not no_sync:
         with Group("Sync upstream releases"):
-            state = stage_sync(container, catalog, state, only=only, incremental=incremental, report=report)
+            state = stage_sync(
+                container,
+                catalog,
+                state,
+                only=only,
+                incremental=incremental,
+                report=report,
+                workers=workers,
+            )
 
     with Group("Check download health"):
         stage_health(container, catalog, state, enabled=not no_health, workers=max(1, workers))
-    write_json(container.paths.feeds / "state.json", dict(sorted(state.items())))
 
     with Group("Validate local assets"):
         stage_assets(container, catalog)
@@ -456,11 +635,18 @@ def run(
     with Group("Build feeds"):
         changed, health_doc = stage_build(container, catalog, state, report)
 
+    # Persist state only after the complete generated dataset passed validation;
+    # a failed build therefore leaves both data and memory at last-known-good.
+    if write_json(container.paths.feeds / "state.json", dict(sorted(state.items()))):
+        changed.append(container.paths.feeds / "state.json")
+
     if not no_mirror:
         with Group("Mirror feeds to repository root"):
             changed += stage_mirror(container, catalog)
 
-    stage_readme(container, catalog, health_doc)
+    if stage_readme(container, catalog, health_doc):
+        changed.append(container.paths.readme)
+    report.finished_at = today()
     report.files_changed = len(changed)
     write_summary(health_doc, changed, report)
 

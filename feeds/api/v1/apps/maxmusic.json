@@ -1,8 +1,10 @@
 {
+  "id": "maxmusic",
   "appId": "maxmusic",
   "name": "MaxMusic",
   "developer": "Mark02-2012",
   "description": "MaxMusic (formerly YTMUltimate+) is Mark02-2012's fork of Dayanch96's YTMusicUltimate for the YouTube Music app on iOS. It keeps everything YTMusicUltimate provides — no ads, background playback, download manager, audio quality selection — and adds Return YouTube Music Dislike, YouMusicPiP, YTMABConfig and VolumeBoostYT, plus fixed in-app downloads on newer YouTube Music versions. Settings live inside YouTube Music under Settings.",
+  "shortDescription": "YTMusicUltimate with extra tweaks",
   "icon": "https://iamsmmh.github.io/OmniSource/assets/MaxMusic.png",
   "screenshots": [
     "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn2.png",
@@ -10,21 +12,108 @@
     "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn4.png"
   ],
   "category": "music",
+  "categories": [
+    "music"
+  ],
+  "tags": [
+    "music"
+  ],
+  "repository": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+  "repositoryUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+  "sourceType": "github",
+  "homepage": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+  "documentation": null,
+  "license": null,
+  "platforms": [
+    "ios"
+  ],
+  "bundleId": "com.google.ios.youtubemusic",
+  "bundleIdentifier": "com.google.ios.youtubemusic",
+  "packageName": null,
+  "minimumIOSVersion": "16.0",
+  "minimumAndroidVersion": null,
+  "minimumOSVersion": "16.0",
   "version": "9.35.2",
   "buildNumber": null,
   "releaseDate": "2026-09-01",
-  "bundleId": "com.google.ios.youtubemusic",
-  "minimumOSVersion": "16.0",
-  "sourceType": "github",
-  "repositoryUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS",
   "changelog": "MaxMusic 9.35.2 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.35.2\n\n**Changed**\nName of my fork\nYTMusic version",
   "downloadUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
   "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
   "size": 105888307,
-  "status": "stable",
+  "status": "active",
+  "lifecycleStatus": "active",
+  "legacyStatus": "stable",
   "featured": false,
-  "tags": [
-    "music"
+  "verified": false,
+  "lastUpdated": "2026-09-03",
+  "latestVersion": "9.35.2",
+  "latestBuild": null,
+  "latestReleaseDate": "2026-09-01",
+  "latestReleaseNotes": "MaxMusic 9.35.2 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.35.2\n\n**Changed**\nName of my fork\nYTMusic version",
+  "downloadAssets": [
+    {
+      "filename": "MaxMusic_2.4.1_9.35.2.ipa",
+      "downloadUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
+      "platform": "ios",
+      "architecture": null,
+      "fileType": "IPA",
+      "size": 105888307,
+      "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
+      "mimeType": "application/octet-stream",
+      "installable": true
+    }
   ],
-  "fallbackDownloadUrls": []
+  "versions": [
+    {
+      "version": "9.35.2",
+      "build": null,
+      "releaseDate": "2026-09-01",
+      "releaseNotes": "MaxMusic 9.35.2 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.35.2\n\n**Changed**\nName of my fork\nYTMusic version",
+      "releaseUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/tag/MaxMusic_9.35.2_2.4.1_(87)",
+      "assets": [
+        {
+          "filename": "MaxMusic_2.4.1_9.35.2.ipa",
+          "downloadUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 105888307,
+          "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
+      ],
+      "source": "github",
+      "isPrerelease": false,
+      "isDraft": false,
+      "tag": null
+    }
+  ],
+  "fallbackDownloadUrls": [],
+  "health": {
+    "downloadReachable": true,
+    "downloadDetail": "HTTP 302",
+    "repositoryReachable": true,
+    "lastReleaseDate": "2026-09-01",
+    "daysSinceRelease": 2,
+    "releaseFrequencyDays": null,
+    "repositoryActivity": {
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03"
+    },
+    "brokenDownloadLinks": 0,
+    "metadataCompleteness": 1.0,
+    "integrityAvailable": true,
+    "integrityVerified": null,
+    "status": "active",
+    "signalsVersion": 1,
+    "statusSince": "2026-09-02"
+  },
+  "integrity": {
+    "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
+    "sha256Available": true,
+    "verified": null,
+    "trustStatement": "A digest match proves integrity of bytes, not application safety."
+  },
+  "aliases": []
 }

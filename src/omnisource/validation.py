@@ -16,12 +16,15 @@ from typing import Any
 
 from omnisource.constants import (
     ALTSTORE_NON_FEED,
+    CANONICAL_FEED_FILES,
     KNOWN_CLIENTS,
+    LIFECYCLE_STATUSES,
     VALID_STATUSES,
     VALID_VERIFICATION_METHODS,
     Paths,
 )
 from omnisource.http import is_http_url
+from omnisource.schema import validate_file
 
 REQUIRED_APP_FIELDS = ("name", "bundleIdentifier", "developerName", "version", "versionDate", "downloadURL")
 REQUIRED_VERSION_FIELDS = ("version", "date", "downloadURL", "size", "localizedDescription")
@@ -449,7 +452,12 @@ def validate_omnistore_apps(path: Path, document: Any, *, root: Path) -> Report:
     if not isinstance(apps, list) or not apps:
         report.error(f"{label}: 'apps' must be a non-empty array")
         return report
+    schema_path = root / "schemas" / "omnistore.schema.json"
+    if schema_path.exists():
+        for problem in validate_file(document, schema_path):
+            report.error(f"{label}: {problem}")
     seen: set[str] = set()
+    seen_bundles: dict[str, str] = {}
     for index, app in enumerate(apps):
         prefix = f"{label}: apps[{index}]"
         if not isinstance(app, dict):
@@ -458,16 +466,87 @@ def validate_omnistore_apps(path: Path, document: Any, *, root: Path) -> Report:
         for key in REQUIRED_OMNISTORE_FIELDS:
             if not app.get(key):
                 report.error(f"{prefix} is missing '{key}'")
-        app_id = app.get("appId")
+        app_id = app.get("id") or app.get("appId")
         if app_id in seen:
-            report.error(f"{prefix}: duplicate appId '{app_id}'")
+            report.error(f"{prefix}: duplicate app id '{app_id}'")
         seen.add(app_id)
+        bundle = app.get("bundleId") or app.get("packageName")
+        if bundle:
+            previous = seen_bundles.get(str(bundle))
+            if previous and previous != app_id:
+                # Multiple variants can intentionally share an installer id;
+                # expose it as a warning rather than dropping either app.
+                report.warn(f"{prefix}: bundle/package id '{bundle}' is also used by '{previous}'")
+            seen_bundles[str(bundle)] = str(app_id)
         if app.get("downloadUrl") and not is_http_url(app["downloadUrl"]):
             report.error(f"{prefix}.downloadUrl must be an HTTP(S) URL")
         if app.get("sha256") not in (None, "") and not SHA_RE.match(str(app.get("sha256"))):
             report.error(f"{prefix}.sha256 must be a 64-char hex digest")
-        if app.get("status") and app["status"] not in VALID_STATUSES:
+        if app.get("status") and app["status"] not in LIFECYCLE_STATUSES:
             report.error(f"{prefix}.status is unknown")
+        assets = app.get("downloadAssets")
+        if not isinstance(assets, list):
+            report.error(f"{prefix}.downloadAssets must be an array")
+        else:
+            for asset_index, asset in enumerate(assets):
+                if not isinstance(asset, dict):
+                    report.error(f"{prefix}.downloadAssets[{asset_index}] must be an object")
+                    continue
+                if not asset.get("filename") or not asset.get("downloadUrl") or not asset.get("fileType"):
+                    report.error(f"{prefix}.downloadAssets[{asset_index}] is missing filename/downloadUrl/fileType")
+                if asset.get("sha256") not in (None, "") and not SHA_RE.match(str(asset.get("sha256"))):
+                    report.error(f"{prefix}.downloadAssets[{asset_index}].sha256 is invalid")
+    return report
+
+
+def validate_canonical_feed(path: Path, document: Any, *, root: Path, kind: str) -> Report:
+    report = Report()
+    label = _rel(path, root)
+    schema = root / "schemas" / "canonical-feed.schema.json"
+    if schema.exists():
+        for problem in validate_file(document, schema):
+            report.error(f"{label}: {problem}")
+    if not isinstance(document, dict):
+        return report
+    if not isinstance(document.get("count"), int):
+        report.error(f"{label}: count must be an integer")
+    values = document.get(kind)
+    if values is not None and not isinstance(values, list):
+        report.error(f"{label}: {kind} must be an array")
+    if kind == "repositories" and isinstance(values, list):
+        ids: set[str] = set()
+        for index, repository in enumerate(values):
+            if not isinstance(repository, dict):
+                report.error(f"{label}: repositories[{index}] must be an object")
+                continue
+            repo_id = repository.get("id")
+            if not repo_id:
+                report.error(f"{label}: repositories[{index}] is missing id")
+            elif repo_id in ids:
+                report.error(f"{label}: duplicate repository id '{repo_id}'")
+            ids.add(str(repo_id))
+    return report
+
+
+def validate_api_app_files(paths: Paths) -> Report:
+    report = Report()
+    app_schema = paths.root / "schemas" / "app.schema.json"
+    release_schema = paths.root / "schemas" / "release.schema.json"
+    if not app_schema.exists():
+        return report
+    for path in sorted((paths.api / "apps").glob("*.json")):
+        document = load_json(path, report, root=paths.root)
+        if document is not None:
+            for problem in validate_file(document, app_schema):
+                report.error(f"{_rel(path, paths.root)}: {problem}")
+    for path in sorted((paths.api / "apps").glob("*/releases.json")):
+        document = load_json(path, report, root=paths.root)
+        if not isinstance(document, dict):
+            continue
+        for index, release in enumerate(document.get("releases", [])):
+            if isinstance(release, dict) and release_schema.exists():
+                for problem in validate_file(release, release_schema):
+                    report.error(f"{_rel(path, paths.root)}.releases[{index}]: {problem}")
     return report
 
 
@@ -497,7 +576,16 @@ def validate_openapi(path: Path, document: Any, *, root: Path) -> Report:
     if not isinstance(paths, dict):
         report.error(f"{label}: missing paths")
         return report
-    for route in ("/apps", "/apps/{id}", "/updates", "/categories", "/repositories", "/search"):
+    for route in (
+        "/apps",
+        "/apps/{id}",
+        "/apps/{id}/releases",
+        "/updates",
+        "/categories",
+        "/repositories",
+        "/search",
+        "/health",
+    ):
         if route not in paths:
             report.error(f"{label}: missing path {route}")
     return report
@@ -554,6 +642,19 @@ def validate_tree(paths: Paths, *, skip_mirrors: bool = False) -> Report:
     if not skip_mirrors:
         report.extend(validate_mirrors(catalog, paths=paths))
 
+    # Canonical short feeds are intentionally separate from AltStore v2 files.
+    # They use the same machine contract as feeds/omnistore/ and are static API
+    # fallbacks for clients that do not want the namespaced path.
+    for filename in sorted(CANONICAL_FEED_FILES):
+        path = paths.feeds / filename
+        if not path.exists():
+            report.error(f"{_rel(path, paths.root)}: canonical feed missing - run scripts/omnisource.py")
+            continue
+        document = load_json(path, report, root=paths.root)
+        if document is not None:
+            kind = filename.removesuffix(".json")
+            report.extend(validate_canonical_feed(path, document, root=paths.root, kind=kind))
+
     omni_apps = paths.omnistore / "apps.json"
     if omni_apps.exists():
         document = load_json(omni_apps, report, root=paths.root)
@@ -564,6 +665,18 @@ def validate_tree(paths: Paths, *, skip_mirrors: bool = False) -> Report:
             index = load_json(search, report, root=paths.root)
             if index is not None:
                 report.extend(validate_search_index(search, index, root=paths.root))
+        for path in sorted(paths.omnistore.glob("*.json")):
+            if path.name in {"apps.json", "search-index.json"}:
+                continue
+            document = load_json(path, report, root=paths.root)
+            if document is not None:
+                kind = (
+                    path.stem
+                    if path.stem in {"categories", "featured", "updates", "repositories", "trending", "recent"}
+                    else "apps"
+                )
+                report.extend(validate_canonical_feed(path, document, root=paths.root, kind=kind))
+        report.extend(validate_api_app_files(paths))
     else:
         report.warn("feeds/omnistore/apps.json missing - run scripts/omnisource.py")
 

@@ -1,8 +1,10 @@
 {
+  "id": "uyouenhanced",
   "appId": "uyouenhanced",
   "name": "uYouEnhanced",
   "developer": "arichornlover",
   "description": "uYou is the best tweak for the YouTube app. uYouEnhanced is a modified version of qnblackcat's uYouPlus & MiRO92's uYou with even more features. Additional features include skipping sponsorships in videos, more PiP options, unlocking higher resolutions, disabling overlays, removing upsell alerts, dimming the UI, enabling the miniplayer, preventing notch issues, configuring A/B settings, and adding a timestamp button.",
+  "shortDescription": "uYouPlus with even more features!",
   "icon": "https://iamsmmh.github.io/OmniSource/assets/uYouEnhanced.png",
   "screenshots": [
     "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus1.jpeg?raw=true",
@@ -13,23 +15,110 @@
     "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus6.jpeg?raw=true"
   ],
   "category": "photo-video",
+  "categories": [
+    "photo-video"
+  ],
+  "tags": [
+    "photo-video"
+  ],
+  "repository": "https://github.com/arichornlover/uYouEnhanced",
+  "repositoryUrl": "https://github.com/arichornlover/uYouEnhanced",
+  "sourceType": "github",
+  "homepage": "https://github.com/arichornlover/uYouEnhanced",
+  "documentation": null,
+  "license": null,
+  "platforms": [
+    "ios"
+  ],
+  "bundleId": "com.google.ios.youtube",
+  "bundleIdentifier": "com.google.ios.youtube",
+  "packageName": null,
+  "minimumIOSVersion": "16.0",
+  "minimumAndroidVersion": null,
+  "minimumOSVersion": "16.0",
   "version": "21.14.4",
   "buildNumber": null,
   "releaseDate": "2026-08-22",
-  "bundleId": "com.google.ios.youtube",
-  "minimumOSVersion": "16.0",
-  "sourceType": "github",
-  "repositoryUrl": "https://github.com/arichornlover/uYouEnhanced",
   "changelog": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
   "downloadUrl": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
   "sha256": null,
   "size": 135840058,
-  "status": "manual",
+  "status": "broken",
+  "lifecycleStatus": "broken",
+  "legacyStatus": "manual",
   "featured": true,
-  "tags": [
-    "photo-video"
+  "verified": false,
+  "lastUpdated": "2026-09-02",
+  "latestVersion": "21.14.4",
+  "latestBuild": null,
+  "latestReleaseDate": "2026-08-22",
+  "latestReleaseNotes": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
+  "downloadAssets": [
+    {
+      "filename": "yt-uYE-21144-305.ipa",
+      "downloadUrl": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+      "platform": "ios",
+      "architecture": null,
+      "fileType": "IPA",
+      "size": 135840058,
+      "sha256": null,
+      "mimeType": null,
+      "installable": true
+    }
+  ],
+  "versions": [
+    {
+      "version": "21.14.4",
+      "build": null,
+      "releaseDate": "2026-08-22",
+      "releaseNotes": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
+      "releaseUrl": "https://github.com/arichornlover/uYouEnhanced",
+      "assets": [
+        {
+          "filename": "yt-uYE-21144-305.ipa",
+          "downloadUrl": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 135840058,
+          "sha256": null,
+          "mimeType": null,
+          "installable": true
+        }
+      ],
+      "source": "github",
+      "isPrerelease": false,
+      "isDraft": false,
+      "tag": null
+    }
   ],
   "fallbackDownloadUrls": [
     "https://dn720705.ca.archive.org/0/items/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
-  ]
+  ],
+  "health": {
+    "downloadReachable": false,
+    "downloadDetail": "TLS/SSL connection has been closed (EOF) (_ssl.c:992)",
+    "repositoryReachable": true,
+    "lastReleaseDate": "2026-08-22",
+    "daysSinceRelease": 12,
+    "releaseFrequencyDays": null,
+    "repositoryActivity": {
+      "lastSync": "2026-09-03",
+      "lastSuccess": "2026-09-03"
+    },
+    "brokenDownloadLinks": 1,
+    "metadataCompleteness": 1.0,
+    "integrityAvailable": false,
+    "integrityVerified": null,
+    "status": "broken",
+    "signalsVersion": 1,
+    "statusSince": "2026-09-03"
+  },
+  "integrity": {
+    "sha256": null,
+    "sha256Available": false,
+    "verified": null,
+    "trustStatement": "A digest match proves integrity of bytes, not application safety."
+  },
+  "aliases": []
 }

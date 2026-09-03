@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/canonical-feed.schema.json",
+  "title": "OmniSource canonical feed",
+  "description": "Machine-readable catalog feed consumed by OmniStore and third-party clients.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schemaVersion", "generatedAt", "count"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "generatedAt": { "type": "string" },
+    "count": { "type": "integer", "minimum": 0 },
+    "apps": { "type": "array", "items": { "type": "object" } },
+    "updates": { "type": "array", "items": { "type": "object" } },
+    "categories": { "type": "array", "items": { "type": "object" } },
+    "repositories": { "type": "array", "items": { "$ref": "repository.schema.json" } },
+    "methodology": { "type": "string" }
+  }
+}

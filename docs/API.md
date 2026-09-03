@@ -1,6 +1,6 @@
 # OmniStore API specification
 
-OmniSource does not run an HTTP server. GitHub Pages serves a **static
+OmniSource does not require a live HTTP service for distribution. GitHub Pages serves a **static
 snapshot** of this contract at:
 
 ```
@@ -77,7 +77,9 @@ GET /search?q=flac&limit=25
 | 400 | `{ "error": "bad_request", "detail": "…" }` |
 | 429 | `{ "error": "rate_limited" }` |
 
-The static snapshot has no error documents.
+The static snapshot has no error documents. For local development and integration tests, the
+optional dependency-free `scripts/api_server.py` serves the same read-only contract; it is not
+required by GitHub Pages or by feed subscribers.
 
 ## Versioning
 

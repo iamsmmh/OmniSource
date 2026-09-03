@@ -32,6 +32,45 @@
           "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-ios-unsigned.ipa",
           "size": 34122124,
           "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/tag/v4.9.5",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "SpotiFLAC-v4.9.5-arm32.apk",
+              "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-arm32.apk",
+              "platform": "android",
+              "architecture": "armv7",
+              "fileType": "APK",
+              "size": 102146586,
+              "sha256": "ece012470a988012c456adf6dc88f0ed76f002eab952928cefa0114590e4eef4",
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "SpotiFLAC-v4.9.5-arm64.apk",
+              "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-arm64.apk",
+              "platform": "android",
+              "architecture": "arm64",
+              "fileType": "APK",
+              "size": 81149806,
+              "sha256": "fbfe30b7ebce48eb3aa2dee315f19d2a180bb3efaec941bc1622eda1b6204258",
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "SpotiFLAC-v4.9.5-ios-unsigned.ipa",
+              "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.5/SpotiFLAC-v4.9.5-ios-unsigned.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 34122124,
+              "sha256": "683375692c0a459fa262c8c543bfbf6467ab17e2bbf45899640a82e115c87451",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
           "sha256": "683375692c0a459fa262c8c543bfbf6467ab17e2bbf45899640a82e115c87451"
         }
       ],
