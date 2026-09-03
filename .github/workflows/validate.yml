@@ -41,6 +41,11 @@ jobs:
       - name: Lint JSON with jq
         run: bash scripts/validate_jq.sh
 
+      - name: Run unit and integration tests
+        env:
+          PYTHONPATH: src
+        run: python3 -m unittest discover -s tests -v
+
       # Guards the invariant that feeds/ is generated, never hand-edited:
       # a rebuild from committed state must be a no-op.
       - name: Verify feeds are reproducible from catalog.json
@@ -59,8 +64,8 @@ jobs:
       - name: Check Python style
         run: |
           python3 -m pip install --quiet --disable-pip-version-check "ruff==0.16.5"
-          python3 -m ruff check scripts/
-          python3 -m ruff format --check scripts/
+          python3 -m ruff check src/ scripts/ tests/
+          python3 -m ruff format --check src/ scripts/ tests/
 
       - name: Lint workflows
         run: |

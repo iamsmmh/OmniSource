@@ -132,9 +132,32 @@
         },
         "upstream": {
           "type": "object",
-          "required": ["repo"],
           "additionalProperties": true,
           "properties": {
+            "provider": {
+              "type": "string",
+              "enum": [
+                "github",
+                "github-tags",
+                "gitlab",
+                "codeberg",
+                "forgejo",
+                "json-feed",
+                "altstore",
+                "feather"
+              ],
+              "description": "Source provider. Defaults to github."
+            },
+            "host": {
+              "type": "string",
+              "format": "uri",
+              "description": "Forge origin for self-hosted GitLab/Forgejo, e.g. https://git.example.com"
+            },
+            "feedURL": {
+              "type": "string",
+              "format": "uri",
+              "description": "Required for json-feed, altstore and feather providers."
+            },
             "repo": { "type": "string", "pattern": "^[\\w.-]+/[\\w.-]+$" },
             "tagPrefix": { "type": "string" },
             "excludeTagPrefixes": { "type": "array", "items": { "type": "string" } },
@@ -153,6 +176,10 @@
             },
             "descriptionTemplate": { "type": "string" },
             "minOSVersion": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)*$" },
+            "isoDates": {
+              "type": "boolean",
+              "description": "Emit full ISO 8601 UTC timestamps instead of date-only strings."
+            },
             "minOSVersionByTagNumber": {
               "type": "object",
               "additionalProperties": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)*$" }

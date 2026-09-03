@@ -2,8 +2,13 @@
 
 ## One sentence
 
-`catalog.json` describes what OmniSource distributes; `scripts/omnisource.py` turns that
-description into AltStore-compatible feeds; GitHub Pages serves them.
+`catalog.json` describes what OmniSource distributes; `src/omnisource` turns that
+description into AltStore-compatible feeds **and** OmniStore/API snapshots;
+GitHub Pages serves them.
+
+The platform overview, domain model, migration and roadmap live in
+[PLATFORM.md](PLATFORM.md). Feed and API contracts: [FEED_SPEC.md](FEED_SPEC.md),
+[API.md](API.md).
 
 ## Data flow
 
@@ -14,18 +19,18 @@ description into AltStore-compatible feeds; GitHub Pages serves them.
                     └──────────────┬───────────────────────┘
                                    │
                     ┌──────────────▼───────────────────────┐
-                    │  scripts/omnisource.py               │
-                    │  1 sync    GitHub Releases API       │
+                    │  src/omnisource (scripts/omnisource.py is a wrapper)
+                    │  1 sync    provider registry (GitHub/GitLab/…)
                     │  2 health  concurrent HEAD probes    │
-                    │  3 build   render feeds              │
-                    │  4 mirror  copy to repo root         │
+                    │  3 build   AltStore + OmniStore + API│
+                    │  4 mirror  copy AltStore to repo root│
                     │  5 readme  refresh catalog block     │
                     └──────────────┬───────────────────────┘
                                    │
         ┌──────────────────────────┼──────────────────────────┐
         ▼                          ▼                          ▼
   feeds/apps.json           feeds/<slug>.json          feeds/health.json
-  feeds/state.json                                     (dashboard input)
+  feeds/state.json          feeds/omnistore/*.json     feeds/api/v1/*.json
         │                          │                          │
         └──────────────────────────┴──────────────────────────┘
                                    │
@@ -153,6 +158,6 @@ the upstream for `uyouenhanced` — the build feeds itself back into the pipelin
 | --- | --- |
 | Add an app | Append to `catalog.json` |
 | Add a download mirror | Add `fallbackDownloadURLs` to the app (or its `manualRelease`) in `catalog.json` |
-| Support a non-GitHub upstream | Add a resolver branch in `sync_app()` keyed on `upstream.provider` |
-| Add a metadata field | Extend `render_app()` and add a rule in `validate.py` |
+| Support a non-GitHub upstream | Set `upstream.provider` (`gitlab`, `codeberg`, `forgejo`, `github-tags`, `altstore`, `feather`, `json-feed`). Self-hosted Forgejo/GitLab also need `upstream.host` |
+| Add a metadata field | Extend `feeds/altstore.py` / `feeds/omnistore.py` and add a rule in `omnisource.validation` |
 | Add a website page | Add a route to `ROUTES` in `website/app.js` |

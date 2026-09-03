@@ -22,6 +22,8 @@ One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · 
 [Catalog](docs/CATALOG.md) ·
 [Compatibility](docs/COMPATIBILITY.md) ·
 [Architecture](docs/ARCHITECTURE.md) ·
+[Platform](docs/PLATFORM.md) ·
+[API](docs/API.md) ·
 [Contribute](docs/CONTRIBUTING.md)
 
 </div>
@@ -87,10 +89,15 @@ catalog.json ──▶ scripts/omnisource.py ──▶ feeds/*.json ──▶ Gi
 ```
 
 `catalog.json` is the only hand-edited data file. Everything else — the master feed, the per-app
-feeds, the root-level compatibility mirrors, the health snapshot and the table above — is
-generated. `feeds/` is the single source of truth for distribution: a dedicated merge workflow
-rebuilds the root `apps.json` from it on every change. See the
-[Architecture Guide](docs/ARCHITECTURE.md).
+feeds, the root-level compatibility mirrors, the health snapshot, the OmniStore machine feeds,
+the static API snapshots and the table above — is generated. `feeds/` is the single source of
+truth for distribution: a dedicated merge workflow rebuilds the root `apps.json` from it on
+every change. See the [Architecture Guide](docs/ARCHITECTURE.md) and the
+[platform overview](docs/PLATFORM.md).
+
+OmniStore (the future client) consumes `feeds/omnistore/` and `feeds/api/v1/` — see
+[the feed spec](docs/FEED_SPEC.md) and [the API spec](docs/API.md). Sideloading clients keep
+using `apps.json`.
 
 | Pipeline | Runs | What it does |
 | --- | --- | --- |
@@ -104,11 +111,15 @@ rebuilds the root `apps.json` from it on every change. See the
 | Path | Purpose |
 | --- | --- |
 | `catalog.json` | Source of truth: apps, upstream repositories, metadata, fallback mirrors |
-| `feeds/` | Generated AltStore feeds + `health.json` + pipeline state (**SSOT for distribution**) |
+| `feeds/` | Generated AltStore feeds + `health.json` + pipeline state (**SSOT for sideloading**) |
+| `feeds/omnistore/` | OmniStore machine feeds (apps, categories, updates, featured, repositories, search) |
+| `feeds/api/v1/` | Static REST snapshots + OpenAPI for the future OmniStore client |
 | `*.json` (root) | Generated mirrors that keep historical feed URLs working |
-| `schemas/` | JSON Schema for `catalog.json` and the AltStore v2 feed format |
+| `schemas/` | JSON Schema for `catalog.json`, AltStore v2, and OmniStore |
 | `assets/` | App and client icons served over Pages |
-| `scripts/` | `omnisource.py` (build) · `validate.py` (checks) · `validate_jq.sh` (jq lint) · `merge_feeds.py` (merge) · `health_check.py` (probe) |
+| `src/omnisource/` | Pipeline package (providers, tracking, feeds, API, validation) |
+| `scripts/` | CLI wrappers + `validate_jq.sh` · `merge_feeds.py` · `health_check.py` |
+| `tests/` | Unit and offline integration tests |
 | `website/` | Static GitHub Pages site |
 | `docs/` | Installation, catalog, compatibility, contributing, architecture, audit |
 

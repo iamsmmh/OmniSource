@@ -5,8 +5,8 @@ permissions and opts in to exactly what it needs, never more.
 
 | Workflow | Trigger | Writes | Purpose |
 | --- | --- | --- | --- |
-| [`sync.yml`](sync.yml) | schedule (6 h) · push · manual | feeds, mirrors, README, Pages | Resolve upstream releases, probe links, rebuild every feed, deploy the site |
-| [`validate.yml`](validate.yml) | pull request · push · manual | nothing | Offline gate: Python + `jq` structural validation, reproducibility check, `ruff`, `actionlint` |
+| [`sync.yml`](sync.yml) | schedule (6 h, incremental) · push · manual | feeds, OmniStore, API, mirrors, README, Pages | Resolve upstream releases, probe links, rebuild every feed, deploy the site |
+| [`validate.yml`](validate.yml) | pull request · push · manual | nothing | Offline gate: Python + `jq` structural validation, unit tests, reproducibility check, `ruff`, `actionlint` |
 | [`merge.yml`](merge.yml) | `feeds/*.json` changed · manual | `apps.json` | Rebuild the unified root `apps.json` from the modular `feeds/` (SSOT) |
 | [`health-check.yml`](health-check.yml) | schedule (daily) · manual | GitHub Issue | HEAD-probe every download URL + mirror and report broken links via an issue |
 | [`build-uyouenhanced.yml`](build-uyouenhanced.yml) | manual | Release asset | Build and publish the uYouEnhanced IPA, then trigger a feed sync |

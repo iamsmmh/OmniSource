@@ -12,6 +12,9 @@ feeds/*.json      linguist-generated=true
 /maxtube.json   linguist-generated=true
 /maxmusic.json  linguist-generated=true
 
+feeds/omnistore/*.json linguist-generated=true
+feeds/api/**           linguist-generated=true
+
 *.json text eol=lf
 *.py   text eol=lf
 *.md   text eol=lf

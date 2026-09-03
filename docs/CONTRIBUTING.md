@@ -10,13 +10,15 @@ mirrors are generated. A pull request that edits a generated file will fail CI.
 
 ## Setup
 
-No virtualenv, no dependencies — the scripts are standard library only.
+No virtualenv, no dependencies — the pipeline is standard library only.
+`src/` is added to `sys.path` by the wrappers; for tests, set `PYTHONPATH=src`.
 
 ```bash
 git clone https://github.com/iamsmmh/OmniSource.git
 cd OmniSource
-python3 scripts/omnisource.py    # sync upstream + rebuild everything
-python3 scripts/validate.py      # offline structural checks
+python3 scripts/omnisource.py                      # sync upstream + rebuild everything
+python3 scripts/validate.py                        # offline structural checks
+PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
 
 Useful flags while iterating:
@@ -25,6 +27,7 @@ Useful flags while iterating:
 python3 scripts/omnisource.py --only ytlite      # sync one app
 python3 scripts/omnisource.py --no-sync          # rebuild from feeds/state.json, no API calls
 python3 scripts/omnisource.py --no-health        # skip link probing
+python3 scripts/omnisource.py --incremental      # skip pagination when the newest asset URL is unchanged
 python3 scripts/validate.py --strict             # treat warnings as errors
 ```
 
@@ -83,7 +86,10 @@ limit. A full sync uses about four requests.
 
 | Key | Default | Purpose |
 | --- | --- | --- |
-| `repo` | required | `owner/name` of the GitHub repository holding releases |
+| `provider` | `"github"` | `github`, `github-tags`, `gitlab`, `codeberg`, `forgejo`, `json-feed`, `altstore`, `feather` |
+| `host` | provider default | Forge origin for self-hosted GitLab/Forgejo |
+| `feedURL` | — | Required for `json-feed` / `altstore` / `feather` |
+| `repo` | required for forges | `owner/name` of the repository holding releases |
 | `tagPrefix` | `""` | Only consider tags starting with this prefix |
 | `excludeTagPrefixes` | `[]` | Skip tags starting with any of these |
 | `assetSuffixes` | `[".ipa"]` | Asset filename suffixes in priority order |
@@ -119,7 +125,8 @@ Open an issue with device, iOS version, client, app and version. Confirmed resul
 - [ ] Only `catalog.json`, `assets/`, docs or scripts hand-edited
 - [ ] `python3 scripts/omnisource.py` run and generated files committed
 - [ ] `python3 scripts/validate.py` passes with zero errors
-- [ ] `python3 -m ruff check scripts/ && python3 -m ruff format --check scripts/` passes if scripts changed
+- [ ] `PYTHONPATH=src python3 -m unittest discover -s tests -v` passes if `src/` or `tests/` changed
+- [ ] `python3 -m ruff check src/ scripts/ tests/ && python3 -m ruff format --check src/ scripts/ tests/` passes if Python changed
 - [ ] No credentials, tokens or private URLs in the diff
 
 ## What we will not merge
