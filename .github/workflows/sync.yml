@@ -18,6 +18,7 @@ on:
       - catalog.json
       - assets/**
       - scripts/**
+      - src/**
       - website/**
       - .github/workflows/sync.yml
   workflow_dispatch:
@@ -59,15 +60,22 @@ jobs:
         with:
           python-version: "3.12"
 
-      # scripts/ is stdlib-only on purpose: no pip install, no lockfile drift,
-      # no third-party code executing with a write-scoped token.
+      # src/omnisource is stdlib-only on purpose: no pip install, no lockfile
+      # drift, no third-party code executing with a write-scoped token.
+      # Scheduled runs are incremental (skip pagination when the newest asset
+      # URL is unchanged). A catalog push always does a full sync.
       - name: Build feeds
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          EXTRA=""
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            EXTRA="--incremental"
+          fi
           python3 scripts/omnisource.py \
             ${{ inputs.skip_sync && '--no-sync' || '' }} \
-            ${{ inputs.skip_health && '--no-health' || '' }}
+            ${{ inputs.skip_health && '--no-health' || '' }} \
+            $EXTRA
 
       - name: Validate output
         run: python3 scripts/validate.py
@@ -101,6 +109,8 @@ jobs:
           cp -r assets _site/assets
           cp -r feeds  _site/feeds
           rm -f _site/feeds/state.json
+          # OmniStore + API snapshots are served from feeds/; never flatten them
+          # to the site root (that namespace is reserved for AltStore URLs).
           # Historical flat URLs (https://<pages>/apps.json) must keep working.
           cp feeds/apps.json _site/apps.json
           for feed in feeds/*.json; do

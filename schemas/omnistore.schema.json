@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/omnistore.schema.json",
+  "title": "OmniStore apps feed",
+  "description": "Unified metadata catalog emitted at feeds/omnistore/apps.json. Independent of the AltStore v2 schema.",
+  "type": "object",
+  "required": ["schemaVersion", "apps"],
+  "additionalProperties": true,
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "generatedAt": { "type": "string" },
+    "count": { "type": "integer", "minimum": 0 },
+    "apps": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/app" }
+    }
+  },
+  "definitions": {
+    "app": {
+      "type": "object",
+      "required": [
+        "appId",
+        "name",
+        "developer",
+        "description",
+        "icon",
+        "version",
+        "bundleId",
+        "minimumOSVersion",
+        "sourceType",
+        "downloadUrl"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "appId": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,31}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "developer": { "type": "string" },
+        "description": { "type": "string" },
+        "icon": { "type": "string", "format": "uri" },
+        "screenshots": { "type": "array", "items": { "type": "string", "format": "uri" } },
+        "category": { "type": "string" },
+        "version": { "type": "string", "minLength": 1 },
+        "buildNumber": { "type": ["string", "null"] },
+        "releaseDate": { "type": "string" },
+        "bundleId": { "type": "string" },
+        "minimumOSVersion": { "type": "string" },
+        "sourceType": {
+          "type": "string",
+          "enum": [
+            "github",
+            "github-tags",
+            "gitlab",
+            "codeberg",
+            "forgejo",
+            "json-feed",
+            "altstore",
+            "feather",
+            "manual"
+          ]
+        },
+        "repositoryUrl": { "type": "string" },
+        "changelog": { "type": "string" },
+        "downloadUrl": { "type": "string", "format": "uri" },
+        "sha256": { "type": ["string", "null"], "pattern": "^[0-9a-fA-F]{64}$" },
+        "size": { "type": "integer", "minimum": 0 },
+        "status": { "enum": ["stable", "beta", "manual", "unmaintained", "deprecated"] },
+        "featured": { "type": "boolean" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "fallbackDownloadUrls": { "type": "array", "items": { "type": "string", "format": "uri" } }
+      }
+    }
+  }
+}
