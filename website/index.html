@@ -1,52 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>OmniSource — A curated iOS application repository</title>
-<meta name="description" content="OmniSource is a curated iOS application repository and distribution platform for AltStore, SideStore, Feather, ESign and LiveContainer.">
-<meta name="theme-color" content="#5b5bd6">
-<meta property="og:title" content="OmniSource">
-<meta property="og:description" content="A curated iOS application repository and distribution platform.">
-<meta property="og:image" content="./assets/OmniSource.png">
-<link rel="icon" href="./assets/OmniSource.png">
-<link rel="stylesheet" href="./styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OmniSource — iOS sideloading app source</title>
+  <meta name="description" content="A curated, automatically maintained AltStore-compatible iOS app source for AltStore, SideStore, Feather, ESign and LiveContainer.">
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 46rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.6; }
+    code { background: rgba(127,127,127,.15); border-radius: 4px; padding: .1em .35em; overflow-wrap: anywhere; }
+    a { color: #5b5bd6; }
+    h1 { font-size: 1.8rem; }
+    hr { margin: 2rem 0; border: 0; border-top: 1px solid rgba(127,127,127,.3); }
+  </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+  <h1>OmniSource</h1>
+  <p>A curated, automatically maintained <strong>iOS app source</strong> for sideloading clients:
+     AltStore, SideStore, Feather, ESign and LiveContainer. Every app entry is resolved from the
+     app’s own official upstream project and re-verified on a schedule.</p>
 
-<header class="topbar">
-  <div class="wrap topbar-inner">
-    <a class="brand" href="#/">
-      <img src="./assets/OmniSource.png" alt="" width="32" height="32">
-      <span>OmniSource</span>
-    </a>
-    <nav aria-label="Primary">
-      <a href="#/catalog" data-nav="catalog">Catalog</a>
-      <a href="#/compare" data-nav="compare">Compare</a>
-      <a href="#/compatibility" data-nav="compatibility">Compatibility</a>
-      <a href="#/health" data-nav="health">Health</a>
-      <a href="#/install" data-nav="install">Install</a>
-    </nav>
-    <button id="theme-toggle" class="ghost" type="button" aria-label="Toggle colour theme">◐</button>
-  </div>
-</header>
-
-<main id="main" class="wrap">
-  <div id="view" aria-live="polite">
-    <p class="muted">Loading catalog…</p>
-  </div>
-</main>
-
-<footer class="wrap footer">
+  <h2>Add the source</h2>
+  <p>Feed URL:</p>
+  <p><code>https://iamsmmh.github.io/OmniSource/apps.json</code></p>
   <p>
-    <strong>OmniSource</strong> — a community project. Apps, trademarks and releases belong to their
-    respective owners. <a href="https://github.com/iamsmmh/OmniSource">Source</a> ·
-    <a href="https://github.com/iamsmmh/OmniSource/blob/main/docs/CONTRIBUTING.md">Contribute</a> ·
-    <a href="./apps.json">apps.json</a>
+    <a href="altstore://source?url=https://iamsmmh.github.io/OmniSource/apps.json">Add to AltStore</a> ·
+    <a href="sidestore://source?url=https://iamsmmh.github.io/OmniSource/apps.json">Add to SideStore</a>
   </p>
-</footer>
+  <p>Feather, ESign and LiveContainer have no deep link — open the client and paste the feed URL above.
+     Per-app feeds are published alongside the master feed, e.g.
+     <code>https://iamsmmh.github.io/OmniSource/feather.json</code>.</p>
 
-<script src="./app.js" type="module"></script>
+  <h2>Source of record</h2>
+  <p>The catalog, automation, per-app feeds and installation notes live in the
+     <a href="https://github.com/iamsmmh/OmniSource">OmniSource GitHub repository</a> (see the README
+     for the generated app catalog).</p>
+
+  <hr>
+  <p><small>OmniSource is an independent community project. All apps, code and trademarks belong to
+     their respective owners.</small></p>
 </body>
 </html>

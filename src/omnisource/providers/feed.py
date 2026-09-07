@@ -1,8 +1,8 @@
-"""Generic JSON feed provider: raw JSON, AltStore sources, Feather repositories.
+"""Generic JSON feed provider: raw JSON documents and AltStore sources.
 
-AltStore and Feather both publish a document with an ``apps`` array. Feather
-sources are AltStore-compatible; we treat them as the same shape and keep the
-source type so OmniStore metadata can tell them apart.
+AltStore sources publish a document with an ``apps`` array; a raw JSON feed may
+contain one app object or an array. The provider normalises both into
+:class:`RemoteRelease` values.
 """
 
 from __future__ import annotations
@@ -291,8 +291,3 @@ class GenericFeedProvider(SourceProvider):
 class AltStoreFeedProvider(GenericFeedProvider):
     name = "altstore"
     source_type = SourceType.ALTSTORE
-
-
-class FeatherFeedProvider(GenericFeedProvider):
-    name = "feather"
-    source_type = SourceType.FEATHER

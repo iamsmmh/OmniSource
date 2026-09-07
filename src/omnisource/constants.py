@@ -12,8 +12,6 @@ from pathlib import Path
 
 USER_AGENT = "OmniSource-Sync/3.0 (+https://github.com/iamsmmh/OmniSource)"
 GITHUB_API_ROOT = "https://api.github.com"
-GITLAB_API_ROOT = "https://gitlab.com/api/v4"
-CODEBERG_API_ROOT = "https://codeberg.org/api/v1"
 
 VERSION_RE_PATTERN = r"(\d+\.\d+(?:\.\d+)?)"
 TAG_NUMBER_RE_PATTERN = r"(\d+)\s*$"
@@ -25,10 +23,6 @@ ALIVE_CODES = frozenset({200, 206, 301, 302, 303, 307, 308})
 RETRYABLE_CODES = frozenset({408, 425, 429, 500, 502, 503, 504})
 
 VALID_STATUSES = frozenset({"stable", "beta", "manual", "unmaintained", "deprecated"})
-LIFECYCLE_STATUSES = frozenset({"active", "maintenance", "inactive", "archived", "broken", "unknown"})
-CANONICAL_FEED_FILES = frozenset(
-    {"updates.json", "categories.json", "repositories.json", "featured.json", "trending.json", "recent.json"}
-)
 VALID_VERIFICATION_METHODS = frozenset(
     {
         "github-release",
@@ -48,12 +42,8 @@ IMAGE_EXTENSIONS = frozenset({".png", ".jpg", ".jpeg", ".webp", ".gif"})
 PNG_MAGIC = b"\x89PNG\r\n\x1a\n"
 JPEG_MAGIC = b"\xff\xd8\xff"
 
-# Pipeline state and dashboard files are not distributable AltStore feeds.
-ALTSTORE_NON_FEED = frozenset({"state.json", "health.json", *CANONICAL_FEED_FILES})
-
-OMNISTORE_SCHEMA_VERSION = 1
-API_VERSION = "v1"
-PLATFORM_VERSION = "3.0.0"
+# Pipeline state and health snapshots are not distributable AltStore feeds.
+ALTSTORE_NON_FEED = frozenset({"state.json", "health.json"})
 
 
 @dataclass(frozen=True)
@@ -65,8 +55,6 @@ class Paths:
     feeds: Path
     assets: Path
     readme: Path
-    omnistore: Path
-    api: Path
     cache: Path
 
     @classmethod
@@ -79,8 +67,6 @@ class Paths:
             feeds=feeds,
             assets=root / "assets",
             readme=root / "README.md",
-            omnistore=feeds / "omnistore",
-            api=feeds / "api" / API_VERSION,
             cache=root / ".cache" / "omnisource",
         )
 

@@ -2,8 +2,8 @@
   "name": "OmniSource",
   "identifier": "com.iamsmmh.omnisource",
   "apiVersion": "v2",
-  "subtitle": "A curated iOS application repository and distribution platform",
-  "description": "OmniSource is a curated, automatically maintained iOS application repository for AltStore, SideStore, Feather, ESign and LiveContainer.",
+  "subtitle": "A curated iOS app source for AltStore, SideStore, Feather, ESign and LiveContainer",
+  "description": "OmniSource is a curated, automatically maintained AltStore-compatible iOS app source. Every entry is resolved from the app's own official upstream project - GitHub Releases or the developer's official AltStore feed - and each download link is re-verified automatically.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
   "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
   "tintColor": "5B5BD6",
@@ -347,15 +347,7 @@
           ]
         }
       ],
-      "screenshotURLs": [
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/1.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/2.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/3.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/4.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/5.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/6.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/7.PNG"
-      ],
+      "screenshotURLs": [],
       "appPermissions": {
         "entitlements": [
           "application-identifier",
@@ -1236,14 +1228,7 @@
           ]
         }
       ],
-      "screenshotURLs": [
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/1.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/2.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/3.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/4.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/5.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/6.PNG"
-      ],
+      "screenshotURLs": [],
       "appPermissions": {
         "entitlements": [
           "application-identifier",
@@ -1559,7 +1544,7 @@
         "upstreamURL": "https://github.com/arichornlover/uYouEnhanced",
         "verification": {
           "method": "manual-mirror",
-          "publisher": "arichornlover/uYouEnhanced via archive.org (mirrored by iamsmmh/OmniSource)",
+          "publisher": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
           "codeSigned": false,
           "checksumPublished": true
         },
@@ -1577,7 +1562,7 @@
             "esign",
             "livecontainer"
           ],
-          "notes": "Served from the official archive.org mirror of the upstream build until the first in-repo 'Build uYouEnhanced' release (tag uyouenhanced-v*) takes over automatically. MD5/SHA-1 are published on the archive.org item page."
+          "notes": "uYouEnhanced's official GitHub releases publish release notes only - no .ipa assets - so the IPA served here is a community build of the official release tag (YouTube 21.14.4 / uYou 3.0.5), mirrored on archive.org. Once a 'Build uYouEnhanced' run publishes an IPA in this repository (tag uyouenhanced-v*), the self-built artifact takes over automatically."
         },
         "health": {
           "downloadReachable": true,
@@ -1736,7 +1721,7 @@
         "slug": "youmod",
         "status": "stable",
         "featured": false,
-        "upstreamURL": "https://github.com/mrdrvt99/YouMod",
+        "upstreamURL": "https://github.com/Tonwalter888/YouMod",
         "verification": {
           "method": "github-release",
           "publisher": "mrdrvt99/YouProEXTRA",
@@ -1757,7 +1742,7 @@
             "esign",
             "livecontainer"
           ],
-          "notes": ""
+          "notes": "Official project: Tonwalter888/YouMod. The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
         },
         "health": {
           "downloadReachable": true,
@@ -1860,7 +1845,7 @@
             "esign",
             "livecontainer"
           ],
-          "notes": ""
+          "notes": "YouPro is developed by alibusut (distributed via the developer's Telegram). This source serves a ready-to-sideload IPA built from the official YouPro tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
         },
         "health": {
           "downloadReachable": true,
@@ -2015,7 +2000,7 @@
             "esign",
             "livecontainer"
           ],
-          "notes": ""
+          "notes": "Official project: dayanch96/YTLite ('YouTube Plus'). The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
         },
         "health": {
           "downloadReachable": true,
@@ -2353,7 +2338,7 @@
             "esign",
             "livecontainer"
           ],
-          "notes": ""
+          "notes": "Official project: dayanch96/YTMusicUltimate. The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by the mrdrvt99/YTMusicUltimate build fork. Shares com.google.ios.youtubemusic with MaxMusic: install one at a time."
         },
         "health": {
           "downloadReachable": true,

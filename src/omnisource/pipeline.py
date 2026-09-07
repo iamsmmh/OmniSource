@@ -4,7 +4,7 @@ Stages
 ------
 1. ``sync``       Resolve upstream releases through the provider registry.
 2. ``health``     Probe every download URL concurrently.
-3. ``build``      Render AltStore feeds + OmniStore feeds + API snapshots.
+3. ``build``      Render the AltStore Source v2 feeds (per-app + ``apps.json``).
 4. ``mirror``     Copy AltStore feeds to the historical root-level paths.
 5. ``readme``     Refresh the generated catalog block inside README.md.
 
@@ -21,17 +21,14 @@ import time
 from pathlib import Path
 from typing import Any
 
-from omnisource.api import render_api_bundle
 from omnisource.assets import DirectoryCache, inspect_catalog
 from omnisource.constants import README_MARKERS
 from omnisource.di import Container, build_container
 from omnisource.domain import App, Catalog, SyncReport, UpdateEvent, today
 from omnisource.errors import ConfigurationError, ProviderError, SyncError
 from omnisource.feeds.altstore import feed_envelope, render_altstore_app, render_health_doc
-from omnisource.feeds.omnistore import render_omnistore_bundle
 from omnisource.io import atomic_write_many, atomic_write_text, read_json, write_json
 from omnisource.logutil import Group, log
-from omnisource.repository_registry import build_repository_registry, record_repository_result, repository_key
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
 
 
@@ -137,32 +134,6 @@ def _sync_result(
         return app.slug, None, str(error)
 
 
-def _history_events(state: dict[str, Any]) -> list[UpdateEvent]:
-    raw = state.get("updateHistory", [])
-    if not isinstance(raw, list):
-        return []
-    events: list[UpdateEvent] = []
-    for item in raw:
-        if not isinstance(item, dict):
-            continue
-        try:
-            events.append(
-                UpdateEvent(
-                    app_id=str(item.get("appId") or ""),
-                    name=str(item.get("name") or ""),
-                    version=str(item.get("version") or ""),
-                    previous_version=(str(item["previousVersion"]) if item.get("previousVersion") else None),
-                    release_date=str(item.get("releaseDate") or ""),
-                    download_url=str(item.get("downloadUrl") or ""),
-                    changelog=str(item.get("changelog") or ""),
-                    kind=str(item.get("kind") or "updated"),
-                )
-            )
-        except (TypeError, ValueError):
-            continue
-    return events
-
-
 def _remember_update(state: dict[str, Any], event: UpdateEvent, *, limit: int) -> None:
     history = state.setdefault("updateHistory", [])
     if not isinstance(history, list):
@@ -194,7 +165,7 @@ def stage_sync(
         log.warning("No GH_TOKEN/GITHUB_TOKEN set - using unauthenticated API limits (60 req/h)")
 
     selected = [app for app in catalog.apps if not only or app.slug in only]
-    report.repositories_checked = len({repository_key(app) for app in selected})
+    report.repositories_checked = len(selected)
     max_workers = max(1, workers or container.settings.sync_workers)
     previous_by_slug = {app.slug: state.get(app.slug) for app in selected}
     results: dict[str, tuple[list[dict[str, Any]] | None, str | None]] = {}
@@ -217,8 +188,6 @@ def stage_sync(
                 slug, versions, error = app.slug, None, str(error)
             results[slug] = (versions, error)
 
-    successful_repositories: set[str] = set()
-    failed_repositories: set[str] = set()
     for app in selected:
         previous = previous_by_slug[app.slug]
         versions, error = results.get(app.slug, (None, "worker returned no result"))
@@ -226,16 +195,12 @@ def stage_sync(
             log.error("%s: upstream sync failed (%s) - keeping last known state", app.slug, error)
             report.apps_failed += 1
             report.errors.append(f"{app.slug}: {error}")
-            failed_repositories.add(repository_key(app))
             entry = state.setdefault(app.slug, {})
             entry["lastError"] = error
             entry["retryCount"] = int(entry.get("retryCount") or 0) + 1
-            record_repository_result(state, app, success=False, error=error, retry_count=entry["retryCount"])
             continue
 
         report.apps_synced += 1
-        successful_repositories.add(repository_key(app))
-        record_repository_result(state, app, success=True)
         entry = state.setdefault(app.slug, {})
         entry.pop("lastError", None)
         entry["retryCount"] = 0
@@ -265,13 +230,9 @@ def stage_sync(
                 )
                 report.updates.append(event)
                 _remember_update(state, event, limit=container.settings.max_update_history)
-                if previous_version:
-                    container.analytics.record_update(app.slug, previous_version, event.version)
         elif incremental:
             report.apps_incremental_hit += 1
 
-    report.repositories_succeeded = len(successful_repositories - failed_repositories)
-    report.repositories_failed = len(failed_repositories)
     report.api_requests = container.http.requests
     log.info("Sync complete using %d HTTP request(s)", container.http.requests)
     return state
@@ -315,49 +276,10 @@ def stage_health(
                 "detail": result.detail,
                 "since": previous.get("since", today()) if previous.get("reachable") == result.reachable else today(),
             }
-            container.analytics.record_health(slug, result.reachable)
             (log.info if result.reachable else log.warning)(
                 "%-14s %s (%s)", slug, "reachable" if result.reachable else "UNREACHABLE", result.detail
             )
     log.info("Probed %d download URL(s) in %.1fs", len(targets), time.monotonic() - started)
-
-
-def _validate_generated_document(path: Path, document: Any, *, root: Path) -> None:
-    """Run schema validation before a generated document can be published."""
-    from omnisource.schema import validate_file
-
-    relative = path.relative_to(root).as_posix()
-    schema_path: Path | None = None
-    if relative.endswith("/apps.json") and ("omnistore" in relative or relative.startswith("feeds/api/")):
-        schema_path = root / "schemas" / "omnistore.schema.json"
-    elif "/apps/" in relative and relative.endswith(".json") and "/releases" not in relative:
-        schema_path = root / "schemas" / "app.schema.json"
-    elif relative.endswith("/releases.json"):
-        # Validate the release list and each release with the release schema.
-        schema_path = root / "schemas" / "release.schema.json"
-        if not schema_path.exists():
-            return
-        releases = document.get("releases", []) if isinstance(document, dict) else []
-        for index, release in enumerate(releases):
-            if isinstance(release, dict):
-                problems = validate_file(release, schema_path)
-                if problems:
-                    raise SyncError(f"{relative}.releases[{index}]: {'; '.join(problems)}")
-        return
-    elif relative in {
-        "feeds/updates.json",
-        "feeds/categories.json",
-        "feeds/repositories.json",
-        "feeds/featured.json",
-        "feeds/trending.json",
-        "feeds/recent.json",
-    }:
-        schema_path = root / "schemas" / "canonical-feed.schema.json"
-    if schema_path is None or not schema_path.exists():
-        return
-    problems = validate_file(document, schema_path)
-    if problems:
-        raise SyncError(f"{relative}: {'; '.join(problems[:8])}")
 
 
 def stage_build(
@@ -367,14 +289,12 @@ def stage_build(
     report: SyncReport,
 ) -> tuple[list[Path], dict[str, Any]]:
     rendered: list[tuple[App, dict[str, Any]]] = []
-    versions_by_slug: dict[str, list[dict[str, Any]]] = {}
 
     for app in catalog.apps:
         versions = state.get(app.slug, {}).get("versions")
         if not isinstance(versions, list) or not versions:
             log.error("%s has no known versions - excluded from this build", app.slug)
             continue
-        versions_by_slug[app.slug] = versions
         rendered.append((app, render_altstore_app(catalog, app, versions, state[app.slug].get("health", {}))))
 
     if not rendered:
@@ -410,69 +330,9 @@ def stage_build(
     health_doc = render_health_doc(rendered)
     documents[feeds_dir / "health.json"] = health_doc
 
-    repository_registry = build_repository_registry(catalog, state=state)
-    history = _history_events(state)
-    omnistore = render_omnistore_bundle(
-        catalog,
-        versions_by_slug=versions_by_slug,
-        updates=report.updates,
-        state_by_slug=state,
-        repository_registry=repository_registry,
-        curation=container.curation,
-        categories=container.categories,
-        update_history=history,
-    )
-    # Keep the required short feed URLs in addition to the namespaced feeds.
-    for name, document in omnistore.items():
-        documents[container.paths.omnistore / name] = document
-    for name in (
-        "updates.json",
-        "categories.json",
-        "repositories.json",
-        "featured.json",
-        "trending.json",
-        "recent.json",
-    ):
-        documents[feeds_dir / name] = omnistore[name]
-
-    api_bundle = render_api_bundle(
-        catalog,
-        versions_by_slug=versions_by_slug,
-        updates=report.updates,
-        state_by_slug=state,
-        repository_registry=repository_registry,
-        curation=container.curation,
-        categories=container.categories,
-        update_history=history,
-    )
-    for name, document in api_bundle.items():
-        documents[container.paths.api / name] = document
-
-    # Validation happens against the complete temporary document set before
-    # any production path is touched. A provider error therefore cannot leave
-    # half a catalog behind.
-    for path, document in documents.items():
-        _validate_generated_document(path, document, root=container.paths.root)
     changed = atomic_write_many(documents)
-
-    for url, count in _repository_counts(catalog).items():
-        container.analytics.record_repository_seen(url, count)
-
-    log.info(
-        "Built %d app feed(s) + canonical feeds + API snapshots (%d file(s) changed)",
-        len(rendered),
-        len(changed),
-    )
+    log.info("Built %d AltStore feed(s) + apps.json + health.json (%d file(s) changed)", len(rendered), len(changed))
     return changed, health_doc
-
-
-def _repository_counts(catalog: Catalog) -> dict[str, int]:
-    counts: dict[str, int] = {}
-    for app in catalog.apps:
-        url = app.repository_url
-        if url:
-            counts[url] = counts.get(url, 0) + 1
-    return counts
 
 
 def stage_mirror(container: Container, catalog: Catalog) -> list[Path]:
@@ -618,7 +478,7 @@ def run(
     known = {app.slug for app in catalog.apps}
     state = {slug: value for slug, value in loaded_state.items() if slug in known and isinstance(value, dict)}
     # State metadata is deliberately kept outside the app slug namespace.
-    for key in ("repositories", "updateHistory", "schemaVersion"):
+    for key in ("updateHistory", "schemaVersion"):
         if key in loaded_state:
             state[key] = loaded_state[key]
 

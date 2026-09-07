@@ -11,9 +11,18 @@ feeds/*.json      linguist-generated=true
 /ytmusic.json   linguist-generated=true
 /maxtube.json   linguist-generated=true
 /maxmusic.json  linguist-generated=true
-
-feeds/omnistore/*.json linguist-generated=true
-feeds/api/**           linguist-generated=true
+/inkillerplus.json linguist-generated=true
+/ttkillerplus.json linguist-generated=true
+/itorrent.json linguist-generated=true
+/stikdebug.json linguist-generated=true
+/bhtwitter.json linguist-generated=true
+/livecontainer.json linguist-generated=true
+/feather.json linguist-generated=true
+/sidestore.json linguist-generated=true
+/aidoku.json linguist-generated=true
+/provenance.json linguist-generated=true
+/winston.json linguist-generated=true
+/utm.json linguist-generated=true
 
 *.json text eol=lf
 *.py   text eol=lf

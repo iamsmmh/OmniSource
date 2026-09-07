@@ -3,10 +3,11 @@
 
 ``feeds/`` is the single source of truth for distribution. Every app ships its
 own feed at ``feeds/<slug>.json``; this script reads those per-app feeds and
-re-assembles the two aggregate documents:
+re-assembles the two aggregate documents plus the root-level mirrors:
 
     feeds/apps.json    the unified master feed (what clients subscribe to)
     apps.json          the root-level compatibility mirror (historical URL)
+    <slug>.json        root-level mirrors of each per-app feed
 
 The per-app feeds win: whatever they contain is what the master feed contains.
 Source metadata (name, identifier, tintColor, icon, website) is taken from
@@ -19,8 +20,8 @@ out so the merge can run as a standalone safety net on every change to
 
 Usage
 -----
-    python3 scripts/merge_feeds.py            # rebuild apps.json from feeds/
-    python3 scripts/merge_feeds.py --check    # fail if apps.json is out of date
+    python3 scripts/merge_feeds.py            # rebuild apps.json + mirrors from feeds/
+    python3 scripts/merge_feeds.py --check    # fail if any output is out of date
 """
 
 from __future__ import annotations
@@ -35,17 +36,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = REPO_ROOT / "catalog.json"
 FEEDS_DIR = REPO_ROOT / "feeds"
 MASTER_NAME = "apps.json"
-# Pipeline state and dashboard files are not distributable feeds.
-NON_FEED_FILES = {
-    "state.json",
-    "health.json",
-    "updates.json",
-    "categories.json",
-    "repositories.json",
-    "featured.json",
-    "trending.json",
-    "recent.json",
-}
+# Pipeline state and health snapshots are not distributable feeds.
+NON_FEED_FILES = {"state.json", "health.json"}
 
 
 def load_json(path: Path) -> Any | None:
@@ -109,10 +101,15 @@ def envelope_from_feed(feed: dict[str, Any]) -> dict[str, Any]:
     return envelope
 
 
-def gather_apps() -> tuple[dict[str, Any], list[dict[str, Any]]]:
+def per_app_feeds() -> list[Path]:
     feeds = sorted(p for p in FEEDS_DIR.glob("*.json") if p.name not in NON_FEED_FILES and p.name != MASTER_NAME)
     if not feeds:
         raise SystemExit("merge: no per-app feeds found in feeds/")
+    return feeds
+
+
+def gather_apps() -> tuple[dict[str, Any], list[dict[str, Any]]]:
+    feeds = per_app_feeds()
 
     catalog = load_json(CATALOG_PATH) if CATALOG_PATH.exists() else None
     envelope = envelope_from_catalog(catalog) if isinstance(catalog, dict) else None
@@ -147,21 +144,43 @@ def build_master() -> dict[str, Any]:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--check", action="store_true", help="fail instead of writing when apps.json is stale")
+    parser.add_argument("--check", action="store_true", help="fail instead of writing when outputs are stale")
     args = parser.parse_args(argv)
 
     master = build_master()
     payload = json.dumps(master, indent=2, ensure_ascii=False) + "\n"
 
-    for target in (FEEDS_DIR / MASTER_NAME, REPO_ROOT / MASTER_NAME):
-        if target.exists() and target.read_text(encoding="utf-8") == payload:
-            continue
-        if args.check:
-            print(f"merge: {target.relative_to(REPO_ROOT)} is out of date; run scripts/merge_feeds.py")
-            return 1
-        write_json(target, master)
-        print(f"merge: wrote {target.relative_to(REPO_ROOT)} ({len(master['apps'])} app(s))")
+    stale: list[Path] = []
 
+    def sync_file(target: Path, content: str | None = None) -> None:
+        current = target.read_text(encoding="utf-8") if target.exists() else None
+        body = content if content is not None else payload
+        if current == body:
+            return
+        stale.append(target)
+        if not args.check:
+            tmp = target.with_suffix(target.suffix + ".tmp")
+            try:
+                tmp.write_text(body, encoding="utf-8")
+                json.loads(tmp.read_text(encoding="utf-8"))  # never publish invalid JSON
+                tmp.replace(target)
+            finally:
+                tmp.unlink(missing_ok=True)
+            print(f"merge: wrote {target.relative_to(REPO_ROOT)}")
+
+    # Master feed + its root mirror, and a root mirror per modular feed.
+    sync_file(FEEDS_DIR / MASTER_NAME, payload)
+    sync_file(REPO_ROOT / MASTER_NAME, payload)
+    for path in per_app_feeds():
+        sync_file(REPO_ROOT / path.name, path.read_text(encoding="utf-8"))
+
+    if args.check and stale:
+        print(
+            "merge: out of date: "
+            + ", ".join(str(p.relative_to(REPO_ROOT)) for p in stale)
+            + " - run scripts/merge_feeds.py"
+        )
+        return 1
     print(f"merge: apps.json unified from {len(master['apps'])} modular feed(s)")
     return 0
 

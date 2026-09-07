@@ -6,10 +6,8 @@ from omnisource.domain import RepositoryRef, SourceType
 from omnisource.errors import ConfigurationError
 from omnisource.http import HttpClient
 from omnisource.providers.base import SourceProvider
-from omnisource.providers.feed import AltStoreFeedProvider, FeatherFeedProvider, GenericFeedProvider
-from omnisource.providers.forgejo import CodebergReleasesProvider, ForgejoReleasesProvider
+from omnisource.providers.feed import AltStoreFeedProvider, GenericFeedProvider
 from omnisource.providers.github import GitHubReleasesProvider, GitHubTagsProvider
-from omnisource.providers.gitlab import GitLabReleasesProvider
 
 
 class ProviderRegistry:
@@ -38,15 +36,10 @@ class ProviderRegistry:
 
 
 def build_default_registry(http: HttpClient) -> ProviderRegistry:
-    """Wire every first-party provider to a shared HTTP client (and thus cache)."""
+    """Wire every provider used by the current catalog to a shared HTTP client."""
     registry = ProviderRegistry()
-    github = GitHubReleasesProvider(http)
-    registry.register(github)
+    registry.register(GitHubReleasesProvider(http))
     registry.register(GitHubTagsProvider(http))
-    registry.register(GitLabReleasesProvider(http))
-    registry.register(CodebergReleasesProvider(http))
-    registry.register(ForgejoReleasesProvider(http))
     registry.register(GenericFeedProvider(http))
     registry.register(AltStoreFeedProvider(http))
-    registry.register(FeatherFeedProvider(http))
     return registry
