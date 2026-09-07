@@ -1,0 +1,117 @@
+{
+  "name": "OmniSource - LiveContainer",
+  "identifier": "com.iamsmmh.omnisource.livecontainer",
+  "apiVersion": "v2",
+  "subtitle": "Run iOS apps without actually installing them",
+  "description": "Standalone distribution feed for LiveContainer, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/livecontainer.json",
+  "apps": [
+    {
+      "name": "LiveContainer",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer Team",
+      "subtitle": "Run iOS apps without actually installing them",
+      "localizedDescription": "LiveContainer runs other iOS apps inside itself instead of installing them, so a single app slot on your certificate can host many sideloaded apps and you stop burning through the 3-app limit. When JIT is available it bypasses codesigning entirely; otherwise guest apps are signed with the same certificate as LiveContainer. It supports multiple data containers per app, tweak injection, adding guest apps to the Home Screen, and multitasking windows on iPadOS 16 and later.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/LiveContainer.png",
+      "tintColor": "0784FC",
+      "category": "utilities",
+      "version": "3.8.0",
+      "versionDate": "2026-07-17",
+      "versionDescription": "LiveContainer 3.8.0 | LiveContainer\n\n# LiveContainer 3.8.0\n\n> [!Warning]\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\n> To install LiveContainer with built-in SideStore (`LiveContainer+SideStore.ipa`), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\n\n# New Features\n\n## Storage Management\n\n- Added a new storage management view with a breakdown of app bundles, containers, temporary files, app group data, tweaks, and other files. (Hidden apps' size is included in \"other\" section until unlocked)\n- Added per-app storage details, including app bundle size, container sizes, and last-used date.\n- Added actions to clean temporary files and caches, including guest app caches and LiveContainer's own caches.\n\n## Multiple LiveContainers\n- Added configurable launch priority for multiple LiveContainer instances, making shared-app shortcuts choose available instances in the order you prefer. (#1367)\n\n## Share to Apps in LiveContainer\nAdded a share extension to LiveContainer. When you share a URL or a file from iOS's share sheet, LiveContainer will ask which app you would like to open the URL/file in, so the old share to LiveContainer shortcut method is no longer needed. When an ipa file is shared in this way, LiveContainer will ask if you want to install it in LiveContainer or in the built-in SideStore (if installed) (#1357)\n\n## Multitasking\n\n- Added per-app multitask preferences. Each app can now follow the global setting, always launch in multitask mode, or avoid multitask mode. (#1208)\n- Improved multitask dock behavior: the dock can be made smaller, hidden more cleanly, and has improved padding. (#1228, #1250)\n- Added more multitask window animations and improved native-window scene handling.\n- URL schemes and `open-url` payloads can be passed to already-running multitask apps and native windows.\n\n## JIT\n- Added StosDebug support as a JIT enabler.\n\n## TweakLoader\nYou can now disable tweaks in the \"Tweaks\" page in LiveContainer's UI. by @SAOMDVN\n\n# Improvements\n- Added support for manually setting a container's IDFV. (#1194)\n- IDFV spoofing works even when Tweakloader is not loaded.\n- Reworked signing logic for tweaks and app installation, with multithreaded signing support.\n- Download alerts now block tab switching while a download is in progress.\n- Crash reports are shown in a sheet instead of a large alert for better performance on newer iOS versions.\n- Add a \"Clear Notification\" button (#1388)\n- Added some popular NSBonjourServices keys so apps can discover AirPlay devices and remote pairing pairable hosts in the local network. (#1417)\n\n# Bug Fixes\n\n- Fixed `livecontainer://open-url` dropping the deep link when launching an app from a cold start. (#1339)\n- Fixed the Add to Home Screen menu failing or behaving incorrectly by replacing the SwiftUI context menu implementation. (#1209)\n- Fixed a crash when opening Container Preferences if the app did not contain an `en.lproj` path. (#1239)\n- Fixed apps and AltStore sources not being searchable in some cases. (#1365, #1368)\n- Fixed converting a shared app back to private after aborting an install with the same bundle identifier, which could leave stale container state behind. (#1347)\n- Fixed shortcuts and JIT flows getting stuck on a busy LiveContainer instance instead of using another available instance. (#1386)\n- Fixed file picker not workings for some apps because Tweakloader is not loaded after enabling \"Hide LiveContainer from dyld API\". (#1430)\n- Fixed several app launch compatibility issues on iOS 26.5 beta, and some multitask/JIT app launches. (#1300, #1310, #1329)\n- Fixed multitask keyboard focus issues on iOS 17.4+, including cases where the keyboard would not appear, Passwords would immediately close, or video playback would freeze in multitask mode. (#1402, #844, #870)\n- Added support for iOS 27 developer beta. (#1394, #1417, #1416)\n- Fix background downloads in multitask apps (choosing \"Keep App Extensions (Register App ID for Each Extension)\" is required). (#1415)\n\n# Localization\n\n- Updated translations. Added Spanish translation by @Deci8BelioS\n\n# Credits\n\nThanks to everyone who contributed code, fixes, testing, and reports for this release, including @boa-z, @ruri1208, @Project516, @yazdipour, @stossy11, and @SAOMDVN.\n\nGreat thanks to everyone who helped translate LiveContainer.",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
+      "size": 4707271,
+      "versions": [
+        {
+          "version": "3.8.0",
+          "date": "2026-07-17",
+          "localizedDescription": "LiveContainer 3.8.0 | LiveContainer\n\n# LiveContainer 3.8.0\n\n> [!Warning]\n> The standalone version requires **SideStore 0.6.2+** or **AltStore 2.2.1+** for installation.\n> To install LiveContainer with built-in SideStore (`LiveContainer+SideStore.ipa`), please use [Impactor](https://github.com/khcrysalis/Impactor) or [iloader](https://github.com/nab138/iloader). See [our installation guide](https://livecontainer.github.io/docs/installation/lc_sidestore) for details.\n\n# New Features\n\n## Storage Management\n\n- Added a new storage management view with a breakdown of app bundles, containers, temporary files, app group data, tweaks, and other files. (Hidden apps' size is included in \"other\" section until unlocked)\n- Added per-app storage details, including app bundle size, container sizes, and last-used date.\n- Added actions to clean temporary files and caches, including guest app caches and LiveContainer's own caches.\n\n## Multiple LiveContainers\n- Added configurable launch priority for multiple LiveContainer instances, making shared-app shortcuts choose available instances in the order you prefer. (#1367)\n\n## Share to Apps in LiveContainer\nAdded a share extension to LiveContainer. When you share a URL or a file from iOS's share sheet, LiveContainer will ask which app you would like to open the URL/file in, so the old share to LiveContainer shortcut method is no longer needed. When an ipa file is shared in this way, LiveContainer will ask if you want to install it in LiveContainer or in the built-in SideStore (if installed) (#1357)\n\n## Multitasking\n\n- Added per-app multitask preferences. Each app can now follow the global setting, always launch in multitask mode, or avoid multitask mode. (#1208)\n- Improved multitask dock behavior: the dock can be made smaller, hidden more cleanly, and has improved padding. (#1228, #1250)\n- Added more multitask window animations and improved native-window scene handling.\n- URL schemes and `open-url` payloads can be passed to already-running multitask apps and native windows.\n\n## JIT\n- Added StosDebug support as a JIT enabler.\n\n## TweakLoader\nYou can now disable tweaks in the \"Tweaks\" page in LiveContainer's UI. by @SAOMDVN\n\n# Improvements\n- Added support for manually setting a container's IDFV. (#1194)\n- IDFV spoofing works even when Tweakloader is not loaded.\n- Reworked signing logic for tweaks and app installation, with multithreaded signing support.\n- Download alerts now block tab switching while a download is in progress.\n- Crash reports are shown in a sheet instead of a large alert for better performance on newer iOS versions.\n- Add a \"Clear Notification\" button (#1388)\n- Added some popular NSBonjourServices keys so apps can discover AirPlay devices and remote pairing pairable hosts in the local network. (#1417)\n\n# Bug Fixes\n\n- Fixed `livecontainer://open-url` dropping the deep link when launching an app from a cold start. (#1339)\n- Fixed the Add to Home Screen menu failing or behaving incorrectly by replacing the SwiftUI context menu implementation. (#1209)\n- Fixed a crash when opening Container Preferences if the app did not contain an `en.lproj` path. (#1239)\n- Fixed apps and AltStore sources not being searchable in some cases. (#1365, #1368)\n- Fixed converting a shared app back to private after aborting an install with the same bundle identifier, which could leave stale container state behind. (#1347)\n- Fixed shortcuts and JIT flows getting stuck on a busy LiveContainer instance instead of using another available instance. (#1386)\n- Fixed file picker not workings for some apps because Tweakloader is not loaded after enabling \"Hide LiveContainer from dyld API\". (#1430)\n- Fixed several app launch compatibility issues on iOS 26.5 beta, and some multitask/JIT app launches. (#1300, #1310, #1329)\n- Fixed multitask keyboard focus issues on iOS 17.4+, including cases where the keyboard would not appear, Passwords would immediately close, or video playback would freeze in multitask mode. (#1402, #844, #870)\n- Added support for iOS 27 developer beta. (#1394, #1417, #1416)\n- Fix background downloads in multitask apps (choosing \"Keep App Extensions (Register App ID for Each Extension)\" is required). (#1415)\n\n# Localization\n\n- Updated translations. Added Spanish translation by @Deci8BelioS\n\n# Credits\n\nThanks to everyone who contributed code, fixes, testing, and reports for this release, including @boa-z, @ruri1208, @Project516, @yazdipour, @stossy11, and @SAOMDVN.\n\nGreat thanks to everyone who helped translate LiveContainer.",
+          "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
+          "size": 4707271,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/LiveContainer/LiveContainer/releases/tag/3.8.0",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "LiveContainer+SideStore.ipa",
+              "downloadUrl": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer%2BSideStore.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 35403538,
+              "sha256": "97dc0fd2202fd4460efcab389943b8d5fdbb4988efff76b116b92b84a4662425",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "LiveContainer.ipa",
+              "downloadUrl": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 4707271,
+              "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6"
+        }
+      ],
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups",
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit"
+        ],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "livecontainer",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/LiveContainer/LiveContainer",
+        "verification": {
+          "method": "github-release",
+          "publisher": "LiveContainer/LiveContainer",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official AGPL-3.0 releases. The plain LiveContainer.ipa is tracked; the LiveContainer+SideStore.ipa bundle in the same release is skipped. Multitasking needs iPadOS 16 or later, and installing guest apps needs AltStore 2.0+ / SideStore 0.6.0+."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-07-17"
+        }
+      }
+    }
+  ],
+  "news": []
+}

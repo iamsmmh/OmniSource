@@ -1,13 +1,37 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
-  "count": 16,
+  "count": 22,
   "totals": {
-    "apps": 16,
-    "reachable": 16,
+    "apps": 22,
+    "reachable": 22,
     "unreachable": 0
   },
   "apps": [
+    {
+      "appId": "aidoku",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-09-03"
+    },
+    {
+      "appId": "bhtwitter",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2025-05-13"
+    },
+    {
+      "appId": "feather",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-07-05"
+    },
     {
       "appId": "inkillerplus",
       "status": "active",
@@ -25,6 +49,14 @@
       "lastReleaseDate": "2026-07-19"
     },
     {
+      "appId": "livecontainer",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-07-17"
+    },
+    {
       "appId": "maxmusic",
       "status": "active",
       "downloadReachable": true,
@@ -39,6 +71,22 @@
       "detail": "HTTP 302",
       "metadataCompleteness": 1.0,
       "lastReleaseDate": "2026-08-03"
+    },
+    {
+      "appId": "provenance",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-03-14"
+    },
+    {
+      "appId": "sidestore",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-05-05"
     },
     {
       "appId": "spotiflac",

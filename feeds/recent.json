@@ -1,13 +1,19 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
-  "count": 16,
+  "count": 22,
   "apps": [
     {
       "appId": "spotiflac",
       "name": "SpotiFLAC Mobile",
       "version": "4.9.6",
       "releaseDate": "2026-09-07"
+    },
+    {
+      "appId": "aidoku",
+      "name": "Aidoku",
+      "version": "0.9",
+      "releaseDate": "2026-09-03"
     },
     {
       "appId": "ytmusic",
@@ -88,10 +94,40 @@
       "releaseDate": "2026-07-19"
     },
     {
+      "appId": "livecontainer",
+      "name": "LiveContainer",
+      "version": "3.8.0",
+      "releaseDate": "2026-07-17"
+    },
+    {
+      "appId": "feather",
+      "name": "Feather",
+      "version": "2.9.0",
+      "releaseDate": "2026-07-05"
+    },
+    {
+      "appId": "sidestore",
+      "name": "SideStore",
+      "version": "0.6.3",
+      "releaseDate": "2026-05-05"
+    },
+    {
+      "appId": "provenance",
+      "name": "Provenance",
+      "version": "3.3.0",
+      "releaseDate": "2026-03-14"
+    },
+    {
       "appId": "utm",
       "name": "UTM",
       "version": "4.7.5",
       "releaseDate": "2026-01-03T17:51:54Z"
+    },
+    {
+      "appId": "bhtwitter",
+      "name": "BHTwitter",
+      "version": "4.4",
+      "releaseDate": "2025-05-13"
     },
     {
       "appId": "winston",

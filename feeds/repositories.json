@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
-  "count": 12,
+  "count": 18,
   "repositories": [
     {
       "id": "altstore--https---repo-ikghd-me-repo-jso-e743df46",
@@ -21,6 +21,21 @@
       "health": {}
     },
     {
+      "id": "github--aidoku-aidoku-c877748b",
+      "name": "Aidoku/Aidoku",
+      "url": "https://github.com/Aidoku/Aidoku",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "applicationIds": [
+        "aidoku"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
+    {
       "id": "github--ashreq-ashstore-repo-861eb454",
       "name": "Ashreq/ashstore-repo",
       "url": "https://github.com/Mark02-2012/YTPlusM",
@@ -31,6 +46,36 @@
       "lastError": null,
       "applicationIds": [
         "maxtube"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
+    {
+      "id": "github--bandarhl-bhtwitter-0477c393",
+      "name": "BandarHL/BHTwitter",
+      "url": "https://github.com/BandarHL/BHTwitter",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "applicationIds": [
+        "bhtwitter"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
+    {
+      "id": "github--claration-feather-3f66d431",
+      "name": "claration/Feather",
+      "url": "https://github.com/claration/Feather",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "applicationIds": [
+        "feather"
       ],
       "retryCount": 0,
       "health": {}
@@ -61,6 +106,21 @@
       "lastError": null,
       "applicationIds": [
         "ytkace"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
+    {
+      "id": "github--livecontainer-livecontainer-49a98a9b",
+      "name": "LiveContainer/LiveContainer",
+      "url": "https://github.com/LiveContainer/LiveContainer",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "applicationIds": [
+        "livecontainer"
       ],
       "retryCount": 0,
       "health": {}
@@ -123,6 +183,36 @@
       "lastError": null,
       "applicationIds": [
         "ytmusic"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
+    {
+      "id": "github--provenance-emu-provenance-e153d4c6",
+      "name": "Provenance-Emu/Provenance",
+      "url": "https://github.com/Provenance-Emu/Provenance",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "applicationIds": [
+        "provenance"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
+    {
+      "id": "github--sidestore-sidestore-39ad530b",
+      "name": "SideStore/SideStore",
+      "url": "https://github.com/SideStore/SideStore",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "applicationIds": [
+        "sidestore"
       ],
       "retryCount": 0,
       "health": {}

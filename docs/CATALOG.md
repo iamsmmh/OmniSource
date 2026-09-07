@@ -22,6 +22,12 @@ who maintains it upstream, and how OmniSource obtains the build.
 | Winston | `winston` | `lo.cafe.winston` | [lo-cafe/winston](https://github.com/lo-cafe/winston) | Newest published release asset (`winston.ipa`) |
 | iTorrent | `itorrent` | `com.xitrix.iTorrent2` | [XITRIX/iTorrent](https://github.com/XITRIX/iTorrent) | Newest published release asset (`iTorrent.ipa`) |
 | StikDebug | `stikdebug` | `com.stik.stikdebug` | [StikDebug/StikDebug](https://github.com/StikDebug/StikDebug) | Newest published release asset (`StikDebug-<version>.ipa`) |
+| BHTwitter | `bhtwitter` | `com.atebits.Tweetie2` | [BandarHL/BHTwitter](https://github.com/BandarHL/BHTwitter) | Newest release asset ending in `-sideloaded.ipa` (the TrollStore `.tipa` is skipped) |
+| LiveContainer | `livecontainer` | `com.kdt.livecontainer` | [LiveContainer/LiveContainer](https://github.com/LiveContainer/LiveContainer) | Newest stable `LiveContainer.ipa` (the `+SideStore` bundle and the rolling `nightly` pre-release are skipped) |
+| Feather | `feather` | `thewonderofyou.Feather` | [claration/Feather](https://github.com/claration/Feather) | Newest published release asset (`Feather.ipa`) |
+| SideStore | `sidestore` | `com.SideStore.SideStore` | [SideStore/SideStore](https://github.com/SideStore/SideStore) | Newest stable release asset (`SideStore.ipa`); the `nightly`/`alpha` tags are pre-releases and are skipped |
+| Aidoku | `aidoku` | `app.aidoku.Aidoku` | [Aidoku/Aidoku](https://github.com/Aidoku/Aidoku) | Newest published release asset (`Aidoku.ipa`) |
+| Provenance | `provenance` | `org.provenance-emu.provenance` | [Provenance-Emu/Provenance](https://github.com/Provenance-Emu/Provenance) | Newest stable release asset ending in `-iOS.ipa` (tvOS build and the rolling `alpha` pre-release are skipped) |
 
 ## Status labels
 
@@ -89,6 +95,11 @@ the jailbreak `.deb` (or nothing at all) and a third party does the sideload bui
 If any of these projects starts publishing IPAs itself, switching is a one-line change to the
 `upstream` block in `catalog.json`.
 
+## Large downloads
+
+`provenance` ships every emulator core in one IPA, so the download is roughly 1 GB. Sign and install it
+over Wi-Fi, and expect on-device signing (Feather, SideStore, ESign) to take several minutes.
+
 ## Shared apps note
 
 Seven YouTube mods share the bundle identifier `com.google.ios.youtube`. iOS treats bundle IDs as
@@ -112,6 +123,12 @@ YTMusicUltimate cannot coexist.
 | Winston | [@lo-cafe](https://github.com/lo-cafe) ([@Kinark](https://github.com/Kinark)) |
 | iTorrent | [@XITRIX](https://github.com/XITRIX) |
 | StikDebug | [@StikDebug](https://github.com/StikDebug) ([@StephenDev0](https://github.com/StephenDev0)) |
+| BHTwitter | [@BandarHL](https://github.com/BandarHL) |
+| LiveContainer | [@khanhduytran0](https://github.com/khanhduytran0) and the LiveContainer team |
+| Feather | [@khcrysalis](https://github.com/khcrysalis) / Samara |
+| SideStore | [SideStore team](https://github.com/SideStore) |
+| Aidoku | [@Skittyblock](https://github.com/Skittyblock) |
+| Provenance | [Provenance-Emu team](https://github.com/Provenance-Emu) |
 
 OmniSource maintenance: [@iamsmmh](https://github.com/iamsmmh). Thanks to
 [@MountainofPenguin](https://github.com/MountainofPenguin), [@HakujouSan](https://github.com/HakujouSan)

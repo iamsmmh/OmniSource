@@ -59,7 +59,7 @@ Prefer a single app? Each app also publishes its own feed at
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-07 · 16 apps · 16/16 downloads reachable._
+_Catalogue last changed 2026-09-07 · 22 apps · 22/22 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -79,6 +79,12 @@ _Catalogue last changed 2026-09-07 · 16 apps · 16/16 downloads reachable._
 | **Winston** | `lo.cafe.winston` | `1.1.5` | 2024-06-24 | 🔴 unmaintained | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/winston.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/winston.json) | [`winston.json`](https://iamsmmh.github.io/OmniSource/winston.json) |
 | **iTorrent** | `com.xitrix.iTorrent2` | `2.2.0` | 2026-07-19 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/itorrent.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/itorrent.json) | [`itorrent.json`](https://iamsmmh.github.io/OmniSource/itorrent.json) |
 | **StikDebug** | `com.stik.stikdebug` | `3.1.10` | 2026-08-27 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/stikdebug.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/stikdebug.json) | [`stikdebug.json`](https://iamsmmh.github.io/OmniSource/stikdebug.json) |
+| **BHTwitter** | `com.atebits.Tweetie2` | `4.4` | 2025-05-13 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/bhtwitter.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/bhtwitter.json) | [`bhtwitter.json`](https://iamsmmh.github.io/OmniSource/bhtwitter.json) |
+| **LiveContainer** | `com.kdt.livecontainer` | `3.8.0` | 2026-07-17 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/livecontainer.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/livecontainer.json) | [`livecontainer.json`](https://iamsmmh.github.io/OmniSource/livecontainer.json) |
+| **Feather** | `thewonderofyou.Feather` | `2.9.0` | 2026-07-05 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feather.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feather.json) | [`feather.json`](https://iamsmmh.github.io/OmniSource/feather.json) |
+| **SideStore** | `com.SideStore.SideStore` | `0.6.3` | 2026-05-05 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/sidestore.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/sidestore.json) | [`sidestore.json`](https://iamsmmh.github.io/OmniSource/sidestore.json) |
+| **Aidoku** | `app.aidoku.Aidoku` | `0.9` | 2026-09-03 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/aidoku.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/aidoku.json) | [`aidoku.json`](https://iamsmmh.github.io/OmniSource/aidoku.json) |
+| **Provenance** | `org.provenance-emu.provenance` | `3.3.0` | 2026-03-14 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/provenance.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/provenance.json) | [`provenance.json`](https://iamsmmh.github.io/OmniSource/provenance.json) |
 
 <!-- omnisource:catalog:end -->
 

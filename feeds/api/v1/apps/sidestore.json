@@ -1,0 +1,119 @@
+{
+  "id": "sidestore",
+  "appId": "sidestore",
+  "name": "SideStore",
+  "developer": "SideStore Team",
+  "description": "SideStore is a fork of AltStore that signs and refreshes sideloaded apps directly on the device. After a one-time pairing-file setup it renews 7-day certificates in the background using your own Apple ID and an anisette server, so apps stop expiring while you are away from a computer. It installs apps from any AltStore-compatible source, keeps them updated, and can back up and restore app data.",
+  "shortDescription": "AltStore fork that refreshes apps without a computer",
+  "icon": "https://iamsmmh.github.io/OmniSource/assets/SideStore.png",
+  "screenshots": [
+    "https://apps.sidestore.io/apps/sidestore/v0.1.1/browse-dark.png",
+    "https://apps.sidestore.io/apps/sidestore/v0.1.1/apps-dark.png",
+    "https://apps.sidestore.io/apps/sidestore/v0.1.1/news-dark.png"
+  ],
+  "category": "utilities",
+  "categories": [
+    "utilities"
+  ],
+  "tags": [
+    "utilities"
+  ],
+  "repository": "https://github.com/SideStore/SideStore",
+  "repositoryUrl": "https://github.com/SideStore/SideStore",
+  "sourceType": "github",
+  "homepage": "https://github.com/SideStore/SideStore",
+  "documentation": null,
+  "license": null,
+  "platforms": [
+    "ios"
+  ],
+  "bundleId": "com.SideStore.SideStore",
+  "bundleIdentifier": "com.SideStore.SideStore",
+  "packageName": null,
+  "minimumIOSVersion": "15.0",
+  "minimumAndroidVersion": null,
+  "minimumOSVersion": "15.0",
+  "version": "0.6.3",
+  "buildNumber": null,
+  "releaseDate": "2026-05-05",
+  "changelog": "SideStore 0.6.3 | SideStore\n\n# ⚠️**Please Reinstall With [iloader](https://iloader.app/)**⚠️\nIf you have updated to iOS 26.4+ and are receiving VPN errors.\n## What's Changed\n* Small fixes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1020\n* Fix expired Discord link in README.md by @Or3nges in https://github.com/SideStore/SideStore/pull/1101\n* Update error codes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1078\n* LocalDevVPN by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1126\n* Sources: Update/Remove Sources from Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1131\n* Adds StikDebug AltSource by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1137\n* Update pairing file help link in alert by @basketshoe in https://github.com/SideStore/SideStore/pull/1147\n* Authentication rework by @hugeBlack in https://github.com/SideStore/SideStore/pull/1151\n* Update Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1152\n* Update trustedapps.json by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1153\n* Update Trusted Sources by @peroka-net in https://github.com/SideStore/SideStore/pull/1160\n* Feature: AppId customization during manual IPA install via \"My Apps\" screen by @mahee96 in https://github.com/SideStore/SideStore/pull/1158\n* Fix issues profile/afc and use main profile issue by @hugeBlack in https://github.com/SideStore/SideStore/pull/1183\n* feat: add Mona to Trusted Sources by @suprstarrd in https://github.com/SideStore/SideStore/pull/1210\n* Fix widget not working & Only run turn off data shortcut when minimuxer is not ready and below 26.4 by @hugeBlack in https://github.com/SideStore/SideStore/pull/1218\n* LC Source Update by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1253\n\n## New Contributors\n* @Or3nges made their first contribution in https://github.com/SideStore/SideStore/pull/1101\n* @basketshoe made their first contribution in https://github.com/SideStore/SideStore/pull/1147\n* @peroka-net made their first contribution in https://github.com/SideStore/SideStore/pull/1160\n* @suprstarrd made their first contribution in https://github.com/SideStore/SideStore/pull/1210\n\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.6.2...0.6.3",
+  "downloadUrl": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa",
+  "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
+  "size": 28632252,
+  "status": "active",
+  "lifecycleStatus": "active",
+  "legacyStatus": "stable",
+  "featured": false,
+  "verified": false,
+  "lastUpdated": "2026-09-07",
+  "latestVersion": "0.6.3",
+  "latestBuild": null,
+  "latestReleaseDate": "2026-05-05",
+  "latestReleaseNotes": "SideStore 0.6.3 | SideStore\n\n# ⚠️**Please Reinstall With [iloader](https://iloader.app/)**⚠️\nIf you have updated to iOS 26.4+ and are receiving VPN errors.\n## What's Changed\n* Small fixes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1020\n* Fix expired Discord link in README.md by @Or3nges in https://github.com/SideStore/SideStore/pull/1101\n* Update error codes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1078\n* LocalDevVPN by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1126\n* Sources: Update/Remove Sources from Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1131\n* Adds StikDebug AltSource by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1137\n* Update pairing file help link in alert by @basketshoe in https://github.com/SideStore/SideStore/pull/1147\n* Authentication rework by @hugeBlack in https://github.com/SideStore/SideStore/pull/1151\n* Update Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1152\n* Update trustedapps.json by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1153\n* Update Trusted Sources by @peroka-net in https://github.com/SideStore/SideStore/pull/1160\n* Feature: AppId customization during manual IPA install via \"My Apps\" screen by @mahee96 in https://github.com/SideStore/SideStore/pull/1158\n* Fix issues profile/afc and use main profile issue by @hugeBlack in https://github.com/SideStore/SideStore/pull/1183\n* feat: add Mona to Trusted Sources by @suprstarrd in https://github.com/SideStore/SideStore/pull/1210\n* Fix widget not working & Only run turn off data shortcut when minimuxer is not ready and below 26.4 by @hugeBlack in https://github.com/SideStore/SideStore/pull/1218\n* LC Source Update by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1253\n\n## New Contributors\n* @Or3nges made their first contribution in https://github.com/SideStore/SideStore/pull/1101\n* @basketshoe made their first contribution in https://github.com/SideStore/SideStore/pull/1147\n* @peroka-net made their first contribution in https://github.com/SideStore/SideStore/pull/1160\n* @suprstarrd made their first contribution in https://github.com/SideStore/SideStore/pull/1210\n\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.6.2...0.6.3",
+  "downloadAssets": [
+    {
+      "filename": "SideStore.ipa",
+      "downloadUrl": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa",
+      "platform": "ios",
+      "architecture": null,
+      "fileType": "IPA",
+      "size": 28632252,
+      "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
+      "mimeType": "application/octet-stream",
+      "installable": true
+    }
+  ],
+  "versions": [
+    {
+      "version": "0.6.3",
+      "build": null,
+      "releaseDate": "2026-05-05",
+      "releaseNotes": "SideStore 0.6.3 | SideStore\n\n# ⚠️**Please Reinstall With [iloader](https://iloader.app/)**⚠️\nIf you have updated to iOS 26.4+ and are receiving VPN errors.\n## What's Changed\n* Small fixes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1020\n* Fix expired Discord link in README.md by @Or3nges in https://github.com/SideStore/SideStore/pull/1101\n* Update error codes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1078\n* LocalDevVPN by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1126\n* Sources: Update/Remove Sources from Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1131\n* Adds StikDebug AltSource by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1137\n* Update pairing file help link in alert by @basketshoe in https://github.com/SideStore/SideStore/pull/1147\n* Authentication rework by @hugeBlack in https://github.com/SideStore/SideStore/pull/1151\n* Update Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1152\n* Update trustedapps.json by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1153\n* Update Trusted Sources by @peroka-net in https://github.com/SideStore/SideStore/pull/1160\n* Feature: AppId customization during manual IPA install via \"My Apps\" screen by @mahee96 in https://github.com/SideStore/SideStore/pull/1158\n* Fix issues profile/afc and use main profile issue by @hugeBlack in https://github.com/SideStore/SideStore/pull/1183\n* feat: add Mona to Trusted Sources by @suprstarrd in https://github.com/SideStore/SideStore/pull/1210\n* Fix widget not working & Only run turn off data shortcut when minimuxer is not ready and below 26.4 by @hugeBlack in https://github.com/SideStore/SideStore/pull/1218\n* LC Source Update by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1253\n\n## New Contributors\n* @Or3nges made their first contribution in https://github.com/SideStore/SideStore/pull/1101\n* @basketshoe made their first contribution in https://github.com/SideStore/SideStore/pull/1147\n* @peroka-net made their first contribution in https://github.com/SideStore/SideStore/pull/1160\n* @suprstarrd made their first contribution in https://github.com/SideStore/SideStore/pull/1210\n\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.6.2...0.6.3",
+      "releaseUrl": "https://github.com/SideStore/SideStore/releases/tag/0.6.3",
+      "assets": [
+        {
+          "filename": "SideStore.ipa",
+          "downloadUrl": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 28632252,
+          "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
+      ],
+      "source": "github",
+      "isPrerelease": false,
+      "isDraft": false,
+      "tag": null
+    }
+  ],
+  "fallbackDownloadUrls": [],
+  "health": {
+    "downloadReachable": true,
+    "downloadDetail": "HTTP 302",
+    "repositoryReachable": true,
+    "lastReleaseDate": "2026-05-05",
+    "daysSinceRelease": 125,
+    "releaseFrequencyDays": null,
+    "repositoryActivity": {
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07"
+    },
+    "brokenDownloadLinks": 0,
+    "metadataCompleteness": 1.0,
+    "integrityAvailable": true,
+    "integrityVerified": null,
+    "status": "active",
+    "signalsVersion": 1,
+    "statusSince": "2026-09-07"
+  },
+  "integrity": {
+    "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
+    "sha256Available": true,
+    "verified": null,
+    "trustStatement": "A digest match proves integrity of bytes, not application safety."
+  },
+  "aliases": []
+}

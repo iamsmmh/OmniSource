@@ -29,7 +29,7 @@
       "id": "feather",
       "name": "Feather",
       "icon": "Feather.png",
-      "url": "https://github.com/khcrysalis/Feather"
+      "url": "https://github.com/claration/Feather"
     },
     {
     "id": "esign",
@@ -40,7 +40,7 @@
       "id": "livecontainer",
       "name": "LiveContainer",
       "icon": "LiveContainer.png",
-      "url": "https://github.com/khanhduytran0/LiveContainer"
+      "url": "https://github.com/LiveContainer/LiveContainer"
     }
   ],
   "apps": [
@@ -1152,6 +1152,342 @@
         "keepVersions": 1,
         "descriptionTemplate": "StikDebug {version} | {label}",
         "minOSVersion": "17.4"
+      }
+    },
+    {
+      "slug": "bhtwitter",
+      "name": "BHTwitter",
+      "subtitle": "X (Twitter) with no ads, downloads and the chronological timeline",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "developerName": "BandarHL",
+      "category": "social",
+      "tintColor": "1D9BF0",
+      "icon": "X.png",
+      "localizedDescription": "BHTwitter is a long-running tweak for X (formerly Twitter), published as a ready-to-sideload IPA. It hides promoted posts and ads, restores the chronological timeline as the default, and lets you download videos, GIFs and images straight from a post. It also adds Face ID / Touch ID app lock, custom fonts, undo posting, inline translation, direct saving of profile pictures and headers, confirmation prompts for likes and reposts, and switches for hiding the tabs and UI elements you never use.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/1.png",
+        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/2.png",
+        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/3.png",
+        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/4.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/BandarHL/BHTwitter",
+      "verification": {
+        "method": "github-release",
+        "publisher": "BandarHL/BHTwitter",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official sideloaded build from BandarHL/BHTwitter. The release also ships a TrollStore .tipa, which OmniSource skips - only the -sideloaded.ipa is tracked. The bundled X app is whichever decrypted build the maintainer packaged for that tweak release."
+      },
+      "upstream": {
+        "repo": "BandarHL/BHTwitter",
+        "assetSuffixes": [
+          "-sideloaded.ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "BHTwitter {version} | {label}",
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "slug": "livecontainer",
+      "name": "LiveContainer",
+      "subtitle": "Run iOS apps without actually installing them",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer Team",
+      "category": "utilities",
+      "tintColor": "0784FC",
+      "icon": "LiveContainer.png",
+      "localizedDescription": "LiveContainer runs other iOS apps inside itself instead of installing them, so a single app slot on your certificate can host many sideloaded apps and you stop burning through the 3-app limit. When JIT is available it bypasses codesigning entirely; otherwise guest apps are signed with the same certificate as LiveContainer. It supports multiple data containers per app, tweak injection, adding guest apps to the Home Screen, and multitasking windows on iPadOS 16 and later.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/LiveContainer/LiveContainer",
+      "verification": {
+        "method": "github-release",
+        "publisher": "LiveContainer/LiveContainer",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups",
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit"
+        ],
+        "privacy": {}
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official AGPL-3.0 releases. The plain LiveContainer.ipa is tracked; the LiveContainer+SideStore.ipa bundle in the same release is skipped. Multitasking needs iPadOS 16 or later, and installing guest apps needs AltStore 2.0+ / SideStore 0.6.0+."
+      },
+      "upstream": {
+        "repo": "LiveContainer/LiveContainer",
+        "assetSuffixes": [
+          "LiveContainer.ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "LiveContainer {version} | {label}",
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "slug": "feather",
+      "name": "Feather",
+      "subtitle": "On-device app manager, signer and installer",
+      "bundleIdentifier": "thewonderofyou.Feather",
+      "developerName": "Samara",
+      "category": "utilities",
+      "tintColor": "848EF9",
+      "icon": "Feather.png",
+      "localizedDescription": "Feather is a free on-device iOS and iPadOS application manager built with UIKit. Import your own developer or enterprise certificate to sign and install IPAs directly from the device, add AltStore-compatible repositories to browse and update apps, keep a library of signed and imported apps, and tweak bundle identifiers, display names, icons and injected dylibs per app - no computer or AltServer required.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/claration/Feather/v1.x/Images/Library.png",
+        "https://raw.githubusercontent.com/claration/Feather/v1.x/Images/Repos.png",
+        "https://raw.githubusercontent.com/claration/Feather/v1.x/Images/Sign.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/claration/Feather",
+      "verification": {
+        "method": "github-release",
+        "publisher": "claration/Feather",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "appPermissions": {
+        "entitlements": [
+          "get-task-allow"
+        ],
+        "privacy": {}
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official GPL-3.0 releases from claration/Feather (formerly khcrysalis/Feather). You need your own signing certificate; Feather does not provide one."
+      },
+      "upstream": {
+        "repo": "claration/Feather",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "Feather {version} | {label}",
+        "minOSVersion": "16.0"
+      }
+    },
+    {
+      "slug": "sidestore",
+      "name": "SideStore",
+      "subtitle": "AltStore fork that refreshes apps without a computer",
+      "bundleIdentifier": "com.SideStore.SideStore",
+      "developerName": "SideStore Team",
+      "category": "utilities",
+      "tintColor": "A405FA",
+      "icon": "SideStore.png",
+      "localizedDescription": "SideStore is a fork of AltStore that signs and refreshes sideloaded apps directly on the device. After a one-time pairing-file setup it renews 7-day certificates in the background using your own Apple ID and an anisette server, so apps stop expiring while you are away from a computer. It installs apps from any AltStore-compatible source, keeps them updated, and can back up and restore app data.",
+      "screenshots": [
+        "https://apps.sidestore.io/apps/sidestore/v0.1.1/browse-dark.png",
+        "https://apps.sidestore.io/apps/sidestore/v0.1.1/apps-dark.png",
+        "https://apps.sidestore.io/apps/sidestore/v0.1.1/news-dark.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/SideStore/SideStore",
+      "verification": {
+        "method": "github-release",
+        "publisher": "SideStore/SideStore",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.security.application-groups",
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.developer.kernel.increased-debugging-memory-limit"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "SideStore can use local network access to discover Bonjour (mDNS) services on your network. This is not required for core functionality."
+        }
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official AGPL-3.0 stable releases; the rolling nightly and alpha tags are pre-releases and are not tracked. Requires a pairing file and, on iOS 17+, a JIT/StikDebug-style enabler for some features."
+      },
+      "upstream": {
+        "repo": "SideStore/SideStore",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "SideStore {version} | {label}",
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "slug": "aidoku",
+      "name": "Aidoku",
+      "subtitle": "Free and open-source manga reader",
+      "bundleIdentifier": "app.aidoku.Aidoku",
+      "developerName": "Skitty",
+      "category": "other",
+      "tintColor": "FF375F",
+      "icon": "Aidoku.png",
+      "localizedDescription": "Aidoku is a free and open-source manga reader for iOS and iPadOS with no ads and no tracking. Content comes from community-maintained source lists that you add yourself, so nothing is bundled with the app. It downloads chapters for offline reading, syncs library, history and settings through iCloud, supports external trackers, and offers paged, vertical and continuous reading modes with customisable layouts.",
+      "screenshots": [
+        "https://aidoku.app/images/library.png",
+        "https://aidoku.app/images/source.png",
+        "https://aidoku.app/images/reader.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Aidoku/Aidoku",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Aidoku/Aidoku",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official releases from Aidoku/Aidoku. Sources are added by the user; the app ships none."
+      },
+      "upstream": {
+        "repo": "Aidoku/Aidoku",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "Aidoku {version} | {label}",
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "slug": "provenance",
+      "name": "Provenance",
+      "subtitle": "Multi-system retro game emulator",
+      "bundleIdentifier": "org.provenance-emu.provenance",
+      "developerName": "Provenance Emu",
+      "category": "games",
+      "tintColor": "1D67F0",
+      "icon": "Provenance.png",
+      "localizedDescription": "Provenance is a multi-emulator front-end covering Atari, Bandai, NEC, Nintendo, Sega, SNK and Sony systems from a single library. It handles save states, cheats, MFi and native game controllers, Metal-based scaling filters, per-core settings, and imports your own ROMs and BIOS files through the Files app, iCloud or its built-in web uploader.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Provenance-Emu/Provenance",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Provenance-Emu/Provenance",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "17.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official stable releases; the rolling alpha tag is a pre-release and is not tracked. The iOS IPA is around 1 GB because every emulator core is bundled, and the tvOS build is skipped. Provenance ships no games - you supply your own ROMs."
+      },
+      "upstream": {
+        "repo": "Provenance-Emu/Provenance",
+        "assetSuffixes": [
+          "-iOS.ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "Provenance {version} | {label}",
+        "minOSVersion": "17.0"
       }
     }
   ]

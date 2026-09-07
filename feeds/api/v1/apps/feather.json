@@ -1,0 +1,141 @@
+{
+  "id": "feather",
+  "appId": "feather",
+  "name": "Feather",
+  "developer": "Samara",
+  "description": "Feather is a free on-device iOS and iPadOS application manager built with UIKit. Import your own developer or enterprise certificate to sign and install IPAs directly from the device, add AltStore-compatible repositories to browse and update apps, keep a library of signed and imported apps, and tweak bundle identifiers, display names, icons and injected dylibs per app - no computer or AltServer required.",
+  "shortDescription": "On-device app manager, signer and installer",
+  "icon": "https://iamsmmh.github.io/OmniSource/assets/Feather.png",
+  "screenshots": [
+    "https://raw.githubusercontent.com/claration/Feather/v1.x/Images/Library.png",
+    "https://raw.githubusercontent.com/claration/Feather/v1.x/Images/Repos.png",
+    "https://raw.githubusercontent.com/claration/Feather/v1.x/Images/Sign.png"
+  ],
+  "category": "utilities",
+  "categories": [
+    "utilities"
+  ],
+  "tags": [
+    "utilities"
+  ],
+  "repository": "https://github.com/claration/Feather",
+  "repositoryUrl": "https://github.com/claration/Feather",
+  "sourceType": "github",
+  "homepage": "https://github.com/claration/Feather",
+  "documentation": null,
+  "license": null,
+  "platforms": [
+    "ios"
+  ],
+  "bundleId": "thewonderofyou.Feather",
+  "bundleIdentifier": "thewonderofyou.Feather",
+  "packageName": null,
+  "minimumIOSVersion": "16.0",
+  "minimumAndroidVersion": null,
+  "minimumOSVersion": "16.0",
+  "version": "2.9.0",
+  "buildNumber": null,
+  "releaseDate": "2026-07-05",
+  "changelog": "Feather 2.9.0 | Feather\n\nThank you for all your feedback and contributions!\n\n> [!TIP]\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\n\n## What's Changed\n* Added tweak options in default signing options.\n* Added ability to search for identifier's in Library @ismailcarlik in https://github.com/claration/Feather/pull/652\n* Fixed issue in the file enumeration logic, by using the path property instead of method.\n* Fixed credit links.\n* Fixed duplicate repository in recommended repositories.\n\n## New Contributors\n* @xiangfeidexiaohuo made their first contribution in https://github.com/claration/Feather/pull/634\n* @osageling made their first contribution in https://github.com/claration/Feather/pull/642\n\n**Full Changelog**: https://github.com/claration/Feather/compare/v2.8.2...v2.9.0",
+  "downloadUrl": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa",
+  "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
+  "size": 14241853,
+  "status": "active",
+  "lifecycleStatus": "active",
+  "legacyStatus": "stable",
+  "featured": false,
+  "verified": false,
+  "lastUpdated": "2026-09-07",
+  "latestVersion": "2.9.0",
+  "latestBuild": null,
+  "latestReleaseDate": "2026-07-05",
+  "latestReleaseNotes": "Feather 2.9.0 | Feather\n\nThank you for all your feedback and contributions!\n\n> [!TIP]\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\n\n## What's Changed\n* Added tweak options in default signing options.\n* Added ability to search for identifier's in Library @ismailcarlik in https://github.com/claration/Feather/pull/652\n* Fixed issue in the file enumeration logic, by using the path property instead of method.\n* Fixed credit links.\n* Fixed duplicate repository in recommended repositories.\n\n## New Contributors\n* @xiangfeidexiaohuo made their first contribution in https://github.com/claration/Feather/pull/634\n* @osageling made their first contribution in https://github.com/claration/Feather/pull/642\n\n**Full Changelog**: https://github.com/claration/Feather/compare/v2.8.2...v2.9.0",
+  "downloadAssets": [
+    {
+      "filename": "Feather.ipa",
+      "downloadUrl": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa",
+      "platform": "ios",
+      "architecture": null,
+      "fileType": "IPA",
+      "size": 14241853,
+      "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
+      "mimeType": "application/octet-stream",
+      "installable": true
+    },
+    {
+      "filename": "Feather_Catalyst.zip",
+      "downloadUrl": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather_Catalyst.zip",
+      "platform": "unknown",
+      "architecture": null,
+      "fileType": "ZIP",
+      "size": 22801338,
+      "sha256": "618ae6eb1304b8154319f62d5acb7a841c3332ce775065ef7d60f1747deddff7",
+      "mimeType": "application/zip",
+      "installable": false
+    }
+  ],
+  "versions": [
+    {
+      "version": "2.9.0",
+      "build": null,
+      "releaseDate": "2026-07-05",
+      "releaseNotes": "Feather 2.9.0 | Feather\n\nThank you for all your feedback and contributions!\n\n> [!TIP]\n> For `idevice` configuration, you can use [Impactor](https://github.com/claration/Impactor?tab=readme-ov-file#pairing-file) for easily retrieving a pairing file for installing!\n\n## What's Changed\n* Added tweak options in default signing options.\n* Added ability to search for identifier's in Library @ismailcarlik in https://github.com/claration/Feather/pull/652\n* Fixed issue in the file enumeration logic, by using the path property instead of method.\n* Fixed credit links.\n* Fixed duplicate repository in recommended repositories.\n\n## New Contributors\n* @xiangfeidexiaohuo made their first contribution in https://github.com/claration/Feather/pull/634\n* @osageling made their first contribution in https://github.com/claration/Feather/pull/642\n\n**Full Changelog**: https://github.com/claration/Feather/compare/v2.8.2...v2.9.0",
+      "releaseUrl": "https://github.com/claration/Feather/releases/tag/v2.9.0",
+      "assets": [
+        {
+          "filename": "Feather.ipa",
+          "downloadUrl": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 14241853,
+          "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
+          "mimeType": "application/octet-stream",
+          "installable": true
+        },
+        {
+          "filename": "Feather_Catalyst.zip",
+          "downloadUrl": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather_Catalyst.zip",
+          "platform": "unknown",
+          "architecture": null,
+          "fileType": "ZIP",
+          "size": 22801338,
+          "sha256": "618ae6eb1304b8154319f62d5acb7a841c3332ce775065ef7d60f1747deddff7",
+          "mimeType": "application/zip",
+          "installable": false
+        }
+      ],
+      "source": "github",
+      "isPrerelease": false,
+      "isDraft": false,
+      "tag": null
+    }
+  ],
+  "fallbackDownloadUrls": [],
+  "health": {
+    "downloadReachable": true,
+    "downloadDetail": "HTTP 302",
+    "repositoryReachable": true,
+    "lastReleaseDate": "2026-07-05",
+    "daysSinceRelease": 64,
+    "releaseFrequencyDays": null,
+    "repositoryActivity": {
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07"
+    },
+    "brokenDownloadLinks": 0,
+    "metadataCompleteness": 1.0,
+    "integrityAvailable": true,
+    "integrityVerified": null,
+    "status": "active",
+    "signalsVersion": 1,
+    "statusSince": "2026-09-07"
+  },
+  "integrity": {
+    "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
+    "sha256Available": true,
+    "verified": null,
+    "trustStatement": "A digest match proves integrity of bytes, not application safety."
+  },
+  "aliases": []
+}

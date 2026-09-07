@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
-  "count": 6,
+  "count": 8,
   "categories": [
     {
       "id": "developer-tools",
@@ -9,6 +9,14 @@
       "appCount": 1,
       "apps": [
         "stikdebug"
+      ]
+    },
+    {
+      "id": "games",
+      "name": "Games",
+      "appCount": 1,
+      "apps": [
+        "provenance"
       ]
     },
     {
@@ -29,6 +37,14 @@
       ]
     },
     {
+      "id": "other",
+      "name": "Other",
+      "appCount": 1,
+      "apps": [
+        "aidoku"
+      ]
+    },
+    {
       "id": "photo-video",
       "name": "Photo & Video",
       "appCount": 7,
@@ -45,8 +61,9 @@
     {
       "id": "social",
       "name": "Social",
-      "appCount": 3,
+      "appCount": 4,
       "apps": [
+        "bhtwitter",
         "inkillerplus",
         "ttkillerplus",
         "winston"
@@ -55,8 +72,11 @@
     {
       "id": "utilities",
       "name": "Utilities",
-      "appCount": 2,
+      "appCount": 5,
       "apps": [
+        "feather",
+        "livecontainer",
+        "sidestore",
         "spotiflac",
         "utm"
       ]
