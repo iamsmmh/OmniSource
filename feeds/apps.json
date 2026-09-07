@@ -406,8 +406,8 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "not probed",
-          "statusSince": "2026-09-01",
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-01"
         }
       }
@@ -707,7 +707,7 @@
         "health": {
           "downloadReachable": true,
           "detail": "HTTP 302",
-          "statusSince": "2026-09-02",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-01"
         }
       }
@@ -825,7 +825,7 @@
         "health": {
           "downloadReachable": true,
           "detail": "HTTP 302",
-          "statusSince": "2026-09-02",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-08-03"
         }
       }
@@ -1108,7 +1108,7 @@
         "health": {
           "downloadReachable": true,
           "detail": "HTTP 302",
-          "statusSince": "2026-09-01",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-07"
         }
       }
@@ -1292,8 +1292,8 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "not probed",
-          "statusSince": "2026-09-01",
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-01"
         }
       }
@@ -1482,7 +1482,7 @@
         "health": {
           "downloadReachable": true,
           "detail": "HTTP 302",
-          "statusSince": "2026-09-02",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-01-03T17:51:54Z"
         }
       }
@@ -1582,7 +1582,7 @@
         "health": {
           "downloadReachable": true,
           "detail": "HTTP 302",
-          "statusSince": "2026-09-03",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-08-22"
         }
       }
@@ -1762,7 +1762,7 @@
         "health": {
           "downloadReachable": true,
           "detail": "HTTP 302",
-          "statusSince": "2026-09-01",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-08-30"
         }
       }
@@ -1865,7 +1865,7 @@
         "health": {
           "downloadReachable": true,
           "detail": "HTTP 302",
-          "statusSince": "2026-09-01",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-08-16"
         }
       }
@@ -2020,7 +2020,7 @@
         "health": {
           "downloadReachable": true,
           "detail": "HTTP 302",
-          "statusSince": "2026-09-01",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-01"
         }
       }
@@ -2048,20 +2048,6 @@
           "size": 134278975,
           "minOSVersion": "17.0",
           "releaseUrl": "https://github.com/itzzace/ytkace/releases/tag/v0.9.2",
-      "version": "21.36.6",
-      "versionDate": "2026-09-07",
-      "versionDescription": "YouTube 21.36.6 | YTKACE_21.36.6_0.9.2\n\n### Latest Release, ENJOY!!\n#### A new free YouTube enhancer for iOS with downloads, iSponsorBlock, player controls, and interface customization.\n> [!NOTE]\n> - [Altstore source](https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json) is available now!.\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - [v0.9.2 release notes](https://github.com/itzzace/ytkace/releases/tag/v0.9.2)\n> - removed gonerino due to bug.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!IMPORTANT]\n> - make sure you reapply tweak by pressing ✔ again after every sideload so background play/pip and cast work. \n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa1/YTKACE_21.36.6_0.9.2.ipa",
-      "size": 129499459,
-      "versions": [
-        {
-          "version": "21.36.6",
-          "date": "2026-09-07",
-          "localizedDescription": "YouTube 21.36.6 | YTKACE_21.36.6_0.9.2\n\n### Latest Release, ENJOY!!\n#### A new free YouTube enhancer for iOS with downloads, iSponsorBlock, player controls, and interface customization.\n> [!NOTE]\n> - [Altstore source](https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json) is available now!.\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - [v0.9.2 release notes](https://github.com/itzzace/ytkace/releases/tag/v0.9.2)\n> - removed gonerino due to bug.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!IMPORTANT]\n> - make sure you reapply tweak by pressing ✔ again after every sideload so background play/pip and cast work. \n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa1/YTKACE_21.36.6_0.9.2.ipa",
-          "size": 129499459,
-          "minOSVersion": "16.0",
-          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytkace-ipa1",
           "source": "github",
           "isPrerelease": false,
           "isDraft": false,
@@ -2107,19 +2093,11 @@
               "fileType": "IPA",
               "size": 132496316,
               "sha256": "261c9df7d96c0691cbe198d04bcfbca4e8ce1ccf081b022a6c064a0d0f500575",
-              "filename": "YTKACE_21.36.6_0.9.2.ipa",
-              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa1/YTKACE_21.36.6_0.9.2.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 129499459,
-              "sha256": "53fde3005e432be33c18bd98b8ebbdd425afa14ae8078c33f0c548b02d923749",
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "ca8579d26a89d6b00009df92aa55d08571b0ceca7632eccbb5903c51e803adbd"
-          "sha256": "53fde3005e432be33c18bd98b8ebbdd425afa14ae8078c33f0c548b02d923749"
         }
       ],
       "screenshotURLs": [],
@@ -2180,7 +2158,6 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-08-31"
-          "lastUpdatedAt": "2026-09-07"
         }
       }
     },
@@ -2195,14 +2172,14 @@
       "category": "photo-video",
       "version": "21.35.3",
       "versionDate": "2026-09-01",
-      "versionDescription": "YouTube 21.35.3 | YouTube_21.35_YTKillerPlus_6.5\n\n• v21.34 requires iOS 17 and later now\n• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases\n• Fix save posted gif image saving only first frame in some cases\n• Fix save posted image when multiple imge in a post first image not saved correctly\n• Fix tabs Icon.\n• Fix and improve audio languages select.\n• Updated iPA to newer YouTube v21.34.6.\n• Add POST tab to tab bar.\n• Improve localization & add missing languages.\n• Improve ad blocking on main Feed.\n• Improve Lyrics API speed & accuracy.\n• Improve MP3 audio handling.\n• Improve backup & restore.\n• Improve media extension importing.\n• Improve Shorts auto-skip.\n• Improve Shorts multiple-post handling.\n• Fix OLED keyboard issue on iOS 27.\n• Other fixes & cleanup.\n• Updated iPA to YouTube v21.35",
+      "versionDescription": "YouTube 21.35.3 | YouTube_21.35_YTKillerPlus_6.5\n\n• v21.34 requires iOS 17 and later now\n• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases\n• Fix save posted gif image saving only first frame in some cases\n• Fix save posted image when multiple imge in a post first image not saved correctly\n• Fix tabs Icon.\n• Fix and improve audio languages select.\n• Updated iPA to newer YouTube v21.34.6.\n• Add POST tab to tab bar.\n• Improve localization &amp; add missing languages.\n• Improve ad blocking on main Feed.\n• Improve Lyrics API speed & accuracy.\n• Improve MP3 audio handling.\n• Improve backup & restore.\n• Improve media extension importing.\n• Improve Shorts auto-skip.\n• Improve Shorts multiple-post handling.\n• Fix OLED keyboard issue on iOS 27.\n• Other fixes & cleanup.\n• Updated iPA to YouTube v21.35",
       "downloadURL": "https://ikghd.site/ipa/YouTube_21.35_YTKillerPlus_6.5.ipa",
       "size": 140645854,
       "versions": [
         {
           "version": "21.35.3",
           "date": "2026-09-01",
-          "localizedDescription": "YouTube 21.35.3 | YouTube_21.35_YTKillerPlus_6.5\n\n• v21.34 requires iOS 17 and later now\n• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases\n• Fix save posted gif image saving only first frame in some cases\n• Fix save posted image when multiple imge in a post first image not saved correctly\n• Fix tabs Icon.\n• Fix and improve audio languages select.\n• Updated iPA to newer YouTube v21.34.6.\n• Add POST tab to tab bar.\n• Improve localization & add missing languages.\n• Improve ad blocking on main Feed.\n• Improve Lyrics API speed & accuracy.\n• Improve MP3 audio handling.\n• Improve backup & restore.\n• Improve media extension importing.\n• Improve Shorts auto-skip.\n• Improve Shorts multiple-post handling.\n• Fix OLED keyboard issue on iOS 27.\n• Other fixes & cleanup.\n• Updated iPA to YouTube v21.35",
+          "localizedDescription": "YouTube 21.35.3 | YouTube_21.35_YTKillerPlus_6.5\n\n• v21.34 requires iOS 17 and later now\n• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases\n• Fix save posted gif image saving only first frame in some cases\n• Fix save posted image when multiple imge in a post first image not saved correctly\n• Fix tabs Icon.\n• Fix and improve audio languages select.\n• Updated iPA to newer YouTube v21.34.6.\n• Add POST tab to tab bar.\n• Improve localization &amp; add missing languages.\n• Improve ad blocking on main Feed.\n• Improve Lyrics API speed & accuracy.\n• Improve MP3 audio handling.\n• Improve backup & restore.\n• Improve media extension importing.\n• Improve Shorts auto-skip.\n• Improve Shorts multiple-post handling.\n• Fix OLED keyboard issue on iOS 27.\n• Other fixes & cleanup.\n• Updated iPA to YouTube v21.35",
           "downloadURL": "https://ikghd.site/ipa/YouTube_21.35_YTKillerPlus_6.5.ipa",
           "size": 140645854,
           "minOSVersion": "17.0",
@@ -2286,8 +2263,8 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "not probed",
-          "statusSince": "2026-09-01",
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-01"
         }
       }
@@ -2381,7 +2358,7 @@
         "health": {
           "downloadReachable": true,
           "detail": "HTTP 302",
-          "statusSince": "2026-09-01",
+          "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-01"
         }
       }

@@ -154,6 +154,7 @@
     }
   },
   "inkillerplus": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "445.0.0",
@@ -181,8 +182,12 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-08",
-    "retryCount": 0
+    "syncedAt": "2026-09-07",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 200",
+      "since": "2026-09-07"
+    }
   },
   "itorrent": {
     "retryCount": 0,
@@ -292,6 +297,7 @@
     }
   },
   "maxmusic": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "9.35.2",
@@ -320,15 +326,15 @@
         "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727"
       }
     ],
-    "syncedAt": "2026-09-03",
+    "syncedAt": "2026-09-07",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "since": "2026-09-02"
-    },
-    "retryCount": 0
+      "since": "2026-09-07"
+    }
   },
   "maxtube": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "21.31.3",
@@ -368,13 +374,12 @@
         "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f"
       }
     ],
-    "syncedAt": "2026-09-03",
+    "syncedAt": "2026-09-07",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "since": "2026-09-02"
-    },
-    "retryCount": 0
+      "since": "2026-09-07"
+    }
   },
   "provenance": {
     "retryCount": 0,
@@ -446,6 +451,20 @@
       "lastError": null,
       "retryCount": 0
     },
+    "altstore::https://repo.ikghd.me/repo.json": {
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "retryCount": 0
+    },
+    "github::itzzace/ytkace": {
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "retryCount": 0
+    },
     "github::Ashreq/ashstore-repo": {
       "enabled": true,
       "lastSync": "2026-09-07",
@@ -468,13 +487,6 @@
       "retryCount": 0
     },
     "github::utmapp/UTM": {
-      "enabled": true,
-      "lastSync": "2026-09-07",
-      "lastSuccess": "2026-09-07",
-      "lastError": null,
-      "retryCount": 0
-    },
-    "github::itzzace/ytkace": {
       "enabled": true,
       "lastSync": "2026-09-07",
       "lastSuccess": "2026-09-07",
@@ -583,6 +595,7 @@
     }
   },
   "spotiflac": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "4.9.6",
@@ -637,9 +650,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "since": "2026-09-01"
-    },
-    "retryCount": 0
+      "since": "2026-09-07"
+    }
   },
   "stikdebug": {
     "retryCount": 0,
@@ -679,6 +691,7 @@
     }
   },
   "ttkillerplus": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "46.7.0",
@@ -706,29 +719,23 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-08",
-    "retryCount": 0
+    "syncedAt": "2026-09-07",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 200",
+      "since": "2026-09-07"
+    }
   },
   "updateHistory": [
-    {
-      "appId": "ytkace",
-      "name": "YTKACE",
-      "version": "21.36.6",
-      "previousVersion": "21.35.3",
-      "releaseDate": "2026-09-07",
-      "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa1/YTKACE_21.36.6_0.9.2.ipa",
-      "changelog": "YouTube 21.36.6 | YTKACE_21.36.6_0.9.2\n\n### Latest Release, ENJOY!!\n#### A new free YouTube enhancer for iOS with downloads, iSponsorBlock, player controls, and interface customization.\n> [!NOTE]\n> - [Altstore source](https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json) is available now!.\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - [v0.9.2 release notes](https://github.com/itzzace/ytkace/releases/tag/v0.9.2)\n> - removed gonerino due to bug.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!IMPORTANT]\n> - make sure you reapply tweak by pressing ✔ again after every sideload so background play/pip and cast work. \n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
-      "kind": "updated"
-    },
     {
       "appId": "spotiflac",
       "name": "SpotiFLAC Mobile",
       "version": "4.9.6",
-      "previousVersion": "4.9.5",
+      "previousVersion": null,
       "releaseDate": "2026-09-07",
       "downloadUrl": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.6/SpotiFLAC-v4.9.6-ios-unsigned.ipa",
       "changelog": "SpotiFLAC 4.9.6 | SpotiFLAC-v4.9.6-ios-unsigned\n\n### New Features\n\n- **about**: Show compiled short Git commit\n- **metadata**: Add safe batch editing and matching\n- **library**: Add bulk duplicate cleanup\n\n### Bug Fixes\n\n- **metadata**: Preserve track tags across collection screens\n- **replaygain**: Report decoder failures and reject incomplete scans\n- **memory**: Release retired runtimes and idle download heap\n- **download**: Resolve missing album folders before publishing\n- **metadata**: Read quality from Opus in MP4 containers\n- **download**: Remove legacy HIGH quality conversion\n- **download**: Preserve native containers before legacy quality conversion\n- **download**: Publish converted SAF files with the final extension\n- **download**: Size quality picker to its content\n- **download**: Allow dragging the quality picker to dismiss\n- **library**: Retain Opus badges when bitrate is missing\n- **download**: Estimate sizes from track quality metadata\n- **download**: Compare size estimates at each quality tier\n- **replaygain**: Write and verify native Opus gain tags\n- **metadata**: Match recording IDs across inconsistent catalogs\n- **metadata**: Normalize artist credits and preserve recording versions\n- **altstore**: Match source bundle ID to released IPA\n- **download**: Prepare fallback sessions before availability checks\n- **metadata**: Preserve Opus tags during batch re-enrichment\n- Restore SAF metadata fallback and preserve active transfers\n- **download**: Preserve verification provider during fallback\n- Resolve backend and test analyzer diagnostics\n- **download**: Route verification notifications to pending challenges\n- **extensions**: Preserve verification on availability errors\n- **extensions**: Bound stream resolution without timing out active transfers\n- **download**: Preserve audio quality across provider fallback\n- **lyrics**: Align usability checks with shared fixtures\n- **library**: Bound playlist picker SQL parameters\n- **playback**: Retain ReplayGain for SAF descriptor leases\n- **android**: Scope SAF read failures to each descriptor\n- **ios**: Isolate download progress subscriptions\n- **metadata**: Preserve Track fields during enrichment\n- **conversion**: Reserve FLAC outputs without overwriting files\n- **search**: Let latest live queries supersede cancelled requests\n- **auth**: Preserve shared signed-session challenge identity\n- **ui**: Resolve collapsed header title overlap\n- **ui**: Improve adaptive phone and tablet layouts\n- **cover**: Preserve provider high-resolution artwork\n- **extensions**: Shorten verification timeout\n- **audio**: Preserve Opus codec in M4A scans\n- **extensions**: Preserve verification callback retries\n- **conversion**: Preserve Unicode SAF document names\n\n### Performance\n\n- **ui**: Retain platform link lookup across rebuilds\n- **ui**: Retain track history lookup snapshots\n- **metadata**: Read complete SAF tags through descriptors\n- **mp3**: Share bounded ID3 metadata and cover reads\n- **library**: Page missing-file cleanup with safe SAF batch checks\n- **extensions**: Clone only the requested storage value\n- **artwork**: Batch and throttle cached preview validation\n- **library**: Reuse collection lookups across selection rebuilds\n- **search**: Decode large extension results off the UI isolate\n- **library**: Stream normalized scan timestamp snapshots\n- **cache**: Enforce cover byte budget during foreground use\n- **queue**: Apply sparse progress updates with chunked snapshots\n- **images**: Size decoded covers from layout constraints\n\n### Refactoring\n\n- **i18n**: Share supported language choices\n- **batch**: Share local track actions and phase settings\n- **ffmpeg**: Remove unused live DASH subsystem\n\n### Documentation\n\n- **changelog**: Document version 4.9.6\n\n### Styling\n\n- **dart**: Apply pinned formatter to existing files\n\n### Testing\n\n- Decouple app fixtures from extension identities\n\n### Chores\n\n- **release**: Bump app version to 4.9.6\n- **ios**: Reuse backend build script without duplicate framework setup\n- Update AltStore source to v4.9.5 by [@github-actions[bot]](https://github.com/github-actions[bot])\n\n### Build\n\n- **ios**: Require iOS 16 and restore local builds\n\n### Revert\n\n- Remove download size estimates\n\n\n\n\n**Full Changelog**: [v4.9.5...v4.9.6](https://github.com/spotiflacapp/SpotiFLAC-Mobile/compare/v4.9.5...v4.9.6)\n\n---\n\n### Downloads\n\n#### Android\n- **arm64**: `SpotiFLAC-v4.9.6-arm64.apk` (recommended for modern devices)\n- **arm32**: `SpotiFLAC-v4.9.6-arm32.apk` (older devices)\n\n#### iOS\n- **iOS**: `SpotiFLAC-v4.9.6-ios-unsigned.ipa` (sideload required)\n\n### Installation\n**Android**: Enable \"Install from unknown sources\" and install the APK\n**iOS**: Use AltStore, Sideloadly, or similar tools to sideload the IPA",
-      "kind": "updated"
+      "kind": "new"
     },
     {
       "appId": "aidoku",
@@ -741,14 +748,84 @@
       "kind": "new"
     },
     {
+      "appId": "ytmusic",
+      "name": "YTMusicUltimate",
+      "version": "9.35.2",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa",
+      "changelog": "YTMusicUltimate 9.35.2 | YTMusic 2.4.1 | YTMusicUltimate_9.35.2_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
+      "kind": "new"
+    },
+    {
+      "appId": "ytlite",
+      "name": "YouTubePlus",
+      "version": "21.24.3",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa4/YouTubePlus_21.24.3_5.2.2.ipa",
+      "changelog": "YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - :key: no subscription required\n> - ✅ Working Download Manager, switch to overlay button before downloading.\n> - 🎥 Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - 🔧 Updated YouPiP and Gonerino. \n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.",
+      "kind": "new"
+    },
+    {
+      "appId": "ytkp",
+      "name": "YTKillerPlus",
+      "version": "21.35.3",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://ikghd.site/ipa/YouTube_21.35_YTKillerPlus_6.5.ipa",
+      "changelog": "YouTube 21.35.3 | YouTube_21.35_YTKillerPlus_6.5\n\n• v21.34 requires iOS 17 and later now\n• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases\n• Fix save posted gif image saving only first frame in some cases\n• Fix save posted image when multiple imge in a post first image not saved correctly\n• Fix tabs Icon.\n• Fix and improve audio languages select.\n• Updated iPA to newer YouTube v21.34.6.\n• Add POST tab to tab bar.\n• Improve localization &amp; add missing languages.\n• Improve ad blocking on main Feed.\n• Improve Lyrics API speed & accuracy.\n• Improve MP3 audio handling.\n• Improve backup & restore.\n• Improve media extension importing.\n• Improve Shorts auto-skip.\n• Improve Shorts multiple-post handling.\n• Fix OLED keyboard issue on iOS 27.\n• Other fixes & cleanup.\n• Updated iPA to YouTube v21.35",
+      "kind": "new"
+    },
+    {
+      "appId": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "version": "46.7.0",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://ikghd.site/ipa/TikTok_46.7_TTKillerPlus_2.1.ipa",
+      "changelog": "TikTok 46.7.0 | TikTok_46.7_TTKillerPlus_2.1\n\n• Add v46.0+ compatibility.\n• Fix like confirmation bypass on double tap.\n• Fix post date display format.\n• Fix settings localization & toggles.\n• Fix flag button not tappable.\n• Other fixes & improvements.\n• Update base IPA to TikTok v46.7",
+      "kind": "new"
+    },
+    {
+      "appId": "maxmusic",
+      "name": "MaxMusic",
+      "version": "9.35.2",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://github.com/Mark02-2012/YTMUltimatePLUS/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
+      "changelog": "MaxMusic 9.35.2 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.35.2\n\n**Changed**\nName of my fork\nYTMusic version",
+      "kind": "new"
+    },
+    {
+      "appId": "inkillerplus",
+      "name": "iNKillerPlus",
+      "version": "445.0.0",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
+      "changelog": "Instagram 445.0.0 | Instagram_445.0_iNKillerPlus_5.2\n\n• Fix profile bio long press to copy detect email and links\n• Fix read DM icon\n• Fix user exception for direct message\n• Add roothide & relaxin JB support\n• Add full compatibility with IG v440+\n• Add tab configuration for hide & launch\n• Fix swipe between tabs\n• Fix story mention button crashes on v440+\n• Fix story download button\n• Fix eye long-press user exception on v440+\n• Fix follow confirmation toggle\n• Fix long-press profile picture expand & download\n• Fix grid button in main navbar\n• Fix 2x2 grid handling in 3x3 position style\n• Fix photo picker with music on multiple posts for iOS 27 Liquid Glass\n• Other fixes & improvements\n• Updated base IPA to Instagram v445.0",
+      "kind": "new"
+    },
+    {
       "appId": "ytkace",
       "name": "YTKACE",
       "version": "21.35.3",
-      "previousVersion": "21.35.3",
+      "previousVersion": null,
       "releaseDate": "2026-08-31",
       "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
       "changelog": "YouTube 21.35.3 | YTKACE 0.9.2 | YTKACE_0.9.2_YouTube_21.35.3\n\nby @itzzace0\n\nWhat’s new:\n• Updated for YouTube 21.35.3\n• Added a save button to community post images, saved at full resolution\n• Added Posts to the tab bar, so it can be shown as a tab or set as the startup tab\n• Added a choice of where downloads are saved, between the YTKACE library, Photos, or asking each time\n• Added a custom hold speed with a slider from 0.25x to 5x, and the speed pill now shows the speed you set\n• Added a toggle to remove the ⋯ button from the action bar\n• Added a toggle to remove the row of buttons under the progress bar in fullscreen\n• Added a toggle to limit gestures to landscape only\n\nFixed:\n• Fixed the app freezing while saving large videos to Photos\n• Fixed tapping an image in the comments opening the share sheet\n• Fixed a crash when rotating the player\n• Fixed a crash when leaving the app while a message was on screen\n\nYouTube 21.35.3 requires iOS 17, so there are two IPAs:\n• `YTKACE_0.9.2_YouTube_21.35.3.ipa` for iOS 17 and newer\n• `YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa` for iOS 16",
-      "kind": "updated"
+      "kind": "new"
+    },
+    {
+      "appId": "youmod",
+      "name": "YouMod",
+      "version": "21.35.3",
+      "previousVersion": null,
+      "releaseDate": "2026-08-30",
+      "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa5/YouMod_21.35.3_2.0.0.ipa",
+      "changelog": "YouTube 21.35.3 | YouMod_21.35.3_2.0.0\n\n### Latest Release, ENJOY!!\n\n> [!NOTE]\n> - no YTUHD. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - [v2.0.0 release notes](https://github.com/Tonwalter888/YouMod/releases/tag/v2.0.0)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+      "kind": "new"
     },
     {
       "appId": "stikdebug",
@@ -758,6 +835,36 @@
       "releaseDate": "2026-08-27",
       "downloadUrl": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
       "changelog": "StikDebug 3.1.10 | StikDebug-3.1.10\n\n**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.1.9...3.1.10",
+      "kind": "new"
+    },
+    {
+      "appId": "uyouenhanced",
+      "name": "uYouEnhanced",
+      "version": "21.14.4",
+      "previousVersion": null,
+      "releaseDate": "2026-08-22",
+      "downloadUrl": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+      "changelog": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
+      "kind": "new"
+    },
+    {
+      "appId": "youpro",
+      "name": "YouPro",
+      "version": "21.24.3",
+      "previousVersion": null,
+      "releaseDate": "2026-08-16",
+      "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa",
+      "changelog": "YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1\n\n### Latest Stable Release, ENJOY!!\n> [!NOTE]\n> - Bundled with **YTUHD**\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`\n\n> [!WARNING]\n> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.",
+      "kind": "new"
+    },
+    {
+      "appId": "maxtube",
+      "name": "MaxTube",
+      "version": "21.31.3",
+      "previousVersion": null,
+      "releaseDate": "2026-08-03",
+      "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+      "changelog": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
       "kind": "new"
     },
     {
@@ -811,6 +918,16 @@
       "kind": "new"
     },
     {
+      "appId": "utm",
+      "name": "UTM",
+      "version": "4.7.5",
+      "previousVersion": null,
+      "releaseDate": "2026-01-03T17:51:54Z",
+      "downloadUrl": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa",
+      "changelog": "UTM 4.7.5 | Universal IPA\n\n## Highlights\n* **QEMU v10.0.2**: The backend has been updated to the latest upstream QEMU which brings with it a variety of bug fixes and performance improvements.\n* **Liquid Glass**: UTM adopts the Liquid Glass design on *OS 26.\n* **App Intents**: New support for automation with Shortcuts.\n* **Keyboard Shortcuts**: Define custom key combinations (such as Ctrl+Alt+Del) that can be sent to the VM from the new Keyboard menu.\n* **Improved Wizard**: Simplify the creation of emulated machines by selecting from a list of well-supported configurations. The updated wizard can create more working configurations such as RISC-V64 Ubuntu, classic Mac OS 8.x/9.x, and Windows 95/98.\n\n## Changes (v4.7.5)\n* Fixed some rare conditions that could lead to a VM fail to start and spin infinitely\n* Fixed some rare crashes that can happen after a VM stops\n* Fixed parsing of file paths with commas in the name (thanks @nikolan123)\n* ANGLE: Fixed a memory leak issue in the GLES backend (#7546) (thanks @cnnn)\n* ANGLE: Fixed a memory leak issue in the Metal backend (#4958)\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (macOS) Fixed App Intents on macOS 26 (#7412) (thanks @peterneutron)\n* (macOS) Fixed an error when file locking is disabled and a removable drive with no image selected is started (#7527)\n* (macOS) AVF: Fixed shared directory disconnecting when window is resized (#7488) (thanks @evan314159)\n* Hotfix: (1/3/25) An earlier release of v4.7.5 has an issue that prevented VMs from starting. Make sure you are on build 118.\n\n## Changes (v4.7.4)\n* (macOS) Fixed a crash on VM start when a toolbar menu was reinitialized (note v4.7.4 was re-released to address this) (#7408)\n* Home: Fixed layout issue with button titles\n* (macOS) Fixed a crash when VM exits while USB is active\n* (iOS) Support for StikDebug on iOS 26 (non-SE only)\n\n## Changes (v4.7.3)\n* Fixed a crash when starting a VM results in a block device error\n* Stop button can now be used a second time to force kill a VM if it is unresponsive after stopping for the first time\n* libusb: Fixed multiple race conditions that caused crashes when using USB capture\n* CocoaSpice: Fixed multiple race conditions that caused crashes during VM start\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (macOS) Scripting: Fixed broken commands due to name collision (#7360)\n* (macOS) Fixed crash when exiting full screen (#7377)\n\n## Changes (v4.7.2)\n* (macOS) AVF: Fixed a crash when starting any Apple Virtualization VM (#7355) (We are re-releasing v4.7.2 with build 112 due to this critical bug.)\n* Home: Display network details and active IP addresses on the home details screen (thanks @gabefair)\n* Home: Show a security warning message when importing a .utm with custom arguments (#6252)\n* Config: Option to reset UEFI without pre-loading Secure Boot keys (useful for custom TPM configurations) (#7005)\n* Config: Pre-loading Secure Boot keys will now install Microsoft UEFI 2023 certificates (#7257)\n* Config: When PS/2 device is enabled, no longer create USB mouse and keyboard devices. This allows older Windows install to work out of the box.\n* Config: Quotes in custom arguments are no longer stripped (unless the only quotes wrap the entire argument) (#6343)\n* Config: Provide a fixed serial number for VirtIO block devices (#7332)\n* QEMU: Fixed an issue which causes Windows 98 to BSoD (#7342)\n* QEMU: Do not create a default floppy drive when -nodefaults is used. UTM configuration will set up a FDC device and this is the only way to set up bootindex for floppy.\n* Wizard: Legacy Windows configurations will now use PS/2 controller by default\n* Wizard: Update OS logos to be consistent with other icons\n* Wizard: Windows + i440fx hardware will now instantiate default devices (sound, VGA, networking) that should work with Windows 95/98\n* Wizard: Add additional supported hardware configurations for running older Windows\n* Wizard: Support floppy boot for Windows configuration\n* Scripting: New input automation suite for sending keyboard and mouse input (#6462)\n* USB: Fixed a rare crash when initializing the USB devices list (#5811)\n* SPICE: Fixed an issue where monitor configuration sent to spice-vdagent contains an invalid size (#5832)\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (iOS) Toolbar: Fix foreground issue on iOS 26 beta 5 and higher\n* (macOS) Added ability to auto-connect USB devices on start (#3400)\n* (macOS) Fixed connecting USB devices from secondary windows\n* (macOS) New \"Virtual Machine\" menu which mirrors the actions accessible through the toolbar\n* (macOS) Keyboard Shortcuts toolbar icon is no longer shown by default (it can be placed on the toolbar through View -> Customize Toolbar). It is also accessible through the \"Virtual Machine\" menu.\n* (macOS) Fixed sending simultaneous mouse button presses (#7068)\n* (macOS) utmctl: Add `version` command to detect current UTM version\n* (macOS) Settings: New option to disable key swapping on ISO keyboards (#6976)\n* (macOS) Settings: New option to randomize network MAC addresses on clone (#7035)\n\n## Changes (v4.7.1)\n* New Liquid Glass icon thanks to @forcequitOS\n* Added App Intents for VM operations (#6245)\n* Added UEFI boot support for RISC-V64 and LoongArch64. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* QEMU PPC: Disable `bootindex` when `boot-device` is used in prom-env. This allows Yellow Dog Linux for PPC to work out of the box. (#6436)\n* QEMU x86_64: Fixed floppy boot order configuration for other PC models (isapc, i440fx) (#7166)\n* QEMU PPC/M68K: Includes classicvirtio drivers to support cursor input without capture and directory sharing (#6520)\n* QEMU M68K: Fixed virtio drive config (#7008)\n* Fixed a rare crash after stopping VM due to a race condition in libusb\n* Home: improve screenshot contrast in Dark Mode (#6894)\n* Config: Fixed a crash when trying to enter a large size value when creating a new drive (#7295)\n* Config: Corrected the default host IP address in port forwarding config to \"0.0.0.0\" when it incorrectly displayed \"127.0.0.1\" (#7132)\n* Keyboard Shortcuts: Create custom combinations of keyboard shortcuts from either Settings -> Input or via the Keyboard icon in the VM (press and hold on iOS/visionOS). This will allow you to easily send key commands such as Ctrl+Alt+Del or Stop+A to the VM. (#5698, #6310, #6757)\n* Wizard: New option to import an existing drive image when setting up a Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* Wizard: New option to create a serial port only Linux VM. This allows Ubuntu for RISC-V64 to work out of the box. (#7183)\n* Wizard: Removed VHDX import option because Microsoft now provides ARM64 ISO images. Note: You can still create manually import an VHDX after creating a new VM.\n* Wizard: New template to create classic Mac OS VMs for M68K and PPC (#3504, #6890)\n* Wizard: Most common and supported machines for emulation are now listed prominently with the full list of supported QEMU architectures/targets hidden behind an \"Expert\" mode. This is necessary because most of the QEMU targets are not properly supported by the wizard anyways and does not generate a bootable config. They usually require a lot more manual tinkering. The page order of the wizard is also tweaked so the hardware config comes before the boot config now.\n* Localization: Updated Chinese (Hong Kong, Simplified) (thanks @changanmoon)\n* (iOS SE) Fixed a crash when launching ArchLinux due to mis-handling of REV32\n* (iOS SE) Fixed a crash when the first instruction executed is a goto\n* (iOS SE) Removed ARM32, RISC-V32, and added M68K. There is little use for ARM32 and RISC-V32 as they cannot boot anything useful that cannot also be booted by the 64-bit variant (which is still included). If you have a counter example of this, please open an issue on GitHub and we can consider re-adding it back in the future. However, removing these will …",
+      "kind": "new"
+    },
+    {
       "appId": "bhtwitter",
       "name": "BHTwitter",
       "version": "4.4",
@@ -832,6 +949,7 @@
     }
   ],
   "utm": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "4.7.5",
@@ -948,15 +1066,15 @@
         "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101"
       }
     ],
-    "syncedAt": "2026-09-03",
+    "syncedAt": "2026-09-07",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "since": "2026-09-02"
-    },
-    "retryCount": 0
+      "since": "2026-09-07"
+    }
   },
   "uyouenhanced": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "21.14.4",
@@ -970,12 +1088,11 @@
         "minOSVersion": "16.0"
       }
     ],
-    "syncedAt": "2026-09-02",
-    "retryCount": 0,
+    "syncedAt": "2026-09-07",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "since": "2026-09-03"
+      "since": "2026-09-07"
     }
   },
   "winston": {
@@ -1015,6 +1132,7 @@
     }
   },
   "youmod": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "21.35.3",
@@ -1043,15 +1161,15 @@
         "sha256": "368bba97a2235bb88488c56e502968a4870ee281e9f4ef5906793c3416f4e6b6"
       }
     ],
-    "syncedAt": "2026-09-03",
+    "syncedAt": "2026-09-07",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "since": "2026-09-01"
-    },
-    "retryCount": 0
+      "since": "2026-09-07"
+    }
   },
   "youpro": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "21.24.3",
@@ -1080,15 +1198,15 @@
         "sha256": "1989f0505d9f25246f1a3f5f02c31577ec83b0c48e153a6108bc2623e200623e"
       }
     ],
-    "syncedAt": "2026-09-03",
+    "syncedAt": "2026-09-07",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "since": "2026-09-01"
-    },
-    "retryCount": 0
+      "since": "2026-09-07"
+    }
   },
   "ytkace": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "21.35.3",
@@ -1098,13 +1216,6 @@
         "size": 134278975,
         "minOSVersion": "17.0",
         "releaseUrl": "https://github.com/itzzace/ytkace/releases/tag/v0.9.2",
-        "version": "21.36.6",
-        "date": "2026-09-07",
-        "localizedDescription": "YouTube 21.36.6 | YTKACE_21.36.6_0.9.2\n\n### Latest Release, ENJOY!!\n#### A new free YouTube enhancer for iOS with downloads, iSponsorBlock, player controls, and interface customization.\n> [!NOTE]\n> - [Altstore source](https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json) is available now!.\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - [v0.9.2 release notes](https://github.com/itzzace/ytkace/releases/tag/v0.9.2)\n> - removed gonerino due to bug.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!IMPORTANT]\n> - make sure you reapply tweak by pressing ✔ again after every sideload so background play/pip and cast work. \n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
-        "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa1/YTKACE_21.36.6_0.9.2.ipa",
-        "size": 129499459,
-        "minOSVersion": "16.0",
-        "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytkace-ipa1",
         "source": "github",
         "isPrerelease": false,
         "isDraft": false,
@@ -1150,19 +1261,11 @@
             "fileType": "IPA",
             "size": 132496316,
             "sha256": "261c9df7d96c0691cbe198d04bcfbca4e8ce1ccf081b022a6c064a0d0f500575",
-            "filename": "YTKACE_21.36.6_0.9.2.ipa",
-            "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa1/YTKACE_21.36.6_0.9.2.ipa",
-            "platform": "ios",
-            "architecture": null,
-            "fileType": "IPA",
-            "size": 129499459,
-            "sha256": "53fde3005e432be33c18bd98b8ebbdd425afa14ae8078c33f0c548b02d923749",
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "ca8579d26a89d6b00009df92aa55d08571b0ceca7632eccbb5903c51e803adbd"
-        "sha256": "53fde3005e432be33c18bd98b8ebbdd425afa14ae8078c33f0c548b02d923749"
       }
     ],
     "syncedAt": "2026-09-07",
@@ -1170,15 +1273,15 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07"
-    },
-    "retryCount": 0
+    }
   },
   "ytkp": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "21.35.3",
         "date": "2026-09-01",
-        "localizedDescription": "YouTube 21.35.3 | YouTube_21.35_YTKillerPlus_6.5\n\n• v21.34 requires iOS 17 and later now\n• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases\n• Fix save posted gif image saving only first frame in some cases\n• Fix save posted image when multiple imge in a post first image not saved correctly\n• Fix tabs Icon.\n• Fix and improve audio languages select.\n• Updated iPA to newer YouTube v21.34.6.\n• Add POST tab to tab bar.\n• Improve localization & add missing languages.\n• Improve ad blocking on main Feed.\n• Improve Lyrics API speed & accuracy.\n• Improve MP3 audio handling.\n• Improve backup & restore.\n• Improve media extension importing.\n• Improve Shorts auto-skip.\n• Improve Shorts multiple-post handling.\n• Fix OLED keyboard issue on iOS 27.\n• Other fixes & cleanup.\n• Updated iPA to YouTube v21.35",
+        "localizedDescription": "YouTube 21.35.3 | YouTube_21.35_YTKillerPlus_6.5\n\n• v21.34 requires iOS 17 and later now\n• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases\n• Fix save posted gif image saving only first frame in some cases\n• Fix save posted image when multiple imge in a post first image not saved correctly\n• Fix tabs Icon.\n• Fix and improve audio languages select.\n• Updated iPA to newer YouTube v21.34.6.\n• Add POST tab to tab bar.\n• Improve localization &amp; add missing languages.\n• Improve ad blocking on main Feed.\n• Improve Lyrics API speed & accuracy.\n• Improve MP3 audio handling.\n• Improve backup & restore.\n• Improve media extension importing.\n• Improve Shorts auto-skip.\n• Improve Shorts multiple-post handling.\n• Fix OLED keyboard issue on iOS 27.\n• Other fixes & cleanup.\n• Updated iPA to YouTube v21.35",
         "downloadURL": "https://ikghd.site/ipa/YouTube_21.35_YTKillerPlus_6.5.ipa",
         "size": 140645854,
         "minOSVersion": "17.0",
@@ -1201,10 +1304,15 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-08",
-    "retryCount": 0
+    "syncedAt": "2026-09-07",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 200",
+      "since": "2026-09-07"
+    }
   },
   "ytlite": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "21.24.3",
@@ -1285,15 +1393,15 @@
         "sha256": "3bd8ac2bfbcfeb59b05c4901f08a5e51cab3d34cf873a0eec218a0206f7304eb"
       }
     ],
-    "syncedAt": "2026-09-03",
+    "syncedAt": "2026-09-07",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "since": "2026-09-01"
-    },
-    "retryCount": 0
+      "since": "2026-09-07"
+    }
   },
   "ytmusic": {
+    "retryCount": 0,
     "versions": [
       {
         "version": "9.35.2",
@@ -1322,12 +1430,11 @@
         "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a"
       }
     ],
-    "syncedAt": "2026-09-03",
+    "syncedAt": "2026-09-07",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "since": "2026-09-01"
-    },
-    "retryCount": 0
+      "since": "2026-09-07"
+    }
   }
 }

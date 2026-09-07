@@ -48,7 +48,7 @@
   "legacyStatus": "stable",
   "featured": false,
   "verified": false,
-  "lastUpdated": "2026-09-08",
+  "lastUpdated": "2026-09-07",
   "latestVersion": "46.7.0",
   "latestBuild": null,
   "latestReleaseDate": "2026-09-01",
@@ -95,21 +95,22 @@
   "fallbackDownloadUrls": [],
   "health": {
     "downloadReachable": true,
-    "downloadDetail": "not probed",
+    "downloadDetail": "HTTP 200",
     "repositoryReachable": true,
     "lastReleaseDate": "2026-09-01",
     "daysSinceRelease": 6,
     "releaseFrequencyDays": null,
     "repositoryActivity": {
-      "lastSync": null,
-      "lastSuccess": null
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07"
     },
     "brokenDownloadLinks": 0,
     "metadataCompleteness": 1.0,
     "integrityAvailable": false,
     "integrityVerified": null,
     "status": "active",
-    "signalsVersion": 1
+    "signalsVersion": 1,
+    "statusSince": "2026-09-07"
   },
   "integrity": {
     "sha256": null,
