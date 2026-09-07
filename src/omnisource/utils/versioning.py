@@ -79,8 +79,11 @@ class Version:
         if self.semver and other.semver:
             if self.numbers != other.numbers:
                 return self.numbers < other.numbers
+            if not self.prerelease and not other.prerelease:
+                return False
+            # Stable releases are higher than pre-releases of the same version.
             if not self.prerelease:
-                return bool(other.prerelease)
+                return False
             if not other.prerelease:
                 return True
             for left, right in zip(self.prerelease, other.prerelease, strict=False):

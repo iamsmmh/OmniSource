@@ -3,41 +3,487 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OmniSource — iOS sideloading app source</title>
-  <meta name="description" content="A curated, automatically maintained AltStore-compatible iOS app source for AltStore, SideStore, Feather, ESign and LiveContainer.">
+  <title>OmniSource — Curated iOS Sideloading Source</title>
+  <meta name="description" content="A curated, automatically maintained AltStore-compatible iOS app source for AltStore, SideStore, Feather, ESign, and LiveContainer.">
+  <link rel="icon" type="image/png" href="assets/OmniSource.png">
   <style>
-    :root { color-scheme: light dark; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; max-width: 46rem; margin: 3rem auto; padding: 0 1rem; line-height: 1.6; }
-    code { background: rgba(127,127,127,.15); border-radius: 4px; padding: .1em .35em; overflow-wrap: anywhere; }
-    a { color: #5b5bd6; }
-    h1 { font-size: 1.8rem; }
-    hr { margin: 2rem 0; border: 0; border-top: 1px solid rgba(127,127,127,.3); }
+    :root {
+      --bg-primary: #0a0c10;
+      --bg-card: rgba(22, 27, 34, 0.75);
+      --bg-card-hover: rgba(30, 38, 48, 0.9);
+      --bg-input: #161b22;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-focus: #5b5bd6;
+      --text-primary: #f0f6fc;
+      --text-secondary: #8b949e;
+      --accent: #5b5bd6;
+      --accent-hover: #6e6ee8;
+      --accent-glow: rgba(91, 91, 214, 0.25);
+      --success: #2ea043;
+      --warning: #d29922;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-primary: #f6f8fa;
+        --bg-card: rgba(255, 255, 255, 0.85);
+        --bg-card-hover: #ffffff;
+        --bg-input: #ffffff;
+        --border-color: rgba(0, 0, 0, 0.08);
+        --text-primary: #1f2328;
+        --text-secondary: #656d76;
+        --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 1.25rem;
+      box-shadow: 0 8px 24px var(--accent-glow);
+      transition: transform 0.2s ease;
+    }
+    .logo:hover { transform: scale(1.05); }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #f0f6fc 30%, #5b5bd6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @media (prefers-color-scheme: light) {
+      h1 {
+        background: linear-gradient(135deg, #1f2328 30%, #5b5bd6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .url-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.5rem 0.75rem 0.5rem 1rem;
+      margin: 1.25rem 0;
+      gap: 0.5rem;
+    }
+
+    .url-text {
+      flex: 1;
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      overflow-x: auto;
+      white-space: nowrap;
+      text-align: left;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+
+    .actions-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .search-bar-wrap {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .search-input {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.8rem 1.25rem;
+      font-size: 1rem;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-input:focus {
+      border-color: var(--border-focus);
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .app-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    }
+    .app-card:hover {
+      transform: translateY(-2px);
+      background-color: var(--bg-card-hover);
+      box-shadow: var(--shadow);
+    }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .app-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      object-fit: cover;
+      background: #1e2430;
+      flex-shrink: 0;
+    }
+
+    .app-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .app-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .app-version {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      background: rgba(91, 91, 214, 0.15);
+      color: var(--accent-hover);
+    }
+    .badge-stable { background: rgba(46, 160, 67, 0.15); color: #3fb950; }
+
+    .app-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.5;
+    }
+
+    .app-footer {
+      display: flex;
+      gap: 0.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .app-footer .btn {
+      flex: 1;
+      padding: 0.45rem 0.65rem;
+      font-size: 0.82rem;
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1f2328;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+      z-index: 1000;
+      pointer-events: none;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
-  <h1>OmniSource</h1>
-  <p>A curated, automatically maintained <strong>iOS app source</strong> for sideloading clients:
-     AltStore, SideStore, Feather, ESign and LiveContainer. Every app entry is resolved from the
-     app’s own official upstream project and re-verified on a schedule.</p>
+  <div class="container">
+    <header>
+      <img src="assets/OmniSource.png" alt="OmniSource" class="logo">
+      <h1>OmniSource</h1>
+      <p class="tagline">A curated, automatically maintained AltStore-compatible iOS app source for AltStore, SideStore, Feather, ESign, and LiveContainer.</p>
+    </header>
 
-  <h2>Add the source</h2>
-  <p>Feed URL:</p>
-  <p><code>https://iamsmmh.github.io/OmniSource/apps.json</code></p>
-  <p>
-    <a href="altstore://source?url=https://iamsmmh.github.io/OmniSource/apps.json">Add to AltStore</a> ·
-    <a href="sidestore://source?url=https://iamsmmh.github.io/OmniSource/apps.json">Add to SideStore</a>
-  </p>
-  <p>Feather, ESign and LiveContainer have no deep link — open the client and paste the feed URL above.
-     Per-app feeds are published alongside the master feed, e.g.
-     <code>https://iamsmmh.github.io/OmniSource/feather.json</code>.</p>
+    <div class="hero-card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Subscribe to OmniSource</h2>
+      <p style="color: var(--text-secondary); font-size: 0.9rem;">Add the unified source URL directly to your favorite sideloading client:</p>
 
-  <h2>Source of record</h2>
-  <p>The catalog, automation, per-app feeds and installation notes live in the
-     <a href="https://github.com/iamsmmh/OmniSource">OmniSource GitHub repository</a> (see the README
-     for the generated app catalog).</p>
+      <div class="url-box">
+        <span class="url-text" id="sourceUrl">https://iamsmmh.github.io/OmniSource/apps.json</span>
+        <button class="btn btn-primary" onclick="copySourceUrl()">Copy URL</button>
+      </div>
 
-  <hr>
-  <p><small>OmniSource is an independent community project. All apps, code and trademarks belong to
-     their respective owners.</small></p>
+      <div class="actions-grid">
+        <a href="altstore://source?url=https://iamsmmh.github.io/OmniSource/apps.json" class="btn btn-secondary">
+          <span>Add to AltStore</span>
+        </a>
+        <a href="sidestore://source?url=https://iamsmmh.github.io/OmniSource/apps.json" class="btn btn-secondary">
+          <span>Add to SideStore</span>
+        </a>
+        <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <span>GitHub Repository</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <span>Curated Apps</span>
+      <span id="appCount" style="font-size: 0.9rem; color: var(--text-secondary); font-weight: normal;"></span>
+    </div>
+
+    <div class="search-bar-wrap">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search apps by name, bundle ID, or description..." oninput="filterApps()">
+    </div>
+
+    <div class="apps-grid" id="appsGrid">
+      <!-- Populated via JavaScript / Fallback -->
+    </div>
+
+    <footer>
+      <p>OmniSource is an open-source community distribution project. All apps, icons, and trademarks belong to their respective authors.</p>
+      <p style="margin-top: 0.4rem;">Automated with GitHub Actions · <a href="https://github.com/iamsmmh/OmniSource">View on GitHub</a></p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast">Source URL copied to clipboard!</div>
+
+  <script>
+    let allApps = [];
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    function copySourceUrl() {
+      const url = document.getElementById('sourceUrl').textContent;
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('Source URL copied to clipboard!');
+      }).catch(() => {
+        showToast('Failed to copy. Please copy manually.');
+      });
+    }
+
+    function copyAppFeed(slug) {
+      const url = `https://iamsmmh.github.io/OmniSource/${slug}.json`;
+      navigator.clipboard.writeText(url).then(() => {
+        showToast(`Feed URL for ${slug} copied!`);
+      }).catch(() => {
+        showToast('Failed to copy. Please copy manually.');
+      });
+    }
+
+    async function loadApps() {
+      try {
+        const res = await fetch('apps.json');
+        if (!res.ok) throw new Error('Network error');
+        const data = await res.json();
+        allApps = data.apps || [];
+        renderApps(allApps);
+      } catch (e) {
+        console.warn('Could not load apps.json dynamically, falling back to static catalog', e);
+      }
+    }
+
+    function renderApps(apps) {
+      const grid = document.getElementById('appsGrid');
+      const count = document.getElementById('appCount');
+      if (count) count.textContent = `${apps.length} app${apps.length === 1 ? '' : 's'}`;
+
+      if (apps.length === 0) {
+        grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 2rem;">No apps match your search.</p>';
+        return;
+      }
+
+      grid.innerHTML = apps.map(app => {
+        const slug = app.omnisource ? app.omnisource.slug : (app.bundleIdentifier || '').split('.').pop();
+        const icon = app.iconURL || 'assets/OmniSource.png';
+        const feedUrl = `https://iamsmmh.github.io/OmniSource/${slug}.json`;
+        const altUrl = `altstore://source?url=${encodeURIComponent(feedUrl)}`;
+        const sideUrl = `sidestore://source?url=${encodeURIComponent(feedUrl)}`;
+        const sizeMb = app.size ? (app.size / (1024 * 1024)).toFixed(1) + ' MB' : '';
+
+        return `
+          <div class="app-card">
+            <div class="app-header">
+              <img src="${icon}" alt="${app.name}" class="app-icon" loading="lazy">
+              <div class="app-info">
+                <div class="app-name">${app.name}</div>
+                <div class="app-version">
+                  <span>v${app.version || '1.0'}</span>
+                  ${sizeMb ? `<span>· ${sizeMb}</span>` : ''}
+                </div>
+              </div>
+            </div>
+            <p class="app-desc">${app.subtitle || app.localizedDescription || ''}</p>
+            <div class="app-footer">
+              <a href="${app.downloadURL}" class="btn btn-primary" download>IPA</a>
+              <a href="${altUrl}" class="btn btn-secondary" title="Add single app to AltStore">AltStore</a>
+              <a href="${sideUrl}" class="btn btn-secondary" title="Add single app to SideStore">SideStore</a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function filterApps() {
+      const q = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+      if (!q) {
+        renderApps(allApps);
+        return;
+      }
+      const filtered = allApps.filter(a => {
+        return (a.name || '').toLowerCase().includes(q) ||
+               (a.bundleIdentifier || '').toLowerCase().includes(q) ||
+               (a.subtitle || '').toLowerCase().includes(q) ||
+               (a.developerName || '').toLowerCase().includes(q);
+      });
+      renderApps(filtered);
+    }
+
+    loadApps();
+  </script>
 </body>
 </html>

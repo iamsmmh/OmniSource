@@ -2,7 +2,7 @@
   "name": "OmniSource - YTKillerPlus",
   "identifier": "com.iamsmmh.omnisource.ytkp",
   "apiVersion": "v2",
-  "subtitle": "YTKP",
+  "subtitle": "Advanced YouTube tweak with extensive controls",
   "description": "Standalone distribution feed for YTKillerPlus, curated within OmniSource.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
   "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
@@ -14,8 +14,8 @@
       "name": "YTKillerPlus",
       "bundleIdentifier": "com.google.ios.youtube",
       "developerName": "iKarwan",
-      "subtitle": "YTKP",
-      "localizedDescription": "YTKillerPlus mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "subtitle": "Advanced YouTube tweak with extensive controls",
+      "localizedDescription": "YTKillerPlus is an advanced feature-packed YouTube tweak by iKarwan. It offers comprehensive ad blocking, background playback, high-speed downloads, PiP, custom player actions, OLED dark theme, and granular privacy controls.",
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
       "tintColor": "FF0000",
       "category": "photo-video",
@@ -54,7 +54,11 @@
           ]
         }
       ],
-      "screenshotURLs": [],
+      "screenshotURLs": [
+        "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/1.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/2.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/3.PNG"
+      ],
       "appPermissions": {
         "entitlements": [
           "com.apple.security.application-groups",
@@ -112,7 +116,7 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "HTTP 200",
+          "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-01"
         }

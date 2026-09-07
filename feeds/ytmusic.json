@@ -2,7 +2,7 @@
   "name": "OmniSource - YTMusicUltimate",
   "identifier": "com.iamsmmh.omnisource.ytmusic",
   "apiVersion": "v2",
-  "subtitle": "YTMusicUltimate",
+  "subtitle": "Lightweight YouTube Music tweak",
   "description": "Standalone distribution feed for YTMusicUltimate, curated within OmniSource.",
   "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
   "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
@@ -14,8 +14,8 @@
       "name": "YTMusicUltimate",
       "bundleIdentifier": "com.google.ios.youtubemusic",
       "developerName": "dayanch96",
-      "subtitle": "YTMusicUltimate",
-      "localizedDescription": "YTMusicUltimate mod. Includes no ads, background playback, and more.",
+      "subtitle": "Lightweight YouTube Music tweak",
+      "localizedDescription": "YTMusicUltimate is a lightweight enhancer for YouTube Music by Dayanch96. It unlocks background audio playback, removes in-app advertisements, enables premium audio streaming quality, and provides customizable player themes.",
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTubeMusic.png",
       "tintColor": "FF0000",
       "category": "music",
@@ -98,7 +98,7 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "HTTP 302",
+          "detail": "HTTP 200",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-01"
         }
