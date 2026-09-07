@@ -90,6 +90,7 @@ catalog uses eight GitHub release-page requests before cache hits.
 | `provider` | `"github"` | `github`, `github-tags`, `gitlab`, `codeberg`, `forgejo`, `json-feed`, `altstore`, `feather` |
 | `host` | provider default | Forge origin for self-hosted GitLab/Forgejo |
 | `feedURL` | — | Required for `json-feed` / `altstore` / `feather` |
+| `appId` | — | Feed providers only: picks one app inside a multi-app source by id, bundle identifier or name |
 | `repo` | required for forges | `owner/name` of the repository holding releases |
 | `tagPrefix` | `""` | Only consider tags starting with this prefix |
 | `excludeTagPrefixes` | `[]` | Skip tags starting with any of these |

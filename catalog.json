@@ -338,7 +338,7 @@
       "name": "YTKillerPlus",
       "subtitle": "YTKP",
       "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "ikghd",
+      "developerName": "iKarwan",
       "category": "photo-video",
       "tintColor": "FF0000",
       "icon": "YouTube.png",
@@ -346,15 +346,15 @@
       "screenshots": [],
       "featured": false,
       "status": "stable",
-        "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
+      "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
       "verification": {
-        "method": "github-release",
-        "publisher": "mrdrvt99/YouProEXTRA",
+        "method": "altstore",
+        "publisher": "iKarwan (repo.ikghd.me)",
         "codeSigned": false,
         "checksumPublished": false
       },
       "compatibility": {
-        "minOSVersion": "16.0",
+        "minOSVersion": "17.0",
         "maxOSVersion": null,
         "devices": [
           "iphone",
@@ -367,7 +367,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": ""
+        "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me. YouTube 21.34+ requires iOS 17. The mrdrvt99/YouProEXTRA build stays configured as a mirror fallback."
       },
       "appPermissions": {
         "entitlements": [
@@ -395,14 +395,24 @@
         }
       },
       "upstream": {
-        "repo": "mrdrvt99/YouProEXTRA",
-        "tagPrefix": "ytkp-ipa",
-        "assetSuffixes": [
-          ".ipa"
-        ],
-        "maxPages": 10,
+        "provider": "altstore",
+        "feedURL": "https://repo.ikghd.me/repo.json",
+        "appId": "com.google.ios.youtube",
         "keepVersions": 1,
-        "descriptionTemplate": "YouTube {version} | {label}"
+        "versionFromTag": true,
+        "descriptionTemplate": "YouTube {version} | {label}",
+        "minOSVersion": "17.0"
+      },
+      "fallbackDownloadURLs": [
+        "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa"
+      ],
+      "manualRelease": {
+        "version": "21.35.3",
+        "date": "2026-08-30",
+        "localizedDescription": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\nMirror build kept as a fallback while the developer's own source (repo.ikghd.me) is unreachable.",
+        "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
+        "size": 141939462,
+        "minOSVersion": "17.0"
       }
     },
     {
@@ -832,6 +842,316 @@
         "descriptionTemplate": "{name} {version} | Universal IPA",
         "minOSVersion": "14.0",
         "isoDates": true
+      }
+    },
+    {
+      "slug": "inkillerplus",
+      "name": "iNKillerPlus",
+      "subtitle": "Instagram with downloads, ghost mode and no ads",
+      "bundleIdentifier": "com.burbn.instagram",
+      "developerName": "iKarwan",
+      "category": "social",
+      "tintColor": "E1306C",
+      "icon": "Instagram.png",
+      "localizedDescription": "iNKillerPlus is a modified Instagram by iKarwan. Download posts, reels, stories and DM media, save profile pictures, block promoted posts and ads, toggle seen/unseen for stories and DMs, ghost typing, hide tabs, copy comments and bios, confirmation prompts before liking or calling, and a profile analyzer. iPadOS supported.",
+      "screenshots": [
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/1.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/2.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/3.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/4.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/5.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/6.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/7.PNG"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/iKarwan/iNKillerPlus",
+      "verification": {
+        "method": "altstore",
+        "publisher": "iKarwan (repo.ikghd.me)",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.3",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.security.application-groups",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "keychain-access-groups",
+          "com.apple.developer.team-identifier"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Instagram uses your device's camera to do things like help you take photos, record videos and use effects.",
+          "NSMicrophoneUsageDescription": "Instagram uses your device's microphone to do things like help you record videos and preview audio effects.",
+          "NSPhotoLibraryUsageDescription": "Instagram uses access to your camera roll to do things like help you share photos and videos to Instagram, apply effects and suggest photos and videos to share.",
+          "NSPhotoLibraryAddUsageDescription": "This lets you save photos and videos to your Camera Roll.",
+          "NSContactsUsageDescription": "Instagram will use your contacts to suggest people and things you care about, and offer a better service.",
+          "NSFaceIDUsageDescription": "Enable Face ID for quick and secure authentication on Instagram.",
+          "NSLocationWhenInUseUsageDescription": "Instagram uses this to make some features work, personalize content and help people find places."
+        }
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://repo.ikghd.me/repo.json",
+        "appId": "com.burbn.instagram",
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "Instagram {version} | {label}",
+        "minOSVersion": "16.3"
+      },
+      "manualRelease": {
+        "version": "445.0.0",
+        "date": "2026-09-01",
+        "localizedDescription": "Instagram 445.0.0 | Instagram_445.0_iNKillerPlus_5.2\n\nLast build published on the developer's AltStore source before this snapshot.",
+        "downloadURL": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
+        "size": 247159162,
+        "minOSVersion": "16.3"
+      }
+    },
+    {
+      "slug": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "subtitle": "TikTok with downloads, no ads and region switch",
+      "bundleIdentifier": "com.zhiliaoapp.musically",
+      "developerName": "iKarwan",
+      "category": "social",
+      "tintColor": "232621",
+      "icon": "TikTok.png",
+      "localizedDescription": "TTKillerPlus is a modified TikTok by iKarwan. Download videos from the feed, stories and Explore, save photos and profile avatars, merge post photos with their music, block promoted posts and ads, toggle seen/unseen, hide tabs, browse the feed of a specific country, show country flags and post dates, and auto-like in live streams. iPadOS supported.",
+      "screenshots": [
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/1.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/2.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/3.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/4.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/5.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/6.PNG"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/iKarwan/TTKillerPlus",
+      "verification": {
+        "method": "altstore",
+        "publisher": "iKarwan (repo.ikghd.me)",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.security.application-groups",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "keychain-access-groups",
+          "com.apple.developer.team-identifier"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "You'll be able to record video.",
+          "NSContactsUsageDescription": "Sync your contacts to easily find people you know on TikTok.",
+          "NSCalendarsUsageDescription": "Add events to your device calendar to get reminders when events start.",
+          "NSFaceIDUsageDescription": "We'll use this to unlock features that require added security.",
+          "NSBluetoothAlwaysUsageDescription": "This will allow TikTok to find and connect to Bluetooth accessories."
+        }
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://repo.ikghd.me/repo.json",
+        "appId": "com.zhiliaoapp.musically",
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "TikTok {version} | {label}",
+        "minOSVersion": "15.1"
+      },
+      "manualRelease": {
+        "version": "46.7.0",
+        "date": "2026-09-01",
+        "localizedDescription": "TikTok 46.7.0 | TikTok_46.7_TTKillerPlus_2.1\n\nLast build published on the developer's AltStore source before this snapshot.",
+        "downloadURL": "https://ikghd.site/ipa/TikTok_46.7_TTKillerPlus_2.1.ipa",
+        "size": 452659069,
+        "minOSVersion": "15.1"
+      }
+    },
+    {
+      "slug": "winston",
+      "name": "Winston",
+      "subtitle": "Open-source Reddit client",
+      "bundleIdentifier": "lo.cafe.winston",
+      "developerName": "lo.cafe",
+      "category": "social",
+      "tintColor": "FF4500",
+      "icon": "Winston.png",
+      "localizedDescription": "Winston is a beautiful open-source Reddit client for iOS built in SwiftUI, with themes, gestures, an inline media viewer and a fast comment thread reader. Because Reddit charges for API access, Winston asks you to create your own free Reddit API credentials on first launch.",
+      "screenshots": [],
+      "featured": false,
+      "status": "unmaintained",
+      "upstreamURL": "https://github.com/lo-cafe/winston",
+      "verification": {
+        "method": "github-release",
+        "publisher": "lo-cafe/winston",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "17.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official GPL-3.0 releases from lo-cafe/winston. The last published build is v1.1.5 (June 2024); the project is on hold, so treat it as archived-but-installable. Requires your own Reddit API credentials."
+      },
+      "upstream": {
+        "repo": "lo-cafe/winston",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "Winston {version} | {label}",
+        "minOSVersion": "17.0"
+      }
+    },
+    {
+      "slug": "itorrent",
+      "name": "iTorrent",
+      "subtitle": "Torrent client with a built-in player",
+      "bundleIdentifier": "com.xitrix.iTorrent2",
+      "developerName": "XITRIX",
+      "category": "networking",
+      "tintColor": "0A6CFF",
+      "icon": "iTorrent.png",
+      "localizedDescription": "iTorrent is a fully featured open-source torrent client for iOS. It keeps downloading in the background, integrates with the Files app, supports magnet links, sequential download and per-file selection, and ships a built-in VLC-based player with Picture in Picture, audio and subtitle tracks and playback speed control.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/XITRIX/iTorrent",
+      "verification": {
+        "method": "github-release",
+        "publisher": "XITRIX/iTorrent",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official MIT-licensed releases from XITRIX/iTorrent."
+      },
+      "upstream": {
+        "repo": "XITRIX/iTorrent",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "iTorrent {version} | {label}",
+        "minOSVersion": "16.0"
+      }
+    },
+    {
+      "slug": "stikdebug",
+      "name": "StikDebug",
+      "subtitle": "On-device JIT enabler and debugger",
+      "bundleIdentifier": "com.stik.stikdebug",
+      "developerName": "StikDebug",
+      "category": "developer-tools",
+      "tintColor": "3B82F6",
+      "icon": "StikDebug.png",
+      "localizedDescription": "StikDebug attaches a debugger to your sideloaded apps directly on device, which enables JIT for emulators and other apps that need it. It uses a pairing file and an on-device VPN loop, so no computer is required after the initial setup. Requires iOS 17.4 or newer.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/HomeScreen.PNG",
+        "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/AppsList.PNG",
+        "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/Settings.PNG"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/StikDebug/StikDebug",
+      "verification": {
+        "method": "github-release",
+        "publisher": "StikDebug/StikDebug",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "17.4",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official releases from StikDebug/StikDebug. Needs a pairing file and the on-device VPN loop; JIT attachment requires iOS 17.4 or newer."
+      },
+      "upstream": {
+        "repo": "StikDebug/StikDebug",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "descriptionTemplate": "StikDebug {version} | {label}",
+        "minOSVersion": "17.4"
       }
     }
   ]

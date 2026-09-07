@@ -2,6 +2,21 @@
   "schemaVersion": 1,
   "repositories": [
     {
+      "id": "altstore-https-repo-ikghd-me-repo-json-9265ace8",
+      "name": "iKarwan (repo.ikghd.me)",
+      "url": "https://repo.ikghd.me/repo.json",
+      "provider": "altstore",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "ytkp",
+        "inkillerplus",
+        "ttkillerplus"
+      ]
+    },
+    {
       "id": "github-https-github-com-arichornlover-uy-cf9ac2f9",
       "name": "iamsmmh/OmniSource",
       "url": "https://github.com/arichornlover/uYouEnhanced",
@@ -26,7 +41,6 @@
       "applicationIds": [
         "ytlite",
         "youpro",
-        "ytkp",
         "youmod"
       ]
     },
@@ -54,6 +68,19 @@
       "lastError": null,
       "applicationIds": [
         "ytkace"
+      ]
+    },
+    {
+      "id": "github-https-github-com-lo-cafe-winston-ff462ceb",
+      "name": "lo-cafe/winston",
+      "url": "https://github.com/lo-cafe/winston",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "winston"
       ]
     },
     {
@@ -96,6 +123,19 @@
       ]
     },
     {
+      "id": "github-https-github-com-stikdebug-stikde-a752478f",
+      "name": "StikDebug/StikDebug",
+      "url": "https://github.com/StikDebug/StikDebug",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "stikdebug"
+      ]
+    },
+    {
       "id": "github-https-github-com-utmapp-utm-1af96ef2",
       "name": "utmapp/UTM",
       "url": "https://github.com/utmapp/UTM",
@@ -106,6 +146,19 @@
       "lastError": null,
       "applicationIds": [
         "utm"
+      ]
+    },
+    {
+      "id": "github-https-github-com-xitrix-itorrent-20115bc9",
+      "name": "XITRIX/iTorrent",
+      "url": "https://github.com/XITRIX/iTorrent",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "itorrent"
       ]
     }
   ]

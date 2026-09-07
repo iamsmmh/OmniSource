@@ -11,6 +11,212 @@
   "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
   "apps": [
     {
+      "name": "iNKillerPlus",
+      "bundleIdentifier": "com.burbn.instagram",
+      "developerName": "iKarwan",
+      "subtitle": "Instagram with downloads, ghost mode and no ads",
+      "localizedDescription": "iNKillerPlus is a modified Instagram by iKarwan. Download posts, reels, stories and DM media, save profile pictures, block promoted posts and ads, toggle seen/unseen for stories and DMs, ghost typing, hide tabs, copy comments and bios, confirmation prompts before liking or calling, and a profile analyzer. iPadOS supported.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.png",
+      "tintColor": "E1306C",
+      "category": "social",
+      "version": "445.0.0",
+      "versionDate": "2026-09-01",
+      "versionDescription": "Instagram 445.0.0 | Instagram_445.0_iNKillerPlus_5.2\n\n• Fix profile bio long press to copy detect email and links\n• Fix read DM icon\n• Fix user exception for direct message\n• Add roothide & relaxin JB support\n• Add full compatibility with IG v440+\n• Add tab configuration for hide & launch\n• Fix swipe between tabs\n• Fix story mention button crashes on v440+\n• Fix story download button\n• Fix eye long-press user exception on v440+\n• Fix follow confirmation toggle\n• Fix long-press profile picture expand & download\n• Fix grid button in main navbar\n• Fix 2x2 grid handling in 3x3 position style\n• Fix photo picker with music on multiple posts for iOS 27 Liquid Glass\n• Other fixes & improvements\n• Updated base IPA to Instagram v445.0",
+      "downloadURL": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
+      "size": 247159162,
+      "versions": [
+        {
+          "version": "445.0.0",
+          "date": "2026-09-01",
+          "localizedDescription": "Instagram 445.0.0 | Instagram_445.0_iNKillerPlus_5.2\n\n• Fix profile bio long press to copy detect email and links\n• Fix read DM icon\n• Fix user exception for direct message\n• Add roothide & relaxin JB support\n• Add full compatibility with IG v440+\n• Add tab configuration for hide & launch\n• Fix swipe between tabs\n• Fix story mention button crashes on v440+\n• Fix story download button\n• Fix eye long-press user exception on v440+\n• Fix follow confirmation toggle\n• Fix long-press profile picture expand & download\n• Fix grid button in main navbar\n• Fix 2x2 grid handling in 3x3 position style\n• Fix photo picker with music on multiple posts for iOS 27 Liquid Glass\n• Other fixes & improvements\n• Updated base IPA to Instagram v445.0",
+          "downloadURL": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
+          "size": 247159162,
+          "minOSVersion": "16.3",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Instagram_445.0_iNKillerPlus_5.2.ipa",
+              "downloadUrl": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 247159162,
+              "sha256": null,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/1.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/2.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/3.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/4.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/5.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/6.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/7.PNG"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.security.application-groups",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "keychain-access-groups",
+          "com.apple.developer.team-identifier"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Instagram uses your device's camera to do things like help you take photos, record videos and use effects.",
+          "NSMicrophoneUsageDescription": "Instagram uses your device's microphone to do things like help you record videos and preview audio effects.",
+          "NSPhotoLibraryUsageDescription": "Instagram uses access to your camera roll to do things like help you share photos and videos to Instagram, apply effects and suggest photos and videos to share.",
+          "NSPhotoLibraryAddUsageDescription": "This lets you save photos and videos to your Camera Roll.",
+          "NSContactsUsageDescription": "Instagram will use your contacts to suggest people and things you care about, and offer a better service.",
+          "NSFaceIDUsageDescription": "Enable Face ID for quick and secure authentication on Instagram.",
+          "NSLocationWhenInUseUsageDescription": "Instagram uses this to make some features work, personalize content and help people find places."
+        }
+      },
+      "omnisource": {
+        "slug": "inkillerplus",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/iKarwan/iNKillerPlus",
+        "verification": {
+          "method": "altstore",
+          "publisher": "iKarwan (repo.ikghd.me)",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.3",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
+        }
+      }
+    },
+    {
+      "name": "iTorrent",
+      "bundleIdentifier": "com.xitrix.iTorrent2",
+      "developerName": "XITRIX",
+      "subtitle": "Torrent client with a built-in player",
+      "localizedDescription": "iTorrent is a fully featured open-source torrent client for iOS. It keeps downloading in the background, integrates with the Files app, supports magnet links, sequential download and per-file selection, and ships a built-in VLC-based player with Picture in Picture, audio and subtitle tracks and playback speed control.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/iTorrent.png",
+      "tintColor": "0A6CFF",
+      "category": "networking",
+      "version": "2.2.0",
+      "versionDate": "2026-07-19",
+      "versionDescription": "iTorrent 2.2.0 | iTorrent\n\n## What's new:\n* Meet the new built-in VLC player. Play compatible video and audio files directly in iTorrent, even while they are still downloading.\n* Enjoy Picture in Picture, playback speeds from 0.5x to 2x, audio and subtitle track selection, precise seeking, and system media controls.\n* Take playback to a bigger screen with AirPlay or a compatible player discovered on your local network.\n* Choose how pieces are downloaded with Sequential and First & Last priority modes, making it easier to start watching sooner.\n* Select and share multiple completed files or entire folders in one go.\n\n## Improvements:\n* Refreshed the interface for iOS 26, with Liquid Glass styling, cleaner dialogs, and more polished navigation.\n* Made torrent details smoother and easier to use, with clearer download-priority controls and private-torrent information.\n* Improved media previewing so iTorrent can offer the best available player for each file.\n* Updated the torrent and media engines for better compatibility, stability, and recovery from unexpected errors.\n* Expanded and refined translations across all supported languages.\n\n## Fixes:\n* Fixed cases where magnet links could be saved incorrectly.\n* Fixed a startup race condition that could interfere with launching the app or completing initial setup.\n* Fixed toolbars and navigation behaving incorrectly in iPad split-screen mode.\n* Fixed RSS downloads returning to the wrong screen.\n* Fixed torrent details sometimes getting stuck in a continuous update loop.\n* Fixed several playback, AirPlay, and local-device connection issues.\n\n**Full Changelog**: https://github.com/XITRIX/iTorrent/compare/v2.1.1-1...v2.2.0-1",
+      "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
+      "size": 24288935,
+      "versions": [
+        {
+          "version": "2.2.0",
+          "date": "2026-07-19",
+          "localizedDescription": "iTorrent 2.2.0 | iTorrent\n\n## What's new:\n* Meet the new built-in VLC player. Play compatible video and audio files directly in iTorrent, even while they are still downloading.\n* Enjoy Picture in Picture, playback speeds from 0.5x to 2x, audio and subtitle track selection, precise seeking, and system media controls.\n* Take playback to a bigger screen with AirPlay or a compatible player discovered on your local network.\n* Choose how pieces are downloaded with Sequential and First & Last priority modes, making it easier to start watching sooner.\n* Select and share multiple completed files or entire folders in one go.\n\n## Improvements:\n* Refreshed the interface for iOS 26, with Liquid Glass styling, cleaner dialogs, and more polished navigation.\n* Made torrent details smoother and easier to use, with clearer download-priority controls and private-torrent information.\n* Improved media previewing so iTorrent can offer the best available player for each file.\n* Updated the torrent and media engines for better compatibility, stability, and recovery from unexpected errors.\n* Expanded and refined translations across all supported languages.\n\n## Fixes:\n* Fixed cases where magnet links could be saved incorrectly.\n* Fixed a startup race condition that could interfere with launching the app or completing initial setup.\n* Fixed toolbars and navigation behaving incorrectly in iPad split-screen mode.\n* Fixed RSS downloads returning to the wrong screen.\n* Fixed torrent details sometimes getting stuck in a continuous update loop.\n* Fixed several playback, AirPlay, and local-device connection issues.\n\n**Full Changelog**: https://github.com/XITRIX/iTorrent/compare/v2.1.1-1...v2.2.0-1",
+          "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
+          "size": 24288935,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/XITRIX/iTorrent/releases/tag/v2.2.0-1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "dSYMs.zip",
+              "downloadUrl": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/dSYMs.zip",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 19769424,
+              "sha256": "380d816e2580f611e0a25f42c1a7e9e35bdf19745ab7808606aed60bb6dd1069",
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "iTorrent.ipa",
+              "downloadUrl": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 24288935,
+              "sha256": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "manifest.plist",
+              "downloadUrl": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/manifest.plist",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "other",
+              "size": 1189,
+              "sha256": "7eb83556f122aea3f4c064f5b9910be89a2ebc9a91138f3cedc41baf82816180",
+              "mimeType": "application/octet-stream",
+              "installable": false
+            }
+          ],
+          "sha256": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7"
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "itorrent",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/XITRIX/iTorrent",
+        "verification": {
+          "method": "github-release",
+          "publisher": "XITRIX/iTorrent",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official MIT-licensed releases from XITRIX/iTorrent."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-07-19"
+        }
+      }
+    },
+    {
       "name": "MaxMusic",
       "bundleIdentifier": "com.google.ios.youtubemusic",
       "developerName": "Mark02-2012",
@@ -327,6 +533,191 @@
       }
     },
     {
+      "name": "StikDebug",
+      "bundleIdentifier": "com.stik.stikdebug",
+      "developerName": "StikDebug",
+      "subtitle": "On-device JIT enabler and debugger",
+      "localizedDescription": "StikDebug attaches a debugger to your sideloaded apps directly on device, which enables JIT for emulators and other apps that need it. It uses a pairing file and an on-device VPN loop, so no computer is required after the initial setup. Requires iOS 17.4 or newer.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/StikDebug.png",
+      "tintColor": "3B82F6",
+      "category": "developer-tools",
+      "version": "3.1.10",
+      "versionDate": "2026-08-27",
+      "versionDescription": "StikDebug 3.1.10 | StikDebug-3.1.10\n\n**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.1.9...3.1.10",
+      "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
+      "size": 12824047,
+      "versions": [
+        {
+          "version": "3.1.10",
+          "date": "2026-08-27",
+          "localizedDescription": "StikDebug 3.1.10 | StikDebug-3.1.10\n\n**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.1.9...3.1.10",
+          "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
+          "size": 12824047,
+          "minOSVersion": "17.4",
+          "releaseUrl": "https://github.com/StikDebug/StikDebug/releases/tag/3.1.10",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "StikDebug-3.1.10.ipa",
+              "downloadUrl": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 12824047,
+              "sha256": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845"
+        }
+      ],
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/HomeScreen.PNG",
+        "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/AppsList.PNG",
+        "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/Settings.PNG"
+      ],
+      "omnisource": {
+        "slug": "stikdebug",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/StikDebug/StikDebug",
+        "verification": {
+          "method": "github-release",
+          "publisher": "StikDebug/StikDebug",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "17.4",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official releases from StikDebug/StikDebug. Needs a pairing file and the on-device VPN loop; JIT attachment requires iOS 17.4 or newer."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-08-27"
+        }
+      }
+    },
+    {
+      "name": "TTKillerPlus",
+      "bundleIdentifier": "com.zhiliaoapp.musically",
+      "developerName": "iKarwan",
+      "subtitle": "TikTok with downloads, no ads and region switch",
+      "localizedDescription": "TTKillerPlus is a modified TikTok by iKarwan. Download videos from the feed, stories and Explore, save photos and profile avatars, merge post photos with their music, block promoted posts and ads, toggle seen/unseen, hide tabs, browse the feed of a specific country, show country flags and post dates, and auto-like in live streams. iPadOS supported.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/TikTok.png",
+      "tintColor": "232621",
+      "category": "social",
+      "version": "46.7.0",
+      "versionDate": "2026-09-01",
+      "versionDescription": "TikTok 46.7.0 | TikTok_46.7_TTKillerPlus_2.1\n\n• Add v46.0+ compatibility.\n• Fix like confirmation bypass on double tap.\n• Fix post date display format.\n• Fix settings localization & toggles.\n• Fix flag button not tappable.\n• Other fixes & improvements.\n• Update base IPA to TikTok v46.7",
+      "downloadURL": "https://ikghd.site/ipa/TikTok_46.7_TTKillerPlus_2.1.ipa",
+      "size": 452659069,
+      "versions": [
+        {
+          "version": "46.7.0",
+          "date": "2026-09-01",
+          "localizedDescription": "TikTok 46.7.0 | TikTok_46.7_TTKillerPlus_2.1\n\n• Add v46.0+ compatibility.\n• Fix like confirmation bypass on double tap.\n• Fix post date display format.\n• Fix settings localization & toggles.\n• Fix flag button not tappable.\n• Other fixes & improvements.\n• Update base IPA to TikTok v46.7",
+          "downloadURL": "https://ikghd.site/ipa/TikTok_46.7_TTKillerPlus_2.1.ipa",
+          "size": 452659069,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "TikTok_46.7_TTKillerPlus_2.1.ipa",
+              "downloadUrl": "https://ikghd.site/ipa/TikTok_46.7_TTKillerPlus_2.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 452659069,
+              "sha256": null,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/1.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/2.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/3.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/4.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/5.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/6.PNG"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.security.application-groups",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "keychain-access-groups",
+          "com.apple.developer.team-identifier"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "You'll be able to record video.",
+          "NSContactsUsageDescription": "Sync your contacts to easily find people you know on TikTok.",
+          "NSCalendarsUsageDescription": "Add events to your device calendar to get reminders when events start.",
+          "NSFaceIDUsageDescription": "We'll use this to unlock features that require added security.",
+          "NSBluetoothAlwaysUsageDescription": "This will allow TikTok to find and connect to Bluetooth accessories."
+        }
+      },
+      "omnisource": {
+        "slug": "ttkillerplus",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/iKarwan/TTKillerPlus",
+        "verification": {
+          "method": "altstore",
+          "publisher": "iKarwan (repo.ikghd.me)",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
+        }
+      }
+    },
+    {
       "name": "UTM",
       "bundleIdentifier": "com.utmapp.UTM",
       "developerName": "UTM Team",
@@ -612,6 +1003,83 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-03",
           "lastUpdatedAt": "2026-08-22"
+        }
+      }
+    },
+    {
+      "name": "Winston",
+      "bundleIdentifier": "lo.cafe.winston",
+      "developerName": "lo.cafe",
+      "subtitle": "Open-source Reddit client",
+      "localizedDescription": "Winston is a beautiful open-source Reddit client for iOS built in SwiftUI, with themes, gestures, an inline media viewer and a fast comment thread reader. Because Reddit charges for API access, Winston asks you to create your own free Reddit API credentials on first launch.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Winston.png",
+      "tintColor": "FF4500",
+      "category": "social",
+      "version": "1.1.5",
+      "versionDate": "2024-06-24",
+      "versionDescription": "Winston 1.1.5 | winston\n\n- Fixed placeholder message alignment\n- Fixed Reddit API preferences page\n- Added localization support\n- Cleaned unused code and replaced glitchy book Lottie\n- Removed old, unused TipJar component\n- Added back GlobalLoaderProvider\n- Fixed broken build\n- Improved RedditListingFeed component and cleaned up some files\n- Fixed many UI bugs and stutters; added new NukeUI Opt components\n- Removed redundant code calling setAudioToMixWithOthers three times\n- Provided RedditListingFeed with a force refresh handler; fixed UserView issues\n- Fixed blur flash on app open\n- Fixed cache clear button not working\n- Added support for inline image within comments\n- Improved spoiler handling in selftext\n- Corrected tab bar hit detection in Split View on iPad",
+      "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+      "size": 50003343,
+      "versions": [
+        {
+          "version": "1.1.5",
+          "date": "2024-06-24",
+          "localizedDescription": "Winston 1.1.5 | winston\n\n- Fixed placeholder message alignment\n- Fixed Reddit API preferences page\n- Added localization support\n- Cleaned unused code and replaced glitchy book Lottie\n- Removed old, unused TipJar component\n- Added back GlobalLoaderProvider\n- Fixed broken build\n- Improved RedditListingFeed component and cleaned up some files\n- Fixed many UI bugs and stutters; added new NukeUI Opt components\n- Removed redundant code calling setAudioToMixWithOthers three times\n- Provided RedditListingFeed with a force refresh handler; fixed UserView issues\n- Fixed blur flash on app open\n- Fixed cache clear button not working\n- Added support for inline image within comments\n- Improved spoiler handling in selftext\n- Corrected tab bar hit detection in Split View on iPad",
+          "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+          "size": 50003343,
+          "minOSVersion": "17.0",
+          "releaseUrl": "https://github.com/lo-cafe/winston/releases/tag/v1.1.5",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "winston.ipa",
+              "downloadUrl": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 50003343,
+              "sha256": null,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "winston",
+        "status": "unmaintained",
+        "featured": false,
+        "upstreamURL": "https://github.com/lo-cafe/winston",
+        "verification": {
+          "method": "github-release",
+          "publisher": "lo-cafe/winston",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "17.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official GPL-3.0 releases from lo-cafe/winston. The last published build is v1.1.5 (June 2024); the project is on hold, so treat it as archived-but-installable. Requires your own Reddit API credentials."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2024-06-24"
         }
       }
     },
@@ -1115,43 +1583,45 @@
     {
       "name": "YTKillerPlus",
       "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "ikghd",
+      "developerName": "iKarwan",
       "subtitle": "YTKP",
       "localizedDescription": "YTKillerPlus mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
       "tintColor": "FF0000",
       "category": "photo-video",
       "version": "21.35.3",
-      "versionDate": "2026-08-30",
-      "versionDescription": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\n### Latest Release, ENJOY!!\n\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\n\n> [!NOTE]\n> - **Sidestore is no longer supported!!.**\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
-      "size": 141939462,
+      "versionDate": "2026-09-01",
+      "versionDescription": "YouTube 21.35.3 | YouTube_21.35_YTKillerPlus_6.5\n\n• v21.34 requires iOS 17 and later now\n• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases\n• Fix save posted gif image saving only first frame in some cases\n• Fix save posted image when multiple imge in a post first image not saved correctly\n• Fix tabs Icon.\n• Fix and improve audio languages select.\n• Updated iPA to newer YouTube v21.34.6.\n• Add POST tab to tab bar.\n• Improve localization & add missing languages.\n• Improve ad blocking on main Feed.\n• Improve Lyrics API speed & accuracy.\n• Improve MP3 audio handling.\n• Improve backup & restore.\n• Improve media extension importing.\n• Improve Shorts auto-skip.\n• Improve Shorts multiple-post handling.\n• Fix OLED keyboard issue on iOS 27.\n• Other fixes & cleanup.\n• Updated iPA to YouTube v21.35",
+      "downloadURL": "https://ikghd.site/ipa/YouTube_21.35_YTKillerPlus_6.5.ipa",
+      "size": 140645854,
       "versions": [
         {
           "version": "21.35.3",
-          "date": "2026-08-30",
-          "localizedDescription": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\n### Latest Release, ENJOY!!\n\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\n\n> [!NOTE]\n> - **Sidestore is no longer supported!!.**\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
-          "size": 141939462,
-          "minOSVersion": "16.0",
-          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytkp-ipa4",
-          "source": "github",
+          "date": "2026-09-01",
+          "localizedDescription": "YouTube 21.35.3 | YouTube_21.35_YTKillerPlus_6.5\n\n• v21.34 requires iOS 17 and later now\n• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases\n• Fix save posted gif image saving only first frame in some cases\n• Fix save posted image when multiple imge in a post first image not saved correctly\n• Fix tabs Icon.\n• Fix and improve audio languages select.\n• Updated iPA to newer YouTube v21.34.6.\n• Add POST tab to tab bar.\n• Improve localization & add missing languages.\n• Improve ad blocking on main Feed.\n• Improve Lyrics API speed & accuracy.\n• Improve MP3 audio handling.\n• Improve backup & restore.\n• Improve media extension importing.\n• Improve Shorts auto-skip.\n• Improve Shorts multiple-post handling.\n• Fix OLED keyboard issue on iOS 27.\n• Other fixes & cleanup.\n• Updated iPA to YouTube v21.35",
+          "downloadURL": "https://ikghd.site/ipa/YouTube_21.35_YTKillerPlus_6.5.ipa",
+          "size": 140645854,
+          "minOSVersion": "17.0",
+          "releaseUrl": null,
+          "source": "altstore",
           "isPrerelease": false,
           "isDraft": false,
           "assets": [
             {
-              "filename": "YTKillerPlus_21.35.3_6.1.ipa",
-              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
+              "filename": "YouTube_21.35_YTKillerPlus_6.5.ipa",
+              "downloadUrl": "https://ikghd.site/ipa/YouTube_21.35_YTKillerPlus_6.5.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 141939462,
-              "sha256": "f275b2ed0a384e96f706420089c9b495b4ad0ff3894c3ae601f90477e95f71be",
-              "mimeType": "application/octet-stream",
+              "size": 140645854,
+              "sha256": null,
+              "mimeType": null,
               "installable": true
             }
           ],
-          "sha256": "f275b2ed0a384e96f706420089c9b495b4ad0ff3894c3ae601f90477e95f71be"
+          "fallbackDownloadURLs": [
+            "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa"
+          ]
         }
       ],
       "screenshotURLs": [],
@@ -1180,19 +1650,22 @@
           "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
         }
       },
+      "fallbackDownloadURLs": [
+        "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa"
+      ],
       "omnisource": {
         "slug": "ytkp",
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
         "verification": {
-          "method": "github-release",
-          "publisher": "mrdrvt99/YouProEXTRA",
+          "method": "altstore",
+          "publisher": "iKarwan (repo.ikghd.me)",
           "codeSigned": false,
           "checksumPublished": false
         },
         "compatibility": {
-          "minOSVersion": "16.0",
+          "minOSVersion": "17.0",
           "maxOSVersion": null,
           "devices": [
             "iphone",
@@ -1205,13 +1678,13 @@
             "esign",
             "livecontainer"
           ],
-          "notes": ""
+          "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me. YouTube 21.34+ requires iOS 17. The mrdrvt99/YouProEXTRA build stays configured as a mirror fallback."
         },
         "health": {
           "downloadReachable": true,
-          "detail": "HTTP 302",
+          "detail": "not probed",
           "statusSince": "2026-09-01",
-          "lastUpdatedAt": "2026-08-30"
+          "lastUpdatedAt": "2026-09-01"
         }
       }
     },

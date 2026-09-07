@@ -258,16 +258,17 @@ class GenericFeedProvider(SourceProvider):
     ) -> list[RemoteRelease]:
         payload = self._load(source)
         apps = _apps_from_payload(payload)
-        # A catalog entry tracking a whole source uses the first app; a more
-        # specific match can be added later via upstream.repo as bundle id.
+        # A catalog entry tracking a whole source uses every app in it;
+        # upstream.appId narrows it to one id, bundle identifier or name.
         target = apps
-        if source.repo:
+        selector = source.app_id or source.repo
+        if selector:
             target = [
                 app
                 for app in apps
-                if str(app.get("id") or app.get("appId") or "") == source.repo
-                or str(app.get("bundleIdentifier") or app.get("bundleId") or "") == source.repo
-                or str(app.get("name") or "") == source.repo
+                if str(app.get("id") or app.get("appId") or "") == selector
+                or str(app.get("bundleIdentifier") or app.get("bundleId") or "") == selector
+                or str(app.get("name") or "") == selector
             ] or apps
         releases: list[RemoteRelease] = []
         for app in target:

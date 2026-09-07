@@ -1,8 +1,25 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
-  "count": 8,
+  "count": 12,
   "repositories": [
+    {
+      "id": "altstore--https---repo-ikghd-me-repo-jso-e743df46",
+      "name": "repo.ikghd.me",
+      "url": "https://github.com/iKarwan/YTKillerPlus",
+      "provider": "altstore",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "inkillerplus",
+        "ttkillerplus",
+        "ytkp"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
     {
       "id": "github--ashreq-ashstore-repo-861eb454",
       "name": "Ashreq/ashstore-repo",
@@ -49,6 +66,21 @@
       "health": {}
     },
     {
+      "id": "github--lo-cafe-winston-7e864f68",
+      "name": "lo-cafe/winston",
+      "url": "https://github.com/lo-cafe/winston",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "applicationIds": [
+        "winston"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
+    {
       "id": "github--mark02-2012-ytmultimateplus-d33fe09c",
       "name": "Mark02-2012/YTMUltimatePLUS",
       "url": "https://github.com/Mark02-2012/YTMUltimatePLUS",
@@ -75,7 +107,6 @@
       "applicationIds": [
         "youmod",
         "youpro",
-        "ytkp",
         "ytlite"
       ],
       "retryCount": 0,
@@ -112,6 +143,21 @@
       "health": {}
     },
     {
+      "id": "github--stikdebug-stikdebug-0b7467ec",
+      "name": "StikDebug/StikDebug",
+      "url": "https://github.com/StikDebug/StikDebug",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "applicationIds": [
+        "stikdebug"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
+    {
       "id": "github--utmapp-utm-53ff8384",
       "name": "utmapp/UTM",
       "url": "https://github.com/utmapp/UTM",
@@ -122,6 +168,21 @@
       "lastError": null,
       "applicationIds": [
         "utm"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
+    {
+      "id": "github--xitrix-itorrent-4d1f8f39",
+      "name": "XITRIX/iTorrent",
+      "url": "https://github.com/XITRIX/iTorrent",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "applicationIds": [
+        "itorrent"
       ],
       "retryCount": 0,
       "health": {}

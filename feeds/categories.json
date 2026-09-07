@@ -1,8 +1,16 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
-  "count": 3,
+  "count": 6,
   "categories": [
+    {
+      "id": "developer-tools",
+      "name": "Developer Tools",
+      "appCount": 1,
+      "apps": [
+        "stikdebug"
+      ]
+    },
     {
       "id": "music",
       "name": "Music",
@@ -10,6 +18,14 @@
       "apps": [
         "maxmusic",
         "ytmusic"
+      ]
+    },
+    {
+      "id": "networking",
+      "name": "Networking",
+      "appCount": 1,
+      "apps": [
+        "itorrent"
       ]
     },
     {
@@ -24,6 +40,16 @@
         "ytkace",
         "ytkp",
         "ytlite"
+      ]
+    },
+    {
+      "id": "social",
+      "name": "Social",
+      "appCount": 3,
+      "apps": [
+        "inkillerplus",
+        "ttkillerplus",
+        "winston"
       ]
     },
     {

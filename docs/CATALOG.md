@@ -10,13 +10,18 @@ who maintains it upstream, and how OmniSource obtains the build.
 | uYouEnhanced | `uyouenhanced` | `com.google.ios.youtube` | [arichornlover/uYouEnhanced](https://github.com/arichornlover/uYouEnhanced) | archive.org mirror of the upstream build; replaced by in-repo *Build uYouEnhanced* releases once they exist |
 | YouTubePlus (YTLite) | `ytlite` | `com.google.ios.youtube` | [Dayanch96/YTLite](https://github.com/Dayanch96/YTLite) | `ytl-ipa*` tags in mrdrvt99/YouProEXTRA |
 | YouPro | `youpro` | `com.google.ios.youtube` | [mrdrvt99/YouProEXTRA](https://github.com/mrdrvt99/YouProEXTRA) (original repo [deleted]; authored by [@Alibusut](https://github.com/alibusut)) | `youproextra-ipa*` tags in mrdrvt99/YouProEXTRA |
-| YTKillerPlus | `ytkp` | `com.google.ios.youtube` | [iKarwan/YTKillerPlus](https://github.com/iKarwan/YTKillerPlus) | `ytkp-ipa*` tags in mrdrvt99/YouProEXTRA |
+| YTKillerPlus | `ytkp` | `com.google.ios.youtube` | [iKarwan/YTKillerPlus](https://github.com/iKarwan/YTKillerPlus) | Developer's own AltStore source `repo.ikghd.me/repo.json`; the `ytkp-ipa*` build in mrdrvt99/YouProEXTRA stays configured as a mirror |
 | YTKACE | `ytkace` | `com.google.ios.youtube` | [itzzace/ytkace](https://github.com/itzzace/ytkace) | Newest official release asset (`YTKACE_<version>_YouTube_<youtube>.ipa`); the separate `_iOS16_` build is filtered out |
 | YouMod | `youmod` | `com.google.ios.youtube` | [mrdrvt99/YouMod](https://github.com/mrdrvt99/YouMod) | `youmod-ipa*` tags in mrdrvt99/YouProEXTRA |
 | MaxTube | `maxtube` | `com.google.ios.youtube` | [Mark02-2012/YTPlusM](https://github.com/Mark02-2012/YTPlusM) | `YTPlusM_*` assets in Ashreq/ashstore-repo (GitHub mirror of the TubeVault build; upstream removed its own release assets) |
 | YTMusicUltimate | `ytmusic` | `com.google.ios.youtubemusic` | [Dayanch96/YTMusicUltimate](https://github.com/Dayanch96/YTMusicUltimate) | Newest published release asset |
 | MaxMusic | `maxmusic` | `com.google.ios.youtubemusic` | [Mark02-2012/YTMUltimatePLUS](https://github.com/Mark02-2012/YTMUltimatePLUS) | `MaxMusic_*` tags, full build (the `no_YMP` variant is filtered out) |
 | UTM | `utm` | `com.utmapp.UTM` | [utmapp/UTM](https://github.com/utmapp/UTM) | Newest published release asset (`UTM.ipa`, universal build) |
+| iNKillerPlus | `inkillerplus` | `com.burbn.instagram` | [iKarwan/iNKillerPlus](https://github.com/iKarwan/iNKillerPlus) | Developer's own AltStore source `repo.ikghd.me/repo.json` |
+| TTKillerPlus | `ttkillerplus` | `com.zhiliaoapp.musically` | [iKarwan/TTKillerPlus](https://github.com/iKarwan/TTKillerPlus) | Developer's own AltStore source `repo.ikghd.me/repo.json` |
+| Winston | `winston` | `lo.cafe.winston` | [lo-cafe/winston](https://github.com/lo-cafe/winston) | Newest published release asset (`winston.ipa`) |
+| iTorrent | `itorrent` | `com.xitrix.iTorrent2` | [XITRIX/iTorrent](https://github.com/XITRIX/iTorrent) | Newest published release asset (`iTorrent.ipa`) |
+| StikDebug | `stikdebug` | `com.stik.stikdebug` | [StikDebug/StikDebug](https://github.com/StikDebug/StikDebug) | Newest published release asset (`StikDebug-<version>.ipa`) |
 
 ## Status labels
 
@@ -34,6 +39,8 @@ who maintains it upstream, and how OmniSource obtains the build.
 | --- | --- |
 | `github-release` | The IPA is served straight from the upstream project's GitHub release asset |
 | `self-built` | Compiled by an OmniSource workflow; the release notes publish a SHA-256 |
+| `altstore` | Resolved from the developer's own AltStore-compatible source document |
+| `json-feed` / `feather` | Resolved from another publisher-controlled JSON feed |
 | `manual-mirror` | A maintainer-hosted mirror; least verifiable, used only as a fallback |
 
 Nothing is pre-signed. `codeSigned: false` on every entry means you sign with your own certificate.
@@ -64,6 +71,24 @@ alternative download links, so an app stays installable when its primary link go
 > own `uyouenhanced-v*` releases, so the first successful *Build uYouEnhanced* run swaps in a
 > first-party URL automatically.
 
+## Why some entries are not resolved from the upstream project
+
+Every entry is pointed at the most authoritative source that actually publishes an installable IPA.
+For several YouTube tweaks that is *not* the upstream repository, because the developer only ships
+the jailbreak `.deb` (or nothing at all) and a third party does the sideload build:
+
+| App | Upstream publishes | Where OmniSource has to look instead |
+| --- | --- | --- |
+| YouTubePlus (YTLite) | `.deb` only — Dayanch96 removes IPAs for legal reasons | `ytl-ipa*` builds in mrdrvt99/YouProEXTRA |
+| YTMusicUltimate | `.deb` only (Dayanch96/YTMusicUltimate) | mrdrvt99/YTMusicUltimate IPA builds |
+| MaxTube (YTPlusM) | Releases deleted upstream (`NO_MORE_RELEASE_HERE`) | `YTPlusM_*` assets in Ashreq/ashstore-repo |
+| uYouEnhanced | Nothing — IPAs were pulled after DMCA takedowns, upstream is DIY-build only | this repository's own `Build uYouEnhanced` workflow, with an archive.org mirror until the first run |
+| YouPro | Upstream repository deleted | `youproextra-ipa*` builds by mrdrvt99 |
+| YouMod | `youmod-ipa3` (behind: YouTube 21.24.3) | `youmod-ipa*` builds in mrdrvt99/YouProEXTRA by the same author, kept current |
+
+If any of these projects starts publishing IPAs itself, switching is a one-line change to the
+`upstream` block in `catalog.json`.
+
 ## Shared apps note
 
 Seven YouTube mods share the bundle identifier `com.google.ios.youtube`. iOS treats bundle IDs as
@@ -81,9 +106,12 @@ YTMusicUltimate cannot coexist.
 | YTLite / YTMusicUltimate | [@Dayanch96](https://github.com/Dayanch96) |
 | YTKACE | [@itzzace](https://github.com/itzzace) |
 | YouPro | [@Alibusut](https://github.com/alibusut) (repo deleted; builds via [@mrdrvt99](https://github.com/mrdrvt99)) |
-| YTKillerPlus | [@iKarwan](https://github.com/iKarwan) |
 | YouMod / release mirroring | [@mrdrvt99](https://github.com/mrdrvt99) |
 | MaxTube / MaxMusic | [@Mark02-2012](https://github.com/Mark02-2012) |
+| YTKillerPlus / iNKillerPlus / TTKillerPlus | [@iKarwan](https://github.com/iKarwan) |
+| Winston | [@lo-cafe](https://github.com/lo-cafe) ([@Kinark](https://github.com/Kinark)) |
+| iTorrent | [@XITRIX](https://github.com/XITRIX) |
+| StikDebug | [@StikDebug](https://github.com/StikDebug) ([@StephenDev0](https://github.com/StephenDev0)) |
 
 OmniSource maintenance: [@iamsmmh](https://github.com/iamsmmh). Thanks to
 [@MountainofPenguin](https://github.com/MountainofPenguin), [@HakujouSan](https://github.com/HakujouSan)

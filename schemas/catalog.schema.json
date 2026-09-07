@@ -96,7 +96,20 @@
           "required": ["method", "publisher"],
           "additionalProperties": true,
           "properties": {
-            "method": { "enum": ["github-release", "manual-mirror", "self-built"] },
+            "method": {
+              "enum": [
+                "github-release",
+                "github-tag",
+                "gitlab-release",
+                "codeberg-release",
+                "forgejo-release",
+                "json-feed",
+                "altstore",
+                "feather",
+                "manual-mirror",
+                "self-built"
+              ]
+            },
             "publisher": { "type": "string", "minLength": 1 },
             "codeSigned": { "type": "boolean" },
             "checksumPublished": { "type": "boolean" }
@@ -159,6 +172,11 @@
               "description": "Required for json-feed, altstore and feather providers."
             },
             "repo": { "type": "string", "pattern": "^[\\w.-]+/[\\w.-]+$" },
+            "appId": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Feed providers only: selects one app inside a multi-app feed by id, bundle identifier or name."
+            },
             "tagPrefix": { "type": "string" },
             "excludeTagPrefixes": { "type": "array", "items": { "type": "string" } },
             "assetSuffixes": { "type": "array", "items": { "type": "string" } },

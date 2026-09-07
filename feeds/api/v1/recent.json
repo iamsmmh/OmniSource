@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
-  "count": 11,
+  "count": 16,
   "apps": [
     {
       "appId": "spotiflac",
@@ -16,9 +16,21 @@
       "releaseDate": "2026-09-01"
     },
     {
+      "appId": "ytkp",
+      "name": "YTKillerPlus",
+      "version": "21.35.3",
+      "releaseDate": "2026-09-01"
+    },
+    {
       "appId": "ytlite",
       "name": "YouTubePlus",
       "version": "21.24.3",
+      "releaseDate": "2026-09-01"
+    },
+    {
+      "appId": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "version": "46.7.0",
       "releaseDate": "2026-09-01"
     },
     {
@@ -28,22 +40,28 @@
       "releaseDate": "2026-09-01"
     },
     {
+      "appId": "inkillerplus",
+      "name": "iNKillerPlus",
+      "version": "445.0.0",
+      "releaseDate": "2026-09-01"
+    },
+    {
       "appId": "ytkace",
       "name": "YTKACE",
       "version": "21.35.3",
       "releaseDate": "2026-08-31"
     },
     {
-      "appId": "ytkp",
-      "name": "YTKillerPlus",
-      "version": "21.35.3",
-      "releaseDate": "2026-08-30"
-    },
-    {
       "appId": "youmod",
       "name": "YouMod",
       "version": "21.35.3",
       "releaseDate": "2026-08-30"
+    },
+    {
+      "appId": "stikdebug",
+      "name": "StikDebug",
+      "version": "3.1.10",
+      "releaseDate": "2026-08-27"
     },
     {
       "appId": "uyouenhanced",
@@ -64,10 +82,22 @@
       "releaseDate": "2026-08-03"
     },
     {
+      "appId": "itorrent",
+      "name": "iTorrent",
+      "version": "2.2.0",
+      "releaseDate": "2026-07-19"
+    },
+    {
       "appId": "utm",
       "name": "UTM",
       "version": "4.7.5",
       "releaseDate": "2026-01-03T17:51:54Z"
+    },
+    {
+      "appId": "winston",
+      "name": "Winston",
+      "version": "1.1.5",
+      "releaseDate": "2024-06-24"
     }
   ]
 }

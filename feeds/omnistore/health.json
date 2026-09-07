@@ -1,13 +1,29 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
-  "count": 11,
+  "count": 16,
   "totals": {
-    "apps": 11,
-    "reachable": 11,
+    "apps": 16,
+    "reachable": 16,
     "unreachable": 0
   },
   "apps": [
+    {
+      "appId": "inkillerplus",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "not probed",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-09-01"
+    },
+    {
+      "appId": "itorrent",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-07-19"
+    },
     {
       "appId": "maxmusic",
       "status": "active",
@@ -33,6 +49,22 @@
       "lastReleaseDate": "2026-09-07"
     },
     {
+      "appId": "stikdebug",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-08-27"
+    },
+    {
+      "appId": "ttkillerplus",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "not probed",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2026-09-01"
+    },
+    {
       "appId": "utm",
       "status": "active",
       "downloadReachable": true,
@@ -47,6 +79,14 @@
       "detail": "HTTP 302",
       "metadataCompleteness": 1.0,
       "lastReleaseDate": "2026-08-22"
+    },
+    {
+      "appId": "winston",
+      "status": "inactive",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "metadataCompleteness": 1.0,
+      "lastReleaseDate": "2024-06-24"
     },
     {
       "appId": "youmod",
@@ -76,9 +116,9 @@
       "appId": "ytkp",
       "status": "active",
       "downloadReachable": true,
-      "detail": "HTTP 302",
+      "detail": "not probed",
       "metadataCompleteness": 1.0,
-      "lastReleaseDate": "2026-08-30"
+      "lastReleaseDate": "2026-09-01"
     },
     {
       "appId": "ytlite",

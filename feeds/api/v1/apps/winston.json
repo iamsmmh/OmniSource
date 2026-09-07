@@ -1,0 +1,115 @@
+{
+  "id": "winston",
+  "appId": "winston",
+  "name": "Winston",
+  "developer": "lo.cafe",
+  "description": "Winston is a beautiful open-source Reddit client for iOS built in SwiftUI, with themes, gestures, an inline media viewer and a fast comment thread reader. Because Reddit charges for API access, Winston asks you to create your own free Reddit API credentials on first launch.",
+  "shortDescription": "Open-source Reddit client",
+  "icon": "https://iamsmmh.github.io/OmniSource/assets/Winston.png",
+  "screenshots": [],
+  "category": "social",
+  "categories": [
+    "social"
+  ],
+  "tags": [
+    "social"
+  ],
+  "repository": "https://github.com/lo-cafe/winston",
+  "repositoryUrl": "https://github.com/lo-cafe/winston",
+  "sourceType": "github",
+  "homepage": "https://github.com/lo-cafe/winston",
+  "documentation": null,
+  "license": null,
+  "platforms": [
+    "ios"
+  ],
+  "bundleId": "lo.cafe.winston",
+  "bundleIdentifier": "lo.cafe.winston",
+  "packageName": null,
+  "minimumIOSVersion": "17.0",
+  "minimumAndroidVersion": null,
+  "minimumOSVersion": "17.0",
+  "version": "1.1.5",
+  "buildNumber": null,
+  "releaseDate": "2024-06-24",
+  "changelog": "Winston 1.1.5 | winston\n\n- Fixed placeholder message alignment\n- Fixed Reddit API preferences page\n- Added localization support\n- Cleaned unused code and replaced glitchy book Lottie\n- Removed old, unused TipJar component\n- Added back GlobalLoaderProvider\n- Fixed broken build\n- Improved RedditListingFeed component and cleaned up some files\n- Fixed many UI bugs and stutters; added new NukeUI Opt components\n- Removed redundant code calling setAudioToMixWithOthers three times\n- Provided RedditListingFeed with a force refresh handler; fixed UserView issues\n- Fixed blur flash on app open\n- Fixed cache clear button not working\n- Added support for inline image within comments\n- Improved spoiler handling in selftext\n- Corrected tab bar hit detection in Split View on iPad",
+  "downloadUrl": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+  "sha256": null,
+  "size": 50003343,
+  "status": "inactive",
+  "lifecycleStatus": "inactive",
+  "legacyStatus": "unmaintained",
+  "featured": false,
+  "verified": false,
+  "lastUpdated": "2026-09-07",
+  "latestVersion": "1.1.5",
+  "latestBuild": null,
+  "latestReleaseDate": "2024-06-24",
+  "latestReleaseNotes": "Winston 1.1.5 | winston\n\n- Fixed placeholder message alignment\n- Fixed Reddit API preferences page\n- Added localization support\n- Cleaned unused code and replaced glitchy book Lottie\n- Removed old, unused TipJar component\n- Added back GlobalLoaderProvider\n- Fixed broken build\n- Improved RedditListingFeed component and cleaned up some files\n- Fixed many UI bugs and stutters; added new NukeUI Opt components\n- Removed redundant code calling setAudioToMixWithOthers three times\n- Provided RedditListingFeed with a force refresh handler; fixed UserView issues\n- Fixed blur flash on app open\n- Fixed cache clear button not working\n- Added support for inline image within comments\n- Improved spoiler handling in selftext\n- Corrected tab bar hit detection in Split View on iPad",
+  "downloadAssets": [
+    {
+      "filename": "winston.ipa",
+      "downloadUrl": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+      "platform": "ios",
+      "architecture": null,
+      "fileType": "IPA",
+      "size": 50003343,
+      "sha256": null,
+      "mimeType": "application/octet-stream",
+      "installable": true
+    }
+  ],
+  "versions": [
+    {
+      "version": "1.1.5",
+      "build": null,
+      "releaseDate": "2024-06-24",
+      "releaseNotes": "Winston 1.1.5 | winston\n\n- Fixed placeholder message alignment\n- Fixed Reddit API preferences page\n- Added localization support\n- Cleaned unused code and replaced glitchy book Lottie\n- Removed old, unused TipJar component\n- Added back GlobalLoaderProvider\n- Fixed broken build\n- Improved RedditListingFeed component and cleaned up some files\n- Fixed many UI bugs and stutters; added new NukeUI Opt components\n- Removed redundant code calling setAudioToMixWithOthers three times\n- Provided RedditListingFeed with a force refresh handler; fixed UserView issues\n- Fixed blur flash on app open\n- Fixed cache clear button not working\n- Added support for inline image within comments\n- Improved spoiler handling in selftext\n- Corrected tab bar hit detection in Split View on iPad",
+      "releaseUrl": "https://github.com/lo-cafe/winston/releases/tag/v1.1.5",
+      "assets": [
+        {
+          "filename": "winston.ipa",
+          "downloadUrl": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+          "platform": "ios",
+          "architecture": null,
+          "fileType": "IPA",
+          "size": 50003343,
+          "sha256": null,
+          "mimeType": "application/octet-stream",
+          "installable": true
+        }
+      ],
+      "source": "github",
+      "isPrerelease": false,
+      "isDraft": false,
+      "tag": null
+    }
+  ],
+  "fallbackDownloadUrls": [],
+  "health": {
+    "downloadReachable": true,
+    "downloadDetail": "HTTP 302",
+    "repositoryReachable": true,
+    "lastReleaseDate": "2024-06-24",
+    "daysSinceRelease": 805,
+    "releaseFrequencyDays": null,
+    "repositoryActivity": {
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07"
+    },
+    "brokenDownloadLinks": 0,
+    "metadataCompleteness": 1.0,
+    "integrityAvailable": false,
+    "integrityVerified": null,
+    "status": "inactive",
+    "signalsVersion": 1,
+    "statusSince": "2026-09-07"
+  },
+  "integrity": {
+    "sha256": null,
+    "sha256Available": false,
+    "verified": null,
+    "trustStatement": "A digest match proves integrity of bytes, not application safety."
+  },
+  "aliases": []
+}

@@ -1,8 +1,8 @@
 {
   "generatedAt": "2026-09-07",
   "totals": {
-    "apps": 11,
-    "reachable": 11,
+    "apps": 16,
+    "reachable": 16,
     "unreachable": 0,
     "featured": 5
   },
@@ -56,10 +56,10 @@
       "name": "YTKillerPlus",
       "status": "stable",
       "version": "21.35.3",
-      "updatedAt": "2026-08-30",
-      "sizeBytes": 141939462,
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 140645854,
       "downloadReachable": true,
-      "detail": "HTTP 302",
+      "detail": "not probed",
       "statusSince": "2026-09-01"
     },
     {
@@ -127,6 +127,61 @@
       "downloadReachable": true,
       "detail": "HTTP 302",
       "statusSince": "2026-09-02"
+    },
+    {
+      "slug": "inkillerplus",
+      "name": "iNKillerPlus",
+      "status": "stable",
+      "version": "445.0.0",
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 247159162,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-01"
+    },
+    {
+      "slug": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "status": "stable",
+      "version": "46.7.0",
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 452659069,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-01"
+    },
+    {
+      "slug": "winston",
+      "name": "Winston",
+      "status": "unmaintained",
+      "version": "1.1.5",
+      "updatedAt": "2024-06-24",
+      "sizeBytes": 50003343,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
+    },
+    {
+      "slug": "itorrent",
+      "name": "iTorrent",
+      "status": "stable",
+      "version": "2.2.0",
+      "updatedAt": "2026-07-19",
+      "sizeBytes": 24288935,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
+    },
+    {
+      "slug": "stikdebug",
+      "name": "StikDebug",
+      "status": "stable",
+      "version": "3.1.10",
+      "updatedAt": "2026-08-27",
+      "sizeBytes": 12824047,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
     }
   ]
 }

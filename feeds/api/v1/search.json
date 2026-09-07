@@ -1,8 +1,34 @@
 {
   "schemaVersion": 1,
-  "documentCount": 11,
-  "tokenCount": 335,
+  "documentCount": 16,
+  "tokenCount": 451,
   "documents": [
+    {
+      "appId": "inkillerplus",
+      "name": "iNKillerPlus",
+      "developer": "iKarwan",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "aliases": [],
+      "bundleId": "com.burbn.instagram",
+      "packageName": "",
+      "repository": "https://github.com/iKarwan/iNKillerPlus"
+    },
+    {
+      "appId": "itorrent",
+      "name": "iTorrent",
+      "developer": "XITRIX",
+      "category": "networking",
+      "tags": [
+        "networking"
+      ],
+      "aliases": [],
+      "bundleId": "com.xitrix.iTorrent2",
+      "packageName": "",
+      "repository": "https://github.com/XITRIX/iTorrent"
+    },
     {
       "appId": "maxmusic",
       "name": "MaxMusic",
@@ -43,6 +69,32 @@
       "repository": "https://github.com/spotiflacapp/SpotiFLAC-Mobile"
     },
     {
+      "appId": "stikdebug",
+      "name": "StikDebug",
+      "developer": "StikDebug",
+      "category": "developer-tools",
+      "tags": [
+        "developer-tools"
+      ],
+      "aliases": [],
+      "bundleId": "com.stik.stikdebug",
+      "packageName": "",
+      "repository": "https://github.com/StikDebug/StikDebug"
+    },
+    {
+      "appId": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "developer": "iKarwan",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "aliases": [],
+      "bundleId": "com.zhiliaoapp.musically",
+      "packageName": "",
+      "repository": "https://github.com/iKarwan/TTKillerPlus"
+    },
+    {
       "appId": "utm",
       "name": "UTM",
       "developer": "UTM Team",
@@ -67,6 +119,19 @@
       "bundleId": "com.google.ios.youtube",
       "packageName": "",
       "repository": "https://github.com/arichornlover/uYouEnhanced"
+    },
+    {
+      "appId": "winston",
+      "name": "Winston",
+      "developer": "lo.cafe",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "aliases": [],
+      "bundleId": "lo.cafe.winston",
+      "packageName": "",
+      "repository": "https://github.com/lo-cafe/winston"
     },
     {
       "appId": "youmod",
@@ -110,7 +175,7 @@
     {
       "appId": "ytkp",
       "name": "YTKillerPlus",
-      "developer": "ikghd",
+      "developer": "iKarwan",
       "category": "photo-video",
       "tags": [
         "photo-video"
@@ -151,6 +216,9 @@
     "100": [
       "maxtube"
     ],
+    "17": [
+      "stikdebug"
+    ],
     "2012": [
       "maxmusic",
       "maxtube"
@@ -176,6 +244,9 @@
     "98": [
       "utm"
     ],
+    "access": [
+      "winston"
+    ],
     "across": [
       "spotiflac"
     ],
@@ -198,7 +269,9 @@
       "maxmusic"
     ],
     "ads": [
+      "inkillerplus",
       "maxmusic",
+      "ttkillerplus",
       "youmod",
       "youpro",
       "ytkace",
@@ -208,6 +281,9 @@
     ],
     "advisory": [
       "spotiflac"
+    ],
+    "after": [
+      "stikdebug"
     ],
     "alerts": [
       "uyouenhanced"
@@ -227,16 +303,24 @@
     "analysis": [
       "spotiflac"
     ],
+    "analyzer": [
+      "inkillerplus"
+    ],
     "apache": [
       "utm"
     ],
+    "api": [
+      "winston"
+    ],
     "app": [
+      "itorrent",
       "maxmusic",
       "maxtube",
       "utm",
       "uyouenhanced"
     ],
     "apps": [
+      "stikdebug",
       "utm"
     ],
     "architectures": [
@@ -251,19 +335,32 @@
     "as": [
       "utm"
     ],
+    "asks": [
+      "winston"
+    ],
+    "attaches": [
+      "stikdebug"
+    ],
     "attribution": [
       "spotiflac"
     ],
     "audio": [
+      "itorrent",
       "maxmusic",
       "maxtube",
       "ytkace"
+    ],
+    "auto": [
+      "ttkillerplus"
     ],
     "automatic": [
       "spotiflac"
     ],
     "automation": [
       "utm"
+    ],
+    "avatars": [
+      "ttkillerplus"
     ],
     "avoid": [
       "spotiflac"
@@ -272,6 +369,7 @@
       "utm"
     ],
     "background": [
+      "itorrent",
       "maxmusic",
       "youmod",
       "youpro",
@@ -286,35 +384,73 @@
     "barcodes": [
       "spotiflac"
     ],
+    "based": [
+      "itorrent"
+    ],
     "batch": [
       "spotiflac"
+    ],
+    "beautiful": [
+      "winston"
+    ],
+    "because": [
+      "winston"
+    ],
+    "before": [
+      "inkillerplus"
     ],
     "best": [
       "uyouenhanced"
     ],
+    "bios": [
+      "inkillerplus"
+    ],
     "bit": [
       "spotiflac"
     ],
+    "block": [
+      "inkillerplus",
+      "ttkillerplus"
+    ],
     "bound": [
       "spotiflac"
+    ],
+    "browse": [
+      "ttkillerplus"
     ],
     "bug": [
       "spotiflac"
     ],
     "built": [
-      "utm"
+      "itorrent",
+      "utm",
+      "winston"
     ],
     "bundles": [
       "utm"
+    ],
+    "burbn": [
+      "inkillerplus"
     ],
     "button": [
       "uyouenhanced"
     ],
     "by": [
-      "spotiflac"
+      "inkillerplus",
+      "spotiflac",
+      "ttkillerplus"
+    ],
+    "cafe": [
+      "winston"
+    ],
+    "calling": [
+      "inkillerplus"
     ],
     "capable": [
       "utm"
+    ],
+    "charges": [
+      "winston"
     ],
     "classic": [
       "utm"
@@ -322,12 +458,21 @@
     "clear": [
       "spotiflac"
     ],
+    "client": [
+      "itorrent",
+      "winston"
+    ],
     "com": [
+      "inkillerplus",
+      "itorrent",
       "maxmusic",
       "maxtube",
       "spotiflac",
+      "stikdebug",
+      "ttkillerplus",
       "utm",
       "uyouenhanced",
+      "winston",
       "youmod",
       "youpro",
       "ytkace",
@@ -338,11 +483,18 @@
     "combined": [
       "spotiflac"
     ],
+    "comment": [
+      "winston"
+    ],
     "comments": [
+      "inkillerplus",
       "spotiflac"
     ],
     "complete": [
       "spotiflac"
+    ],
+    "computer": [
+      "stikdebug"
     ],
     "configurable": [
       "maxtube"
@@ -353,6 +505,12 @@
     "configuring": [
       "uyouenhanced"
     ],
+    "confirmation": [
+      "inkillerplus"
+    ],
+    "control": [
+      "itorrent"
+    ],
     "conversion": [
       "spotiflac"
     ],
@@ -360,16 +518,26 @@
       "spotiflac"
     ],
     "copy": [
+      "inkillerplus",
       "spotiflac"
     ],
     "count": [
       "spotiflac"
+    ],
+    "country": [
+      "ttkillerplus"
     ],
     "cover": [
       "spotiflac"
     ],
     "cpu": [
       "utm"
+    ],
+    "create": [
+      "winston"
+    ],
+    "credentials": [
+      "winston"
     ],
     "ctrl": [
       "utm"
@@ -383,10 +551,16 @@
     "cutoffs": [
       "spotiflac"
     ],
+    "dates": [
+      "ttkillerplus"
+    ],
     "dayanch96": [
       "maxmusic",
       "ytlite",
       "ytmusic"
+    ],
+    "debugger": [
+      "stikdebug"
     ],
     "deep": [
       "ytkace"
@@ -403,6 +577,12 @@
     "dev": [
       "spotiflac"
     ],
+    "developer": [
+      "stikdebug"
+    ],
+    "device": [
+      "stikdebug"
+    ],
     "dimensions": [
       "spotiflac"
     ],
@@ -410,6 +590,7 @@
       "uyouenhanced"
     ],
     "directly": [
+      "stikdebug",
       "utm"
     ],
     "disabling": [
@@ -419,15 +600,27 @@
       "maxmusic",
       "maxtube"
     ],
+    "dm": [
+      "inkillerplus"
+    ],
+    "dms": [
+      "inkillerplus"
+    ],
     "donteatmycontent": [
       "maxtube"
     ],
     "download": [
+      "inkillerplus",
+      "itorrent",
       "maxmusic",
-      "spotiflac"
+      "spotiflac",
+      "ttkillerplus"
     ],
     "downloader": [
       "ytkace"
+    ],
+    "downloading": [
+      "itorrent"
     ],
     "downloads": [
       "maxmusic",
@@ -453,6 +646,12 @@
     "emulation": [
       "utm"
     ],
+    "emulators": [
+      "stikdebug"
+    ],
+    "enables": [
+      "stikdebug"
+    ],
     "enabling": [
       "uyouenhanced"
     ],
@@ -475,6 +674,9 @@
     "explicit": [
       "spotiflac"
     ],
+    "explore": [
+      "ttkillerplus"
+    ],
     "export": [
       "utm"
     ],
@@ -487,28 +689,46 @@
     "false": [
       "spotiflac"
     ],
+    "fast": [
+      "winston"
+    ],
     "feature": [
       "maxtube"
+    ],
+    "featured": [
+      "itorrent"
     ],
     "features": [
       "spotiflac",
       "uyouenhanced"
     ],
+    "feed": [
+      "ttkillerplus"
+    ],
     "file": [
-      "spotiflac"
+      "itorrent",
+      "spotiflac",
+      "stikdebug"
     ],
     "filename": [
       "spotiflac"
     ],
     "files": [
+      "itorrent",
       "spotiflac",
       "utm"
+    ],
+    "first": [
+      "winston"
     ],
     "fixed": [
       "maxmusic"
     ],
     "fixes": [
       "spotiflac"
+    ],
+    "flags": [
+      "ttkillerplus"
     ],
     "folder": [
       "spotiflac"
@@ -525,17 +745,30 @@
       "maxtube"
     ],
     "free": [
+      "winston",
       "ytkace"
+    ],
+    "fully": [
+      "itorrent"
     ],
     "gestures": [
+      "winston",
       "ytkace"
     ],
+    "ghost": [
+      "inkillerplus"
+    ],
     "github": [
+      "inkillerplus",
+      "itorrent",
       "maxmusic",
       "maxtube",
       "spotiflac",
+      "stikdebug",
+      "ttkillerplus",
       "utm",
       "uyouenhanced",
+      "winston",
       "youmod",
       "youpro",
       "ytkace",
@@ -563,6 +796,10 @@
     "handle": [
       "spotiflac"
     ],
+    "hide": [
+      "inkillerplus",
+      "ttkillerplus"
+    ],
     "higher": [
       "uyouenhanced"
     ],
@@ -579,11 +816,16 @@
       "spotiflac"
     ],
     "https": [
+      "inkillerplus",
+      "itorrent",
       "maxmusic",
       "maxtube",
       "spotiflac",
+      "stikdebug",
+      "ttkillerplus",
       "utm",
       "uyouenhanced",
+      "winston",
       "youmod",
       "youpro",
       "ytkace",
@@ -595,9 +837,8 @@
       "spotiflac"
     ],
     "ikarwan": [
-      "ytkp"
-    ],
-    "ikghd": [
+      "inkillerplus",
+      "ttkillerplus",
       "ytkp"
     ],
     "import": [
@@ -619,11 +860,24 @@
     "indicator": [
       "spotiflac"
     ],
+    "initial": [
+      "stikdebug"
+    ],
+    "inkillerplus": [
+      "inkillerplus"
+    ],
+    "inline": [
+      "winston"
+    ],
     "inside": [
       "maxmusic",
       "maxtube"
     ],
+    "instagram": [
+      "inkillerplus"
+    ],
     "integrates": [
+      "itorrent",
       "maxtube"
     ],
     "intents": [
@@ -633,11 +887,14 @@
       "ytkace"
     ],
     "ios": [
+      "itorrent",
       "maxmusic",
       "maxtube",
       "spotiflac",
+      "stikdebug",
       "utm",
       "uyouenhanced",
+      "winston",
       "youmod",
       "youpro",
       "ytkace",
@@ -648,14 +905,23 @@
     "ipad": [
       "utm"
     ],
+    "ipados": [
+      "inkillerplus",
+      "ttkillerplus"
+    ],
     "iphone": [
       "utm"
     ],
     "is": [
+      "inkillerplus",
+      "itorrent",
       "maxmusic",
       "maxtube",
+      "stikdebug",
+      "ttkillerplus",
       "utm",
       "uyouenhanced",
+      "winston",
       "ytkace"
     ],
     "isponsorblock": [
@@ -668,7 +934,15 @@
       "uyouenhanced"
     ],
     "it": [
-      "maxmusic"
+      "itorrent",
+      "maxmusic",
+      "stikdebug"
+    ],
+    "itorrent": [
+      "itorrent"
+    ],
+    "itorrent2": [
+      "itorrent"
     ],
     "itzzace": [
       "ytkace"
@@ -677,9 +951,11 @@
       "utm"
     ],
     "jit": [
+      "stikdebug",
       "utm"
     ],
     "keeps": [
+      "itorrent",
       "maxmusic"
     ],
     "keyboard": [
@@ -694,8 +970,20 @@
     "large": [
       "spotiflac"
     ],
+    "launch": [
+      "winston"
+    ],
     "library": [
       "spotiflac"
+    ],
+    "like": [
+      "ttkillerplus"
+    ],
+    "liking": [
+      "inkillerplus"
+    ],
+    "links": [
+      "itorrent"
     ],
     "linux": [
       "utm"
@@ -706,7 +994,11 @@
     "live": [
       "maxmusic",
       "maxtube",
-      "spotiflac"
+      "spotiflac",
+      "ttkillerplus"
+    ],
+    "lo": [
+      "winston"
     ],
     "locations": [
       "spotiflac"
@@ -716,6 +1008,9 @@
     ],
     "long": [
       "spotiflac"
+    ],
+    "loop": [
+      "stikdebug"
     ],
     "lossy": [
       "spotiflac"
@@ -731,6 +1026,9 @@
     ],
     "machine": [
       "utm"
+    ],
+    "magnet": [
+      "itorrent"
     ],
     "manager": [
       "maxmusic"
@@ -748,11 +1046,18 @@
     "maxtube": [
       "maxtube"
     ],
+    "media": [
+      "inkillerplus",
+      "winston"
+    ],
     "memory": [
       "spotiflac"
     ],
     "menu": [
       "utm"
+    ],
+    "merge": [
+      "ttkillerplus"
     ],
     "metadata": [
       "spotiflac"
@@ -777,6 +1082,8 @@
       "spotiflac"
     ],
     "modified": [
+      "inkillerplus",
+      "ttkillerplus",
       "uyouenhanced"
     ],
     "more": [
@@ -797,16 +1104,28 @@
     ],
     "music": [
       "maxmusic",
+      "ttkillerplus",
       "ytmusic"
+    ],
+    "musically": [
+      "ttkillerplus"
+    ],
+    "need": [
+      "stikdebug"
+    ],
+    "networking": [
+      "itorrent"
     ],
     "new": [
       "spotiflac"
     ],
     "newer": [
-      "maxmusic"
+      "maxmusic",
+      "stikdebug"
     ],
     "no": [
       "maxmusic",
+      "stikdebug",
       "utm",
       "youmod",
       "youpro",
@@ -819,8 +1138,10 @@
       "uyouenhanced"
     ],
     "open": [
+      "itorrent",
       "spotiflac",
       "utm",
+      "winston",
       "ytkace"
     ],
     "operating": [
@@ -834,6 +1155,7 @@
       "utm"
     ],
     "other": [
+      "stikdebug",
       "utm"
     ],
     "output": [
@@ -845,8 +1167,17 @@
     "overlays": [
       "uyouenhanced"
     ],
+    "own": [
+      "winston"
+    ],
     "padma": [
       "spotiflac"
+    ],
+    "pairing": [
+      "stikdebug"
+    ],
+    "per": [
+      "itorrent"
     ],
     "performance": [
       "utm"
@@ -863,8 +1194,15 @@
       "ytkp",
       "ytlite"
     ],
+    "photos": [
+      "ttkillerplus"
+    ],
     "picture": [
+      "itorrent",
       "ytkace"
+    ],
+    "pictures": [
+      "inkillerplus"
     ],
     "pip": [
       "maxtube",
@@ -881,6 +1219,7 @@
       "spotiflac"
     ],
     "playback": [
+      "itorrent",
       "maxmusic",
       "youmod",
       "youpro",
@@ -890,6 +1229,7 @@
       "ytmusic"
     ],
     "player": [
+      "itorrent",
       "spotiflac",
       "ytkace"
     ],
@@ -901,6 +1241,13 @@
     ],
     "plus": [
       "maxmusic"
+    ],
+    "post": [
+      "ttkillerplus"
+    ],
+    "posts": [
+      "inkillerplus",
+      "ttkillerplus"
     ],
     "powerpc": [
       "utm"
@@ -914,8 +1261,19 @@
     "preventing": [
       "uyouenhanced"
     ],
+    "profile": [
+      "inkillerplus",
+      "ttkillerplus"
+    ],
     "progress": [
       "spotiflac"
+    ],
+    "promoted": [
+      "inkillerplus",
+      "ttkillerplus"
+    ],
+    "prompts": [
+      "inkillerplus"
     ],
     "provider": [
       "spotiflac"
@@ -936,11 +1294,20 @@
     "readable": [
       "spotiflac"
     ],
+    "reader": [
+      "winston"
+    ],
     "real": [
       "utm"
     ],
     "recent": [
       "spotiflac"
+    ],
+    "reddit": [
+      "winston"
+    ],
+    "reels": [
+      "inkillerplus"
     ],
     "reject": [
       "spotiflac"
@@ -955,7 +1322,11 @@
       "spotiflac"
     ],
     "required": [
+      "stikdebug",
       "utm"
+    ],
+    "requires": [
+      "stikdebug"
     ],
     "resolution": [
       "spotiflac"
@@ -989,7 +1360,9 @@
       "spotiflac"
     ],
     "save": [
-      "spotiflac"
+      "inkillerplus",
+      "spotiflac",
+      "ttkillerplus"
     ],
     "scan": [
       "spotiflac"
@@ -997,14 +1370,22 @@
     "search": [
       "spotiflac"
     ],
+    "seen": [
+      "inkillerplus",
+      "ttkillerplus"
+    ],
     "selected": [
       "spotiflac"
     ],
     "selection": [
+      "itorrent",
       "maxmusic"
     ],
     "sent": [
       "utm"
+    ],
+    "sequential": [
+      "itorrent"
     ],
     "set": [
       "maxtube"
@@ -1014,11 +1395,21 @@
       "maxtube",
       "uyouenhanced"
     ],
+    "setup": [
+      "stikdebug"
+    ],
+    "ships": [
+      "itorrent"
+    ],
     "shortcuts": [
       "utm"
     ],
     "show": [
-      "spotiflac"
+      "spotiflac",
+      "ttkillerplus"
+    ],
+    "sideloaded": [
+      "stikdebug"
     ],
     "size": [
       "spotiflac"
@@ -1029,16 +1420,32 @@
     "smooth": [
       "spotiflac"
     ],
+    "so": [
+      "stikdebug"
+    ],
+    "social": [
+      "inkillerplus",
+      "ttkillerplus",
+      "winston"
+    ],
     "source": [
+      "itorrent",
       "spotiflac",
       "utm",
+      "winston",
       "ytkace"
+    ],
+    "specific": [
+      "ttkillerplus"
     ],
     "spectral": [
       "spotiflac"
     ],
     "spectrogram": [
       "spotiflac"
+    ],
+    "speed": [
+      "itorrent"
     ],
     "sponsorblock": [
       "maxtube",
@@ -1053,11 +1460,27 @@
     "spotiflacapp": [
       "spotiflac"
     ],
+    "stik": [
+      "stikdebug"
+    ],
+    "stikdebug": [
+      "stikdebug"
+    ],
     "storage": [
       "spotiflac"
     ],
+    "stories": [
+      "inkillerplus",
+      "ttkillerplus"
+    ],
+    "streams": [
+      "ttkillerplus"
+    ],
     "subscription": [
       "maxtube"
+    ],
+    "subtitle": [
+      "itorrent"
     ],
     "such": [
       "utm"
@@ -1067,10 +1490,22 @@
       "utm"
     ],
     "supported": [
+      "inkillerplus",
+      "ttkillerplus",
       "utm"
+    ],
+    "supports": [
+      "itorrent"
+    ],
+    "swiftui": [
+      "winston"
     ],
     "systems": [
       "utm"
+    ],
+    "tabs": [
+      "inkillerplus",
+      "ttkillerplus"
     ],
     "tag": [
       "spotiflac"
@@ -1093,8 +1528,23 @@
     "tested": [
       "utm"
     ],
+    "that": [
+      "stikdebug"
+    ],
+    "their": [
+      "ttkillerplus"
+    ],
+    "themes": [
+      "winston"
+    ],
+    "thread": [
+      "winston"
+    ],
     "thumbnail": [
       "maxtube"
+    ],
+    "tiktok": [
+      "ttkillerplus"
     ],
     "timed": [
       "spotiflac"
@@ -1105,11 +1555,21 @@
     "titles": [
       "spotiflac"
     ],
+    "toggle": [
+      "inkillerplus",
+      "ttkillerplus"
+    ],
     "tonwalter888": [
       "youmod"
     ],
+    "tools": [
+      "stikdebug"
+    ],
     "top": [
       "maxtube"
+    ],
+    "torrent": [
+      "itorrent"
     ],
     "traceability": [
       "spotiflac"
@@ -1117,11 +1577,20 @@
     "track": [
       "spotiflac"
     ],
+    "tracks": [
+      "itorrent"
+    ],
+    "ttkillerplus": [
+      "ttkillerplus"
+    ],
     "tweak": [
       "uyouenhanced"
     ],
     "tweaks": [
       "maxtube"
+    ],
+    "typing": [
+      "inkillerplus"
     ],
     "ubuntu": [
       "utm"
@@ -1137,11 +1606,18 @@
     "unlocking": [
       "uyouenhanced"
     ],
+    "unseen": [
+      "inkillerplus",
+      "ttkillerplus"
+    ],
     "upc": [
       "spotiflac"
     ],
     "upsell": [
       "uyouenhanced"
+    ],
+    "uses": [
+      "stikdebug"
     ],
     "utilities": [
       "spotiflac",
@@ -1188,13 +1664,20 @@
       "ytlite"
     ],
     "videos": [
+      "ttkillerplus",
       "uyouenhanced"
+    ],
+    "viewer": [
+      "winston"
     ],
     "virtual": [
       "utm"
     ],
     "virtualization": [
       "utm"
+    ],
+    "vlc": [
+      "itorrent"
     ],
     "vm": [
       "utm"
@@ -1203,11 +1686,20 @@
       "maxmusic",
       "maxtube"
     ],
+    "vpn": [
+      "stikdebug"
+    ],
     "well": [
       "utm"
     ],
+    "which": [
+      "stikdebug"
+    ],
     "windows": [
       "utm"
+    ],
+    "winston": [
+      "winston"
     ],
     "without": [
       "maxtube"
@@ -1223,6 +1715,12 @@
     ],
     "x86": [
       "utm"
+    ],
+    "xitrix": [
+      "itorrent"
+    ],
+    "you": [
+      "winston"
     ],
     "youchoosequality": [
       "maxtube"
@@ -1246,7 +1744,9 @@
       "maxtube"
     ],
     "your": [
-      "utm"
+      "stikdebug",
+      "utm",
+      "winston"
     ],
     "youshare": [
       "maxtube"
@@ -1317,6 +1817,9 @@
     ],
     "zarzet": [
       "spotiflac"
+    ],
+    "zhiliaoapp": [
+      "ttkillerplus"
     ]
   },
   "generatedAt": "2026-09-07"
