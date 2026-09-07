@@ -59,7 +59,7 @@ Prefer a single app? Each app also publishes its own feed at
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-07 · 11 apps · 11/11 downloads reachable._
+_Catalogue last changed 2026-09-07 · 11 apps · 10/11 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -68,7 +68,7 @@ _Catalogue last changed 2026-09-07 · 11 apps · 11/11 downloads reachable._
 | **YouTubePlus** | `com.google.ios.youtube` | `21.24.3` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ytlite.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ytlite.json) | [`ytlite.json`](https://iamsmmh.github.io/OmniSource/ytlite.json) |
 | **YouPro** | `com.google.ios.youtube` | `21.24.3` | 2026-08-16 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/youpro.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/youpro.json) | [`youpro.json`](https://iamsmmh.github.io/OmniSource/youpro.json) |
 | **YTKillerPlus** | `com.google.ios.youtube` | `21.35.3` | 2026-08-30 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ytkp.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ytkp.json) | [`ytkp.json`](https://iamsmmh.github.io/OmniSource/ytkp.json) |
-| **YTKACE** | `com.google.ios.youtube` | `21.35.3` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ytkace.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ytkace.json) | [`ytkace.json`](https://iamsmmh.github.io/OmniSource/ytkace.json) |
+| **YTKACE** | `com.google.ios.youtube` | `21.35.3` | 2026-09-01 | 🟢 stable | ⚠️ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ytkace.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ytkace.json) | [`ytkace.json`](https://iamsmmh.github.io/OmniSource/ytkace.json) |
 | **YouMod** | `com.google.ios.youtube` | `21.35.3` | 2026-08-30 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/youmod.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/youmod.json) | [`youmod.json`](https://iamsmmh.github.io/OmniSource/youmod.json) |
 | **MaxTube** | `com.google.ios.youtube` | `21.31.3` | 2026-08-03 | 🔵 manual | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/maxtube.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/maxtube.json) | [`maxtube.json`](https://iamsmmh.github.io/OmniSource/maxtube.json) |
 | **YTMusicUltimate** | `com.google.ios.youtubemusic` | `9.35.2` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ytmusic.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ytmusic.json) | [`ytmusic.json`](https://iamsmmh.github.io/OmniSource/ytmusic.json) |

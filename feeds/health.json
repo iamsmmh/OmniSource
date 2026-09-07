@@ -2,8 +2,8 @@
   "generatedAt": "2026-09-07",
   "totals": {
     "apps": 11,
-    "reachable": 11,
-    "unreachable": 0,
+    "reachable": 10,
+    "unreachable": 1,
     "featured": 5
   },
   "apps": [
@@ -69,9 +69,9 @@
       "version": "21.35.3",
       "updatedAt": "2026-09-01",
       "sizeBytes": 129059304,
-      "downloadReachable": true,
-      "detail": "HTTP 302",
-      "statusSince": "2026-09-01"
+      "downloadReachable": false,
+      "detail": "HTTP 404",
+      "statusSince": "2026-09-07"
     },
     {
       "slug": "youmod",
