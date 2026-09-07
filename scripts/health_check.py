@@ -39,6 +39,9 @@ FEEDS_DIR = REPO_ROOT / "feeds"
 NON_FEED_FILES = {
     "state.json",
     "health.json",
+    "badge-apps.json",
+    "badge-health.json",
+    "badge-version.json",
 }
 USER_AGENT = "OmniSource-HealthCheck/2.0 (+https://github.com/iamsmmh/OmniSource)"
 

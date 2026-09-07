@@ -1,0 +1,94 @@
+# =============================================================================
+# Build & Inject Tweak into IPA
+# =============================================================================
+# Modular workflow that takes a decrypted base iOS .ipa and injects any .deb
+# tweak or dylibs using cyan (the maintained modern successor to Azule / pyzule).
+#
+# How to run:
+#   Actions → "Build & Inject Tweak" → Run workflow → provide IPA URL & Deb URL.
+# =============================================================================
+
+name: Build & Inject Tweak
+
+run-name: Build Tweak (${{ inputs.tweak_name || 'Generic' }})
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_ipa_url:
+        description: "Direct download URL for the decrypted base .ipa"
+        required: true
+        type: string
+      tweak_deb_url:
+        description: "Direct download URL for the .deb tweak to inject"
+        required: true
+        type: string
+      tweak_name:
+        description: "Name of the tweak (e.g. YTLite, BHTwitter)"
+        required: true
+        type: string
+        default: "Tweak"
+      app_name:
+        description: "CFBundleDisplayName for the patched app (leave empty to keep original)"
+        required: false
+        type: string
+        default: ""
+      bundle_id:
+        description: "CFBundleIdentifier for the patched app (leave empty to keep original)"
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Inject tweak into IPA
+    runs-on: macos-14
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Cyan & Dependencies
+        run: |
+          brew install ldid dpkg
+          python3 -m pip install --upgrade pip
+          python3 -m pip install cyan-cli
+
+      - name: Download Base IPA & Deb Tweak
+        run: |
+          set -euo pipefail
+          mkdir -p workspace
+          echo "Downloading base IPA..."
+          curl -L "${{ inputs.base_ipa_url }}" -o workspace/base.ipa
+          echo "Downloading tweak .deb..."
+          curl -L "${{ inputs.tweak_deb_url }}" -o workspace/tweak.deb
+
+      - name: Inject Tweak using Cyan
+        run: |
+          set -euo pipefail
+          cd workspace
+          FLAGS=""
+          if [ -n "${{ inputs.bundle_id }}" ]; then
+            FLAGS="$FLAGS -b ${{ inputs.bundle_id }}"
+          fi
+          if [ -n "${{ inputs.app_name }}" ]; then
+            FLAGS="$FLAGS -n '${{ inputs.app_name }}'"
+          fi
+
+          echo "Injecting tweak with Cyan..."
+          cyan -i base.ipa -o output.ipa -d tweak.deb $FLAGS
+
+      - name: Upload Patched IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.tweak_name }}-Patched-IPA
+          path: workspace/output.ipa
+          retention-days: 14

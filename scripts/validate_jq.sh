@@ -57,7 +57,7 @@ rm -f /tmp/jq-lint.err
 feeds=()
 for f in feeds/*.json; do
   case "$(basename "$f")" in
-    state.json | health.json) continue ;; # pipeline state/health, not AltStore v2
+    state.json | health.json | badge-*.json) continue ;; # pipeline state/health/badges, not AltStore v2
     *) feeds+=("$f") ;;
   esac
 done

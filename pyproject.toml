@@ -22,7 +22,7 @@ where = ["src"]
 [tool.ruff]
 line-length = 120
 target-version = "py311"
-src = ["src", "scripts"]
+src = ["src", "scripts", "tests"]
 
 [tool.ruff.lint]
 select = [
@@ -36,6 +36,8 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "scripts/*.py" = ["E402"]
+"tests/*.py" = ["E402", "S101", "S105", "S106"]
+
 
 [tool.ruff.format]
 quote-style = "double"

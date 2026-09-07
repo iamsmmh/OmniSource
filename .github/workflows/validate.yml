@@ -58,9 +58,12 @@ jobs:
       # into a surprise red build on an unrelated pull request.
       - name: Check Python style
         run: |
-          python3 -m pip install --quiet --disable-pip-version-check "ruff==0.16.5"
-          python3 -m ruff check src/ scripts/
-          python3 -m ruff format --check src/ scripts/
+          python3 -m pip install --quiet --disable-pip-version-check "ruff>=0.16.0"
+          python3 -m ruff check src/ scripts/ tests/
+          python3 -m ruff format --check src/ scripts/ tests/
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests
 
       - name: Lint workflows
         run: |
