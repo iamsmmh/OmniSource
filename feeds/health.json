@@ -1,6 +1,8 @@
 {
   "generatedAt": "2026-09-07",
   "totals": {
+    "apps": 22,
+    "reachable": 22,
     "apps": 11,
     "reachable": 11,
     "unreachable": 0,
@@ -56,16 +58,19 @@
       "name": "YTKillerPlus",
       "status": "stable",
       "version": "21.35.3",
-      "updatedAt": "2026-08-30",
-      "sizeBytes": 141939462,
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 140645854,
       "downloadReachable": true,
-      "detail": "HTTP 302",
+      "detail": "not probed",
       "statusSince": "2026-09-01"
     },
     {
       "slug": "ytkace",
       "name": "YTKACE",
       "status": "stable",
+      "version": "21.35.3",
+      "updatedAt": "2026-08-31",
+      "sizeBytes": 134278975,
       "version": "21.36.6",
       "updatedAt": "2026-09-07",
       "sizeBytes": 129499459,
@@ -127,6 +132,127 @@
       "downloadReachable": true,
       "detail": "HTTP 302",
       "statusSince": "2026-09-02"
+    },
+    {
+      "slug": "inkillerplus",
+      "name": "iNKillerPlus",
+      "status": "stable",
+      "version": "445.0.0",
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 247159162,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-01"
+    },
+    {
+      "slug": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "status": "stable",
+      "version": "46.7.0",
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 452659069,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-01"
+    },
+    {
+      "slug": "winston",
+      "name": "Winston",
+      "status": "unmaintained",
+      "version": "1.1.5",
+      "updatedAt": "2024-06-24",
+      "sizeBytes": 50003343,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
+    },
+    {
+      "slug": "itorrent",
+      "name": "iTorrent",
+      "status": "stable",
+      "version": "2.2.0",
+      "updatedAt": "2026-07-19",
+      "sizeBytes": 24288935,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
+    },
+    {
+      "slug": "stikdebug",
+      "name": "StikDebug",
+      "status": "stable",
+      "version": "3.1.10",
+      "updatedAt": "2026-08-27",
+      "sizeBytes": 12824047,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
+    },
+    {
+      "slug": "bhtwitter",
+      "name": "BHTwitter",
+      "status": "stable",
+      "version": "4.4",
+      "updatedAt": "2025-05-13",
+      "sizeBytes": 167001383,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
+    },
+    {
+      "slug": "livecontainer",
+      "name": "LiveContainer",
+      "status": "stable",
+      "version": "3.8.0",
+      "updatedAt": "2026-07-17",
+      "sizeBytes": 4707271,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
+    },
+    {
+      "slug": "feather",
+      "name": "Feather",
+      "status": "stable",
+      "version": "2.9.0",
+      "updatedAt": "2026-07-05",
+      "sizeBytes": 14241853,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
+    },
+    {
+      "slug": "sidestore",
+      "name": "SideStore",
+      "status": "stable",
+      "version": "0.6.3",
+      "updatedAt": "2026-05-05",
+      "sizeBytes": 28632252,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
+    },
+    {
+      "slug": "aidoku",
+      "name": "Aidoku",
+      "status": "stable",
+      "version": "0.9",
+      "updatedAt": "2026-09-03",
+      "sizeBytes": 14731108,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
+    },
+    {
+      "slug": "provenance",
+      "name": "Provenance",
+      "status": "stable",
+      "version": "3.3.0",
+      "updatedAt": "2026-03-14",
+      "sizeBytes": 1076407494,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
+      "statusSince": "2026-09-07"
     }
   ]
 }

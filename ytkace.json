@@ -15,10 +15,24 @@
       "bundleIdentifier": "com.google.ios.youtube",
       "developerName": "itzzace",
       "subtitle": "YTKACE",
-      "localizedDescription": "YTKACE mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "localizedDescription": "YTKACE is a free, open-source YouTube enhancer and downloader for iOS. No ads, background playback, video and audio downloads, SponsorBlock, Picture in Picture, player gestures and deep interface customization.",
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.png",
       "tintColor": "FF0000",
       "category": "photo-video",
+      "version": "21.35.3",
+      "versionDate": "2026-08-31",
+      "versionDescription": "YouTube 21.35.3 | YTKACE 0.9.2 | YTKACE_0.9.2_YouTube_21.35.3\n\nby @itzzace0\n\nWhat’s new:\n• Updated for YouTube 21.35.3\n• Added a save button to community post images, saved at full resolution\n• Added Posts to the tab bar, so it can be shown as a tab or set as the startup tab\n• Added a choice of where downloads are saved, between the YTKACE library, Photos, or asking each time\n• Added a custom hold speed with a slider from 0.25x to 5x, and the speed pill now shows the speed you set\n• Added a toggle to remove the ⋯ button from the action bar\n• Added a toggle to remove the row of buttons under the progress bar in fullscreen\n• Added a toggle to limit gestures to landscape only\n\nFixed:\n• Fixed the app freezing while saving large videos to Photos\n• Fixed tapping an image in the comments opening the share sheet\n• Fixed a crash when rotating the player\n• Fixed a crash when leaving the app while a message was on screen\n\nYouTube 21.35.3 requires iOS 17, so there are two IPAs:\n• `YTKACE_0.9.2_YouTube_21.35.3.ipa` for iOS 17 and newer\n• `YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa` for iOS 16",
+      "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
+      "size": 134278975,
+      "versions": [
+        {
+          "version": "21.35.3",
+          "date": "2026-08-31",
+          "localizedDescription": "YouTube 21.35.3 | YTKACE 0.9.2 | YTKACE_0.9.2_YouTube_21.35.3\n\nby @itzzace0\n\nWhat’s new:\n• Updated for YouTube 21.35.3\n• Added a save button to community post images, saved at full resolution\n• Added Posts to the tab bar, so it can be shown as a tab or set as the startup tab\n• Added a choice of where downloads are saved, between the YTKACE library, Photos, or asking each time\n• Added a custom hold speed with a slider from 0.25x to 5x, and the speed pill now shows the speed you set\n• Added a toggle to remove the ⋯ button from the action bar\n• Added a toggle to remove the row of buttons under the progress bar in fullscreen\n• Added a toggle to limit gestures to landscape only\n\nFixed:\n• Fixed the app freezing while saving large videos to Photos\n• Fixed tapping an image in the comments opening the share sheet\n• Fixed a crash when rotating the player\n• Fixed a crash when leaving the app while a message was on screen\n\nYouTube 21.35.3 requires iOS 17, so there are two IPAs:\n• `YTKACE_0.9.2_YouTube_21.35.3.ipa` for iOS 17 and newer\n• `YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa` for iOS 16",
+          "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
+          "size": 134278975,
+          "minOSVersion": "17.0",
+          "releaseUrl": "https://github.com/itzzace/ytkace/releases/tag/v0.9.2",
       "version": "21.36.6",
       "versionDate": "2026-09-07",
       "versionDescription": "YouTube 21.36.6 | YTKACE_21.36.6_0.9.2\n\n### Latest Release, ENJOY!!\n#### A new free YouTube enhancer for iOS with downloads, iSponsorBlock, player controls, and interface customization.\n> [!NOTE]\n> - [Altstore source](https://raw.githubusercontent.com/mrdrvt99/Altstore-Repository/main/ytkace.json) is available now!.\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - [v0.9.2 release notes](https://github.com/itzzace/ytkace/releases/tag/v0.9.2)\n> - removed gonerino due to bug.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!IMPORTANT]\n> - make sure you reapply tweak by pressing ✔ again after every sideload so background play/pip and cast work. \n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
@@ -38,6 +52,46 @@
           "isDraft": false,
           "assets": [
             {
+              "filename": "com.itzzace.ytkace_0.9.2_roothide.deb",
+              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/com.itzzace.ytkace_0.9.2_roothide.deb",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "DEB",
+              "size": 877834,
+              "sha256": "1021efd74bb20e6388f37fb13a12b0cfed08c275820bfc0d5843cdce9d38449a",
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "com.itzzace.ytkace_0.9.2_rootless.deb",
+              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/com.itzzace.ytkace_0.9.2_rootless.deb",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "DEB",
+              "size": 878030,
+              "sha256": "43a8efa81448a66587106f449e128bf7a03d11a28e70c60f60925e19cbace38c",
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "YTKACE_0.9.2_YouTube_21.35.3.ipa",
+              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 134278975,
+              "sha256": "ca8579d26a89d6b00009df92aa55d08571b0ceca7632eccbb5903c51e803adbd",
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa",
+              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 132496316,
+              "sha256": "261c9df7d96c0691cbe198d04bcfbca4e8ce1ccf081b022a6c064a0d0f500575",
               "filename": "YTKACE_21.36.6_0.9.2.ipa",
               "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkace-ipa1/YTKACE_21.36.6_0.9.2.ipa",
               "platform": "ios",
@@ -49,6 +103,7 @@
               "installable": true
             }
           ],
+          "sha256": "ca8579d26a89d6b00009df92aa55d08571b0ceca7632eccbb5903c51e803adbd"
           "sha256": "53fde3005e432be33c18bd98b8ebbdd425afa14ae8078c33f0c548b02d923749"
         }
       ],
@@ -82,15 +137,15 @@
         "slug": "ytkace",
         "status": "stable",
         "featured": false,
-        "upstreamURL": "https://github.com/itzzace/YTKACE",
+        "upstreamURL": "https://github.com/itzzace/ytkace",
         "verification": {
           "method": "github-release",
-          "publisher": "mrdrvt99/YouProEXTRA",
+          "publisher": "itzzace/ytkace",
           "codeSigned": false,
           "checksumPublished": false
         },
         "compatibility": {
-          "minOSVersion": "16.0",
+          "minOSVersion": "17.0",
           "maxOSVersion": null,
           "devices": [
             "iphone",
@@ -103,12 +158,13 @@
             "esign",
             "livecontainer"
           ],
-          "notes": ""
+          "notes": "Tracks the official itzzace/ytkace releases. The published build follows the latest YouTube release and needs iOS 17 or newer; upstream also ships a separate iOS 16 IPA (YTKACE_<version>_YouTube_iOS16_<youtube>.ipa) on the same release page."
         },
         "health": {
           "downloadReachable": true,
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-08-31"
           "lastUpdatedAt": "2026-09-07"
         }
       }

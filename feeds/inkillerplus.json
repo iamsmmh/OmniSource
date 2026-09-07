@@ -1,0 +1,121 @@
+{
+  "name": "OmniSource - iNKillerPlus",
+  "identifier": "com.iamsmmh.omnisource.inkillerplus",
+  "apiVersion": "v2",
+  "subtitle": "Instagram with downloads, ghost mode and no ads",
+  "description": "Standalone distribution feed for iNKillerPlus, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/inkillerplus.json",
+  "apps": [
+    {
+      "name": "iNKillerPlus",
+      "bundleIdentifier": "com.burbn.instagram",
+      "developerName": "iKarwan",
+      "subtitle": "Instagram with downloads, ghost mode and no ads",
+      "localizedDescription": "iNKillerPlus is a modified Instagram by iKarwan. Download posts, reels, stories and DM media, save profile pictures, block promoted posts and ads, toggle seen/unseen for stories and DMs, ghost typing, hide tabs, copy comments and bios, confirmation prompts before liking or calling, and a profile analyzer. iPadOS supported.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.png",
+      "tintColor": "E1306C",
+      "category": "social",
+      "version": "445.0.0",
+      "versionDate": "2026-09-01",
+      "versionDescription": "Instagram 445.0.0 | Instagram_445.0_iNKillerPlus_5.2\n\n• Fix profile bio long press to copy detect email and links\n• Fix read DM icon\n• Fix user exception for direct message\n• Add roothide & relaxin JB support\n• Add full compatibility with IG v440+\n• Add tab configuration for hide & launch\n• Fix swipe between tabs\n• Fix story mention button crashes on v440+\n• Fix story download button\n• Fix eye long-press user exception on v440+\n• Fix follow confirmation toggle\n• Fix long-press profile picture expand & download\n• Fix grid button in main navbar\n• Fix 2x2 grid handling in 3x3 position style\n• Fix photo picker with music on multiple posts for iOS 27 Liquid Glass\n• Other fixes & improvements\n• Updated base IPA to Instagram v445.0",
+      "downloadURL": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
+      "size": 247159162,
+      "versions": [
+        {
+          "version": "445.0.0",
+          "date": "2026-09-01",
+          "localizedDescription": "Instagram 445.0.0 | Instagram_445.0_iNKillerPlus_5.2\n\n• Fix profile bio long press to copy detect email and links\n• Fix read DM icon\n• Fix user exception for direct message\n• Add roothide & relaxin JB support\n• Add full compatibility with IG v440+\n• Add tab configuration for hide & launch\n• Fix swipe between tabs\n• Fix story mention button crashes on v440+\n• Fix story download button\n• Fix eye long-press user exception on v440+\n• Fix follow confirmation toggle\n• Fix long-press profile picture expand & download\n• Fix grid button in main navbar\n• Fix 2x2 grid handling in 3x3 position style\n• Fix photo picker with music on multiple posts for iOS 27 Liquid Glass\n• Other fixes & improvements\n• Updated base IPA to Instagram v445.0",
+          "downloadURL": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
+          "size": 247159162,
+          "minOSVersion": "16.3",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Instagram_445.0_iNKillerPlus_5.2.ipa",
+              "downloadUrl": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 247159162,
+              "sha256": null,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/1.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/2.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/3.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/4.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/5.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/6.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/7.PNG"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.security.application-groups",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "keychain-access-groups",
+          "com.apple.developer.team-identifier"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Instagram uses your device's camera to do things like help you take photos, record videos and use effects.",
+          "NSMicrophoneUsageDescription": "Instagram uses your device's microphone to do things like help you record videos and preview audio effects.",
+          "NSPhotoLibraryUsageDescription": "Instagram uses access to your camera roll to do things like help you share photos and videos to Instagram, apply effects and suggest photos and videos to share.",
+          "NSPhotoLibraryAddUsageDescription": "This lets you save photos and videos to your Camera Roll.",
+          "NSContactsUsageDescription": "Instagram will use your contacts to suggest people and things you care about, and offer a better service.",
+          "NSFaceIDUsageDescription": "Enable Face ID for quick and secure authentication on Instagram.",
+          "NSLocationWhenInUseUsageDescription": "Instagram uses this to make some features work, personalize content and help people find places."
+        }
+      },
+      "omnisource": {
+        "slug": "inkillerplus",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/iKarwan/iNKillerPlus",
+        "verification": {
+          "method": "altstore",
+          "publisher": "iKarwan (repo.ikghd.me)",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.3",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
+        }
+      }
+    }
+  ],
+  "news": []
+}

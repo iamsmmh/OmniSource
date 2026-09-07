@@ -29,7 +29,7 @@
       "id": "feather",
       "name": "Feather",
       "icon": "Feather.png",
-      "url": "https://github.com/khcrysalis/Feather"
+      "url": "https://github.com/claration/Feather"
     },
     {
     "id": "esign",
@@ -40,7 +40,7 @@
       "id": "livecontainer",
       "name": "LiveContainer",
       "icon": "LiveContainer.png",
-      "url": "https://github.com/khanhduytran0/LiveContainer"
+      "url": "https://github.com/LiveContainer/LiveContainer"
     }
   ],
   "apps": [
@@ -338,7 +338,7 @@
       "name": "YTKillerPlus",
       "subtitle": "YTKP",
       "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "ikghd",
+      "developerName": "iKarwan",
       "category": "photo-video",
       "tintColor": "FF0000",
       "icon": "YouTube.png",
@@ -346,15 +346,15 @@
       "screenshots": [],
       "featured": false,
       "status": "stable",
-        "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
+      "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
       "verification": {
-        "method": "github-release",
-        "publisher": "mrdrvt99/YouProEXTRA",
+        "method": "altstore",
+        "publisher": "iKarwan (repo.ikghd.me)",
         "codeSigned": false,
         "checksumPublished": false
       },
       "compatibility": {
-        "minOSVersion": "16.0",
+        "minOSVersion": "17.0",
         "maxOSVersion": null,
         "devices": [
           "iphone",
@@ -367,7 +367,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": ""
+        "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me. YouTube 21.34+ requires iOS 17. The mrdrvt99/YouProEXTRA build stays configured as a mirror fallback."
       },
       "appPermissions": {
         "entitlements": [
@@ -395,14 +395,24 @@
         }
       },
       "upstream": {
-        "repo": "mrdrvt99/YouProEXTRA",
-        "tagPrefix": "ytkp-ipa",
-        "assetSuffixes": [
-          ".ipa"
-        ],
-        "maxPages": 10,
+        "provider": "altstore",
+        "feedURL": "https://repo.ikghd.me/repo.json",
+        "appId": "com.google.ios.youtube",
         "keepVersions": 1,
-        "descriptionTemplate": "YouTube {version} | {label}"
+        "versionFromTag": true,
+        "descriptionTemplate": "YouTube {version} | {label}",
+        "minOSVersion": "17.0"
+      },
+      "fallbackDownloadURLs": [
+        "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa"
+      ],
+      "manualRelease": {
+        "version": "21.35.3",
+        "date": "2026-08-30",
+        "localizedDescription": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\nMirror build kept as a fallback while the developer's own source (repo.ikghd.me) is unreachable.",
+        "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
+        "size": 141939462,
+        "minOSVersion": "17.0"
       }
     },
     {
@@ -414,19 +424,19 @@
       "category": "photo-video",
       "tintColor": "FF0000",
       "icon": "YouTube.png",
-      "localizedDescription": "YTKACE mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "localizedDescription": "YTKACE is a free, open-source YouTube enhancer and downloader for iOS. No ads, background playback, video and audio downloads, SponsorBlock, Picture in Picture, player gestures and deep interface customization.",
       "screenshots": [],
       "featured": false,
       "status": "stable",
-      "upstreamURL": "https://github.com/itzzace/YTKACE",
+      "upstreamURL": "https://github.com/itzzace/ytkace",
       "verification": {
         "method": "github-release",
-        "publisher": "mrdrvt99/YouProEXTRA",
+        "publisher": "itzzace/ytkace",
         "codeSigned": false,
         "checksumPublished": false
       },
       "compatibility": {
-        "minOSVersion": "16.0",
+        "minOSVersion": "17.0",
         "maxOSVersion": null,
         "devices": [
           "iphone",
@@ -439,7 +449,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": ""
+        "notes": "Tracks the official itzzace/ytkace releases. The published build follows the latest YouTube release and needs iOS 17 or newer; upstream also ships a separate iOS 16 IPA (YTKACE_<version>_YouTube_iOS16_<youtube>.ipa) on the same release page."
       },
       "appPermissions": {
         "entitlements": [
@@ -467,14 +477,16 @@
         }
       },
       "upstream": {
-        "repo": "mrdrvt99/YouProEXTRA",
-        "tagPrefix": "ytkace-ipa",
+        "repo": "itzzace/ytkace",
+        "assetNamePattern": "^YTKACE_[0-9][^/]*_YouTube_[0-9]",
         "assetSuffixes": [
           ".ipa"
         ],
-        "maxPages": 10,
+        "maxPages": 3,
         "keepVersions": 1,
-        "descriptionTemplate": "YouTube {version} | {label}"
+        "versionPattern": "YouTube_(\\d+\\.\\d+(?:\\.\\d+)?)",
+        "descriptionTemplate": "YouTube {version} | YTKACE {secondary} | {label}",
+        "minOSVersion": "17.0"
       }
     },
     {
@@ -830,6 +842,652 @@
         "descriptionTemplate": "{name} {version} | Universal IPA",
         "minOSVersion": "14.0",
         "isoDates": true
+      }
+    },
+    {
+      "slug": "inkillerplus",
+      "name": "iNKillerPlus",
+      "subtitle": "Instagram with downloads, ghost mode and no ads",
+      "bundleIdentifier": "com.burbn.instagram",
+      "developerName": "iKarwan",
+      "category": "social",
+      "tintColor": "E1306C",
+      "icon": "Instagram.png",
+      "localizedDescription": "iNKillerPlus is a modified Instagram by iKarwan. Download posts, reels, stories and DM media, save profile pictures, block promoted posts and ads, toggle seen/unseen for stories and DMs, ghost typing, hide tabs, copy comments and bios, confirmation prompts before liking or calling, and a profile analyzer. iPadOS supported.",
+      "screenshots": [
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/1.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/2.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/3.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/4.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/5.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/6.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/7.PNG"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/iKarwan/iNKillerPlus",
+      "verification": {
+        "method": "altstore",
+        "publisher": "iKarwan (repo.ikghd.me)",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.3",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.security.application-groups",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "keychain-access-groups",
+          "com.apple.developer.team-identifier"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Instagram uses your device's camera to do things like help you take photos, record videos and use effects.",
+          "NSMicrophoneUsageDescription": "Instagram uses your device's microphone to do things like help you record videos and preview audio effects.",
+          "NSPhotoLibraryUsageDescription": "Instagram uses access to your camera roll to do things like help you share photos and videos to Instagram, apply effects and suggest photos and videos to share.",
+          "NSPhotoLibraryAddUsageDescription": "This lets you save photos and videos to your Camera Roll.",
+          "NSContactsUsageDescription": "Instagram will use your contacts to suggest people and things you care about, and offer a better service.",
+          "NSFaceIDUsageDescription": "Enable Face ID for quick and secure authentication on Instagram.",
+          "NSLocationWhenInUseUsageDescription": "Instagram uses this to make some features work, personalize content and help people find places."
+        }
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://repo.ikghd.me/repo.json",
+        "appId": "com.burbn.instagram",
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "Instagram {version} | {label}",
+        "minOSVersion": "16.3"
+      },
+      "manualRelease": {
+        "version": "445.0.0",
+        "date": "2026-09-01",
+        "localizedDescription": "Instagram 445.0.0 | Instagram_445.0_iNKillerPlus_5.2\n\nLast build published on the developer's AltStore source before this snapshot.",
+        "downloadURL": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
+        "size": 247159162,
+        "minOSVersion": "16.3"
+      }
+    },
+    {
+      "slug": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "subtitle": "TikTok with downloads, no ads and region switch",
+      "bundleIdentifier": "com.zhiliaoapp.musically",
+      "developerName": "iKarwan",
+      "category": "social",
+      "tintColor": "232621",
+      "icon": "TikTok.png",
+      "localizedDescription": "TTKillerPlus is a modified TikTok by iKarwan. Download videos from the feed, stories and Explore, save photos and profile avatars, merge post photos with their music, block promoted posts and ads, toggle seen/unseen, hide tabs, browse the feed of a specific country, show country flags and post dates, and auto-like in live streams. iPadOS supported.",
+      "screenshots": [
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/1.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/2.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/3.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/4.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/5.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/6.PNG"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/iKarwan/TTKillerPlus",
+      "verification": {
+        "method": "altstore",
+        "publisher": "iKarwan (repo.ikghd.me)",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.security.application-groups",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "keychain-access-groups",
+          "com.apple.developer.team-identifier"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "You'll be able to record video.",
+          "NSContactsUsageDescription": "Sync your contacts to easily find people you know on TikTok.",
+          "NSCalendarsUsageDescription": "Add events to your device calendar to get reminders when events start.",
+          "NSFaceIDUsageDescription": "We'll use this to unlock features that require added security.",
+          "NSBluetoothAlwaysUsageDescription": "This will allow TikTok to find and connect to Bluetooth accessories."
+        }
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://repo.ikghd.me/repo.json",
+        "appId": "com.zhiliaoapp.musically",
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "TikTok {version} | {label}",
+        "minOSVersion": "15.1"
+      },
+      "manualRelease": {
+        "version": "46.7.0",
+        "date": "2026-09-01",
+        "localizedDescription": "TikTok 46.7.0 | TikTok_46.7_TTKillerPlus_2.1\n\nLast build published on the developer's AltStore source before this snapshot.",
+        "downloadURL": "https://ikghd.site/ipa/TikTok_46.7_TTKillerPlus_2.1.ipa",
+        "size": 452659069,
+        "minOSVersion": "15.1"
+      }
+    },
+    {
+      "slug": "winston",
+      "name": "Winston",
+      "subtitle": "Open-source Reddit client",
+      "bundleIdentifier": "lo.cafe.winston",
+      "developerName": "lo.cafe",
+      "category": "social",
+      "tintColor": "FF4500",
+      "icon": "Winston.png",
+      "localizedDescription": "Winston is a beautiful open-source Reddit client for iOS built in SwiftUI, with themes, gestures, an inline media viewer and a fast comment thread reader. Because Reddit charges for API access, Winston asks you to create your own free Reddit API credentials on first launch.",
+      "screenshots": [],
+      "featured": false,
+      "status": "unmaintained",
+      "upstreamURL": "https://github.com/lo-cafe/winston",
+      "verification": {
+        "method": "github-release",
+        "publisher": "lo-cafe/winston",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "17.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official GPL-3.0 releases from lo-cafe/winston. The last published build is v1.1.5 (June 2024); the project is on hold, so treat it as archived-but-installable. Requires your own Reddit API credentials."
+      },
+      "upstream": {
+        "repo": "lo-cafe/winston",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "Winston {version} | {label}",
+        "minOSVersion": "17.0"
+      }
+    },
+    {
+      "slug": "itorrent",
+      "name": "iTorrent",
+      "subtitle": "Torrent client with a built-in player",
+      "bundleIdentifier": "com.xitrix.iTorrent2",
+      "developerName": "XITRIX",
+      "category": "networking",
+      "tintColor": "0A6CFF",
+      "icon": "iTorrent.png",
+      "localizedDescription": "iTorrent is a fully featured open-source torrent client for iOS. It keeps downloading in the background, integrates with the Files app, supports magnet links, sequential download and per-file selection, and ships a built-in VLC-based player with Picture in Picture, audio and subtitle tracks and playback speed control.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/XITRIX/iTorrent",
+      "verification": {
+        "method": "github-release",
+        "publisher": "XITRIX/iTorrent",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official MIT-licensed releases from XITRIX/iTorrent."
+      },
+      "upstream": {
+        "repo": "XITRIX/iTorrent",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "iTorrent {version} | {label}",
+        "minOSVersion": "16.0"
+      }
+    },
+    {
+      "slug": "stikdebug",
+      "name": "StikDebug",
+      "subtitle": "On-device JIT enabler and debugger",
+      "bundleIdentifier": "com.stik.stikdebug",
+      "developerName": "StikDebug",
+      "category": "developer-tools",
+      "tintColor": "3B82F6",
+      "icon": "StikDebug.png",
+      "localizedDescription": "StikDebug attaches a debugger to your sideloaded apps directly on device, which enables JIT for emulators and other apps that need it. It uses a pairing file and an on-device VPN loop, so no computer is required after the initial setup. Requires iOS 17.4 or newer.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/HomeScreen.PNG",
+        "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/AppsList.PNG",
+        "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/Settings.PNG"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/StikDebug/StikDebug",
+      "verification": {
+        "method": "github-release",
+        "publisher": "StikDebug/StikDebug",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "17.4",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official releases from StikDebug/StikDebug. Needs a pairing file and the on-device VPN loop; JIT attachment requires iOS 17.4 or newer."
+      },
+      "upstream": {
+        "repo": "StikDebug/StikDebug",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "descriptionTemplate": "StikDebug {version} | {label}",
+        "minOSVersion": "17.4"
+      }
+    },
+    {
+      "slug": "bhtwitter",
+      "name": "BHTwitter",
+      "subtitle": "X (Twitter) with no ads, downloads and the chronological timeline",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "developerName": "BandarHL",
+      "category": "social",
+      "tintColor": "1D9BF0",
+      "icon": "X.png",
+      "localizedDescription": "BHTwitter is a long-running tweak for X (formerly Twitter), published as a ready-to-sideload IPA. It hides promoted posts and ads, restores the chronological timeline as the default, and lets you download videos, GIFs and images straight from a post. It also adds Face ID / Touch ID app lock, custom fonts, undo posting, inline translation, direct saving of profile pictures and headers, confirmation prompts for likes and reposts, and switches for hiding the tabs and UI elements you never use.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/1.png",
+        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/2.png",
+        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/3.png",
+        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/4.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/BandarHL/BHTwitter",
+      "verification": {
+        "method": "github-release",
+        "publisher": "BandarHL/BHTwitter",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official sideloaded build from BandarHL/BHTwitter. The release also ships a TrollStore .tipa, which OmniSource skips - only the -sideloaded.ipa is tracked. The bundled X app is whichever decrypted build the maintainer packaged for that tweak release."
+      },
+      "upstream": {
+        "repo": "BandarHL/BHTwitter",
+        "assetSuffixes": [
+          "-sideloaded.ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "BHTwitter {version} | {label}",
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "slug": "livecontainer",
+      "name": "LiveContainer",
+      "subtitle": "Run iOS apps without actually installing them",
+      "bundleIdentifier": "com.kdt.livecontainer",
+      "developerName": "LiveContainer Team",
+      "category": "utilities",
+      "tintColor": "0784FC",
+      "icon": "LiveContainer.png",
+      "localizedDescription": "LiveContainer runs other iOS apps inside itself instead of installing them, so a single app slot on your certificate can host many sideloaded apps and you stop burning through the 3-app limit. When JIT is available it bypasses codesigning entirely; otherwise guest apps are signed with the same certificate as LiveContainer. It supports multiple data containers per app, tweak injection, adding guest apps to the Home Screen, and multitasking windows on iPadOS 16 and later.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/LiveContainer/LiveContainer",
+      "verification": {
+        "method": "github-release",
+        "publisher": "LiveContainer/LiveContainer",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "com.apple.security.application-groups",
+          "get-task-allow",
+          "keychain-access-groups",
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit"
+        ],
+        "privacy": {}
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official AGPL-3.0 releases. The plain LiveContainer.ipa is tracked; the LiveContainer+SideStore.ipa bundle in the same release is skipped. Multitasking needs iPadOS 16 or later, and installing guest apps needs AltStore 2.0+ / SideStore 0.6.0+."
+      },
+      "upstream": {
+        "repo": "LiveContainer/LiveContainer",
+        "assetSuffixes": [
+          "LiveContainer.ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "LiveContainer {version} | {label}",
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "slug": "feather",
+      "name": "Feather",
+      "subtitle": "On-device app manager, signer and installer",
+      "bundleIdentifier": "thewonderofyou.Feather",
+      "developerName": "Samara",
+      "category": "utilities",
+      "tintColor": "848EF9",
+      "icon": "Feather.png",
+      "localizedDescription": "Feather is a free on-device iOS and iPadOS application manager built with UIKit. Import your own developer or enterprise certificate to sign and install IPAs directly from the device, add AltStore-compatible repositories to browse and update apps, keep a library of signed and imported apps, and tweak bundle identifiers, display names, icons and injected dylibs per app - no computer or AltServer required.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/claration/Feather/v1.x/Images/Library.png",
+        "https://raw.githubusercontent.com/claration/Feather/v1.x/Images/Repos.png",
+        "https://raw.githubusercontent.com/claration/Feather/v1.x/Images/Sign.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/claration/Feather",
+      "verification": {
+        "method": "github-release",
+        "publisher": "claration/Feather",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "appPermissions": {
+        "entitlements": [
+          "get-task-allow"
+        ],
+        "privacy": {}
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official GPL-3.0 releases from claration/Feather (formerly khcrysalis/Feather). You need your own signing certificate; Feather does not provide one."
+      },
+      "upstream": {
+        "repo": "claration/Feather",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "Feather {version} | {label}",
+        "minOSVersion": "16.0"
+      }
+    },
+    {
+      "slug": "sidestore",
+      "name": "SideStore",
+      "subtitle": "AltStore fork that refreshes apps without a computer",
+      "bundleIdentifier": "com.SideStore.SideStore",
+      "developerName": "SideStore Team",
+      "category": "utilities",
+      "tintColor": "A405FA",
+      "icon": "SideStore.png",
+      "localizedDescription": "SideStore is a fork of AltStore that signs and refreshes sideloaded apps directly on the device. After a one-time pairing-file setup it renews 7-day certificates in the background using your own Apple ID and an anisette server, so apps stop expiring while you are away from a computer. It installs apps from any AltStore-compatible source, keeps them updated, and can back up and restore app data.",
+      "screenshots": [
+        "https://apps.sidestore.io/apps/sidestore/v0.1.1/browse-dark.png",
+        "https://apps.sidestore.io/apps/sidestore/v0.1.1/apps-dark.png",
+        "https://apps.sidestore.io/apps/sidestore/v0.1.1/news-dark.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/SideStore/SideStore",
+      "verification": {
+        "method": "github-release",
+        "publisher": "SideStore/SideStore",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "appPermissions": {
+        "entitlements": [
+          "aps-environment",
+          "com.apple.security.application-groups",
+          "com.apple.developer.kernel.extended-virtual-addressing",
+          "com.apple.developer.kernel.increased-memory-limit",
+          "com.apple.developer.kernel.increased-debugging-memory-limit"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "SideStore can use local network access to discover Bonjour (mDNS) services on your network. This is not required for core functionality."
+        }
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official AGPL-3.0 stable releases; the rolling nightly and alpha tags are pre-releases and are not tracked. Requires a pairing file and, on iOS 17+, a JIT/StikDebug-style enabler for some features."
+      },
+      "upstream": {
+        "repo": "SideStore/SideStore",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "SideStore {version} | {label}",
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "slug": "aidoku",
+      "name": "Aidoku",
+      "subtitle": "Free and open-source manga reader",
+      "bundleIdentifier": "app.aidoku.Aidoku",
+      "developerName": "Skitty",
+      "category": "other",
+      "tintColor": "FF375F",
+      "icon": "Aidoku.png",
+      "localizedDescription": "Aidoku is a free and open-source manga reader for iOS and iPadOS with no ads and no tracking. Content comes from community-maintained source lists that you add yourself, so nothing is bundled with the app. It downloads chapters for offline reading, syncs library, history and settings through iCloud, supports external trackers, and offers paged, vertical and continuous reading modes with customisable layouts.",
+      "screenshots": [
+        "https://aidoku.app/images/library.png",
+        "https://aidoku.app/images/source.png",
+        "https://aidoku.app/images/reader.png"
+      ],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Aidoku/Aidoku",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Aidoku/Aidoku",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official releases from Aidoku/Aidoku. Sources are added by the user; the app ships none."
+      },
+      "upstream": {
+        "repo": "Aidoku/Aidoku",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "Aidoku {version} | {label}",
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "slug": "provenance",
+      "name": "Provenance",
+      "subtitle": "Multi-system retro game emulator",
+      "bundleIdentifier": "org.provenance-emu.provenance",
+      "developerName": "Provenance Emu",
+      "category": "games",
+      "tintColor": "1D67F0",
+      "icon": "Provenance.png",
+      "localizedDescription": "Provenance is a multi-emulator front-end covering Atari, Bandai, NEC, Nintendo, Sega, SNK and Sony systems from a single library. It handles save states, cheats, MFi and native game controllers, Metal-based scaling filters, per-core settings, and imports your own ROMs and BIOS files through the Files app, iCloud or its built-in web uploader.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Provenance-Emu/Provenance",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Provenance-Emu/Provenance",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "17.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official stable releases; the rolling alpha tag is a pre-release and is not tracked. The iOS IPA is around 1 GB because every emulator core is bundled, and the tvOS build is skipped. Provenance ships no games - you supply your own ROMs."
+      },
+      "upstream": {
+        "repo": "Provenance-Emu/Provenance",
+        "assetSuffixes": [
+          "-iOS.ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionFromTag": true,
+        "descriptionTemplate": "Provenance {version} | {label}",
+        "minOSVersion": "17.0"
       }
     }
   ]

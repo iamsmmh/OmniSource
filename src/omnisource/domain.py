@@ -158,10 +158,14 @@ class RepositoryRef:
     repo: str = ""
     host: str = ""
     feed_url: str = ""
+    # Feed providers publish many apps in one document; this selects one of
+    # them by id, bundle identifier or name.
+    app_id: str = ""
     tag_prefix: str = ""
     exclude_tag_prefixes: tuple[str, ...] = ()
     asset_suffixes: tuple[str, ...] = (".ipa",)
     asset_name_pattern: str = ""
+    version_pattern: str = ""
     max_pages: int = 3
     keep_versions: int = 1
     sort_by_tag_number: bool = False
@@ -178,10 +182,20 @@ class RepositoryRef:
     def cache_key(self) -> tuple[str, str, str, int]:
         return (self.provider.value, self.host, self.repo or self.feed_url, self.max_pages)
 
+    @property
+    def is_feed(self) -> bool:
+        return self.provider in {SourceType.JSON_FEED, SourceType.ALTSTORE, SourceType.FEATHER}
+
+    @property
+    def identity(self) -> str:
+        """Stable identifier of the upstream *source* (not of one app in it)."""
+        return self.feed_url if self.is_feed else (self.repo or self.feed_url)
+
     @classmethod
     def parse(cls, raw: dict[str, Any]) -> RepositoryRef:
         provider = SourceType.parse(raw.get("provider"))
         repo = str(raw.get("repo") or "")
+        app_id = str(raw.get("appId") or "")
         feed_url = str(raw.get("feedURL") or raw.get("feedUrl") or "")
         if provider in {SourceType.JSON_FEED, SourceType.ALTSTORE, SourceType.FEATHER}:
             if not feed_url:
@@ -191,12 +205,14 @@ class RepositoryRef:
         return cls(
             provider=provider,
             repo=repo,
+            app_id=app_id,
             host=str(raw.get("host") or "").rstrip("/"),
             feed_url=feed_url,
             tag_prefix=raw.get("tagPrefix", ""),
             exclude_tag_prefixes=tuple(raw.get("excludeTagPrefixes", ())),
             asset_suffixes=tuple(raw.get("assetSuffixes", (".ipa",))),
             asset_name_pattern=raw.get("assetNamePattern", ""),
+            version_pattern=raw.get("versionPattern", ""),
             max_pages=int(raw.get("maxPages", 3)),
             keep_versions=int(raw.get("keepVersions", 1)),
             sort_by_tag_number=bool(raw.get("sortByTagNumber", False)),

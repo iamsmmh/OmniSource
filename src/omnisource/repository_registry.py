@@ -5,8 +5,9 @@ from __future__ import annotations
 import hashlib
 from collections import OrderedDict
 from typing import Any
+from urllib.parse import urlparse
 
-from omnisource.domain import App, Catalog, today
+from omnisource.domain import App, Catalog, RepositoryRef, today
 from omnisource.models.repository import Repository
 
 
@@ -14,7 +15,9 @@ def repository_key(app: App) -> str:
     ref = app.upstream
     if ref is None:
         return f"manual:{app.slug}"
-    return ":".join((ref.provider.value, ref.host, ref.repo or ref.feed_url))
+    # ``identity`` is the source document/repository - several apps published
+    # in one feed must collapse into a single monitored repository.
+    return ":".join((ref.provider.value, ref.host, ref.identity))
 
 
 def repository_id(key: str) -> str:
@@ -51,7 +54,7 @@ def build_repository_registry(
         repositories.append(
             Repository(
                 id=repository_id(key),
-                name=(ref.repo if ref and ref.repo else first.name),
+                name=_repository_name(ref, first),
                 url=url,
                 provider=provider,
                 enabled=bool(diagnostics.get("enabled", True)),
@@ -99,6 +102,15 @@ def record_repository_result(
         }
     )
     records[key] = previous
+
+
+def _repository_name(ref: RepositoryRef | None, first: App) -> str:
+    """Human-readable source name: ``owner/name`` for forges, host for feeds."""
+    if ref is None:
+        return first.name
+    if ref.is_feed and ref.feed_url:
+        return urlparse(ref.feed_url).netloc or ref.feed_url
+    return ref.repo or first.name
 
 
 def _latest_sync(repositories: list[dict[str, Any]]) -> str:

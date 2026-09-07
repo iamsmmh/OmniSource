@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
   "methodology": "Ordered by latest observable release date; no downloads, users, or popularity are inferred.",
-  "count": 11,
+  "count": 22,
   "apps": [
     {
       "appId": "ytkace",
@@ -19,9 +19,23 @@
       "activity": "recent-release"
     },
     {
+      "appId": "aidoku",
+      "name": "Aidoku",
+      "version": "0.9",
+      "releaseDate": "2026-09-03",
+      "activity": "recent-release"
+    },
+    {
       "appId": "ytmusic",
       "name": "YTMusicUltimate",
       "version": "9.35.2",
+      "releaseDate": "2026-09-01",
+      "activity": "recent-release"
+    },
+    {
+      "appId": "ytkp",
+      "name": "YTKillerPlus",
+      "version": "21.35.3",
       "releaseDate": "2026-09-01",
       "activity": "recent-release"
     },
@@ -33,6 +47,13 @@
       "activity": "recent-release"
     },
     {
+      "appId": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "version": "46.7.0",
+      "releaseDate": "2026-09-01",
+      "activity": "recent-release"
+    },
+    {
       "appId": "maxmusic",
       "name": "MaxMusic",
       "version": "9.35.2",
@@ -40,10 +61,17 @@
       "activity": "recent-release"
     },
     {
-      "appId": "ytkp",
-      "name": "YTKillerPlus",
+      "appId": "inkillerplus",
+      "name": "iNKillerPlus",
+      "version": "445.0.0",
+      "releaseDate": "2026-09-01",
+      "activity": "recent-release"
+    },
+    {
+      "appId": "ytkace",
+      "name": "YTKACE",
       "version": "21.35.3",
-      "releaseDate": "2026-08-30",
+      "releaseDate": "2026-08-31",
       "activity": "recent-release"
     },
     {
@@ -51,6 +79,13 @@
       "name": "YouMod",
       "version": "21.35.3",
       "releaseDate": "2026-08-30",
+      "activity": "recent-release"
+    },
+    {
+      "appId": "stikdebug",
+      "name": "StikDebug",
+      "version": "3.1.10",
+      "releaseDate": "2026-08-27",
       "activity": "recent-release"
     },
     {
@@ -75,10 +110,59 @@
       "activity": "recent-release"
     },
     {
+      "appId": "itorrent",
+      "name": "iTorrent",
+      "version": "2.2.0",
+      "releaseDate": "2026-07-19",
+      "activity": "recent-release"
+    },
+    {
+      "appId": "livecontainer",
+      "name": "LiveContainer",
+      "version": "3.8.0",
+      "releaseDate": "2026-07-17",
+      "activity": "recent-release"
+    },
+    {
+      "appId": "feather",
+      "name": "Feather",
+      "version": "2.9.0",
+      "releaseDate": "2026-07-05",
+      "activity": "recent-release"
+    },
+    {
+      "appId": "sidestore",
+      "name": "SideStore",
+      "version": "0.6.3",
+      "releaseDate": "2026-05-05",
+      "activity": "recent-release"
+    },
+    {
+      "appId": "provenance",
+      "name": "Provenance",
+      "version": "3.3.0",
+      "releaseDate": "2026-03-14",
+      "activity": "recent-release"
+    },
+    {
       "appId": "utm",
       "name": "UTM",
       "version": "4.7.5",
       "releaseDate": "2026-01-03T17:51:54Z",
+      "activity": "recent-release"
+    },
+    {
+      "appId": "bhtwitter",
+      "name": "BHTwitter",
+      "version": "4.4",
+      "releaseDate": "2025-05-13",
+      "activity": "recent-release"
+    },
+    {
+      "appId": "winston",
+      "name": "Winston",
+      "version": "1.1.5",
+      "releaseDate": "2024-06-24",
       "activity": "recent-release"
     }
   ]

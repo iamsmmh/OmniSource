@@ -7,11 +7,12 @@ selection. All functions are pure so they can be unit-tested without I/O.
 from __future__ import annotations
 
 import re
-from functools import cmp_to_key
+from functools import cmp_to_key, lru_cache
 from typing import Any
 
 from omnisource.constants import TAG_NUMBER_RE_PATTERN, VERSION_RE_PATTERN
 from omnisource.domain import RemoteAsset, RemoteRelease, RepositoryRef
+from omnisource.errors import ConfigurationError
 from omnisource.utils.versioning import Version
 from omnisource.utils.versioning import compare_versions as _compare_versions
 from omnisource.utils.versioning import is_newer as _is_newer
@@ -102,7 +103,27 @@ def release_is_eligible(release: RemoteRelease, ref: RepositoryRef) -> bool:
     return matches_tag_rules(release.tag, ref)
 
 
-def version_numbers(release: RemoteRelease, asset_name: str, *, from_tag: bool) -> list[str]:
+def version_numbers(
+    release: RemoteRelease,
+    asset_name: str,
+    *,
+    from_tag: bool,
+    version_pattern: str = "",
+) -> list[str]:
+    """Return the version numbers for a release, most significant first.
+
+    ``version_pattern`` wins when it matches: it names the number that is the
+    published version, which matters when a filename carries two of them (for
+    example ``YTKACE_0.9.2_YouTube_21.35.3.ipa``, where the YouTube version is
+    what an installed app reports). Remaining numbers stay available through
+    ``{secondary}``.
+    """
+    selected = _match_version_pattern(release, asset_name, version_pattern)
+    if selected:
+        chosen, haystack = selected
+        others = [number for number in VERSION_RE.findall(haystack) if number != chosen]
+        return [chosen, *others]
+
     numbers: list[str] = []
     if from_tag:
         numbers = VERSION_RE.findall(release.tag)
@@ -111,6 +132,34 @@ def version_numbers(release: RemoteRelease, asset_name: str, *, from_tag: bool) 
     if not numbers:
         numbers = VERSION_RE.findall(release.tag) or VERSION_RE.findall(release.name)
     return numbers
+
+
+@lru_cache(maxsize=64)
+def compile_version_pattern(pattern: str) -> re.Pattern[str] | None:
+    """Compile ``versionPattern``; an invalid regex is a configuration error."""
+    if not pattern:
+        return None
+    try:
+        return re.compile(pattern)
+    except re.error as error:
+        raise ConfigurationError(f"upstream.versionPattern does not compile: {error}") from error
+
+
+def _match_version_pattern(release: RemoteRelease, asset_name: str, pattern: str) -> tuple[str, str] | None:
+    """Return ``(version, haystack)`` for the first candidate the regex hits."""
+    compiled = compile_version_pattern(pattern)
+    if compiled is None:
+        return None
+    for candidate in (asset_name, release.tag, release.name):
+        if not candidate:
+            continue
+        match = compiled.search(candidate)
+        if not match:
+            continue
+        value = (match.group(1) if match.groups() else match.group(0)).strip()
+        if value:
+            return value, candidate
+    return None
 
 
 def build_version_entry(
@@ -135,7 +184,12 @@ def build_version_entry(
     else:
         date = published[:10]
 
-    numbers = version_numbers(release, asset.name, from_tag=ref.version_from_tag)
+    numbers = version_numbers(
+        release,
+        asset.name,
+        from_tag=ref.version_from_tag,
+        version_pattern=ref.version_pattern,
+    )
     version = numbers[0] if numbers else date
     secondary = numbers[-1] if numbers else version
 
@@ -207,8 +261,18 @@ def select_versions(
             )
             if tag_order:
                 return tag_order
-        left_version = version_numbers(left_release, left_asset.name, from_tag=ref.version_from_tag)
-        right_version = version_numbers(right_release, right_asset.name, from_tag=ref.version_from_tag)
+        left_version = version_numbers(
+            left_release,
+            left_asset.name,
+            from_tag=ref.version_from_tag,
+            version_pattern=ref.version_pattern,
+        )
+        right_version = version_numbers(
+            right_release,
+            right_asset.name,
+            from_tag=ref.version_from_tag,
+            version_pattern=ref.version_pattern,
+        )
         version_order = compare_versions(".".join(left_version), ".".join(right_version))
         if version_order:
             return -version_order

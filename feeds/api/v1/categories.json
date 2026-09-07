@@ -1,8 +1,24 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
-  "count": 3,
+  "count": 8,
   "categories": [
+    {
+      "id": "developer-tools",
+      "name": "Developer Tools",
+      "appCount": 1,
+      "apps": [
+        "stikdebug"
+      ]
+    },
+    {
+      "id": "games",
+      "name": "Games",
+      "appCount": 1,
+      "apps": [
+        "provenance"
+      ]
+    },
     {
       "id": "music",
       "name": "Music",
@@ -10,6 +26,22 @@
       "apps": [
         "maxmusic",
         "ytmusic"
+      ]
+    },
+    {
+      "id": "networking",
+      "name": "Networking",
+      "appCount": 1,
+      "apps": [
+        "itorrent"
+      ]
+    },
+    {
+      "id": "other",
+      "name": "Other",
+      "appCount": 1,
+      "apps": [
+        "aidoku"
       ]
     },
     {
@@ -27,10 +59,24 @@
       ]
     },
     {
+      "id": "social",
+      "name": "Social",
+      "appCount": 4,
+      "apps": [
+        "bhtwitter",
+        "inkillerplus",
+        "ttkillerplus",
+        "winston"
+      ]
+    },
+    {
       "id": "utilities",
       "name": "Utilities",
-      "appCount": 2,
+      "appCount": 5,
       "apps": [
+        "feather",
+        "livecontainer",
+        "sidestore",
         "spotiflac",
         "utm"
       ]

@@ -90,11 +90,13 @@ catalog uses eight GitHub release-page requests before cache hits.
 | `provider` | `"github"` | `github`, `github-tags`, `gitlab`, `codeberg`, `forgejo`, `json-feed`, `altstore`, `feather` |
 | `host` | provider default | Forge origin for self-hosted GitLab/Forgejo |
 | `feedURL` | — | Required for `json-feed` / `altstore` / `feather` |
+| `appId` | — | Feed providers only: picks one app inside a multi-app source by id, bundle identifier or name |
 | `repo` | required for forges | `owner/name` of the repository holding releases |
 | `tagPrefix` | `""` | Only consider tags starting with this prefix |
 | `excludeTagPrefixes` | `[]` | Skip tags starting with any of these |
 | `assetSuffixes` | `[".ipa"]` | Asset filename suffixes in priority order |
 | `assetNamePattern` | `""` | Regex an asset filename must match before suffixes are tried; picks one flavour when a repository publishes several |
+| `versionPattern` | `""` | Regex selecting *which* number in the asset filename (then tag, then release name) is the published version — needed when a filename carries both a tweak version and a host-app version. First capture group wins; the other numbers remain available as `{secondary}` |
 | `maxPages` | `3` | Release pages (100 per page) to scan |
 | `keepVersions` | `1` | Versions to publish; `0` keeps every match |
 | `sortByTagNumber` | `false` | Order by the trailing number in the tag instead of API order |

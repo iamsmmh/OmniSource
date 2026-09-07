@@ -155,6 +155,53 @@ class FeedProviderTests(unittest.TestCase):
         releases = provider.fetch_releases(ref)
         self.assertEqual(releases[0].tag, "1.0")
 
+    def _multi_app_payload(self) -> dict[str, Any]:
+        def app(name: str, bundle: str, version: str, url: str) -> dict[str, Any]:
+            return {
+                "name": name,
+                "bundleIdentifier": bundle,
+                "developerName": "dev",
+                "version": version,
+                "versionDate": "2026-09-01",
+                "downloadURL": url,
+                "size": 7,
+                "versions": [
+                    {"version": version, "date": "2026-09-01", "downloadURL": url, "size": 7},
+                ],
+            }
+
+        return {
+            "name": "Multi",
+            "apps": [
+                app("YouTube", "com.google.ios.youtube", "21.35.3", "https://example.com/yt.ipa"),
+                app("Instagram", "com.burbn.instagram", "445.0.0", "https://example.com/ig.ipa"),
+                app("TikTok", "com.zhiliaoapp.musically", "46.7.0", "https://example.com/tt.ipa"),
+            ],
+        }
+
+    def test_app_id_selects_one_app_from_a_multi_app_feed(self) -> None:
+        http = FakeHttp({"https://example.com/source.json": self._multi_app_payload()})
+        provider = GenericFeedProvider(http)
+        ref = RepositoryRef(
+            provider=SourceType.ALTSTORE,
+            feed_url="https://example.com/source.json",
+            app_id="com.burbn.instagram",
+        )
+        releases = provider.fetch_releases(ref)
+        self.assertEqual([release.tag for release in releases], ["445.0.0"])
+        self.assertEqual(releases[0].assets[0].download_url, "https://example.com/ig.ipa")
+
+    def test_unmatched_app_id_falls_back_to_the_whole_feed(self) -> None:
+        # Losing the selector must not silently drop the app from the catalog.
+        http = FakeHttp({"https://example.com/source.json": self._multi_app_payload()})
+        provider = GenericFeedProvider(http)
+        ref = RepositoryRef(
+            provider=SourceType.ALTSTORE,
+            feed_url="https://example.com/source.json",
+            app_id="com.example.missing",
+        )
+        self.assertEqual(len(provider.fetch_releases(ref)), 3)
+
 
 class RegistryTests(unittest.TestCase):
     def test_default_registry_covers_every_source_type(self) -> None:

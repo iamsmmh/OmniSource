@@ -6,6 +6,7 @@ import unittest
 
 from omnisource.domain import Catalog, SourceType
 from omnisource.errors import ConfigurationError, SyncError
+from omnisource.repository_registry import build_repository_registry
 
 
 class SourceTypeTests(unittest.TestCase):
@@ -65,6 +66,62 @@ class CatalogTests(unittest.TestCase):
                     ],
                 }
             )
+
+
+class FeedBackedCatalogTests(unittest.TestCase):
+    """Apps published together in one source share a monitored repository."""
+
+    def _catalog(self) -> Catalog:
+        def app(slug: str, bundle: str, app_id: str) -> dict[str, object]:
+            return {
+                "slug": slug,
+                "name": slug,
+                "bundleIdentifier": bundle,
+                "developerName": "dev",
+                "upstream": {
+                    "provider": "altstore",
+                    "feedURL": "https://repo.example.com/repo.json",
+                    "appId": app_id,
+                },
+            }
+
+        return Catalog.from_dict(
+            {
+                "source": {},
+                "apps": [
+                    app("one", "com.example.one", "com.example.one"),
+                    app("two", "com.example.two", "com.example.two"),
+                    {
+                        "slug": "three",
+                        "name": "three",
+                        "bundleIdentifier": "com.example.three",
+                        "developerName": "dev",
+                        "upstream": {"provider": "github", "repo": "owner/three"},
+                    },
+                ],
+            }
+        )
+
+    def test_app_id_is_parsed_and_identifies_the_feed(self) -> None:
+        catalog = self._catalog()
+        first = catalog.apps[0].upstream
+        assert first is not None
+        self.assertTrue(first.is_feed)
+        self.assertEqual(first.app_id, "com.example.one")
+        self.assertEqual(first.identity, "https://repo.example.com/repo.json")
+        forge = catalog.apps[2].upstream
+        assert forge is not None
+        self.assertFalse(forge.is_feed)
+        self.assertEqual(forge.identity, "owner/three")
+
+    def test_registry_groups_feed_apps_and_names_them_by_host(self) -> None:
+        registry = build_repository_registry(self._catalog(), generated_at="2026-09-08")
+        self.assertEqual(registry["count"], 2)
+        feed_repo = next(item for item in registry["repositories"] if item["provider"] == "altstore")
+        self.assertEqual(feed_repo["name"], "repo.example.com")
+        self.assertEqual(sorted(feed_repo["applicationIds"]), ["one", "two"])
+        forge_repo = next(item for item in registry["repositories"] if item["provider"] == "github")
+        self.assertEqual(forge_repo["name"], "owner/three")
 
 
 if __name__ == "__main__":

@@ -32,7 +32,7 @@ from omnisource.feeds.omnistore import render_omnistore_bundle
 from omnisource.io import atomic_write_many, atomic_write_text, read_json, write_json
 from omnisource.logutil import Group, log
 from omnisource.repository_registry import build_repository_registry, record_repository_result, repository_key
-from omnisource.tracking import detect_update, select_versions
+from omnisource.tracking import compile_version_pattern, detect_update, select_versions
 
 
 def _reuse_or(path: Path, fallback: dict[str, Any]) -> dict[str, Any]:
@@ -54,7 +54,15 @@ def load_state(container: Container) -> dict[str, Any]:
 
 def _compile_pattern(app: App) -> re.Pattern[str] | None:
     up = app.upstream
-    if up is None or not up.asset_name_pattern:
+    if up is None:
+        return None
+    if up.version_pattern:
+        # Fail fast on the app, not deep inside version rendering.
+        try:
+            compile_version_pattern(up.version_pattern)
+        except ConfigurationError as error:
+            raise SyncError(f"{app.slug}: {error}") from error
+    if not up.asset_name_pattern:
         return None
     try:
         return re.compile(up.asset_name_pattern)

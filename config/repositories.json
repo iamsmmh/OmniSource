@@ -2,6 +2,34 @@
   "schemaVersion": 1,
   "repositories": [
     {
+      "id": "altstore-https-repo-ikghd-me-repo-json-9265ace8",
+      "name": "iKarwan (repo.ikghd.me)",
+      "url": "https://repo.ikghd.me/repo.json",
+      "provider": "altstore",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "ytkp",
+        "inkillerplus",
+        "ttkillerplus"
+      ]
+    },
+    {
+      "id": "github-https-github-com-aidoku-aidoku-d96c8d7c",
+      "name": "Aidoku/Aidoku",
+      "url": "https://github.com/Aidoku/Aidoku",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "aidoku"
+      ]
+    },
+    {
       "id": "github-https-github-com-arichornlover-uy-cf9ac2f9",
       "name": "iamsmmh/OmniSource",
       "url": "https://github.com/arichornlover/uYouEnhanced",
@@ -12,6 +40,32 @@
       "lastError": null,
       "applicationIds": [
         "uyouenhanced"
+      ]
+    },
+    {
+      "id": "github-https-github-com-bandarhl-bhtwitt-66f1789e",
+      "name": "BandarHL/BHTwitter",
+      "url": "https://github.com/BandarHL/BHTwitter",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "bhtwitter"
+      ]
+    },
+    {
+      "id": "github-https-github-com-claration-feathe-e87e5f2f",
+      "name": "claration/Feather",
+      "url": "https://github.com/claration/Feather",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "feather"
       ]
     },
     {
@@ -26,8 +80,6 @@
       "applicationIds": [
         "ytlite",
         "youpro",
-        "ytkp",
-        "ytkace",
         "youmod"
       ]
     },
@@ -42,6 +94,45 @@
       "lastError": null,
       "applicationIds": [
         "ytmusic"
+      ]
+    },
+    {
+      "id": "github-https-github-com-itzzace-ytkace-2d83a22c",
+      "name": "itzzace/ytkace",
+      "url": "https://github.com/itzzace/ytkace",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "ytkace"
+      ]
+    },
+    {
+      "id": "github-https-github-com-livecontainer-li-3c3d1855",
+      "name": "LiveContainer/LiveContainer",
+      "url": "https://github.com/LiveContainer/LiveContainer",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "github-https-github-com-lo-cafe-winston-ff462ceb",
+      "name": "lo-cafe/winston",
+      "url": "https://github.com/lo-cafe/winston",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "winston"
       ]
     },
     {
@@ -71,6 +162,32 @@
       ]
     },
     {
+      "id": "github-https-github-com-provenance-emu-p-01494fd1",
+      "name": "Provenance-Emu/Provenance",
+      "url": "https://github.com/Provenance-Emu/Provenance",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "provenance"
+      ]
+    },
+    {
+      "id": "github-https-github-com-sidestore-sidest-26ad4ca8",
+      "name": "SideStore/SideStore",
+      "url": "https://github.com/SideStore/SideStore",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "sidestore"
+      ]
+    },
+    {
       "id": "github-https-github-com-spotiflacapp-spo-8e6cd254",
       "name": "spotiflacapp/SpotiFLAC-Mobile",
       "url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
@@ -84,6 +201,19 @@
       ]
     },
     {
+      "id": "github-https-github-com-stikdebug-stikde-a752478f",
+      "name": "StikDebug/StikDebug",
+      "url": "https://github.com/StikDebug/StikDebug",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "stikdebug"
+      ]
+    },
+    {
       "id": "github-https-github-com-utmapp-utm-1af96ef2",
       "name": "utmapp/UTM",
       "url": "https://github.com/utmapp/UTM",
@@ -94,6 +224,19 @@
       "lastError": null,
       "applicationIds": [
         "utm"
+      ]
+    },
+    {
+      "id": "github-https-github-com-xitrix-itorrent-20115bc9",
+      "name": "XITRIX/iTorrent",
+      "url": "https://github.com/XITRIX/iTorrent",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": null,
+      "lastSuccess": null,
+      "lastError": null,
+      "applicationIds": [
+        "itorrent"
       ]
     }
   ]

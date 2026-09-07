@@ -248,6 +248,21 @@ def _validate_upstream(prefix: str, app: dict[str, Any]) -> Report:
                 re.compile(pattern)
             except re.error as error:
                 report.error(f"{prefix}: upstream.assetNamePattern is not a valid regex ({error})")
+    version_pattern = upstream.get("versionPattern")
+    if version_pattern is not None:
+        if not isinstance(version_pattern, str) or not version_pattern:
+            report.error(f"{prefix}: upstream.versionPattern must be a non-empty string")
+        else:
+            try:
+                compiled = re.compile(version_pattern)
+            except re.error as error:
+                report.error(f"{prefix}: upstream.versionPattern is not a valid regex ({error})")
+            else:
+                if compiled.groups > 1:
+                    report.warn(
+                        f"{prefix}: upstream.versionPattern has {compiled.groups} capture groups - "
+                        "only the first one is read"
+                    )
     if upstream.get("versionFromTag") is not None and not isinstance(upstream.get("versionFromTag"), bool):
         report.error(f"{prefix}: upstream.versionFromTag must be a boolean")
     return report
