@@ -32,7 +32,7 @@ class TestAltStoreFeed(unittest.TestCase):
                 {
                     "slug": "spotiflac",
                     "name": "SpotiFLAC Mobile",
-                    "bundleIdentifier": "com.zarzet.spotiflac",
+                    "bundleIdentifier": "com.zarz.spotiflacAndroid",
                     "developerName": "zarzet",
                     "icon": "SpotiFLAC.png",
                     "status": "stable",
@@ -60,7 +60,7 @@ class TestAltStoreFeed(unittest.TestCase):
         raw_app = {
             "slug": "spotiflac",
             "name": "SpotiFLAC Mobile",
-            "bundleIdentifier": "com.zarzet.spotiflac",
+            "bundleIdentifier": "com.zarz.spotiflacAndroid",
             "developerName": "zarzet",
             "subtitle": "FLAC Downloader for iOS",
             "localizedDescription": "Download high quality FLAC audio.",
@@ -85,7 +85,7 @@ class TestAltStoreFeed(unittest.TestCase):
 
         rendered = render_altstore_app(self.catalog, app, versions, health)
         self.assertEqual(rendered["name"], "SpotiFLAC Mobile")
-        self.assertEqual(rendered["bundleIdentifier"], "com.zarzet.spotiflac")
+        self.assertEqual(rendered["bundleIdentifier"], "com.zarz.spotiflacAndroid")
         self.assertEqual(rendered["version"], "4.9.6")
         self.assertEqual(rendered["downloadURL"], "https://example.com/SpotiFLAC.ipa")
         self.assertEqual(rendered["tintColor"], "1DB954")
