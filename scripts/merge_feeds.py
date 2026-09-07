@@ -36,8 +36,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = REPO_ROOT / "catalog.json"
 FEEDS_DIR = REPO_ROOT / "feeds"
 MASTER_NAME = "apps.json"
-# Pipeline state and health snapshots are not distributable feeds.
-NON_FEED_FILES = {"state.json", "health.json"}
+# Pipeline state, health snapshots, and badges are not distributable feeds.
+NON_FEED_FILES = {"state.json", "health.json", "badge-apps.json", "badge-health.json", "badge-version.json"}
 
 
 def load_json(path: Path) -> Any | None:
@@ -138,7 +138,12 @@ def build_master() -> dict[str, Any]:
     envelope, apps = gather_apps()
     master = dict(envelope)
     master["apps"] = apps
-    master["news"] = []
+    existing_news = []
+    if (FEEDS_DIR / MASTER_NAME).exists():
+        existing_doc = load_json(FEEDS_DIR / MASTER_NAME)
+        if isinstance(existing_doc, dict) and isinstance(existing_doc.get("news"), list):
+            existing_news = existing_doc["news"]
+    master["news"] = existing_news
     return master
 
 

@@ -124,3 +124,104 @@ def render_health_doc(rendered: list[tuple[App, dict[str, Any]]]) -> dict[str, A
             for app, entry in rendered
         ],
     }
+
+
+def render_news_items(
+    catalog: Catalog,
+    state: dict[str, Any],
+    limit: int = 10,
+) -> list[dict[str, Any]]:
+    """Build AltStore Source v2 news cards from recent release history."""
+    base = catalog.base_url.rstrip("/")
+    app_by_slug = {app.slug: app for app in catalog.apps}
+    app_by_bundle = {app.bundle_id: app for app in catalog.apps}
+    news: list[dict[str, Any]] = []
+    seen: set[str] = set()
+
+    # 1. From recorded update history
+    history = state.get("updateHistory", [])
+    if isinstance(history, list):
+        for event in history:
+            if not isinstance(event, dict):
+                continue
+            app_id = str(event.get("appId") or "")
+            app = app_by_slug.get(app_id) or app_by_bundle.get(app_id)
+            if not app:
+                continue
+            version = str(event.get("version") or "")
+            identifier = f"news-{app.slug}-{version}".replace(".", "-").replace("_", "-")
+            if identifier in seen:
+                continue
+            seen.add(identifier)
+            date_val = str(event.get("releaseDate") or event.get("date") or "2026-09-07")[:10]
+            news.append(
+                {
+                    "title": f"{app.name} v{version}",
+                    "identifier": identifier,
+                    "caption": app.short_description or f"{app.name} has been updated to version {version}.",
+                    "date": date_val,
+                    "appID": app.bundle_id,
+                    "imageURL": f"{base}/assets/{app.icon}",
+                    "notify": True,
+                }
+            )
+            if len(news) >= limit:
+                return news
+
+    # 2. Seed with newest versions from state if history is sparse
+    for app in catalog.apps:
+        versions = state.get(app.slug, {}).get("versions")
+        if not isinstance(versions, list) or not versions:
+            continue
+        newest = versions[0]
+        version = str(newest.get("version") or "")
+        identifier = f"news-{app.slug}-{version}".replace(".", "-").replace("_", "-")
+        if identifier in seen:
+            continue
+        seen.add(identifier)
+        news.append(
+            {
+                "title": f"{app.name} v{version}",
+                "identifier": identifier,
+                "caption": app.short_description or f"{app.name} is available in version {version}.",
+                "date": str(newest.get("date") or "2026-09-07")[:10],
+                "appID": app.bundle_id,
+                "imageURL": f"{base}/assets/{app.icon}",
+                "notify": False,
+            }
+        )
+        if len(news) >= limit:
+            break
+
+    news.sort(key=lambda item: str(item.get("date") or ""), reverse=True)
+    return news[:limit]
+
+
+def render_badge_docs(
+    rendered: list[tuple[App, dict[str, Any]]],
+    health_doc: dict[str, Any],
+) -> dict[str, dict[str, Any]]:
+    """Return dynamic Shields.io JSON endpoint documents."""
+    total_apps = len(rendered)
+    reachable = health_doc["totals"]["reachable"]
+    health_color = "2ea043" if reachable == total_apps else ("d29922" if reachable > 0 else "e5534b")
+    return {
+        "badge-apps.json": {
+            "schemaVersion": 1,
+            "label": "apps",
+            "message": f"{total_apps}",
+            "color": "5b5bd6",
+        },
+        "badge-health.json": {
+            "schemaVersion": 1,
+            "label": "downloads",
+            "message": f"{reachable}/{total_apps} healthy",
+            "color": health_color,
+        },
+        "badge-version.json": {
+            "schemaVersion": 1,
+            "label": "source",
+            "message": "AltStore v2",
+            "color": "108548",
+        },
+    }

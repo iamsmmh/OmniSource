@@ -11,7 +11,13 @@ if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
 
 from omnisource.domain import App, Catalog
-from omnisource.feeds.altstore import feed_envelope, render_altstore_app, render_health_doc
+from omnisource.feeds.altstore import (
+    feed_envelope,
+    render_altstore_app,
+    render_badge_docs,
+    render_health_doc,
+    render_news_items,
+)
 
 
 class TestAltStoreFeed(unittest.TestCase):
@@ -119,6 +125,58 @@ class TestAltStoreFeed(unittest.TestCase):
         self.assertEqual(doc["totals"]["apps"], 1)
         self.assertEqual(doc["totals"]["reachable"], 1)
         self.assertEqual(doc["totals"]["unreachable"], 0)
+
+    def test_render_news_items(self) -> None:
+        state = {
+            "spotiflac": {
+                "versions": [
+                    {
+                        "version": "4.9.6",
+                        "date": "2026-09-07",
+                        "localizedDescription": "Release",
+                    }
+                ]
+            },
+            "updateHistory": [
+                {
+                    "appId": "spotiflac",
+                    "version": "4.9.6",
+                    "releaseDate": "2026-09-07",
+                }
+            ],
+        }
+        news = render_news_items(self.catalog, state, limit=5)
+        self.assertEqual(len(news), 1)
+        self.assertEqual(news[0]["appID"], "com.zarz.spotiflacAndroid")
+        self.assertEqual(news[0]["title"], "SpotiFLAC Mobile v4.9.6")
+        self.assertTrue(news[0]["identifier"].startswith("news-spotiflac"))
+
+    def test_render_badge_docs(self) -> None:
+        raw_app = {
+            "slug": "test",
+            "name": "Test",
+            "bundleIdentifier": "com.test",
+            "developerName": "Tester",
+            "icon": "Test.png",
+            "status": "stable",
+        }
+        app = App(slug="test", raw=raw_app)
+        entry = {
+            "version": "1.0",
+            "versionDate": "2026-09-07",
+            "size": 1000,
+            "omnisource": {
+                "featured": False,
+                "health": {"downloadReachable": True, "detail": "HTTP 200", "statusSince": "2026-09-07"},
+            },
+        }
+        health_doc = render_health_doc([(app, entry)])
+        badges = render_badge_docs([(app, entry)], health_doc)
+        self.assertIn("badge-apps.json", badges)
+        self.assertIn("badge-health.json", badges)
+        self.assertIn("badge-version.json", badges)
+        self.assertEqual(badges["badge-apps.json"]["message"], "1")
+        self.assertEqual(badges["badge-health.json"]["message"], "1/1 healthy")
 
 
 if __name__ == "__main__":

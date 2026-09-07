@@ -26,7 +26,14 @@ from omnisource.constants import README_MARKERS
 from omnisource.di import Container, build_container
 from omnisource.domain import App, Catalog, SyncReport, UpdateEvent, today
 from omnisource.errors import ConfigurationError, ProviderError, SyncError
-from omnisource.feeds.altstore import feed_envelope, render_altstore_app, render_health_doc
+from omnisource.feeds.altstore import (
+    feed_envelope,
+    render_altstore_app,
+    render_badge_docs,
+    render_health_doc,
+    render_news_items,
+)
+from omnisource.feeds.rss import render_rss_feed
 from omnisource.io import atomic_write_many, atomic_write_text, read_json, write_json
 from omnisource.logutil import Group, log
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
@@ -324,21 +331,45 @@ def stage_build(
         description=str(catalog.source.get("description", "")),
     )
     master["apps"] = [entry for _, entry in sorted(rendered, key=lambda item: item[0].name.casefold())]
-    master["news"] = []
+    master["news"] = render_news_items(catalog, state, limit=10)
     documents[feeds_dir / "apps.json"] = master
 
     health_doc = render_health_doc(rendered)
     documents[feeds_dir / "health.json"] = health_doc
 
+    # Dynamic badge documents
+    badges = render_badge_docs(rendered, health_doc)
+    for badge_name, badge_doc in badges.items():
+        documents[feeds_dir / badge_name] = badge_doc
+
     changed = atomic_write_many(documents)
-    log.info("Built %d AltStore feed(s) + apps.json + health.json (%d file(s) changed)", len(rendered), len(changed))
+
+    # RSS 2.0 / Atom XML feed
+    rss_content = render_rss_feed(catalog, state, limit=25)
+    for rss_name in ("feed.xml", "rss.xml"):
+        rss_path = feeds_dir / rss_name
+        if atomic_write_text(rss_path, rss_content):
+            changed.append(rss_path)
+
+    log.info(
+        "Built %d AltStore feed(s) + apps.json + health.json + badges + RSS (%d file(s) changed)",
+        len(rendered),
+        len(changed),
+    )
     return changed, health_doc
 
 
 def stage_mirror(container: Container, catalog: Catalog) -> list[Path]:
     """Publish historical root mirrors only after the feed set is valid."""
     documents: dict[Path, Any] = {}
-    for name in ["apps.json", *(f"{app.slug}.json" for app in catalog.apps)]:
+    extra_names = [
+        "apps.json",
+        "badge-apps.json",
+        "badge-health.json",
+        "badge-version.json",
+        *(f"{app.slug}.json" for app in catalog.apps),
+    ]
+    for name in extra_names:
         source = container.paths.feeds / name
         if source.exists():
             document = read_json(source)
@@ -347,6 +378,15 @@ def stage_mirror(container: Container, catalog: Catalog) -> list[Path]:
             else:
                 log.warning("Skipping invalid mirror source %s", source)
     mirrored = atomic_write_many(documents)
+
+    # Mirror RSS feeds
+    for rss_name in ("feed.xml", "rss.xml"):
+        rss_src = container.paths.feeds / rss_name
+        if rss_src.exists():
+            rss_text = rss_src.read_text(encoding="utf-8")
+            if atomic_write_text(container.paths.root / rss_name, rss_text):
+                mirrored.append(container.paths.root / rss_name)
+
     if mirrored:
         log.info("Refreshed %d root mirror(s)", len(mirrored))
     return mirrored
@@ -517,6 +557,16 @@ def run(
     report.finished_at = today()
     report.files_changed = len(changed)
     write_summary(health_doc, changed, report)
+
+    # Dispatch webhooks to Discord and Telegram if configured and updates occurred
+    if report.updates:
+        from omnisource.notify import dispatch_configured_notifications
+
+        dispatch_configured_notifications(
+            report.updates,
+            source_name=str(catalog.source.get("name", "OmniSource")),
+            base_url=catalog.base_url,
+        )
 
     unreachable = health_doc["totals"]["unreachable"]
     if unreachable:
