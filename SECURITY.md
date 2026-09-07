@@ -20,7 +20,7 @@ Expect an initial response within 72 hours.
 ## What we guarantee
 
 - **No credentials leave the API layer.** `GH_TOKEN` is attached only to `api.github.com` requests
-  in `fetch_json()`. Download probes send no `Authorization` header, ever.
+  inside the HTTP client (`omnisource.http`). Download probes send no `Authorization` header, ever.
 - **Least privilege.** Workflows declare `permissions: {}` at the top level and opt in per job.
   `validate.yml` runs read-only with `persist-credentials: false`, so pull requests from forks
   cannot touch repository state.
@@ -34,8 +34,8 @@ Expect an initial response within 72 hours.
 ## What we cannot guarantee
 
 - **Upstream integrity.** If an upstream maintainer's account is compromised and they publish a
-  malicious release asset, OmniSource will mirror the link. Check the **Verification** panel:
-  `github-release` means the file comes straight from the upstream project;
+  malicious release asset, OmniSource will mirror the link. Check each entry's `omnisource.verification`
+  metadata block: `github-release` means the file comes straight from the upstream project;
   `self-built` means an OmniSource workflow compiled it and published a SHA-256;
   `manual-mirror` is the weakest and is used only as a fallback.
 - **Signing.** Nothing here is pre-signed. You sign with your own certificate or Apple ID, and you

@@ -3,8 +3,8 @@
   "source": {
     "name": "OmniSource",
     "identifier": "com.iamsmmh.omnisource",
-    "subtitle": "A curated iOS application repository and distribution platform",
-    "description": "OmniSource is a curated, automatically maintained iOS application repository for AltStore, SideStore, Feather, ESign and LiveContainer.",
+    "subtitle": "A curated iOS app source for AltStore, SideStore, Feather, ESign and LiveContainer",
+    "description": "OmniSource is a curated, automatically maintained AltStore-compatible iOS app source. Every entry is resolved from the app's own official upstream project - GitHub Releases or the developer's official AltStore feed - and each download link is re-verified automatically.",
     "owner": "iamsmmh",
     "repository": "https://github.com/iamsmmh/OmniSource",
     "baseURL": "https://iamsmmh.github.io/OmniSource",
@@ -32,10 +32,10 @@
       "url": "https://github.com/claration/Feather"
     },
     {
-    "id": "esign",
-    "name": "ESign",
-    "icon": "E-Sign.png"
-  },
+      "id": "esign",
+      "name": "ESign",
+      "icon": "E-Sign.png"
+    },
     {
       "id": "livecontainer",
       "name": "LiveContainer",
@@ -114,7 +114,7 @@
       "upstreamURL": "https://github.com/arichornlover/uYouEnhanced",
       "verification": {
         "method": "manual-mirror",
-        "publisher": "arichornlover/uYouEnhanced via archive.org (mirrored by iamsmmh/OmniSource)",
+        "publisher": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
         "codeSigned": false,
         "checksumPublished": true
       },
@@ -132,7 +132,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": "Served from the official archive.org mirror of the upstream build until the first in-repo 'Build uYouEnhanced' release (tag uyouenhanced-v*) takes over automatically. MD5/SHA-1 are published on the archive.org item page."
+        "notes": "uYouEnhanced's official GitHub releases publish release notes only - no .ipa assets - so the IPA served here is a community build of the official release tag (YouTube 21.14.4 / uYou 3.0.5), mirrored on archive.org. Once a 'Build uYouEnhanced' run publishes an IPA in this repository (tag uyouenhanced-v*), the self-built artifact takes over automatically."
       },
       "appPermissions": {
         "entitlements": [
@@ -218,7 +218,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": ""
+        "notes": "Official project: dayanch96/YTLite ('YouTube Plus'). The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
       },
       "appPermissions": {
         "entitlements": [
@@ -274,7 +274,7 @@
       "screenshots": [],
       "featured": true,
       "status": "stable",
-        "upstreamURL": "https://github.com/mrdrvt99/YouProEXTRA",
+      "upstreamURL": "https://github.com/mrdrvt99/YouProEXTRA",
       "verification": {
         "method": "github-release",
         "publisher": "mrdrvt99/YouProEXTRA",
@@ -295,7 +295,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": ""
+        "notes": "YouPro is developed by alibusut (distributed via the developer's Telegram). This source serves a ready-to-sideload IPA built from the official YouPro tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
       },
       "appPermissions": {
         "entitlements": [
@@ -502,7 +502,7 @@
       "screenshots": [],
       "featured": false,
       "status": "stable",
-      "upstreamURL": "https://github.com/mrdrvt99/YouMod",
+      "upstreamURL": "https://github.com/Tonwalter888/YouMod",
       "verification": {
         "method": "github-release",
         "publisher": "mrdrvt99/YouProEXTRA",
@@ -523,7 +523,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": ""
+        "notes": "Official project: Tonwalter888/YouMod. The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
       },
       "appPermissions": {
         "entitlements": [
@@ -672,7 +672,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": ""
+        "notes": "Official project: dayanch96/YTMusicUltimate. The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by the mrdrvt99/YTMusicUltimate build fork. Shares com.google.ios.youtubemusic with MaxMusic: install one at a time."
       },
       "appPermissions": {
         "entitlements": [
@@ -854,15 +854,7 @@
       "tintColor": "E1306C",
       "icon": "Instagram.png",
       "localizedDescription": "iNKillerPlus is a modified Instagram by iKarwan. Download posts, reels, stories and DM media, save profile pictures, block promoted posts and ads, toggle seen/unseen for stories and DMs, ghost typing, hide tabs, copy comments and bios, confirmation prompts before liking or calling, and a profile analyzer. iPadOS supported.",
-      "screenshots": [
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/1.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/2.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/3.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/4.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/5.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/6.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/7.PNG"
-      ],
+      "screenshots": [],
       "featured": false,
       "status": "stable",
       "upstreamURL": "https://github.com/iKarwan/iNKillerPlus",
@@ -937,14 +929,7 @@
       "tintColor": "232621",
       "icon": "TikTok.png",
       "localizedDescription": "TTKillerPlus is a modified TikTok by iKarwan. Download videos from the feed, stories and Explore, save photos and profile avatars, merge post photos with their music, block promoted posts and ads, toggle seen/unseen, hide tabs, browse the feed of a specific country, show country flags and post dates, and auto-like in live streams. iPadOS supported.",
-      "screenshots": [
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/1.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/2.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/3.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/4.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/5.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/6.PNG"
-      ],
+      "screenshots": [],
       "featured": false,
       "status": "stable",
       "upstreamURL": "https://github.com/iKarwan/TTKillerPlus",

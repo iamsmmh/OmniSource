@@ -1,9 +1,8 @@
-"""Type-safe domain model for the OmniSource platform.
+"""Type-safe domain model for the OmniSource feed pipeline.
 
-These dataclasses are the single in-memory representation of catalog entries,
-remote releases, and the unified OmniStore metadata record. Providers produce
-:class:`RemoteRelease` values; the pipeline turns them into version entries
-and :class:`StandardizedApp` records regardless of source.
+These dataclasses are the single in-memory representation of catalog entries
+and remote releases. Providers produce :class:`RemoteRelease` values; the
+pipeline turns them into the version entries of the AltStore feeds.
 """
 
 from __future__ import annotations
@@ -427,10 +426,10 @@ class Catalog:
 
 @dataclass(frozen=True)
 class StandardizedApp:
-    """Unified metadata record, independent of AltStore schema.
+    """Unified metadata record, independent of the AltStore schema.
 
-    Field names match the OmniStore / OmniSource platform contract. This is
-    what ``feeds/omnistore/apps.json`` and the static API emit.
+    Field names mirror the catalog keys so the record can be serialised into
+    machine feeds without a second mapping layer.
     """
 
     app_id: str
@@ -456,8 +455,8 @@ class StandardizedApp:
     tags: tuple[str, ...] = ()
     fallback_download_urls: tuple[str, ...] = ()
     short_description: str = ""
-    # Canonical OmniStore fields. Defaults keep the historical constructor
-    # source-compatible for downstream feed tooling.
+    # Canonical fields. Defaults keep the constructor source-compatible for
+    # downstream feed tooling.
     app_categories: tuple[str, ...] = ()
     platforms: tuple[str, ...] = ()
     homepage: str | None = None
@@ -531,7 +530,7 @@ class StandardizedApp:
             "packageName": self.package_name,
             "minimumIOSVersion": self.minimum_os_version,
             "minimumAndroidVersion": self.minimum_android_version,
-            # Historical aliases retained for existing OmniStore clients.
+            # Historical aliases kept for compatibility with earlier feed tooling.
             "minimumOSVersion": self.minimum_os_version,
             "version": self.version,
             "buildNumber": self.build_number,

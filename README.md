@@ -4,35 +4,22 @@
 
 # OmniSource
 
-**A curated iOS application repository and distribution platform.**
+**A curated iOS sideloading app source.**
 
 One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · LiveContainer**.
 
 <p>
-  <a href="https://github.com/iamsmmh/OmniSource/actions/workflows/sync.yml"><img src="https://github.com/iamsmmh/OmniSource/actions/workflows/sync.yml/badge.svg" alt="Sync &amp; Publish"></a>
+  <a href="https://github.com/iamsmmh/OmniSource/actions/workflows/sync.yml"><img src="https://github.com/iamsmmh/OmniSource/actions/workflows/sync.yml/badge.svg" alt="Sync & Publish"></a>
   <a href="https://github.com/iamsmmh/OmniSource/actions/workflows/validate.yml"><img src="https://github.com/iamsmmh/OmniSource/actions/workflows/validate.yml/badge.svg" alt="Validate"></a>
-  <a href="https://github.com/iamsmmh/OmniSource/actions/workflows/health-check.yml"><img src="https://github.com/iamsmmh/OmniSource/actions/workflows/health-check.yml/badge.svg" alt="Health Check"></a>
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Ffeeds%2Fhealth.json&query=%24.totals.apps&label=apps&color=5B5BD6&cacheSeconds=3600" alt="App count">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Ffeeds%2Fhealth.json&query=%24.totals.reachable&label=downloads%20online&color=success&cacheSeconds=3600" alt="Downloads online">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/iamsmmh/OmniSource" alt="License"></a>
 </p>
 
-[Website](https://iamsmmh.github.io/OmniSource/) ·
-[Install](docs/INSTALLATION.md) ·
-[Catalog](docs/CATALOG.md) ·
-[Compatibility](docs/COMPATIBILITY.md) ·
-[Architecture](docs/ARCHITECTURE.md) ·
-[Platform](docs/PLATFORM.md) ·
-[API](docs/API.md) ·
-[Contribute](docs/CONTRIBUTING.md)
-
 </div>
 
----
-
-OmniSource tracks upstream iOS app releases, verifies every download link, and publishes a single
-AltStore Source **v2** feed. Every entry is rebuilt automatically from its upstream project, and a
-daily health check reports broken links so the catalog stays installable.
+OmniSource resolves each app's release from its **official upstream source** — the developer's GitHub
+Releases or the developer's own AltStore feed — and publishes a single AltStore Source **v2** feed.
+A scheduled pipeline keeps every entry current and probes every download link, so the catalog stays
+installable.
 
 ## Add the source
 
@@ -40,20 +27,15 @@ daily health check reports broken links so the catalog stays installable.
 https://iamsmmh.github.io/OmniSource/apps.json
 ```
 
-One tap from your device:
-
 | Client | Install action |
 | --- | --- |
 | **AltStore** | <a href="altstore://source?url=https://iamsmmh.github.io/OmniSource/apps.json">➕ Add to AltStore</a> |
 | **SideStore** | <a href="sidestore://source?url=https://iamsmmh.github.io/OmniSource/apps.json">➕ Add to SideStore</a> |
 | **Feather** | <a href="feather://source/iamsmmh.github.io/OmniSource/apps.json">➕ Add to Feather</a> |
 
-ESign and LiveContainer don't expose a source deep-link protocol — open them and paste the feed URL
-manually. Step-by-step walkthroughs for every client live in the
-[Installation Guide](docs/INSTALLATION.md).
-
-Prefer a single app? Each app also publishes its own feed at
-`https://iamsmmh.github.io/OmniSource/<slug>.json` (slugs below).
+ESign and LiveContainer don't expose a source deep-link protocol — open the client and paste the feed
+URL manually. Each app also publishes its own feed at `https://iamsmmh.github.io/OmniSource/<slug>.json`
+(see the catalog below).
 
 ## Catalog
 
@@ -89,97 +71,79 @@ _Catalogue last changed 2026-09-07 · 22 apps · 22/22 downloads reachable._
 <!-- omnisource:catalog:end -->
 
 **Columns** — *Status*: 🟢 stable · 🟡 beta · 🔵 manually published · 🔴 unmaintained.
-*Download*: ✅ / ⚠️ reflects the last automated reachability probe. *Install*: one-tap deep links
-that open the per-app feed directly in AltStore or SideStore. *Feed*: the per-app JSON source.
+*Download*: ✅ / ⚠️ reflects the last automated reachability probe.
+
+## Where the info comes from
+
+Every app in `catalog.json` declares its upstream and verification method, and the published entry is
+generated from that upstream — the catalog is never the source of versions, dates or download URLs.
+
+| Channel | Apps | What is official |
+| --- | --- | --- |
+| **GitHub Releases of the app itself** | Aidoku, BHTwitter, Feather, iTorrent, LiveContainer, Provenance, SideStore, SpotiFLAC, StikDebug, UTM, Winston, YTKACE, MaxMusic | The release, its IPA asset, date and notes come straight from the project's own GitHub release. |
+| **Developer's own AltStore feed** | YTKillerPlus, iNKillerPlus, TTKillerPlus | iKarwan's source (`repo.ikghd.me`). When unreachable, the last verified build is kept and a mirror fallback is offered. |
+| **Ready-to-sideload builds of official tweaks** | uYouEnhanced, YouTubePlus, YouPro, YouMod, YTMusicUltimate, MaxTube | The underlying tweak's project is the official source of record; because those projects publish `.deb` (or nothing), this source serves **community-built IPAs** of the official tweak, clearly labelled in each entry's metadata. |
+
+Each feed entry embeds an `omnisource` metadata block with `status`, `verification` and
+`compatibility` (including these source notes), so clients and users can see exactly where a build
+came from.
 
 ## How it works
 
 ```
 catalog.json ──▶ scripts/omnisource.py ──▶ feeds/*.json ──▶ GitHub Pages ──▶ your client
-  (edited)         (every 6 hours)          (generated)
+  (hand edited)   (every 6 h: sync from      (generated)      https://iamsmmh.github.io/OmniSource/
+                  official upstreams,
+                  probe links, build feeds)
 ```
 
-`catalog.json` is the only hand-edited data file. Everything else — the master feed, the per-app
-feeds, the root-level compatibility mirrors, the health snapshot, the OmniStore machine feeds,
-the static API snapshots and the table above — is generated. `feeds/` is the single source of
-truth for distribution: a dedicated merge workflow rebuilds the root `apps.json` from it on
-every change. See the [Architecture Guide](docs/ARCHITECTURE.md) and the
-[platform overview](docs/PLATFORM.md).
-
-OmniStore (the future client) consumes `feeds/omnistore/` and `feeds/api/v1/` — see
-[the feed spec](docs/FEED_SPEC.md) and [the API spec](docs/API.md). Sideloading clients keep
-using `apps.json`.
+`catalog.json` is the only hand-edited data file. Everything under `feeds/` (per-app feeds,
+`apps.json`, `health.json`, `state.json`) and the root-level mirrors (`apps.json`, `<slug>.json`) is
+generated — edit `catalog.json`, never the generated files.
 
 | Pipeline | Runs | What it does |
 | --- | --- | --- |
 | **Sync & Publish** | every 6 h · on push | Resolve upstream releases, probe links, rebuild every feed, deploy Pages |
-| **Validate** | every push & PR | `jq` + Python structural checks, reproducibility, `ruff`, `actionlint` |
-| **Merge Feeds** | when `feeds/` changes | Rebuild the unified root `apps.json` from the modular feeds |
-| **Health Check** | daily | HEAD-probe every download URL + mirror and report broken links via a GitHub Issue |
+| **Validate** | every push & PR | Offline structural checks (`validate.py` + `validate_jq.sh`), reproducibility, `ruff`, `actionlint` |
+| **Health Check** | daily | HEAD-probe every download URL and report broken links via a GitHub Issue |
 
 ## Repository layout
 
 | Path | Purpose |
 | --- | --- |
-| `catalog.json` | Source of truth: apps, upstream repositories, metadata, fallback mirrors |
-| `feeds/` | Generated AltStore feeds + `health.json` + pipeline state (**SSOT for sideloading**) |
-| `feeds/omnistore/` | OmniStore machine feeds (apps, categories, updates, featured, repositories, search) |
-| `feeds/api/v1/` | Static REST snapshots + OpenAPI for the future OmniStore client |
-| `*.json` (root) | Generated mirrors that keep historical feed URLs working |
-| `schemas/` | JSON Schema for `catalog.json`, AltStore v2, and OmniStore |
+| `catalog.json` | Source of truth: apps, official upstreams, verification and compatibility metadata |
+| `feeds/` | Generated AltStore v2 feeds + `health.json` + pipeline `state.json` |
 | `assets/` | App and client icons served over Pages |
-| `src/omnisource/` | Pipeline package (providers, tracking, feeds, API, validation) |
-| `scripts/` | CLI wrappers + `validate_jq.sh` · `merge_feeds.py` · `health_check.py` |
-| `tests/` | Unit and offline integration tests |
-| `website/` | Static GitHub Pages site |
-| `docs/` | Installation, catalog, compatibility, contributing, architecture, audit |
+| `src/omnisource/` | Sync pipeline (providers, release tracking, AltStore feed rendering, validation) |
+| `scripts/` | CLI wrappers: `omnisource.py` · `validate.py` · `validate_jq.sh` · `health_check.py` |
+| `website/` | Minimal static GitHub Pages landing page |
 
-## Usage
-
-### For users
-
-1. Tap **Add to AltStore** / **Add to SideStore** above (or paste the feed URL in Feather/ESign).
-2. Open the source in your client and pick an app.
-3. Sign with your own Apple ID or certificate and install.
-
-> [!IMPORTANT]
-> Nothing in OmniSource is pre-signed, and free Apple IDs are limited to **three** sideloaded apps
-> with a **seven-day** signature. AltStore and SideStore refresh automatically; Feather and ESign
-> use your own certificate for longer-lived installs.
-
-### For developers
+## For developers
 
 ```bash
-git clone https://github.com/iamsmmh/OmniSource.git
-cd OmniSource
-
-python3 scripts/omnisource.py     # sync upstream + rebuild every feed
+python3 scripts/omnisource.py     # sync official upstreams + rebuild every feed
 python3 scripts/validate.py       # offline structural checks
-bash scripts/validate_jq.sh       # jq-only JSON lint + AltStore v2 checks
+bash scripts/validate_jq.sh       # jq-only lint + AltStore v2 checks
 python3 scripts/health_check.py   # HEAD-probe every download URL
 ```
 
-All scripts are Python/bundled-`jq` standard-library only — no virtualenv, no dependencies. See
-[CONTRIBUTING](docs/CONTRIBUTING.md) for the golden rule: change `catalog.json`, never the
-generated files.
+Golden rule: change `catalog.json`, never the generated files. Scripts are Python stdlib only — no
+virtualenv, no dependencies.
 
-## Resilience
+## Adding an app
 
-- **Fallback mirrors** — an app may declare `fallbackDownloadURLs` in `catalog.json`; the feed,
-  the website and the health check all honour them, so a build stays installable when its primary
-  host goes dark.
-- **Last-good build** — if an upstream goes quiet, the feed keeps serving the previous release
-  instead of dropping the app.
-- **Broken-link reporting** — the daily health check files a GitHub Issue with every unreachable
-  URL, so failures are visible and triaged.
+1. Add an entry to `catalog.json`: `slug`, identity, `icon` (add the file under `assets/`),
+   `verification` (source method + publisher), `compatibility`, and an `upstream` block pointing at
+   the **official** source (`repo` + matching `assetSuffixes` for GitHub releases, or `feedURL` for a
+   developer AltStore feed; `manualRelease` only when no live upstream exists).
+2. Run `python3 scripts/omnisource.py` and commit the regenerated feeds.
 
 ## Disclaimer
 
-OmniSource is an independent community project. It aggregates and redistributes third-party
-releases; all apps, code and trademarks belong to their respective owners. Availability may change
-without notice, and you are responsible for complying with applicable laws and terms of service.
-
-Credits to upstream maintainers are listed in [docs/CATALOG.md](docs/CATALOG.md).
+OmniSource is an independent community project. It aggregates third-party releases; some entries are
+community-built IPAs of open-source tweaks whose projects publish no IPA themselves. All apps, code
+and trademarks belong to their respective owners, and you are responsible for complying with
+applicable laws and terms of service.
 
 ## License
 

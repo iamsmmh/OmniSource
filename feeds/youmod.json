@@ -82,7 +82,7 @@
         "slug": "youmod",
         "status": "stable",
         "featured": false,
-        "upstreamURL": "https://github.com/mrdrvt99/YouMod",
+        "upstreamURL": "https://github.com/Tonwalter888/YouMod",
         "verification": {
           "method": "github-release",
           "publisher": "mrdrvt99/YouProEXTRA",
@@ -103,7 +103,7 @@
             "esign",
             "livecontainer"
           ],
-          "notes": ""
+          "notes": "Official project: Tonwalter888/YouMod. The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
         },
         "health": {
           "downloadReachable": true,
