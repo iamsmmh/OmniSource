@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-07",
-  "count": 7,
+  "count": 8,
   "repositories": [
     {
       "id": "github--ashreq-ashstore-repo-861eb454",
@@ -34,6 +34,21 @@
       "health": {}
     },
     {
+      "id": "github--itzzace-ytkace-512d6ce7",
+      "name": "itzzace/ytkace",
+      "url": "https://github.com/itzzace/ytkace",
+      "provider": "github",
+      "enabled": true,
+      "lastSync": "2026-09-07",
+      "lastSuccess": "2026-09-07",
+      "lastError": null,
+      "applicationIds": [
+        "ytkace"
+      ],
+      "retryCount": 0,
+      "health": {}
+    },
+    {
       "id": "github--mark02-2012-ytmultimateplus-d33fe09c",
       "name": "Mark02-2012/YTMUltimatePLUS",
       "url": "https://github.com/Mark02-2012/YTMUltimatePLUS",
@@ -60,7 +75,6 @@
       "applicationIds": [
         "youmod",
         "youpro",
-        "ytkace",
         "ytkp",
         "ytlite"
       ],

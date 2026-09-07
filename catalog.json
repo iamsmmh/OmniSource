@@ -414,19 +414,19 @@
       "category": "photo-video",
       "tintColor": "FF0000",
       "icon": "YouTube.png",
-      "localizedDescription": "YTKACE mod. Includes no ads, background playback, downloads, iSponsorBlock, PiP, and more.",
+      "localizedDescription": "YTKACE is a free, open-source YouTube enhancer and downloader for iOS. No ads, background playback, video and audio downloads, SponsorBlock, Picture in Picture, player gestures and deep interface customization.",
       "screenshots": [],
       "featured": false,
       "status": "stable",
-      "upstreamURL": "https://github.com/itzzace/YTKACE",
+      "upstreamURL": "https://github.com/itzzace/ytkace",
       "verification": {
         "method": "github-release",
-        "publisher": "mrdrvt99/YouProEXTRA",
+        "publisher": "itzzace/ytkace",
         "codeSigned": false,
         "checksumPublished": false
       },
       "compatibility": {
-        "minOSVersion": "16.0",
+        "minOSVersion": "17.0",
         "maxOSVersion": null,
         "devices": [
           "iphone",
@@ -439,7 +439,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": ""
+        "notes": "Tracks the official itzzace/ytkace releases. The published build follows the latest YouTube release and needs iOS 17 or newer; upstream also ships a separate iOS 16 IPA (YTKACE_<version>_YouTube_iOS16_<youtube>.ipa) on the same release page."
       },
       "appPermissions": {
         "entitlements": [
@@ -467,14 +467,16 @@
         }
       },
       "upstream": {
-        "repo": "mrdrvt99/YouProEXTRA",
-        "tagPrefix": "ytkace-ipa",
+        "repo": "itzzace/ytkace",
+        "assetNamePattern": "^YTKACE_[0-9][^/]*_YouTube_[0-9]",
         "assetSuffixes": [
           ".ipa"
         ],
-        "maxPages": 10,
+        "maxPages": 3,
         "keepVersions": 1,
-        "descriptionTemplate": "YouTube {version} | {label}"
+        "versionPattern": "YouTube_(\\d+\\.\\d+(?:\\.\\d+)?)",
+        "descriptionTemplate": "YouTube {version} | YTKACE {secondary} | {label}",
+        "minOSVersion": "17.0"
       }
     },
     {

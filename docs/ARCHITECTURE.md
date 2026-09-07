@@ -54,7 +54,8 @@ Keeping resolution rules as *data* rather than code is the central design decisi
 previous design, each app had a bespoke `sync_*()` function; adding an app meant writing Python.
 Now it means adding an object. The `upstream` block carries the whole rule set — tag prefixes,
 asset suffixes and an optional `assetNamePattern` regex, version ordering (`sortByTagNumber`)
-and version source (`versionFromTag`), retention and the description template — so a repository
+and version source (`versionFromTag`, or a `versionPattern` regex when a filename carries both a
+tweak version and a host-app version), retention and the description template — so a repository
 that publishes several build flavours per release (MaxMusic ships a full and a no-YouMusicPiP
 IPA side by side) still resolves to exactly one entry.
 

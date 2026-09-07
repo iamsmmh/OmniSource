@@ -11,7 +11,7 @@ who maintains it upstream, and how OmniSource obtains the build.
 | YouTubePlus (YTLite) | `ytlite` | `com.google.ios.youtube` | [Dayanch96/YTLite](https://github.com/Dayanch96/YTLite) | `ytl-ipa*` tags in mrdrvt99/YouProEXTRA |
 | YouPro | `youpro` | `com.google.ios.youtube` | [mrdrvt99/YouProEXTRA](https://github.com/mrdrvt99/YouProEXTRA) (original repo [deleted]; authored by [@Alibusut](https://github.com/alibusut)) | `youproextra-ipa*` tags in mrdrvt99/YouProEXTRA |
 | YTKillerPlus | `ytkp` | `com.google.ios.youtube` | [iKarwan/YTKillerPlus](https://github.com/iKarwan/YTKillerPlus) | `ytkp-ipa*` tags in mrdrvt99/YouProEXTRA |
-| YTKACE | `ytkace` | `com.google.ios.youtube` | [itzzace/YTKACE](https://github.com/itzzace/YTKACE) | `ytkace-ipa*` tags in mrdrvt99/YouProEXTRA |
+| YTKACE | `ytkace` | `com.google.ios.youtube` | [itzzace/ytkace](https://github.com/itzzace/ytkace) | Newest official release asset (`YTKACE_<version>_YouTube_<youtube>.ipa`); the separate `_iOS16_` build is filtered out |
 | YouMod | `youmod` | `com.google.ios.youtube` | [mrdrvt99/YouMod](https://github.com/mrdrvt99/YouMod) | `youmod-ipa*` tags in mrdrvt99/YouProEXTRA |
 | MaxTube | `maxtube` | `com.google.ios.youtube` | [Mark02-2012/YTPlusM](https://github.com/Mark02-2012/YTPlusM) | `YTPlusM_*` assets in Ashreq/ashstore-repo (GitHub mirror of the TubeVault build; upstream removed its own release assets) |
 | YTMusicUltimate | `ytmusic` | `com.google.ios.youtubemusic` | [Dayanch96/YTMusicUltimate](https://github.com/Dayanch96/YTMusicUltimate) | Newest published release asset |

@@ -5,9 +5,11 @@ from __future__ import annotations
 import unittest
 
 from omnisource.domain import RemoteAsset, RemoteRelease, RepositoryRef, SourceType
+from omnisource.errors import ConfigurationError
 from omnisource.tracking import (
     build_version_entry,
     compare_versions,
+    compile_version_pattern,
     detect_update,
     extract_changelog,
     extract_sha256,
@@ -100,6 +102,74 @@ class AssetSelectionTests(unittest.TestCase):
         entry = build_version_entry(app_name="UTM", ref=ref, release=release, asset=release.assets[0])
         self.assertEqual(entry["date"], "2026-01-03T17:51:54Z")
         self.assertIn("Highlights", entry["localizedDescription"])
+
+    def test_version_pattern_selects_host_app_version(self) -> None:
+        """A filename with two versions publishes the one the pattern names."""
+        ref = RepositoryRef(
+            provider=SourceType.GITHUB_RELEASES,
+            repo="itzzace/ytkace",
+            version_pattern=r"YouTube_(\d+\.\d+(?:\.\d+)?)",
+            description_template="YouTube {version} | YTKACE {secondary} | {label}",
+        )
+        release = RemoteRelease(
+            tag="v0.9.2",
+            name="YTKACE v0.9.2",
+            body="",
+            published_at="2026-08-31T18:20:20Z",
+            assets=(
+                RemoteAsset(
+                    name="YTKACE_0.9.2_YouTube_21.35.3.ipa",
+                    download_url="https://example.com/YTKACE_0.9.2_YouTube_21.35.3.ipa",
+                    size=1,
+                ),
+            ),
+        )
+        entry = build_version_entry(app_name="YTKACE", ref=ref, release=release, asset=release.assets[0])
+        self.assertEqual(entry["version"], "21.35.3")
+        self.assertEqual(
+            entry["localizedDescription"],
+            "YouTube 21.35.3 | YTKACE 0.9.2 | YTKACE_0.9.2_YouTube_21.35.3",
+        )
+
+    def test_version_pattern_orders_releases_by_host_app_version(self) -> None:
+        ref = RepositoryRef(
+            provider=SourceType.GITHUB_RELEASES,
+            repo="itzzace/ytkace",
+            keep_versions=1,
+            version_pattern=r"YouTube_(\d+\.\d+(?:\.\d+)?)",
+        )
+        releases = [
+            RemoteRelease(
+                tag="v0.9.1",
+                name="YTKACE v0.9.1",
+                body="",
+                published_at="2026-08-29T18:43:06Z",
+                assets=(RemoteAsset(name="YTKACE_0.9.1_YouTube_21.34.3.ipa", download_url="https://a", size=1),),
+            ),
+            RemoteRelease(
+                tag="v0.9.2",
+                name="YTKACE v0.9.2",
+                body="",
+                published_at="2026-08-31T18:20:20Z",
+                assets=(RemoteAsset(name="YTKACE_0.9.2_YouTube_21.35.3.ipa", download_url="https://b", size=1),),
+            ),
+        ]
+        versions = select_versions(app_name="YTKACE", ref=ref, releases=releases)
+        self.assertEqual([entry["version"] for entry in versions], ["21.35.3"])
+
+    def test_version_pattern_ignored_when_it_does_not_match(self) -> None:
+        ref = RepositoryRef(
+            provider=SourceType.GITHUB_RELEASES,
+            repo="o/r",
+            version_pattern=r"YouTube_(\d+\.\d+\.\d+)",
+        )
+        release = self._release("App_2.0.0.ipa")
+        entry = build_version_entry(app_name="App", ref=ref, release=release, asset=release.assets[0])
+        self.assertEqual(entry["version"], "2.0.0")
+
+    def test_invalid_version_pattern_is_a_configuration_error(self) -> None:
+        with self.assertRaises(ConfigurationError):
+            compile_version_pattern("YouTube_(")
 
     def test_detect_update(self) -> None:
         old = [{"version": "1.0.0", "downloadURL": "https://a"}]

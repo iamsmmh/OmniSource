@@ -162,6 +162,7 @@ class RepositoryRef:
     exclude_tag_prefixes: tuple[str, ...] = ()
     asset_suffixes: tuple[str, ...] = (".ipa",)
     asset_name_pattern: str = ""
+    version_pattern: str = ""
     max_pages: int = 3
     keep_versions: int = 1
     sort_by_tag_number: bool = False
@@ -197,6 +198,7 @@ class RepositoryRef:
             exclude_tag_prefixes=tuple(raw.get("excludeTagPrefixes", ())),
             asset_suffixes=tuple(raw.get("assetSuffixes", (".ipa",))),
             asset_name_pattern=raw.get("assetNamePattern", ""),
+            version_pattern=raw.get("versionPattern", ""),
             max_pages=int(raw.get("maxPages", 3)),
             keep_versions=int(raw.get("keepVersions", 1)),
             sort_by_tag_number=bool(raw.get("sortByTagNumber", False)),

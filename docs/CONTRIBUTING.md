@@ -95,6 +95,7 @@ catalog uses eight GitHub release-page requests before cache hits.
 | `excludeTagPrefixes` | `[]` | Skip tags starting with any of these |
 | `assetSuffixes` | `[".ipa"]` | Asset filename suffixes in priority order |
 | `assetNamePattern` | `""` | Regex an asset filename must match before suffixes are tried; picks one flavour when a repository publishes several |
+| `versionPattern` | `""` | Regex selecting *which* number in the asset filename (then tag, then release name) is the published version — needed when a filename carries both a tweak version and a host-app version. First capture group wins; the other numbers remain available as `{secondary}` |
 | `maxPages` | `3` | Release pages (100 per page) to scan |
 | `keepVersions` | `1` | Versions to publish; `0` keeps every match |
 | `sortByTagNumber` | `false` | Order by the trailing number in the tag instead of API order |

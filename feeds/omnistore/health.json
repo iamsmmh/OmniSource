@@ -4,8 +4,8 @@
   "count": 11,
   "totals": {
     "apps": 11,
-    "reachable": 10,
-    "unreachable": 1
+    "reachable": 11,
+    "unreachable": 0
   },
   "apps": [
     {
@@ -66,11 +66,11 @@
     },
     {
       "appId": "ytkace",
-      "status": "broken",
-      "downloadReachable": false,
-      "detail": "HTTP 404",
+      "status": "active",
+      "downloadReachable": true,
+      "detail": "HTTP 302",
       "metadataCompleteness": 1.0,
-      "lastReleaseDate": "2026-09-01"
+      "lastReleaseDate": "2026-08-31"
     },
     {
       "appId": "ytkp",

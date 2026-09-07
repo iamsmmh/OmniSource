@@ -2,8 +2,8 @@
   "generatedAt": "2026-09-07",
   "totals": {
     "apps": 11,
-    "reachable": 10,
-    "unreachable": 1,
+    "reachable": 11,
+    "unreachable": 0,
     "featured": 5
   },
   "apps": [
@@ -67,10 +67,10 @@
       "name": "YTKACE",
       "status": "stable",
       "version": "21.35.3",
-      "updatedAt": "2026-09-01",
-      "sizeBytes": 129059304,
-      "downloadReachable": false,
-      "detail": "HTTP 404",
+      "updatedAt": "2026-08-31",
+      "sizeBytes": 134278975,
+      "downloadReachable": true,
+      "detail": "HTTP 302",
       "statusSince": "2026-09-07"
     },
     {

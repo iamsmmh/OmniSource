@@ -167,6 +167,11 @@
               "minLength": 1,
               "description": "Regular expression an asset filename must match to be eligible."
             },
+            "versionPattern": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Regular expression selecting the published version number from the asset filename (then tag, then release name). The first capture group wins; remaining numbers stay available as {secondary}."
+            },
             "maxPages": { "type": "integer", "minimum": 1 },
             "keepVersions": { "type": "integer", "minimum": 0 },
             "sortByTagNumber": { "type": "boolean" },
