@@ -1,0 +1,37 @@
+name: ✨ Suggest a feature
+description: An idea for the catalog, pipeline, feeds, or website.
+title: "Feature: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: The situation or limitation you ran into.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Proposed feature
+      description: How you imagine it working (UI sketch, feed field, workflow, etc.).
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Website
+        - Pipeline / feeds
+        - Catalog content
+        - Notifications
+        - Docs
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context
+      description: Links, examples from other sources, or rough implementation notes.

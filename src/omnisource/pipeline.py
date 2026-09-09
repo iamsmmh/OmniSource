@@ -20,6 +20,7 @@ import concurrent.futures
 import os
 import re
 import time
+from datetime import date
 from pathlib import Path
 from typing import Any
 
@@ -35,7 +36,8 @@ from omnisource.feeds.altstore import (
     render_health_doc,
     render_news_items,
 )
-from omnisource.feeds.rss import render_rss_feed
+from omnisource.feeds.rss import render_app_rss_feed, render_rss_feed
+from omnisource.feeds.updates import render_updates_doc
 from omnisource.io import atomic_write_many, atomic_write_text, read_json, write_json
 from omnisource.logutil import Group, log
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
@@ -291,6 +293,29 @@ def stage_health(
     log.info("Probed %d download URL(s) in %.1fs", len(targets), time.monotonic() - started)
 
 
+def _days_since(iso_date: str, *, today_iso: str) -> int:
+    """Whole days between an ISO date and today (0 when either is unparseable)."""
+    try:
+        start = date.fromisoformat(str(iso_date)[:10])
+    except ValueError:
+        return 0
+    try:
+        end = date.fromisoformat(str(today_iso)[:10])
+    except ValueError:
+        return 0
+    return max(0, (end - start).days)
+
+
+def _annotate_staleness(health_doc: dict[str, Any], *, stale_after_days: int) -> None:
+    """Attach ``updatedDaysAgo`` and ``stale`` to every health entry."""
+    today_iso = today()
+    for entry in health_doc.get("apps", []):
+        updated = str(entry.get("updatedAt") or "")
+        days = _days_since(updated, today_iso=today_iso) if updated else 0
+        entry["updatedDaysAgo"] = days
+        entry["stale"] = bool(days > stale_after_days and entry.get("status") not in {"unmaintained", "deprecated"})
+
+
 def stage_build(
     container: Container,
     catalog: Catalog,
@@ -337,7 +362,13 @@ def stage_build(
     documents[feeds_dir / "apps.json"] = master
 
     health_doc = render_health_doc(rendered)
+    _annotate_staleness(health_doc, stale_after_days=container.settings.stale_after_days)
     documents[feeds_dir / "health.json"] = health_doc
+
+    # Website updates timeline (sanitized history + newest versions).
+    documents[feeds_dir / "updates.json"] = render_updates_doc(
+        catalog, state, limit=max(10, container.settings.max_update_history)
+    )
 
     # Dynamic badge documents
     badges = render_badge_docs(rendered, health_doc)
@@ -346,15 +377,20 @@ def stage_build(
 
     changed = atomic_write_many(documents)
 
-    # RSS 2.0 / Atom XML feed
+    # RSS 2.0 / Atom XML feeds: one combined feed plus a per-app feed.
     rss_content = render_rss_feed(catalog, state, limit=25)
     for rss_name in ("feed.xml", "rss.xml"):
         rss_path = feeds_dir / rss_name
         if atomic_write_text(rss_path, rss_content):
             changed.append(rss_path)
+    for app, _entry in rendered:
+        app_rss_path = feeds_dir / f"{app.slug}.xml"
+        app_rss_content = render_app_rss_feed(catalog, state, app.slug, limit=15)
+        if app_rss_content and atomic_write_text(app_rss_path, app_rss_content):
+            changed.append(app_rss_path)
 
     log.info(
-        "Built %d AltStore feed(s) + apps.json + health.json + badges + RSS (%d file(s) changed)",
+        "Built %d AltStore feed(s) + apps.json + health.json + updates.json + badges + RSS (%d file(s) changed)",
         len(rendered),
         len(changed),
     )
@@ -375,21 +411,22 @@ def stage_readme(container: Container, catalog: Catalog, health_doc: dict[str, A
     by_slug = {item["slug"]: item for item in health_doc["apps"]}
     status_icon = {"stable": "🟢", "beta": "🟡", "manual": "🔵", "unmaintained": "🔴"}
 
-    header = "| App | Bundle ID | Version | Updated | Status | Download | Install | Feed |"
-    divider = "| --- | --- | --- | --- | --- | --- | --- | --- |"
+    header = "| App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |"
+    divider = "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"
     rows = [header, divider]
     for app in catalog.apps:
         item = by_slug.get(app.slug)
         if not item:
             continue
         feed_url = f"{base}/{app.slug}.json"
+        rss_url = f"{base}/{app.slug}.xml"
         bundle = str(app.raw.get("bundleIdentifier", "—"))
         reachable = "✅" if item["downloadReachable"] else "⚠️"
         install = f"[AltStore](altstore://source?url={feed_url}) · [SideStore](sidestore://source?url={feed_url})"
         rows.append(
             f"| **{app.name}** | `{bundle}` | `{item['version']}` | {item['updatedAt']} | "
             f"{status_icon.get(app.status, '⚪')} {app.status} | {reachable} | {install} | "
-            f"[`{app.slug}.json`]({feed_url}) |"
+            f"[`{app.slug}.json`]({feed_url}) | [`{app.slug}.xml`]({rss_url}) |"
         )
 
     totals = health_doc["totals"]

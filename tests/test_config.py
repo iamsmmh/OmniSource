@@ -31,11 +31,16 @@ class TestConfig(unittest.TestCase):
             "syncWorkers": 12,
             "requestTimeout": 45,
             "maxUpdateHistory": 50,
+            "staleAfterDays": 60,
         }
         settings = RuntimeSettings.from_dict(raw)
         self.assertEqual(settings.sync_workers, 12)
         self.assertEqual(settings.request_timeout, 45.0)
         self.assertEqual(settings.max_update_history, 50)
+        self.assertEqual(settings.stale_after_days, 60)
+
+    def test_stale_after_days_defaults(self) -> None:
+        self.assertEqual(RuntimeSettings().stale_after_days, 90)
 
     def test_environment_overrides(self) -> None:
         settings = RuntimeSettings(sync_workers=4)

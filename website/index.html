@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
-  <title>OmniSource — Curated iOS Apps</title>
-  <meta name="description" content="A clean, verified and automatically updated iOS sideloading source for AltStore, SideStore, Feather, ESign and LiveContainer.">
+  <meta name="theme-color" content="#f4f5fa" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0b0c10" id="themeColor">
+  <title>OmniSource — Curated iOS Apps, Always Current</title>
+  <meta name="description" content="A verified and automatically updated iOS sideloading source for AltStore, SideStore, Feather, ESign and LiveContainer. Every app resolves from its official upstream.">
   <meta property="og:title" content="OmniSource — Curated iOS Apps">
-  <meta property="og:description" content="One source. Curated apps. Always current.">
+  <meta property="og:description" content="One source. Curated apps. Always current. AltStore, SideStore, Feather, ESign and LiveContainer.">
   <meta property="og:image" content="assets/OmniSource.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="color-scheme" content="light dark">
   <link rel="icon" type="image/png" href="assets/OmniSource.png">
   <link rel="apple-touch-icon" href="assets/OmniSource.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="OmniSource releases" href="feed.xml">
   <link rel="preload" href="assets/OmniSource.png" as="image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/app.js" defer></script>
 </head>
@@ -23,107 +30,198 @@
   <header class="site-header">
     <nav class="nav shell" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="OmniSource home">
-        <img src="assets/OmniSource.png" alt="" width="36" height="36">
+        <img src="assets/OmniSource.png" alt="" width="38" height="38">
         <span>OmniSource</span>
+        <span class="brand-badge">LIVE</span>
       </a>
       <div class="nav-links">
         <a href="#catalog">Apps</a>
+        <a href="#whats-new">What&rsquo;s new</a>
         <a href="#how-it-works">About</a>
-        <a href="feed.xml">RSS</a>
-        <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener">GitHub</a>
+        <a href="feed.xml" class="nav-rss" title="Combined release feed (RSS)">RSS</a>
+        <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" class="nav-gh">GitHub</a>
       </div>
-      <button class="icon-button" id="themeButton" type="button" aria-label="Change color theme" title="Change color theme">
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42M7.06 16.94l-1.42 1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
-      </button>
+      <div class="nav-controls">
+        <button class="icon-button" id="viewToggle" type="button" aria-label="Use compact view" title="Toggle view" aria-pressed="false">
+          <svg class="icon-grid" aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.4"/><rect x="14" y="4" width="6" height="6" rx="1.4"/><rect x="4" y="14" width="6" height="6" rx="1.4"/><rect x="14" y="14" width="6" height="6" rx="1.4"/></svg>
+          <svg class="icon-list" aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="3.4" rx="1.4"/><rect x="4" y="10.3" width="16" height="3.4" rx="1.4"/><rect x="4" y="15.6" width="16" height="3.4" rx="1.4"/></svg>
+        </button>
+        <button class="icon-button" id="themeButton" type="button" aria-label="Change color theme" title="Theme: system">
+          <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2M12 19.2v2M2.8 12h2M19.2 12h2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l-1.4 1.4"/></svg>
+          <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6Z"/></svg>
+        </button>
+      </div>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero shell">
-      <div class="eyebrow"><span class="live-dot"></span><span id="healthLabel">Checking source health…</span></div>
-      <h1>One source.<br><span>Every app you need.</span></h1>
-      <p class="hero-copy">A carefully curated iOS catalog, automatically synced from trusted upstream releases and verified every day.</p>
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"><i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><i class="grid-fade"></i></div>
+      <div class="shell hero-inner">
+        <div class="eyebrow" id="healthPill"><span class="live-dot"></span><span id="healthLabel">Checking source health…</span></div>
+        <h1>Every app you need.<br><span class="grad-text">Always current.</span></h1>
+        <p class="hero-copy" id="heroCopy">A carefully curated iOS catalog, automatically synced from official upstream releases and verified every day.</p>
 
-      <div class="source-box" aria-label="OmniSource feed URL">
-        <div class="source-address">
-          <span class="source-label">SOURCE URL</span>
-          <code id="sourceUrl">https://iamsmmh.github.io/OmniSource/apps.json</code>
+        <div class="source-box" aria-label="OmniSource feed URL">
+          <span class="source-glow" aria-hidden="true"></span>
+          <div class="source-address">
+            <span class="source-label">SOURCE URL</span>
+            <code id="sourceUrl">https://iamsmmh.github.io/OmniSource/apps.json</code>
+          </div>
+          <button class="button primary" id="copySource" type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+            <span>Copy</span>
+          </button>
+          <button class="button square" id="sourceQr" type="button" title="Show QR code" aria-label="Show QR code for the source URL">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M15 14h2v2h-2zM19 14h1.4v3.4H19zM14 19h3.4v1.4H14zM20 19.6V20h-1.4"/></svg>
+          </button>
         </div>
-        <button class="button primary" id="copySource" type="button">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
-          <span>Copy</span>
-        </button>
-      </div>
 
-      <div class="quick-actions" aria-label="Add source">
-        <a class="button client-button" href="altstore://source?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Fapps.json"><img src="assets/AltStore.png" alt="">AltStore</a>
-        <a class="button client-button" href="sidestore://source?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Fapps.json"><img src="assets/SideStore.png" alt="">SideStore</a>
-        <a class="button client-button" href="feather://source/iamsmmh.github.io/OmniSource/apps.json"><img src="assets/Feather.png" alt="">Feather</a>
-        <button class="button client-button" id="sourceQr" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM15 14h2v2h-2zM19 14h1v3h-3M14 19h3v1h-3zM20 19v1h-1"/></svg>QR code</button>
-      </div>
+        <div class="client-row" id="clientButtons" role="group" aria-label="Add the source in your sideloading client">
+          <span class="client-hint">Add in your client</span>
+        </div>
 
-      <div class="stats" aria-label="Catalog statistics">
-        <div><strong id="appTotal">—</strong><span>Curated apps</span></div>
-        <div><strong>6h</strong><span>Sync interval</span></div>
-        <div><strong id="healthyTotal">—</strong><span>Links online</span></div>
-        <div><strong>5</strong><span>Supported clients</span></div>
+        <div class="stats-grid" id="statCards">
+          <div class="stat-card"><strong id="appTotal">—</strong><span>Curated apps</span></div>
+          <div class="stat-card"><strong id="healthyTotal">—</strong><span>Downloads online</span></div>
+          <div class="stat-card"><strong id="staleTotal">—</strong><span>Stale releases</span></div>
+          <div class="stat-card"><strong id="clientTotal">—</strong><span>Clients supported</span></div>
+        </div>
       </div>
     </section>
 
-    <section class="catalog-section shell" id="catalog">
-      <div class="section-heading">
-        <div><span class="kicker">THE CATALOG</span><h2>Discover apps</h2></div>
-        <p>Official releases and clearly labeled community builds, with provenance and compatibility details.</p>
-      </div>
+    <section class="catalog-section" id="catalog">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">THE CATALOG</span>
+            <h2>Discover <span class="grad-text">apps</span></h2>
+          </div>
+          <p>Official releases and clearly labeled community builds, with provenance, compatibility and health details.</p>
+        </div>
 
-      <div class="catalog-tools">
-        <label class="search-box" for="searchInput">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
-          <input type="search" id="searchInput" placeholder="Search apps, features, or developers…" autocomplete="off">
-          <kbd>⌘ K</kbd>
-        </label>
-        <select id="sortSelect" class="select" aria-label="Sort apps">
-          <option value="featured">Featured first</option>
-          <option value="updated">Recently updated</option>
-          <option value="name">Name A–Z</option>
-          <option value="size">Smallest first</option>
-        </select>
-        <button class="icon-button view-toggle" id="viewToggle" type="button" aria-label="Use compact view" title="Toggle view">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
-        </button>
-      </div>
+        <div class="catalog-tools">
+          <label class="search-box" for="searchInput">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input type="search" id="searchInput" placeholder="Search apps, features, developers, bundle IDs…" autocomplete="off" spellcheck="false">
+            <kbd>⌘ K</kbd>
+          </label>
+          <label class="select-wrap" for="osSelect">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2.4"/><path d="M10 7h4M10 18h4"/></svg>
+            <select id="osSelect" aria-label="Filter by device iOS version">
+              <option value="any">Any iOS</option>
+            </select>
+          </label>
+          <label class="select-wrap" for="sortSelect">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M8 6h12M8 12h9M8 18h6"/><path d="m4 5 1.6 2L7 5M4 11l1.6 2L7 11M4 17l1.6 2L7 17"/></svg>
+            <select id="sortSelect" aria-label="Sort apps">
+              <option value="featured">Featured first</option>
+              <option value="updated">Recently updated</option>
+              <option value="version">Newest version</option>
+              <option value="name">Name A–Z</option>
+              <option value="size">Smallest first</option>
+            </select>
+          </label>
+        </div>
 
-      <div class="filter-row" id="categoryFilters" role="group" aria-label="Filter by category"></div>
-      <div class="results-meta"><span id="resultCount">Loading catalog…</span><button id="clearFilters" class="text-button" type="button" hidden>Clear filters</button></div>
+        <div class="filter-groups">
+          <div class="filter-row" id="categoryFilters" role="group" aria-label="Filter by category"></div>
+          <div class="filter-row" id="statusFilters" role="group" aria-label="Filter by release status"></div>
+        </div>
+        <div class="results-meta">
+          <span id="resultCount">Loading catalog…</span>
+          <div class="results-actions">
+            <span id="collisionSummary" class="collision-summary" hidden></span>
+            <button id="clearFilters" class="text-button" type="button" hidden>Clear filters</button>
+          </div>
+        </div>
 
-      <div class="apps-grid" id="appsGrid" aria-live="polite" aria-busy="true">
-        <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+        <div class="apps-grid" id="appsGrid" aria-live="polite" aria-busy="true">
+          <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+        </div>
+        <div class="empty-state" id="emptyState" hidden>
+          <div class="empty-icon">⌕</div>
+          <h3>No apps found</h3>
+          <p>Try another keyword or remove your filters.</p>
+          <button class="button" type="button" id="emptyClear">Reset search</button>
+        </div>
       </div>
-      <div class="empty-state" id="emptyState" hidden>
-        <div class="empty-icon">⌕</div><h3>No apps found</h3><p>Try another keyword or remove your filters.</p>
-        <button class="button" type="button" id="emptyClear">Reset search</button>
+    </section>
+
+    <section class="updates-section" id="whats-new">
+      <div class="shell">
+        <div class="section-heading split">
+          <div>
+            <span class="kicker">RELEASE FEED</span>
+            <h2>What&rsquo;s <span class="grad-text">new</span></h2>
+          </div>
+          <div class="feed-links">
+            <a class="button" href="updates.json" target="_blank" rel="noopener">JSON timeline</a>
+            <a class="button" href="feed.xml" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.6"/></svg> RSS feed</a>
+          </div>
+        </div>
+        <ol class="timeline" id="updatesList" aria-live="polite">
+          <li class="timeline-skeleton"></li><li class="timeline-skeleton"></li><li class="timeline-skeleton"></li>
+        </ol>
+        <p class="updates-note" id="updatesNote" hidden></p>
       </div>
     </section>
 
     <section class="trust-section" id="how-it-works">
       <div class="shell">
         <div class="section-heading">
-          <div><span class="kicker">BUILT ON TRUST</span><h2>Current by design.</h2></div>
+          <div><span class="kicker">BUILT ON TRUST</span><h2>Current by <span class="grad-text">design</span>.</h2></div>
           <p>OmniSource is transparent about where every build comes from and keeps the catalog healthy without manual busywork.</p>
         </div>
         <div class="trust-grid">
-          <article><span class="step">01</span><h3>Curated upstreams</h3><p>Releases resolve from official GitHub projects or each developer’s own feed.</p></article>
-          <article><span class="step">02</span><h3>Automatic updates</h3><p>The catalog syncs every six hours, so new versions appear without stale links.</p></article>
-          <article><span class="step">03</span><h3>Daily verification</h3><p>Every download is probed and its origin, status, requirements and notes remain visible.</p></article>
+          <article>
+            <span class="step">01</span><h3>Curated upstreams</h3>
+            <p>Releases resolve from official GitHub projects or each developer&rsquo;s own feed — never random re-uploads.</p>
+          </article>
+          <article>
+            <span class="step">02</span><h3>Automated updates</h3>
+            <p>The pipeline syncs every six hours, publishes per-app feeds and RSS, and keeps version history for rollbacks.</p>
+          </article>
+          <article>
+            <span class="step">03</span><h3>Verified daily</h3>
+            <p>Every download is probed; broken links raise an issue automatically. Origin, status, requirements and notes stay visible.</p>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer shell">
-    <div class="footer-brand"><img src="assets/OmniSource.png" alt="" width="34" height="34"><div><strong>OmniSource</strong><span>Open-source iOS distribution.</span></div></div>
-    <div class="footer-links"><a href="https://github.com/iamsmmh/OmniSource">Repository</a><a href="https://github.com/iamsmmh/OmniSource/blob/main/SECURITY.md">Security</a><a href="feed.xml">Release feed</a><a href="catalog.json">Catalog JSON</a></div>
-    <p class="fine-print">Independent community project. Apps and trademarks belong to their respective owners. © <span id="year"></span> OmniSource contributors.</p>
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <img src="assets/OmniSource.png" alt="" width="40" height="40">
+        <div>
+          <strong>OmniSource</strong>
+          <span id="footerTagline">Curated iOS sideloading, kept current automatically.</span>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Clients</h4>
+          <div id="footerClients"></div>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#catalog">Browse apps</a>
+          <a href="#whats-new">Release timeline</a>
+          <a href="feed.xml">Combined RSS</a>
+          <a href="apps.json">Source JSON</a>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener">Repository</a>
+          <a href="https://github.com/iamsmmh/OmniSource/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">Contributing</a>
+          <a href="https://github.com/iamsmmh/OmniSource/blob/main/SECURITY.md" target="_blank" rel="noopener">Security</a>
+          <a href="catalog.json">Catalog JSON</a>
+        </div>
+      </div>
+      <p class="fine-print">Independent community project. Apps and trademarks belong to their respective owners. © <span id="year"></span> OmniSource contributors.</p>
+    </div>
   </footer>
 
   <dialog id="appDialog" class="app-dialog" aria-labelledby="dialogTitle">
@@ -132,13 +230,17 @@
 
   <dialog id="qrDialog" class="qr-dialog" aria-labelledby="qrTitle">
     <button class="dialog-close" type="button" data-close aria-label="Close"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
-    <span class="kicker">SCAN TO ADD</span><h2 id="qrTitle">OmniSource</h2>
-    <div class="qr-image"><img id="qrImage" width="220" height="220" alt="QR code for source URL"></div>
+    <span class="kicker">SCAN TO ADD</span>
+    <h2 id="qrTitle">OmniSource</h2>
+    <div class="qr-image"><img id="qrImage" width="240" height="240" alt="QR code for the source URL"></div>
     <code id="qrText"></code>
-    <button class="button primary full" id="qrCopy" type="button">Copy source URL</button>
+    <button class="button primary full" id="qrCopy" type="button">Copy URL</button>
   </dialog>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+    <span></span>
+  </div>
   <noscript><div class="noscript">JavaScript is required to browse the live catalog. You can still <a href="apps.json">open the source feed</a>.</div></noscript>
 </body>
 </html>

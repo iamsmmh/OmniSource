@@ -26,6 +26,7 @@ class RuntimeSettings:
     request_retries: int = 3
     health_timeout: float = 12.0
     max_update_history: int = 100
+    stale_after_days: int = 90
 
     @classmethod
     def from_dict(cls, raw: dict[str, Any]) -> RuntimeSettings:
@@ -36,6 +37,7 @@ class RuntimeSettings:
             request_retries=max(1, _int(raw.get("requestRetries"), cls.request_retries)),
             health_timeout=max(1.0, _float(raw.get("healthTimeout"), cls.health_timeout)),
             max_update_history=max(1, _int(raw.get("maxUpdateHistory"), cls.max_update_history)),
+            stale_after_days=max(1, _int(raw.get("staleAfterDays"), cls.stale_after_days)),
         )
 
     def with_environment(self) -> RuntimeSettings:
@@ -46,6 +48,7 @@ class RuntimeSettings:
             "requestRetries": "OMNISOURCE_REQUEST_RETRIES",
             "healthTimeout": "OMNISOURCE_HEALTH_TIMEOUT",
             "maxUpdateHistory": "OMNISOURCE_MAX_UPDATE_HISTORY",
+            "staleAfterDays": "OMNISOURCE_STALE_AFTER_DAYS",
         }
         values = {key: os.environ.get(env) for key, env in mapping.items() if os.environ.get(env)}
         if not values:
@@ -60,6 +63,7 @@ class RuntimeSettings:
             "requestRetries": self.request_retries,
             "healthTimeout": self.health_timeout,
             "maxUpdateHistory": self.max_update_history,
+            "staleAfterDays": self.stale_after_days,
         }
 
 

@@ -1,0 +1,42 @@
+{
+  "name": "OmniSource — Curated iOS Apps",
+  "short_name": "OmniSource",
+  "description": "A verified and automatically updated iOS sideloading source for AltStore, SideStore, Feather, ESign and LiveContainer.",
+  "id": "omnisource",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0c10",
+  "theme_color": "#0b0c10",
+  "categories": ["utilities", "productivity"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "assets/OmniSource.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/OmniSource.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Browse apps",
+      "short_name": "Apps",
+      "description": "Open the catalog",
+      "url": "./#catalog"
+    },
+    {
+      "name": "What's new",
+      "short_name": "Updates",
+      "description": "Recent releases",
+      "url": "./#whats-new"
+    }
+  ]
+}

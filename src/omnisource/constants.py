@@ -42,9 +42,10 @@ IMAGE_EXTENSIONS = frozenset({".png", ".jpg", ".jpeg", ".webp", ".gif"})
 PNG_MAGIC = b"\x89PNG\r\n\x1a\n"
 JPEG_MAGIC = b"\xff\xd8\xff"
 
-# Pipeline state, health snapshots, and badges are not distributable AltStore feeds.
+# Pipeline state, health snapshots, updates timeline, and badges are not
+# distributable AltStore feeds.
 ALTSTORE_NON_FEED = frozenset(
-    {"state.json", "health.json", "badge-apps.json", "badge-health.json", "badge-version.json"}
+    {"state.json", "health.json", "updates.json", "badge-apps.json", "badge-health.json", "badge-version.json"}
 )
 
 

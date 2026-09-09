@@ -1,0 +1,41 @@
+name: 🔗 Report a broken upstream / download
+description: A catalog entry's upstream, feed or download link is stale or broken.
+title: "Broken upstream: "
+labels: ["broken-link"]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App
+      description: App name or slug from the catalog.
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: URL that fails
+      description: The upstream, feed or download URL that is broken.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What fails
+      options:
+        - Download link (404/removed)
+        - Repository moved or renamed
+        - Developer feed unreachable
+        - Asset never appears in releases
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: new-url
+    attributes:
+      label: Replacement URL (optional)
+      description: The project's new repository, feed, or asset URL if you know it.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: HTTP status, error message, or anything else that helps.

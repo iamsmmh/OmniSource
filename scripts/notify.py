@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Send test or release broadcast notifications to Discord and Telegram."""
+"""Send test or release broadcast notifications.
+
+Transports are enabled through environment variables and dispatched together:
+Discord (``DISCORD_WEBHOOK_URL``), Telegram (``TELEGRAM_BOT_TOKEN`` +
+``TELEGRAM_CHAT_ID``), ntfy (``NTFY_URL``/``NTFY_TOPIC``) and a generic JSON
+webhook (``OMNISOURCE_WEBHOOK_URL``). See ``omnisource.notify`` for details.
+"""
 
 from __future__ import annotations
 
