@@ -2598,6 +2598,8 @@
       style.textContent = `
         .language-selector {
           position: relative;
+          flex: none;
+          min-width: 0;
         }
         .language-selector select {
           height: 36px;
@@ -2610,6 +2612,8 @@
           cursor: pointer;
           appearance: none;
           -webkit-appearance: none;
+          min-width: 0;
+          max-width: 110px;
         }
         .language-selector::after {
           content: '▼';
@@ -2621,37 +2625,96 @@
           color: var(--muted);
           font-size: 10px;
         }
+        .nav-lang {
+          display: none;
+          align-items: center;
+          gap: 10px;
+          padding: 12px 16px 6px;
+          margin-top: 10px;
+          border-top: 1px solid var(--line);
+        }
+        .nav-lang > span {
+          font-size: 11px;
+          font-weight: 700;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--muted);
+          flex: none;
+        }
+        .nav-lang .language-selector { flex: 1 1 auto; }
+        /* Below the hamburger breakpoint the row's copy hides and the
+           menu's copy takes over — exactly one language control is ever
+           visible, and neither can overflow the nav row. */
+        @media (max-width: 1100px) {
+          .nav-controls .language-selector { display: none; }
+          .nav-links .nav-lang { display: flex; }
+        }
       `;
       document.head.appendChild(style);
 
-      // Add language selector to nav
+      const buildSelect = () => {
+        const select = document.createElement('select');
+        select.className = 'lang-select';
+        select.setAttribute('aria-label', 'Language');
+        Object.entries(this.languages).forEach(([code, lang]) => {
+          const option = document.createElement('option');
+          option.value = code;
+          option.textContent = lang.native;
+          if (code === this.currentLanguage) option.selected = true;
+          select.appendChild(option);
+        });
+        return select;
+      };
+
+      const buildWrap = () => {
+        const wrap = document.createElement('div');
+        wrap.className = 'language-selector';
+        wrap.appendChild(buildSelect());
+        return wrap;
+      };
+
+      // Header row (visible ≥1100px, where the links are inline).
       const navControls = document.querySelector('.nav-controls');
-      if (!navControls) return;
+      if (navControls) {
+        const wrap = buildWrap();
+        navControls.appendChild(wrap);
+        wrap.querySelector('select').addEventListener('change', (e) => {
+          this.setLanguage(e.target.value);
+        });
+      }
 
-      const selector = document.createElement('div');
-      selector.className = 'language-selector';
-      selector.innerHTML = `
-        <select id="language-select">
-          ${Object.entries(this.languages).map(([code, lang]) => `
-            <option value="${code}" ${code === this.currentLanguage ? 'selected' : ''}>
-              ${lang.native}
-            </option>
-          `).join('')}
-        </select>
-      `;
+      // Hamburger menu (visible <1100px, where the row is tight on phones).
+      const navLinks = document.querySelector('.nav-links');
+      if (navLinks) {
+        const row = document.createElement('div');
+        row.className = 'nav-lang';
+        const label = document.createElement('span');
+        label.textContent = 'Language';
+        const wrap = buildWrap();
+        row.appendChild(label);
+        row.appendChild(wrap);
+        navLinks.appendChild(row);
+        wrap.querySelector('select').addEventListener('change', (e) => {
+          this.setLanguage(e.target.value);
+          if (OS.closeNav) OS.closeNav();
+        });
+      }
 
-      navControls.appendChild(selector);
+      this.syncLanguageSelects();
+    },
 
-      selector.querySelector('select').addEventListener('change', (e) => {
-        this.setLanguage(e.target.value);
+    syncLanguageSelects() {
+      document.querySelectorAll('.lang-select').forEach((select) => {
+        select.value = this.currentLanguage;
       });
     },
 
     setLanguage(code) {
       if (!this.translations[code]) return;
-      
+
       this.currentLanguage = code;
       Storage.set(this.STORAGE_KEY, code);
+      this.syncLanguageSelects();
       this._applyTranslations();
       OS.emit('language:changed', code);
     },

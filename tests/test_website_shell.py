@@ -88,6 +88,27 @@ class TestWebsiteShell(unittest.TestCase):
         self.assertTrue(flat.is_file(), "flat apps.json missing at the repository root")
         self.assertEqual(flat.read_bytes(), canonical.read_bytes())
 
+    def test_nav_never_pushes_controls_off_page(self) -> None:
+        # The header row is wider than the 1200px shell on desktops (11
+        # links + controls); the nav links must absorb the squeeze so the
+        # controls (search/theme/install/language) always stay on-page.
+        css = (ROOT / "assets" / "design-system" / "components.css").read_text(encoding="utf-8")
+        self.assertRegex(css, r"\.nav-links \{[^}]*flex: 0 1 auto;[^}]*min-width: 0;")
+        self.assertRegex(css, r"\.nav-links a \{[^}]*text-overflow: ellipsis;")
+        self.assertRegex(css, r"\.nav-controls \{[^}]*flex: none;")
+        self.assertIn("@media (max-width: 560px)", css)
+        self.assertIn("@media (max-width: 430px)", css)
+
+    def test_language_selector_has_a_home_at_every_breakpoint(self) -> None:
+        # features.js renders the language switcher in the header row AND in
+        # the hamburger menu; the CSS swap keeps exactly one visible so it
+        # can never overflow the row (it used to sit past the page edge).
+        features = (ROOT / "js" / "features.js").read_text(encoding="utf-8")
+        self.assertIn("nav-lang", features)
+        self.assertIn(".nav-controls .language-selector { display: none; }", features)
+        self.assertIn(".nav-links .nav-lang { display: flex; }", features)
+        self.assertIn("syncLanguageSelects", features)
+
     def test_liquid_glass_tokens(self) -> None:
         tokens = (ROOT / "assets" / "design-system" / "tokens.css").read_text(encoding="utf-8")
         self.assertIn("--glass-nav:", tokens)
