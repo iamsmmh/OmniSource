@@ -299,8 +299,8 @@ class TestAppPages(unittest.TestCase):
             duplicates,
         )
         self.assertIn("<title>Alpha Tweak — OmniSource</title>", html_doc)
-        self.assertIn("app-page.css", html_doc)
-        self.assertIn("Download IPA", html_doc)
+        self.assertIn("assets/design-system/tokens.css", html_doc)
+        self.assertIn("Primary IPA", html_doc)
         self.assertIn("VERIFIED", html_doc)
         self.assertIn("https://example.com/alpha.ipa", html_doc)
         self.assertIn("altstore://source?url=", html_doc)

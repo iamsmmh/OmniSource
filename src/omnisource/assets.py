@@ -131,7 +131,7 @@ def inspect_catalog(catalog: Catalog, *, assets_dir: Path) -> AssetReport:
                 )
     if assets_dir.is_dir():
         for asset in sorted(assets_dir.iterdir()):
-            if asset.is_file() and asset.name not in referenced:
+            if asset.is_file() and asset.name not in referenced and not _is_paired_fallback(asset.name, referenced):
                 report.issues.append(
                     AssetIssue("", "unused", f"assets/{asset.name} is not referenced by catalog.json", asset.name)
                 )
@@ -140,6 +140,21 @@ def inspect_catalog(catalog: Catalog, *, assets_dir: Path) -> AssetReport:
                     AssetIssue("", "oversized", f"assets/{asset.name}: {asset.stat().st_size // 1024} KB", asset.name)
                 )
     return report
+
+
+def _is_paired_fallback(name: str, referenced: set[str]) -> bool:
+    """True when ``name`` is the format twin of a referenced asset.
+
+    The catalog references WebP icons; the original PNGs stay in the repo as
+    fallbacks for older iOS versions and for ``<picture>`` fallbacks, so a
+    ``.png`` sitting next to a referenced ``.webp`` (or vice versa) is not
+    dead weight.
+    """
+    stem, dot, ext = name.rpartition(".")
+    if not dot:
+        return False
+    twin_ext = ".png" if ext.lower() == "webp" else ".webp"
+    return f"{stem}{twin_ext}" in referenced
 
 
 def _inspect_app(app: App, assets_dir: Path, report: AssetReport, referenced: set[str]) -> None:

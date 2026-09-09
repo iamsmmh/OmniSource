@@ -59,11 +59,17 @@ rm -f /tmp/jq-lint.err
 feeds=()
 for f in feeds/*.json; do
   case "$(basename "$f")" in
-    # pipeline state/health/timeline/badges and derived intelligence documents
-    # (discovery, sources, verification, status, duplicates, analytics) are
-    # machine-readable datasets, not AltStore v2 distribution feeds.
-    state.json | health.json | updates.json | badge-*.json | discovery.json | sources.json | \
-    verification.json | status.json | duplicates.json | analytics.json) continue ;;
+  # pipeline state/health/timeline/badges and derived intelligence documents
+  # (discovery, sources, verification, status, duplicates, analytics, trending,
+  # related, reputation, download-intelligence, community, install,
+  # search-index, compare, screenshots) are machine-readable datasets, not
+  # AltStore v2 distribution feeds. Keep in sync with ALTSTORE_NON_FEED in
+  # src/omnisource/constants.py (the standalone script keeps an explicit local
+  # copy so it stays runnable without importing the package).
+  state.json | health.json | updates.json | badge-*.json | discovery.json | sources.json | \
+  verification.json | status.json | duplicates.json | analytics.json | trending.json | \
+  related.json | reputation.json | download-intelligence.json | community.json | \
+  install.json | search-index.json | compare.json | screenshots.json) continue ;;
     *) feeds+=("$f") ;;
   esac
 done

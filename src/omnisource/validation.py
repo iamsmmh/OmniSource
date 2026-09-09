@@ -412,6 +412,20 @@ def validate_feed(path: Path, feed: Any, *, root: Path) -> Report:
     return report
 
 
+def _is_paired_asset(name: str, referenced: set[Any]) -> bool:
+    """True when ``name`` is the format twin of a referenced asset.
+
+    The catalog references WebP icons while the original PNGs stay in the
+    repo as fallbacks, so a ``.png`` next to a referenced ``.webp`` (or the
+    reverse) is intentional, not dead weight.
+    """
+    stem, dot, ext = str(name).rpartition(".")
+    if not dot:
+        return False
+    twin_ext = ".png" if ext.lower() == "webp" else ".webp"
+    return f"{stem}{twin_ext}" in referenced
+
+
 def validate_assets(catalog: Any, *, assets_dir: Path) -> Report:
     report = Report()
     referenced = {app.get("icon") for app in catalog.get("apps", []) if isinstance(app, dict)}
@@ -425,7 +439,9 @@ def validate_assets(catalog: Any, *, assets_dir: Path) -> Report:
 
     if assets_dir.is_dir():
         for asset in sorted(assets_dir.iterdir()):
-            if asset.is_file() and asset.name not in referenced:
+            # The catalog references WebP icons; the matching PNGs are kept
+            # as <picture>/legacy fallbacks, so paired twins are not unused.
+            if asset.is_file() and asset.name not in referenced and not _is_paired_asset(asset.name, referenced):
                 report.warn(f"assets/{asset.name}: not referenced by catalog.json")
             if asset.is_file() and asset.stat().st_size > 512_000:
                 report.warn(f"assets/{asset.name}: {asset.stat().st_size // 1024} KB - consider optimising")
@@ -486,7 +502,7 @@ def validate_generated_docs(catalog: Any, paths: Paths) -> Report:
         except OSError as error:
             report.error(f"apps/{slug}/index.html: unreadable ({error})")
             continue
-        if "og:title" not in content or 'href="../../css/app-page.css"' not in content:
+        if "og:title" not in content or "assets/design-system/tokens.css" not in content:
             report.error(f"apps/{slug}/index.html: looks incomplete (missing page shell)")
     return report
 
