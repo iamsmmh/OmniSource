@@ -243,3 +243,140 @@ Per-app download reachability plus `updatedDaysAgo` / `stale` annotations.
 * Unknown keys may be added in the future; consumers must ignore them.
 * `state.json` is internal and **never published**.
 * HTML pages for discovery live at `https://iamsmmh.github.io/OmniSource/apps/<slug>/`.
+
+## Discovery (Phase 1–8)
+
+The discovery layer adds precomputed intelligence documents that power the
+homepage rails, search and install cards. All are derived from the same
+pipeline state and are mirrored at `/feeds/<file>` and `/api/<file>`.
+
+### `feeds/trending.json` — trending, rising and recently updated
+
+The trending score is a 0..1 value combining four signals (see
+`src/omnisource/trending.py`):
+
+```
+trending_score = recency      * 0.4
+               + availability * 0.2
+               + featured     * 0.2
+               + verification * 0.2
+```
+
+* `recency` decays linearly from 1.0 (today) to 0.0 after 60 days.
+* `availability` is 1.0 when the download is currently reachable, 0.5 for
+  degraded, 0.0 otherwise.
+* `featured` is 1.0 when the catalog marks the app as featured.
+* `verification` maps `VERIFIED=1.0`, `COMMUNITY=0.7`, `MANUAL=0.4`,
+  `UNVERIFIED=0.0`.
+
+The document also exposes three derived lists — `trending`, `rising`
+(ordered by recency alone) and `recentlyUpdated` — so the front-end never
+has to recompute them client-side.
+
+### `feeds/related.json` — relationship graph
+
+Each app's `related` array is ranked by bundle identifier (0.55),
+category (0.20), developer (0.15) and shared tags (0.10). The document
+also carries a curated `media` block listing every app that targets the
+YouTube, YouTube Music or Spotify bundle identifiers — the "SpotiFLAC &
+Media Ecosystem" section on the homepage.
+
+### `feeds/reputation.json` — source reputation
+
+Every upstream identity receives a 0..100 reputation score. The score
+blends uptime (0.5), update cadence (0..25), a broken-release penalty
+(0..-15) and a sample-size bonus (0..10). Levels are `TRUSTED` (≥85),
+`RELIABLE` (≥70), `AVERAGE` (≥50) and `EXPERIMENTAL`.
+
+### `feeds/download-intelligence.json`
+
+Per-app historical availability, average latency, mirror count and
+release consistency, plus an aggregate `summary` block with
+`averageAvailability`, `averageResponseTimeMs`, `mirrorCount` and
+`probes`. The website renders "99.9% availability" style hero cards from
+this document.
+
+### `feeds/community.json`
+
+Community features: `popular`, `recentlyAdded`, `rising` and
+`requested`. The `requested` array is populated from
+`state.communityRequests` — a forward-compatible extension point for a
+future GitHub Issues integration.
+
+### `feeds/install.json`
+
+For every app and the master feed, an array of install cards
+describing the deep-link, icon, recommended flag and manual-setup flag
+for each client (AltStore, SideStore, Feather, ESign, LiveContainer).
+URLs are derived from the catalog `baseURL` and the per-app feed, never
+hard-coded.
+
+### `feeds/search-index.json`
+
+A precomputed index consumable by any Fuse.js-compatible engine. The
+document carries the recommended `fuse.keys` and the full `documents`
+list with `name`, `shortDescription`, `description`, `category`,
+`tags`, `developer`, `bundleId` and `verificationLevel` fields.
+
+### `feeds/compare.json`
+
+Every pair of apps in the catalog, ready for the `compare.html` page.
+Each pair carries a `winner` flag (the recommended pick), a
+`shareBundle`/`shareCategory` hint and full per-side metadata.
+
+### `feeds/screenshots.json`
+
+Catalog of every screenshot URL — original, mirrored and thumbnail —
+plus any fallback icon gallery entry. Issues are reported as
+`info` / `warning` / `error` records; the build never fails on missing
+screenshots.
+
+## SDK
+
+A zero-dependency JavaScript and Python client lives under `sdk/`.
+
+| Language | Module | Tests |
+| --- | --- | --- |
+| JavaScript (ESM + CJS) | `sdk/javascript/omnisource.mjs` | `sdk/javascript/test.mjs` |
+| Python (3.8+) | `sdk/python/omnisource_sdk.py` | `sdk/python/test_omnisource_sdk.py` |
+
+Both clients expose the same public surface:
+
+```js
+const client = new OmniSource({ baseURL: 'https://example.com/OmniSource' });
+await client.getTrending();
+await client.getRelated('uyouenhanced');
+await client.search('spotify');
+```
+
+```python
+client = OmniSource(base_url='https://example.com/OmniSource')
+client.get_trending()
+client.get_related('uyouenhanced')
+client.search('spotify')
+```
+
+The full reference lives in `sdk/javascript/README.md` and
+`sdk/python/README.md`.
+
+## Generation pipeline
+
+The data flow is fully deterministic and resumable:
+
+```
+catalog.json (hand-edited)
+   │
+   ├──► sync stage   →  state.json (versions, health)
+   │
+   ├──► health stage →  state.json (probe results)
+   │
+   └──► build stage  →  feeds/*.json  (AltStore feeds + intelligence)
+                        api/*.json    (1:1 mirror of feeds)
+                        apps/<slug>/  (static detail pages)
+                        README.md     (live catalog block)
+```
+
+All artifacts are deterministic for a given `catalog.json` and
+`state.json`, so the build is reproducible across CI and local
+environments. See `docs/REPOSITORY.md` for the full pipeline and
+`docs/AUDIT.md` for the trust model.

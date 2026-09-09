@@ -1,0 +1,519 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-09",
+  "totals": {
+    "sources": 22,
+    "healthy": 18,
+    "degraded": 4,
+    "unavailable": 0,
+    "unknown": 0
+  },
+  "sources": [
+    {
+      "id": "aidoku",
+      "app": "aidoku",
+      "name": "Aidoku",
+      "source": "Aidoku/Aidoku",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 164,
+      "latencyMs": 164,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-09-03",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 164,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "feather",
+      "app": "feather",
+      "name": "Feather",
+      "source": "claration/Feather",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 176,
+      "latencyMs": 176,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-07-05",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 176,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "inkillerplus",
+      "app": "inkillerplus",
+      "name": "iNKillerPlus",
+      "source": "iKarwan (repo.ikghd.me)",
+      "type": "altstore",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 233,
+      "latencyMs": 233,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-09-09",
+      "valid": true,
+      "detail": "HTTP 200",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 233,
+          "detail": "HTTP 200"
+        }
+      ]
+    },
+    {
+      "id": "itorrent",
+      "app": "itorrent",
+      "name": "iTorrent",
+      "source": "XITRIX/iTorrent",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 150,
+      "latencyMs": 150,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-07-19",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 150,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "livecontainer",
+      "app": "livecontainer",
+      "name": "LiveContainer",
+      "source": "LiveContainer/LiveContainer",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 160,
+      "latencyMs": 160,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-07-17",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 160,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "maxmusic",
+      "app": "maxmusic",
+      "name": "MaxMusic",
+      "source": "Mark02-2012/YTMUltimatePLUS",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 186,
+      "latencyMs": 186,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 186,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "maxtube",
+      "app": "maxtube",
+      "name": "MaxTube",
+      "source": "Ashreq/ashstore-repo",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 204,
+      "latencyMs": 204,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-08-03",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 204,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "spotiflac",
+      "app": "spotiflac",
+      "name": "SpotiFLAC Mobile",
+      "source": "spotiflacapp/SpotiFLAC-Mobile",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 185,
+      "latencyMs": 185,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-09-07",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 185,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "stikdebug",
+      "app": "stikdebug",
+      "name": "StikDebug",
+      "source": "StikDebug/StikDebug",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 200,
+      "latencyMs": 200,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-08-27",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 200,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "ttkillerplus",
+      "app": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "source": "iKarwan (repo.ikghd.me)",
+      "type": "altstore",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 237,
+      "latencyMs": 237,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-09-09",
+      "valid": true,
+      "detail": "HTTP 200",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 237,
+          "detail": "HTTP 200"
+        }
+      ]
+    },
+    {
+      "id": "uyouenhanced",
+      "app": "uyouenhanced",
+      "name": "uYouEnhanced",
+      "source": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 132,
+      "latencyMs": 132,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-08-22",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 132,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "winston",
+      "app": "winston",
+      "name": "Winston",
+      "source": "lo-cafe/winston",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 232,
+      "latencyMs": 232,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2024-06-24",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 232,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "youmod",
+      "app": "youmod",
+      "name": "YouMod",
+      "source": "mrdrvt99/YouProEXTRA",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 213,
+      "latencyMs": 213,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-08-30",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 213,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "youpro",
+      "app": "youpro",
+      "name": "YouPro",
+      "source": "mrdrvt99/YouProEXTRA",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 158,
+      "latencyMs": 158,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-08-16",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 158,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "ytlite",
+      "app": "ytlite",
+      "name": "YouTubePlus",
+      "source": "mrdrvt99/YouProEXTRA",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 162,
+      "latencyMs": 162,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 162,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "ytkace",
+      "app": "ytkace",
+      "name": "YTKACE",
+      "source": "itzzace/ytkace",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 233,
+      "latencyMs": 233,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-08-31",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 233,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "ytkp",
+      "app": "ytkp",
+      "name": "YTKillerPlus",
+      "source": "iKarwan (repo.ikghd.me)",
+      "type": "altstore",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 244,
+      "latencyMs": 244,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-09-09",
+      "valid": true,
+      "detail": "HTTP 200",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 244,
+          "detail": "HTTP 200"
+        }
+      ]
+    },
+    {
+      "id": "ytmusic",
+      "app": "ytmusic",
+      "name": "YTMusicUltimate",
+      "source": "mrdrvt99/YTMusicUltimate",
+      "type": "github",
+      "status": "healthy",
+      "reachable": true,
+      "latency": 218,
+      "latencyMs": 218,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 218,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "bhtwitter",
+      "app": "bhtwitter",
+      "name": "BHTwitter",
+      "source": "BandarHL/BHTwitter",
+      "type": "github",
+      "status": "degraded",
+      "reachable": true,
+      "latency": 187,
+      "latencyMs": 187,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2025-05-13",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 187,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "provenance",
+      "app": "provenance",
+      "name": "Provenance",
+      "source": "Provenance-Emu/Provenance",
+      "type": "github",
+      "status": "degraded",
+      "reachable": true,
+      "latency": 326,
+      "latencyMs": 326,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-03-14",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 326,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "sidestore",
+      "app": "sidestore",
+      "name": "SideStore",
+      "source": "SideStore/SideStore",
+      "type": "github",
+      "status": "degraded",
+      "reachable": true,
+      "latency": 172,
+      "latencyMs": 172,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-05-05",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 172,
+          "detail": "HTTP 302"
+        }
+      ]
+    },
+    {
+      "id": "utm",
+      "app": "utm",
+      "name": "UTM",
+      "source": "utmapp/UTM",
+      "type": "github",
+      "status": "degraded",
+      "reachable": true,
+      "latency": 168,
+      "latencyMs": 168,
+      "checkedAt": "2026-09-07",
+      "lastUpdate": "2026-01-03T17:51:54Z",
+      "valid": true,
+      "detail": "HTTP 302",
+      "history": [
+        {
+          "at": "2026-09-09",
+          "reachable": true,
+          "latencyMs": 168,
+          "detail": "HTTP 302"
+        }
+      ]
+    }
+  ]
+}

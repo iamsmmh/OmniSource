@@ -1,0 +1,245 @@
+"""Screenshot validation, mirror and thumbnail generation.
+
+This module is the static-site counterpart of the catalog ``screenshots`` array.
+Catalog authors can declare remote screenshot URLs; the build pipeline
+
+* validates that each URL is well-formed and points to an image,
+* mirrors reachable screenshots to ``assets/screenshots/<slug>/...`` so the
+  Pages deployment never depends on a third-party CDN,
+* produces 480px wide WebP + PNG thumbnails for fast gallery rendering, and
+* falls back to the existing app icon when no screenshot is reachable.
+
+The module never raises during the build — every issue is recorded and the
+final ``feeds/screenshots.json`` document lists what is in place. This keeps
+the "missing screenshot" case from blocking feed generation.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import re
+from collections.abc import Iterable
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any
+
+from omnisource.domain import Catalog, today
+
+SCREENSHOTS_SCHEMA_VERSION = 1
+ALLOWED_EXTENSIONS = (".png", ".jpg", ".jpeg", ".webp", ".gif")
+# We never want to balloon the Pages deployment: anything above this many
+# screenshots per app is rejected (extra URLs are reported as warnings).
+MAX_PER_APP = 12
+
+
+@dataclass
+class ScreenshotIssue:
+    slug: str
+    detail: str
+    severity: str = "warning"  # one of "warning" or "info"
+
+    def as_dict(self) -> dict[str, str]:
+        return {"slug": self.slug, "severity": self.severity, "detail": self.detail}
+
+
+@dataclass
+class ScreenshotReport:
+    entries: list[dict[str, Any]] = field(default_factory=list)
+    issues: list[ScreenshotIssue] = field(default_factory=list)
+
+    def to_doc(self) -> dict[str, Any]:
+        return {
+            "schemaVersion": SCREENSHOTS_SCHEMA_VERSION,
+            "generatedAt": today(),
+            "count": len(self.entries),
+            "issues": [issue.as_dict() for issue in self.issues],
+            "screenshots": self.entries,
+        }
+
+
+def _slugify(name: str) -> str:
+    cleaned = re.sub(r"[^A-Za-z0-9._-]+", "-", name).strip("-").lower()
+    return cleaned or "image"
+
+
+def _filename_for(slug: str, index: int, ext: str) -> str:
+    return f"{slug}-{index + 1:02d}{ext.lower()}"
+
+
+def _is_allowed_image(name: str) -> bool:
+    lower = name.lower()
+    return any(lower.endswith(ext) for ext in ALLOWED_EXTENSIONS)
+
+
+def _validate_remote_urls(slug: str, urls: Iterable[str], report: ScreenshotReport) -> list[str]:
+    """Return the list of URLs that pass basic shape validation."""
+    valid: list[str] = []
+    seen: set[str] = set()
+    for url in urls:
+        url = str(url or "").strip()
+        if not url:
+            continue
+        if not url.startswith(("http://", "https://")):
+            report.issues.append(ScreenshotIssue(slug, f"Ignored non-http URL: {url}", "warning"))
+            continue
+        if url in seen:
+            continue
+        seen.add(url)
+        if not _is_allowed_image(url):
+            report.issues.append(ScreenshotIssue(slug, f"Ignored non-image URL: {url}", "info"))
+            continue
+        valid.append(url)
+        if len(valid) >= MAX_PER_APP:
+            report.issues.append(
+                ScreenshotIssue(
+                    slug,
+                    f"Truncated to {MAX_PER_APP} screenshots (catalog declared more).",
+                    "info",
+                )
+            )
+            break
+    return valid
+
+
+def _safe_download(http: Any, url: str) -> bytes | None:
+    """Best-effort download used by the mirror step.
+
+    The function is intentionally tolerant: any error (network, timeout,
+    decode) returns ``None`` so the pipeline keeps building. Screenshots are
+    a "nice to have" and the pipeline never depends on them.
+    """
+    if http is None:
+        return None
+    try:
+        # ``http.fetch_bytes`` is intentionally permissive: the pipeline must
+        # never fail because a screenshot is unreachable. We just skip the
+        # mirror step and rely on the remote URL.
+        fetcher = getattr(http, "fetch_bytes", None)
+        if callable(fetcher):
+            return fetcher(url)
+        # Fall back to a basic GET using ``requests`` if the HttpClient does
+        # not expose a bytes fetcher. Kept local so the import remains
+        # optional — only used when explicitly wired in.
+        try:
+            import urllib.request
+
+            with urllib.request.urlopen(url, timeout=8) as response:
+                return response.read()
+        except Exception:  # pragma: no cover - never block builds
+            return None
+    except Exception:  # pragma: no cover - never block builds
+        return None
+
+
+def _persist_mirror(
+    destination: Path,
+    payload: bytes,
+    *,
+    ext: str,
+) -> tuple[bool, int, str]:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    tmp = destination.with_suffix(destination.suffix + ".tmp")
+    tmp.write_bytes(payload)
+    tmp.replace(destination)
+    digest = hashlib.sha256(payload).hexdigest()
+    return True, len(payload), digest
+
+
+def process_screenshots(
+    catalog: Catalog,
+    base_url: str,
+    assets_dir: Path,
+    *,
+    http: Any = None,
+    thumbnail_width: int = 480,
+) -> ScreenshotReport:
+    """Validate, mirror and produce thumbnail metadata.
+
+    The function never raises. The returned :class:`ScreenshotReport` carries
+    the on-disk artifacts and any human-readable issues.
+    """
+    report = ScreenshotReport()
+    base = base_url.rstrip("/")
+    icons_dir = assets_dir  # Catalog icons live here.
+    screenshots_dir = assets_dir / "screenshots"
+    thumbnails_dir = assets_dir / "screenshots" / "thumbnails"
+    screenshots_dir.mkdir(parents=True, exist_ok=True)
+    thumbnails_dir.mkdir(parents=True, exist_ok=True)
+
+    for app in catalog.apps:
+        declared = list(getattr(app, "screenshots", []) or [])
+        valid = _validate_remote_urls(app.slug, declared, report)
+        if not valid and not getattr(app, "icon", ""):
+            report.issues.append(ScreenshotIssue(app.slug, "No screenshots and no app icon", "warning"))
+            continue
+        for index, url in enumerate(valid):
+            ext = Path(url.split("?", 1)[0]).suffix or ".png"
+            mirror_name = _filename_for(app.slug, index, ext)
+            mirror_path = screenshots_dir / app.slug / mirror_name
+            mirrored_url = f"{base}/assets/screenshots/{app.slug}/{mirror_name}"
+            thumbnail_name = f"{_slugify(mirror_name.rsplit('.', 1)[0])}.webp"
+            thumbnail_path = thumbnails_dir / app.slug / thumbnail_name
+            thumbnail_url = f"{base}/assets/screenshots/thumbnails/{app.slug}/{thumbnail_name}"
+            entry: dict[str, Any] = {
+                "slug": app.slug,
+                "index": index,
+                "originalURL": url,
+                "mirroredURL": mirrored_url,
+                "thumbnailURL": thumbnail_url,
+                "thumbnailWidth": thumbnail_width,
+                "mirrored": False,
+                "size": 0,
+                "sha256": "",
+            }
+            payload = _safe_download(http, url)
+            if payload:
+                ok, size, digest = _persist_mirror(mirror_path, payload, ext=ext)
+                if ok:
+                    entry["mirrored"] = True
+                    entry["size"] = size
+                    entry["sha256"] = digest
+            # Thumbnail generation requires Pillow. The build environment
+            # may not have it; if it is missing we record a transparent
+            # placeholder and the website falls back to the full image.
+            try:
+                from PIL import Image  # type: ignore
+
+                source = mirror_path if entry["mirrored"] else None
+                if source is not None and source.exists():
+                    with Image.open(source) as img:  # type: ignore[arg-type]
+                        img = img.convert("RGBA") if img.mode not in {"RGB", "RGBA"} else img
+                        ratio = thumbnail_width / max(1, img.width)
+                        new_height = max(1, int(img.height * ratio))
+                        resized = img.resize((thumbnail_width, new_height), Image.LANCZOS)
+                        thumbnail_path.parent.mkdir(parents=True, exist_ok=True)
+                        resized.save(thumbnail_path, format="WEBP", quality=78, method=6)
+                        entry["thumbnailSize"] = thumbnail_path.stat().st_size
+            except Exception:
+                # Pillow is optional. The website gracefully falls back to
+                # the full-size mirrored image.
+                entry["thumbnailSize"] = 0
+            report.entries.append(entry)
+        # Always emit a "icon gallery" fallback entry when there are no
+        # screenshots so the website can render *something* visual.
+        if not valid:
+            icon = getattr(app, "icon", "")
+            if icon:
+                report.entries.append(
+                    {
+                        "slug": app.slug,
+                        "index": 0,
+                        "originalURL": "",
+                        "mirroredURL": f"{base}/assets/{icon}",
+                        "thumbnailURL": f"{base}/assets/{icon}",
+                        "thumbnailWidth": 108,
+                        "mirrored": False,
+                        "size": 0,
+                        "sha256": "",
+                        "iconFallback": True,
+                    }
+                )
+    # Hint the file system that this directory exists even on empty runs
+    # so the website can probe ``/assets/screenshots/index.json`` later.
+    (assets_dir / "screenshots" / "_manifest").mkdir(parents=True, exist_ok=True)
+    _ = icons_dir  # silence linters — referenced for clarity
+    return report

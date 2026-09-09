@@ -39,6 +39,15 @@ API_DOCUMENTS = {
     "analytics.json": "Repository-derived metrics: totals, weekly changes, trends.",
     "updates.json": "Release timeline for the website.",
     "health.json": "Per-app download health and staleness annotations.",
+    "trending.json": "Phase 1: trending apps, rising apps, recently updated.",
+    "related.json": "Phase 2: per-app relationship graph (bundle, category, developer, tags).",
+    "reputation.json": "Phase 6: source reputation (TRUSTED / RELIABLE / AVERAGE / EXPERIMENTAL).",
+    "download-intelligence.json": "Phase 7: per-app historical availability, latency, mirror count.",
+    "community.json": "Phase 13: popular, recently added, rising, requested apps.",
+    "install.json": "Phase 9: install cards for every app and the master feed.",
+    "search-index.json": "Phase 4: Fuse.js-compatible search index.",
+    "compare.json": "Phase 5: side-by-side comparison matrix.",
+    "screenshots.json": "Phase 3: screenshot catalog + mirror URLs + WebP thumbnails.",
 }
 
 

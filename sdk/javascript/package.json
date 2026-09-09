@@ -1,0 +1,31 @@
+{
+  "name": "@omnisource/sdk",
+  "version": "1.0.0",
+  "description": "Zero-dependency client for the public OmniSource API.",
+  "type": "module",
+  "main": "./omnisource.cjs",
+  "module": "./omnisource.mjs",
+  "exports": {
+    ".": {
+      "import": "./omnisource.mjs",
+      "require": "./omnisource.cjs"
+    }
+  },
+  "files": [
+    "omnisource.mjs",
+    "omnisource.cjs",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node test.mjs"
+  },
+  "keywords": [
+    "omnisource",
+    "altstore",
+    "sidestore",
+    "feather",
+    "ios",
+    "sideloading"
+  ],
+  "license": "MIT"
+}

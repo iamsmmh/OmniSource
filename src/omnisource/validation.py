@@ -444,6 +444,15 @@ GENERATED_DOCS = (
     "status.json",
     "duplicates.json",
     "analytics.json",
+    "trending.json",
+    "related.json",
+    "reputation.json",
+    "download-intelligence.json",
+    "community.json",
+    "install.json",
+    "search-index.json",
+    "compare.json",
+    "screenshots.json",
 )
 CHECK_KEYS = ("metadata", "urls", "fileAvailable", "hashVerified")
 
@@ -575,6 +584,76 @@ def validate_doc_shape(
                 report.error(f"feeds/analytics.json: totals.{key} is missing")
         if totals.get("apps") != apps_count:
             report.error(f"feeds/analytics.json: totals.apps ({totals.get('apps')}) != catalog apps ({apps_count})")
+
+    if name == "trending.json":
+        if doc.get("count") != len(items("all")):
+            report.error("feeds/trending.json: count does not match all[] length")
+        for app in items("all"):
+            if not isinstance(app, dict):
+                continue
+            if not isinstance(app.get("score"), (int, float)):
+                report.error(f"feeds/trending.json: app {app.get('slug')} score must be a number")
+            if not isinstance(app.get("signals"), dict):
+                report.error(f"feeds/trending.json: app {app.get('slug')} signals must be an object")
+
+    if name == "related.json":
+        related = doc.get("related")
+        if not isinstance(related, dict):
+            report.error("feeds/related.json: related must be an object")
+        for slug, entries in (related or {}).items():
+            if not isinstance(entries, list):
+                report.error(f"feeds/related.json: related.{slug} must be a list")
+                continue
+            for entry in entries:
+                if not isinstance(entry, dict) or not entry.get("slug"):
+                    report.error(f"feeds/related.json: related.{slug} entries must be objects with a slug")
+
+    if name == "reputation.json":
+        if doc.get("count") != len(items("sources")):
+            report.error("feeds/reputation.json: count does not match sources[] length")
+        for source in items("sources"):
+            if not isinstance(source, dict):
+                continue
+            if source.get("level") not in {"TRUSTED", "RELIABLE", "AVERAGE", "EXPERIMENTAL"}:
+                report.error(f"feeds/reputation.json: {source.get('id')} has unknown level")
+            score = source.get("score")
+            if not isinstance(score, (int, float)) or not (0 <= score <= 100):
+                report.error(f"feeds/reputation.json: {source.get('id')} score must be 0..100")
+
+    if name == "download-intelligence.json":
+        summary = doc.get("summary", {})
+        for key in ("averageAvailability", "mirrorCount", "probes"):
+            if key not in summary:
+                report.error(f"feeds/download-intelligence.json: summary.{key} is missing")
+
+    if name == "community.json":
+        for key in ("popular", "recentlyAdded", "rising", "requested"):
+            if not isinstance(doc.get(key), list):
+                report.error(f"feeds/community.json: {key} must be a list")
+
+    if name == "install.json":
+        if not isinstance(doc.get("clients"), list) or not doc.get("clients"):
+            report.error("feeds/install.json: clients must be a non-empty list")
+        if not isinstance(doc.get("apps"), list) or not doc.get("apps"):
+            report.error("feeds/install.json: apps must be a non-empty list")
+        for app in items("apps"):
+            if not isinstance(app.get("cards"), list) or not app.get("cards"):
+                report.error(f"feeds/install.json: {app.get('slug')} must have install cards")
+
+    if name == "search-index.json":
+        documents = doc.get("documents")
+        if not isinstance(documents, list) or not documents:
+            report.error("feeds/search-index.json: documents must be a non-empty list")
+        else:
+            for entry in documents:
+                if not isinstance(entry, dict) or not entry.get("id"):
+                    report.error("feeds/search-index.json: every document must have an id")
+
+    if name == "compare.json" and doc.get("count") != len(items("pairs")):
+        report.error("feeds/compare.json: count does not match pairs[] length")
+
+    if name == "screenshots.json" and not isinstance(doc.get("screenshots"), list):
+        report.error("feeds/screenshots.json: screenshots must be a list")
 
 
 # ---------------------------------------------------------------------------

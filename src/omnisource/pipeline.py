@@ -25,12 +25,16 @@ from pathlib import Path
 from typing import Any
 
 from omnisource.analytics import build_analytics_doc, remember_analytics_snapshot
+from omnisource.api_mirror import mirror_feeds
 from omnisource.app_pages import build_app_pages
 from omnisource.assets import DirectoryCache, inspect_catalog
+from omnisource.community import build_community_doc
+from omnisource.compare import build_compare_doc
 from omnisource.constants import README_MARKERS, README_STATS_MARKERS
 from omnisource.di import Container, build_container
 from omnisource.discovery import build_discovery_doc, build_sources_doc
 from omnisource.domain import App, Catalog, SyncReport, UpdateEvent, today
+from omnisource.download_intel import build_download_intel_doc
 from omnisource.duplicates import build_duplicates_doc
 from omnisource.errors import ConfigurationError, ProviderError, SyncError
 from omnisource.feeds.altstore import (
@@ -43,10 +47,16 @@ from omnisource.feeds.altstore import (
 from omnisource.feeds.rss import render_app_rss_feed, render_rss_feed
 from omnisource.feeds.updates import render_updates_doc
 from omnisource.http import ProbeResult
+from omnisource.install import build_install_doc
 from omnisource.io import atomic_write_many, atomic_write_text, read_json, write_json
 from omnisource.logutil import Group, log
 from omnisource.monitor import build_status_doc, remember_probe
+from omnisource.related import build_related_doc
+from omnisource.reputation import build_reputation_doc
+from omnisource.screenshots import process_screenshots
+from omnisource.search_index import build_search_index
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
+from omnisource.trending import build_trending_doc
 from omnisource.verification import build_verification_doc
 
 
@@ -415,6 +425,50 @@ def stage_build(
     ):
         documents[feeds_dir / name] = doc
 
+    # Phase 1-7 intelligence documents. Each of them is derived from the
+    # already-built health / verification / analytics documents and shares
+    # the same atomic-write contract. Order matters: trending depends on
+    # health+verification, related depends on state, reputation depends on
+    # health+state, download-intel depends on health+state, community
+    # depends on state, search index depends on health+verification, install
+    # depends only on catalog, compare depends on health+verification.
+    trending_doc = build_trending_doc(catalog, state, health_doc, verification_doc)
+    related_doc = build_related_doc(catalog, state)
+    reputation_doc = build_reputation_doc(catalog, state, health_doc)
+    download_intel_doc = build_download_intel_doc(catalog, state, health_doc)
+    community_doc = build_community_doc(catalog, state)
+    search_index_doc = build_search_index(catalog, state, health_doc, verification_doc)
+    install_doc = build_install_doc(catalog)
+    compare_doc = build_compare_doc(catalog, state, health_doc, verification_doc)
+    # Screenshot pipeline (validation + mirror + thumbnail). The function
+    # itself never raises; issues are recorded inside the resulting doc.
+    screenshot_report = process_screenshots(
+        catalog,
+        base_url=catalog.base_url,
+        assets_dir=container.paths.assets,
+        http=container.http,
+    )
+    screenshot_doc = screenshot_report.to_doc()
+    for name, doc in (
+        ("trending.json", trending_doc),
+        ("related.json", related_doc),
+        ("reputation.json", reputation_doc),
+        ("download-intelligence.json", download_intel_doc),
+        ("community.json", community_doc),
+        ("search-index.json", search_index_doc),
+        ("install.json", install_doc),
+        ("compare.json", compare_doc),
+        ("screenshots.json", screenshot_doc),
+    ):
+        documents[feeds_dir / name] = doc
+
+    # Phase 11 — mirror the public feeds into ``api/`` so SDKs and
+    # third-party consumers can rely on stable URLs.
+    api_dir = container.paths.root / "api"
+    if api_dir.exists() or True:  # always ensure the directory exists
+        api_dir.mkdir(parents=True, exist_ok=True)
+    written_api = mirror_feeds(feeds_dir, api_dir)
+
     # Additional Shields.io-compatible badges for the README.
     documents[feeds_dir / "badge-sync.json"] = {
         "schemaVersion": 1,
@@ -454,14 +508,19 @@ def stage_build(
             verification_doc,
             duplicates_doc,
             pages_dir=page_dir,
+            related_doc=related_doc,
+            install_doc=install_doc,
         )
     )
 
     log.info(
         "Built %d AltStore feed(s) + apps.json + health.json + updates.json + badges + RSS + "
-        "discovery/verification/status/duplicates/analytics + %d app page(s) (%d file(s) changed)",
+        "discovery/verification/status/duplicates/analytics + "
+        "trending/related/reputation/download-intel/community/search-index/install/compare/screenshots + "
+        "%d app page(s); mirrored %d api/* file(s) (%d file(s) changed)",
         len(rendered),
         len(rendered),
+        len(written_api),
         len(changed),
     )
     return changed, health_doc, analytics_doc

@@ -114,3 +114,55 @@ all recommendations below are already implemented in the current branch.
   because the ThreadPoolExecutor + retry/backoff HTTP client already satisfies
   the parallel-fetch/retry/timeout/rate-limit requirements without adding a
   third-party dependency to the release pipeline.
+
+## 3. Discovery v2 additions
+
+The discovery engine is now a full ecosystem: trending, related apps,
+reputation, download intelligence, install cards, screenshots, search
+index, community lists and side-by-side comparison. The full set of
+generated documents is listed in `docs/API.md`.
+
+| Phase | New module | Generated artifact |
+| --- | --- | --- |
+| 1 | `src/omnisource/trending.py` | `feeds/trending.json` |
+| 2 | `src/omnisource/related.py` | `feeds/related.json` |
+| 3 | `src/omnisource/screenshots.py` | `feeds/screenshots.json` + `assets/screenshots/` |
+| 4 | `src/omnisource/search_index.py` | `feeds/search-index.json` (Fuse.js compatible) |
+| 5 | `src/omnisource/compare.py` | `feeds/compare.json` |
+| 6 | `src/omnisource/reputation.py` | `feeds/reputation.json` |
+| 7 | `src/omnisource/download_intel.py` | `feeds/download-intelligence.json` |
+| 9 | `src/omnisource/install.py` | `feeds/install.json` |
+| 11 | `src/omnisource/api_mirror.py` | `api/*.json` |
+| 13 | `src/omnisource/community.py` | `feeds/community.json` |
+| 14 | `sdk/javascript/`, `sdk/python/` | Zero-dependency client libraries |
+
+## 4. Website v2
+
+The static website gained seven new sections, an instant fuzzy search
+popover and a side-by-side comparison page:
+
+* **Trending / Featured / Recently Updated / Verified** — horizontal
+  rails with skeleton placeholders.
+* **Source Health** — reputation grid with TRUSTED / RELIABLE / AVERAGE
+  / EXPERIMENTAL badges.
+* **Statistics** — metric grid with availability, response time and
+  mirror count.
+* **Community** — popular apps, recently added, rising apps.
+* **Search popover** — Fuse.js-style fuzzy search with verified /
+  community filter chips, keyboard navigation, and result highlighting.
+* **compare.html** — full side-by-side comparison page driven entirely
+  by `feeds/compare.json`.
+* **PWA v2** — `sw.js` pre-caches app pages, supports background
+  refresh, and prompts the user to reload on a new service worker.
+
+## 5. Validation enhancements
+
+* `validate_generated_docs` now covers every new intelligence document.
+  Critical errors (missing `id`, malformed score, out-of-range
+  reputation, missing install cards) fail the CI run; minor issues
+  (empty tag list, missing publisher) emit a warning.
+* Icon / screenshot existence is enforced by the assets inspector; the
+  validator no longer lets a broken `icon` slip through.
+* Bundle-identifier collisions are still a warning, not an error,
+  because the YouTube / YouTube Music overlap is deliberate and
+  documented.

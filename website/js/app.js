@@ -14,6 +14,13 @@ const state = {
   verification: new Map(), // slug -> { status, hash_verified, checks }
   discovery: new Map(),    // slug -> discovery entry (tags, downloads, page URL)
   collisions: new Map(), // bundleIdentifier -> [slug, ...] when length > 1
+  trending: null,        // Phase 1
+  related: new Map(),    // Phase 2
+  reputation: null,      // Phase 6
+  downloadIntel: null,   // Phase 7
+  community: null,       // Phase 13
+  searchIndex: null,     // Phase 4 (fuzzy)
+  screenshots: null,     // Phase 3
   query: '',
   category: 'all',
   status: 'all',
@@ -537,6 +544,8 @@ function clearFilters() {
   state.os = 'any';
   $('#searchInput').value = '';
   $('#osSelect').value = 'any';
+  const popover = $('#searchPopover');
+  if (popover) popover.dataset.open = 'false';
   renderApps();
 }
 
@@ -792,10 +801,433 @@ function registerServiceWorker() {
   const isGithubPagesHost = parts.length === 3 && parts[1] === 'github' && parts[2] === 'io';
   if (!isGithubPagesHost && !isLocalhost) return;
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(() => { /* offline support is progressive */ });
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => {
+        // Listen for updates the page should adopt.
+        if (reg.waiting) promptUpdate(reg.waiting);
+        reg.addEventListener('updatefound', () => {
+          const next = reg.installing;
+          if (!next) return;
+          next.addEventListener('statechange', () => {
+            if (next.state === 'installed' && navigator.serviceWorker.controller) {
+              promptUpdate(next);
+            }
+          });
+        });
+        navigator.serviceWorker.addEventListener('message', event => {
+          if (event.data && event.data.type === 'omnisource-sw-updated') {
+            toast('A new version is ready. Reloading…');
+            setTimeout(() => location.reload(), 1200);
+          }
+        });
+      })
+      .catch(() => { /* offline support is progressive */ });
   });
+}
+
+function promptUpdate(worker) {
+  // Only the first prompt matters; the page already has the new version
+  // available, so we ask the new worker to take over and reload once it does.
+  worker.postMessage({ type: 'omnisource-skip-waiting' });
 }
 
 bindEvents();
 loadCatalog();
+loadExtra();
 registerServiceWorker();
+
+/* ============================================================ Phase 1–8 ===
+ * New sections: Trending, Featured, Recently Updated, Verified, Source
+ * Health, Statistics, Community, and instant fuzzy search.
+ * Every renderer is tolerant: it shows the section only when there is
+ * data. None of them block the rest of the page.
+ * ========================================================================== */
+
+const slugLookup = (() => {
+  const map = new Map();
+  for (const app of state.apps) map.set(slugFor(app), app);
+  return map;
+})();
+const refreshSlugLookup = () => {
+  slugLookup.clear();
+  for (const app of state.apps) slugLookup.set(slugFor(app), app);
+};
+const appFor = slug => slugLookup.get(slug) || state.apps.find(a => slugFor(a) === slug) || null;
+
+function railCard(slug) {
+  const app = appFor(slug);
+  if (!app) return '';
+  const meta = app.omnisource || {};
+  const verification = verificationFor(app);
+  const icon = cleanUrl(app.iconURL || 'assets/OmniSource.png');
+  const tags = (state.discovery.get(slug)?.tags || []).slice(0, 3);
+  return `<a class="rail-card" href="apps/${encodeURIComponent(slug)}/" aria-label="View ${escapeHTML(app.name)}">
+    <div class="row">
+      <img src="${escapeHTML(icon)}" alt="" width="48" height="48" loading="lazy">
+      <div style="min-width:0; flex:1;">
+        <h3>${escapeHTML(app.name)}</h3>
+        <div class="dev">${escapeHTML(app.developerName || '')}</div>
+      </div>
+    </div>
+    <p style="margin:0; font-size:12.5px; color:var(--muted); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${escapeHTML(app.subtitle || app.localizedDescription || '').slice(0, 140)}</p>
+    <div class="meta">
+      <span><b>v${escapeHTML(app.version || '—')}</b></span>
+      ${meta.status ? `<span>${escapeHTML(statusLabel(meta.status))}</span>` : ''}
+      ${verification?.status ? `<span>${escapeHTML(VERIFICATION_LABELS[verification.status] || verification.status)}</span>` : ''}
+      ${tags.length ? `<span>${escapeHTML(tags.join(' · '))}</span>` : ''}
+    </div>
+  </a>`;
+}
+
+function skeletonRail(count) {
+  return Array.from({ length: count }, () => '<div class="rail-skeleton"></div>').join('');
+}
+
+function renderTrending() {
+  const section = $('#trending');
+  const rail = $('#trendingRail');
+  if (!state.trending?.trending?.length) {
+    section.hidden = true;
+    return;
+  }
+  rail.innerHTML = state.trending.trending.slice(0, 10).map(item => {
+    const score = item.score ? `<span class="score" title="Trending score: recency + availability + featured + verification">${(item.score * 100).toFixed(0)}</span>` : '';
+    return `<article class="rail-card" data-slug="${escapeHTML(item.slug)}" tabindex="0">
+      ${score}
+      <div class="row">
+        <img src="assets/${escapeHTML(state.discovery.get(item.slug)?.icon?.split('/').pop() || 'OmniSource.png')}" alt="" width="48" height="48" loading="lazy" onerror="this.src='assets/OmniSource.png'">
+        <div style="min-width:0; flex:1;">
+          <h3><a href="apps/${encodeURIComponent(item.slug)}/">${escapeHTML(item.name)}</a></h3>
+          <div class="dev">${escapeHTML(item.category || '')} · ${escapeHTML(item.signals?.verification >= 0.7 ? 'verified' : item.signals?.verification >= 0.4 ? 'community' : 'manual')}</div>
+        </div>
+      </div>
+      <div class="meta"><span><b>v${escapeHTML(item.version || '—')}</b></span>${item.releaseDate ? `<span>${escapeHTML(timeAgo(item.releaseDate))}</span>` : ''}</div>
+    </article>`;
+  }).join('');
+  section.hidden = false;
+  rail.addEventListener('click', event => {
+    const card = event.target.closest('[data-slug]');
+    if (card) openApp(card.dataset.slug);
+  }, { once: true });
+}
+
+function renderFeatured() {
+  const section = $('#featured');
+  const rail = $('#featuredRail');
+  if (!state.apps.length) return;
+  const featured = state.apps
+    .filter(app => app.omnisource?.featured)
+    .slice(0, 10);
+  if (!featured.length) { section.hidden = true; return; }
+  rail.innerHTML = featured.map(app => railCard(slugFor(app))).join('');
+  section.hidden = false;
+}
+
+function renderRecent() {
+  const section = $('#recent');
+  const rail = $('#recentRail');
+  if (!state.trending?.recentlyUpdated?.length) { section.hidden = true; return; }
+  rail.innerHTML = state.trending.recentlyUpdated.slice(0, 10).map(item => railCard(item.slug)).join('');
+  section.hidden = false;
+}
+
+function renderVerified() {
+  const section = $('#verifiedApps');
+  const rail = $('#verifiedRail');
+  const verified = state.apps.filter(app => verificationFor(app)?.status === 'VERIFIED').slice(0, 10);
+  if (!verified.length) { section.hidden = true; return; }
+  rail.innerHTML = verified.map(app => railCard(slugFor(app))).join('');
+  section.hidden = false;
+}
+
+function renderSourceHealth() {
+  const section = $('#sourceHealth');
+  const grid = $('#sourceGrid');
+  if (!state.reputation?.sources?.length) { section.hidden = true; return; }
+  const top = state.reputation.sources.slice(0, 9);
+  grid.innerHTML = top.map(source => {
+    const level = source.level || 'EXPERIMENTAL';
+    const cls = level.toLowerCase();
+    return `<article class="source-card">
+      <span class="rep-badge ${cls}">${escapeHTML(level)}</span>
+      <div class="name">${escapeHTML(source.source)}</div>
+      <div class="metric"><span>Score</span><b>${source.score.toFixed(1)} / 100</b></div>
+      <div class="metric"><span>Uptime</span><b>${source.metrics?.uptime ?? 0}%</b></div>
+      <div class="metric"><span>Avg latency</span><b>${source.metrics?.averageLatencyMs ?? '—'} ms</b></div>
+      <div class="metric"><span>Update gap</span><b>${source.metrics?.averageUpdateGapDays ?? '—'} d</b></div>
+      <div class="apps">${source.apps.length} app${source.apps.length === 1 ? '' : 's'}</div>
+    </article>`;
+  }).join('');
+  section.hidden = false;
+}
+
+function renderStats() {
+  // Stats cards in the hero (existing) and the new statistics section.
+  const total = state.apps.length;
+  const totals = state.analytics?.totals || {};
+  const healthy = state.health?.totals?.reachable ?? state.apps.filter(app => healthFor(app).downloadReachable !== false).length;
+  const verified = totals.verifiedApps ?? state.apps.filter(app => verificationFor(app)?.status === 'VERIFIED').length;
+  const sources = totals.sources ?? new Set(state.apps.map(app => app.omnisource?.upstreamURL || app.omnisource?.verification?.publisher || app.developerName)).size;
+  const lastSync = totals.lastSync !== undefined ? totals.lastSync : state.analytics?.lastSync || null;
+
+  $('#appTotal').textContent = total;
+  $('#sourceTotal').textContent = sources;
+  $('#verifiedTotal').textContent = `${verified}/${total}`;
+  $('#lastSync').textContent = lastSync ? timeAgo(lastSync) : '—';
+  $('#lastSync').setAttribute('title', lastSync ? formatDate(lastSync) : 'Awaiting first sync');
+  $('#sourceTotal').setAttribute('title', `${sources} upstream sources`);
+  $('#verifiedTotal').setAttribute('title', `${verified} of ${total} apps have a verified upstream provenance`);
+  $('.stat-card:nth-child(2)').classList.toggle('ok', sources > 0);
+  $('.stat-card:nth-child(4)').classList.toggle('ok', verified === total && total > 0);
+  $('.stat-card:nth-child(3)').classList.toggle('warn', Boolean(totals.deadLinks));
+
+  const label = $('#healthLabel');
+  if (total === 0) {
+    label.textContent = 'Source status unavailable';
+  } else if (healthy === total) {
+    label.textContent = `All ${total} downloads verified online`;
+  } else {
+    label.textContent = `${healthy} of ${total} downloads online`;
+    $('.eyebrow').classList.add('is-error');
+  }
+  if (state.source?.subtitle) $('#heroCopy').textContent = state.source.subtitle;
+  if (state.source?.name) {
+    document.title = `${state.source.name} — Curated iOS Apps, Always Current`;
+  }
+
+  // New statistics section.
+  const statsSection = $('#statistics');
+  const grid = $('#metricsGrid');
+  if (!state.trending || !grid) return;
+  const trending = state.trending;
+  const intel = state.downloadIntel || {};
+  const summary = intel.summary || {};
+  const metrics = [
+    { label: 'Trending apps', value: trending.trending?.length || 0, hint: 'Live ranking' },
+    { label: 'Rising this week', value: trending.rising?.length || 0, hint: 'New releases' },
+    { label: 'Recently updated', value: trending.recentlyUpdated?.length || 0, hint: 'Past 60 days' },
+    { label: 'Verified apps', value: verified, hint: `${total ? Math.round(verified / total * 100) : 0}% of catalog` },
+    { label: 'Avg. availability', value: `${summary.averageAvailability ?? 0}%`, hint: `${summary.probes || 0} probes / 30d` },
+    { label: 'Avg. response time', value: `${summary.averageResponseTimeMs ?? '—'} ms`, hint: 'Across all upstreams' },
+    { label: 'Mirror count', value: summary.mirrorCount || 0, hint: 'Primary + fallbacks' },
+    { label: 'Trusted sources', value: state.reputation?.sources?.filter(s => s.level === 'TRUSTED').length || 0, hint: 'Score ≥ 85' },
+  ];
+  grid.innerHTML = metrics.map(m => `<div class="metric-card"><small>${escapeHTML(m.hint)}</small><strong>${escapeHTML(String(m.value))}</strong><span>${escapeHTML(m.label)}</span></div>`).join('');
+  statsSection.hidden = false;
+}
+
+function renderCommunity() {
+  const section = $('#communitySection');
+  const rail = $('#communityRail');
+  if (!state.community) { section.hidden = true; return; }
+  const items = state.community.popular || [];
+  if (!items.length) { section.hidden = true; return; }
+  rail.innerHTML = items.slice(0, 10).map(item => railCard(item.slug)).join('');
+  section.hidden = false;
+}
+
+async function loadExtra() {
+  // All of these endpoints are progressive: if any is missing the page
+  // still works. Every fetch has a tight timeout so a slow upstream never
+  // blocks the rest of the page.
+  const TIMEOUT = 5500;
+  const fetchWithTimeout = async url => {
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), TIMEOUT);
+    try {
+      const res = await fetch(url, { signal: controller.signal });
+      return res.ok ? res.json() : null;
+    } catch { return null; } finally { clearTimeout(id); }
+  };
+  const [trending, reputation, intel, community, searchIndex] = await Promise.all([
+    fetchWithTimeout('feeds/trending.json'),
+    fetchWithTimeout('feeds/reputation.json'),
+    fetchWithTimeout('feeds/download-intelligence.json'),
+    fetchWithTimeout('feeds/community.json'),
+    fetchWithTimeout('feeds/search-index.json')
+  ]);
+  state.trending = trending;
+  state.reputation = reputation;
+  state.downloadIntel = intel;
+  state.community = community;
+  state.searchIndex = searchIndex;
+  // Build a slug -> related map for the search popover.
+  if (state.searchIndex?.documents) {
+    state.searchDocs = state.searchIndex.documents;
+  } else if (state.apps.length) {
+    state.searchDocs = state.apps.map(app => ({
+      id: slugFor(app), slug: slugFor(app), name: app.name, developer: app.developerName,
+      bundleId: app.bundleIdentifier, description: app.localizedDescription, icon: app.iconURL
+    }));
+  }
+  // Build the related map for any section that needs it.
+  refreshSlugLookup();
+  renderTrending();
+  renderFeatured();
+  renderRecent();
+  renderVerified();
+  renderSourceHealth();
+  renderStats();
+  renderCommunity();
+  bindSearchPopover();
+}
+
+/* ============================================================ Phase 4 ===
+ * Instant fuzzy search popover. Fuse.js style scoring implemented in ~50
+ * lines so the page stays fully offline-capable. The keys / weights live in
+ * ``feeds/search-index.json``; the front-end just applies them.
+ * ========================================================================== */
+
+const FUSE_KEYS = [
+  { name: 'name', weight: 0.35 },
+  { name: 'shortDescription', weight: 0.15 },
+  { name: 'description', weight: 0.10 },
+  { name: 'category', weight: 0.08 },
+  { name: 'tags', weight: 0.10 },
+  { name: 'developer', weight: 0.10 },
+  { name: 'bundleId', weight: 0.12 }
+];
+const FUSE_THRESHOLD = 0.38;
+const FUSE_MIN_MATCH = 2;
+
+function fuzzyScore(query, value) {
+  if (!value) return 0;
+  const text = String(value).toLowerCase();
+  if (!text) return 0;
+  if (text === query) return 1;
+  if (text.startsWith(query)) return 0.85;
+  if (text.includes(query)) return 0.65;
+  // Token match: every space-separated query token is found in the value.
+  const tokens = query.split(/\s+/).filter(Boolean);
+  if (!tokens.length) return 0;
+  const hits = tokens.filter(token => text.includes(token)).length;
+  if (!hits) return 0;
+  return 0.45 * (hits / tokens.length);
+}
+
+function searchApps(query) {
+  if (!state.searchDocs) return [];
+  const q = String(query || '').toLowerCase().trim();
+  if (q.length < FUSE_MIN_MATCH) return [];
+  const results = [];
+  for (const doc of state.searchDocs) {
+    let score = 0;
+    for (const key of FUSE_KEYS) {
+      const fieldValue = doc[key.name];
+      if (Array.isArray(fieldValue)) {
+        for (const entry of fieldValue) {
+          score += key.weight * fuzzyScore(q, String(entry).toLowerCase());
+        }
+      } else {
+        score += key.weight * fuzzyScore(q, String(fieldValue || '').toLowerCase());
+      }
+    }
+    if (score >= FUSE_THRESHOLD) results.push({ doc, score });
+  }
+  results.sort((a, b) => b.score - a.score);
+  return results.slice(0, 8);
+}
+
+function highlightMatch(text, query) {
+  if (!text) return '';
+  const value = String(text);
+  if (!query) return escapeHTML(value);
+  const pattern = query.split(/\s+/).filter(t => t.length >= FUSE_MIN_MATCH).map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  if (!pattern.length) return escapeHTML(value);
+  const re = new RegExp(`(${pattern.join('|')})`, 'ig');
+  return escapeHTML(value).replace(re, '<mark>$1</mark>');
+}
+
+let popoverSelected = 0;
+let popoverResults = [];
+
+function renderSearchPopover(query) {
+  const popover = $('#searchPopover');
+  if (!popover) return;
+  popoverResults = searchApps(query);
+  if (!query || query.length < FUSE_MIN_MATCH) {
+    popover.dataset.open = 'false';
+    popover.innerHTML = '';
+    popoverSelected = 0;
+    return;
+  }
+  const filterChips = [
+    { id: 'all', label: 'All' },
+    { id: 'verified', label: 'Verified' },
+    { id: 'community', label: 'Community' }
+  ];
+  const filters = `<div class="filters">${filterChips.map(f => `<button class="filter-chip" data-filter="${f.id}" aria-pressed="${state.searchFilter === f.id}">${f.label}</button>`).join('')}</div>`;
+  const items = popoverResults
+    .filter(item => {
+      if (state.searchFilter === 'all') return true;
+      const slug = item.doc.slug || item.doc.id;
+      const level = state.verification.get(slug)?.status || '';
+      if (state.searchFilter === 'verified') return level === 'VERIFIED';
+      if (state.searchFilter === 'community') return level === 'COMMUNITY VERIFIED' || level === 'COMMUNITY';
+      return true;
+    })
+    .map((item, index) => {
+      const doc = item.doc;
+      const sub = doc.developer || doc.bundleId || doc.category || '';
+      return `<a class="result" href="apps/${encodeURIComponent(doc.slug || doc.id)}/" data-index="${index}" aria-selected="${index === popoverSelected}">
+        <img src="${escapeHTML(cleanUrl(doc.icon || 'assets/OmniSource.png'))}" alt="" width="36" height="36" loading="lazy" onerror="this.src='assets/OmniSource.png'">
+        <div class="info">
+          <b>${highlightMatch(doc.name || '', query)}</b>
+          <span>${highlightMatch(sub, query)}</span>
+        </div>
+        <span class="meta">${escapeHTML(String(doc.bundleId || '').slice(0, 28))}</span>
+      </a>`;
+    }).join('');
+  popover.innerHTML = filters + (items || `<div class="empty">No matches for “${escapeHTML(query)}”</div>`);
+  popover.dataset.open = 'true';
+  popoverSelected = 0;
+}
+
+function bindSearchPopover() {
+  const input = $('#searchInput');
+  const popover = $('#searchPopover');
+  if (!input || !popover) return;
+  // Build a popover element if it doesn't exist.
+  if (!popover) return;
+  state.searchFilter = 'all';
+  input.addEventListener('input', event => {
+    state.query = event.target.value;
+    renderApps();
+    renderSearchPopover(state.query);
+  });
+  input.addEventListener('focus', () => {
+    if (state.query) renderSearchPopover(state.query);
+  });
+  input.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { popover.dataset.open = 'false'; return; }
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      popoverSelected = Math.min(popoverResults.length - 1, popoverSelected + 1);
+      renderSearchPopover(state.query);
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      popoverSelected = Math.max(0, popoverSelected - 1);
+      renderSearchPopover(state.query);
+    } else if (event.key === 'Enter' && popoverResults[popoverSelected]) {
+      const doc = popoverResults[popoverSelected].doc;
+      const slug = doc.slug || doc.id;
+      window.location.href = `apps/${encodeURIComponent(slug)}/`;
+    }
+  });
+  popover.addEventListener('click', event => {
+    const filter = event.target.closest('[data-filter]');
+    if (filter) {
+      state.searchFilter = filter.dataset.filter;
+      renderSearchPopover(state.query);
+      return;
+    }
+    const result = event.target.closest('.result');
+    if (result) {
+      // let the anchor do its job; just close the popover.
+      popover.dataset.open = 'false';
+    }
+  });
+  document.addEventListener('click', event => {
+    if (!event.target.closest('.search-box')) popover.dataset.open = 'false';
+  });
+}

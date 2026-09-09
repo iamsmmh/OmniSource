@@ -168,17 +168,35 @@ virtualenv, no dependencies.
 
 Every build publishes a generated API under `api/` (see [docs/API.md](docs/API.md)):
 `apps.json`, `catalog.json` (discovery index), `sources.json`, `verification.json`,
-`status.json`, `duplicates.json`, `analytics.json`, `updates.json`, `health.json` —
-each with a gzip twin and an `api/index.json` manifest. The website consumes the
-same documents, and the [audit](docs/AUDIT.md) explains the architecture.
+`status.json`, `duplicates.json`, `analytics.json`, `updates.json`, `health.json`,
+plus the v2 discovery layer: `trending.json`, `related.json`, `reputation.json`,
+`download-intelligence.json`, `community.json`, `install.json`,
+`search-index.json`, `compare.json` and `screenshots.json`. Each JSON document
+is also published as a gzip twin and mirrored in `api/index.json`. The website
+consumes the same documents; zero-dependency client libraries live in
+[`sdk/javascript/`](sdk/javascript/) and [`sdk/python/`](sdk/python/).
+
+## Discovery features
+
+* **Trending** — `feeds/trending.json` ranks every app by recency, availability, featured status and verification level.
+* **Related apps** — `feeds/related.json` builds a relationship graph from bundle identifier, category, developer and tags.
+* **Source reputation** — `feeds/reputation.json` scores each upstream on uptime, update cadence and broken releases (TRUSTED / RELIABLE / AVERAGE / EXPERIMENTAL).
+* **Download intelligence** — `feeds/download-intelligence.json` reports per-app availability, latency, mirror count and release consistency.
+* **Install cards** — `feeds/install.json` generates AltStore / SideStore / Feather / ESign / LiveContainer install URLs (never hard-coded).
+* **Search index** — `feeds/search-index.json` is a Fuse.js-compatible index with verified / community filter chips and instant suggestions.
+* **Comparison** — `feeds/compare.json` powers the `compare.html` page; every pair is precomputed.
+* **Screenshots** — `feeds/screenshots.json` plus a mirror under `assets/screenshots/` with WebP thumbnails.
+* **Community** — `feeds/community.json` lists popular, recently added, rising and requested apps.
 
 ## Roadmap
 
 - [x] Auto-generated discovery catalog, verification levels, health board and analytics
 - [x] Static app detail pages + machine API
+- [x] Trending, related, reputation, download intelligence, install cards, search, comparison
+- [x] JavaScript + Python SDKs
+- [x] PWA v2 (offline app pages, update prompt)
 - [ ] OmniSource mobile app consuming `/api/`
 - [ ] Community app submissions (PRs to `catalog.json`)
-- [ ] App voting and trending rankings
 - [ ] Signed release notifications
 
 ## Adding an app

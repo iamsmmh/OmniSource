@@ -144,6 +144,75 @@
 .ap-footer .shell { max-width: 1080px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
 .ap-footer a { color: var(--text); font-weight: 600; }
 
+/* Install cards: a grid of one card per client. Glassmorphic, with a
+ * status pill that says "Recommended", "Compatible" or "Manual setup". */
+.ap-install-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+.ap-install-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  transition: border-color .18s, background .18s, transform .18s;
+  text-align: left;
+}
+.ap-install-card:hover { border-color: var(--line-strong); transform: translateY(-2px); background: var(--surface-solid); }
+.ap-install-card img { width: 28px; height: 28px; border-radius: 8px; box-shadow: var(--shadow-sm); }
+.ap-install-card b { display: block; font-size: 14px; font-weight: 700; }
+.ap-install-card small { display: block; font-size: 11.5px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+.ap-install-card .ap-recommended,
+.ap-install-card .ap-compatible,
+.ap-install-card .ap-manual {
+  display: inline-block;
+  font: 700 10px var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 99px;
+  margin-top: 4px;
+}
+.ap-install-card .ap-recommended { background: var(--green-soft); color: var(--green); }
+.ap-install-card .ap-compatible { background: var(--cyan-soft); color: var(--cyan); }
+.ap-install-card .ap-manual { background: var(--amber-soft); color: var(--amber); }
+
+/* Related apps strip. The score is shown as a small pill. */
+.ap-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.ap-related-card {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  transition: border-color .18s, transform .18s;
+}
+.ap-related-card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+.ap-related-name { font-weight: 700; font-size: 14px; }
+.ap-related-reason { font-size: 11.5px; color: var(--muted); }
+.ap-related-score {
+  position: absolute; top: 10px; right: 12px;
+  font: 700 11px var(--mono);
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 2px 7px; border-radius: 99px;
+}
+
 @keyframes ap-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @keyframes ap-pop { from { opacity: 0; transform: scale(.86); } to { opacity: 1; transform: none; } }
 
