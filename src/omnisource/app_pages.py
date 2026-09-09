@@ -10,7 +10,7 @@ URL: ``https://iamsmmh.github.io/OmniSource/apps/<slug>/``.
 Pages are self-contained (shared design-system CSS, ``js/core.js`` for
 theme / clipboard / search palette / service worker) and link back to the
 landing page, per-app feed, RSS and direct download, so they work with or
-without JavaScript. The visual language is App Store–style: a tinted glass
+without JavaScript. The visual language is App Store-style: a tinted glass
 hero, a capsule "Get" button, numbered sections and trust checklist.
 """
 
@@ -136,7 +136,10 @@ def _version_rows(versions: list[dict[str, Any]]) -> str:
         published = html.escape(_fmt_date(str(version.get("date") or "")))
         size = html.escape(_fmt_bytes(int(version.get("size") or 0)))
         if notes:
-            notes_html = f'<details class="ap-changelog"><summary>Release notes</summary><pre class="ap-notes">{html.escape(notes[:4000])}</pre></details>'
+            notes_html = (
+                f'<details class="ap-changelog"><summary>Release notes</summary>'
+                f'<pre class="ap-notes">{html.escape(notes[:4000])}</pre></details>'
+            )
         else:
             notes_html = ""
         rows.append(
@@ -156,9 +159,10 @@ def _checks_html(checks: dict[str, bool]) -> str:
     cells = []
     for key, ok in checks.items():
         state = "pass" if ok else "fail"
-        icon = "<path d=\"m5 12 4 4L19 6\"/>" if ok else '<path d="m9 9 6 6m0-6-6 6"/>'
+        icon = '<path d="m5 12 4 4L19 6"/>' if ok else '<path d="m9 9 6 6m0-6-6 6"/>'
         cells.append(
-            f'<li class="ap-check {state}"><span class="check-ico"><svg viewBox="0 0 24 24" aria-hidden="true">{icon}</svg></span>'
+            f'<li class="ap-check {state}"><span class="check-ico">'
+            f'<svg viewBox="0 0 24 24" aria-hidden="true">{icon}</svg></span>'
             f"<span>{html.escape(key)}</span><small>{state}</small></li>"
         )
     return f'<ul class="ap-checks">{"".join(cells)}</ul>'
@@ -191,11 +195,12 @@ def _install_cards_html(install_doc: dict[str, Any] | None, slug: str) -> str:
         else:
             flag = '<span class="card-flag flag-compatible">Compatible</span>'
         icon_html = f'<img src="../../assets/{icon}" alt="" width="30" height="30" loading="lazy">' if icon else ""
-        body = f"<div style=\"min-width:0\"><b>{name}</b>{flag}<small>{html.escape(str(card.get('instructions') or ''))}</small></div>"
+        body = (
+            f'<div style="min-width:0"><b>{name}</b>{flag}'
+            f"<small>{html.escape(str(card.get('instructions') or ''))}</small></div>"
+        )
         if url:
-            items.append(
-                f'<a class="ap-install-card" href="{url}" title="Open in {name}">{icon_html}{body}</a>'
-            )
+            items.append(f'<a class="ap-install-card" href="{url}" title="Open in {name}">{icon_html}{body}</a>')
         else:
             items.append(
                 f'<button class="ap-install-card" type="button" '
@@ -448,9 +453,14 @@ def render_app_page(
         f'        <a href="{html.escape(feed_url)}" target="_blank" rel="noopener">Feed</a>\n',
         '        <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener">GitHub</a>\n',
         "      </div>\n",
-        '      <button class="icon-button theme-toggle" id="themeButton" type="button" aria-label="Change color theme" title="Theme: system">\n',
-        '        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2M12 19.2v2M2.8 12h2M19.2 12h2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l1.4 1.4"/></svg>\n',
-        '        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6Z"/></svg>\n',
+        '      <button class="icon-button theme-toggle" id="themeButton" type="button" '
+        'aria-label="Change color theme" title="Theme: system">\n',
+        '        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24">'
+        '<circle cx="12" cy="12" r="4.2"/>'
+        '<path d="M12 2.8v2M12 19.2v2M2.8 12h2M19.2 12h2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4'
+        'M18.6 5.4l-1.4 1.4M6.8 17.2l1.4 1.4"/></svg>\n',
+        '        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24">'
+        '<path d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6Z"/></svg>\n',
         "      </button>\n",
         "    </nav>\n",
         "  </header>\n\n",
@@ -460,12 +470,13 @@ def render_app_page(
         "    </nav>\n",
         '    <section class="ap-hero"' + tint_style + ">\n",
         '      <div class="ap-hero-tint" aria-hidden="true"></div>\n',
-        f'      <img class="ap-icon" src="{html.escape(icon_url)}" alt="{title} icon" width="112" height="112" fetchpriority="high">\n',
+        f'      <img class="ap-icon" src="{html.escape(icon_url)}" alt="{title} icon" '
+        'width="112" height="112" fetchpriority="high">\n',
         "      <div>\n",
-        f"        <span class=\"ap-kicker\">{html.escape(tagline)}</span>\n",
-        f"        <h1 class=\"ap-title\">{title}</h1>\n",
-        f"        <p class=\"ap-sub\">{sub}</p>\n",
-        f"        <p class=\"ap-dev\">by {html.escape(app.developer or 'Unknown developer')}</p>\n",
+        f'        <span class="ap-kicker">{html.escape(tagline)}</span>\n',
+        f'        <h1 class="ap-title">{title}</h1>\n',
+        f'        <p class="ap-sub">{sub}</p>\n',
+        f'        <p class="ap-dev">by {html.escape(app.developer or "Unknown developer")}</p>\n',
         '        <div class="ap-badges">\n',
         _badges(
             app.status,
@@ -474,16 +485,19 @@ def render_app_page(
             bool(health_item.get("stale")),
         ),
         "</div>\n",
-        '      </div>\n',
+        "      </div>\n",
         _duplicate_banner(app, duplicate),
         '      <div class="ap-install">\n',
         f'        <a class="get-capsule" href="{html.escape(download_url)}" target="_blank" rel="noopener">'
-        f"Get · v{version_text}<span class=\"capsule-size\">{size_text}</span></a>\n",
+        f'Get · v{version_text}<span class="capsule-size">{size_text}</span></a>\n',
         _client_buttons(catalog, feed_url),
         '        <button class="button ap-copy" type="button" '
         f'data-copy="{html.escape(feed_url)}" data-copy-msg="Source URL copied">Copy source URL</button>\n',
-        '        <button class="button square" type="button" id="qrButton" title="Show QR code" aria-label="Show QR code for the source URL">\n',
-        '          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M15 14h2v2h-2zM19 14h1.4v3.4H19zM14 19h3.4v1.4H14zM20 19.6V20h-1.4"/></svg>\n',
+        '        <button class="button square" type="button" id="qrButton" '
+        'title="Show QR code" aria-label="Show QR code for the source URL">\n',
+        '          <svg aria-hidden="true" viewBox="0 0 24 24">'
+        '<path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/>'
+        '<path d="M15 14h2v2h-2zM19 14h1.4v3.4H19zM14 19h3.4v1.4H14zM20 19.6V20h-1.4"/></svg>\n',
         "        </button>\n",
         "      </div>\n",
         "    </section>\n",
@@ -492,12 +506,13 @@ def render_app_page(
     sections = [
         '    <section class="ap-section" data-reveal>\n',
         '      <h2><span class="num">01</span> About</h2>\n',
-        f"      <p class=\"ap-desc\">{description}</p>\n",
-        f"      <div class=\"ap-screenshots\">{screenshots_html}</div>\n",
+        f'      <p class="ap-desc">{description}</p>\n',
+        f'      <div class="ap-screenshots">{screenshots_html}</div>\n',
         "    </section>\n\n",
         '    <section class="ap-section" data-reveal>\n',
         '      <h2><span class="num">02</span> Install with</h2>\n',
-        '      <p class="ap-desc">Pick your client. Links are generated from the catalog on every build — never hard-coded.</p>\n',
+        '      <p class="ap-desc">Pick your client. Links are generated from the '
+        "catalog on every build — never hard-coded.</p>\n",
         _install_cards_html(install_doc, app.slug),
         '      <p class="mt-3"><a class="button small" href="../../install/">Open the installation center →</a></p>\n',
         "    </section>\n\n",
@@ -517,27 +532,29 @@ def render_app_page(
         '      <p class="ap-desc mt-3">Published by ' + f"{html.escape(publisher)} · {method_text}.</p>\n",
         f"      <ul>{reasons_html}</ul>\n",
         (
-            '      <div class="detail-note mt-3">'
-            f"<b>Compatibility notes:</b> {notes_html}</div>\n"
+            f'      <div class="detail-note mt-3"><b>Compatibility notes:</b> {notes_html}</div>\n'
             if source_notes
             else ""
         ),
         "    </section>\n\n",
         '    <section class="ap-section" data-reveal>\n',
         '      <h2><span class="num">06</span> Related apps</h2>\n',
-        f"      <p class=\"ap-desc\">Apps that share a bundle, category or developer with {html.escape(app.name)}.</p>\n",
+        f'      <p class="ap-desc">Apps that share a bundle, category or developer with {html.escape(app.name)}.</p>\n',
         _related_html(related_doc, app.slug),
         "    </section>\n\n",
         '    <section class="ap-section" data-reveal>\n',
         '      <h2><span class="num">07</span> Downloads</h2>\n',
         '      <div class="ap-links">\n',
-        f'        <a class="button primary" href="{html.escape(download_url)}" target="_blank" rel="noopener">Primary IPA</a>\n',
+        f'        <a class="button primary" href="{html.escape(download_url)}" '
+        'target="_blank" rel="noopener">Primary IPA</a>\n',
         f"        {fallback_html}\n",
         f'        <a class="button" href="{html.escape(feed_url)}" target="_blank" rel="noopener">App feed</a>\n',
         f'        <a class="button" href="{html.escape(rss_url)}" target="_blank" rel="noopener">App RSS</a>\n',
         f'        <a class="button" href="{upstream_url}" target="_blank" rel="noopener">Upstream</a>\n',
-        f'        <a class="button" href="{html.escape(base)}/discovery.json" target="_blank" rel="noopener">Discovery catalog</a>\n',
-        f'        <a class="button" href="{html.escape(base)}/compare/?left={html.escape(app.slug)}" target="_blank" rel="noopener">Compare with another app</a>\n',
+        f'        <a class="button" href="{html.escape(base)}/discovery.json" '
+        'target="_blank" rel="noopener">Discovery catalog</a>\n',
+        f'        <a class="button" href="{html.escape(base)}/compare/?left={html.escape(app.slug)}" '
+        'target="_blank" rel="noopener">Compare with another app</a>\n',
         "      </div>\n",
         "    </section>\n",
         "  </main>\n\n",
@@ -549,18 +566,21 @@ def render_app_page(
         "    </div>\n",
         "  </footer>\n\n",
         '  <dialog id="qrDialog" class="qr-dialog os-dialog" aria-labelledby="qrTitle">\n',
-        '    <button class="dialog-close" type="button" data-close aria-label="Close"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>\n',
-        "    <span class=\"kicker\">SCAN TO ADD</span>\n",
-        f"    <h2 id=\"qrTitle\">{title} — source feed</h2>\n",
+        '    <button class="dialog-close" type="button" data-close aria-label="Close">'
+        '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>\n',
+        '    <span class="kicker">SCAN TO ADD</span>\n',
+        f'    <h2 id="qrTitle">{title} — source feed</h2>\n',
         '    <div class="qr-image"><img id="qrImage" width="240" height="240" alt="QR code for the app feed"></div>\n',
         f"    <code>{html.escape(feed_url)}</code>\n",
-        '    <button class="button primary full" type="button" data-copy="' + html.escape(feed_url) + '">Copy URL</button>\n',
+        '    <button class="button primary full" type="button" data-copy="'
+        + html.escape(feed_url)
+        + '">Copy URL</button>\n',
         "  </dialog>\n\n",
         '  <div class="toast" id="toast" role="status" aria-live="polite">\n',
         '    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span></span>\n',
         "  </div>\n\n",
-        "  <script src=\"../../js/core.js\" defer></script>\n",
-        '  <script>\n'
+        '  <script src="../../js/core.js" defer></script>\n',
+        "  <script>\n"
         "    // Tiny QR opener: core.js owns theme/clipboard/palette/SW.\n"
         "    (function () {\n"
         "      'use strict';\n"
@@ -569,11 +589,13 @@ def render_app_page(
         "      var button = document.getElementById('qrButton');\n"
         "      if (!dialog || !button) return;\n"
         "      dialog.addEventListener('click', function (event) {\n"
-        "        if (event.target === dialog || (event.target.closest && event.target.closest('[data-close]'))) dialog.close();\n"
+        "        if (event.target === dialog || (event.target.closest && "
+        "event.target.closest('[data-close]'))) dialog.close();\n"
         "      });\n"
         "      button.addEventListener('click', function () {\n"
         "        var img = document.getElementById('qrImage');\n"
-        "        img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=460x460&margin=0&data=' + encodeURIComponent(feed);\n"
+        "        img.src = 'https://api.qrserver.com/v1/create-qr-code/"
+        "?size=460x460&margin=0&data=' + encodeURIComponent(feed);\n"
         "        dialog.showModal();\n"
         "      });\n"
         "    })();\n"
