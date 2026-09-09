@@ -24,6 +24,47 @@ class TestReproducible(unittest.TestCase):
         self.assertNotIn(b"2026-09-09", normalized)
         self.assertIn(b'"generatedAt": "<DATE>"', normalized)
 
+    def test_normalizes_screenshot_mirror_state(self) -> None:
+        def doc(mirrored: bool, size: int, sha: str) -> bytes:
+            import json
+
+            return json.dumps(
+                {
+                    "schemaVersion": 1,
+                    "generatedAt": "2026-09-09",
+                    "screenshots": [
+                        {
+                            "slug": "demo",
+                            "index": 0,
+                            "originalURL": "https://example.com/shot.png",
+                            "mirroredURL": "https://example.invalid/assets/screenshots/demo/demo-01.png",
+                            "mirrored": mirrored,
+                            "size": size,
+                            "sha256": sha,
+                            "thumbnailSize": size,
+                        }
+                    ],
+                }
+            ).encode("utf-8")
+
+        online = MODULE._norm_screenshots(doc(True, 1234, "abc"))
+        offline = MODULE._norm_screenshots(doc(False, 0, ""))
+        # Network-dependent fields are environment state, not content.
+        self.assertEqual(online, offline)
+
+    def test_norm_screenshots_still_checks_urls(self) -> None:
+        def doc(url: str) -> bytes:
+            import json
+
+            return json.dumps({"screenshots": [{"slug": "demo", "originalURL": url, "mirrored": False}]}).encode(
+                "utf-8"
+            )
+
+        self.assertNotEqual(
+            MODULE._norm_screenshots(doc("https://a.example/1.png")),
+            MODULE._norm_screenshots(doc("https://a.example/2.png")),
+        )
+
     def test_matches_patterns(self) -> None:
         self.assertTrue(MODULE._matches("feeds/discovery.json", "feeds/*.json"))
         self.assertTrue(MODULE._matches("apps/alpha/index.html", "apps/*/index.html"))

@@ -152,11 +152,18 @@ def process_screenshots(
     *,
     http: Any = None,
     thumbnail_width: int = 480,
+    refresh: bool = False,
 ) -> ScreenshotReport:
     """Validate, mirror and produce thumbnail metadata.
 
     The function never raises. The returned :class:`ScreenshotReport` carries
     the on-disk artifacts and any human-readable issues.
+
+    ``refresh`` (real sync runs) re-downloads every declared screenshot so
+    upstream updates eventually replace stale local mirrors. Without it, a
+    mirror already on disk is trusted as-is — rebuilds then stay
+    deterministic and a transient remote failure can never demote a good
+    mirror (``feeds/screenshots.json`` must be reproducible offline).
     """
     report = ScreenshotReport()
     base = base_url.rstrip("/")
@@ -191,13 +198,19 @@ def process_screenshots(
                 "size": 0,
                 "sha256": "",
             }
-            payload = _safe_download(http, url)
-            if payload:
-                ok, size, digest = _persist_mirror(mirror_path, payload, ext=ext)
-                if ok:
-                    entry["mirrored"] = True
-                    entry["size"] = size
-                    entry["sha256"] = digest
+            if mirror_path.exists() and not refresh:
+                payload = mirror_path.read_bytes()
+                entry["mirrored"] = True
+                entry["size"] = len(payload)
+                entry["sha256"] = hashlib.sha256(payload).hexdigest()
+            else:
+                payload = _safe_download(http, url)
+                if payload:
+                    ok, size, digest = _persist_mirror(mirror_path, payload, ext=ext)
+                    if ok:
+                        entry["mirrored"] = True
+                        entry["size"] = size
+                        entry["sha256"] = digest
             # Thumbnail generation requires Pillow. The build environment
             # may not have it; if it is missing we record a transparent
             # placeholder and the website falls back to the full image.

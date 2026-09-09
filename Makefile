@@ -32,6 +32,9 @@ lint:
 	$(PYTHON) -m ruff check src scripts tests
 
 check: lint validate test
+	$(PYTHON) scripts/merge_feeds.py --check
+	$(PYTHON) scripts/check_reproducible.py --diff
+	$(PYTHON) -m ruff format --check src scripts tests
 
 clean:
 	rm -rf _site
