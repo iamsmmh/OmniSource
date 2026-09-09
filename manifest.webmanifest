@@ -1,0 +1,60 @@
+{
+  "name": "OmniSource — The App Store for Sideloaded iOS",
+  "short_name": "OmniSource",
+  "description": "A verified and automatically updated iOS sideloading source for AltStore, SideStore, Feather, ESign and LiveContainer.",
+  "id": "omnisource",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#060608",
+  "theme_color": "#060608",
+  "categories": ["utilities", "productivity"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "assets/OmniSource.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/OmniSource.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Browse apps",
+      "short_name": "Apps",
+      "description": "Open the catalog",
+      "url": "./#catalog"
+    },
+    {
+      "name": "What's new",
+      "short_name": "Updates",
+      "description": "Recent releases",
+      "url": "./#whats-new"
+    },
+    {
+      "name": "Compare apps",
+      "short_name": "Compare",
+      "description": "Side-by-side comparison",
+      "url": "./compare/"
+    },
+    {
+      "name": "Source health",
+      "short_name": "Health",
+      "description": "Uptime, latency and sync state",
+      "url": "./status/"
+    },
+    {
+      "name": "Install guide",
+      "short_name": "Install",
+      "description": "Add the source to your client",
+      "url": "./install/"
+    }
+  ]
+}

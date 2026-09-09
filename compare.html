@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <meta http-equiv="refresh" content="0; url=compare/">
+  <!-- Keep query params (?left=…&right=…) when redirecting from the old URL. -->
+  <script>
+    (function () {
+      var qs = location.search;
+      location.replace('compare/' + (qs ? qs : ''));
+    })();
+  </script>
+</head>
+<body>
+  <p style="font-family:system-ui;padding:24px">
+    The comparison page has moved to <a href="compare/">compare/</a>. If you are not redirected, follow that link.
+  </p>
+</body>
+</html>
