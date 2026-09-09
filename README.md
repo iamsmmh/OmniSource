@@ -39,6 +39,11 @@ URL manually. Each app also publishes its own feed at `https://iamsmmh.github.io
 
 ## Catalog
 
+The complete generated catalog is available below. For a cleaner browsing experience, use the [OmniSource website](https://iamsmmh.github.io/OmniSource/).
+
+<details>
+<summary><strong>View all apps and source links</strong></summary>
+
 <!-- omnisource:catalog:start -->
 
 _Catalogue last changed 2026-09-07 · 22 apps · 22/22 downloads reachable._
@@ -70,6 +75,8 @@ _Catalogue last changed 2026-09-07 · 22 apps · 22/22 downloads reachable._
 
 <!-- omnisource:catalog:end -->
 
+</details>
+
 **Columns** — *Status*: 🟢 stable · 🟡 beta · 🔵 manually published · 🔴 unmaintained.
 *Download*: ✅ / ⚠️ reflects the last automated reachability probe.
 
@@ -97,9 +104,9 @@ catalog.json ──▶ scripts/omnisource.py ──▶ feeds/*.json ──▶ Gi
                   probe links, build feeds)
 ```
 
-`catalog.json` is the only hand-edited data file. Everything under `feeds/` (per-app feeds,
-`apps.json`, `health.json`, `state.json`) and the root-level mirrors (`apps.json`, `<slug>.json`) is
-generated — edit `catalog.json`, never the generated files.
+`catalog.json` is the only hand-edited data file. Everything under `feeds/`—per-app feeds,
+`apps.json`, health data, badges, RSS and pipeline state—is generated. During deployment, the site
+builder also publishes these files at the historical flat URLs, so existing subscribers keep working.
 
 | Pipeline | Runs | What it does |
 | --- | --- | --- |
@@ -112,11 +119,17 @@ generated — edit `catalog.json`, never the generated files.
 | Path | Purpose |
 | --- | --- |
 | `catalog.json` | Source of truth: apps, official upstreams, verification and compatibility metadata |
-| `feeds/` | Generated AltStore v2 feeds + `health.json` + pipeline `state.json` |
+| `config/` | Runtime defaults for sync, retries, health checks and history |
 | `assets/` | App and client icons served over Pages |
-| `src/omnisource/` | Sync pipeline (providers, release tracking, AltStore feed rendering, validation) |
-| `scripts/` | CLI wrappers: `omnisource.py` · `validate.py` · `validate_jq.sh` · `health_check.py` |
-| `website/` | Minimal static GitHub Pages landing page |
+| `src/omnisource/` | Organized Python package for providers, feeds, validation and release tracking |
+| `scripts/` | Small CLI entry points, including the shared Pages site builder |
+| `schemas/` | Catalog and AltStore feed contracts |
+| `tests/` | Offline unit test suite |
+| `feeds/` | All generated feeds, badges, RSS, health data and pipeline state |
+| `website/` | Static interface organized into HTML, CSS and JavaScript |
+| `docs/` | Maintainer documentation and repository map |
+
+See the concise [repository guide](docs/REPOSITORY.md) before making structural changes.
 
 ## For developers
 

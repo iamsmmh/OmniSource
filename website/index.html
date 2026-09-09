@@ -1,629 +1,144 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="auto">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OmniSource — Curated iOS Sideloading Source</title>
-  <meta name="description" content="A curated, automatically maintained AltStore-compatible iOS app source for AltStore, SideStore, Feather, ESign, and LiveContainer.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
+  <title>OmniSource — Curated iOS Apps</title>
+  <meta name="description" content="A clean, verified and automatically updated iOS sideloading source for AltStore, SideStore, Feather, ESign and LiveContainer.">
+  <meta property="og:title" content="OmniSource — Curated iOS Apps">
+  <meta property="og:description" content="One source. Curated apps. Always current.">
+  <meta property="og:image" content="assets/OmniSource.png">
   <link rel="icon" type="image/png" href="assets/OmniSource.png">
-  <link rel="alternate" type="application/rss+xml" title="OmniSource Release Updates" href="feed.xml">
-  <style>
-    :root {
-      --bg-primary: #0a0c10;
-      --bg-card: rgba(22, 27, 34, 0.75);
-      --bg-card-hover: rgba(30, 38, 48, 0.95);
-      --bg-input: #161b22;
-      --border-color: rgba(255, 255, 255, 0.1);
-      --border-focus: #5b5bd6;
-      --text-primary: #f0f6fc;
-      --text-secondary: #8b949e;
-      --accent: #5b5bd6;
-      --accent-hover: #6e6ee8;
-      --accent-glow: rgba(91, 91, 214, 0.25);
-      --success: #2ea043;
-      --warning: #d29922;
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg-primary: #f6f8fa;
-        --bg-card: rgba(255, 255, 255, 0.9);
-        --bg-card-hover: #ffffff;
-        --bg-input: #ffffff;
-        --border-color: rgba(0, 0, 0, 0.08);
-        --text-primary: #1f2328;
-        --text-secondary: #656d76;
-        --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
-      }
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: var(--font);
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 1rem;
-    }
-
-    .container {
-      max-width: 1040px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .logo {
-      width: 92px;
-      height: 92px;
-      border-radius: var(--radius-lg);
-      margin-bottom: 1.25rem;
-      box-shadow: 0 8px 24px var(--accent-glow);
-      transition: transform 0.2s ease;
-    }
-    .logo:hover { transform: scale(1.05); }
-
-    h1 {
-      font-size: 2.6rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, #f0f6fc 30%, #5b5bd6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    @media (prefers-color-scheme: light) {
-      h1 {
-        background: linear-gradient(135deg, #1f2328 30%, #5b5bd6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    }
-
-    .tagline {
-      font-size: 1.15rem;
-      color: var(--text-secondary);
-      max-width: 650px;
-      margin: 0 auto 1.5rem;
-    }
-
-    .badges-row {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-    .badges-row img { height: 20px; }
-
-    .hero-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 1.75rem;
-      box-shadow: var(--shadow);
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-
-    .url-box {
-      display: flex;
-      align-items: center;
-      background: var(--bg-input);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 0.5rem 0.75rem 0.5rem 1rem;
-      margin: 1.25rem 0;
-      gap: 0.5rem;
-    }
-
-    .url-text {
-      flex: 1;
-      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-      font-size: 0.95rem;
-      color: var(--text-primary);
-      overflow-x: auto;
-      white-space: nowrap;
-      text-align: left;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-family: inherit;
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 0.65rem 1.25rem;
-      border-radius: var(--radius-sm);
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #ffffff;
-    }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--text-primary);
-      border: 1px solid var(--border-color);
-    }
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.15);
-      transform: translateY(-1px);
-    }
-
-    .actions-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-
-    .controls-wrap {
-      margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .search-input {
-      width: 100%;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 0.85rem 1.25rem;
-      font-size: 1rem;
-      color: var(--text-primary);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .search-input:focus {
-      border-color: var(--border-focus);
-    }
-
-    .categories-bar {
-      display: flex;
-      gap: 0.5rem;
-      overflow-x: auto;
-      padding-bottom: 0.25rem;
-      scrollbar-width: none;
-    }
-    .categories-bar::-webkit-scrollbar { display: none; }
-
-    .cat-pill {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--border-color);
-      color: var(--text-secondary);
-      padding: 0.4rem 0.9rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-    .cat-pill:hover, .cat-pill.active {
-      background: var(--accent);
-      color: #ffffff;
-      border-color: var(--accent);
-    }
-
-    .section-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 3rem;
-    }
-
-    .app-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-    }
-    .app-card:hover {
-      transform: translateY(-2px);
-      background-color: var(--bg-card-hover);
-      box-shadow: var(--shadow);
-    }
-
-    .app-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .app-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 12px;
-      object-fit: cover;
-      background: #1e2430;
-      flex-shrink: 0;
-    }
-
-    .app-info {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .app-name {
-      font-size: 1.05rem;
-      font-weight: 700;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .app-version {
-      font-size: 0.82rem;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 0.15rem 0.5rem;
-      border-radius: 20px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      background: rgba(91, 91, 214, 0.15);
-      color: var(--accent-hover);
-    }
-    .badge-stable { background: rgba(46, 160, 67, 0.15); color: #3fb950; }
-
-    .app-desc {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      margin-bottom: 1rem;
-      flex: 1;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      line-height: 1.5;
-    }
-
-    .app-footer {
-      display: flex;
-      gap: 0.45rem;
-      padding-top: 0.75rem;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .app-footer .btn {
-      flex: 1;
-      padding: 0.45rem 0.5rem;
-      font-size: 0.8rem;
-    }
-
-    /* Modal */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(8px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-      padding: 1rem;
-    }
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .modal-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 2rem;
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: transparent;
-      border: none;
-      color: var(--text-secondary);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .qr-container {
-      background: #ffffff;
-      padding: 1rem;
-      border-radius: 12px;
-      display: inline-block;
-      margin: 1.25rem 0;
-    }
-    .qr-container img { display: block; }
-
-    footer {
-      margin-top: auto;
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 0.85rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border-color);
-    }
-
-    footer a { color: var(--accent); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    .toast {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: #1f2328;
-      color: #ffffff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 30px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-      font-size: 0.9rem;
-      font-weight: 500;
-      opacity: 0;
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
-      z-index: 3000;
-      pointer-events: none;
-    }
-    .toast.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
-    }
-  </style>
+  <link rel="apple-touch-icon" href="assets/OmniSource.png">
+  <link rel="alternate" type="application/rss+xml" title="OmniSource releases" href="feed.xml">
+  <link rel="preload" href="assets/OmniSource.png" as="image">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="assets/OmniSource.png" alt="OmniSource" class="logo">
-      <h1>OmniSource</h1>
-      <p class="tagline">A curated, automatically maintained AltStore-compatible iOS app source for AltStore, SideStore, Feather, ESign, and LiveContainer.</p>
-      
-      <div class="badges-row">
-        <a href="https://github.com/iamsmmh/OmniSource/actions/workflows/sync.yml"><img src="https://github.com/iamsmmh/OmniSource/actions/workflows/sync.yml/badge.svg" alt="Sync"></a>
-        <a href="https://github.com/iamsmmh/OmniSource/actions/workflows/validate.yml"><img src="https://github.com/iamsmmh/OmniSource/actions/workflows/validate.yml/badge.svg" alt="Validate"></a>
-        <a href="feed.xml" title="RSS Feed"><img src="https://img.shields.io/badge/RSS-Release_Feed-orange?logo=rss" alt="RSS"></a>
+  <a class="skip-link" href="#catalog">Skip to catalog</a>
+
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="OmniSource home">
+        <img src="assets/OmniSource.png" alt="" width="36" height="36">
+        <span>OmniSource</span>
+      </a>
+      <div class="nav-links">
+        <a href="#catalog">Apps</a>
+        <a href="#how-it-works">About</a>
+        <a href="feed.xml">RSS</a>
+        <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener">GitHub</a>
       </div>
-    </header>
+      <button class="icon-button" id="themeButton" type="button" aria-label="Change color theme" title="Change color theme">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42M7.06 16.94l-1.42 1.42M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
+      </button>
+    </nav>
+  </header>
 
-    <div class="hero-card">
-      <h2 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Subscribe to OmniSource</h2>
-      <p style="color: var(--text-secondary); font-size: 0.9rem;">Add the unified source URL directly to your sideloading client or scan with your iPhone camera:</p>
+  <main id="top">
+    <section class="hero shell">
+      <div class="eyebrow"><span class="live-dot"></span><span id="healthLabel">Checking source health…</span></div>
+      <h1>One source.<br><span>Every app you need.</span></h1>
+      <p class="hero-copy">A carefully curated iOS catalog, automatically synced from trusted upstream releases and verified every day.</p>
 
-      <div class="url-box">
-        <span class="url-text" id="sourceUrl">https://iamsmmh.github.io/OmniSource/apps.json</span>
-        <button class="btn btn-primary" onclick="copySourceUrl()">Copy URL</button>
-      </div>
-
-      <div class="actions-grid">
-        <a href="altstore://source?url=https://iamsmmh.github.io/OmniSource/apps.json" class="btn btn-secondary">
-          <span>Add to AltStore</span>
-        </a>
-        <a href="sidestore://source?url=https://iamsmmh.github.io/OmniSource/apps.json" class="btn btn-secondary">
-          <span>Add to SideStore</span>
-        </a>
-        <button class="btn btn-secondary" onclick="openQrModal('OmniSource Master Feed', 'https://iamsmmh.github.io/OmniSource/apps.json')">
-          <span>📷 Scan QR</span>
+      <div class="source-box" aria-label="OmniSource feed URL">
+        <div class="source-address">
+          <span class="source-label">SOURCE URL</span>
+          <code id="sourceUrl">https://iamsmmh.github.io/OmniSource/apps.json</code>
+        </div>
+        <button class="button primary" id="copySource" type="button">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+          <span>Copy</span>
         </button>
-        <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-          <span>GitHub</span>
-        </a>
       </div>
-    </div>
 
-    <div class="controls-wrap">
-      <input type="text" id="searchInput" class="search-input" placeholder="Search 20+ apps by name, bundle ID, or feature..." oninput="filterApps()">
-      <div class="categories-bar" id="categoryBar">
-        <button class="cat-pill active" onclick="setCategory('all')">All Apps</button>
-        <button class="cat-pill" onclick="setCategory('photo-video')">Media & Video</button>
-        <button class="cat-pill" onclick="setCategory('music')">Music</button>
-        <button class="cat-pill" onclick="setCategory('social')">Social & News</button>
-        <button class="cat-pill" onclick="setCategory('utilities')">Utilities</button>
-        <button class="cat-pill" onclick="setCategory('games')">Games & Emulators</button>
-        <button class="cat-pill" onclick="setCategory('developer-tools')">Developer Tools</button>
+      <div class="quick-actions" aria-label="Add source">
+        <a class="button client-button" href="altstore://source?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Fapps.json"><img src="assets/AltStore.png" alt="">AltStore</a>
+        <a class="button client-button" href="sidestore://source?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Fapps.json"><img src="assets/SideStore.png" alt="">SideStore</a>
+        <a class="button client-button" href="feather://source/iamsmmh.github.io/OmniSource/apps.json"><img src="assets/Feather.png" alt="">Feather</a>
+        <button class="button client-button" id="sourceQr" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM15 14h2v2h-2zM19 14h1v3h-3M14 19h3v1h-3zM20 19v1h-1"/></svg>QR code</button>
       </div>
-    </div>
 
-    <div class="section-title">
-      <span>Curated Apps</span>
-      <span id="appCount" style="font-size: 0.9rem; color: var(--text-secondary); font-weight: normal;"></span>
-    </div>
-
-    <div class="apps-grid" id="appsGrid">
-      <!-- Populated dynamically via JavaScript -->
-    </div>
-
-    <footer>
-      <p>OmniSource is an open-source community distribution project. All apps, icons, and trademarks belong to their respective authors.</p>
-      <p style="margin-top: 0.4rem;">Automated every 6 hours with GitHub Actions · <a href="https://github.com/iamsmmh/OmniSource">View Repository</a></p>
-    </footer>
-  </div>
-
-  <!-- QR Modal -->
-  <div id="qrModal" class="modal-overlay" onclick="closeQrModal(event)">
-    <div class="modal-card" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeQrModal()">&times;</button>
-      <h3 id="qrTitle" style="font-size: 1.15rem; margin-bottom: 0.5rem;">Scan with Camera</h3>
-      <p style="color: var(--text-secondary); font-size: 0.85rem;">Scan this QR code with your iOS Camera app to open the source.</p>
-      <div class="qr-container">
-        <img id="qrImg" src="" alt="QR Code" width="200" height="200">
+      <div class="stats" aria-label="Catalog statistics">
+        <div><strong id="appTotal">—</strong><span>Curated apps</span></div>
+        <div><strong>6h</strong><span>Sync interval</span></div>
+        <div><strong id="healthyTotal">—</strong><span>Links online</span></div>
+        <div><strong>5</strong><span>Supported clients</span></div>
       </div>
-      <p id="qrUrl" style="font-family: monospace; font-size: 0.8rem; word-break: break-all; color: var(--text-secondary);"></p>
-    </div>
-  </div>
+    </section>
 
-  <div id="toast" class="toast">Source URL copied to clipboard!</div>
+    <section class="catalog-section shell" id="catalog">
+      <div class="section-heading">
+        <div><span class="kicker">THE CATALOG</span><h2>Discover apps</h2></div>
+        <p>Official releases and clearly labeled community builds, with provenance and compatibility details.</p>
+      </div>
 
-  <script>
-    let allApps = [];
-    let currentCategory = 'all';
+      <div class="catalog-tools">
+        <label class="search-box" for="searchInput">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input type="search" id="searchInput" placeholder="Search apps, features, or developers…" autocomplete="off">
+          <kbd>⌘ K</kbd>
+        </label>
+        <select id="sortSelect" class="select" aria-label="Sort apps">
+          <option value="featured">Featured first</option>
+          <option value="updated">Recently updated</option>
+          <option value="name">Name A–Z</option>
+          <option value="size">Smallest first</option>
+        </select>
+        <button class="icon-button view-toggle" id="viewToggle" type="button" aria-label="Use compact view" title="Toggle view">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
+        </button>
+      </div>
 
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      toast.textContent = msg;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2500);
-    }
+      <div class="filter-row" id="categoryFilters" role="group" aria-label="Filter by category"></div>
+      <div class="results-meta"><span id="resultCount">Loading catalog…</span><button id="clearFilters" class="text-button" type="button" hidden>Clear filters</button></div>
 
-    function copySourceUrl() {
-      const url = document.getElementById('sourceUrl').textContent;
-      navigator.clipboard.writeText(url).then(() => {
-        showToast('Source URL copied to clipboard!');
-      }).catch(() => {
-        showToast('Failed to copy.');
-      });
-    }
+      <div class="apps-grid" id="appsGrid" aria-live="polite" aria-busy="true">
+        <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+      </div>
+      <div class="empty-state" id="emptyState" hidden>
+        <div class="empty-icon">⌕</div><h3>No apps found</h3><p>Try another keyword or remove your filters.</p>
+        <button class="button" type="button" id="emptyClear">Reset search</button>
+      </div>
+    </section>
 
-    function openQrModal(title, url) {
-      document.getElementById('qrTitle').textContent = title;
-      document.getElementById('qrUrl').textContent = url;
-      // Use clean QR API
-      document.getElementById('qrImg').src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(url)}`;
-      document.getElementById('qrModal').classList.add('active');
-    }
+    <section class="trust-section" id="how-it-works">
+      <div class="shell">
+        <div class="section-heading">
+          <div><span class="kicker">BUILT ON TRUST</span><h2>Current by design.</h2></div>
+          <p>OmniSource is transparent about where every build comes from and keeps the catalog healthy without manual busywork.</p>
+        </div>
+        <div class="trust-grid">
+          <article><span class="step">01</span><h3>Curated upstreams</h3><p>Releases resolve from official GitHub projects or each developer’s own feed.</p></article>
+          <article><span class="step">02</span><h3>Automatic updates</h3><p>The catalog syncs every six hours, so new versions appear without stale links.</p></article>
+          <article><span class="step">03</span><h3>Daily verification</h3><p>Every download is probed and its origin, status, requirements and notes remain visible.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    function closeQrModal(e) {
-      document.getElementById('qrModal').classList.remove('active');
-    }
+  <footer class="footer shell">
+    <div class="footer-brand"><img src="assets/OmniSource.png" alt="" width="34" height="34"><div><strong>OmniSource</strong><span>Open-source iOS distribution.</span></div></div>
+    <div class="footer-links"><a href="https://github.com/iamsmmh/OmniSource">Repository</a><a href="https://github.com/iamsmmh/OmniSource/blob/main/SECURITY.md">Security</a><a href="feed.xml">Release feed</a><a href="catalog.json">Catalog JSON</a></div>
+    <p class="fine-print">Independent community project. Apps and trademarks belong to their respective owners. © <span id="year"></span> OmniSource contributors.</p>
+  </footer>
 
-    function setCategory(cat) {
-      currentCategory = cat;
-      document.querySelectorAll('.cat-pill').forEach(el => {
-        el.classList.toggle('active', el.textContent.toLowerCase().includes(cat) || (cat === 'all' && el.textContent === 'All Apps'));
-      });
-      filterApps();
-    }
+  <dialog id="appDialog" class="app-dialog" aria-labelledby="dialogTitle">
+    <div id="dialogContent"></div>
+  </dialog>
 
-    async function loadApps() {
-      try {
-        const res = await fetch('apps.json');
-        if (!res.ok) throw new Error('Network error');
-        const data = await res.json();
-        allApps = data.apps || [];
-        renderApps(allApps);
-      } catch (e) {
-        console.warn('Fallback loading catalog', e);
-      }
-    }
+  <dialog id="qrDialog" class="qr-dialog" aria-labelledby="qrTitle">
+    <button class="dialog-close" type="button" data-close aria-label="Close"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <span class="kicker">SCAN TO ADD</span><h2 id="qrTitle">OmniSource</h2>
+    <div class="qr-image"><img id="qrImage" width="220" height="220" alt="QR code for source URL"></div>
+    <code id="qrText"></code>
+    <button class="button primary full" id="qrCopy" type="button">Copy source URL</button>
+  </dialog>
 
-    function renderApps(apps) {
-      const grid = document.getElementById('appsGrid');
-      const count = document.getElementById('appCount');
-      if (count) count.textContent = `${apps.length} app${apps.length === 1 ? '' : 's'}`;
-
-      if (apps.length === 0) {
-        grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 3rem;">No apps match your criteria.</p>';
-        return;
-      }
-
-      grid.innerHTML = apps.map(app => {
-        const slug = app.omnisource ? app.omnisource.slug : (app.bundleIdentifier || '').split('.').pop();
-        const icon = app.iconURL || 'assets/OmniSource.png';
-        const feedUrl = `https://iamsmmh.github.io/OmniSource/${slug}.json`;
-        const altUrl = `altstore://source?url=${encodeURIComponent(feedUrl)}`;
-        const sideUrl = `sidestore://source?url=${encodeURIComponent(feedUrl)}`;
-        const sizeMb = app.size ? (app.size / (1024 * 1024)).toFixed(1) + ' MB' : '';
-
-        return `
-          <div class="app-card">
-            <div class="app-header">
-              <img src="${icon}" alt="${app.name}" class="app-icon" loading="lazy">
-              <div class="app-info">
-                <div class="app-name">${app.name}</div>
-                <div class="app-version">
-                  <span>v${app.version || '1.0'}</span>
-                  ${sizeMb ? `<span>· ${sizeMb}</span>` : ''}
-                </div>
-              </div>
-            </div>
-            <p class="app-desc">${app.subtitle || app.localizedDescription || ''}</p>
-            <div class="app-footer">
-              <a href="${app.downloadURL}" class="btn btn-primary" download>IPA</a>
-              <a href="${altUrl}" class="btn btn-secondary" title="Add single app to AltStore">AltStore</a>
-              <a href="${sideUrl}" class="btn btn-secondary" title="Add single app to SideStore">SideStore</a>
-              <button class="btn btn-secondary" style="flex: 0 0 auto; padding: 0.45rem 0.6rem;" title="Scan QR Code" onclick="openQrModal('${app.name}', '${feedUrl}')">📷</button>
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    function filterApps() {
-      const q = (document.getElementById('searchInput').value || '').toLowerCase().trim();
-      const filtered = allApps.filter(a => {
-        const matchesQuery = !q ||
-          (a.name || '').toLowerCase().includes(q) ||
-          (a.bundleIdentifier || '').toLowerCase().includes(q) ||
-          (a.subtitle || '').toLowerCase().includes(q) ||
-          (a.localizedDescription || '').toLowerCase().includes(q) ||
-          (a.developerName || '').toLowerCase().includes(q);
-
-        const category = (a.category || '').toLowerCase();
-        const matchesCat = (currentCategory === 'all') ||
-          (currentCategory === category) ||
-          (currentCategory === 'games' && (category === 'games' || category === 'other')) ||
-          (currentCategory === 'social' && (category === 'social' || category === 'news'));
-
-        return matchesQuery && matchesCat;
-      });
-      renderApps(filtered);
-    }
-
-    loadApps();
-  </script>
+  <div class="toast" id="toast" role="status" aria-live="polite"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span></span></div>
+  <noscript><div class="noscript">JavaScript is required to browse the live catalog. You can still <a href="apps.json">open the source feed</a>.</div></noscript>
 </body>
 </html>

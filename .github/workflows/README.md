@@ -5,9 +5,9 @@ permissions and opts in to exactly what it needs, never more.
 
 | Workflow | Trigger | Writes | Purpose |
 | --- | --- | --- | --- |
-| [`sync.yml`](sync.yml) | schedule (6 h, incremental) · push · manual | feeds, mirrors, README, Pages | Resolve official upstream releases, probe links, rebuild every feed, deploy the source to Pages |
+| [`sync.yml`](sync.yml) | schedule (6 h, incremental) · push · manual | feeds, README, Pages | Resolve official upstream releases, probe links, rebuild every feed, deploy the source to Pages |
 | [`validate.yml`](validate.yml) | pull request · push · manual | nothing | Offline gate: Python + `jq` structural validation, reproducibility check, `ruff`, `actionlint` |
-| [`merge.yml`](merge.yml) | `feeds/*.json` changed · manual | `*.json` mirrors | Rebuild the unified `apps.json` and the root mirrors from the modular `feeds/` (SSOT) |
+| [`merge.yml`](merge.yml) | `feeds/*.json` changed · manual | `feeds/apps.json` | Rebuild the unified master source from modular feeds |
 | [`health-check.yml`](health-check.yml) | schedule (daily) · manual | GitHub Issue | HEAD-probe every download URL + mirror and report broken links via an issue |
 | [`build-uyouenhanced.yml`](build-uyouenhanced.yml) | manual | Release asset | Build and publish the uYouEnhanced IPA, then trigger a feed sync |
 
@@ -18,14 +18,14 @@ catalog.json ──▶ sync.yml (scripts/omnisource.py) ──▶ feeds/*.json �
 ▲ │
 │ ▼
 build-uyouenhanced.yml   merge.yml (scripts/merge_feeds.py)
-(publishes uyouenhanced-v release) ──▶ apps.json + root mirrors
+(publishes uyouenhanced-v release) ──▶ feeds/apps.json
 ```
 
 - **`sync.yml`** is the only scheduled writer. `concurrency` prevents two runs from
   writing `feeds/` at once.
 - **`merge.yml`** is the safety net for direct edits to `feeds/`: it re-derives
-  `apps.json` and the root-level mirrors from the modular feeds — `feeds/` is the
-  single source of truth.
+  `feeds/apps.json` from the modular feeds, keeping `feeds/` as the single source
+  of truth.
 - **`health-check.yml`** is independent of releases: a broken upstream link is
   reported even when nothing new has shipped.
 - **`validate.yml`** guards pull requests. It is read-only and network-free, so it

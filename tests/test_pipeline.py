@@ -17,12 +17,12 @@ from unittest.mock import MagicMock
 from omnisource.constants import PNG_MAGIC, Paths
 from omnisource.di import Container
 from omnisource.domain import SyncReport
-from omnisource.pipeline import load_catalog, load_state, stage_build, stage_mirror
+from omnisource.pipeline import load_catalog, load_state, stage_build
 from omnisource.providers.registry import ProviderRegistry
 
 
 class TestPipeline(unittest.TestCase):
-    def test_pipeline_build_and_mirror(self) -> None:
+    def test_pipeline_builds_canonical_feeds(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
             paths = Paths.from_root(root)
@@ -92,11 +92,8 @@ class TestPipeline(unittest.TestCase):
             self.assertTrue((paths.feeds / "testapp.json").exists())
             self.assertTrue((paths.feeds / "apps.json").exists())
             self.assertTrue((paths.feeds / "health.json").exists())
-
-            changed_mirrors = stage_mirror(container, catalog)
-            self.assertGreater(len(changed_mirrors), 0)
-            self.assertTrue((paths.root / "testapp.json").exists())
-            self.assertTrue((paths.root / "apps.json").exists())
+            self.assertFalse((paths.root / "testapp.json").exists())
+            self.assertFalse((paths.root / "apps.json").exists())
 
 
 if __name__ == "__main__":

@@ -3,25 +3,22 @@
 
 ``feeds/`` is the single source of truth for distribution. Every app ships its
 own feed at ``feeds/<slug>.json``; this script reads those per-app feeds and
-re-assembles the two aggregate documents plus the root-level mirrors:
-
-    feeds/apps.json    the unified master feed (what clients subscribe to)
-    apps.json          the root-level compatibility mirror (historical URL)
-    <slug>.json        root-level mirrors of each per-app feed
+reassembles ``feeds/apps.json``, the unified master feed. The Pages builder
+publishes these canonical files at both organized and historical flat URLs.
 
 The per-app feeds win: whatever they contain is what the master feed contains.
 Source metadata (name, identifier, tintColor, icon, website) is taken from
 ``catalog.json`` when present, and derived from the first feed otherwise, so
 the merge never depends on a network call or a prior pipeline run.
 
-This is a subset of ``scripts/omnisource.py`` stage "build" + "mirror", factored
-out so the merge can run as a standalone safety net on every change to
-``feeds/``. Output is byte-identical to what the full pipeline produces.
+This is a subset of the main build stage, factored out so the merge can run as
+a standalone safety net on every change to ``feeds/``. Output is byte-identical
+to what the full pipeline produces.
 
 Usage
 -----
-    python3 scripts/merge_feeds.py            # rebuild apps.json + mirrors from feeds/
-    python3 scripts/merge_feeds.py --check    # fail if any output is out of date
+    python3 scripts/merge_feeds.py            # rebuild feeds/apps.json
+    python3 scripts/merge_feeds.py --check    # fail if it is out of date
 """
 
 from __future__ import annotations
@@ -173,11 +170,7 @@ def main(argv: list[str] | None = None) -> int:
                 tmp.unlink(missing_ok=True)
             print(f"merge: wrote {target.relative_to(REPO_ROOT)}")
 
-    # Master feed + its root mirror, and a root mirror per modular feed.
     sync_file(FEEDS_DIR / MASTER_NAME, payload)
-    sync_file(REPO_ROOT / MASTER_NAME, payload)
-    for path in per_app_feeds():
-        sync_file(REPO_ROOT / path.name, path.read_text(encoding="utf-8"))
 
     if args.check and stale:
         print(

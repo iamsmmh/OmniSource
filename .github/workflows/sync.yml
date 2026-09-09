@@ -105,27 +105,7 @@ jobs:
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Assemble Pages site
-        run: |
-          set -euo pipefail
-          mkdir -p _site
-          cp -r website/. _site/
-          cp -r assets _site/assets
-          cp -r feeds  _site/feeds
-          rm -f _site/feeds/state.json
-          # Historical flat URLs (https://<pages>/apps.json) must keep working.
-          cp feeds/apps.json _site/apps.json
-          for feed in feeds/*.json; do
-            name="$(basename "$feed")"
-            [ "$name" = "state.json" ] && continue
-            cp "$feed" "_site/$name"
-          done
-          for xml in feeds/*.xml; do
-            [ -f "$xml" ] || continue
-            name="$(basename "$xml")"
-            cp "$xml" "_site/$name"
-          done
-          cp catalog.json _site/catalog.json
-          touch _site/.nojekyll
+        run: python3 scripts/build_site.py
 
       - uses: actions/upload-pages-artifact@v3
         with:
