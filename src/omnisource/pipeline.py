@@ -345,6 +345,8 @@ def stage_build(
     catalog: Catalog,
     state: dict[str, Any],
     report: SyncReport,
+    *,
+    refresh_mirrors: bool = False,
 ) -> tuple[list[Path], dict[str, Any]]:
     rendered: list[tuple[App, dict[str, Any]]] = []
 
@@ -447,6 +449,7 @@ def stage_build(
         base_url=catalog.base_url,
         assets_dir=container.paths.assets,
         http=container.http,
+        refresh=refresh_mirrors,
     )
     screenshot_doc = screenshot_report.to_doc()
     for name, doc in (
@@ -707,7 +710,7 @@ def run(
         stage_assets(container, catalog)
 
     with Group("Build feeds"):
-        changed, health_doc, analytics_doc = stage_build(container, catalog, state, report)
+        changed, health_doc, analytics_doc = stage_build(container, catalog, state, report, refresh_mirrors=not no_sync)
 
     # Persist state only after the complete generated dataset passed validation;
     # a failed build therefore leaves both data and memory at last-known-good.
