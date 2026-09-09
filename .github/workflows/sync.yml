@@ -157,8 +157,31 @@ jobs:
             exit 0
           fi
           # Rebase instead of force-push: a concurrent human commit must survive.
-          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          # A single transient fetch/push glitch (main can be busy right after
+          # a merge: managed Pages builds, feed-sync runs) must not kill a
+          # scheduled run, so each step retries a few times before failing.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "::error::git pull --rebase failed after 3 attempts"
+              git status --porcelain | head -50
+              exit 1
+            fi
+            sleep $((attempt * 5))
+          done
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "::error::git push failed after 3 attempts"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          done
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Upload generated feeds (debug artifact)
