@@ -90,6 +90,11 @@
           "enum": ["stable", "beta", "manual", "unmaintained", "deprecated"]
         },
         "upstreamURL": { "type": "string", "format": "uri" },
+        "sourceURL": {
+          "type": "string",
+          "format": "uri",
+          "description": "Link of the source that actually publishes the sideload IPA (build fork, mirror repository or feed). Defaults to the upstream project page when unset."
+        },
         "fallbackDownloadURLs": { "$ref": "#/definitions/fallbackDownloadURLs" },
         "verification": {
           "type": "object",

@@ -12,6 +12,7 @@ if str(_SRC) not in sys.path:
 import unittest
 
 from omnisource.domain import (
+    App,
     Catalog,
     RemoteAsset,
     RemoteRelease,
@@ -100,6 +101,59 @@ class TestDomainModel(unittest.TestCase):
         self.assertEqual(app.name, "Test App")
         self.assertEqual(app.bundle_id, "com.test.app")
         self.assertEqual(app.lifecycle_status, "active")
+
+    def _app(self, **overrides: object) -> App:
+        raw: dict[str, object] = {
+            "slug": "demo",
+            "name": "Demo",
+            "bundleIdentifier": "com.example.demo",
+            "developerName": "Example",
+            "icon": "Demo.png",
+            "status": "stable",
+            "compatibility": {"minOSVersion": "16.0", "clients": ["altstore"]},
+        }
+        raw.update(overrides)
+        return App(slug=str(raw["slug"]), raw=raw)
+
+    def test_source_url_tracks_sideload_builder(self) -> None:
+        """Apps whose sideload IPA is built by a fork link to that source."""
+        app = self._app(
+            upstreamURL="https://github.com/Developer/Official",
+            upstream={"provider": "github", "repo": "Builder/SideloadReleases"},
+        )
+        self.assertEqual(app.repository_url, "https://github.com/Developer/Official")
+        self.assertEqual(app.source_url, "https://github.com/Builder/SideloadReleases")
+
+    def test_source_url_defaults_to_official_repo(self) -> None:
+        """Apps published by their own repo keep the official page as source."""
+        app = self._app(
+            upstreamURL="https://github.com/Owner/App",
+            upstream={"provider": "github", "repo": "Owner/App"},
+        )
+        self.assertEqual(app.source_url, "https://github.com/Owner/App")
+        self.assertEqual(app.source_url, app.repository_url)
+
+    def test_source_url_for_feed_providers(self) -> None:
+        """AltStore/JSON feeds link to the feed's own site/origin."""
+        app = self._app(
+            upstreamURL="https://github.com/Dev/Project",
+            upstream={"provider": "altstore", "feedURL": "https://repo.example.test/repo.json"},
+        )
+        self.assertEqual(app.source_url, "https://repo.example.test")
+        # The official project page stays available as the repository URL.
+        self.assertEqual(app.repository_url, "https://github.com/Dev/Project")
+
+    def test_source_url_falls_back_to_upstream(self) -> None:
+        app = self._app(upstreamURL="https://example.com/project")
+        self.assertEqual(app.source_url, "https://example.com/project")
+
+    def test_source_url_explicit_override_wins(self) -> None:
+        app = self._app(
+            upstreamURL="https://github.com/Developer/Official",
+            sourceURL="https://archive.org/details/mirror-item",
+            upstream={"provider": "github", "repo": "Builder/SideloadReleases"},
+        )
+        self.assertEqual(app.source_url, "https://archive.org/details/mirror-item")
 
     def test_update_event_to_json(self) -> None:
         event = UpdateEvent(

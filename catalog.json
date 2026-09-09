@@ -112,6 +112,7 @@
       "featured": true,
       "status": "manual",
       "upstreamURL": "https://github.com/arichornlover/uYouEnhanced",
+      "sourceURL": "https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6",
       "verification": {
         "method": "manual-mirror",
         "publisher": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
@@ -576,13 +577,13 @@
       "icon": "MaxTube.webp",
       "localizedDescription": "MaxTube (formerly YTPlusM) is Mark02-2012's fork of YTPlus/YTLite, the enhancer for the YouTube app on iOS. On top of the YTPlus feature set — video/audio/thumbnail downloads, SponsorBlock, PiP, YTUHD, YouQuality, Return YouTube Dislike, YTABConfig, DontEatMyContent and over 100 configurable options without a subscription — MaxTube integrates ten extra tweaks: YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, YTPlaybackFix, YouChooseQuality, YouShare and PleaseDontStopTheMusic. Settings live inside YouTube under Settings.",
       "screenshots": [
-        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr1.jpg",
-        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr2.jpg",
-        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr3.jpg"
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr1.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr2.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr3.jpg"
       ],
       "featured": false,
       "status": "manual",
-      "upstreamURL": "https://github.com/Mark02-2012/YTPlusM",
+      "upstreamURL": "https://github.com/Mark02-2012/MaxTube",
       "verification": {
         "method": "github-release",
         "publisher": "Ashreq/ashstore-repo",
@@ -715,16 +716,16 @@
       "icon": "MaxMusic.webp",
       "localizedDescription": "MaxMusic (formerly YTMUltimate+) is Mark02-2012's fork of Dayanch96's YTMusicUltimate for the YouTube Music app on iOS. It keeps everything YTMusicUltimate provides — no ads, background playback, download manager, audio quality selection — and adds Return YouTube Music Dislike, YouMusicPiP, YTMABConfig and VolumeBoostYT, plus fixed in-app downloads on newer YouTube Music versions. Settings live inside YouTube Music under Settings.",
       "screenshots": [
-        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn2.png",
-        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn3.png",
-        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn4.png"
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn2.png",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn3.png",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn4.png"
       ],
       "featured": false,
       "status": "stable",
-      "upstreamURL": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+      "upstreamURL": "https://github.com/Mark02-2012/MaxMusic",
       "verification": {
         "method": "github-release",
-        "publisher": "Mark02-2012/YTMUltimatePLUS",
+        "publisher": "Mark02-2012/MaxMusic",
         "codeSigned": false,
         "checksumPublished": false
       },
@@ -761,7 +762,7 @@
         }
       },
       "upstream": {
-        "repo": "Mark02-2012/YTMUltimatePLUS",
+        "repo": "Mark02-2012/MaxMusic",
         "tagPrefix": "MaxMusic_",
         "assetNamePattern": "^MaxMusic_\\d",
         "assetSuffixes": [

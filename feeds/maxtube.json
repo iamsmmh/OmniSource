@@ -67,9 +67,9 @@
         }
       ],
       "screenshotURLs": [
-        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr1.jpg",
-        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr2.jpg",
-        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr3.jpg"
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr1.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr2.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr3.jpg"
       ],
       "appPermissions": {
         "entitlements": [
@@ -100,7 +100,8 @@
         "slug": "maxtube",
         "status": "manual",
         "featured": false,
-        "upstreamURL": "https://github.com/Mark02-2012/YTPlusM",
+        "upstreamURL": "https://github.com/Mark02-2012/MaxTube",
+        "sourceURL": "https://github.com/Ashreq/ashstore-repo",
         "verification": {
           "method": "github-release",
           "publisher": "Ashreq/ashstore-repo",

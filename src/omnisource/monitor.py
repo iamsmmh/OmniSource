@@ -66,6 +66,7 @@ def build_status_doc(
                 "app": app.slug,
                 "name": app.name,
                 "source": source_label(app),
+                "sourceURL": app.source_url,
                 "type": app.source_type.value,
                 "status": status,
                 "reachable": reachable,
