@@ -200,7 +200,7 @@ feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)   api/  (local mirror, giti
 | `src/omnisource/` | The Python package: providers, feed renderers, validation, intelligence engines, app pages, site builder |
 | `scripts/` | Thin CLI entry points over the package (one command, one module) |
 | `schemas/` | Catalog and AltStore feed contracts |
-| `tests/` | Offline unit test suite (102 tests) |
+| `tests/` | Offline unit test suite (112 tests) |
 | `feeds/` | Generated feeds, RSS, badges, health data, intelligence documents, pipeline state |
 | `apps/<slug>/` | Generated App-Store-style app pages |
 | `api/` | Local feeds mirror (gitignored; published as `_site/api/`) |
@@ -233,7 +233,7 @@ make check      # ruff + validator + jq checks + unit tests
 ```
 
 The service worker is versioned (`omnisource-vN`): bump the version in `website/sw.js` whenever
-the cached asset set changes, and the update toast in `js/core.js` offers the reload.
+the cached asset set changes, and the update toast in `website/js/core.js` offers the reload.
 
 ## Contributing
 

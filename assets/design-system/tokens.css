@@ -28,8 +28,8 @@
   --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco,
     "Cascadia Code", "Roboto Mono", monospace;
 
-  --text-xxl: clamp(44px, 7.2vw, 84px);
-  --text-xl: clamp(30px, 4.6vw, 52px);
+  --text-xxl: clamp(48px, 8vw, 96px);
+  --text-xl: clamp(32px, 5vw, 58px);
   --text-lg: clamp(20px, 2.6vw, 28px);
   --text-md: 17px;
   --text-base: 15px;
@@ -85,7 +85,7 @@
   --cyan-soft: rgba(10, 132, 255, 0.11);
 
   /* -------------------------------------------------------------- surface */
-  --radius-xxl: 28px;
+  --radius-xxl: 32px;
   --radius-xl: 22px;
   --radius-lg: 18px;
   --radius-md: 14px;
@@ -95,9 +95,19 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 14px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.05), 0 16px 44px rgba(0, 0, 0, 0.09);
   --shadow-lg: 0 4px 14px rgba(0, 0, 0, 0.06), 0 36px 90px rgba(0, 0, 0, 0.15);
-  --glow-accent: 0 10px 34px rgba(91, 77, 242, 0.35);
-  --glow-soft: 0 18px 60px rgba(91, 77, 242, 0.14);
-  --glow-card: 0 24px 70px rgba(91, 77, 242, 0.16);
+  --glow-accent: 0 10px 34px rgba(91, 77, 242, 0.38), 0 2px 8px rgba(192, 38, 211, 0.22);
+  --glow-soft: 0 18px 60px rgba(91, 77, 242, 0.16);
+  --glow-card: 0 24px 70px rgba(91, 77, 242, 0.18);
+
+  /* Glass top-light: a hairline of caught light along the top edge of cards,
+     buttons and panels. Layered first in box-shadow stacks. */
+  --highlight-inset: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  /* Gradient hairline for crowning bands (header, trust, footer). */
+  --hairline-grad: linear-gradient(90deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 55%, transparent) 28%,
+    color-mix(in srgb, var(--accent-3) 55%, transparent) 72%,
+    transparent);
 
   --blur-glass: blur(22px) saturate(1.7);
 
@@ -130,11 +140,11 @@
 html[data-theme="dark"] {
   color-scheme: dark;
 
-  --bg: #060608;
-  --bg-soft: #0b0b0e;
-  --bg-deep: #111114;
-  --surface: rgba(26, 26, 30, 0.62);
-  --surface-solid: #151518;
+  --bg: #07070d;
+  --bg-soft: #0b0b14;
+  --bg-deep: #12121c;
+  --surface: rgba(23, 23, 34, 0.62);
+  --surface-solid: #14141d;
   --surface-2: rgba(118, 118, 128, 0.16);
   --surface-3: rgba(118, 118, 128, 0.26);
 
@@ -146,13 +156,13 @@ html[data-theme="dark"] {
   --line: rgba(255, 255, 255, 0.09);
   --line-strong: rgba(255, 255, 255, 0.17);
 
-  --accent-1: #6a5cff;
-  --accent-2: #9d6bff;
-  --accent-3: #e879f9;
-  --accent: #8b7cff;
+  --accent-1: #7c6cff;
+  --accent-2: #a06bff;
+  --accent-3: #f0abfc;
+  --accent: #9d8fff;
   --accent-ink: #0c0a14;
-  --accent-soft: rgba(139, 124, 255, 0.16);
-  --accent-ring: rgba(139, 124, 255, 0.3);
+  --accent-soft: rgba(157, 143, 255, 0.16);
+  --accent-ring: rgba(157, 143, 255, 0.3);
 
   --green: #30d158;
   --green-soft: rgba(48, 209, 88, 0.14);
@@ -168,9 +178,11 @@ html[data-theme="dark"] {
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45), 0 6px 18px rgba(0, 0, 0, 0.35);
   --shadow-md: 0 2px 10px rgba(0, 0, 0, 0.5), 0 20px 54px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.5), 0 44px 110px rgba(0, 0, 0, 0.6);
-  --glow-accent: 0 10px 40px rgba(139, 124, 255, 0.4);
-  --glow-soft: 0 18px 70px rgba(139, 124, 255, 0.16);
-  --glow-card: 0 24px 80px rgba(139, 124, 255, 0.22);
+  --glow-accent: 0 10px 40px rgba(157, 143, 255, 0.42), 0 2px 10px rgba(240, 171, 252, 0.25);
+  --glow-soft: 0 18px 70px rgba(157, 143, 255, 0.18);
+  --glow-card: 0 24px 80px rgba(157, 143, 255, 0.24);
+
+  --highlight-inset: inset 0 1px 0 rgba(255, 255, 255, 0.09);
 }
 
 /* Dark palette — system preference (auto) ---------------------------------- */
@@ -178,11 +190,11 @@ html[data-theme="dark"] {
   html[data-theme="auto"] {
     color-scheme: dark;
 
-    --bg: #060608;
-    --bg-soft: #0b0b0e;
-    --bg-deep: #111114;
-    --surface: rgba(26, 26, 30, 0.62);
-    --surface-solid: #151518;
+    --bg: #07070d;
+    --bg-soft: #0b0b14;
+    --bg-deep: #12121c;
+    --surface: rgba(23, 23, 34, 0.62);
+    --surface-solid: #14141d;
     --surface-2: rgba(118, 118, 128, 0.16);
     --surface-3: rgba(118, 118, 128, 0.26);
 
@@ -194,13 +206,13 @@ html[data-theme="dark"] {
     --line: rgba(255, 255, 255, 0.09);
     --line-strong: rgba(255, 255, 255, 0.17);
 
-    --accent-1: #6a5cff;
-    --accent-2: #9d6bff;
-    --accent-3: #e879f9;
-    --accent: #8b7cff;
+    --accent-1: #7c6cff;
+    --accent-2: #a06bff;
+    --accent-3: #f0abfc;
+    --accent: #9d8fff;
     --accent-ink: #0c0a14;
-    --accent-soft: rgba(139, 124, 255, 0.16);
-    --accent-ring: rgba(139, 124, 255, 0.3);
+    --accent-soft: rgba(157, 143, 255, 0.16);
+    --accent-ring: rgba(157, 143, 255, 0.3);
 
     --green: #30d158;
     --green-soft: rgba(48, 209, 88, 0.14);
@@ -216,9 +228,11 @@ html[data-theme="dark"] {
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45), 0 6px 18px rgba(0, 0, 0, 0.35);
     --shadow-md: 0 2px 10px rgba(0, 0, 0, 0.5), 0 20px 54px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.5), 0 44px 110px rgba(0, 0, 0, 0.6);
-    --glow-accent: 0 10px 40px rgba(139, 124, 255, 0.4);
-    --glow-soft: 0 18px 70px rgba(139, 124, 255, 0.16);
-    --glow-card: 0 24px 80px rgba(139, 124, 255, 0.22);
+    --glow-accent: 0 10px 40px rgba(157, 143, 255, 0.42), 0 2px 10px rgba(240, 171, 252, 0.25);
+    --glow-soft: 0 18px 70px rgba(157, 143, 255, 0.18);
+    --glow-card: 0 24px 80px rgba(157, 143, 255, 0.24);
+
+    --highlight-inset: inset 0 1px 0 rgba(255, 255, 255, 0.09);
   }
 }
 
@@ -243,8 +257,9 @@ body {
      every page has depth even where there is no hero. Theme-aware via the
      accent tokens; kept whisper-quiet so content stays king. */
   background:
-    radial-gradient(1100px 520px at 12% -8%, color-mix(in srgb, var(--accent-1) 9%, transparent), transparent 65%),
-    radial-gradient(940px 500px at 88% -4%, color-mix(in srgb, var(--accent-3) 8%, transparent), transparent 65%),
+    radial-gradient(1100px 520px at 12% -8%, color-mix(in srgb, var(--accent-1) 11%, transparent), transparent 65%),
+    radial-gradient(940px 500px at 88% -4%, color-mix(in srgb, var(--accent-3) 10%, transparent), transparent 65%),
+    radial-gradient(760px 460px at 50% 110%, color-mix(in srgb, var(--accent-2) 7%, transparent), transparent 65%),
     var(--bg);
   background-attachment: fixed;
   color: var(--text);

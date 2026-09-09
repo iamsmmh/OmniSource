@@ -120,11 +120,10 @@ jobs:
           set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # feeds JSON/XML, generated app detail pages and the README blocks,
-          # plus the published website (root site files for branch-backed Pages)
-          git add -A -- '*.json' '*.xml' 'apps/**' README.md \
-            'index.html' 'compare.html' 'js' 'compare' 'status' 'analytics' 'install' 'search' 'api' 'assets' \
-            'sw.js' 'manifest.webmanifest' 'feed.xml' 'sitemap.xml' 'robots.txt' '.nojekyll'
+          # Generated feeds JSON/XML, app detail pages and the README blocks.
+          # The pipeline writes nothing else, so the allowlist stays minimal
+          # on purpose: a stray file here would mean the build misbehaved.
+          git add -A -- '*.json' '*.xml' 'apps/**' README.md
 
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -132,7 +131,13 @@ jobs:
             exit 0
           fi
 
-          git commit -m "chore(feeds): sync upstream releases [skip ci]"
+          # A concurrent run may have pushed identical content first; treat an
+          # empty commit as "already published" instead of failing the run.
+          if ! git commit -m "chore(feeds): sync upstream releases [skip ci]"; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing to commit (a concurrent run published first)."
+            exit 0
+          fi
           # Rebase instead of force-push: a concurrent human commit must survive.
           git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
@@ -152,26 +157,9 @@ jobs:
       - name: Assemble Pages site
         run: python3 scripts/build_site.py
 
-      # Also mirror the built site into the repository root. GitHub Pages is
-      # currently served in "legacy" (branch) mode, which publishes the branch
-      # tree directly — so without this the live site would only see the raw
-      # repo (README + website/ + feeds/), not the real web app. _site/ stays
-      # gitignored; this publishes its contents to root so the branch-backed
-      # deployment serves the genuine site. Harmless once Pages is switched to
-      # GitHub Actions mode (that deploy path uses the _site artifact instead).
-      # assets/, feeds/ and apps/ are published at root by the pipeline itself,
-      # so they are skipped here to avoid clobbering them with build-time copies.
-      - name: Publish site to repo root (branch-backed Pages)
-        if: github.event_name != 'pull_request'
-        run: |
-          for item in _site/* _site/.[!.]*; do
-            [ -e "$item" ] || continue
-            base=$(basename "$item")
-            case "$base" in assets|feeds|apps|_site) continue;; esac
-            rm -rf "$base"
-            cp -r "$item" .
-          done
-
+      # The deployable site (_site/) is published as a Pages artifact; the
+      # repository root stays free of generated copies. Requires Settings →
+      # Pages → Build and deployment → GitHub Actions (see workflows/README).
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
