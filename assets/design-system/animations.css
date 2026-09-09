@@ -93,6 +93,12 @@
   55%, 100% { transform: translateX(38%); opacity: 0; }
 }
 
+/* Slow caustic drift for liquid-glass plates. */
+@keyframes os-caustic {
+  0%, 100% { background-position: 0% 40%; }
+  50%      { background-position: 100% 60%; }
+}
+
 /* --- scroll reveal ---------------------------------------------------------- */
 /* JS (js/core.js) observes [data-reveal] and adds .is-revealed when the
    element enters the viewport. Optional per-element delay via

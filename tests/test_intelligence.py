@@ -299,6 +299,9 @@ class TestAppPages(unittest.TestCase):
             duplicates,
         )
         self.assertIn("<title>Alpha Tweak — OmniSource</title>", html_doc)
+        self.assertIn('content="#e8eef8"', html_doc)
+        self.assertIn('content="#07070f"', html_doc)
+        self.assertIn('id="themeColor"', html_doc)
         self.assertIn("assets/design-system/tokens.css", html_doc)
         self.assertIn("Primary IPA", html_doc)
         self.assertIn("VERIFIED", html_doc)

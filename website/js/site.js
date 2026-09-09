@@ -566,6 +566,7 @@
             OS.toast(state.favorites.has(slug) ? 'Saved for later' : 'Removed from saved apps');
             return;
           }
+          if (event.target.closest && event.target.closest('a')) return;
           var card = event.target.closest ? event.target.closest('[data-slug]') : null;
           if (card) Home.openApp(card.dataset.slug);
         });
@@ -1127,7 +1128,6 @@
         var left = $('#leftSelect'); if (left) left.value = Compare.left;
         var right = $('#rightSelect'); if (right) right.value = Compare.right;
         Compare.renderResult();
-        history.replaceState(null, '', '#/' + Compare.left + '-' + Compare.right);
       });
     },
 
@@ -1197,6 +1197,7 @@
       if (empty) empty.hidden = true;
       $$('#result [data-reveal]').forEach(function (n) { n.classList.add('is-revealed'); });
       if (section.scrollIntoView) section.scrollIntoView({ behavior: OS.reducedMotion ? 'auto' : 'smooth', block: 'start' });
+      history.replaceState(null, '', '?left=' + encodeURIComponent(this.left) + '&right=' + encodeURIComponent(this.right));
     }
   };
 
@@ -1628,7 +1629,7 @@
           }
           results.innerHTML = items.map(function (item) {
             var doc = item.doc;
-            var icon = OS.cleanUrl(doc.icon ? (OS.ROOT + 'assets/' + doc.icon) : null) || OS.url('assets/OmniSource.png');
+            var icon = OS.asset(doc.icon || 'OmniSource.png');
             var verification = (state.verification.get(doc.slug || doc.id) || {}).status || '';
             return '<a class="result-row panel os-lift" href="' + OS.esc(OS.url('apps/' + (doc.slug || doc.id) + '/')) + '">' +
               '<img src="' + OS.esc(icon) + '" alt="" width="52" height="52" loading="lazy">' +
