@@ -1,25 +1,25 @@
-/* OmniSource service worker — offline-first for the live catalog.
+/* OmniSource service worker v3 — offline-first for the full site.
  *
- * The cache strategy is split into three rings:
+ * Cache strategy is split into three rings:
  *
- *   CORE_CACHE   – the application shell. Pre-cached on install.
- *   DATA_CACHE   – every JSON feed / app page. Stale-while-revalidate so the
- *                  page renders instantly even when the network is down.
- *   ASSET_CACHE  – icons, screenshots, fonts. Cache-first, falls back to the
- *                  network on miss.
+ *   CORE_CACHE   – the application shell (every page, CSS, JS, logo).
+ *                  Pre-cached on install, versioned so old caches die.
+ *   DATA_CACHE   – every JSON feed / generated app page.
+ *                  Stale-while-revalidate: instant paint, background refresh.
+ *   ASSET_CACHE  – icons and screenshots. Cache-first with background
+ *                  revalidation.
  *
- * The new strategy also:
- *   • caches per-app pages the first time a user opens one (so offline
- *     browsing of the full catalog works after a single visit);
- *   • uses a network-first strategy for navigations, with the shell as a
- *     fallback so the home page always loads;
- *   • exposes ``skipWaiting`` + ``clients.claim`` so a new SW activates
- *     immediately after install, which the front-end pairs with the
- *     "new version available" toast in the page.
+ * v3 changes (design-system era):
+ *   • the shell now covers the new page set: /, /compare/, /status/,
+ *     /analytics/, /install/, /search/ plus the design-system stylesheets;
+ *   • per-app pages (apps/<slug>/) are still captured on first visit so the
+ *     whole catalog stays browsable offline;
+ *   • skipWaiting + clients.claim + the update message protocol are kept,
+ *     which powers the “new version ready” toast in js/core.js.
  */
 'use strict';
 
-const VERSION = 'omnisource-v2';
+const VERSION = 'omnisource-v3';
 const CORE_CACHE = `${VERSION}-core`;
 const DATA_CACHE = `${VERSION}-data`;
 const ASSET_CACHE = `${VERSION}-assets`;
@@ -28,11 +28,18 @@ const CORE_ASSETS = [
   './',
   './index.html',
   './compare.html',
+  './compare/index.html',
+  './status/index.html',
+  './analytics/index.html',
+  './install/index.html',
+  './search/index.html',
   './manifest.webmanifest',
-  './css/styles.css',
-  './css/app-page.css',
-  './js/app.js',
-  './js/compare.js',
+  './assets/design-system/tokens.css',
+  './assets/design-system/utilities.css',
+  './assets/design-system/animations.css',
+  './assets/design-system/components.css',
+  './js/core.js',
+  './js/site.js',
   './assets/OmniSource.png'
 ];
 
@@ -76,8 +83,8 @@ self.addEventListener('activate', event => {
 });
 
 function notifyClientsOfUpdate() {
-  // Inform every open client that a new SW has taken over so the page can
-  // show an "update available" toast and reload.
+  // Tell every open client that a new SW took over so the page can show
+  // the “update available” toast and reload.
   self.clients.matchAll({ includeUncontrolled: true }).then(clients => {
     for (const client of clients) {
       client.postMessage({ type: 'omnisource-sw-updated', version: VERSION });
@@ -145,7 +152,6 @@ function cacheFirst(cacheName, request) {
       if (response && response.ok) cache.put(request, response.clone()).catch(() => undefined);
       return response;
     } catch (error) {
-      // Last resort: a cached shell or a simple 504.
       return new Response('Offline', { status: 504, statusText: 'Offline' });
     }
   });
@@ -168,7 +174,7 @@ function networkFirstNavigation(request) {
     caches.open(CORE_CACHE).then(cache => cache.put(request, copy)).catch(() => undefined);
     return response;
   }).catch(async () => {
-    // Fall back to the cached shell, then the cached home page.
+    // Fall back to the cached copy of this URL, then the cached shell.
     const cache = await caches.open(CORE_CACHE);
     return (await cache.match(request)) || (await cache.match('./index.html')) ||
       new Response('Offline', { status: 504, statusText: 'Offline' });
@@ -176,8 +182,7 @@ function networkFirstNavigation(request) {
 }
 
 self.addEventListener('message', event => {
-  // Allow the page to ask the SW to skip waiting (used by the "update"
-  // toast). The caller is responsible for reloading after activation.
+  // Let the page ask the SW to skip waiting (paired with the update toast).
   if (event.data && event.data.type === 'omnisource-skip-waiting') {
     self.skipWaiting();
   }

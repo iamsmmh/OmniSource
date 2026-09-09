@@ -40,8 +40,8 @@ all recommendations below are already implemented in the current branch.
 | Metrics (weekly changes, dead links, verified counts, trends) | `src/omnisource/analytics.py` |
 | Static app detail pages | `src/omnisource/app_pages.py` → `apps/<slug>/index.html` |
 | Machine API surface (`api/`, gzip twins, manifest) | `scripts/build_site.py` |
-| Homepage stats from feeds (total apps/sources, sync time, verified) | `website/js/app.js` + `feeds/analytics.json` |
-| Most-downloaded sort + tag/verification search | `website/js/app.js` |
+| Homepage stats from feeds (total apps/sources, sync time, verified) | `website/js/site.js` + `feeds/analytics.json` |
+| Most-downloaded sort + tag/verification search | `website/js/site.js` |
 | README live badges + stats block | `src/omnisource/pipeline.py` (`stage_readme`) |
 | Workflow matrix + caching | `.github/workflows/validate.yml`, `sync.yml` |
 
@@ -150,10 +150,12 @@ popover and a side-by-side comparison page:
 * **Community** — popular apps, recently added, rising apps.
 * **Search popover** — Fuse.js-style fuzzy search with verified /
   community filter chips, keyboard navigation, and result highlighting.
-* **compare.html** — full side-by-side comparison page driven entirely
-  by `feeds/compare.json`.
-* **PWA v2** — `sw.js` pre-caches app pages, supports background
-  refresh, and prompts the user to reload on a new service worker.
+* **compare/** — full side-by-side comparison page driven entirely
+  by `feeds/compare.json` (root `compare.html` remains as a redirect shim).
+* **PWA v3** — `sw.js` pre-caches the whole site (all section pages +
+  design system), serves JSON feeds stale-while-revalidate, caches per-app
+  pages on first visit, and prompts the user to reload on a new service
+  worker.
 
 ## 5. Validation enhancements
 

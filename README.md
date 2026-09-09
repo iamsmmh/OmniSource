@@ -4,9 +4,9 @@
 
 # OmniSource
 
-**A curated iOS sideloading app source.**
+**The App Store for sideloaded iOS.**
 
-One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · LiveContainer**.
+One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · LiveContainer**, wrapped in a full web experience: live catalog, comparison, source health, analytics, an install center and offline-first PWA.
 
 <!-- omnisource:stats:start -->
 
@@ -25,10 +25,27 @@ One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · 
 
 </div>
 
-OmniSource resolves each app's release from its **official upstream source** — the developer's GitHub
-Releases or the developer's own AltStore feed — and publishes a single AltStore Source **v2** feed.
-A scheduled pipeline keeps every entry current and probes every download link, so the catalog stays
-installable.
+OmniSource resolves each app's release from its **official upstream source** — the developer's
+GitHub Releases or the developer's own AltStore feed — and publishes a single AltStore Source
+**v2** feed. A scheduled pipeline keeps every entry current and probes every download link, so
+the catalog stays installable.
+
+## Website
+
+The live site is an immersive, dependency-free web app (HTML5 + modern CSS + vanilla JS, no build
+step) served by GitHub Pages:
+
+| Page | What it does |
+| --- | --- |
+| [Home](https://iamsmmh.github.io/OmniSource/) | Hero, trending / recent / featured / verified rails, statistics, source health, install guide, full catalog with search + filters, release timeline |
+| [Compare](https://iamsmmh.github.io/OmniSource/compare/) | App-vs-app comparison (bundle, category, developer, size, verification…) — deep-linkable: `compare/?left=youpro&right=ytlite` |
+| [Source Health](https://iamsmmh.github.io/OmniSource/status/) | Uptime, latency, availability and sync state for every upstream source |
+| [Analytics](https://iamsmmh.github.io/OmniSource/analytics/) | App/source counts, weekly updates, verification mix, category distribution, health trends — all charted from generated JSON, no backend |
+| [Install center](https://iamsmmh.github.io/OmniSource/install/) | Step-by-step instructions and auto-generated deep links for AltStore, SideStore, Feather, ESign and LiveContainer, per app and for the master feed |
+| [Search](https://iamsmmh.github.io/OmniSource/search/) | Full-text search over name, bundle, developer, source, category and tags — plus a ⌘K command palette on every page |
+
+The site is a **PWA**: installable (manifest + shortcuts), offline-first (service worker precaches
+the shell and caches every feed and app page), with a "new version available" reload prompt.
 
 ## Add the source
 
@@ -42,16 +59,17 @@ https://iamsmmh.github.io/OmniSource/apps.json
 | **SideStore** | <a href="sidestore://source?url=https://iamsmmh.github.io/OmniSource/apps.json">➕ Add to SideStore</a> |
 | **Feather** | <a href="feather://source/iamsmmh.github.io/OmniSource/apps.json">➕ Add to Feather</a> |
 
-ESign and LiveContainer don't expose a source deep-link protocol — open the client and paste the feed
-URL manually. Each app also publishes its own standalone feed at
+ESign and LiveContainer don't expose a source deep-link protocol — open the client and paste the
+feed URL manually, or use the [install center](https://iamsmmh.github.io/OmniSource/install/).
+Each app also publishes its own standalone feed at
 `https://iamsmmh.github.io/OmniSource/<slug>.json`, a per-app RSS release feed at
-`https://iamsmmh.github.io/OmniSource/<slug>.xml`, and a combined release feed (`feed.xml`/`rss.xml`).
-A machine-readable "What's new" timeline is published at `updates.json` for the website (see the
-catalog below).
+`https://iamsmmh.github.io/OmniSource/<slug>.xml`, and a combined release feed
+(`feed.xml`/`rss.xml`). A machine-readable "What's new" timeline is published at `updates.json`.
 
 ## Catalog
 
-The complete generated catalog is available below. For a cleaner browsing experience, use the [OmniSource website](https://iamsmmh.github.io/OmniSource/).
+The complete generated catalog is available below. For a cleaner browsing experience, use the
+[OmniSource website](https://iamsmmh.github.io/OmniSource/).
 
 <details>
 <summary><strong>View all apps and source links</strong></summary>
@@ -95,8 +113,9 @@ _Catalogue last changed 2026-09-09 · 22 apps · 22/22 downloads reachable._
 
 ## Where the info comes from
 
-Every app in `catalog.json` declares its upstream and verification method, and the published entry is
-generated from that upstream — the catalog is never the source of versions, dates or download URLs.
+Every app in `catalog.json` declares its upstream and verification method, and the published entry
+is generated from that upstream — the catalog is never the source of versions, dates or download
+URLs.
 
 | Channel | Apps | What is official |
 | --- | --- | --- |
@@ -108,104 +127,148 @@ Each feed entry embeds an `omnisource` metadata block with `status`, `verificati
 `compatibility` (including these source notes), so clients and users can see exactly where a build
 came from.
 
-## How it works
+## Architecture
 
 ```
-catalog.json ──▶ scripts/omnisource.py ──▶ feeds/*.json + feeds/*.xml + apps/<slug>/ ──▶ GitHub Pages ──▶ your client
-  (hand edited)   (every 6 h: sync from      (generated)                        https://iamsmmh.github.io/OmniSource/
-                  official upstreams,
-                  probe links, build feeds)
+catalog.json (hand-edited source of truth)
+      │
+      ▼
+scripts/omnisource.py ──▶ src/omnisource/ (Python, stdlib-only)
+      │                       ├─ providers/   GitHub Releases + external-feed adapters
+      │                       ├─ feeds/       AltStore v2, RSS, updates-timeline renderers
+      │                       ├─ validation   offline rule engine (catalog, feeds, docs, pages)
+      │                       ├─ intelligence trending · related · reputation · download-intel
+      │                       │                community · search-index · compare · screenshots
+      │                       ├─ install      per-client deep-link cards
+      │                       ├─ app_pages    App-Store-style static pages (apps/<slug>/)
+      │                       └─ site         _site/ builder (sitemap, robots, API mirror, minify)
+      ▼
+feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)   api/  (local mirror, gitignored)
+      │                              │                     │
+      └──────────────┬───────────────┴─────────────────────┘
+                     ▼
+        scripts/build_site.py  ──▶  _site/  (the deployable site)
+                     │
+                     ▼
+        GitHub Pages  ──▶  website/ pages (7) + design system + sw.js (PWA)
 ```
 
-`catalog.json` is the only hand-edited data file. Everything under `feeds/` — per-app feeds,
-`apps.json`, the `updates.json` website timeline, per-app + combined RSS, health data, badges,
-pipeline state and the derived intelligence documents (`discovery.json`, `sources.json`,
-`verification.json`, `status.json`, `duplicates.json`, `analytics.json`) — is generated, together
-with one static page per app under `apps/<slug>/`. During deployment, the site builder publishes
-all of it at the historical flat URLs, the organized `feeds/` paths, and the machine API surface
-(`api/…`, with gzip twins) — see [docs/API.md](docs/API.md) — so existing subscribers and future
-clients keep working.
+* **Data plane** — `catalog.json` is the only hand-edited data file. The pipeline syncs official
+  upstreams, probes every download link and regenerates all feeds, intelligence documents, badges
+  and app pages. Generated files are never hand-edited.
+* **Site plane** — `scripts/build_site.py` (over `src/omnisource/site.py`) assembles `_site/`:
+  the hand-maintained `website/`, shared `assets/` (icons in PNG + WebP, the design system),
+  every feed at three URL families (flat root, `/feeds/`, `/api/` with gzip twins), the static
+  app pages, plus `sitemap.xml` and `robots.txt`.
+* **Presentation plane** — HTML5 + modern CSS + vanilla JS with Web Components. No framework, no
+  build step, no dependencies: GitHub Pages serves it as-is. A single design system
+  (`assets/design-system/`) styles the website and the generated app pages alike; shared logic
+  lives in `website/js/core.js` (theme, ⌘K palette, search engine, PWA) and `website/js/site.js`
+  (page renderers).
+
+## Generation flow
+
+1. **Sync** — for every catalog app, resolve the newest release from its declared upstream
+   (GitHub Releases or the developer's AltStore feed), download metadata only (never the IPA),
+   and store versions, sizes, hashes and dates in `feeds/state.json`.
+2. **Health** — HEAD-probe (ranged-GET fallback) every primary + fallback download URL; record
+   reachability, latency and staleness.
+3. **Build** — render per-app AltStore feeds, `apps.json`, RSS, `updates.json`, badges, all
+   intelligence documents, one static page per app, and the local `api/` mirror; refresh the
+   marked stats/catalog blocks in this README.
+4. **Validate** — the offline rule engine (`scripts/validate.py`) plus jq contract checks run on
+   every push; `check_reproducible.py` proves an offline rebuild produces byte-identical output
+   (date values normalized).
+5. **Deploy** — `scripts/build_site.py` assembles `_site/` and
+   `actions/deploy-pages@v4` publishes it. Existing subscriptions keep working at the historical
+   flat URLs.
 
 | Pipeline | Runs | What it does |
 | --- | --- | --- |
-| **Sync & Publish** | every 6 h · on push | Resolve upstream releases, probe links, rebuild every feed, deploy Pages |
-| **Validate** | every push & PR | Offline structural checks (`validate.py` + `validate_jq.sh`), reproducibility, `ruff`, `actionlint` |
-| **Health Check** | daily | HEAD-probe every download URL and report broken links via a GitHub Issue |
+| **Sync & Publish** (`.github/workflows/sync.yml`) | every 6 h · on push | Sync → health → build → assemble `_site/` → deploy Pages |
+| **Validate** (`.github/workflows/validate.yml`) | every push & PR | Offline structural checks, reproducibility, `ruff`, `actionlint` |
+| **Merge** (`.github/workflows/merge.yml`) | on demand | Merge feed sets between branches |
+| **Health Check** (`.github/workflows/health-check.yml`) | daily | Probe every download URL; open a GitHub Issue on breakage |
 
-## Repository layout
+## Directory structure
 
 | Path | Purpose |
 | --- | --- |
 | `catalog.json` | Source of truth: apps, official upstreams, verification and compatibility metadata |
 | `config/` | Runtime defaults for sync, retries, health checks and history |
-| `assets/` | App and client icons served over Pages |
-| `src/omnisource/` | Organized Python package: providers, feeds, validation, discovery catalog, verification, health monitoring, duplicates, analytics, app-page rendering |
-| `scripts/` | Small CLI entry points, including the shared Pages site builder and page generator |
+| `assets/` | App/client icons (PNG + WebP) and the shared design system |
+| `src/omnisource/` | The Python package: providers, feed renderers, validation, intelligence engines, app pages, site builder |
+| `scripts/` | Thin CLI entry points over the package (one command, one module) |
 | `schemas/` | Catalog and AltStore feed contracts |
-| `tests/` | Offline unit test suite |
-| `feeds/` | All generated feeds, badges, RSS, health data, intelligence documents and pipeline state |
-| `apps/<slug>/` | Generated static app detail pages |
-| `website/` | Static interface organized into HTML, CSS and JavaScript |
-| `docs/` | Maintainer documentation, API contracts and the repository audit |
+| `tests/` | Offline unit test suite (89 tests) |
+| `feeds/` | Generated feeds, RSS, badges, health data, intelligence documents, pipeline state |
+| `apps/<slug>/` | Generated App-Store-style app pages |
+| `api/` | Local feeds mirror (gitignored; published as `_site/api/`) |
+| `website/` | The website: 7 hand-maintained pages, `js/core.js`, `js/site.js`, `sw.js`, manifest |
+| `sdk/` | Zero-dependency client SDKs (JavaScript + Python) |
+| `docs/` | Repository guide, API contracts, audit, and the [cleanup report](docs/cleanup-report.md) |
 
-See the concise [repository guide](docs/REPOSITORY.md) before making structural changes.
+See the [repository guide](docs/REPOSITORY.md) for the detailed map and data-flow diagram.
 
-## For developers
+## Deployment guide
+
+Deployment is fully automated — push to `main` and GitHub Pages updates:
+
+1. `sync.yml` runs the pipeline (sync, health, build) with GitHub Actions caching and
+   concurrency limits; it commits the regenerated feeds/pages back via a bot push
+   (allowlisted: `*.json`, `*.xml`, `apps/**`, `README.md`).
+2. It assembles the site with `python3 scripts/build_site.py` and uploads `_site/` with
+   `actions/upload-pages-artifact@v3`.
+3. A separate `deploy` job publishes it with `actions/deploy-pages@v4`
+   (environment: `github-pages`).
+4. `validate.yml` guards every push and PR; the daily `health-check.yml` file breakage issues.
+
+Local development mirrors production exactly:
 
 ```bash
-python3 scripts/omnisource.py     # sync official upstreams + rebuild every feed/docs/pages
-python3 scripts/validate.py       # offline structural checks (feeds + intelligence docs)
-bash scripts/validate_jq.sh       # jq-only lint + AltStore v2 checks
-python3 scripts/check_reproducible.py  # rebuild offline; generated files must not drift
-python3 scripts/health_check.py   # HEAD-probe every download URL
-python3 scripts/generate_pages.py # rebuild only the static app pages
+make build      # sync + health + build (python3 scripts/omnisource.py)
+make site       # assemble _site/
+make serve      # serve _site/ on http://localhost:8000
+make check      # ruff + validator + jq checks + unit tests
 ```
 
-Golden rule: change `catalog.json`, never the generated files. Scripts are Python stdlib only — no
-virtualenv, no dependencies.
+The service worker is versioned (`omnisource-vN`): bump the version in `website/sw.js` whenever
+the cached asset set changes, and the update toast in `js/core.js` offers the reload.
 
-## Machine API
+## Contributing
 
-Every build publishes a generated API under `api/` (see [docs/API.md](docs/API.md)):
-`apps.json`, `catalog.json` (discovery index), `sources.json`, `verification.json`,
-`status.json`, `duplicates.json`, `analytics.json`, `updates.json`, `health.json`,
-plus the v2 discovery layer: `trending.json`, `related.json`, `reputation.json`,
-`download-intelligence.json`, `community.json`, `install.json`,
-`search-index.json`, `compare.json` and `screenshots.json`. Each JSON document
-is also published as a gzip twin and mirrored in `api/index.json`. The website
-consumes the same documents; zero-dependency client libraries live in
-[`sdk/javascript/`](sdk/javascript/) and [`sdk/python/`](sdk/python/).
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) first. Issues use templates: [request an app](
+https://github.com/iamsmmh/OmniSource/issues/new?template=01-app-request.yml), report a [broken
+upstream](https://github.com/iamsmmh/OmniSource/issues/new?template=02-broken-upstream.yml), [file a
+bug](https://github.com/iamsmmh/OmniSource/issues/new?template=03-bug-report.yml) or [suggest a
+feature](https://github.com/iamsmmh/OmniSource/issues/new?template=04-feature-idea.yml).
 
-## Discovery features
+Developer commands:
 
-* **Trending** — `feeds/trending.json` ranks every app by recency, availability, featured status and verification level.
-* **Related apps** — `feeds/related.json` builds a relationship graph from bundle identifier, category, developer and tags.
-* **Source reputation** — `feeds/reputation.json` scores each upstream on uptime, update cadence and broken releases (TRUSTED / RELIABLE / AVERAGE / EXPERIMENTAL).
-* **Download intelligence** — `feeds/download-intelligence.json` reports per-app availability, latency, mirror count and release consistency.
-* **Install cards** — `feeds/install.json` generates AltStore / SideStore / Feather / ESign / LiveContainer install URLs (never hard-coded).
-* **Search index** — `feeds/search-index.json` is a Fuse.js-compatible index with verified / community filter chips and instant suggestions.
-* **Comparison** — `feeds/compare.json` powers the `compare.html` page; every pair is precomputed.
-* **Screenshots** — `feeds/screenshots.json` plus a mirror under `assets/screenshots/` with WebP thumbnails.
-* **Community** — `feeds/community.json` lists popular, recently added, rising and requested apps.
+```bash
+python3 scripts/omnisource.py              # sync official upstreams + rebuild everything
+python3 scripts/omnisource.py --no-sync    # rebuild from feeds/state.json (offline)
+python3 scripts/validate.py                # offline structural checks (feeds + docs + pages)
+bash scripts/validate_jq.sh                # jq-only lint + AltStore v2 checks
+python3 scripts/check_reproducible.py      # offline rebuild must not drift
+python3 scripts/health_check.py            # HEAD-probe every download URL
+python3 scripts/build_site.py              # assemble the deployable _site/
+python3 -m unittest discover -s tests      # run the test suite
+```
 
-## Roadmap
+Golden rule: change `catalog.json`, never the generated files. Scripts are Python stdlib only —
+no virtualenv, no dependencies. Web changes are plain files in `website/` and
+`assets/design-system/` — no build step, preview with `make serve`.
 
-- [x] Auto-generated discovery catalog, verification levels, health board and analytics
-- [x] Static app detail pages + machine API
-- [x] Trending, related, reputation, download intelligence, install cards, search, comparison
-- [x] JavaScript + Python SDKs
-- [x] PWA v2 (offline app pages, update prompt)
-- [ ] OmniSource mobile app consuming `/api/`
-- [ ] Community app submissions (PRs to `catalog.json`)
-- [ ] Signed release notifications
+**Adding an app**
 
-## Adding an app
-
-1. Add an entry to `catalog.json`: `slug`, identity, `icon` (add the file under `assets/`),
-   `verification` (source method + publisher), `compatibility`, and an `upstream` block pointing at
-   the **official** source (`repo` + matching `assetSuffixes` for GitHub releases, or `feedURL` for a
-   developer AltStore feed; `manualRelease` only when no live upstream exists).
-2. Run `python3 scripts/omnisource.py` and commit the regenerated feeds.
+1. Add an entry to `catalog.json`: `slug`, identity, `icon` (add a PNG under `assets/` and a
+   WebP twin), `verification` (source method + publisher), `compatibility`, and an `upstream`
+   block pointing at the **official** source (`repo` + matching `assetSuffixes` for GitHub
+   releases, or `feedURL` for a developer AltStore feed; `manualRelease` only when no live
+   upstream exists).
+2. Run `python3 scripts/omnisource.py` and commit the regenerated feeds, app page and README
+   blocks.
 
 Useful optional `upstream` knobs:
 
@@ -217,17 +280,54 @@ Useful optional `upstream` knobs:
 - `minOSVersion` / `minOSVersionByTagNumber` — record the minimum iOS each build needs so the
   website can filter by device compatibility.
 
-Remember that sideloading clients replace an installed app whose `bundleIdentifier` matches, so two
-catalog entries must not share a bundle ID unless that replacement behaviour is intended (the
+Remember that sideloading clients replace an installed app whose `bundleIdentifier` matches, so
+two catalog entries must not share a bundle ID unless that replacement behaviour is intended (the
 validator and website both surface these conflicts).
 
-## Contributing
+## Machine API
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) first. Issues use templates: [request an app](
-https://github.com/iamsmmh/OmniSource/issues/new?template=01-app-request.yml), report a [broken
-upstream](https://github.com/iamsmmh/OmniSource/issues/new?template=02-broken-upstream.yml), [file a
-bug](https://github.com/iamsmmh/OmniSource/issues/new?template=03-bug-report.yml) or [suggest a
-feature](https://github.com/iamsmmh/OmniSource/issues/new?template=04-feature-idea.yml).
+Every build publishes a generated API under `/api/` on the site (see
+[docs/API.md](docs/API.md)): `apps.json`, `catalog.json` (discovery index), `sources.json`,
+`verification.json`, `status.json`, `duplicates.json`, `analytics.json`, `updates.json`,
+`health.json`, plus the discovery layer: `trending.json`, `related.json`, `reputation.json`,
+`download-intelligence.json`, `community.json`, `install.json`, `search-index.json`,
+`compare.json` and `screenshots.json`. Each JSON document is also published as a gzip twin and
+mirrored in `api/index.json`. The website consumes the same documents; zero-dependency client
+libraries live in [`sdk/javascript/`](sdk/javascript/) and [`sdk/python/`](sdk/python/).
+
+## Discovery features
+
+* **Trending** — `feeds/trending.json` ranks every app by recency, availability, featured status and verification level; powers the home rails.
+* **Related apps** — `feeds/related.json` builds a relationship graph from bundle identifier, category, developer and tags.
+* **Source reputation** — `feeds/reputation.json` scores each upstream on uptime, update cadence and broken releases (TRUSTED / RELIABLE / AVERAGE / EXPERIMENTAL).
+* **Download intelligence** — `feeds/download-intelligence.json` reports per-app availability, latency, mirror count and release consistency.
+* **Install cards** — `feeds/install.json` generates AltStore / SideStore / Feather / ESign / LiveContainer install URLs (never hard-coded).
+* **Search index** — `feeds/search-index.json` is a Fuse.js-compatible index behind the ⌘K palette and the [search page](https://iamsmmh.github.io/OmniSource/search/), with history and popular searches.
+* **Comparison** — `feeds/compare.json` precomputes every pair; the [compare page](https://iamsmmh.github.io/OmniSource/compare/) deep-links as `?left=<slug>&right=<slug>`.
+* **Source health** — `feeds/status.json` drives the [health center](https://iamsmmh.github.io/OmniSource/status/) (uptime, latency, sync state).
+* **Analytics** — `feeds/analytics.json` (totals, weekly changes, 30-day history) drives the [dashboard](https://iamsmmh.github.io/OmniSource/analytics/).
+* **Community** — `feeds/community.json` lists popular, recently added, rising and requested apps.
+
+## Roadmap
+
+- [x] Auto-generated discovery catalog, verification levels, health board and analytics
+- [x] Static App-Store-style app pages + machine API
+- [x] Trending, related, reputation, download intelligence, install cards, search, comparison
+- [x] JavaScript + Python SDKs
+- [x] Immersive design-system rebuild: home, compare, status, analytics, install, search
+- [x] PWA v3 (offline shell + feeds, install prompt, update toast, manifest shortcuts)
+- [x] Sitemap, robots, WebP assets, minified CSS in the deploy bundle
+- [ ] OmniSource mobile app consuming `/api/`
+- [ ] Community app submissions (PRs to `catalog.json`)
+- [ ] Ratings, reviews and request tracking in the web experience
+- [ ] Signed release notifications
+
+## Cleanup report
+
+The 2026-09 modernization pass removed dead and duplicate files and consolidated the generator
+surface — 24 files removed (18-file `api/` duplicate tree, 3 disjoint stylesheets, 2 legacy page
+scripts, a redundant page-regeneration script) and the front end rebuilt on a single design
+system. Full inventory with reasons and replacements: [docs/cleanup-report.md](docs/cleanup-report.md).
 
 ## Disclaimer
 

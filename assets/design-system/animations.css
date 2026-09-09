@@ -1,0 +1,252 @@
+/* ============================================================================
+   OmniSource Design System — animations
+   -------------------------------------
+   Keyframes, scroll-reveal system, hover micro-motion and load choreography.
+   Every animation here is disabled (see tokens.css) when the user prefers
+   reduced motion.
+   ========================================================================== */
+
+/* --- keyframes ------------------------------------------------------------ */
+
+@keyframes os-pulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--green) 45%, transparent); }
+  70%  { box-shadow: 0 0 0 9px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@keyframes os-pulse-red {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--red) 45%, transparent); }
+  70%  { box-shadow: 0 0 0 9px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+/* Slow drift for the hero aurora orbs. */
+@keyframes os-drift {
+  from { transform: translate3d(-4%, -3%, 0) scale(1); }
+  to   { transform: translate3d(5%, 4%, 0) scale(1.14); }
+}
+
+/* Gentle horizontal pan of gradient surfaces (CTAs, hero text). */
+@keyframes os-gradient-pan {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Skeleton shimmer while data loads. */
+@keyframes os-shimmer {
+  to { background-position: -200% 0; }
+}
+
+/* Fade-up entrance (used for hero + reveal). */
+@keyframes os-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Pop for icons / badges. */
+@keyframes os-pop {
+  from { opacity: 0; transform: scale(0.86); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Soft scale-in for dialogs. */
+@keyframes os-zoom {
+  from { opacity: 0; transform: scale(0.965) translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Fade for overlays/backdrops. */
+@keyframes os-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Toast slide. */
+@keyframes os-toast-in {
+  from { opacity: 0; transform: translate(-50%, 16px) scale(0.96); }
+  to   { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+/* Marquee-less horizontal drift for the "trusted by clients" strip. */
+@keyframes os-breathe {
+  0%, 100% { opacity: 0.85; }
+  50%      { opacity: 1; }
+}
+
+/* --- scroll reveal ---------------------------------------------------------- */
+/* JS (js/core.js) observes [data-reveal] and adds .is-revealed when the
+   element enters the viewport. Optional per-element delay via
+   style="--reveal-delay:120ms". */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity var(--dur-slow) var(--ease),
+    transform var(--dur-slow) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero choreography: staged entrances on first paint. */
+.os-hero > * {
+  animation: os-rise 0.7s var(--ease-out) both;
+}
+.os-hero > :nth-child(1) { animation-delay: 0.05s; }
+.os-hero > :nth-child(2) { animation-delay: 0.12s; }
+.os-hero > :nth-child(3) { animation-delay: 0.2s; }
+.os-hero > :nth-child(4) { animation-delay: 0.28s; }
+.os-hero > :nth-child(5) { animation-delay: 0.36s; }
+.os-hero > :nth-child(6) { animation-delay: 0.44s; }
+
+/* --- micro-motion ----------------------------------------------------------- */
+
+/* Cards lift with a springy ease and deepen their shadow. */
+.os-lift {
+  transition:
+    transform var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.os-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Icon scale inside cards. */
+.os-icon-hover .os-icon {
+  transition: transform var(--dur) var(--ease-spring);
+}
+.os-icon-hover:hover .os-icon {
+  transform: scale(1.06) rotate(-2deg);
+}
+
+/* Buttons: subtle press + hover brightness. */
+.os-press {
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease),
+    filter var(--dur-fast) var(--ease),
+    background-position 0.6s var(--ease);
+}
+.os-press:hover { transform: translateY(-1px); }
+.os-press:active { transform: translateY(0) scale(0.985); }
+
+/* Animated gradient surfaces. */
+.os-grad-anim {
+  background-size: 180% 180%;
+  animation: os-gradient-pan 9s ease-in-out infinite;
+}
+
+/* Skeletons. */
+.os-skeleton {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: linear-gradient(105deg, var(--surface) 30%, var(--surface-2) 46%, var(--surface) 60%);
+  background-size: 220% 100%;
+  animation: os-shimmer 1.5s linear infinite;
+}
+
+/* Progress shimmer bar for the status page header. */
+.os-scan {
+  position: relative;
+  overflow: hidden;
+}
+.os-scan::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, color-mix(in srgb, var(--accent) 10%, transparent) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: os-scan 3.2s var(--ease) infinite;
+}
+@keyframes os-scan {
+  60%, 100% { transform: translateX(100%); }
+}
+
+/* Dialog & overlay entrances. */
+dialog.os-dialog {
+  animation: os-zoom 0.32s var(--ease-out) both;
+}
+dialog.os-dialog::backdrop {
+  animation: os-fade 0.25s var(--ease) both;
+}
+
+/* Search palette entrance. */
+.os-palette.is-open .os-palette-panel {
+  animation: os-zoom 0.28s var(--ease-out) both;
+}
+.os-palette.is-open .os-palette-backdrop {
+  animation: os-fade 0.22s var(--ease) both;
+}
+
+/* Count-up numbers settle with a tiny pop when they finish. */
+.os-count {
+  font-variant-numeric: tabular-nums;
+  transition: transform var(--dur-fast) var(--ease-spring);
+}
+.os-count.os-count-done {
+  transform: scale(1.03);
+}
+
+/* Chart draw-in (SVG line/area charts on the analytics dashboard). */
+.os-chart-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: os-draw 1.4s var(--ease-out) 0.15s forwards;
+}
+@keyframes os-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.os-chart-area {
+  opacity: 0;
+  animation: os-fade 0.9s var(--ease) 0.7s forwards;
+}
+
+.os-bar {
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 0.7s var(--ease-out);
+  transition-delay: var(--bar-delay, 0ms);
+}
+.is-revealed .os-bar,
+.os-bars.is-revealed .os-bar {
+  transform: scaleY(1);
+}
+
+/* Donut segments fade in. */
+.os-donut-seg {
+  opacity: 0;
+  transition: opacity 0.6s var(--ease);
+  transition-delay: var(--seg-delay, 0ms);
+}
+.is-revealed .os-donut-seg {
+  opacity: 1;
+}
+
+/* --- reduced motion: kill choreography, keep state -------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .os-hero > *,
+  dialog.os-dialog,
+  dialog.os-dialog::backdrop,
+  .os-palette .os-palette-panel,
+  .os-palette .os-palette-backdrop {
+    animation: none;
+  }
+  .os-chart-line { stroke-dashoffset: 0; animation: none; }
+  .os-chart-area, .os-donut-seg { opacity: 1; animation: none; }
+  .os-bar { transform: scaleY(1); transition: none; }
+  .os-lift:hover { transform: none; }
+}
