@@ -1,18 +1,24 @@
-"""Invariants for the static website shell (Liquid Glass + GH Pages root).
+"""Invariants for the static website shell (Liquid Glass + GH Pages).
 
-The repository root *is* the site: hand-maintained pages live at the root
-(index.html, install/, js/, …) and GitHub's Jekyll-managed Pages build
-publishes them directly (see _config.yml). These invariants protect the
-pieces the pipeline and the Jekyll build depend on.
+The repository root holds the site *sources* (index.html, install/, js/,
+feeds/, apps/, …) and ``scripts/build_site.py`` assembles the deployable
+site into ``_site/``, which ``sync.yml`` publishes via GitHub Actions
+deployment. These invariants protect the pieces the builder and the
+deployed site depend on.
 """
 
 from __future__ import annotations
 
-import re
+import shutil
+import sys
+import tempfile
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+_SRC = ROOT / "src"
+if str(_SRC) not in sys.path:
+    sys.path.insert(0, str(_SRC))
 
 
 class TestWebsiteShell(unittest.TestCase):
@@ -46,8 +52,9 @@ class TestWebsiteShell(unittest.TestCase):
         self.assertNotIn("'./assets/OmniSource.png'", sw)
 
     def test_homepage_stat_markers(self) -> None:
-        # The pipeline (site._inject_homepage_stats) rewrites these markers
-        # in place and fails loudly when one disappears — keep them stable.
+        # The site builder (site._inject_homepage_stats) rewrites these
+        # markers in the deployed _site/index.html copy and fails loudly
+        # when one disappears — keep them stable.
         home = (ROOT / "index.html").read_text(encoding="utf-8")
         for marker in (
             'id="statApps" data-count>',
@@ -62,31 +69,60 @@ class TestWebsiteShell(unittest.TestCase):
         # not the 0 placeholders (no-JS visitors and crawlers read these).
         self.assertNotIn('id="statApps" data-count>0<', home)
 
-    def test_jekyll_excludes_cover_repo_internals(self) -> None:
-        # If an excluded directory comes back into the Jekyll-managed build,
-        # the public site would start serving repository internals.
-        config = (ROOT / "_config.yml").read_text(encoding="utf-8")
-        for entry in (
-            "scripts",
-            "src",
-            "docs",
-            "tests",
-            "schemas",
-            "config",
-            "sdk",
-            "feeds/state.json",
-            "README.md",
-            "Makefile",
-        ):
-            self.assertRegex(config, rf"(?m)^\s*- {re.escape(entry)}\s*$", f"_config.yml exclude missing: {entry}")
+    def test_pages_deploys_from_site_artifact(self) -> None:
+        # Single-publisher invariant: Pages deploys the _site/ artifact that
+        # sync.yml assembles — never the repository root. A Jekyll config
+        # must not come back, or a managed branch build would serve the raw
+        # root (without the flat feed URLs) and fight the Actions deploy.
+        self.assertFalse(
+            (ROOT / "_config.yml").exists(),
+            "_config.yml must stay deleted: Pages deploys _site/ via GitHub Actions, not a Jekyll branch build",
+        )
+        sync = (ROOT / ".github" / "workflows" / "sync.yml").read_text(encoding="utf-8")
+        self.assertIn("scripts/build_site.py", sync)
+        self.assertIn("actions/upload-pages-artifact", sync)
+        self.assertIn("actions/deploy-pages", sync)
 
-    def test_flat_apps_json_matches_canonical_feed(self) -> None:
-        # /apps.json is the installable source URL for existing clients; it
-        # must stay byte-identical to feeds/apps.json in the committed tree.
-        flat = ROOT / "apps.json"
-        canonical = ROOT / "feeds" / "apps.json"
-        self.assertTrue(flat.is_file(), "flat apps.json missing at the repository root")
-        self.assertEqual(flat.read_bytes(), canonical.read_bytes())
+    def test_repo_root_carries_no_generated_flat_copies(self) -> None:
+        # The flat subscriber URLs (/<feed>.json, /<feed>.xml, badges) are
+        # assembled into _site/ at deploy time; committing them at the root
+        # again would resurrect the ~70 duplicate files this layout removed.
+        # catalog.json is the hand-edited source of truth, not a copy.
+        for path in sorted(ROOT.glob("*.json")):
+            self.assertEqual(path.name, "catalog.json", f"unexpected root JSON: {path.name}")
+        self.assertEqual(list(ROOT.glob("*.xml")), [], "no generated XML belongs at the repository root")
+        self.assertFalse((ROOT / "robots.txt").exists(), "robots.txt is generated into _site/, not committed")
+
+    def test_site_build_publishes_flat_subscriber_urls(self) -> None:
+        # /apps.json is the installable source URL for existing clients; the
+        # builder must publish it (and every other flat URL) byte-identical
+        # to feeds/, plus sitemap/robots and live homepage statistics.
+        from omnisource.site import build_site
+
+        tmp = Path(tempfile.mkdtemp(prefix="omnisource-site-test-", dir=ROOT))
+        try:
+            summary = build_site(tmp)
+            self.assertGreater(summary["flat_files"], 0)
+            for pattern in ("*.json", "*.xml"):
+                for canonical in sorted((ROOT / "feeds").glob(pattern)):
+                    if canonical.name == "state.json":
+                        continue
+                    flat = tmp / canonical.name
+                    self.assertTrue(flat.is_file(), f"flat URL missing from the built site: {canonical.name}")
+                    self.assertEqual(
+                        flat.read_bytes(),
+                        canonical.read_bytes(),
+                        f"flat URL diverged from feeds/: {canonical.name}",
+                    )
+            self.assertTrue((tmp / "catalog.json").is_file())
+            self.assertTrue((tmp / "sitemap.xml").is_file())
+            self.assertTrue((tmp / "robots.txt").is_file())
+            self.assertTrue((tmp / "feeds" / "apps.json").is_file())
+            self.assertTrue((tmp / "api" / "apps.json").is_file())
+            home = (tmp / "index.html").read_text(encoding="utf-8")
+            self.assertNotIn('id="statApps" data-count>0<', home)
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
 
     def test_nav_never_pushes_controls_off_page(self) -> None:
         # The header row is wider than the 1200px shell on desktops (11

@@ -132,7 +132,7 @@ generated documents is listed in `docs/API.md`.
 | 6 | `src/omnisource/reputation.py` | `feeds/reputation.json` |
 | 7 | `src/omnisource/download_intel.py` | `feeds/download-intelligence.json` |
 | 9 | `src/omnisource/install.py` | `feeds/install.json` |
-| 11 | `src/omnisource/api_mirror.py` | `api/*.json` |
+| 11 | `src/omnisource/api_mirror.py` (later removed; `_site/api/` is built by `site.py`) | `api/*.json` (gitignored local mirror at the time) |
 | 13 | `src/omnisource/community.py` | `feeds/community.json` |
 | 14 | `sdk/javascript/`, `sdk/python/` | Zero-dependency client libraries |
 
