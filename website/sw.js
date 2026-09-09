@@ -16,10 +16,15 @@
  *     whole catalog stays browsable offline;
  *   • skipWaiting + clients.claim + the update message protocol are kept,
  *     which powers the “new version ready” toast in js/core.js.
+ *
+ * v4 changes (sub-path deploy fix):
+ *   • the site is served from a sub-path (/OmniSource/), so every pathname
+ *     check is base-agnostic: asset / data / per-app matching works under
+ *     any base instead of assuming the domain root.
  */
 'use strict';
 
-const VERSION = 'omnisource-v3';
+const VERSION = 'omnisource-v4';
 const CORE_CACHE = `${VERSION}-core`;
 const DATA_CACHE = `${VERSION}-data`;
 const ASSET_CACHE = `${VERSION}-assets`;
@@ -92,9 +97,13 @@ function notifyClientsOfUpdate() {
   });
 }
 
+// DATA_URLS is written root-relative; strip the './' so it can be matched as
+// a suffix against pathnames under any deploy base (e.g. '/OmniSource/').
+const DATA_SUFFIXES = DATA_URLS.map(entry => '/' + entry.replace(/^\.\//, ''));
+
 function isAssetPath(pathname) {
   return (
-    pathname.startsWith('/assets/') ||
+    pathname.includes('/assets/') ||
     pathname.endsWith('.png') ||
     pathname.endsWith('.webp') ||
     pathname.endsWith('.svg') ||
@@ -105,10 +114,10 @@ function isAssetPath(pathname) {
 }
 
 function isDataPath(pathname) {
-  if (DATA_URLS.includes(pathname) || DATA_URLS.includes(`${pathname}/`)) return true;
+  if (DATA_SUFFIXES.some(suffix => pathname === suffix || pathname.endsWith(suffix))) return true;
   if (pathname.endsWith('.json')) return true;
-  if (/^\/apps\/[^/]+\/?$/.test(pathname)) return true; // per-app pages
-  if (/^\/apps\/[^/]+\/index\.html$/.test(pathname)) return true;
+  if (/\/apps\/[^/]+\/?$/.test(pathname)) return true; // per-app pages
+  if (/\/apps\/[^/]+\/index\.html$/.test(pathname)) return true;
   return false;
 }
 

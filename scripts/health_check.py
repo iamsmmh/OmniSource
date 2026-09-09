@@ -22,91 +22,41 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
-import json
 import os
 import shutil
 import subprocess
 import sys
-import time
-import urllib.error
-import urllib.parse
-import urllib.request
 from pathlib import Path
 from typing import Any
 
+_SCRIPTS = str(Path(__file__).resolve().parent)
+if _SCRIPTS in sys.path:
+    sys.path.remove(_SCRIPTS)
+_SRC = str(Path(__file__).resolve().parents[1] / "src")
+if _SRC in sys.path:
+    sys.path.remove(_SRC)
+sys.path.insert(0, _SRC)
+
+from omnisource.constants import ALTSTORE_NON_FEED
+from omnisource.http import HttpClient
+from omnisource.io import read_json
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 FEEDS_DIR = REPO_ROOT / "feeds"
-NON_FEED_FILES = {
-    "state.json",
-    "health.json",
-    "updates.json",
-    "badge-apps.json",
-    "badge-health.json",
-    "badge-version.json",
-    "badge-sync.json",
-    "badge-verified.json",
-    "discovery.json",
-    "verification.json",
-    "status.json",
-    "duplicates.json",
-    "analytics.json",
-    "sources.json",
-}
-USER_AGENT = "OmniSource-HealthCheck/2.0 (+https://github.com/iamsmmh/OmniSource)"
-
-# A download URL is considered reachable when the server answers with one of
-# these. 206 covers ranged GET, 3xx covers CDN redirects.
-ALIVE_CODES = frozenset({200, 206, 301, 302, 303, 307, 308})
-RETRYABLE_CODES = frozenset({408, 425, 429, 500, 502, 503, 504})
+# Shared with the pipeline so intelligence documents are never probed as feeds.
+NON_FEED_FILES = ALTSTORE_NON_FEED
 ISSUE_LABEL = "broken-link"
 ISSUE_TITLE = "🔗 Broken download links detected"
 
-
-class _NoRedirect(urllib.request.HTTPRedirectHandler):
-    """Stop at the first 3xx: a redirect is sufficient evidence the asset exists."""
-
-    def redirect_request(self, req, fp, code, msg, headers, newurl):  # type: ignore[no-untyped-def]
-        return None
-
-
-_PROBE_OPENER = urllib.request.build_opener(_NoRedirect)
+# The same prober the sync pipeline uses (HEAD, one-byte ranged-GET fallback,
+# no credentials on download URLs), so both jobs always agree on reachability.
+_CLIENT = HttpClient()
 
 
 def probe_url(url: str, *, timeout: float = 15.0, retries: int = 2) -> tuple[bool, str]:
     """Return ``(reachable, detail)`` for a download URL, without credentials."""
-    if not isinstance(url, str) or not url:
-        return False, "empty url"
-    parsed = urllib.parse.urlparse(url)
-    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
-        return False, "not an http(s) url"
-
-    headers = {"User-Agent": USER_AGENT}
-    detail = "unknown"
-    for attempt in range(1, retries + 1):
-        for method, extra in (("HEAD", {}), ("GET", {"Range": "bytes=0-0"})):
-            request = urllib.request.Request(url, headers={**headers, **extra}, method=method)
-            try:
-                with _PROBE_OPENER.open(request, timeout=timeout) as response:
-                    if response.status in ALIVE_CODES:
-                        return True, f"HTTP {response.status}"
-                    detail = f"HTTP {response.status}"
-            except urllib.error.HTTPError as error:
-                detail = f"HTTP {error.code}"
-                if error.code in ALIVE_CODES:
-                    return True, detail
-                if error.code in RETRYABLE_CODES:
-                    break  # transient: retry the whole attempt
-                if method == "GET":
-                    return False, detail
-                if error.code not in {403, 405, 501}:
-                    return False, detail
-            except (urllib.error.URLError, TimeoutError, OSError) as error:
-                detail = str(getattr(error, "reason", error))
-                break
-        if attempt < retries:
-            # Avoid hammering a flapping host; retry with a modest backoff.
-            time.sleep(1.5 * attempt)
-    return False, detail
+    result = _CLIENT.probe(url, timeout=timeout, retries=retries)
+    return result.reachable, result.detail
 
 
 def iter_targets() -> list[dict[str, str]]:
@@ -129,10 +79,9 @@ def iter_targets() -> list[dict[str, str]]:
             targets.append({"app": app_name, "kind": kind, "url": url})
 
     for path in feeds:
-        try:
-            feed = json.loads(path.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError) as error:
-            raise SystemExit(f"health-check: cannot read {path}: {error}") from error
+        feed = read_json(path)
+        if not isinstance(feed, dict):
+            raise SystemExit(f"health-check: cannot read {path}: not a JSON object")
         entries = feed.get("apps", [])
         for app in entries:
             if not isinstance(app, dict):

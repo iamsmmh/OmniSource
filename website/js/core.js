@@ -289,7 +289,7 @@
     el: null,
     input: null,
     body: null,
-    open: false,
+    isOpen: false,
     selected: 0,
     rows: [],          // visible, in DOM order: {type:'app'|'history', slug, name, q}
     lastFocus: null,
@@ -350,9 +350,9 @@
 
     open: function () {
       this.build();
-      if (this.open) { this.input.focus(); return; }
+      if (this.isOpen) { this.input.focus(); return; }
       this.lastFocus = document.activeElement;
-      this.open = true;
+      this.isOpen = true;
       document.body.style.overflow = 'hidden';
       this.el.classList.add('is-open');
       this.input.value = '';
@@ -365,8 +365,8 @@
     },
 
     close: function () {
-      if (!this.open) return;
-      this.open = false;
+      if (!this.isOpen) return;
+      this.isOpen = false;
       this.el.classList.remove('is-open');
       document.body.style.overflow = '';
       if (this.lastFocus && this.lastFocus.focus) this.lastFocus.focus();
@@ -409,7 +409,6 @@
     },
 
     historyRow: function (item, index) {
-      var self = this;
       return '<button class="os-palette-row" type="button" data-index="' + index + '" ' +
         'data-history="' + OS.esc(item.q) + '" aria-selected="false" role="option">' +
         '<svg viewBox="0 0 24 24" width="38" height="38" style="flex:none" aria-hidden="true">' +
@@ -423,7 +422,6 @@
     render: function (query) {
       if (!this.body) return;
       var q = String(query || '').trim();
-      var self = this;
 
       if (q.length < SEARCH_MIN_CHARS) {
         this.renderEmptyState();
@@ -431,7 +429,7 @@
       }
 
       Search.load().then(function () {
-        if (!Palette.open) return;
+        if (!Palette.isOpen) return;
         var results = Search.search(q);
         if (!results.length) {
           Palette.body.innerHTML = '<div class="os-palette-empty">No matches for “' +
@@ -542,11 +540,11 @@
     var typing = tag === 'input' || tag === 'textarea' || tag === 'select' || event.target.isContentEditable;
     if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
       event.preventDefault();
-      Palette.open ? Palette.close() : Palette.open();
-    } else if (event.key === '/' && !typing && !Palette.open) {
+      Palette.isOpen ? Palette.close() : Palette.open();
+    } else if (event.key === '/' && !typing && !Palette.isOpen) {
       event.preventDefault();
       Palette.open();
-    } else if (event.key === 'Escape' && Palette.open) {
+    } else if (event.key === 'Escape' && Palette.isOpen) {
       Palette.close();
     }
   });
@@ -596,6 +594,44 @@
     // The page already has the new version available: ask the new worker to
     // take over; the SW posts an update message that reloads the page.
     try { worker.postMessage({ type: 'omnisource-skip-waiting' }); } catch (e) { /* ignore */ }
+  }
+
+  /* Generic QR dialog (static app pages).
+     Pages carrying #qrButton[data-qr-feed] + #qrDialog get a working QR
+     dialog with zero inline script. Home/install wire their own richer
+     dialogs in js/site.js (different button ids), so this never conflicts. */
+  function setupQrButton() {
+    var button = $('#qrButton');
+    var dialog = $('#qrDialog');
+    if (!button || !dialog || !button.dataset.qrFeed) return;
+    if (button._omniQrBound) return;
+    button._omniQrBound = true;
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog || (event.target.closest && event.target.closest('[data-close]'))) dialog.close();
+    });
+    button.addEventListener('click', function () {
+      var img = $('#qrImage');
+      if (img) {
+        img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=460x460&margin=0&data=' +
+          encodeURIComponent(button.dataset.qrFeed);
+      }
+      if (!dialog.open) dialog.showModal();
+    });
+  }
+
+  /* Header glass solidifies once the page scrolls (see .is-scrolled). */
+  function setupHeaderState() {
+    var header = $('.site-header');
+    if (!header) return;
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      header.classList.toggle('is-scrolled', window.scrollY > 12);
+    };
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
   }
 
   /* Install prompt (beforeinstallprompt) — the browser hands us the moment. */
@@ -756,6 +792,8 @@
     var year = $('#year');
     if (year) year.textContent = String(new Date().getFullYear());
 
+    setupQrButton();
+    setupHeaderState();
     setupReveal();
     setupCounts();
     registerServiceWorker();

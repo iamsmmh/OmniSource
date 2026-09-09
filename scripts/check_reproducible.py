@@ -8,11 +8,11 @@ build, snapshots again and compares.
 
 Volatile values that are correct to refresh on every build are normalized
 before comparing — the build/sync date (``generatedAt``, ``lastSync``), the
-generated footer date on app pages, the README ``last sync`` line and the
-rolling analytics history (which legitimately gains a new day's entry). Any
-*other* difference means a hand-edit or a bug in the generators and fails the
-check. Untracked files under ``feeds/``/``apps/`` are also reported, because a
-generated artifact that is not committed would silently diverge after deploy.
+README ``last sync`` line and the rolling analytics history (which
+legitimately gains a new day's entry). Any *other* difference means a
+hand-edit or a bug in the generators and fails the check. Untracked files
+under ``feeds/``/``apps/`` are also reported, because a generated artifact
+that is not committed would silently diverge after deploy.
 
 Usage
 -----
@@ -45,7 +45,6 @@ TRACKED_PATTERNS = (
 NORMALIZERS = (
     (re.compile(rb'"generatedAt":\s*"[^"]*"'), b'"generatedAt": "<DATE>"'),
     (re.compile(rb'"lastSync":\s*"[^"]*"'), b'"lastSync": "<DATE>"'),
-    (re.compile(rb"Generated \d{4}-\d{2}-\d{2}"), b"Generated <DATE>"),
     (re.compile(rb"last sync \*\*[\d-]+\*\*"), b"last sync **<DATE>**"),
     # Analytics history gains an entry per day; its dates are derived from the
     # snapshot date, not from content.

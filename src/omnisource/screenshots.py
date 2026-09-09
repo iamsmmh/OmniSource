@@ -152,13 +152,30 @@ def process_screenshots(
     *,
     http: Any = None,
     thumbnail_width: int = 480,
+    previous: dict[str, Any] | None = None,
 ) -> ScreenshotReport:
     """Validate, mirror and produce thumbnail metadata.
 
     The function never raises. The returned :class:`ScreenshotReport` carries
     the on-disk artifacts and any human-readable issues.
+
+    ``previous`` is the last committed ``screenshots.json`` document, when
+    available. Offline rebuilds (and transient download failures) cannot
+    re-fetch mirrors, so entries whose remote URL is unchanged keep their
+    last known mirror metadata instead of degrading to
+    ``mirrored: false`` — the pipeline's keep-last-good contract, and what
+    keeps offline reproducibility checks stable.
     """
     report = ScreenshotReport()
+    prior: dict[tuple[str, int, str], dict[str, Any]] = {}
+    if isinstance(previous, dict):
+        for old in previous.get("screenshots", []) or []:
+            if isinstance(old, dict):
+                try:
+                    key = (str(old.get("slug")), int(old.get("index") or 0), str(old.get("originalURL")))
+                except (TypeError, ValueError):
+                    continue
+                prior[key] = old
     base = base_url.rstrip("/")
     icons_dir = assets_dir  # Catalog icons live here.
     screenshots_dir = assets_dir / "screenshots"
@@ -192,32 +209,47 @@ def process_screenshots(
                 "sha256": "",
             }
             payload = _safe_download(http, url)
+            reused = False
             if payload:
                 ok, size, digest = _persist_mirror(mirror_path, payload, ext=ext)
                 if ok:
                     entry["mirrored"] = True
                     entry["size"] = size
                     entry["sha256"] = digest
+            else:
+                # No fresh bytes (offline rebuild or unreachable host): reuse
+                # the last known mirror metadata for this exact URL.
+                old = prior.get((app.slug, index, url))
+                if old and old.get("mirrored"):
+                    reused = True
+                    entry["mirrored"] = True
+                    entry["size"] = old.get("size", 0)
+                    entry["sha256"] = old.get("sha256", "")
+                    if "thumbnailSize" in old:
+                        entry["thumbnailSize"] = old.get("thumbnailSize", 0)
             # Thumbnail generation requires Pillow. The build environment
             # may not have it; if it is missing we record a transparent
             # placeholder and the website falls back to the full image.
-            try:
-                from PIL import Image  # type: ignore
+            # Reused entries keep their recorded size (there is no local
+            # mirror file to re-measure in an offline rebuild).
+            if not reused:
+                try:
+                    from PIL import Image  # type: ignore
 
-                source = mirror_path if entry["mirrored"] else None
-                if source is not None and source.exists():
-                    with Image.open(source) as img:  # type: ignore[arg-type]
-                        img = img.convert("RGBA") if img.mode not in {"RGB", "RGBA"} else img
-                        ratio = thumbnail_width / max(1, img.width)
-                        new_height = max(1, int(img.height * ratio))
-                        resized = img.resize((thumbnail_width, new_height), Image.LANCZOS)
-                        thumbnail_path.parent.mkdir(parents=True, exist_ok=True)
-                        resized.save(thumbnail_path, format="WEBP", quality=78, method=6)
-                        entry["thumbnailSize"] = thumbnail_path.stat().st_size
-            except Exception:
-                # Pillow is optional. The website gracefully falls back to
-                # the full-size mirrored image.
-                entry["thumbnailSize"] = 0
+                    source = mirror_path if entry["mirrored"] else None
+                    if source is not None and source.exists():
+                        with Image.open(source) as img:  # type: ignore[arg-type]
+                            img = img.convert("RGBA") if img.mode not in {"RGB", "RGBA"} else img
+                            ratio = thumbnail_width / max(1, img.width)
+                            new_height = max(1, int(img.height * ratio))
+                            resized = img.resize((thumbnail_width, new_height), Image.LANCZOS)
+                            thumbnail_path.parent.mkdir(parents=True, exist_ok=True)
+                            resized.save(thumbnail_path, format="WEBP", quality=78, method=6)
+                            entry["thumbnailSize"] = thumbnail_path.stat().st_size
+                except Exception:
+                    # Pillow is optional. The website gracefully falls back to
+                    # the full-size mirrored image.
+                    entry["thumbnailSize"] = 0
             report.entries.append(entry)
         # Always emit a "icon gallery" fallback entry when there are no
         # screenshots so the website can render *something* visual.

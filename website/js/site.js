@@ -195,7 +195,7 @@
       ? '<img src="' + OS.esc(OS.url('assets/' + client.icon)) + '" alt="" loading="lazy">'
       : '<span class="cli-fallback">' + OS.esc(String(client.name || '?').slice(0, 1).toUpperCase()) + '</span>';
     var urlValue = installUrlFor(client.id, feedUrl);
-    var common = 'class="button client-button" os-press';
+    var common = 'class="button client-button os-press"';
     if (urlValue) {
       return '<a ' + common + ' href="' + OS.esc(urlValue) + '" title="Add to ' + OS.esc(client.name) + '" aria-label="Add to ' + OS.esc(client.name) + '">' + icon + OS.esc(client.name) + '</a>';
     }
@@ -1113,10 +1113,6 @@
       });
     },
 
-    row: function (label, leftValue, rightValue) {
-      return '<tr><th scope="row">' + OS.esc(label) + '</th><td>' + leftValue + '</td><td>' + rightValue + '</td></tr>';
-    },
-
     screenStrip: function (app) {
       var catalogApp = appForSlug(app.slug);
       var shots = catalogApp && catalogApp.screenshotURLs
@@ -1387,9 +1383,7 @@
 
       node.innerHTML =
         '<div class="chart-body"><svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="Catalog size and verification over time">' +
-        grid + area + paths +
-        '<text x="' + PAD.l + '" y="' + (H - 8) + '" text-anchor="start">' + xLabel(0) + '</text>' +
-        '<text x="' + (W - PAD.r) + '" y="' + (H - 8) + '" text-anchor="end">' + xLabel(n - 1) + '</text>' +
+        grid + area + paths + xLabel(0) + xLabel(n - 1) +
         '</svg></div>' +
         '<div class="donut-legend" style="margin-top:14px">' + legend + '</div>';
     },

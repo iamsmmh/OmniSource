@@ -29,50 +29,25 @@ import sys
 from pathlib import Path
 from typing import Any
 
+_SCRIPTS = str(Path(__file__).resolve().parent)
+if _SCRIPTS in sys.path:
+    sys.path.remove(_SCRIPTS)
+_SRC = str(Path(__file__).resolve().parents[1] / "src")
+if _SRC in sys.path:
+    sys.path.remove(_SRC)
+sys.path.insert(0, _SRC)
+
+from omnisource.constants import ALTSTORE_NON_FEED
+from omnisource.io import atomic_write_text, read_json
+
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = REPO_ROOT / "catalog.json"
 FEEDS_DIR = REPO_ROOT / "feeds"
 MASTER_NAME = "apps.json"
 # Pipeline state, health snapshots, badges and derived intelligence documents
-# are not distributable feeds.
-NON_FEED_FILES = {
-    "state.json",
-    "health.json",
-    "updates.json",
-    "badge-apps.json",
-    "badge-health.json",
-    "badge-version.json",
-    "badge-sync.json",
-    "badge-verified.json",
-    "discovery.json",
-    "verification.json",
-    "status.json",
-    "duplicates.json",
-    "analytics.json",
-    "sources.json",
-}
-
-
-def load_json(path: Path) -> Any | None:
-    try:
-        return json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as error:
-        raise SystemExit(f"merge: cannot read {path}: {error}") from error
-
-
-def write_json(path: Path, data: Any) -> bool:
-    """Atomically write ``data``; return True when the file actually changed."""
-    payload = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
-    if path.exists() and path.read_text(encoding="utf-8") == payload:
-        return False
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    try:
-        tmp.write_text(payload, encoding="utf-8")
-        json.loads(tmp.read_text(encoding="utf-8"))  # never publish invalid JSON
-        tmp.replace(path)
-    finally:
-        tmp.unlink(missing_ok=True)
-    return True
+# are not distributable feeds. Shared with the pipeline so the merge can never
+# mistake an intelligence document for a per-app feed.
+NON_FEED_FILES = ALTSTORE_NON_FEED
 
 
 def envelope_from_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
@@ -124,12 +99,12 @@ def per_app_feeds() -> list[Path]:
 def gather_apps() -> tuple[dict[str, Any], list[dict[str, Any]]]:
     feeds = per_app_feeds()
 
-    catalog = load_json(CATALOG_PATH) if CATALOG_PATH.exists() else None
+    catalog = read_json(CATALOG_PATH) if CATALOG_PATH.exists() else None
     envelope = envelope_from_catalog(catalog) if isinstance(catalog, dict) else None
 
     apps: list[dict[str, Any]] = []
     for path in feeds:
-        feed = load_json(path)
+        feed = read_json(path)
         if not isinstance(feed, dict):
             raise SystemExit(f"merge: {path.name} is not a JSON object")
         entries = feed.get("apps")
@@ -153,7 +128,7 @@ def build_master() -> dict[str, Any]:
     master["apps"] = apps
     existing_news = []
     if (FEEDS_DIR / MASTER_NAME).exists():
-        existing_doc = load_json(FEEDS_DIR / MASTER_NAME)
+        existing_doc = read_json(FEEDS_DIR / MASTER_NAME)
         if isinstance(existing_doc, dict) and isinstance(existing_doc.get("news"), list):
             existing_news = existing_doc["news"]
     master["news"] = existing_news
@@ -167,34 +142,14 @@ def main(argv: list[str] | None = None) -> int:
 
     master = build_master()
     payload = json.dumps(master, indent=2, ensure_ascii=False) + "\n"
-
-    stale: list[Path] = []
-
-    def sync_file(target: Path, content: str | None = None) -> None:
-        current = target.read_text(encoding="utf-8") if target.exists() else None
-        body = content if content is not None else payload
-        if current == body:
-            return
-        stale.append(target)
-        if not args.check:
-            tmp = target.with_suffix(target.suffix + ".tmp")
-            try:
-                tmp.write_text(body, encoding="utf-8")
-                json.loads(tmp.read_text(encoding="utf-8"))  # never publish invalid JSON
-                tmp.replace(target)
-            finally:
-                tmp.unlink(missing_ok=True)
-            print(f"merge: wrote {target.relative_to(REPO_ROOT)}")
-
-    sync_file(FEEDS_DIR / MASTER_NAME, payload)
-
-    if args.check and stale:
-        print(
-            "merge: out of date: "
-            + ", ".join(str(p.relative_to(REPO_ROOT)) for p in stale)
-            + " - run scripts/merge_feeds.py"
-        )
-        return 1
+    target = FEEDS_DIR / MASTER_NAME
+    current = target.read_text(encoding="utf-8") if target.exists() else None
+    if current != payload:
+        if args.check:
+            print(f"merge: out of date: {target.relative_to(REPO_ROOT)} - run scripts/merge_feeds.py")
+            return 1
+        atomic_write_text(target, payload)
+        print(f"merge: wrote {target.relative_to(REPO_ROOT)}")
     print(f"merge: apps.json unified from {len(master['apps'])} modular feed(s)")
     return 0
 

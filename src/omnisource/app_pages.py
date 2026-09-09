@@ -8,7 +8,7 @@ the ``apps/`` directory into the deployed site, so each app has a permanent
 URL: ``https://iamsmmh.github.io/OmniSource/apps/<slug>/``.
 
 Pages are self-contained (shared design-system CSS, ``js/core.js`` for
-theme / clipboard / search palette / service worker) and link back to the
+theme / clipboard / search palette / QR dialog / service worker) and link back to the
 landing page, per-app feed, RSS and direct download, so they work with or
 without JavaScript. The visual language is App Store–style: a tinted glass
 hero, a capsule "Get" button, numbered sections and trust checklist.
@@ -17,14 +17,16 @@ hero, a capsule "Get" button, numbered sections and trust checklist.
 from __future__ import annotations
 
 import html
+import json
 import shutil
 from datetime import date
 from pathlib import Path
 from typing import Any
 
 from omnisource.discovery import newest_version, source_label
-from omnisource.domain import Catalog, today
+from omnisource.domain import Catalog
 from omnisource.duplicates import group_for_app
+from omnisource.install import install_url
 from omnisource.io import atomic_write_text
 
 
@@ -49,40 +51,27 @@ def _fmt_date(value: str) -> str:
         return str(value or "Unknown")
 
 
-def _time_ago(value: str) -> str:
-    try:
-        parsed = date.fromisoformat(str(value)[:10])
-    except ValueError:
-        return "Unknown"
-    days = max(0, (date.today() - parsed).days)
-    if days == 0:
-        return "today"
-    if days == 1:
-        return "yesterday"
-    if days < 30:
-        return f"{days}d ago"
-    if days < 365:
-        return f"{round(days / 30)}mo ago"
-    return f"{round(days / 365)}y ago"
-
-
-def _install_url(client_id: str, feed_url: str) -> str:
-    if client_id in ("altstore", "sidestore"):
-        return f"{client_id}://source?url={feed_url}"
-    if client_id == "feather":
-        return f"feather://source/{feed_url.removeprefix('https://').removeprefix('http://')}"
-    return ""
-
-
 def _badge(cls: str, label: str) -> str:
     return f'<span class="badge {html.escape(cls)}">{html.escape(label)}</span>'
+
+
+# Same trust styling as the website (js/site.js verificationBadgeClass).
+_VERIFICATION_BADGES = {
+    "VERIFIED": ("verified", "✓ Verified"),
+    "COMMUNITY VERIFIED": ("community", "Community verified"),
+    "UNVERIFIED": ("unverified", "Unverified"),
+}
 
 
 def _badges(status: str, health_ok: bool, verification_level: str, stale: bool) -> str:
     parts = [
         _badge("stable" if status == "stable" else status, status.title()),
-        _badge("ok" if health_ok else "bad", "● Online" if health_ok else "● Download unavailable"),
-        _badge("neutral" if verification_level == "VERIFIED" else "warn", verification_level),
+        (
+            '<span class="badge ok"><span class="dot"></span>Online</span>'
+            if health_ok
+            else '<span class="badge bad"><span class="dot"></span>Offline</span>'
+        ),
+        _badge(*_VERIFICATION_BADGES.get(verification_level, ("unverified", verification_level))),
     ]
     if stale and status != "unmaintained":
         parts.append(_badge("warn", "Stale release"))
@@ -99,7 +88,7 @@ def _client_buttons(catalog: Catalog, feed_url: str) -> str:
             image = f'<img src="../../assets/{html.escape(icon)}" alt="" width="20" height="20" loading="lazy">'
         else:
             image = f'<span class="cli-fallback">{html.escape(name[:1].upper())}</span>'
-        url = _install_url(client_id, feed_url)
+        url = install_url(client_id, feed_url)
         if url:
             buttons.append(
                 f'<a class="button client-button" href="{html.escape(url)}" '
@@ -237,7 +226,6 @@ def _detail_cells(
 ) -> str:
     version = html.escape(str(newest.get("version") or "—"))
     updated_at = html.escape(_fmt_date(str(newest.get("date") or "")))
-    updated_ago = html.escape(_time_ago(str(newest.get("date") or "")))
     size = html.escape(_fmt_bytes(int(newest.get("size") or 0)))
     required_os = html.escape(app.minimum_ios_version or "Not listed")
     category = html.escape(str(app.category or "other").title())
@@ -249,7 +237,7 @@ def _detail_cells(
     source = html.escape(source_label(app))
     cells = [
         ("Version", f"v{version}"),
-        ("Updated", f"{updated_at} ({updated_ago})"),
+        ("Updated", updated_at),
         ("Size", size),
         ("Requires iOS", required_os),
         ("Category", category),
@@ -360,9 +348,7 @@ def _head(
 
 def json_quote(value: str) -> str:
     """JSON string literal (double-quoted, escaped) for inline JSON-LD."""
-    text = str(value)
-    text = text.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n").replace("\r", "\\r")
-    return f'"{text}"'
+    return json.dumps(str(value), ensure_ascii=False)
 
 
 def render_app_page(
@@ -377,6 +363,7 @@ def render_app_page(
 ) -> str:
     """Render one app detail page as an HTML string."""
     base = catalog.base_url.rstrip("/")
+    repo_url = str(catalog.source.get("repository") or "https://github.com/iamsmmh/OmniSource")
     app_state = state.get(app.slug) if isinstance(state.get(app.slug), dict) else {}
     versions = app_state.get("versions") if isinstance(app_state.get("versions"), list) else []
     newest = newest_version(state, app.slug)
@@ -446,7 +433,7 @@ def render_app_page(
         '        <a href="../../install/">Install</a>\n',
         f'        <a href="{html.escape(rss_url)}" target="_blank" rel="noopener">RSS</a>\n',
         f'        <a href="{html.escape(feed_url)}" target="_blank" rel="noopener">Feed</a>\n',
-        '        <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener">GitHub</a>\n',
+        f'        <a href="{html.escape(repo_url)}" target="_blank" rel="noopener">GitHub</a>\n',
         "      </div>\n",
         '      <button class="icon-button theme-toggle" id="themeButton" type="button" aria-label="Change color theme" title="Theme: system">\n',
         '        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2M12 19.2v2M2.8 12h2M19.2 12h2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l1.4 1.4"/></svg>\n',
@@ -482,7 +469,7 @@ def render_app_page(
         _client_buttons(catalog, feed_url),
         '        <button class="button ap-copy" type="button" '
         f'data-copy="{html.escape(feed_url)}" data-copy-msg="Source URL copied">Copy source URL</button>\n',
-        '        <button class="button square" type="button" id="qrButton" title="Show QR code" aria-label="Show QR code for the source URL">\n',
+        f'        <button class="button square" type="button" id="qrButton" data-qr-feed="{html.escape(feed_url)}" title="Show QR code" aria-label="Show QR code for the source URL">\n',
         '          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M15 14h2v2h-2zM19 14h1.4v3.4H19zM14 19h3.4v1.4H14zM20 19.6V20h-1.4"/></svg>\n',
         "        </button>\n",
         "      </div>\n",
@@ -543,7 +530,7 @@ def render_app_page(
         "  </main>\n\n",
         '  <footer class="ap-footer">\n',
         '    <div class="ap-footer-inner">\n',
-        f"      <span>Generated {html.escape(today())} · v{version_text} of {title}.</span>\n",
+        f"      <span>v{version_text} of {title} · refreshed automatically.</span>\n",
         '      <a href="../../#catalog">← Back to catalog</a>\n',
         "      <span>Independent community project. Apps and trademarks belong to their respective owners.</span>\n",
         "    </div>\n",
@@ -560,24 +547,6 @@ def render_app_page(
         '    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span></span>\n',
         "  </div>\n\n",
         "  <script src=\"../../js/core.js\" defer></script>\n",
-        '  <script>\n'
-        "    // Tiny QR opener: core.js owns theme/clipboard/palette/SW.\n"
-        "    (function () {\n"
-        "      'use strict';\n"
-        "      var feed = '" + html.escape(feed_url, quote=True) + "';\n"
-        "      var dialog = document.getElementById('qrDialog');\n"
-        "      var button = document.getElementById('qrButton');\n"
-        "      if (!dialog || !button) return;\n"
-        "      dialog.addEventListener('click', function (event) {\n"
-        "        if (event.target === dialog || (event.target.closest && event.target.closest('[data-close]'))) dialog.close();\n"
-        "      });\n"
-        "      button.addEventListener('click', function () {\n"
-        "        var img = document.getElementById('qrImage');\n"
-        "        img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=460x460&margin=0&data=' + encodeURIComponent(feed);\n"
-        "        dialog.showModal();\n"
-        "      });\n"
-        "    })();\n"
-        "  </script>\n",
         "</body>\n",
         "</html>\n",
     ]

@@ -97,6 +97,7 @@
   --shadow-lg: 0 4px 14px rgba(0, 0, 0, 0.06), 0 36px 90px rgba(0, 0, 0, 0.15);
   --glow-accent: 0 10px 34px rgba(91, 77, 242, 0.35);
   --glow-soft: 0 18px 60px rgba(91, 77, 242, 0.14);
+  --glow-card: 0 24px 70px rgba(91, 77, 242, 0.16);
 
   --blur-glass: blur(22px) saturate(1.7);
 
@@ -169,6 +170,7 @@ html[data-theme="dark"] {
   --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.5), 0 44px 110px rgba(0, 0, 0, 0.6);
   --glow-accent: 0 10px 40px rgba(139, 124, 255, 0.4);
   --glow-soft: 0 18px 70px rgba(139, 124, 255, 0.16);
+  --glow-card: 0 24px 80px rgba(139, 124, 255, 0.22);
 }
 
 /* Dark palette — system preference (auto) ---------------------------------- */
@@ -216,6 +218,7 @@ html[data-theme="dark"] {
     --shadow-lg: 0 6px 20px rgba(0, 0, 0, 0.5), 0 44px 110px rgba(0, 0, 0, 0.6);
     --glow-accent: 0 10px 40px rgba(139, 124, 255, 0.4);
     --glow-soft: 0 18px 70px rgba(139, 124, 255, 0.16);
+    --glow-card: 0 24px 80px rgba(139, 124, 255, 0.22);
   }
 }
 
@@ -236,7 +239,14 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  /* Ambient aurora wash: fixed accent-tinted light from the top corners so
+     every page has depth even where there is no hero. Theme-aware via the
+     accent tokens; kept whisper-quiet so content stays king. */
+  background:
+    radial-gradient(1100px 520px at 12% -8%, color-mix(in srgb, var(--accent-1) 9%, transparent), transparent 65%),
+    radial-gradient(940px 500px at 88% -4%, color-mix(in srgb, var(--accent-3) 8%, transparent), transparent 65%),
+    var(--bg);
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-sans);
   font-size: var(--text-base);
@@ -283,6 +293,7 @@ video { display: block; max-width: 100%; }
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 6px;
+  box-shadow: 0 0 0 4px var(--accent-ring);
 }
 
 /* Skip link (screen readers / keyboard users). */

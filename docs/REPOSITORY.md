@@ -41,7 +41,7 @@ OmniSource/
 │   ├── health_check.py       # Standalone download-link probe (HEAD/ranged GET)
 │   └── notify.py             # Broadcast notifications (Discord/Telegram/ntfy/webhook)
 ├── schemas/                  # JSON schemas
-├── tests/                    # Unit test suite (89 tests)
+├── tests/                    # Unit test suite (96 tests)
 ├── feeds/                    # Generated canonical feeds, RSS, intelligence docs, state
 ├── apps/<slug>/index.html    # Generated static app detail pages (design-system styled)
 ├── api/                      # Local feeds mirror (gitignored; published inside _site/api/)
