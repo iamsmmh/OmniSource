@@ -242,8 +242,7 @@ def _detail_cells(
     source = html.escape(source_label(app))
     source_url = html.escape((app.source_url or "").strip())
     source_value = (
-        f'<a class="ap-source-link" href="{source_url}" target="_blank" rel="noopener">'
-        f"{source}</a>"
+        f'<a class="ap-source-link" href="{source_url}" target="_blank" rel="noopener">{source}</a>'
         if source_url
         else source
     )
