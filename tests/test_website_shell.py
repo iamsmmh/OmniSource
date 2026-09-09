@@ -39,12 +39,12 @@ class TestWebsiteShell(unittest.TestCase):
         self.assertIn("--glass-nav:", tokens)
         self.assertIn("--blur-liquid:", tokens)
         self.assertIn("--bg: #e8eef8", tokens)
-        self.assertIn("--bg: #07070f", tokens)
+        self.assertIn("--bg: #06060e", tokens)
         self.assertIn("--highlight-inset: inset 0 1px 0 rgba(255, 255, 255, 0.16)", tokens)
 
     def test_liquid_glass_nav(self) -> None:
         css = (ROOT / "assets" / "design-system" / "components.css").read_text(encoding="utf-8")
-        self.assertIn("Liquid Glass layer", css)
+        self.assertIn("LIQUID GLASS layer", css)
         self.assertIn(".nav-toggle", css)
         self.assertIn("@media (max-width: 1100px)", css)
         self.assertIn("var(--glass-nav)", css)
