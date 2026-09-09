@@ -39,6 +39,11 @@ URL manually. Each app also publishes its own feed at `https://iamsmmh.github.io
 
 ## Catalog
 
+The complete generated catalog is available below. For a cleaner browsing experience, use the [OmniSource website](https://iamsmmh.github.io/OmniSource/).
+
+<details>
+<summary><strong>View all apps and source links</strong></summary>
+
 <!-- omnisource:catalog:start -->
 
 _Catalogue last changed 2026-09-07 · 22 apps · 22/22 downloads reachable._
@@ -69,6 +74,8 @@ _Catalogue last changed 2026-09-07 · 22 apps · 22/22 downloads reachable._
 | **Provenance** | `org.provenance-emu.provenance` | `3.3.0` | 2026-03-14 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/provenance.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/provenance.json) | [`provenance.json`](https://iamsmmh.github.io/OmniSource/provenance.json) |
 
 <!-- omnisource:catalog:end -->
+
+</details>
 
 **Columns** — *Status*: 🟢 stable · 🟡 beta · 🔵 manually published · 🔴 unmaintained.
 *Download*: ✅ / ⚠️ reflects the last automated reachability probe.
@@ -112,11 +119,18 @@ generated — edit `catalog.json`, never the generated files.
 | Path | Purpose |
 | --- | --- |
 | `catalog.json` | Source of truth: apps, official upstreams, verification and compatibility metadata |
-| `feeds/` | Generated AltStore v2 feeds + `health.json` + pipeline `state.json` |
+| `config/` | Runtime defaults for sync, retries, health checks and history |
 | `assets/` | App and client icons served over Pages |
-| `src/omnisource/` | Sync pipeline (providers, release tracking, AltStore feed rendering, validation) |
-| `scripts/` | CLI wrappers: `omnisource.py` · `validate.py` · `validate_jq.sh` · `health_check.py` |
-| `website/` | Minimal static GitHub Pages landing page |
+| `src/omnisource/` | Organized Python package for providers, feeds, validation and release tracking |
+| `scripts/` | Small CLI entry points, including the shared Pages site builder |
+| `schemas/` | Catalog and AltStore feed contracts |
+| `tests/` | Offline unit test suite |
+| `feeds/` | Generated canonical feeds, health data and pipeline state |
+| `website/` | Static interface organized into HTML, CSS and JavaScript |
+| `docs/` | Maintainer documentation and repository map |
+| Root `*.json` / `*.xml` | Generated compatibility mirrors that preserve existing subscriber URLs |
+
+See the concise [repository guide](docs/REPOSITORY.md) before making structural changes.
 
 ## For developers
 

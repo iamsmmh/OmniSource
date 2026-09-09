@@ -1,12 +1,22 @@
-.PHONY: all build validate test format lint check
+.PHONY: all build site serve validate test format lint check clean
 
 PYTHON ?= python3
+PORT ?= 8000
 export PYTHONPATH := src
 
-all: build validate test
+all: build check
 
+# Refresh generated source feeds from their configured upstreams.
 build:
 	$(PYTHON) scripts/omnisource.py
+
+# Assemble the exact static bundle deployed to GitHub Pages.
+site:
+	$(PYTHON) scripts/build_site.py
+
+# Preview the assembled website locally at http://localhost:$(PORT).
+serve: site
+	$(PYTHON) -m http.server $(PORT) --bind 0.0.0.0 --directory _site
 
 validate:
 	$(PYTHON) scripts/validate.py
@@ -23,3 +33,5 @@ lint:
 
 check: lint validate test
 
+clean:
+	rm -rf _site
