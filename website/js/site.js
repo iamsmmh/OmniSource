@@ -124,6 +124,7 @@
       }
       var discovery = docs[5];
       if (discovery && Array.isArray(discovery.apps)) {
+        window.OS_CATALOG = discovery.apps;
         discovery.apps.forEach(function (entry) { state.discovery.set(entry.id || entry.slug, entry); });
       }
       state.trending = docs[6];
