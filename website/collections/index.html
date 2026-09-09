@@ -502,7 +502,8 @@
     // Load catalog data
     fetch('../api/catalog.json')
       .then(r => r.json())
-      .then(catalog => {
+      .then(data => {
+        const catalog = data.apps || data;
         window.OS_CATALOG = catalog;
         OS.Collections.renderAll();
         OS.Favorites.injectButtons();
@@ -512,7 +513,8 @@
       .catch(() => {
         fetch('../feeds/catalog.json')
           .then(r => r.json())
-          .then(catalog => {
+          .then(data => {
+            const catalog = data.apps || data;
             window.OS_CATALOG = catalog;
             OS.Collections.renderAll();
             OS.Favorites.injectButtons();

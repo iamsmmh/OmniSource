@@ -30,7 +30,7 @@
         <a href="../status/">Status</a>
         <a href="../analytics/">Analytics</a>
         <a href="../install/">Install</a>
-        <a href="collections/" class="collections-nav-item">Collections</a>
+        <a href="../collections/" class="collections-nav-item">Collections</a>
         <a href="index.html" class="active" aria-current="page">
           <span>Favorites</span>
           <span class="favorites-count" id="favorites-count">0</span>
@@ -89,8 +89,8 @@
           <h4>Resources</h4>
           <a href="../install/">Install Center</a>
           <a href="../search/">Search</a>
-          <a href="favorites/">Favorites</a>
-          <a href="collections/">Collections</a>
+          <a href="../favorites/">Favorites</a>
+          <a href="../collections/">Collections</a>
         </div>
         <div class="footer-col">
           <h4>Legal</h4>
@@ -175,7 +175,8 @@
     // Load catalog data
     fetch('../api/catalog.json')
       .then(r => r.json())
-      .then(catalog => {
+      .then(data => {
+        const catalog = data.apps || data;
         window.OS_CATALOG = catalog;
         OS.Favorites.injectButtons();
         OS.Ratings.injectRatingDisplays();
@@ -209,7 +210,8 @@
         // Fallback: try to load from feeds
         fetch('../feeds/catalog.json')
           .then(r => r.json())
-          .then(catalog => {
+          .then(data => {
+            const catalog = data.apps || data;
             window.OS_CATALOG = catalog;
             OS.Favorites.injectButtons();
             OS.Ratings.injectRatingDisplays();
