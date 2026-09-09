@@ -225,12 +225,8 @@ class SourceLinkTests(unittest.TestCase):
         by_id = {entry["id"]: entry for entry in doc["sources"]}
         self.assertEqual(by_id["mrdrvt99/YouProEXTRA"]["homepage"], "https://github.com/mrdrvt99/YouProEXTRA")
         self.assertEqual(by_id["mrdrvt99/YouProEXTRA"]["sourceURL"], "https://github.com/mrdrvt99/YouProEXTRA")
-        self.assertEqual(
-            by_id["https://repo.ikghd.me/repo.json"]["homepage"], "https://repo.ikghd.me"
-        )
-        self.assertEqual(
-            by_id["https://repo.ikghd.me/repo.json"]["sourceURL"], "https://repo.ikghd.me"
-        )
+        self.assertEqual(by_id["https://repo.ikghd.me/repo.json"]["homepage"], "https://repo.ikghd.me")
+        self.assertEqual(by_id["https://repo.ikghd.me/repo.json"]["sourceURL"], "https://repo.ikghd.me")
 
     def test_reputation_group_links_to_the_source(self) -> None:
         catalog = _sideload_catalog()
@@ -239,9 +235,7 @@ class SourceLinkTests(unittest.TestCase):
         self.assertEqual(by_id["mrdrvt99/YouProEXTRA"]["homepage"], "https://github.com/mrdrvt99/YouProEXTRA")
         self.assertEqual(by_id["mrdrvt99/YouProEXTRA"]["sourceURL"], "https://github.com/mrdrvt99/YouProEXTRA")
         self.assertEqual(by_id["https://repo.ikghd.me/repo.json"]["homepage"], "https://repo.ikghd.me")
-        self.assertEqual(
-            by_id["https://repo.ikghd.me/repo.json"]["sourceURL"], "https://repo.ikghd.me"
-        )
+        self.assertEqual(by_id["https://repo.ikghd.me/repo.json"]["sourceURL"], "https://repo.ikghd.me")
 
     def test_compare_summary_carries_source_url(self) -> None:
         catalog = _sideload_catalog()
