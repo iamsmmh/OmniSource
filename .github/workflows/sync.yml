@@ -45,7 +45,7 @@ jobs:
   build:
     name: Sync, validate, build
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     permissions:
       contents: write
     outputs:
@@ -93,8 +93,25 @@ jobs:
             ${{ inputs.skip_health && '--no-health' || '' }} \
             $EXTRA
 
+      # Test gate: the commit step below only runs if every check here is
+      # green (GitHub Actions skips the rest of the job on any failure). This
+      # is the same suite validate.yml requires on PRs, so a scheduled sync or
+      # a dispatch run can never publish feeds, pages or README changes that
+      # would fail a pull request.
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests
+
       - name: Validate output
         run: python3 scripts/validate.py
+
+      # jq-only lint + AltStore v2 structural assertions.
+      - name: Lint JSON with jq
+        run: bash scripts/validate_jq.sh
+
+      # A rebuild from the freshly generated state must be a no-op: proves
+      # the build is deterministic and nothing was hand-edited mid-run.
+      - name: Verify generated artifacts are reproducible
+        run: python3 scripts/check_reproducible.py
 
       - name: Commit changes
         id: commit
