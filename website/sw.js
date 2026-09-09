@@ -24,7 +24,7 @@
  */
 'use strict';
 
-const VERSION = 'omnisource-v4';
+const VERSION = 'omnisource-v5';
 const CORE_CACHE = `${VERSION}-core`;
 const DATA_CACHE = `${VERSION}-data`;
 const ASSET_CACHE = `${VERSION}-assets`;

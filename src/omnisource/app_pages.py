@@ -306,8 +306,9 @@ def _head(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#07070d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#e8eef8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#07070f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#07070f" id="themeColor">
   <title>{title} — OmniSource</title>
   <meta name="description" content="{sub}">
   <link rel="canonical" href="{html.escape(page_url)}">

@@ -16,18 +16,43 @@
   'use strict';
 
   /* ------------------------------------------------------------------ root */
-  // js/core.js is referenced as <root>/js/core.js, so the site root is the
-  // script's directory minus /js. This keeps deep pages (apps/<slug>/)
-  // working without any per-page configuration.
-  var scriptEl = document.currentScript;
-  var ROOT = '';
-  if (scriptEl && scriptEl.src) {
-    ROOT = scriptEl.src.slice(0, scriptEl.src.lastIndexOf('/js/core.js'));
+  // Resolve the site root from a loaded asset URL. `document.currentScript`
+  // is null for deferred scripts (every page loads core.js with `defer`),
+  // so we look the tag up in the DOM instead. Falling back to the pathname
+  // keeps GitHub Pages project sites (/OmniSource/) working even if the
+  // script tag is rewritten.
+  function detectRoot() {
+    function fromUrl(value, needle) {
+      if (!value) return '';
+      try { value = new URL(value, location.href).href; } catch (e) { return ''; }
+      var idx = value.lastIndexOf(needle);
+      return idx === -1 ? '' : value.slice(0, idx);
+    }
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      var rooted = fromUrl(scripts[i].src, '/js/core.js');
+      if (rooted) return rooted.replace(/\/+$/, '');
+    }
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var j = 0; j < links.length; j++) {
+      var fromCss = fromUrl(links[j].href, '/assets/design-system/');
+      if (fromCss) return fromCss.replace(/\/+$/, '');
+    }
+    var path = (location.pathname || '/').replace(/\/index\.html$/, '');
+    path = path.replace(/\/(compare|status|analytics|install|search)(\/.*)?$/, '');
+    path = path.replace(/\/apps\/[^/]+(\/.*)?$/, '');
+    path = path.replace(/\/+$/, '');
+    return path ? location.origin + path : location.origin;
   }
+  var ROOT = detectRoot();
   function url(path) {
     if (!path) return '#';
     if (/^https?:\/\//.test(path)) return path;
     return ROOT + (path.charAt(0) === '/' ? path : '/' + path);
+  }
+  function asset(name) {
+    var file = String(name || 'OmniSource.png').replace(/^assets\//, '');
+    return url('assets/' + file);
   }
 
   /* --------------------------------------------------------------- helpers */
@@ -37,6 +62,7 @@
   var OS = {
     ROOT: ROOT,
     url: url,
+    asset: asset,
     $: $,
     $$: $$,
     animateCount: animateCount,
@@ -138,7 +164,11 @@
     document.documentElement.dataset.theme = theme;
     try { localStorage.setItem('omnisource-theme', theme); } catch (e) { /* private mode */ }
     var meta = $('#themeColor');
-    if (meta) meta.content = (theme === 'light') ? '#f5f5f7' : '#07070d';
+    if (meta) {
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var dark = theme === 'dark' || (theme === 'auto' && prefersDark);
+      meta.content = dark ? '#07070f' : '#e8eef8';
+    }
     var btn = $('#themeButton');
     if (btn) {
       var labels = { auto: 'Theme: system', light: 'Theme: light', dark: 'Theme: dark' };
@@ -353,6 +383,7 @@
       if (this.isOpen) { this.input.focus(); return; }
       this.lastFocus = document.activeElement;
       this.isOpen = true;
+      if (OS.closeNav) OS.closeNav();
       document.body.style.overflow = 'hidden';
       this.el.classList.add('is-open');
       this.input.value = '';
@@ -399,7 +430,7 @@
     appRow: function (doc, query, index) {
       var name = OS.Search.highlight(doc.name || '', query);
       var sub = OS.Search.highlight(doc.developer || doc.subtitle || '', query);
-      var icon = OS.cleanUrl(doc.icon ? (ROOT + 'assets/' + doc.icon) : null) || (ROOT + 'assets/OmniSource.png');
+      var icon = asset(doc.icon || 'OmniSource.png');
       return '<a class="os-palette-row" href="' + OS.esc(url('apps/' + (doc.slug || doc.id) + '/')) + '" ' +
         'data-index="' + index + '" aria-selected="false" role="option">' +
         '<img src="' + OS.esc(icon) + '" alt="" width="38" height="38" loading="lazy">' +
@@ -621,17 +652,74 @@
 
   /* Header glass solidifies once the page scrolls (see .is-scrolled). */
   function setupHeaderState() {
-    var header = $('.site-header');
+    var header = $('.site-header') || $('.ap-header');
     if (!header) return;
     var ticking = false;
     var update = function () {
       ticking = false;
-      header.classList.toggle('is-scrolled', window.scrollY > 12);
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
     };
     window.addEventListener('scroll', function () {
       if (!ticking) { ticking = true; requestAnimationFrame(update); }
     }, { passive: true });
     update();
+  }
+
+  /* Mobile glass drawer. Injected so generated app pages get it for free. */
+  function setupMobileNav() {
+    var nav = $('.site-header .nav') || $('.ap-header-inner');
+    if (!nav) return;
+    var links = nav.querySelector('.nav-links');
+    if (!links) return;
+    if (!links.id) links.id = 'navLinks';
+
+    var btn = $('#navToggle');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.id = 'navToggle';
+      btn.className = 'icon-button nav-toggle';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Open menu');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-controls', links.id);
+      btn.innerHTML =
+        '<svg class="icon-menu" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>' +
+        '<svg class="icon-close" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>';
+      nav.appendChild(btn);
+    }
+
+    var backdrop = $('.nav-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'nav-backdrop';
+      backdrop.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(backdrop);
+    }
+
+    function closeNav() {
+      document.body.classList.remove('nav-open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open menu');
+    }
+    function openNav() {
+      document.body.classList.add('nav-open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Close menu');
+    }
+    btn.addEventListener('click', function () {
+      document.body.classList.contains('nav-open') ? closeNav() : openNav();
+    });
+    backdrop.addEventListener('click', closeNav);
+    links.addEventListener('click', function (event) {
+      if (event.target.closest && event.target.closest('a')) closeNav();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeNav();
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1100) closeNav();
+    });
+    OS.closeNav = closeNav;
   }
 
   /* Install prompt (beforeinstallprompt) — the browser hands us the moment. */
@@ -794,6 +882,7 @@
 
     setupQrButton();
     setupHeaderState();
+    setupMobileNav();
     setupReveal();
     setupCounts();
     registerServiceWorker();
