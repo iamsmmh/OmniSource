@@ -26,8 +26,12 @@ app pages, the API or search was removed without a live replacement.**
 | `website/compare.html` | Reduced to a redirect shim; the compare page moved to `website/compare/` (path-based, deep-linkable, shareable) preserving `?left=&right=`. |
 | `website/sw.js` | v2 → v3: caches the whole page set (`/`, `compare/`, `status/`, `analytics/`, `install/`, `search/`), design-system CSS, stale-while-revalidate for every JSON feed, per-app pages cached on first visit. |
 | `website/manifest.webmanifest` | Added PWA shortcuts (Catalog, Updates, Compare, Health, Install). |
-| `src/omnisource/app_pages.py` | App Store–style template: tinted glass hero, capsule Get button, numbered sections, release-notes `<details>`, trust checklist, install cards, related apps, QR dialog, JSON-LD `SoftwareApplication`. Replaces ~300 lines of per-page inline `PAGE_SCRIPT` JS and inline CSS with shared `js/core.js` + design-system links. |
+| `src/omnisource/app_pages.py` | App Store-style template: tinted glass hero, capsule Get button, numbered sections, release-notes `<details>`, trust checklist, install cards, related apps, QR dialog, JSON-LD `SoftwareApplication`. Replaces ~300 lines of per-page inline `PAGE_SCRIPT` JS and inline CSS with shared `js/core.js` + design-system links. Also made CI-lint clean: long template lines wrapped as adjacent string concatenations (generated HTML byte-identical) and quote style normalized by `ruff format`. |
 | `scripts/build_site.py` | Thin wrapper over the new `src/omnisource/site.py` builder, which now also emits `sitemap.xml`, `robots.txt`, minified design-system CSS and the gz API mirror. |
+| `scripts/merge_feeds.py` | Fixed the same pre-existing stale skip-list bug as `scripts/validate_jq.sh`: `NON_FEED_FILES` had never been extended for the Phase 4–13 intelligence documents, so the merge exited with "community.json must contain exactly one app entry" and the "Rebuild apps.json from feeds/" CI job failed on every run. It now imports the canonical `ALTSTORE_NON_FEED` from `src/omnisource/constants.py`, so the list cannot drift again. |
+| `src/omnisource/screenshots.py` + `src/omnisource/pipeline.py` | Fixed a real reproducibility bug in the "Verify generated artifacts are reproducible" CI job: `feeds/screenshots.json` embedded download results (`mirrored`/`size`/`sha256`) that depend on whether the *build machine* can reach third-party screenshot hosts, so the offline rebuild in the check drifts whenever the verifying environment differs from the one that generated the committed file. A mirror already on disk is now trusted as-is (deterministic offline rebuild, transient remote failures can no longer demote a good mirror); real sync runs pass `refresh=True` and re-download so upstream updates still land. |
+| `scripts/check_reproducible.py` | Normalizes the network-dependent mirror state of `feeds/screenshots.json` before comparing (the URLs and thumbnail metadata stay fully checked), matching the existing date normalization for `generatedAt`/`lastSync`. |
+| `Makefile` | `make check` now runs the entire CI gate, including `merge_feeds.py --check`, `check_reproducible.py --diff` and `ruff format --check` — the gap that let the two stale-skip-list bugs and the line-length lint ship in the first place. |
 | `scripts/validate_jq.sh` | Fixed a pre-existing bug: the "not an AltStore feed" skip-list had never been extended for the Phase 4–13 intelligence documents, so `trending.json`, `related.json`, `reputation.json`, `download-intelligence.json`, `community.json`, `install.json`, `search-index.json`, `compare.json` and `screenshots.json` were wrongly validated against the AltStore v2 `.apps[]` contract and failed every run (reproduced on `main`). The list now mirrors `ALTSTORE_NON_FEED` from `src/omnisource/constants.py`. |
 | `website/js/core.js` | (new file, bug note) count-up observer now arms a retry when the async value is set after first paint, and ratio values like `22/22` render directly — the hero stats previously could stay at `0` in real browsers. |
 
@@ -94,3 +98,27 @@ duplicate JSON tree removed entirely.
 - `sdk/` — public SDK surface (JS + Python) consuming the API.
 - PNG icons — kept as fallbacks (see WebP note above).
 - `feeds/state.json` — runtime sync state, already excluded from the site.
+
+## Follow-up: dedup + bug-fix pass (PR #20, merged on top of this report)
+
+A second agent pass independently found the same two CI-red bugs (stale
+`merge_feeds.py` skip-list, offline `screenshots.json` drift) plus more, and
+was reconciled with this report's fixes at merge time:
+
+- `merge_feeds.py` — kept this report's canonical `ALTSTORE_NON_FEED` import
+  (as a defensive `set()` copy) and additionally deduplicated onto the
+  shared `omnisource.io` JSON helpers (203 → 158 lines, byte-identical
+  `apps.json`).
+- `screenshots.py` + `pipeline.py` — kept this report's trust-on-disk /
+  `refresh=True` mechanism and added a `previous`-document fallback layer:
+  fresh checkouts (CI) have no on-disk mirrors since mirrors are not
+  committed to git, so unchanged URLs reuse the last committed mirror
+  metadata instead of degrading. The `check_reproducible.py` mirror-state
+  normalization from this report stays as a backstop.
+- `sdk/javascript/omnisource.{mjs,cjs}` — fixed a quadratic-ReDoS CodeQL
+  alert (`/\/+$/` on caller-supplied `baseURL`) with an identical
+  linear-time `stripTrailingSlashes()` helper in both twins.
+- Also fixed: the ⌘K palette `open` flag/method collision (palette never
+  opened), `sw.js` sub-path matching (v4), SDK CJS/MJS edge-case drift, and
+  ~550 lines of duplication (`tracking.py` wrappers, a second HTTP probe,
+  23 inline QR scripts → one `core.js` binding). Test suite: 102 tests.

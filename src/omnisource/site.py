@@ -135,11 +135,7 @@ def _sitemap(base_url: str, slugs: list[str], today: str) -> str:
 
 def _robots(base_url: str) -> str:
     base = base_url.rstrip("/")
-    return (
-        "User-agent: *\n"
-        "Allow: /\n"
-        f"Sitemap: {base}/sitemap.xml\n"
-    )
+    return f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n"
 
 
 def _minify_css(text: str) -> str:

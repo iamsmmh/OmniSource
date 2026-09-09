@@ -21,10 +21,19 @@ class OmniSourceError extends Error {
 const DEFAULT_BASE_URL = 'https://iamsmmh.github.io/OmniSource';
 const DEFAULT_TIMEOUT = 8000;
 
+// Linear-time trailing-slash trim. (A /\/+$/ regex backtracks
+// quadratically on slash-heavy input, so it must not run on
+// caller-supplied URLs.)
+function stripTrailingSlashes(value) {
+  let end = value.length;
+  while (end > 0 && value.charCodeAt(end - 1) === 47) end--;
+  return value.slice(0, end);
+}
+
 class OmniSource {
   constructor(options) {
     options = options || {};
-    this.baseURL = (options.baseURL == null ? DEFAULT_BASE_URL : options.baseURL).replace(/\/+$/, '');
+    this.baseURL = stripTrailingSlashes(options.baseURL == null ? DEFAULT_BASE_URL : options.baseURL);
     this.timeout = options.timeout == null ? DEFAULT_TIMEOUT : options.timeout;
     this.lastError = null;
     this.fetch = options.fetch || ((url, init) => {

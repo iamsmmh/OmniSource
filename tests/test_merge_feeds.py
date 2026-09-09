@@ -74,9 +74,7 @@ class TestMergeFeeds(unittest.TestCase):
             # Intelligence-shaped documents: no single-app "apps" entry.
             (feeds / "trending.json").write_text(json.dumps({"trending": [{"slug": "alpha"}]}))
             (feeds / "community.json").write_text(json.dumps({"popular": []}))
-            (feeds / "install.json").write_text(
-                json.dumps({"apps": [_app_entry("A", "x"), _app_entry("B", "y")]})
-            )
+            (feeds / "install.json").write_text(json.dumps({"apps": [_app_entry("A", "x"), _app_entry("B", "y")]}))
 
             previous_feeds, previous_catalog = MERGE.FEEDS_DIR, MERGE.CATALOG_PATH
             MERGE.FEEDS_DIR, MERGE.CATALOG_PATH = feeds, feeds / "catalog.json"
@@ -94,12 +92,8 @@ class TestMergeFeeds(unittest.TestCase):
 class TestInstallUrl(unittest.TestCase):
     def test_deep_links(self) -> None:
         feed = "https://example.com/OmniSource/alpha.json"
-        self.assertEqual(
-            install_url("altstore", feed), f"altstore://source?url={feed}"
-        )
-        self.assertEqual(
-            install_url("sidestore", feed), f"sidestore://source?url={feed}"
-        )
+        self.assertEqual(install_url("altstore", feed), f"altstore://source?url={feed}")
+        self.assertEqual(install_url("sidestore", feed), f"sidestore://source?url={feed}")
         self.assertEqual(
             install_url("feather", feed),
             "feather://source/example.com/OmniSource/alpha.json",

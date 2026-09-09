@@ -8,11 +8,13 @@ build, snapshots again and compares.
 
 Volatile values that are correct to refresh on every build are normalized
 before comparing — the build/sync date (``generatedAt``, ``lastSync``), the
-README ``last sync`` line and the rolling analytics history (which
-legitimately gains a new day's entry). Any *other* difference means a
-hand-edit or a bug in the generators and fails the check. Untracked files
-under ``feeds/``/``apps/`` are also reported, because a generated artifact
-that is not committed would silently diverge after deploy.
+README ``last sync`` line, the rolling analytics history (which legitimately
+gains a new day's entry) and the screenshot-mirror state
+(``mirrored``/``size``/``sha256``/``thumbnailSize``), which depends on
+whether *this* machine could reach the remote screenshot hosts. Any *other*
+difference means a hand-edit or a bug in the generators and fails the check.
+Untracked files under ``feeds/``/``apps/`` are also reported, because a
+generated artifact that is not committed would silently diverge after deploy.
 
 Usage
 -----
@@ -24,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import re
 import shutil
 import subprocess
@@ -68,6 +71,28 @@ def _norm(data: bytes) -> bytes:
     return data
 
 
+def _norm_screenshots(data: bytes) -> bytes:
+    """Blank the network-dependent mirror state in ``feeds/screenshots.json``.
+
+    Whether a screenshot could be mirrored depends on the build machine's
+    reachability to third-party hosts (a fresh CI runner downloads, an
+    offline or sandboxed build cannot), so ``mirrored``/``size``/``sha256``
+    /``thumbnailSize`` are environment state, not generated content. The
+    URLs and thumbnail metadata stay fully checked.
+    """
+    try:
+        doc = json.loads(data)
+    except (json.JSONDecodeError, TypeError):
+        return data
+    if not isinstance(doc, dict):
+        return data
+    for entry in doc.get("screenshots", []):
+        if isinstance(entry, dict):
+            for key in ("mirrored", "size", "sha256", "thumbnailSize"):
+                entry.pop(key, None)
+    return json.dumps(doc, indent=2, sort_keys=True).encode("utf-8")
+
+
 def _snapshot() -> dict[str, bytes]:
     """Map path -> normalized hash for every generated file on disk."""
     snapshot: dict[str, bytes] = {}
@@ -76,7 +101,10 @@ def _snapshot() -> dict[str, bytes]:
         glob = pattern[len(prefix) :]
         for path in (ROOT / prefix).glob(glob):
             if path.is_file() and path.name != "state.json":
-                snapshot[str(path.relative_to(ROOT))] = hashlib.sha256(_norm(path.read_bytes())).hexdigest()
+                data = _norm(path.read_bytes())
+                if path.name == "screenshots.json":
+                    data = _norm_screenshots(data)
+                snapshot[str(path.relative_to(ROOT))] = hashlib.sha256(data).hexdigest()
     return snapshot
 
 

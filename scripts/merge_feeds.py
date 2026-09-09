@@ -45,9 +45,10 @@ CATALOG_PATH = REPO_ROOT / "catalog.json"
 FEEDS_DIR = REPO_ROOT / "feeds"
 MASTER_NAME = "apps.json"
 # Pipeline state, health snapshots, badges and derived intelligence documents
-# are not distributable feeds. Shared with the pipeline so the merge can never
-# mistake an intelligence document for a per-app feed.
-NON_FEED_FILES = ALTSTORE_NON_FEED
+# are not distributable feeds. Canonical list lives in omnisource.constants so
+# new intelligence documents never silently break the merge (see also
+# scripts/validate_jq.sh, which shares the same contract).
+NON_FEED_FILES = set(ALTSTORE_NON_FEED)
 
 
 def envelope_from_catalog(catalog: dict[str, Any]) -> dict[str, Any]:
