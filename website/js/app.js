@@ -738,7 +738,11 @@ function bindEvents() {
 function registerServiceWorker() {
   if (!('serviceWorker' in navigator)) return;
   if (location.protocol !== 'https:') return;
-  if (!location.hostname.endsWith('github.io') && !location.hostname.startsWith('localhost')) return;
+  const host = location.hostname.toLowerCase();
+  const parts = host.split('.');
+  const isLocalhost = host === 'localhost' || host === '127.0.0.1';
+  const isGithubPagesHost = parts.length === 3 && parts[1] === 'github' && parts[2] === 'io';
+  if (!isGithubPagesHost && !isLocalhost) return;
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js').catch(() => { /* offline support is progressive */ });
   });
