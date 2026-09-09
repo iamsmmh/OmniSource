@@ -55,6 +55,7 @@ from omnisource.related import build_related_doc
 from omnisource.reputation import build_reputation_doc
 from omnisource.screenshots import process_screenshots
 from omnisource.search_index import build_search_index
+from omnisource.site import publish_repo_artifacts
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
 from omnisource.trending import build_trending_doc
 from omnisource.verification import build_verification_doc
@@ -723,6 +724,14 @@ def run(
 
     if stage_readme(container, catalog, health_doc, analytics_doc):
         changed.append(container.paths.readme)
+
+    # Publish the repo-root site artifacts (flat feed URLs, sitemap, robots,
+    # homepage stats) so the Jekyll-managed Pages build serves the same
+    # correct site as the _site/ deploy (see site.publish_repo_artifacts).
+    with Group("Publish site artifacts"):
+        for path in publish_repo_artifacts(container.paths.root, health_doc=health_doc, analytics_doc=analytics_doc):
+            if path not in changed:
+                changed.append(path)
     report.finished_at = today()
     report.files_changed = len(changed)
     write_summary(health_doc, changed, report)

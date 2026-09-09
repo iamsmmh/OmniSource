@@ -19,7 +19,10 @@ def read_json(path: Path) -> Any | None:
 
 
 def dumps(data: Any) -> str:
-    return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+    # Compact by design: the feeds are published four ways (feeds/, flat root
+    # copies, /api/ mirror and .gz twins) and served to feed clients, so the
+    # byte count matters. Structure and key order stay fully deterministic.
+    return json.dumps(data, separators=(",", ":"), ensure_ascii=False) + "\n"
 
 
 def write_json(path: Path, data: Any) -> bool:

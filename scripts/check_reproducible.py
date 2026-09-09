@@ -25,6 +25,7 @@ Usage
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import hashlib
 import json
 import re
@@ -35,10 +36,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 # The offline build may legitimately rewrite these; nothing else is checked.
+# Root-level patterns (no "/") match the repository root only: the flat feed
+# copies, the sitemap/robots and the home page's generated stat values.
 TRACKED_PATTERNS = (
     "feeds/*.json",
     "apps/*/index.html",
     "README.md",
+    "*.json",
+    "*.xml",
+    "index.html",
+    "robots.txt",
+    "sitemap.xml",
 )
 # state.json is runtime state (syncedAt, health history) and changes whenever
 # the scheduler runs a real sync, so it is intentionally not compared.
@@ -49,6 +57,9 @@ NORMALIZERS = (
     (re.compile(rb'"generatedAt":\s*"[^"]*"'), b'"generatedAt": "<DATE>"'),
     (re.compile(rb'"lastSync":\s*"[^"]*"'), b'"lastSync": "<DATE>"'),
     (re.compile(rb"last sync \*\*[\d-]+\*\*"), b"last sync **<DATE>**"),
+    (re.compile(rb"last sync \d{4}-\d{2}-\d{2}"), b"last sync <DATE>"),
+    (re.compile(rb"<lastBuildDate>[^<]*</lastBuildDate>"), b"<lastBuildDate>DATE</lastBuildDate>"),
+    (re.compile(rb"<lastmod>[^<]*</lastmod>"), b"<lastmod>DATE</lastmod>"),
     # Analytics history gains an entry per day; its dates are derived from the
     # snapshot date, not from content.
     (re.compile(rb'"history":\s*\[.*?\]', re.DOTALL), b'"history": [...]'),
@@ -62,6 +73,9 @@ def _matches(path: str, pattern: str) -> bool:
     if pattern.endswith("/*/index.html"):
         parts = path.split("/")
         return len(parts) == 3 and parts[0] == "apps" and parts[2] == "index.html"
+    if "*" in pattern and "/" not in pattern:
+        # Root-level glob (e.g. the flat feed copies at the repository root).
+        return "/" not in path and fnmatch.fnmatch(path, pattern)
     return path == pattern
 
 

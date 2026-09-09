@@ -157,6 +157,12 @@
   display: flex;
   align-items: center;
   gap: 2px;
+  /* Overflow safety: the row must never push the controls (search, theme,
+     install, language selector) off the page. The links are the widest
+     element, so they absorb the squeeze first — padding compresses and the
+     text ellipsizes only as a last resort. */
+  flex: 0 1 auto;
+  min-width: 0;
 }
 .nav-links a {
   text-decoration: none;
@@ -166,6 +172,10 @@
   padding: 8px 13px;
   border-radius: var(--radius-sm);
   transition: color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .nav-links a:hover {
   color: var(--text);
@@ -181,6 +191,9 @@
   align-items: center;
   gap: 8px;
   margin-left: 8px;
+  /* Controls keep their size; the language selector is appended here by
+     features.js and is the last thing that must stay on-page. */
+  flex: none;
 }
 
 /* Icon buttons (theme, view, search, install). */
@@ -3699,6 +3712,36 @@ body.nav-open .nav-backdrop {
   .os-palette-panel, .app-dialog, .qr-dialog, .site-header .nav, .ap-header-inner {
     background: var(--surface-solid);
   }
+}
+
+/* ── Nav overflow protection ─────────────────────────────────────────────
+   The app-page header uses its own class but the same row problem, so it
+   gets the identical structural rules as .site-header .nav. */
+.ap-header-inner { min-width: 0; }
+.ap-header-inner .nav-links { flex: 0 1 auto; min-width: 0; }
+.ap-header-inner .nav-links a {
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Compress the inline links well before the row gets tight, so on a
+   standard laptop (≥1100px, where links stay inline) the controls —
+   including the language selector — always have room on-page. */
+@media (max-width: 1480px) {
+  .nav-links a { padding: 8px 9px; font-size: 12.5px; }
+}
+
+/* Phones: the hamburger row (brand + icon controls + toggle) sheds the
+   least essential control first, then the install pill, so nothing —
+   including the language switcher, which lives in the menu here — is
+   ever pushed off the page. */
+@media (max-width: 560px) {
+  .nav-controls #viewToggle { display: none; }
+}
+@media (max-width: 430px) {
+  .install-prompt { display: none; }
 }
 
 /* ── Responsive glass ──────────────────────────────────────────────────── */

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your favorite sideloadable iOS apps on OmniSource">
+  <title>My Favorites - OmniSource</title>
+  
+  <link rel="stylesheet" href="../assets/design-system/tokens.css">
+  <link rel="stylesheet" href="../assets/design-system/components.css">
+  <link rel="icon" type="image/png" href="../assets/OmniSource.png">
+  <meta name="theme-color" content="#e8eef8">
+  
+  <meta property="og:title" content="My Favorites - OmniSource">
+  <meta property="og:description" content="Your favorite sideloadable iOS apps">
+  <meta property="og:image" content="https://iamsmmh.github.io/OmniSource/assets/OmniSource.png">
+  <meta property="og:url" content="https://iamsmmh.github.io/OmniSource/favorites/">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="nav shell">
+      <a href="../" class="brand">
+        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="OmniSource" width="40" height="40"></picture>
+        <span>OmniSource</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../">Home</a>
+        <a href="../compare/">Compare</a>
+        <a href="../status/">Status</a>
+        <a href="../analytics/">Analytics</a>
+        <a href="../install/">Install</a>
+        <a href="../collections/" class="collections-nav-item">Collections</a>
+        <a href="index.html" class="active" aria-current="page">
+          <span>Favorites</span>
+          <span class="favorites-count" id="favorites-count">0</span>
+        </a>
+      </nav>
+      <div class="nav-controls">
+        <button id="themeButton" class="icon-button" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        </button>
+        <button class="icon-button" onclick="OS.QRCode.showQR('https://iamsmmh.github.io/OmniSource/apps.json', 'OmniSource Feed')" aria-label="Show QR code">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 2.31 1.03 4.4 2.69 5.88L12 22l4.31-7.12C18.97 13.4 20 11.31 20 9c0-3.87-3.13-7-7-7zm0 14.5c-3.04 0-5.5-2.46-5.5-5.5s2.46-5.5 5.5-5.5 5.5 2.46 5.5 5.5-2.46 5.5-5.5 5.5z"/>
+            <path d="M12 6.5c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="section">
+      <div class="section-heading">
+        <div class="kicker">
+          <span class="dot"></span>
+          <span>Favorites</span>
+        </div>
+        <h1>My Favorites</h1>
+        <p class="lead">Save apps you love and get notified when they update.</p>
+      </div>
+
+      <div id="favorites-content">
+        <!-- Content will be injected by JavaScript -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner shell">
+      <div class="footer-brand">
+        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="OmniSource" width="40" height="40"></picture>
+        <div>
+          <strong>OmniSource</strong>
+          <p>The App Store for sideloaded iOS.</p>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="../">Home</a>
+          <a href="../compare/">Compare</a>
+          <a href="../status/">Status</a>
+          <a href="../analytics/">Analytics</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="../install/">Install Center</a>
+          <a href="../search/">Search</a>
+          <a href="../favorites/">Favorites</a>
+          <a href="../collections/">Collections</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="https://github.com/iamsmmh/OmniSource/blob/main/LICENSE">License</a>
+          <a href="https://github.com/iamsmmh/OmniSource">GitHub</a>
+        </div>
+      </div>
+      <p class="fine-print">
+        OmniSource is an independent community project. All apps, code and trademarks belong to their respective owners.
+        You are responsible for complying with applicable laws and terms of service.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
+
+  <!-- QR Modal -->
+  <div class="qr-backdrop"></div>
+  <div class="qr-modal">
+    <h3>QR Code</h3>
+    <div class="qr-code"></div>
+    <div class="url-display"></div>
+    <div class="actions">
+      <button class="button" onclick="OS.QRCode.download()">Download</button>
+      <button class="button ghost" onclick="OS.QRCode.hideQR()">Close</button>
+    </div>
+  </div>
+
+  <!-- Rating Modal -->
+  <div class="rating-backdrop"></div>
+  <div class="rating-modal">
+    <h3>Rate App</h3>
+    <p>Help others discover great apps by sharing your experience.</p>
+    <div class="rating-stars">
+      <span class="star" data-rating="1">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+      </span>
+      <span class="star" data-rating="2">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+      </span>
+      <span class="star" data-rating="3">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+      </span>
+      <span class="star" data-rating="4">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+      </span>
+      <span class="star" data-rating="5">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+      </span>
+    </div>
+    <div class="actions">
+      <button class="button ghost" onclick="OS.Ratings.hideRatingModal()">Cancel</button>
+      <button class="button primary" onclick="OS.Ratings.submitRating()">Submit</button>
+    </div>
+  </div>
+
+  <!-- Collections Modal -->
+  <div class="collections-backdrop"></div>
+  <div class="collections-modal">
+    <h3>Add to Collection</h3>
+    <p>Choose a collection to add this app to.</p>
+    <div class="collection-list" id="collection-list"></div>
+    <div class="actions">
+      <button class="button ghost" onclick="OS.Collections.hideModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="../js/core.js"></script>
+  <script src="../js/features.js"></script>
+  <script>
+    // Load catalog data
+    fetch('../api/catalog.json')
+      .then(r => r.json())
+      .then(data => {
+        const catalog = data.apps || data;
+        window.OS_CATALOG = catalog;
+        OS.Favorites.injectButtons();
+        OS.Ratings.injectRatingDisplays();
+        OS.Favorites.updateCount();
+        
+        // Render favorites
+        const favorites = OS.Favorites.getAll();
+        const favoriteApps = catalog.filter(app => favorites.includes(app.slug || app.id));
+        
+        const content = document.getElementById('favorites-content');
+        if (favoriteApps.length === 0) {
+          content.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-icon">❤️</div>
+              <h3>No favorites yet</h3>
+              <p>Start adding apps to your favorites by clicking the heart icon on any app card.</p>
+              <a href="../" class="button primary">Browse Apps</a>
+            </div>
+          `;
+        } else {
+          content.innerHTML = `
+            <div class="apps-grid">
+              ${favoriteApps.map(app => OS.Favorites._renderAppCard(app)).join('')}
+            </div>
+          `;
+          OS.Favorites.injectButtons(content);
+          OS.Ratings.injectRatingDisplays(content);
+        }
+      })
+      .catch(() => {
+        // Fallback: try to load from feeds
+        fetch('../feeds/catalog.json')
+          .then(r => r.json())
+          .then(data => {
+            const catalog = data.apps || data;
+            window.OS_CATALOG = catalog;
+            OS.Favorites.injectButtons();
+            OS.Ratings.injectRatingDisplays();
+            OS.Favorites.updateCount();
+          });
+      });
+  </script>
+</body>
+</html>
