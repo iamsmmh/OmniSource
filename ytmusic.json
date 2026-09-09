@@ -1,0 +1,112 @@
+{
+  "name": "OmniSource - YTMusicUltimate",
+  "identifier": "com.iamsmmh.omnisource.ytmusic",
+  "apiVersion": "v2",
+  "subtitle": "Lightweight YouTube Music tweak",
+  "description": "Standalone distribution feed for YTMusicUltimate, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/ytmusic.json",
+  "apps": [
+    {
+      "name": "YTMusicUltimate",
+      "bundleIdentifier": "com.google.ios.youtubemusic",
+      "developerName": "dayanch96",
+      "subtitle": "Lightweight YouTube Music tweak",
+      "localizedDescription": "YTMusicUltimate is a lightweight enhancer for YouTube Music by Dayanch96. It unlocks background audio playback, removes in-app advertisements, enables premium audio streaming quality, and provides customizable player themes.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTubeMusic.webp",
+      "tintColor": "FF0000",
+      "category": "music",
+      "version": "9.35.2",
+      "versionDate": "2026-09-01",
+      "versionDescription": "YTMusicUltimate 9.35.2 | YTMusic 2.4.1 | YTMusicUltimate_9.35.2_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
+      "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa",
+      "size": 104464285,
+      "versions": [
+        {
+          "version": "9.35.2",
+          "date": "2026-09-01",
+          "localizedDescription": "YTMusicUltimate 9.35.2 | YTMusic 2.4.1 | YTMusicUltimate_9.35.2_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
+          "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa",
+          "size": 104464285,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/tag/ytmu-ipa28",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "YTMusicUltimate_9.35.2_2.4.1.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 104464285,
+              "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a",
+              "downloads": 330,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "b2384dc62bfe1d028109e990185ca039605d78731c685d12bf6e79b3406bb91a",
+          "downloads": 330
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.storekit.request-data",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth headphones and audio devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and cast audio to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "ytmusic",
+        "status": "stable",
+        "featured": true,
+        "upstreamURL": "https://github.com/Dayanch96/YTMusicUltimate",
+        "sourceURL": "https://github.com/mrdrvt99/YTMusicUltimate",
+        "verification": {
+          "method": "github-release",
+          "publisher": "mrdrvt99/YTMusicUltimate",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official project: dayanch96/YTMusicUltimate. The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by the mrdrvt99/YTMusicUltimate build fork. Shares com.google.ios.youtubemusic with MaxMusic: install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-09-01"
+        }
+      }
+    }
+  ],
+  "news": []
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>uYouEnhanced — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/uyouenhanced.json</link>
+    <description>Release feed for uYouEnhanced within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Sep 2026 13:11:22 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/uyouenhanced.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>uYouEnhanced v21.14.4</title>
+      <link>https://iamsmmh.github.io/OmniSource/uyouenhanced.json</link>
+      <guid isPermaLink="false">uyouenhanced-21.14.4</guid>
+      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Current YouTube IPA: "21.14.4"
+Current uYou Version: "3.0.5 (Unofficial)"
+
+RELEASE 21.14.4 - 3.0.5: (2026-08-22)
+
+• Updated for YouTube 21.14.4
+• uYou Downloads fixed for modern YouTube (fixes infinite "Downloading...")
+• Fixed iSponsorBlock startup crash on 21.x
+• App Icons now actually work + fresh grid picker UI
+• Notifications Tab is now reorderable
+• iPad & landscape UI fixes across all custom menus
+• uYou rebranded to 3.0.5 (Unofficial build)]]></description>
+      <enclosure url="https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

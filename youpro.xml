@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YouPro — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/youpro.json</link>
+    <description>Release feed for YouPro within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Sep 2026 13:11:22 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/youpro.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>YouPro v21.24.3</title>
+      <link>https://iamsmmh.github.io/OmniSource/youpro.json</link>
+      <guid isPermaLink="false">youpro-21.24.3</guid>
+      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1
+
+### Latest Stable Release, ENJOY!!
+> [!NOTE]
+> - Bundled with **YTUHD**
+> - - -
+> #### Extra Tweaks:
+> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` 
+> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`
+
+> [!WARNING]
+> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.]]></description>
+      <enclosure url="https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>
