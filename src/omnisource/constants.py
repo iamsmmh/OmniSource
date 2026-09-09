@@ -62,6 +62,15 @@ ALTSTORE_NON_FEED = frozenset(
         "duplicates.json",
         "analytics.json",
         "sources.json",
+        "trending.json",
+        "related.json",
+        "reputation.json",
+        "download-intelligence.json",
+        "community.json",
+        "install.json",
+        "search-index.json",
+        "compare.json",
+        "screenshots.json",
     }
 )
 

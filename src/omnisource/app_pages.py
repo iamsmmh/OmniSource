@@ -155,6 +155,74 @@ def _checks_html(checks: dict[str, bool]) -> str:
     return "".join(cells)
 
 
+def _install_cards_html(install_doc: dict[str, Any] | None, slug: str) -> str:
+    """Render the per-client install card row for a given app slug."""
+    if not install_doc:
+        return ""
+    app_entry = next(
+        (item for item in install_doc.get("apps", []) if item.get("slug") == slug),
+        None,
+    )
+    if not app_entry:
+        return ""
+    cards = app_entry.get("cards", [])
+    if not cards:
+        return ""
+    items: list[str] = []
+    for card in cards:
+        name = html.escape(str(card.get("name") or ""))
+        url = html.escape(str(card.get("url") or ""))
+        icon = html.escape(str(card.get("icon") or ""))
+        recommended = bool(card.get("recommended"))
+        manual = bool(card.get("manualSetup"))
+        badge = ""
+        if recommended:
+            badge = '<span class="ap-recommended">Recommended</span>'
+        elif manual:
+            badge = '<span class="ap-manual">Manual setup</span>'
+        else:
+            badge = '<span class="ap-compatible">Compatible</span>'
+        icon_html = f'<img src="../../assets/{icon}" alt="" width="22" height="22" loading="lazy">' if icon else ""
+        if url:
+            items.append(
+                f'<a class="ap-install-card" href="{url}" title="Open in {name}">'
+                f"{icon_html}<div><b>{name}</b>{badge}</div>"
+                f"<small>{html.escape(str(card.get('instructions') or ''))}</small>"
+                f"</a>"
+            )
+        else:
+            items.append(
+                f'<button class="ap-install-card" type="button" '
+                f'data-copy="{html.escape(str(card.get("feedURL") or ""))}" '
+                f'title="Open {name} and paste the URL"><div>{icon_html}<b>{name}</b>{badge}</div>'
+                f"<small>{html.escape(str(card.get('instructions') or ''))}</small></button>"
+            )
+    return '<div class="ap-install-grid">' + "".join(items) + "</div>"
+
+
+def _related_html(related_doc: dict[str, Any] | None, slug: str) -> str:
+    """Render the related-apps strip for a given app slug."""
+    if not related_doc:
+        return ""
+    related = related_doc.get("related", {}).get(slug) or []
+    if not related:
+        return ""
+    items: list[str] = []
+    for entry in related[:5]:
+        target_slug = html.escape(str(entry.get("slug") or ""))
+        name = html.escape(str(entry.get("name") or ""))
+        reason = html.escape(", ".join(entry.get("reasons") or []))
+        score = entry.get("score") or 0
+        items.append(
+            f'<a class="ap-related-card" href="../{target_slug}/" title="{reason}">'
+            f'<div class="ap-related-name">{name}</div>'
+            f'<div class="ap-related-reason">{reason}</div>'
+            f'<div class="ap-related-score">{round(float(score) * 100)}</div>'
+            f"</a>"
+        )
+    return '<div class="ap-related-grid">' + "".join(items) + "</div>"
+
+
 def _detail_cells(
     app: Any,
     newest: dict[str, Any],
@@ -223,6 +291,8 @@ def render_app_page(
     health_doc: dict[str, Any],
     verification_doc: dict[str, Any],
     duplicates_doc: dict[str, Any],
+    related_doc: dict[str, Any] | None = None,
+    install_doc: dict[str, Any] | None = None,
 ) -> str:
     """Render one app detail page as an HTML string."""
     base = catalog.base_url.rstrip("/")
@@ -376,20 +446,25 @@ def render_app_page(
         f'      <div class="ap-screenshots">{screenshots_html}</div>\n',
         "    </section>\n\n",
         '    <section class="ap-section">\n',
-        '      <h2><span class="num">02</span> Release notes</h2>\n',
+        '      <h2><span class="num">02</span> Install with</h2>\n',
+        '      <p class="ap-desc">Pick your client. URLs are generated from your catalog, never hard-coded.</p>\n',
+        _install_cards_html(install_doc, app.slug),
+        "    </section>\n\n",
+        '    <section class="ap-section">\n',
+        '      <h2><span class="num">03</span> Release notes</h2>\n',
         f"      {_version_rows(versions)}\n",
         "    </section>\n\n",
         '    <section class="ap-section">\n',
-        '      <h2><span class="num">03</span> Details</h2>\n',
+        '      <h2><span class="num">04</span> Details</h2>\n',
         '      <div class="ap-detail-grid">',
         _detail_cells(app, newest, health_item, verification_level, len(versions)),
-        "      </div>\n",
+        "</div>\n",
         "    </section>\n\n",
         '    <section class="ap-section">\n',
-        '      <h2><span class="num">04</span> Trust &amp; provenance</h2>\n',
+        '      <h2><span class="num">05</span> Trust &amp; provenance</h2>\n',
         '      <div class="ap-detail-grid">',
         _checks_html(checks),
-        "      </div>\n",
+        "</div>\n",
         '      <p class="ap-desc" style="margin-top:14px">',
         f"Published by {html.escape(publisher)} · {method_text}.</p>\n",
         f"      <ul>{reasons_html}</ul>\n",
@@ -401,7 +476,12 @@ def render_app_page(
         ),
         "    </section>\n\n",
         '    <section class="ap-section">\n',
-        '      <h2><span class="num">05</span> Downloads</h2>\n',
+        '      <h2><span class="num">06</span> Related apps</h2>\n',
+        f'      <p class="ap-desc">Apps that share a bundle, category or developer with {html.escape(app.name)}.</p>\n',
+        _related_html(related_doc, app.slug),
+        "    </section>\n\n",
+        '    <section class="ap-section">\n',
+        '      <h2><span class="num">07</span> Downloads</h2>\n',
         '      <div class="ap-links">\n',
         f'        <a class="button primary" href="{html.escape(download_url)}"',
         ' target="_blank" rel="noopener">Primary IPA</a>\n',
@@ -414,6 +494,8 @@ def render_app_page(
         ' rel="noopener">Upstream</a>\n',
         f'        <a class="button" href="{html.escape(base)}/discovery.json"',
         ' target="_blank" rel="noopener">Discovery catalog</a>\n',
+        f'        <a class="button" href="{html.escape(base)}/compare.html?left={html.escape(app.slug)}"',
+        ' target="_blank" rel="noopener">Compare with another app</a>\n',
         "      </div>\n",
         "    </section>\n",
         "  </main>\n\n",
@@ -479,12 +561,23 @@ def build_app_pages(
     duplicates_doc: dict[str, Any],
     *,
     pages_dir: Path,
+    related_doc: dict[str, Any] | None = None,
+    install_doc: dict[str, Any] | None = None,
 ) -> list[Path]:
     """Render every app page and remove pages for apps that left the catalog."""
     changed: list[Path] = []
     for app in catalog.apps:
         page = pages_dir / app.slug / "index.html"
-        content = render_app_page(catalog, app, state, health_doc, verification_doc, duplicates_doc)
+        content = render_app_page(
+            catalog,
+            app,
+            state,
+            health_doc,
+            verification_doc,
+            duplicates_doc,
+            related_doc=related_doc,
+            install_doc=install_doc,
+        )
         if atomic_write_text(page, content):
             changed.append(page)
 

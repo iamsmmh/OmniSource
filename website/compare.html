@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0c10">
+  <title>Compare apps — OmniSource</title>
+  <meta name="description" content="Side-by-side comparison of every app in the OmniSource catalog. Pick by version, source, verification, update frequency and compatibility.">
+  <link rel="icon" type="image/png" href="assets/OmniSource.png">
+  <link rel="apple-touch-icon" href="assets/OmniSource.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="OmniSource releases" href="feed.xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/compare.css">
+  <script src="js/compare.js" defer></script>
+</head>
+<body class="compare-page">
+  <a class="skip-link" href="#main">Skip to comparison</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary">
+      <a class="brand" href="./" aria-label="OmniSource home">
+        <img src="assets/OmniSource.png" alt="" width="38" height="38">
+        <span>OmniSource</span>
+        <span class="brand-badge">COMPARE</span>
+      </a>
+      <div class="nav-links">
+        <a href="./#catalog">Catalog</a>
+        <a href="./#trending">Trending</a>
+        <a href="./#sourceHealth">Source health</a>
+        <a href="feed.xml">RSS</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main" class="shell">
+    <section class="compare-hero">
+      <div>
+        <span class="kicker">SIDE BY SIDE</span>
+        <h1>Compare <span class="grad-text">apps</span></h1>
+        <p>Every entry in the catalog is automatically compared against the others. Pick any two apps to see versions, source provenance, verification level, update cadence and compatibility side by side.</p>
+      </div>
+      <form class="compare-picker" id="compareForm" autocomplete="off">
+        <label>
+          <span>App A</span>
+          <select id="leftSelect" required></select>
+        </label>
+        <span class="vs">vs</span>
+        <label>
+          <span>App B</span>
+          <select id="rightSelect" required></select>
+        </label>
+        <button class="button primary" type="submit">Compare</button>
+      </form>
+    </section>
+
+    <section class="compare-pairs" id="pairs" hidden>
+      <div class="section-heading">
+        <div><span class="kicker">SUGGESTED</span><h2>Apps that share a bundle or category</h2></div>
+        <p>The same bundle identifier means only one of them can be installed at a time — these are the natural choices to compare.</p>
+      </div>
+      <ul class="pair-list" id="pairList"></ul>
+    </section>
+
+    <section class="compare-result" id="result" hidden>
+      <div class="result-grid" id="resultGrid"></div>
+      <div class="result-screens" id="resultScreens"></div>
+    </section>
+
+    <section class="empty-state" id="emptyState">
+      <div class="empty-icon">⇆</div>
+      <h3>Pick two apps to compare</h3>
+      <p>Or jump straight to one of the suggested pairs below.</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <img src="assets/OmniSource.png" alt="" width="40" height="40">
+        <div>
+          <strong>OmniSource</strong>
+          <span>Generated on every build — no manual edits.</span>
+        </div>
+      </div>
+      <p class="fine-print">Comparison data: <a href="feeds/compare.json">compare.json</a> · Generated client-side from the same feed as the rest of the site.</p>
+    </div>
+  </footer>
+  <noscript><div class="noscript">JavaScript is required to compare apps. The raw data is available at <a href="feeds/compare.json">compare.json</a>.</div></noscript>
+</body>
+</html>

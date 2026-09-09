@@ -265,12 +265,223 @@ h1 { font-size: clamp(44px, 7.4vw, 86px); line-height: 1.03; letter-spacing: -.0
 
 /* ============================================================ catalog */
 .catalog-section { padding: clamp(64px, 9vw, 110px) 0; }
+
+/* ============================================================ rails */
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 46px; margin-bottom: 34px; }
 .section-heading.split { align-items: center; }
 .section-heading h2 { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.06; letter-spacing: -.05em; margin: 10px 0 0; }
 .section-heading > p, .section-heading .lead { color: var(--muted); max-width: 440px; margin: 0; font-size: 14.5px; }
 .kicker { font: 600 10.5px var(--mono); color: var(--accent); letter-spacing: .16em; }
 .feed-links { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Rails: horizontal scrollable card row used for Trending, Featured,
+   Recently Updated, Verified, Community. Smooth, snap-to-card on touch. */
+.rail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 1fr);
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  padding: 4px 2px 18px;
+  margin-inline: -2px;
+}
+.rail > * { scroll-snap-align: start; }
+.rail::-webkit-scrollbar { height: 8px; }
+.rail::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 99px;
+}
+
+.rail-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .18s, border-color .18s, box-shadow .18s, background .18s;
+  position: relative;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  backdrop-filter: blur(18px) saturate(1.3);
+}
+.rail-card:hover { transform: translateY(-3px); border-color: var(--line-strong); box-shadow: var(--shadow-md); }
+.rail-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--accent-grad);
+  opacity: 0;
+  transition: opacity .25s;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+.rail-card:hover::after { opacity: .12; }
+.rail-card .row { display: flex; align-items: center; gap: 10px; }
+.rail-card .row img { width: 48px; height: 48px; border-radius: 12px; box-shadow: var(--shadow-sm); }
+.rail-card h3 { margin: 0; font-size: 14px; font-weight: 700; letter-spacing: -.01em; line-height: 1.2; }
+.rail-card .dev { font-size: 11.5px; color: var(--muted); }
+.rail-card .meta { display: flex; gap: 8px; flex-wrap: wrap; font-size: 11px; color: var(--muted); }
+.rail-card .meta b { color: var(--text); }
+.rail-card .score {
+  display: inline-flex; align-items: center; gap: 6px;
+  font: 600 11px var(--mono);
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 3px 8px;
+  border-radius: 99px;
+  align-self: flex-start;
+}
+.rail-card .score::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent-grad);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* Trending / Featured / Recent / Verified share the same look. The section
+   background is rotated so each band is visually distinct. */
+.trending-section,
+.featured-section,
+.recent-section,
+.verified-section,
+.community-section {
+  padding: clamp(56px, 7vw, 92px) 0;
+}
+.trending-section .section-heading + .rail,
+.featured-section .section-heading + .rail,
+.recent-section .section-heading + .rail,
+.verified-section .section-heading + .rail,
+.community-section .section-heading + .rail { margin-top: 8px; }
+
+/* Stats / metrics: a 2x3 grid of large numbers. */
+.metrics-section,
+.stats-section { padding: clamp(60px, 8vw, 96px) 0; background: var(--bg-2); border-block: 1px solid var(--line); }
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+.metric-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.metric-card::after {
+  content: '';
+  position: absolute;
+  inset: -40% -40% auto auto;
+  width: 220px; height: 220px;
+  background: var(--accent-grad);
+  filter: blur(70px);
+  opacity: .14;
+  pointer-events: none;
+}
+.metric-card strong {
+  font: 800 36px/1 var(--font);
+  letter-spacing: -.04em;
+  font-variant-numeric: tabular-nums;
+}
+.metric-card span { font-size: 12.5px; color: var(--muted); }
+.metric-card small { font: 500 11px var(--mono); letter-spacing: .08em; color: var(--accent); text-transform: uppercase; }
+
+/* Source reputation grid. */
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+.source-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.source-card .rep-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font: 700 11px var(--mono); letter-spacing: .08em; text-transform: uppercase;
+  padding: 4px 9px; border-radius: 99px;
+  align-self: flex-start;
+}
+.source-card .rep-badge.trusted { background: var(--green-soft); color: var(--green); }
+.source-card .rep-badge.reliable { background: var(--cyan-soft); color: var(--cyan); }
+.source-card .rep-badge.average { background: var(--amber-soft); color: var(--amber); }
+.source-card .rep-badge.experimental { background: var(--red-soft); color: var(--red); }
+.source-card .name { font-size: 14px; font-weight: 700; }
+.source-card .metric { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--muted); }
+.source-card .metric b { color: var(--text); font-variant-numeric: tabular-nums; }
+.source-card .apps { font-size: 11.5px; color: var(--muted); }
+
+/* Skeleton placeholders for the rails while data loads. */
+.rail-skeleton {
+  height: 158px;
+  border-radius: var(--radius);
+  background: linear-gradient(120deg, var(--surface) 0%, var(--surface-2) 50%, var(--surface) 100%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s linear infinite;
+  border: 1px solid var(--line);
+}
+@keyframes skeleton-shimmer { 0% { background-position: 0 0; } 100% { background-position: -200% 0; } }
+
+/* Search results popover (cmd+k). The search box already exists; this is
+   the dropdown that lists instant results. */
+.search-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0; right: 0;
+  background: var(--surface-solid);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  max-height: min(60vh, 480px);
+  overflow-y: auto;
+  z-index: 80;
+  display: none;
+}
+.search-popover[data-open="true"] { display: block; }
+.search-popover .result {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--text);
+  border-bottom: 1px solid var(--line);
+}
+.search-popover .result:last-child { border-bottom: none; }
+.search-popover .result:hover, .search-popover .result[aria-selected="true"] {
+  background: var(--accent-soft);
+}
+.search-popover .result img { width: 36px; height: 36px; border-radius: 8px; }
+.search-popover .result .info { flex: 1; min-width: 0; }
+.search-popover .result .info b { display: block; font-size: 13px; font-weight: 700; }
+.search-popover .result .info span { display: block; font-size: 11.5px; color: var(--muted); }
+.search-popover .result mark { background: var(--accent-soft); color: var(--accent); padding: 0 2px; border-radius: 3px; }
+.search-popover .empty { padding: 24px; text-align: center; color: var(--muted); font-size: 13px; }
+.search-popover .filters { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px 14px; border-bottom: 1px solid var(--line); }
+.search-popover .filter-chip {
+  font: 600 11px var(--mono); letter-spacing: .04em;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  padding: 3px 9px;
+  border-radius: 99px;
+  cursor: pointer;
+}
+.search-popover .filter-chip[aria-pressed="true"] { background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 40%, transparent); color: var(--accent); }
+.search-box { position: relative; }
 
 .catalog-tools { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 10px; }
 .search-box {

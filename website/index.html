@@ -36,8 +36,10 @@
       </a>
       <div class="nav-links">
         <a href="#catalog">Apps</a>
+        <a href="#trending">Trending</a>
         <a href="#whats-new">What&rsquo;s new</a>
-        <a href="#how-it-works">About</a>
+        <a href="#sourceHealth">Health</a>
+        <a href="compare.html">Compare</a>
         <a href="feed.xml" class="nav-rss" title="Combined release feed (RSS)">RSS</a>
         <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" class="nav-gh">GitHub</a>
       </div>
@@ -90,6 +92,97 @@
       </div>
     </section>
 
+    <section class="trending-section" id="trending" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">TRENDING NOW</span>
+            <h2>Apps <span class="grad-text">everybody is installing</span></h2>
+          </div>
+          <p>Ranked by recency, reachability, featured status and verification level. Refreshed on every build.</p>
+        </div>
+        <div class="rail" id="trendingRail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="featured-section" id="featured" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">FEATURED PICKS</span>
+            <h2>Hand-picked by the curator</h2>
+          </div>
+          <p>Apps that earn the spotlight — verified, recently updated and trusted by the community.</p>
+        </div>
+        <div class="rail" id="featuredRail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="recent-section" id="recent" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">RECENTLY UPDATED</span>
+            <h2>Just <span class="grad-text">shipped</span></h2>
+          </div>
+          <p>The newest versions that landed in the catalog. Tap a card to see the release notes.</p>
+        </div>
+        <div class="rail" id="recentRail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="verified-section" id="verifiedApps" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">VERIFIED APPS</span>
+            <h2>Downloads you can <span class="grad-text">trust</span></h2>
+          </div>
+          <p>Every entry below is verified end-to-end: the file is reachable, the upstream is the developer's, and the catalog flag is set.</p>
+        </div>
+        <div class="rail" id="verifiedRail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="health-section" id="sourceHealth" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">SOURCE HEALTH</span>
+            <h2>Upstream <span class="grad-text">reputation</span></h2>
+          </div>
+          <p>Badges reflect the rolling 30-day reachability, update cadence and broken-release history of each upstream source.</p>
+        </div>
+        <div class="source-grid" id="sourceGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="stats-section" id="statistics" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">PLATFORM STATISTICS</span>
+            <h2>By the <span class="grad-text">numbers</span></h2>
+          </div>
+          <p>Every metric is computed from the catalog, the pipeline state and the rolling health window — never sampled from a third-party service.</p>
+        </div>
+        <div class="metrics-grid" id="metricsGrid"></div>
+      </div>
+    </section>
+
+    <section class="community-section" id="communitySection" hidden>
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">COMMUNITY</span>
+            <h2>What people are <span class="grad-text">asking for</span></h2>
+          </div>
+          <p>Top requests and rising apps, derived from update history and the rolling health window.</p>
+        </div>
+        <div class="rail" id="communityRail" aria-live="polite"></div>
+      </div>
+    </section>
+
     <section class="catalog-section" id="catalog">
       <div class="shell">
         <div class="section-heading">
@@ -105,6 +198,7 @@
             <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
             <input type="search" id="searchInput" placeholder="Search apps, features, developers, bundle IDs…" autocomplete="off" spellcheck="false">
             <kbd>⌘ K</kbd>
+            <div class="search-popover" id="searchPopover" role="listbox" aria-label="Search suggestions"></div>
           </label>
           <label class="select-wrap" for="osSelect">
             <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2.4"/><path d="M10 7h4M10 18h4"/></svg>
