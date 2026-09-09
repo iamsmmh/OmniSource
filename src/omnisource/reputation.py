@@ -167,7 +167,10 @@ def build_reputation_doc(
                 "id": identity,
                 "source": source_label(app),
                 "publisher": verification.get("publisher", ""),
-                "homepage": app.repository_url or app.homepage,
+                # Link of the source itself (the repo/feed that publishes the
+                # sideload IPAs) - not the official page of one of its apps.
+                "homepage": app.source_url or app.repository_url or app.homepage,
+                "sourceURL": app.source_url or app.repository_url or app.homepage,
                 "apps": [],
             },
         )
@@ -214,6 +217,7 @@ def build_reputation_doc(
                 "source": info["source"],
                 "publisher": info["publisher"],
                 "homepage": info["homepage"],
+                "sourceURL": info["sourceURL"],
                 "apps": info["apps"],
                 "score": score,
                 "level": _level_for(score),

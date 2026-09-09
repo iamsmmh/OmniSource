@@ -60,6 +60,7 @@ def render_altstore_app(
         "status": app.status,
         "featured": app.featured,
         "upstreamURL": raw.get("upstreamURL", ""),
+        "sourceURL": app.source_url,
         "verification": raw.get("verification", {}),
         "compatibility": raw.get("compatibility", {}),
         "health": {

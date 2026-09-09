@@ -55,9 +55,9 @@
         }
       ],
       "screenshotURLs": [
-        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn2.png",
-        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn3.png",
-        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn4.png"
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn2.png",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn3.png",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn4.png"
       ],
       "appPermissions": {
         "entitlements": [
@@ -79,10 +79,11 @@
         "slug": "maxmusic",
         "status": "stable",
         "featured": false,
-        "upstreamURL": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+        "upstreamURL": "https://github.com/Mark02-2012/MaxMusic",
+        "sourceURL": "https://github.com/Mark02-2012/MaxMusic",
         "verification": {
           "method": "github-release",
-          "publisher": "Mark02-2012/YTMUltimatePLUS",
+          "publisher": "Mark02-2012/MaxMusic",
           "codeSigned": false,
           "checksumPublished": false
         },

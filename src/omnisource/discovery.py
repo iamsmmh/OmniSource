@@ -70,6 +70,7 @@ def _entry(catalog: Catalog, app: App, state: dict[str, Any], health: dict[str, 
         "tags": list(app.tags),
         "source": source_label(app),
         # Extended metadata for the website and future clients.
+        "sourceURL": app.source_url,
         "bundleId": app.bundle_id,
         "bundleIdentifier": app.bundle_id,
         "description": app.description,
@@ -140,7 +141,10 @@ def build_sources_doc(catalog: Catalog, state: dict[str, Any]) -> dict[str, Any]
                 "id": identity,
                 "source": display,
                 "type": kind,
-                "homepage": app.repository_url or app.homepage,
+                # Link of the source itself (the repo/feed that publishes the
+                # sideload IPAs) - not the official page of one of its apps.
+                "homepage": app.source_url or app.repository_url or app.homepage,
+                "sourceURL": app.source_url or app.repository_url or app.homepage,
                 "publisher": verification.get("publisher", ""),
                 "apps": [],
             },

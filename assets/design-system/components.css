@@ -2256,6 +2256,20 @@ button.client-link:hover { color: var(--text); }
 .ap-cell strong { font-size: 13.5px; overflow-wrap: anywhere; font-weight: 700; }
 .ap-cell code { font: 500 12.5px var(--font-mono); }
 
+/* Source links: the repo/feed that publishes a sideload IPA. */
+a.source-link,
+a.ap-source-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+a.source-link:hover,
+a.source-link:focus-visible,
+a.ap-source-link:hover,
+a.ap-source-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* Verification checklist. */
 .ap-checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .ap-check {

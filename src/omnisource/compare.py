@@ -70,6 +70,7 @@ def _summary(app: Any, state: dict[str, Any], verification_level: str, health_ok
         "version": str(newest.get("version") or ""),
         "releaseDate": str(newest.get("date") or ""),
         "source": source_label(app),
+        "sourceURL": app.source_url,
         "verificationLevel": verification_level,
         "updateFrequencyDays": _update_frequency(state, app.slug),
         "downloadReachable": health_ok,

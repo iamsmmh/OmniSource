@@ -11,6 +11,7 @@ from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from enum import StrEnum
 from typing import Any
+from urllib.parse import urlsplit
 
 from omnisource.errors import ConfigurationError, SyncError
 
@@ -389,6 +390,38 @@ class App:
         if up.repo and host:
             return f"{host}/{up.repo}"
         return ""
+
+    @property
+    def source_url(self) -> str:
+        """Link for the source that actually publishes the sideload IPA.
+
+        ``upstreamURL``/``repository_url`` names the official project page
+        (which often ships only a .deb tweak or release notes). Apps served as
+        ready-to-sideload IPAs by a different project - a build fork such as
+        ``mrdrvt99/YouProEXTRA``, a mirror repository, or an AltStore/JSON
+        feed - must link to that *source* instead. An explicit ``sourceURL``
+        in the catalog wins; otherwise the URL is derived from the upstream
+        configuration (feed origin or forge host + repo), falling back to the
+        official project page when the source is the official project.
+        """
+        explicit = self.raw.get("sourceURL")
+        if isinstance(explicit, str) and explicit:
+            return explicit
+        up = self.upstream
+        if up is None:
+            return self.repository_url
+        if up.feed_url:
+            try:
+                parts = urlsplit(up.feed_url)
+            except ValueError:
+                return up.feed_url
+            if parts.scheme and parts.netloc:
+                return f"{parts.scheme}://{parts.netloc}"
+            return up.feed_url
+        host = up.host or _default_host(up.provider)
+        if up.repo and host:
+            return f"{host}/{up.repo}"
+        return self.repository_url
 
 
 def _default_host(provider: SourceType) -> str:

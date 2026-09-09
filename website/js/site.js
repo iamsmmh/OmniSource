@@ -208,6 +208,15 @@
     return 'unverified';
   }
 
+  /* Source cell: the human-readable source name, hyperlinked to the repo/feed
+     that actually publishes the sideload IPA when one is known. */
+  function sourceCell(app) {
+    var text = app.source || '—';
+    var url = app.sourceURL ? OS.cleanUrl(app.sourceURL) : '';
+    if (!url || url === '#') return OS.esc(text);
+    return '<a class="source-link" href="' + OS.esc(url) + '" target="_blank" rel="noopener">' + OS.esc(text) + '</a>';
+  }
+
   function tintFor(slug) {
     var app = appForSlug(slug);
     if (app && app.tintColor) return '#' + String(app.tintColor).replace(/^#/, '');
@@ -470,9 +479,13 @@
       if (!sources.length) { section.hidden = true; return; }
       grid.innerHTML = sources.slice(0, 9).map(function (source, i) {
         var level = source.level || 'EXPERIMENTAL';
+        var srcUrl = source.sourceURL ? OS.cleanUrl(source.sourceURL) : '';
+        var nameHtml = (srcUrl && srcUrl !== '#')
+          ? '<a class="source-link" href="' + OS.esc(srcUrl) + '" target="_blank" rel="noopener" title="Open the source repo/feed">' + OS.esc(source.source) + '</a>'
+          : OS.esc(source.source);
         return '<article class="source-card os-lift" data-reveal style="--reveal-delay:' + (i * 45) + 'ms">' +
           '<span class="rep-badge ' + OS.esc(level.toLowerCase()) + '">' + OS.esc(level) + '</span>' +
-          '<div class="name">' + OS.esc(source.source) + '</div>' +
+          '<div class="name">' + nameHtml + '</div>' +
           '<div class="metric"><span>Score</span><b>' + (source.score != null ? source.score.toFixed(1) : '—') + ' / 100</b></div>' +
           '<div class="metric"><span>Uptime</span><b>' + (source.metrics && source.metrics.uptime != null ? source.metrics.uptime : 0) + '%</b></div>' +
           '<div class="metric"><span>Avg latency</span><b>' + (source.metrics && source.metrics.averageLatencyMs != null ? source.metrics.averageLatencyMs + ' ms' : '—') + '</b></div>' +
@@ -834,6 +847,9 @@
     ];
     var sourceNotes = compatibility.notes;
     var upstreamUrl = meta.upstreamURL ? OS.cleanUrl(meta.upstreamURL) : '#';
+    // The sideload IPA source when it differs from the official project page.
+    var sourceUrl = meta.sourceURL ? OS.cleanUrl(meta.sourceURL) : '';
+    if (!sourceUrl || sourceUrl === '#' || sourceUrl === upstreamUrl) sourceUrl = '';
     var fallbacks = (app.fallbackDownloadURLs || []).filter(function (u) { return OS.cleanUrl(u) !== '#'; });
     var permissions = app.appPermissions || app.permissions || null;
     var entitlements = permissions ? permissions.entitlements : null;
@@ -866,6 +882,7 @@
         '<a href="' + OS.esc(OS.cleanUrl(app.downloadURL)) + '" target="_blank" rel="noopener">Direct IPA ↗</a>' +
         '<a href="' + OS.esc(feedFor(app)) + '" target="_blank" rel="noopener">App feed ↗</a>' +
         '<a href="' + OS.esc(rssFor(app)) + '" target="_blank" rel="noopener">App RSS ↗</a>' +
+        (sourceUrl ? '<a href="' + OS.esc(sourceUrl) + '" target="_blank" rel="noopener">Source ↗</a>' : '') +
         (upstreamUrl !== '#' ? '<a href="' + OS.esc(upstreamUrl) + '" target="_blank" rel="noopener">Upstream ↗</a>' : '') +
         '<button type="button" data-app-qr>QR code</button>' +
         '<button type="button" data-share>Share</button>' +
@@ -1060,7 +1077,8 @@
         this.bySlug.set(slugFor(app), {
           slug: slugFor(app), name: app.name, icon: OS.url('assets/' + (app.icon ? app.icon.replace(/^assets\//, '') : 'OmniSource.png')),
           category: app.category, version: app.version, releaseDate: app.versionDate,
-          source: app.omnisource ? (app.omnisource.upstreamURL || '') : '', verificationLevel: '',
+          source: app.omnisource ? ((app.omnisource.verification && app.omnisource.verification.publisher) || app.omnisource.upstreamURL || '') : '',
+          sourceURL: app.omnisource ? (app.omnisource.sourceURL || '') : '', verificationLevel: '',
           updateFrequencyDays: null, downloadReachable: true,
           compatibility: (app.omnisource && app.omnisource.compatibility) || {}
         });
@@ -1143,7 +1161,7 @@
         '<table class="cmp-table"><tbody>' +
           '<tr><th scope="row">Version</th><td>v' + OS.esc(app.version || '—') + '</td></tr>' +
           '<tr><th scope="row">Released</th><td>' + OS.esc(OS.fmtDate(app.releaseDate)) + '</td></tr>' +
-          '<tr><th scope="row">Source</th><td>' + OS.esc(app.source || '—') + '</td></tr>' +
+          '<tr><th scope="row">Source</th><td>' + sourceCell(app) + '</td></tr>' +
           '<tr><th scope="row">Update gap</th><td>' + (app.updateFrequencyDays != null ? OS.esc(app.updateFrequencyDays + ' days') : '—') + '</td></tr>' +
           '<tr><th scope="row">Min iOS</th><td>' + OS.esc((app.compatibility && app.compatibility.minOSVersion) || '—') + '</td></tr>' +
           '<tr><th scope="row">Devices</th><td>' + OS.esc(((app.compatibility && app.compatibility.devices) || []).join(', ') || '—') + '</td></tr>' +
@@ -1215,8 +1233,13 @@
       var rows = doc.sources.map(function (source, i) {
         var level = rep[source.source] ? rep[source.source].level : '';
         var spark = sparkline(source.history);
+        var srcUrl = source.sourceURL ? OS.cleanUrl(source.sourceURL) : '';
+        var srcText = source.source || source.id || '';
+        var srcHtml = (srcUrl && srcUrl !== '#')
+          ? '<a class="source-link" href="' + OS.esc(srcUrl) + '" target="_blank" rel="noopener">' + OS.esc(srcText) + '</a>'
+          : OS.esc(srcText);
         return '<tr data-reveal style="--reveal-delay:' + Math.min(i * 25, 400) + 'ms">' +
-          '<td class="source-name">' + OS.esc(source.name) + '<small>' + OS.esc(source.source || source.id) + (level ? ' · ' + OS.esc(level) : '') + '</small></td>' +
+          '<td class="source-name">' + OS.esc(source.name) + '<small>' + srcHtml + (level ? ' · ' + OS.esc(level) : '') + '</small></td>' +
           '<td><span class="st-status ' + OS.esc(source.status || 'unknown') + '">' + OS.esc(source.status || 'unknown') + '</span></td>' +
           '<td class="num">' + (source.latencyMs != null ? source.latencyMs + ' ms' : '—') + '</td>' +
           '<td class="num">' + spark + '</td>' +

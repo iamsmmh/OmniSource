@@ -240,6 +240,12 @@ def _detail_cells(
     health_text = html.escape("Online" if health.get("downloadReachable") else "Unavailable")
     verification = html.escape(verification_level)
     source = html.escape(source_label(app))
+    source_url = html.escape((app.source_url or "").strip())
+    source_value = (
+        f'<a class="ap-source-link" href="{source_url}" target="_blank" rel="noopener">{source}</a>'
+        if source_url
+        else source
+    )
     cells = [
         ("Version", f"v{version}"),
         ("Updated", updated_at),
@@ -252,7 +258,7 @@ def _detail_cells(
         ("Checksum", f"<code>{checksum}</code>"),
         ("Health", health_text),
         ("Version history", str(version_count)),
-        ("Source", source),
+        ("Source", source_value),
     ]
     return "".join(
         f'<div class="ap-cell"><span>{html.escape(label)}</span><strong>{value}</strong></div>'
@@ -390,6 +396,15 @@ def render_app_page(
     download_url = str(newest.get("downloadURL") or app.raw.get("downloadURL") or "")
     screenshots = [url for url in app.screenshots if str(url).startswith(("http://", "https://"))]
     publisher = str(app.raw.get("verification", {}).get("publisher") or app.developer)
+    publisher_html = html.escape(publisher)
+    source_url = (app.source_url or "").strip()
+    # "Published by" describes who publishes the sideload IPA - link it to the
+    # source when the source is not the same page as Upstream.
+    if source_url and source_url != (app.repository_url or ""):
+        publisher_html = (
+            f'<a class="ap-source-link" href="{html.escape(source_url)}" target="_blank" rel="noopener">'
+            f"{publisher_html}</a>"
+        )
     compatibility = app.raw.get("compatibility")
     source_notes = str(compatibility.get("notes") or "") if isinstance(compatibility, dict) else ""
     fallbacks = newest.get("fallbackDownloadURLs") or app.raw.get("fallbackDownloadURLs") or []
@@ -419,6 +434,15 @@ def render_app_page(
     method_text = html.escape(str(app.raw.get("verification", {}).get("method") or "upstream source").replace("-", " "))
     notes_html = html.escape(source_notes)
     upstream_url = html.escape(app.repository_url or "")
+    source_url = html.escape(app.source_url or "")
+    # When the sideload IPA is published by a different repo/feed than the
+    # official project page, surface that source link right next to Upstream.
+    source_button = (
+        f'        <a class="button" href="{source_url}" target="_blank" rel="noopener" '
+        'title="The repo/feed that publishes this sideload IPA">Source</a>\n'
+        if source_url and source_url != upstream_url
+        else ""
+    )
 
     head = _head(title, sub, icon_url, page_url, rss_url, app, newest, download_url, publisher)
 
@@ -517,7 +541,7 @@ def render_app_page(
         '    <section class="ap-section" data-reveal>\n',
         '      <h2><span class="num">05</span> Trust &amp; provenance</h2>\n',
         f"      {_checks_html(checks)}\n",
-        '      <p class="ap-desc mt-3">Published by ' + f"{html.escape(publisher)} · {method_text}.</p>\n",
+        '      <p class="ap-desc mt-3">Published by ' + f"{publisher_html} · {method_text}.</p>\n",
         f"      <ul>{reasons_html}</ul>\n",
         (
             f'      <div class="detail-note mt-3"><b>Compatibility notes:</b> {notes_html}</div>\n'
@@ -538,6 +562,7 @@ def render_app_page(
         f"        {fallback_html}\n",
         f'        <a class="button" href="{html.escape(feed_url)}" target="_blank" rel="noopener">App feed</a>\n',
         f'        <a class="button" href="{html.escape(rss_url)}" target="_blank" rel="noopener">App RSS</a>\n',
+        source_button,
         f'        <a class="button" href="{upstream_url}" target="_blank" rel="noopener">Upstream</a>\n',
         f'        <a class="button" href="{html.escape(base)}/discovery.json" '
         'target="_blank" rel="noopener">Discovery catalog</a>\n',

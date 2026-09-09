@@ -12,9 +12,11 @@ if str(_SRC) not in sys.path:
 
 from omnisource.community import build_community_doc
 from omnisource.compare import build_compare_doc
+from omnisource.discovery import build_discovery_doc, build_sources_doc
 from omnisource.domain import Catalog
 from omnisource.download_intel import build_download_intel_doc
 from omnisource.install import build_install_doc
+from omnisource.monitor import build_status_doc
 from omnisource.related import build_related_doc
 from omnisource.reputation import build_reputation_doc
 from omnisource.search_index import build_search_index
@@ -127,6 +129,128 @@ VERIFICATION_DOC = {
 
 def _catalog() -> Catalog:
     return Catalog.from_dict(CATALOG)
+
+
+def _sideload_catalog() -> Catalog:
+    """Fixture mirroring the catalog's sideload-source pattern: an app built
+    by a fork repo and an app resolved from a developer AltStore feed."""
+    base_app = {
+        "bundleIdentifier": "com.example.demo",
+        "developerName": "Dev",
+        "icon": "Demo.png",
+        "status": "stable",
+        "compatibility": {"minOSVersion": "16.0", "clients": ["altstore", "sidestore"]},
+    }
+    return Catalog.from_dict(
+        {
+            "source": {
+                "name": "OmniSource",
+                "identifier": "com.omnisource",
+                "baseURL": "https://example.test/OmniSource",
+                "icon": "OmniSource.png",
+            },
+            "clients": [{"id": "altstore", "name": "AltStore", "icon": "AltStore.png"}],
+            "apps": [
+                {
+                    **base_app,
+                    "slug": "ytlite",
+                    "name": "YouTubePlus",
+                    "upstreamURL": "https://github.com/Dayanch96/YTLite",
+                    "verification": {"method": "github-release", "publisher": "mrdrvt99/YouProEXTRA"},
+                    "upstream": {"provider": "github", "repo": "mrdrvt99/YouProEXTRA"},
+                },
+                {
+                    **base_app,
+                    "slug": "ytkp",
+                    "name": "YTKillerPlus",
+                    "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
+                    "verification": {"method": "altstore", "publisher": "iKarwan (repo.ikghd.me)"},
+                    "upstream": {
+                        "provider": "altstore",
+                        "feedURL": "https://repo.ikghd.me/repo.json",
+                        "appId": "com.google.ios.youtube",
+                    },
+                },
+            ],
+        }
+    )
+
+
+_SIDELOAD_STATE = {
+    "ytlite": {
+        "versions": [
+            {"version": "21.24.3", "date": "2026-09-01", "size": 1024, "downloadURL": "https://example.com/ytlite.ipa"}
+        ]
+    },
+    "ytkp": {
+        "versions": [
+            {"version": "21.36.6", "date": "2026-09-09", "size": 1024, "downloadURL": "https://example.com/ytkp.ipa"}
+        ]
+    },
+}
+
+_SIDELOAD_HEALTH = {
+    "apps": [
+        {"slug": "ytlite", "downloadReachable": True, "status": "healthy"},
+        {"slug": "ytkp", "downloadReachable": True, "status": "healthy"},
+    ]
+}
+
+_SIDELOAD_VERIFICATION = {
+    "apps": [
+        {"app": "ytlite", "status": "VERIFIED", "checks": {}, "reasons": []},
+        {"app": "ytkp", "status": "VERIFIED", "checks": {}, "reasons": []},
+    ]
+}
+
+
+class SourceLinkTests(unittest.TestCase):
+    """Every generated document exposes the link of the sideload source."""
+
+    def test_discovery_carries_source_url(self) -> None:
+        catalog = _sideload_catalog()
+        doc = build_discovery_doc(catalog, _SIDELOAD_STATE, _SIDELOAD_HEALTH)
+        by_slug = {entry["slug"]: entry for entry in doc["apps"]}
+        # Fork-built app: sourceURL points at the builder repo, homepage at
+        # the official project page.
+        self.assertEqual(by_slug["ytlite"]["sourceURL"], "https://github.com/mrdrvt99/YouProEXTRA")
+        self.assertEqual(by_slug["ytlite"]["homepage"], "https://github.com/Dayanch96/YTLite")
+        # AltStore feed app: sourceURL points at the feed's site.
+        self.assertEqual(by_slug["ytkp"]["sourceURL"], "https://repo.ikghd.me")
+        self.assertEqual(by_slug["ytkp"]["homepage"], "https://github.com/iKarwan/YTKillerPlus")
+
+    def test_sources_index_group_links_to_the_source(self) -> None:
+        catalog = _sideload_catalog()
+        doc = build_sources_doc(catalog, _SIDELOAD_STATE)
+        by_id = {entry["id"]: entry for entry in doc["sources"]}
+        self.assertEqual(by_id["mrdrvt99/YouProEXTRA"]["homepage"], "https://github.com/mrdrvt99/YouProEXTRA")
+        self.assertEqual(by_id["mrdrvt99/YouProEXTRA"]["sourceURL"], "https://github.com/mrdrvt99/YouProEXTRA")
+        self.assertEqual(by_id["https://repo.ikghd.me/repo.json"]["homepage"], "https://repo.ikghd.me")
+        self.assertEqual(by_id["https://repo.ikghd.me/repo.json"]["sourceURL"], "https://repo.ikghd.me")
+
+    def test_reputation_group_links_to_the_source(self) -> None:
+        catalog = _sideload_catalog()
+        doc = build_reputation_doc(catalog, _SIDELOAD_STATE, _SIDELOAD_HEALTH)
+        by_id = {entry["id"]: entry for entry in doc["sources"]}
+        self.assertEqual(by_id["mrdrvt99/YouProEXTRA"]["homepage"], "https://github.com/mrdrvt99/YouProEXTRA")
+        self.assertEqual(by_id["mrdrvt99/YouProEXTRA"]["sourceURL"], "https://github.com/mrdrvt99/YouProEXTRA")
+        self.assertEqual(by_id["https://repo.ikghd.me/repo.json"]["homepage"], "https://repo.ikghd.me")
+        self.assertEqual(by_id["https://repo.ikghd.me/repo.json"]["sourceURL"], "https://repo.ikghd.me")
+
+    def test_compare_summary_carries_source_url(self) -> None:
+        catalog = _sideload_catalog()
+        doc = build_compare_doc(catalog, _SIDELOAD_STATE, _SIDELOAD_HEALTH, _SIDELOAD_VERIFICATION)
+        pair = doc["pairs"][0]
+        sides = {side["slug"]: side for side in (pair["left"], pair["right"])}
+        self.assertEqual(sides["ytlite"]["sourceURL"], "https://github.com/mrdrvt99/YouProEXTRA")
+        self.assertEqual(sides["ytkp"]["sourceURL"], "https://repo.ikghd.me")
+
+    def test_status_rows_carry_source_url(self) -> None:
+        catalog = _sideload_catalog()
+        doc = build_status_doc(catalog, _SIDELOAD_STATE, _SIDELOAD_HEALTH)
+        by_app = {entry["app"]: entry for entry in doc["sources"]}
+        self.assertEqual(by_app["ytlite"]["sourceURL"], "https://github.com/mrdrvt99/YouProEXTRA")
+        self.assertEqual(by_app["ytkp"]["sourceURL"], "https://repo.ikghd.me")
 
 
 class TrendingTests(unittest.TestCase):

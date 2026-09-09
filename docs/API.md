@@ -66,6 +66,7 @@ website search box uses; never maintain it manually.
       "pageURL": "https://iamsmmh.github.io/OmniSource/apps/youpro/",
       "feedURL": "https://iamsmmh.github.io/OmniSource/youpro.json",
       "homepage": "https://github.com/mrdrvt99/YouProEXTRA",
+      "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
       "status": "stable",
       "featured": false,
       "size": 119894440,
@@ -84,9 +85,23 @@ website search box uses; never maintain it manually.
 
 Search fields: `name`, `developer`, `bundleId`, `tags`, `source`, `description`.
 
+Every entry carries two distinct links:
+
+* `homepage` — the app's official project page (`catalog.json` `upstreamURL`).
+* `sourceURL` — the repo/feed that *actually publishes the sideload IPA*.
+  For most apps the two are the same. Apps served as ready-to-sideload IPA
+  builds by a different project (for example `ytlite`, `youpro` and `youmod`
+  are built by `mrdrvt99/YouProEXTRA`, `maxmusic` releases come from
+  `Mark02-2012/MaxMusic`, and the iKarwan trio resolves from the
+  `repo.ikghd.me` AltStore feed) carry the publishing source here, so a
+  "Source" link on the website always points at the repo/feed users actually
+  install from.
+
 ### `api/sources.json` — source index
 
-Every distinct upstream plus the feed envelope itself:
+Every distinct upstream plus the feed envelope itself. The `homepage` of each
+entry links to the source itself (the repo or feed named by `id`), not to the
+official project page of whichever app happens to resolve from it:
 
 ```json
 {
@@ -102,6 +117,7 @@ Every distinct upstream plus the feed envelope itself:
   "sources": [
     { "id": "mrdrvt99/YouProEXTRA", "source": "mrdrvt99/YouProEXTRA",
       "type": "github", "homepage": "https://github.com/mrdrvt99/YouProEXTRA",
+      "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
       "publisher": "mrdrvt99/YouProEXTRA",
       "apps": [ { "slug": "youpro", "name": "YouPro", "version": "21.24.3" } ] }
   ]
@@ -148,7 +164,9 @@ exact rules).
   "sources": [
     {
       "id": "spotiflac", "app": "spotiflac", "name": "SpotiFLAC Mobile",
-      "source": "spotiflacapp/SpotiFLAC-Mobile", "type": "github",
+      "source": "spotiflacapp/SpotiFLAC-Mobile",
+      "sourceURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+      "type": "github",
       "status": "healthy", "reachable": true,
       "latency": 120, "latencyMs": 120,
       "checkedAt": "2026-09-09", "lastUpdate": "2026-09-07",

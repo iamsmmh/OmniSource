@@ -64,6 +64,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/Aidoku/Aidoku",
+        "sourceURL": "https://github.com/Aidoku/Aidoku",
         "verification": {
           "method": "github-release",
           "publisher": "Aidoku/Aidoku",
@@ -184,6 +185,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/BandarHL/BHTwitter",
+        "sourceURL": "https://github.com/BandarHL/BHTwitter",
         "verification": {
           "method": "github-release",
           "publisher": "BandarHL/BHTwitter",
@@ -286,6 +288,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/claration/Feather",
+        "sourceURL": "https://github.com/claration/Feather",
         "verification": {
           "method": "github-release",
           "publisher": "claration/Feather",
@@ -389,6 +392,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/iKarwan/iNKillerPlus",
+        "sourceURL": "https://repo.ikghd.me",
         "verification": {
           "method": "altstore",
           "publisher": "iKarwan (repo.ikghd.me)",
@@ -493,6 +497,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/XITRIX/iTorrent",
+        "sourceURL": "https://github.com/XITRIX/iTorrent",
         "verification": {
           "method": "github-release",
           "publisher": "XITRIX/iTorrent",
@@ -598,6 +603,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/LiveContainer/LiveContainer",
+        "sourceURL": "https://github.com/LiveContainer/LiveContainer",
         "verification": {
           "method": "github-release",
           "publisher": "LiveContainer/LiveContainer",
@@ -673,9 +679,9 @@
         }
       ],
       "screenshotURLs": [
-        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn2.png",
-        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn3.png",
-        "https://raw.githubusercontent.com/Mark02-2012/YTMUltimatePLUS/MYmain/Resources/scrn4.png"
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn2.png",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn3.png",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn4.png"
       ],
       "appPermissions": {
         "entitlements": [
@@ -697,10 +703,11 @@
         "slug": "maxmusic",
         "status": "stable",
         "featured": false,
-        "upstreamURL": "https://github.com/Mark02-2012/YTMUltimatePLUS",
+        "upstreamURL": "https://github.com/Mark02-2012/MaxMusic",
+        "sourceURL": "https://github.com/Mark02-2012/MaxMusic",
         "verification": {
           "method": "github-release",
-          "publisher": "Mark02-2012/YTMUltimatePLUS",
+          "publisher": "Mark02-2012/MaxMusic",
           "codeSigned": false,
           "checksumPublished": false
         },
@@ -785,9 +792,9 @@
         }
       ],
       "screenshotURLs": [
-        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr1.jpg",
-        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr2.jpg",
-        "https://raw.githubusercontent.com/Mark02-2012/YTPlusM/main/Resources/scr3.jpg"
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr1.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr2.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr3.jpg"
       ],
       "appPermissions": {
         "entitlements": [
@@ -818,7 +825,8 @@
         "slug": "maxtube",
         "status": "manual",
         "featured": false,
-        "upstreamURL": "https://github.com/Mark02-2012/YTPlusM",
+        "upstreamURL": "https://github.com/Mark02-2012/MaxTube",
+        "sourceURL": "https://github.com/Ashreq/ashstore-repo",
         "verification": {
           "method": "github-release",
           "publisher": "Ashreq/ashstore-repo",
@@ -911,6 +919,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/Provenance-Emu/Provenance",
+        "sourceURL": "https://github.com/Provenance-Emu/Provenance",
         "verification": {
           "method": "github-release",
           "publisher": "Provenance-Emu/Provenance",
@@ -1007,6 +1016,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/SideStore/SideStore",
+        "sourceURL": "https://github.com/SideStore/SideStore",
         "verification": {
           "method": "github-release",
           "publisher": "SideStore/SideStore",
@@ -1111,6 +1121,7 @@
         "status": "stable",
         "featured": true,
         "upstreamURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+        "sourceURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
         "verification": {
           "method": "github-release",
           "publisher": "spotiflacapp/SpotiFLAC-Mobile",
@@ -1195,6 +1206,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/StikDebug/StikDebug",
+        "sourceURL": "https://github.com/StikDebug/StikDebug",
         "verification": {
           "method": "github-release",
           "publisher": "StikDebug/StikDebug",
@@ -1296,6 +1308,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/iKarwan/TTKillerPlus",
+        "sourceURL": "https://repo.ikghd.me",
         "verification": {
           "method": "altstore",
           "publisher": "iKarwan (repo.ikghd.me)",
@@ -1495,6 +1508,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/utmapp/UTM",
+        "sourceURL": "https://github.com/utmapp/UTM",
         "verification": {
           "method": "github-release",
           "publisher": "utmapp/UTM",
@@ -1595,6 +1609,7 @@
         "status": "manual",
         "featured": true,
         "upstreamURL": "https://github.com/arichornlover/uYouEnhanced",
+        "sourceURL": "https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6",
         "verification": {
           "method": "manual-mirror",
           "publisher": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
@@ -1674,6 +1689,7 @@
         "status": "unmaintained",
         "featured": false,
         "upstreamURL": "https://github.com/lo-cafe/winston",
+        "sourceURL": "https://github.com/lo-cafe/winston",
         "verification": {
           "method": "github-release",
           "publisher": "lo-cafe/winston",
@@ -1779,6 +1795,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/Tonwalter888/YouMod",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
         "verification": {
           "method": "github-release",
           "publisher": "mrdrvt99/YouProEXTRA",
@@ -1884,6 +1901,7 @@
         "status": "stable",
         "featured": true,
         "upstreamURL": "https://github.com/mrdrvt99/YouProEXTRA",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
         "verification": {
           "method": "github-release",
           "publisher": "mrdrvt99/YouProEXTRA",
@@ -2045,6 +2063,7 @@
         "status": "stable",
         "featured": true,
         "upstreamURL": "https://github.com/Dayanch96/YTLite",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
         "verification": {
           "method": "github-release",
           "publisher": "mrdrvt99/YouProEXTRA",
@@ -2186,6 +2205,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/itzzace/ytkace",
+        "sourceURL": "https://github.com/itzzace/ytkace",
         "verification": {
           "method": "github-release",
           "publisher": "itzzace/ytkace",
@@ -2299,6 +2319,7 @@
         "status": "stable",
         "featured": false,
         "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
+        "sourceURL": "https://repo.ikghd.me",
         "verification": {
           "method": "altstore",
           "publisher": "iKarwan (repo.ikghd.me)",
@@ -2395,6 +2416,7 @@
         "status": "stable",
         "featured": true,
         "upstreamURL": "https://github.com/Dayanch96/YTMusicUltimate",
+        "sourceURL": "https://github.com/mrdrvt99/YTMusicUltimate",
         "verification": {
           "method": "github-release",
           "publisher": "mrdrvt99/YTMusicUltimate",
