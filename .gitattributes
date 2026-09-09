@@ -1,6 +1,7 @@
 # Generated distribution artifacts: collapse in diffs and language statistics.
 feeds/*.json linguist-generated=true
 feeds/*.xml  linguist-generated=true
+apps/*/index.html linguist-generated=true
 
 # Consistent text files across development platforms.
 *.json text eol=lf

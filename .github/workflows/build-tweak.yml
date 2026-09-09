@@ -75,16 +75,16 @@ jobs:
         run: |
           set -euo pipefail
           cd workspace
-          FLAGS=""
+          FLAGS=()
           if [ -n "${{ inputs.bundle_id }}" ]; then
-            FLAGS="$FLAGS -b ${{ inputs.bundle_id }}"
+            FLAGS+=(-b "${{ inputs.bundle_id }}")
           fi
           if [ -n "${{ inputs.app_name }}" ]; then
-            FLAGS="$FLAGS -n '${{ inputs.app_name }}'"
+            FLAGS+=(-n "${{ inputs.app_name }}")
           fi
 
           echo "Injecting tweak with Cyan..."
-          cyan -i base.ipa -o output.ipa -d tweak.deb $FLAGS
+          cyan -i base.ipa -o output.ipa -d tweak.deb "${FLAGS[@]}"
 
       - name: Upload Patched IPA Artifact
         uses: actions/upload-artifact@v4

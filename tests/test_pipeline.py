@@ -87,7 +87,7 @@ class TestPipeline(unittest.TestCase):
             state = load_state(container)
             report = SyncReport()
 
-            changed_feeds, _health_doc = stage_build(container, catalog, state, report)
+            changed_feeds, _health_doc, _analytics_doc = stage_build(container, catalog, state, report)
             self.assertGreater(len(changed_feeds), 0)
             self.assertTrue((paths.feeds / "testapp.json").exists())
             self.assertTrue((paths.feeds / "apps.json").exists())

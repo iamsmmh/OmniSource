@@ -2,7 +2,9 @@
 # Validation for pull requests and direct pushes.
 #
 # Everything here is offline and read-only, so it is safe to run on forks:
-# no token, no network, no write permission.
+# no token, no network, no write permission. Jobs are split so the structural
+# gate (fast), the unit tests (matrix) and the linters (slow, cached) run in
+# parallel instead of serially.
 # -----------------------------------------------------------------------------
 name: Validate
 
@@ -41,31 +43,69 @@ jobs:
       - name: Lint JSON with jq
         run: bash scripts/validate_jq.sh
 
-      # Guards the invariant that feeds/ is generated, never hand-edited:
-      # a rebuild from committed state must be a no-op.
-      - name: Verify feeds are reproducible from catalog.json
-        run: |
-          set -euo pipefail
-          python3 scripts/omnisource.py --no-sync --no-health
-          if ! git diff --quiet -- '*.json' README.md; then
-            echo "::error::feeds/ or README.md is out of date. Run 'python3 scripts/omnisource.py' and commit the result."
-            git --no-pager diff --stat -- '*.json' README.md
-            exit 1
-          fi
-          echo "Feeds match catalog.json."
+      # Guards the invariant that feeds/ and apps/ are generated, never
+      # hand-edited: a rebuild from committed state must be a no-op.
+      # Date-stamped values (generatedAt, lastSync, RSS timestamps, analytics
+      # history) are normalized so a PR opened on a different day still
+      # passes; any real content drift fails.
+      - name: Verify generated artifacts are reproducible
+        run: python3 scripts/check_reproducible.py --diff
 
-      # Pinned exact versions: an unpinned linter turns an upstream release
-      # into a surprise red build on an unrelated pull request.
-      - name: Check Python style
-        run: |
-          python3 -m pip install --quiet --disable-pip-version-check "ruff>=0.16.0"
-          python3 -m ruff check src/ scripts/ tests/
-          python3 -m ruff format --check src/ scripts/ tests/
-
+  tests:
+    name: Unit tests (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
       - name: Run unit tests
         run: python3 -m unittest discover -s tests
 
+  lint:
+    name: Lint (ruff + actionlint)
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      # The runtime is stdlib-only; ruff is the only cached dependency.
+      # The cache holds downloaded wheels, so repeated runs reuse them.
+      - name: Cache pip downloads
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ruff-${{ runner.os }}-0.16
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check Python style
+        run: |
+          python3 -m pip install --quiet --disable-pip-version-check "ruff==0.16.6"
+          python3 -m ruff check src/ scripts/ tests/
+          python3 -m ruff format --check src/ scripts/ tests/
+
+      # actionlint pinned via its release binary (no docker image to pull).
+      # The upstream checksums.txt escapes underscores with backslashes
+      # (e.g. actionlint\_1.7.12\_linux\_amd64.tar.gz), so extract the hash
+      # with awk instead of unescaping the file.
       - name: Lint workflows
         run: |
-          docker run --rm -v "$PWD:/repo" -w /repo \
-            rhysd/actionlint:1.7.7 -color
+          curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_checksums.txt" -o /tmp/actionlint.sha256
+          curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz" -o /tmp/actionlint.tar.gz
+          EXPECTED=$(awk '/linux/ && /amd64\.tar\.gz$/ {print $1}' /tmp/actionlint.sha256)
+          test -n "$EXPECTED"
+          test "$(sha256sum /tmp/actionlint.tar.gz | awk '{print $1}')" = "$EXPECTED"
+          tar -xzf /tmp/actionlint.tar.gz -C /tmp actionlint
+          /tmp/actionlint -color

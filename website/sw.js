@@ -17,8 +17,14 @@ const CORE_ASSETS = [
 const DATA_URLS = [
   './apps.json',
   './catalog.json',
+  './discovery.json',
   './feeds/health.json',
-  './feeds/updates.json'
+  './feeds/updates.json',
+  './feeds/analytics.json',
+  './feeds/verification.json',
+  './feeds/status.json',
+  './feeds/duplicates.json',
+  './feeds/sources.json'
 ];
 
 self.addEventListener('install', event => {
@@ -41,8 +47,8 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(request.url);
 
-  // App icons and screenshots: cache-first, then network.
-  if (url.pathname.startsWith('/assets/')) {
+  // App icons, screenshots and static app pages: cache-first, then network.
+  if (url.pathname.startsWith('/assets/') || url.pathname.startsWith('/apps/')) {
     event.respondWith(
       caches.match(request).then(cached => cached || fetch(request).then(response => {
         const copy = response.clone();

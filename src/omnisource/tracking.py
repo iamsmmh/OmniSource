@@ -226,6 +226,8 @@ def build_version_entry(
         entry["sha256"] = sha
     if release.build_number:
         entry["buildVersion"] = release.build_number
+    if asset.download_count:
+        entry["downloads"] = int(asset.download_count)
     return entry
 
 

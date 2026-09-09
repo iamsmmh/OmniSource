@@ -43,6 +43,14 @@ NON_FEED_FILES = {
     "badge-apps.json",
     "badge-health.json",
     "badge-version.json",
+    "badge-sync.json",
+    "badge-verified.json",
+    "discovery.json",
+    "verification.json",
+    "status.json",
+    "duplicates.json",
+    "analytics.json",
+    "sources.json",
 }
 USER_AGENT = "OmniSource-HealthCheck/2.0 (+https://github.com/iamsmmh/OmniSource)"
 

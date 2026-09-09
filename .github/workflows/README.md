@@ -5,8 +5,8 @@ permissions and opts in to exactly what it needs, never more.
 
 | Workflow | Trigger | Writes | Purpose |
 | --- | --- | --- | --- |
-| [`sync.yml`](sync.yml) | schedule (6 h, incremental) · push · manual | feeds, README, Pages | Resolve official upstream releases, probe links, rebuild every feed, deploy the source to Pages |
-| [`validate.yml`](validate.yml) | pull request · push · manual | nothing | Offline gate: Python + `jq` structural validation, reproducibility check, `ruff`, `actionlint` |
+| [`sync.yml`](sync.yml) | schedule (6 h, incremental) · push · manual | feeds, `apps/` pages, README, Pages | Resolve official upstream releases, probe links, rebuild every feed + intelligence documents + app pages, deploy |
+| [`validate.yml`](validate.yml) | pull request · push · manual | nothing | Parallel offline gate: structural validation + reproducibility, unit test matrix (3.11/3.12), `ruff` + `actionlint` (cached) |
 | [`merge.yml`](merge.yml) | `feeds/*.json` changed · manual | `feeds/apps.json` | Rebuild the unified master source from modular feeds |
 | [`health-check.yml`](health-check.yml) | schedule (daily) · manual | GitHub Issue | HEAD-probe every download URL + mirror and report broken links via an issue |
 | [`build-uyouenhanced.yml`](build-uyouenhanced.yml) | manual | Release asset | Build and publish the uYouEnhanced IPA, then trigger a feed sync |

@@ -64,6 +64,7 @@ class RemoteAsset:
     architecture: str | None = None
     file_type: str = "other"
     installable: bool = False
+    download_count: int = 0
 
     def to_dict(self) -> dict[str, Any]:
         from omnisource.utils.assets import detect_asset_metadata
@@ -81,6 +82,7 @@ class RemoteAsset:
             "fileType": file_type,
             "size": self.size,
             "sha256": self.sha256,
+            "downloads": self.download_count,
             "mimeType": self.content_type or None,
             "installable": installable,
         }

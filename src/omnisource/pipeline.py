@@ -24,10 +24,14 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from omnisource.analytics import build_analytics_doc, remember_analytics_snapshot
+from omnisource.app_pages import build_app_pages
 from omnisource.assets import DirectoryCache, inspect_catalog
-from omnisource.constants import README_MARKERS
+from omnisource.constants import README_MARKERS, README_STATS_MARKERS
 from omnisource.di import Container, build_container
+from omnisource.discovery import build_discovery_doc, build_sources_doc
 from omnisource.domain import App, Catalog, SyncReport, UpdateEvent, today
+from omnisource.duplicates import build_duplicates_doc
 from omnisource.errors import ConfigurationError, ProviderError, SyncError
 from omnisource.feeds.altstore import (
     feed_envelope,
@@ -38,9 +42,12 @@ from omnisource.feeds.altstore import (
 )
 from omnisource.feeds.rss import render_app_rss_feed, render_rss_feed
 from omnisource.feeds.updates import render_updates_doc
+from omnisource.http import ProbeResult
 from omnisource.io import atomic_write_many, atomic_write_text, read_json, write_json
 from omnisource.logutil import Group, log
+from omnisource.monitor import build_status_doc, remember_probe
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
+from omnisource.verification import build_verification_doc
 
 
 def _reuse_or(path: Path, fallback: dict[str, Any]) -> dict[str, Any]:
@@ -269,26 +276,33 @@ def stage_health(
     started = time.monotonic()
 
     def probe(url: str):
-        return container.http.probe(url, timeout=container.settings.health_timeout)
+        probe_started = time.monotonic()
+        result = container.http.probe(url, timeout=container.settings.health_timeout)
+        elapsed_ms = (time.monotonic() - probe_started) * 1000.0
+        return result, elapsed_ms
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {pool.submit(probe, url): slug for slug, url in targets.items()}
         for future in concurrent.futures.as_completed(futures):
             slug = futures[future]
             try:
-                result = future.result()
+                result, latency_ms = future.result()
             except Exception as error:  # a probe must not cancel the other apps
-                from omnisource.http import ProbeResult
-
                 result = ProbeResult(False, f"probe failed: {error}", targets[slug])
-            previous = state[slug].get("health", {})
-            state[slug]["health"] = {
-                "reachable": result.reachable,
-                "detail": result.detail,
-                "since": previous.get("since", today()) if previous.get("reachable") == result.reachable else today(),
-            }
+                latency_ms = 0.0
+
+            previous = state.get(slug, {}).get("health", {}) if isinstance(state.get(slug), dict) else {}
+            if not isinstance(previous, dict):
+                previous = {}
+            since = previous.get("since", today()) if previous.get("reachable") == result.reachable else today()
+            remember_probe(state, slug, reachable=result.reachable, detail=result.detail, latency_ms=latency_ms)
+            state.setdefault(slug, {})["health"]["since"] = since
             (log.info if result.reachable else log.warning)(
-                "%-14s %s (%s)", slug, "reachable" if result.reachable else "UNREACHABLE", result.detail
+                "%-14s %s (%s) in %dms",
+                slug,
+                "reachable" if result.reachable else "UNREACHABLE",
+                result.detail,
+                int(latency_ms),
             )
     log.info("Probed %d download URL(s) in %.1fs", len(targets), time.monotonic() - started)
 
@@ -375,6 +389,47 @@ def stage_build(
     for badge_name, badge_doc in badges.items():
         documents[feeds_dir / badge_name] = badge_doc
 
+    # Derived intelligence documents: discovery catalog, source index,
+    # verification levels, health status board, duplicate groups, analytics.
+    # All of them are generated from the same in-memory dataset; none is
+    # hand-edited. See docs/API.md for the contracts.
+    discovery_doc = build_discovery_doc(catalog, state, health_doc)
+    sources_doc = build_sources_doc(catalog, state)
+    verification_doc = build_verification_doc(catalog, state, health_doc)
+    status_doc = build_status_doc(catalog, state, health_doc)
+    duplicates_doc = build_duplicates_doc(catalog, state)
+    analytics_doc = build_analytics_doc(catalog, state, health_doc, verification_doc)
+    # Rolling analytics snapshot lives in pipeline state (no external DB).
+    # Record it before publishing so the document carries today's entry too.
+    remember_analytics_snapshot(state, analytics_doc)
+    history = state.get("analyticsHistory")
+    if isinstance(history, list):
+        analytics_doc["history"] = history[-30:]
+    for name, doc in (
+        ("discovery.json", discovery_doc),
+        ("sources.json", sources_doc),
+        ("verification.json", verification_doc),
+        ("status.json", status_doc),
+        ("duplicates.json", duplicates_doc),
+        ("analytics.json", analytics_doc),
+    ):
+        documents[feeds_dir / name] = doc
+
+    # Additional Shields.io-compatible badges for the README.
+    documents[feeds_dir / "badge-sync.json"] = {
+        "schemaVersion": 1,
+        "label": "last sync",
+        "message": analytics_doc.get("lastSync") or "pending",
+        "color": "5b5bd6",
+    }
+    verified = int(analytics_doc["totals"]["verifiedApps"])
+    documents[feeds_dir / "badge-verified.json"] = {
+        "schemaVersion": 1,
+        "label": "verified",
+        "message": f"{verified}/{len(catalog.apps)}",
+        "color": "2ea043" if verified == len(catalog.apps) else "d29922",
+    }
+
     changed = atomic_write_many(documents)
 
     # RSS 2.0 / Atom XML feeds: one combined feed plus a per-app feed.
@@ -389,15 +444,44 @@ def stage_build(
         if app_rss_content and atomic_write_text(app_rss_path, app_rss_content):
             changed.append(app_rss_path)
 
+    # Static app detail pages (apps/<slug>/index.html).
+    page_dir = container.paths.root / "apps"
+    changed.extend(
+        build_app_pages(
+            catalog,
+            state,
+            health_doc,
+            verification_doc,
+            duplicates_doc,
+            pages_dir=page_dir,
+        )
+    )
+
     log.info(
-        "Built %d AltStore feed(s) + apps.json + health.json + updates.json + badges + RSS (%d file(s) changed)",
+        "Built %d AltStore feed(s) + apps.json + health.json + updates.json + badges + RSS + "
+        "discovery/verification/status/duplicates/analytics + %d app page(s) (%d file(s) changed)",
+        len(rendered),
         len(rendered),
         len(changed),
     )
-    return changed, health_doc
+    return changed, health_doc, analytics_doc
 
 
-def stage_readme(container: Container, catalog: Catalog, health_doc: dict[str, Any]) -> bool:
+def _refresh_block(text: str, markers: tuple[str, str], block: str) -> tuple[str, bool]:
+    start, end = markers
+    if start not in text or end not in text:
+        return text, False
+    pattern = re.compile(re.escape(start) + ".*?" + re.escape(end), re.DOTALL)
+    updated = pattern.sub(lambda _: block, text)
+    return updated, updated != text
+
+
+def stage_readme(
+    container: Container,
+    catalog: Catalog,
+    health_doc: dict[str, Any],
+    analytics_doc: dict[str, Any] | None = None,
+) -> bool:
     readme = container.paths.readme
     if not readme.exists():
         return False
@@ -442,13 +526,31 @@ def stage_readme(container: Container, catalog: Catalog, health_doc: dict[str, A
             end,
         ]
     )
-    pattern = re.compile(re.escape(start) + ".*?" + re.escape(end), re.DOTALL)
-    updated = pattern.sub(lambda _: block, text)
+    updated, _ = _refresh_block(text, README_MARKERS, block)
+
+    # Live statistics block, refreshed from the analytics document.
+    analytics_doc = analytics_doc or build_analytics_doc(catalog, load_state(container), health_doc)
+    analytics_totals = analytics_doc["totals"]
+    stats_block = "\n".join(
+        [
+            README_STATS_MARKERS[0],
+            "",
+            f"**{analytics_totals['apps']}** apps · **{analytics_totals['sources']}** upstream sources · "
+            f"**{analytics_totals['verifiedApps']}** verified · "
+            f"**{analytics_totals['communityVerifiedApps']}** community verified · "
+            f"**{analytics_totals['downloadsReachable']}/{analytics_totals['apps']}** downloads online · "
+            f"last sync **{analytics_doc.get('lastSync') or 'pending'}**.",
+            "",
+            README_STATS_MARKERS[1],
+        ]
+    )
+    updated, _ = _refresh_block(updated, README_STATS_MARKERS, stats_block)
+
     if updated == text:
         return False
     changed = atomic_write_text(readme, updated)
     if changed:
-        log.info("README catalog block refreshed")
+        log.info("README catalog + stats block refreshed")
     return changed
 
 
@@ -546,14 +648,14 @@ def run(
         stage_assets(container, catalog)
 
     with Group("Build feeds"):
-        changed, health_doc = stage_build(container, catalog, state, report)
+        changed, health_doc, analytics_doc = stage_build(container, catalog, state, report)
 
     # Persist state only after the complete generated dataset passed validation;
     # a failed build therefore leaves both data and memory at last-known-good.
     if write_json(container.paths.feeds / "state.json", dict(sorted(state.items()))):
         changed.append(container.paths.feeds / "state.json")
 
-    if stage_readme(container, catalog, health_doc):
+    if stage_readme(container, catalog, health_doc, analytics_doc):
         changed.append(container.paths.readme)
     report.finished_at = today()
     report.files_changed = len(changed)

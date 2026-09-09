@@ -59,7 +59,11 @@ rm -f /tmp/jq-lint.err
 feeds=()
 for f in feeds/*.json; do
   case "$(basename "$f")" in
-    state.json | health.json | updates.json | badge-*.json) continue ;; # pipeline state/health/timeline/badges, not AltStore v2
+    # pipeline state/health/timeline/badges and derived intelligence documents
+    # (discovery, sources, verification, status, duplicates, analytics) are
+    # machine-readable datasets, not AltStore v2 distribution feeds.
+    state.json | health.json | updates.json | badge-*.json | discovery.json | sources.json | \
+    verification.json | status.json | duplicates.json | analytics.json) continue ;;
     *) feeds+=("$f") ;;
   esac
 done

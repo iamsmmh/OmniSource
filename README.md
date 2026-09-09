@@ -8,9 +8,18 @@
 
 One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · LiveContainer**.
 
+<!-- omnisource:stats:start -->
+
+**22** apps · **18** upstream sources · **21** verified · **1** community verified · **22/22** downloads online · last sync **2026-09-09**.
+
+<!-- omnisource:stats:end -->
+
 <p>
   <a href="https://github.com/iamsmmh/OmniSource/actions/workflows/sync.yml"><img src="https://github.com/iamsmmh/OmniSource/actions/workflows/sync.yml/badge.svg" alt="Sync & Publish"></a>
   <a href="https://github.com/iamsmmh/OmniSource/actions/workflows/validate.yml"><img src="https://github.com/iamsmmh/OmniSource/actions/workflows/validate.yml/badge.svg" alt="Validate"></a>
+  <a href="https://img.shields.io/endpoint?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Fbadge-apps.json"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Fbadge-apps.json" alt="Apps"></a>
+  <a href="https://img.shields.io/endpoint?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Fbadge-health.json"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Fbadge-health.json" alt="Downloads healthy"></a>
+  <a href="https://img.shields.io/endpoint?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Fbadge-sync.json"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2Fbadge-sync.json" alt="Last sync"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/iamsmmh/OmniSource" alt="License"></a>
 </p>
 
@@ -102,16 +111,20 @@ came from.
 ## How it works
 
 ```
-catalog.json ──▶ scripts/omnisource.py ──▶ feeds/*.json + feeds/*.xml ──▶ GitHub Pages ──▶ your client
-  (hand edited)   (every 6 h: sync from      (generated)                   https://iamsmmh.github.io/OmniSource/
+catalog.json ──▶ scripts/omnisource.py ──▶ feeds/*.json + feeds/*.xml + apps/<slug>/ ──▶ GitHub Pages ──▶ your client
+  (hand edited)   (every 6 h: sync from      (generated)                        https://iamsmmh.github.io/OmniSource/
                   official upstreams,
                   probe links, build feeds)
 ```
 
-`catalog.json` is the only hand-edited data file. Everything under `feeds/`—per-app feeds,
-`apps.json`, the `updates.json` website timeline, per-app + combined RSS, health data, badges and
-pipeline state—is generated. During deployment, the site builder also publishes these files at the
-historical flat URLs, so existing subscribers keep working.
+`catalog.json` is the only hand-edited data file. Everything under `feeds/` — per-app feeds,
+`apps.json`, the `updates.json` website timeline, per-app + combined RSS, health data, badges,
+pipeline state and the derived intelligence documents (`discovery.json`, `sources.json`,
+`verification.json`, `status.json`, `duplicates.json`, `analytics.json`) — is generated, together
+with one static page per app under `apps/<slug>/`. During deployment, the site builder publishes
+all of it at the historical flat URLs, the organized `feeds/` paths, and the machine API surface
+(`api/…`, with gzip twins) — see [docs/API.md](docs/API.md) — so existing subscribers and future
+clients keep working.
 
 | Pipeline | Runs | What it does |
 | --- | --- | --- |
@@ -126,27 +139,47 @@ historical flat URLs, so existing subscribers keep working.
 | `catalog.json` | Source of truth: apps, official upstreams, verification and compatibility metadata |
 | `config/` | Runtime defaults for sync, retries, health checks and history |
 | `assets/` | App and client icons served over Pages |
-| `src/omnisource/` | Organized Python package for providers, feeds, validation and release tracking |
-| `scripts/` | Small CLI entry points, including the shared Pages site builder |
+| `src/omnisource/` | Organized Python package: providers, feeds, validation, discovery catalog, verification, health monitoring, duplicates, analytics, app-page rendering |
+| `scripts/` | Small CLI entry points, including the shared Pages site builder and page generator |
 | `schemas/` | Catalog and AltStore feed contracts |
 | `tests/` | Offline unit test suite |
-| `feeds/` | All generated feeds, badges, RSS, health data and pipeline state |
+| `feeds/` | All generated feeds, badges, RSS, health data, intelligence documents and pipeline state |
+| `apps/<slug>/` | Generated static app detail pages |
 | `website/` | Static interface organized into HTML, CSS and JavaScript |
-| `docs/` | Maintainer documentation and repository map |
+| `docs/` | Maintainer documentation, API contracts and the repository audit |
 
 See the concise [repository guide](docs/REPOSITORY.md) before making structural changes.
 
 ## For developers
 
 ```bash
-python3 scripts/omnisource.py     # sync official upstreams + rebuild every feed
-python3 scripts/validate.py       # offline structural checks
+python3 scripts/omnisource.py     # sync official upstreams + rebuild every feed/docs/pages
+python3 scripts/validate.py       # offline structural checks (feeds + intelligence docs)
 bash scripts/validate_jq.sh       # jq-only lint + AltStore v2 checks
+python3 scripts/check_reproducible.py  # rebuild offline; generated files must not drift
 python3 scripts/health_check.py   # HEAD-probe every download URL
+python3 scripts/generate_pages.py # rebuild only the static app pages
 ```
 
 Golden rule: change `catalog.json`, never the generated files. Scripts are Python stdlib only — no
 virtualenv, no dependencies.
+
+## Machine API
+
+Every build publishes a generated API under `api/` (see [docs/API.md](docs/API.md)):
+`apps.json`, `catalog.json` (discovery index), `sources.json`, `verification.json`,
+`status.json`, `duplicates.json`, `analytics.json`, `updates.json`, `health.json` —
+each with a gzip twin and an `api/index.json` manifest. The website consumes the
+same documents, and the [audit](docs/AUDIT.md) explains the architecture.
+
+## Roadmap
+
+- [x] Auto-generated discovery catalog, verification levels, health board and analytics
+- [x] Static app detail pages + machine API
+- [ ] OmniSource mobile app consuming `/api/`
+- [ ] Community app submissions (PRs to `catalog.json`)
+- [ ] App voting and trending rankings
+- [ ] Signed release notifications
 
 ## Adding an app
 
