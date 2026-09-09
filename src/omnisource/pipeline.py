@@ -25,7 +25,6 @@ from pathlib import Path
 from typing import Any
 
 from omnisource.analytics import build_analytics_doc, remember_analytics_snapshot
-from omnisource.api_mirror import mirror_feeds
 from omnisource.app_pages import build_app_pages
 from omnisource.assets import DirectoryCache, inspect_catalog
 from omnisource.community import build_community_doc
@@ -55,7 +54,6 @@ from omnisource.related import build_related_doc
 from omnisource.reputation import build_reputation_doc
 from omnisource.screenshots import process_screenshots
 from omnisource.search_index import build_search_index
-from omnisource.site import publish_repo_artifacts
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
 from omnisource.trending import build_trending_doc
 from omnisource.verification import build_verification_doc
@@ -470,13 +468,6 @@ def stage_build(
     ):
         documents[feeds_dir / name] = doc
 
-    # Phase 11 — mirror the public feeds into ``api/`` so SDKs and
-    # third-party consumers can rely on stable URLs.
-    api_dir = container.paths.root / "api"
-    if api_dir.exists() or True:  # always ensure the directory exists
-        api_dir.mkdir(parents=True, exist_ok=True)
-    written_api = mirror_feeds(feeds_dir, api_dir)
-
     # Additional Shields.io-compatible badges for the README.
     documents[feeds_dir / "badge-sync.json"] = {
         "schemaVersion": 1,
@@ -525,10 +516,9 @@ def stage_build(
         "Built %d AltStore feed(s) + apps.json + health.json + updates.json + badges + RSS + "
         "discovery/verification/status/duplicates/analytics + "
         "trending/related/reputation/download-intel/community/search-index/install/compare/screenshots + "
-        "%d app page(s); mirrored %d api/* file(s) (%d file(s) changed)",
+        "%d app page(s) (%d file(s) changed)",
         len(rendered),
         len(rendered),
-        len(written_api),
         len(changed),
     )
     return changed, health_doc, analytics_doc
@@ -725,13 +715,9 @@ def run(
     if stage_readme(container, catalog, health_doc, analytics_doc):
         changed.append(container.paths.readme)
 
-    # Publish the repo-root site artifacts (flat feed URLs, sitemap, robots,
-    # homepage stats) so the Jekyll-managed Pages build serves the same
-    # correct site as the _site/ deploy (see site.publish_repo_artifacts).
-    with Group("Publish site artifacts"):
-        for path in publish_repo_artifacts(container.paths.root, health_doc=health_doc, analytics_doc=analytics_doc):
-            if path not in changed:
-                changed.append(path)
+    # The deploy builder (scripts/build_site.py) assembles every published
+    # URL — flat feeds, sitemap, robots, homepage stats — into _site/ from
+    # these canonical outputs, so the pipeline itself writes nothing else.
     report.finished_at = today()
     report.files_changed = len(changed)
     write_summary(health_doc, changed, report)

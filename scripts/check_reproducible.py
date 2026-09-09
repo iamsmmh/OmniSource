@@ -36,17 +36,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 # The offline build may legitimately rewrite these; nothing else is checked.
-# Root-level patterns (no "/") match the repository root only: the flat feed
-# copies, the sitemap/robots and the home page's generated stat values.
+# The pipeline commits only the canonical generated outputs (feeds/, app
+# pages, README blocks). Deployed-only artifacts — flat feed URLs, sitemap,
+# robots, homepage stats — are assembled into _site/ by scripts/build_site.py
+# and never touch the repository root, so they are intentionally not tracked.
 TRACKED_PATTERNS = (
     "feeds/*.json",
     "apps/*/index.html",
     "README.md",
-    "*.json",
-    "*.xml",
-    "index.html",
-    "robots.txt",
-    "sitemap.xml",
 )
 # state.json is runtime state (syncedAt, health history) and changes whenever
 # the scheduler runs a real sync, so it is intentionally not compared.

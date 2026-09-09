@@ -19,8 +19,10 @@ on:
       - assets/**
       - scripts/**
       - src/**
-      # The repository root *is* the site (see _config.yml / docs/website.md);
-      # hand-maintained site sources live at the root, not in a website/ dir.
+      # Hand-maintained site sources live at the repository root, not in a
+      # website/ dir (see docs/website.md). Deployed-only artifacts (flat
+      # feed URLs, sitemap, robots, homepage stats) are assembled into _site/
+      # on every build and never committed, so they need no trigger here.
       - index.html
       - compare.html
       - compare/**
@@ -33,8 +35,6 @@ on:
       - js/**
       - manifest.webmanifest
       - sw.js
-      - sitemap.xml
-      - robots.txt
       - .github/workflows/sync.yml
   workflow_dispatch:
     inputs:
@@ -135,13 +135,12 @@ jobs:
           set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Generated feeds JSON/XML (organized + flat root copies), app
-          # detail pages, README blocks, the home page stat values, sitemap
-          # and robots. The pipeline writes nothing else, so the allowlist
-          # stays minimal on purpose: a stray file here means the build
-          # misbehaved. ('index.html' is generated only in its stat block,
-          # which the pipeline rewrites in place.)
-          git add -A -- '*.json' '*.xml' 'apps/**' README.md index.html robots.txt
+          # Generated feeds JSON/XML (feeds/ only — the flat subscriber URLs,
+          # sitemap, robots and homepage stats are assembled into _site/ at
+          # deploy time and never committed), app detail pages and README
+          # blocks. The pipeline writes nothing else, so the allowlist stays
+          # minimal on purpose: a stray file here means the build misbehaved.
+          git add -A -- '*.json' '*.xml' 'apps/**' README.md
 
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -158,8 +157,8 @@ jobs:
           fi
           # Rebase instead of force-push: a concurrent human commit must survive.
           # A single transient fetch/push glitch (main can be busy right after
-          # a merge: managed Pages builds, feed-sync runs) must not kill a
-          # scheduled run, so each step retries a few times before failing.
+          # a merge) must not kill a scheduled run, so each step retries a
+          # few times before failing.
           for attempt in 1 2 3; do
             if git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
               break

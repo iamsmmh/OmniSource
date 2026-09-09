@@ -29,7 +29,6 @@ OmniSource/
 │   ├── search_index.py       # Phase 4 Fuse.js-style search index
 │   ├── install.py            # Phase 9 install card generator
 │   ├── compare.py            # Phase 5 side-by-side comparison engine
-│   ├── api_mirror.py         # Phase 11 1:1 mirror of feeds/ → api/
 │   └── app_pages.py          # Static App-Store-style app detail page generator
 ├── scripts/                  # Thin CLI entry points over src/omnisource
 │   ├── omnisource.py         # Pipeline (sync → health → build)
@@ -44,9 +43,8 @@ OmniSource/
 ├── tests/                    # Unit test suite (121 tests)
 ├── feeds/                    # Generated canonical feeds, RSS, intelligence docs, state
 ├── apps/<slug>/index.html    # Generated static app detail pages (design-system styled)
-├── api/                      # Local feeds mirror (gitignored; published inside _site/api/)
 ├── index.html                # Immersive home: hero, rails, stats, catalog, timeline
-│                             #   (stat values are generated in place by the pipeline)
+│                             #   (live stat values are baked into the _site/ copy at deploy time)
 ├── compare.html              # Redirect shim → compare/ (preserves ?left=&right=)
 ├── compare/                  # Side-by-side app comparison (deep-linkable)
 ├── status/                   # Source Health Center (uptime, latency, sync)
@@ -55,11 +53,8 @@ OmniSource/
 ├── search/                   # Full-text search page
 ├── js/core.js                # OS namespace: theme, ⌘K palette, search engine, PWA
 ├── js/site.js                # Page renderers (dispatched on body[data-page])
-├── apps.json, <feed>.json…   # Generated flat feed copies (historical install URLs)
-├── sitemap.xml, robots.txt   # Generated SEO files (committed so the Jekyll build serves them)
 ├── manifest.webmanifest      # PWA install manifest (with shortcuts)
 ├── sw.js                     # Service worker (offline shell + SWR feeds)
-├── _config.yml               # Excludes repo internals from GitHub's Jekyll build
 ├── sdk/                      # Phase 14: client SDKs
 │   ├── javascript/           # ESM + CJS, no dependencies
 │   └── python/               # Single-file, 3.8+, no dependencies
@@ -108,16 +103,20 @@ stylesheets. See [`API.md`](API.md) for the endpoint contracts.
 ## How are generated artifacts published?
 
 Generated files have canonical homes under `feeds/` (JSON/XML) and `apps/`
-(pages), keeping the repository root clean. During deployment,
-`scripts/build_site.py` copies them to the site root, the `feeds/` path and the
-`api/` path as well. Existing subscriptions such as the following therefore
-continue to work:
+(pages) — nothing generated is committed at the repository root, keeping it
+clean. During deployment, `scripts/build_site.py` assembles every public URL
+into `_site/`: the site root (flat historical URLs), the `feeds/` path and
+the `api/` path, plus `sitemap.xml`, `robots.txt` and the home page's live
+statistics. Existing subscriptions such as the following therefore continue
+to work:
 
 ```text
 https://iamsmmh.github.io/OmniSource/apps.json
 ```
 
-This avoids duplicate tracked files without changing any public URL.
+This avoids duplicate tracked files without changing any public URL. Pages
+deploys the `_site/` artifact via GitHub Actions (`sync.yml`); the raw
+repository root is never served.
 
 ## Common commands
 
@@ -186,15 +185,16 @@ The Pages workflow calls `scripts/build_site.py`, so local and production site a
    The hand-maintained pages at the repository root (index.html, install/,
    js/, sw.js, manifest) render the live experience on top of the deployed
    feeds/ and api/; assets/design-system/ styles both the website and the
-   generated pages. The same root tree is what GitHub's Jekyll build serves.
+   generated pages. GitHub Pages serves the assembled _site/ artifact only
+   (GitHub Actions deployment); the repository root is never served directly.
 ```
 
 ## Generation pipeline (Make targets)
 
 | Target | What it does |
 | --- | --- |
-| `make build` | Runs the sync + health + build stages, writing everything under `feeds/`, `api/` (gitignored) and `apps/`. |
-| `make site` | Calls `scripts/build_site.py` to assemble the deployable site in `_site/`. The site builder copies the root-level site files, publishes `feeds/` at the flat root and `api/` (with `.gz` twins), and copies the `sitemap.xml` + `robots.txt` the pipeline committed at the root. |
+| `make build` | Runs the sync + health + build stages, writing everything under `feeds/`, `apps/` and the README blocks. |
+| `make site` | Calls `scripts/build_site.py` to assemble the deployable site in `_site/`. The site builder copies the root-level site files, publishes `feeds/` at the flat root and `api/` (with `.gz` twins), and generates `sitemap.xml` + `robots.txt` plus the home page's live statistics fresh on every build. |
 | `make check` | Runs the offline validator (`scripts/validate.py`), the jq contract checks (`scripts/validate_jq.sh`) and the unit test suite (`python3 -m unittest discover -s tests`). |
 | `make serve` | Builds the site and serves `_site/` on a local port for development. |
 

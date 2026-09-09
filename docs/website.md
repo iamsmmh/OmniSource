@@ -2,17 +2,16 @@
 
 The OmniSource website is a dependency-free static application: HTML5, modern
 CSS and vanilla JavaScript with Web Components — no React/Vue/Angular, no
-build step. **The repository root *is* the site**: the hand-maintained pages
-live at the root next to the generated feeds, so GitHub's Jekyll-managed
-Pages build (`_config.yml` excludes the repo internals) publishes the same
-correct site as the `_site/` artifact that `scripts/build_site.py` assembles
-in CI.
+framework build step. The hand-maintained page *sources* live at the
+repository root next to the generated feeds, and `scripts/build_site.py`
+assembles them into the `_site/` artifact that `sync.yml` deploys to GitHub
+Pages (GitHub Actions deployment — the raw root is never served).
 
 ```text
-.  (repository root)
+.  (repository root: site sources)
 ├── index.html               # Immersive home: hero, rails, stats, catalog, timeline
-│                            #   (the stat values are rewritten in place by
-│                            #    the pipeline — never hand-edit them)
+│                            #   (live stat values are baked into the _site/ copy
+│                            #    at deploy time — never hand-edit them)
 ├── compare/                 # App-vs-app comparison (deep links: ?left=&right=)
 ├── compare.html             # Redirect shim for the historical /compare.html URL
 ├── status/                  # Source Health Center (uptime, latency, sync state)
@@ -22,10 +21,10 @@ in CI.
 ├── js/core.js               # OS namespace: theme, ⌘K palette, search engine, PWA, toasts
 ├── js/site.js               # Page renderers (dispatched on body[data-page])
 ├── sw.js                    # Service worker: offline shell + stale-while-revalidate feeds
-├── manifest.webmanifest     # PWA manifest with shortcuts (offline installable)
-├── apps.json, <feed>.json…  # Generated flat feed copies (historical install URLs)
-├── sitemap.xml, robots.txt  # Generated SEO files (committed for the Jekyll build)
-└── _config.yml              # Jekyll excludes for GitHub's managed build
+└── manifest.webmanifest     # PWA manifest with shortcuts (offline installable)
+
+feeds/ holds the canonical generated feeds; the builder publishes them at
+the flat historical URLs (/<feed>), /feeds/ and /api/ inside _site/.
 ```
 
 The shared design system (`assets/design-system/`: `tokens.css`,
@@ -70,7 +69,7 @@ The interface renders everything from those files at runtime.
 From the repository root:
 
 ```bash
-make site   # assemble _site/ (includes sitemap.xml, robots.txt, API mirror)
+make site   # assemble _site/ (flat feed URLs, sitemap.xml, robots.txt, API mirror)
 make serve  # preview on port 8000
 ```
 

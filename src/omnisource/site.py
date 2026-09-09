@@ -1,10 +1,10 @@
 """Static site assembler for GitHub Pages.
 
 Builds the complete deployable site into ``_site/`` (default) from the
-repository root, which *is* the site (hand-maintained pages + generated
-feeds/app pages). The published site exposes every generated artifact at
-three URL families so existing subscribers and future API consumers both
-keep working:
+repository sources: hand-maintained pages at the root plus the generated
+feeds (``feeds/``) and app pages (``apps/``). The published site exposes
+every generated artifact at three URL families so existing subscribers
+and future API consumers both keep working:
 
 * organized   ``/feeds/<file>``           — canonical generated location
 * flat        ``/<file>``                 — historical subscriber URLs
@@ -13,19 +13,21 @@ keep working:
 
 On top of the copy, the builder adds the pieces that make the site a
 first-class web app: ``sitemap.xml`` (every page, regenerated each build),
-``robots.txt``, gzip copies of the JSON API documents (``.json.gz``) for
-consumers that want the smallest payload, and minified copies of the
-design-system stylesheets (comments/blank lines stripped — no structural
-rewriting, so the source of truth stays readable).
+``robots.txt``, the home page's live statistics (baked into the deployed
+``index.html`` copy only — the committed template is never rewritten),
+gzip copies of the JSON API documents (``.json.gz``) for consumers that
+want the smallest payload, and minified copies of the design-system
+stylesheets (comments/blank lines stripped — no structural rewriting, so
+the source of truth stays readable).
 
 GitHub Pages itself serves the uncompressed originals; the ``.gz`` twins
 are for API consumers who can request them explicitly.
 
-``publish_repo_artifacts()`` is the pipeline-side counterpart: it writes
-the repo-root artifacts (flat feed copies, sitemap, robots, homepage stat
-values) before commit, so GitHub's Jekyll-managed Pages build — which
-serves the repository root directly — publishes the same correct site.
-See ``_config.yml`` and ``.github/workflows/README.md``.
+This builder is the single publisher: Pages deploys the ``_site/``
+artifact via ``sync.yml`` (GitHub Actions deployment). The repository
+root intentionally carries no generated flat feed copies, so it stays
+small and every public URL is assembled fresh on each build.
+See ``.github/workflows/README.md``.
 """
 
 from __future__ import annotations
@@ -44,10 +46,10 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_OUTPUT = ROOT / "_site"
 
-# Hand-maintained website sources that live at the repository root (the
-# repository root *is* the site). Keep in sync with the exclude list in
-# _config.yml: everything at the root that is NOT listed here (or an
-# generated/asset directory) must be excluded there.
+# Hand-maintained website sources that live at the repository root. The
+# repository root holds the site *sources* (pages, js/, assets/, feeds/,
+# apps/); the deployable site is assembled from them into _site/ by
+# build_site(), which is the only publisher (GitHub Actions deployment).
 SITE_FILES = (
     "index.html",
     "compare.html",
@@ -212,7 +214,7 @@ def _deployable_asset(path: Path) -> bool:
 
 
 # ---------------------------------------------------------------------------
-# Homepage live statistics (no-JS/SEO values + Jekyll-build equivalence)
+# Homepage live statistics (no-JS/SEO values, baked into the _site/ copy)
 # ---------------------------------------------------------------------------
 
 
@@ -240,13 +242,14 @@ def _homepage_stat_values(health_doc: dict[str, Any], analytics_doc: dict[str, A
 
 
 def _inject_homepage_stats(path: Path, health_doc: dict[str, Any], analytics_doc: dict[str, Any]) -> bool:
-    """Write the real statistics into the static home page.
+    """Write the real statistics into a home page copy.
 
-    The numbers are placeholders (0) in the committed template; without this
-    step, no-JS visitors, crawlers and any renderer whose
+    Without this step, no-JS visitors, crawlers and any renderer whose
     requestAnimationFrame callbacks never fire (headless, throttled
-    background tabs) would see zeros forever. JS still animates on top of
-    the real values. Fails loudly if a marker disappears from the page.
+    background tabs) would see stale numbers forever. JS still animates on
+    top of the real values. Fails loudly if a marker disappears from the
+    page. Only ever called on the deployed ``_site/index.html`` copy — the
+    committed template keeps the values of the last build for readability.
     """
     if not path.is_file():
         raise ValueError(f"home page missing: {path}")
@@ -277,52 +280,17 @@ def _inject_homepage_stats(path: Path, health_doc: dict[str, Any], analytics_doc
 
 
 # ---------------------------------------------------------------------------
-# Pipeline publishing (repo root — what the Jekyll-managed build serves)
-# ---------------------------------------------------------------------------
-
-
-def publish_repo_artifacts(root: Path, *, health_doc: dict[str, Any], analytics_doc: dict[str, Any]) -> list[Path]:
-    """Write the repo-root artifacts the deployed site depends on.
-
-    Called by the pipeline before commit. Returns the files that changed.
-    """
-    root = root.resolve()
-    changed: list[Path] = []
-
-    # Historical flat URLs: /<feed> byte-identical to /feeds/<feed>.
-    for pattern in ("*.json", "*.xml"):
-        for feed in sorted((root / "feeds").glob(pattern)):
-            if feed.name == "state.json":
-                continue
-            destination = root / feed.name
-            if not destination.exists() or destination.read_bytes() != feed.read_bytes():
-                _write_text(destination, feed.read_text(encoding="utf-8"))
-                changed.append(destination)
-
-    # Sitemap + robots (regenerated every build so the Jekyll build serves
-    # the same ones as the _site/ deploy).
-    base_url = _base_url_from_catalog(root)
-    slugs = _app_slugs(root)
-    today = date.today().isoformat()
-    for name, payload in (
-        ("sitemap.xml", _sitemap(base_url, slugs, today)),
-        ("robots.txt", _robots(base_url)),
-    ):
-        destination = root / name
-        if not destination.exists() or destination.read_text(encoding="utf-8") != payload:
-            _write_text(destination, payload)
-            changed.append(destination)
-
-    # Live statistics in the static home page (no-JS/SEO + build equivalence).
-    if _inject_homepage_stats(root / "index.html", health_doc, analytics_doc):
-        changed.append(root / "index.html")
-
-    return changed
-
-
-# ---------------------------------------------------------------------------
 # _site/ assembly
 # ---------------------------------------------------------------------------
+
+
+def _generated_doc(root: Path, name: str) -> dict[str, Any]:
+    """Read a generated intelligence document, tolerating a fresh checkout."""
+    try:
+        raw = json.loads((root / "feeds" / name).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return raw if isinstance(raw, dict) else {}
 
 
 def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
@@ -357,15 +325,17 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
     # Organized feeds (canonical location).
     shutil.copytree(root / "feeds", output / "feeds", ignore=shutil.ignore_patterns("state.json"))
 
-    # Historical flat source URLs for existing subscribers. Prefer the
-    # pipeline-published repo-root copies (what the Jekyll build serves) and
-    # fall back to feeds/ for anything not written yet.
+    # Historical flat source URLs for existing subscribers (/apps.json,
+    # /<slug>.json, /<slug>.xml, badges, intelligence docs): byte-identical
+    # copies of the canonical feeds/, assembled fresh on every build so the
+    # repository root itself stays free of generated duplicates.
+    flat_count = 0
     for pattern in ("*.json", "*.xml"):
         for feed in sorted((root / "feeds").glob(pattern)):
             if feed.name == "state.json":
                 continue
-            source = root / feed.name if (root / feed.name).is_file() else feed
-            shutil.copy2(source, output / feed.name)
+            shutil.copy2(feed, output / feed.name)
+            flat_count += 1
 
     shutil.copy2(root / "catalog.json", output / "catalog.json")
 
@@ -397,17 +367,17 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
     if _write_gzip(manifest_path) is not None:
         gz_count += 1
 
-    # SEO / discoverability: the pipeline publishes these at the repo root;
-    # copy them so both deploys agree, and generate as a fallback so a
-    # standalone build still works on a fresh checkout.
-    for name in ("sitemap.xml", "robots.txt"):
-        source = root / name
-        if source.is_file():
-            shutil.copy2(source, output / name)
-        elif name == "sitemap.xml":
-            _write_text(output / name, _sitemap(base_url, slugs, today))
-        else:
-            _write_text(output / name, _robots(base_url))
+    # SEO / discoverability: regenerated on every build (never committed).
+    _write_text(output / "sitemap.xml", _sitemap(base_url, slugs, today))
+    _write_text(output / "robots.txt", _robots(base_url))
+
+    # Live statistics in the deployed home page copy (no-JS/SEO values).
+    # The committed index.html template is left untouched.
+    stats_injected = _inject_homepage_stats(
+        output / "index.html",
+        _generated_doc(root, "health.json"),
+        _generated_doc(root, "analytics.json"),
+    )
 
     # Minify the design-system stylesheets in the deployed copy only.
     minified = 0
@@ -425,8 +395,10 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
         "output": str(output),
         "pages": 6 + len(slugs),
         "app_pages": len(slugs),
+        "flat_files": flat_count,
         "gz_files": gz_count,
         "css_minified_bytes": minified,
+        "stats_injected": stats_injected,
     }
 
 
@@ -437,7 +409,8 @@ def main(argv: list[str] | None = None) -> int:
     summary = build_site(args.output)
     print(
         f"Built site at {summary['output']}: {summary['pages']} pages "
-        f"({summary['app_pages']} app pages), {summary['gz_files']} gz API copies, "
+        f"({summary['app_pages']} app pages), {summary['flat_files']} flat feed URLs, "
+        f"{summary['gz_files']} gz API copies, "
         f"{summary['css_minified_bytes'] // 1024} KB CSS minified, sitemap + robots written."
     )
     return 0

@@ -143,9 +143,9 @@ scripts/omnisource.py ──▶ src/omnisource/ (Python, stdlib-only)
       │                       ├─ app_pages    App-Store-style static pages (apps/<slug>/)
       │                       └─ site         _site/ builder (sitemap, robots, API mirror, minify)
       ▼
-feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)   api/  (local mirror, gitignored)
-      │                              │                     │
-      └──────────────┬───────────────┴─────────────────────┘
+feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)
+      │                              │
+      └──────────────┬───────────────┘
                      ▼
         scripts/build_site.py  ──▶  _site/  (the deployable site)
                      │
@@ -156,14 +156,14 @@ feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)   api/  (local mirror, giti
 * **Data plane** — `catalog.json` is the only hand-edited data file. The pipeline syncs official
   upstreams, probes every download link and regenerates all feeds, intelligence documents, badges
   and app pages. Generated files are never hand-edited.
-* **Site plane** — the repository root *is* the site: hand-maintained pages at the root
-  (`index.html`, `install/`, `js/`, `sw.js`, …), with the generated feeds, flat historical
-  copies, `sitemap.xml`, `robots.txt` and the home page's live statistics committed alongside.
+* **Site plane** — hand-maintained page sources at the repository root
+  (`index.html`, `install/`, `js/`, `sw.js`, …) plus the generated feeds and app pages.
   `scripts/build_site.py` (over `src/omnisource/site.py`) assembles `_site/` from that state:
   shared `assets/` (WebP icons, the design system), every feed at three URL families (flat root,
-  `/feeds/`, `/api/` with gzip twins), the static app pages. GitHub's managed Jekyll build
-  (`_config.yml` excludes repo internals) publishes the same correct site on plain pushes,
-  so `sync.yml` and the managed build never fight over the live site.
+  `/feeds/`, `/api/` with gzip twins), the static app pages, `sitemap.xml`, `robots.txt` and
+  the home page's live statistics. Nothing generated is committed at the root. GitHub Pages
+  deploys the `_site/` artifact via `sync.yml` (GitHub Actions deployment), so there is a
+  single publisher and plain pushes can never serve a half-built site.
 * **Presentation plane** — HTML5 + modern CSS + vanilla JS with Web Components. No framework, no
   build step, no dependencies: GitHub Pages serves it as-is. A single design system
   (`assets/design-system/`) styles the website and the generated app pages alike; shared logic
@@ -178,7 +178,7 @@ feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)   api/  (local mirror, giti
 2. **Health** — HEAD-probe (ranged-GET fallback) every primary + fallback download URL; record
    reachability, latency and staleness.
 3. **Build** — render per-app AltStore feeds, `apps.json`, RSS, `updates.json`, badges, all
-   intelligence documents, one static page per app, and the local `api/` mirror; refresh the
+   intelligence documents and one static page per app; refresh the
    marked stats/catalog blocks in this README.
 4. **Validate** — the offline rule engine (`scripts/validate.py`) plus jq contract checks run on
    every push; `check_reproducible.py` proves an offline rebuild produces byte-identical output
@@ -191,7 +191,7 @@ feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)   api/  (local mirror, giti
 | --- | --- | --- |
 | **Sync & Publish** (`.github/workflows/sync.yml`) | every 6 h · on push | Sync → health → build → assemble `_site/` → deploy Pages |
 | **Validate** (`.github/workflows/validate.yml`) | every push & PR | Offline structural checks, reproducibility, `ruff`, `actionlint` |
-| **Merge** (`.github/workflows/merge.yml`) | on `feeds/*.json` change | Rebuild the unified `apps.json` (and its flat copy) from the modular feeds |
+| **Merge** (`.github/workflows/merge.yml`) | on `feeds/*.json` change | Rebuild the unified `feeds/apps.json` from the modular feeds |
 | **Health Check** (`.github/workflows/health-check.yml`) | daily | Probe every download URL; open a GitHub Issue on breakage |
 
 ## Directory structure
@@ -207,9 +207,7 @@ feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)   api/  (local mirror, giti
 | `tests/` | Offline unit test suite (121 tests) |
 | `feeds/` | Generated feeds, RSS, badges, health data, intelligence documents, pipeline state |
 | `apps/<slug>/` | Generated App-Store-style app pages |
-| `apps.json`, `<feed>.json`, … (root) | Generated flat copies of the feeds — the historical install/subscriber URLs (byte-identical to `feeds/`) |
-| `index.html`, `install/`, `js/`, `sw.js`, … (root) | The website: 7 hand-maintained pages + design system; the repo root *is* the site (see `docs/website.md`) |
-| `api/` | Local feeds mirror (gitignored; published as `_site/api/`) |
+| `index.html`, `install/`, `js/`, `sw.js`, … (root) | The website sources: 7 hand-maintained pages + design system, assembled into `_site/` at deploy time (see `docs/website.md`) |
 | `sdk/` | Zero-dependency client SDKs (JavaScript + Python) |
 | `docs/` | Repository guide, API contracts, audit, and the [cleanup report](docs/cleanup-report.md) |
 
@@ -221,7 +219,7 @@ Deployment is fully automated — push to `main` and GitHub Pages updates:
 
 1. `sync.yml` runs the pipeline (sync, health, build) with GitHub Actions caching and
    concurrency limits; it commits the regenerated feeds/pages back via a bot push
-   (allowlisted: `*.json`, `*.xml`, `apps/**`, `README.md`, `index.html`, `robots.txt`).
+   (allowlisted: `*.json`, `*.xml`, `apps/**`, `README.md`).
 2. It assembles the site with `python3 scripts/build_site.py` and uploads `_site/` with
    `actions/upload-pages-artifact@v3`.
 3. A separate `deploy` job publishes it with `actions/deploy-pages@v4`
