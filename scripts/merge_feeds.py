@@ -24,7 +24,6 @@ Usage
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from pathlib import Path
 from typing import Any
@@ -38,7 +37,7 @@ if _SRC in sys.path:
 sys.path.insert(0, _SRC)
 
 from omnisource.constants import ALTSTORE_NON_FEED
-from omnisource.io import atomic_write_text, read_json
+from omnisource.io import atomic_write_text, dumps, read_json
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = REPO_ROOT / "catalog.json"
@@ -142,7 +141,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     master = build_master()
-    payload = json.dumps(master, indent=2, ensure_ascii=False) + "\n"
+    payload = dumps(master)
     target = FEEDS_DIR / MASTER_NAME
     current = target.read_text(encoding="utf-8") if target.exists() else None
     if current != payload:

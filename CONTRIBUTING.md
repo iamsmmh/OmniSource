@@ -65,8 +65,9 @@ repository/feed URL.
 
 Open a [feature idea](https://github.com/iamsmmh/OmniSource/issues/new?template=04-feature-idea.yml)
 first so the direction is agreed before a large change lands. Code lives in
-`src/omnisource/` (pipeline), `scripts/` (entry points), `website/`
-(static site) and `tests/`. Run `make check` before pushing; CI runs the same
+`src/omnisource/` (pipeline), `scripts/` (entry points), the repository root
+(static site: `index.html`, section pages, `js/`, `sw.js`) and `tests/`.
+Run `make check` before pushing; CI runs the same
 lint (`ruff`), structural validation (`validate.py`, `validate_jq.sh`),
 reproducibility and unit tests offline.
 
@@ -76,7 +77,7 @@ reproducibility and unit tests offline.
 - [ ] Ran the pipeline and committed regenerated output.
 - [ ] `make check` passes locally (or the equivalent commands).
 - [ ] Added/updated tests under `tests/` for new behaviour.
-- [ ] Updated docs (`README.md`, `website/README.md`, `docs/REPOSITORY.md`)
+- [ ] Updated docs (`README.md`, `docs/website.md`, `docs/REPOSITORY.md`)
       when the layout, outputs or commands changed.
 
 ## Code of conduct

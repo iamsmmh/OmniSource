@@ -41,22 +41,25 @@ OmniSource/
 │   ├── health_check.py       # Standalone download-link probe (HEAD/ranged GET)
 │   └── notify.py             # Broadcast notifications (Discord/Telegram/ntfy/webhook)
 ├── schemas/                  # JSON schemas
-├── tests/                    # Unit test suite (102 tests)
+├── tests/                    # Unit test suite (121 tests)
 ├── feeds/                    # Generated canonical feeds, RSS, intelligence docs, state
 ├── apps/<slug>/index.html    # Generated static app detail pages (design-system styled)
 ├── api/                      # Local feeds mirror (gitignored; published inside _site/api/)
-├── website/                  # Static website source (dependency-free)
-│   ├── index.html            # Immersive home: hero, rails, stats, catalog, timeline
-│   ├── compare.html          # Redirect shim → compare/ (preserves ?left=&right=)
-│   ├── compare/              # Side-by-side app comparison (deep-linkable)
-│   ├── status/               # Source Health Center (uptime, latency, sync)
-│   ├── analytics/            # Dashboard: trends, updates, verification, categories
-│   ├── install/              # Install center (AltStore/SideStore/Feather/ESign/LiveContainer)
-│   ├── search/               # Full-text search page
-│   ├── js/core.js            # OS namespace: theme, ⌘K palette, search engine, PWA
-│   ├── js/site.js            # Page renderers (dispatched on body[data-page])
-│   ├── manifest.webmanifest  # PWA install manifest (with shortcuts)
-│   └── sw.js                 # Service worker v3 (offline shell + SWR feeds)
+├── index.html                # Immersive home: hero, rails, stats, catalog, timeline
+│                             #   (stat values are generated in place by the pipeline)
+├── compare.html              # Redirect shim → compare/ (preserves ?left=&right=)
+├── compare/                  # Side-by-side app comparison (deep-linkable)
+├── status/                   # Source Health Center (uptime, latency, sync)
+├── analytics/                # Dashboard: trends, updates, verification, categories
+├── install/                  # Install center (AltStore/SideStore/Feather/ESign/LiveContainer)
+├── search/                   # Full-text search page
+├── js/core.js                # OS namespace: theme, ⌘K palette, search engine, PWA
+├── js/site.js                # Page renderers (dispatched on body[data-page])
+├── apps.json, <feed>.json…   # Generated flat feed copies (historical install URLs)
+├── sitemap.xml, robots.txt   # Generated SEO files (committed so the Jekyll build serves them)
+├── manifest.webmanifest      # PWA install manifest (with shortcuts)
+├── sw.js                     # Service worker (offline shell + SWR feeds)
+├── _config.yml               # Excludes repo internals from GitHub's Jekyll build
 ├── sdk/                      # Phase 14: client SDKs
 │   ├── javascript/           # ESM + CJS, no dependencies
 │   └── python/               # Single-file, 3.8+, no dependencies
@@ -69,7 +72,7 @@ OmniSource/
 | --- | --- | --- |
 | Add or update an app | `catalog.json` and, when needed, `assets/` | `make build` |
 | Change sync behavior | `src/omnisource/` | `make check` |
-| Change the landing page | `website/` | `make site` |
+| Change the landing page | `index.html` / the root-level pages | `make site` |
 | Change pipeline defaults | `config/settings.json` | `make check` |
 | Change validation rules | `schemas/` or `src/omnisource/validation.py` | `make check` |
 
@@ -180,9 +183,10 @@ The Pages workflow calls `scripts/build_site.py`, so local and production site a
                   ▼
                _site/         (GitHub Pages deployment)
 
-   website/ (7 pages, js/core.js + js/site.js, sw.js, manifest) is layered
-   on top of the deployed feeds/ and api/ to render the live experience;
-   assets/design-system/ styles both the website and the generated pages.
+   The hand-maintained pages at the repository root (index.html, install/,
+   js/, sw.js, manifest) render the live experience on top of the deployed
+   feeds/ and api/; assets/design-system/ styles both the website and the
+   generated pages. The same root tree is what GitHub's Jekyll build serves.
 ```
 
 ## Generation pipeline (Make targets)
@@ -190,7 +194,7 @@ The Pages workflow calls `scripts/build_site.py`, so local and production site a
 | Target | What it does |
 | --- | --- |
 | `make build` | Runs the sync + health + build stages, writing everything under `feeds/`, `api/` (gitignored) and `apps/`. |
-| `make site` | Calls `scripts/build_site.py` to assemble the deployable site in `_site/`. The site builder mirrors `feeds/` to the root and to `api/`, copies the static `website/` files, and writes `sitemap.xml` + `robots.txt`. |
+| `make site` | Calls `scripts/build_site.py` to assemble the deployable site in `_site/`. The site builder copies the root-level site files, publishes `feeds/` at the flat root and `api/` (with `.gz` twins), and copies the `sitemap.xml` + `robots.txt` the pipeline committed at the root. |
 | `make check` | Runs the offline validator (`scripts/validate.py`), the jq contract checks (`scripts/validate_jq.sh`) and the unit test suite (`python3 -m unittest discover -s tests`). |
 | `make serve` | Builds the site and serves `_site/` on a local port for development. |
 

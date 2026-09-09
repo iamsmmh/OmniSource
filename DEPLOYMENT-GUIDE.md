@@ -1,5 +1,10 @@
 # OmniSource P0-P3 Features - Deployment Guide
 
+> **Note (2026-09):** this guide records the P0-P3 release. Since then the
+> website sources moved from `website/` to the **repository root** (the repo
+> root *is* the site; see `docs/website.md`), so `website/<path>` below means
+> `<path>` at the root today.
+
 ## ✅ Implementation Complete
 
 All Priority 0 through Priority 3 features have been successfully implemented and are ready for deployment.

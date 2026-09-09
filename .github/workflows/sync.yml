@@ -19,7 +19,22 @@ on:
       - assets/**
       - scripts/**
       - src/**
-      - website/**
+      # The repository root *is* the site (see _config.yml / docs/website.md);
+      # hand-maintained site sources live at the root, not in a website/ dir.
+      - index.html
+      - compare.html
+      - compare/**
+      - collections/**
+      - favorites/**
+      - install/**
+      - analytics/**
+      - search/**
+      - status/**
+      - js/**
+      - manifest.webmanifest
+      - sw.js
+      - sitemap.xml
+      - robots.txt
       - .github/workflows/sync.yml
   workflow_dispatch:
     inputs:
@@ -120,10 +135,13 @@ jobs:
           set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Generated feeds JSON/XML, app detail pages and the README blocks.
-          # The pipeline writes nothing else, so the allowlist stays minimal
-          # on purpose: a stray file here would mean the build misbehaved.
-          git add -A -- '*.json' '*.xml' 'apps/**' README.md
+          # Generated feeds JSON/XML (organized + flat root copies), app
+          # detail pages, README blocks, the home page stat values, sitemap
+          # and robots. The pipeline writes nothing else, so the allowlist
+          # stays minimal on purpose: a stray file here means the build
+          # misbehaved. ('index.html' is generated only in its stat block,
+          # which the pipeline rewrites in place.)
+          git add -A -- '*.json' '*.xml' 'apps/**' README.md index.html robots.txt
 
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"

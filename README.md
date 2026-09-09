@@ -150,21 +150,25 @@ feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)   api/  (local mirror, giti
         scripts/build_site.py  ──▶  _site/  (the deployable site)
                      │
                      ▼
-        GitHub Pages  ──▶  website/ pages (7) + design system + sw.js (PWA)
+        GitHub Pages  ──▶  hand-maintained pages (7) + design system + sw.js (PWA)
 ```
 
 * **Data plane** — `catalog.json` is the only hand-edited data file. The pipeline syncs official
   upstreams, probes every download link and regenerates all feeds, intelligence documents, badges
   and app pages. Generated files are never hand-edited.
-* **Site plane** — `scripts/build_site.py` (over `src/omnisource/site.py`) assembles `_site/`:
-  the hand-maintained `website/`, shared `assets/` (icons in PNG + WebP, the design system),
-  every feed at three URL families (flat root, `/feeds/`, `/api/` with gzip twins), the static
-  app pages, plus `sitemap.xml` and `robots.txt`.
+* **Site plane** — the repository root *is* the site: hand-maintained pages at the root
+  (`index.html`, `install/`, `js/`, `sw.js`, …), with the generated feeds, flat historical
+  copies, `sitemap.xml`, `robots.txt` and the home page's live statistics committed alongside.
+  `scripts/build_site.py` (over `src/omnisource/site.py`) assembles `_site/` from that state:
+  shared `assets/` (WebP icons, the design system), every feed at three URL families (flat root,
+  `/feeds/`, `/api/` with gzip twins), the static app pages. GitHub's managed Jekyll build
+  (`_config.yml` excludes repo internals) publishes the same correct site on plain pushes,
+  so `sync.yml` and the managed build never fight over the live site.
 * **Presentation plane** — HTML5 + modern CSS + vanilla JS with Web Components. No framework, no
   build step, no dependencies: GitHub Pages serves it as-is. A single design system
   (`assets/design-system/`) styles the website and the generated app pages alike; shared logic
-  lives in `website/js/core.js` (theme, ⌘K palette, search engine, PWA) and `website/js/site.js`
-  (page renderers).
+  lives in `js/core.js` (theme, ⌘K palette, search engine, PWA) and `js/site.js` (page
+  renderers).
 
 ## Generation flow
 
@@ -187,7 +191,7 @@ feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)   api/  (local mirror, giti
 | --- | --- | --- |
 | **Sync & Publish** (`.github/workflows/sync.yml`) | every 6 h · on push | Sync → health → build → assemble `_site/` → deploy Pages |
 | **Validate** (`.github/workflows/validate.yml`) | every push & PR | Offline structural checks, reproducibility, `ruff`, `actionlint` |
-| **Merge** (`.github/workflows/merge.yml`) | on demand | Merge feed sets between branches |
+| **Merge** (`.github/workflows/merge.yml`) | on `feeds/*.json` change | Rebuild the unified `apps.json` (and its flat copy) from the modular feeds |
 | **Health Check** (`.github/workflows/health-check.yml`) | daily | Probe every download URL; open a GitHub Issue on breakage |
 
 ## Directory structure
@@ -200,11 +204,12 @@ feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)   api/  (local mirror, giti
 | `src/omnisource/` | The Python package: providers, feed renderers, validation, intelligence engines, app pages, site builder |
 | `scripts/` | Thin CLI entry points over the package (one command, one module) |
 | `schemas/` | Catalog and AltStore feed contracts |
-| `tests/` | Offline unit test suite (112 tests) |
+| `tests/` | Offline unit test suite (121 tests) |
 | `feeds/` | Generated feeds, RSS, badges, health data, intelligence documents, pipeline state |
 | `apps/<slug>/` | Generated App-Store-style app pages |
+| `apps.json`, `<feed>.json`, … (root) | Generated flat copies of the feeds — the historical install/subscriber URLs (byte-identical to `feeds/`) |
+| `index.html`, `install/`, `js/`, `sw.js`, … (root) | The website: 7 hand-maintained pages + design system; the repo root *is* the site (see `docs/website.md`) |
 | `api/` | Local feeds mirror (gitignored; published as `_site/api/`) |
-| `website/` | The website: 7 hand-maintained pages, `js/core.js`, `js/site.js`, `sw.js`, manifest |
 | `sdk/` | Zero-dependency client SDKs (JavaScript + Python) |
 | `docs/` | Repository guide, API contracts, audit, and the [cleanup report](docs/cleanup-report.md) |
 
@@ -216,7 +221,7 @@ Deployment is fully automated — push to `main` and GitHub Pages updates:
 
 1. `sync.yml` runs the pipeline (sync, health, build) with GitHub Actions caching and
    concurrency limits; it commits the regenerated feeds/pages back via a bot push
-   (allowlisted: `*.json`, `*.xml`, `apps/**`, `README.md`).
+   (allowlisted: `*.json`, `*.xml`, `apps/**`, `README.md`, `index.html`, `robots.txt`).
 2. It assembles the site with `python3 scripts/build_site.py` and uploads `_site/` with
    `actions/upload-pages-artifact@v3`.
 3. A separate `deploy` job publishes it with `actions/deploy-pages@v4`
@@ -232,8 +237,8 @@ make serve      # serve _site/ on http://localhost:8000
 make check      # ruff + validator + jq checks + unit tests
 ```
 
-The service worker is versioned (`omnisource-vN`): bump the version in `website/sw.js` whenever
-the cached asset set changes, and the update toast in `website/js/core.js` offers the reload.
+The service worker is versioned (`omnisource-vN`): bump the version in `sw.js` whenever
+the cached asset set changes, and the update toast in `js/core.js` offers the reload.
 
 ## Contributing
 
@@ -257,8 +262,8 @@ python3 -m unittest discover -s tests      # run the test suite
 ```
 
 Golden rule: change `catalog.json`, never the generated files. Scripts are Python stdlib only —
-no virtualenv, no dependencies. Web changes are plain files in `website/` and
-`assets/design-system/` — no build step, preview with `make serve`.
+no virtualenv, no dependencies. Web changes are plain files at the repository root (pages,
+`js/`, `sw.js`) and in `assets/design-system/` — no build step, preview with `make serve`.
 
 **Adding an app**
 
