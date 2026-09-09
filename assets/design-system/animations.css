@@ -1,7 +1,8 @@
 /* ============================================================================
    OmniSource Design System — animations
    -------------------------------------
-   Keyframes, scroll-reveal system, hover micro-motion and load choreography.
+   LIQUID GLASS edition — fluid motion, caustic shimmer, glass refraction
+   pulses, aurora breathing and elegant choreography.
    Every animation here is disabled (see tokens.css) when the user prefers
    reduced motion.
    ========================================================================== */
@@ -10,20 +11,22 @@
 
 @keyframes os-pulse {
   0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--green) 45%, transparent); }
-  70%  { box-shadow: 0 0 0 9px transparent; }
+  70%  { box-shadow: 0 0 0 10px transparent; }
   100% { box-shadow: 0 0 0 0 transparent; }
 }
 
 @keyframes os-pulse-red {
   0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--red) 45%, transparent); }
-  70%  { box-shadow: 0 0 0 9px transparent; }
+  70%  { box-shadow: 0 0 0 10px transparent; }
   100% { box-shadow: 0 0 0 0 transparent; }
 }
 
-/* Slow drift for the hero aurora orbs. */
+/* Slow, dreamy drift for the hero aurora orbs. */
 @keyframes os-drift {
-  from { transform: translate3d(-4%, -3%, 0) scale(1); }
-  to   { transform: translate3d(5%, 4%, 0) scale(1.14); }
+  0%   { transform: translate3d(-3%, -2%, 0) scale(1) rotate(0deg); }
+  33%  { transform: translate3d(2%, 3%, 0) scale(1.08) rotate(1deg); }
+  66%  { transform: translate3d(4%, -1%, 0) scale(1.04) rotate(-1deg); }
+  100% { transform: translate3d(-4%, 2%, 0) scale(1.12) rotate(0deg); }
 }
 
 /* Gentle horizontal pan of gradient surfaces (CTAs, hero text). */
@@ -33,27 +36,29 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Skeleton shimmer while data loads. */
+/* Skeleton shimmer — liquid glass shimmer while data loads. */
 @keyframes os-shimmer {
-  to { background-position: -200% 0; }
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
-/* Fade-up entrance (used for hero + reveal). */
+/* Fade-up entrance — smooth and elegant. */
 @keyframes os-rise {
-  from { opacity: 0; transform: translateY(14px); }
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
   to   { opacity: 1; transform: none; }
 }
 
-/* Pop for icons / badges. */
+/* Pop for icons / badges — springy entrance. */
 @keyframes os-pop {
-  from { opacity: 0; transform: scale(0.86); }
+  from { opacity: 0; transform: scale(0.82); }
+  60%  { transform: scale(1.04); }
   to   { opacity: 1; transform: scale(1); }
 }
 
-/* Soft scale-in for dialogs. */
+/* Soft scale-in for dialogs — glass materializing. */
 @keyframes os-zoom {
-  from { opacity: 0; transform: scale(0.965) translateY(8px); }
-  to   { opacity: 1; transform: none; }
+  from { opacity: 0; transform: scale(0.95) translateY(12px); filter: blur(4px); }
+  to   { opacity: 1; transform: none; filter: blur(0); }
 }
 
 /* Fade for overlays/backdrops. */
@@ -62,28 +67,26 @@
   to   { opacity: 1; }
 }
 
-/* Toast slide. */
+/* Toast slide — springy arrival. */
 @keyframes os-toast-in {
-  from { opacity: 0; transform: translate(-50%, 16px) scale(0.96); }
+  from { opacity: 0; transform: translate(-50%, 20px) scale(0.92); }
+  60%  { transform: translate(-50%, -2px) scale(1.02); }
   to   { opacity: 1; transform: translate(-50%, 0) scale(1); }
-}
-
-/* Marquee-less horizontal drift for the "trusted by clients" strip. */
-@keyframes os-breathe {
-  0%, 100% { opacity: 0.85; }
-  50%      { opacity: 1; }
 }
 
 /* Gentle levitation for the hero logo. */
 @keyframes os-float {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-7px); }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-5px) rotate(0.5deg); }
+  50%  { transform: translateY(-8px) rotate(0deg); }
+  75%  { transform: translateY(-4px) rotate(-0.5deg); }
 }
 
 /* Slow-breathing drift for the hero aurora spotlight. */
 @keyframes os-aurora {
-  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.65; }
-  50%      { transform: translateX(-50%) scale(1.12); opacity: 1; }
+  0%, 100% { transform: translateX(-50%) scale(1) rotate(0deg); opacity: 0.6; }
+  33%  { transform: translateX(-48%) scale(1.08) rotate(1deg); opacity: 0.85; }
+  66%  { transform: translateX(-52%) scale(1.1) rotate(-1deg); opacity: 1; }
 }
 
 /* Sheen sweep across the source-URL box. */
@@ -99,6 +102,28 @@
   50%      { background-position: 100% 60%; }
 }
 
+/* Glass refraction shimmer — chromatic edge pulse */
+@keyframes os-refraction {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+/* Liquid breathing for glass panels */
+@keyframes os-glass-breathe {
+  0%, 100% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.6),
+      0 8px 24px rgba(40, 50, 110, 0.08),
+      0 24px 60px rgba(40, 50, 110, 0.1);
+  }
+  50% {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.7),
+      0 10px 30px rgba(40, 50, 110, 0.1),
+      0 30px 70px rgba(40, 50, 110, 0.12);
+  }
+}
+
 /* --- scroll reveal ---------------------------------------------------------- */
 /* JS (js/core.js) observes [data-reveal] and adds .is-revealed when the
    element enters the viewport. Optional per-element delay via
@@ -106,9 +131,9 @@
 
 [data-reveal] {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(20px) scale(0.98);
   transition:
-    opacity var(--dur-slow) var(--ease),
+    opacity var(--dur-slow) var(--ease-out),
     transform var(--dur-slow) var(--ease-out);
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
@@ -119,50 +144,52 @@
   transform: none;
 }
 
-/* Hero choreography: staged entrances on first paint. */
+/* Hero choreography: staged, elegant entrances on first paint. */
 .os-hero > * {
-  animation: os-rise 0.7s var(--ease-out) both;
+  animation: os-rise 0.8s var(--ease-out) both;
 }
 .os-hero > :nth-child(1) { animation-delay: 0.05s; }
-.os-hero > :nth-child(2) { animation-delay: 0.12s; }
-.os-hero > :nth-child(3) { animation-delay: 0.2s; }
-.os-hero > :nth-child(4) { animation-delay: 0.28s; }
-.os-hero > :nth-child(5) { animation-delay: 0.36s; }
-.os-hero > :nth-child(6) { animation-delay: 0.44s; }
+.os-hero > :nth-child(2) { animation-delay: 0.15s; }
+.os-hero > :nth-child(3) { animation-delay: 0.25s; }
+.os-hero > :nth-child(4) { animation-delay: 0.35s; }
+.os-hero > :nth-child(5) { animation-delay: 0.45s; }
+.os-hero > :nth-child(6) { animation-delay: 0.55s; }
+.os-hero > :nth-child(7) { animation-delay: 0.65s; }
+.os-hero > :nth-child(8) { animation-delay: 0.75s; }
 
 /* --- micro-motion ----------------------------------------------------------- */
 
-/* Cards lift with a springy ease and deepen their shadow. */
+/* Cards lift with a springy ease, deepen shadow, and shift chromatic edge. */
 .os-lift {
   transition:
-    transform var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-spring),
     box-shadow var(--dur) var(--ease),
     border-color var(--dur) var(--ease);
 }
 .os-lift:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md), var(--glow-card);
-  border-color: color-mix(in srgb, var(--accent) 32%, var(--line));
+  box-shadow: var(--glass-shadow-lg), var(--glow-card);
+  border-color: color-mix(in srgb, var(--accent) 32%, var(--glass-border));
 }
 
-/* Icon scale inside cards. */
+/* Icon scale inside cards — springy rotation. */
 .os-icon-hover .os-icon {
   transition: transform var(--dur) var(--ease-spring);
 }
 .os-icon-hover:hover .os-icon {
-  transform: scale(1.06) rotate(-2deg);
+  transform: scale(1.08) rotate(-3deg);
 }
 
 /* Buttons: subtle press + hover brightness. */
 .os-press {
   transition:
-    transform var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease-spring),
     box-shadow var(--dur-fast) var(--ease),
     filter var(--dur-fast) var(--ease),
     background-position 0.6s var(--ease);
 }
-.os-press:hover { transform: translateY(-1px); }
-.os-press:active { transform: translateY(0) scale(0.985); }
+.os-press:hover { transform: translateY(-2px); }
+.os-press:active { transform: translateY(0) scale(0.975); }
 
 /* Animated gradient surfaces. */
 .os-grad-anim {
@@ -170,13 +197,17 @@
   animation: os-gradient-pan 9s ease-in-out infinite;
 }
 
-/* Skeletons. */
+/* Skeletons — glass shimmer effect. */
 .os-skeleton {
   border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  background: linear-gradient(105deg, var(--surface) 30%, var(--surface-2) 46%, var(--surface) 60%);
+  border: 1px solid var(--glass-border);
+  background:
+    linear-gradient(105deg,
+      var(--surface) 30%,
+      color-mix(in srgb, var(--accent-soft) 30%, var(--surface-2)) 46%,
+      var(--surface) 60%);
   background-size: 220% 100%;
-  animation: os-shimmer 1.5s linear infinite;
+  animation: os-shimmer 1.8s ease-in-out infinite;
 }
 
 /* Progress shimmer bar for the status page header. */
@@ -196,20 +227,20 @@
   60%, 100% { transform: translateX(100%); }
 }
 
-/* Dialog & overlay entrances. */
+/* Dialog & overlay entrances — glass materializing. */
 dialog.os-dialog {
-  animation: os-zoom 0.32s var(--ease-out) both;
+  animation: os-zoom 0.38s var(--ease-out) both;
 }
 dialog.os-dialog::backdrop {
-  animation: os-fade 0.25s var(--ease) both;
+  animation: os-fade 0.3s var(--ease) both;
 }
 
 /* Search palette entrance. */
 .os-palette.is-open .os-palette-panel {
-  animation: os-zoom 0.28s var(--ease-out) both;
+  animation: os-zoom 0.32s var(--ease-out) both;
 }
 .os-palette.is-open .os-palette-backdrop {
-  animation: os-fade 0.22s var(--ease) both;
+  animation: os-fade 0.25s var(--ease) both;
 }
 
 /* Count-up numbers settle with a tiny pop when they finish. */
@@ -218,14 +249,14 @@ dialog.os-dialog::backdrop {
   transition: transform var(--dur-fast) var(--ease-spring);
 }
 .os-count.os-count-done {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 /* Chart draw-in (SVG line/area charts on the analytics dashboard). */
 .os-chart-line {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: os-draw 1.4s var(--ease-out) 0.15s forwards;
+  animation: os-draw 1.6s var(--ease-out) 0.15s forwards;
 }
 @keyframes os-draw {
   to { stroke-dashoffset: 0; }
@@ -233,13 +264,13 @@ dialog.os-dialog::backdrop {
 
 .os-chart-area {
   opacity: 0;
-  animation: os-fade 0.9s var(--ease) 0.7s forwards;
+  animation: os-fade 1s var(--ease) 0.8s forwards;
 }
 
 .os-bar {
   transform-origin: bottom;
   transform: scaleY(0);
-  transition: transform 0.7s var(--ease-out);
+  transition: transform 0.8s var(--ease-out);
   transition-delay: var(--bar-delay, 0ms);
 }
 .is-revealed .os-bar,
@@ -247,17 +278,29 @@ dialog.os-dialog::backdrop {
   transform: scaleY(1);
 }
 
-/* Donut segments fade in. */
+/* Donut segments fade in with a slight scale. */
 .os-donut-seg {
   opacity: 0;
-  transition: opacity 0.6s var(--ease);
+  transform-origin: center;
+  transform: scale(0.9);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease-spring);
   transition-delay: var(--seg-delay, 0ms);
 }
 .is-revealed .os-donut-seg {
   opacity: 1;
+  transform: scale(1);
 }
 
-/* --- reduced motion: kill choreography, keep state -------------------------- */
+/* --- glass caustic animation for cards ───────────────────────────────────── */
+/* Applied via JS or on hover — a subtle light sweep across glass surfaces */
+@keyframes os-caustic-sweep {
+  0%   { transform: translateX(-100%) skewX(-15deg); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { transform: translateX(200%) skewX(-15deg); opacity: 0; }
+}
+
+/* --- reduced motion: kill choreography, keep state ────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     opacity: 1;
