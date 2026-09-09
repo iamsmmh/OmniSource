@@ -151,7 +151,7 @@ popover and a side-by-side comparison page:
 * **Search popover** — Fuse.js-style fuzzy search with verified /
   community filter chips, keyboard navigation, and result highlighting.
 * **compare/** — full side-by-side comparison page driven entirely
-  by `feeds/compare.json` (root `compare.html` remains as a redirect shim).
+  by `feeds/compare.json` (`website/compare.html` ships as a redirect shim).
 * **PWA v3** — `sw.js` pre-caches the whole site (all section pages +
   design system), serves JSON feeds stale-while-revalidate, caches per-app
   pages on first visit, and prompts the user to reload on a new service

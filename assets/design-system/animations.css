@@ -80,6 +80,19 @@
   50%      { transform: translateY(-7px); }
 }
 
+/* Slow-breathing drift for the hero aurora spotlight. */
+@keyframes os-aurora {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.65; }
+  50%      { transform: translateX(-50%) scale(1.12); opacity: 1; }
+}
+
+/* Sheen sweep across the source-URL box. */
+@keyframes os-sheen {
+  0%       { transform: translateX(-38%); opacity: 0; }
+  22%      { opacity: 1; }
+  55%, 100% { transform: translateX(38%); opacity: 0; }
+}
+
 /* --- scroll reveal ---------------------------------------------------------- */
 /* JS (js/core.js) observes [data-reveal] and adds .is-revealed when the
    element enters the viewport. Optional per-element delay via
@@ -249,7 +262,9 @@ dialog.os-dialog::backdrop {
   dialog.os-dialog,
   dialog.os-dialog::backdrop,
   .os-palette .os-palette-panel,
-  .os-palette .os-palette-backdrop {
+  .os-palette .os-palette-backdrop,
+  .hero-bg .spot,
+  .source-box .source-glow {
     animation: none;
   }
   .os-chart-line { stroke-dashoffset: 0; animation: none; }

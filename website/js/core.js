@@ -138,7 +138,7 @@
     document.documentElement.dataset.theme = theme;
     try { localStorage.setItem('omnisource-theme', theme); } catch (e) { /* private mode */ }
     var meta = $('#themeColor');
-    if (meta) meta.content = (theme === 'light') ? '#f5f5f7' : '#060608';
+    if (meta) meta.content = (theme === 'light') ? '#f5f5f7' : '#07070d';
     var btn = $('#themeButton');
     if (btn) {
       var labels = { auto: 'Theme: system', light: 'Theme: light', dark: 'Theme: dark' };
