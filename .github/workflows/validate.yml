@@ -96,13 +96,15 @@ jobs:
           python3 -m ruff check src/ scripts/ tests/
           python3 -m ruff format --check src/ scripts/ tests/
 
-      # actionlint pinned via its release binary (no docker image to pull);
-      # the checksum file is verified before the archive is extracted.
+      # actionlint pinned via its release binary (no docker image to pull).
+      # The upstream checksums.txt escapes every underscore with a backslash
+      # (e.g. actionlint\_1.7.12\_linux\_amd64.tar.gz), so unescape it before
+      # extracting the linux-amd64 hash and verifying the downloaded archive.
       - name: Lint workflows
         run: |
           curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_checksums.txt" -o /tmp/actionlint.sha256
           curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz" -o /tmp/actionlint.tar.gz
-          grep ' linux_amd64.tar.gz$' /tmp/actionlint.sha256 | cut -d' ' -f1 > /tmp/actionlint.expected
+          tr -d '\\' < /tmp/actionlint.sha256 | grep 'linux_amd64.tar.gz$' | awk '{print $1}' > /tmp/actionlint.expected
           echo "$(cat /tmp/actionlint.expected)  /tmp/actionlint.tar.gz" | sha256sum -c -
           tar -xzf /tmp/actionlint.tar.gz -C /tmp actionlint
           /tmp/actionlint -color
