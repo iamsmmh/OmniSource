@@ -5,5 +5,6 @@
   "requestTimeout": 30,
   "requestRetries": 3,
   "healthTimeout": 12,
-  "maxUpdateHistory": 100
+  "maxUpdateHistory": 100,
+  "staleAfterDays": 90
 }

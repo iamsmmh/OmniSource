@@ -1,0 +1,39 @@
+name: 📲 Request an app
+description: Ask to add an app to the OmniSource catalog.
+title: "Add app: "
+labels: ["app-request"]
+body:
+  - type: input
+    id: app-name
+    attributes:
+      label: App name
+      description: The name exactly as users should see it.
+    validations:
+      required: true
+  - type: input
+    id: bundle-id
+    attributes:
+      label: Bundle identifier
+      description: e.g. com.example.app (shown on the app's App Store / IPA page).
+    validations:
+      required: true
+  - type: input
+    id: upstream
+    attributes:
+      label: Official upstream
+      description: GitHub repository (owner/name) or the developer's own AltStore feed URL.
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+  - type: input
+    id: ipa-asset
+    attributes:
+      label: IPA asset name (optional)
+      description: Exact release asset name if releases carry several files.
+  - type: textarea
+    id: details
+    attributes:
+      label: Why add it?
+      description: What the app does, how popular it is, why it belongs in a curated source.
+    validations:
+      required: true

@@ -39,6 +39,7 @@ FEEDS_DIR = REPO_ROOT / "feeds"
 NON_FEED_FILES = {
     "state.json",
     "health.json",
+    "updates.json",
     "badge-apps.json",
     "badge-health.json",
     "badge-version.json",

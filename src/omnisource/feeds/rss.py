@@ -1,4 +1,9 @@
-"""RSS 2.0 and Atom feed generator for release updates."""
+"""RSS 2.0 and Atom feed generator for release updates.
+
+Renders the combined ``feed.xml``/``rss.xml`` update feed as well as one
+per-app feed per catalog entry (``feeds/<slug>.xml``), so users can follow a
+single app in any RSS reader.
+"""
 
 from __future__ import annotations
 
@@ -21,19 +26,29 @@ def _rfc822_date(date_str: str) -> str:
         return datetime.now(UTC).strftime("%a, %d %b %Y %H:%M:%S +0000")
 
 
-def render_rss_feed(
+def _now_rfc822() -> str:
+    return datetime.now(UTC).strftime("%a, %d %b %Y %H:%M:%S +0000")
+
+
+def _collect_items(
     catalog: Catalog,
     state: dict[str, Any],
-    limit: int = 25,
-) -> str:
-    """Generate a clean RSS 2.0 XML feed of recent updates."""
+    *,
+    limit: int,
+    slug: str | None = None,
+) -> list[dict[str, Any]]:
+    """Collect recent release items for the whole catalog or a single app.
+
+    Update-history events are listed first (they carry changelogs); the newest
+    known version of every app (or of the selected app) seeds the list when
+    history is sparse, mirroring the AltStore news card behaviour.
+    """
     base = catalog.base_url.rstrip("/")
-    source_name = str(catalog.source.get("name", "OmniSource"))
-    source_desc = str(catalog.source.get("description", "OmniSource curated iOS app updates"))
-
-    now_rfc822 = datetime.now(UTC).strftime("%a, %d %b %Y %H:%M:%S +0000")
-
     app_by_slug = {app.slug: app for app in catalog.apps}
+    app_by_bundle = {app.bundle_id: app for app in catalog.apps}
+
+    def matches(app: Any) -> bool:
+        return slug is None or app.slug == slug
 
     items: list[dict[str, Any]] = []
     seen: set[str] = set()
@@ -45,8 +60,8 @@ def render_rss_feed(
             if not isinstance(event, dict):
                 continue
             app_id = str(event.get("appId") or "")
-            app = app_by_slug.get(app_id)
-            if not app:
+            app = app_by_slug.get(app_id) or app_by_bundle.get(app_id)
+            if not app or not matches(app):
                 continue
             version = str(event.get("version") or "")
             guid = f"{app.slug}-{version}"
@@ -64,11 +79,13 @@ def render_rss_feed(
                 }
             )
             if len(items) >= limit:
-                break
+                return items
 
     # 2. Seed with newest app versions if history is sparse
     if len(items) < limit:
         for app in catalog.apps:
+            if not matches(app):
+                continue
             versions = state.get(app.slug, {}).get("versions")
             if not isinstance(versions, list) or not versions:
                 continue
@@ -91,7 +108,18 @@ def render_rss_feed(
             )
             if len(items) >= limit:
                 break
+    return items
 
+
+def _render_channel(
+    *,
+    title: str,
+    link: str,
+    description: str,
+    self_link: str,
+    items: list[dict[str, Any]],
+) -> str:
+    """Render an RSS 2.0 channel with a CDATA description per item."""
     item_xml_lines: list[str] = []
     for item in items:
         esc_title = html.escape(item["title"])
@@ -104,25 +132,67 @@ def render_rss_feed(
             size = item.get("size", 0)
             enclosure = f'\n      <enclosure url="{esc_dl}" length="{size}" type="application/octet-stream" />'
 
-        item_xml_lines.append(f"""    <item>
+        item_xml_lines.append(
+            f"""    <item>
       <title>{esc_title}</title>
       <link>{esc_link}</link>
       <guid isPermaLink="false">{esc_guid}</guid>
       <pubDate>{item["date"]}</pubDate>
       <description>{esc_desc}</description>{enclosure}
-    </item>""")
+    </item>"""
+        )
 
-    xml_content = f"""<?xml version="1.0" encoding="UTF-8"?>
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{html.escape(source_name)} Updates</title>
-    <link>{html.escape(base)}/</link>
-    <description>{html.escape(source_desc)}</description>
+    <title>{html.escape(title)}</title>
+    <link>{html.escape(link)}</link>
+    <description>{html.escape(description)}</description>
     <language>en-us</language>
-    <lastBuildDate>{now_rfc822}</lastBuildDate>
-    <atom:link href="{html.escape(base)}/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>{_now_rfc822()}</lastBuildDate>
+    <atom:link href="{html.escape(self_link)}" rel="self" type="application/rss+xml"/>
 {chr(10).join(item_xml_lines)}
   </channel>
 </rss>
 """
-    return xml_content
+
+
+def render_rss_feed(
+    catalog: Catalog,
+    state: dict[str, Any],
+    limit: int = 25,
+) -> str:
+    """Generate a clean RSS 2.0 XML feed of recent updates."""
+    base = catalog.base_url.rstrip("/")
+    source_name = str(catalog.source.get("name", "OmniSource"))
+    source_desc = str(catalog.source.get("description", "OmniSource curated iOS app updates"))
+    items = _collect_items(catalog, state, limit=limit)
+    return _render_channel(
+        title=f"{source_name} Updates",
+        link=f"{base}/",
+        description=source_desc,
+        self_link=f"{base}/feed.xml",
+        items=items,
+    )
+
+
+def render_app_rss_feed(
+    catalog: Catalog,
+    state: dict[str, Any],
+    slug: str,
+    limit: int = 15,
+) -> str:
+    """Generate the per-app RSS 2.0 feed for one catalog slug."""
+    base = catalog.base_url.rstrip("/")
+    app = next((item for item in catalog.apps if item.slug == slug), None)
+    if app is None:
+        return ""
+    source_name = str(catalog.source.get("name", "OmniSource"))
+    items = _collect_items(catalog, state, limit=limit, slug=slug)
+    return _render_channel(
+        title=f"{app.name} — Releases",
+        link=f"{base}/{app.slug}.json",
+        description=(f"Release feed for {app.name} within {source_name}, curated from official upstream sources."),
+        self_link=f"{base}/{app.slug}.xml",
+        items=items,
+    )

@@ -86,6 +86,22 @@ def validate_catalog(catalog: Any, *, assets_dir: Path) -> Report:
         report.error("catalog.json: 'apps' must be a non-empty array")
         return report
 
+    # Bundle identifiers must be unique on-device: sideloading clients replace
+    # an installed app whose bundleIdentifier matches, so sharing one across
+    # catalog entries silently uninstalls the other. Flag the conflicts so
+    # maintainers can decide whether the overlap is deliberate and visible.
+    bundles: dict[str, list[str]] = {}
+    for app in apps:
+        if isinstance(app, dict) and app.get("bundleIdentifier"):
+            bundles.setdefault(str(app["bundleIdentifier"]), []).append(str(app.get("slug") or app.get("name") or "?"))
+    for bundle_id, slugs in sorted(bundles.items()):
+        if len(slugs) > 1:
+            listed = ", ".join(f"`{slug}`" for slug in slugs)
+            report.warn(
+                f"catalog.json: {len(slugs)} apps share bundleIdentifier '{bundle_id}' ({listed}) - "
+                "installing one replaces the others on device"
+            )
+
     seen_slugs: set[str] = set()
     seen_names: set[str] = set()
     for index, app in enumerate(apps):
