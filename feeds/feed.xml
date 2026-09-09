@@ -5,8 +5,78 @@
     <link>https://iamsmmh.github.io/OmniSource/</link>
     <description>OmniSource is a curated, automatically maintained AltStore-compatible iOS app source. Every entry is resolved from the app&#x27;s own official upstream project - GitHub Releases or the developer&#x27;s official AltStore feed - and each download link is re-verified automatically.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Sep 2026 02:25:21 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2026 07:25:58 +0000</lastBuildDate>
     <atom:link href="https://iamsmmh.github.io/OmniSource/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>YTKillerPlus v21.36.6</title>
+      <link>https://iamsmmh.github.io/OmniSource/ytkp.json</link>
+      <guid isPermaLink="false">ytkp-21.36.6</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[YouTube 21.36.6 | YouTube_21.36_YTKillerPlus_6.5
+
+• v21.34 requires iOS 17 and later now
+• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases
+• Fix save posted gif image saving only first frame in some cases
+• Fix save posted image when multiple imge in a post first image not saved correctly
+• Fix tabs Icon.
+• Fix and improve audio languages select.
+• Updated iPA to newer YouTube v21.34.6.
+• Add POST tab to tab bar.
+• Improve localization &amp; add missing languages.
+• Improve ad blocking on main Feed.
+• Improve Lyrics API speed & accuracy.
+• Improve MP3 audio handling.
+• Improve backup & restore.
+• Improve media extension importing.
+• Improve Shorts auto-skip.
+• Improve Shorts multiple-post handling.
+• Fix OLED keyboard issue on iOS 27.
+• Other fixes & cleanup.
+• Updated iPA to YouTube v21.36]]></description>
+      <enclosure url="https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>TTKillerPlus v46.8.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/ttkillerplus.json</link>
+      <guid isPermaLink="false">ttkillerplus-46.8.0</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[TikTok 46.8.0 | TikTok_46.8_TTKillerPlus_2.1
+
+• Add v46.0+ compatibility.
+• Fix like confirmation bypass on double tap.
+• Fix post date display format.
+• Fix settings localization & toggles.
+• Fix flag button not tappable.
+• Other fixes & improvements.
+• Update base IPA to TikTok v46.8]]></description>
+      <enclosure url="https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>iNKillerPlus v446.0.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/inkillerplus.json</link>
+      <guid isPermaLink="false">inkillerplus-446.0.0</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Instagram 446.0.0 | Instagram_446.0_iNKillerPlus_5.2
+
+• Fix profile bio long press to copy detect email and links
+• Fix read DM icon
+• Fix user exception for direct message
+• Add roothide & relaxin JB support
+• Add full compatibility with IG v440+
+• Add tab configuration for hide & launch
+• Fix swipe between tabs
+• Fix story mention button crashes on v440+
+• Fix story download button
+• Fix eye long-press user exception on v440+
+• Fix follow confirmation toggle
+• Fix long-press profile picture expand & download
+• Fix grid button in main navbar
+• Fix 2x2 grid handling in 3x3 position style
+• Fix photo picker with music on multiple posts for iOS 27 Liquid Glass
+• Other fixes & improvements
+• Updated base IPA to Instagram v446.0]]></description>
+      <enclosure url="https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa" length="0" type="application/octet-stream" />
+    </item>
     <item>
       <title>SpotiFLAC Mobile v4.9.6</title>
       <link>https://iamsmmh.github.io/OmniSource/spotiflac.json</link>
