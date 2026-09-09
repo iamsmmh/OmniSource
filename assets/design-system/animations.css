@@ -74,6 +74,12 @@
   50%      { opacity: 1; }
 }
 
+/* Gentle levitation for the hero logo. */
+@keyframes os-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-7px); }
+}
+
 /* --- scroll reveal ---------------------------------------------------------- */
 /* JS (js/core.js) observes [data-reveal] and adds .is-revealed when the
    element enters the viewport. Optional per-element delay via
@@ -116,7 +122,8 @@
 }
 .os-lift:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md), var(--glow-card);
+  border-color: color-mix(in srgb, var(--accent) 32%, var(--line));
 }
 
 /* Icon scale inside cards. */

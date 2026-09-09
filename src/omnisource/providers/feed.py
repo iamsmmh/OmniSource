@@ -24,8 +24,8 @@ from omnisource.domain import (
 from omnisource.errors import ProviderError
 from omnisource.http import HttpClient, is_http_url
 from omnisource.providers.base import SourceProvider
-from omnisource.tracking import compare_versions
 from omnisource.utils.assets import detect_asset_metadata
+from omnisource.utils.versioning import compare_versions
 
 
 def _apps_from_payload(payload: object) -> list[dict]:

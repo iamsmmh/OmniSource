@@ -98,3 +98,27 @@ duplicate JSON tree removed entirely.
 - `sdk/` — public SDK surface (JS + Python) consuming the API.
 - PNG icons — kept as fallbacks (see WebP note above).
 - `feeds/state.json` — runtime sync state, already excluded from the site.
+
+## Follow-up: dedup + bug-fix pass (PR #20, merged on top of this report)
+
+A second agent pass independently found the same two CI-red bugs (stale
+`merge_feeds.py` skip-list, offline `screenshots.json` drift) plus more, and
+was reconciled with this report's fixes at merge time:
+
+- `merge_feeds.py` — kept this report's canonical `ALTSTORE_NON_FEED` import
+  (as a defensive `set()` copy) and additionally deduplicated onto the
+  shared `omnisource.io` JSON helpers (203 → 158 lines, byte-identical
+  `apps.json`).
+- `screenshots.py` + `pipeline.py` — kept this report's trust-on-disk /
+  `refresh=True` mechanism and added a `previous`-document fallback layer:
+  fresh checkouts (CI) have no on-disk mirrors since mirrors are not
+  committed to git, so unchanged URLs reuse the last committed mirror
+  metadata instead of degrading. The `check_reproducible.py` mirror-state
+  normalization from this report stays as a backstop.
+- `sdk/javascript/omnisource.{mjs,cjs}` — fixed a quadratic-ReDoS CodeQL
+  alert (`/\/+$/` on caller-supplied `baseURL`) with an identical
+  linear-time `stripTrailingSlashes()` helper in both twins.
+- Also fixed: the ⌘K palette `open` flag/method collision (palette never
+  opened), `sw.js` sub-path matching (v4), SDK CJS/MJS edge-case drift, and
+  ~550 lines of duplication (`tracking.py` wrappers, a second HTTP probe,
+  23 inline QR scripts → one `core.js` binding). Test suite: 102 tests.

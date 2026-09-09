@@ -444,12 +444,16 @@ def stage_build(
     compare_doc = build_compare_doc(catalog, state, health_doc, verification_doc)
     # Screenshot pipeline (validation + mirror + thumbnail). The function
     # itself never raises; issues are recorded inside the resulting doc.
+    # The previous document seeds keep-last-good: offline rebuilds reuse
+    # mirror metadata they cannot re-download.
+    previous_screenshots = read_json(feeds_dir / "screenshots.json")
     screenshot_report = process_screenshots(
         catalog,
         base_url=catalog.base_url,
         assets_dir=container.paths.assets,
         http=container.http,
         refresh=refresh_mirrors,
+        previous=previous_screenshots if isinstance(previous_screenshots, dict) else None,
     )
     screenshot_doc = screenshot_report.to_doc()
     for name, doc in (

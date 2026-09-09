@@ -89,12 +89,12 @@
         <p class="ap-sub">AltStore fork that refreshes apps without a computer</p>
         <p class="ap-dev">by SideStore Team</p>
         <div class="ap-badges">
-<span class="badge stable">Stable</span><span class="badge ok">● Online</span><span class="badge neutral">VERIFIED</span><span class="badge warn">Stale release</span></div>
+<span class="badge stable">Stable</span><span class="badge ok"><span class="dot"></span>Online</span><span class="badge verified">✓ Verified</span><span class="badge warn">Stale release</span></div>
       </div>
       <div class="ap-install">
         <a class="get-capsule" href="https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa" target="_blank" rel="noopener">Get · v0.6.3<span class="capsule-size">27.3 MB</span></a>
 <a class="button client-button" href="altstore://source?url=https://iamsmmh.github.io/OmniSource/sidestore.json" title="Add to AltStore"><img src="../../assets/AltStore.webp" alt="" width="20" height="20" loading="lazy">AltStore</a><a class="button client-button" href="sidestore://source?url=https://iamsmmh.github.io/OmniSource/sidestore.json" title="Add to SideStore"><img src="../../assets/SideStore.webp" alt="" width="20" height="20" loading="lazy">SideStore</a><a class="button client-button" href="feather://source/iamsmmh.github.io/OmniSource/sidestore.json" title="Add to Feather"><img src="../../assets/Feather.webp" alt="" width="20" height="20" loading="lazy">Feather</a><button class="button client-button" type="button" data-copy="https://iamsmmh.github.io/OmniSource/sidestore.json" data-copy-msg="URL copied — paste it in ESign" title="Open ESign and paste the source URL"><img src="../../assets/E-Sign.webp" alt="" width="20" height="20" loading="lazy">ESign</button><button class="button client-button" type="button" data-copy="https://iamsmmh.github.io/OmniSource/sidestore.json" data-copy-msg="URL copied — paste it in LiveContainer" title="Open LiveContainer and paste the source URL"><img src="../../assets/LiveContainer.webp" alt="" width="20" height="20" loading="lazy">LiveContainer</button>        <button class="button ap-copy" type="button" data-copy="https://iamsmmh.github.io/OmniSource/sidestore.json" data-copy-msg="Source URL copied">Copy source URL</button>
-        <button class="button square" type="button" id="qrButton" title="Show QR code" aria-label="Show QR code for the source URL">
+        <button class="button square" type="button" id="qrButton" data-qr-feed="https://iamsmmh.github.io/OmniSource/sidestore.json" title="Show QR code" aria-label="Show QR code for the source URL">
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path d="M15 14h2v2h-2zM19 14h1.4v3.4H19zM14 19h3.4v1.4H14zM20 19.6V20h-1.4"/></svg>
         </button>
       </div>
@@ -152,7 +152,7 @@ If you have updated to iOS 26.4+ and are receiving VPN errors.
     <section class="ap-section" data-reveal>
       <h2><span class="num">04</span> Details</h2>
       <div class="ap-detail-grid">
-<div class="ap-cell"><span>Version</span><strong>v0.6.3</strong></div><div class="ap-cell"><span>Updated</span><strong>May 05, 2026 (4mo ago)</strong></div><div class="ap-cell"><span>Size</span><strong>27.3 MB</strong></div><div class="ap-cell"><span>Requires iOS</span><strong>15.0</strong></div><div class="ap-cell"><span>Category</span><strong>Utilities</strong></div><div class="ap-cell"><span>Developer</span><strong>SideStore Team</strong></div><div class="ap-cell"><span>Bundle ID</span><strong><code>com.SideStore.SideStore</code></strong></div><div class="ap-cell"><span>Verification</span><strong>VERIFIED</strong></div><div class="ap-cell"><span>Checksum</span><strong><code>d7f8fa2bfafcb7f97607</code></strong></div><div class="ap-cell"><span>Health</span><strong>Online</strong></div><div class="ap-cell"><span>Version history</span><strong>1</strong></div><div class="ap-cell"><span>Source</span><strong>SideStore/SideStore</strong></div></div>
+<div class="ap-cell"><span>Version</span><strong>v0.6.3</strong></div><div class="ap-cell"><span>Updated</span><strong>May 05, 2026</strong></div><div class="ap-cell"><span>Size</span><strong>27.3 MB</strong></div><div class="ap-cell"><span>Requires iOS</span><strong>15.0</strong></div><div class="ap-cell"><span>Category</span><strong>Utilities</strong></div><div class="ap-cell"><span>Developer</span><strong>SideStore Team</strong></div><div class="ap-cell"><span>Bundle ID</span><strong><code>com.SideStore.SideStore</code></strong></div><div class="ap-cell"><span>Verification</span><strong>VERIFIED</strong></div><div class="ap-cell"><span>Checksum</span><strong><code>d7f8fa2bfafcb7f97607</code></strong></div><div class="ap-cell"><span>Health</span><strong>Online</strong></div><div class="ap-cell"><span>Version history</span><strong>1</strong></div><div class="ap-cell"><span>Source</span><strong>SideStore/SideStore</strong></div></div>
     </section>
 
     <section class="ap-section" data-reveal>
@@ -184,7 +184,7 @@ If you have updated to iOS 26.4+ and are receiving VPN errors.
 
   <footer class="ap-footer">
     <div class="ap-footer-inner">
-      <span>Generated 2026-09-09 · v0.6.3 of SideStore.</span>
+      <span>v0.6.3 of SideStore · refreshed automatically.</span>
       <a href="../../#catalog">← Back to catalog</a>
       <span>Independent community project. Apps and trademarks belong to their respective owners.</span>
     </div>
@@ -204,23 +204,5 @@ If you have updated to iOS 26.4+ and are receiving VPN errors.
   </div>
 
   <script src="../../js/core.js" defer></script>
-  <script>
-    // Tiny QR opener: core.js owns theme/clipboard/palette/SW.
-    (function () {
-      'use strict';
-      var feed = 'https://iamsmmh.github.io/OmniSource/sidestore.json';
-      var dialog = document.getElementById('qrDialog');
-      var button = document.getElementById('qrButton');
-      if (!dialog || !button) return;
-      dialog.addEventListener('click', function (event) {
-        if (event.target === dialog || (event.target.closest && event.target.closest('[data-close]'))) dialog.close();
-      });
-      button.addEventListener('click', function () {
-        var img = document.getElementById('qrImage');
-        img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=460x460&margin=0&data=' + encodeURIComponent(feed);
-        dialog.showModal();
-      });
-    })();
-  </script>
 </body>
 </html>

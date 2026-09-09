@@ -13,33 +13,12 @@ from typing import Any
 from omnisource.constants import TAG_NUMBER_RE_PATTERN, VERSION_RE_PATTERN
 from omnisource.domain import RemoteAsset, RemoteRelease, RepositoryRef
 from omnisource.errors import ConfigurationError
-from omnisource.utils.versioning import Version
-from omnisource.utils.versioning import compare_versions as _compare_versions
-from omnisource.utils.versioning import is_newer as _is_newer
+from omnisource.utils.versioning import compare_versions, is_newer
 
 VERSION_RE = re.compile(VERSION_RE_PATTERN)
 TAG_NUMBER_RE = re.compile(TAG_NUMBER_RE_PATTERN)
 SHA256_RE = re.compile(r"(?:sha-?256|sha256sum)[:\s]*([0-9a-fA-F]{64})", re.IGNORECASE)
 DIGEST_RE = re.compile(r"^sha256:([0-9a-fA-F]{64})$")
-
-
-def parse_version(value: str) -> tuple[int, ...]:
-    """Extract numeric components (compatibility API for older callers)."""
-    version = Version.parse(value)
-    return version.numbers if version.numbers else (0,)
-
-
-def compare_versions(left: str, right: str) -> int:
-    """Return ``1`` if ``left > right``, ``-1`` if ``left < right``, else ``0``.
-
-    SemVer pre-release ordering is handled by :mod:`omnisource.utils.versioning`;
-    non-SemVer release tags retain the historical numeric fallback.
-    """
-    return _compare_versions(left, right)
-
-
-def is_newer(candidate: str, current: str) -> bool:
-    return _is_newer(candidate, current)
 
 
 def tag_number(tag: str) -> int:

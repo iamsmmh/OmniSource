@@ -14,6 +14,7 @@ to the catalog.
 from __future__ import annotations
 
 from typing import Any
+from urllib.parse import urlsplit
 
 from omnisource.domain import Catalog, today
 
@@ -70,11 +71,23 @@ def _build_url(profile: dict[str, Any], feed_url: str) -> str:
     template = profile.get("scheme") or ""
     if not template:
         return ""
-    if profile["id"] == "feather":
-        host = feed_url.split("://", 1)[-1].split("/", 1)[0]
-        path = "/" + feed_url.split("://", 1)[-1].split("/", 1)[1] if "/" in feed_url.split("://", 1)[-1] else ""
-        return template.format(host=host, path=path)
+    if profile.get("id") == "feather":
+        parts = urlsplit(feed_url)
+        host_path = parts.netloc + parts.path or feed_url.split("://", 1)[-1]
+        return f"feather://source/{host_path}"
     return template.format(url=feed_url)
+
+
+def install_url(client_id: str, feed_url: str) -> str:
+    """Return the deep link that adds ``feed_url`` to ``client_id``.
+
+    Clients without a source protocol (ESign, LiveContainer, unknown ids)
+    return ``""`` — callers fall back to copy-paste.
+    """
+    profile = CLIENT_PROFILES.get(client_id)
+    if profile is None:
+        return ""
+    return _build_url(profile, feed_url)
 
 
 def build_install_doc(
@@ -108,15 +121,11 @@ def build_install_doc(
         else:
             clients.append({**profile, "icon": str(client.get("icon") or profile.get("icon", ""))})
 
-    apps = []
-    for app in catalog.apps:
-        feed_url = f"{base}/{app.slug}.json"
-        # Per-app install card.
-        install_cards = []
+    def _cards(feed_url: str) -> list[dict[str, Any]]:
+        cards = []
         for client in clients:
             cid = client["id"]
-            url = _build_url(client, feed_url)
-            install_cards.append(
+            cards.append(
                 {
                     "client": cid,
                     "name": client["name"],
@@ -124,41 +133,30 @@ def build_install_doc(
                     "compatible": True,
                     "recommended": cid in {"altstore", "sidestore"},
                     "manualSetup": bool(client.get("manualSetup", False)),
-                    "url": url,
+                    "url": _build_url(client, feed_url),
                     "feedURL": feed_url,
                     "instructions": client.get("instructions", ""),
                 }
             )
-        # Catalog-level "add the whole OmniSource" card.
-        master_feed = f"{base}/apps.json"
-        master_cards = []
-        for client in clients:
-            url = _build_url(client, master_feed)
-            master_cards.append(
-                {
-                    "client": client["id"],
-                    "name": client["name"],
-                    "icon": client.get("icon", ""),
-                    "compatible": True,
-                    "recommended": client["id"] in {"altstore", "sidestore"},
-                    "manualSetup": bool(client.get("manualSetup", False)),
-                    "url": url,
-                    "feedURL": master_feed,
-                    "instructions": client.get("instructions", ""),
-                }
-            )
+        return cards
+
+    apps = []
+    for app in catalog.apps:
+        feed_url = f"{base}/{app.slug}.json"
         apps.append(
             {
                 "slug": app.slug,
                 "name": app.name,
                 "feedURL": feed_url,
-                "cards": install_cards,
+                "cards": _cards(feed_url),
             }
         )
+    # Catalog-level "add the whole OmniSource" card (built once, not per app).
+    master_feed = f"{base}/apps.json"
     master = {
         "name": str(catalog.source.get("name", "OmniSource")),
-        "feedURL": f"{base}/apps.json",
-        "cards": master_cards,
+        "feedURL": master_feed,
+        "cards": _cards(master_feed),
     }
     return {
         "schemaVersion": INSTALL_SCHEMA_VERSION,

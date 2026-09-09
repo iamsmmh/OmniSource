@@ -11,22 +11,30 @@ class OmniSourceError extends Error {
   constructor(message, info) {
     super(message);
     this.name = 'OmniSourceError';
-    if (info) {
-      this.status = info.status;
-      this.url = info.url;
-      this.body = info.body;
-    }
+    info = info || {};
+    this.status = info.status;
+    this.url = info.url;
+    this.body = info.body;
   }
 }
 
 const DEFAULT_BASE_URL = 'https://iamsmmh.github.io/OmniSource';
 const DEFAULT_TIMEOUT = 8000;
 
+// Linear-time trailing-slash trim. (A /\/+$/ regex backtracks
+// quadratically on slash-heavy input, so it must not run on
+// caller-supplied URLs.)
+function stripTrailingSlashes(value) {
+  let end = value.length;
+  while (end > 0 && value.charCodeAt(end - 1) === 47) end--;
+  return value.slice(0, end);
+}
+
 class OmniSource {
   constructor(options) {
     options = options || {};
-    this.baseURL = (options.baseURL || DEFAULT_BASE_URL).replace(/\/+$/, '');
-    this.timeout = options.timeout || DEFAULT_TIMEOUT;
+    this.baseURL = stripTrailingSlashes(options.baseURL == null ? DEFAULT_BASE_URL : options.baseURL);
+    this.timeout = options.timeout == null ? DEFAULT_TIMEOUT : options.timeout;
     this.lastError = null;
     this.fetch = options.fetch || ((url, init) => {
       if (typeof fetch === 'function') return fetch(url, init);
@@ -42,7 +50,7 @@ class OmniSource {
     return this.fetch(url, { signal: controller.signal, headers: { Accept: 'application/json' } })
       .then(res => {
         if (!res.ok) {
-          return res.text().then(body => {
+          return res.text().catch(() => '').then(body => {
             self.lastError = new OmniSourceError(`Request failed (${res.status})`, { status: res.status, url, body });
             throw self.lastError;
           });
@@ -76,7 +84,7 @@ class OmniSource {
 
   search(query, options) {
     options = options || {};
-    const limit = options.limit || 12;
+    const limit = options.limit == null ? 12 : options.limit;
     const verifiedOnly = !!options.verifiedOnly;
     return this._safe('feeds/search-index.json', { documents: [], fuse: { keys: [] } })
       .then(data => {
