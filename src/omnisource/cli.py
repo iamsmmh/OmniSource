@@ -21,7 +21,6 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="rebuild from feeds/state.json without hitting upstream APIs",
     )
     parser.add_argument("--no-health", action="store_true", help="skip download link probing")
-    parser.add_argument("--no-mirror", action="store_true", help="do not refresh the root-level compatibility copies")
     parser.add_argument("--only", metavar="SLUG", action="append", help="restrict the sync stage to these app slugs")
     parser.add_argument(
         "--incremental",
@@ -40,7 +39,6 @@ def main(argv: list[str] | None = None) -> int:
         code, _report = run(
             no_sync=args.no_sync,
             no_health=args.no_health,
-            no_mirror=args.no_mirror,
             only=set(args.only) if args.only else None,
             incremental=args.incremental,
             workers=args.workers,

@@ -104,9 +104,9 @@ catalog.json ──▶ scripts/omnisource.py ──▶ feeds/*.json ──▶ Gi
                   probe links, build feeds)
 ```
 
-`catalog.json` is the only hand-edited data file. Everything under `feeds/` (per-app feeds,
-`apps.json`, `health.json`, `state.json`) and the root-level mirrors (`apps.json`, `<slug>.json`) is
-generated — edit `catalog.json`, never the generated files.
+`catalog.json` is the only hand-edited data file. Everything under `feeds/`—per-app feeds,
+`apps.json`, health data, badges, RSS and pipeline state—is generated. During deployment, the site
+builder also publishes these files at the historical flat URLs, so existing subscribers keep working.
 
 | Pipeline | Runs | What it does |
 | --- | --- | --- |
@@ -125,10 +125,9 @@ generated — edit `catalog.json`, never the generated files.
 | `scripts/` | Small CLI entry points, including the shared Pages site builder |
 | `schemas/` | Catalog and AltStore feed contracts |
 | `tests/` | Offline unit test suite |
-| `feeds/` | Generated canonical feeds, health data and pipeline state |
+| `feeds/` | All generated feeds, badges, RSS, health data and pipeline state |
 | `website/` | Static interface organized into HTML, CSS and JavaScript |
 | `docs/` | Maintainer documentation and repository map |
-| Root `*.json` / `*.xml` | Generated compatibility mirrors that preserve existing subscriber URLs |
 
 See the concise [repository guide](docs/REPOSITORY.md) before making structural changes.
 

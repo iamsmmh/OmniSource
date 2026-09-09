@@ -5,8 +5,10 @@ Stages
 1. ``sync``       Resolve upstream releases through the provider registry.
 2. ``health``     Probe every download URL concurrently.
 3. ``build``      Render the AltStore Source v2 feeds (per-app + ``apps.json``).
-4. ``mirror``     Copy AltStore feeds to the historical root-level paths.
-5. ``readme``     Refresh the generated catalog block inside README.md.
+4. ``readme``     Refresh the generated catalog block inside README.md.
+
+The deploy builder publishes feeds at both organized and historical flat URLs;
+the repository therefore keeps one canonical generated copy under ``feeds/``.
 
 A failing upstream degrades to "keep serving the last good build". The
 pipeline is idempotent: unchanged payloads are not written.
@@ -359,39 +361,6 @@ def stage_build(
     return changed, health_doc
 
 
-def stage_mirror(container: Container, catalog: Catalog) -> list[Path]:
-    """Publish historical root mirrors only after the feed set is valid."""
-    documents: dict[Path, Any] = {}
-    extra_names = [
-        "apps.json",
-        "badge-apps.json",
-        "badge-health.json",
-        "badge-version.json",
-        *(f"{app.slug}.json" for app in catalog.apps),
-    ]
-    for name in extra_names:
-        source = container.paths.feeds / name
-        if source.exists():
-            document = read_json(source)
-            if isinstance(document, dict):
-                documents[container.paths.root / name] = document
-            else:
-                log.warning("Skipping invalid mirror source %s", source)
-    mirrored = atomic_write_many(documents)
-
-    # Mirror RSS feeds
-    for rss_name in ("feed.xml", "rss.xml"):
-        rss_src = container.paths.feeds / rss_name
-        if rss_src.exists():
-            rss_text = rss_src.read_text(encoding="utf-8")
-            if atomic_write_text(container.paths.root / rss_name, rss_text):
-                mirrored.append(container.paths.root / rss_name)
-
-    if mirrored:
-        log.info("Refreshed %d root mirror(s)", len(mirrored))
-    return mirrored
-
-
 def stage_readme(container: Container, catalog: Catalog, health_doc: dict[str, Any]) -> bool:
     readme = container.paths.readme
     if not readme.exists():
@@ -503,7 +472,6 @@ def run(
     container: Container | None = None,
     no_sync: bool = False,
     no_health: bool = False,
-    no_mirror: bool = False,
     only: set[str] | None = None,
     incremental: bool = False,
     workers: int = 8,
@@ -547,10 +515,6 @@ def run(
     # a failed build therefore leaves both data and memory at last-known-good.
     if write_json(container.paths.feeds / "state.json", dict(sorted(state.items()))):
         changed.append(container.paths.feeds / "state.json")
-
-    if not no_mirror:
-        with Group("Mirror feeds to repository root"):
-            changed += stage_mirror(container, catalog)
 
     if stage_readme(container, catalog, health_doc):
         changed.append(container.paths.readme)

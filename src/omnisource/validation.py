@@ -396,22 +396,6 @@ def validate_feed(path: Path, feed: Any, *, root: Path) -> Report:
     return report
 
 
-def validate_mirrors(catalog: Any, *, paths: Paths) -> Report:
-    report = Report()
-    slugs = [app["slug"] for app in catalog.get("apps", []) if isinstance(app, dict) and app.get("slug")]
-    for name in ["apps.json", *(f"{slug}.json" for slug in slugs)]:
-        source, mirror = paths.feeds / name, paths.root / name
-        if not source.exists():
-            report.error(f"feeds/{name}: missing - run scripts/omnisource.py")
-            continue
-        if not mirror.exists():
-            report.error(f"{name}: root compatibility mirror missing - run scripts/omnisource.py")
-            continue
-        if mirror.read_text(encoding="utf-8") != source.read_text(encoding="utf-8"):
-            report.error(f"{name}: root mirror is out of sync with feeds/{name}")
-    return report
-
-
 def validate_assets(catalog: Any, *, assets_dir: Path) -> Report:
     report = Report()
     referenced = {app.get("icon") for app in catalog.get("apps", []) if isinstance(app, dict)}
@@ -463,7 +447,7 @@ def emit(report: Report, *, strict: bool) -> int:
     return 0
 
 
-def validate_tree(paths: Paths, *, skip_mirrors: bool = False) -> Report:
+def validate_tree(paths: Paths) -> Report:
     report = Report()
     catalog = load_json(paths.catalog, report, root=paths.root)
     if catalog is None:
@@ -480,9 +464,6 @@ def validate_tree(paths: Paths, *, skip_mirrors: bool = False) -> Report:
         if feed is not None:
             report.extend(validate_feed(path, feed, root=paths.root))
 
-    if not skip_mirrors:
-        report.extend(validate_mirrors(catalog, paths=paths))
-
     print(f"Validated catalog.json and {len(feed_paths)} AltStore feed(s).")
     return report
 
@@ -491,7 +472,6 @@ def main(argv: list[str] | None = None) -> int:
     parser = ArgumentParser(description=__doc__, formatter_class=RawDescriptionHelpFormatter)
     parser.add_argument("files", nargs="*", type=Path, help="specific feed files (default: catalog + every feed)")
     parser.add_argument("--strict", action="store_true", help="treat warnings as failures")
-    parser.add_argument("--skip-mirrors", action="store_true", help="do not compare root mirrors with feeds/")
     args = parser.parse_args(argv)
 
     paths = Paths.default()
@@ -505,7 +485,7 @@ def main(argv: list[str] | None = None) -> int:
                 report.extend(validate_feed(path, feed, root=paths.root))
         return emit(report, strict=args.strict)
 
-    report.extend(validate_tree(paths, skip_mirrors=args.skip_mirrors))
+    report.extend(validate_tree(paths))
     return emit(report, strict=args.strict)
 
 

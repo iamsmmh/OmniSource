@@ -18,7 +18,7 @@ def build_site(output: Path) -> None:
         raise ValueError("output must be a directory inside the repository")
 
     shutil.rmtree(output, ignore_errors=True)
-    shutil.copytree(ROOT / "website", output)
+    shutil.copytree(ROOT / "website", output, ignore=shutil.ignore_patterns("README.md"))
     shutil.copytree(ROOT / "assets", output / "assets")
     shutil.copytree(ROOT / "feeds", output / "feeds", ignore=shutil.ignore_patterns("state.json"))
 

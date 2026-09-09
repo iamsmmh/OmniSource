@@ -1,31 +1,22 @@
-# Generated feeds: collapse them in diffs and exclude them from language stats.
-feeds/*.json      linguist-generated=true
-/apps.json        linguist-generated=true
-/spotiflac.json   linguist-generated=true
-/uyouenhanced.json linguist-generated=true
-/youmod.json      linguist-generated=true
-/youpro.json      linguist-generated=true
-/ytkace.json      linguist-generated=true
-/ytkp.json        linguist-generated=true
-/ytlite.json    linguist-generated=true
-/ytmusic.json   linguist-generated=true
-/maxtube.json   linguist-generated=true
-/maxmusic.json  linguist-generated=true
-/inkillerplus.json linguist-generated=true
-/ttkillerplus.json linguist-generated=true
-/itorrent.json linguist-generated=true
-/stikdebug.json linguist-generated=true
-/bhtwitter.json linguist-generated=true
-/livecontainer.json linguist-generated=true
-/feather.json linguist-generated=true
-/sidestore.json linguist-generated=true
-/aidoku.json linguist-generated=true
-/provenance.json linguist-generated=true
-/winston.json linguist-generated=true
-/utm.json linguist-generated=true
+# Generated distribution artifacts: collapse in diffs and language statistics.
+feeds/*.json linguist-generated=true
+feeds/*.xml  linguist-generated=true
 
+# Consistent text files across development platforms.
 *.json text eol=lf
+*.xml  text eol=lf
 *.py   text eol=lf
+*.sh   text eol=lf
 *.md   text eol=lf
 *.yml  text eol=lf
+*.yaml text eol=lf
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+
+# Images must never receive newline conversion.
 *.png  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.gif  binary

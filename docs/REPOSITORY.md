@@ -21,8 +21,7 @@ OmniSource/
 │   ├── index.html
 │   ├── css/styles.css
 │   └── js/app.js
-├── docs/                     # Project documentation
-└── *.json / *.xml            # Generated legacy URL mirrors
+└── docs/                     # Project documentation
 ```
 
 ## What should be edited?
@@ -35,17 +34,17 @@ OmniSource/
 | Change pipeline defaults | `config/settings.json` | `make check` |
 | Change validation rules | `schemas/` or `src/omnisource/validation.py` | `make check` |
 
-Do not hand-edit `feeds/`, root-level app JSON files, RSS XML files, badges, or the generated catalog section in `README.md`. The sync pipeline owns them.
+Do not hand-edit `feeds/` or the generated catalog section in `README.md`. The sync pipeline owns them.
 
-## Why are JSON files kept at the root?
+## How are historical source URLs preserved?
 
-Files such as `apps.json`, `aidoku.json`, and `sidestore.json` look like clutter, but they are compatibility mirrors. Existing users subscribe to URLs such as:
+Generated files have one canonical home under `feeds/`, keeping the repository root clean. During deployment, `scripts/build_site.py` copies them to the website root as well. Existing subscriptions such as the following therefore continue to work:
 
 ```text
 https://iamsmmh.github.io/OmniSource/apps.json
 ```
 
-The organized canonical copies live in `feeds/`. The root mirrors remain intentionally so updates never break subscribers or old links.
+This avoids duplicate tracked files without changing any public URL.
 
 ## Common commands
 

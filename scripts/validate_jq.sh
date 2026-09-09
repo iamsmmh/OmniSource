@@ -11,7 +11,6 @@
 #   3. AltStore v2 shape - feeds/*.json must carry the required fields with
 #                          valid types (bundleIdentifier, version, ISO versionDate,
 #                          localizedDescription, tintColor, size, versions[]).
-#   4. Mirror integrity  - root-level *.json must be byte-identical to feeds/.
 # -----------------------------------------------------------------------------
 set -euo pipefail
 
@@ -29,7 +28,10 @@ assert_jq() { # <file> <jq-filter> <message>
   fi
 }
 
-mapfile -t all_json < <(git ls-files '*.json')
+# Ignore tracked paths staged for deletion during repository cleanups.
+mapfile -t all_json < <(git ls-files '*.json' | while IFS= read -r file; do
+  [ -f "$file" ] && printf '%s\n' "$file"
+done)
 
 # ---------------------------------------------------------------------------
 # 1 + 2. Syntax and formatting for every tracked JSON file.
@@ -100,18 +102,6 @@ for f in "${feeds[@]}"; do
     "fallbackDownloadURLs must be an array or omitted"
   assert_jq "$f" '.apps | all((.fallbackDownloadURLs // []) | all(startswith("https://")))' \
     "fallbackDownloadURLs entries must be https URLs"
-done
-
-# ---------------------------------------------------------------------------
-# 4. Root mirrors must be byte-identical copies of feeds/ (SSOT).
-# ---------------------------------------------------------------------------
-for f in "${feeds[@]}"; do
-  mirror="$ROOT/$(basename "$f")"
-  if [ ! -f "$mirror" ]; then
-    err "$(basename "$f")" "root mirror missing - run scripts/merge_feeds.py"
-  elif ! cmp -s "$f" "$mirror"; then
-    err "$(basename "$f")" "root mirror is out of sync with feeds/$(basename "$f")"
-  fi
 done
 
 if [ "$fail" -ne 0 ]; then
