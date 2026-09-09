@@ -47,6 +47,7 @@ def _asset_from_github(raw: dict) -> RemoteAsset | None:
         architecture=detected["architecture"],
         file_type=str(detected["fileType"]),
         installable=bool(detected["installable"]),
+        download_count=int(raw.get("download_count") or 0),
     )
 
 

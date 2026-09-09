@@ -33,8 +33,24 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = REPO_ROOT / "catalog.json"
 FEEDS_DIR = REPO_ROOT / "feeds"
 MASTER_NAME = "apps.json"
-# Pipeline state, health snapshots, and badges are not distributable feeds.
-NON_FEED_FILES = {"state.json", "health.json", "badge-apps.json", "badge-health.json", "badge-version.json"}
+# Pipeline state, health snapshots, badges and derived intelligence documents
+# are not distributable feeds.
+NON_FEED_FILES = {
+    "state.json",
+    "health.json",
+    "updates.json",
+    "badge-apps.json",
+    "badge-health.json",
+    "badge-version.json",
+    "badge-sync.json",
+    "badge-verified.json",
+    "discovery.json",
+    "verification.json",
+    "status.json",
+    "duplicates.json",
+    "analytics.json",
+    "sources.json",
+}
 
 
 def load_json(path: Path) -> Any | None:

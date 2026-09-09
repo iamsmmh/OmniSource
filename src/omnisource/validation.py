@@ -433,6 +433,151 @@ def validate_assets(catalog: Any, *, assets_dir: Path) -> Report:
 
 
 # ---------------------------------------------------------------------------
+# Generated intelligence documents + static app pages
+# ---------------------------------------------------------------------------
+VERIFICATION_LEVELS = {"VERIFIED", "COMMUNITY VERIFIED", "UNVERIFIED"}
+SOURCE_STATUSES = {"healthy", "degraded", "unavailable", "unknown"}
+GENERATED_DOCS = (
+    "discovery.json",
+    "sources.json",
+    "verification.json",
+    "status.json",
+    "duplicates.json",
+    "analytics.json",
+)
+CHECK_KEYS = ("metadata", "urls", "fileAvailable", "hashVerified")
+
+
+def validate_generated_docs(catalog: Any, paths: Paths) -> Report:
+    """Validate the derived documents and the static app pages."""
+    report = Report()
+    apps = catalog.get("apps", []) if isinstance(catalog, dict) else []
+    slugs = {str(item.get("slug")) for item in apps if isinstance(item, dict) and item.get("slug")}
+
+    for name in GENERATED_DOCS:
+        path = paths.feeds / name
+        doc = load_json(path, report, root=paths.root)
+        if doc is None:
+            continue
+        if not isinstance(doc, dict):
+            report.error(f"feeds/{name}: root must be a JSON object")
+            continue
+        if not doc.get("generatedAt"):
+            report.error(f"feeds/{name}: missing generatedAt")
+        validate_doc_shape(name, doc, catalog, report, root=paths.root, apps_count=len(apps))
+
+    pages_dir = paths.root / "apps"
+    for slug in sorted(slugs):
+        page = pages_dir / slug / "index.html"
+        if not page.is_file():
+            report.error(f"apps/{slug}/index.html: missing generated app page (run scripts/omnisource.py)")
+            continue
+        try:
+            content = page.read_text(encoding="utf-8")
+        except OSError as error:
+            report.error(f"apps/{slug}/index.html: unreadable ({error})")
+            continue
+        if "og:title" not in content or 'href="../../css/app-page.css"' not in content:
+            report.error(f"apps/{slug}/index.html: looks incomplete (missing page shell)")
+    return report
+
+
+def validate_doc_shape(
+    name: str,
+    doc: dict[str, Any],
+    catalog: Any,
+    report: Report,
+    *,
+    root: Path,
+    apps_count: int,
+) -> None:
+    """Structural checks per generated document type."""
+
+    def items(key: str) -> list[Any]:
+        value = doc.get(key)
+        return value if isinstance(value, list) else []
+
+    if name == "discovery.json":
+        if doc.get("count") != len(items("apps")):
+            report.error("feeds/discovery.json: count does not match apps[] length")
+        if len(items("apps")) != apps_count:
+            report.error(f"feeds/discovery.json: {len(items('apps'))} apps, catalog declares {apps_count}")
+        for app in items("apps"):
+            if not isinstance(app, dict):
+                report.error("feeds/discovery.json: apps[] entries must be objects")
+                continue
+            for key in ("id", "name", "developer", "version", "category", "tags", "source"):
+                if key not in app:
+                    report.error(f"feeds/discovery.json: app {app.get('id')} is missing '{key}'")
+
+    if name == "sources.json":
+        if doc.get("count") != len(items("sources")):
+            report.error("feeds/sources.json: count does not match sources[] length")
+        if not items("sources"):
+            report.error("feeds/sources.json: sources[] is empty")
+        for source in items("sources"):
+            if not isinstance(source, dict) or not source.get("id") or not source.get("source"):
+                report.error("feeds/sources.json: every source needs id + source")
+            if not isinstance(source.get("apps"), list):
+                report.error("feeds/sources.json: every source needs an apps[] list")
+
+    if name == "verification.json":
+        if doc.get("totals", {}).get("apps") != len(items("apps")):
+            report.error("feeds/verification.json: totals.apps does not match entries")
+        for entry in items("apps"):
+            if not isinstance(entry, dict):
+                continue
+            status = str(entry.get("status") or "")
+            if status not in VERIFICATION_LEVELS:
+                report.error(f"feeds/verification.json: {entry.get('app')} has unknown status '{status}'")
+            checks = entry.get("checks", {})
+            if not isinstance(checks, dict) or sorted(checks) != sorted(CHECK_KEYS):
+                report.error(f"feeds/verification.json: {entry.get('app')} checks must be {list(CHECK_KEYS)}")
+
+    if name == "status.json":
+        if doc.get("totals", {}).get("sources") != len(items("sources")):
+            report.error("feeds/status.json: totals.sources does not match sources[] length")
+        for source in items("sources"):
+            if not isinstance(source, dict):
+                continue
+            status = str(source.get("status") or "")
+            if status not in SOURCE_STATUSES:
+                report.error(f"feeds/status.json: {source.get('id')} has unknown status '{status}'")
+            latency = source.get("latency")
+            if latency is not None and (not isinstance(latency, int) or latency < 0):
+                report.error(f"feeds/status.json: {source.get('id')} latency must be a non-negative integer or null")
+
+    if name == "duplicates.json":
+        if doc.get("count") != len(items("groups")):
+            report.error("feeds/duplicates.json: count does not match groups[] length")
+        for group in items("groups"):
+            if not isinstance(group, dict):
+                continue
+            if len(group.get("apps", [])) < 2:
+                report.error("feeds/duplicates.json: every group needs at least 2 apps")
+            if not isinstance(group.get("recommended"), dict):
+                report.error("feeds/duplicates.json: every group needs a recommendation")
+
+    if name == "analytics.json":
+        totals = doc.get("totals", {})
+        required = (
+            "apps",
+            "sources",
+            "verifiedApps",
+            "communityVerifiedApps",
+            "unverifiedApps",
+            "newAppsThisWeek",
+            "updatedAppsThisWeek",
+            "deadLinks",
+        )
+        for key in required:
+            if key not in totals:
+                report.error(f"feeds/analytics.json: totals.{key} is missing")
+        if totals.get("apps") != apps_count:
+            report.error(f"feeds/analytics.json: totals.apps ({totals.get('apps')}) != catalog apps ({apps_count})")
+
+
+# ---------------------------------------------------------------------------
 # Entry
 # ---------------------------------------------------------------------------
 def emit(report: Report, *, strict: bool) -> int:
@@ -480,7 +625,8 @@ def validate_tree(paths: Paths) -> Report:
         if feed is not None:
             report.extend(validate_feed(path, feed, root=paths.root))
 
-    print(f"Validated catalog.json and {len(feed_paths)} AltStore feed(s).")
+    report.extend(validate_generated_docs(catalog, paths))
+    print(f"Validated catalog.json, {len(feed_paths)} AltStore feed(s) and the derived intelligence documents.")
     return report
 
 

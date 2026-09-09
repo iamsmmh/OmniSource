@@ -82,10 +82,10 @@
         </div>
 
         <div class="stats-grid" id="statCards">
-          <div class="stat-card"><strong id="appTotal">—</strong><span>Curated apps</span></div>
-          <div class="stat-card"><strong id="healthyTotal">—</strong><span>Downloads online</span></div>
-          <div class="stat-card"><strong id="staleTotal">—</strong><span>Stale releases</span></div>
-          <div class="stat-card"><strong id="clientTotal">—</strong><span>Clients supported</span></div>
+          <div class="stat-card"><strong id="appTotal">—</strong><span>Total apps</span></div>
+          <div class="stat-card"><strong id="sourceTotal">—</strong><span>Total sources</span></div>
+          <div class="stat-card"><strong id="lastSync">—</strong><span>Last sync</span></div>
+          <div class="stat-card"><strong id="verifiedTotal">—</strong><span>Verified apps</span></div>
         </div>
       </div>
     </section>
@@ -117,6 +117,7 @@
             <select id="sortSelect" aria-label="Sort apps">
               <option value="featured">Featured first</option>
               <option value="updated">Recently updated</option>
+              <option value="downloads">Most downloaded</option>
               <option value="version">Newest version</option>
               <option value="name">Name A–Z</option>
               <option value="size">Smallest first</option>
@@ -211,6 +212,7 @@
           <a href="#whats-new">Release timeline</a>
           <a href="feed.xml">Combined RSS</a>
           <a href="apps.json">Source JSON</a>
+          <a href="api/index.json">API endpoints</a>
         </div>
         <div class="footer-col">
           <h4>Project</h4>

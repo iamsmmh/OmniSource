@@ -1,4 +1,4 @@
-.PHONY: all build site serve validate test format lint check clean
+.PHONY: all build pages site serve validate test format lint check clean
 
 PYTHON ?= python3
 PORT ?= 8000
@@ -9,6 +9,10 @@ all: build check
 # Refresh generated source feeds from their configured upstreams.
 build:
 	$(PYTHON) scripts/omnisource.py
+
+# Rebuild only the static app detail pages from the last pipeline run.
+pages:
+	$(PYTHON) scripts/generate_pages.py
 
 # Assemble the exact static bundle deployed to GitHub Pages.
 site:

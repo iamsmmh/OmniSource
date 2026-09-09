@@ -10,6 +10,9 @@ const state = {
   updates: null,
   source: null,
   clients: [],
+  analytics: null,
+  verification: new Map(), // slug -> { status, hash_verified, checks }
+  discovery: new Map(),    // slug -> discovery entry (tags, downloads, page URL)
   collisions: new Map(), // bundleIdentifier -> [slug, ...] when length > 1
   query: '',
   category: 'all',
@@ -47,8 +50,16 @@ const CATEGORY_ICONS = {
 };
 const STATUS_LABELS = { stable: 'Stable', beta: 'Beta', manual: 'Manual', unmaintained: 'Unmaintained', deprecated: 'Deprecated' };
 const KIND_LABELS = { new: 'New app', updated: 'Updated', available: 'Live', unmaintained: 'Flagged' };
+const VERIFICATION_LABELS = {
+  'VERIFIED': '✓ Verified',
+  'COMMUNITY VERIFIED': 'Community verified',
+  'UNVERIFIED': 'Unverified'
+};
 const categoryLabel = category => CATEGORY_LABELS[category] || 'Other';
 const statusLabel = status => STATUS_LABELS[status] || (status ? status[0].toUpperCase() + status.slice(1) : 'Unknown');
+const verificationFor = app => state.verification.get(slugFor(app)) || null;
+const discoveryFor = app => state.discovery.get(slugFor(app)) || null;
+const downloadCountFor = app => Number(discoveryFor(app)?.downloads || app.versions?.[0]?.downloads || 0);
 
 const formatBytes = bytes => {
   if (!Number(bytes)) return 'Unknown';
@@ -219,10 +230,14 @@ function filteredApps() {
   const result = state.apps.filter(app => {
     const slug = slugFor(app);
     const meta = app.omnisource || {};
+    const discovery = discoveryFor(app);
+    const verification = verificationFor(app);
     const searchText = [
       app.name, app.subtitle, app.localizedDescription, app.developerName,
       app.bundleIdentifier, categoryLabel(app.category), meta.verification?.publisher,
-      meta.status, slug
+      meta.status, slug,
+      ...(discovery?.tags || []),
+      verification?.status || ''
     ].join(' ').toLowerCase();
     const categoryMatch = state.category === 'all'
       || (state.category === 'favorites' ? state.favorites.has(slug) : app.category === state.category);
@@ -236,6 +251,7 @@ function filteredApps() {
     if (state.sort === 'version') return String(b.version).localeCompare(String(a.version), undefined, { numeric: true });
     if (state.sort === 'updated') return String(b.versionDate).localeCompare(String(a.versionDate));
     if (state.sort === 'size') return (a.size || Infinity) - (b.size || Infinity);
+    if (state.sort === 'downloads') return downloadCountFor(b) - downloadCountFor(a) || String(b.versionDate).localeCompare(String(a.versionDate));
     return Number(Boolean(b.omnisource?.featured)) - Number(Boolean(a.omnisource?.featured))
       || String(b.versionDate).localeCompare(String(a.versionDate));
   });
@@ -266,6 +282,10 @@ function cardMarkup(app) {
     ? '<span class="badge ok">● Online</span>'
     : '<span class="badge bad">● Offline</span>';
   const staleBadge = stale ? '<span class="badge warn">Stale release</span>' : '';
+  const verification = verificationFor(app);
+  const verificationBadge = verification
+    ? `<span class="badge ${verification.status === 'VERIFIED' ? 'verified' : verification.status === 'COMMUNITY VERIFIED' ? 'community' : 'unverified'}" title="${escapeHTML((verification.checks?.fileAvailable ? 'File available · ' : '') + (verification.hash_verified ? 'Checksum verified' : 'No published checksum'))}">${escapeHTML(VERIFICATION_LABELS[verification.status] || verification.status)}</span>`
+    : '';
   const osMajor = minOSMajor(app);
   const icon = cleanUrl(app.iconURL || 'assets/OmniSource.png');
   return `<article class="app-card${conflict ? ' has-collision' : ''}" data-slug="${escapeHTML(slug)}" tabindex="0" role="button" aria-label="View ${escapeHTML(app.name)} details">
@@ -275,14 +295,14 @@ function cardMarkup(app) {
         <span class="health-dot${online ? '' : ' down'}" title="${online ? 'Download online' : 'Download currently unavailable'}"></span>
       </div>
       <div class="card-identity">
-        <div class="name-row"><h3>${escapeHTML(app.name)}</h3></div>
+        <div class="name-row"><h3><a href="apps/${escapeHTML(slug)}/" title="Open ${escapeHTML(app.name)} detail page">${escapeHTML(app.name)}</a></h3></div>
         <p class="card-dev">${escapeHTML(app.developerName || app.subtitle || 'Independent developer')}</p>
       </div>
       <button class="favorite${state.favorites.has(slug) ? ' active' : ''}" type="button" data-favorite="${escapeHTML(slug)}" aria-label="${state.favorites.has(slug) ? 'Remove from' : 'Add to'} saved apps" title="Save app" aria-pressed="${state.favorites.has(slug)}">
         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 20.5S4.5 16.1 4.5 10A4.5 4.5 0 0 1 12 7.2a4.5 4.5 0 0 1 7.5 2.8c0 6.1-7.5 10.5-7.5 10.5Z"/></svg>
       </button>
     </div>
-    <div class="card-badges">${statusBadge}${healthBadge}${collisionBadge}${staleBadge}</div>
+    <div class="card-badges">${statusBadge}${healthBadge}${verificationBadge}${collisionBadge}${staleBadge}</div>
     <p class="app-description">${escapeHTML(app.subtitle || app.localizedDescription || 'View app details and installation options.')}</p>
     <div class="card-meta">
       <span class="meta-item"><b>v${escapeHTML(app.version || '—')}</b></span>
@@ -292,7 +312,10 @@ function cardMarkup(app) {
     </div>
     <div class="card-bottom">
       <div class="card-mini"><b>${escapeHTML(categoryLabel(app.category))}</b><span>${escapeHTML(categoryLabel(app.category))}</span></div>
-      <button class="get-button" type="button" data-open="${escapeHTML(slug)}">VIEW <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+      <div class="card-actions">
+        <a class="page-link" href="apps/${escapeHTML(slug)}/" title="Open the static detail page">PAGE ↗</a>
+        <button class="get-button" type="button" data-open="${escapeHTML(slug)}">VIEW <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+      </div>
     </div>
   </article>`;
 }
@@ -326,6 +349,10 @@ function dialogChips(app) {
   const meta = app.omnisource || {};
   const status = meta.status || 'stable';
   const chips = [`<span class="badge ${status === 'stable' ? 'stable' : status} status-line"><span class="dot"></span>${escapeHTML(statusLabel(status))}</span>`];
+  const verification = verificationFor(app);
+  if (verification) {
+    chips.push(`<span class="badge ${verification.status === 'VERIFIED' ? 'verified' : verification.status === 'COMMUNITY VERIFIED' ? 'community' : 'unverified'}" title="${escapeHTML((verification.checks?.fileAvailable ? 'File available · ' : '') + (verification.hash_verified ? 'Checksum verified' : 'No published checksum'))}">${escapeHTML(VERIFICATION_LABELS[verification.status] || verification.status)}</span>`);
+  }
   const conflict = collisionInfo(app);
   if (conflict) {
     chips.push(`<span class="badge warn" title="Bundle ID ${escapeHTML(app.bundleIdentifier)} is shared by ${conflict.count} apps (${escapeHTML(conflict.names)}). Installing one replaces the others on device.">⚠️ Same bundle ID ×${conflict.count}</span>`);
@@ -420,6 +447,7 @@ ${verification.checksumPublished ? 'An official checksum is published.' : 'No up
     </div></div>` : ''}
     ${fallbacks.length ? `<div class="detail-section"><h3>Mirror download links</h3><p class="body">${fallbacks.map(url => `<a href="${escapeHTML(cleanUrl(url))}" target="_blank" rel="noopener">${escapeHTML(url)}</a>`).join('<br>')}</p></div>` : ''}
     <div class="detail-section"><h3>Links</h3><div class="link-row">
+      <a href="apps/${escapeHTML(slugFor(app))}/" rel="noopener">Detail page ↗</a>
       <a href="${escapeHTML(cleanUrl(app.downloadURL))}" target="_blank" rel="noopener">Direct IPA ↗</a>
       <a href="${escapeHTML(feedFor(app))}" target="_blank" rel="noopener">App feed ↗</a>
       <a href="${escapeHTML(rssFor(app))}" target="_blank" rel="noopener">App RSS ↗</a>
@@ -553,14 +581,22 @@ function renderTimeline() {
 /* ---------------------------------- load -------------------------------- */
 function renderStats() {
   const total = state.apps.length;
+  const totals = state.analytics?.totals || {};
   const healthy = state.health?.totals?.reachable ?? state.apps.filter(app => healthFor(app).downloadReachable !== false).length;
-  const staleCount = (state.health?.apps || []).filter(item => item.stale).length;
+  const verified = totals.verifiedApps ?? state.apps.filter(app => verificationFor(app)?.status === 'VERIFIED').length;
+  const sources = totals.sources ?? new Set(state.apps.map(app => app.omnisource?.upstreamURL || app.omnisource?.verification?.publisher || app.developerName)).size;
+  const lastSync = totals.lastSync !== undefined ? totals.lastSync : state.analytics?.lastSync || null;
+
   $('#appTotal').textContent = total;
-  $('#healthyTotal').textContent = `${healthy}/${total}`;
-  $('#staleTotal').textContent = staleCount || 0;
-  $('#clientTotal').textContent = state.clients.length || 5;
-  $('.stat-card:nth-child(2)').classList.toggle('ok', healthy === total && total > 0);
-  $('.stat-card:nth-child(3)').classList.toggle('warn', staleCount > 0);
+  $('#sourceTotal').textContent = sources;
+  $('#verifiedTotal').textContent = `${verified}/${total}`;
+  $('#lastSync').textContent = lastSync ? timeAgo(lastSync) : '—';
+  $('#lastSync').setAttribute('title', lastSync ? formatDate(lastSync) : 'Awaiting first sync');
+  $('#sourceTotal').setAttribute('title', `${sources} upstream sources`);
+  $('#verifiedTotal').setAttribute('title', `${verified} of ${total} apps have a verified upstream provenance`);
+  $('.stat-card:nth-child(2)').classList.toggle('ok', sources > 0);
+  $('.stat-card:nth-child(4)').classList.toggle('ok', verified === total && total > 0);
+  $('.stat-card:nth-child(3)').classList.toggle('warn', Boolean(totals.deadLinks));
 
   const label = $('#healthLabel');
   if (total === 0) {
@@ -579,17 +615,29 @@ function renderStats() {
 
 async function loadCatalog() {
   try {
-    const [feedResponse, healthResponse, updatesResponse, catalogResponse] = await Promise.all([
+    const [feedResponse, healthResponse, updatesResponse, catalogResponse, analyticsResponse, verificationResponse, discoveryResponse] = await Promise.all([
       fetch('apps.json'),
       fetch('feeds/health.json').catch(() => null),
       fetch('feeds/updates.json').catch(() => null),
-      fetch('catalog.json').catch(() => null)
+      fetch('catalog.json').catch(() => null),
+      fetch('feeds/analytics.json').catch(() => null),
+      fetch('feeds/verification.json').catch(() => null),
+      fetch('discovery.json').catch(() => null)
     ]);
     if (!feedResponse.ok) throw new Error(`Feed returned ${feedResponse.status}`);
     const feed = await feedResponse.json();
     state.apps = feed.apps || [];
     if (healthResponse?.ok) state.health = await healthResponse.json();
     if (updatesResponse?.ok) state.updates = await updatesResponse.json();
+    if (analyticsResponse?.ok) state.analytics = await analyticsResponse.json();
+    if (verificationResponse?.ok) {
+      const doc = await verificationResponse.json();
+      for (const entry of doc.apps || []) state.verification.set(entry.app, entry);
+    }
+    if (discoveryResponse?.ok) {
+      const doc = await discoveryResponse.json();
+      for (const entry of doc.apps || []) state.discovery.set(entry.id || entry.slug, entry);
+    }
     if (catalogResponse?.ok) {
       const meta = await catalogResponse.json();
       state.source = meta.source || null;
