@@ -86,16 +86,58 @@
   // FAVORITES / WATCHLIST (P0)
   // ============================================================================
 
+  // Favorites live under 'omnisource-favorites' (canonical, read/written by
+  // js/site.js) and are mirrored to the legacy prefixed 'os:favorites' key,
+  // so the heart buttons on the home catalog and on /favorites/ +
+  // /collections/ never disagree. Keep both keys in sync on every write.
+  const FAVORITES_CANONICAL_KEY = 'omnisource-favorites';
+  const FAVORITES_EVENT = 'os:favorites-changed';
+
   const Favorites = {
-    STORAGE_KEY: 'favorites',
-    
+    STORAGE_KEY: 'favorites', // legacy os:favorites, mirrored below
+
     init() {
-      // Ensure favorites exist
-      if (!Storage.get(this.STORAGE_KEY)) {
-        Storage.set(this.STORAGE_KEY, []);
-      }
+      // Merge any legacy data into the canonical store and mirror it back.
+      this.getAll();
       this._injectUI();
       this._loadFromURL();
+      window.addEventListener(FAVORITES_EVENT, () => {
+        this.updateCount();
+        this._syncButtons();
+      });
+      window.addEventListener('storage', (event) => {
+        if (event.key === FAVORITES_CANONICAL_KEY || event.key === `os:${this.STORAGE_KEY}`) {
+          this.updateCount();
+          this._syncButtons();
+        }
+      });
+    },
+
+    _readList(key) {
+      try {
+        const raw = localStorage.getItem(key);
+        const list = raw ? JSON.parse(raw) : [];
+        return Array.isArray(list) ? list : [];
+      } catch {
+        return [];
+      }
+    },
+
+    _writeList(list) {
+      const value = JSON.stringify(Array.from(new Set(list)));
+      try {
+        localStorage.setItem(FAVORITES_CANONICAL_KEY, value);
+        localStorage.setItem(`os:${this.STORAGE_KEY}`, value);
+      } catch (e) { /* storage unavailable */ }
+      try { window.dispatchEvent(new CustomEvent(FAVORITES_EVENT)); } catch (e) { /* ignore */ }
+    },
+
+    _syncButtons() {
+      document.querySelectorAll('.favorite-btn[data-app-id]').forEach(btn => {
+        const active = this.has(btn.dataset.appId);
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-label', active ? 'Remove from favorites' : 'Add to favorites');
+      });
     },
 
     _injectUI() {
@@ -162,7 +204,18 @@
     },
 
     getAll() {
-      return Storage.get(this.STORAGE_KEY, []);
+      // Union the canonical key and the legacy prefixed key, then persist the
+      // merge so a one-time migration happens transparently.
+      const canonical = this._readList(FAVORITES_CANONICAL_KEY);
+      const legacy = this._readList(`os:${this.STORAGE_KEY}`);
+      const merged = Array.from(new Set(canonical.concat(legacy)));
+      if (merged.length !== canonical.length || legacy.length !== merged.length) {
+        try {
+          localStorage.setItem(FAVORITES_CANONICAL_KEY, JSON.stringify(merged));
+          localStorage.setItem(`os:${this.STORAGE_KEY}`, JSON.stringify(merged));
+        } catch (e) { /* storage unavailable */ }
+      }
+      return merged;
     },
 
     has(appId) {
@@ -173,7 +226,7 @@
       const favorites = this.getAll();
       if (!favorites.includes(appId)) {
         favorites.push(appId);
-        Storage.set(this.STORAGE_KEY, favorites);
+        this._writeList(favorites);
         this.updateCount();
         OS.emit('favorites:updated', this.getAll());
         return true;
@@ -186,7 +239,7 @@
       const index = favorites.indexOf(appId);
       if (index > -1) {
         favorites.splice(index, 1);
-        Storage.set(this.STORAGE_KEY, favorites);
+        this._writeList(favorites);
         this.updateCount();
         OS.emit('favorites:updated', this.getAll());
         return true;
@@ -207,11 +260,10 @@
 
     updateCount() {
       const count = this.getAll().length;
-      const countEl = document.getElementById('favorites-count');
-      if (countEl) {
+      document.querySelectorAll('.favorites-count').forEach(countEl => {
         countEl.textContent = count;
         countEl.style.display = count > 0 ? 'inline' : 'none';
-      }
+      });
     },
 
     injectButtons(container = document) {

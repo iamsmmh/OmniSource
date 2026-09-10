@@ -33,19 +33,19 @@
     {
       "id": "esign",
       "name": "ESign",
-      "scheme": "",
-      "deepLinkable": false,
-      "instructions": "Open ESign, choose Sources and paste the URL.",
-      "manualSetup": true,
+      "scheme": "esign://addsource?url={url}",
+      "deepLinkable": true,
+      "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL.",
+      "manualSetup": false,
       "icon": "E-Sign.webp"
     },
     {
       "id": "livecontainer",
       "name": "LiveContainer",
-      "scheme": "",
-      "deepLinkable": false,
-      "instructions": "Open LiveContainer, choose Sources and paste the URL.",
-      "manualSetup": true,
+      "scheme": "livecontainer://sources?url={url}",
+      "deepLinkable": true,
+      "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL.",
+      "manualSetup": false,
       "icon": "LiveContainer.webp"
     }
   ],
@@ -92,10 +92,10 @@
         "icon": "E-Sign.webp",
         "compatible": true,
         "recommended": false,
-        "manualSetup": true,
-        "url": "",
+        "manualSetup": false,
+        "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/apps.json",
         "feedURL": "https://iamsmmh.github.io/OmniSource/apps.json",
-        "instructions": "Open ESign, choose Sources and paste the URL."
+        "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
       },
       {
         "client": "livecontainer",
@@ -103,10 +103,10 @@
         "icon": "LiveContainer.webp",
         "compatible": true,
         "recommended": false,
-        "manualSetup": true,
-        "url": "",
+        "manualSetup": false,
+        "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/apps.json",
         "feedURL": "https://iamsmmh.github.io/OmniSource/apps.json",
-        "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
       }
     ]
   },
@@ -155,10 +155,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/spotiflac.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/spotiflac.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -166,10 +166,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/spotiflac.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/spotiflac.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -217,10 +217,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/uyouenhanced.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/uyouenhanced.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -228,10 +228,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/uyouenhanced.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/uyouenhanced.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -279,10 +279,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ytlite.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ytlite.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -290,10 +290,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ytlite.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ytlite.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -341,10 +341,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/youpro.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/youpro.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -352,10 +352,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/youpro.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/youpro.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -403,10 +403,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ytkp.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ytkp.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -414,10 +414,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ytkp.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ytkp.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -465,10 +465,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ytkace.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ytkace.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -476,10 +476,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ytkace.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ytkace.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -527,10 +527,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/youmod.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/youmod.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -538,10 +538,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/youmod.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/youmod.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -589,10 +589,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/maxtube.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/maxtube.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -600,10 +600,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/maxtube.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/maxtube.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -651,10 +651,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ytmusic.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ytmusic.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -662,10 +662,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ytmusic.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ytmusic.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -713,10 +713,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/maxmusic.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/maxmusic.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -724,10 +724,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/maxmusic.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/maxmusic.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -775,10 +775,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/utm.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/utm.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -786,10 +786,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/utm.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/utm.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -837,10 +837,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/inkillerplus.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/inkillerplus.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -848,10 +848,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/inkillerplus.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/inkillerplus.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -899,10 +899,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ttkillerplus.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ttkillerplus.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -910,10 +910,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ttkillerplus.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ttkillerplus.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -961,10 +961,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/winston.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/winston.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -972,10 +972,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/winston.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/winston.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1023,10 +1023,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/itorrent.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/itorrent.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1034,10 +1034,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/itorrent.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/itorrent.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1085,10 +1085,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/stikdebug.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/stikdebug.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1096,10 +1096,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/stikdebug.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/stikdebug.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1147,10 +1147,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/bhtwitter.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/bhtwitter.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1158,10 +1158,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/bhtwitter.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/bhtwitter.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1209,10 +1209,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/livecontainer.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/livecontainer.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1220,10 +1220,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/livecontainer.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/livecontainer.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1271,10 +1271,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/feather.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/feather.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1282,10 +1282,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/feather.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/feather.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1333,10 +1333,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/sidestore.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/sidestore.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1344,10 +1344,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/sidestore.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/sidestore.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1395,10 +1395,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/aidoku.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/aidoku.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1406,10 +1406,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/aidoku.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/aidoku.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1457,10 +1457,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/provenance.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/provenance.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1468,10 +1468,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/provenance.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/provenance.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1519,10 +1519,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/delta.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/delta.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1530,10 +1530,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/delta.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/delta.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1581,10 +1581,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ppsspp.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ppsspp.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1592,10 +1592,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ppsspp.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ppsspp.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1643,10 +1643,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/yattee.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/yattee.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1654,10 +1654,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/yattee.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/yattee.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1705,10 +1705,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/streamyfin.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/streamyfin.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1716,10 +1716,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/streamyfin.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/streamyfin.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1767,10 +1767,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/spotube.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/spotube.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1778,10 +1778,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/spotube.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/spotube.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1829,10 +1829,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/jellify.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/jellify.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1840,10 +1840,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/jellify.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/jellify.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1891,10 +1891,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/zeus.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/zeus.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1902,10 +1902,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/zeus.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/zeus.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -1953,10 +1953,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/bluewallet.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/bluewallet.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -1964,10 +1964,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/bluewallet.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/bluewallet.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2015,10 +2015,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/voyager.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/voyager.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2026,10 +2026,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/voyager.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/voyager.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2077,10 +2077,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/saber.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/saber.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2088,10 +2088,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/saber.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/saber.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2139,10 +2139,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/anxreader.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/anxreader.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2150,10 +2150,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/anxreader.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/anxreader.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2201,10 +2201,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/apollo.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/apollo.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2212,10 +2212,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/apollo.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/apollo.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2263,10 +2263,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/dolphinish.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/dolphinish.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2274,10 +2274,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/dolphinish.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/dolphinish.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2325,10 +2325,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ish.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ish.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2336,10 +2336,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ish.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ish.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2387,10 +2387,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/qbitcontrol.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/qbitcontrol.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2398,10 +2398,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/qbitcontrol.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/qbitcontrol.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2449,10 +2449,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/qbitconnect.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/qbitconnect.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2460,10 +2460,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/qbitconnect.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/qbitconnect.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2511,10 +2511,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/vcmi.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/vcmi.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2522,10 +2522,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/vcmi.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/vcmi.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2573,10 +2573,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/mame4ios.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/mame4ios.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2584,10 +2584,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/mame4ios.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/mame4ios.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2635,10 +2635,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/qbitcontroller.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/qbitcontroller.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2646,10 +2646,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/qbitcontroller.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/qbitcontroller.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2697,10 +2697,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/minivmac.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/minivmac.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2708,10 +2708,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/minivmac.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/minivmac.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2759,10 +2759,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/stiknes.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/stiknes.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2770,10 +2770,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/stiknes.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/stiknes.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2821,10 +2821,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/twitchadblock.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/twitchadblock.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2832,10 +2832,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/twitchadblock.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/twitchadblock.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2883,10 +2883,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/neofreebird.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/neofreebird.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2894,10 +2894,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/neofreebird.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/neofreebird.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -2945,10 +2945,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/conduit.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/conduit.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -2956,10 +2956,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/conduit.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/conduit.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3007,10 +3007,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/fladder.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/fladder.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3018,10 +3018,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/fladder.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/fladder.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3069,10 +3069,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/anymex.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/anymex.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3080,10 +3080,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/anymex.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/anymex.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3131,10 +3131,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/sora.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/sora.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3142,10 +3142,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/sora.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/sora.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3193,10 +3193,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/raintweak.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/raintweak.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3204,10 +3204,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/raintweak.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/raintweak.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3255,10 +3255,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/infuseplus.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/infuseplus.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3266,10 +3266,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/infuseplus.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/infuseplus.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3317,10 +3317,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/glow.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/glow.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3328,10 +3328,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/glow.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/glow.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3379,10 +3379,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/swiftgram.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/swiftgram.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3390,10 +3390,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/swiftgram.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/swiftgram.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3441,10 +3441,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3452,10 +3452,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3503,10 +3503,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/iqface.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/iqface.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3514,10 +3514,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/iqface.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/iqface.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3565,10 +3565,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3576,10 +3576,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3627,10 +3627,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/sparkle.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/sparkle.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3638,10 +3638,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/sparkle.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/sparkle.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3689,10 +3689,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/redditfilter.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/redditfilter.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3700,10 +3700,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/redditfilter.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/redditfilter.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3751,10 +3751,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3762,10 +3762,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3813,10 +3813,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3824,10 +3824,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3875,10 +3875,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3886,10 +3886,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3937,10 +3937,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -3948,10 +3948,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -3999,10 +3999,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ime.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ime.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4010,10 +4010,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ime.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ime.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4061,10 +4061,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4072,10 +4072,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4123,10 +4123,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram-ig410.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ryukgram-ig410.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4134,10 +4134,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram-ig410.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ryukgram-ig410.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4185,10 +4185,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram-sidebyside.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ryukgram-sidebyside.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4196,10 +4196,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram-sidebyside.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ryukgram-sidebyside.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4247,10 +4247,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/dopamine.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/dopamine.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4258,10 +4258,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/dopamine.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/dopamine.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4309,10 +4309,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4320,10 +4320,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4371,10 +4371,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/bootstrap.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/bootstrap.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4382,10 +4382,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/bootstrap.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/bootstrap.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4433,10 +4433,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/serotonin.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/serotonin.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4444,10 +4444,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/serotonin.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/serotonin.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4495,10 +4495,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/taurine.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/taurine.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4506,10 +4506,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/taurine.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/taurine.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4557,10 +4557,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/odyssey.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/odyssey.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4568,10 +4568,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/odyssey.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/odyssey.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4619,10 +4619,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/unc0ver.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/unc0ver.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4630,10 +4630,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/unc0ver.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/unc0ver.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4681,10 +4681,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/sameboy.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/sameboy.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4692,10 +4692,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/sameboy.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/sameboy.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4743,10 +4743,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/gopeed.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/gopeed.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4754,10 +4754,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/gopeed.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/gopeed.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4805,10 +4805,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/manicemu.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/manicemu.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4816,10 +4816,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/manicemu.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/manicemu.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     },
@@ -4867,10 +4867,10 @@
           "icon": "E-Sign.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "esign://addsource?url=https://iamsmmh.github.io/OmniSource/feeds/xenios.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/xenios.json",
-          "instructions": "Open ESign, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
         },
         {
           "client": "livecontainer",
@@ -4878,10 +4878,10 @@
           "icon": "LiveContainer.webp",
           "compatible": true,
           "recommended": false,
-          "manualSetup": true,
-          "url": "",
+          "manualSetup": false,
+          "url": "livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/feeds/xenios.json",
           "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/xenios.json",
-          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+          "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL."
         }
       ]
     }

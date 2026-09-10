@@ -21,8 +21,11 @@ from omnisource.domain import Catalog, today
 INSTALL_SCHEMA_VERSION = 1
 
 # Each client is described with: id, name, icon, supported URL scheme(s),
-# and whether the source URL is *deep-linkable*. ESign and LiveContainer
-# don't expose a ``source?url=`` scheme, so users paste the URL manually.
+# and whether the source URL is *deep-linkable*. All five clients support
+# a one-tap "add source" scheme; keep the raw feed URL in the query string
+# (the feed URLs never contain ``&`` or spaces, and this matches the format
+# AltStore/SideStore clients expect). If a future scheme breaks, flip the
+# profile back to ``deepLinkable: False`` and the UI falls back to copy.
 CLIENT_PROFILES = {
     "altstore": {
         "id": "altstore",
@@ -51,18 +54,23 @@ CLIENT_PROFILES = {
     "esign": {
         "id": "esign",
         "name": "ESign",
-        "scheme": "",
-        "deepLinkable": False,
-        "instructions": "Open ESign, choose Sources and paste the URL.",
-        "manualSetup": True,
+        "scheme": "esign://addsource?url={url}",
+        "deepLinkable": True,
+        "instructions": (
+            "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
+        ),
+        "manualSetup": False,
     },
     "livecontainer": {
         "id": "livecontainer",
         "name": "LiveContainer",
-        "scheme": "",
-        "deepLinkable": False,
-        "instructions": "Open LiveContainer, choose Sources and paste the URL.",
-        "manualSetup": True,
+        "scheme": "livecontainer://sources?url={url}",
+        "deepLinkable": True,
+        "instructions": (
+            "Tap to add the source to LiveContainer. If nothing happens, "
+            "open LiveContainer → Settings → Sources and paste the URL."
+        ),
+        "manualSetup": False,
     },
 }
 
@@ -81,8 +89,7 @@ def _build_url(profile: dict[str, Any], feed_url: str) -> str:
 def install_url(client_id: str, feed_url: str) -> str:
     """Return the deep link that adds ``feed_url`` to ``client_id``.
 
-    Clients without a source protocol (ESign, LiveContainer, unknown ids)
-    return ``""`` — callers fall back to copy-paste.
+    Unknown client ids return ``""`` — callers fall back to copy-paste.
     """
     profile = CLIENT_PROFILES.get(client_id)
     if profile is None:

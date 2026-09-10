@@ -46,20 +46,40 @@
     query: '',
     category: 'all',
     statusFilter: 'all',
+    provenance: 'all',
     os: 'any',
     sort: 'featured',
     activeApp: null,
     activeTab: 'about'
   };
 
-  function loadFavorites() {
+  /* Favorites are shared with js/features.js (favorites/collections pages).
+     'omnisource-favorites' is canonical (raw JSON array); 'os:favorites' is
+     the prefixed legacy key features.js used on its own. Both are kept in
+     sync and merged on read so hearts agree on every page. */
+  var FAVORITES_KEY = 'omnisource-favorites';
+  var FAVORITES_LEGACY_KEY = 'os:favorites';
+  function readFavoriteList(key) {
     try {
-      var list = JSON.parse(localStorage.getItem('omnisource-favorites') || '[]');
+      var list = JSON.parse(localStorage.getItem(key) || '[]');
       return Array.isArray(list) ? list : [];
     } catch (e) { return []; }
   }
+  function loadFavorites() {
+    var canonical = readFavoriteList(FAVORITES_KEY);
+    var legacy = readFavoriteList(FAVORITES_LEGACY_KEY);
+    var merged = Array.from(new Set(canonical.concat(legacy)));
+    if (merged.length !== canonical.length || legacy.length !== merged.length) {
+      try { localStorage.setItem(FAVORITES_KEY, JSON.stringify(merged)); } catch (e) { /* ignore */ }
+      try { localStorage.setItem(FAVORITES_LEGACY_KEY, JSON.stringify(merged)); } catch (e) { /* ignore */ }
+    }
+    return merged;
+  }
   function saveFavorites() {
-    try { localStorage.setItem('omnisource-favorites', JSON.stringify(Array.from(state.favorites))); } catch (e) { /* ignore */ }
+    var value = JSON.stringify(Array.from(state.favorites));
+    try { localStorage.setItem(FAVORITES_KEY, value); } catch (e) { /* ignore */ }
+    try { localStorage.setItem(FAVORITES_LEGACY_KEY, value); } catch (e) { /* ignore */ }
+    try { window.dispatchEvent(new CustomEvent('os:favorites-changed')); } catch (e) { /* ignore */ }
   }
 
   /* --------------------------------------------------------------- labels */
@@ -80,6 +100,26 @@
   var rssFor = function (app) { return OS.url('feeds/' + slugFor(app) + '.xml'); };
   var healthFor = function (app) { return (state.health && state.health.apps || []).find(function (item) { return item.slug === slugFor(app); }) || {}; };
   var verificationFor = function (app) { return state.verification.get(slugFor(app)) || null; };
+  /* Official = the IPA is published by the project's own upstream release
+     feed/repository. Community = repackaged/mirrored by someone else (the
+     compatibility notes disclose who). Mirrors verification.py's rule. */
+  var COMMUNITY_METHODS = { 'manual-mirror': 1, 'self-built': 1 };
+  function provenanceFor(app) {
+    var meta = app.omnisource || app || {};
+    var verification = meta.verification || (app.verification) || {};
+    var method = String(verification.method || '').toLowerCase();
+    var publisher = String(verification.publisher || '').toLowerCase();
+    var upstream = String(meta.upstreamURL || app.upstreamURL || '').toLowerCase();
+    if ((meta.status || app.status) === 'manual') return 'community';
+    if (COMMUNITY_METHODS[method]) return 'community';
+    if (/vault|mirror|community/.test(publisher)) return 'community';
+    if (method === 'github-release') {
+      var p = publisher.replace(/^https?:\/\/github\.com\//, '').replace(/\/$/, '');
+      var m = upstream.match(/github\.com\/([^/]+\/[^/]+?)(?:\.git)?\/?$/);
+      if (p && m && m[1] !== p) return 'community';
+    }
+    return 'official';
+  }
   var discoveryFor = function (app) { return state.discovery.get(slugFor(app)) || null; };
   var minOSMajor = function (app) {
     var value = app.omnisource && app.omnisource.compatibility ? app.omnisource.compatibility.minOSVersion : null;
@@ -198,6 +238,9 @@
   function installUrlFor(clientId, feedUrl) {
     if (clientId === 'altstore' || clientId === 'sidestore') return clientId + '://source?url=' + encodeURIComponent(feedUrl);
     if (clientId === 'feather') return 'feather://source/' + feedUrl.replace(/^https?:\/\//, '');
+    // ESign and LiveContainer both ship one-tap "add source" schemes.
+    if (clientId === 'esign') return 'esign://addsource?url=' + encodeURIComponent(feedUrl);
+    if (clientId === 'livecontainer') return 'livecontainer://sources?url=' + encodeURIComponent(feedUrl);
     return '';
   }
 
@@ -303,6 +346,10 @@
       : '<span class="badge bad"><span class="dot"></span>Offline</span>';
     var staleBadge = stale ? '<span class="badge warn">Stale</span>' : '';
     var verification = verificationFor(app);
+    var provenance = provenanceFor(app);
+    var provenanceBadge = provenance === 'official'
+      ? '<span class="badge verified" title="IPA published by the project&#39;s own upstream release channel">Official build</span>'
+      : '<span class="badge community" title="Repackaged or mirrored by a community builder — see the Details tab for provenance">Community build</span>';
     var verificationBadge = verification
       ? '<span class="badge ' + verificationBadgeClass(verification.status) + '" title="' + OS.esc((verification.checks && verification.checks.fileAvailable ? 'File available · ' : '') + (verification.hash_verified ? 'Checksum verified' : 'No published checksum')) + '">' + OS.esc(VERIFICATION_LABELS[verification.status] || verification.status) + '</span>'
       : '';
@@ -322,7 +369,7 @@
           '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 20.5S4.5 16.1 4.5 10A4.5 4.5 0 0 1 12 7.2a4.5 4.5 0 0 1 7.5 2.8c0 6.1-7.5 10.5-7.5 10.5Z"/></svg>' +
         '</button>' +
       '</div>' +
-      '<div class="card-badges">' + statusBadge + healthBadge + verificationBadge + collisionBadge + staleBadge + '</div>' +
+      '<div class="card-badges">' + statusBadge + provenanceBadge + healthBadge + verificationBadge + collisionBadge + staleBadge + '</div>' +
       '<p class="app-description">' + OS.esc(app.subtitle || app.localizedDescription || 'View app details and installation options.') + '</p>' +
       '<div class="card-meta">' +
         '<span class="meta-item"><b>v' + OS.esc(app.version || '—') + '</b></span>' +
@@ -529,17 +576,28 @@
       var self = this;
       var searchInput = $('#searchInput');
       if (searchInput) {
-        searchInput.addEventListener('input', function () {
-          state.query = this.value;
-          self.filterAndRender();
-        });
-        searchInput.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape' && state.query) {
-            state.query = '';
-            searchInput.value = '';
-            self.filterAndRender();
-          }
-        });
+        // Debounced: filtering 77 cards is cheap, rebuilding the DOM on every
+        // keystroke still causes layout churn and drops hover states.
+        if (!searchInput._osBound) {
+          searchInput._osBound = true;
+          var searchTimer = null;
+          searchInput.addEventListener('input', function () {
+            var value = this.value;
+            clearTimeout(searchTimer);
+            searchTimer = setTimeout(function () {
+              state.query = value;
+              self.filterAndRender();
+            }, 110);
+          });
+          searchInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && state.query) {
+              clearTimeout(searchTimer);
+              state.query = '';
+              searchInput.value = '';
+              self.filterAndRender();
+            }
+          });
+        }
       }
       var sortSelect = $('#sortSelect');
       if (sortSelect) {
@@ -559,6 +617,8 @@
           if (!chip) return;
           if (chip.dataset.kind === 'category') state.category = state.category === chip.dataset.id ? 'all' : chip.dataset.id;
           if (chip.dataset.kind === 'status') state.statusFilter = state.statusFilter === chip.dataset.id ? 'all' : chip.dataset.id;
+          if (chip.dataset.kind === 'provenance') state.provenance = state.provenance === chip.dataset.id ? 'all' : chip.dataset.id;
+          self.renderFilters();
           self.filterAndRender();
         });
       }
@@ -576,6 +636,7 @@
             var slug = favorite.dataset.favorite;
             if (state.favorites.has(slug)) state.favorites.delete(slug); else state.favorites.add(slug);
             saveFavorites();
+            self.renderFilters(); // refresh the "Saved" chip count
             self.filterAndRender();
             OS.toast(state.favorites.has(slug) ? 'Saved for later' : 'Removed from saved apps');
             return;
@@ -599,12 +660,27 @@
     renderFilters: function () {
       var categoryCounts = new Map();
       var statusCounts = new Map();
+      var provenanceCounts = { official: 0, community: 0 };
       state.apps.forEach(function (app) {
         var cat = app.category || 'other';
         categoryCounts.set(cat, (categoryCounts.get(cat) || 0) + 1);
         var status = (app.omnisource && app.omnisource.status) || 'stable';
         statusCounts.set(status, (statusCounts.get(status) || 0) + 1);
+        provenanceCounts[provenanceFor(app)]++;
       });
+
+      var provenanceRow = $('#provenanceFilters');
+      if (provenanceRow) {
+        var provenanceFilters = [
+          { id: 'all', label: 'All builds', count: state.apps.length },
+          { id: 'official', label: 'Official', count: provenanceCounts.official },
+          { id: 'community', label: 'Community', count: provenanceCounts.community }
+        ];
+        provenanceRow.innerHTML = provenanceFilters.map(function (filter) {
+          return '<button type="button" class="chip' + (state.provenance === filter.id ? ' active' : '') + '" data-kind="provenance" data-id="' + OS.esc(filter.id) + '">' +
+            '<span>' + OS.esc(filter.label) + '</span><span class="count">' + filter.count + '</span></button>';
+        }).join('');
+      }
 
       var categories = Array.from(categoryCounts.keys()).sort(function (a, b) {
         return categoryLabel(a).localeCompare(categoryLabel(b));
@@ -646,7 +722,23 @@
     },
 
     filteredApps: function () {
-      var query = state.query.toLowerCase().trim();
+      // The search box supports a few operators (documented in the ⌘K panel):
+      // status:beta, category:music, source:vault, provenance:community,
+      // version:1.2, updated:>30d / updated:<7d. Anything else is free text.
+      var raw = state.query.toLowerCase().trim();
+      var operators = {};
+      var freeParts = [];
+      raw.split(/\s+/).forEach(function (token) {
+        if (!token) return;
+        var m = token.match(/^([a-z]+):(.+)$/);
+        if (m && ['status', 'category', 'source', 'provenance', 'version', 'updated'].indexOf(m[1]) !== -1) {
+          (operators[m[1]] = operators[m[1]] || []).push(m[2]);
+        } else {
+          freeParts.push(token);
+        }
+      });
+      var freeQuery = freeParts.join(' ');
+      var now = Date.now();
       var result = state.apps.filter(function (app) {
         var slug = slugFor(app);
         var meta = app.omnisource || {};
@@ -663,9 +755,30 @@
         var categoryMatch = state.category === 'all' ||
           (state.category === 'favorites' ? state.favorites.has(slug) : app.category === state.category);
         var statusMatch = state.statusFilter === 'all' || ((meta.status || 'stable') === state.statusFilter);
+        var provenanceMatch = state.provenance === 'all' || provenanceFor(app) === state.provenance;
         var osMajor = minOSMajor(app);
         var osMatch = state.os === 'any' || state.os === '' || osMajor === null || osMajor <= Number(state.os);
-        return categoryMatch && statusMatch && osMatch && (!query || searchText.indexOf(query) !== -1);
+        if (!categoryMatch || !statusMatch || !provenanceMatch || !osMatch) return false;
+        if (freeQuery && searchText.indexOf(freeQuery) === -1) return false;
+        var matchAll = function (values, test) { return values.every(test); };
+        if (operators.status && !matchAll(operators.status, function (v) { return (meta.status || 'stable') === v; })) return false;
+        if (operators.provenance && !matchAll(operators.provenance, function (v) { return provenanceFor(app) === v; })) return false;
+        if (operators.version && !matchAll(operators.version, function (v) { return String(app.version || '').toLowerCase().indexOf(v) !== -1; })) return false;
+        if (operators.category && !matchAll(operators.category, function (v) {
+          return app.category === v || categoryLabel(app.category).toLowerCase().indexOf(v) !== -1;
+        })) return false;
+        if (operators.source && !matchAll(operators.source, function (v) {
+          var hay = String(meta.verification && meta.verification.publisher || '') + ' ' + String(app.developerName || '');
+          return hay.toLowerCase().indexOf(v) !== -1;
+        })) return false;
+        if (operators.updated && !matchAll(operators.updated, function (v) {
+          var days = (now - new Date(app.versionDate).getTime()) / 86400000;
+          var mm = v.match(/^(>=?|<=?)\s*(\d+)\s*d?$/);
+          if (!mm) return true;
+          var n = Number(mm[2]);
+          return mm[1].charAt(0) === '>' ? days > n : days < n;
+        })) return false;
+        return true;
       });
       result.sort(function (a, b) {
         if (state.sort === 'name') return a.name.localeCompare(b.name);
@@ -696,7 +809,7 @@
         count.textContent = apps.length + ' ' + (apps.length === 1 ? 'app' : 'apps') +
           (document.documentElement.dataset.view === 'compact' ? ' listed' : ' shown');
       }
-      var filtered = state.category !== 'all' || state.statusFilter !== 'all' || state.os !== 'any' || Boolean(state.query);
+      var filtered = state.category !== 'all' || state.statusFilter !== 'all' || state.provenance !== 'all' || state.os !== 'any' || Boolean(state.query);
       var clearButton = $('#clearFilters');
       if (clearButton) clearButton.hidden = !filtered;
       var empty = $('#emptyState');
@@ -714,18 +827,22 @@
           summary.hidden = true;
         }
       }
-      this.renderFilters();
+      // Filter chips are static per catalog; rebuilding them on every
+      // keystroke discards nothing but wastes DOM work, so they render once
+      // on load and explicitly when favorites change.
     },
 
     clearFilters: function () {
       state.query = '';
       state.category = 'all';
       state.statusFilter = 'all';
+      state.provenance = 'all';
       state.os = 'any';
       var searchInput = $('#searchInput');
       if (searchInput) searchInput.value = '';
       var osSelect = $('#osSelect');
       if (osSelect) osSelect.value = 'any';
+      this.renderFilters();
       this.filterAndRender();
     },
 
@@ -799,6 +916,10 @@
     var meta = app.omnisource || {};
     var status = meta.status || 'stable';
     var chips = ['<span class="badge ' + (status === 'stable' ? 'stable' : status) + '" title="Release status"><span class="dot"></span>' + OS.esc(statusLabel(status)) + '</span>'];
+    var provenance = provenanceFor(app);
+    chips.push(provenance === 'official'
+      ? '<span class="badge verified" title="This IPA is published by the project&#39;s own upstream release channel">Official build</span>'
+      : '<span class="badge community" title="This IPA is repackaged or mirrored by a community builder — provenance is listed under the Details tab">Community build</span>');
     var verification = verificationFor(app);
     if (verification) {
       chips.push('<span class="badge ' + verificationBadgeClass(verification.status) + '">' + OS.esc(VERIFICATION_LABELS[verification.status] || verification.status) + '</span>');
@@ -931,7 +1052,7 @@
           state.clients.map(function (client) { return clientButton(client, sourceFeed); }).join('') +
         '</div>' +
         (conflict
-          ? '<div class="collision-note"><svg viewBox="0 0 24 24"><path d="M12 3 2.8 20h18.4L12 3Zm0 6v5m0 3.2v.1"/></svg><span><b>Shared bundle ID.</b> ' + OS.esc(conflict.names) + ' also use <code>' + OS.esc(app.bundleIdentifier) + '</code> — installing this app replaces whichever of them is installed on the same device.</span></div>'
+          ? '<div class="collision-note"><svg viewBox="0 0 24 24"><path d="M12 3 2.8 20h18.4L12 3Zm0 6v5m0 3.2v.1"/></svg><span><b>Shared bundle ID.</b> ' + OS.esc(conflict.names) + ' also use <code>' + OS.esc(app.bundleIdentifier) + '</code> — installing one replaces the others on the same device. SideStore cannot add two of them from the master feed; add this app on its own with its single-app source instead.<br><button type="button" class="copy-feed-btn" data-copy="' + OS.esc(sourceFeed) + '" data-copy-msg="Single-app source copied — add it manually in your client">⧉ Copy single-app source link</button> <a class="copy-feed-link" href="' + OS.esc(sourceFeed) + '" target="_blank" rel="noopener">open feed ↗</a></span></div>'
           : '') +
         '<div class="tabs" role="tablist" aria-label="App details">' +
           [['about', 'About'], ['versions', 'Versions' + (versionCount > 1 ? ' <span class="count">' + versionCount + '</span>' : '')], ['info', 'Details']].map(function (tab) {
@@ -1585,7 +1706,11 @@
           entry = doc.apps.find(function (a) { return a.slug === (slug || ''); });
         }
         var sourceFeed = slug ? OS.ROOT.replace(/\/$/, '') + '/feeds/' + slug + '.json' : OS.ROOT.replace(/\/$/, '') + '/apps.json';
-        if (feedLabel) feedLabel.textContent = sourceFeed;
+        // One-click copy of the single-app feed — the manual workaround when a
+        // client (e.g. SideStore) cannot co-install apps sharing a bundle ID.
+        if (feedLabel) {
+          feedLabel.innerHTML = '<span class="ap-feed-url">' + OS.esc(sourceFeed) + '</span> <button type="button" class="ap-feed-copy" data-copy="' + OS.esc(sourceFeed) + '" data-copy-msg="Single-app source copied — add it manually in your client">Copy source link</button>';
+        }
         var appCards = (entry && entry.cards) || (doc && doc.master ? doc.master.cards : []);
         if (!appCards.length) {
           cards.innerHTML = '<div class="chart-empty">Install cards are generated on every build.</div>';
@@ -1617,7 +1742,7 @@
       'Browse the catalog and install any app. Updates refresh automatically on every sync.'
     ];
     if (client.id === 'esign' || client.id === 'livecontainer') {
-      base[1] = 'In ' + name + ', open <b>Sources</b> and paste the feed URL (copy it below).';
+      base[1] = 'Tap <b>Add source in ' + name + '</b> below to import the feed automatically. If the app does not open, copy the source URL and paste it under <b>Sources</b> in ' + name + '.';
     }
     return base;
   }
@@ -1673,6 +1798,32 @@
       draw(q);
     }
   };
+
+  /* Keep hearts in sync when favorites change on another page/tab
+     (features.js on /favorites/ and /collections/). */
+  function syncFavoritesFromStorage() {
+    var next = new Set(loadFavorites());
+    var same = next.size === state.favorites.size &&
+      Array.prototype.every.call(next, function (slug) { return state.favorites.has(slug); });
+    if (same) return;
+    state.favorites = next;
+    $$('.favorite[data-favorite]').forEach(function (btn) {
+      var active = state.favorites.has(btn.dataset.favorite);
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', String(active));
+      btn.setAttribute('aria-label', (active ? 'Remove from' : 'Add to') + ' saved apps');
+    });
+    if (document.body.dataset.page === 'home') {
+      Home.renderFilters();
+      if (state.category === 'favorites') Home.filterAndRender();
+    }
+  }
+  window.addEventListener('os:favorites-changed', syncFavoritesFromStorage);
+  window.addEventListener('storage', function (event) {
+    if (event.key === FAVORITES_KEY || event.key === FAVORITES_LEGACY_KEY) {
+      syncFavoritesFromStorage();
+    }
+  });
 
   /* ------------------------------------------------------------------ boot */
   function boot() {

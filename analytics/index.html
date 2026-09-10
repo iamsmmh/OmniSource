@@ -55,8 +55,20 @@
         <a href="../compare/">Compare</a>
         <a href="../status/">Health</a>
         <a href="../install/">Install</a>
-        <a href="../favorites/">Favorites</a>
-        <a href="../collections/">Collections</a>
+        <details class="nav-more">
+          <summary aria-haspopup="menu" aria-label="More pages">More
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="nav-menu" role="menu">
+            <a href="../#whats-new" role="menuitem">What&rsquo;s new</a>
+            <a href="../analytics/" role="menuitem" class="active" aria-current="page">Analytics</a>
+            <a href="../favorites/" role="menuitem">Favorites</a>
+            <a href="../collections/" role="menuitem">Collections</a>
+            <a href="../search/" role="menuitem">Search</a>
+            <a href="../feeds/feed.xml" role="menuitem" title="Combined release feed (RSS)">RSS feed</a>
+            <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" class="nav-gh" role="menuitem">GitHub &#8599;</a>
+          </div>
+        </details>
       </div>
       <div class="nav-controls">
         <button class="icon-button" id="searchToggle" type="button" data-open-palette aria-label="Search (Command K)" title="Search (⌘K)">
