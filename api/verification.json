@@ -6,8 +6,8 @@
     "verified": 62,
     "communityVerified": 1,
     "unverified": 0,
-    "hashVerified": 46,
-    "avgTrustScore": 7.12,
+    "hashVerified": 49,
+    "avgTrustScore": 7.19,
     "trustLevels": [
       "Verified",
       "Trusted",
@@ -660,61 +660,61 @@
       "app": "ryukgram",
       "name": "RyukGram",
       "status": "VERIFIED",
-      "hash_verified": false,
+      "hash_verified": true,
       "method": "altstore",
       "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
       "checks": {
         "metadata": true,
         "urls": true,
         "fileAvailable": true,
-        "hashVerified": false
+        "hashVerified": true
       },
       "reasons": [
         "official upstream (altstore)"
       ],
       "downloadURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa",
-      "trustScore": 6.0,
-      "trustBadge": "Community"
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "ryukgram-ig410",
       "name": "RyukGram (IG 410)",
       "status": "VERIFIED",
-      "hash_verified": false,
+      "hash_verified": true,
       "method": "altstore",
       "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
       "checks": {
         "metadata": true,
         "urls": true,
         "fileAvailable": true,
-        "hashVerified": false
+        "hashVerified": true
       },
       "reasons": [
         "official upstream (altstore)"
       ],
       "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
-      "trustScore": 6.0,
-      "trustBadge": "Community"
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "ryukgram-sidebyside",
       "name": "RyukGram Side by Side",
       "status": "VERIFIED",
-      "hash_verified": false,
+      "hash_verified": true,
       "method": "altstore",
       "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
       "checks": {
         "metadata": true,
         "urls": true,
         "fileAvailable": true,
-        "hashVerified": false
+        "hashVerified": true
       },
       "reasons": [
         "official upstream (altstore)"
       ],
       "downloadURL": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa",
-      "trustScore": 6.0,
-      "trustBadge": "Community"
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "saber",

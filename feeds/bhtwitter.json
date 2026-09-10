@@ -45,21 +45,21 @@
               "fileType": "IPA",
               "size": 167001383,
               "sha256": null,
-              "downloads": 16744,
+              "downloads": 16746,
               "mimeType": "application/octet-stream",
               "installable": true
             },
             {
               "filename": "BHTwitter-trollstore.tipa",
               "downloadUrl": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-trollstore.tipa",
-              "platform": "unknown",
+              "platform": "ios",
               "architecture": null,
-              "fileType": "other",
+              "fileType": "IPA",
               "size": 166994432,
               "sha256": null,
               "downloads": 4594,
               "mimeType": "application/octet-stream",
-              "installable": false
+              "installable": true
             },
             {
               "filename": "com.bandarhl.bhtwitter_4.4-1+debug_iphoneos-arm.deb",
@@ -86,7 +86,7 @@
               "installable": true
             }
           ],
-          "downloads": 16744
+          "downloads": 16746
         }
       ],
       "screenshotURLs": [

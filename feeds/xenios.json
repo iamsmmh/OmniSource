@@ -45,7 +45,7 @@
               "fileType": "IPA",
               "size": 46253576,
               "sha256": "61de6cfc9cf05389161272ceaa70d46662dab77de40ab11fdda3d4a2221621a7",
-              "downloads": 25754,
+              "downloads": 25756,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -81,13 +81,13 @@
               "fileType": "DMG",
               "size": 77245617,
               "sha256": "4aee749e878d8cbe301610372a1f1fcb636253ed93ab24732ed59054f19bc46c",
-              "downloads": 3479,
+              "downloads": 3480,
               "mimeType": "application/x-apple-diskimage",
               "installable": true
             }
           ],
           "sha256": "61de6cfc9cf05389161272ceaa70d46662dab77de40ab11fdda3d4a2221621a7",
-          "downloads": 25754
+          "downloads": 25756
         }
       ],
       "screenshotURLs": [],
@@ -125,8 +125,8 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "not probed",
-          "statusSince": "2026-06-08",
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-06-08"
         }
       }

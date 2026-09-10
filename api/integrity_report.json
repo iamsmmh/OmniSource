@@ -3,8 +3,8 @@
   "generatedAt": "2026-09-10",
   "totals": {
     "apps": 63,
-    "pass": 46,
-    "warn": 17,
+    "pass": 49,
+    "warn": 14,
     "fail": 0,
     "rejected": 0
   },
@@ -590,10 +590,10 @@
       "slug": "ryukgram",
       "name": "RyukGram",
       "asset": {
-        "sha256": null,
+        "sha256": "c08e27efd9ec4a6e16828557b369b5c5aa555f2ba1fe931c21803fedb9523836",
         "size": 333670703,
         "releaseId": "446.0.0",
-        "source": "",
+        "source": "altstore",
         "downloadUrl": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa"
       },
       "checks": {
@@ -602,16 +602,16 @@
         "digestFormat": true,
         "reachable": true
       },
-      "status": "warn"
+      "status": "pass"
     },
     {
       "slug": "ryukgram-ig410",
       "name": "RyukGram (IG 410)",
       "asset": {
-        "sha256": null,
+        "sha256": "5e365019d7bf29b3a4ee3064b45f86876c878c52c960daa370b2092328871f9d",
         "size": 267074754,
         "releaseId": "410.1.0",
-        "source": "",
+        "source": "altstore",
         "downloadUrl": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa"
       },
       "checks": {
@@ -620,16 +620,16 @@
         "digestFormat": true,
         "reachable": true
       },
-      "status": "warn"
+      "status": "pass"
     },
     {
       "slug": "ryukgram-sidebyside",
       "name": "RyukGram Side by Side",
       "asset": {
-        "sha256": null,
+        "sha256": "fb58720a4bd6248165f6126f2514e6afd4af4ef7345534f35f515be3fb0060b9",
         "size": 259670417,
         "releaseId": "446.0.0",
-        "source": "",
+        "source": "altstore",
         "downloadUrl": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa"
       },
       "checks": {
@@ -638,7 +638,7 @@
         "digestFormat": true,
         "reachable": true
       },
-      "status": "warn"
+      "status": "pass"
     },
     {
       "slug": "saber",

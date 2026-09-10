@@ -45,7 +45,7 @@
               "fileType": "IPA",
               "size": 55409206,
               "sha256": "ad0c4ea182b232346470df10439cfa2c1b7952e6b586113edfbc2720e455b201",
-              "downloads": 128535,
+              "downloads": 128653,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -57,13 +57,13 @@
               "fileType": "IPA",
               "size": 55409206,
               "sha256": "ad0c4ea182b232346470df10439cfa2c1b7952e6b586113edfbc2720e455b201",
-              "downloads": 8622,
+              "downloads": 8630,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "ad0c4ea182b232346470df10439cfa2c1b7952e6b586113edfbc2720e455b201",
-          "downloads": 128535
+          "downloads": 128653
         }
       ],
       "screenshotURLs": [],
@@ -101,8 +101,8 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "not probed",
-          "statusSince": "2026-08-22",
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-22"
         }
       }
