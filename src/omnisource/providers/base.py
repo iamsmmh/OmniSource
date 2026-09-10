@@ -91,3 +91,12 @@ class SourceProvider(ABC):
 
     def healthCheck(self, source: RepositoryRef) -> ValidationResult:
         return self.health_check(source)
+
+    def verify(self, source: RepositoryRef) -> ValidationResult:
+        """Confirm ``source`` is reachable and structurally valid.
+
+        Contract alias: the platform interface names this ``verify()``; the
+        implementation is the provider's repository validation (a release
+        API ping, a feed payload parse, or an asset HEAD probe).
+        """
+        return self.validate_repository(source)

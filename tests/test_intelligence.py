@@ -1,330 +1,281 @@
-"""Tests for the derived intelligence documents and static app pages."""
+"""Tests for the Phase 3/6/7/8/9/10 intelligence modules."""
 
 from __future__ import annotations
 
 import sys
-import tempfile
-import unittest
 from pathlib import Path
 
 _SRC = Path(__file__).resolve().parents[1] / "src"
 if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
 
-from omnisource.analytics import build_analytics_doc, remember_analytics_snapshot
-from omnisource.app_pages import build_app_pages, render_app_page
-from omnisource.discovery import build_discovery_doc, build_sources_doc
-from omnisource.domain import Catalog
-from omnisource.duplicates import build_duplicates_doc, group_for_app
-from omnisource.monitor import build_status_doc, remember_probe
-from omnisource.verification import build_verification_doc
+import unittest
 
-CATALOG = {
-    "source": {
-        "name": "OmniSource",
-        "identifier": "com.omnisource",
-        "baseURL": "https://iamsmmh.github.io/OmniSource",
-        "icon": "OmniSource.png",
-    },
-    "clients": [
-        {"id": "altstore", "name": "AltStore", "icon": "AltStore.png"},
-        {"id": "esign", "name": "ESign", "icon": "E-Sign.png"},
-    ],
-    "apps": [
-        {
-            "slug": "alpha",
-            "name": "Alpha Tweak",
-            "subtitle": "Official alpha build",
-            "bundleIdentifier": "com.example.alpha",
-            "developerName": "Alpha Dev",
-            "category": "utilities",
-            "tags": ["tweak", "utility"],
-            "icon": "Alpha.png",
-            "status": "stable",
-            "featured": True,
-            "localizedDescription": "An app with a long description.",
-            "shortDescription": "Official alpha build",
-            "screenshots": [],
-            "upstreamURL": "https://github.com/alpha/alpha",
-            "verification": {
-                "method": "github-release",
-                "publisher": "Alpha Dev",
-                "checksumPublished": True,
-            },
-            "compatibility": {"minOSVersion": "16.0", "clients": ["altstore", "esign"], "notes": "Official."},
-            "upstream": {"provider": "github", "repo": "alpha/alpha"},
-        },
-        {
-            "slug": "beta",
-            "name": "Alpha Tweak Plus",
-            "subtitle": "Community build",
-            "bundleIdentifier": "com.example.alpha",
-            "developerName": "Community Builder",
-            "category": "utilities",
-            "tags": ["tweak"],
-            "icon": "Beta.png",
-            "status": "manual",
-            "localizedDescription": "Community packaged build.",
-            "upstreamURL": "https://github.com/beta/beta",
-            "verification": {
-                "method": "manual-mirror",
-                "publisher": "Community Builder",
-                "checksumPublished": False,
-            },
-            "compatibility": {"minOSVersion": "15.0", "clients": ["altstore"]},
-            "upstream": {"provider": "github", "repo": "beta/beta"},
-        },
-        {
-            "slug": "gamma",
-            "name": "Gamma Solo",
-            "bundleIdentifier": "com.example.gamma",
-            "developerName": "Gamma Dev",
-            "category": "music",
-            "icon": "Gamma.png",
-            "status": "stable",
-            "localizedDescription": "A standalone music app.",
-            "upstreamURL": "https://github.com/gamma/gamma",
-            "verification": {"method": "github-release", "publisher": "Gamma Dev"},
-            "compatibility": {"minOSVersion": "16.0", "clients": ["altstore"]},
-            "upstream": {"provider": "github", "repo": "gamma/gamma"},
-        },
-    ],
-}
+from omnisource.collections import build_collection_pages, build_collections_doc
+from omnisource.compare import build_compare_pages, render_compare_page, render_compare_redirect
+from omnisource.dead_apps import build_dead_apps_doc, classify_age
+from omnisource.domain import App, Catalog
+from omnisource.health_score import annotate_health_doc, build_health_scores, compute_health_score
+from omnisource.integrity import build_integrity_doc, integrity_errors, metadata_checks
+from omnisource.verification import compute_trust_score, trust_badge
 
-STATE = {
-    "alpha": {
-        "versions": [
-            {
-                "version": "2.0.0",
-                "date": "2026-09-08",
-                "localizedDescription": "Big release",
-                "downloadURL": "https://example.com/alpha.ipa",
-                "size": 1000,
-                "sha256": "a" * 64,
-                "downloads": 42,
-            },
-            {
-                "version": "1.0.0",
-                "date": "2026-08-01",
-                "localizedDescription": "First",
-                "downloadURL": "https://example.com/alpha-1.ipa",
-                "size": 900,
-            },
-        ],
-        "health": {"reachable": True, "detail": "HTTP 200", "since": "2026-09-09", "latencyMs": 120},
-        "syncedAt": "2026-09-09",
-    },
-    "beta": {
-        "versions": [
-            {
-                "version": "2.5.0",
-                "date": "2026-09-09",
-                "localizedDescription": "Newer community build",
-                "downloadURL": "https://example.com/beta.ipa",
-                "size": 2000,
-            }
-        ],
-        "health": {"reachable": True, "detail": "HTTP 302", "since": "2026-09-09", "latencyMs": 300},
-        "syncedAt": "2026-09-09",
-    },
-    "gamma": {
-        "versions": [
-            {
-                "version": "1.2.0",
-                "date": "2026-07-01",
-                "localizedDescription": "Music",
-                "downloadURL": "https://example.com/gamma.ipa",
-                "size": 3000,
-            }
-        ],
-        "health": {"reachable": False, "detail": "HTTP 404", "since": "2026-09-09", "latencyMs": 50},
-        "syncedAt": "2026-09-07",
-    },
-    "updateHistory": [
-        {
-            "appId": "beta",
-            "name": "Alpha Tweak Plus",
-            "version": "2.5.0",
-            "releaseDate": "2026-09-09",
-            "kind": "updated",
-        },
-        {
-            "appId": "gamma",
-            "name": "Gamma Solo",
-            "version": "1.2.0",
-            "releaseDate": "2026-09-08",
-            "kind": "new",
-        },
-        {
-            "appId": "alpha",
-            "name": "Alpha Tweak",
-            "version": "2.0.0",
-            "releaseDate": "2026-06-01",
-            "kind": "updated",
-        },
-    ],
+
+def _app(slug: str = "demo", **extra) -> App:
+    raw = {
+        "slug": slug,
+        "name": f"App {slug.title()}",
+        "bundleIdentifier": f"com.example.{slug}",
+        "developerName": "Dev",
+        "icon": "Icon.png",
+        "category": "utilities",
+        "status": "stable",
+        "localizedDescription": "A description.",
+        "shortDescription": "Short.",
+        "compatibility": {"minOSVersion": "16.0", "clients": ["altstore"]},
+        "verification": {"publisher": "Dev", "verified": True},
+        **extra,
+    }
+    return App(slug=slug, raw=raw)
+
+
+def _catalog(*apps: App) -> Catalog:
+    return Catalog(source={"baseURL": "https://example.com"}, clients=[], apps=list(apps))
+
+
+GOOD_NEWEST = {
+    "version": "1.0.0",
+    "date": "2026-09-01",
+    "downloadURL": "https://example.com/app.ipa",
+    "size": 1000,
+    "sha256": "a" * 64,
+    "source": "github",
 }
 
 
-def catalog() -> Catalog:
-    return Catalog.from_dict(CATALOG)
+class IntegrityTests(unittest.TestCase):
+    def test_good_asset_passes(self) -> None:
+        result = metadata_checks(_app(), dict(GOOD_NEWEST), {"downloadReachable": True})
+        self.assertEqual(result["status"], "pass")
+        self.assertTrue(all(result["checks"].values()))
 
+    def test_zero_bytes_fails(self) -> None:
+        newest = dict(GOOD_NEWEST, size=0)
+        result = metadata_checks(_app(), newest, None)
+        self.assertEqual(result["status"], "fail")
+        self.assertFalse(result["checks"]["sizePositive"])
 
-class TestDiscovery(unittest.TestCase):
-    def test_discovery_doc(self) -> None:
-        doc = build_discovery_doc(catalog(), STATE)
-        self.assertEqual(doc["count"], 3)
-        alpha = next(item for item in doc["apps"] if item["id"] == "alpha")
-        self.assertEqual(alpha["bundleId"], "com.example.alpha")
-        self.assertEqual(alpha["tags"], ["tweak", "utility"])
-        self.assertEqual(alpha["downloads"], 42)
-        self.assertEqual(alpha["pageURL"], "https://iamsmmh.github.io/OmniSource/apps/alpha/")
+    def test_non_ipa_fails(self) -> None:
+        newest = dict(GOOD_NEWEST, downloadURL="https://example.com/app.zip")
+        result = metadata_checks(_app(), newest, None)
+        self.assertEqual(result["status"], "fail")
+        self.assertFalse(result["checks"]["installable"])
 
-    def test_sources_doc(self) -> None:
-        doc = build_sources_doc(catalog(), STATE)
-        self.assertEqual(doc["count"], 3)
-        self.assertEqual(len(doc["clients"]), 2)
-        self.assertEqual(doc["feed"]["appsURL"], "https://iamsmmh.github.io/OmniSource/apps.json")
+    def test_bad_digest_fails(self) -> None:
+        newest = dict(GOOD_NEWEST, sha256="not-a-hex")
+        result = metadata_checks(_app(), newest, None)
+        self.assertEqual(result["status"], "fail")
+        self.assertFalse(result["checks"]["digestFormat"])
 
+    def test_missing_sha_is_warn(self) -> None:
+        newest = dict(GOOD_NEWEST)
+        newest.pop("sha256")
+        result = metadata_checks(_app(), newest, None)
+        self.assertEqual(result["status"], "warn")
 
-class TestVerification(unittest.TestCase):
-    def test_levels(self) -> None:
-        health_doc = {
-            "apps": [
-                {"slug": "alpha", "downloadReachable": True},
-                {"slug": "beta", "downloadReachable": True},
-                {"slug": "gamma", "downloadReachable": False},
-            ]
+    def test_build_doc_and_errors(self) -> None:
+        catalog = _catalog(_app("demo"), _app("broken", **{"bundleIdentifier": "com.example.broken"}))
+        state = {
+            "demo": {"versions": [dict(GOOD_NEWEST)]},
+            "broken": {"versions": [dict(GOOD_NEWEST, size=0)]},
         }
-        doc = build_verification_doc(catalog(), STATE, health_doc)
-        by_slug = {item["app"]: item for item in doc["apps"]}
-        self.assertEqual(by_slug["alpha"]["status"], "VERIFIED")
-        self.assertTrue(by_slug["alpha"]["hash_verified"])
-        self.assertEqual(by_slug["beta"]["status"], "COMMUNITY VERIFIED")
-        self.assertFalse(by_slug["beta"]["hash_verified"])
-        self.assertEqual(by_slug["gamma"]["status"], "UNVERIFIED")
-        self.assertEqual(doc["totals"]["verified"], 1)
-        self.assertEqual(doc["totals"]["communityVerified"], 1)
-        self.assertEqual(doc["totals"]["unverified"], 1)
+        doc = build_integrity_doc(catalog, state, {})
+        self.assertEqual(doc["totals"]["fail"], 1)
+        self.assertEqual(doc["totals"]["rejected"], 1)
+        errors = integrity_errors(doc)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("broken", errors[0])
+        # Failing entries are sorted first.
+        self.assertEqual(doc["apps"][0]["slug"], "broken")
+        self.assertEqual(doc["apps"][0]["asset"]["releaseId"], "1.0.0")
+        self.assertEqual(doc["apps"][0]["asset"]["source"], "github")
 
 
-class TestMonitor(unittest.TestCase):
-    def test_status_doc(self) -> None:
-        health_doc = {
-            "apps": [
-                {"slug": "alpha", "downloadReachable": True, "stale": False},
-                {"slug": "beta", "downloadReachable": True, "stale": False},
-                {"slug": "gamma", "downloadReachable": False, "stale": True},
-            ]
-        }
-        doc = build_status_doc(catalog(), STATE, health_doc)
-        by_slug = {item["id"]: item for item in doc["sources"]}
-        self.assertEqual(by_slug["alpha"]["status"], "healthy")
-        self.assertEqual(by_slug["alpha"]["latencyMs"], 120)
-        self.assertEqual(by_slug["gamma"]["status"], "unavailable")
-        self.assertEqual(doc["totals"]["healthy"], 2)
-        self.assertEqual(doc["totals"]["unavailable"], 1)
-
-    def test_remember_probe_appends_history(self) -> None:
-        state: dict = {}
-        remember_probe(state, "alpha", reachable=True, detail="HTTP 200", latency_ms=99.4)
-        self.assertEqual(state["alpha"]["health"]["latencyMs"], 99)
-        self.assertEqual(len(state["alpha"]["healthHistory"]), 1)
-
-
-class TestDuplicates(unittest.TestCase):
-    def test_bundle_group_and_recommendation(self) -> None:
-        doc = build_duplicates_doc(catalog(), STATE)
-        self.assertEqual(doc["count"], 1)
-        group = doc["groups"][0]
-        self.assertIn("bundle-id", group["type"])
-        self.assertEqual(len(group["apps"]), 2)
-        # Beta 2.5.0 is newer than Alpha 2.0.0.
-        self.assertEqual(group["recommended"]["app"], "beta")
-        self.assertIn("Newest version", group["recommended"]["reason"])
-        info = group_for_app(doc, "alpha")
-        self.assertEqual(info["recommended"]["app"], "beta")
-
-
-class TestAnalytics(unittest.TestCase):
-    def test_totals_and_week_counts(self) -> None:
-        health_doc = {
-            "totals": {"apps": 3, "reachable": 2, "unreachable": 1, "featured": 1},
-            "apps": [
-                {"slug": "alpha", "downloadReachable": True},
-                {"slug": "beta", "downloadReachable": True},
-                {"slug": "gamma", "downloadReachable": False},
-            ],
-        }
-        verification = build_verification_doc(catalog(), STATE, health_doc)
-        doc = build_analytics_doc(catalog(), STATE, health_doc, verification)
-        totals = doc["totals"]
-        self.assertEqual(totals["apps"], 3)
-        self.assertEqual(totals["sources"], 3)
-        self.assertEqual(totals["verifiedApps"], 1)
-        self.assertEqual(totals["newAppsThisWeek"], 1)
-        self.assertEqual(totals["updatedAppsThisWeek"], 1)
-        self.assertEqual(totals["deadLinks"], 1)
-        self.assertEqual(doc["lastSync"], "2026-09-09")
-
-    def test_snapshot_history(self) -> None:
-        state: dict = {}
-        snapshot = {
-            "totals": {
-                "apps": 3,
-                "sources": 3,
-                "verifiedApps": 1,
-                "deadLinks": 0,
-                "newAppsThisWeek": 0,
-                "updatedAppsThisWeek": 0,
+class HealthScoreTests(unittest.TestCase):
+    def test_weights_and_status(self) -> None:
+        app = _app()
+        state = {
+            "demo": {
+                "versions": [
+                    {"version": "1.0.0", "date": "2026-09-01"},
+                    {"version": "0.9.0", "date": "2026-08-25"},
+                ],
+                "healthHistory": [{"date": "2026-09-05", "reachable": True, "latencyMs": 80}],
             }
         }
-        remember_analytics_snapshot(state, snapshot)
-        remember_analytics_snapshot(state, snapshot)
-        # Same-day snapshots collapse into one entry.
-        self.assertEqual(len(state["analyticsHistory"]), 1)
+        result = compute_health_score(app, state, reachable_now=True)
+        # All components near-perfect except metadata completeness -> high score.
+        self.assertGreaterEqual(result["health_score"], 70)
+        self.assertEqual(result["status"], "healthy")
+        self.assertEqual(result["weights"]["downloadSuccess"], 0.30)
+        # Weights sum to 1.0 and every breakdown component is bounded 0..1.
+        self.assertAlmostEqual(sum(result["weights"].values()), 1.0, places=6)
+        for value in result["breakdown"].values():
+            self.assertGreaterEqual(value, 0.0)
+            self.assertLessEqual(value, 1.0)
+
+    def test_unreachable_is_lower(self) -> None:
+        app = _app()
+        result = compute_health_score(app, {}, reachable_now=False)
+        self.assertEqual(result["status"] in {"warning", "critical"}, True)
+        self.assertLess(result["health_score"], 70)
+
+    def test_archived_status(self) -> None:
+        app = _app(status="deprecated")
+        result = compute_health_score(app, {}, reachable_now=True)
+        self.assertEqual(result["status"], "archived")
+
+    def test_annotate(self) -> None:
+        catalog = _catalog(_app())
+        state = {"demo": {"versions": [dict(GOOD_NEWEST)]}}
+        health_doc = {"apps": [{"slug": "demo", "downloadReachable": True}], "totals": {}}
+        scores = build_health_scores(catalog, state, health_doc, {})
+        annotate_health_doc(health_doc, scores)
+        item = health_doc["apps"][0]
+        self.assertIn("healthScore", item)
+        self.assertIn("healthStatus", item)
+        self.assertEqual(health_doc["totals"]["healthy"], 1)
 
 
-class TestAppPages(unittest.TestCase):
-    def test_render_page(self) -> None:
-        catalog_obj = catalog()
-        verification = build_verification_doc(catalog_obj, STATE)
-        duplicates = build_duplicates_doc(catalog_obj, STATE)
-        html_doc = render_app_page(
-            catalog_obj,
-            catalog_obj.app_by_slug("alpha"),
-            STATE,
-            {"apps": []},
-            verification,
-            duplicates,
+class TrustScoreTests(unittest.TestCase):
+    def test_badge_thresholds(self) -> None:
+        self.assertEqual(trust_badge(9.5), "Verified")
+        self.assertEqual(trust_badge(8.0), "Trusted")
+        self.assertEqual(trust_badge(5.0), "Community")
+        self.assertEqual(trust_badge(4.9), "Experimental")
+
+    def test_max_score(self) -> None:
+        score, badge = compute_trust_score(
+            level="VERIFIED", release_count=3, consistency=1.0, uptime=1.0, hash_verified=True
         )
-        self.assertIn("<title>Alpha Tweak — OmniSource</title>", html_doc)
-        self.assertIn('content="#e8eef8"', html_doc)
-        self.assertIn('content="#07070f"', html_doc)
-        self.assertIn('id="themeColor"', html_doc)
-        self.assertIn("assets/design-system/tokens.css", html_doc)
-        self.assertIn("Primary IPA", html_doc)
-        self.assertIn("VERIFIED", html_doc)
-        self.assertIn("https://example.com/alpha.ipa", html_doc)
-        self.assertIn("altstore://source?url=", html_doc)
+        self.assertEqual(score, 10.0)
+        self.assertEqual(badge, "Verified")
 
-    def test_build_pages_writes_and_cleans(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            pages_dir = Path(tmpdir)
-            (pages_dir / "stale").mkdir(parents=True)
-            (pages_dir / "stale" / "index.html").write_text("old", encoding="utf-8")
-            catalog_obj = catalog()
-            changed = build_app_pages(
-                catalog_obj,
-                STATE,
-                {"apps": []},
-                build_verification_doc(catalog_obj, STATE),
-                build_duplicates_doc(catalog_obj, STATE),
-                pages_dir=pages_dir,
-            )
-            self.assertTrue((pages_dir / "alpha" / "index.html").is_file())
-            self.assertFalse((pages_dir / "stale").exists())
-            self.assertGreaterEqual(len(changed), 3)
+    def test_min_score(self) -> None:
+        score, badge = compute_trust_score(
+            level="UNVERIFIED", release_count=0, consistency=0.0, uptime=0.0, hash_verified=False
+        )
+        self.assertEqual(score, 1.0)
+        self.assertEqual(badge, "Experimental")
+
+
+class DeadAppsTests(unittest.TestCase):
+    def test_age_thresholds(self) -> None:
+        self.assertEqual(classify_age(30), "healthy")
+        self.assertEqual(classify_age(90), "warning")
+        self.assertEqual(classify_age(180), "stale")
+        self.assertEqual(classify_age(365), "archived")
+
+    def test_removed_release_is_critical(self) -> None:
+        app = _app()
+        state = {
+            "demo": {
+                "versions": [{"version": "1.0", "date": "2026-09-01"}],
+                "removedReleases": [{"version": "0.9", "at": "2026-09-02"}],
+            }
+        }
+        doc = build_dead_apps_doc(_catalog(app), state, today_iso="2026-09-10")
+        entry = doc["apps"][0]
+        self.assertEqual(entry["classification"], "critical")
+        self.assertEqual(doc["summary"]["critical"], 1)
+        self.assertEqual(entry["removedReleases"], 1)
+
+    def test_fresh_app_is_healthy(self) -> None:
+        app = _app()
+        state = {"demo": {"versions": [{"version": "1.0", "date": "2026-09-08"}]}}
+        doc = build_dead_apps_doc(_catalog(app), state, today_iso="2026-09-10")
+        self.assertEqual(doc["count"], 0)
+        self.assertEqual(doc["apps"][0]["classification"], "healthy")
+
+
+class CollectionsTests(unittest.TestCase):
+    def test_build_doc_shape(self) -> None:
+        catalog = _catalog(_app("ytlite"), _app("utm"))
+        doc = build_collections_doc(catalog, {})
+        self.assertEqual(doc["count"], 5)
+        slugs = {c["slug"] for c in doc["collections"]}
+        self.assertEqual(slugs, {"youtube", "music", "emulators", "utilities", "productivity"})
+        # Only apps present in the catalog are referenced.
+        for collection in doc["collections"]:
+            for slug in collection["appSlugs"]:
+                self.assertIn(slug, {"ytlite", "utm"})
+
+    def test_pages_generated(self) -> None:
+        import tempfile
+
+        catalog = _catalog(_app("utm"))
+        with tempfile.TemporaryDirectory() as tmp:
+            changed = build_collection_pages(catalog, {}, pages_dir=Path(tmp))
+            names = {p.parent.name for p in changed}
+            self.assertEqual(len(changed), 5)
+            self.assertIn("emulators", names)
+            content = (Path(tmp) / "emulators" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("App Utm", content)
+
+
+class ComparePageTests(unittest.TestCase):
+    def test_both_orders_generated(self) -> None:
+        import tempfile
+
+        catalog = _catalog(_app("aaa"), _app("bbb"))
+        health_doc = {"apps": [{"slug": "aaa", "downloadReachable": True}, {"slug": "bbb", "downloadReachable": True}]}
+        verification_doc = {
+            "apps": [
+                {"app": "aaa", "status": "VERIFIED", "trustScore": 9.0, "trustBadge": "Verified"},
+                {"app": "bbb", "status": "UNVERIFIED", "trustScore": 1.0, "trustBadge": "Experimental"},
+            ]
+        }
+        state = {
+            "aaa": {"versions": [dict(GOOD_NEWEST, version="1.0")]},
+            "bbb": {"versions": [dict(GOOD_NEWEST, version="2.0", size=2000)]},
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            changed = build_compare_pages(catalog, state, health_doc, verification_doc, pages_dir=Path(tmp))
+            # One unordered pair -> 1 canonical page + 1 reverse-order stub.
+            self.assertEqual(len(changed), 2)
+            canonical = (Path(tmp) / "aaa-vs-bbb" / "index.html").read_text(encoding="utf-8")
+            self.assertIn("App Aaa vs App Bbb", canonical)
+            self.assertIn("Trust score", canonical)
+            stub = (Path(tmp) / "bbb-vs-aaa" / "index.html").read_text(encoding="utf-8")
+            self.assertIn('http-equiv="refresh"', stub)
+            self.assertIn("aaa-vs-bbb", stub)
+
+    def test_redirect_helper(self) -> None:
+        page = render_compare_redirect("../../compare/a-vs-b/")
+        self.assertIn("../../compare/a-vs-b/", page)
+
+    def test_render_page_escaping(self) -> None:
+        left = {
+            "slug": "a",
+            "name": "A <b>",
+            "icon": "../../assets/i.png",
+            "category": "other",
+            "developer": "d",
+            "version": "1",
+            "releaseDate": "",
+            "sizeBytes": 0,
+            "updateFrequencyDays": 0.0,
+            "verificationLevel": "UNVERIFIED",
+            "trustScore": 1.0,
+            "trustBadge": "Experimental",
+            "healthScore": 10,
+            "healthStatus": "critical",
+            "features": 'x"y',
+            "detailURL": "../../apps/a/",
+        }
+        right = dict(left, slug="b", name="B")
+        page = render_compare_page(catalog=_catalog(_app("a")), left=left, right=right, base_url="https://x.dev")
+        self.assertIn("&lt;b&gt;", page)
+        self.assertIn("Trust score", page)
 
 
 if __name__ == "__main__":

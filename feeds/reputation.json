@@ -21,14 +21,36 @@
         "youpro",
         "youmod"
       ],
-      "score": 68.17,
+      "score": 78.17,
+      "level": "RELIABLE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 66,
+        "averageLatencyMs": 203.7,
+        "averageUpdateGapDays": 1.0,
+        "brokenReleases": 2,
+        "currentlyReachable": "3/3"
+      }
+    },
+    {
+      "id": "https://repo.ikghd.me/repo.json",
+      "source": "iKarwan (repo.ikghd.me)",
+      "publisher": "iKarwan (repo.ikghd.me)",
+      "homepage": "https://repo.ikghd.me",
+      "sourceURL": "https://repo.ikghd.me",
+      "apps": [
+        "ytkp",
+        "inkillerplus",
+        "ttkillerplus"
+      ],
+      "score": 60.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
-        "averageUpdateGapDays": 1.0,
-        "brokenReleases": 2,
+        "probes": 66,
+        "averageLatencyMs": 272.3,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
         "currentlyReachable": "3/3"
       }
     },
@@ -41,12 +63,12 @@
       "apps": [
         "itorrent"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 196.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -61,12 +83,12 @@
       "apps": [
         "utm"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 178.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -81,12 +103,12 @@
       "apps": [
         "stikdebug"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 176.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -101,12 +123,12 @@
       "apps": [
         "spotiflac"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 192.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -121,12 +143,12 @@
       "apps": [
         "sidestore"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 172.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -141,12 +163,12 @@
       "apps": [
         "provenance"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 210.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -161,12 +183,12 @@
       "apps": [
         "ytmusic"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 206.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -181,12 +203,12 @@
       "apps": [
         "maxmusic"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 210.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -201,12 +223,12 @@
       "apps": [
         "winston"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 209.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -221,12 +243,12 @@
       "apps": [
         "livecontainer"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 172.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -241,37 +263,15 @@
       "apps": [
         "ytkace"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 252.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
-      }
-    },
-    {
-      "id": "https://repo.ikghd.me/repo.json",
-      "source": "iKarwan (repo.ikghd.me)",
-      "publisher": "iKarwan (repo.ikghd.me)",
-      "homepage": "https://repo.ikghd.me",
-      "sourceURL": "https://repo.ikghd.me",
-      "apps": [
-        "ytkp",
-        "inkillerplus",
-        "ttkillerplus"
-      ],
-      "score": 50.0,
-      "level": "AVERAGE",
-      "metrics": {
-        "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
-        "averageUpdateGapDays": null,
-        "brokenReleases": 0,
-        "currentlyReachable": "3/3"
       }
     },
     {
@@ -283,12 +283,12 @@
       "apps": [
         "uyouenhanced"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 573.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -303,12 +303,12 @@
       "apps": [
         "feather"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 180.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -323,12 +323,12 @@
       "apps": [
         "bhtwitter"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 198.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -343,12 +343,12 @@
       "apps": [
         "maxtube"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 218.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -363,12 +363,12 @@
       "apps": [
         "aidoku"
       ],
-      "score": 50.0,
+      "score": 55.0,
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 0,
-        "averageLatencyMs": null,
+        "probes": 22,
+        "averageLatencyMs": 188.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"

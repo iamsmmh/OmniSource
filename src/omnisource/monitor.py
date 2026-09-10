@@ -85,7 +85,77 @@ def build_status_doc(
         "schemaVersion": STATUS_SCHEMA_VERSION,
         "generatedAt": today(),
         "totals": {"sources": len(entries), **totals},
+        "pipeline": _pipeline_section(state, len(entries), totals),
+        "providers": _provider_section(entries, state),
+        "deployment": _deployment_section(totals, len(entries)),
         "sources": entries,
+    }
+
+
+def _pipeline_section(state: dict[str, Any], apps_total: int, totals: dict[str, int]) -> dict[str, Any]:
+    """Feed-generation health from pipeline state (Phase 15)."""
+    last_build = ""
+    failing = 0
+    for slug, value in state.items():
+        if not isinstance(value, dict) or slug in {"updateHistory", "schemaVersion"}:
+            continue
+        synced_at = str(value.get("syncedAt") or "")
+        if synced_at > last_build:
+            last_build = synced_at
+        if value.get("lastError"):
+            failing += 1
+    return {
+        "status": "ok" if failing == 0 else "degraded",
+        "lastBuild": last_build,
+        "appsTotal": apps_total,
+        "appsHealthy": totals.get(HEALTHY, 0),
+        "appsFailing": failing,
+    }
+
+
+def _provider_section(entries: list[dict[str, Any]], state: dict[str, Any]) -> list[dict[str, Any]]:
+    """Per-provider-kind availability + the failover leg that supplied each app (Phase 2/15)."""
+    by_provider: dict[str, dict[str, Any]] = {}
+    for entry in entries:
+        provider = str(entry.get("type") or "unknown")
+        info = by_provider.setdefault(
+            provider,
+            {"provider": provider, "apps": 0, "healthy": 0, "unavailable": 0, "lastResolvedFrom": {}},
+        )
+        info["apps"] += 1
+        if entry.get("status") == HEALTHY:
+            info["healthy"] += 1
+        if entry.get("status") == UNAVAILABLE:
+            info["unavailable"] += 1
+        app_state = state.get(str(entry.get("app")))
+        resolved = app_state.get("lastResolvedSource") if isinstance(app_state, dict) else None
+        if resolved:
+            info["lastResolvedFrom"][str(entry.get("app"))] = str(resolved)
+    providers = sorted(by_provider.values(), key=lambda item: item["provider"])
+    for info in providers:
+        if not info["lastResolvedFrom"]:
+            del info["lastResolvedFrom"]
+    return providers
+
+
+def _deployment_section(totals: dict[str, int], apps_total: int) -> dict[str, Any]:
+    """Deployment status for the static GitHub Pages target (Phase 15).
+
+    Pages has no server to report from, so the observable signal is the build
+    itself: the sync workflow assembles and publishes the site in the same run,
+    a fully reachable catalog means the deployed feeds are installable.
+    """
+    unavailable = totals.get(UNAVAILABLE, 0)
+    status = "ok"
+    if unavailable == apps_total and apps_total > 0:
+        status = "unavailable"
+    elif unavailable > 0:
+        status = "degraded"
+    return {
+        "platform": "GitHub Pages (static)",
+        "status": status,
+        "reachable": apps_total - unavailable,
+        "total": apps_total,
     }
 
 

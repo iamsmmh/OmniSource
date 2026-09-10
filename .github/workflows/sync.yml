@@ -137,10 +137,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # Generated feeds JSON/XML (feeds/ only — the flat subscriber URLs,
           # sitemap, robots and homepage stats are assembled into _site/ at
-          # deploy time and never committed), app detail pages and README
-          # blocks. The pipeline writes nothing else, so the allowlist stays
-          # minimal on purpose: a stray file here means the build misbehaved.
-          git add -A -- '*.json' '*.xml' 'apps/**' README.md
+          # deploy time and never committed), app detail pages, static
+          # comparison + collection pages and README blocks. The pipeline
+          # writes nothing else, so the allowlist stays minimal on purpose:
+          # a stray file here means the build misbehaved.
+          git add -A -- '*.json' '*.xml' 'apps/**' 'compare/**' 'collections/**' README.md
 
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -191,6 +192,8 @@ jobs:
             feeds/*.json
             feeds/*.xml
             apps/**/index.html
+            compare/**/index.html
+            collections/**/index.html
           if-no-files-found: error
           retention-days: 7
 

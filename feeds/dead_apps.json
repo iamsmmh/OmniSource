@@ -1,0 +1,283 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-10",
+  "thresholds": {
+    "warning": 90,
+    "stale": 180,
+    "archived": 365
+  },
+  "count": 5,
+  "summary": {
+    "warning": 1,
+    "stale": 2,
+    "archived": 2,
+    "critical": 0
+  },
+  "deadApps": [
+    {
+      "slug": "bhtwitter",
+      "name": "BHTwitter",
+      "lastUpdate": "2025-05-13",
+      "daysSinceUpdate": 485,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 485 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "winston",
+      "name": "Winston",
+      "lastUpdate": "2024-06-24",
+      "daysSinceUpdate": 808,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 808 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "provenance",
+      "name": "Provenance",
+      "lastUpdate": "2026-03-14",
+      "daysSinceUpdate": 180,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 180 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "utm",
+      "name": "UTM",
+      "lastUpdate": "2026-01-03T17:51:54Z",
+      "daysSinceUpdate": 250,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 250 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "sidestore",
+      "name": "SideStore",
+      "lastUpdate": "2026-05-05",
+      "daysSinceUpdate": 128,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 128 days (threshold 90)"
+      ]
+    }
+  ],
+  "apps": [
+    {
+      "slug": "spotiflac",
+      "name": "SpotiFLAC Mobile",
+      "lastUpdate": "2026-09-07",
+      "daysSinceUpdate": 3,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "uyouenhanced",
+      "name": "uYouEnhanced",
+      "lastUpdate": "2026-08-22",
+      "daysSinceUpdate": 19,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "ytlite",
+      "name": "YouTubePlus",
+      "lastUpdate": "2026-09-09",
+      "daysSinceUpdate": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "youpro",
+      "name": "YouPro",
+      "lastUpdate": "2026-09-10",
+      "daysSinceUpdate": 0,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "ytkp",
+      "name": "YTKillerPlus",
+      "lastUpdate": "2026-09-09",
+      "daysSinceUpdate": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "ytkace",
+      "name": "YTKACE",
+      "lastUpdate": "2026-08-31",
+      "daysSinceUpdate": 10,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "youmod",
+      "name": "YouMod",
+      "lastUpdate": "2026-09-09",
+      "daysSinceUpdate": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "maxtube",
+      "name": "MaxTube",
+      "lastUpdate": "2026-08-03",
+      "daysSinceUpdate": 38,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "ytmusic",
+      "name": "YTMusicUltimate",
+      "lastUpdate": "2026-09-09",
+      "daysSinceUpdate": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "maxmusic",
+      "name": "MaxMusic",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "utm",
+      "name": "UTM",
+      "lastUpdate": "2026-01-03T17:51:54Z",
+      "daysSinceUpdate": 250,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 250 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "inkillerplus",
+      "name": "iNKillerPlus",
+      "lastUpdate": "2026-09-09",
+      "daysSinceUpdate": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "lastUpdate": "2026-09-09",
+      "daysSinceUpdate": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "winston",
+      "name": "Winston",
+      "lastUpdate": "2024-06-24",
+      "daysSinceUpdate": 808,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 808 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "itorrent",
+      "name": "iTorrent",
+      "lastUpdate": "2026-07-19",
+      "daysSinceUpdate": 53,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "stikdebug",
+      "name": "StikDebug",
+      "lastUpdate": "2026-08-27",
+      "daysSinceUpdate": 14,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "bhtwitter",
+      "name": "BHTwitter",
+      "lastUpdate": "2025-05-13",
+      "daysSinceUpdate": 485,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 485 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "livecontainer",
+      "name": "LiveContainer",
+      "lastUpdate": "2026-07-17",
+      "daysSinceUpdate": 55,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "feather",
+      "name": "Feather",
+      "lastUpdate": "2026-07-05",
+      "daysSinceUpdate": 67,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "sidestore",
+      "name": "SideStore",
+      "lastUpdate": "2026-05-05",
+      "daysSinceUpdate": 128,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 128 days (threshold 90)"
+      ]
+    },
+    {
+      "slug": "aidoku",
+      "name": "Aidoku",
+      "lastUpdate": "2026-09-03",
+      "daysSinceUpdate": 7,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "provenance",
+      "name": "Provenance",
+      "lastUpdate": "2026-03-14",
+      "daysSinceUpdate": 180,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 180 days (threshold 180)"
+      ]
+    }
+  ]
+}

@@ -4,7 +4,10 @@
     "apps": 22,
     "reachable": 22,
     "unreachable": 0,
-    "featured": 5
+    "featured": 5,
+    "healthy": 22,
+    "warning": 0,
+    "critical": 0
   },
   "apps": [
     {
@@ -18,7 +21,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 3,
-      "stale": false
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "uyouenhanced",
@@ -31,7 +43,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 19,
-      "stale": false
+      "stale": false,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "ytlite",
@@ -44,7 +65,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 1,
-      "stale": false
+      "stale": false,
+      "healthScore": 89,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 1.0,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "youpro",
@@ -57,7 +87,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 0,
-      "stale": false
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "ytkp",
@@ -70,7 +109,16 @@
       "detail": "HTTP 200",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 1,
-      "stale": false
+      "stale": false,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "ytkace",
@@ -83,7 +131,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 10,
-      "stale": false
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "youmod",
@@ -96,7 +153,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 1,
-      "stale": false
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "maxtube",
@@ -109,7 +175,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 38,
-      "stale": false
+      "stale": false,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "ytmusic",
@@ -122,7 +197,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 1,
-      "stale": false
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "maxmusic",
@@ -135,7 +219,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 9,
-      "stale": false
+      "stale": false,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "utm",
@@ -148,7 +241,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 250,
-      "stale": true
+      "stale": true,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "inkillerplus",
@@ -161,7 +263,16 @@
       "detail": "HTTP 200",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 1,
-      "stale": false
+      "stale": false,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "ttkillerplus",
@@ -174,7 +285,16 @@
       "detail": "HTTP 200",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 1,
-      "stale": false
+      "stale": false,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "winston",
@@ -187,7 +307,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 808,
-      "stale": false
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "itorrent",
@@ -200,7 +329,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 53,
-      "stale": false
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "stikdebug",
@@ -213,7 +351,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 14,
-      "stale": false
+      "stale": false,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "bhtwitter",
@@ -226,7 +373,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 485,
-      "stale": true
+      "stale": true,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "livecontainer",
@@ -239,7 +395,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 55,
-      "stale": false
+      "stale": false,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "feather",
@@ -252,7 +417,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 67,
-      "stale": false
+      "stale": false,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "sidestore",
@@ -265,7 +439,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 128,
-      "stale": true
+      "stale": true,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "aidoku",
@@ -278,7 +461,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 7,
-      "stale": false
+      "stale": false,
+      "healthScore": 79,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.75,
+        "sourceReliability": 0.5
+      }
     },
     {
       "slug": "provenance",
@@ -291,7 +483,16 @@
       "detail": "HTTP 302",
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 180,
-      "stale": true
+      "stale": true,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
     }
   ]
 }

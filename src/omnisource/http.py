@@ -261,6 +261,17 @@ class HttpClient:
         with self._open(url, headers=headers, timeout=timeout) as response:
             return response.read(limit)
 
+    def open_stream(self, url: str, *, timeout: float | None = None):
+        """Open a GET stream for a large payload; the caller must close it.
+
+        Used only by integrity verification, which hashes in chunks so an IPA
+        never sits fully in memory.
+        """
+        if not is_http_url(url):
+            raise ProviderError(f"invalid HTTP(S) URL: {url}")
+        headers = self._auth_headers(url)
+        return self._open(url, headers=headers, timeout=timeout)
+
     def probe(self, url: str, *, timeout: float = 12.0, retries: int = 2) -> ProbeResult:
         """Return reachability for a download URL, without credentials.
 

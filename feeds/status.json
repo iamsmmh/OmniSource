@@ -8,6 +8,33 @@
     "unavailable": 0,
     "unknown": 0
   },
+  "pipeline": {
+    "status": "ok",
+    "lastBuild": "2026-09-10",
+    "appsTotal": 22,
+    "appsHealthy": 18,
+    "appsFailing": 0
+  },
+  "providers": [
+    {
+      "provider": "altstore",
+      "apps": 3,
+      "healthy": 3,
+      "unavailable": 0
+    },
+    {
+      "provider": "github",
+      "apps": 19,
+      "healthy": 15,
+      "unavailable": 0
+    }
+  ],
+  "deployment": {
+    "platform": "GitHub Pages (static)",
+    "status": "ok",
+    "reachable": 22,
+    "total": 22
+  },
   "sources": [
     {
       "id": "aidoku",

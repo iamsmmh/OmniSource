@@ -27,6 +27,9 @@ class SourceType(StrEnum):
     JSON_FEED = "json-feed"
     ALTSTORE = "altstore"
     FEATHER = "feather"
+    DIRECT = "direct"
+    ARCHIVE = "archive"
+    MIRROR = "mirror"
     MANUAL = "manual"
 
     @classmethod
@@ -38,6 +41,18 @@ class SourceType(StrEnum):
         except ValueError as error:
             known = ", ".join(item.value for item in cls)
             raise ConfigurationError(f"unknown upstream.provider '{value}' (expected one of {known})") from error
+
+    @property
+    def is_url_source(self) -> bool:
+        """Sources addressed by a single URL rather than a forge ``repo``."""
+        return self in {
+            SourceType.DIRECT,
+            SourceType.ARCHIVE,
+            SourceType.MIRROR,
+            SourceType.JSON_FEED,
+            SourceType.ALTSTORE,
+            SourceType.FEATHER,
+        }
 
 
 def utc_now() -> datetime:
@@ -163,6 +178,13 @@ class RepositoryRef:
     # Feed providers publish many apps in one document; this selects one of
     # them by id, bundle identifier or name.
     app_id: str = ""
+    # For single-asset sources (direct/mirror/archive) there is no release
+    # API to discover a version; the catalog supplies it explicitly.
+    version: str = ""
+    version_date: str = ""
+    # Failover legs: additional upstream blocks (same shape as ``upstream``)
+    # tried in order when the primary yields nothing or fails.
+    mirrors: tuple[dict[str, Any], ...] = ()
     tag_prefix: str = ""
     exclude_tag_prefixes: tuple[str, ...] = ()
     asset_suffixes: tuple[str, ...] = (".ipa",)
@@ -186,7 +208,18 @@ class RepositoryRef:
 
     @property
     def is_feed(self) -> bool:
-        return self.provider in {SourceType.JSON_FEED, SourceType.ALTSTORE, SourceType.FEATHER}
+        return self.provider in {
+            SourceType.JSON_FEED,
+            SourceType.ALTSTORE,
+            SourceType.FEATHER,
+            SourceType.DIRECT,
+            SourceType.ARCHIVE,
+            SourceType.MIRROR,
+        }
+
+    @property
+    def is_url_source(self) -> bool:
+        return self.provider.is_url_source
 
     @property
     def identity(self) -> str:
@@ -198,18 +231,25 @@ class RepositoryRef:
         provider = SourceType.parse(raw.get("provider"))
         repo = str(raw.get("repo") or "")
         app_id = str(raw.get("appId") or "")
-        feed_url = str(raw.get("feedURL") or raw.get("feedUrl") or "")
-        if provider in {SourceType.JSON_FEED, SourceType.ALTSTORE, SourceType.FEATHER}:
+        # ``url`` is the single-asset alias for direct/mirror/archive sources;
+        # ``feedURL`` remains the canonical key for document feeds.
+        feed_url = str(raw.get("feedURL") or raw.get("feedUrl") or raw.get("url") or "")
+        if provider.is_url_source:
             if not feed_url:
-                raise ConfigurationError("feed providers require upstream.feedURL")
+                raise ConfigurationError(f"{provider.value} providers require upstream.url (or feedURL)")
         elif not repo:
             raise ConfigurationError("forge providers require upstream.repo")
+        mirrors_raw = raw.get("mirrors")
+        mirrors = tuple(item for item in mirrors_raw if isinstance(item, dict)) if isinstance(mirrors_raw, list) else ()
         return cls(
             provider=provider,
             repo=repo,
             app_id=app_id,
             host=str(raw.get("host") or "").rstrip("/"),
             feed_url=feed_url,
+            version=str(raw.get("version") or ""),
+            version_date=str(raw.get("versionDate") or ""),
+            mirrors=mirrors,
             tag_prefix=raw.get("tagPrefix", ""),
             exclude_tag_prefixes=tuple(raw.get("excludeTagPrefixes", ())),
             asset_suffixes=tuple(raw.get("assetSuffixes", (".ipa",))),

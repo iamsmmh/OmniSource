@@ -6,7 +6,14 @@
     "verified": 21,
     "communityVerified": 1,
     "unverified": 0,
-    "hashVerified": 16
+    "hashVerified": 16,
+    "avgTrustScore": 7.16,
+    "trustLevels": [
+      "Verified",
+      "Trusted",
+      "Community",
+      "Experimental"
+    ]
   },
   "apps": [
     {
@@ -25,7 +32,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa"
+      "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "bhtwitter",
@@ -43,7 +52,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-sideloaded.ipa"
+      "downloadURL": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-sideloaded.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
     },
     {
       "app": "feather",
@@ -61,7 +72,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa"
+      "downloadURL": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "inkillerplus",
@@ -79,7 +92,9 @@
       "reasons": [
         "official upstream (altstore)"
       ],
-      "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa"
+      "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
     },
     {
       "app": "itorrent",
@@ -97,7 +112,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa"
+      "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "livecontainer",
@@ -115,7 +132,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa"
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "maxmusic",
@@ -133,7 +152,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa"
+      "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "maxtube",
@@ -151,7 +172,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa"
+      "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "provenance",
@@ -169,7 +192,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/Provenance-Emu/Provenance/releases/download/3.3.0/Provenance-3.3.0-iOS.ipa"
+      "downloadURL": "https://github.com/Provenance-Emu/Provenance/releases/download/3.3.0/Provenance-3.3.0-iOS.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "sidestore",
@@ -187,7 +212,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa"
+      "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "spotiflac",
@@ -205,7 +232,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.6/SpotiFLAC-v4.9.6-ios-unsigned.ipa"
+      "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.6/SpotiFLAC-v4.9.6-ios-unsigned.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "stikdebug",
@@ -223,7 +252,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa"
+      "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "ttkillerplus",
@@ -241,7 +272,9 @@
       "reasons": [
         "official upstream (altstore)"
       ],
-      "downloadURL": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa"
+      "downloadURL": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
     },
     {
       "app": "utm",
@@ -259,7 +292,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa"
+      "downloadURL": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "winston",
@@ -277,7 +312,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa"
+      "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
     },
     {
       "app": "youmod",
@@ -295,7 +332,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa"
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "youpro",
@@ -313,7 +352,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa"
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "ytlite",
@@ -331,7 +372,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.24.3_5.2.2.ipa"
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.24.3_5.2.2.ipa",
+      "trustScore": 10.0,
+      "trustBadge": "Verified"
     },
     {
       "app": "ytkace",
@@ -349,7 +392,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa"
+      "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "ytkp",
@@ -367,7 +412,9 @@
       "reasons": [
         "official upstream (altstore)"
       ],
-      "downloadURL": "https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa"
+      "downloadURL": "https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
     },
     {
       "app": "ytmusic",
@@ -385,7 +432,9 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa29/YTMusicUltimate_9.36.1_2.4.1.ipa"
+      "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa29/YTMusicUltimate_9.36.1_2.4.1.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "uyouenhanced",
@@ -403,7 +452,9 @@
       "reasons": [
         "community package (manual-mirror) — build provenance is not the upstream developer"
       ],
-      "downloadURL": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
+      "downloadURL": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+      "trustScore": 5.0,
+      "trustBadge": "Community"
     }
   ]
 }

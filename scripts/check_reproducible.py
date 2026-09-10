@@ -43,6 +43,8 @@ ROOT = Path(__file__).resolve().parents[1]
 TRACKED_PATTERNS = (
     "feeds/*.json",
     "apps/*/index.html",
+    "compare/*/index.html",
+    "collections/*/index.html",
     "README.md",
 )
 # state.json is runtime state (syncedAt, health history) and changes whenever
@@ -69,7 +71,7 @@ def _matches(path: str, pattern: str) -> bool:
         return path.startswith(prefix + "/") and path.rsplit("/", 1)[-1].endswith(".json")
     if pattern.endswith("/*/index.html"):
         parts = path.split("/")
-        return len(parts) == 3 and parts[0] == "apps" and parts[2] == "index.html"
+        return len(parts) == 3 and parts[0] in {"apps", "compare", "collections"} and parts[2] == "index.html"
     if "*" in pattern and "/" not in pattern:
         # Root-level glob (e.g. the flat feed copies at the repository root).
         return "/" not in path and fnmatch.fnmatch(path, pattern)

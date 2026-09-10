@@ -6,8 +6,11 @@ from omnisource.domain import RepositoryRef, SourceType
 from omnisource.errors import ConfigurationError
 from omnisource.http import HttpClient
 from omnisource.providers.base import SourceProvider
+from omnisource.providers.direct import ArchiveProvider, DirectURLProvider
 from omnisource.providers.feed import AltStoreFeedProvider, GenericFeedProvider
+from omnisource.providers.gitea import GiteaReleasesProvider
 from omnisource.providers.github import GitHubReleasesProvider, GitHubTagsProvider
+from omnisource.providers.gitlab import GitLabReleasesProvider
 
 
 class ProviderRegistry:
@@ -36,10 +39,19 @@ class ProviderRegistry:
 
 
 def build_default_registry(http: HttpClient) -> ProviderRegistry:
-    """Wire every provider used by the current catalog to a shared HTTP client."""
+    """Wire every supported provider kind to a shared HTTP client."""
     registry = ProviderRegistry()
     registry.register(GitHubReleasesProvider(http))
     registry.register(GitHubTagsProvider(http))
+    registry.register(GitLabReleasesProvider(http))
+    registry.register(GiteaReleasesProvider(http, SourceType.CODEBERG_RELEASES))
+    registry.register(GiteaReleasesProvider(http, SourceType.FORGEJO_RELEASES))
     registry.register(GenericFeedProvider(http))
     registry.register(AltStoreFeedProvider(http))
+    # Feather feeds share the AltStore document shape but keep their own
+    # provider id, so register a dedicated instance under FEATHER.
+    registry.register(AltStoreFeedProvider(http, source_type=SourceType.FEATHER))
+    registry.register(DirectURLProvider(http, SourceType.DIRECT))
+    registry.register(DirectURLProvider(http, SourceType.MIRROR))
+    registry.register(ArchiveProvider(http))
     return registry

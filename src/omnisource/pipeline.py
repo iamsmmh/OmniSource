@@ -27,9 +27,11 @@ from typing import Any
 from omnisource.analytics import build_analytics_doc, remember_analytics_snapshot
 from omnisource.app_pages import build_app_pages
 from omnisource.assets import DirectoryCache, inspect_catalog
+from omnisource.collections import build_collection_pages, build_collections_doc
 from omnisource.community import build_community_doc
-from omnisource.compare import build_compare_doc
+from omnisource.compare import build_compare_doc, build_compare_pages
 from omnisource.constants import README_MARKERS, README_STATS_MARKERS
+from omnisource.dead_apps import build_dead_apps_doc
 from omnisource.di import Container, build_container
 from omnisource.discovery import build_discovery_doc, build_sources_doc
 from omnisource.domain import App, Catalog, SyncReport, UpdateEvent, today
@@ -45,11 +47,14 @@ from omnisource.feeds.altstore import (
 )
 from omnisource.feeds.rss import render_app_rss_feed, render_rss_feed
 from omnisource.feeds.updates import render_updates_doc
+from omnisource.health_score import annotate_health_doc, build_health_scores
 from omnisource.http import ProbeResult
 from omnisource.install import build_install_doc
+from omnisource.integrity import build_integrity_doc, verify_downloads
 from omnisource.io import atomic_write_many, atomic_write_text, read_json, write_json
 from omnisource.logutil import Group, log
 from omnisource.monitor import build_status_doc, remember_probe
+from omnisource.providers.failover import FailoverChain
 from omnisource.related import build_related_doc
 from omnisource.reputation import build_reputation_doc
 from omnisource.screenshots import process_screenshots
@@ -109,8 +114,13 @@ def sync_app(
     *,
     incremental: bool,
     previous: dict[str, Any] | None,
-) -> list[dict[str, Any]] | None:
-    """Return the version list for ``app`` or ``None`` to keep previous state."""
+) -> tuple[list[dict[str, Any]] | None, str | None]:
+    """Return ``(versions, resolved_source)`` for ``app``.
+
+    ``versions is None`` means "keep previous state". ``resolved_source``
+    names the failover leg that actually supplied the versions ("" for
+    manual/cached fallbacks), recorded in state for the status board.
+    """
     up = app.upstream
     previous_versions = (previous or {}).get("versions") if isinstance(previous, dict) else None
     previous_url = None
@@ -118,33 +128,37 @@ def sync_app(
         previous_url = previous_versions[0].get("downloadURL")
 
     if up is None:
-        return _manual_versions(app, "no upstream configured")
+        return _manual_versions(app, "no upstream configured"), "manual"
 
-    provider = container.providers.resolve(up)
+    chain = FailoverChain.from_ref(container.providers, up)
     try:
-        releases = provider.fetch_releases(up, previous_latest_url=previous_url, incremental=incremental)
+        result = chain.fetch_releases(previous_latest_url=previous_url, incremental=incremental)
     except (ProviderError, ConfigurationError) as error:
         raise SyncError(str(error)) from error
+    releases = result.releases
 
     if incremental and previous_versions and not releases:
         log.info("%-14s incremental hit - keeping v%s", app.slug, previous_versions[0].get("version"))
-        return None
+        return None, None
 
     if not releases:
-        return _manual_versions(app, f"no published release with a matching asset in {up.repo or up.feed_url}")
+        manual = _manual_versions(app, f"no published release with a matching asset in {up.repo or up.feed_url}")
+        return manual, "manual" if manual else ""
 
     versions = select_versions(app_name=app.name, ref=up, releases=releases, pattern=_compile_pattern(app))
     if not versions:
-        return _manual_versions(app, "upstream produced no usable version entries")
+        manual = _manual_versions(app, "upstream produced no usable version entries")
+        return manual, "manual" if manual else ""
 
     log.info(
-        "%-14s %-28s -> v%s (%d version(s))",
+        "%-14s %-28s -> v%s (%d version(s))%s",
         app.slug,
         up.repo or up.feed_url,
         versions[0]["version"],
         len(versions),
+        f" [failover: {result.attempts[-1]}]" if result.used_failover else "",
     )
-    return versions
+    return versions, result.source
 
 
 def _sync_result(
@@ -153,12 +167,13 @@ def _sync_result(
     *,
     incremental: bool,
     previous: dict[str, Any] | None,
-) -> tuple[str, list[dict[str, Any]] | None, str | None]:
+) -> tuple[str, list[dict[str, Any]] | None, str | None, str | None]:
     """Worker boundary: one provider failure becomes one isolated result."""
     try:
-        return app.slug, sync_app(container, app, incremental=incremental, previous=previous), None
+        versions, source = sync_app(container, app, incremental=incremental, previous=previous)
+        return app.slug, versions, None, source
     except Exception as error:  # provider failures must not stop sibling apps
-        return app.slug, None, str(error)
+        return app.slug, None, str(error), None
 
 
 def _remember_update(state: dict[str, Any], event: UpdateEvent, *, limit: int) -> None:
@@ -195,7 +210,7 @@ def stage_sync(
     report.repositories_checked = len(selected)
     max_workers = max(1, workers or container.settings.sync_workers)
     previous_by_slug = {app.slug: state.get(app.slug) for app in selected}
-    results: dict[str, tuple[list[dict[str, Any]] | None, str | None]] = {}
+    results: dict[str, tuple[list[dict[str, Any]] | None, str | None, str | None]] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=min(max_workers, max(1, len(selected)))) as pool:
         futures = {
             pool.submit(
@@ -210,14 +225,14 @@ def stage_sync(
         for future in concurrent.futures.as_completed(futures):
             app = futures[future]
             try:
-                slug, versions, error = future.result()
+                slug, versions, error, source = future.result()
             except Exception as error:  # executor boundary; preserve all known state
-                slug, versions, error = app.slug, None, str(error)
-            results[slug] = (versions, error)
+                slug, versions, error, source = app.slug, None, str(error), None
+            results[slug] = (versions, error, source)
 
     for app in selected:
         previous = previous_by_slug[app.slug]
-        versions, error = results.get(app.slug, (None, "worker returned no result"))
+        versions, error, source = results.get(app.slug, (None, "worker returned no result", None))
         if error is not None:
             log.error("%s: upstream sync failed (%s) - keeping last known state", app.slug, error)
             report.apps_failed += 1
@@ -231,6 +246,8 @@ def stage_sync(
         entry = state.setdefault(app.slug, {})
         entry.pop("lastError", None)
         entry["retryCount"] = 0
+        if source:
+            entry["lastResolvedSource"] = source
         previous_versions = (previous or {}).get("versions") if isinstance(previous, dict) else None
         if versions is None:
             report.apps_incremental_hit += 1
@@ -241,6 +258,36 @@ def stage_sync(
             previous_version = None
             if isinstance(previous_versions, list) and previous_versions:
                 previous_version = str(previous_versions[0].get("version") or "") or None
+            # Phase 8 signal: the upstream no longer offers the previously
+            # newest version (deleted release, or policy change) — the dead-app
+            # engine classifies such apps as critical.
+            if isinstance(previous_versions, list) and previous_versions and isinstance(versions, list):
+                previous_latest = previous_versions[0]
+                current_keys = {
+                    (str(v.get("version") or ""), str(v.get("downloadURL") or ""))
+                    for v in versions
+                    if isinstance(v, dict)
+                }
+                previous_key = (
+                    str(previous_latest.get("version") or ""),
+                    str(previous_latest.get("downloadURL") or ""),
+                )
+                if previous_key not in current_keys:
+                    removed = entry.setdefault("removedReleases", [])
+                    if not isinstance(removed, list):
+                        removed = []
+                        entry["removedReleases"] = removed
+                    removed.append(
+                        {
+                            "version": str(previous_latest.get("version") or ""),
+                            "downloadURL": str(previous_latest.get("downloadURL") or ""),
+                            "at": today(),
+                        }
+                    )
+                    del removed[:-10]
+                    log.warning("%s: previous latest %s no longer published upstream", app.slug, previous_version)
+                else:
+                    entry.pop("removedReleases", None)
             entry["versions"] = versions
             entry["syncedAt"] = today()
             if kind != "unchanged":
@@ -441,6 +488,15 @@ def stage_build(
     search_index_doc = build_search_index(catalog, state, health_doc, verification_doc)
     install_doc = build_install_doc(catalog)
     compare_doc = build_compare_doc(catalog, state, health_doc, verification_doc)
+    # Phase 6/7/8 intelligence: per-app health score (30/25/20/15/10 formula),
+    # trust score (inside verification_doc above) and dead-app classification.
+    health_scores = build_health_scores(catalog, state, health_doc, reputation_doc)
+    annotate_health_doc(health_doc, health_scores)
+    integrity_doc = build_integrity_doc(catalog, state, health_doc)
+    dead_apps_doc = build_dead_apps_doc(catalog, state)
+    # Phase 10 curated collections (YouTube, Music, Emulators, Utilities,
+    # Productivity) — static JSON plus generated pages in the site builder.
+    collections_doc = build_collections_doc(catalog, state)
     # Screenshot pipeline (validation + mirror + thumbnail). The function
     # itself never raises; issues are recorded inside the resulting doc.
     # The previous document seeds keep-last-good: offline rebuilds reuse
@@ -465,6 +521,9 @@ def stage_build(
         ("install.json", install_doc),
         ("compare.json", compare_doc),
         ("screenshots.json", screenshot_doc),
+        ("integrity_report.json", integrity_doc),
+        ("dead_apps.json", dead_apps_doc),
+        ("collections.json", collections_doc),
     ):
         documents[feeds_dir / name] = doc
 
@@ -514,6 +573,17 @@ def stage_build(
             install_doc=install_doc,
         )
     )
+
+    # Static comparison pages: one /compare/<a>-vs-<b>/ per unordered pair
+    # (Phase 9) plus a redirect stub for the reverse-ordered URL.
+    compare_pages = build_compare_pages(
+        catalog, state, health_doc, verification_doc, pages_dir=container.paths.root / "compare"
+    )
+    changed.extend(compare_pages)
+
+    # Static collection pages: one /collections/<slug>/ per curated collection
+    # (Phase 10).
+    changed.extend(build_collection_pages(catalog, state, pages_dir=container.paths.root / "collections"))
 
     log.info(
         "Built %d AltStore feed(s) + apps.json + health.json + updates.json + badges + RSS + "
@@ -671,11 +741,18 @@ def run(
     container: Container | None = None,
     no_sync: bool = False,
     no_health: bool = False,
+    verify: bool = False,
     only: set[str] | None = None,
     incremental: bool = False,
     workers: int = 8,
 ) -> tuple[int, SyncReport]:
-    """Execute the pipeline. Returns ``(exit_code, report)``."""
+    """Execute the pipeline. Returns ``(exit_code, report)``.
+
+    ``verify`` enables the Phase 3 full-integrity pass (stream download +
+    SHA-256 + size check of every app's newest asset) and makes the run fail
+    when any download is rejected. Used by the weekly ``verify.yml`` job; the
+    regular sync only performs the metadata-level checks.
+    """
     container = container or build_container()
     report = SyncReport(started_at=today())
 
@@ -703,6 +780,15 @@ def run(
 
     with Group("Check download health"):
         stage_health(container, catalog, state, enabled=not no_health, workers=max(1, workers))
+
+    verify_failed: list[dict[str, Any]] = []
+    if verify:
+        with Group("Verify downloads (full integrity)"):
+            records = verify_downloads(container, catalog, state, workers=max(1, min(workers, 4)))
+            verify_failed = [record for record in records if not record.get("ok")]
+            report.broken_assets += len(verify_failed)
+            for record in verify_failed:
+                report.errors.append(f"integrity: {record['slug']} rejected ({record.get('detail')})")
 
     with Group("Validate local assets"):
         stage_assets(container, catalog)
@@ -738,5 +824,9 @@ def run(
     unreachable = health_doc["totals"]["unreachable"]
     if unreachable:
         log.warning("%d app(s) currently have an unreachable download URL", unreachable)
+    if verify_failed:
+        log.warning("%d app(s) FAILED full integrity verification", len(verify_failed))
     log.info("Done. %d file(s) changed.", len(changed))
-    return 0, report
+    # A failing full-integrity verification is a hard gate (weekly verify job),
+    # but a normal sync never enables it, so this only affects explicit runs.
+    return (1 if verify_failed else 0), report

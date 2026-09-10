@@ -34,9 +34,49 @@ from typing import Any
 
 from omnisource.discovery import newest_version
 from omnisource.domain import Catalog, today
+from omnisource.download_intel import release_consistency
 from omnisource.http import is_http_url
+from omnisource.utils.health import probe_window
 
 VERIFICATION_SCHEMA_VERSION = 1
+
+# Trust Score (Phase 7): a 0..10 number per app combining five observable
+# factors. Weights sum to 10.
+TRUST_WEIGHTS = {
+    "sourceVerification": 4.0,  # VERIFIED=4.0 / COMMUNITY VERIFIED=3.0 / other=1.0
+    "updateHistory": 1.5,  # 0.5 per recorded release, capped at 3
+    "releaseConsistency": 1.5,  # cadence variance 0..1
+    "uptime": 1.5,  # probe reachability 0..1
+    "integrity": 1.5,  # SHA-256 digest verified/known
+}
+TRUST_LEVELS = ("Verified", "Trusted", "Community", "Experimental")
+TRUST_THRESHOLDS = ((9.0, "Verified"), (7.5, "Trusted"), (5.0, "Community"))
+
+
+def trust_badge(score: float) -> str:
+    for threshold, badge in TRUST_THRESHOLDS:
+        if score >= threshold:
+            return badge
+    return "Experimental"
+
+
+def compute_trust_score(
+    *,
+    level: str,
+    release_count: int,
+    consistency: float,
+    uptime: float,
+    hash_verified: bool,
+) -> tuple[float, str]:
+    """Return ``(trust_score 0..10, badge)`` for one app."""
+    source = {"VERIFIED": 4.0, "COMMUNITY VERIFIED": 3.0}.get(str(level).upper(), 1.0)
+    history = 0.5 * max(0, min(release_count, 3))
+    consistency_component = max(0.0, min(1.0, consistency)) * TRUST_WEIGHTS["releaseConsistency"]
+    uptime_component = max(0.0, min(1.0, uptime)) * TRUST_WEIGHTS["uptime"]
+    integrity = TRUST_WEIGHTS["integrity"] if hash_verified else 0.0
+    score = round(source + history + consistency_component + uptime_component + integrity, 1)
+    return score, trust_badge(score)
+
 
 # Methods whose publisher is the application's official upstream.
 OFFICIAL_METHODS = frozenset(
@@ -122,6 +162,25 @@ def build_verification_doc(
         if checks["hashVerified"]:
             totals["hashVerified"] += 1
 
+        # Trust Score (Phase 7): five observable factors, 0..10.
+        app_state = state.get(app.slug) if isinstance(state.get(app.slug), dict) else {}
+        versions = app_state.get("versions")
+        release_count = len(versions) if isinstance(versions, list) else 0
+        probes, reachable, _ = probe_window(app_state)
+        if probes:
+            uptime = reachable / probes
+        else:
+            current = health_by_slug.get(app.slug) or {}
+            current_reachable = current.get("downloadReachable")
+            uptime = 1.0 if current_reachable is True else (0.0 if current_reachable is False else 0.5)
+        trust, badge = compute_trust_score(
+            level=level,
+            release_count=release_count,
+            consistency=release_consistency(state, app.slug),
+            uptime=uptime,
+            hash_verified=checks["hashVerified"],
+        )
+
         entries.append(
             {
                 "app": app.slug,
@@ -133,10 +192,15 @@ def build_verification_doc(
                 "checks": checks,
                 "reasons": _reason_for_level(level, failed, method),
                 "downloadURL": str(newest.get("downloadURL") or ""),
+                "trustScore": trust,
+                "trustBadge": badge,
             }
         )
 
     entries.sort(key=lambda item: (item["status"] != "VERIFIED", str(item["name"]).casefold()))
+    if entries:
+        totals["avgTrustScore"] = round(sum(item["trustScore"] for item in entries) / len(entries), 2)
+    totals["trustLevels"] = list(TRUST_LEVELS)
     return {
         "schemaVersion": VERIFICATION_SCHEMA_VERSION,
         "generatedAt": today(),
