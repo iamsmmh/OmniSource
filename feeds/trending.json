@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 43,
+  "count": 49,
   "formula": {
     "weights": {
       "recency": 0.4,
@@ -166,14 +166,14 @@
       "downloadReachable": true
     },
     {
-      "slug": "voyager",
-      "name": "Voyager",
-      "category": "social",
-      "version": "2.49.0",
-      "releaseDate": "2026-09-06",
-      "score": 0.7733,
+      "slug": "fladder",
+      "name": "Fladder",
+      "category": "photo-video",
+      "version": "0.11.1",
+      "releaseDate": "2026-09-08",
+      "score": 0.7867,
       "signals": {
-        "recency": 0.9333,
+        "recency": 0.9667,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -321,6 +321,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "fladder",
+      "name": "Fladder",
+      "category": "photo-video",
+      "version": "0.11.1",
+      "releaseDate": "2026-09-08",
+      "score": 0.7867,
+      "signals": {
+        "recency": 0.9667,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "spotiflac",
       "name": "SpotiFLAC Mobile",
       "category": "music",
@@ -335,23 +352,6 @@
       },
       "verificationLevel": "VERIFIED",
       "featured": true,
-      "downloadReachable": true
-    },
-    {
-      "slug": "voyager",
-      "name": "Voyager",
-      "category": "social",
-      "version": "2.49.0",
-      "releaseDate": "2026-09-06",
-      "score": 0.7733,
-      "signals": {
-        "recency": 0.9333,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
       "downloadReachable": true
     }
   ],
@@ -493,6 +493,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "fladder",
+      "name": "Fladder",
+      "category": "photo-video",
+      "version": "0.11.1",
+      "releaseDate": "2026-09-08",
+      "score": 0.7867,
+      "signals": {
+        "recency": 0.9667,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "spotiflac",
       "name": "SpotiFLAC Mobile",
       "category": "music",
@@ -507,23 +524,6 @@
       },
       "verificationLevel": "VERIFIED",
       "featured": true,
-      "downloadReachable": true
-    },
-    {
-      "slug": "voyager",
-      "name": "Voyager",
-      "category": "social",
-      "version": "2.49.0",
-      "releaseDate": "2026-09-06",
-      "score": 0.7733,
-      "signals": {
-        "recency": 0.9333,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
       "downloadReachable": true
     }
   ],
@@ -682,6 +682,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "fladder",
+      "name": "Fladder",
+      "category": "photo-video",
+      "version": "0.11.1",
+      "releaseDate": "2026-09-08",
+      "score": 0.7867,
+      "signals": {
+        "recency": 0.9667,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "voyager",
       "name": "Voyager",
       "category": "social",
@@ -750,6 +767,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "conduit",
+      "name": "Conduit",
+      "category": "utilities",
+      "version": "4.1.4",
+      "releaseDate": "2026-09-01",
+      "score": 0.74,
+      "signals": {
+        "recency": 0.85,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "ytkace",
       "name": "YTKACE",
       "category": "photo-video",
@@ -771,6 +805,23 @@
       "name": "Saber",
       "category": "utilities",
       "version": "1.36.1",
+      "releaseDate": "2026-08-30",
+      "score": 0.7267,
+      "signals": {
+        "recency": 0.8167,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "anymex",
+      "name": "AnymeX",
+      "category": "other",
+      "version": "3.1.7",
       "releaseDate": "2026-08-30",
       "score": 0.7267,
       "signals": {
@@ -835,6 +886,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "sora",
+      "name": "Sora",
+      "category": "photo-video",
+      "version": "1.3.0",
+      "releaseDate": "2026-08-20",
+      "score": 0.66,
+      "signals": {
+        "recency": 0.65,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "apollo",
       "name": "Apollo",
       "category": "social",
@@ -860,6 +928,23 @@
       "score": 0.6267,
       "signals": {
         "recency": 0.5667,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "twitchadblock",
+      "name": "TwitchAdBlock",
+      "category": "social",
+      "version": "30.7",
+      "releaseDate": "2026-08-14",
+      "score": 0.62,
+      "signals": {
+        "recency": 0.55,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -1248,6 +1333,23 @@
       "category": "games",
       "version": "2.0.2",
       "releaseDate": "2025-02-23",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "neofreebird",
+      "name": "NeoFreeBird",
+      "category": "social",
+      "version": "2.2",
+      "releaseDate": "2025-11-03",
       "score": 0.4,
       "signals": {
         "recency": 0.0,

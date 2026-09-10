@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 39,
+  "count": 45,
   "levels": [
     "TRUSTED",
     "RELIABLE",
@@ -515,6 +515,26 @@
       }
     },
     {
+      "id": "RyanYuuki/AnymeX",
+      "source": "RyanYuuki/AnymeX",
+      "publisher": "RyanYuuki/AnymeX",
+      "homepage": "https://github.com/RyanYuuki/AnymeX",
+      "sourceURL": "https://github.com/RyanYuuki/AnymeX",
+      "apps": [
+        "anymex"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
       "id": "RileyTestut/Delta",
       "source": "RileyTestut/Delta",
       "publisher": "RileyTestut/Delta",
@@ -562,6 +582,26 @@
       "sourceURL": "https://github.com/OatmealDome/dolphin-ios",
       "apps": [
         "dolphinish"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "NeoFreeBird/app",
+      "source": "NeoFreeBird/app",
+      "publisher": "NeoFreeBird/app",
+      "homepage": "https://github.com/NeoFreeBird/app",
+      "sourceURL": "https://github.com/NeoFreeBird/app",
+      "apps": [
+        "neofreebird"
       ],
       "score": 50.0,
       "level": "AVERAGE",
@@ -675,6 +715,26 @@
       }
     },
     {
+      "id": "gunnerkidBT/TwitchAdBlock",
+      "source": "gunnerkidBT/TwitchAdBlock",
+      "publisher": "gunnerkidBT/TwitchAdBlock",
+      "homepage": "https://github.com/gunnerkidBT/TwitchAdBlock",
+      "sourceURL": "https://github.com/gunnerkidBT/TwitchAdBlock",
+      "apps": [
+        "twitchadblock"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
       "id": "fredrikburmester/streamyfin",
       "source": "fredrikburmester/streamyfin",
       "publisher": "fredrikburmester/streamyfin",
@@ -682,6 +742,66 @@
       "sourceURL": "https://github.com/fredrikburmester/streamyfin",
       "apps": [
         "streamyfin"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "DonutWare/Fladder",
+      "source": "DonutWare/Fladder",
+      "publisher": "DonutWare/Fladder",
+      "homepage": "https://github.com/DonutWare/Fladder",
+      "sourceURL": "https://github.com/DonutWare/Fladder",
+      "apps": [
+        "fladder"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "cranci1/Sora",
+      "source": "cranci1/Sora",
+      "publisher": "cranci1/Sora",
+      "homepage": "https://github.com/cranci1/Sora",
+      "sourceURL": "https://github.com/cranci1/Sora",
+      "apps": [
+        "sora"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "cogwheel0/conduit",
+      "source": "cogwheel0/conduit",
+      "publisher": "cogwheel0/conduit",
+      "homepage": "https://github.com/cogwheel0/conduit",
+      "sourceURL": "https://github.com/cogwheel0/conduit",
+      "apps": [
+        "conduit"
       ],
       "score": 50.0,
       "level": "AVERAGE",

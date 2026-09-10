@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 43,
-    "pass": 33,
+    "apps": 49,
+    "pass": 39,
     "warn": 10,
     "fail": 0,
     "rejected": 0
@@ -37,6 +37,24 @@
         "releaseId": "1.14.0",
         "source": "github",
         "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "anymex",
+      "name": "AnymeX",
+      "asset": {
+        "sha256": "72d546ba01fb33c82c80fa02332bd9aecc80fd16157d39ac4af901e28f554ece",
+        "size": 39662751,
+        "releaseId": "3.1.7",
+        "source": "github",
+        "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -101,6 +119,24 @@
       "status": "pass"
     },
     {
+      "slug": "conduit",
+      "name": "Conduit",
+      "asset": {
+        "sha256": "8657f3cbe68a00f6b965581ccbd417f42ff525823c80335e5e8efdb5e371d811",
+        "size": 35794270,
+        "releaseId": "4.1.4",
+        "source": "github",
+        "downloadUrl": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/conduit.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "delta",
       "name": "Delta",
       "asset": {
@@ -145,6 +181,24 @@
         "releaseId": "2.9.0",
         "source": "github",
         "downloadUrl": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "fladder",
+      "name": "Fladder",
+      "asset": {
+        "sha256": "e9538c2a3a7acc1d6d3d97ab69b6bddcf6bc5763dcd520139c8450ce8604fc3c",
+        "size": 41137245,
+        "releaseId": "0.11.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -317,6 +371,24 @@
       "status": "warn"
     },
     {
+      "slug": "neofreebird",
+      "name": "NeoFreeBird",
+      "asset": {
+        "sha256": "e5592371a53e770a0ac99242a44b4f6ea27a521058470491f18e1ed661acdaa2",
+        "size": 158452402,
+        "releaseId": "2.2",
+        "source": "github",
+        "downloadUrl": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "ppsspp",
       "name": "PPSSPP",
       "asset": {
@@ -443,6 +515,24 @@
       "status": "pass"
     },
     {
+      "slug": "sora",
+      "name": "Sora",
+      "asset": {
+        "sha256": "8bcdf430a58fb2aa55e9b841266a6aff731af7623fcbb90a8bc4654a10d7c1ce",
+        "size": 3112338,
+        "releaseId": "1.3.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "spotiflac",
       "name": "SpotiFLAC Mobile",
       "asset": {
@@ -549,6 +639,24 @@
         "reachable": true
       },
       "status": "warn"
+    },
+    {
+      "slug": "twitchadblock",
+      "name": "TwitchAdBlock",
+      "asset": {
+        "sha256": "5ddea13264259f54c7f8812ef16ddc20ddb675703826537a1e5dfd144f228181",
+        "size": 152372292,
+        "releaseId": "30.7",
+        "source": "github",
+        "downloadUrl": "https://github.com/gunnerkidBT/TwitchAdBlock/releases/download/v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
     },
     {
       "slug": "utm",

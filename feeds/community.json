@@ -125,6 +125,12 @@
       "category": "social"
     },
     {
+      "slug": "fladder",
+      "name": "Fladder",
+      "firstSeen": "2026-09-08",
+      "category": "photo-video"
+    },
+    {
       "slug": "spotiflac",
       "name": "SpotiFLAC Mobile",
       "firstSeen": "2026-09-07",
@@ -141,12 +147,6 @@
       "name": "Aidoku",
       "firstSeen": "2026-09-03",
       "category": "other"
-    },
-    {
-      "slug": "jellify",
-      "name": "Jellify",
-      "firstSeen": "2026-09-02",
-      "category": "music"
     }
   ],
   "rising": [
@@ -211,23 +211,23 @@
       "newThisMonth": 1
     },
     {
-      "slug": "ttkillerplus",
-      "name": "TTKillerPlus",
+      "slug": "twitchadblock",
+      "name": "TwitchAdBlock",
       "category": "social",
       "newThisMonth": 1
     },
     {
-      "slug": "stikdebug",
-      "name": "StikDebug",
-      "category": "developer-tools",
+      "slug": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "category": "social",
       "newThisMonth": 1
     }
   ],
   "requested": [],
   "counts": {
-    "popular": 43,
-    "recentlyAdded": 16,
-    "rising": 20,
+    "popular": 49,
+    "recentlyAdded": 19,
+    "rising": 25,
     "requested": 0
   }
 }

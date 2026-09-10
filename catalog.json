@@ -1191,7 +1191,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": "Official sideloaded build from BandarHL/BHTwitter. The release also ships a TrollStore .tipa, which OmniSource skips - only the -sideloaded.ipa is tracked. The bundled X app is whichever decrypted build the maintainer packaged for that tweak release."
+        "notes": "Official sideloaded build from BandarHL/BHTwitter. The release also ships a TrollStore .tipa, which OmniSource skips - only the -sideloaded.ipa is tracked. The bundled X app is whichever decrypted build the maintainer packaged for that tweak release. Shares com.atebits.Tweetie2 with NeoFreeBird: install one at a time."
       },
       "upstream": {
         "repo": "BandarHL/BHTwitter",
@@ -1203,7 +1203,8 @@
         "versionFromTag": true,
         "descriptionTemplate": "BHTwitter {version} | {label}",
         "minOSVersion": "15.0"
-      }
+      },
+      "alternativeTo": "neofreebird"
     },
     {
       "slug": "livecontainer",
@@ -2511,6 +2512,299 @@
         "keepVersions": 1,
         "minOSVersion": "17.0",
         "descriptionTemplate": "StikNES {version} | {label}"
+      }
+    },
+    {
+      "slug": "twitchadblock",
+      "name": "TwitchAdBlock",
+      "subtitle": "Ad blocker for the Twitch app on iOS",
+      "bundleIdentifier": "tv.twitch",
+      "developerName": "gunnerkidBT (original by dayanch96)",
+      "category": "social",
+      "tintColor": "9146FF",
+      "icon": "TAB.webp",
+      "localizedDescription": "TwitchAdBlock is an open-source tweak for the native Twitch iOS app that blocks advert break requests at the network layer, so streams play without ads and without the purple loading screen. This fork by gunnerkidBT keeps the tweak working on the latest Twitch releases (29.x-30.x) and modern iOS versions, and publishes ready-to-sideload IPAs built from the official tweak source.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/gunnerkidBT/TwitchAdBlock",
+      "verification": {
+        "method": "github-release",
+        "publisher": "gunnerkidBT/TwitchAdBlock",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPAs from the fork's GitHub releases; the '-noplugins' variant on each release is intentionally not distributed. Replaces the App Store Twitch app (shares tv.twitch). The upstream tweak repo publishes only .deb packages for jailbroken devices; the sideload IPA comes from this maintained fork."
+      },
+      "upstream": {
+        "repo": "gunnerkidBT/TwitchAdBlock",
+        "assetNamePattern": "^(?!.*noplugins)tv\\.twitch-[0-9][^/]*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 10,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Twitch {version} | TwitchAdBlock {secondary}",
+        "versionPattern": "^tv\\.twitch-([0-9]+\\.[0-9]+)"
+      }
+    },
+    {
+      "slug": "neofreebird",
+      "name": "NeoFreeBird",
+      "subtitle": "Modified Twitter with QoL fixes and reverts",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "developerName": "NeoFreeBird contributors",
+      "category": "social",
+      "tintColor": "1D9BF0",
+      "icon": "NeoFreeBird.webp",
+      "localizedDescription": "NeoFreeBird is a modified build of the official Twitter app that reverts unpopular rebranding and interface changes, restores classic features, and bundles quality-of-life modifications including BHTwitter options — built and published automatically from the project's GitHub releases. Shares com.atebits.Tweetie2 with the App Store Twitter/X app and BHTwitter: install one at a time.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/NeoFreeBird/app",
+      "verification": {
+        "method": "github-release",
+        "publisher": "NeoFreeBird/app",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPAs from the project's GitHub releases (its own AltStore source mirrors them). The plain build is distributed here; the -noFixTwitterLogin variant on the same release is a troubleshooting fallback. Twitter 11.x builds require iOS 15+. Shares the Twitter bundle identifier with BHTwitter in this catalog — install one at a time."
+      },
+      "upstream": {
+        "repo": "NeoFreeBird/app",
+        "assetNamePattern": "^NeoFreeBird-[0-9][^/]*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Twitter {version} | {label}"
+      },
+      "alternativeTo": "bhtwitter"
+    },
+    {
+      "slug": "conduit",
+      "name": "Conduit",
+      "subtitle": "Native client for Open WebUI & Ollama",
+      "bundleIdentifier": "app.cogwheel.conduit",
+      "developerName": "cogwheel0",
+      "category": "utilities",
+      "tintColor": "7794F0",
+      "icon": "Conduit.webp",
+      "localizedDescription": "Conduit is a native, open-source iOS and Android client for Open WebUI, direct OpenAI-compatible endpoints, Ollama and Hermes. Chat with your own self-hosted local models or API-backed ones with a polished SwiftUI interface — conversations stay in sync, code blocks render properly, and your data never touches a third-party server.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/cogwheel0/conduit",
+      "verification": {
+        "method": "github-release",
+        "publisher": "cogwheel0/conduit",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA (conduit.ipa) from the developer's GitHub releases; the debug-flavored bundle (app.cogwheel.conduit.debug) is excluded. Requires a self-hosted Open WebUI/Ollama server or your own API endpoints."
+      },
+      "upstream": {
+        "repo": "cogwheel0/conduit",
+        "tagPrefix": "v",
+        "assetNamePattern": "^conduit\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.0",
+        "descriptionTemplate": "Conduit {version} | {label}"
+      }
+    },
+    {
+      "slug": "fladder",
+      "name": "Fladder",
+      "subtitle": "Cross-platform Jellyfin frontend",
+      "bundleIdentifier": "nl.jknaapen.fladder",
+      "developerName": "DonutWare",
+      "category": "photo-video",
+      "tintColor": "A34920",
+      "icon": "Fladder.webp",
+      "localizedDescription": "Fladder is a free and open-source Jellyfin frontend built on Flutter, giving you a beautiful Netflix-style interface over your own media library on iPhone and iPad. Direct play and transcode support, offline viewing with sync, multi-server switching, and full library management — no server plugins required.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/DonutWare/Fladder",
+      "verification": {
+        "method": "github-release",
+        "publisher": "DonutWare/Fladder",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official release IPA (Fladder-iOS-<version>.ipa) from the developer's GitHub releases; the 'nightly' tag is excluded so only stable builds are tracked. Requires a Jellyfin server. A natural alternative to Streamyfin."
+      },
+      "upstream": {
+        "repo": "DonutWare/Fladder",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Fladder-iOS-[0-9][^/]*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Fladder {version} | {label}"
+      }
+    },
+    {
+      "slug": "anymex",
+      "name": "AnymeX",
+      "subtitle": "Anime, manga, novels & tracking, open source",
+      "bundleIdentifier": "com.ryan.anymex",
+      "developerName": "RyanYuuki",
+      "category": "other",
+      "tintColor": "131313",
+      "icon": "AnymeX.webp",
+      "localizedDescription": "AnymeX is an open-source, cross-platform app for streaming anime and reading manga, manhwa, light and web novels, with deep integration for tracking services (AniList, MyAnimeList, Simkl and Kitsu). Extensions keep sources working, and your library, progress and statistics stay in sync across services.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/RyanYuuki/AnymeX",
+      "verification": {
+        "method": "github-release",
+        "publisher": "RyanYuuki/AnymeX",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "12.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA (AnymeX-iOS-<version>.ipa) built by the developer's release pipeline; the Flutter project targets iOS 12+. Content sources are provided by community extensions."
+      },
+      "upstream": {
+        "repo": "RyanYuuki/AnymeX",
+        "tagPrefix": "v",
+        "assetNamePattern": "^AnymeX-iOS-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "12.0",
+        "descriptionTemplate": "AnymeX {version} | {label}"
+      }
+    },
+    {
+      "slug": "sora",
+      "name": "Sora",
+      "subtitle": "Modular media streaming app for iOS",
+      "bundleIdentifier": "me.cranci.sulfur",
+      "developerName": "cranci",
+      "category": "photo-video",
+      "tintColor": "EE4310",
+      "icon": "Sora.webp",
+      "localizedDescription": "Sora is a modular, open-source media player for iPhone, iPad and Mac that streams movies and shows from community-maintained modules, with AniList sync, watching collections, watch-next recommendations, bookmarks and a fast native SwiftUI interface. The current build line is distributed as Sulfur.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/cranci1/Sora",
+      "verification": {
+        "method": "github-release",
+        "publisher": "cranci1/Sora",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from the developer's GitHub releases; current builds ship as Sulfur.ipa (the project's renamed build) with bundle me.cranci.sulfur — the asset pattern also accepts Sora.ipa from older tags. Requires iOS 15+. Content modules are community-maintained."
+      },
+      "upstream": {
+        "repo": "cranci1/Sora",
+        "assetNamePattern": "^(Sulfur|Sora)\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Sora {version} | {label}"
       }
     }
   ]

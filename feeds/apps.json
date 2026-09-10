@@ -45,13 +45,13 @@
               "fileType": "IPA",
               "size": 14731108,
               "sha256": "86405861d3a0c90876a90aa1ca668bee54f4555a56249fede4444be5382833e8",
-              "downloads": 1172,
+              "downloads": 1175,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "86405861d3a0c90876a90aa1ca668bee54f4555a56249fede4444be5382833e8",
-          "downloads": 1172
+          "downloads": 1175
         }
       ],
       "screenshotURLs": [
@@ -130,7 +130,7 @@
               "fileType": "APK",
               "size": 27520363,
               "sha256": "ac17738ddd11c2b1834494b1a31d494384fcabefa8501c9587ab63fef20b1eb4",
-              "downloads": 16880,
+              "downloads": 16881,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -154,7 +154,7 @@
               "fileType": "APK",
               "size": 54364453,
               "sha256": "43ae699477f7805b17bab4dd0c3c115cae590a44e8a6d696c6d548fb6a23e2cf",
-              "downloads": 12971,
+              "downloads": 12973,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -166,7 +166,7 @@
               "fileType": "APK",
               "size": 27699135,
               "sha256": "f64978c6ebfc63d671e4423b490ee64380749772c96d79f76ef4361a9e06f27b",
-              "downloads": 944,
+              "downloads": 945,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -226,7 +226,7 @@
               "fileType": "EXE",
               "size": 25440912,
               "sha256": "886579acf3e8acb56fee60cbc634c700b9fc4080b28f8f1f7c1182c746975a62",
-              "downloads": 7807,
+              "downloads": 7808,
               "mimeType": "application/x-msdos-program",
               "installable": true
             },
@@ -281,6 +281,219 @@
           "detail": "not probed",
           "statusSince": "2026-03-19",
           "lastUpdatedAt": "2026-03-19"
+        }
+      }
+    },
+    {
+      "name": "AnymeX",
+      "bundleIdentifier": "com.ryan.anymex",
+      "developerName": "RyanYuuki",
+      "subtitle": "Anime, manga, novels & tracking, open source",
+      "localizedDescription": "AnymeX is an open-source, cross-platform app for streaming anime and reading manga, manhwa, light and web novels, with deep integration for tracking services (AniList, MyAnimeList, Simkl and Kitsu). Extensions keep sources working, and your library, progress and statistics stay in sync across services.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/AnymeX.webp",
+      "tintColor": "131313",
+      "category": "other",
+      "version": "3.1.7",
+      "versionDate": "2026-08-30",
+      "versionDescription": "AnymeX 3.1.7 | AnymeX-iOS-v3.1.7\n\n### 🆕 Changelog\n### 🌟 Features\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/36754206) enhanced new episode released cards, fixed bugs when deleting history items and more by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/0837dcf8) server remember for episodes and some ui changes by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/e3ec2a4e) new episode released on home page for any anime you watch from app by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/91224c3f) enhanced the tab system and ui of headers on pages by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/7af109c1) nav bar layout switcher, improved ui of media type selector and organized ui settings page by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/4380f646) added extensive data of user's usage by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/97d7d054) user xp system by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/2eac3561) add AniList profile compatibility checker (#547) by @Shebyyy\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/f8226772) stats record implementation on anime and manga by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/3427750b) user app statistics by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/1774abfb) history tab implemented by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/465d66cc) new tabs system (home, discover, library, history, stats) by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/1582c7eb) sync subtitle sentence progress controller by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/20df44bf) local subtitle import by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/64740546) bottom nav bar margin adjustment setting by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/c0389949) more fields like country, popularity, source for media details and fixed issues like sequel repeating, and recommendation opening wrong pages by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/a585abee) font family change option by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/fc7649b9) improved user experience on player by consolidating audio, subs, servers by @RyanYuuki\n\n\n### 🔧 Bug Fixes & Improvements\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/5acd1120) inconsistency bug on header and major refactor of header by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/0cadc7f3) fixed a issue where offline database was not saving title of ep/chps by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/c47225a5) fixed bad redirect on manga pages when clicking on genre/tags by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/98914683) fixed manga chapter selector and chapter navigation logic by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/261af6e0) fixed join dialog behaviour by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/480eb738) hero tag duplicate fix (probably) by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/7b36bf18) fixed some stats not tracking properly by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/834a5522) fixed scanlator not being respected issue by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/0e6495fe) fixed minor desync issues between user rec section by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/ee2c22dd) fixed updater not showing proper toast and proper beta updates by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/afb580ce) fixed ui not reflecting on pallete change on theme page by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/1970de1e) fixed profile page activity opening anime page on manga entries by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/a21009b1) fixed mapper mappng to wrong medias by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/1dff1f52) fixed rpc for desktop users by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/fa60bf90) fixed show entries in community recommandation opening manga page by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/22236d7f) fixed delete entry not working by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/47d42453) fixed dupe entries in tracking lists by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/e5d0945b) fixed tracking dialog not respecting preference by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/3631e005) fixed follower, following count on profile by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/696f2991) fixed splash logo animation not applying by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/2265209a) fixed al, mal, simkl card not getting saved properly by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/895001c0) fixed speed not persisting in a session and speed configs not persisting app restarts by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/c5d70d7a) fixed anify kitsu button not reflecting instantly by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/32b8ba93) fixed cover not showing up on episodes by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/8d71bc38) fixed staff not appearing, characters not showing roles in anilist by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/63ab2d18) fixed sub parser it was not showing cues before by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/5053aaf7) fixed novel search sending to anime search by @RyanYuuki\n\n\n### 🔧 Refactors\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/24cd99eb) refactored card styles by @RyanYuuki\n\n\n### 🎨 Style Changes\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/a3614a65) minor ui tweak by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/105b5775) improved list editor ui by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/169a6122) improved library ui by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/3be13154) media mode selector ui improvement by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/a0fd1926) improved ui of image button by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/f0894ef3) added bouncy animation on tab change by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/f51ed12b) extension settings page elements harmonized with the rest of the app's ui by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/8461f0fd) improved ui and performance of all the source, audio, subtitle panes by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/6b74c1a8) improved the stretched tab bar on desktop by @RyanYuuki\n\n\n### 🚀 Performance Improvements\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/aaf2174a) snappy gestures for pan and zoom on manga pages even on continous mode by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/68eeffea) player controls overlay should feel snappier by @RyanYuuki\n\n\n### 🧹 Chores & Documentation\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/c7d2690a) bump version to v3.1.7 (patch release) by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/0bde25cf) library changes by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/704415da) update sideloading source by @ghost\n\n\n![Total Downloads](https://img.shields.io/github/downloads/RyanYuuki/AnymeX/total?style=for-the-badge&label=TOTAL%20DOWNLOADS&labelColor=black&color=white) ![Current Release](https://img.shields.io/github/downloads/RyanYuuki/AnymeX/v3.1.7/total?style=for-the-badge&label=CURRENT%20RELEASE&labelColor=black&color=white)",
+      "downloadURL": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa",
+      "size": 39662751,
+      "versions": [
+        {
+          "version": "3.1.7",
+          "date": "2026-08-30",
+          "localizedDescription": "AnymeX 3.1.7 | AnymeX-iOS-v3.1.7\n\n### 🆕 Changelog\n### 🌟 Features\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/36754206) enhanced new episode released cards, fixed bugs when deleting history items and more by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/0837dcf8) server remember for episodes and some ui changes by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/e3ec2a4e) new episode released on home page for any anime you watch from app by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/91224c3f) enhanced the tab system and ui of headers on pages by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/7af109c1) nav bar layout switcher, improved ui of media type selector and organized ui settings page by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/4380f646) added extensive data of user's usage by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/97d7d054) user xp system by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/2eac3561) add AniList profile compatibility checker (#547) by @Shebyyy\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/f8226772) stats record implementation on anime and manga by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/3427750b) user app statistics by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/1774abfb) history tab implemented by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/465d66cc) new tabs system (home, discover, library, history, stats) by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/1582c7eb) sync subtitle sentence progress controller by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/20df44bf) local subtitle import by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/64740546) bottom nav bar margin adjustment setting by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/c0389949) more fields like country, popularity, source for media details and fixed issues like sequel repeating, and recommendation opening wrong pages by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/a585abee) font family change option by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/fc7649b9) improved user experience on player by consolidating audio, subs, servers by @RyanYuuki\n\n\n### 🔧 Bug Fixes & Improvements\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/5acd1120) inconsistency bug on header and major refactor of header by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/0cadc7f3) fixed a issue where offline database was not saving title of ep/chps by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/c47225a5) fixed bad redirect on manga pages when clicking on genre/tags by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/98914683) fixed manga chapter selector and chapter navigation logic by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/261af6e0) fixed join dialog behaviour by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/480eb738) hero tag duplicate fix (probably) by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/7b36bf18) fixed some stats not tracking properly by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/834a5522) fixed scanlator not being respected issue by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/0e6495fe) fixed minor desync issues between user rec section by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/ee2c22dd) fixed updater not showing proper toast and proper beta updates by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/afb580ce) fixed ui not reflecting on pallete change on theme page by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/1970de1e) fixed profile page activity opening anime page on manga entries by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/a21009b1) fixed mapper mappng to wrong medias by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/1dff1f52) fixed rpc for desktop users by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/fa60bf90) fixed show entries in community recommandation opening manga page by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/22236d7f) fixed delete entry not working by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/47d42453) fixed dupe entries in tracking lists by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/e5d0945b) fixed tracking dialog not respecting preference by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/3631e005) fixed follower, following count on profile by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/696f2991) fixed splash logo animation not applying by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/2265209a) fixed al, mal, simkl card not getting saved properly by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/895001c0) fixed speed not persisting in a session and speed configs not persisting app restarts by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/c5d70d7a) fixed anify kitsu button not reflecting instantly by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/32b8ba93) fixed cover not showing up on episodes by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/8d71bc38) fixed staff not appearing, characters not showing roles in anilist by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/63ab2d18) fixed sub parser it was not showing cues before by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/5053aaf7) fixed novel search sending to anime search by @RyanYuuki\n\n\n### 🔧 Refactors\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/24cd99eb) refactored card styles by @RyanYuuki\n\n\n### 🎨 Style Changes\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/a3614a65) minor ui tweak by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/105b5775) improved list editor ui by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/169a6122) improved library ui by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/3be13154) media mode selector ui improvement by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/a0fd1926) improved ui of image button by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/f0894ef3) added bouncy animation on tab change by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/f51ed12b) extension settings page elements harmonized with the rest of the app's ui by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/8461f0fd) improved ui and performance of all the source, audio, subtitle panes by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/6b74c1a8) improved the stretched tab bar on desktop by @RyanYuuki\n\n\n### 🚀 Performance Improvements\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/aaf2174a) snappy gestures for pan and zoom on manga pages even on continous mode by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/68eeffea) player controls overlay should feel snappier by @RyanYuuki\n\n\n### 🧹 Chores & Documentation\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/c7d2690a) bump version to v3.1.7 (patch release) by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/0bde25cf) library changes by @RyanYuuki\n- [֍](https://github.com/RyanYuuki/AnymeX/commit/704415da) update sideloading source by @ghost\n\n\n![Total Downloads](https://img.shields.io/github/downloads/RyanYuuki/AnymeX/total?style=for-the-badge&label=TOTAL%20DOWNLOADS&labelColor=black&color=white) ![Current Release](https://img.shields.io/github/downloads/RyanYuuki/AnymeX/v3.1.7/total?style=for-the-badge&label=CURRENT%20RELEASE&labelColor=black&color=white)",
+          "downloadURL": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa",
+          "size": 39662751,
+          "minOSVersion": "12.0",
+          "releaseUrl": "https://github.com/RyanYuuki/AnymeX/releases/tag/v3.1.7",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "AnymeX-Android-arm64-v8a.apk",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-Android-arm64-v8a.apk",
+              "platform": "android",
+              "architecture": "arm64",
+              "fileType": "APK",
+              "size": 37702413,
+              "sha256": "cb19e0b910a53da5a8b8c7616565b4c014fdb4cb9b013df32c20e924b2b0c715",
+              "downloads": 8308,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "AnymeX-Android-armeabi-v7a.apk",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-Android-armeabi-v7a.apk",
+              "platform": "android",
+              "architecture": "armv7",
+              "fileType": "APK",
+              "size": 36621609,
+              "sha256": "fa9a7993843f12e9bd05149c90914485bf170540169b8ca2f7ef89b9ff5128d3",
+              "downloads": 167,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "AnymeX-Android-universal.apk",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-Android-universal.apk",
+              "platform": "android",
+              "architecture": "universal",
+              "fileType": "APK",
+              "size": 97025621,
+              "sha256": "4ae7cb174483fa2fd191855e13b4a468950ca0da090886f27579be3a28a4f219",
+              "downloads": 607,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "AnymeX-Android-x86_64.apk",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-Android-x86_64.apk",
+              "platform": "android",
+              "architecture": "x86_64",
+              "fileType": "APK",
+              "size": 39068891,
+              "sha256": "cc1be457c7465da537a5f64d3a2a6f3e8dc36c0052997c031348d47f572ef04a",
+              "downloads": 51,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "AnymeX-iOS-v3.1.7.ipa",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 39662751,
+              "sha256": "72d546ba01fb33c82c80fa02332bd9aecc80fd16157d39ac4af901e28f554ece",
+              "downloads": 629,
+              "mimeType": "raw",
+              "installable": true
+            },
+            {
+              "filename": "AnymeX-Linux.AppImage",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-Linux.AppImage",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "AppImage",
+              "size": 44075512,
+              "sha256": "38efc71e213a49f52aa5adcaae1261067d2acc32e5f447c9df489939e867ad85",
+              "downloads": 264,
+              "mimeType": "raw",
+              "installable": true
+            },
+            {
+              "filename": "AnymeX-Linux.rpm",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-Linux.rpm",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "other",
+              "size": 37928596,
+              "sha256": "8a8725903922d0cb942d1bb6b226e035548794da412f95cd792811e27f3b9d4b",
+              "downloads": 12,
+              "mimeType": "raw",
+              "installable": false
+            },
+            {
+              "filename": "AnymeX-Linux.zip",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-Linux.zip",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 47552768,
+              "sha256": "6a99a13689df5d3de7f44f5689ef65784021568c39c4df4ee921af8d2d7ff783",
+              "downloads": 26,
+              "mimeType": "raw",
+              "installable": false
+            },
+            {
+              "filename": "AnymeX-Windows.zip",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-Windows.zip",
+              "platform": "windows",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 52983094,
+              "sha256": "4777e6bc19df964e0d2d1c9411bb1ba23a4ca7c09ff947844d0ccb594d73bb8b",
+              "downloads": 693,
+              "mimeType": "raw",
+              "installable": false
+            },
+            {
+              "filename": "AnymeX-x86_64-3.1.7-Installer.exe",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-x86_64-3.1.7-Installer.exe",
+              "platform": "windows",
+              "architecture": "x86_64",
+              "fileType": "EXE",
+              "size": 39141844,
+              "sha256": "c1780331d3614177b92286563b6788ef90ff566b3ba3a8ddf116ba73ea5611e7",
+              "downloads": 1079,
+              "mimeType": "raw",
+              "installable": true
+            },
+            {
+              "filename": "AnymeX.dmg",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX.dmg",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "DMG",
+              "size": 92783072,
+              "sha256": "612ced0df6b66b91d807061a37ab794c9cf6105c7c4251200c6da814ebaa6f72",
+              "downloads": 163,
+              "mimeType": "raw",
+              "installable": true
+            },
+            {
+              "filename": "com.ryan.anymex.3.1.7.nupkg",
+              "downloadUrl": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/com.ryan.anymex.3.1.7.nupkg",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "other",
+              "size": 3239,
+              "sha256": "d14ce9208f1586978b753088316a1179824e93d3c190371938b9950d21b33d87",
+              "downloads": 6,
+              "mimeType": "raw",
+              "installable": false
+            }
+          ],
+          "sha256": "72d546ba01fb33c82c80fa02332bd9aecc80fd16157d39ac4af901e28f554ece",
+          "downloads": 629
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "anymex",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/RyanYuuki/AnymeX",
+        "sourceURL": "https://github.com/RyanYuuki/AnymeX",
+        "verification": {
+          "method": "github-release",
+          "publisher": "RyanYuuki/AnymeX",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "12.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned IPA (AnymeX-iOS-<version>.ipa) built by the developer's release pipeline; the Flutter project targets iOS 12+. Content sources are provided by community extensions."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-08-30",
+          "lastUpdatedAt": "2026-08-30"
         }
       }
     },
@@ -343,7 +556,7 @@
               "fileType": "IPA",
               "size": 123354289,
               "sha256": "c65e1dd5bb35a13878013848945346d8b7cb774b5965573db939f7bc698d4ac6",
-              "downloads": 7060,
+              "downloads": 7066,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -496,7 +709,7 @@
               "fileType": "IPA",
               "size": 167001383,
               "sha256": null,
-              "downloads": 16735,
+              "downloads": 16736,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -537,7 +750,7 @@
               "installable": true
             }
           ],
-          "downloads": 16735
+          "downloads": 16736
         }
       ],
       "screenshotURLs": [
@@ -572,7 +785,7 @@
             "esign",
             "livecontainer"
           ],
-          "notes": "Official sideloaded build from BandarHL/BHTwitter. The release also ships a TrollStore .tipa, which OmniSource skips - only the -sideloaded.ipa is tracked. The bundled X app is whichever decrypted build the maintainer packaged for that tweak release."
+          "notes": "Official sideloaded build from BandarHL/BHTwitter. The release also ships a TrollStore .tipa, which OmniSource skips - only the -sideloaded.ipa is tracked. The bundled X app is whichever decrypted build the maintainer packaged for that tweak release. Shares com.atebits.Tweetie2 with NeoFreeBird: install one at a time."
         },
         "health": {
           "downloadReachable": true,
@@ -696,6 +909,135 @@
           "detail": "not probed",
           "statusSince": "2026-07-21",
           "lastUpdatedAt": "2026-07-21"
+        }
+      }
+    },
+    {
+      "name": "Conduit",
+      "bundleIdentifier": "app.cogwheel.conduit",
+      "developerName": "cogwheel0",
+      "subtitle": "Native client for Open WebUI & Ollama",
+      "localizedDescription": "Conduit is a native, open-source iOS and Android client for Open WebUI, direct OpenAI-compatible endpoints, Ollama and Hermes. Chat with your own self-hosted local models or API-backed ones with a polished SwiftUI interface — conversations stay in sync, code blocks render properly, and your data never touches a third-party server.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Conduit.webp",
+      "tintColor": "7794F0",
+      "category": "utilities",
+      "version": "4.1.4",
+      "versionDate": "2026-09-01",
+      "versionDescription": "Conduit 4.1.4 | conduit\n\n## What's Changed\n* Support Open WebUI v0.11.3 by @cogwheel0 in https://github.com/cogwheel0/conduit/pull/696\n\n\n**Full Changelog**: https://github.com/cogwheel0/conduit/compare/v4.1.3...v4.1.4",
+      "downloadURL": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/conduit.ipa",
+      "size": 35794270,
+      "versions": [
+        {
+          "version": "4.1.4",
+          "date": "2026-09-01",
+          "localizedDescription": "Conduit 4.1.4 | conduit\n\n## What's Changed\n* Support Open WebUI v0.11.3 by @cogwheel0 in https://github.com/cogwheel0/conduit/pull/696\n\n\n**Full Changelog**: https://github.com/cogwheel0/conduit/compare/v4.1.3...v4.1.4",
+          "downloadURL": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/conduit.ipa",
+          "size": 35794270,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/cogwheel0/conduit/releases/tag/v4.1.4",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "app-arm64-v8a-release.apk",
+              "downloadUrl": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/app-arm64-v8a-release.apk",
+              "platform": "android",
+              "architecture": "arm64",
+              "fileType": "APK",
+              "size": 77845591,
+              "sha256": "1ff55c963065c4e5ccc1ff8f31e36eacc35f4faf8bf851693199e3bfd1cff356",
+              "downloads": 1496,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "app-armeabi-v7a-release.apk",
+              "downloadUrl": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/app-armeabi-v7a-release.apk",
+              "platform": "android",
+              "architecture": "armv7",
+              "fileType": "APK",
+              "size": 70339387,
+              "sha256": "31d949c6ef86dc8553ce7ab4a794a393096c95dd77c7074a9faaf36e643254ca",
+              "downloads": 18,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "app-release.aab",
+              "downloadUrl": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/app-release.aab",
+              "platform": "android",
+              "architecture": null,
+              "fileType": "AAB",
+              "size": 172108069,
+              "sha256": "17d0254647ff56e6bf823da9227c7efd929e47af1d907d3267f5d4a48a323f42",
+              "downloads": 7,
+              "mimeType": "raw",
+              "installable": true
+            },
+            {
+              "filename": "app-x86_64-release.apk",
+              "downloadUrl": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/app-x86_64-release.apk",
+              "platform": "android",
+              "architecture": "x86_64",
+              "fileType": "APK",
+              "size": 83720927,
+              "sha256": "5a5f0f7c21b936f804e684ff4411a8ee94c3131d6ceb10be9db50922ea69b4c0",
+              "downloads": 14,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "conduit.ipa",
+              "downloadUrl": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/conduit.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 35794270,
+              "sha256": "8657f3cbe68a00f6b965581ccbd417f42ff525823c80335e5e8efdb5e371d811",
+              "downloads": 61,
+              "mimeType": "raw",
+              "installable": true
+            }
+          ],
+          "sha256": "8657f3cbe68a00f6b965581ccbd417f42ff525823c80335e5e8efdb5e371d811",
+          "downloads": 61
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "conduit",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/cogwheel0/conduit",
+        "sourceURL": "https://github.com/cogwheel0/conduit",
+        "verification": {
+          "method": "github-release",
+          "publisher": "cogwheel0/conduit",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA (conduit.ipa) from the developer's GitHub releases; the debug-flavored bundle (app.cogwheel.conduit.debug) is excluded. Requires a self-hosted Open WebUI/Ollama server or your own API endpoints."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
         }
       }
     },
@@ -838,7 +1180,7 @@
               "fileType": "IPA",
               "size": 17963367,
               "sha256": "8460c194f0b24ab3a15594e800e1533cb14e90e0aa51527b3609c7ac0f9745c2",
-              "downloads": 31958,
+              "downloads": 31961,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -850,13 +1192,13 @@
               "fileType": "other",
               "size": 17963682,
               "sha256": "7a25dba181257dd55800a3991f185e474fc17770aa66535dd45de67e6fe2b04c",
-              "downloads": 3374,
+              "downloads": 3375,
               "mimeType": "application/octet-stream",
               "installable": false
             }
           ],
           "sha256": "8460c194f0b24ab3a15594e800e1533cb14e90e0aa51527b3609c7ac0f9745c2",
-          "downloads": 31958
+          "downloads": 31961
         }
       ],
       "screenshotURLs": [],
@@ -931,7 +1273,7 @@
               "fileType": "IPA",
               "size": 14241853,
               "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
-              "downloads": 46943,
+              "downloads": 46963,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -949,7 +1291,7 @@
             }
           ],
           "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
-          "downloads": 46943
+          "downloads": 46963
         }
       ],
       "screenshotURLs": [
@@ -996,6 +1338,231 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-07-05"
+        }
+      }
+    },
+    {
+      "name": "Fladder",
+      "bundleIdentifier": "nl.jknaapen.fladder",
+      "developerName": "DonutWare",
+      "subtitle": "Cross-platform Jellyfin frontend",
+      "localizedDescription": "Fladder is a free and open-source Jellyfin frontend built on Flutter, giving you a beautiful Netflix-style interface over your own media library on iPhone and iPad. Direct play and transcode support, offline viewing with sync, multi-server switching, and full library management — no server plugins required.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Fladder.webp",
+      "tintColor": "A34920",
+      "category": "photo-video",
+      "version": "0.11.1",
+      "versionDate": "2026-09-08",
+      "versionDescription": "Fladder 0.11.1 | Fladder-iOS-0.11.1\n\n<!-- Release notes generated using configuration in .github/release.yml at v0.11.1 -->\n\n## What's Changed\nRelease is v0.11.1 is a hot-fix release for v0.11.0 mainly fixing local network connections not working on Android. Besides that the changelog remains the same.\n\n## Music playback\n\nMusic playback has finally arrived after a long time.\n\n<img height=\"480\" alt=\"music_dashboard\" src=\"https://github.com/user-attachments/assets/a5f829d2-bd65-4502-b06f-7c55bf465b58\" />\n\nThe music dashboard can be accessed by long pressing the home button and selecting music dashboard.\n\nIncluding the following features\n- Music dashboard\n- Gapless playback\n- Volume normalization\n- Fade in/out when pausing and switching tracks that are not in the same album\n- Lyrics\n- Syncing of playlist albums tracks etc.\n\nThe music playback is probably best considered to be in beta. While everything works there can and will be small bugs/annoyances. For AndroidTV navigation of the player controls are a bit cumbersome and will be improved along with other dPad improvements\n\n## Picture-in-Picture\n<img  height=\"480\" alt=\"pip\" src=\"https://github.com/user-attachments/assets/b808c9b7-c4f2-43e4-9f4d-3bcab96b9f36\" />\n\n## Filters 2.0 + Library search improvements\nThe filters in the library search view have now been improved. Besides a lot of small bugfixes, more settings are now saved. \n- Allow setting filters for specific folders inside libraries not just libraries themselves\n- Add any saved filter to the side navigation bar\n- Setting a \"default/favorite\" filter that applies instead of the default behavior for that library.\n\n## Ambient blur\nFor the people that don't like black-bars around their videos there is now the option to enable \"ambient blur\" this generates a YouTube \"theather\" like blur around videos.\n\n##\n\n### Exciting New Features 🏕\n* feat: Add hotkeys to step through frames by @peanut250 in https://github.com/DonutWare/Fladder/pull/928\n* feat: Add hotkeys for instant seek by @peanut250 in https://github.com/DonutWare/Fladder/pull/945\n* feat: Music playback by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1005\n* feat: Implement biometrics for all platforms by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1006\n* feat: add subtitle toggle hotkey by @schembriaiden in https://github.com/DonutWare/Fladder/pull/961\n* feat: add \"Open Jellyfin QuickConnect\" link to QuickConnect modal by @v3DJG6GL in https://github.com/DonutWare/Fladder/pull/974\n* feat(pip): add Picture-in-Picture support for Android and iOS by @aviadlevy in https://github.com/DonutWare/Fladder/pull/995\n* feat: Update system colors on app resume by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1027\n* feat: Add \"set as\" and move the share button for images by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1028\n* feat: Improve biometrics message and face unlock by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1029\n* feat: Library filters 2.0 by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1054\n### Bugfixes 🐞\n* fix: Performance impact in details screens by @PartyDonut in https://github.com/DonutWare/Fladder/pull/959\n* fix: specials showing in wrong category in sync by @schembriaiden in https://github.com/DonutWare/Fladder/pull/954\n* fix: Failed to play items with empty backdrop image list by @dertasiu in https://github.com/DonutWare/Fladder/pull/969\n* fix(web): container ENV vars unreliably applied due to startup race by @v3DJG6GL in https://github.com/DonutWare/Fladder/pull/972\n* fix: audio glitches on Android by @schembriaiden in https://github.com/DonutWare/Fladder/pull/964\n* fix: prevent sidebar labels wrapping by @Pegoku in https://github.com/DonutWare/Fladder/pull/1003\n* fix: improve play/pause behavior on desktop by @loregard735 in https://github.com/DonutWare/Fladder/pull/986\n* fix: Improve multi-window support by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1013\n* fix: TV Guide/Channel/Program not updating correctly by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1014\n* fix: Improve offline capabilities by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1030\n* fix(AndroidTV): App not initializing in TV mode by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1049\n* fix: Persist subtitle font weight across app restarts by @Charlie284 in https://github.com/DonutWare/Fladder/pull/1075\n* fix(macOS): Double click titlebar to zoom by @aaravjhamb in https://github.com/DonutWare/Fladder/pull/1033\n* fix: Volume indicator text in light mode by @aviadlevy in https://github.com/DonutWare/Fladder/pull/1045\n* fix(Android): Keep screen awake after returning to video playback from background by @aviadlevy in https://github.com/DonutWare/Fladder/pull/1047\n* fix: Subtitle/audio mismatch under certain conditions and with multiple default tracks by @aviadlevy in https://github.com/DonutWare/Fladder/pull/1044\n* fix: Use thumb for next-up/continue instead of posters by @TheMatrixan in https://github.com/DonutWare/Fladder/pull/1051\n* fix: Use internet bitrate for mobile playback by @Charlie284 in https://github.com/DonutWare/Fladder/pull/1086\n* fix: keep playback queue anchor in sync when advancing episodes by @JenteJan in https://github.com/DonutWare/Fladder/pull/1026\n* fix(Android): Local network permission Android 17+ by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1112\n### Other Changes\n* refactor: make Linux binary name lowercase by @schembriaiden in https://github.com/DonutWare/Fladder/pull/950\n* refactor(i18n): rename \"Local Server URL\" → \"Local Jellyfin URL\" by @v3DJG6GL in https://github.com/DonutWare/Fladder/pull/975\n* chore: flathub branding and updated documentation by @schembriaiden in https://github.com/DonutWare/Fladder/pull/1012\n* chore: Updated translations from  Hosted Weblate by @weblate in https://github.com/DonutWare/Fladder/pull/1084\n\n\n## New Contributors\n* @peanut250 made their first contribution in https://github.com/DonutWare/Fladder/pull/928\n* @dertasiu made their first contribution in https://github.com/DonutWare/Fladder/pull/969\n* @Pegoku made their first contribution in https://github.com/DonutWare/Fladder/pull/1003\n* @loregard735 made their first contribution in https://github.com/DonutWare/Fladder/pull/986\n* @aviadlevy made their first contribution in https://github.com/DonutWare/Fladder/pull/995\n* @JenteJan made their first contribution in https://github.com/DonutWare/Fladder/pull/1026\n* @Charlie284 made their first contribution in https://github.com/DonutWare/Fladder/pull/1075\n* @aaravjhamb made their first contribution in https://github.com/DonutWare/Fladder/pull/1033\n* @TheMatrixan made their first contribution in https://github.com/DonutWare/Fladder/pull/1051\n\n**Full Changelog**: https://github.com/DonutWare/Fladder/compare/v0.10.3...v0.11.1",
+      "downloadURL": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa",
+      "size": 41137245,
+      "versions": [
+        {
+          "version": "0.11.1",
+          "date": "2026-09-08",
+          "localizedDescription": "Fladder 0.11.1 | Fladder-iOS-0.11.1\n\n<!-- Release notes generated using configuration in .github/release.yml at v0.11.1 -->\n\n## What's Changed\nRelease is v0.11.1 is a hot-fix release for v0.11.0 mainly fixing local network connections not working on Android. Besides that the changelog remains the same.\n\n## Music playback\n\nMusic playback has finally arrived after a long time.\n\n<img height=\"480\" alt=\"music_dashboard\" src=\"https://github.com/user-attachments/assets/a5f829d2-bd65-4502-b06f-7c55bf465b58\" />\n\nThe music dashboard can be accessed by long pressing the home button and selecting music dashboard.\n\nIncluding the following features\n- Music dashboard\n- Gapless playback\n- Volume normalization\n- Fade in/out when pausing and switching tracks that are not in the same album\n- Lyrics\n- Syncing of playlist albums tracks etc.\n\nThe music playback is probably best considered to be in beta. While everything works there can and will be small bugs/annoyances. For AndroidTV navigation of the player controls are a bit cumbersome and will be improved along with other dPad improvements\n\n## Picture-in-Picture\n<img  height=\"480\" alt=\"pip\" src=\"https://github.com/user-attachments/assets/b808c9b7-c4f2-43e4-9f4d-3bcab96b9f36\" />\n\n## Filters 2.0 + Library search improvements\nThe filters in the library search view have now been improved. Besides a lot of small bugfixes, more settings are now saved. \n- Allow setting filters for specific folders inside libraries not just libraries themselves\n- Add any saved filter to the side navigation bar\n- Setting a \"default/favorite\" filter that applies instead of the default behavior for that library.\n\n## Ambient blur\nFor the people that don't like black-bars around their videos there is now the option to enable \"ambient blur\" this generates a YouTube \"theather\" like blur around videos.\n\n##\n\n### Exciting New Features 🏕\n* feat: Add hotkeys to step through frames by @peanut250 in https://github.com/DonutWare/Fladder/pull/928\n* feat: Add hotkeys for instant seek by @peanut250 in https://github.com/DonutWare/Fladder/pull/945\n* feat: Music playback by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1005\n* feat: Implement biometrics for all platforms by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1006\n* feat: add subtitle toggle hotkey by @schembriaiden in https://github.com/DonutWare/Fladder/pull/961\n* feat: add \"Open Jellyfin QuickConnect\" link to QuickConnect modal by @v3DJG6GL in https://github.com/DonutWare/Fladder/pull/974\n* feat(pip): add Picture-in-Picture support for Android and iOS by @aviadlevy in https://github.com/DonutWare/Fladder/pull/995\n* feat: Update system colors on app resume by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1027\n* feat: Add \"set as\" and move the share button for images by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1028\n* feat: Improve biometrics message and face unlock by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1029\n* feat: Library filters 2.0 by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1054\n### Bugfixes 🐞\n* fix: Performance impact in details screens by @PartyDonut in https://github.com/DonutWare/Fladder/pull/959\n* fix: specials showing in wrong category in sync by @schembriaiden in https://github.com/DonutWare/Fladder/pull/954\n* fix: Failed to play items with empty backdrop image list by @dertasiu in https://github.com/DonutWare/Fladder/pull/969\n* fix(web): container ENV vars unreliably applied due to startup race by @v3DJG6GL in https://github.com/DonutWare/Fladder/pull/972\n* fix: audio glitches on Android by @schembriaiden in https://github.com/DonutWare/Fladder/pull/964\n* fix: prevent sidebar labels wrapping by @Pegoku in https://github.com/DonutWare/Fladder/pull/1003\n* fix: improve play/pause behavior on desktop by @loregard735 in https://github.com/DonutWare/Fladder/pull/986\n* fix: Improve multi-window support by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1013\n* fix: TV Guide/Channel/Program not updating correctly by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1014\n* fix: Improve offline capabilities by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1030\n* fix(AndroidTV): App not initializing in TV mode by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1049\n* fix: Persist subtitle font weight across app restarts by @Charlie284 in https://github.com/DonutWare/Fladder/pull/1075\n* fix(macOS): Double click titlebar to zoom by @aaravjhamb in https://github.com/DonutWare/Fladder/pull/1033\n* fix: Volume indicator text in light mode by @aviadlevy in https://github.com/DonutWare/Fladder/pull/1045\n* fix(Android): Keep screen awake after returning to video playback from background by @aviadlevy in https://github.com/DonutWare/Fladder/pull/1047\n* fix: Subtitle/audio mismatch under certain conditions and with multiple default tracks by @aviadlevy in https://github.com/DonutWare/Fladder/pull/1044\n* fix: Use thumb for next-up/continue instead of posters by @TheMatrixan in https://github.com/DonutWare/Fladder/pull/1051\n* fix: Use internet bitrate for mobile playback by @Charlie284 in https://github.com/DonutWare/Fladder/pull/1086\n* fix: keep playback queue anchor in sync when advancing episodes by @JenteJan in https://github.com/DonutWare/Fladder/pull/1026\n* fix(Android): Local network permission Android 17+ by @PartyDonut in https://github.com/DonutWare/Fladder/pull/1112\n### Other Changes\n* refactor: make Linux binary name lowercase by @schembriaiden in https://github.com/DonutWare/Fladder/pull/950\n* refactor(i18n): rename \"Local Server URL\" → \"Local Jellyfin URL\" by @v3DJG6GL in https://github.com/DonutWare/Fladder/pull/975\n* chore: flathub branding and updated documentation by @schembriaiden in https://github.com/DonutWare/Fladder/pull/1012\n* chore: Updated translations from  Hosted Weblate by @weblate in https://github.com/DonutWare/Fladder/pull/1084\n\n\n## New Contributors\n* @peanut250 made their first contribution in https://github.com/DonutWare/Fladder/pull/928\n* @dertasiu made their first contribution in https://github.com/DonutWare/Fladder/pull/969\n* @Pegoku made their first contribution in https://github.com/DonutWare/Fladder/pull/1003\n* @loregard735 made their first contribution in https://github.com/DonutWare/Fladder/pull/986\n* @aviadlevy made their first contribution in https://github.com/DonutWare/Fladder/pull/995\n* @JenteJan made their first contribution in https://github.com/DonutWare/Fladder/pull/1026\n* @Charlie284 made their first contribution in https://github.com/DonutWare/Fladder/pull/1075\n* @aaravjhamb made their first contribution in https://github.com/DonutWare/Fladder/pull/1033\n* @TheMatrixan made their first contribution in https://github.com/DonutWare/Fladder/pull/1051\n\n**Full Changelog**: https://github.com/DonutWare/Fladder/compare/v0.10.3...v0.11.1",
+          "downloadURL": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa",
+          "size": 41137245,
+          "minOSVersion": "14.0",
+          "releaseUrl": "https://github.com/DonutWare/Fladder/releases/tag/v0.11.1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Fladder-Android-0.11.1-arm64-v8a.apk",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Android-0.11.1-arm64-v8a.apk",
+              "platform": "android",
+              "architecture": "arm64",
+              "fileType": "APK",
+              "size": 82205001,
+              "sha256": "b8287e420641f740fe433d2d5476d6bfceedb58e0dd84a98ba575252c1014b4b",
+              "downloads": 925,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Fladder-Android-0.11.1-armeabi-v7a.apk",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Android-0.11.1-armeabi-v7a.apk",
+              "platform": "android",
+              "architecture": "armv7",
+              "fileType": "APK",
+              "size": 76769213,
+              "sha256": "1e9d36b9ab0a24d76bfb77bb692ef0b2a3a60733ad165b80dee363986046650d",
+              "downloads": 26,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Fladder-Android-0.11.1-x86_64.apk",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Android-0.11.1-x86_64.apk",
+              "platform": "android",
+              "architecture": "x86_64",
+              "fileType": "APK",
+              "size": 91253671,
+              "sha256": "66661b9e9b7eaf1768bd757e9a6cab41f1b170b76f9c98372b436d14b4f2c043",
+              "downloads": 35,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Fladder-Android-0.11.1.aab",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Android-0.11.1.aab",
+              "platform": "android",
+              "architecture": null,
+              "fileType": "AAB",
+              "size": 132458682,
+              "sha256": "f544718b990dc0e1081a1e42baeb579c8d00d053bb7e585e3fd7a60f9afa09f6",
+              "downloads": 4,
+              "mimeType": "application/x-authorware-bin",
+              "installable": true
+            },
+            {
+              "filename": "Fladder-iOS-0.11.1.ipa",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 41137245,
+              "sha256": "e9538c2a3a7acc1d6d3d97ab69b6bddcf6bc5763dcd520139c8450ce8604fc3c",
+              "downloads": 30,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Fladder-Linux-0.11.1.AppImage",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Linux-0.11.1.AppImage",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "AppImage",
+              "size": 36398272,
+              "sha256": "2d007b89fa9af207955fdc631e5227358f5e20f7aa96c3f2f66409c040a4e343",
+              "downloads": 36,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Fladder-Linux-0.11.1.AppImage.zsync",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Linux-0.11.1.AppImage.zsync",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "other",
+              "size": 124628,
+              "sha256": "86f2f0e01d0a20b3af8607fa09504a410fc2df0157468149e7d9dff3683973ce",
+              "downloads": 78,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "Fladder-Linux-0.11.1.flatpak",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Linux-0.11.1.flatpak",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "other",
+              "size": 29193984,
+              "sha256": "816e4f6cc9603e34fd9384e3b0f9a9e378343f68075f59d7067e6ebdf685c78e",
+              "downloads": 21,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "Fladder-Linux-0.11.1.zip",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Linux-0.11.1.zip",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 43040367,
+              "sha256": "f5441e90329002b65eb58dfc5fd1bf88e5dd8b75d432d4e11c222109f3c7e66f",
+              "downloads": 8,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "Fladder-macOS-0.11.1.dmg",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-macOS-0.11.1.dmg",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "DMG",
+              "size": 77810469,
+              "sha256": "db7f93e833a14afabb71032a0664c831c567128d5b60c6accc402775065efe51",
+              "downloads": 64,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Fladder-Web-0.11.1.zip",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Web-0.11.1.zip",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 21760791,
+              "sha256": "108ae434482803ad8abed8f7d02254b95f0c3452a0b685490f327610c45af461",
+              "downloads": 18,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "Fladder-Windows-0.11.1-Setup.exe",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Windows-0.11.1-Setup.exe",
+              "platform": "windows",
+              "architecture": null,
+              "fileType": "EXE",
+              "size": 64513470,
+              "sha256": "bcfd66113cbc599126a0d47cdffde18df21300aef191deb221b7d8c6571552c5",
+              "downloads": 170,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Fladder-Windows-0.11.1.zip",
+              "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-Windows-0.11.1.zip",
+              "platform": "windows",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 88784379,
+              "sha256": "c1180beb1ecabe8c79b60adcb23d02c55043e4593490892f965b776910ff6b41",
+              "downloads": 72,
+              "mimeType": "application/zip",
+              "installable": false
+            }
+          ],
+          "sha256": "e9538c2a3a7acc1d6d3d97ab69b6bddcf6bc5763dcd520139c8450ce8604fc3c",
+          "downloads": 30
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "fladder",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/DonutWare/Fladder",
+        "sourceURL": "https://github.com/DonutWare/Fladder",
+        "verification": {
+          "method": "github-release",
+          "publisher": "DonutWare/Fladder",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official release IPA (Fladder-iOS-<version>.ipa) from the developer's GitHub releases; the 'nightly' tag is excluded so only stable builds are tracked. Requires a Jellyfin server. A natural alternative to Streamyfin."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-08",
+          "lastUpdatedAt": "2026-09-08"
         }
       }
     },
@@ -1243,7 +1810,7 @@
               "fileType": "IPA",
               "size": 24288935,
               "sha256": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7",
-              "downloads": 10795,
+              "downloads": 10797,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -1261,7 +1828,7 @@
             }
           ],
           "sha256": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7",
-          "downloads": 10795
+          "downloads": 10797
         }
       ],
       "screenshotURLs": [],
@@ -1336,7 +1903,7 @@
               "fileType": "APK",
               "size": 63573400,
               "sha256": "a35ad4cc96695e0aa644899a6b4576717c6a4d468ad95b91dc41aa9131f55e20",
-              "downloads": 670,
+              "downloads": 671,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -1477,7 +2044,7 @@
               "fileType": "IPA",
               "size": 35403538,
               "sha256": "97dc0fd2202fd4460efcab389943b8d5fdbb4988efff76b116b92b84a4662425",
-              "downloads": 267911,
+              "downloads": 267948,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -1489,13 +2056,13 @@
               "fileType": "IPA",
               "size": 4707271,
               "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6",
-              "downloads": 76213,
+              "downloads": 76224,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6",
-          "downloads": 76213
+          "downloads": 76224
         }
       ],
       "screenshotURLs": [
@@ -1583,7 +2150,7 @@
               "fileType": "IPA",
               "size": 52332306,
               "sha256": null,
-              "downloads": 37349,
+              "downloads": 37351,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -1648,7 +2215,7 @@
               "installable": true
             }
           ],
-          "downloads": 37349
+          "downloads": 37351
         }
       ],
       "screenshotURLs": [],
@@ -1723,13 +2290,13 @@
               "fileType": "IPA",
               "size": 106420283,
               "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
-              "downloads": 8,
+              "downloads": 10,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
-          "downloads": 8
+          "downloads": 10
         }
       ],
       "screenshotURLs": [
@@ -2004,6 +2571,99 @@
       }
     },
     {
+      "name": "NeoFreeBird",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "developerName": "NeoFreeBird contributors",
+      "subtitle": "Modified Twitter with QoL fixes and reverts",
+      "localizedDescription": "NeoFreeBird is a modified build of the official Twitter app that reverts unpopular rebranding and interface changes, restores classic features, and bundles quality-of-life modifications including BHTwitter options — built and published automatically from the project's GitHub releases. Shares com.atebits.Tweetie2 with the App Store Twitter/X app and BHTwitter: install one at a time.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/NeoFreeBird.webp",
+      "tintColor": "1D9BF0",
+      "category": "social",
+      "version": "2.2",
+      "versionDate": "2025-11-03",
+      "versionDescription": "Twitter 2.2 | NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin\n\nNeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\n\n### Change log:\n\n**Twitter, version 11.35:**\n- Updated the Twitter build to 11.35\n\n**NeoFreeBird, version 2.2:**\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\n- Localized the Post > Tweet replacer\n- Improved the Open in Twitter extension\n- Minor bug fixes and other minor improvements\n\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\n\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
+      "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
+      "size": 158452402,
+      "versions": [
+        {
+          "version": "2.2",
+          "date": "2025-11-03",
+          "localizedDescription": "Twitter 2.2 | NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin\n\nNeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\n\n### Change log:\n\n**Twitter, version 11.35:**\n- Updated the Twitter build to 11.35\n\n**NeoFreeBird, version 2.2:**\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\n- Localized the Post > Tweet replacer\n- Improved the Open in Twitter extension\n- Minor bug fixes and other minor improvements\n\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\n\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
+          "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
+          "size": 158452402,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/NeoFreeBird/app/releases/tag/2.2",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
+              "downloadUrl": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 158452402,
+              "sha256": "e5592371a53e770a0ac99242a44b4f6ea27a521058470491f18e1ed661acdaa2",
+              "downloads": 22285,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "NeoFreeBird-2.2-Twitter-11.35.ipa",
+              "downloadUrl": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 153108663,
+              "sha256": "964d8e009113dea7c29924a746bebbf5f50c29d61c1fd8656a91a8a765231db0",
+              "downloads": 21595,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "e5592371a53e770a0ac99242a44b4f6ea27a521058470491f18e1ed661acdaa2",
+          "downloads": 22285
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "neofreebird",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/NeoFreeBird/app",
+        "sourceURL": "https://github.com/NeoFreeBird/app",
+        "verification": {
+          "method": "github-release",
+          "publisher": "NeoFreeBird/app",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPAs from the project's GitHub releases (its own AltStore source mirrors them). The plain build is distributed here; the -noFixTwitterLogin variant on the same release is a troubleshooting fallback. Twitter 11.x builds require iOS 15+. Shares the Twitter bundle identifier with BHTwitter in this catalog — install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2025-11-03",
+          "lastUpdatedAt": "2025-11-03"
+        }
+      }
+    },
+    {
       "name": "PPSSPP",
       "bundleIdentifier": "org.ppsspp.ppsspp",
       "developerName": "Henrik Rydgård",
@@ -2038,7 +2698,7 @@
               "fileType": "DEB",
               "size": 23412564,
               "sha256": "a3f888dcba0442b4d34a0ddd859747f4aa267b6249b56f5df6a7c327908371b9",
-              "downloads": 10118,
+              "downloads": 10120,
               "mimeType": "application/x-debian-package",
               "installable": true
             },
@@ -2062,7 +2722,7 @@
               "fileType": "IPA",
               "size": 31124277,
               "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
-              "downloads": 8305,
+              "downloads": 8311,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -2074,7 +2734,7 @@
               "fileType": "AppImage",
               "size": 48581283,
               "sha256": "18c1d515fd99b0b10ca5fa8cbab192f6d4c9d8a10381e16f5de8fb8f9d39bbe1",
-              "downloads": 5214,
+              "downloads": 5215,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -2098,7 +2758,7 @@
               "fileType": "AppImage",
               "size": 50689748,
               "sha256": "661c098e6b7f7610171a57b7c533ce8bba6f2312b71e76d61e850461973eba21",
-              "downloads": 14383,
+              "downloads": 14384,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -2110,7 +2770,7 @@
               "fileType": "other",
               "size": 173467,
               "sha256": "e2d4c9f6d238840ac6fc0da4f90769b810dd7760bae776ed5f95771fd45976be",
-              "downloads": 29386,
+              "downloads": 29388,
               "mimeType": "application/octet-stream",
               "installable": false
             },
@@ -2146,13 +2806,13 @@
               "fileType": "ZIP",
               "size": 37389023,
               "sha256": "fb32a215861a293c28f641bf47f3164766ba512214025f4457796c8d14242665",
-              "downloads": 5035,
+              "downloads": 5036,
               "mimeType": "application/zip",
               "installable": false
             }
           ],
           "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
-          "downloads": 8305
+          "downloads": 8311
         }
       ],
       "screenshotURLs": [],
@@ -2227,7 +2887,7 @@
               "fileType": "IPA",
               "size": 1076407494,
               "sha256": "2aaf7fe05cbe86a5d8c5c012c4b87a688d68fd160f53cca1f486d2e7d0f70f8c",
-              "downloads": 9634,
+              "downloads": 9635,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -2245,7 +2905,7 @@
             }
           ],
           "sha256": "2aaf7fe05cbe86a5d8c5c012c4b87a688d68fd160f53cca1f486d2e7d0f70f8c",
-          "downloads": 9634
+          "downloads": 9635
         }
       ],
       "screenshotURLs": [],
@@ -2707,7 +3367,7 @@
               "fileType": "other",
               "size": 315955,
               "sha256": "28c0125adf6cbdc8a49d9c2160e5d09468aee6770a3fa266267adec0f3631236",
-              "downloads": 125,
+              "downloads": 127,
               "mimeType": "binary/octet-stream",
               "installable": false
             },
@@ -2719,7 +3379,7 @@
               "fileType": "EXE",
               "size": 41802638,
               "sha256": "7f36ef4fd31c7c48ae493d3c01aa6cfb9f00e9cef661d56676037f266ea2cc21",
-              "downloads": 939,
+              "downloads": 942,
               "mimeType": "binary/octet-stream",
               "installable": true
             },
@@ -2860,13 +3520,13 @@
               "fileType": "IPA",
               "size": 28632252,
               "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
-              "downloads": 687180,
+              "downloads": 687199,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
-          "downloads": 687180
+          "downloads": 687199
         }
       ],
       "screenshotURLs": [
@@ -2923,6 +3583,87 @@
       }
     },
     {
+      "name": "Sora",
+      "bundleIdentifier": "me.cranci.sulfur",
+      "developerName": "cranci",
+      "subtitle": "Modular media streaming app for iOS",
+      "localizedDescription": "Sora is a modular, open-source media player for iPhone, iPad and Mac that streams movies and shows from community-maintained modules, with AniList sync, watching collections, watch-next recommendations, bookmarks and a fast native SwiftUI interface. The current build line is distributed as Sulfur.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Sora.webp",
+      "tintColor": "EE4310",
+      "category": "photo-video",
+      "version": "1.3.0",
+      "versionDate": "2026-08-20",
+      "versionDescription": "Sora 1.3.0 | Sulfur\n\n## What's New:\n- Modules Settings support\n- AniList sync (Watching/Planing collections)\n\n## Fixes:\n- Fixed search results being randomized\n- Fixed bookmark removal causing view to close\n- Fixed \"Mark as Watched\" option not showing up\n- Fixed \"Watch Next\" button choosing wrong season\n\n\n**Full Changelog**: https://github.com/cranci1/Sora/compare/1.2.0...1.3.0",
+      "downloadURL": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa",
+      "size": 3112338,
+      "versions": [
+        {
+          "version": "1.3.0",
+          "date": "2026-08-20",
+          "localizedDescription": "Sora 1.3.0 | Sulfur\n\n## What's New:\n- Modules Settings support\n- AniList sync (Watching/Planing collections)\n\n## Fixes:\n- Fixed search results being randomized\n- Fixed bookmark removal causing view to close\n- Fixed \"Mark as Watched\" option not showing up\n- Fixed \"Watch Next\" button choosing wrong season\n\n\n**Full Changelog**: https://github.com/cranci1/Sora/compare/1.2.0...1.3.0",
+          "downloadURL": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa",
+          "size": 3112338,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/cranci1/Sora/releases/tag/1.3.0",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Sulfur.ipa",
+              "downloadUrl": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 3112338,
+              "sha256": "8bcdf430a58fb2aa55e9b841266a6aff731af7623fcbb90a8bc4654a10d7c1ce",
+              "downloads": 581,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "8bcdf430a58fb2aa55e9b841266a6aff731af7623fcbb90a8bc4654a10d7c1ce",
+          "downloads": 581
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "sora",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/cranci1/Sora",
+        "sourceURL": "https://github.com/cranci1/Sora",
+        "verification": {
+          "method": "github-release",
+          "publisher": "cranci1/Sora",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA from the developer's GitHub releases; current builds ship as Sulfur.ipa (the project's renamed build) with bundle me.cranci.sulfur — the asset pattern also accepts Sora.ipa from older tags. Requires iOS 15+. Content modules are community-maintained."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-08-20",
+          "lastUpdatedAt": "2026-08-20"
+        }
+      }
+    },
+    {
       "name": "SpotiFLAC Mobile",
       "bundleIdentifier": "com.zarz.spotiflacAndroid",
       "developerName": "zarzet",
@@ -2957,7 +3698,7 @@
               "fileType": "APK",
               "size": 102232099,
               "sha256": "dca5575a769d0ef762a8a734bced9128cf3eb118f796aec809d2e347c767e121",
-              "downloads": 2639,
+              "downloads": 2650,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -2969,7 +3710,7 @@
               "fileType": "APK",
               "size": 81186819,
               "sha256": "5ccfa354b38cf9a7e686fc5cf0806137c83980a2aa9a803f27ecc1f4a5547003",
-              "downloads": 37653,
+              "downloads": 37860,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -2981,13 +3722,13 @@
               "fileType": "IPA",
               "size": 34171700,
               "sha256": "c25683b5d36f8d1d55deb29058cd601ee23a8b1e3a9e67ded75d8d53f9fa8bef",
-              "downloads": 860,
+              "downloads": 867,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "c25683b5d36f8d1d55deb29058cd601ee23a8b1e3a9e67ded75d8d53f9fa8bef",
-          "downloads": 860
+          "downloads": 867
         }
       ],
       "screenshotURLs": [],
@@ -3062,7 +3803,7 @@
               "fileType": "other",
               "size": 811,
               "sha256": "9056b0106032cd126a87d513e3d1a4025bba16689376e70b33e4113379a72599",
-              "downloads": 2140,
+              "downloads": 2141,
               "mimeType": "raw",
               "installable": false
             },
@@ -3074,7 +3815,7 @@
               "fileType": "other",
               "size": 1227,
               "sha256": "182c7196f7bae77b9b582e7165cf68da20410f5d5cd4f424dfd97f3e835141b7",
-              "downloads": 635,
+              "downloads": 636,
               "mimeType": "raw",
               "installable": false
             },
@@ -3086,7 +3827,7 @@
               "fileType": "APK",
               "size": 128388471,
               "sha256": "20de38abd2eea0c0998174c8a34b324f4a9531665110f67176257e7ecc5bf0fe",
-              "downloads": 200280,
+              "downloads": 200335,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -3134,7 +3875,7 @@
               "fileType": "AppImage",
               "size": 104290808,
               "sha256": "017d7b77919353b704990c71f80dee5e3381a4799ac46d3204cc5937a760b5c1",
-              "downloads": 964,
+              "downloads": 965,
               "mimeType": "raw",
               "installable": true
             },
@@ -3170,7 +3911,7 @@
               "fileType": "DEB",
               "size": 37996550,
               "sha256": "1446f998f986380330e279c5274902fb29a0e3305d5175a3bc83b4b06392e8cd",
-              "downloads": 6618,
+              "downloads": 6620,
               "mimeType": "raw",
               "installable": true
             },
@@ -3182,7 +3923,7 @@
               "fileType": "other",
               "size": 37131723,
               "sha256": "cf4feaa792133afe2887064de119899f102b78e77aff37499c09a3343b4e4abc",
-              "downloads": 1435,
+              "downloads": 1436,
               "mimeType": "raw",
               "installable": false
             },
@@ -3194,7 +3935,7 @@
               "fileType": "DMG",
               "size": 63167099,
               "sha256": "27627dfd44190040af1a6ba6a86cdc4450399296a43a616940a94ae687ac0913",
-              "downloads": 6823,
+              "downloads": 6825,
               "mimeType": "raw",
               "installable": true
             },
@@ -3218,7 +3959,7 @@
               "fileType": "EXE",
               "size": 38294732,
               "sha256": "e5641f3841ec724fcb5e00a22d980f410ee507fdd00669b86db0c29f9b741162",
-              "downloads": 55833,
+              "downloads": 55856,
               "mimeType": "raw",
               "installable": true
             },
@@ -3311,13 +4052,13 @@
               "fileType": "IPA",
               "size": 12824047,
               "sha256": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845",
-              "downloads": 26260,
+              "downloads": 26278,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845",
-          "downloads": 26260
+          "downloads": 26278
         }
       ],
       "screenshotURLs": [
@@ -3396,12 +4137,12 @@
               "fileType": "IPA",
               "size": 7141231,
               "sha256": null,
-              "downloads": 9156,
+              "downloads": 9158,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
-          "downloads": 9156
+          "downloads": 9158
         }
       ],
       "screenshotURLs": [],
@@ -3673,6 +4414,99 @@
       }
     },
     {
+      "name": "TwitchAdBlock",
+      "bundleIdentifier": "tv.twitch",
+      "developerName": "gunnerkidBT (original by dayanch96)",
+      "subtitle": "Ad blocker for the Twitch app on iOS",
+      "localizedDescription": "TwitchAdBlock is an open-source tweak for the native Twitch iOS app that blocks advert break requests at the network layer, so streams play without ads and without the purple loading screen. This fork by gunnerkidBT keeps the tweak working on the latest Twitch releases (29.x-30.x) and modern iOS versions, and publishes ready-to-sideload IPAs built from the official tweak source.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/TAB.webp",
+      "tintColor": "9146FF",
+      "category": "social",
+      "version": "30.7",
+      "versionDate": "2026-08-14",
+      "versionDescription": "Twitch 30.7 | TwitchAdBlock 0.1.13\n\n**TwitchMods v0.1.13** — for Twitch iOS **30.7**\n\n### New in v0.1.13\n- **Casting & AirPlay now work with ad-blocking on.** Previously, having the ad-block proxy enabled could make casting to a Chromecast crash after a few seconds, or make AirPlay to an Apple TV show \"offline.\" The mod now automatically steps aside while you're casting/AirPlaying, so the stream plays on the TV — and your phone goes right back to blocking ads the moment you stop. (The stream *on the TV* still shows ads — the TV fetches the video itself, so that can't be blocked — but your phone stays ad-free.)\n\n### Everything else (v0.1.12)\n- Blocks ads (live + VOD pre-rolls, feed banners, sponsor spots, the \"Go Ad-Free\" Turbo button)\n- Keep Live Feed Playing · 7TV/BTTV/FFZ chat emotes + Reload · settings backup/restore · Diagnostics · launch screen · hide Stories\n\n### Downloads\n- **`tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa`** — full app.\n- **`tv.twitch-30.7-TwitchAdBlock-0.1.13-noplugins.ipa`** — app extensions removed so a free Apple ID only uses 1 App ID slot when sideloading.\n\nInstall with **AltStore / SideStore** (drag in the IPA) or **TrollStore** (tap +, pick the IPA).\n\nFull plain-language changelog: [`CHANGELOG.md`](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
+      "downloadURL": "https://github.com/gunnerkidBT/TwitchAdBlock/releases/download/v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa",
+      "size": 152372292,
+      "versions": [
+        {
+          "version": "30.7",
+          "date": "2026-08-14",
+          "localizedDescription": "Twitch 30.7 | TwitchAdBlock 0.1.13\n\n**TwitchMods v0.1.13** — for Twitch iOS **30.7**\n\n### New in v0.1.13\n- **Casting & AirPlay now work with ad-blocking on.** Previously, having the ad-block proxy enabled could make casting to a Chromecast crash after a few seconds, or make AirPlay to an Apple TV show \"offline.\" The mod now automatically steps aside while you're casting/AirPlaying, so the stream plays on the TV — and your phone goes right back to blocking ads the moment you stop. (The stream *on the TV* still shows ads — the TV fetches the video itself, so that can't be blocked — but your phone stays ad-free.)\n\n### Everything else (v0.1.12)\n- Blocks ads (live + VOD pre-rolls, feed banners, sponsor spots, the \"Go Ad-Free\" Turbo button)\n- Keep Live Feed Playing · 7TV/BTTV/FFZ chat emotes + Reload · settings backup/restore · Diagnostics · launch screen · hide Stories\n\n### Downloads\n- **`tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa`** — full app.\n- **`tv.twitch-30.7-TwitchAdBlock-0.1.13-noplugins.ipa`** — app extensions removed so a free Apple ID only uses 1 App ID slot when sideloading.\n\nInstall with **AltStore / SideStore** (drag in the IPA) or **TrollStore** (tap +, pick the IPA).\n\nFull plain-language changelog: [`CHANGELOG.md`](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
+          "downloadURL": "https://github.com/gunnerkidBT/TwitchAdBlock/releases/download/v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa",
+          "size": 152372292,
+          "minOSVersion": "14.0",
+          "releaseUrl": "https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v30.7-0.1.13",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "tv.twitch-30.7-TwitchAdBlock-0.1.13-noplugins.ipa",
+              "downloadUrl": "https://github.com/gunnerkidBT/TwitchAdBlock/releases/download/v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13-noplugins.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 143381478,
+              "sha256": "d01020aa34ddf4517a1a0e5fef430120450148b7cd8346024b50a8445d7f6bf4",
+              "downloads": 399,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa",
+              "downloadUrl": "https://github.com/gunnerkidBT/TwitchAdBlock/releases/download/v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 152372292,
+              "sha256": "5ddea13264259f54c7f8812ef16ddc20ddb675703826537a1e5dfd144f228181",
+              "downloads": 830,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "5ddea13264259f54c7f8812ef16ddc20ddb675703826537a1e5dfd144f228181",
+          "downloads": 830
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "twitchadblock",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/gunnerkidBT/TwitchAdBlock",
+        "sourceURL": "https://github.com/gunnerkidBT/TwitchAdBlock",
+        "verification": {
+          "method": "github-release",
+          "publisher": "gunnerkidBT/TwitchAdBlock",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPAs from the fork's GitHub releases; the '-noplugins' variant on each release is intentionally not distributed. Replaces the App Store Twitch app (shares tv.twitch). The upstream tweak repo publishes only .deb packages for jailbroken devices; the sideload IPA comes from this maintained fork."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-08-14",
+          "lastUpdatedAt": "2026-08-14"
+        }
+      }
+    },
+    {
       "name": "UTM",
       "bundleIdentifier": "com.utmapp.UTM",
       "developerName": "UTM Team",
@@ -3755,7 +4589,7 @@
               "fileType": "IPA",
               "size": 130058389,
               "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
-              "downloads": 80315,
+              "downloads": 80322,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -3779,7 +4613,7 @@
               "fileType": "IPA",
               "size": 130058653,
               "sha256": "42c568d53f12f2d594665daa7f7382af501b97880d61f58aceca73de23f17b28",
-              "downloads": 21091,
+              "downloads": 21092,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -3803,13 +4637,13 @@
               "fileType": "DMG",
               "size": 250021057,
               "sha256": "a8435c93cfb5f8bbfeea4b134cfad1ac66b67632b75e438c63b1a8ae043bef0e",
-              "downloads": 4286191,
+              "downloads": 4286646,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
-          "downloads": 80315
+          "downloads": 80322
         }
       ],
       "screenshotURLs": [],
@@ -4116,7 +4950,7 @@
               "fileType": "DMG",
               "size": 35462171,
               "sha256": "b56b55d0671ae604effb12d0394b74a552f203426cafa165f82488505fb465e3",
-              "downloads": 8584,
+              "downloads": 8592,
               "mimeType": "application/x-apple-diskimage",
               "installable": true
             },
@@ -4128,7 +4962,7 @@
               "fileType": "DMG",
               "size": 38897972,
               "sha256": "613f7e9c2d515e10ff1eae77bab236308cf5bd08b68ff3d1b65cb7a16cde0ef6",
-              "downloads": 1572,
+              "downloads": 1574,
               "mimeType": "application/x-apple-diskimage",
               "installable": true
             },
@@ -4140,7 +4974,7 @@
               "fileType": "other",
               "size": 19251683,
               "sha256": "e5822c193348534bb25d14e04ebec2d241058d12fa84beaa8234ee016710eb7a",
-              "downloads": 728,
+              "downloads": 730,
               "mimeType": "application/gzip",
               "installable": false
             },
@@ -4164,7 +4998,7 @@
               "fileType": "EXE",
               "size": 34381177,
               "sha256": "3b5fe1fcf74732f22fb07330205b2f02c37333916fc5b01a18d6ed0d55019266",
-              "downloads": 6131,
+              "downloads": 6134,
               "mimeType": "application/x-msdownload",
               "installable": true
             },
@@ -4269,7 +5103,7 @@
               "fileType": "APK",
               "size": 8228595,
               "sha256": "b164edc7e58b1d283f8f472aaccfabebc51dcf18588014176b18803f7d6e3b34",
-              "downloads": 1420,
+              "downloads": 1422,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -4654,13 +5488,13 @@
               "fileType": "IPA",
               "size": 128845098,
               "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-              "downloads": 34,
+              "downloads": 36,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-          "downloads": 34
+          "downloads": 36
         }
       ],
       "screenshotURLs": [],
@@ -4866,13 +5700,13 @@
               "fileType": "IPA",
               "size": 129031075,
               "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba",
-              "downloads": 248,
+              "downloads": 259,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba",
-          "downloads": 248
+          "downloads": 259
         },
         {
           "version": "20.21.6",
@@ -4894,13 +5728,13 @@
               "fileType": "IPA",
               "size": 115566999,
               "sha256": "9b97fdef5a336ef784621efa8f6afa8e30eff6dbe414a4924ef8020409628355",
-              "downloads": 7,
+              "downloads": 8,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "9b97fdef5a336ef784621efa8f6afa8e30eff6dbe414a4924ef8020409628355",
-          "downloads": 7
+          "downloads": 8
         },
         {
           "version": "19.20.2",
@@ -5280,13 +6114,13 @@
               "fileType": "IPA",
               "size": 104992686,
               "sha256": "c098eb3877d4e6526af83cfb1ff2e3eaa547c3e266dd01770a87acd2f9cf3944",
-              "downloads": 33,
+              "downloads": 34,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "c098eb3877d4e6526af83cfb1ff2e3eaa547c3e266dd01770a87acd2f9cf3944",
-          "downloads": 33
+          "downloads": 34
         }
       ],
       "screenshotURLs": [],
@@ -5582,21 +6416,21 @@
       "notify": true
     },
     {
+      "title": "Fladder v0.11.1",
+      "identifier": "news-fladder-0-11-1",
+      "caption": "Cross-platform Jellyfin frontend",
+      "date": "2026-09-08",
+      "appID": "nl.jknaapen.fladder",
+      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Fladder.webp",
+      "notify": true
+    },
+    {
       "title": "SpotiFLAC Mobile v4.9.6",
       "identifier": "news-spotiflac-4-9-6",
       "caption": "FLAC Downloader for iOS",
       "date": "2026-09-07",
       "appID": "com.zarz.spotiflacAndroid",
       "imageURL": "https://iamsmmh.github.io/OmniSource/assets/SpotiFLAC.webp",
-      "notify": true
-    },
-    {
-      "title": "Voyager v2.49.0",
-      "identifier": "news-voyager-2-49-0",
-      "caption": "Beautiful open-source client for Lemmy",
-      "date": "2026-09-06",
-      "appID": "app.vger.voyager",
-      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Voyager.webp",
       "notify": true
     }
   ]

@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "sources": 43,
+    "sources": 49,
     "healthy": 18,
     "degraded": 4,
     "unavailable": 0,
-    "unknown": 21
+    "unknown": 27
   },
   "pipeline": {
     "status": "degraded",
     "lastBuild": "2026-09-10",
-    "appsTotal": 43,
+    "appsTotal": 49,
     "appsHealthy": 18,
     "appsFailing": 2
   },
@@ -28,7 +28,7 @@
     },
     {
       "provider": "github",
-      "apps": 41,
+      "apps": 47,
       "healthy": 16,
       "unavailable": 0,
       "lastResolvedFrom": {
@@ -49,15 +49,19 @@
         "ytkp": "github:mrdrvt99/YouProEXTRA",
         "ytmusic": "github:mrdrvt99/YTMusicUltimate",
         "anxreader": "github:Anxcye/anx-reader",
+        "anymex": "github:RyanYuuki/AnymeX",
         "apollo": "github:Apollo-Reborn/Apollo-Reborn",
         "bhtwitter": "github:BandarHL/BHTwitter",
         "bluewallet": "github:BlueWallet/BlueWallet",
+        "conduit": "github:cogwheel0/conduit",
         "delta": "github:RileyTestut/Delta",
         "dolphinish": "github:OatmealDome/dolphin-ios",
+        "fladder": "github:DonutWare/Fladder",
         "ish": "github:ish-app/ish",
         "jellify": "github:Jellify-Music/App",
         "mame4ios": "github:yoshisuga/MAME4iOS",
         "minivmac": "github:zydeco/minivmac4ios",
+        "neofreebird": "github:NeoFreeBird/app",
         "ppsspp": "github:hrydgard/ppsspp",
         "provenance": "github:Provenance-Emu/Provenance",
         "qbitconnect": "github:RajnishOne/qbitconnect",
@@ -65,9 +69,11 @@
         "qbitcontroller": "github:Bartuzen/qBitController",
         "saber": "github:saber-notes/saber",
         "sidestore": "github:SideStore/SideStore",
+        "sora": "github:cranci1/Sora",
         "spotube": "github:KRTirtho/spotube",
         "stiknes": "github:StikEMU/StikNES-2.0",
         "streamyfin": "github:fredrikburmester/streamyfin",
+        "twitchadblock": "github:gunnerkidBT/TwitchAdBlock",
         "utm": "github:utmapp/UTM",
         "vcmi": "github:vcmi/vcmi",
         "voyager": "github:aeharding/voyager",
@@ -79,8 +85,8 @@
   "deployment": {
     "platform": "GitHub Pages (static)",
     "status": "ok",
-    "reachable": 43,
-    "total": 43
+    "reachable": 49,
+    "total": 49
   },
   "sources": [
     {
@@ -1937,6 +1943,23 @@
       "history": []
     },
     {
+      "id": "anymex",
+      "app": "anymex",
+      "name": "AnymeX",
+      "source": "RyanYuuki/AnymeX",
+      "sourceURL": "https://github.com/RyanYuuki/AnymeX",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-08-30",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "apollo",
       "app": "apollo",
       "name": "Apollo",
@@ -2073,6 +2096,23 @@
       "history": []
     },
     {
+      "id": "conduit",
+      "app": "conduit",
+      "name": "Conduit",
+      "source": "cogwheel0/conduit",
+      "sourceURL": "https://github.com/cogwheel0/conduit",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "delta",
       "app": "delta",
       "name": "Delta",
@@ -2102,6 +2142,23 @@
       "latencyMs": null,
       "checkedAt": "",
       "lastUpdate": "2026-06-20",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "fladder",
+      "app": "fladder",
+      "name": "Fladder",
+      "source": "DonutWare/Fladder",
+      "sourceURL": "https://github.com/DonutWare/Fladder",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-08",
       "valid": true,
       "detail": "",
       "history": []
@@ -2170,6 +2227,23 @@
       "latencyMs": null,
       "checkedAt": "",
       "lastUpdate": "2024-07-09",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "neofreebird",
+      "app": "neofreebird",
+      "name": "NeoFreeBird",
+      "source": "NeoFreeBird/app",
+      "sourceURL": "https://github.com/NeoFreeBird/app",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2025-11-03",
       "valid": true,
       "detail": "",
       "history": []
@@ -2464,6 +2538,23 @@
       ]
     },
     {
+      "id": "sora",
+      "app": "sora",
+      "name": "Sora",
+      "source": "cranci1/Sora",
+      "sourceURL": "https://github.com/cranci1/Sora",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-08-20",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "spotube",
       "app": "spotube",
       "name": "Spotube",
@@ -2510,6 +2601,23 @@
       "latencyMs": null,
       "checkedAt": "",
       "lastUpdate": "2026-06-02",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "twitchadblock",
+      "app": "twitchadblock",
+      "name": "TwitchAdBlock",
+      "source": "gunnerkidBT/TwitchAdBlock",
+      "sourceURL": "https://github.com/gunnerkidBT/TwitchAdBlock",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-08-14",
       "valid": true,
       "detail": "",
       "history": []

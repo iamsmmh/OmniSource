@@ -10,7 +10,7 @@ One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · 
 
 <!-- omnisource:stats:start -->
 
-**43** apps · **39** upstream sources · **42** verified · **1** community verified · **43/43** downloads online · last sync **2026-09-10**.
+**49** apps · **45** upstream sources · **48** verified · **1** community verified · **49/49** downloads online · last sync **2026-09-10**.
 
 <!-- omnisource:stats:end -->
 
@@ -104,7 +104,7 @@ The complete generated catalog is below — it refreshes automatically on every 
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-10 · 43 apps · 43/43 downloads reachable._
+_Catalogue last changed 2026-09-10 · 49 apps · 49/49 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -151,6 +151,12 @@ _Catalogue last changed 2026-09-10 · 43 apps · 43/43 downloads reachable._
 | **qBitController** | `dev.bartuzen.qbitcontroller` | `2.2.1` | 2026-07-28 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/qbitcontroller.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/qbitcontroller.json) | [`qbitcontroller.json`](https://iamsmmh.github.io/OmniSource/qbitcontroller.json) | [`qbitcontroller.xml`](https://iamsmmh.github.io/OmniSource/qbitcontroller.xml) |
 | **Mini vMac** | `net.namedfork.minivmac` | `2.6` | 2024-07-09 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/minivmac.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/minivmac.json) | [`minivmac.json`](https://iamsmmh.github.io/OmniSource/minivmac.json) | [`minivmac.xml`](https://iamsmmh.github.io/OmniSource/minivmac.xml) |
 | **StikNES** | `com.stik.StikNES` | `2.0.2` | 2025-02-23 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/stiknes.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/stiknes.json) | [`stiknes.json`](https://iamsmmh.github.io/OmniSource/stiknes.json) | [`stiknes.xml`](https://iamsmmh.github.io/OmniSource/stiknes.xml) |
+| **TwitchAdBlock** | `tv.twitch` | `30.7` | 2026-08-14 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/twitchadblock.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/twitchadblock.json) | [`twitchadblock.json`](https://iamsmmh.github.io/OmniSource/twitchadblock.json) | [`twitchadblock.xml`](https://iamsmmh.github.io/OmniSource/twitchadblock.xml) |
+| **NeoFreeBird** | `com.atebits.Tweetie2` | `2.2` | 2025-11-03 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/neofreebird.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/neofreebird.json) | [`neofreebird.json`](https://iamsmmh.github.io/OmniSource/neofreebird.json) | [`neofreebird.xml`](https://iamsmmh.github.io/OmniSource/neofreebird.xml) |
+| **Conduit** | `app.cogwheel.conduit` | `4.1.4` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/conduit.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/conduit.json) | [`conduit.json`](https://iamsmmh.github.io/OmniSource/conduit.json) | [`conduit.xml`](https://iamsmmh.github.io/OmniSource/conduit.xml) |
+| **Fladder** | `nl.jknaapen.fladder` | `0.11.1` | 2026-09-08 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/fladder.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/fladder.json) | [`fladder.json`](https://iamsmmh.github.io/OmniSource/fladder.json) | [`fladder.xml`](https://iamsmmh.github.io/OmniSource/fladder.xml) |
+| **AnymeX** | `com.ryan.anymex` | `3.1.7` | 2026-08-30 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/anymex.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/anymex.json) | [`anymex.json`](https://iamsmmh.github.io/OmniSource/anymex.json) | [`anymex.xml`](https://iamsmmh.github.io/OmniSource/anymex.xml) |
+| **Sora** | `me.cranci.sulfur` | `1.3.0` | 2026-08-20 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/sora.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/sora.json) | [`sora.json`](https://iamsmmh.github.io/OmniSource/sora.json) | [`sora.xml`](https://iamsmmh.github.io/OmniSource/sora.xml) |
 
 <!-- omnisource:catalog:end -->
 

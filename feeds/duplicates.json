@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 2,
-  "appsAffected": 9,
+  "count": 3,
+  "appsAffected": 11,
   "groups": [
     {
       "key": "com.google.ios.youtube",
@@ -92,6 +92,42 @@
         "name": "YouPro",
         "version": "21.36.6",
         "reason": "Newest version available (21.36.6, released 2026-09-10)"
+      },
+      "replacementRisk": true
+    },
+    {
+      "key": "com.atebits.Tweetie2",
+      "type": "bundle-id",
+      "reason": "2 apps share bundle identifier 'com.atebits.Tweetie2'",
+      "apps": [
+        {
+          "app": "bhtwitter",
+          "name": "BHTwitter",
+          "version": "4.4",
+          "releaseDate": "2025-05-13",
+          "source": "BandarHL/BHTwitter",
+          "developer": "BandarHL",
+          "category": "social",
+          "status": "stable",
+          "downloadURL": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-sideloaded.ipa"
+        },
+        {
+          "app": "neofreebird",
+          "name": "NeoFreeBird",
+          "version": "2.2",
+          "releaseDate": "2025-11-03",
+          "source": "NeoFreeBird/app",
+          "developer": "NeoFreeBird contributors",
+          "category": "social",
+          "status": "stable",
+          "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa"
+        }
+      ],
+      "recommended": {
+        "app": "bhtwitter",
+        "name": "BHTwitter",
+        "version": "4.4",
+        "reason": "Newest version available (4.4, released 2025-05-13)"
       },
       "replacementRisk": true
     },
@@ -209,6 +245,28 @@
         "reason": "Newest version available (21.36.6, released 2026-09-10)"
       },
       "reason": "7 apps share bundle identifier 'com.google.ios.youtube'"
+    },
+    "bhtwitter": {
+      "groupKey": "com.atebits.Tweetie2",
+      "type": "bundle-id",
+      "recommended": {
+        "app": "bhtwitter",
+        "name": "BHTwitter",
+        "version": "4.4",
+        "reason": "Newest version available (4.4, released 2025-05-13)"
+      },
+      "reason": "2 apps share bundle identifier 'com.atebits.Tweetie2'"
+    },
+    "neofreebird": {
+      "groupKey": "com.atebits.Tweetie2",
+      "type": "bundle-id",
+      "recommended": {
+        "app": "bhtwitter",
+        "name": "BHTwitter",
+        "version": "4.4",
+        "reason": "Newest version available (4.4, released 2025-05-13)"
+      },
+      "reason": "2 apps share bundle identifier 'com.atebits.Tweetie2'"
     },
     "ytmusic": {
       "groupKey": "com.google.ios.youtubemusic",

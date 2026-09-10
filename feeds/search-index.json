@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 43,
+  "count": 49,
   "fuse": {
     "keys": [
       {
@@ -1146,6 +1146,162 @@
       "icon": "assets/StikNES.webp",
       "pageURL": "apps/stiknes/",
       "version": "2.0.2",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "twitchadblock",
+      "slug": "twitchadblock",
+      "name": "TwitchAdBlock",
+      "subtitle": "Ad blocker for the Twitch app on iOS",
+      "shortDescription": "Ad blocker for the Twitch app on iOS",
+      "description": "TwitchAdBlock is an open-source tweak for the native Twitch iOS app that blocks advert break requests at the network layer, so streams play without ads and without the purple loading screen. This fork by gunnerkidBT keeps the tweak working on the latest Twitch releases (29.x-30.x) and modern iOS versions, and publishes ready-to-sideload IPAs built from the official tweak source.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "gunnerkidBT (original by dayanch96)",
+      "bundleId": "tv.twitch",
+      "icon": "assets/TAB.webp",
+      "pageURL": "apps/twitchadblock/",
+      "version": "30.7",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "neofreebird",
+      "slug": "neofreebird",
+      "name": "NeoFreeBird",
+      "subtitle": "Modified Twitter with QoL fixes and reverts",
+      "shortDescription": "Modified Twitter with QoL fixes and reverts",
+      "description": "NeoFreeBird is a modified build of the official Twitter app that reverts unpopular rebranding and interface changes, restores classic features, and bundles quality-of-life modifications including BHTwitter options — built and published automatically from the project's GitHub releases. Shares com.atebits.Tweetie2 with the App Store Twitter/X app and BHTwitter: install one at a time.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "NeoFreeBird contributors",
+      "bundleId": "com.atebits.Tweetie2",
+      "icon": "assets/NeoFreeBird.webp",
+      "pageURL": "apps/neofreebird/",
+      "version": "2.2",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "conduit",
+      "slug": "conduit",
+      "name": "Conduit",
+      "subtitle": "Native client for Open WebUI & Ollama",
+      "shortDescription": "Native client for Open WebUI & Ollama",
+      "description": "Conduit is a native, open-source iOS and Android client for Open WebUI, direct OpenAI-compatible endpoints, Ollama and Hermes. Chat with your own self-hosted local models or API-backed ones with a polished SwiftUI interface — conversations stay in sync, code blocks render properly, and your data never touches a third-party server.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "cogwheel0",
+      "bundleId": "app.cogwheel.conduit",
+      "icon": "assets/Conduit.webp",
+      "pageURL": "apps/conduit/",
+      "version": "4.1.4",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "fladder",
+      "slug": "fladder",
+      "name": "Fladder",
+      "subtitle": "Cross-platform Jellyfin frontend",
+      "shortDescription": "Cross-platform Jellyfin frontend",
+      "description": "Fladder is a free and open-source Jellyfin frontend built on Flutter, giving you a beautiful Netflix-style interface over your own media library on iPhone and iPad. Direct play and transcode support, offline viewing with sync, multi-server switching, and full library management — no server plugins required.",
+      "category": "photo-video",
+      "tags": [
+        "photo-video"
+      ],
+      "developer": "DonutWare",
+      "bundleId": "nl.jknaapen.fladder",
+      "icon": "assets/Fladder.webp",
+      "pageURL": "apps/fladder/",
+      "version": "0.11.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "anymex",
+      "slug": "anymex",
+      "name": "AnymeX",
+      "subtitle": "Anime, manga, novels & tracking, open source",
+      "shortDescription": "Anime, manga, novels & tracking, open source",
+      "description": "AnymeX is an open-source, cross-platform app for streaming anime and reading manga, manhwa, light and web novels, with deep integration for tracking services (AniList, MyAnimeList, Simkl and Kitsu). Extensions keep sources working, and your library, progress and statistics stay in sync across services.",
+      "category": "other",
+      "tags": [
+        "other"
+      ],
+      "developer": "RyanYuuki",
+      "bundleId": "com.ryan.anymex",
+      "icon": "assets/AnymeX.webp",
+      "pageURL": "apps/anymex/",
+      "version": "3.1.7",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "sora",
+      "slug": "sora",
+      "name": "Sora",
+      "subtitle": "Modular media streaming app for iOS",
+      "shortDescription": "Modular media streaming app for iOS",
+      "description": "Sora is a modular, open-source media player for iPhone, iPad and Mac that streams movies and shows from community-maintained modules, with AniList sync, watching collections, watch-next recommendations, bookmarks and a fast native SwiftUI interface. The current build line is distributed as Sulfur.",
+      "category": "photo-video",
+      "tags": [
+        "photo-video"
+      ],
+      "developer": "cranci",
+      "bundleId": "me.cranci.sulfur",
+      "icon": "assets/Sora.webp",
+      "pageURL": "apps/sora/",
+      "version": "1.3.0",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [

@@ -6,14 +6,25 @@
     "stale": 180,
     "archived": 365
   },
-  "count": 16,
+  "count": 18,
   "summary": {
     "warning": 5,
-    "stale": 3,
+    "stale": 4,
     "archived": 7,
-    "critical": 1
+    "critical": 2
   },
   "deadApps": [
+    {
+      "slug": "twitchadblock",
+      "name": "TwitchAdBlock",
+      "lastUpdate": "2026-08-14",
+      "daysSinceUpdate": 27,
+      "classification": "critical",
+      "removedReleases": 1,
+      "reasons": [
+        "removed upstream release(s): 29.4.2"
+      ]
+    },
     {
       "slug": "ytkp",
       "name": "YTKillerPlus",
@@ -100,6 +111,17 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 956 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "neofreebird",
+      "name": "NeoFreeBird",
+      "lastUpdate": "2025-11-03",
+      "daysSinceUpdate": 311,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 311 days (threshold 180)"
       ]
     },
     {
@@ -610,6 +632,64 @@
       "reasons": [
         "no update for 564 days (threshold 365)"
       ]
+    },
+    {
+      "slug": "twitchadblock",
+      "name": "TwitchAdBlock",
+      "lastUpdate": "2026-08-14",
+      "daysSinceUpdate": 27,
+      "classification": "critical",
+      "removedReleases": 1,
+      "reasons": [
+        "removed upstream release(s): 29.4.2"
+      ]
+    },
+    {
+      "slug": "neofreebird",
+      "name": "NeoFreeBird",
+      "lastUpdate": "2025-11-03",
+      "daysSinceUpdate": 311,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 311 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "conduit",
+      "name": "Conduit",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "fladder",
+      "name": "Fladder",
+      "lastUpdate": "2026-09-08",
+      "daysSinceUpdate": 2,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "anymex",
+      "name": "AnymeX",
+      "lastUpdate": "2026-08-30",
+      "daysSinceUpdate": 11,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "sora",
+      "name": "Sora",
+      "lastUpdate": "2026-08-20",
+      "daysSinceUpdate": 21,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     }
   ]
 }

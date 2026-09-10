@@ -3,23 +3,31 @@
   "generatedAt": "2026-09-10",
   "lastSync": "2026-09-10",
   "totals": {
-    "apps": 43,
-    "sources": 39,
-    "verifiedApps": 42,
+    "apps": 49,
+    "sources": 45,
+    "verifiedApps": 48,
     "communityVerifiedApps": 1,
     "unverifiedApps": 0,
-    "hashVerifiedApps": 33,
-    "verified": 42,
+    "hashVerifiedApps": 39,
+    "verified": 48,
     "community_verified": 1,
     "unverified": 0,
     "featuredApps": 6,
-    "downloadsReachable": 43,
+    "downloadsReachable": 49,
     "deadLinks": 0,
-    "newAppsThisWeek": 3,
+    "newAppsThisWeek": 4,
     "updatedAppsThisWeek": 8,
     "clientsSupported": 5
   },
   "newThisWeek": [
+    {
+      "slug": "fladder",
+      "name": "Fladder",
+      "version": "0.11.1",
+      "previousVersion": "",
+      "date": "2026-09-08",
+      "downloadURL": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa"
+    },
     {
       "slug": "spotiflac",
       "name": "SpotiFLAC Mobile",
@@ -114,11 +122,11 @@
   "topCategories": [
     {
       "category": "utilities",
-      "count": 11
+      "count": 12
     },
     {
       "category": "photo-video",
-      "count": 9
+      "count": 11
     },
     {
       "category": "games",
@@ -126,7 +134,7 @@
     },
     {
       "category": "social",
-      "count": 6
+      "count": 8
     },
     {
       "category": "music",
@@ -137,16 +145,16 @@
       "count": 2
     },
     {
-      "category": "networking",
-      "count": 1
+      "category": "other",
+      "count": 2
     },
     {
-      "category": "other",
+      "category": "networking",
       "count": 1
     }
   ],
   "verification": {
-    "VERIFIED": 42,
+    "VERIFIED": 48,
     "COMMUNITY VERIFIED": 1,
     "UNVERIFIED": 0
   },
@@ -159,6 +167,11 @@
     {
       "slug": "anxreader",
       "name": "Anx Reader",
+      "status": "VERIFIED"
+    },
+    {
+      "slug": "anymex",
+      "name": "AnymeX",
       "status": "VERIFIED"
     },
     {
@@ -177,6 +190,11 @@
       "status": "VERIFIED"
     },
     {
+      "slug": "conduit",
+      "name": "Conduit",
+      "status": "VERIFIED"
+    },
+    {
       "slug": "delta",
       "name": "Delta",
       "status": "VERIFIED"
@@ -190,26 +208,16 @@
       "slug": "feather",
       "name": "Feather",
       "status": "VERIFIED"
-    },
-    {
-      "slug": "inkillerplus",
-      "name": "iNKillerPlus",
-      "status": "VERIFIED"
-    },
-    {
-      "slug": "ish",
-      "name": "iSH",
-      "status": "VERIFIED"
     }
   ],
   "history": [
     {
       "date": "2026-09-10",
-      "apps": 43,
-      "sources": 39,
-      "verified": 42,
+      "apps": 49,
+      "sources": 45,
+      "verified": 48,
       "deadLinks": 0,
-      "newThisWeek": 3,
+      "newThisWeek": 4,
       "updatedThisWeek": 8
     }
   ]

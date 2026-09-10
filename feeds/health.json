@@ -1,11 +1,11 @@
 {
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 43,
-    "reachable": 43,
+    "apps": 49,
+    "reachable": 49,
     "unreachable": 0,
     "featured": 6,
-    "healthy": 43,
+    "healthy": 49,
     "warning": 0,
     "critical": 0
   },
@@ -946,6 +946,138 @@
       "statusSince": "2025-02-23",
       "updatedDaysAgo": 564,
       "stale": true,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "twitchadblock",
+      "name": "TwitchAdBlock",
+      "status": "stable",
+      "version": "30.7",
+      "updatedAt": "2026-08-14",
+      "sizeBytes": 152372292,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-08-14",
+      "updatedDaysAgo": 27,
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "neofreebird",
+      "name": "NeoFreeBird",
+      "status": "stable",
+      "version": "2.2",
+      "updatedAt": "2025-11-03",
+      "sizeBytes": 158452402,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2025-11-03",
+      "updatedDaysAgo": 311,
+      "stale": true,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "conduit",
+      "name": "Conduit",
+      "status": "stable",
+      "version": "4.1.4",
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 35794270,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-01",
+      "updatedDaysAgo": 9,
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "fladder",
+      "name": "Fladder",
+      "status": "stable",
+      "version": "0.11.1",
+      "updatedAt": "2026-09-08",
+      "sizeBytes": 41137245,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-08",
+      "updatedDaysAgo": 2,
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "anymex",
+      "name": "AnymeX",
+      "status": "stable",
+      "version": "3.1.7",
+      "updatedAt": "2026-08-30",
+      "sizeBytes": 39662751,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-08-30",
+      "updatedDaysAgo": 11,
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "sora",
+      "name": "Sora",
+      "status": "stable",
+      "version": "1.3.0",
+      "updatedAt": "2026-08-20",
+      "sizeBytes": 3112338,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-08-20",
+      "updatedDaysAgo": 21,
+      "stale": false,
       "healthScore": 77,
       "healthStatus": "healthy",
       "scoreBreakdown": {
