@@ -3,17 +3,17 @@
   "generatedAt": "2026-09-10",
   "lastSync": "2026-09-10",
   "totals": {
-    "apps": 33,
-    "sources": 29,
-    "verifiedApps": 32,
+    "apps": 38,
+    "sources": 34,
+    "verifiedApps": 37,
     "communityVerifiedApps": 1,
     "unverifiedApps": 0,
-    "hashVerifiedApps": 26,
-    "verified": 32,
+    "hashVerifiedApps": 31,
+    "verified": 37,
     "community_verified": 1,
     "unverified": 0,
     "featuredApps": 6,
-    "downloadsReachable": 33,
+    "downloadsReachable": 38,
     "deadLinks": 0,
     "newAppsThisWeek": 3,
     "updatedAppsThisWeek": 8,
@@ -113,28 +113,28 @@
   ],
   "topCategories": [
     {
+      "category": "utilities",
+      "count": 10
+    },
+    {
       "category": "photo-video",
       "count": 9
     },
     {
-      "category": "utilities",
-      "count": 8
+      "category": "social",
+      "count": 6
     },
     {
       "category": "music",
       "count": 5
     },
     {
-      "category": "social",
-      "count": 5
-    },
-    {
       "category": "games",
-      "count": 3
+      "count": 4
     },
     {
       "category": "developer-tools",
-      "count": 1
+      "count": 2
     },
     {
       "category": "networking",
@@ -146,7 +146,7 @@
     }
   ],
   "verification": {
-    "VERIFIED": 32,
+    "VERIFIED": 37,
     "COMMUNITY VERIFIED": 1,
     "UNVERIFIED": 0
   },
@@ -159,6 +159,11 @@
     {
       "slug": "anxreader",
       "name": "Anx Reader",
+      "status": "VERIFIED"
+    },
+    {
+      "slug": "apollo",
+      "name": "Apollo",
       "status": "VERIFIED"
     },
     {
@@ -177,6 +182,11 @@
       "status": "VERIFIED"
     },
     {
+      "slug": "dolphinish",
+      "name": "DolphiniOS",
+      "status": "VERIFIED"
+    },
+    {
       "slug": "feather",
       "name": "Feather",
       "status": "VERIFIED"
@@ -187,27 +197,17 @@
       "status": "VERIFIED"
     },
     {
-      "slug": "itorrent",
-      "name": "iTorrent",
-      "status": "VERIFIED"
-    },
-    {
-      "slug": "jellify",
-      "name": "Jellify",
-      "status": "VERIFIED"
-    },
-    {
-      "slug": "livecontainer",
-      "name": "LiveContainer",
+      "slug": "ish",
+      "name": "iSH",
       "status": "VERIFIED"
     }
   ],
   "history": [
     {
       "date": "2026-09-10",
-      "apps": 33,
-      "sources": 29,
-      "verified": 32,
+      "apps": 38,
+      "sources": 34,
+      "verified": 37,
       "deadLinks": 0,
       "newThisWeek": 3,
       "updatedThisWeek": 8

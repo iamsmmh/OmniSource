@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-09-10",
   "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
-  "count": 40,
+  "count": 46,
   "updates": [
     {
       "slug": "youpro",
@@ -349,6 +349,51 @@
       "shortDescription": "uYouPlus with even more features!"
     },
     {
+      "slug": "ish",
+      "name": "iSH",
+      "version": "2026-08-22",
+      "previousVersion": "",
+      "date": "2026-08-22",
+      "kind": "new",
+      "changelog": "iSH 2026-08-22 | iSH\n\nAutomated daily build",
+      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/iSH.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ish.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/ish.xml",
+      "status": "beta",
+      "shortDescription": "Linux shell on iOS via x86 emulation"
+    },
+    {
+      "slug": "ish",
+      "name": "iSH",
+      "version": "813",
+      "previousVersion": "",
+      "date": "2026-08-22",
+      "kind": "available",
+      "changelog": "iSH 813 | iSH (builds/813)\n\nAutomated daily build",
+      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/iSH.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ish.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/ish.xml",
+      "status": "beta",
+      "shortDescription": "Linux shell on iOS via x86 emulation"
+    },
+    {
+      "slug": "apollo",
+      "name": "Apollo",
+      "version": "3.6.0",
+      "previousVersion": "",
+      "date": "2026-08-18",
+      "kind": "new",
+      "changelog": "Apollo 3.6.0 | Apollo-Reborn-3.6.0\n\n### Features\n\n- Add **Gallery View** to the Home feed, Popular, All, Moderator Posts, and user profiles, with real video controls, rotation, and sort inherited from the feed you opened it from (#904: @icpryde)\n  - Adds a universal \"...\" menu to your own profile holding Gallery View, Edit Profile, Recently Read, hidden and deleted content, and Share Profile, so the floating Edit pill and the nav-bar clock and eye icons are gone\n- Add **Live Interactive Posts** so Reddit's Developer Platform posts — live match threads, games, and other custom widgets — render inline in comments and the feed instead of the \"not supported on old Reddit\" placeholder (#920, #939: @icpryde)\n- Add a **Feed Video Scrubber** that makes an inline video's own progress bar grabbable, so you can slide to seek without opening the player (#938: @icpryde)\n  - Adds **Unmute Videos in Feed** alongside it, with Never, Always, and Remember modes\n- Redesign the **App Icon** picker around browsable pack cards, a daily-rotating Spotlight row, an adaptive iPad grid, and clearer selection state and haptics (#912, #941: @IllIIllIllIllII)\n- Add an **Icon Appearance** menu so any icon can be pinned to its Light or Dark artwork instead of always following the device appearance (#894: @IllIIllIllIllII)\n- Add **Wallpapers** to Settings for browsing and saving Apollo's Goodbye wallpaper collections for iPhone, iPad, and Mac (#947: @IllIIllIllIllII)\n- Add a configurable **Share Link Host** so Copy Link, the share sheet, and Share as Image can share through Reddit, old.reddit, vxReddit, or fxreddit (#857: @JamesLautner)\n- Add a **Blur NSFW Media** setting with Reddit Setting, Always, and Never options, covering mature media while leaving the post title readable (#874: @jordanearle)\n- Add **Swipe Past Gallery to Navigate** so swiping past the first or last image of a feed gallery goes back or forward instead of rubber-banding (#934: @icpryde)\n- Add swipe navigation between **Notifications and Chat** in the Inbox, and keep the title from sliding across when switching tabs (#900: @icpryde)\n- Add **Prefer Native Images** to Comment Link Host, so comment images upload natively wherever a subreddit allows image comments and only fall back to the link host where it doesn't (#952: @icpryde)\n- Add the **Right to Repair** app icon, overhaul the **Classics** Liquid Glass pack with more faithful recreations and four new icons, and refresh **Synthwave** (#888, #915, #927, #928: @IllIIllIllIllII, @bajader)\n- Move **Icon-Only Tab Bar** under Settings > Interface alongside the rest of the tab bar options (#867: @JeffreyCA)\n\n### Fixes\n\n- Fix five crashes reported against 3.5.1 — Filters & Blocks Edit and the Tag Filters toggle, switching accounts from the Inbox, token refresh, and Liquid Glass nav titles — plus a crash on malformed multireddit responses (#864, #897: @jordanearle)\n- Stop hidden scrape web views letting a Reddit video ad take over the screen while **Community Highlights**, Badge Book, Social Links, User Flair, or the sidebar load in the background (#908: @jordanearle)\n- Stop the **theme crash kill-switch** disabling a custom theme after force-quits, iOS prewarm discards, or jetsams, while still tripping on a real crash loop (#923: @icpryde)\n- Fix **Community Highlights** stalling at two entries when Reddit serves its bot challenge, plus the collapsed bar's excess padding and the layout snap the first time a subreddit opens (#925, #926: @icpryde)\n- Fix **A–Z scrubbing** in the Subreddits list going dead mid-drag on non-Liquid-Glass builds, along with the black bands behind its section headers (#936: @icpryde)\n- Fix images being cropped in multi-image **feed carousels** — every page now shows the complete picture, letterboxed in the theme's card color (#922: @icpryde)\n- Fix **link previews** rendering as mojibake for pages served in a legacy charset such as EUC-KR, Shift_JIS, GB18030, or Big5 (#950: @icpryde)\n- Fix **tweet previews** not rendering at all after x.com changed its guest-token flow, and show them on posts with 40 or fewer upvotes too (#873: @DeltAndy123)\n- Fix **Picture in Picture** taking over for silent v.redd.it clips while Activate For is set to Unmuted Videos Only (#951: @JeffreyCA)\n- Play more **sports clips** inline: add MLB's cuts-diamond CDN, restore streamain posters, and follow dubz's and streamin's split CDNs instead of assuming a single host (#929, #944: @icpryde)\n- Fix Apollo's native **NSFW blur** ignoring your Reddit preference on API-Key-Free accounts, and the Search tab pill painting its light-mode color on dark themes (#866: @jordanearle)\n- Fix **custom themes** greying out primary text in Pure Black Dark Mode and leaving the GIF and gallery-count pills unreadable on compact posts (#869: @DeltAndy123)\n- Fix **Recently Read** opening with a black background and mis-sized stats, and apply custom theme text colors to the remaining tweak-owned settings rows that ignored them (#860: @JeffreyCA)\n- Fix mature listings returning the placeholder user on **API-Key-Free** accounts configured with a custom User-Agent (#889: @Thetromboneman1)\n- Fix cloud **AI Summaries** failing on newer OpenAI models, and bound streaming responses so a malformed endpoint can't exhaust memory (#887, #890: @Thetromboneman1, @jaredrossberg)\n- Improve scrolling and launch smoothness by tightening shared-state synchronization and keeping cache serialization and image decoding off the critical path (#859: @ryannair05)\n- Fix the **Public Sticky from Subreddit** row eating the gap above Cancel on the legacy \"Notify user via...\" sheet (#862: @DeltAndy123)",
+      "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Apollo.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/apollo.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/apollo.xml",
+      "status": "stable",
+      "shortDescription": "The beloved Reddit client, continued by Apollo-Reborn"
+    },
+    {
       "slug": "youpro",
       "name": "YouPro",
       "version": "21.24.3",
@@ -377,6 +422,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/maxtube.xml",
       "status": "manual",
       "shortDescription": "YTPlus with ten extra tweaks"
+    },
+    {
+      "slug": "qbitcontrol",
+      "name": "qBitControl",
+      "version": "1.4.1",
+      "previousVersion": "",
+      "date": "2026-07-23",
+      "kind": "new",
+      "changelog": "qBitControl 1.4.1 | qBitControl\n\n## 📊 Performance & Efficiency\n\n- **Reduced Data Usage:** Network traffic reduced by **93%** thanks to optimized data syncing.\n- **Smooth Charts:** Statistics charts now scroll continuously and smoothly instead of updating every two seconds.\n- **Responsive Progress Bars:** Progress indicators now feature fluid animations for a more natural feel.\n\n## 🛠️ Interface & Usability\n\n- **Custom Headers:** Specify custom HTTP headers for server connections—offering seamless support for reverse proxies and zero-trust networks (e.g., Cloudflare Access, Authelia).\n- **Reworked Server Addition:** Redesigned server setup and edit screens with an updated *Advanced* settings page and deferred saving.\n- **Limit Configuration:** Configure precise speed limits, seeding time limits, and share ratios for individual torrents directly in-app.\n- **Cleaner Torrent List:** Torrent rows now adapt dynamically to show the most relevant details depending on whether a transfer is downloading, seeding, or paused.\n- **Repositioned Add Button:** Moved the \"Add Torrent\" button to the toolbar for cleaner, more intuitive access.\n- **Offline Banner:** A clear overlay banner now appears whenever your connection drops.\n- **In-App Logs:** Added a built-in log viewer to review and easily share system events directly inside the app.\n\n## 🐛 Fixes & Refinements\n\n- **Self-Signed Certificate Support:** Full support for untrusted and self-signed SSL certificates, making it easier to connect to home-hosted servers.\n- **Stable RSS Downloads:** Fixed an issue in the RSS view where tapping a row to download a torrent caused the confirmation sheet to glitch and reopen unexpectedly.\n- **Connection Timeouts:** Implemented strict network timeouts to prevent the app from hanging indefinitely on the launch screen if a server is unresponsive.\n- **Clearer Error Alerts:** If adding a `.torrent` file or magnet link fails, a clear error message now pops up explaining what went wrong.",
+      "downloadURL": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/qBitControl.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/qbitcontrol.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/qbitcontrol.xml",
+      "status": "stable",
+      "shortDescription": "qBittorrent remote control for iOS"
     },
     {
       "slug": "bluewallet",
@@ -437,6 +497,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/feather.xml",
       "status": "stable",
       "shortDescription": "On-device app manager, signer and installer"
+    },
+    {
+      "slug": "dolphinish",
+      "name": "DolphiniOS",
+      "version": "5.0.0",
+      "previousVersion": "",
+      "date": "2026-06-20",
+      "kind": "new",
+      "changelog": "DolphiniOS 5.0.0 | Non-Jailbroken\n\n* Fixed JIT support on A13/A14/M1 devices running iOS 27 beta. (@CelloSerenity)\n* Fixed wrong app version number introduced in 5.0.0b5. (@CelloSerenity)\n\nThe next update will be sometime after the next official Dolphin release. It will include a core update.\n\n**Full Changelog**: https://github.com/OatmealDome/dolphin-ios/compare/v5.0.0b5...v5.0.0b6",
+      "downloadURL": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/DolphiniOS.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/dolphinish.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/dolphinish.xml",
+      "status": "beta",
+      "shortDescription": "GameCube and Wii emulator for iOS"
     },
     {
       "slug": "spotube",
@@ -542,6 +617,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/utm.xml",
       "status": "stable",
       "shortDescription": "Virtual machines for iOS"
+    },
+    {
+      "slug": "qbitconnect",
+      "name": "qBitConnect",
+      "version": "1.6.6",
+      "previousVersion": "",
+      "date": "2025-11-02",
+      "kind": "new",
+      "changelog": "qBitConnect 1.6.6 | qBitConnect\n\nThis release includes:\n• Minor improvements and bug fixes\n• UI Enhancements",
+      "downloadURL": "https://github.com/RajnishOne/qbitconnect/releases/download/v1.6.6/qBitConnect.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/qBitConnect.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/qbitconnect.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/qbitconnect.xml",
+      "status": "stable",
+      "shortDescription": "Modern qBittorrent remote client"
     },
     {
       "slug": "bhtwitter",

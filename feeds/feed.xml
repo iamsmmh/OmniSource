@@ -5,7 +5,7 @@
     <link>https://iamsmmh.github.io/OmniSource/</link>
     <description>OmniSource is a curated, automatically maintained AltStore-compatible iOS app source. Every entry is resolved from the app&#x27;s own official upstream project - GitHub Releases or the developer&#x27;s official AltStore feed - and each download link is re-verified automatically.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2026 12:49:21 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 13:02:43 +0000</lastBuildDate>
     <atom:link href="https://iamsmmh.github.io/OmniSource/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>YouPro v21.36.6</title>
@@ -684,52 +684,60 @@ RELEASE 21.14.4 - 3.0.5: (2026-08-22)
       <enclosure url="https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
-      <title>YouPro v21.24.3</title>
-      <link>https://iamsmmh.github.io/OmniSource/youpro.json</link>
-      <guid isPermaLink="false">youpro-21.24.3</guid>
-      <pubDate>Sun, 16 Aug 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[YouTube 21.24.3 | YouProExtra_21.24.3_1.3.1
+      <title>iSH v2026-08-22</title>
+      <link>https://iamsmmh.github.io/OmniSource/ish.json</link>
+      <guid isPermaLink="false">ish-2026-08-22</guid>
+      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[iSH 2026-08-22 | iSH
 
-### Latest Stable Release, ENJOY!!
-> [!NOTE]
-> - Bundled with **YTUHD**
-> - - -
-> #### Extra Tweaks:
-> - `YouPip` `YTUHD` `YouSlider` `YTSilentVote` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` 
-> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`
-
-> [!WARNING]
-> - Limited Support for new YT versions.(+21.25.5). 21.24.3 is the latest build that works with extra tweaks.]]></description>
-      <enclosure url="https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa2/YouProExtra_21.24.3_1.3.1.ipa" length="0" type="application/octet-stream" />
+Automated daily build]]></description>
+      <enclosure url="https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
-      <title>MaxTube v21.31.3</title>
-      <link>https://iamsmmh.github.io/OmniSource/maxtube.json</link>
-      <guid isPermaLink="false">maxtube-21.31.3</guid>
-      <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault
+      <title>Apollo v3.6.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/apollo.json</link>
+      <guid isPermaLink="false">apollo-3.6.0</guid>
+      <pubDate>Tue, 18 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Apollo 3.6.0 | Apollo-Reborn-3.6.0
 
-[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]
+### Features
 
-Description: 
-YTPlus 5.2.2 Cracked by zarzel
-YouTube v21.31.3
+- Add **Gallery View** to the Home feed, Popular, All, Moderator Posts, and user profiles, with real video controls, rotation, and sort inherited from the feed you opened it from (#904: @icpryde)
+  - Adds a universal "..." menu to your own profile holding Gallery View, Edit Profile, Recently Read, hidden and deleted content, and Share Profile, so the floating Edit pill and the nav-bar clock and eye icons are gone
+- Add **Live Interactive Posts** so Reddit's Developer Platform posts — live match threads, games, and other custom widgets — render inline in comments and the feed instead of the "not supported on old Reddit" placeholder (#920, #939: @icpryde)
+- Add a **Feed Video Scrubber** that makes an inline video's own progress bar grabbable, so you can slide to seek without opening the player (#938: @icpryde)
+  - Adds **Unmute Videos in Feed** alongside it, with Never, Always, and Remember modes
+- Redesign the **App Icon** picker around browsable pack cards, a daily-rotating Spotlight row, an adaptive iPad grid, and clearer selection state and haptics (#912, #941: @IllIIllIllIllII)
+- Add an **Icon Appearance** menu so any icon can be pinned to its Light or Dark artwork instead of always following the device appearance (#894: @IllIIllIllIllII)
+- Add **Wallpapers** to Settings for browsing and saving Apollo's Goodbye wallpaper collections for iPhone, iPad, and Mac (#947: @IllIIllIllIllII)
+- Add a configurable **Share Link Host** so Copy Link, the share sheet, and Share as Image can share through Reddit, old.reddit, vxReddit, or fxreddit (#857: @JamesLautner)
+- Add a **Blur NSFW Media** setting with Reddit Setting, Always, and Never options, covering mature media while leaving the post title readable (#874: @jordanearle)
+- Add **Swipe Past Gallery to Navigate** so swiping past the first or last image of a feed gallery goes back or forward instead of rubber-banding (#934: @icpryde)
+- Add swipe navigation between **Notifications and Chat** in the Inbox, and keep the title from sliding across when switching tabs (#900: @icpryde)
+- Add **Prefer Native Images** to Comment Link Host, so comment images upload natively wherever a subreddit allows image comments and only fall back to the link host where it doesn't (#952: @icpryde)
+- Add the **Right to Repair** app icon, overhaul the **Classics** Liquid Glass pack with more faithful recreations and four new icons, and refresh **Synthwave** (#888, #915, #927, #928: @IllIIllIllIllII, @bajader)
+- Move **Icon-Only Tab Bar** under Settings > Interface alongside the rest of the tab bar options (#867: @JeffreyCA)
 
-Version Description:
-Downloading does not work on this version of YouTube
-No Bonus Tweaks
-Sidestore is supported
+### Fixes
 
-[YTPlusM_21.31.3_5.2.2.tg@tubevault]
-
-Description: 
-YTPlusM v1.4.2
-YouTube v21.31.3
-
-Version Description:
-Bonus Tweaks:
-YouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.]]></description>
-      <enclosure url="https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa" length="0" type="application/octet-stream" />
+- Fix five crashes reported against 3.5.1 — Filters & Blocks Edit and the Tag Filters toggle, switching accounts from the Inbox, token refresh, and Liquid Glass nav titles — plus a crash on malformed multireddit responses (#864, #897: @jordanearle)
+- Stop hidden scrape web views letting a Reddit video ad take over the screen while **Community Highlights**, Badge Book, Social Links, User Flair, or the sidebar load in the background (#908: @jordanearle)
+- Stop the **theme crash kill-switch** disabling a custom theme after force-quits, iOS prewarm discards, or jetsams, while still tripping on a real crash loop (#923: @icpryde)
+- Fix **Community Highlights** stalling at two entries when Reddit serves its bot challenge, plus the collapsed bar's excess padding and the layout snap the first time a subreddit opens (#925, #926: @icpryde)
+- Fix **A–Z scrubbing** in the Subreddits list going dead mid-drag on non-Liquid-Glass builds, along with the black bands behind its section headers (#936: @icpryde)
+- Fix images being cropped in multi-image **feed carousels** — every page now shows the complete picture, letterboxed in the theme's card color (#922: @icpryde)
+- Fix **link previews** rendering as mojibake for pages served in a legacy charset such as EUC-KR, Shift_JIS, GB18030, or Big5 (#950: @icpryde)
+- Fix **tweet previews** not rendering at all after x.com changed its guest-token flow, and show them on posts with 40 or fewer upvotes too (#873: @DeltAndy123)
+- Fix **Picture in Picture** taking over for silent v.redd.it clips while Activate For is set to Unmuted Videos Only (#951: @JeffreyCA)
+- Play more **sports clips** inline: add MLB's cuts-diamond CDN, restore streamain posters, and follow dubz's and streamin's split CDNs instead of assuming a single host (#929, #944: @icpryde)
+- Fix Apollo's native **NSFW blur** ignoring your Reddit preference on API-Key-Free accounts, and the Search tab pill painting its light-mode color on dark themes (#866: @jordanearle)
+- Fix **custom themes** greying out primary text in Pure Black Dark Mode and leaving the GIF and gallery-count pills unreadable on compact posts (#869: @DeltAndy123)
+- Fix **Recently Read** opening with a black background and mis-sized stats, and apply custom theme text colors to the remaining tweak-owned settings rows that ignored them (#860: @JeffreyCA)
+- Fix mature listings returning the placeholder user on **API-Key-Free** accounts configured with a custom User-Agent (#889: @Thetromboneman1)
+- Fix cloud **AI Summaries** failing on newer OpenAI models, and bound streaming responses so a malformed endpoint can't exhaust memory (#887, #890: @Thetromboneman1, @jaredrossberg)
+- Improve scrolling and launch smoothness by tightening shared-state synchronization and keeping cache serialization and image decoding off the critical path (#859: @ryannair05)
+- Fix the **Public Sticky from Subreddit** row eating the gap above Cancel on the legacy "Notify user via..." sheet (#862: @DeltAndy123)]]></description>
+      <enclosure url="https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa" length="0" type="application/octet-stream" />
     </item>
   </channel>
 </rss>

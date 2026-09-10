@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 33,
-    "pass": 26,
+    "apps": 38,
+    "pass": 31,
     "warn": 7,
     "fail": 0,
     "rejected": 0
@@ -37,6 +37,24 @@
         "releaseId": "1.14.0",
         "source": "github",
         "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "apollo",
+      "name": "Apollo",
+      "asset": {
+        "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8",
+        "size": 95474417,
+        "releaseId": "3.6.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -101,6 +119,24 @@
       "status": "warn"
     },
     {
+      "slug": "dolphinish",
+      "name": "DolphiniOS",
+      "asset": {
+        "sha256": "8460c194f0b24ab3a15594e800e1533cb14e90e0aa51527b3609c7ac0f9745c2",
+        "size": 17963367,
+        "releaseId": "5.0.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "feather",
       "name": "Feather",
       "asset": {
@@ -135,6 +171,24 @@
         "reachable": true
       },
       "status": "warn"
+    },
+    {
+      "slug": "ish",
+      "name": "iSH",
+      "asset": {
+        "sha256": "f2d389ca859d380e2f53259a245340e22c64dba68db73f5977f75a3464e1ee3d",
+        "size": 4602446,
+        "releaseId": "813",
+        "source": "github",
+        "downloadUrl": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
     },
     {
       "slug": "itorrent",
@@ -253,6 +307,42 @@
         "releaseId": "3.3.0",
         "source": "github",
         "downloadUrl": "https://github.com/Provenance-Emu/Provenance/releases/download/3.3.0/Provenance-3.3.0-iOS.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "qbitconnect",
+      "name": "qBitConnect",
+      "asset": {
+        "sha256": "683361416e6816c167f4dd72b5d4742a59c3a10faaa0823f8c5ec0754ba941c4",
+        "size": 11798221,
+        "releaseId": "1.6.6",
+        "source": "github",
+        "downloadUrl": "https://github.com/RajnishOne/qbitconnect/releases/download/v1.6.6/qBitConnect.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "qbitcontrol",
+      "name": "qBitControl",
+      "asset": {
+        "sha256": "4a218f22120e5251fac7383c36169adbbf0503453aac339cc5573df4bb6dc6c3",
+        "size": 4777720,
+        "releaseId": "1.4.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa"
       },
       "checks": {
         "sizePositive": true,

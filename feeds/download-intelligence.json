@@ -5,7 +5,7 @@
   "summary": {
     "averageAvailability": 100.0,
     "averageResponseTimeMs": 223.1,
-    "mirrorCount": 34,
+    "mirrorCount": 39,
     "probes": 506
   },
   "apps": [
@@ -372,6 +372,61 @@
       "mirrorCount": 1,
       "releaseConsistency": 0.0,
       "primaryURL": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "apollo",
+      "name": "Apollo",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "dolphinish",
+      "name": "DolphiniOS",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "ish",
+      "name": "iSH",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "qbitcontrol",
+      "name": "qBitControl",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "qbitconnect",
+      "name": "qBitConnect",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/RajnishOne/qbitconnect/releases/download/v1.6.6/qBitConnect.ipa",
       "fallbackURLs": []
     }
   ]

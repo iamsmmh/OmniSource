@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "sources": 33,
+    "sources": 38,
     "healthy": 18,
     "degraded": 4,
     "unavailable": 0,
-    "unknown": 11
+    "unknown": 16
   },
   "pipeline": {
     "status": "degraded",
     "lastBuild": "2026-09-10",
-    "appsTotal": 33,
+    "appsTotal": 38,
     "appsHealthy": 18,
     "appsFailing": 2
   },
@@ -28,7 +28,7 @@
     },
     {
       "provider": "github",
-      "apps": 31,
+      "apps": 36,
       "healthy": 16,
       "unavailable": 0,
       "lastResolvedFrom": {
@@ -49,12 +49,17 @@
         "ytkp": "github:mrdrvt99/YouProEXTRA",
         "ytmusic": "github:mrdrvt99/YTMusicUltimate",
         "anxreader": "github:Anxcye/anx-reader",
+        "apollo": "github:Apollo-Reborn/Apollo-Reborn",
         "bhtwitter": "github:BandarHL/BHTwitter",
         "bluewallet": "github:BlueWallet/BlueWallet",
         "delta": "github:RileyTestut/Delta",
+        "dolphinish": "github:OatmealDome/dolphin-ios",
+        "ish": "github:ish-app/ish",
         "jellify": "github:Jellify-Music/App",
         "ppsspp": "github:hrydgard/ppsspp",
         "provenance": "github:Provenance-Emu/Provenance",
+        "qbitconnect": "github:RajnishOne/qbitconnect",
+        "qbitcontrol": "github:Michael-128/qBitControl",
         "saber": "github:saber-notes/saber",
         "sidestore": "github:SideStore/SideStore",
         "spotube": "github:KRTirtho/spotube",
@@ -69,8 +74,8 @@
   "deployment": {
     "platform": "GitHub Pages (static)",
     "status": "ok",
-    "reachable": 33,
-    "total": 33
+    "reachable": 38,
+    "total": 38
   },
   "sources": [
     {
@@ -1927,6 +1932,23 @@
       "history": []
     },
     {
+      "id": "apollo",
+      "app": "apollo",
+      "name": "Apollo",
+      "source": "Apollo-Reborn/Apollo-Reborn",
+      "sourceURL": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-08-18",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "bhtwitter",
       "app": "bhtwitter",
       "name": "BHTwitter",
@@ -2058,6 +2080,40 @@
       "latencyMs": null,
       "checkedAt": "",
       "lastUpdate": "2024-07-11",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "dolphinish",
+      "app": "dolphinish",
+      "name": "DolphiniOS",
+      "source": "OatmealDome/dolphin-ios",
+      "sourceURL": "https://github.com/OatmealDome/dolphin-ios",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-06-20",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "ish",
+      "app": "ish",
+      "name": "iSH",
+      "source": "ish-app/ish",
+      "sourceURL": "https://github.com/ish-app/ish",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-08-22",
       "valid": true,
       "detail": "",
       "history": []
@@ -2197,6 +2253,40 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "qbitconnect",
+      "app": "qbitconnect",
+      "name": "qBitConnect",
+      "source": "RajnishOne/qbitconnect",
+      "sourceURL": "https://github.com/RajnishOne/qbitconnect",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2025-11-02",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "qbitcontrol",
+      "app": "qbitcontrol",
+      "name": "qBitControl",
+      "source": "Michael-128/qBitControl",
+      "sourceURL": "https://github.com/Michael-128/qBitControl",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-07-23",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "saber",

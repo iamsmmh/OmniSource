@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 29,
+  "count": 34,
   "feed": {
     "name": "OmniSource",
     "identifier": "com.iamsmmh.omnisource",
@@ -83,6 +83,21 @@
           "slug": "anxreader",
           "name": "Anx Reader",
           "version": "1.14.0"
+        }
+      ]
+    },
+    {
+      "id": "Apollo-Reborn/Apollo-Reborn",
+      "source": "Apollo-Reborn/Apollo-Reborn",
+      "type": "github",
+      "homepage": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "sourceURL": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "publisher": "Apollo-Reborn/Apollo-Reborn",
+      "apps": [
+        {
+          "slug": "apollo",
+          "name": "Apollo",
+          "version": "3.6.0"
         }
       ]
     },
@@ -212,6 +227,21 @@
       ]
     },
     {
+      "id": "ish-app/ish",
+      "source": "ish-app/ish",
+      "type": "github",
+      "homepage": "https://github.com/ish-app/ish",
+      "sourceURL": "https://github.com/ish-app/ish",
+      "publisher": "ish-app/ish",
+      "apps": [
+        {
+          "slug": "ish",
+          "name": "iSH",
+          "version": "813"
+        }
+      ]
+    },
+    {
       "id": "itzzace/ytkace",
       "source": "itzzace/ytkace",
       "type": "github",
@@ -302,6 +332,21 @@
       ]
     },
     {
+      "id": "Michael-128/qBitControl",
+      "source": "Michael-128/qBitControl",
+      "type": "github",
+      "homepage": "https://github.com/Michael-128/qBitControl",
+      "sourceURL": "https://github.com/Michael-128/qBitControl",
+      "publisher": "Michael-128/qBitControl",
+      "apps": [
+        {
+          "slug": "qbitcontrol",
+          "name": "qBitControl",
+          "version": "1.4.1"
+        }
+      ]
+    },
+    {
       "id": "mrdrvt99/YouProEXTRA",
       "source": "mrdrvt99/YouProEXTRA",
       "type": "github",
@@ -347,6 +392,21 @@
       ]
     },
     {
+      "id": "OatmealDome/dolphin-ios",
+      "source": "OatmealDome/dolphin-ios",
+      "type": "github",
+      "homepage": "https://github.com/OatmealDome/dolphin-ios",
+      "sourceURL": "https://github.com/OatmealDome/dolphin-ios",
+      "publisher": "OatmealDome/dolphin-ios",
+      "apps": [
+        {
+          "slug": "dolphinish",
+          "name": "DolphiniOS",
+          "version": "5.0.0"
+        }
+      ]
+    },
+    {
       "id": "Provenance-Emu/Provenance",
       "source": "Provenance-Emu/Provenance",
       "type": "github",
@@ -358,6 +418,21 @@
           "slug": "provenance",
           "name": "Provenance",
           "version": "3.3.0"
+        }
+      ]
+    },
+    {
+      "id": "RajnishOne/qbitconnect",
+      "source": "RajnishOne/qbitconnect",
+      "type": "github",
+      "homepage": "https://github.com/RajnishOne/qbitconnect",
+      "sourceURL": "https://github.com/RajnishOne/qbitconnect",
+      "publisher": "RajnishOne/qbitconnect",
+      "apps": [
+        {
+          "slug": "qbitconnect",
+          "name": "qBitConnect",
+          "version": "1.6.6"
         }
       ]
     },

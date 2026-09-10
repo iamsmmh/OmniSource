@@ -2021,6 +2021,254 @@
         "minOSVersion": "15.2",
         "descriptionTemplate": "Anx Reader {version} | {label}"
       }
+    },
+    {
+      "slug": "apollo",
+      "name": "Apollo",
+      "subtitle": "The beloved Reddit client, continued by Apollo-Reborn",
+      "bundleIdentifier": "com.christianselig.Apollo",
+      "developerName": "Christian Selig (& Apollo-Reborn contributors)",
+      "category": "social",
+      "tintColor": "F0542D",
+      "icon": "Apollo.webp",
+      "localizedDescription": "Apollo was the beloved, award-winning Reddit client for iPhone and iPad known for its beautiful native interface, powerful gestures, jump-to-comments, inline media reading and fanatic attention to detail. After Reddit's API changes ended the original app, the Apollo-Reborn project now publishes official continuation builds that work against Reddit's public API — keeping the classic Apollo experience alive.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Apollo-Reborn/Apollo-Reborn",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official Apollo-Reborn builds from the project's own GitHub releases (deployment target iOS 14 per the build config). The standard variant is distributed here; the project also publishes Liquid Glass and icon variants on the same release. The long-standing Balackburn/Apollo AltStore source mirrors these same builds."
+      },
+      "upstream": {
+        "repo": "Apollo-Reborn/Apollo-Reborn",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Apollo-Reborn-[0-9.]+\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Apollo {version} | {label}"
+      }
+    },
+    {
+      "slug": "dolphinish",
+      "name": "DolphiniOS",
+      "subtitle": "GameCube and Wii emulator for iOS",
+      "bundleIdentifier": "me.oatmealdome.DolphiniOS-njb",
+      "developerName": "OatmealDome",
+      "category": "games",
+      "tintColor": "03A9FF",
+      "icon": "DolphiniOS.webp",
+      "localizedDescription": "DolphiniOS is the Dolphin GameCube and Wii emulator ported to iOS by OatmealDome, requiring no jailbreak. It runs the full Dolphin core with Metal rendering via MoltenVK, supports controllers, save states and high-resolution rendering, and plays your legally dumped GameCube and Wii games.",
+      "screenshots": [],
+      "featured": false,
+      "status": "beta",
+      "upstreamURL": "https://github.com/OatmealDome/dolphin-ios",
+      "verification": {
+        "method": "github-release",
+        "publisher": "OatmealDome/dolphin-ios",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official Non-Jailbroken IPA from the developer's GitHub releases (DolphiniOS 5.0 beta line, iOS 14+). This feed tracks the current 5.0 beta channel — every published build so far is tagged as a pre-release upstream. The same release also ships jailbreak .deb packages and a TrollStore .tipa."
+      },
+      "upstream": {
+        "repo": "OatmealDome/dolphin-ios",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Non-Jailbroken\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "includePrereleases": true,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "DolphiniOS {version} | {label}"
+      }
+    },
+    {
+      "slug": "ish",
+      "name": "iSH",
+      "subtitle": "Linux shell on iOS via x86 emulation",
+      "bundleIdentifier": "app.ish.iSH",
+      "developerName": "Theodore Dubois and contributors",
+      "category": "developer-tools",
+      "tintColor": "000000",
+      "icon": "iSH.webp",
+      "localizedDescription": "iSH is an open-source project that runs a Linux shell environment on iOS using a user-mode x86 emulator. It provides Alpine Linux with the APK package manager, so you can install and run familiar command-line tools — ssh, git, python, vim and more — entirely on your iPhone or iPad, no jailbreak required.",
+      "screenshots": [],
+      "featured": false,
+      "status": "beta",
+      "upstreamURL": "https://github.com/ish-app/ish",
+      "verification": {
+        "method": "github-release",
+        "publisher": "ish-app/ish",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "12.2",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "The official iSH AltStore source (ish.app/altstore.json) serves exactly this channel: the newest iSH.ipa from the project's builds/* GitHub releases. iSH marks trunk builds as pre-releases; the last promoted stable was 1.3.2 (build 494). Reported version is the upstream build number."
+      },
+      "upstream": {
+        "repo": "ish-app/ish",
+        "tagPrefix": "builds/",
+        "assetNamePattern": "^iSH\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "12.2",
+        "descriptionTemplate": "iSH {version} | {label} ({tag})",
+        "includePrereleases": true,
+        "versionPattern": "Build (\\d+)"
+      }
+    },
+    {
+      "slug": "qbitcontrol",
+      "name": "qBitControl",
+      "subtitle": "qBittorrent remote control for iOS",
+      "bundleIdentifier": "MikeMichael225.qBitControl",
+      "developerName": "Michael-128",
+      "category": "utilities",
+      "tintColor": "3C76C5",
+      "icon": "qBitControl.webp",
+      "localizedDescription": "qBitControl is a native qBittorrent remote control app for iPhone and iPad. Manage your torrents from anywhere: add, pause, resume and recheck torrents, browse files and set priorities, configure speed and seeding limits, use custom HTTP headers and self-signed certificates, and track RSS feeds — all against your own qBittorrent WebUI.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Michael-128/qBitControl",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Michael-128/qBitControl",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official release IPAs from the developer's GitHub releases (release-* tags, iOS 16+). The developer also publishes newer continuous builds under build-ci-* tags; this feed tracks the stable release channel."
+      },
+      "upstream": {
+        "repo": "Michael-128/qBitControl",
+        "tagPrefix": "release-",
+        "assetNamePattern": "^qBitControl\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.0",
+        "descriptionTemplate": "qBitControl {version} | {label}"
+      }
+    },
+    {
+      "slug": "qbitconnect",
+      "name": "qBitConnect",
+      "subtitle": "Modern qBittorrent remote client",
+      "bundleIdentifier": "com.bluematter.qbitconnect",
+      "developerName": "Rajnish Sharma",
+      "category": "utilities",
+      "tintColor": "3875C5",
+      "icon": "qBitConnect.webp",
+      "localizedDescription": "qBitConnect is a modern, open-source qBittorrent remote client for iPhone and iPad built with Flutter. Connect to your qBittorrent WebUI to add, manage and monitor torrents with a clean, adaptive interface, push notifications for finished downloads, RSS support and quick actions.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/RajnishOne/qbitconnect",
+      "verification": {
+        "method": "github-release",
+        "publisher": "RajnishOne/qbitconnect",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPAs from the developer's own GitHub releases (iOS 15+ per the Xcode project). The developer's AltStore PAL source may carry newer builds from a separate pipeline; this feed tracks the signed-off GitHub release tags."
+      },
+      "upstream": {
+        "repo": "RajnishOne/qbitconnect",
+        "tagPrefix": "v",
+        "assetNamePattern": "^qBitConnect\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "qBitConnect {version} | {label}"
+      }
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 33,
+  "count": 38,
   "weights": {
     "bundle": 0.55,
     "category": 0.2,
@@ -840,38 +840,38 @@
         ]
       },
       {
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
+        "category": "utilities",
+        "developer": "Michael-128",
+        "bundleId": "MikeMichael225.qBitControl",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
+        "category": "utilities",
+        "developer": "Rajnish Sharma",
+        "bundleId": "com.bluematter.qbitconnect",
+        "version": "1.6.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "livecontainer",
         "name": "LiveContainer",
         "category": "utilities",
         "developer": "LiveContainer Team",
         "bundleId": "com.kdt.livecontainer",
         "version": "3.8.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "feather",
-        "name": "Feather",
-        "category": "utilities",
-        "developer": "Samara",
-        "bundleId": "thewonderofyou.Feather",
-        "version": "2.9.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "bluewallet",
-        "name": "BlueWallet",
-        "category": "utilities",
-        "developer": "BlueWallet",
-        "bundleId": "io.bluewallet.bluewallet",
-        "version": "8.0.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -927,6 +927,19 @@
         "developer": "BandarHL",
         "bundleId": "com.atebits.Tweetie2",
         "version": "4.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "apollo",
+        "name": "Apollo",
+        "category": "social",
+        "developer": "Christian Selig (& Apollo-Reborn contributors)",
+        "bundleId": "com.christianselig.Apollo",
+        "version": "3.6.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1001,6 +1014,19 @@
         ]
       },
       {
+        "slug": "apollo",
+        "name": "Apollo",
+        "category": "social",
+        "developer": "Christian Selig (& Apollo-Reborn contributors)",
+        "bundleId": "com.christianselig.Apollo",
+        "version": "3.6.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
         "slug": "ytkp",
         "name": "YTKillerPlus",
         "category": "photo-video",
@@ -1065,10 +1091,37 @@
           "Same category (social)",
           "Shared tags: social"
         ]
+      },
+      {
+        "slug": "apollo",
+        "name": "Apollo",
+        "category": "social",
+        "developer": "Christian Selig (& Apollo-Reborn contributors)",
+        "bundleId": "com.christianselig.Apollo",
+        "version": "3.6.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
       }
     ],
     "itorrent": [],
-    "stikdebug": [],
+    "stikdebug": [
+      {
+        "slug": "ish",
+        "name": "iSH",
+        "category": "developer-tools",
+        "developer": "Theodore Dubois and contributors",
+        "bundleId": "app.ish.iSH",
+        "version": "813",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (developer-tools)",
+          "Shared tags: developer-tools"
+        ]
+      }
+    ],
     "bhtwitter": [
       {
         "slug": "winston",
@@ -1116,6 +1169,19 @@
         "developer": "iKarwan",
         "bundleId": "com.burbn.instagram",
         "version": "446.0.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "apollo",
+        "name": "Apollo",
+        "category": "social",
+        "developer": "Christian Selig (& Apollo-Reborn contributors)",
+        "bundleId": "com.christianselig.Apollo",
+        "version": "3.6.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1177,12 +1243,12 @@
         ]
       },
       {
-        "slug": "feather",
-        "name": "Feather",
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
         "category": "utilities",
-        "developer": "Samara",
-        "bundleId": "thewonderofyou.Feather",
-        "version": "2.9.0",
+        "developer": "Michael-128",
+        "bundleId": "MikeMichael225.qBitControl",
+        "version": "1.4.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1190,12 +1256,12 @@
         ]
       },
       {
-        "slug": "bluewallet",
-        "name": "BlueWallet",
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
         "category": "utilities",
-        "developer": "BlueWallet",
-        "bundleId": "io.bluewallet.bluewallet",
-        "version": "8.0.1",
+        "developer": "Rajnish Sharma",
+        "bundleId": "com.bluematter.qbitconnect",
+        "version": "1.6.6",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1257,12 +1323,12 @@
         ]
       },
       {
-        "slug": "livecontainer",
-        "name": "LiveContainer",
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
         "category": "utilities",
-        "developer": "LiveContainer Team",
-        "bundleId": "com.kdt.livecontainer",
-        "version": "3.8.0",
+        "developer": "Michael-128",
+        "bundleId": "MikeMichael225.qBitControl",
+        "version": "1.4.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1270,12 +1336,12 @@
         ]
       },
       {
-        "slug": "bluewallet",
-        "name": "BlueWallet",
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
         "category": "utilities",
-        "developer": "BlueWallet",
-        "bundleId": "io.bluewallet.bluewallet",
-        "version": "8.0.1",
+        "developer": "Rajnish Sharma",
+        "bundleId": "com.bluematter.qbitconnect",
+        "version": "1.6.6",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1324,38 +1390,38 @@
         ]
       },
       {
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
+        "category": "utilities",
+        "developer": "Michael-128",
+        "bundleId": "MikeMichael225.qBitControl",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
+        "category": "utilities",
+        "developer": "Rajnish Sharma",
+        "bundleId": "com.bluematter.qbitconnect",
+        "version": "1.6.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "livecontainer",
         "name": "LiveContainer",
         "category": "utilities",
         "developer": "LiveContainer Team",
         "bundleId": "com.kdt.livecontainer",
         "version": "3.8.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "feather",
-        "name": "Feather",
-        "category": "utilities",
-        "developer": "Samara",
-        "bundleId": "thewonderofyou.Feather",
-        "version": "2.9.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "bluewallet",
-        "name": "BlueWallet",
-        "category": "utilities",
-        "developer": "BlueWallet",
-        "bundleId": "io.bluewallet.bluewallet",
-        "version": "8.0.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1372,6 +1438,19 @@
         "developer": "Henrik Rydgård",
         "bundleId": "org.ppsspp.ppsspp",
         "version": "1.20.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "dolphinish",
+        "name": "DolphiniOS",
+        "category": "games",
+        "developer": "OatmealDome",
+        "bundleId": "me.oatmealdome.DolphiniOS-njb",
+        "version": "5.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -1418,6 +1497,19 @@
           "Same category (games)",
           "Shared tags: games"
         ]
+      },
+      {
+        "slug": "dolphinish",
+        "name": "DolphiniOS",
+        "category": "games",
+        "developer": "OatmealDome",
+        "bundleId": "me.oatmealdome.DolphiniOS-njb",
+        "version": "5.0.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
       }
     ],
     "ppsspp": [
@@ -1428,6 +1520,19 @@
         "developer": "Provenance Emu",
         "bundleId": "org.provenance-emu.provenance",
         "version": "3.3.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "dolphinish",
+        "name": "DolphiniOS",
+        "category": "games",
+        "developer": "OatmealDome",
+        "bundleId": "me.oatmealdome.DolphiniOS-njb",
+        "version": "5.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -1757,38 +1862,38 @@
         ]
       },
       {
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
+        "category": "utilities",
+        "developer": "Michael-128",
+        "bundleId": "MikeMichael225.qBitControl",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
+        "category": "utilities",
+        "developer": "Rajnish Sharma",
+        "bundleId": "com.bluematter.qbitconnect",
+        "version": "1.6.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "livecontainer",
         "name": "LiveContainer",
         "category": "utilities",
         "developer": "LiveContainer Team",
         "bundleId": "com.kdt.livecontainer",
         "version": "3.8.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "feather",
-        "name": "Feather",
-        "category": "utilities",
-        "developer": "Samara",
-        "bundleId": "thewonderofyou.Feather",
-        "version": "2.9.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "bluewallet",
-        "name": "BlueWallet",
-        "category": "utilities",
-        "developer": "BlueWallet",
-        "bundleId": "io.bluewallet.bluewallet",
-        "version": "8.0.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1850,12 +1955,12 @@
         ]
       },
       {
-        "slug": "livecontainer",
-        "name": "LiveContainer",
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
         "category": "utilities",
-        "developer": "LiveContainer Team",
-        "bundleId": "com.kdt.livecontainer",
-        "version": "3.8.0",
+        "developer": "Michael-128",
+        "bundleId": "MikeMichael225.qBitControl",
+        "version": "1.4.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1863,12 +1968,12 @@
         ]
       },
       {
-        "slug": "feather",
-        "name": "Feather",
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
         "category": "utilities",
-        "developer": "Samara",
-        "bundleId": "thewonderofyou.Feather",
-        "version": "2.9.0",
+        "developer": "Rajnish Sharma",
+        "bundleId": "com.bluematter.qbitconnect",
+        "version": "1.6.6",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1928,6 +2033,19 @@
           "Same category (social)",
           "Shared tags: social"
         ]
+      },
+      {
+        "slug": "apollo",
+        "name": "Apollo",
+        "category": "social",
+        "developer": "Christian Selig (& Apollo-Reborn contributors)",
+        "bundleId": "com.christianselig.Apollo",
+        "version": "3.6.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
       }
     ],
     "saber": [
@@ -1971,38 +2089,38 @@
         ]
       },
       {
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
+        "category": "utilities",
+        "developer": "Michael-128",
+        "bundleId": "MikeMichael225.qBitControl",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
+        "category": "utilities",
+        "developer": "Rajnish Sharma",
+        "bundleId": "com.bluematter.qbitconnect",
+        "version": "1.6.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "livecontainer",
         "name": "LiveContainer",
         "category": "utilities",
         "developer": "LiveContainer Team",
         "bundleId": "com.kdt.livecontainer",
         "version": "3.8.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "feather",
-        "name": "Feather",
-        "category": "utilities",
-        "developer": "Samara",
-        "bundleId": "thewonderofyou.Feather",
-        "version": "2.9.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "bluewallet",
-        "name": "BlueWallet",
-        "category": "utilities",
-        "developer": "BlueWallet",
-        "bundleId": "io.bluewallet.bluewallet",
-        "version": "8.0.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -2064,6 +2182,222 @@
         ]
       },
       {
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
+        "category": "utilities",
+        "developer": "Michael-128",
+        "bundleId": "MikeMichael225.qBitControl",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
+        "category": "utilities",
+        "developer": "Rajnish Sharma",
+        "bundleId": "com.bluematter.qbitconnect",
+        "version": "1.6.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "apollo": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "inkillerplus",
+        "name": "iNKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.burbn.instagram",
+        "version": "446.0.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "bhtwitter",
+        "name": "BHTwitter",
+        "category": "social",
+        "developer": "BandarHL",
+        "bundleId": "com.atebits.Tweetie2",
+        "version": "4.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "dolphinish": [
+      {
+        "slug": "provenance",
+        "name": "Provenance",
+        "category": "games",
+        "developer": "Provenance Emu",
+        "bundleId": "org.provenance-emu.provenance",
+        "version": "3.3.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "ppsspp",
+        "name": "PPSSPP",
+        "category": "games",
+        "developer": "Henrik Rydgård",
+        "bundleId": "org.ppsspp.ppsspp",
+        "version": "1.20.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "delta",
+        "name": "Delta",
+        "category": "games",
+        "developer": "Riley Testut",
+        "bundleId": "com.rileytestut.Delta",
+        "version": "1.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      }
+    ],
+    "ish": [
+      {
+        "slug": "stikdebug",
+        "name": "StikDebug",
+        "category": "developer-tools",
+        "developer": "StikDebug",
+        "bundleId": "com.stik.stikdebug",
+        "version": "3.1.10",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (developer-tools)",
+          "Shared tags: developer-tools"
+        ]
+      }
+    ],
+    "qbitcontrol": [
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "saber",
+        "name": "Saber",
+        "category": "utilities",
+        "developer": "Adil Hanney",
+        "bundleId": "com.adilhanney.saber",
+        "version": "1.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
+        "category": "utilities",
+        "developer": "Rajnish Sharma",
+        "bundleId": "com.bluematter.qbitconnect",
+        "version": "1.6.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "livecontainer",
         "name": "LiveContainer",
         "category": "utilities",
@@ -2075,14 +2409,81 @@
           "Same category (utilities)",
           "Shared tags: utilities"
         ]
+      }
+    ],
+    "qbitconnect": [
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
       },
       {
-        "slug": "feather",
-        "name": "Feather",
+        "slug": "utm",
+        "name": "UTM",
         "category": "utilities",
-        "developer": "Samara",
-        "bundleId": "thewonderofyou.Feather",
-        "version": "2.9.0",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "saber",
+        "name": "Saber",
+        "category": "utilities",
+        "developer": "Adil Hanney",
+        "bundleId": "com.adilhanney.saber",
+        "version": "1.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
+        "category": "utilities",
+        "developer": "Michael-128",
+        "bundleId": "MikeMichael225.qBitControl",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "livecontainer",
+        "name": "LiveContainer",
+        "category": "utilities",
+        "developer": "LiveContainer Team",
+        "bundleId": "com.kdt.livecontainer",
+        "version": "3.8.0",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",

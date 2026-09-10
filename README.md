@@ -10,7 +10,7 @@ One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · 
 
 <!-- omnisource:stats:start -->
 
-**33** apps · **29** upstream sources · **32** verified · **1** community verified · **33/33** downloads online · last sync **2026-09-10**.
+**38** apps · **34** upstream sources · **37** verified · **1** community verified · **38/38** downloads online · last sync **2026-09-10**.
 
 <!-- omnisource:stats:end -->
 
@@ -104,7 +104,7 @@ The complete generated catalog is below — it refreshes automatically on every 
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-10 · 33 apps · 33/33 downloads reachable._
+_Catalogue last changed 2026-09-10 · 38 apps · 38/38 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -141,6 +141,11 @@ _Catalogue last changed 2026-09-10 · 33 apps · 33/33 downloads reachable._
 | **Voyager** | `app.vger.voyager` | `2.49.0` | 2026-09-06 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/voyager.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/voyager.json) | [`voyager.json`](https://iamsmmh.github.io/OmniSource/voyager.json) | [`voyager.xml`](https://iamsmmh.github.io/OmniSource/voyager.xml) |
 | **Saber** | `com.adilhanney.saber` | `1.36.1` | 2026-08-30 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/saber.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/saber.json) | [`saber.json`](https://iamsmmh.github.io/OmniSource/saber.json) | [`saber.xml`](https://iamsmmh.github.io/OmniSource/saber.xml) |
 | **Anx Reader** | `com.anxcye.anxReader` | `1.14.0` | 2026-03-19 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/anxreader.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/anxreader.json) | [`anxreader.json`](https://iamsmmh.github.io/OmniSource/anxreader.json) | [`anxreader.xml`](https://iamsmmh.github.io/OmniSource/anxreader.xml) |
+| **Apollo** | `com.christianselig.Apollo` | `3.6.0` | 2026-08-18 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/apollo.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/apollo.json) | [`apollo.json`](https://iamsmmh.github.io/OmniSource/apollo.json) | [`apollo.xml`](https://iamsmmh.github.io/OmniSource/apollo.xml) |
+| **DolphiniOS** | `me.oatmealdome.DolphiniOS-njb` | `5.0.0` | 2026-06-20 | 🟡 beta | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/dolphinish.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/dolphinish.json) | [`dolphinish.json`](https://iamsmmh.github.io/OmniSource/dolphinish.json) | [`dolphinish.xml`](https://iamsmmh.github.io/OmniSource/dolphinish.xml) |
+| **iSH** | `app.ish.iSH` | `813` | 2026-08-22 | 🟡 beta | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ish.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ish.json) | [`ish.json`](https://iamsmmh.github.io/OmniSource/ish.json) | [`ish.xml`](https://iamsmmh.github.io/OmniSource/ish.xml) |
+| **qBitControl** | `MikeMichael225.qBitControl` | `1.4.1` | 2026-07-23 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/qbitcontrol.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/qbitcontrol.json) | [`qbitcontrol.json`](https://iamsmmh.github.io/OmniSource/qbitcontrol.json) | [`qbitcontrol.xml`](https://iamsmmh.github.io/OmniSource/qbitcontrol.xml) |
+| **qBitConnect** | `com.bluematter.qbitconnect` | `1.6.6` | 2025-11-02 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/qbitconnect.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/qbitconnect.json) | [`qbitconnect.json`](https://iamsmmh.github.io/OmniSource/qbitconnect.json) | [`qbitconnect.xml`](https://iamsmmh.github.io/OmniSource/qbitconnect.xml) |
 
 <!-- omnisource:catalog:end -->
 

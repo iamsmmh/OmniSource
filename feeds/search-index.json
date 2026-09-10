@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 33,
+  "count": 38,
   "fuse": {
     "keys": [
       {
@@ -886,6 +886,136 @@
       "icon": "assets/AnxReader.webp",
       "pageURL": "apps/anxreader/",
       "version": "1.14.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "apollo",
+      "slug": "apollo",
+      "name": "Apollo",
+      "subtitle": "The beloved Reddit client, continued by Apollo-Reborn",
+      "shortDescription": "The beloved Reddit client, continued by Apollo-Reborn",
+      "description": "Apollo was the beloved, award-winning Reddit client for iPhone and iPad known for its beautiful native interface, powerful gestures, jump-to-comments, inline media reading and fanatic attention to detail. After Reddit's API changes ended the original app, the Apollo-Reborn project now publishes official continuation builds that work against Reddit's public API — keeping the classic Apollo experience alive.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "Christian Selig (& Apollo-Reborn contributors)",
+      "bundleId": "com.christianselig.Apollo",
+      "icon": "assets/Apollo.webp",
+      "pageURL": "apps/apollo/",
+      "version": "3.6.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "dolphinish",
+      "slug": "dolphinish",
+      "name": "DolphiniOS",
+      "subtitle": "GameCube and Wii emulator for iOS",
+      "shortDescription": "GameCube and Wii emulator for iOS",
+      "description": "DolphiniOS is the Dolphin GameCube and Wii emulator ported to iOS by OatmealDome, requiring no jailbreak. It runs the full Dolphin core with Metal rendering via MoltenVK, supports controllers, save states and high-resolution rendering, and plays your legally dumped GameCube and Wii games.",
+      "category": "games",
+      "tags": [
+        "games"
+      ],
+      "developer": "OatmealDome",
+      "bundleId": "me.oatmealdome.DolphiniOS-njb",
+      "icon": "assets/DolphiniOS.webp",
+      "pageURL": "apps/dolphinish/",
+      "version": "5.0.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "ish",
+      "slug": "ish",
+      "name": "iSH",
+      "subtitle": "Linux shell on iOS via x86 emulation",
+      "shortDescription": "Linux shell on iOS via x86 emulation",
+      "description": "iSH is an open-source project that runs a Linux shell environment on iOS using a user-mode x86 emulator. It provides Alpine Linux with the APK package manager, so you can install and run familiar command-line tools — ssh, git, python, vim and more — entirely on your iPhone or iPad, no jailbreak required.",
+      "category": "developer-tools",
+      "tags": [
+        "developer-tools"
+      ],
+      "developer": "Theodore Dubois and contributors",
+      "bundleId": "app.ish.iSH",
+      "icon": "assets/iSH.webp",
+      "pageURL": "apps/ish/",
+      "version": "813",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "qbitcontrol",
+      "slug": "qbitcontrol",
+      "name": "qBitControl",
+      "subtitle": "qBittorrent remote control for iOS",
+      "shortDescription": "qBittorrent remote control for iOS",
+      "description": "qBitControl is a native qBittorrent remote control app for iPhone and iPad. Manage your torrents from anywhere: add, pause, resume and recheck torrents, browse files and set priorities, configure speed and seeding limits, use custom HTTP headers and self-signed certificates, and track RSS feeds — all against your own qBittorrent WebUI.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "Michael-128",
+      "bundleId": "MikeMichael225.qBitControl",
+      "icon": "assets/qBitControl.webp",
+      "pageURL": "apps/qbitcontrol/",
+      "version": "1.4.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "qbitconnect",
+      "slug": "qbitconnect",
+      "name": "qBitConnect",
+      "subtitle": "Modern qBittorrent remote client",
+      "shortDescription": "Modern qBittorrent remote client",
+      "description": "qBitConnect is a modern, open-source qBittorrent remote client for iPhone and iPad built with Flutter. Connect to your qBittorrent WebUI to add, manage and monitor torrents with a clean, adaptive interface, push notifications for finished downloads, RSS support and quick actions.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "Rajnish Sharma",
+      "bundleId": "com.bluematter.qbitconnect",
+      "icon": "assets/qBitConnect.webp",
+      "pageURL": "apps/qbitconnect/",
+      "version": "1.6.6",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [
