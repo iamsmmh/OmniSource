@@ -107,9 +107,9 @@
           "notes": "UNOFFICIAL BUILD. MSGPlusX has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses the stock Messenger bundle identifier, so installing it REPLACES the App Store Messenger on device."
         },
         "health": {
-          "downloadReachable": true,
-          "detail": "not probed",
-          "statusSince": "2026-09-03",
+          "downloadReachable": false,
+          "detail": "HTTP 404",
+          "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-03"
         }
       }
