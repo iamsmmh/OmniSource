@@ -56,7 +56,7 @@ PAGES: list[tuple[str, str]] = [
     ("/favorites/", 'id="favorites-content"'),
     ("/apps/ytlite/", 'class="app-page"'),
     ("/manifest.webmanifest", '"name": "OmniSource'),
-    ("/sw.js", "omnisource-v7"),
+    ("/sw.js", "omnisource-v8"),
     ("/sitemap.xml", "<urlset"),
     ("/robots.txt", "User-agent"),
 ]

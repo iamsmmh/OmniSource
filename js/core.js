@@ -123,7 +123,17 @@
 
     toast: function (message) {
       var node = $('#toast');
-      if (!node) return;
+      if (!node) {
+        // Pages that do not ship the toast markup (favorites / collections)
+        // still get the same shared component, created once on demand.
+        node = document.createElement('div');
+        node.className = 'toast';
+        node.id = 'toast';
+        node.setAttribute('role', 'status');
+        node.setAttribute('aria-live', 'polite');
+        node.innerHTML = '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span></span>';
+        document.body.appendChild(node);
+      }
       var label = node.querySelector('span');
       if (label) label.textContent = message;
       node.classList.add('show');
@@ -723,15 +733,21 @@
       document.body.appendChild(backdrop);
     }
 
+    // The "More" dropdown lives inside the same .nav-links container: in the
+    // phone drawer its items must always be visible (CSS hides the summary),
+    // while on desktop it behaves as a hover/click menu.
+    var moreMenus = $$('.nav-more', links);
     function closeNav() {
       document.body.classList.remove('nav-open');
       btn.setAttribute('aria-expanded', 'false');
       btn.setAttribute('aria-label', 'Open menu');
+      if (window.innerWidth > 1100) moreMenus.forEach(function (d) { d.open = false; });
     }
     function openNav() {
       document.body.classList.add('nav-open');
       btn.setAttribute('aria-expanded', 'true');
       btn.setAttribute('aria-label', 'Close menu');
+      if (window.innerWidth <= 1100) moreMenus.forEach(function (d) { d.open = true; });
     }
     btn.addEventListener('click', function () {
       document.body.classList.contains('nav-open') ? closeNav() : openNav();
@@ -739,6 +755,16 @@
     backdrop.addEventListener('click', closeNav);
     links.addEventListener('click', function (event) {
       if (event.target.closest && event.target.closest('a')) closeNav();
+    });
+    // Desktop: close the "More" menu when clicking/tapping outside of it.
+    document.addEventListener('click', function (event) {
+      if (window.innerWidth <= 1100) return;
+      moreMenus.forEach(function (details) {
+        if (details.open && !details.contains(event.target)) details.open = false;
+      });
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') moreMenus.forEach(function (d) { d.open = false; });
     });
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') closeNav();

@@ -24,18 +24,29 @@
         <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="OmniSource" width="40" height="40"></picture>
         <span>OmniSource</span>
       </a>
-      <nav class="nav-links">
+      <div class="nav-links">
         <a href="../">Home</a>
         <a href="../compare/">Compare</a>
-        <a href="../status/">Status</a>
-        <a href="../analytics/">Analytics</a>
+        <a href="../status/">Health</a>
         <a href="../install/">Install</a>
-        <a href="../favorites/" class="favorites-nav-item">
-          <span>Favorites</span>
-          <span class="favorites-count">0</span>
-        </a>
-        <a href="index.html" class="active" aria-current="page">Collections</a>
-      </nav>
+        <details class="nav-more">
+          <summary aria-haspopup="menu" aria-label="More pages">More
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="nav-menu" role="menu">
+            <a href="../#trending" role="menuitem">Trending</a>
+            <a href="../analytics/" role="menuitem">Analytics</a>
+            <a href="index.html" class="active" aria-current="page" role="menuitem">Collections</a>
+            <a href="../favorites/" role="menuitem favorites-nav-item">
+              <span>Favorites</span>
+              <span class="favorites-count">0</span>
+            </a>
+            <a href="../search/" role="menuitem">Search</a>
+            <a href="../feeds/feed.xml" role="menuitem" title="Combined release feed (RSS)">RSS feed</a>
+            <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" class="nav-gh" role="menuitem">GitHub &#8599;</a>
+          </div>
+        </details>
+      </div>
       <div class="nav-controls">
         <button id="themeButton" class="icon-button" aria-label="Toggle theme">
           <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/></svg>

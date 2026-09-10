@@ -30,10 +30,15 @@
  *   • the generated feeds now live only under /feeds/ (the repository root
  *     no longer mirrors them), so the discovery catalog precache points at
  *     ./feeds/discovery.json instead of the removed ./discovery.json.
+ *
+ * v8 changes (shell completeness):
+ *   • js/features.js and the favorites/collections pages join the precache
+ *     so those pages work offline on first load too; the dead Fuse.js
+ *     vendor bundle was removed.
  */
 'use strict';
 
-const VERSION = 'omnisource-v7';
+const VERSION = 'omnisource-v8';
 const CORE_CACHE = `${VERSION}-core`;
 const DATA_CACHE = `${VERSION}-data`;
 const ASSET_CACHE = `${VERSION}-assets`;
@@ -47,6 +52,8 @@ const CORE_ASSETS = [
   './analytics/index.html',
   './install/index.html',
   './search/index.html',
+  './favorites/index.html',
+  './collections/index.html',
   './manifest.webmanifest',
   './assets/design-system/tokens.css',
   './assets/design-system/utilities.css',
@@ -54,6 +61,7 @@ const CORE_ASSETS = [
   './assets/design-system/components.css',
   './js/core.js',
   './js/site.js',
+  './js/features.js',
   './assets/OmniSource.webp'
 ];
 

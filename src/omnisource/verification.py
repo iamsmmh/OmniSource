@@ -97,6 +97,41 @@ COMMUNITY_METHODS = frozenset({"manual-mirror", "self-built"})
 BUNDLE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9.-]*$")
 LEVELS = ("VERIFIED", "COMMUNITY VERIFIED", "UNVERIFIED")
 
+# Publishers whose name itself signals a community repack/mirror.
+_COMMUNITY_PUBLISHER_RE = re.compile(r"vault|mirror|community", re.IGNORECASE)
+_GH_PUBLISHER_RE = re.compile(r"^(?:https?://github\.com/)?([^/]+/[^/]+?)(?:\.git)?/?$", re.IGNORECASE)
+_GH_UPSTREAM_RE = re.compile(r"github\.com/([^/]+/[^/]+?)(?:\.git)?/?$", re.IGNORECASE)
+
+
+def provenance_for(app: Any, method: str, publisher: str) -> str:
+    """Classify who actually publishes the sideload IPA.
+
+    ``official``  — the IPA comes from the project's own release channel
+                    (its forge releases or its own AltStore/JSON feed).
+    ``community`` — a third party repackaged or mirrored the build (manual
+                    mirrors, "IPA vault" publishers, or a GitHub packaging
+                    repository that is not the project's own upstream repo).
+
+    This is distinct from :data:`LEVELS`: a community build can be VERIFIED
+    and an official-method build can be UNVERIFIED (e.g. a dead link).
+    """
+    raw = getattr(app, "raw", None) or {}
+    status = str(raw.get("status") or "stable").lower()
+    method = str(method or "").lower()
+    publisher = str(publisher or "")
+    if status == "manual":
+        return "community"
+    if method in COMMUNITY_METHODS:
+        return "community"
+    if _COMMUNITY_PUBLISHER_RE.search(publisher):
+        return "community"
+    if method in {"github-release", "github-tag"}:
+        published = _GH_PUBLISHER_RE.match(publisher.strip())
+        upstream = _GH_UPSTREAM_RE.search(str(raw.get("upstreamURL") or ""))
+        if published and upstream and published.group(1).lower() != upstream.group(1).lower():
+            return "community"
+    return "official"
+
 
 def _checks(catalog: Catalog, app: Any, newest: dict[str, Any], health: dict[str, Any] | None) -> dict[str, bool]:
     """Evaluate each verification check against defensively-sourced values."""
@@ -132,13 +167,23 @@ def build_verification_doc(
     health_doc = health_doc or {}
     health_by_slug = {item.get("slug"): item for item in health_doc.get("apps", []) if isinstance(item, dict)}
     entries: list[dict[str, Any]] = []
-    totals = {"apps": 0, "verified": 0, "communityVerified": 0, "unverified": 0, "hashVerified": 0}
+    totals = {
+        "apps": 0,
+        "verified": 0,
+        "communityVerified": 0,
+        "unverified": 0,
+        "hashVerified": 0,
+        "official": 0,
+        "communityBuilds": 0,
+    }
 
     for app in catalog.apps:
         verification = app.raw.get("verification", {})
         if not isinstance(verification, dict):
             verification = {}
         method = str(verification.get("method") or "")
+        publisher = str(verification.get("publisher") or app.developer)
+        provenance = provenance_for(app, method, publisher)
         newest = newest_version(state, app.slug)
         health = health_by_slug.get(app.slug)
         checks = _checks(catalog, app, newest, health)
@@ -159,6 +204,7 @@ def build_verification_doc(
 
         totals["apps"] += 1
         totals[{"VERIFIED": "verified", "COMMUNITY VERIFIED": "communityVerified"}.get(level, "unverified")] += 1
+        totals["official" if provenance == "official" else "communityBuilds"] += 1
         if checks["hashVerified"]:
             totals["hashVerified"] += 1
 
@@ -186,9 +232,10 @@ def build_verification_doc(
                 "app": app.slug,
                 "name": app.name,
                 "status": level,
+                "provenance": provenance,
                 "hash_verified": checks["hashVerified"],
                 "method": method,
-                "publisher": str(verification.get("publisher") or app.developer),
+                "publisher": publisher,
                 "checks": checks,
                 "reasons": _reason_for_level(level, failed, method),
                 "downloadURL": str(newest.get("downloadURL") or ""),

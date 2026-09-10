@@ -98,11 +98,11 @@ class TestInstallUrl(unittest.TestCase):
             install_url("feather", feed),
             "feather://source/example.com/OmniSource/alpha.json",
         )
+        self.assertEqual(install_url("esign", feed), f"esign://addsource?url={feed}")
+        self.assertEqual(install_url("livecontainer", feed), f"livecontainer://sources?url={feed}")
 
-    def test_manual_clients_have_no_deep_link(self) -> None:
+    def test_unknown_clients_have_no_deep_link(self) -> None:
         feed = "https://example.com/OmniSource/alpha.json"
-        self.assertEqual(install_url("esign", feed), "")
-        self.assertEqual(install_url("livecontainer", feed), "")
         self.assertEqual(install_url("unknown-client", feed), "")
 
 

@@ -63,9 +63,15 @@ _VERIFICATION_BADGES = {
 }
 
 
-def _badges(status: str, health_ok: bool, verification_level: str, stale: bool) -> str:
+def _badges(status: str, health_ok: bool, verification_level: str, stale: bool, provenance: str = "official") -> str:
+    provenance_badge = (
+        '<span class="badge verified" title="IPA published by the project&#39;s own upstream release channel">Official build</span>'
+        if provenance == "official"
+        else '<span class="badge community" title="Repackaged or mirrored by a community builder — see Trust &amp; provenance">Community build</span>'
+    )
     parts = [
         _badge("stable" if status == "stable" else status, status.title()),
+        provenance_badge,
         (
             '<span class="badge ok"><span class="dot"></span>Online</span>'
             if health_ok
@@ -228,6 +234,7 @@ def _detail_cells(
     health: dict[str, Any],
     verification_level: str,
     version_count: int,
+    provenance: str = "official",
 ) -> str:
     version = html.escape(str(newest.get("version") or "—"))
     updated_at = html.escape(_fmt_date(str(newest.get("date") or "")))
@@ -255,6 +262,7 @@ def _detail_cells(
         ("Developer", developer),
         ("Bundle ID", f"<code>{bundle}</code>"),
         ("Verification", verification),
+        ("Build", "Official build" if provenance == "official" else "Community build"),
         ("Checksum", f"<code>{checksum}</code>"),
         ("Health", health_text),
         ("Version history", str(version_count)),
@@ -266,7 +274,7 @@ def _detail_cells(
     )
 
 
-def _duplicate_banner(app: Any, duplicate: dict[str, Any] | None) -> str:
+def _duplicate_banner(app: Any, duplicate: dict[str, Any] | None, feed_url: str = "") -> str:
     if not duplicate:
         return ""
     recommended = duplicate.get("recommended") if isinstance(duplicate.get("recommended"), dict) else {}
@@ -278,12 +286,26 @@ def _duplicate_banner(app: Any, duplicate: dict[str, Any] | None) -> str:
     )
     if target and target != app.slug:
         recommendation += f' <a href="../{html.escape(target)}/">Open {html.escape(target)} →</a>'
+    # Bundle-ID collisions: clients like SideStore cannot keep two apps that
+    # share a bundle ID from the master feed. The per-app feed adds this one
+    # app on its own, so offer a one-click copy of that source URL.
+    bundle_collision = str(duplicate.get("type") or "").startswith("bundle-id")
+    collision_hint = (
+        '<p>Clients that identify apps by bundle ID (e.g. SideStore) cannot install these '
+        'side by side — adding the new one replaces the old. To add <b>only this app</b> '
+        'manually, use its single-app source: '
+        f'<button class="button small" type="button" data-copy="{html.escape(feed_url)}" '
+        'data-copy-msg="Single-app source copied — add it manually in your client">Copy single-app source link</button></p>'
+        if bundle_collision and feed_url
+        else ""
+    )
     return f"""<div class="ap-alert" role="note">
   <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none"
     stroke="currentColor" stroke-width="2"><path d="M12 3 2.8 20h18.4L12 3Zm0 6v5m0 3.2v.1"/></svg>
   <div>
     <b>Similar apps detected in the catalog.</b>
     <p>{reason} · {recommendation}</p>
+    {collision_hint}
   </div>
 </div>"""
 
@@ -388,6 +410,7 @@ def render_app_page(
         {"status": "UNVERIFIED", "checks": {}, "reasons": []},
     )
     verification_level = str(verification_item.get("status") or "UNVERIFIED")
+    provenance = str(verification_item.get("provenance") or "official")
     duplicate = group_for_app(duplicates_doc, app.slug)
 
     icon_url = f"{base}/assets/{app.icon}"
@@ -461,9 +484,21 @@ def render_app_page(
         '        <a href="../../compare/">Compare</a>\n',
         '        <a href="../../status/">Health</a>\n',
         '        <a href="../../install/">Install</a>\n',
-        f'        <a href="{html.escape(rss_url)}" target="_blank" rel="noopener">RSS</a>\n',
-        f'        <a href="{html.escape(feed_url)}" target="_blank" rel="noopener">Feed</a>\n',
-        f'        <a href="{html.escape(repo_url)}" target="_blank" rel="noopener">GitHub</a>\n',
+        '        <details class="nav-more">\n',
+        '          <summary aria-haspopup="menu" aria-label="More pages">More\n',
+        '            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>\n',
+        '          </summary>\n',
+        '          <div class="nav-menu" role="menu">\n',
+        '            <a href="../../#trending" role="menuitem">Trending</a>\n',
+        '            <a href="../../analytics/" role="menuitem">Analytics</a>\n',
+        '            <a href="../../favorites/" role="menuitem">Favorites</a>\n',
+        '            <a href="../../collections/" role="menuitem">Collections</a>\n',
+        '            <a href="../../search/" role="menuitem">Search</a>\n',
+        f'            <a href="{html.escape(rss_url)}" target="_blank" rel="noopener" role="menuitem">RSS</a>\n',
+        f'            <a href="{html.escape(feed_url)}" target="_blank" rel="noopener" role="menuitem">This app&rsquo;s feed</a>\n',
+        f'            <a href="{html.escape(repo_url)}" target="_blank" rel="noopener" class="nav-gh" role="menuitem">GitHub ↗</a>\n',
+        '          </div>\n',
+        '        </details>\n',
         "      </div>\n",
         '      <button class="icon-button theme-toggle" id="themeButton" type="button" '
         'aria-label="Change color theme" title="Theme: system">\n',
@@ -495,10 +530,11 @@ def render_app_page(
             bool(health_item.get("downloadReachable", True)),
             verification_level,
             bool(health_item.get("stale")),
+            provenance,
         ),
         "</div>\n",
         "      </div>\n",
-        _duplicate_banner(app, duplicate),
+        _duplicate_banner(app, duplicate, feed_url),
         '      <div class="ap-install">\n',
         f'        <a class="get-capsule" href="{html.escape(download_url)}" target="_blank" rel="noopener">'
         f'Get · v{version_text}<span class="capsule-size">{size_text}</span></a>\n',
@@ -536,13 +572,20 @@ def render_app_page(
         '    <section class="ap-section" data-reveal>\n',
         '      <h2><span class="num">04</span> Details</h2>\n',
         '      <div class="ap-detail-grid">\n',
-        _detail_cells(app, newest, health_item, verification_level, len(versions)),
+        _detail_cells(app, newest, health_item, verification_level, len(versions), provenance),
         "</div>\n",
         "    </section>\n\n",
         '    <section class="ap-section" data-reveal>\n',
         '      <h2><span class="num">05</span> Trust &amp; provenance</h2>\n',
         f"      {_checks_html(checks)}\n",
-        '      <p class="ap-desc mt-3">Published by ' + f"{publisher_html} · {method_text}.</p>\n",
+        (
+            '      <p class="ap-desc mt-3"><b>Official build.</b> The IPA is published by the '
+            "project&rsquo;s own upstream release channel.</p>\n"
+            if provenance == "official"
+            else '      <p class="ap-desc mt-3"><b>Community build.</b> The IPA is repackaged or '
+            "mirrored by a community builder; the tweak or app itself is developed upstream.</p>\n"
+        ),
+        '      <p class="ap-desc">Published by ' + f"{publisher_html} · {method_text}.</p>\n",
         f"      <ul>{reasons_html}</ul>\n",
         (
             f'      <div class="detail-note mt-3"><b>Compatibility notes:</b> {notes_html}</div>\n'

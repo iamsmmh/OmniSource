@@ -3838,3 +3838,134 @@ body.nav-open .nav-backdrop {
     opacity: 0.35;
   }
 }
+
+/* ============================================================================
+   Navigation "More" dropdown (declutter of the top capsule)
+   ========================================================================== */
+.nav-more { position: relative; }
+.nav-more > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+.nav-more > summary::-webkit-details-marker { display: none; }
+.nav-more > summary svg {
+  width: 13px; height: 13px;
+  fill: none; stroke: currentColor; stroke-width: 2.2;
+  stroke-linecap: round; stroke-linejoin: round;
+  transition: transform var(--dur-fast) var(--ease-spring);
+}
+.nav-more > summary:hover,
+.nav-more[open] > summary {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+.nav-more[open] > summary svg { transform: rotate(180deg); }
+.nav-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 204px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px;
+  background: var(--glass-heavy);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow-xl);
+  backdrop-filter: var(--blur-liquid);
+  -webkit-backdrop-filter: var(--blur-liquid);
+  z-index: var(--z-header);
+}
+.nav-menu a {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+.nav-menu a:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 9%, transparent);
+}
+/* In the phone drawer the summary disappears and the menu items join the
+   vertical stack directly (details is forced open by js/core.js). */
+@media (max-width: 1100px) {
+  .nav-more { width: 100%; }
+  .nav-more > summary { display: none; }
+  .nav-menu {
+    position: static;
+    display: flex;
+    min-width: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0 0 0 12px;
+  }
+  .nav-menu a { padding: 10px 14px; font-size: 14px; }
+}
+
+/* ============================================================================
+   Single-app source copy affordances (bundle-ID collision workaround)
+   ========================================================================== */
+.collision-note .copy-feed-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 9px;
+  border: 1px solid color-mix(in srgb, currentColor 32%, transparent);
+  background: color-mix(in srgb, currentColor 12%, transparent);
+  color: inherit;
+  font: inherit;
+  font-weight: 800;
+  font-size: 11.5px;
+  padding: 7px 13px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.collision-note .copy-feed-btn:hover {
+  background: var(--amber);
+  color: #170d01;
+  transform: translateY(-1px);
+}
+.collision-note .copy-feed-link {
+  font-weight: 800;
+  font-size: 11.5px;
+  margin-left: 10px;
+  white-space: nowrap;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ap-feed-url { font-family: var(--font-mono); font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+.ap-feed-copy {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--accent);
+  border-radius: var(--radius-pill);
+  padding: 6px 13px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.ap-feed-copy:hover { border-color: var(--accent); transform: translateY(-1px); }
