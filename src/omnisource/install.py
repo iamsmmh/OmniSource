@@ -56,7 +56,9 @@ CLIENT_PROFILES = {
         "name": "ESign",
         "scheme": "esign://addsource?url={url}",
         "deepLinkable": True,
-        "instructions": "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL.",
+        "instructions": (
+            "Tap to add the source to ESign. If nothing happens, open ESign → App Sources → + and paste the URL."
+        ),
         "manualSetup": False,
     },
     "livecontainer": {
@@ -64,7 +66,10 @@ CLIENT_PROFILES = {
         "name": "LiveContainer",
         "scheme": "livecontainer://sources?url={url}",
         "deepLinkable": True,
-        "instructions": "Tap to add the source to LiveContainer. If nothing happens, open LiveContainer → Settings → Sources and paste the URL.",
+        "instructions": (
+            "Tap to add the source to LiveContainer. If nothing happens, "
+            "open LiveContainer → Settings → Sources and paste the URL."
+        ),
         "manualSetup": False,
     },
 }

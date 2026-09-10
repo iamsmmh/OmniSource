@@ -65,9 +65,11 @@ _VERIFICATION_BADGES = {
 
 def _badges(status: str, health_ok: bool, verification_level: str, stale: bool, provenance: str = "official") -> str:
     provenance_badge = (
-        '<span class="badge verified" title="IPA published by the project&#39;s own upstream release channel">Official build</span>'
+        '<span class="badge verified" title="IPA published by the project&#39;s '
+        'own upstream release channel">Official build</span>'
         if provenance == "official"
-        else '<span class="badge community" title="Repackaged or mirrored by a community builder — see Trust &amp; provenance">Community build</span>'
+        else '<span class="badge community" title="Repackaged or mirrored by a '
+        'community builder — see Trust &amp; provenance">Community build</span>'
     )
     parts = [
         _badge("stable" if status == "stable" else status, status.title()),
@@ -291,11 +293,12 @@ def _duplicate_banner(app: Any, duplicate: dict[str, Any] | None, feed_url: str 
     # app on its own, so offer a one-click copy of that source URL.
     bundle_collision = str(duplicate.get("type") or "").startswith("bundle-id")
     collision_hint = (
-        '<p>Clients that identify apps by bundle ID (e.g. SideStore) cannot install these '
-        'side by side — adding the new one replaces the old. To add <b>only this app</b> '
-        'manually, use its single-app source: '
+        "<p>Clients that identify apps by bundle ID (e.g. SideStore) cannot install these "
+        "side by side — adding the new one replaces the old. To add <b>only this app</b> "
+        "manually, use its single-app source: "
         f'<button class="button small" type="button" data-copy="{html.escape(feed_url)}" '
-        'data-copy-msg="Single-app source copied — add it manually in your client">Copy single-app source link</button></p>'
+        'data-copy-msg="Single-app source copied — add it manually in your '
+        'client">Copy single-app source link</button></p>'
         if bundle_collision and feed_url
         else ""
     )
@@ -487,18 +490,26 @@ def render_app_page(
         '        <details class="nav-more">\n',
         '          <summary aria-haspopup="menu" aria-label="More pages">More\n',
         '            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>\n',
-        '          </summary>\n',
+        "          </summary>\n",
         '          <div class="nav-menu" role="menu">\n',
         '            <a href="../../#trending" role="menuitem">Trending</a>\n',
         '            <a href="../../analytics/" role="menuitem">Analytics</a>\n',
         '            <a href="../../favorites/" role="menuitem">Favorites</a>\n',
         '            <a href="../../collections/" role="menuitem">Collections</a>\n',
         '            <a href="../../search/" role="menuitem">Search</a>\n',
-        f'            <a href="{html.escape(rss_url)}" target="_blank" rel="noopener" role="menuitem">RSS</a>\n',
-        f'            <a href="{html.escape(feed_url)}" target="_blank" rel="noopener" role="menuitem">This app&rsquo;s feed</a>\n',
-        f'            <a href="{html.escape(repo_url)}" target="_blank" rel="noopener" class="nav-gh" role="menuitem">GitHub ↗</a>\n',
-        '          </div>\n',
-        '        </details>\n',
+        '            <a href="'
+        + f"{html.escape(rss_url)}"
+        + '" target="_blank" rel="noopener" role="menuitem">RSS</a>\n',
+        '            <a href="'
+        + f"{html.escape(feed_url)}"
+        + '" target="_blank" rel="noopener" role="menuitem">'
+        + "This app&rsquo;s feed</a>\n",
+        '            <a href="'
+        + f"{html.escape(repo_url)}"
+        + '" target="_blank" rel="noopener" class="nav-gh" '
+        + 'role="menuitem">GitHub ↗</a>\n',
+        "          </div>\n",
+        "        </details>\n",
         "      </div>\n",
         '      <button class="icon-button theme-toggle" id="themeButton" type="button" '
         'aria-label="Change color theme" title="Theme: system">\n',
