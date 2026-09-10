@@ -9,6 +9,7 @@ _SRC = Path(__file__).resolve().parents[1] / "src"
 if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
 
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -16,8 +17,9 @@ from unittest.mock import MagicMock
 
 from omnisource.constants import PNG_MAGIC, Paths
 from omnisource.di import Container
-from omnisource.domain import SyncReport
-from omnisource.pipeline import load_catalog, load_state, stage_build
+from omnisource.domain import SourceType, SyncReport
+from omnisource.errors import ProviderError, SyncError
+from omnisource.pipeline import load_catalog, load_state, stage_build, sync_app
 from omnisource.providers.registry import ProviderRegistry
 from omnisource.site import publish_repo_artifacts
 
@@ -120,6 +122,79 @@ class TestPipeline(unittest.TestCase):
             stale.write_text("{}", encoding="utf-8")
             publish_repo_artifacts(root, health_doc=health_doc, analytics_doc=analytics_doc)
             self.assertFalse(stale.exists(), "a feed that no longer exists must not stay published")
+
+
+class _UnreachableProvider:
+    """Stands in for a provider whose every leg errors (host blocked, API down)."""
+
+    name = "github"
+    source_type = SourceType.GITHUB_RELEASES
+
+    def fetch_releases(self, source, *, previous_latest_url=None, incremental=False):
+        raise ProviderError("upstream unreachable")
+
+
+class TestManualReleaseFallback(unittest.TestCase):
+    """A brand-new entry must survive an unreachable upstream."""
+
+    def _container(self, root: Path) -> Container:
+        paths = Paths.from_root(root)
+        paths.feeds.mkdir(parents=True, exist_ok=True)
+        paths.assets.mkdir(parents=True, exist_ok=True)
+        (paths.assets / "TestApp.png").write_bytes(PNG_MAGIC + b"app-icon")
+        paths.catalog.write_text(
+            json.dumps(
+                {
+                    "source": {
+                        "name": "OmniSource",
+                        "identifier": "com.iamsmmh.omnisource",
+                        "baseURL": "https://iamsmmh.github.io/OmniSource",
+                        "icon": "TestApp.png",
+                    },
+                    "apps": [
+                        {
+                            "slug": "testapp",
+                            "name": "Test App",
+                            "bundleIdentifier": "com.example.testapp",
+                            "developerName": "Tester",
+                            "icon": "TestApp.png",
+                            "status": "stable",
+                            "compatibility": {"minOSVersion": "15.0", "clients": ["altstore"]},
+                            "upstream": {"provider": "github", "repo": "example/testapp"},
+                            "manualRelease": {
+                                "version": "3.0.9",
+                                "date": "2026-08-22",
+                                "localizedDescription": "Snapshot of the last known good build.",
+                                "downloadURL": "https://example.com/TestApp.ipa",
+                                "size": 123456,
+                                "minOSVersion": "15.0",
+                            },
+                        }
+                    ],
+                }
+            ),
+            encoding="utf-8",
+        )
+        registry = ProviderRegistry()
+        registry.register(_UnreachableProvider())
+        return Container(paths=paths, http=MagicMock(), providers=registry)
+
+    def test_manual_release_is_the_last_resort_without_cached_state(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            container = self._container(Path(tmpdir))
+            app = load_catalog(container).apps[0]
+
+            # No cached snapshot yet: the catalog's manualRelease keeps the app
+            # in the build instead of dropping it while the upstream is down.
+            versions, source = sync_app(container, app, incremental=False, previous=None)
+            self.assertEqual(source, "manual")
+            self.assertEqual(versions[0]["version"], "3.0.9")
+            self.assertEqual(versions[0]["downloadURL"], "https://example.com/TestApp.ipa")
+
+            # With cached state the existing "keep the last good build"
+            # behaviour still wins: a transient outage must not rewrite state.
+            with self.assertRaises(SyncError):
+                sync_app(container, app, incremental=False, previous={"versions": versions})
 
 
 if __name__ == "__main__":

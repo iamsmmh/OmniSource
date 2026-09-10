@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RyukGram — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json</link>
+    <description>Release feed for RyukGram within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 17:57:12 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/ryukgram.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>RyukGram v446.0.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json</link>
+      <guid isPermaLink="false">ryukgram-446.0.0</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Instagram 446.0.0 | RyukGram v1.4.0 — fallback snapshot of the developer's source.
+
+Setting profiles, mobile-config browser, story stats, custom fonts, full-resolution photo downloads, reorderable post and reel buttons, view-once media capture while the app is closed and an update checker. See the live RyukSign source for the full release notes.]]></description>
+      <enclosure url="https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

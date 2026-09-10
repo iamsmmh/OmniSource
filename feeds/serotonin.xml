@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Serotonin — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/serotonin.json</link>
+    <description>Release feed for Serotonin within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 17:57:12 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/serotonin.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Serotonin v1.2.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/serotonin.json</link>
+      <guid isPermaLink="false">serotonin-1.2.1</guid>
+      <pubDate>Wed, 17 Jan 2024 00:00:00 +0000</pubDate>
+      <description><![CDATA[Serotonin 1.2.1 | Serotonin.tipa
+
+# Serotonin 1.2.1
+## Changelog
+### Cleanup
+
+- Fixed memory hogger
+- Fixed exploit picker
+- Fixed launchd entitlements
+- Remove a bunch of unused code
+- Slight UI changes]]></description>
+      <enclosure url="https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

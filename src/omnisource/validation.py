@@ -14,7 +14,14 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
-from omnisource.constants import ALTSTORE_NON_FEED, KNOWN_CLIENTS, VALID_STATUSES, VALID_VERIFICATION_METHODS, Paths
+from omnisource.constants import (
+    ALTSTORE_NON_FEED,
+    INSTALLABLE_SUFFIXES,
+    KNOWN_CLIENTS,
+    VALID_STATUSES,
+    VALID_VERIFICATION_METHODS,
+    Paths,
+)
 from omnisource.http import is_http_url
 
 REQUIRED_APP_FIELDS = ("name", "bundleIdentifier", "developerName", "version", "versionDate", "downloadURL")
@@ -782,7 +789,7 @@ def validate_doc_shape(
                 if not isinstance(asset.get("size"), int) or asset["size"] <= 0:
                     report.error(f"feeds/integrity_report.json: {entry.get('slug')} asset is zero bytes")
                 url = str(asset.get("downloadUrl") or "")
-                if url and not url.split("?", 1)[0].lower().endswith(".ipa"):
+                if url and not url.split("?", 1)[0].lower().endswith(INSTALLABLE_SUFFIXES):
                     report.error(f"feeds/integrity_report.json: {entry.get('slug')} primary asset is not an IPA")
                 sha = asset.get("sha256")
                 if sha is not None and not SHA_RE.match(str(sha)):

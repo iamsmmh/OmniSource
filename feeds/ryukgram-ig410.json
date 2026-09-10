@@ -1,0 +1,80 @@
+{
+  "name": "OmniSource - RyukGram (IG 410)",
+  "identifier": "com.iamsmmh.omnisource.ryukgram-ig410",
+  "apiVersion": "v2",
+  "subtitle": "RyukGram built on the Instagram 410 app",
+  "description": "Standalone distribution feed for RyukGram (IG 410), curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/ryukgram-ig410.json",
+  "apps": [
+    {
+      "name": "RyukGram (IG 410)",
+      "bundleIdentifier": "com.burbn.instagram",
+      "developerName": "Ryuk (@axryuk)",
+      "subtitle": "RyukGram built on the Instagram 410 app",
+      "localizedDescription": "RyukGram (IG 410) is the same enhanced Instagram client ported to the Instagram 410.1.0 app for iOS 15 and later. It carries the full RyukGram feature set — follow-request tracking, read receipts, story-viewer insights, deleted-message logs, device-ID masking, media downloading, custom chat themes and a configurable tab bar — on top of the older Instagram base, which is what you want if the current Instagram builds are unstable on your device or you deliberately stay on an older app version.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "tintColor": "C13584",
+      "category": "social",
+      "version": "410.1.0",
+      "versionDate": "2026-07-25",
+      "versionDescription": "Instagram 410.1.0 | RyukGram (IG 410) v1.3.3 — fallback snapshot of the developer's source.\n\nThe RyukGram feature set on the Instagram 410 base for iOS 15 and later. See the live RyukSign source for the full release notes.",
+      "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+      "size": 267074754,
+      "versions": [
+        {
+          "version": "410.1.0",
+          "date": "2026-07-25",
+          "localizedDescription": "Instagram 410.1.0 | RyukGram (IG 410) v1.3.3 — fallback snapshot of the developer's source.\n\nThe RyukGram feature set on the Instagram 410 base for iOS 15 and later. See the live RyukSign source for the full release notes.",
+          "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+          "size": 267074754,
+          "minOSVersion": "15.0"
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "ryukgram-ig410",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://store.ryuksign.com/",
+        "sourceURL": "https://source.ryuksign.com/ig410",
+        "verification": {
+          "method": "altstore",
+          "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "The IG 410 line from the developer's own source (source.ryuksign.com/ig410); versions track the Instagram base build rather than the RyukGram tweak version. Shares com.burbn.instagram with RyukGram, RyukGram Side by Side's sibling builds and iNKillerPlus — install one Instagram mod at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-07-25",
+          "lastUpdatedAt": "2026-07-25"
+        }
+      }
+    }
+  ],
+  "news": []
+}

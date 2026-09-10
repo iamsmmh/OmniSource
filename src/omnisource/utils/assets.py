@@ -7,6 +7,8 @@ from urllib.parse import urlsplit
 
 _FILE_TYPES = {
     ".ipa": "IPA",
+    # TrollStore-named IPA: same container, installs without the Share sheet.
+    ".tipa": "IPA",
     ".apk": "APK",
     ".aab": "AAB",
     ".zip": "ZIP",

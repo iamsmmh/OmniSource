@@ -125,6 +125,18 @@
       "category": "social"
     },
     {
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "firstSeen": "2026-09-09",
+      "category": "social"
+    },
+    {
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "firstSeen": "2026-09-09",
+      "category": "social"
+    },
+    {
       "slug": "fladder",
       "name": "Fladder",
       "firstSeen": "2026-09-08",
@@ -135,18 +147,6 @@
       "name": "SpotiFLAC Mobile",
       "firstSeen": "2026-09-07",
       "category": "music"
-    },
-    {
-      "slug": "voyager",
-      "name": "Voyager",
-      "firstSeen": "2026-09-06",
-      "category": "social"
-    },
-    {
-      "slug": "aidoku",
-      "name": "Aidoku",
-      "firstSeen": "2026-09-03",
-      "category": "other"
     }
   ],
   "rising": [
@@ -225,9 +225,9 @@
   ],
   "requested": [],
   "counts": {
-    "popular": 49,
-    "recentlyAdded": 19,
-    "rising": 25,
+    "popular": 63,
+    "recentlyAdded": 23,
+    "rising": 30,
     "requested": 0
   }
 }

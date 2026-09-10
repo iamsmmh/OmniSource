@@ -15,7 +15,9 @@ from pathlib import Path
 
 from omnisource.constants import PNG_MAGIC
 from omnisource.validation import (
+    Report,
     validate_catalog,
+    validate_doc_shape,
     validate_feed,
 )
 
@@ -188,6 +190,48 @@ class TestValidation(unittest.TestCase):
         }
         report = validate_feed(Path("test.json"), valid_feed, root=Path())
         self.assertEqual(len(report.errors), 0)
+
+
+class TestIntegrityReportValidation(unittest.TestCase):
+    """TrollStore-named IPAs (.tipa) pass the integrity hard-reject rules."""
+
+    def _validate(self, download_url: str) -> object:
+        doc = {
+            "totals": {"apps": 1},
+            "apps": [
+                {
+                    "slug": "bootstrap",
+                    "asset": {
+                        "sha256": None,
+                        "size": 55704386,
+                        "releaseId": "2.2.1",
+                        "source": "github",
+                        "downloadUrl": download_url,
+                    },
+                }
+            ],
+        }
+        report = Report()
+        validate_doc_shape(
+            "integrity_report.json",
+            doc,
+            {"apps": [{"slug": "bootstrap"}]},
+            report,
+            root=Path(tempfile.gettempdir()),
+            apps_count=1,
+        )
+        return report
+
+    def test_tipa_counts_as_an_ipa(self) -> None:
+        report = self._validate("https://example.com/Bootstrap.tipa")
+        self.assertEqual(report.errors, [])
+
+    def test_plain_ipa_still_passes(self) -> None:
+        self.assertEqual(self._validate("https://example.com/Dopamine.ipa").errors, [])
+
+    def test_other_containers_still_fail(self) -> None:
+        report = self._validate("https://example.com/Bootstrap.zip")
+        self.assertTrue(any("not an IPA" in message for message in report.errors))
 
 
 if __name__ == "__main__":

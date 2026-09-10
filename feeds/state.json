@@ -226,11 +226,11 @@
   "analyticsHistory": [
     {
       "date": "2026-09-10",
-      "apps": 49,
-      "sources": 45,
-      "verified": 48,
+      "apps": 63,
+      "sources": 59,
+      "verified": 62,
       "deadLinks": 0,
-      "newThisWeek": 4,
+      "newThisWeek": 8,
       "updatedThisWeek": 8
     }
   ],
@@ -1209,6 +1209,41 @@
       }
     ]
   },
+  "bootstrap": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:roothide/Bootstrap",
+    "versions": [
+      {
+        "version": "2.2.1",
+        "date": "2026-06-12",
+        "localizedDescription": "Bootstrap 2.2.1 | Bootstrap.tipa\n\n1: add procursus(alt) repo by default\n\n2: hide more jailbreak traces",
+        "downloadURL": "https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa",
+        "size": 55704386,
+        "minOSVersion": "15.0",
+        "releaseUrl": "https://github.com/roothide/Bootstrap/releases/tag/2.2.1",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Bootstrap.tipa",
+            "downloadUrl": "https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 55704386,
+            "sha256": "24c43c66579fcbf8735176b8465b58d20d0b92524e5b32ed64c60993d76ec8f5",
+            "downloads": 8309,
+            "mimeType": "application/trollstore-ipa",
+            "installable": true
+          }
+        ],
+        "sha256": "24c43c66579fcbf8735176b8465b58d20d0b92524e5b32ed64c60993d76ec8f5",
+        "downloads": 8309
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "conduit": {
     "retryCount": 0,
     "lastResolvedSource": "github:cogwheel0/conduit",
@@ -1549,6 +1584,100 @@
         "detail": "HTTP 302"
       }
     ]
+  },
+  "dopamine": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:opa334/Dopamine",
+    "versions": [
+      {
+        "version": "3.0.9",
+        "date": "2026-08-22",
+        "localizedDescription": "Dopamine 3.0.9 | Dopamine\n\n- Fix jailbreak apps not being removed from home screen when removing the jailbreak on iOS 18.0 - 18.3.1 too",
+        "downloadURL": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa",
+        "size": 55409206,
+        "minOSVersion": "15.0",
+        "releaseUrl": "https://github.com/opa334/Dopamine/releases/tag/3.0.9",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Dopamine.ipa",
+            "downloadUrl": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 55409206,
+            "sha256": "ad0c4ea182b232346470df10439cfa2c1b7952e6b586113edfbc2720e455b201",
+            "downloads": 128535,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "Dopamine.tipa",
+            "downloadUrl": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.tipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 55409206,
+            "sha256": "ad0c4ea182b232346470df10439cfa2c1b7952e6b586113edfbc2720e455b201",
+            "downloads": 8622,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "sha256": "ad0c4ea182b232346470df10439cfa2c1b7952e6b586113edfbc2720e455b201",
+        "downloads": 128535
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
+  "dopamine-roothide": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:roothide/Dopamine2-roothide",
+    "versions": [
+      {
+        "version": "2.4.9.26",
+        "date": "2026-09-07",
+        "localizedDescription": "Dopamine (RootHide) 2.4.9.26 | Dopamine\n\n1: fix state consistency issues\n\n2: fix library trusting issues (eg: UTM)\n\n3: hide more jailbreak traces",
+        "downloadURL": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa",
+        "size": 54859511,
+        "minOSVersion": "15.0",
+        "releaseUrl": "https://github.com/roothide/Dopamine2-roothide/releases/tag/26",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Dopamine.ipa",
+            "downloadUrl": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 54859511,
+            "sha256": "38d02ec6167772011e4f58aaf31566c7be4db86302962aeedc601f9b4795cc1f",
+            "downloads": 3742,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "Dopamine.tipa",
+            "downloadUrl": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.tipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 54859511,
+            "sha256": "38d02ec6167772011e4f58aaf31566c7be4db86302962aeedc601f9b4795cc1f",
+            "downloads": 1635,
+            "mimeType": "application/trollstore-ipa",
+            "installable": true
+          }
+        ],
+        "sha256": "38d02ec6167772011e4f58aaf31566c7be4db86302962aeedc601f9b4795cc1f",
+        "downloads": 3742
+      }
+    ],
+    "syncedAt": "2026-09-10"
   },
   "feather": {
     "retryCount": 0,
@@ -2015,6 +2144,389 @@
         "detail": "HTTP 302"
       }
     ]
+  },
+  "gopeed": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:GopeedLab/gopeed",
+    "versions": [
+      {
+        "version": "1.9.3",
+        "date": "2026-03-18",
+        "localizedDescription": "Gopeed 1.9.3 | Gopeed-v1.9.3-ios\n\n<table>\n  <tbody>\n    <tr>\n      <td rowspan=\"4\">🪟 Windows</td>\n      <td rowspan=\"2\"><code>EXE</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>Portable</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-amd64-portable.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-arm64-portable.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"3\">🍎 MacOS</td>\n      <td rowspan=\"3\"><code>DMG</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos-amd64.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos-arm64.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"6\">🐧 Linux</td>\n      <td><code>Flathub</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://flathub.org/apps/com.gopeed.Gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td><code>SNAP</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://snapcraft.io/gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>DEB</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-amd64.deb\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-arm64.deb\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>AppImage</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-amd64.AppImage\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-arm64.AppImage\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"4\">🤖 Android</td>\n      <td rowspan=\"4\"><code>APK</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>armeabi-v7a</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-armeabi-v7a.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64-v8a</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-arm64-v8a.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>x86_64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-x86_64.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>📱 iOS</td>\n      <td><code>IPA</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-ios.ipa\">📥</a></td>\n    </tr>\n    <tr>\n      <td>🐳 Docker</td>\n      <td>-</td>\n      <td>universal</td>\n      <td><a href=\"https://hub.docker.com/r/liwei2633/gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\">💾 Qnap</td>\n      <td rowspan=\"2\"><code>QPKG</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-v1.9.3-qnap-amd64.qpkg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-v1.9.3-qnap-arm64.qpkg\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"8\">🌐 Web</td>\n      <td rowspan=\"3\"><code>Windows</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>386</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-386.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>MacOS</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-macos-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-macos-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"3\"><code>Linux</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>386</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-386.zip\">📥</a></td>\n    </tr>\n  </tbody>\n</table>\n\n# Release notes\n\n## 🆕 Features\n\n- feat: ed2k protocol support (important!!!) @monkeyWie (#1316)\n\n## 🐛 Bug Fixes\n\n- fix: non-range HTTP downloaded bytes exceeding total file size @monkeyWie (#1317)\n- fix: update isCreate logic for pending tasks @Roxym3 (#1314)\n- fix: update RPM icon path @monkeyWie (#1309)\n\n## 📖 Document\n\n- docs: migrate docs.gopeed.com links to gopeed.com/docs equivalents @copilot-swe-agent (#1311)\n\n## 🌎 Internationalization\n\n- feat(lang): Catalan language added @kayron8 (#1303)\n- feat(lang): update Turkish translation @Hweord (#1304)\n\n# 更新日志\n\n## 🆕 新特性\n\n- feat: ed2k 协议支持 (重大特性！！！) @monkeyWie (#1316)\n\n## 🐛 Bug Fixes\n\n- fix: 不支持断点下载的 HTTP 链接下载超出文件总大小 @monkeyWie (#1317)\n- fix: 更新 isCreate 逻辑用于等待中的任务 @Roxym3 (#1314)\n- fix: 更新 RPM 图标路径 @monkeyWie (#1309)\n\n## 📖 Document\n\n- docs: 迁移 docs.gopeed.com 链接至 gopeed.com/docs @copilot-swe-agent (#1311)\n\n## 🌎 Internationalization\n\n- feat(lang): 添加加泰罗尼亚语言 @kayron8 (#1303)\n- feat(lang): 更新土耳其语言 @Hweord (#1304)",
+        "downloadURL": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa",
+        "size": 27488140,
+        "minOSVersion": "14.0",
+        "releaseUrl": "https://github.com/GopeedLab/gopeed/releases/tag/v1.9.3",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Gopeed-v1.9.3-android-arm64-v8a.apk",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-android-arm64-v8a.apk",
+            "platform": "android",
+            "architecture": "arm64",
+            "fileType": "APK",
+            "size": 25240830,
+            "sha256": "1a8f4988e8dd69ceb8c2c9f8b856d974c5864efd962f11edbc42f58eae9271b3",
+            "downloads": 163846,
+            "mimeType": "application/vnd.android.package-archive",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-android-armeabi-v7a.apk",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-android-armeabi-v7a.apk",
+            "platform": "android",
+            "architecture": "armv7",
+            "fileType": "APK",
+            "size": 25469158,
+            "sha256": "f138d118be01bd43aa664880e3d482237b8acf7b46ea727432dc11343fb58017",
+            "downloads": 4827,
+            "mimeType": "application/vnd.android.package-archive",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-android-x86_64.apk",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-android-x86_64.apk",
+            "platform": "android",
+            "architecture": "x86_64",
+            "fileType": "APK",
+            "size": 26593182,
+            "sha256": "1bf4cd793f7d871de57ba349c1ef2d887420463b5aa3cf8ad0e17d7c971438b0",
+            "downloads": 13150,
+            "mimeType": "application/vnd.android.package-archive",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-android.apk",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-android.apk",
+            "platform": "android",
+            "architecture": null,
+            "fileType": "APK",
+            "size": 74093376,
+            "sha256": "bf90ea5ac64a93e80143b3aa15da352049993002afc6be07103e7b26e2e73990",
+            "downloads": 13451,
+            "mimeType": "application/vnd.android.package-archive",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-ios.ipa",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 27488140,
+            "sha256": "3f024956a28c27e20bb28bee519c0236b46ba496770a3ce368c20b093b1b20fa",
+            "downloads": 20512,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-linux-amd64.AppImage",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-linux-amd64.AppImage",
+            "platform": "linux",
+            "architecture": "x86_64",
+            "fileType": "AppImage",
+            "size": 38304248,
+            "sha256": "cc641ec5d2350e38cd4b955412ab0e0355ac01931e6b082404beef464d6f946c",
+            "downloads": 2684,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-linux-amd64.deb",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-linux-amd64.deb",
+            "platform": "linux",
+            "architecture": "x86_64",
+            "fileType": "DEB",
+            "size": 32133934,
+            "sha256": "23d7caa11877ad0a21d6f1a8f1e00e23606ccf9fe2953a3d045046a2950946e5",
+            "downloads": 9758,
+            "mimeType": "application/x-debian-package",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-linux-amd64.rpm",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-linux-amd64.rpm",
+            "platform": "linux",
+            "architecture": "x86_64",
+            "fileType": "other",
+            "size": 32232299,
+            "sha256": "19ffa755f3a52451bf6d21c01af08220b819c342d646d3be1d55da9c1cfb0b31",
+            "downloads": 2679,
+            "mimeType": "application/x-redhat-package-manager",
+            "installable": false
+          },
+          {
+            "filename": "Gopeed-v1.9.3-linux-arm64.AppImage",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-linux-arm64.AppImage",
+            "platform": "linux",
+            "architecture": "arm64",
+            "fileType": "AppImage",
+            "size": 36596216,
+            "sha256": "d1e53819bb5221943ad6bab9627cc7268ef1b80851cd28f8f2f27bd6ac53fbd4",
+            "downloads": 1107,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-linux-arm64.deb",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-linux-arm64.deb",
+            "platform": "linux",
+            "architecture": "arm64",
+            "fileType": "DEB",
+            "size": 30609082,
+            "sha256": "0f1fbf44d77d4555998e810d81620a60c97cb4c0035bcba45c355745be0a7158",
+            "downloads": 1519,
+            "mimeType": "application/x-debian-package",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-linux-arm64.rpm",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-linux-arm64.rpm",
+            "platform": "linux",
+            "architecture": "arm64",
+            "fileType": "other",
+            "size": 30462440,
+            "sha256": "b638c7cb4994c4224ee3a8268860738157fca378308969aa76bf6682c59b362a",
+            "downloads": 644,
+            "mimeType": "application/x-redhat-package-manager",
+            "installable": false
+          },
+          {
+            "filename": "Gopeed-v1.9.3-macos-amd64.dmg",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-macos-amd64.dmg",
+            "platform": "macos",
+            "architecture": "x86_64",
+            "fileType": "DMG",
+            "size": 40877453,
+            "sha256": "fdb6be465be15765c953731e83c48a9e2bb3edf0eff3acd3162b80f94df30cac",
+            "downloads": 2898,
+            "mimeType": "application/x-apple-diskimage",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-macos-arm64.dmg",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-macos-arm64.dmg",
+            "platform": "macos",
+            "architecture": "arm64",
+            "fileType": "DMG",
+            "size": 39394569,
+            "sha256": "7e1b6c8e9270d99e0d0238efbd53072b58847ffd71d13c3cc8cf203f99c4769e",
+            "downloads": 13497,
+            "mimeType": "application/x-apple-diskimage",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-macos.dmg",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-macos.dmg",
+            "platform": "macos",
+            "architecture": null,
+            "fileType": "DMG",
+            "size": 58401819,
+            "sha256": "ebe7f39ef501deb3a55cd86e54f985a92872e215de50ea5ddbcbf9a02a2bd3cb",
+            "downloads": 7181,
+            "mimeType": "application/x-apple-diskimage",
+            "installable": true
+          },
+          {
+            "filename": "gopeed-v1.9.3-qnap-amd64.qpkg",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/gopeed-v1.9.3-qnap-amd64.qpkg",
+            "platform": "unknown",
+            "architecture": "x86_64",
+            "fileType": "other",
+            "size": 40125699,
+            "sha256": "9c3639eff3f80fc531fda3a029131a6c97df6fda5a9ba980dc99a8d0a7155206",
+            "downloads": 938,
+            "mimeType": "application/octet-stream",
+            "installable": false
+          },
+          {
+            "filename": "gopeed-v1.9.3-qnap-arm64.qpkg",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/gopeed-v1.9.3-qnap-arm64.qpkg",
+            "platform": "unknown",
+            "architecture": "arm64",
+            "fileType": "other",
+            "size": 38847360,
+            "sha256": "ef92697a0c45a90f9f500d0424964ea0b8de7dbd76e4d15c001ab09e328ff85f",
+            "downloads": 784,
+            "mimeType": "application/octet-stream",
+            "installable": false
+          },
+          {
+            "filename": "Gopeed-v1.9.3-windows-amd64-portable.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-windows-amd64-portable.zip",
+            "platform": "windows",
+            "architecture": "x86_64",
+            "fileType": "ZIP",
+            "size": 35244300,
+            "sha256": "02b3b2f0ce4b0e0008edc835802ad6f4b241eb863f312b0bdd77b2b2afc9e012",
+            "downloads": 38588,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "Gopeed-v1.9.3-windows-amd64.exe",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-windows-amd64.exe",
+            "platform": "windows",
+            "architecture": "x86_64",
+            "fileType": "EXE",
+            "size": 26467613,
+            "sha256": "34989879ba61f7695a724cd0bd93295a04655bd241dba9245398c1573821af03",
+            "downloads": 250916,
+            "mimeType": "application/x-msdos-program",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-windows-amd64.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-windows-amd64.zip",
+            "platform": "windows",
+            "architecture": "x86_64",
+            "fileType": "ZIP",
+            "size": 25956988,
+            "sha256": "3e1efa25b60b14fe3137e3ed50691fb1d851e79656eeb0130b8f7dafe48a6ce1",
+            "downloads": 47509,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "Gopeed-v1.9.3-windows-arm64-portable.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-windows-arm64-portable.zip",
+            "platform": "windows",
+            "architecture": "arm64",
+            "fileType": "ZIP",
+            "size": 32262880,
+            "sha256": "48a85f30ac94e72d1427f28f1465d5e79b1e8ab252c2a3ad408ae5c1c8bfd915",
+            "downloads": 3324,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "Gopeed-v1.9.3-windows-arm64.exe",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-windows-arm64.exe",
+            "platform": "windows",
+            "architecture": "arm64",
+            "fileType": "EXE",
+            "size": 24018266,
+            "sha256": "46ca27f450b001fdd906fe4b6b6bed5607b6eb6bf47c6e490123926d47e65806",
+            "downloads": 2841,
+            "mimeType": "application/x-msdos-program",
+            "installable": true
+          },
+          {
+            "filename": "Gopeed-v1.9.3-windows-arm64.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-windows-arm64.zip",
+            "platform": "windows",
+            "architecture": "arm64",
+            "fileType": "ZIP",
+            "size": 23517175,
+            "sha256": "49a2ba3d32737c331b23ae890b29c65d256ce157f9ad1a75245df6eeb2aabe06",
+            "downloads": 6329,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "gopeed-web-v1.9.3-linux-386.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/gopeed-web-v1.9.3-linux-386.zip",
+            "platform": "linux",
+            "architecture": null,
+            "fileType": "ZIP",
+            "size": 39359472,
+            "sha256": "98576071620937c7bf1305cd8e5e5bc866c60cba269a460acc3e74a6f1e09288",
+            "downloads": 1527,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "gopeed-web-v1.9.3-linux-amd64.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/gopeed-web-v1.9.3-linux-amd64.zip",
+            "platform": "linux",
+            "architecture": "x86_64",
+            "fileType": "ZIP",
+            "size": 40090273,
+            "sha256": "52444c86ffb5152c89d1c3a3b074285c4ef6dd3dabc9d4ae097cc703e0fa3e15",
+            "downloads": 3065,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "gopeed-web-v1.9.3-linux-arm64.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/gopeed-web-v1.9.3-linux-arm64.zip",
+            "platform": "linux",
+            "architecture": "arm64",
+            "fileType": "ZIP",
+            "size": 38812437,
+            "sha256": "7921a5a67ebda725b99074122c7b4f0e19fcf36c26c7349f369bdb3ab584acc9",
+            "downloads": 1523,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "gopeed-web-v1.9.3-macos-amd64.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/gopeed-web-v1.9.3-macos-amd64.zip",
+            "platform": "macos",
+            "architecture": "x86_64",
+            "fileType": "ZIP",
+            "size": 40403575,
+            "sha256": "390c51e2406349e69a31d95bf24024fdf482d3cc4001762e7429a8add182a3c8",
+            "downloads": 1352,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "gopeed-web-v1.9.3-macos-arm64.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/gopeed-web-v1.9.3-macos-arm64.zip",
+            "platform": "macos",
+            "architecture": "arm64",
+            "fileType": "ZIP",
+            "size": 39824901,
+            "sha256": "d0a6923297c31cdcdfd9caab2e1d312b6a91a1cc3bab4d4ec43418093cc7c927",
+            "downloads": 1532,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "gopeed-web-v1.9.3-windows-386.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/gopeed-web-v1.9.3-windows-386.zip",
+            "platform": "windows",
+            "architecture": null,
+            "fileType": "ZIP",
+            "size": 39872276,
+            "sha256": "863b53e53d5a8727f8418dda0641e5406638fe91c47777c58c131c7b49ebe674",
+            "downloads": 2310,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "gopeed-web-v1.9.3-windows-amd64.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/gopeed-web-v1.9.3-windows-amd64.zip",
+            "platform": "windows",
+            "architecture": "x86_64",
+            "fileType": "ZIP",
+            "size": 40411930,
+            "sha256": "ee3d41fa19c366b820a2483619328156579108ac03c53ea35cdb33327320f756",
+            "downloads": 6311,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "gopeed-web-v1.9.3-windows-arm64.zip",
+            "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/gopeed-web-v1.9.3-windows-arm64.zip",
+            "platform": "windows",
+            "architecture": "arm64",
+            "fileType": "ZIP",
+            "size": 38916254,
+            "sha256": "48f709fb73f3c1f28b1c7b296584b4200c42f84ca453816194b440636c9846f3",
+            "downloads": 1954,
+            "mimeType": "application/zip",
+            "installable": false
+          }
+        ],
+        "sha256": "3f024956a28c27e20bb28bee519c0236b46ba496770a3ce368c20b093b1b20fa",
+        "downloads": 20512
+      }
+    ],
+    "syncedAt": "2026-09-10"
   },
   "inkillerplus": {
     "retryCount": 0,
@@ -3111,6 +3623,41 @@
       }
     ]
   },
+  "manicemu": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:Manic-EMU/ManicEMU",
+    "versions": [
+      {
+        "version": "2.0.0",
+        "date": "2026-09-03",
+        "localizedDescription": "Manic EMU 2.0.0 | ManicEMU.v2.0.0.SideloadJIT\n\n> [!NOTE]\n> Starting from version 2.0.0, we no longer provide builds of TrollStore JIT. You can package it yourself by following the [guide](https://github.com/Rednick16/TrollStoreJITEnabler).\n\nThis is a major release focused on a redesigned interface, expanded platform support, and advanced features. Landscape browsing, library management, and external controller navigation have been rebuilt. It also adds several new systems and brings Netplay to eligible Libretro cores.\n\n\n### Before You Update\n\n- Dreamcast (Flycast): Existing save states will no longer work as of 2.0.0. Convert important save states to in-game saves before updating, or back up the `Flycast/dc` folder yourself.\n- Wii: A BootMii-format `keys.bin` is required.\n- Symbian: Install firmware in Settings first (`.ROM`; S60v2 and later also need `.RPKG`).\n- GameCube / Wii: The core is still being optimized, so heat and frame drops should still be expected.\n- MAME: A number of lesser-used arcade systems have been trimmed. Some obscure titles may no longer run.\n\n### Interface\n\nLandscape\n\n- A new landscape library, with most landscape pages redesigned.\n- Built-in dynamic backgrounds. You can use or upload ShaderToy (GLSL) scripts to customize them. Only single-Image scripts are supported; complex scripts may increase battery use or heat.\n- Multiple customizable card carousel styles.\n- Focused background: when a game is selected, its banner can be used as the landscape focus backdrop.\n- background music feature in landscape mode—besides built-in tracks, you can upload your own music files to use as background music.\n- built in 12 sets of navigation and focus sound effects.\n\nGame Options and Shortcuts\n\n- A unified options list and interaction model throughout the app.\n- Available actions are automatically arranged and regrouped for the current context.\n- Advanced reordering: customize the order and grouping of options.\n- A redesigned in-game shortcut menu. Shortcuts can appear on supported skins and in the in-game menu.\n\nNavigation and Input\n\n- A global focus and navigation system for iPhone and iPad. You can browse and interact entirely with a controller or keyboard.\n- Hold Command or the controller’s Select button to view the shortcut cheatsheet.\n- A unified navigation bar for more consistent browsing and editing.\n- Many long-press and hidden actions have been replaced with more conventional, iOS-style interactions.\n- Batch management and actions.\n- Adaptive rotation throughout the app.\n- Controllers can be assigned to a player slot. On cores that expect a keyboard, controller inputs can be mapped to keyboard events.\n\n### Features\n\nLibrary and Artwork\n\n- Covers now support separate icon and banner artwork. Box art is used in regular lists, icons in square layouts, and banners as the landscape focus backdrop.\n- Online artwork from Libretro Thumbnails and SteamGridDB (Grids / Heroes / Logos / Icons; SteamGridDB requires your own API key).\n- Switching platform or category rematches cover art.\n\nGame Data\n\n- Game metadata: auto-match, search the database, or edit it yourself (developer, publisher, series, genre, release date, region, overview, and more).\n- ESRB ratings and matching icons. Rating icons can be hidden in Settings.\n- A redesigned save-state manager with import and export.\n- Scoped settings: the same option can be stored at game, platform, or global level, and each can be cleared or reset independently.\n- batch scraping for covers, icons, and banners.\n- \n\nShaders and Skins\n\n- Real-time shader preview, without loading the shader first.\n- Redesigned default GBA skin.\n- Flex skins now support customizing button size and position.\n\nAchievements, Cheats, and Netplay\n\n- RetroAchievements pages are easier to read and load faster.\n- MultiSet support: earn subset achievements without a patched ROM. Switching the achievement list only changes what is shown; it does not affect which sets you can unlock while playing.\n- Online cheat database: search, multi-select add, and bookmarks.\n- Netplay for many Libretro cores: host or join a room, public lobby, LAN scan, relay, spectator mode, and room password. Your Adventurer Card nickname is used as the Netplay display name. You can now trade treasured Pokémon with friends over the network, or go head-to-head on arcade systems.\n- Rewind: add it to the shortcut menu, a controller mapping, or TriggerPro, then touch and hold to use it.\n\nAdvanced Features and Import\n\n- Core Settings: intended for advanced users. Incorrect values may prevent games from launching. Settings can be reset per game or per platform.\n- Settings now include an Adventurer Card, with a customizable nickname and avatar.\n- Import games from DukeX.\n- Import games from Armsx2.\n- PS1 now supports importing `.bin` files directly.\n\n\n### New Systems and Cores\n\nSymbian (EKA2L1)\n\n- Supports S60v1, N-Gage 1.0, S60v2, S60v3, N-Gage 2.0, S60v5, and Symbian^3.\n- Touch input, firmware management, and system apps.\n- Legacy / PPL / TXM JIT.\n\nPC Engine (Beetle PCE)\n\n- Supports TurboGrafx-16, TurboGrafx-CD, and SuperGrafx, with subcategory switching.\n\nNeo Geo Pocket / Color (Beetle NeoPop)\n\n- Supports Neo Geo Pocket and Neo Geo Pocket Color, with subcategory switching.\n\nCommodore 64 (VICE x64sc)\n\n- Full keyboard support, with switching between gamepad and keyboard skins.\n\nAmiga (PUAE)\n\n- Full keyboard support, with switching between gamepad and keyboard skins.\n\nGameCube / Wii (Dolphin)\n\n- Legacy / PPL / TXM JIT.\n- Wii: Wiimote sideways mode.\n- Dolphin cheats, including Action Replay Max decryption.\n- Wiimote skins for Wii\n\nOther Cores\n\n- Mesen-S added for SNES / GB / GBC.\n- gpSP added for GBA, and can be switched with mGBA and VBA-M.\n\n### JIT Fixes and Improvements\n\n- Fixed JIT failing on TXM devices running iOS 26.6 and later.\n- Revised TXM device detection.\n- N64 GLideN64 and ParaLLEl RDP now both support JIT.\n\n### Core Updates\n\nThe following cores have been updated to the latest upstream stable releases.\n\n- 3DS (Azahar, Citra)\n- PS1 (Beetle PSX HW)\n- DOS (DOSBox Pure)\n- Dreamcast (Flycast) — see the save-state migration note above\n- NDS (melonDS)\n- PSP (PPSSPP)\n- N64 (Mupen64Plus)\n\n### Fixes\n\n- Numerous bug fixes and performance optimizations",
+        "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+        "size": 273393210,
+        "minOSVersion": "15.0",
+        "releaseUrl": "https://github.com/Manic-EMU/ManicEMU/releases/tag/v2.0.0",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "ManicEMU.v2.0.0.SideloadJIT.ipa",
+            "downloadUrl": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 273393210,
+            "sha256": "7f2adf280dba286ef1374fac874b87af9be535bae39f62139e0e68b4ae324a9f",
+            "downloads": 4684,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "sha256": "7f2adf280dba286ef1374fac874b87af9be535bae39f62139e0e68b4ae324a9f",
+        "downloads": 4684
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "maxmusic": {
     "retryCount": 0,
     "versions": [
@@ -3765,6 +4312,40 @@
         "detail": "HTTP 302"
       }
     ]
+  },
+  "odyssey": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:Odyssey-Team/Odyssey",
+    "versions": [
+      {
+        "version": "1.4.3",
+        "date": "2023-04-04",
+        "localizedDescription": "Odyssey 1.4.3 | Odyssey-1.4.3\n\n- Update Sileo to 2.3-1",
+        "downloadURL": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
+        "size": 27204395,
+        "minOSVersion": "13.0",
+        "releaseUrl": "https://github.com/Odyssey-Team/Odyssey/releases/tag/v1.4.3",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Odyssey-1.4.3.ipa",
+            "downloadUrl": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 27204395,
+            "sha256": null,
+            "downloads": 562977,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "downloads": 562977
+      }
+    ],
+    "syncedAt": "2026-09-10"
   },
   "ppsspp": {
     "retryCount": 0,
@@ -4562,6 +5143,54 @@
       }
     ]
   },
+  "ryukgram": {
+    "retryCount": 1,
+    "lastResolvedSource": "manual",
+    "versions": [
+      {
+        "version": "446.0.0",
+        "date": "2026-09-09",
+        "localizedDescription": "Instagram 446.0.0 | RyukGram v1.4.0 — fallback snapshot of the developer's source.\n\nSetting profiles, mobile-config browser, story stats, custom fonts, full-resolution photo downloads, reorderable post and reel buttons, view-once media capture while the app is closed and an update checker. See the live RyukSign source for the full release notes.",
+        "downloadURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa",
+        "size": 333670703,
+        "minOSVersion": "15.0"
+      }
+    ],
+    "syncedAt": "2026-09-10",
+    "lastError": "all sources failed: altstore:https://source.ryuksign.com/plugins error: HTTP request failed after 3 attempts: https://source.ryuksign.com/plugins (<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>)"
+  },
+  "ryukgram-ig410": {
+    "retryCount": 1,
+    "lastResolvedSource": "manual",
+    "versions": [
+      {
+        "version": "410.1.0",
+        "date": "2026-07-25",
+        "localizedDescription": "Instagram 410.1.0 | RyukGram (IG 410) v1.3.3 — fallback snapshot of the developer's source.\n\nThe RyukGram feature set on the Instagram 410 base for iOS 15 and later. See the live RyukSign source for the full release notes.",
+        "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+        "size": 267074754,
+        "minOSVersion": "15.0"
+      }
+    ],
+    "syncedAt": "2026-09-10",
+    "lastError": "all sources failed: altstore:https://source.ryuksign.com/ig410 error: HTTP request failed after 3 attempts: https://source.ryuksign.com/ig410 (<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>)"
+  },
+  "ryukgram-sidebyside": {
+    "retryCount": 1,
+    "lastResolvedSource": "manual",
+    "versions": [
+      {
+        "version": "446.0.0",
+        "date": "2026-09-09",
+        "localizedDescription": "Instagram 446.0.0 | RyukGram v1.4.0 (side-by-side, no plugins) — fallback snapshot of the developer's source.\n\nThe same build under its own bundle identifier so it installs next to the real Instagram app. See the live RyukSign source for the full release notes.",
+        "downloadURL": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa",
+        "size": 259670417,
+        "minOSVersion": "15.0"
+      }
+    ],
+    "syncedAt": "2026-09-10",
+    "lastError": "all sources failed: altstore:https://source.ryuksign.com/duplicate error: HTTP request failed after 3 attempts: https://source.ryuksign.com/duplicate (<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>)"
+  },
   "saber": {
     "retryCount": 0,
     "lastResolvedSource": "github:saber-notes/saber",
@@ -4755,6 +5384,123 @@
         "detail": "HTTP 302"
       }
     ]
+  },
+  "sameboy": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:LIJI32/SameBoy",
+    "versions": [
+      {
+        "version": "1.0.3",
+        "date": "2026-03-04",
+        "localizedDescription": "SameBoy 1.0.3 | sameboy_ios_v1.0.3\n\nThis version is backwards compatible with save states from SameBoy 0.14.3 and newer, as well as save states from any BESS compliant emulator\n\n## New/Improved Features\n* Added support for more controllers in the iOS frontend, including singular Joy-Cons\n* Pressing buttons while in a locked rewind state now exits rewind mode in the iOS frontend\n* The iOS frontend now handles save conflicts with a dialog, making syncing saves across different machines and emulators easier\n* An `examine`/`x` command can now use the `/s` modifier to change its output style to RGBDS-compatible assembly\n* An `examine`/`x` command can now use `$` in its modifier to use hexadecimal count values\n* It is now possible to adjust the maximum rumble strength\n* It is now possible to modify and save a running ROM file from the Memory Viewer in the Cocoa frontend\n* Controller buttons can now be assigned to one of 4 hotkey commands in the iOS frontend\n* Periodic saves were added to the iOS frontend\n* A new screenshot hotkey was added to the SDL frontend\n* Controller UI hiding in the iOS frontend can now optionally disable the centering of the game screen\n* The Cocoa and SDL frontends now save the battery more frequently\n\n## Accuracy Improvements/Fixes\n* Added silence detection to eliminate rounding artifacts when playing nothing but frequencies above Nyquist\n* Prevented abnormal vblank events from updating the SNES-side buffers prematurely\n* Fixed a bug that made reading the PCM registers non-deterministic when emulating a CGB in CPU revision C or older\n* Fixed a bug that caused ROMs to be running in the background under some cases in the Cocoa frontend\n* Fixed a bug that caused channel `PCM12` to output incorrect channel 2 values when emulating CGB in CPU revision C or older\n* Improved the accuracy of the `PCM` registers when emulating CGB in CPU revision C or older\n* Emulated a new quirk where volume envelope ticks are delayed while emulating a CGB in CPU revisions D or E\n* Corrected the channel alignment of channels 1 and 2 while emulating CGB in CPU revision C or older\n* Fixed a bug where a volume envelope quirk that was only applicable to channels 1 and 2 was also applied to channel 4\n* Major improvements to emulation of channel 4 start delays\n* Emulated a quirk where one of channel 4's internal counters counts while the channel is inactive\n* Emulated LFSR corruptions and \"zombie steps\" when writing to `NR43`, including revision differences\n\n## Bug Fixes\n* Fixed mouse cursor hiding behavior while debugging in the Cocoa frontend\n* Fixed an issue where rewinding could reset the ROM under some circumstances in the iOS frontend\n* Fixed a visual glitch in the reverse search functionality of the Cocoa debugger console\n* Fixed a memory leak in scenarios where `getline` fails on some platforms\n* Fixed a resource leak in scenarios where loading a cheat file fails\n* Fixed resource leaks in certain scenarios where loading a battery save or an ISX ROM fails\n* Fixed a bug that caused the SDL frontend to be stuck on the greyscale palette\n* Fixed a bug where starting an audio recording could crash on Windows on some systems\n* Fixed a bug where the Game Boy Camera could not be emulated correctly on some iPhone models\n* Fixed a spelling mistake in an iOS tip message\n* Fixed a bug where certain versions of macOS did not display SameBoy's icon\n* Fixed an issue that made it impossible to change the RTC mode in link mode in the libretro frontend\n\n## Misc Internal Changes\n* Updated the boot ROMs so they can be built with the latest version of RGBDS\n* Removed code for supporting legacy Windows save states from versions no longer compatible with modern versions of SameBoy\n* Fixed compilation of the SDL frontend on `unsigned char` platforms\n* Made it possible to build the Cocoa frontend using older SDKs\n* Removed accidentally committed debugging code from the Cocoa frontend",
+        "downloadURL": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+        "size": 3170899,
+        "minOSVersion": "11.0",
+        "releaseUrl": "https://github.com/LIJI32/SameBoy/releases/tag/v1.0.3",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "sameboy_cocoa_v1.0.3.zip",
+            "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_cocoa_v1.0.3.zip",
+            "platform": "unknown",
+            "architecture": null,
+            "fileType": "ZIP",
+            "size": 4825348,
+            "sha256": "09ed6eb475f0d6b0dd52217f878741e6551aa7022352947a0b7d62787316a6bf",
+            "downloads": 19717,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "sameboy_ios_v1.0.3.deb",
+            "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.deb",
+            "platform": "linux",
+            "architecture": null,
+            "fileType": "DEB",
+            "size": 3160226,
+            "sha256": "f274617f2df1c3100583ecf8d4d7896733d7aee1e100916a3be39d6abe296e4f",
+            "downloads": 2277,
+            "mimeType": "application/x-deb",
+            "installable": true
+          },
+          {
+            "filename": "sameboy_ios_v1.0.3.ipa",
+            "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 3170899,
+            "sha256": "2dddc5dee5048713dcfc4f38450c503afa13e85ffd0d138b5f52fc4c4c39370f",
+            "downloads": 3057,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "sameboy_winsdl_v1.0.3.zip",
+            "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_winsdl_v1.0.3.zip",
+            "platform": "unknown",
+            "architecture": null,
+            "fileType": "ZIP",
+            "size": 1629322,
+            "sha256": "66fb05acc075abba860f2c5fa31af2198fef9767573d28834c78d0dfc15746b2",
+            "downloads": 31579,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "sameboy_winsdl_v1.0.3.zip.js",
+            "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_winsdl_v1.0.3.zip.js",
+            "platform": "unknown",
+            "architecture": null,
+            "fileType": "other",
+            "size": 2172562,
+            "sha256": "b504c6fea2becdf73c8048200ef51f41986a9998abc4490d764d1eed6fc3a1ed",
+            "downloads": 183,
+            "mimeType": "application/x-javascript",
+            "installable": false
+          }
+        ],
+        "sha256": "2dddc5dee5048713dcfc4f38450c503afa13e85ffd0d138b5f52fc4c4c39370f",
+        "downloads": 3057
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
+  "serotonin": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:mineek/Serotonin",
+    "versions": [
+      {
+        "version": "1.2.1",
+        "date": "2024-01-17",
+        "localizedDescription": "Serotonin 1.2.1 | Serotonin.tipa\n\n# Serotonin 1.2.1\n## Changelog\n### Cleanup\n\n- Fixed memory hogger\n- Fixed exploit picker\n- Fixed launchd entitlements\n- Remove a bunch of unused code\n- Slight UI changes",
+        "downloadURL": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+        "size": 14986482,
+        "minOSVersion": "16.5.1",
+        "releaseUrl": "https://github.com/SerotoninApp/Serotonin/releases/tag/1.2.1",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Serotonin.tipa",
+            "downloadUrl": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 14986482,
+            "sha256": null,
+            "downloads": 51177,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "downloads": 51177
+      }
+    ],
+    "syncedAt": "2026-09-10"
   },
   "sidestore": {
     "retryCount": 0,
@@ -6011,6 +6757,40 @@
       }
     ]
   },
+  "taurine": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:Odyssey-Team/Taurine",
+    "versions": [
+      {
+        "version": "1.1.7",
+        "date": "2023-09-23",
+        "localizedDescription": "Taurine 1.1.7 | Taurine.1.1.7-3\n\nFix kfd change being implemented incorrectly",
+        "downloadURL": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+        "size": 32244737,
+        "minOSVersion": "14.0",
+        "releaseUrl": "https://github.com/Odyssey-Team/Taurine/releases/tag/1.1.7-3",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Taurine.1.1.7-3.ipa",
+            "downloadUrl": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 32244737,
+            "sha256": null,
+            "downloads": 756792,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "downloads": 756792
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "ttkillerplus": {
     "retryCount": 0,
     "versions": [
@@ -6331,6 +7111,40 @@
       }
     ]
   },
+  "unc0ver": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:pwn20wndstuff/Undecimus",
+    "versions": [
+      {
+        "version": "5.2.0",
+        "date": "2020-06-09",
+        "localizedDescription": "unc0ver 5.2.0 | unc0ver_5.2.0\n\nLast updated at: 06/09/2020\n\n06/09/2020 - v5.2.0 was released for production with the following changes:\n\n### ⚠️ Support development with https://phonerebel.com ⚠️\n\n- Enable iOS 13.5.5~b1 support\n- Fix a logic bug in disabling auto updates\n- Update bundled Cydia to fix crashes on iOS 13.5 with Hardware Keyboard enabled",
+        "downloadURL": "https://github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa",
+        "size": 43235739,
+        "minOSVersion": "11.0",
+        "releaseUrl": "https://github.com/pwn20wndstuff/Undecimus/releases/tag/v5.2.0",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "unc0ver_5.2.0.ipa",
+            "downloadUrl": "https://github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 43235739,
+            "sha256": null,
+            "downloads": 524691,
+            "mimeType": "application/binary",
+            "installable": true
+          }
+        ],
+        "downloads": 524691
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "updateHistory": [
     {
       "appId": "youpro",
@@ -6403,6 +7217,26 @@
       "kind": "updated"
     },
     {
+      "appId": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "version": "446.0.0",
+      "previousVersion": null,
+      "releaseDate": "2026-09-09",
+      "downloadUrl": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa",
+      "changelog": "Instagram 446.0.0 | RyukGram v1.4.0 (side-by-side, no plugins) — fallback snapshot of the developer's source.\n\nThe same build under its own bundle identifier so it installs next to the real Instagram app. See the live RyukSign source for the full release notes.",
+      "kind": "new"
+    },
+    {
+      "appId": "ryukgram",
+      "name": "RyukGram",
+      "version": "446.0.0",
+      "previousVersion": null,
+      "releaseDate": "2026-09-09",
+      "downloadUrl": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa",
+      "changelog": "Instagram 446.0.0 | RyukGram v1.4.0 — fallback snapshot of the developer's source.\n\nSetting profiles, mobile-config browser, story stats, custom fonts, full-resolution photo downloads, reorderable post and reel buttons, view-once media capture while the app is closed and an update checker. See the live RyukSign source for the full release notes.",
+      "kind": "new"
+    },
+    {
       "appId": "inkillerplus",
       "name": "iNKillerPlus",
       "version": "446.0.0",
@@ -6433,6 +7267,16 @@
       "kind": "new"
     },
     {
+      "appId": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "version": "2.4.9.26",
+      "previousVersion": null,
+      "releaseDate": "2026-09-07",
+      "downloadUrl": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa",
+      "changelog": "Dopamine (RootHide) 2.4.9.26 | Dopamine\n\n1: fix state consistency issues\n\n2: fix library trusting issues (eg: UTM)\n\n3: hide more jailbreak traces",
+      "kind": "new"
+    },
+    {
       "appId": "voyager",
       "name": "Voyager",
       "version": "2.49.0",
@@ -6440,6 +7284,16 @@
       "releaseDate": "2026-09-06",
       "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
       "changelog": "Voyager 2.49.0 | Voyager-iOS-2.49.0\n\n## 🚀 Features\n\n- feat: enable rich editor by default\n   - PR: #2352\n\n## 🐛 Fixes\n\n- fix: show two column setting in desktop app\n   - PR: #2346\n- fix: stabilize navigation after ionic v9 upgrade\n   - PR: #2348\n- fix: preserve tab state during route transitions\n   - PR: #2349\n- fix: prevent random community transition flicker\n   - PR: #2353\n\n## 📝 Other Changes\n\n- chore: upgrade to ionic v9\n   - PR: #2347\n- test: expand provider matrix to comment threads, feed and search\n   - PR: #2321\n- chore: upgrade threadiverse to 0.21.2\n   - PR: #2350\n- chore: upgrade dependencies\n   - PR: #2351",
+      "kind": "new"
+    },
+    {
+      "appId": "manicemu",
+      "name": "Manic EMU",
+      "version": "2.0.0",
+      "previousVersion": null,
+      "releaseDate": "2026-09-03",
+      "downloadUrl": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+      "changelog": "Manic EMU 2.0.0 | ManicEMU.v2.0.0.SideloadJIT\n\n> [!NOTE]\n> Starting from version 2.0.0, we no longer provide builds of TrollStore JIT. You can package it yourself by following the [guide](https://github.com/Rednick16/TrollStoreJITEnabler).\n\nThis is a major release focused on a redesigned interface, expanded platform support, and advanced features. Landscape browsing, library management, and external controller navigation have been rebuilt. It also adds several new systems and brings Netplay to eligible Libretro cores.\n\n\n### Before You Update\n\n- Dreamcast (Flycast): Existing save states will no longer work as of 2.0.0. Convert important save states to in-game saves before updating, or back up the `Flycast/dc` folder yourself.\n- Wii: A BootMii-format `keys.bin` is required.\n- Symbian: Install firmware in Settings first (`.ROM`; S60v2 and later also need `.RPKG`).\n- GameCube / Wii: The core is still being optimized, so heat and frame drops should still be expected.\n- MAME: A number of lesser-used arcade systems have been trimmed. Some obscure titles may no longer run.\n\n### Interface\n\nLandscape\n\n- A new landscape library, with most landscape pages redesigned.\n- Built-in dynamic backgrounds. You can use or upload ShaderToy (GLSL) scripts to customize them. Only single-Image scripts are supported; complex scripts may increase battery use or heat.\n- Multiple customizable card carousel styles.\n- Focused background: when a game is selected, its banner can be used as the landscape focus backdrop.\n- background music feature in landscape mode—besides built-in tracks, you can upload your own music files to use as background music.\n- built in 12 sets of navigation and focus sound effects.\n\nGame Options and Shortcuts\n\n- A unified options list and interaction model throughout the app.\n- Available actions are automatically arranged and regrouped for the current context.\n- Advanced reordering: customize the order and grouping of options.\n- A redesigned in-game shortcut menu. Shortcuts can appear on supported skins and in the in-game menu.\n\nNavigation and Input\n\n- A global focus and navigation system for iPhone and iPad. You can browse and interact entirely with a controller or keyboard.\n- Hold Command or the controller’s Select button to view the shortcut cheatsheet.\n- A unified navigation bar for more consistent browsing and editing.\n- Many long-press and hidden actions have been replaced with more conventional, iOS-style interactions.\n- Batch management and actions.\n- Adaptive rotation throughout the app.\n- Controllers can be assigned to a player slot. On cores that expect a keyboard, controller inputs can be mapped to keyboard events.\n\n### Features\n\nLibrary and Artwork\n\n- Covers now support separate icon and banner artwork. Box art is used in regular lists, icons in square layouts, and banners as the landscape focus backdrop.\n- Online artwork from Libretro Thumbnails and SteamGridDB (Grids / Heroes / Logos / Icons; SteamGridDB requires your own API key).\n- Switching platform or category rematches cover art.\n\nGame Data\n\n- Game metadata: auto-match, search the database, or edit it yourself (developer, publisher, series, genre, release date, region, overview, and more).\n- ESRB ratings and matching icons. Rating icons can be hidden in Settings.\n- A redesigned save-state manager with import and export.\n- Scoped settings: the same option can be stored at game, platform, or global level, and each can be cleared or reset independently.\n- batch scraping for covers, icons, and banners.\n- \n\nShaders and Skins\n\n- Real-time shader preview, without loading the shader first.\n- Redesigned default GBA skin.\n- Flex skins now support customizing button size and position.\n\nAchievements, Cheats, and Netplay\n\n- RetroAchievements pages are easier to read and load faster.\n- MultiSet support: earn subset achievements without a patched ROM. Switching the achievement list only changes what is shown; it does not affect which sets you can unlock while playing.\n- Online cheat database: search, multi-select add, and bookmarks.\n- Netplay for many Libretro cores: host or join a room, public lobby, LAN scan, relay, spectator mode, and room password. Your Adventurer Card nickname is used as the Netplay display name. You can now trade treasured Pokémon with friends over the network, or go head-to-head on arcade systems.\n- Rewind: add it to the shortcut menu, a controller mapping, or TriggerPro, then touch and hold to use it.\n\nAdvanced Features and Import\n\n- Core Settings: intended for advanced users. Incorrect values may prevent games from launching. Settings can be reset per game or per platform.\n- Settings now include an Adventurer Card, with a customizable nickname and avatar.\n- Import games from DukeX.\n- Import games from Armsx2.\n- PS1 now supports importing `.bin` files directly.\n\n\n### New Systems and Cores\n\nSymbian (EKA2L1)\n\n- Supports S60v1, N-Gage 1.0, S60v2, S60v3, N-Gage 2.0, S60v5, and Symbian^3.\n- Touch input, firmware management, and system apps.\n- Legacy / PPL / TXM JIT.\n\nPC Engine (Beetle PCE)\n\n- Supports TurboGrafx-16, TurboGrafx-CD, and SuperGrafx, with subcategory switching.\n\nNeo Geo Pocket / Color (Beetle NeoPop)\n\n- Supports Neo Geo Pocket and Neo Geo Pocket Color, with subcategory switching.\n\nCommodore 64 (VICE x64sc)\n\n- Full keyboard support, with switching between gamepad and keyboard skins.\n\nAmiga (PUAE)\n\n- Full keyboard support, with switching between gamepad and keyboard skins.\n\nGameCube / Wii (Dolphin)\n\n- Legacy / PPL / TXM JIT.\n- Wii: Wiimote sideways mode.\n- Dolphin cheats, including Action Replay Max decryption.\n- Wiimote skins for Wii\n\nOther Cores\n\n- Mesen-S added for SNES / GB / GBC.\n- gpSP added for GBA, and can be switched with mGBA and VBA-M.\n\n### JIT Fixes and Improvements\n\n- Fixed JIT failing on TXM devices running iOS 26.6 and later.\n- Revised TXM device detection.\n- N64 GLideN64 and ParaLLEl RDP now both support JIT.\n\n### Core Updates\n\nThe following cores have been updated to the latest upstream stable releases.\n\n- 3DS (Azahar, Citra)\n- PS1 (Beetle PSX HW)\n- DOS (DOSBox Pure)\n- Dreamcast (Flycast) — see the save-state migration note above\n- NDS (melonDS)\n- PSP (PPSSPP)\n- N64 (Mupen64Plus)\n\n### Fixes\n\n- Numerous bug fixes and performance optimizations",
       "kind": "new"
     },
     {
@@ -6623,6 +7477,16 @@
       "kind": "new"
     },
     {
+      "appId": "dopamine",
+      "name": "Dopamine",
+      "version": "3.0.9",
+      "previousVersion": null,
+      "releaseDate": "2026-08-22",
+      "downloadUrl": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa",
+      "changelog": "Dopamine 3.0.9 | Dopamine\n\n- Fix jailbreak apps not being removed from home screen when removing the jailbreak on iOS 18.0 - 18.3.1 too",
+      "kind": "new"
+    },
+    {
       "appId": "sora",
       "name": "Sora",
       "version": "1.3.0",
@@ -6693,6 +7557,16 @@
       "kind": "new"
     },
     {
+      "appId": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "version": "410.1.0",
+      "previousVersion": null,
+      "releaseDate": "2026-07-25",
+      "downloadUrl": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+      "changelog": "Instagram 410.1.0 | RyukGram (IG 410) v1.3.3 — fallback snapshot of the developer's source.\n\nThe RyukGram feature set on the Instagram 410 base for iOS 15 and later. See the live RyukSign source for the full release notes.",
+      "kind": "new"
+    },
+    {
       "appId": "qbitcontrol",
       "name": "qBitControl",
       "version": "1.4.1",
@@ -6750,6 +7624,26 @@
       "releaseDate": "2026-06-20",
       "downloadUrl": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
       "changelog": "DolphiniOS 5.0.0 | Non-Jailbroken\n\n* Fixed JIT support on A13/A14/M1 devices running iOS 27 beta. (@CelloSerenity)\n* Fixed wrong app version number introduced in 5.0.0b5. (@CelloSerenity)\n\nThe next update will be sometime after the next official Dolphin release. It will include a core update.\n\n**Full Changelog**: https://github.com/OatmealDome/dolphin-ios/compare/v5.0.0b5...v5.0.0b6",
+      "kind": "new"
+    },
+    {
+      "appId": "bootstrap",
+      "name": "Bootstrap",
+      "version": "2.2.1",
+      "previousVersion": null,
+      "releaseDate": "2026-06-12",
+      "downloadUrl": "https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa",
+      "changelog": "Bootstrap 2.2.1 | Bootstrap.tipa\n\n1: add procursus(alt) repo by default\n\n2: hide more jailbreak traces",
+      "kind": "new"
+    },
+    {
+      "appId": "xenios",
+      "name": "XeniOS",
+      "version": "2.0.1",
+      "previousVersion": null,
+      "releaseDate": "2026-06-08",
+      "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+      "changelog": "XeniOS 2.0.1 | xenios_ios_iphone_ipad\n\n# 2.0.1-9730\n\n- Channel: release\n- Stage: stable\n- Version: 2.0.1\n- Build number: 9730\n- Commit: 57c3ca140\n- Published at: 2026-06-08T03:28:01Z\n- Source ref: refs/heads/xenios",
       "kind": "new"
     },
     {
@@ -6813,6 +7707,16 @@
       "kind": "new"
     },
     {
+      "appId": "gopeed",
+      "name": "Gopeed",
+      "version": "1.9.3",
+      "previousVersion": null,
+      "releaseDate": "2026-03-18",
+      "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa",
+      "changelog": "Gopeed 1.9.3 | Gopeed-v1.9.3-ios\n\n<table>\n  <tbody>\n    <tr>\n      <td rowspan=\"4\">🪟 Windows</td>\n      <td rowspan=\"2\"><code>EXE</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>Portable</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-amd64-portable.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-arm64-portable.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"3\">🍎 MacOS</td>\n      <td rowspan=\"3\"><code>DMG</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos-amd64.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos-arm64.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"6\">🐧 Linux</td>\n      <td><code>Flathub</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://flathub.org/apps/com.gopeed.Gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td><code>SNAP</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://snapcraft.io/gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>DEB</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-amd64.deb\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-arm64.deb\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>AppImage</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-amd64.AppImage\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-arm64.AppImage\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"4\">🤖 Android</td>\n      <td rowspan=\"4\"><code>APK</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>armeabi-v7a</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-armeabi-v7a.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64-v8a</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-arm64-v8a.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>x86_64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-x86_64.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>📱 iOS</td>\n      <td><code>IPA</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-ios.ipa\">📥</a></td>\n    </tr>\n    <tr>\n      <td>🐳 Docker</td>\n      <td>-</td>\n      <td>universal</td>\n      <td><a href=\"https://hub.docker.com/r/liwei2633/gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\">💾 Qnap</td>\n      <td rowspan=\"2\"><code>QPKG</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-v1.9.3-qnap-amd64.qpkg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-v1.9.3-qnap-arm64.qpkg\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"8\">🌐 Web</td>\n      <td rowspan=\"3\"><code>Windows</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>386</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-386.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>MacOS</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-macos-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-macos-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"3\"><code>Linux</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>386</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-386.zip\">📥</a></td>\n    </tr>\n  </tbody>\n</table>\n\n# Release notes\n\n## 🆕 Features\n\n- feat: ed2k protocol support (important!!!) @monkeyWie (#1316)\n\n## 🐛 Bug Fixes\n\n- fix: non-range HTTP downloaded bytes exceeding total file size @monkeyWie (#1317)\n- fix: update isCreate logic for pending tasks @Roxym3 (#1314)\n- fix: update RPM icon path @monkeyWie (#1309)\n\n## 📖 Document\n\n- docs: migrate docs.gopeed.com links to gopeed.com/docs equivalents @copilot-swe-agent (#1311)\n\n## 🌎 Internationalization\n\n- feat(lang): Catalan language added @kayron8 (#1303)\n- feat(lang): update Turkish translation @Hweord (#1304)\n\n# 更新日志\n\n## 🆕 新特性\n\n- feat: ed2k 协议支持 (重大特性！！！) @monkeyWie (#1316)\n\n## 🐛 Bug Fixes\n\n- fix: 不支持断点下载的 HTTP 链接下载超出文件总大小 @monkeyWie (#1317)\n- fix: 更新 isCreate 逻辑用于等待中的任务 @Roxym3 (#1314)\n- fix: 更新 RPM 图标路径 @monkeyWie (#1309)\n\n## 📖 Document\n\n- docs: 迁移 docs.gopeed.com 链接至 gopeed.com/docs @copilot-swe-agent (#1311)\n\n## 🌎 Internationalization\n\n- feat(lang): 添加加泰罗尼亚语言 @kayron8 (#1303)\n- feat(lang): 更新土耳其语言 @Hweord (#1304)",
+      "kind": "new"
+    },
+    {
       "appId": "provenance",
       "name": "Provenance",
       "version": "3.3.0",
@@ -6820,6 +7724,16 @@
       "releaseDate": "2026-03-14",
       "downloadUrl": "https://github.com/Provenance-Emu/Provenance/releases/download/3.3.0/Provenance-3.3.0-iOS.ipa",
       "changelog": "Provenance 3.3.0 | Provenance-3.3.0-iOS\n\n## What's New in 3.3.0\n\nThis is a big one. Four months of work since 3.2.1 covering iCloud sync, a completely revamped tvOS interface, video filters, and a ton of core and stability fixes.\n\n### ☁️ iCloud / CloudKit Sync\n- ROMs, save states, BIOS files, and artwork now sync across devices via iCloud\n- Real-time download progress indicators when loading cloud save states\n- Auto BIOS sync on game load when available in iCloud\n- ROM metadata syncs alongside files\n- Artwork syncs after library updates\n- CloudKit records management tab in Settings\n- iCloud upsell UI for new users with empty libraries\n- Sync queue pauses during emulation and resumes after\n\n### 📺 New tvOS UI (Default)\n- Completely redesigned tvOS interface now enabled by default\n- RetroWave-themed side menu with smooth animations\n- Save states browser accessible from the main UI with artwork and core name\n- \"View All\" saves section with per-system filtering\n- TopShelf v2: recent games and save states with artwork and timestamps\n- Cheats UI in the pause menu\n- Game \"More Info\" panel\n- Log viewer tab\n- Import status view in side menu\n- Search with persistent history\n- Dozens of focus, navigation, and theming fixes throughout\n\n### 🎨 Video Filters & Shaders\n- Unified filter pipeline works across native and RetroArch cores\n- GB and VHS filters improved\n- Filters accessible from the pause menu\n- RetroArch GLES 3D cores now supported (Vecx/GLiden, etc.)\n- Dolphin shader/filter support\n- PPSSPP filter support\n\n### 🎮 Core & Controller Fixes\n- **RetroArch**: Fixed player index mapping for MFi, PS4, and Xbox controllers; PS4 start/select fixed; 32x controls added; GameCube controller responder added\n- **Mupen64Plus**: Fixed PS4 start button; fixed tvOS scaling and placement; better save error messages\n- **Dolphin**: Fixed Vulkan landscape rendering\n- **GenPluGX**: Added CHD support; added wide-screen GameGear core\n- **PicoDrive**: Fixed crash on unload; fixed 32x controller mapping\n- **FCEUmm**: Fixed start/select button mapping\n- **Mednafen**: Fixed DualShock/DualSense pause/play button mapping\n- **GameBatte / TGDB Dual**: Fixed PSX/Xbox pause/select button mapping\n\n### 🐛 Bug Fixes & Stability\n- Fixed multiple app hangs from main-thread Realm access (moved to background)\n- Fixed crash in pause menu when closing core\n- Fixed potential crash if audio ring buffer init fails\n- Fixed crash in share/import extension\n- Fixed aspect ratio issues in Stella and some other cores\n- Fixed FPS label appearing in screenshots\n- Fixed artwork not refreshing in game library after sync\n- Fixed game importer re-queuing already-imported items\n- Fixed Realm contentless core crash\n- Fixed \"Continue\" carousel metadata mismatch\n- Skin selector refreshes orientation previews on rotation change\n- ManicSkin/DeltaSkin files can now be opened directly from Safari\n- iPad import status modal clipped layout fixed\n- DSP audio engine fixes\n\n### ⚡ Performance\n- Artwork loading significantly faster\n- Game library UI rendering optimizations (removed unnecessary Observable wrappers)\n- Async tab bar icon loading\n- CloudKit sync deduplication and repeat-lookup fixes\n- Game importer skips MD5 hashing for large non-BIOS files\n\n**Full Changelog**: https://github.com/Provenance-Emu/Provenance/compare/3.2.1...3.3.0",
+      "kind": "new"
+    },
+    {
+      "appId": "sameboy",
+      "name": "SameBoy",
+      "version": "1.0.3",
+      "previousVersion": null,
+      "releaseDate": "2026-03-04",
+      "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+      "changelog": "SameBoy 1.0.3 | sameboy_ios_v1.0.3\n\nThis version is backwards compatible with save states from SameBoy 0.14.3 and newer, as well as save states from any BESS compliant emulator\n\n## New/Improved Features\n* Added support for more controllers in the iOS frontend, including singular Joy-Cons\n* Pressing buttons while in a locked rewind state now exits rewind mode in the iOS frontend\n* The iOS frontend now handles save conflicts with a dialog, making syncing saves across different machines and emulators easier\n* An `examine`/`x` command can now use the `/s` modifier to change its output style to RGBDS-compatible assembly\n* An `examine`/`x` command can now use `$` in its modifier to use hexadecimal count values\n* It is now possible to adjust the maximum rumble strength\n* It is now possible to modify and save a running ROM file from the Memory Viewer in the Cocoa frontend\n* Controller buttons can now be assigned to one of 4 hotkey commands in the iOS frontend\n* Periodic saves were added to the iOS frontend\n* A new screenshot hotkey was added to the SDL frontend\n* Controller UI hiding in the iOS frontend can now optionally disable the centering of the game screen\n* The Cocoa and SDL frontends now save the battery more frequently\n\n## Accuracy Improvements/Fixes\n* Added silence detection to eliminate rounding artifacts when playing nothing but frequencies above Nyquist\n* Prevented abnormal vblank events from updating the SNES-side buffers prematurely\n* Fixed a bug that made reading the PCM registers non-deterministic when emulating a CGB in CPU revision C or older\n* Fixed a bug that caused ROMs to be running in the background under some cases in the Cocoa frontend\n* Fixed a bug that caused channel `PCM12` to output incorrect channel 2 values when emulating CGB in CPU revision C or older\n* Improved the accuracy of the `PCM` registers when emulating CGB in CPU revision C or older\n* Emulated a new quirk where volume envelope ticks are delayed while emulating a CGB in CPU revisions D or E\n* Corrected the channel alignment of channels 1 and 2 while emulating CGB in CPU revision C or older\n* Fixed a bug where a volume envelope quirk that was only applicable to channels 1 and 2 was also applied to channel 4\n* Major improvements to emulation of channel 4 start delays\n* Emulated a quirk where one of channel 4's internal counters counts while the channel is inactive\n* Emulated LFSR corruptions and \"zombie steps\" when writing to `NR43`, including revision differences\n\n## Bug Fixes\n* Fixed mouse cursor hiding behavior while debugging in the Cocoa frontend\n* Fixed an issue where rewinding could reset the ROM under some circumstances in the iOS frontend\n* Fixed a visual glitch in the reverse search functionality of the Cocoa debugger console\n* Fixed a memory leak in scenarios where `getline` fails on some platforms\n* Fixed a resource leak in scenarios where loading a cheat file fails\n* Fixed resource leaks in certain scenarios where loading a battery save or an ISX ROM fails\n* Fixed a bug that caused the SDL frontend to be stuck on the greyscale palette\n* Fixed a bug where starting an audio recording could crash on Windows on some systems\n* Fixed a bug where the Game Boy Camera could not be emulated correctly on some iPhone models\n* Fixed a spelling mistake in an iOS tip message\n* Fixed a bug where certain versions of macOS did not display SameBoy's icon\n* Fixed an issue that made it impossible to change the RTC mode in link mode in the libretro frontend\n\n## Misc Internal Changes\n* Updated the boot ROMs so they can be built with the latest version of RGBDS\n* Removed code for supporting legacy Windows save states from versions no longer compatible with modern versions of SameBoy\n* Fixed compilation of the SDL frontend on `unsigned char` platforms\n* Made it possible to build the Cocoa frontend using older SDKs\n* Removed accidentally committed debugging code from the Cocoa frontend",
       "kind": "new"
     },
     {
@@ -6913,6 +7827,36 @@
       "kind": "new"
     },
     {
+      "appId": "serotonin",
+      "name": "Serotonin",
+      "version": "1.2.1",
+      "previousVersion": null,
+      "releaseDate": "2024-01-17",
+      "downloadUrl": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+      "changelog": "Serotonin 1.2.1 | Serotonin.tipa\n\n# Serotonin 1.2.1\n## Changelog\n### Cleanup\n\n- Fixed memory hogger\n- Fixed exploit picker\n- Fixed launchd entitlements\n- Remove a bunch of unused code\n- Slight UI changes",
+      "kind": "new"
+    },
+    {
+      "appId": "taurine",
+      "name": "Taurine",
+      "version": "1.1.7",
+      "previousVersion": null,
+      "releaseDate": "2023-09-23",
+      "downloadUrl": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+      "changelog": "Taurine 1.1.7 | Taurine.1.1.7-3\n\nFix kfd change being implemented incorrectly",
+      "kind": "new"
+    },
+    {
+      "appId": "odyssey",
+      "name": "Odyssey",
+      "version": "1.4.3",
+      "previousVersion": null,
+      "releaseDate": "2023-04-04",
+      "downloadUrl": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
+      "changelog": "Odyssey 1.4.3 | Odyssey-1.4.3\n\n- Update Sileo to 2.3-1",
+      "kind": "new"
+    },
+    {
       "appId": "mame4ios",
       "name": "MAME4iOS",
       "version": "2022.5",
@@ -6920,6 +7864,16 @@
       "releaseDate": "2022-12-12",
       "downloadUrl": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa",
       "changelog": "MAME4iOS 2022.5 | MAME4iOS-2022.5-139\n\n* Updated to [MAME 250](https://www.mamedev.org/releases/whatsnew_0250.txt).\n* tvOS UX: use a Alert instead of a inline Segmented Control.\n* Show upload feedback in Web Server UX.\n* Added `Make First Favorite` to game context menu.",
+      "kind": "new"
+    },
+    {
+      "appId": "unc0ver",
+      "name": "unc0ver",
+      "version": "5.2.0",
+      "previousVersion": null,
+      "releaseDate": "2020-06-09",
+      "downloadUrl": "https://github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa",
+      "changelog": "unc0ver 5.2.0 | unc0ver_5.2.0\n\nLast updated at: 06/09/2020\n\n06/09/2020 - v5.2.0 was released for production with the following changes:\n\n### ⚠️ Support development with https://phonerebel.com ⚠️\n\n- Enable iOS 13.5.5~b1 support\n- Fix a logic bug in disabling auto updates\n- Update bundled Cydia to fix crashes on iOS 13.5 with Hardware Keyboard enabled",
       "kind": "new"
     }
   ],
@@ -8144,6 +9098,77 @@
       }
     ],
     "lastResolvedSource": "github:lo-cafe/winston"
+  },
+  "xenios": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:xenios-jp/XeniOS",
+    "versions": [
+      {
+        "version": "2.0.1",
+        "date": "2026-06-08",
+        "localizedDescription": "XeniOS 2.0.1 | xenios_ios_iphone_ipad\n\n# 2.0.1-9730\n\n- Channel: release\n- Stage: stable\n- Version: 2.0.1\n- Build number: 9730\n- Commit: 57c3ca140\n- Published at: 2026-06-08T03:28:01Z\n- Source ref: refs/heads/xenios",
+        "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+        "size": 46253576,
+        "minOSVersion": "18.0",
+        "releaseUrl": "https://github.com/xenios-jp/XeniOS/releases/tag/release-v2.0.1-build-9730",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "xenios_ios_iphone_ipad.ipa",
+            "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 46253576,
+            "sha256": "61de6cfc9cf05389161272ceaa70d46662dab77de40ab11fdda3d4a2221621a7",
+            "downloads": 25754,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "xenios_macos_apple_silicon.dmg",
+            "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_macos_apple_silicon.dmg",
+            "platform": "macos",
+            "architecture": null,
+            "fileType": "DMG",
+            "size": 52809681,
+            "sha256": "c87e3cee8758e0a1684f31d4cf8f1d949e17db4aed1de22db4f2fe16ebd5088f",
+            "downloads": 4888,
+            "mimeType": "application/x-apple-diskimage",
+            "installable": true
+          },
+          {
+            "filename": "xenios_macos_intel.dmg",
+            "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_macos_intel.dmg",
+            "platform": "macos",
+            "architecture": null,
+            "fileType": "DMG",
+            "size": 54180623,
+            "sha256": "66504eb4b04a1c0db6d3ee62548c0353e60a166743bfc654545b347b9de03bcf",
+            "downloads": 1031,
+            "mimeType": "application/x-apple-diskimage",
+            "installable": true
+          },
+          {
+            "filename": "xenios_macos_universal.dmg",
+            "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_macos_universal.dmg",
+            "platform": "macos",
+            "architecture": "universal",
+            "fileType": "DMG",
+            "size": 77245617,
+            "sha256": "4aee749e878d8cbe301610372a1f1fcb636253ed93ab24732ed59054f19bc46c",
+            "downloads": 3479,
+            "mimeType": "application/x-apple-diskimage",
+            "installable": true
+          }
+        ],
+        "sha256": "61de6cfc9cf05389161272ceaa70d46662dab77de40ab11fdda3d4a2221621a7",
+        "downloads": 25754
+      }
+    ],
+    "syncedAt": "2026-09-10"
   },
   "yattee": {
     "retryCount": 0,

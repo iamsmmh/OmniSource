@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bootstrap — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/bootstrap.json</link>
+    <description>Release feed for Bootstrap within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 17:57:12 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/bootstrap.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Bootstrap v2.2.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/bootstrap.json</link>
+      <guid isPermaLink="false">bootstrap-2.2.1</guid>
+      <pubDate>Fri, 12 Jun 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Bootstrap 2.2.1 | Bootstrap.tipa
+
+1: add procursus(alt) repo by default
+
+2: hide more jailbreak traces]]></description>
+      <enclosure url="https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

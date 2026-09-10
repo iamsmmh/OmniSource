@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 49,
+  "count": 63,
   "baseURL": "https://iamsmmh.github.io/OmniSource",
   "apps": [
     {
@@ -2011,6 +2011,580 @@
         "reachable": true,
         "detail": "HTTP 302",
         "updatedAt": "2026-08-20"
+      }
+    },
+    {
+      "id": "ryukgram",
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "developer": "Ryuk (@axryuk)",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-09",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "Ryuk / RyukSign (source.ryuksign.com)",
+      "sourceURL": "https://source.ryuksign.com/plugins",
+      "bundleId": "com.burbn.instagram",
+      "bundleIdentifier": "com.burbn.instagram",
+      "description": "RyukGram is an enhanced Instagram client for iOS by @axryuk — the full Instagram app with a built-in suite of privacy, logging and customisation tools that all run on-device. It adds follow-request tracking, read-receipt and seen-state control, device-ID masking, a deleted-message log, story-viewer insights and a stories archive, media downloading for posts, reels, stories and DMs, custom chat themes and fonts, per-account setting profiles, an Instagram mobile-config browser and a configurable tab bar. The release notes for each build are carried through from the developer's own source.",
+      "shortDescription": "Instagram, supercharged with RyukGram",
+      "icon": "Instagram.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/ryukgram/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram.json",
+      "homepage": "https://store.ryuksign.com/",
+      "status": "stable",
+      "featured": false,
+      "size": 333670703,
+      "downloads": 0,
+      "downloadURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa",
+      "sha256": null,
+      "minOSVersion": "15.0",
+      "verificationMethod": "altstore",
+      "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-09"
+      }
+    },
+    {
+      "id": "ryukgram-ig410",
+      "slug": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "developer": "Ryuk (@axryuk)",
+      "version": "410.1.0",
+      "releaseDate": "2026-07-25",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "Ryuk / RyukSign (source.ryuksign.com)",
+      "sourceURL": "https://source.ryuksign.com/ig410",
+      "bundleId": "com.burbn.instagram",
+      "bundleIdentifier": "com.burbn.instagram",
+      "description": "RyukGram (IG 410) is the same enhanced Instagram client ported to the Instagram 410.1.0 app for iOS 15 and later. It carries the full RyukGram feature set — follow-request tracking, read receipts, story-viewer insights, deleted-message logs, device-ID masking, media downloading, custom chat themes and a configurable tab bar — on top of the older Instagram base, which is what you want if the current Instagram builds are unstable on your device or you deliberately stay on an older app version.",
+      "shortDescription": "RyukGram built on the Instagram 410 app",
+      "icon": "Instagram.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/ryukgram-ig410/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram-ig410.json",
+      "homepage": "https://store.ryuksign.com/",
+      "status": "stable",
+      "featured": false,
+      "size": 267074754,
+      "downloads": 0,
+      "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+      "sha256": null,
+      "minOSVersion": "15.0",
+      "verificationMethod": "altstore",
+      "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-07-25"
+      }
+    },
+    {
+      "id": "ryukgram-sidebyside",
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "developer": "Ryuk (@axryuk)",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-09",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "Ryuk / RyukSign (source.ryuksign.com)",
+      "sourceURL": "https://source.ryuksign.com/duplicate",
+      "bundleId": "com.ryuk.ryukgram",
+      "bundleIdentifier": "com.ryuk.ryukgram",
+      "description": "RyukGram Side by Side is the RyukGram build packaged under its own bundle identifier, com.ryuk.ryukgram, so it installs alongside the real Instagram app instead of replacing it. Both apps get their own name, icon and login, so you can stay signed into a stock account and a modded one at the same time. This variant ships the no-plugin-loader build.",
+      "shortDescription": "RyukGram under its own bundle id, next to Instagram",
+      "icon": "Instagram.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/ryukgram-sidebyside/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram-sidebyside.json",
+      "homepage": "https://store.ryuksign.com/",
+      "status": "stable",
+      "featured": false,
+      "size": 259670417,
+      "downloads": 0,
+      "downloadURL": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa",
+      "sha256": null,
+      "minOSVersion": "15.0",
+      "verificationMethod": "altstore",
+      "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-09"
+      }
+    },
+    {
+      "id": "dopamine",
+      "slug": "dopamine",
+      "name": "Dopamine",
+      "developer": "opa334 & contributors",
+      "version": "3.0.9",
+      "releaseDate": "2026-08-22",
+      "category": "utilities",
+      "categories": [
+        "utilities"
+      ],
+      "tags": [
+        "utilities"
+      ],
+      "source": "opa334/Dopamine",
+      "sourceURL": "https://github.com/opa334/Dopamine",
+      "bundleId": "com.opa334.Dopamine",
+      "bundleIdentifier": "com.opa334.Dopamine",
+      "description": "Dopamine is the modern semi-untethered, rootless jailbreak for iOS and iPadOS 15.0 through 26.0.1. It bootstraps a Procursus environment (Sileo and friends) on supported arm64e and arm64 devices, keeps passcode, Touch ID/Face ID and Apple Pay working, and hides its filesystem changes well enough to stay through a userspace reboot. This entry tracks the official Dopamine app the developer publishes on GitHub Releases.",
+      "shortDescription": "Semi-untethered jailbreak for iOS 15 – 26",
+      "icon": "Dopamine.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Dopamine.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/dopamine/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/dopamine.json",
+      "homepage": "https://github.com/opa334/Dopamine",
+      "status": "stable",
+      "featured": false,
+      "size": 55409206,
+      "downloads": 128535,
+      "downloadURL": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa",
+      "sha256": "ad0c4ea182b232346470df10439cfa2c1b7952e6b586113edfbc2720e455b201",
+      "minOSVersion": "15.0",
+      "verificationMethod": "github-release",
+      "publisher": "opa334/Dopamine",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-08-22"
+      }
+    },
+    {
+      "id": "dopamine-roothide",
+      "slug": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "developer": "roothide",
+      "version": "2.4.9.26",
+      "releaseDate": "2026-09-07",
+      "category": "utilities",
+      "categories": [
+        "utilities"
+      ],
+      "tags": [
+        "utilities"
+      ],
+      "source": "roothide/Dopamine2-roothide",
+      "sourceURL": "https://github.com/roothide/Dopamine2-roothide",
+      "bundleId": "com.opa334.Dopamine-roothide",
+      "bundleIdentifier": "com.opa334.Dopamine-roothide",
+      "description": "Dopamine (RootHide) is roothide's hardened Dopamine 2 build for iOS 15.0 through 16.7.x. It runs the jailbreak in a hidden, per-app environment: App Store apps do not see the bootstrap or your tweaks unless you explicitly patch them, and extra work is done to hide jailbreak traces from detection. It keeps the usual Dopamine toolchain — Sileo, rootless tweaks and userspace reboots — under a separate bundle identifier so it can sit next to the stock Dopamine app.",
+      "shortDescription": "Dopamine fork that hides the jailbreak from apps",
+      "icon": "DopamineRootHide.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/DopamineRootHide.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/dopamine-roothide/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/dopamine-roothide.json",
+      "homepage": "https://github.com/roothide/Dopamine2-roothide",
+      "status": "stable",
+      "featured": false,
+      "size": 54859511,
+      "downloads": 3742,
+      "downloadURL": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa",
+      "sha256": "38d02ec6167772011e4f58aaf31566c7be4db86302962aeedc601f9b4795cc1f",
+      "minOSVersion": "15.0",
+      "verificationMethod": "github-release",
+      "publisher": "roothide/Dopamine2-roothide",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-07"
+      }
+    },
+    {
+      "id": "bootstrap",
+      "slug": "bootstrap",
+      "name": "Bootstrap",
+      "developer": "roothide",
+      "version": "2.2.1",
+      "releaseDate": "2026-06-12",
+      "category": "utilities",
+      "categories": [
+        "utilities"
+      ],
+      "tags": [
+        "utilities"
+      ],
+      "source": "roothide/Bootstrap",
+      "sourceURL": "https://github.com/roothide/Bootstrap",
+      "bundleId": "com.roothide.Bootstrap",
+      "bundleIdentifier": "com.roothide.Bootstrap",
+      "description": "Bootstrap is roothide's semi-jailbreak bootstrap for iOS and iPadOS 15.0 through 17.0 on A8 to A17 Pro and M1/M2 devices. Instead of jailbreaking the whole system it builds a hidden environment that boots Sileo, Zebra and rootless tweaks while App Store apps stay untouched — so banking, streaming and game apps that refuse to run on a jailbroken device keep working. Apps are patched one at a time when you want tweaks inside them, and the whole environment can be removed again.",
+      "shortDescription": "RootHide bootstrap for iOS 15 – 17",
+      "icon": "Bootstrap.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Bootstrap.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/bootstrap/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/bootstrap.json",
+      "homepage": "https://github.com/roothide/Bootstrap",
+      "status": "stable",
+      "featured": false,
+      "size": 55704386,
+      "downloads": 8309,
+      "downloadURL": "https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa",
+      "sha256": "24c43c66579fcbf8735176b8465b58d20d0b92524e5b32ed64c60993d76ec8f5",
+      "minOSVersion": "15.0",
+      "verificationMethod": "github-release",
+      "publisher": "roothide/Bootstrap",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-06-12"
+      }
+    },
+    {
+      "id": "serotonin",
+      "slug": "serotonin",
+      "name": "Serotonin",
+      "developer": "mineek",
+      "version": "1.2.1",
+      "releaseDate": "2024-01-17",
+      "category": "utilities",
+      "categories": [
+        "utilities"
+      ],
+      "tags": [
+        "utilities"
+      ],
+      "source": "mineek/Serotonin",
+      "sourceURL": "https://github.com/mineek/Serotonin",
+      "bundleId": "pisshill.usprebooter",
+      "bundleIdentifier": "pisshill.usprebooter",
+      "description": "Serotonin is a semi-untethered 'semi-jailbreak' for iOS 16.5.1 through 16.7 RC and iOS 17.0 on arm64e devices. Built on the Fugu15 code base, it gives you tweak injection and a Procursus bootstrap without a full jailbreak: tweaks load into the apps you patch, and the device keeps working normally everywhere else.",
+      "shortDescription": "Semi-jailbreak for iOS 16.5.1 – 17.0",
+      "icon": "Serotonin.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Serotonin.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/serotonin/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/serotonin.json",
+      "homepage": "https://github.com/mineek/Serotonin",
+      "status": "unmaintained",
+      "featured": false,
+      "size": 14986482,
+      "downloads": 51177,
+      "downloadURL": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+      "sha256": null,
+      "minOSVersion": "16.5.1",
+      "verificationMethod": "github-release",
+      "publisher": "mineek/Serotonin",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2024-01-17"
+      }
+    },
+    {
+      "id": "taurine",
+      "slug": "taurine",
+      "name": "Taurine",
+      "developer": "Odyssey Team (coolstar)",
+      "version": "1.1.7",
+      "releaseDate": "2023-09-23",
+      "category": "utilities",
+      "categories": [
+        "utilities"
+      ],
+      "tags": [
+        "utilities"
+      ],
+      "source": "Odyssey-Team/Taurine",
+      "sourceURL": "https://github.com/Odyssey-Team/Taurine",
+      "bundleId": "org.coolstar.taurine",
+      "bundleIdentifier": "org.coolstar.taurine",
+      "description": "Taurine is the Odyssey Team's semi-untethered jailbreak for iOS 14.0 – 14.3 on A9 to A14 devices using the cicuta_virosa and amfid exploits. It installs Sileo and a libhooker-based tweak environment, keeps passcode support, and boots into a userspace jailbreak from the app. Useful for keeping vintage firmwares usable on older iPhones and iPads.",
+      "shortDescription": "Semi-untethered jailbreak for iOS 14",
+      "icon": "Taurine.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Taurine.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/taurine/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/taurine.json",
+      "homepage": "https://github.com/Odyssey-Team/Taurine",
+      "status": "unmaintained",
+      "featured": false,
+      "size": 32244737,
+      "downloads": 756792,
+      "downloadURL": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+      "sha256": null,
+      "minOSVersion": "14.0",
+      "verificationMethod": "github-release",
+      "publisher": "Odyssey-Team/Taurine",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2023-09-23"
+      }
+    },
+    {
+      "id": "odyssey",
+      "slug": "odyssey",
+      "name": "Odyssey",
+      "developer": "Odyssey Team (coolstar)",
+      "version": "1.4.3",
+      "releaseDate": "2023-04-04",
+      "category": "utilities",
+      "categories": [
+        "utilities"
+      ],
+      "tags": [
+        "utilities"
+      ],
+      "source": "Odyssey-Team/Odyssey",
+      "sourceURL": "https://github.com/Odyssey-Team/Odyssey",
+      "bundleId": "org.coolstar.odyssey",
+      "bundleIdentifier": "org.coolstar.odyssey",
+      "description": "Odyssey is the Odyssey Team's semi-untethered jailbreak for iOS 13.0 – 13.7 on A9 through A13 devices. It uses the same modern approach as Taurine — libhooker tweak injection, Sileo as the package manager and a userspace jailbreak you re-apply after a reboot — and remains the standard choice for iOS 13 firmwares that unc0ver and checkra1n handle less comfortably.",
+      "shortDescription": "Semi-untethered jailbreak for iOS 13",
+      "icon": "Odyssey.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Odyssey.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/odyssey/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/odyssey.json",
+      "homepage": "https://github.com/Odyssey-Team/Odyssey",
+      "status": "unmaintained",
+      "featured": false,
+      "size": 27204395,
+      "downloads": 562977,
+      "downloadURL": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
+      "sha256": null,
+      "minOSVersion": "13.0",
+      "verificationMethod": "github-release",
+      "publisher": "Odyssey-Team/Odyssey",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2023-04-04"
+      }
+    },
+    {
+      "id": "unc0ver",
+      "slug": "unc0ver",
+      "name": "unc0ver",
+      "developer": "pwn20wnd",
+      "version": "5.2.0",
+      "releaseDate": "2020-06-09",
+      "category": "utilities",
+      "categories": [
+        "utilities"
+      ],
+      "tags": [
+        "utilities"
+      ],
+      "source": "pwn20wndstuff/Undecimus",
+      "sourceURL": "https://github.com/pwn20wndstuff/Undecimus",
+      "bundleId": "science.xnu.undecimus",
+      "bundleIdentifier": "science.xnu.undecimus",
+      "description": "unc0ver is the long-running semi-untethered jailbreak by pwn20wnd for iOS 11.0 through 14.8.1. Its final 5.2.0 release covers the widest firmware range of the classic jailbreaks, installing Cydia or Sileo depending on the chosen bootstrap, and it stays useful for the 32-bit era iPhones and iPads that are otherwise stuck without a package manager.",
+      "shortDescription": "Jailbreak for iOS 11 – 14.8.1",
+      "icon": "unc0ver.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/unc0ver.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/unc0ver/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/unc0ver.json",
+      "homepage": "https://github.com/pwn20wndstuff/Undecimus",
+      "status": "unmaintained",
+      "featured": false,
+      "size": 43235739,
+      "downloads": 524691,
+      "downloadURL": "https://github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa",
+      "sha256": null,
+      "minOSVersion": "11.0",
+      "verificationMethod": "github-release",
+      "publisher": "pwn20wndstuff/Undecimus",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2020-06-09"
+      }
+    },
+    {
+      "id": "sameboy",
+      "slug": "sameboy",
+      "name": "SameBoy",
+      "developer": "LIJI32",
+      "version": "1.0.3",
+      "releaseDate": "2026-03-04",
+      "category": "games",
+      "categories": [
+        "games"
+      ],
+      "tags": [
+        "games"
+      ],
+      "source": "LIJI32/SameBoy",
+      "sourceURL": "https://github.com/LIJI32/SameBoy",
+      "bundleId": "com.github.liji32.sameboy.ios",
+      "bundleIdentifier": "com.github.liji32.sameboy.ios",
+      "description": "SameBoy is a highly accurate Game Boy and Game Boy Color emulator by LIJI32, ported to iPhone and iPad. It emulates the original hardware closely enough to pass hardware test ROMs, supports Super Game Boy palettes and link-cable emulation between its own instances, ships a built-in debugger, rewinding, save states and cheat support, and lets you import your own ROMs from Files.",
+      "shortDescription": "High-accuracy Game Boy and Game Boy Color emulator",
+      "icon": "SameBoy.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SameBoy.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/sameboy/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/sameboy.json",
+      "homepage": "https://github.com/LIJI32/SameBoy",
+      "status": "stable",
+      "featured": false,
+      "size": 3170899,
+      "downloads": 3057,
+      "downloadURL": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+      "sha256": "2dddc5dee5048713dcfc4f38450c503afa13e85ffd0d138b5f52fc4c4c39370f",
+      "minOSVersion": "11.0",
+      "verificationMethod": "github-release",
+      "publisher": "LIJI32/SameBoy",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-03-04"
+      }
+    },
+    {
+      "id": "gopeed",
+      "slug": "gopeed",
+      "name": "Gopeed",
+      "developer": "GopeedLab",
+      "version": "1.9.3",
+      "releaseDate": "2026-03-18",
+      "category": "networking",
+      "categories": [
+        "networking"
+      ],
+      "tags": [
+        "networking"
+      ],
+      "source": "GopeedLab/gopeed",
+      "sourceURL": "https://github.com/GopeedLab/gopeed",
+      "bundleId": "com.gopeed.gopeed",
+      "bundleIdentifier": "com.gopeed.gopeed",
+      "description": "Gopeed is a modern, open-source download manager written in Go with a Flutter interface. On iOS it handles HTTP/HTTPS, BitTorrent and magnet links, splits downloads into multiple connections, resumes interrupted transfers, and lets you queue and manage everything with upload and download limits. It is the maintained alternative to iTorrent when you want torrents plus ordinary file downloads in the same app.",
+      "shortDescription": "Modern download manager for HTTP, BitTorrent and more",
+      "icon": "Gopeed.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Gopeed.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/gopeed/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/gopeed.json",
+      "homepage": "https://github.com/GopeedLab/gopeed",
+      "status": "stable",
+      "featured": false,
+      "size": 27488140,
+      "downloads": 20512,
+      "downloadURL": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa",
+      "sha256": "3f024956a28c27e20bb28bee519c0236b46ba496770a3ce368c20b093b1b20fa",
+      "minOSVersion": "14.0",
+      "verificationMethod": "github-release",
+      "publisher": "GopeedLab/gopeed",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-03-18"
+      }
+    },
+    {
+      "id": "manicemu",
+      "slug": "manicemu",
+      "name": "Manic EMU",
+      "developer": "Aoshuang Lee (Manic EMU)",
+      "version": "2.0.0",
+      "releaseDate": "2026-09-03",
+      "category": "games",
+      "categories": [
+        "games"
+      ],
+      "tags": [
+        "games"
+      ],
+      "source": "Manic-EMU/ManicEMU",
+      "sourceURL": "https://github.com/Manic-EMU/ManicEMU",
+      "bundleId": "com.aoshuang.manicemu",
+      "bundleIdentifier": "com.aoshuang.manicemu",
+      "description": "Manic EMU is an all-in-one retro emulator for iPhone and iPad. One app covers NES, SNES, N64, Game Boy and Game Boy Advance, Nintendo DS and 3DS, PlayStation, PSP, Dreamcast, Arcade and more through libretro cores, with a game library that imports your own ROMs, per-core control mapping, cheat support, save states and controller support. The upstream project is AGPL-3.0 and publishes its own signed-for-testing builds.",
+      "shortDescription": "All-in-one retro game emulator",
+      "icon": "ManicEMU.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/ManicEMU.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/manicemu/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/manicemu.json",
+      "homepage": "https://github.com/Manic-EMU/ManicEMU",
+      "status": "stable",
+      "featured": false,
+      "size": 273393210,
+      "downloads": 4684,
+      "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+      "sha256": "7f2adf280dba286ef1374fac874b87af9be535bae39f62139e0e68b4ae324a9f",
+      "minOSVersion": "15.0",
+      "verificationMethod": "github-release",
+      "publisher": "Manic-EMU/ManicEMU",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-03"
+      }
+    },
+    {
+      "id": "xenios",
+      "slug": "xenios",
+      "name": "XeniOS",
+      "developer": "XeniOS Project (xenios-jp)",
+      "version": "2.0.1",
+      "releaseDate": "2026-06-08",
+      "category": "games",
+      "categories": [
+        "games"
+      ],
+      "tags": [
+        "games"
+      ],
+      "source": "xenios-jp/XeniOS",
+      "sourceURL": "https://github.com/xenios-jp/XeniOS",
+      "bundleId": "com.xenios",
+      "bundleIdentifier": "com.xenios",
+      "description": "XeniOS is an experimental Apple-focused fork of Xenia, the Xbox 360 emulator research project, built for iPhone, iPad and Apple silicon Macs. The iOS build ships as an unsigned IPA and needs recent, powerful hardware: the upstream CMake configuration sets the iOS deployment target to 18.0, and the emulated PowerPC cores plus the Xbox 360 GPU workload only reach playable frame rates on A17 Pro / M-series class chips. It carries the same edge-line core as upstream Xenia and reports game compatibility on xenios.jp. As with every console emulator, you supply your own game files.",
+      "shortDescription": "Xbox 360 emulation for iPhone and iPad",
+      "icon": "XeniOS.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/XeniOS.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/xenios/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/xenios.json",
+      "homepage": "https://github.com/xenios-jp/XeniOS",
+      "status": "beta",
+      "featured": false,
+      "size": 46253576,
+      "downloads": 25754,
+      "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+      "sha256": "61de6cfc9cf05389161272ceaa70d46662dab77de40ab11fdda3d4a2221621a7",
+      "minOSVersion": "18.0",
+      "verificationMethod": "github-release",
+      "publisher": "xenios-jp/XeniOS",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-06-08"
       }
     }
   ]

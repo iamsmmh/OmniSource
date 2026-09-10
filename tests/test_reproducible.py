@@ -72,6 +72,12 @@ class TestReproducible(unittest.TestCase):
         self.assertTrue(MODULE._matches("README.md", "README.md"))
         self.assertFalse(MODULE._matches("docs/API.md", "README.md"))
 
+    def test_screenshot_normalization_covers_the_published_gz_twin(self) -> None:
+        """``api/screenshots.json.gz`` is the same document as the feed."""
+        self.assertTrue(MODULE._is_screenshots_doc("screenshots.json"))
+        self.assertTrue(MODULE._is_screenshots_doc("screenshots.json.gz"))
+        self.assertFalse(MODULE._is_screenshots_doc("discovery.json"))
+
 
 if __name__ == "__main__":
     unittest.main()

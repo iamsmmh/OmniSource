@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Taurine — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/taurine.json</link>
+    <description>Release feed for Taurine within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 17:57:12 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/taurine.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Taurine v1.1.7</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/taurine.json</link>
+      <guid isPermaLink="false">taurine-1.1.7</guid>
+      <pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate>
+      <description><![CDATA[Taurine 1.1.7 | Taurine.1.1.7-3
+
+Fix kfd change being implemented incorrectly]]></description>
+      <enclosure url="https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

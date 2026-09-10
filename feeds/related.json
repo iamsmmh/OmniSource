@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 49,
+  "count": 63,
   "weights": {
     "bundle": 0.55,
     "category": 0.2,
@@ -814,12 +814,51 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
         "developer": "SideStore Team",
         "bundleId": "com.SideStore.SideStore",
         "version": "0.6.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -838,48 +877,37 @@
           "Same category (utilities)",
           "Shared tags: utilities"
         ]
-      },
-      {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
-        "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitconnect",
-        "name": "qBitConnect",
-        "category": "utilities",
-        "developer": "Rajnish Sharma",
-        "bundleId": "com.bluematter.qbitconnect",
-        "version": "1.6.6",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
       }
     ],
     "inkillerplus": [
+      {
+        "slug": "ryukgram-ig410",
+        "name": "RyukGram (IG 410)",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "410.1.0",
+        "score": 0.7833,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ryukgram",
+        "name": "RyukGram",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "446.0.0",
+        "score": 0.7833,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
       {
         "slug": "ttkillerplus",
         "name": "TTKillerPlus",
@@ -927,32 +955,6 @@
         "developer": "gunnerkidBT (original by dayanch96)",
         "bundleId": "tv.twitch",
         "version": "30.7",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (social)",
-          "Shared tags: social"
-        ]
-      },
-      {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
-        "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (social)",
-          "Shared tags: social"
-        ]
-      },
-      {
-        "slug": "bhtwitter",
-        "name": "BHTwitter",
-        "category": "social",
-        "developer": "BandarHL",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "4.4",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1015,12 +1017,12 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.ryuk.ryukgram",
+        "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1028,12 +1030,12 @@
         ]
       },
       {
-        "slug": "bhtwitter",
-        "name": "BHTwitter",
+        "slug": "ryukgram-ig410",
+        "name": "RyukGram (IG 410)",
         "category": "social",
-        "developer": "BandarHL",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "4.4",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "410.1.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1082,24 +1084,11 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (social)",
-          "Shared tags: social"
-        ]
-      },
-      {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
-        "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.ryuk.ryukgram",
         "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
@@ -1108,12 +1097,25 @@
         ]
       },
       {
-        "slug": "bhtwitter",
-        "name": "BHTwitter",
+        "slug": "ryukgram-ig410",
+        "name": "RyukGram (IG 410)",
         "category": "social",
-        "developer": "BandarHL",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "4.4",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "410.1.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ryukgram",
+        "name": "RyukGram",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1121,7 +1123,21 @@
         ]
       }
     ],
-    "itorrent": [],
+    "itorrent": [
+      {
+        "slug": "gopeed",
+        "name": "Gopeed",
+        "category": "networking",
+        "developer": "GopeedLab",
+        "bundleId": "com.gopeed.gopeed",
+        "version": "1.9.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (networking)",
+          "Shared tags: networking"
+        ]
+      }
+    ],
     "stikdebug": [
       {
         "slug": "ish",
@@ -1205,11 +1221,11 @@
         ]
       },
       {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
         "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.ryuk.ryukgram",
         "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
@@ -1246,6 +1262,32 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
@@ -1259,38 +1301,12 @@
         ]
       },
       {
-        "slug": "saber",
-        "name": "Saber",
+        "slug": "serotonin",
+        "name": "Serotonin",
         "category": "utilities",
-        "developer": "Adil Hanney",
-        "bundleId": "com.adilhanney.saber",
-        "version": "1.36.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
-        "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1326,6 +1342,32 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
@@ -1339,38 +1381,12 @@
         ]
       },
       {
-        "slug": "saber",
-        "name": "Saber",
+        "slug": "serotonin",
+        "name": "Serotonin",
         "category": "utilities",
-        "developer": "Adil Hanney",
-        "bundleId": "com.adilhanney.saber",
-        "version": "1.36.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
-        "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1406,51 +1422,51 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "saber",
         "name": "Saber",
         "category": "utilities",
         "developer": "Adil Hanney",
         "bundleId": "com.adilhanney.saber",
         "version": "1.36.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
-        "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitconnect",
-        "name": "qBitConnect",
-        "category": "utilities",
-        "developer": "Rajnish Sharma",
-        "bundleId": "com.bluematter.qbitconnect",
-        "version": "1.6.6",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -1475,6 +1491,19 @@
     ],
     "provenance": [
       {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "vcmi",
         "name": "VCMI",
         "category": "games",
@@ -1501,6 +1530,19 @@
         ]
       },
       {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "ppsspp",
         "name": "PPSSPP",
         "category": "games",
@@ -1520,32 +1562,6 @@
         "developer": "zydeco",
         "bundleId": "net.namedfork.minivmac",
         "version": "2.6",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "mame4ios",
-        "name": "MAME4iOS",
-        "category": "games",
-        "developer": "Yoshisuga & MAME4iOS Contributors",
-        "bundleId": "com.example.mame4ios",
-        "version": "2022.5",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "dolphinish",
-        "name": "DolphiniOS",
-        "category": "games",
-        "developer": "OatmealDome",
-        "bundleId": "me.oatmealdome.DolphiniOS-njb",
-        "version": "5.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -1555,6 +1571,19 @@
     ],
     "delta": [
       {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "vcmi",
         "name": "VCMI",
         "category": "games",
@@ -1574,6 +1603,19 @@
         "developer": "StikEMU",
         "bundleId": "com.stik.StikNES",
         "version": "2.0.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -1605,35 +1647,22 @@
           "Same category (games)",
           "Shared tags: games"
         ]
-      },
-      {
-        "slug": "minivmac",
-        "name": "Mini vMac",
-        "category": "games",
-        "developer": "zydeco",
-        "bundleId": "net.namedfork.minivmac",
-        "version": "2.6",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "mame4ios",
-        "name": "MAME4iOS",
-        "category": "games",
-        "developer": "Yoshisuga & MAME4iOS Contributors",
-        "bundleId": "com.example.mame4ios",
-        "version": "2022.5",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
       }
     ],
     "ppsspp": [
+      {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
       {
         "slug": "vcmi",
         "name": "VCMI",
@@ -1661,6 +1690,19 @@
         ]
       },
       {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "provenance",
         "name": "Provenance",
         "category": "games",
@@ -1680,32 +1722,6 @@
         "developer": "zydeco",
         "bundleId": "net.namedfork.minivmac",
         "version": "2.6",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "mame4ios",
-        "name": "MAME4iOS",
-        "category": "games",
-        "developer": "Yoshisuga & MAME4iOS Contributors",
-        "bundleId": "com.example.mame4ios",
-        "version": "2022.5",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "dolphinish",
-        "name": "DolphiniOS",
-        "category": "games",
-        "developer": "OatmealDome",
-        "bundleId": "me.oatmealdome.DolphiniOS-njb",
-        "version": "5.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -1996,6 +2012,32 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
@@ -2009,51 +2051,25 @@
         ]
       },
       {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "saber",
         "name": "Saber",
         "category": "utilities",
         "developer": "Adil Hanney",
         "bundleId": "com.adilhanney.saber",
         "version": "1.36.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
-        "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitconnect",
-        "name": "qBitConnect",
-        "category": "utilities",
-        "developer": "Rajnish Sharma",
-        "bundleId": "com.bluematter.qbitconnect",
-        "version": "1.6.6",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -2089,6 +2105,32 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
@@ -2102,38 +2144,12 @@
         ]
       },
       {
-        "slug": "saber",
-        "name": "Saber",
+        "slug": "serotonin",
+        "name": "Serotonin",
         "category": "utilities",
-        "developer": "Adil Hanney",
-        "bundleId": "com.adilhanney.saber",
-        "version": "1.36.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
-        "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -2182,24 +2198,11 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (social)",
-          "Shared tags: social"
-        ]
-      },
-      {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
-        "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.ryuk.ryukgram",
         "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
@@ -2208,12 +2211,25 @@
         ]
       },
       {
-        "slug": "bhtwitter",
-        "name": "BHTwitter",
+        "slug": "ryukgram-ig410",
+        "name": "RyukGram (IG 410)",
         "category": "social",
-        "developer": "BandarHL",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "4.4",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "410.1.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ryukgram",
+        "name": "RyukGram",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -2249,6 +2265,32 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
@@ -2262,38 +2304,12 @@
         ]
       },
       {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
+        "slug": "serotonin",
+        "name": "Serotonin",
         "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitconnect",
-        "name": "qBitConnect",
-        "category": "utilities",
-        "developer": "Rajnish Sharma",
-        "bundleId": "com.bluematter.qbitconnect",
-        "version": "1.6.6",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -2329,6 +2345,32 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
@@ -2342,38 +2384,12 @@
         ]
       },
       {
-        "slug": "saber",
-        "name": "Saber",
+        "slug": "serotonin",
+        "name": "Serotonin",
         "category": "utilities",
-        "developer": "Adil Hanney",
-        "bundleId": "com.adilhanney.saber",
-        "version": "1.36.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
-        "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -2435,12 +2451,12 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.ryuk.ryukgram",
+        "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -2448,12 +2464,12 @@
         ]
       },
       {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
+        "slug": "ryukgram-ig410",
+        "name": "RyukGram (IG 410)",
         "category": "social",
-        "developer": "iKarwan",
+        "developer": "Ryuk (@axryuk)",
         "bundleId": "com.burbn.instagram",
-        "version": "446.0.0",
+        "version": "410.1.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -2462,6 +2478,19 @@
       }
     ],
     "dolphinish": [
+      {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
       {
         "slug": "vcmi",
         "name": "VCMI",
@@ -2489,6 +2518,19 @@
         ]
       },
       {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "provenance",
         "name": "Provenance",
         "category": "games",
@@ -2508,32 +2550,6 @@
         "developer": "Henrik Rydgård",
         "bundleId": "org.ppsspp.ppsspp",
         "version": "1.20.4",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "minivmac",
-        "name": "Mini vMac",
-        "category": "games",
-        "developer": "zydeco",
-        "bundleId": "net.namedfork.minivmac",
-        "version": "2.6",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "mame4ios",
-        "name": "MAME4iOS",
-        "category": "games",
-        "developer": "Yoshisuga & MAME4iOS Contributors",
-        "bundleId": "com.example.mame4ios",
-        "version": "2022.5",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -2584,6 +2600,32 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
@@ -2597,38 +2639,12 @@
         ]
       },
       {
-        "slug": "saber",
-        "name": "Saber",
+        "slug": "serotonin",
+        "name": "Serotonin",
         "category": "utilities",
-        "developer": "Adil Hanney",
-        "bundleId": "com.adilhanney.saber",
-        "version": "1.36.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
-        "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitconnect",
-        "name": "qBitConnect",
-        "category": "utilities",
-        "developer": "Rajnish Sharma",
-        "bundleId": "com.bluematter.qbitconnect",
-        "version": "1.6.6",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -2664,6 +2680,32 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
@@ -2677,38 +2719,12 @@
         ]
       },
       {
-        "slug": "saber",
-        "name": "Saber",
+        "slug": "serotonin",
+        "name": "Serotonin",
         "category": "utilities",
-        "developer": "Adil Hanney",
-        "bundleId": "com.adilhanney.saber",
-        "version": "1.36.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
-        "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -2718,12 +2734,38 @@
     ],
     "vcmi": [
       {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "stiknes",
         "name": "StikNES",
         "category": "games",
         "developer": "StikEMU",
         "bundleId": "com.stik.StikNES",
         "version": "2.0.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -2768,35 +2810,22 @@
           "Same category (games)",
           "Shared tags: games"
         ]
-      },
-      {
-        "slug": "mame4ios",
-        "name": "MAME4iOS",
-        "category": "games",
-        "developer": "Yoshisuga & MAME4iOS Contributors",
-        "bundleId": "com.example.mame4ios",
-        "version": "2022.5",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "dolphinish",
-        "name": "DolphiniOS",
-        "category": "games",
-        "developer": "OatmealDome",
-        "bundleId": "me.oatmealdome.DolphiniOS-njb",
-        "version": "5.0.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
       }
     ],
     "mame4ios": [
+      {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
       {
         "slug": "vcmi",
         "name": "VCMI",
@@ -2824,6 +2853,19 @@
         ]
       },
       {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "provenance",
         "name": "Provenance",
         "category": "games",
@@ -2843,32 +2885,6 @@
         "developer": "Henrik Rydgård",
         "bundleId": "org.ppsspp.ppsspp",
         "version": "1.20.4",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "minivmac",
-        "name": "Mini vMac",
-        "category": "games",
-        "developer": "zydeco",
-        "bundleId": "net.namedfork.minivmac",
-        "version": "2.6",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "dolphinish",
-        "name": "DolphiniOS",
-        "category": "games",
-        "developer": "OatmealDome",
-        "bundleId": "me.oatmealdome.DolphiniOS-njb",
-        "version": "5.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -2904,6 +2920,32 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
@@ -2917,38 +2959,12 @@
         ]
       },
       {
-        "slug": "saber",
-        "name": "Saber",
+        "slug": "serotonin",
+        "name": "Serotonin",
         "category": "utilities",
-        "developer": "Adil Hanney",
-        "bundleId": "com.adilhanney.saber",
-        "version": "1.36.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitconnect",
-        "name": "qBitConnect",
-        "category": "utilities",
-        "developer": "Rajnish Sharma",
-        "bundleId": "com.bluematter.qbitconnect",
-        "version": "1.6.6",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -2957,6 +2973,19 @@
       }
     ],
     "minivmac": [
+      {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
       {
         "slug": "vcmi",
         "name": "VCMI",
@@ -2977,6 +3006,19 @@
         "developer": "StikEMU",
         "bundleId": "com.stik.StikNES",
         "version": "2.0.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -3008,35 +3050,22 @@
           "Same category (games)",
           "Shared tags: games"
         ]
-      },
-      {
-        "slug": "mame4ios",
-        "name": "MAME4iOS",
-        "category": "games",
-        "developer": "Yoshisuga & MAME4iOS Contributors",
-        "bundleId": "com.example.mame4ios",
-        "version": "2022.5",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "dolphinish",
-        "name": "DolphiniOS",
-        "category": "games",
-        "developer": "OatmealDome",
-        "bundleId": "me.oatmealdome.DolphiniOS-njb",
-        "version": "5.0.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
       }
     ],
     "stiknes": [
+      {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
       {
         "slug": "vcmi",
         "name": "VCMI",
@@ -3044,6 +3073,19 @@
         "developer": "VCMI Team",
         "bundleId": "eu.vcmi.vcmiclient",
         "version": "1.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -3083,32 +3125,6 @@
         "developer": "zydeco",
         "bundleId": "net.namedfork.minivmac",
         "version": "2.6",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "mame4ios",
-        "name": "MAME4iOS",
-        "category": "games",
-        "developer": "Yoshisuga & MAME4iOS Contributors",
-        "bundleId": "com.example.mame4ios",
-        "version": "2022.5",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "dolphinish",
-        "name": "DolphiniOS",
-        "category": "games",
-        "developer": "OatmealDome",
-        "bundleId": "me.oatmealdome.DolphiniOS-njb",
-        "version": "5.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -3157,24 +3173,11 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (social)",
-          "Shared tags: social"
-        ]
-      },
-      {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
-        "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.ryuk.ryukgram",
         "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
@@ -3183,12 +3186,25 @@
         ]
       },
       {
-        "slug": "bhtwitter",
-        "name": "BHTwitter",
+        "slug": "ryukgram-ig410",
+        "name": "RyukGram (IG 410)",
         "category": "social",
-        "developer": "BandarHL",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "4.4",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "410.1.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ryukgram",
+        "name": "RyukGram",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3264,11 +3280,11 @@
         ]
       },
       {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
         "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.ryuk.ryukgram",
         "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
@@ -3305,6 +3321,32 @@
         ]
       },
       {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "sidestore",
         "name": "SideStore",
         "category": "utilities",
@@ -3318,38 +3360,12 @@
         ]
       },
       {
-        "slug": "saber",
-        "name": "Saber",
+        "slug": "serotonin",
+        "name": "Serotonin",
         "category": "utilities",
-        "developer": "Adil Hanney",
-        "bundleId": "com.adilhanney.saber",
-        "version": "1.36.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontroller",
-        "name": "qBitController",
-        "category": "utilities",
-        "developer": "Bartuzen",
-        "bundleId": "dev.bartuzen.qbitcontroller",
-        "version": "2.2.1",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "qbitcontrol",
-        "name": "qBitControl",
-        "category": "utilities",
-        "developer": "Michael-128",
-        "bundleId": "MikeMichael225.qBitControl",
-        "version": "1.4.1",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -3529,6 +3545,1075 @@
         "reasons": [
           "Same category (photo-video)",
           "Shared tags: photo-video"
+        ]
+      }
+    ],
+    "ryukgram": [
+      {
+        "slug": "ryukgram-ig410",
+        "name": "RyukGram (IG 410)",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "410.1.0",
+        "score": 0.9333,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Same developer (Ryuk (@axryuk))",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "inkillerplus",
+        "name": "iNKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.burbn.instagram",
+        "version": "446.0.0",
+        "score": 0.7833,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.ryuk.ryukgram",
+        "version": "446.0.0",
+        "score": 0.3833,
+        "reasons": [
+          "Same category (social)",
+          "Same developer (Ryuk (@axryuk))",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "ryukgram-ig410": [
+      {
+        "slug": "ryukgram",
+        "name": "RyukGram",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "446.0.0",
+        "score": 0.9333,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Same developer (Ryuk (@axryuk))",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "inkillerplus",
+        "name": "iNKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.burbn.instagram",
+        "version": "446.0.0",
+        "score": 0.7833,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.ryuk.ryukgram",
+        "version": "446.0.0",
+        "score": 0.3833,
+        "reasons": [
+          "Same category (social)",
+          "Same developer (Ryuk (@axryuk))",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "ryukgram-sidebyside": [
+      {
+        "slug": "ryukgram-ig410",
+        "name": "RyukGram (IG 410)",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "410.1.0",
+        "score": 0.3833,
+        "reasons": [
+          "Same category (social)",
+          "Same developer (Ryuk (@axryuk))",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ryukgram",
+        "name": "RyukGram",
+        "category": "social",
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "version": "446.0.0",
+        "score": 0.3833,
+        "reasons": [
+          "Same category (social)",
+          "Same developer (Ryuk (@axryuk))",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "dopamine": [
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "dopamine-roothide": [
+      {
+        "slug": "bootstrap",
+        "name": "Bootstrap",
+        "category": "utilities",
+        "developer": "roothide",
+        "bundleId": "com.roothide.Bootstrap",
+        "version": "2.2.1",
+        "score": 0.3833,
+        "reasons": [
+          "Same category (utilities)",
+          "Same developer (roothide)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "bootstrap": [
+      {
+        "slug": "dopamine-roothide",
+        "name": "Dopamine (RootHide)",
+        "category": "utilities",
+        "developer": "roothide",
+        "bundleId": "com.opa334.Dopamine-roothide",
+        "version": "2.4.9.26",
+        "score": 0.3833,
+        "reasons": [
+          "Same category (utilities)",
+          "Same developer (roothide)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "serotonin": [
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "saber",
+        "name": "Saber",
+        "category": "utilities",
+        "developer": "Adil Hanney",
+        "bundleId": "com.adilhanney.saber",
+        "version": "1.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "taurine": [
+      {
+        "slug": "odyssey",
+        "name": "Odyssey",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.odyssey",
+        "version": "1.4.3",
+        "score": 0.3833,
+        "reasons": [
+          "Same category (utilities)",
+          "Same developer (Odyssey Team (coolstar))",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "odyssey": [
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.3833,
+        "reasons": [
+          "Same category (utilities)",
+          "Same developer (Odyssey Team (coolstar))",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "unc0ver": [
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "saber",
+        "name": "Saber",
+        "category": "utilities",
+        "developer": "Adil Hanney",
+        "bundleId": "com.adilhanney.saber",
+        "version": "1.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "sameboy": [
+      {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "vcmi",
+        "name": "VCMI",
+        "category": "games",
+        "developer": "VCMI Team",
+        "bundleId": "eu.vcmi.vcmiclient",
+        "version": "1.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "stiknes",
+        "name": "StikNES",
+        "category": "games",
+        "developer": "StikEMU",
+        "bundleId": "com.stik.StikNES",
+        "version": "2.0.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "provenance",
+        "name": "Provenance",
+        "category": "games",
+        "developer": "Provenance Emu",
+        "bundleId": "org.provenance-emu.provenance",
+        "version": "3.3.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "ppsspp",
+        "name": "PPSSPP",
+        "category": "games",
+        "developer": "Henrik Rydgård",
+        "bundleId": "org.ppsspp.ppsspp",
+        "version": "1.20.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "minivmac",
+        "name": "Mini vMac",
+        "category": "games",
+        "developer": "zydeco",
+        "bundleId": "net.namedfork.minivmac",
+        "version": "2.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      }
+    ],
+    "gopeed": [
+      {
+        "slug": "itorrent",
+        "name": "iTorrent",
+        "category": "networking",
+        "developer": "XITRIX",
+        "bundleId": "com.xitrix.iTorrent2",
+        "version": "2.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (networking)",
+          "Shared tags: networking"
+        ]
+      }
+    ],
+    "manicemu": [
+      {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "vcmi",
+        "name": "VCMI",
+        "category": "games",
+        "developer": "VCMI Team",
+        "bundleId": "eu.vcmi.vcmiclient",
+        "version": "1.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "stiknes",
+        "name": "StikNES",
+        "category": "games",
+        "developer": "StikEMU",
+        "bundleId": "com.stik.StikNES",
+        "version": "2.0.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "provenance",
+        "name": "Provenance",
+        "category": "games",
+        "developer": "Provenance Emu",
+        "bundleId": "org.provenance-emu.provenance",
+        "version": "3.3.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "ppsspp",
+        "name": "PPSSPP",
+        "category": "games",
+        "developer": "Henrik Rydgård",
+        "bundleId": "org.ppsspp.ppsspp",
+        "version": "1.20.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      }
+    ],
+    "xenios": [
+      {
+        "slug": "vcmi",
+        "name": "VCMI",
+        "category": "games",
+        "developer": "VCMI Team",
+        "bundleId": "eu.vcmi.vcmiclient",
+        "version": "1.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "stiknes",
+        "name": "StikNES",
+        "category": "games",
+        "developer": "StikEMU",
+        "bundleId": "com.stik.StikNES",
+        "version": "2.0.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "provenance",
+        "name": "Provenance",
+        "category": "games",
+        "developer": "Provenance Emu",
+        "bundleId": "org.provenance-emu.provenance",
+        "version": "3.3.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "ppsspp",
+        "name": "PPSSPP",
+        "category": "games",
+        "developer": "Henrik Rydgård",
+        "bundleId": "org.ppsspp.ppsspp",
+        "version": "1.20.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "minivmac",
+        "name": "Mini vMac",
+        "category": "games",
+        "developer": "zydeco",
+        "bundleId": "net.namedfork.minivmac",
+        "version": "2.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
         ]
       }
     ]

@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 49,
-    "pass": 39,
-    "warn": 10,
+    "apps": 63,
+    "pass": 46,
+    "warn": 17,
     "fail": 0,
     "rejected": 0
   },
@@ -119,6 +119,24 @@
       "status": "pass"
     },
     {
+      "slug": "bootstrap",
+      "name": "Bootstrap",
+      "asset": {
+        "sha256": "24c43c66579fcbf8735176b8465b58d20d0b92524e5b32ed64c60993d76ec8f5",
+        "size": 55704386,
+        "releaseId": "2.2.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "conduit",
       "name": "Conduit",
       "asset": {
@@ -173,6 +191,42 @@
       "status": "pass"
     },
     {
+      "slug": "dopamine",
+      "name": "Dopamine",
+      "asset": {
+        "sha256": "ad0c4ea182b232346470df10439cfa2c1b7952e6b586113edfbc2720e455b201",
+        "size": 55409206,
+        "releaseId": "3.0.9",
+        "source": "github",
+        "downloadUrl": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "asset": {
+        "sha256": "38d02ec6167772011e4f58aaf31566c7be4db86302962aeedc601f9b4795cc1f",
+        "size": 54859511,
+        "releaseId": "2.4.9.26",
+        "source": "github",
+        "downloadUrl": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "feather",
       "name": "Feather",
       "asset": {
@@ -199,6 +253,24 @@
         "releaseId": "0.11.1",
         "source": "github",
         "downloadUrl": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "gopeed",
+      "name": "Gopeed",
+      "asset": {
+        "sha256": "3f024956a28c27e20bb28bee519c0236b46ba496770a3ce368c20b093b1b20fa",
+        "size": 27488140,
+        "releaseId": "1.9.3",
+        "source": "github",
+        "downloadUrl": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -317,6 +389,24 @@
       "status": "warn"
     },
     {
+      "slug": "manicemu",
+      "name": "Manic EMU",
+      "asset": {
+        "sha256": "7f2adf280dba286ef1374fac874b87af9be535bae39f62139e0e68b4ae324a9f",
+        "size": 273393210,
+        "releaseId": "2.0.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "maxmusic",
       "name": "MaxMusic",
       "asset": {
@@ -387,6 +477,24 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "odyssey",
+      "name": "Odyssey",
+      "asset": {
+        "sha256": null,
+        "size": 27204395,
+        "releaseId": "1.4.3",
+        "source": "github",
+        "downloadUrl": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "ppsspp",
@@ -479,6 +587,60 @@
       "status": "pass"
     },
     {
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "asset": {
+        "sha256": null,
+        "size": 333670703,
+        "releaseId": "446.0.0",
+        "source": "",
+        "downloadUrl": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "asset": {
+        "sha256": null,
+        "size": 267074754,
+        "releaseId": "410.1.0",
+        "source": "",
+        "downloadUrl": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "asset": {
+        "sha256": null,
+        "size": 259670417,
+        "releaseId": "446.0.0",
+        "source": "",
+        "downloadUrl": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "saber",
       "name": "Saber",
       "asset": {
@@ -495,6 +657,42 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "sameboy",
+      "name": "SameBoy",
+      "asset": {
+        "sha256": "2dddc5dee5048713dcfc4f38450c503afa13e85ffd0d138b5f52fc4c4c39370f",
+        "size": 3170899,
+        "releaseId": "1.0.3",
+        "source": "github",
+        "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "serotonin",
+      "name": "Serotonin",
+      "asset": {
+        "sha256": null,
+        "size": 14986482,
+        "releaseId": "1.2.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "sidestore",
@@ -623,6 +821,24 @@
       "status": "pass"
     },
     {
+      "slug": "taurine",
+      "name": "Taurine",
+      "asset": {
+        "sha256": null,
+        "size": 32244737,
+        "releaseId": "1.1.7",
+        "source": "github",
+        "downloadUrl": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "ttkillerplus",
       "name": "TTKillerPlus",
       "asset": {
@@ -657,6 +873,24 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "unc0ver",
+      "name": "unc0ver",
+      "asset": {
+        "sha256": null,
+        "size": 43235739,
+        "releaseId": "5.2.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "utm",
@@ -747,6 +981,24 @@
         "reachable": true
       },
       "status": "warn"
+    },
+    {
+      "slug": "xenios",
+      "name": "XeniOS",
+      "asset": {
+        "sha256": "61de6cfc9cf05389161272ceaa70d46662dab77de40ab11fdda3d4a2221621a7",
+        "size": 46253576,
+        "releaseId": "2.0.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
     },
     {
       "slug": "yattee",
