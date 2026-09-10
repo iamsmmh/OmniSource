@@ -26,15 +26,21 @@ class CLIParseTests(unittest.TestCase):
 
 class CLIRunTests(unittest.TestCase):
     def test_sync_error_returns_failure_code(self):
-        with mock.patch("omnisource.cli.run", side_effect=SyncError("boom")):
-            with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
-                code = main([])
+        with (
+            mock.patch("omnisource.cli.run", side_effect=SyncError("boom")),
+            redirect_stdout(io.StringIO()),
+            redirect_stderr(io.StringIO()),
+        ):
+            code = main([])
         self.assertEqual(code, 1)
 
     def test_keyboard_interrupt_returns_130(self):
-        with mock.patch("omnisource.cli.run", side_effect=KeyboardInterrupt):
-            with redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
-                code = main([])
+        with (
+            mock.patch("omnisource.cli.run", side_effect=KeyboardInterrupt),
+            redirect_stdout(io.StringIO()),
+            redirect_stderr(io.StringIO()),
+        ):
+            code = main([])
         self.assertEqual(code, 130)
 
 

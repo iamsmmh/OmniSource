@@ -35,9 +35,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument("--workers", type=int, default=8, help="concurrent link probes (default: 8)")
     parser.add_argument("-v", "--verbose", action="store_true", help="debug logging")
-    parser.add_argument(
-        "--version", action="store_true", help="show the OmniSource version and exit"
-    )
+    parser.add_argument("--version", action="store_true", help="show the OmniSource version and exit")
     return parser.parse_args(argv)
 
 
