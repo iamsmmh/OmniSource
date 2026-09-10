@@ -124,24 +124,27 @@
   }
 }
 
-/* --- scroll reveal ---------------------------------------------------------- */
+/* --- scroll reveal · fluid edition ---------------------------------------- */
 /* JS (js/core.js) observes [data-reveal] and adds .is-revealed when the
    element enters the viewport. Optional per-element delay via
-   style="--reveal-delay:120ms". */
+   style="--reveal-delay:120ms". Fluid easing for a more liquid feel. */
 
 [data-reveal] {
   opacity: 0;
-  transform: translateY(20px) scale(0.98);
+  transform: translateY(22px) scale(0.985);
+  filter: blur(4px);
   transition:
-    opacity var(--dur-slow) var(--ease-out),
-    transform var(--dur-slow) var(--ease-out);
+    opacity var(--dur-slow) var(--ease-fluid),
+    transform var(--dur-slow) var(--ease-fluid),
+    filter var(--dur-slow) var(--ease-fluid);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
+  will-change: opacity, transform, filter;
 }
 
 [data-reveal].is-revealed {
   opacity: 1;
   transform: none;
+  filter: blur(0);
 }
 
 /* Hero choreography: staged, elegant entrances on first paint. */
@@ -159,17 +162,20 @@
 
 /* --- micro-motion ----------------------------------------------------------- */
 
-/* Cards lift with a springy ease, deepen shadow, and shift chromatic edge. */
+/* Cards lift — fluid spring with depth and chromatic edge shift */
 .os-lift {
   transition:
-    transform var(--dur) var(--ease-spring),
-    box-shadow var(--dur) var(--ease),
-    border-color var(--dur) var(--ease);
+    transform var(--dur) var(--ease-fluid),
+    box-shadow var(--dur) var(--ease-fluid),
+    border-color var(--dur) var(--ease-fluid),
+    filter var(--dur) var(--ease-fluid);
+  will-change: transform, box-shadow;
 }
 .os-lift:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px) scale(1.005);
   box-shadow: var(--glass-shadow-lg), var(--glow-card);
-  border-color: color-mix(in srgb, var(--accent) 32%, var(--glass-border));
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--glass-border));
+  filter: saturate(1.05);
 }
 
 /* Icon scale inside cards — springy rotation. */
@@ -180,16 +186,16 @@
   transform: scale(1.08) rotate(-3deg);
 }
 
-/* Buttons: subtle press + hover brightness. */
+/* Buttons: fluid press with micro-bounce */
 .os-press {
   transition:
     transform var(--dur-fast) var(--ease-spring),
-    box-shadow var(--dur-fast) var(--ease),
-    filter var(--dur-fast) var(--ease),
-    background-position 0.6s var(--ease);
+    box-shadow var(--dur-fast) var(--ease-fluid),
+    filter var(--dur-fast) var(--ease-fluid),
+    background-position 0.7s var(--ease-fluid);
 }
-.os-press:hover { transform: translateY(-2px); }
-.os-press:active { transform: translateY(0) scale(0.975); }
+.os-press:hover { transform: translateY(-2px) scale(1.01); }
+.os-press:active { transform: translateY(0) scale(0.97); }
 
 /* Animated gradient surfaces. */
 .os-grad-anim {
@@ -300,11 +306,36 @@ dialog.os-dialog::backdrop {
   100% { transform: translateX(200%) skewX(-15deg); opacity: 0; }
 }
 
+/* --- fluid glass keyframes · new ------------------------------------------ */
+@keyframes os-fluid-in {
+  from { opacity: 0; transform: translateY(18px) scale(0.99); filter: blur(6px); }
+  to   { opacity: 1; transform: none; filter: blur(0); }
+}
+@keyframes os-liquid-morph {
+  0%   { border-radius: 22px; }
+  33%  { border-radius: 26px 22px 28px 20px; }
+  66%  { border-radius: 20px 28px 22px 26px; }
+  100% { border-radius: 22px; }
+}
+@keyframes os-grain-shift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-2%, -1%); }
+}
+
+/* Floating glass orb — more fluid, subtle scale + rotation */
+@keyframes os-float-glass {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate3d(1.2%, -1.5%, 0) scale(1.04) rotate(0.4deg); }
+  50% { transform: translate3d(-0.8%, -2.2%, 0) scale(1.02) rotate(-0.3deg); }
+  75% { transform: translate3d(-1.4%, 1%, 0) scale(1.03) rotate(0.2deg); }
+}
+
 /* --- reduced motion: kill choreography, keep state ────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] {
     opacity: 1;
     transform: none;
+    filter: blur(0);
     transition: none;
   }
   .os-hero > *,
@@ -319,5 +350,5 @@ dialog.os-dialog::backdrop {
   .os-chart-line { stroke-dashoffset: 0; animation: none; }
   .os-chart-area, .os-donut-seg { opacity: 1; animation: none; }
   .os-bar { transform: scaleY(1); transition: none; }
-  .os-lift:hover { transform: none; }
+  .os-lift:hover { transform: none; filter: none; }
 }

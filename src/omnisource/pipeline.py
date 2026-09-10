@@ -636,37 +636,23 @@ def stage_readme(
         log.debug("README has no generated catalog block - skipping")
         return False
 
-    base = catalog.base_url
-    by_slug = {item["slug"]: item for item in health_doc["apps"]}
-    status_icon = {"stable": "🟢", "beta": "🟡", "manual": "🔵", "unmaintained": "🔴"}
-
-    header = "| App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |"
-    divider = "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"
-    rows = [header, divider]
-    for app in catalog.apps:
-        item = by_slug.get(app.slug)
-        if not item:
-            continue
-        feed_url = f"{base}/feeds/{app.slug}.json"
-        rss_url = f"{base}/feeds/{app.slug}.xml"
-        bundle = str(app.raw.get("bundleIdentifier", "—"))
-        reachable = "✅" if item["downloadReachable"] else "⚠️"
-        install = f"[AltStore](altstore://source?url={feed_url}) · [SideStore](sidestore://source?url={feed_url})"
-        rows.append(
-            f"| **{app.name}** | `{bundle}` | `{item['version']}` | {item['updatedAt']} | "
-            f"{status_icon.get(app.status, '⚪')} {app.status} | {reachable} | {install} | "
-            f"[`{app.slug}.json`]({feed_url}) | [`{app.slug}.xml`]({rss_url}) |"
-        )
-
     totals = health_doc["totals"]
     block = "\n".join(
         [
             start,
             "",
-            f"_Catalogue last changed {health_doc['generatedAt']} · {totals['apps']} apps · "
-            f"{totals['reachable']}/{totals['apps']} downloads reachable._",
+            f"Browse the full **{totals['apps']}-app catalog** on the [website]({catalog.base_url}/#catalog) — "
+            f"all installable with one tap.",
             "",
-            *rows,
+            "- Combined feeds: [`feeds/apps.json`](./feeds/apps.json), "
+            "[`feeds/feed.xml`](./feeds/feed.xml), [`Catalog.json`](./Catalog.json)",
+            "- Substrate docs: [`feeds/sources.json`](./feeds/sources.json), "
+            "[`feeds/discovery.json`](./feeds/discovery.json), [`feeds/health.json`](./feeds/health.json), "
+            "[`feeds/updates.json`](./feeds/updates.json), [`feeds/verification.json`](./feeds/verification.json)",
+            "- Per-app feeds at `feeds/<slug>.json` and `feeds/<slug>.xml` — e.g. "
+            "[`feeds/esign.json`](./feeds/esign.json)",
+            "",
+            f"_Last sync {health_doc['generatedAt']} · {totals['reachable']}/{totals['apps']} downloads reachable._",
             "",
             end,
         ]

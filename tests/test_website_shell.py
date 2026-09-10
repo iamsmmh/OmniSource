@@ -57,7 +57,7 @@ class TestWebsiteShell(unittest.TestCase):
 
     def test_service_worker_version(self) -> None:
         sw = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("omnisource-v8", sw)
+        self.assertIn("omnisource-v9", sw)
         # The shell precaches the lightweight WebP logo; the PNG stays for
         # favicons, feed iconURLs and non-WebP fallbacks only.
         self.assertIn("'./assets/OmniSource.webp'", sw)

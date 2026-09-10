@@ -3969,3 +3969,222 @@ body.nav-open .nav-backdrop {
   transition: border-color var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
 }
 .ap-feed-copy:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+/* ============================================================================
+   FLUID GLASS v2 — refinements for the "best of best" pass
+   ----------------------------------------------------------------------------
+   Extra fluid polish layered on top of the Ultra-premium glass:
+   • softer, more translucent glass with inner highlight depth
+   • fluid spring easings everywhere
+   • hero orbs breathe slower + grain + aurora diffusion
+   • cards feel carved from liquid — specular sweep + depth glow
+   • buttons have liquid press + pill glass beads
+   ========================================================================== */
+
+/* Use the smoother fluid easing for all interactive motion by default */
+.panel,
+.app-card,
+.rail-card,
+.stat-card,
+.source-card,
+.metric-card,
+.featured-card,
+.tl-card,
+.kpi-card,
+.status-tile,
+.client-card,
+.cmp-side,
+.result-row,
+.ap-install-card,
+.ap-related-card {
+  transition-timing-function: var(--ease-fluid);
+}
+
+/* Hero — add extra depth layers: grain + softer aurora */
+.hero {
+  isolation: isolate;
+}
+.hero::after {
+  height: 180px;
+  background: linear-gradient(to top,
+    var(--bg) 12%,
+    color-mix(in srgb, var(--bg) 82%, transparent) 46%,
+    transparent 100%);
+}
+.hero-bg .orb {
+  filter: blur(96px) saturate(1.15);
+  opacity: 0.78;
+  animation-name: os-float-glass;
+  animation-timing-function: var(--ease-fluid);
+}
+.hero-bg .o1 { background: radial-gradient(circle, color-mix(in srgb, var(--accent-1) 52%, transparent), transparent 72%); }
+.hero-bg .o2 { background: radial-gradient(circle, color-mix(in srgb, var(--accent-3) 44%, transparent), transparent 72%); }
+.hero-bg .o3 { background: radial-gradient(circle, color-mix(in srgb, var(--blue) 32%, transparent), transparent 72%); }
+.hero-bg .spot {
+  background:
+    conic-gradient(from 182deg at 50% 48%,
+      color-mix(in srgb, var(--accent-1) 0%, transparent),
+      color-mix(in srgb, var(--accent-1) 20%, transparent) 19%,
+      color-mix(in srgb, var(--accent-3) 18%, transparent) 39%,
+      color-mix(in srgb, var(--accent-2) 0%, transparent) 56%,
+      color-mix(in srgb, var(--accent-2) 16%, transparent) 75%,
+      color-mix(in srgb, var(--accent-1) 0%, transparent));
+  filter: blur(56px) saturate(1.2);
+}
+
+/* Hero logo — glass jewel with inner highlight */
+.hero-logo {
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.55);
+  background: #fff;
+}
+.hero-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.45), transparent 52%);
+  pointer-events: none;
+}
+
+/* Source box + search — extra liquid depth */
+.hero-search .search-box {
+  backdrop-filter: var(--blur-pill);
+  -webkit-backdrop-filter: var(--blur-pill);
+  background: color-mix(in srgb, var(--surface-solid) 88%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 14%, var(--glass-border));
+  box-shadow: var(--glass-highlight-strong), var(--glass-shadow), var(--glow-soft);
+}
+.source-box {
+  backdrop-filter: var(--blur-liquid);
+  -webkit-backdrop-filter: var(--blur-liquid);
+}
+
+/* Stat cards — liquid breathing on hover, more depth */
+.stat-card {
+  backdrop-filter: var(--blur-fluid);
+  -webkit-backdrop-filter: var(--blur-fluid);
+}
+.stat-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: var(--glass-shadow-lg), var(--glow-card);
+}
+
+/* App cards — carved glass: inner highlight + outer refraction + sweep */
+.app-card {
+  backdrop-filter: var(--blur-fluid);
+  -webkit-backdrop-filter: var(--blur-fluid);
+  background:
+    linear-gradient(168deg, rgba(255,255,255,0.52), rgba(255,255,255,0.18)),
+    var(--surface);
+}
+
+/* Rail + featured cards — same liquid surface */
+.rail-card,
+.featured-card {
+  backdrop-filter: var(--blur-fluid);
+  -webkit-backdrop-filter: var(--blur-fluid);
+}
+
+/* Eyebrow pill — capsule glass */
+.eyebrow {
+  backdrop-filter: var(--blur-pill);
+  -webkit-backdrop-filter: var(--blur-pill);
+  background: color-mix(in srgb, var(--surface-solid) 76%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 18%, var(--glass-border));
+  box-shadow: var(--glass-highlight-strong), var(--glass-shadow);
+}
+
+/* Chips — pill glass beads with fluid press */
+.chip {
+  backdrop-filter: var(--blur-pill);
+  -webkit-backdrop-filter: var(--blur-pill);
+  transition: all var(--dur) var(--ease-fluid);
+}
+.chip:active { transform: scale(0.97); }
+
+/* Buttons — glass beads */
+.button:not(.primary) {
+  backdrop-filter: var(--blur-pill);
+  -webkit-backdrop-filter: var(--blur-pill);
+}
+.button.primary {
+  box-shadow: var(--glass-highlight-strong), var(--glow-accent);
+}
+.get-button {
+  backdrop-filter: var(--blur-pill);
+  -webkit-backdrop-filter: var(--blur-pill);
+}
+
+/* Icon buttons — true pill beads */
+.icon-button {
+  backdrop-filter: var(--blur-pill);
+  -webkit-backdrop-filter: var(--blur-pill);
+}
+
+/* Header capsule — frosted pill floating over aurora */
+.site-header .nav {
+  backdrop-filter: var(--blur-liquid);
+  -webkit-backdrop-filter: var(--blur-liquid);
+  background: color-mix(in srgb, var(--surface-solid) 72%, transparent);
+  box-shadow: var(--glass-highlight-strong), var(--glass-shadow), 0 8px 32px rgba(40,50,110,0.08);
+  border-color: rgba(255,255,255,0.72);
+}
+.site-header.is-scrolled .nav {
+  background: color-mix(in srgb, var(--surface-solid) 84%, transparent);
+  box-shadow: var(--glass-highlight-strong), var(--glass-shadow-lg), 0 12px 40px rgba(40,50,110,0.12);
+}
+
+/* Dialog & palette — heavy liquid glass */
+.app-dialog,
+.qr-dialog,
+.os-palette-panel {
+  backdrop-filter: blur(36px) saturate(1.9);
+  -webkit-backdrop-filter: blur(36px) saturate(1.9);
+  background: color-mix(in srgb, var(--surface-solid) 82%, transparent);
+  border-color: rgba(255,255,255,0.72);
+  box-shadow: var(--glass-highlight-strong), var(--glass-shadow-xl);
+}
+
+/* Footer — diffused glass band */
+.footer {
+  backdrop-filter: var(--blur-fluid);
+  -webkit-backdrop-filter: var(--blur-fluid);
+}
+
+/* Tinted sections — softer, more diffused */
+.section.tinted {
+  background: color-mix(in srgb, var(--bg-soft) 52%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Reveal — fluid blur entrance already in animations.css, ensure stagger feels liquid */
+[data-reveal] {
+  will-change: opacity, transform, filter;
+}
+
+/* Skeleton — more liquid shimmer */
+.os-skeleton {
+  background:
+    linear-gradient(105deg,
+      color-mix(in srgb, var(--surface) 92%, transparent) 28%,
+      color-mix(in srgb, var(--accent-soft) 45%, transparent) 46%,
+      color-mix(in srgb, var(--surface) 92%, transparent) 62%);
+  background-size: 220% 100%;
+}
+
+/* Ensure app pages get same fluid glass */
+.ap-hero,
+.ap-section {
+  backdrop-filter: var(--blur-liquid);
+  -webkit-backdrop-filter: var(--blur-liquid);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border-color: rgba(255,255,255,0.68);
+  box-shadow: var(--glass-highlight-strong), var(--glass-shadow);
+}
+
+/* Fix: hero inner stagger uses fluid easing now */
+.os-hero > * {
+  animation-timing-function: var(--ease-fluid);
+}
