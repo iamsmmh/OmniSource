@@ -36,7 +36,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 226,
+      "latencyMs": 187,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -165,6 +165,12 @@
         "reachable": true,
         "latencyMs": 226,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 187,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -251,7 +257,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 240,
+      "latencyMs": 195,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -380,6 +386,12 @@
         "reachable": true,
         "latencyMs": 240,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 195,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -432,7 +444,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 294,
+      "latencyMs": 162,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -560,6 +572,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 294,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 162,
         "detail": "HTTP 302"
       }
     ]
@@ -728,6 +746,12 @@
         "reachable": true,
         "latencyMs": 228,
         "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 228,
+        "detail": "HTTP 200"
       }
     ]
   },
@@ -792,7 +816,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 280,
+      "latencyMs": 184,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -921,6 +945,12 @@
         "reachable": true,
         "latencyMs": 280,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 184,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -973,7 +1003,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 240,
+      "latencyMs": 178,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1102,6 +1132,12 @@
         "reachable": true,
         "latencyMs": 240,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 178,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1128,13 +1164,13 @@
             "fileType": "IPA",
             "size": 105888307,
             "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
-            "downloads": 715,
+            "downloads": 726,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
-        "downloads": 715
+        "downloads": 726
       }
     ],
     "syncedAt": "2026-09-10",
@@ -1142,7 +1178,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 254,
+      "latencyMs": 186,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1271,6 +1307,12 @@
         "reachable": true,
         "latencyMs": 254,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 186,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1309,13 +1351,13 @@
             "fileType": "IPA",
             "size": 133357787,
             "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-            "downloads": 98,
+            "downloads": 100,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-        "downloads": 98
+        "downloads": 100
       }
     ],
     "syncedAt": "2026-09-10",
@@ -1323,7 +1365,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 256,
+      "latencyMs": 195,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1452,6 +1494,12 @@
         "reachable": true,
         "latencyMs": 256,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 195,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1504,7 +1552,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 266,
+      "latencyMs": 225,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1633,6 +1681,12 @@
         "reachable": true,
         "latencyMs": 266,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 225,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1673,7 +1727,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 235,
+      "latencyMs": 150,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1802,6 +1856,12 @@
         "reachable": true,
         "latencyMs": 235,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 150,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1866,7 +1926,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 245,
+      "latencyMs": 220,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1995,6 +2055,12 @@
         "reachable": true,
         "latencyMs": 245,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 220,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -2035,7 +2101,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 256,
+      "latencyMs": 172,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -2164,6 +2230,12 @@
         "reachable": true,
         "latencyMs": 256,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 172,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -2202,7 +2274,7 @@
       "reachable": true,
       "detail": "HTTP 200",
       "since": "2026-09-07",
-      "latencyMs": 246,
+      "latencyMs": 215,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -2330,6 +2402,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 246,
+        "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 215,
         "detail": "HTTP 200"
       }
     ]
@@ -2769,7 +2847,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 248,
+      "latencyMs": 184,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -2898,6 +2976,12 @@
         "reachable": true,
         "latencyMs": 248,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 184,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -2921,7 +3005,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 212,
+      "latencyMs": 416,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3050,6 +3134,12 @@
         "reachable": true,
         "latencyMs": 212,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 416,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3089,7 +3179,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 261,
+      "latencyMs": 184,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3218,6 +3308,12 @@
         "reachable": true,
         "latencyMs": 261,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 184,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3244,13 +3340,13 @@
             "fileType": "IPA",
             "size": 128845098,
             "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-            "downloads": 24,
+            "downloads": 30,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-        "downloads": 24
+        "downloads": 30
       }
     ],
     "syncedAt": "2026-09-10",
@@ -3258,7 +3354,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 266,
+      "latencyMs": 189,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3387,6 +3483,12 @@
         "reachable": true,
         "latencyMs": 266,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 189,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3413,13 +3515,13 @@
             "fileType": "IPA",
             "size": 129007319,
             "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
-            "downloads": 10,
+            "downloads": 14,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
-        "downloads": 10
+        "downloads": 14
       }
     ],
     "syncedAt": "2026-09-10",
@@ -3427,7 +3529,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 278,
+      "latencyMs": 163,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3556,6 +3658,12 @@
         "reachable": true,
         "latencyMs": 278,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 163,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3632,7 +3740,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 241,
+      "latencyMs": 192,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3761,6 +3869,12 @@
         "reachable": true,
         "latencyMs": 241,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 192,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3799,7 +3913,7 @@
       "reachable": true,
       "detail": "HTTP 200",
       "since": "2026-09-07",
-      "latencyMs": 315,
+      "latencyMs": 273,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3928,6 +4042,12 @@
         "reachable": true,
         "latencyMs": 315,
         "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 273,
+        "detail": "HTTP 200"
       }
     ]
   },
@@ -4024,7 +4144,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 317,
+      "latencyMs": 169,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -4153,6 +4273,12 @@
         "reachable": true,
         "latencyMs": 317,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 169,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -4193,7 +4319,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 274,
+      "latencyMs": 180,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -4321,6 +4447,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 274,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 180,
         "detail": "HTTP 302"
       }
     ]
