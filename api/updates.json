@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-09-10",
   "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
-  "count": 73,
+  "count": 86,
   "updates": [
     {
       "slug": "youpro",
@@ -124,6 +124,21 @@
       "shortDescription": "Instagram with downloads, ghost mode and no ads"
     },
     {
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "version": "446.0.0",
+      "previousVersion": "",
+      "date": "2026-09-09",
+      "kind": "available",
+      "changelog": "Instagram 446.0.0 | RyukGram Side by Side\n\nUpdated for Instagram 446.0.0.\n\n### ✨ Highlights\n- **Setting profiles.** Keep several complete setups under names and switch between them in a tap. Give each one a color and icon, duplicate it, share it as a file, or tie it to an Instagram account so it follows your quick switch\n- **MobileConfig browser.** Read and change Instagram's own internal settings from inside the app, with search, copiable details, and export or import of everything you changed\n- **Story stats.** Overview numbers over your archive, a views-per-story chart, and a searchable audience list you can filter, sort and pin. Tap anyone to see every story of yours they watched and how they reacted\n- **Custom fonts.** Import your own .ttf or .otf files or download from thousands online, then use them across Instagram, RyukGram, or the story text tool\n- **Full-resolution photos.** Photos download at their original upload size, often far larger than the copy Instagram hands the app, with a picker showing dimensions, format and file size per option\n- **Post and Reel buttons.** Reorder Instagram's own like, comment, share, repost and save buttons, hide any of them, or drop a count without hiding its button\n- **View-once media while closed.** Catch disappearing DM media that arrives while Instagram is fully shut, and keep it in the log when it gets unsent\n- **Update checker.** RyukGram tells you when a newer release is out, shows what changed, and keeps every past release on its own page under About\n\n### 🆕 New features\n\n#### Setting profiles\n- Keep several complete setups under names and switch between them in a tap\n- Profiles carry a name, color and icon, and can be duplicated, exported or shared as a file\n- Link a profile to Instagram accounts and it switches with the account, with an unlinked profile covering the rest\n- Reset a profile to defaults or turn everything off inside it, with a count of what is on and what differs\n- Importing a backup can send its settings to a new profile instead of the ones you are using\n- Backup & Restore is now Backup & Profiles, with a profile shortcut on the settings home page\n\n#### Fonts and theme\n- Import your own .ttf or .otf fonts, or download from thousands online\n- Use custom fonts for Instagram, RyukGram, or both, set under Theme\n- Your imported and device fonts show up in the story text tool next to the built-in ones\n- Manage fonts in bulk from either font picker, with multi-select and a delete confirmation\n\n#### Messages\n- Catch view-once media that arrives while Instagram is fully closed and keep it in the log when unsent, off by default, with size and age cleanup\n- Logging view-once media you open is now its own switch in the deleted messages log, off by default\n- Deleted messages log entries can open the chat and jump to where the message was\n- Mark kept unsent messages with a tag, a faded bubble, a tinted bubble or any mix, with your own tag text, position, size and colors\n- Confirm before a reaction sends in a chat, catching only the accidental double-tap or every reaction you send\n- Hide reels in chats so they never show or open in a thread\n- Messages-only mode switches in place with no restart, whether you flip it yourself or the schedule does\n- The messages-only schedule can ask first and switch only when you confirm\n\n#### Stories\n- Story stats for the archive: overview numbers, a views-per-story chart, and a searchable audience list with filters, sorting and pinned viewers on top\n- Story stats compares the last 7 or 30 days against the stretch before it\n- Tap someone in the audience list to see every story of yours they watched and what they reacted with\n- Refresh names and photos from the story stats screen and any story viewers list\n- Playback controls for stories with speed, seek and pause, held from the ⋯ or speaker button or opened from the story menu\n- Hold the story eye button to mark a whole reel as seen, or only the stories up to where you are\n- Disappearing media has its own settings page, and the mark-as-viewed button only shows when view receipts are blocked\n- A slider in the layout editor sets the spacing between story and disappearing media overlay buttons\n- Buttons placed next to each other close the gap when one of them is hidden, with a switch to turn it off\n\n#### Feed and reels\n- New Post buttons and Reel buttons pages to reorder Instagram's own like, comment, share, repost and save buttons, hide any of them, or drop a count without hiding its button\n- Hide metrics and the two hide repost switches moved into those pages, per button instead of all at once, and your old settings carry over\n- Tap a reel in the feed to play it in place instead of opening the Reels player, or play first and open on a second tap\n- Hold controls for reels: force hold-to-pause, force the options menu, or the options menu with picture in picture\n- The reels playback menu gains a pause control\n- Expanded view shows the whole reel instead of cropping the sides\n- Bring back the old Instagram logo in the feed header\n- Status bar tap on the feed can scroll up without refreshing, or be turned off\n- Stop the right swipe on the feed from opening the camera\n- The doom-scrolling limit can cap the grids on audio, effect, template and remix pages too\n\n#### Profile\n- Fake profile options moved to their own page under Profile, with the username, name, counts and badge together\n- Fake your own username and display name, shown only on your device\n- Follow indicator in follower and following lists, styled separately from the profile one\n- Hide the Threads button in the profile header\n- Long press a tracked follow request to open the profile, view the picture, filter to that user, copy the username or delete the entry\n\n#### Downloads and gallery\n- Photos download at their full upload size, often much larger than the copy Instagram hands the app\n- Pick the size a photo downloads at, with the dimensions, format and file size on every option\n- Duplicate check asks before you save the same media twice, and can remove the old gallery copy first\n- A post or story downloaded to the gallery stays one item you swipe through, with a switch in Gallery settings\n- Group any gallery files into an album, or split one back apart, from multi-select\n- Saved files share one naming scheme everywhere, stamped with the date the post went up instead of the moment you downloaded it\n- Optional ryuk_ prefix on saved file names, under Media saving\n- Hold a song in any music picker to download its audio\n\n#### Calls\n- Call recordings are tagged auto or manual in the list\n- Select recordings to save them to the gallery, share them, share video calls as audio only, or delete them together\n\n#### Interface and general\n- Always mute starts feed, reels, stories and DMs silent until you tap a speaker or press volume\n- Copied text can open in a sheet first so you can edit it or copy only the part you selected\n- Hold any tab in the bottom bar to open a RyukGram screen, picked per tab under Interface, Tab bar, Tab shortcuts, replacing the separate home, search and DM hold toggles\n- New MobileConfig browser to read and change Instagram's own internal settings, with search inside a config, copiable details and a home shortcut entry\n- MobileConfig changes can be exported and imported from the browser menu\n- Auto-clear cache can run on every launch\n- Indonesian translation added\n\n#### Updates\n- RyukGram tells you when a newer release is out, shows what changed in it, and links straight to the Telegram channel\n- New Updates page under About with the update status, what is new in your build, every past release, and switches for the automatic checks\n- Tapping the RyukGram name or version on the settings links sheet opens the Updates page\n\n#### Privacy\n- Machine ID masking, pinned like the rest of the identifiers, with copy and manual entry\n- Mask everything and relaunch rolls every identifier, blocks Apple attestation and clears saved logins in one tap, from Settings or the login screen button\n\n#### Backup…",
+      "downloadURL": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram-sidebyside.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/ryukgram-sidebyside.xml",
+      "status": "stable",
+      "shortDescription": "RyukGram under its own bundle id, next to Instagram"
+    },
+    {
       "slug": "fladder",
       "name": "Fladder",
       "version": "0.11.1",
@@ -167,6 +182,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/nexasc.xml",
       "status": "beta",
       "shortDescription": "SoundCloud Go+ unlock and ad removal (unofficial build)"
+    },
+    {
+      "slug": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "version": "2.4.9.26",
+      "previousVersion": "",
+      "date": "2026-09-07",
+      "kind": "available",
+      "changelog": "Dopamine (RootHide) 2.4.9.26 | Dopamine\n\n1: fix state consistency issues\n\n2: fix library trusting issues (eg: UTM)\n\n3: hide more jailbreak traces",
+      "downloadURL": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/DopamineRootHide.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/dopamine-roothide.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/dopamine-roothide.xml",
+      "status": "stable",
+      "shortDescription": "Dopamine fork that hides the jailbreak from apps"
     },
     {
       "slug": "voyager",
@@ -257,6 +287,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/aidoku.xml",
       "status": "stable",
       "shortDescription": "Free and open-source manga reader"
+    },
+    {
+      "slug": "manicemu",
+      "name": "Manic EMU",
+      "version": "2.0.0",
+      "previousVersion": "",
+      "date": "2026-09-03",
+      "kind": "available",
+      "changelog": "Manic EMU 2.0.0 | ManicEMU.v2.0.0.SideloadJIT\n\n> [!NOTE]\n> Starting from version 2.0.0, we no longer provide builds of TrollStore JIT. You can package it yourself by following the [guide](https://github.com/Rednick16/TrollStoreJITEnabler).\n\nThis is a major release focused on a redesigned interface, expanded platform support, and advanced features. Landscape browsing, library management, and external controller navigation have been rebuilt. It also adds several new systems and brings Netplay to eligible Libretro cores.\n\n\n### Before You Update\n\n- Dreamcast (Flycast): Existing save states will no longer work as of 2.0.0. Convert important save states to in-game saves before updating, or back up the `Flycast/dc` folder yourself.\n- Wii: A BootMii-format `keys.bin` is required.\n- Symbian: Install firmware in Settings first (`.ROM`; S60v2 and later also need `.RPKG`).\n- GameCube / Wii: The core is still being optimized, so heat and frame drops should still be expected.\n- MAME: A number of lesser-used arcade systems have been trimmed. Some obscure titles may no longer run.\n\n### Interface\n\nLandscape\n\n- A new landscape library, with most landscape pages redesigned.\n- Built-in dynamic backgrounds. You can use or upload ShaderToy (GLSL) scripts to customize them. Only single-Image scripts are supported; complex scripts may increase battery use or heat.\n- Multiple customizable card carousel styles.\n- Focused background: when a game is selected, its banner can be used as the landscape focus backdrop.\n- background music feature in landscape mode—besides built-in tracks, you can upload your own music files to use as background music.\n- built in 12 sets of navigation and focus sound effects.\n\nGame Options and Shortcuts\n\n- A unified options list and interaction model throughout the app.\n- Available actions are automatically arranged and regrouped for the current context.\n- Advanced reordering: customize the order and grouping of options.\n- A redesigned in-game shortcut menu. Shortcuts can appear on supported skins and in the in-game menu.\n\nNavigation and Input\n\n- A global focus and navigation system for iPhone and iPad. You can browse and interact entirely with a controller or keyboard.\n- Hold Command or the controller’s Select button to view the shortcut cheatsheet.\n- A unified navigation bar for more consistent browsing and editing.\n- Many long-press and hidden actions have been replaced with more conventional, iOS-style interactions.\n- Batch management and actions.\n- Adaptive rotation throughout the app.\n- Controllers can be assigned to a player slot. On cores that expect a keyboard, controller inputs can be mapped to keyboard events.\n\n### Features\n\nLibrary and Artwork\n\n- Covers now support separate icon and banner artwork. Box art is used in regular lists, icons in square layouts, and banners as the landscape focus backdrop.\n- Online artwork from Libretro Thumbnails and SteamGridDB (Grids / Heroes / Logos / Icons; SteamGridDB requires your own API key).\n- Switching platform or category rematches cover art.\n\nGame Data\n\n- Game metadata: auto-match, search the database, or edit it yourself (developer, publisher, series, genre, release date, region, overview, and more).\n- ESRB ratings and matching icons. Rating icons can be hidden in Settings.\n- A redesigned save-state manager with import and export.\n- Scoped settings: the same option can be stored at game, platform, or global level, and each can be cleared or reset independently.\n- batch scraping for covers, icons, and banners.\n- \n\nShaders and Skins\n\n- Real-time shader preview, without loading the shader first.\n- Redesigned default GBA skin.\n- Flex skins now support customizing button size and position.\n\nAchievements, Cheats, and Netplay\n\n- RetroAchievements pages are easier to read and load faster.\n- MultiSet support: earn subset achievements without a patched ROM. Switching the achievement list only changes what is shown; it does not affect which sets you can unlock while playing.\n- Online cheat database: search, multi-select add, and bookmarks.\n- Netplay for many Libretro cores: host or join a room, public lobby, LAN scan, relay, spectator mode, and room password. Your Adventurer Card nickname is used as the Netplay display name. You can now trade treasured Pokémon with friends over the network, or go head-to-head on arcade systems.\n- Rewind: add it to the shortcut menu, a controller mapping, or TriggerPro, then touch and hold to use it.\n\nAdvanced Features and Import\n\n- Core Settings: intended for advanced users. Incorrect values may prevent games from launching. Settings can be reset per game or per platform.\n- Settings now include an Adventurer Card, with a customizable nickname and avatar.\n- Import games from DukeX.\n- Import games from Armsx2.\n- PS1 now supports importing `.bin` files directly.\n\n\n### New Systems and Cores\n\nSymbian (EKA2L1)\n\n- Supports S60v1, N-Gage 1.0, S60v2, S60v3, N-Gage 2.0, S60v5, and Symbian^3.\n- Touch input, firmware management, and system apps.\n- Legacy / PPL / TXM JIT.\n\nPC Engine (Beetle PCE)\n\n- Supports TurboGrafx-16, TurboGrafx-CD, and SuperGrafx, with subcategory switching.\n\nNeo Geo Pocket / Color (Beetle NeoPop)\n\n- Supports Neo Geo Pocket and Neo Geo Pocket Color, with subcategory switching.\n\nCommodore 64 (VICE x64sc)\n\n- Full keyboard support, with switching between gamepad and keyboard skins.\n\nAmiga (PUAE)\n\n- Full keyboard support, with switching between gamepad and keyboard skins.\n\nGameCube / Wii (Dolphin)\n\n- Legacy / PPL / TXM JIT.\n- Wii: Wiimote sideways mode.\n- Dolphin cheats, including Action Replay Max decryption.\n- Wiimote skins for Wii\n\nOther Cores\n\n- Mesen-S added for SNES / GB / GBC.\n- gpSP added for GBA, and can be switched with mGBA and VBA-M.\n\n### JIT Fixes and Improvements\n\n- Fixed JIT failing on TXM devices running iOS 26.6 and later.\n- Revised TXM device detection.\n- N64 GLideN64 and ParaLLEl RDP now both support JIT.\n\n### Core Updates\n\nThe following cores have been updated to the latest upstream stable releases.\n\n- 3DS (Azahar, Citra)\n- PS1 (Beetle PSX HW)\n- DOS (DOSBox Pure)\n- Dreamcast (Flycast) — see the save-state migration note above\n- NDS (melonDS)\n- PSP (PPSSPP)\n- N64 (Mupen64Plus)\n\n### Fixes\n\n- Numerous bug fixes and performance optimizations",
+      "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/ManicEMU.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/manicemu.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/manicemu.xml",
+      "status": "stable",
+      "shortDescription": "All-in-one retro game emulator"
     },
     {
       "slug": "zeus",
@@ -619,6 +664,21 @@
       "shortDescription": "Linux shell on iOS via x86 emulation"
     },
     {
+      "slug": "dopamine",
+      "name": "Dopamine",
+      "version": "3.0.9",
+      "previousVersion": "",
+      "date": "2026-08-22",
+      "kind": "available",
+      "changelog": "Dopamine 3.0.9 | Dopamine\n\n- Fix jailbreak apps not being removed from home screen when removing the jailbreak on iOS 18.0 - 18.3.1 too",
+      "downloadURL": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Dopamine.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/dopamine.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/dopamine.xml",
+      "status": "stable",
+      "shortDescription": "Semi-untethered jailbreak for iOS 15 – 26"
+    },
+    {
       "slug": "sora",
       "name": "Sora",
       "version": "1.3.0",
@@ -722,6 +782,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/qbitcontroller.xml",
       "status": "stable",
       "shortDescription": "Cross-platform qBittorrent remote (Kotlin)"
+    },
+    {
+      "slug": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "version": "410.1.0",
+      "previousVersion": "",
+      "date": "2026-07-25",
+      "kind": "available",
+      "changelog": "Instagram 410.1.0 | RyukGram (IG 410)\n\nUpdated for Instagram 439.0.0.\n\n### ✨ Highlights\n- **Call recording** — record voice and video calls, with auto-record, smart video grids and a per-person browser to play them back\n- **Activity notifications** — one log for who read your messages plus who came online, went offline or started typing, per person, with an accurate green dot\n- **Grid feed** — turn your home feed into a tappable grid of thumbnails with stats and author overlays, per account\n- **Stories archive** — saves every story you post before it expires, with its media and full viewer list, per account\n- **Story viewers list** — a searchable, filterable, sortable and pinnable \"who viewed my story\", with each viewer's reaction shown\n- **Instagram Plus** — turn on some Instagram's paid subscriber features inside the app\n- **Custom button icons** — pick any Instagram icon or iOS symbol for the action and home-shortcut buttons\n\n### 🆕 New features\n\n#### Messages\n- Activity notifications and Activity log — records who read your messages plus who came online, went offline or started typing, as a per-person timeline. Set each event to log silently, notify you, or both, and hold anyone to customise or mute them. A new accurate active-status option turns the green dot off the moment someone leaves. Filter by type and date, swipe or multi-select to delete, and lock the log behind your passcode\n- A dot in the DMs inbox to turn your active status on or off without opening settings\n- Keep deleted messages can now also keep the ones you unsend yourself, shown faded in chat and added to the deleted log\n- Mark chats seen locally — with read-receipt blocking on, opened chats look read on your device while the sender still gets no receipt; the eye button turns orange until you really mark seen\n- Hold the account name at the top of Direct to show or hide your hidden chats, with an optional passcode/Face ID lock\n- Messages-only mode is now its own menu, can turn on automatically during a daily window, and adds a notifications shortcut plus an optional home-shortcut button in the inbox header\n- Adding someone to a list (read-receipt blocking, hidden or locked chats, chat backgrounds, story viewer pins) now opens a picker of recent DMs with username search, instead of typing it in blind\n- The DM Draw feature can now send an image as your doodle — from the gallery, Photos, your Instagram or iOS stickers, or a pasted image — with an editor to crop, resize and remove the background\n- Custom chat backgrounds can now be videos or GIFs, framed with pan-zoom and trim, with the same opacity, blur and dim controls, and re-editable later\n- Hide suggested accounts and channels in Direct messages search\n\n#### Stories\n- Stories archive saves every story you post before it expires, with its media and full viewer list, per account. Browse by date in a grid, see who viewed, liked or reacted, with filter, sort, pinned viewers, an unread badge, optional alerts and its own backup and storage entry\n- The \"who viewed my story\" list is now searchable — filter (mutuals, following, follows you, verified, reacted, pinned), sort, and pin anyone to the top. Shows avatars, verified badges and each viewer's reaction, loads every viewer, and can switch back to Instagram's own list. Pick which one opens first\n- Marked-seen indicator — stories you already marked as seen hide the eye button or fill it green for 48 hours, per account\n- New \"Save image (no music)\" story download option for photo stories that have Instagram music on them\n- Story tray long-press \"Profile picture\" now also works in Instagram's new subscriber story preview menu\n\n#### Reels\n- New reels playback menu — hold the ⋯ or audio button for speed, seek (skip back/forward by a custom amount) and auto-scroll controls\n- Auto-scroll reels is back — Instagram default or RyukGram mode that keeps advancing after you swipe back\n- Filter reels by engagement — set a minimum for likes, comments, views or reposts and reels below it never show, plus an option to hide reels whose author hides their counts. Only the Reels tab is filtered by default, so reels you open from a post, profile or share stay untouched\n- Show when a reel was reposted — an optional date on the \"reposted this reel\" header\n\n#### Feed & Explore\n- New Grid feed — turn your home feed into a grid of post thumbnails showing likes, comments, views, shares and the author. Pinch to change columns, pull to refresh, tap a post to open it, or hold for a menu to like, follow, view profile, expand, share or copy the link. Choose which stats show, square or taller tiles, and how you switch back to Instagram's feed. Loads instantly, works per account and remembers where you left off\n- Search and explore grids now show stat pills on posts and reels — views, likes, comments, shares, reposts and date — with a page to pick which appear, reorder them and toggle them\n- New date format options — swap Instagram's relative timestamps on posts, notes, comments, stories and DMs for a fixed date, a preset like dd/MM/yyyy, or your own template, with a relative-time threshold\n- New \"Block surveys\" toggle — hides Instagram's in-app surveys and feedback prompts, including the \"Interested in this post?\" cards\n- Confirm feed refresh — an optional alert before a pull-to-refresh reloads the home feed\n- Refresh stories only — pull-to-refresh reloads just the stories tray and leaves the feed where it is\n\n#### Instants\n- Instants download now works on videos too — expand, save, share and download-all all handle video instants\n- Send a video from your gallery as an Instant — frame it square, trim any 7 seconds on a scrollable timeline, then hold to record\n- Confirm before capturing an Instant — an optional alert on a photo tap or held video, plus a confirm before tapping to switch Instants\n- Auto close the Instants viewer once you've seen them all\n\n#### Downloads & Gallery\n- Download manager got a rebuild — thumbnails for finished media, live size, speed and time left, a filter row, and swipe a row to cancel, retry or remove\n- Downloads now stay listed after you close the app and can be downloaded again from the history — kept from 12 hours up to forever, and cleared or exported from Backup and Storage\n- Download quality picker has an advanced view — download a video with no audio, or pick any of its audio tracks\n- Gallery — import your own photos, videos and files from the ••• menu, saved under an Imported filter\n- Gallery browsing got more controls — combine a sort with images, videos or favorites first, filter by date, pick 2 to 5 columns, and long-press a user section to select all their media\n- The gallery now uses Instagram icons throughout, grid tiles show a date chip, and long-pressing an item shows its date, source and size\n\n#### Profile\n- Profile card details now also show comment, share and repost counts, with a page to pick which stats appear, reorder them and toggle them\n- Followers and Following lists get a filter and sort button on Instagram's search bar — mutuals, following, follows you or verified, sorted by name or relationship\n- Profile Analyzer's badge now shows gains and losses — a green +N when a list grew, a red −N when it shrank\n- Profile Analyzer is out of beta\n\n#### Interface & notifications\n- Action button and home-shortcut icons are now fully customisable — a searchable browser for any Instagram icon or iOS symbol, per button or shared, including Instagram's colourful pet stickers\n- Tab bar icon order is now a live tab bar preview — drag to reorder, drag one up to hide, tap a hidden icon to add it back\n- Story and disappearing-media overlay buttons can be repositioned by dragging them on a preview\n- The notification pill can be placed anywhere on a phone preview, not just top or bottom\n- Notifications mirrored to the iOS notification centre can now also show as system banners while you're using the app\n- The home shortcut button shows a red dot for new deleted messages, read receipts or call recordings, with a count next…",
+      "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram-ig410.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/ryukgram-ig410.xml",
+      "status": "stable",
+      "shortDescription": "RyukGram built on the Instagram 410 app"
     },
     {
       "slug": "qbitcontrol",
@@ -829,6 +904,36 @@
       "shortDescription": "Discord client mod with themes and QoL fixes"
     },
     {
+      "slug": "bootstrap",
+      "name": "Bootstrap",
+      "version": "2.2.1",
+      "previousVersion": "",
+      "date": "2026-06-12",
+      "kind": "available",
+      "changelog": "Bootstrap 2.2.1 | Bootstrap.tipa\n\n1: add procursus(alt) repo by default\n\n2: hide more jailbreak traces",
+      "downloadURL": "https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Bootstrap.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/bootstrap.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/bootstrap.xml",
+      "status": "stable",
+      "shortDescription": "RootHide bootstrap for iOS 15 – 17"
+    },
+    {
+      "slug": "xenios",
+      "name": "XeniOS",
+      "version": "2.0.1",
+      "previousVersion": "",
+      "date": "2026-06-08",
+      "kind": "available",
+      "changelog": "XeniOS 2.0.1 | xenios_ios_iphone_ipad\n\n# 2.0.1-9730\n\n- Channel: release\n- Stage: stable\n- Version: 2.0.1\n- Build number: 9730\n- Commit: 57c3ca140\n- Published at: 2026-06-08T03:28:01Z\n- Source ref: refs/heads/xenios",
+      "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/XeniOS.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/xenios.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/xenios.xml",
+      "status": "beta",
+      "shortDescription": "Xbox 360 emulation for iPhone and iPad"
+    },
+    {
       "slug": "spotube",
       "name": "Spotube",
       "version": "5.1.2",
@@ -919,6 +1024,21 @@
       "shortDescription": "Open-source e-book reader with AI"
     },
     {
+      "slug": "gopeed",
+      "name": "Gopeed",
+      "version": "1.9.3",
+      "previousVersion": "",
+      "date": "2026-03-18",
+      "kind": "available",
+      "changelog": "Gopeed 1.9.3 | Gopeed-v1.9.3-ios\n\n<table>\n  <tbody>\n    <tr>\n      <td rowspan=\"4\">🪟 Windows</td>\n      <td rowspan=\"2\"><code>EXE</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>Portable</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-amd64-portable.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-arm64-portable.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"3\">🍎 MacOS</td>\n      <td rowspan=\"3\"><code>DMG</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos-amd64.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos-arm64.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"6\">🐧 Linux</td>\n      <td><code>Flathub</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://flathub.org/apps/com.gopeed.Gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td><code>SNAP</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://snapcraft.io/gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>DEB</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-amd64.deb\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-arm64.deb\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>AppImage</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-amd64.AppImage\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-arm64.AppImage\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"4\">🤖 Android</td>\n      <td rowspan=\"4\"><code>APK</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>armeabi-v7a</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-armeabi-v7a.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64-v8a</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-arm64-v8a.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>x86_64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-x86_64.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>📱 iOS</td>\n      <td><code>IPA</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-ios.ipa\">📥</a></td>\n    </tr>\n    <tr>\n      <td>🐳 Docker</td>\n      <td>-</td>\n      <td>universal</td>\n      <td><a href=\"https://hub.docker.com/r/liwei2633/gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\">💾 Qnap</td>\n      <td rowspan=\"2\"><code>QPKG</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-v1.9.3-qnap-amd64.qpkg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-v1.9.3-qnap-arm64.qpkg\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"8\">🌐 Web</td>\n      <td rowspan=\"3\"><code>Windows</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>386</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-386.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>MacOS</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-macos-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-macos-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"3\"><code>Linux</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>386</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-386.zip\">📥</a></td>\n    </tr>\n  </tbody>\n</table>\n\n# Release notes\n\n## 🆕 Features\n\n- feat: ed2k protocol support (important!!!) @monkeyWie (#1316)\n\n## 🐛 Bug Fixes\n\n- fix: non-range HTTP downloaded bytes exceeding total file size @monkeyWie (#1317)\n- fix: update isCreate logic for pending tasks @Roxym3 (#1314)\n- fix: update RPM icon path @monkeyWie (#1309)\n\n## 📖 Document\n\n- docs: migrate docs.gopeed.com links to gopeed.com/docs equivalents @copilot-swe-agent (#1311)\n\n## 🌎 Internationalization\n\n- feat(lang): Catalan language added @kayron8 (#1303)\n- feat(lang): update Turkish translation @Hweord (#1304)\n\n# 更新日志\n\n## 🆕 新特性\n\n- feat: ed2k 协议支持 (重大特性！！！) @monkeyWie (#1316)\n\n## 🐛 Bug Fixes\n\n- fix: 不支持断点下载的 HTTP 链接下载超出文件总大小 @monkeyWie (#1317)\n- fix: 更新 isCreate 逻辑用于等待中的任务 @Roxym3 (#1314)\n- fix: 更新 RPM 图标路径 @monkeyWie (#1309)\n\n## 📖 Document\n\n- docs: 迁移 docs.gopeed.com 链接至 gopeed.com/docs @copilot-swe-agent (#1311)\n\n## 🌎 Internationalization\n\n- feat(lang): 添加加泰罗尼亚语言 @kayron8 (#1303)\n- feat(lang): 更新土耳其语言 @Hweord (#1304)",
+      "downloadURL": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Gopeed.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/gopeed.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/gopeed.xml",
+      "status": "stable",
+      "shortDescription": "Modern download manager for HTTP, BitTorrent and more"
+    },
+    {
       "slug": "provenance",
       "name": "Provenance",
       "version": "3.3.0",
@@ -932,6 +1052,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/provenance.xml",
       "status": "stable",
       "shortDescription": "Multi-system retro game emulator"
+    },
+    {
+      "slug": "sameboy",
+      "name": "SameBoy",
+      "version": "1.0.3",
+      "previousVersion": "",
+      "date": "2026-03-04",
+      "kind": "available",
+      "changelog": "SameBoy 1.0.3 | sameboy_ios_v1.0.3\n\nThis version is backwards compatible with save states from SameBoy 0.14.3 and newer, as well as save states from any BESS compliant emulator\n\n## New/Improved Features\n* Added support for more controllers in the iOS frontend, including singular Joy-Cons\n* Pressing buttons while in a locked rewind state now exits rewind mode in the iOS frontend\n* The iOS frontend now handles save conflicts with a dialog, making syncing saves across different machines and emulators easier\n* An `examine`/`x` command can now use the `/s` modifier to change its output style to RGBDS-compatible assembly\n* An `examine`/`x` command can now use `$` in its modifier to use hexadecimal count values\n* It is now possible to adjust the maximum rumble strength\n* It is now possible to modify and save a running ROM file from the Memory Viewer in the Cocoa frontend\n* Controller buttons can now be assigned to one of 4 hotkey commands in the iOS frontend\n* Periodic saves were added to the iOS frontend\n* A new screenshot hotkey was added to the SDL frontend\n* Controller UI hiding in the iOS frontend can now optionally disable the centering of the game screen\n* The Cocoa and SDL frontends now save the battery more frequently\n\n## Accuracy Improvements/Fixes\n* Added silence detection to eliminate rounding artifacts when playing nothing but frequencies above Nyquist\n* Prevented abnormal vblank events from updating the SNES-side buffers prematurely\n* Fixed a bug that made reading the PCM registers non-deterministic when emulating a CGB in CPU revision C or older\n* Fixed a bug that caused ROMs to be running in the background under some cases in the Cocoa frontend\n* Fixed a bug that caused channel `PCM12` to output incorrect channel 2 values when emulating CGB in CPU revision C or older\n* Improved the accuracy of the `PCM` registers when emulating CGB in CPU revision C or older\n* Emulated a new quirk where volume envelope ticks are delayed while emulating a CGB in CPU revisions D or E\n* Corrected the channel alignment of channels 1 and 2 while emulating CGB in CPU revision C or older\n* Fixed a bug where a volume envelope quirk that was only applicable to channels 1 and 2 was also applied to channel 4\n* Major improvements to emulation of channel 4 start delays\n* Emulated a quirk where one of channel 4's internal counters counts while the channel is inactive\n* Emulated LFSR corruptions and \"zombie steps\" when writing to `NR43`, including revision differences\n\n## Bug Fixes\n* Fixed mouse cursor hiding behavior while debugging in the Cocoa frontend\n* Fixed an issue where rewinding could reset the ROM under some circumstances in the iOS frontend\n* Fixed a visual glitch in the reverse search functionality of the Cocoa debugger console\n* Fixed a memory leak in scenarios where `getline` fails on some platforms\n* Fixed a resource leak in scenarios where loading a cheat file fails\n* Fixed resource leaks in certain scenarios where loading a battery save or an ISX ROM fails\n* Fixed a bug that caused the SDL frontend to be stuck on the greyscale palette\n* Fixed a bug where starting an audio recording could crash on Windows on some systems\n* Fixed a bug where the Game Boy Camera could not be emulated correctly on some iPhone models\n* Fixed a spelling mistake in an iOS tip message\n* Fixed a bug where certain versions of macOS did not display SameBoy's icon\n* Fixed an issue that made it impossible to change the RTC mode in link mode in the libretro frontend\n\n## Misc Internal Changes\n* Updated the boot ROMs so they can be built with the latest version of RGBDS\n* Removed code for supporting legacy Windows save states from versions no longer compatible with modern versions of SameBoy\n* Fixed compilation of the SDL frontend on `unsigned char` platforms\n* Made it possible to build the Cocoa frontend using older SDKs\n* Removed accidentally committed debugging code from the Cocoa frontend",
+      "downloadURL": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SameBoy.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/sameboy.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/sameboy.xml",
+      "status": "stable",
+      "shortDescription": "High-accuracy Game Boy and Game Boy Color emulator"
     },
     {
       "slug": "utm",
@@ -1084,6 +1219,51 @@
       "shortDescription": "Privacy-oriented native video player"
     },
     {
+      "slug": "serotonin",
+      "name": "Serotonin",
+      "version": "1.2.1",
+      "previousVersion": "",
+      "date": "2024-01-17",
+      "kind": "available",
+      "changelog": "Serotonin 1.2.1 | Serotonin.tipa\n\n# Serotonin 1.2.1\n## Changelog\n### Cleanup\n\n- Fixed memory hogger\n- Fixed exploit picker\n- Fixed launchd entitlements\n- Remove a bunch of unused code\n- Slight UI changes",
+      "downloadURL": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Serotonin.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/serotonin.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/serotonin.xml",
+      "status": "unmaintained",
+      "shortDescription": "Semi-jailbreak for iOS 16.5.1 – 17.0"
+    },
+    {
+      "slug": "taurine",
+      "name": "Taurine",
+      "version": "1.1.7",
+      "previousVersion": "",
+      "date": "2023-09-23",
+      "kind": "available",
+      "changelog": "Taurine 1.1.7 | Taurine.1.1.7-3\n\nFix kfd change being implemented incorrectly",
+      "downloadURL": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Taurine.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/taurine.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/taurine.xml",
+      "status": "unmaintained",
+      "shortDescription": "Semi-untethered jailbreak for iOS 14"
+    },
+    {
+      "slug": "odyssey",
+      "name": "Odyssey",
+      "version": "1.4.3",
+      "previousVersion": "",
+      "date": "2023-04-04",
+      "kind": "available",
+      "changelog": "Odyssey 1.4.3 | Odyssey-1.4.3\n\n- Update Sileo to 2.3-1",
+      "downloadURL": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Odyssey.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/odyssey.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/odyssey.xml",
+      "status": "unmaintained",
+      "shortDescription": "Semi-untethered jailbreak for iOS 13"
+    },
+    {
       "slug": "mame4ios",
       "name": "MAME4iOS",
       "version": "2022.5",
@@ -1097,6 +1277,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/mame4ios.xml",
       "status": "stable",
       "shortDescription": "Multi-arcade machine emulator for iOS"
+    },
+    {
+      "slug": "unc0ver",
+      "name": "unc0ver",
+      "version": "5.2.0",
+      "previousVersion": "",
+      "date": "2020-06-09",
+      "kind": "available",
+      "changelog": "unc0ver 5.2.0 | unc0ver_5.2.0\n\nLast updated at: 06/09/2020\n\n06/09/2020 - v5.2.0 was released for production with the following changes:\n\n### ⚠️ Support development with https://phonerebel.com ⚠️\n\n- Enable iOS 13.5.5~b1 support\n- Fix a logic bug in disabling auto updates\n- Update bundled Cydia to fix crashes on iOS 13.5 with Hardware Keyboard enabled",
+      "downloadURL": "https://github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/unc0ver.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/unc0ver.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/unc0ver.xml",
+      "status": "unmaintained",
+      "shortDescription": "Jailbreak for iOS 11 – 14.8.1"
     }
   ]
 }

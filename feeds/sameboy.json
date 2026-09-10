@@ -1,0 +1,148 @@
+{
+  "name": "OmniSource - SameBoy",
+  "identifier": "com.iamsmmh.omnisource.sameboy",
+  "apiVersion": "v2",
+  "subtitle": "High-accuracy Game Boy and Game Boy Color emulator",
+  "description": "Standalone distribution feed for SameBoy, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/sameboy.json",
+  "apps": [
+    {
+      "name": "SameBoy",
+      "bundleIdentifier": "com.github.liji32.sameboy.ios",
+      "developerName": "LIJI32",
+      "subtitle": "High-accuracy Game Boy and Game Boy Color emulator",
+      "localizedDescription": "SameBoy is a highly accurate Game Boy and Game Boy Color emulator by LIJI32, ported to iPhone and iPad. It emulates the original hardware closely enough to pass hardware test ROMs, supports Super Game Boy palettes and link-cable emulation between its own instances, ships a built-in debugger, rewinding, save states and cheat support, and lets you import your own ROMs from Files.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SameBoy.webp",
+      "tintColor": "4CAF50",
+      "category": "games",
+      "version": "1.0.3",
+      "versionDate": "2026-03-04",
+      "versionDescription": "SameBoy 1.0.3 | sameboy_ios_v1.0.3\n\nThis version is backwards compatible with save states from SameBoy 0.14.3 and newer, as well as save states from any BESS compliant emulator\n\n## New/Improved Features\n* Added support for more controllers in the iOS frontend, including singular Joy-Cons\n* Pressing buttons while in a locked rewind state now exits rewind mode in the iOS frontend\n* The iOS frontend now handles save conflicts with a dialog, making syncing saves across different machines and emulators easier\n* An `examine`/`x` command can now use the `/s` modifier to change its output style to RGBDS-compatible assembly\n* An `examine`/`x` command can now use `$` in its modifier to use hexadecimal count values\n* It is now possible to adjust the maximum rumble strength\n* It is now possible to modify and save a running ROM file from the Memory Viewer in the Cocoa frontend\n* Controller buttons can now be assigned to one of 4 hotkey commands in the iOS frontend\n* Periodic saves were added to the iOS frontend\n* A new screenshot hotkey was added to the SDL frontend\n* Controller UI hiding in the iOS frontend can now optionally disable the centering of the game screen\n* The Cocoa and SDL frontends now save the battery more frequently\n\n## Accuracy Improvements/Fixes\n* Added silence detection to eliminate rounding artifacts when playing nothing but frequencies above Nyquist\n* Prevented abnormal vblank events from updating the SNES-side buffers prematurely\n* Fixed a bug that made reading the PCM registers non-deterministic when emulating a CGB in CPU revision C or older\n* Fixed a bug that caused ROMs to be running in the background under some cases in the Cocoa frontend\n* Fixed a bug that caused channel `PCM12` to output incorrect channel 2 values when emulating CGB in CPU revision C or older\n* Improved the accuracy of the `PCM` registers when emulating CGB in CPU revision C or older\n* Emulated a new quirk where volume envelope ticks are delayed while emulating a CGB in CPU revisions D or E\n* Corrected the channel alignment of channels 1 and 2 while emulating CGB in CPU revision C or older\n* Fixed a bug where a volume envelope quirk that was only applicable to channels 1 and 2 was also applied to channel 4\n* Major improvements to emulation of channel 4 start delays\n* Emulated a quirk where one of channel 4's internal counters counts while the channel is inactive\n* Emulated LFSR corruptions and \"zombie steps\" when writing to `NR43`, including revision differences\n\n## Bug Fixes\n* Fixed mouse cursor hiding behavior while debugging in the Cocoa frontend\n* Fixed an issue where rewinding could reset the ROM under some circumstances in the iOS frontend\n* Fixed a visual glitch in the reverse search functionality of the Cocoa debugger console\n* Fixed a memory leak in scenarios where `getline` fails on some platforms\n* Fixed a resource leak in scenarios where loading a cheat file fails\n* Fixed resource leaks in certain scenarios where loading a battery save or an ISX ROM fails\n* Fixed a bug that caused the SDL frontend to be stuck on the greyscale palette\n* Fixed a bug where starting an audio recording could crash on Windows on some systems\n* Fixed a bug where the Game Boy Camera could not be emulated correctly on some iPhone models\n* Fixed a spelling mistake in an iOS tip message\n* Fixed a bug where certain versions of macOS did not display SameBoy's icon\n* Fixed an issue that made it impossible to change the RTC mode in link mode in the libretro frontend\n\n## Misc Internal Changes\n* Updated the boot ROMs so they can be built with the latest version of RGBDS\n* Removed code for supporting legacy Windows save states from versions no longer compatible with modern versions of SameBoy\n* Fixed compilation of the SDL frontend on `unsigned char` platforms\n* Made it possible to build the Cocoa frontend using older SDKs\n* Removed accidentally committed debugging code from the Cocoa frontend",
+      "downloadURL": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+      "size": 3170899,
+      "versions": [
+        {
+          "version": "1.0.3",
+          "date": "2026-03-04",
+          "localizedDescription": "SameBoy 1.0.3 | sameboy_ios_v1.0.3\n\nThis version is backwards compatible with save states from SameBoy 0.14.3 and newer, as well as save states from any BESS compliant emulator\n\n## New/Improved Features\n* Added support for more controllers in the iOS frontend, including singular Joy-Cons\n* Pressing buttons while in a locked rewind state now exits rewind mode in the iOS frontend\n* The iOS frontend now handles save conflicts with a dialog, making syncing saves across different machines and emulators easier\n* An `examine`/`x` command can now use the `/s` modifier to change its output style to RGBDS-compatible assembly\n* An `examine`/`x` command can now use `$` in its modifier to use hexadecimal count values\n* It is now possible to adjust the maximum rumble strength\n* It is now possible to modify and save a running ROM file from the Memory Viewer in the Cocoa frontend\n* Controller buttons can now be assigned to one of 4 hotkey commands in the iOS frontend\n* Periodic saves were added to the iOS frontend\n* A new screenshot hotkey was added to the SDL frontend\n* Controller UI hiding in the iOS frontend can now optionally disable the centering of the game screen\n* The Cocoa and SDL frontends now save the battery more frequently\n\n## Accuracy Improvements/Fixes\n* Added silence detection to eliminate rounding artifacts when playing nothing but frequencies above Nyquist\n* Prevented abnormal vblank events from updating the SNES-side buffers prematurely\n* Fixed a bug that made reading the PCM registers non-deterministic when emulating a CGB in CPU revision C or older\n* Fixed a bug that caused ROMs to be running in the background under some cases in the Cocoa frontend\n* Fixed a bug that caused channel `PCM12` to output incorrect channel 2 values when emulating CGB in CPU revision C or older\n* Improved the accuracy of the `PCM` registers when emulating CGB in CPU revision C or older\n* Emulated a new quirk where volume envelope ticks are delayed while emulating a CGB in CPU revisions D or E\n* Corrected the channel alignment of channels 1 and 2 while emulating CGB in CPU revision C or older\n* Fixed a bug where a volume envelope quirk that was only applicable to channels 1 and 2 was also applied to channel 4\n* Major improvements to emulation of channel 4 start delays\n* Emulated a quirk where one of channel 4's internal counters counts while the channel is inactive\n* Emulated LFSR corruptions and \"zombie steps\" when writing to `NR43`, including revision differences\n\n## Bug Fixes\n* Fixed mouse cursor hiding behavior while debugging in the Cocoa frontend\n* Fixed an issue where rewinding could reset the ROM under some circumstances in the iOS frontend\n* Fixed a visual glitch in the reverse search functionality of the Cocoa debugger console\n* Fixed a memory leak in scenarios where `getline` fails on some platforms\n* Fixed a resource leak in scenarios where loading a cheat file fails\n* Fixed resource leaks in certain scenarios where loading a battery save or an ISX ROM fails\n* Fixed a bug that caused the SDL frontend to be stuck on the greyscale palette\n* Fixed a bug where starting an audio recording could crash on Windows on some systems\n* Fixed a bug where the Game Boy Camera could not be emulated correctly on some iPhone models\n* Fixed a spelling mistake in an iOS tip message\n* Fixed a bug where certain versions of macOS did not display SameBoy's icon\n* Fixed an issue that made it impossible to change the RTC mode in link mode in the libretro frontend\n\n## Misc Internal Changes\n* Updated the boot ROMs so they can be built with the latest version of RGBDS\n* Removed code for supporting legacy Windows save states from versions no longer compatible with modern versions of SameBoy\n* Fixed compilation of the SDL frontend on `unsigned char` platforms\n* Made it possible to build the Cocoa frontend using older SDKs\n* Removed accidentally committed debugging code from the Cocoa frontend",
+          "downloadURL": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+          "size": 3170899,
+          "minOSVersion": "11.0",
+          "releaseUrl": "https://github.com/LIJI32/SameBoy/releases/tag/v1.0.3",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "sameboy_cocoa_v1.0.3.zip",
+              "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_cocoa_v1.0.3.zip",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 4825348,
+              "sha256": "09ed6eb475f0d6b0dd52217f878741e6551aa7022352947a0b7d62787316a6bf",
+              "downloads": 19719,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "sameboy_ios_v1.0.3.deb",
+              "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.deb",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "DEB",
+              "size": 3160226,
+              "sha256": "f274617f2df1c3100583ecf8d4d7896733d7aee1e100916a3be39d6abe296e4f",
+              "downloads": 2277,
+              "mimeType": "application/x-deb",
+              "installable": true
+            },
+            {
+              "filename": "sameboy_ios_v1.0.3.ipa",
+              "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 3170899,
+              "sha256": "2dddc5dee5048713dcfc4f38450c503afa13e85ffd0d138b5f52fc4c4c39370f",
+              "downloads": 3059,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "sameboy_winsdl_v1.0.3.zip",
+              "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_winsdl_v1.0.3.zip",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 1629322,
+              "sha256": "66fb05acc075abba860f2c5fa31af2198fef9767573d28834c78d0dfc15746b2",
+              "downloads": 31585,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "sameboy_winsdl_v1.0.3.zip.js",
+              "downloadUrl": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_winsdl_v1.0.3.zip.js",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "other",
+              "size": 2172562,
+              "sha256": "b504c6fea2becdf73c8048200ef51f41986a9998abc4490d764d1eed6fc3a1ed",
+              "downloads": 183,
+              "mimeType": "application/x-javascript",
+              "installable": false
+            }
+          ],
+          "sha256": "2dddc5dee5048713dcfc4f38450c503afa13e85ffd0d138b5f52fc4c4c39370f",
+          "downloads": 3059
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "sameboy",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/LIJI32/SameBoy",
+        "sourceURL": "https://github.com/LIJI32/SameBoy",
+        "verification": {
+          "method": "github-release",
+          "publisher": "LIJI32/SameBoy",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "11.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned iOS IPA published on the project's GitHub releases (sameboy_ios_v…). The upstream build targets iOS 11.0 and later (IOS_MIN in the project's Makefile). Brought to you by the same developer whose Game Boy boot ROM is used by other emulators."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2026-03-04"
+        }
+      }
+    }
+  ],
+  "news": []
+}

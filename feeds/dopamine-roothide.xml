@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dopamine (RootHide) — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.json</link>
+    <description>Release feed for Dopamine (RootHide) within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 18:20:27 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Dopamine (RootHide) v2.4.9.26</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.json</link>
+      <guid isPermaLink="false">dopamine-roothide-2.4.9.26</guid>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Dopamine (RootHide) 2.4.9.26 | Dopamine
+
+1: fix state consistency issues
+
+2: fix library trusting issues (eg: UTM)
+
+3: hide more jailbreak traces]]></description>
+      <enclosure url="https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa" length="54859511" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 64,
+  "count": 77,
   "fuse": {
     "keys": [
       {
@@ -1692,6 +1692,344 @@
       "icon": "assets/Turrit.webp",
       "pageURL": "apps/turrit-mxgram/",
       "version": "1.5.3",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "ryukgram-ig410",
+      "slug": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "subtitle": "RyukGram built on the Instagram 410 app",
+      "shortDescription": "RyukGram built on the Instagram 410 app",
+      "description": "RyukGram (IG 410) is the same enhanced Instagram client ported to the Instagram 410.1.0 app for iOS 15 and later. It carries the full RyukGram feature set — follow-request tracking, read receipts, story-viewer insights, deleted-message logs, device-ID masking, media downloading, custom chat themes and a configurable tab bar — on top of the older Instagram base, which is what you want if the current Instagram builds are unstable on your device or you deliberately stay on an older app version.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "Ryuk (@axryuk)",
+      "bundleId": "com.burbn.instagram",
+      "icon": "assets/Instagram.webp",
+      "pageURL": "apps/ryukgram-ig410/",
+      "version": "410.1.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "ryukgram-sidebyside",
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "subtitle": "RyukGram under its own bundle id, next to Instagram",
+      "shortDescription": "RyukGram under its own bundle id, next to Instagram",
+      "description": "RyukGram Side by Side is the RyukGram build packaged under its own bundle identifier, com.ryuk.ryukgram, so it installs alongside the real Instagram app instead of replacing it. Both apps get their own name, icon and login, so you can stay signed into a stock account and a modded one at the same time. This variant ships the no-plugin-loader build.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "Ryuk (@axryuk)",
+      "bundleId": "com.ryuk.ryukgram",
+      "icon": "assets/Instagram.webp",
+      "pageURL": "apps/ryukgram-sidebyside/",
+      "version": "446.0.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "dopamine",
+      "slug": "dopamine",
+      "name": "Dopamine",
+      "subtitle": "Semi-untethered jailbreak for iOS 15 – 26",
+      "shortDescription": "Semi-untethered jailbreak for iOS 15 – 26",
+      "description": "Dopamine is the modern semi-untethered, rootless jailbreak for iOS and iPadOS 15.0 through 26.0.1. It bootstraps a Procursus environment (Sileo and friends) on supported arm64e and arm64 devices, keeps passcode, Touch ID/Face ID and Apple Pay working, and hides its filesystem changes well enough to stay through a userspace reboot. This entry tracks the official Dopamine app the developer publishes on GitHub Releases.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "opa334 & contributors",
+      "bundleId": "com.opa334.Dopamine",
+      "icon": "assets/Dopamine.webp",
+      "pageURL": "apps/dopamine/",
+      "version": "3.0.9",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "dopamine-roothide",
+      "slug": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "subtitle": "Dopamine fork that hides the jailbreak from apps",
+      "shortDescription": "Dopamine fork that hides the jailbreak from apps",
+      "description": "Dopamine (RootHide) is roothide's hardened Dopamine 2 build for iOS 15.0 through 16.7.x. It runs the jailbreak in a hidden, per-app environment: App Store apps do not see the bootstrap or your tweaks unless you explicitly patch them, and extra work is done to hide jailbreak traces from detection. It keeps the usual Dopamine toolchain — Sileo, rootless tweaks and userspace reboots — under a separate bundle identifier so it can sit next to the stock Dopamine app.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "roothide",
+      "bundleId": "com.opa334.Dopamine-roothide",
+      "icon": "assets/DopamineRootHide.webp",
+      "pageURL": "apps/dopamine-roothide/",
+      "version": "2.4.9.26",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "bootstrap",
+      "slug": "bootstrap",
+      "name": "Bootstrap",
+      "subtitle": "RootHide bootstrap for iOS 15 – 17",
+      "shortDescription": "RootHide bootstrap for iOS 15 – 17",
+      "description": "Bootstrap is roothide's semi-jailbreak bootstrap for iOS and iPadOS 15.0 through 17.0 on A8 to A17 Pro and M1/M2 devices. Instead of jailbreaking the whole system it builds a hidden environment that boots Sileo, Zebra and rootless tweaks while App Store apps stay untouched — so banking, streaming and game apps that refuse to run on a jailbroken device keep working. Apps are patched one at a time when you want tweaks inside them, and the whole environment can be removed again.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "roothide",
+      "bundleId": "com.roothide.Bootstrap",
+      "icon": "assets/Bootstrap.webp",
+      "pageURL": "apps/bootstrap/",
+      "version": "2.2.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "serotonin",
+      "slug": "serotonin",
+      "name": "Serotonin",
+      "subtitle": "Semi-jailbreak for iOS 16.5.1 – 17.0",
+      "shortDescription": "Semi-jailbreak for iOS 16.5.1 – 17.0",
+      "description": "Serotonin is a semi-untethered 'semi-jailbreak' for iOS 16.5.1 through 16.7 RC and iOS 17.0 on arm64e devices. Built on the Fugu15 code base, it gives you tweak injection and a Procursus bootstrap without a full jailbreak: tweaks load into the apps you patch, and the device keeps working normally everywhere else.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "mineek",
+      "bundleId": "pisshill.usprebooter",
+      "icon": "assets/Serotonin.webp",
+      "pageURL": "apps/serotonin/",
+      "version": "1.2.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "taurine",
+      "slug": "taurine",
+      "name": "Taurine",
+      "subtitle": "Semi-untethered jailbreak for iOS 14",
+      "shortDescription": "Semi-untethered jailbreak for iOS 14",
+      "description": "Taurine is the Odyssey Team's semi-untethered jailbreak for iOS 14.0 – 14.3 on A9 to A14 devices using the cicuta_virosa and amfid exploits. It installs Sileo and a libhooker-based tweak environment, keeps passcode support, and boots into a userspace jailbreak from the app. Useful for keeping vintage firmwares usable on older iPhones and iPads.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "Odyssey Team (coolstar)",
+      "bundleId": "org.coolstar.taurine",
+      "icon": "assets/Taurine.webp",
+      "pageURL": "apps/taurine/",
+      "version": "1.1.7",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "odyssey",
+      "slug": "odyssey",
+      "name": "Odyssey",
+      "subtitle": "Semi-untethered jailbreak for iOS 13",
+      "shortDescription": "Semi-untethered jailbreak for iOS 13",
+      "description": "Odyssey is the Odyssey Team's semi-untethered jailbreak for iOS 13.0 – 13.7 on A9 through A13 devices. It uses the same modern approach as Taurine — libhooker tweak injection, Sileo as the package manager and a userspace jailbreak you re-apply after a reboot — and remains the standard choice for iOS 13 firmwares that unc0ver and checkra1n handle less comfortably.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "Odyssey Team (coolstar)",
+      "bundleId": "org.coolstar.odyssey",
+      "icon": "assets/Odyssey.webp",
+      "pageURL": "apps/odyssey/",
+      "version": "1.4.3",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "unc0ver",
+      "slug": "unc0ver",
+      "name": "unc0ver",
+      "subtitle": "Jailbreak for iOS 11 – 14.8.1",
+      "shortDescription": "Jailbreak for iOS 11 – 14.8.1",
+      "description": "unc0ver is the long-running semi-untethered jailbreak by pwn20wnd for iOS 11.0 through 14.8.1. Its final 5.2.0 release covers the widest firmware range of the classic jailbreaks, installing Cydia or Sileo depending on the chosen bootstrap, and it stays useful for the 32-bit era iPhones and iPads that are otherwise stuck without a package manager.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "pwn20wnd",
+      "bundleId": "science.xnu.undecimus",
+      "icon": "assets/unc0ver.webp",
+      "pageURL": "apps/unc0ver/",
+      "version": "5.2.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "sameboy",
+      "slug": "sameboy",
+      "name": "SameBoy",
+      "subtitle": "High-accuracy Game Boy and Game Boy Color emulator",
+      "shortDescription": "High-accuracy Game Boy and Game Boy Color emulator",
+      "description": "SameBoy is a highly accurate Game Boy and Game Boy Color emulator by LIJI32, ported to iPhone and iPad. It emulates the original hardware closely enough to pass hardware test ROMs, supports Super Game Boy palettes and link-cable emulation between its own instances, ships a built-in debugger, rewinding, save states and cheat support, and lets you import your own ROMs from Files.",
+      "category": "games",
+      "tags": [
+        "games"
+      ],
+      "developer": "LIJI32",
+      "bundleId": "com.github.liji32.sameboy.ios",
+      "icon": "assets/SameBoy.webp",
+      "pageURL": "apps/sameboy/",
+      "version": "1.0.3",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "gopeed",
+      "slug": "gopeed",
+      "name": "Gopeed",
+      "subtitle": "Modern download manager for HTTP, BitTorrent and more",
+      "shortDescription": "Modern download manager for HTTP, BitTorrent and more",
+      "description": "Gopeed is a modern, open-source download manager written in Go with a Flutter interface. On iOS it handles HTTP/HTTPS, BitTorrent and magnet links, splits downloads into multiple connections, resumes interrupted transfers, and lets you queue and manage everything with upload and download limits. It is the maintained alternative to iTorrent when you want torrents plus ordinary file downloads in the same app.",
+      "category": "networking",
+      "tags": [
+        "networking"
+      ],
+      "developer": "GopeedLab",
+      "bundleId": "com.gopeed.gopeed",
+      "icon": "assets/Gopeed.webp",
+      "pageURL": "apps/gopeed/",
+      "version": "1.9.3",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "manicemu",
+      "slug": "manicemu",
+      "name": "Manic EMU",
+      "subtitle": "All-in-one retro game emulator",
+      "shortDescription": "All-in-one retro game emulator",
+      "description": "Manic EMU is an all-in-one retro emulator for iPhone and iPad. One app covers NES, SNES, N64, Game Boy and Game Boy Advance, Nintendo DS and 3DS, PlayStation, PSP, Dreamcast, Arcade and more through libretro cores, with a game library that imports your own ROMs, per-core control mapping, cheat support, save states and controller support. The upstream project is AGPL-3.0 and publishes its own signed-for-testing builds.",
+      "category": "games",
+      "tags": [
+        "games"
+      ],
+      "developer": "Aoshuang Lee (Manic EMU)",
+      "bundleId": "com.aoshuang.manicemu",
+      "icon": "assets/ManicEMU.webp",
+      "pageURL": "apps/manicemu/",
+      "version": "2.0.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "xenios",
+      "slug": "xenios",
+      "name": "XeniOS",
+      "subtitle": "Xbox 360 emulation for iPhone and iPad",
+      "shortDescription": "Xbox 360 emulation for iPhone and iPad",
+      "description": "XeniOS is an experimental Apple-focused fork of Xenia, the Xbox 360 emulator research project, built for iPhone, iPad and Apple silicon Macs. The iOS build ships as an unsigned IPA and needs recent, powerful hardware: the upstream CMake configuration sets the iOS deployment target to 18.0, and the emulated PowerPC cores plus the Xbox 360 GPU workload only reach playable frame rates on A17 Pro / M-series class chips. It carries the same edge-line core as upstream Xenia and reports game compatibility on xenios.jp. As with every console emulator, you supply your own game files.",
+      "category": "games",
+      "tags": [
+        "games"
+      ],
+      "developer": "XeniOS Project (xenios-jp)",
+      "bundleId": "com.xenios",
+      "icon": "assets/XeniOS.webp",
+      "pageURL": "apps/xenios/",
+      "version": "2.0.1",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [

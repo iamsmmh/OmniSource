@@ -23,6 +23,11 @@ README_STATS_MARKERS = ("<!-- omnisource:stats:start -->", "<!-- omnisource:stat
 ALIVE_CODES = frozenset({200, 206, 301, 302, 303, 307, 308})
 RETRYABLE_CODES = frozenset({408, 425, 429, 500, 502, 503, 504})
 
+# Containers an iOS sideloading client can install. ``.tipa`` is a
+# TrollStore-named IPA: byte-identical to a .ipa, only the extension
+# tells TrollStore to install it without the Share sheet.
+INSTALLABLE_SUFFIXES = (".ipa", ".tipa")
+
 VALID_STATUSES = frozenset({"stable", "beta", "manual", "unmaintained", "deprecated"})
 VALID_VERIFICATION_METHODS = frozenset(
     {

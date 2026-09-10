@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "count": 4,
-  "appsAffected": 14,
+  "appsAffected": 15,
   "groups": [
     {
       "key": "com.google.ios.youtube",
@@ -144,8 +144,8 @@
     },
     {
       "key": "com.burbn.instagram",
-      "type": "bundle-id",
-      "reason": "2 apps share bundle identifier 'com.burbn.instagram'",
+      "type": "bundle-id+similar-name",
+      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))",
       "apps": [
         {
           "app": "inkillerplus",
@@ -168,6 +168,17 @@
           "category": "social",
           "status": "stable",
           "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa"
+        },
+        {
+          "app": "ryukgram-ig410",
+          "name": "RyukGram (IG 410)",
+          "version": "410.1.0",
+          "releaseDate": "2026-07-25",
+          "source": "Ryuk / RyukSign (source.ryuksign.com)",
+          "developer": "Ryuk (@axryuk)",
+          "category": "social",
+          "status": "stable",
+          "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa"
         }
       ],
       "recommended": {
@@ -328,25 +339,36 @@
     },
     "inkillerplus": {
       "groupKey": "com.burbn.instagram",
-      "type": "bundle-id",
+      "type": "bundle-id+similar-name",
       "recommended": {
         "app": "inkillerplus",
         "name": "iNKillerPlus",
         "version": "446.0.0",
         "reason": "Newest version available (446.0.0, released 2026-09-09)"
       },
-      "reason": "2 apps share bundle identifier 'com.burbn.instagram'"
+      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))"
     },
     "ryukgram": {
       "groupKey": "com.burbn.instagram",
-      "type": "bundle-id",
+      "type": "bundle-id+similar-name",
       "recommended": {
         "app": "inkillerplus",
         "name": "iNKillerPlus",
         "version": "446.0.0",
         "reason": "Newest version available (446.0.0, released 2026-09-09)"
       },
-      "reason": "2 apps share bundle identifier 'com.burbn.instagram'"
+      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))"
+    },
+    "ryukgram-ig410": {
+      "groupKey": "com.burbn.instagram",
+      "type": "bundle-id+similar-name",
+      "recommended": {
+        "app": "inkillerplus",
+        "name": "iNKillerPlus",
+        "version": "446.0.0",
+        "reason": "Newest version available (446.0.0, released 2026-09-09)"
+      },
+      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))"
     },
     "ytmusic": {
       "groupKey": "com.google.ios.youtubemusic",

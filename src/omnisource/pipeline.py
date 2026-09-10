@@ -12,8 +12,10 @@ Stages
 :func:`omnisource.site.publish_repo_artifacts` refreshes at the end of every
 run, because GitHub Pages serves this repository from the branch itself.
 
-A failing upstream degrades to "keep serving the last good build". The
-pipeline is idempotent: unchanged payloads are not written.
+A failing upstream degrades to "keep serving the last good build"; an entry
+that has no cached build yet (a brand-new catalog row) falls back to its
+``manualRelease`` snapshot instead of disappearing. The pipeline is idempotent:
+unchanged payloads are not written.
 """
 
 from __future__ import annotations
@@ -137,6 +139,15 @@ def sync_app(
     try:
         result = chain.fetch_releases(previous_latest_url=previous_url, incremental=incremental)
     except (ProviderError, ConfigurationError) as error:
+        # Every failover leg errored. ``feeds/state.json`` is the usual last
+        # leg, but a brand-new entry has no cached snapshot yet: fall back to
+        # the catalog's manualRelease so the app is not dropped from the build
+        # (and so a fresh clone still publishes it) while the upstream is
+        # unreachable. Entries that do have cached state keep it untouched.
+        if not previous_versions:
+            manual = _manual_versions(app, f"upstream unreachable ({error})")
+            if manual:
+                return manual, "manual"
         raise SyncError(str(error)) from error
     releases = result.releases
 

@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 64,
-    "verified": 63,
+    "apps": 77,
+    "verified": 76,
     "communityVerified": 1,
     "unverified": 0,
-    "hashVerified": 41,
-    "avgTrustScore": 6.98,
+    "hashVerified": 50,
+    "avgTrustScore": 6.99,
     "trustLevels": [
       "Verified",
       "Trusted",
@@ -137,6 +137,26 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "bootstrap",
+      "name": "Bootstrap",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "roothide/Bootstrap",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
       "app": "conduit",
       "name": "Conduit",
       "status": "VERIFIED",
@@ -193,6 +213,46 @@
         "official upstream (github-release)"
       ],
       "downloadURL": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "dopamine",
+      "name": "Dopamine",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "opa334/Dopamine",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "roothide/Dopamine2-roothide",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa",
       "trustScore": 7.5,
       "trustBadge": "Trusted"
     },
@@ -255,6 +315,26 @@
       "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
       "trustScore": 6.0,
       "trustBadge": "Community"
+    },
+    {
+      "app": "gopeed",
+      "name": "Gopeed",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "GopeedLab/gopeed",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "ime",
@@ -437,6 +517,26 @@
       "trustBadge": "Community"
     },
     {
+      "app": "manicemu",
+      "name": "Manic EMU",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Manic-EMU/ManicEMU",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
       "app": "maxmusic",
       "name": "MaxMusic",
       "status": "VERIFIED",
@@ -573,6 +673,26 @@
         "official upstream (altstore)"
       ],
       "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "odyssey",
+      "name": "Odyssey",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "Odyssey-Team/Odyssey",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
       "trustScore": 6.0,
       "trustBadge": "Community"
     },
@@ -737,6 +857,46 @@
       "trustBadge": "Community"
     },
     {
+      "app": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "altstore",
+      "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "altstore",
+      "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
       "app": "saber",
       "name": "Saber",
       "status": "VERIFIED",
@@ -755,6 +915,46 @@
       "downloadURL": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.ipa",
       "trustScore": 7.5,
       "trustBadge": "Trusted"
+    },
+    {
+      "app": "sameboy",
+      "name": "SameBoy",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "LIJI32/SameBoy",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "serotonin",
+      "name": "Serotonin",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "mineek/Serotonin",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
     },
     {
       "app": "sidestore",
@@ -937,6 +1137,26 @@
       "trustBadge": "Community"
     },
     {
+      "app": "taurine",
+      "name": "Taurine",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "Odyssey-Team/Taurine",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
       "app": "telegram-mxgram",
       "name": "Telegram MxGram",
       "status": "VERIFIED",
@@ -1037,6 +1257,26 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "unc0ver",
+      "name": "unc0ver",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "pwn20wndstuff/Undecimus",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
       "app": "utm",
       "name": "UTM",
       "status": "VERIFIED",
@@ -1115,6 +1355,26 @@
       "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
       "trustScore": 6.0,
       "trustBadge": "Community"
+    },
+    {
+      "app": "xenios",
+      "name": "XeniOS",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "xenios-jp/XeniOS",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "yattee",

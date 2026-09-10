@@ -207,7 +207,7 @@ mutated, into the distribution surface:
                 │  ├─ upstream{} ── RepositoryRef ─► providers ─► state │
                 │  ├─ verification{} ─► verification.json (levels)      │
                 │  ├─ compatibility{} ─► feeds (minOS), compare, pages  │
-                │  ├─ manualRelease{} ─► fallback when upstream empty   │
+                │  ├─ manualRelease{} ─► fallback: upstream empty/gone  │
                 │  ├─ screenshots/featured/tags ─► discovery, pages     │
                 │  └─ fallbackDownloadURLs ─► feeds + mirror probes     │
                 └───────────────────────────────────────────────────────┘
