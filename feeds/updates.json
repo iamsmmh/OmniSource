@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-09-10",
   "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
-  "count": 67,
+  "count": 73,
   "updates": [
     {
       "slug": "youpro",
@@ -154,6 +154,21 @@
       "shortDescription": "FLAC Downloader for iOS"
     },
     {
+      "slug": "nexasc",
+      "name": "NexaSC",
+      "version": "8.77.0",
+      "previousVersion": "",
+      "date": "2026-09-07",
+      "kind": "new",
+      "changelog": "SoundCloud 8.77.0 | SoundCloud-8.77.0-NexaSC\n\nIPA Vault build for SoundCloud (NexaSC), version 8.77.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SoundCloud.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/nexasc.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/nexasc.xml",
+      "status": "beta",
+      "shortDescription": "SoundCloud Go+ unlock and ad removal (unofficial build)"
+    },
+    {
       "slug": "voyager",
       "name": "Voyager",
       "version": "2.49.0",
@@ -197,6 +212,36 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/glow.xml",
       "status": "stable",
       "shortDescription": "Clean, powerful Facebook tweak by dayanch96"
+    },
+    {
+      "slug": "msgplusx",
+      "name": "MSGPlusX",
+      "version": "577.0.0",
+      "previousVersion": "",
+      "date": "2026-09-03",
+      "kind": "new",
+      "changelog": "Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 577.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/msgplusx.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/msgplusx.xml",
+      "status": "stable",
+      "shortDescription": "Messenger tweak by Dens0r & lucaspedrosa (unofficial build)"
+    },
+    {
+      "slug": "messenger-flow",
+      "name": "Messenger Flow",
+      "version": "577.0.0",
+      "previousVersion": "",
+      "date": "2026-09-03",
+      "kind": "new",
+      "changelog": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/messenger-flow.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/messenger-flow.xml",
+      "status": "stable",
+      "shortDescription": "Facebook Messenger tweak by dvntms (unofficial build)"
     },
     {
       "slug": "aidoku",
@@ -274,6 +319,21 @@
       "shortDescription": "Advanced YouTube tweak with extensive controls"
     },
     {
+      "slug": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "version": "1.5.3",
+      "previousVersion": "",
+      "date": "2026-09-01",
+      "kind": "new",
+      "changelog": "Turrit 1.5.3 | Turrit-1.5.3-MxGram\n\nIPA Vault build for Turrit (MxGram), version 1.5.3",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Turrit.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/turrit-mxgram.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/turrit-mxgram.xml",
+      "status": "stable",
+      "shortDescription": "MxGram-tweaked Turrit client (unofficial build)"
+    },
+    {
       "slug": "ttkillerplus",
       "name": "TTKillerPlus",
       "version": "46.7.0",
@@ -287,6 +347,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/ttkillerplus.xml",
       "status": "stable",
       "shortDescription": "TikTok with downloads, no ads and region switch"
+    },
+    {
+      "slug": "threadsaver",
+      "name": "ThreadSaver",
+      "version": "445.1",
+      "previousVersion": "",
+      "date": "2026-09-01",
+      "kind": "new",
+      "changelog": "Threads 445.1 | Threads-445.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 445.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Threads.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/threadsaver.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/threadsaver.xml",
+      "status": "stable",
+      "shortDescription": "Threads enhancement tweak (unofficial build)"
     },
     {
       "slug": "telegram-mxgram",
@@ -392,6 +467,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/infuseplus.xml",
       "status": "stable",
       "shortDescription": "Enhancer tweak for the Infuse video player"
+    },
+    {
+      "slug": "ime",
+      "name": "iMe MxGram",
+      "version": "12.8.1",
+      "previousVersion": "",
+      "date": "2026-09-01",
+      "kind": "new",
+      "changelog": "iMe 12.8.1 | iMe-12.8.1-MxGram\n\nIPA Vault build for iMe (MxGram), version 12.8.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/iMe.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ime.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/ime.xml",
+      "status": "stable",
+      "shortDescription": "MxGram-tweaked iMe messenger (unofficial build)"
     },
     {
       "slug": "conduit",

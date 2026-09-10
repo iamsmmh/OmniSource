@@ -1,11 +1,11 @@
 {
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 58,
-    "reachable": 58,
+    "apps": 64,
+    "reachable": 64,
     "unreachable": 0,
     "featured": 6,
-    "healthy": 58,
+    "healthy": 64,
     "warning": 0,
     "critical": 0
   },
@@ -1276,6 +1276,138 @@
       "statusSince": "2025-09-26",
       "updatedDaysAgo": 349,
       "stale": true,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "nexasc",
+      "name": "NexaSC",
+      "status": "beta",
+      "version": "8.77.0",
+      "updatedAt": "2026-09-07",
+      "sizeBytes": 107196182,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-07",
+      "updatedDaysAgo": 3,
+      "stale": false,
+      "healthScore": 75,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.5,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "messenger-flow",
+      "name": "Messenger Flow",
+      "status": "stable",
+      "version": "577.0.0",
+      "updatedAt": "2026-09-03",
+      "sizeBytes": 112652101,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-03",
+      "updatedDaysAgo": 7,
+      "stale": false,
+      "healthScore": 75,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.5,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "msgplusx",
+      "name": "MSGPlusX",
+      "status": "stable",
+      "version": "577.0.0",
+      "updatedAt": "2026-09-03",
+      "sizeBytes": 112528712,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-03",
+      "updatedDaysAgo": 7,
+      "stale": false,
+      "healthScore": 75,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.5,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "threadsaver",
+      "name": "ThreadSaver",
+      "status": "stable",
+      "version": "445.1",
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 100461178,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-01",
+      "updatedDaysAgo": 9,
+      "stale": false,
+      "healthScore": 75,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.5,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "ime",
+      "name": "iMe MxGram",
+      "status": "stable",
+      "version": "12.8.1",
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 148174542,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-01",
+      "updatedDaysAgo": 9,
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "status": "stable",
+      "version": "1.5.3",
+      "updatedAt": "2026-09-01",
+      "sizeBytes": 94300571,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-01",
+      "updatedDaysAgo": 9,
+      "stale": false,
       "healthScore": 77,
       "healthStatus": "healthy",
       "scoreBreakdown": {

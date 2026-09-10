@@ -2,35 +2,41 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "sources": 58,
+    "sources": 64,
     "healthy": 34,
     "degraded": 15,
     "unavailable": 0,
-    "unknown": 9
+    "unknown": 15
   },
   "pipeline": {
     "status": "ok",
     "lastBuild": "2026-09-10",
-    "appsTotal": 58,
+    "appsTotal": 64,
     "appsHealthy": 34,
     "appsFailing": 0
   },
   "providers": [
     {
       "provider": "altstore",
-      "apps": 9,
+      "apps": 15,
       "healthy": 2,
       "unavailable": 0,
       "lastResolvedFrom": {
         "inkillerplus": "altstore:https://repo.ikghd.me/repo.json",
         "ttkillerplus": "altstore:https://repo.ikghd.me/repo.json",
         "glow": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "ime": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "infuseplus": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "iqface": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "messenger-flow": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "msgplusx": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "nexasc": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "ryukgram": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "sparkle": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "swiftgram": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
-        "telegram-mxgram": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json"
+        "telegram-mxgram": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "threadsaver": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "turrit-mxgram": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json"
       }
     },
     {
@@ -102,8 +108,8 @@
   "deployment": {
     "platform": "GitHub Pages (static)",
     "status": "ok",
-    "reachable": 58,
-    "total": 58
+    "reachable": 64,
+    "total": 64
   },
   "sources": [
     {
@@ -3142,6 +3148,23 @@
       "history": []
     },
     {
+      "id": "ime",
+      "app": "ime",
+      "name": "iMe MxGram",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "infuseplus",
       "app": "infuseplus",
       "name": "Infuse Plus",
@@ -3236,6 +3259,23 @@
       ]
     },
     {
+      "id": "messenger-flow",
+      "app": "messenger-flow",
+      "name": "Messenger Flow",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-03",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "minivmac",
       "app": "minivmac",
       "name": "Mini vMac",
@@ -3296,6 +3336,23 @@
       ]
     },
     {
+      "id": "msgplusx",
+      "app": "msgplusx",
+      "name": "MSGPlusX",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-03",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "neofreebird",
       "app": "neofreebird",
       "name": "NeoFreeBird",
@@ -3354,6 +3411,23 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "nexasc",
+      "app": "nexasc",
+      "name": "NexaSC",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-07",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "ppsspp",
@@ -3948,6 +4022,40 @@
       "id": "telegram-mxgram",
       "app": "telegram-mxgram",
       "name": "Telegram MxGram",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "threadsaver",
+      "app": "threadsaver",
+      "name": "ThreadSaver",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "turrit-mxgram",
+      "app": "turrit-mxgram",
+      "name": "Turrit MxGram",
       "source": "927tx/IPA-Vault",
       "sourceURL": "https://raw.githubusercontent.com",
       "type": "altstore",

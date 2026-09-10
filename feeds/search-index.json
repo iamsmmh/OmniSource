@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 58,
+  "count": 64,
   "fuse": {
     "keys": [
       {
@@ -1536,6 +1536,162 @@
       "icon": "assets/Reddit.webp",
       "pageURL": "apps/redditfilter/",
       "version": "2025.37.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "nexasc",
+      "slug": "nexasc",
+      "name": "NexaSC",
+      "subtitle": "SoundCloud Go+ unlock and ad removal (unofficial build)",
+      "shortDescription": "SoundCloud Go+ unlock and ad removal (unofficial build)",
+      "description": "NexaSC is a community SoundCloud tweak by cielogic: it unlocks SoundCloud Go+ features, removes ads, adds track downloads and can fetch lyrics automatically (via LRCLIB). The tweak is opened by long-pressing the home icon.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "cielogic & IPA Vault",
+      "bundleId": "com.soundcloud.TouchApp",
+      "icon": "assets/SoundCloud.webp",
+      "pageURL": "apps/nexasc/",
+      "version": "8.77.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "messenger-flow",
+      "slug": "messenger-flow",
+      "name": "Messenger Flow",
+      "subtitle": "Facebook Messenger tweak by dvntms (unofficial build)",
+      "shortDescription": "Facebook Messenger tweak by dvntms (unofficial build)",
+      "description": "Messenger Flow is a tweaked Facebook Messenger build by dvntms, distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The Flow tweak's feature set is defined by its build; no official public documentation exists.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "dvntms & IPA Vault",
+      "bundleId": "com.facebook.Messenger.flow",
+      "icon": "assets/Messenger.webp",
+      "pageURL": "apps/messenger-flow/",
+      "version": "577.0.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "msgplusx",
+      "slug": "msgplusx",
+      "name": "MSGPlusX",
+      "subtitle": "Messenger tweak by Dens0r & lucaspedrosa (unofficial build)",
+      "shortDescription": "Messenger tweak by Dens0r & lucaspedrosa (unofficial build)",
+      "description": "MSGPlusX is a tweaked Facebook Messenger build (MessengerPlus lineage by Dens0r and lucaspedrosa), distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The tweak's feature set is defined by its build; no official public documentation exists.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "Dens0r & IPA Vault & lucaspedrosa",
+      "bundleId": "com.facebook.Messenger",
+      "icon": "assets/Messenger.webp",
+      "pageURL": "apps/msgplusx/",
+      "version": "577.0.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "threadsaver",
+      "slug": "threadsaver",
+      "name": "ThreadSaver",
+      "subtitle": "Threads enhancement tweak (unofficial build)",
+      "shortDescription": "Threads enhancement tweak (unofficial build)",
+      "description": "ThreadSaver (by swiftleopard) is a tweaked Threads build distributed ready-to-sideload through the IPA Vault on a current Threads base version. The tweak's feature set is defined by its build; no official public documentation exists.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "swiftleopard & IPA Vault",
+      "bundleId": "com.burbn.barcelona",
+      "icon": "assets/Threads.webp",
+      "pageURL": "apps/threadsaver/",
+      "version": "445.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "ime",
+      "slug": "ime",
+      "name": "iMe MxGram",
+      "subtitle": "MxGram-tweaked iMe messenger (unofficial build)",
+      "shortDescription": "MxGram-tweaked iMe messenger (unofficial build)",
+      "description": "iMe MxGram is the third-party iMe messenger with the MxGram tweak (by m1ronx1412) injected: ghost mode with per-user exceptions, anti-revoke, saving of protected media and more, on top of the iMe Telegram client.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "m1ronx1412 & IPA Vault",
+      "bundleId": "com.olcorporation.olai",
+      "icon": "assets/iMe.webp",
+      "pageURL": "apps/ime/",
+      "version": "12.8.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "turrit-mxgram",
+      "slug": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "subtitle": "MxGram-tweaked Turrit client (unofficial build)",
+      "shortDescription": "MxGram-tweaked Turrit client (unofficial build)",
+      "description": "Turrit MxGram is the third-party Turrit messenger with the MxGram tweak (by m1ronx1412) injected: ghost mode with per-user exceptions, anti-revoke, saving of protected media and more, on top of the Turrit Telegram client.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "m1ronx1412 & IPA Vault",
+      "bundleId": "com.seastar.turrit",
+      "icon": "assets/Turrit.webp",
+      "pageURL": "apps/turrit-mxgram/",
+      "version": "1.5.3",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [

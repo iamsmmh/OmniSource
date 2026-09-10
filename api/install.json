@@ -3706,6 +3706,378 @@
           "instructions": "Open LiveContainer, choose Sources and paste the URL."
         }
       ]
+    },
+    {
+      "slug": "nexasc",
+      "name": "NexaSC",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/feeds/nexasc.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/nexasc.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "messenger-flow",
+      "name": "Messenger Flow",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "msgplusx",
+      "name": "MSGPlusX",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "threadsaver",
+      "name": "ThreadSaver",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "ime",
+      "name": "iMe MxGram",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ime.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ime.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ime.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ime.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ime.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/feeds/ime.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ime.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ime.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ime.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
     }
   ]
 }

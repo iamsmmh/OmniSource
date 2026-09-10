@@ -1,0 +1,119 @@
+{
+  "name": "OmniSource - Messenger Flow",
+  "identifier": "com.iamsmmh.omnisource.messenger-flow",
+  "apiVersion": "v2",
+  "subtitle": "Facebook Messenger tweak by dvntms (unofficial build)",
+  "description": "Standalone distribution feed for Messenger Flow, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/messenger-flow.json",
+  "apps": [
+    {
+      "name": "Messenger Flow",
+      "bundleIdentifier": "com.facebook.Messenger.flow",
+      "developerName": "dvntms & IPA Vault",
+      "subtitle": "Facebook Messenger tweak by dvntms (unofficial build)",
+      "localizedDescription": "Messenger Flow is a tweaked Facebook Messenger build by dvntms, distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The Flow tweak's feature set is defined by its build; no official public documentation exists.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
+      "tintColor": "0084FF",
+      "category": "social",
+      "version": "577.0.0",
+      "versionDate": "2026-09-03",
+      "versionDescription": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+      "size": 112652101,
+      "versions": [
+        {
+          "version": "577.0.0",
+          "date": "2026-09-03",
+          "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+          "size": 112652101,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Messenger-577.0.0-Flow.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 112652101,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "messenger-flow",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "UNOFFICIAL BUILD. Flow has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses its own bundle identifier, so it installs alongside the stock App Store Messenger."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-03",
+          "lastUpdatedAt": "2026-09-03"
+        }
+      }
+    }
+  ],
+  "news": []
+}

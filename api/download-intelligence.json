@@ -5,7 +5,7 @@
   "summary": {
     "averageAvailability": 100.0,
     "averageResponseTimeMs": 341.6,
-    "mirrorCount": 59,
+    "mirrorCount": 65,
     "probes": 849
   },
   "apps": [
@@ -647,6 +647,72 @@
       "mirrorCount": 1,
       "releaseConsistency": 0.0,
       "primaryURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "nexasc",
+      "name": "NexaSC",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "messenger-flow",
+      "name": "Messenger Flow",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "msgplusx",
+      "name": "MSGPlusX",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "threadsaver",
+      "name": "ThreadSaver",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "ime",
+      "name": "iMe MxGram",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
       "fallbackURLs": []
     }
   ]

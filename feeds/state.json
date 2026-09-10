@@ -226,11 +226,11 @@
   "analyticsHistory": [
     {
       "date": "2026-09-10",
-      "apps": 58,
+      "apps": 64,
       "sources": 48,
-      "verified": 57,
+      "verified": 63,
       "deadLinks": 0,
-      "newThisWeek": 6,
+      "newThisWeek": 9,
       "updatedThisWeek": 8
     }
   ],
@@ -2049,6 +2049,39 @@
     ],
     "syncedAt": "2026-09-10"
   },
+  "ime": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "12.8.1",
+        "date": "2026-09-01",
+        "localizedDescription": "iMe 12.8.1 | iMe-12.8.1-MxGram\n\nIPA Vault build for iMe (MxGram), version 12.8.1",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+        "size": 148174542,
+        "minOSVersion": "13.0",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "iMe-12.8.1-MxGram.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 148174542,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "infuseplus": {
     "retryCount": 0,
     "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
@@ -3670,6 +3703,39 @@
     ],
     "lastResolvedSource": "github:Ashreq/ashstore-repo"
   },
+  "messenger-flow": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "577.0.0",
+        "date": "2026-09-03",
+        "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+        "size": 112652101,
+        "minOSVersion": "15.1",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Messenger-577.0.0-Flow.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 112652101,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "minivmac": {
     "retryCount": 0,
     "lastResolvedSource": "github:zydeco/minivmac4ios",
@@ -3766,6 +3832,39 @@
         "detail": "HTTP 302"
       }
     ]
+  },
+  "msgplusx": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "577.0.0",
+        "date": "2026-09-03",
+        "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 577.0.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+        "size": 112528712,
+        "minOSVersion": "15.1",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Messenger-577.0.0-MSGPlusX.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 112528712,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
   },
   "neofreebird": {
     "retryCount": 0,
@@ -3864,6 +3963,39 @@
         "detail": "HTTP 302"
       }
     ]
+  },
+  "nexasc": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "8.77.0",
+        "date": "2026-09-07",
+        "localizedDescription": "SoundCloud 8.77.0 | SoundCloud-8.77.0-NexaSC\n\nIPA Vault build for SoundCloud (NexaSC), version 8.77.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+        "size": 107196182,
+        "minOSVersion": "16.4",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "SoundCloud-8.77.0-NexaSC.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 107196182,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
   },
   "ppsspp": {
     "retryCount": 0,
@@ -6348,6 +6480,39 @@
     ],
     "syncedAt": "2026-09-10"
   },
+  "threadsaver": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "445.1",
+        "date": "2026-09-01",
+        "localizedDescription": "Threads 445.1 | Threads-445.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 445.1",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+        "size": 100461178,
+        "minOSVersion": "15.1",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Threads-445.1-ThreadSaver.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 100461178,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "ttkillerplus": {
     "retryCount": 0,
     "versions": [
@@ -6570,6 +6735,39 @@
     ],
     "lastResolvedSource": "altstore:https://repo.ikghd.me/repo.json"
   },
+  "turrit-mxgram": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "1.5.3",
+        "date": "2026-09-01",
+        "localizedDescription": "Turrit 1.5.3 | Turrit-1.5.3-MxGram\n\nIPA Vault build for Turrit (MxGram), version 1.5.3",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+        "size": 94300571,
+        "minOSVersion": "13.0",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Turrit-1.5.3-MxGram.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 94300571,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "twitchadblock": {
     "retryCount": 0,
     "lastResolvedSource": "github:gunnerkidBT/TwitchAdBlock",
@@ -6770,6 +6968,16 @@
       "kind": "new"
     },
     {
+      "appId": "nexasc",
+      "name": "NexaSC",
+      "version": "8.77.0",
+      "previousVersion": null,
+      "releaseDate": "2026-09-07",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+      "changelog": "SoundCloud 8.77.0 | SoundCloud-8.77.0-NexaSC\n\nIPA Vault build for SoundCloud (NexaSC), version 8.77.0",
+      "kind": "new"
+    },
+    {
       "appId": "voyager",
       "name": "Voyager",
       "version": "2.49.0",
@@ -6797,6 +7005,26 @@
       "releaseDate": "2026-09-05",
       "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
       "changelog": "Facebook 577.1 | Facebook-577.1-Glow\n\nIPA Vault build for Facebook (Glow), version 577.1",
+      "kind": "new"
+    },
+    {
+      "appId": "msgplusx",
+      "name": "MSGPlusX",
+      "version": "577.0.0",
+      "previousVersion": null,
+      "releaseDate": "2026-09-03",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+      "changelog": "Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 577.0.0",
+      "kind": "new"
+    },
+    {
+      "appId": "messenger-flow",
+      "name": "Messenger Flow",
+      "version": "577.0.0",
+      "previousVersion": null,
+      "releaseDate": "2026-09-03",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+      "changelog": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
       "kind": "new"
     },
     {
@@ -6860,6 +7088,16 @@
       "kind": "new"
     },
     {
+      "appId": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "version": "1.5.3",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+      "changelog": "Turrit 1.5.3 | Turrit-1.5.3-MxGram\n\nIPA Vault build for Turrit (MxGram), version 1.5.3",
+      "kind": "new"
+    },
+    {
       "appId": "ttkillerplus",
       "name": "TTKillerPlus",
       "version": "46.7.0",
@@ -6867,6 +7105,16 @@
       "releaseDate": "2026-09-01",
       "downloadUrl": "https://ikghd.site/ipa/TikTok_46.7_TTKillerPlus_2.1.ipa",
       "changelog": "TikTok 46.7.0 | TikTok_46.7_TTKillerPlus_2.1\n\n• Add v46.0+ compatibility.\n• Fix like confirmation bypass on double tap.\n• Fix post date display format.\n• Fix settings localization & toggles.\n• Fix flag button not tappable.\n• Other fixes & improvements.\n• Update base IPA to TikTok v46.7",
+      "kind": "new"
+    },
+    {
+      "appId": "threadsaver",
+      "name": "ThreadSaver",
+      "version": "445.1",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+      "changelog": "Threads 445.1 | Threads-445.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 445.1",
       "kind": "new"
     },
     {
@@ -6947,6 +7195,16 @@
       "releaseDate": "2026-09-01",
       "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
       "changelog": "Infuse 8.5.3 | Infuse-8.5.3-Infuse-Plus\n\nIPA Vault build for Infuse Plus (8.5.3), version 8.5.3",
+      "kind": "new"
+    },
+    {
+      "appId": "ime",
+      "name": "iMe MxGram",
+      "version": "12.8.1",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+      "changelog": "iMe 12.8.1 | iMe-12.8.1-MxGram\n\nIPA Vault build for iMe (MxGram), version 12.8.1",
       "kind": "new"
     },
     {

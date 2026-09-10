@@ -10,7 +10,7 @@ One AltStore-compatible source URL for **AltStore · SideStore · Feather · ESi
 
 <!-- omnisource:stats:start -->
 
-**58** apps · **48** upstream sources · **57** verified · **1** community verified · **58/58** downloads online · last sync **2026-09-10**.
+**64** apps · **48** upstream sources · **63** verified · **1** community verified · **64/64** downloads online · last sync **2026-09-10**.
 
 <!-- omnisource:stats:end -->
 
@@ -107,7 +107,7 @@ The complete generated catalog is below — it refreshes automatically on every 
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-10 · 58 apps · 58/58 downloads reachable._
+_Catalogue last changed 2026-09-10 · 64 apps · 64/64 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -169,6 +169,12 @@ _Catalogue last changed 2026-09-10 · 58 apps · 58/58 downloads reachable._
 | **RyukGram** | `com.burbn.instagram` | `445.0.0` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json) | [`ryukgram.json`](https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json) | [`ryukgram.xml`](https://iamsmmh.github.io/OmniSource/feeds/ryukgram.xml) |
 | **Sparkle** | `com.burbn.instagram.sparkle` | `445.0.0` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sparkle.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sparkle.json) | [`sparkle.json`](https://iamsmmh.github.io/OmniSource/feeds/sparkle.json) | [`sparkle.xml`](https://iamsmmh.github.io/OmniSource/feeds/sparkle.xml) |
 | **RedditFilter** | `com.atebits.Tweetie2` | `2025.37.0` | 2025-09-26 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/redditfilter.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/redditfilter.json) | [`redditfilter.json`](https://iamsmmh.github.io/OmniSource/feeds/redditfilter.json) | [`redditfilter.xml`](https://iamsmmh.github.io/OmniSource/feeds/redditfilter.xml) |
+| **NexaSC** | `com.soundcloud.TouchApp` | `8.77.0` | 2026-09-07 | 🟡 beta | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/nexasc.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/nexasc.json) | [`nexasc.json`](https://iamsmmh.github.io/OmniSource/feeds/nexasc.json) | [`nexasc.xml`](https://iamsmmh.github.io/OmniSource/feeds/nexasc.xml) |
+| **Messenger Flow** | `com.facebook.Messenger.flow` | `577.0.0` | 2026-09-03 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json) | [`messenger-flow.json`](https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json) | [`messenger-flow.xml`](https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.xml) |
+| **MSGPlusX** | `com.facebook.Messenger` | `577.0.0` | 2026-09-03 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json) | [`msgplusx.json`](https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json) | [`msgplusx.xml`](https://iamsmmh.github.io/OmniSource/feeds/msgplusx.xml) |
+| **ThreadSaver** | `com.burbn.barcelona` | `445.1` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json) | [`threadsaver.json`](https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json) | [`threadsaver.xml`](https://iamsmmh.github.io/OmniSource/feeds/threadsaver.xml) |
+| **iMe MxGram** | `com.olcorporation.olai` | `12.8.1` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ime.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ime.json) | [`ime.json`](https://iamsmmh.github.io/OmniSource/feeds/ime.json) | [`ime.xml`](https://iamsmmh.github.io/OmniSource/feeds/ime.xml) |
+| **Turrit MxGram** | `com.seastar.turrit` | `1.5.3` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json) | [`turrit-mxgram.json`](https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json) | [`turrit-mxgram.xml`](https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.xml) |
 
 <!-- omnisource:catalog:end -->
 

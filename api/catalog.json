@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 58,
+  "count": 64,
   "baseURL": "https://iamsmmh.github.io/OmniSource",
   "apps": [
     {
@@ -2380,6 +2380,252 @@
         "reachable": true,
         "detail": "not probed",
         "updatedAt": "2025-09-26"
+      }
+    },
+    {
+      "id": "nexasc",
+      "slug": "nexasc",
+      "name": "NexaSC",
+      "developer": "cielogic & IPA Vault",
+      "version": "8.77.0",
+      "releaseDate": "2026-09-07",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.soundcloud.TouchApp",
+      "bundleIdentifier": "com.soundcloud.TouchApp",
+      "description": "NexaSC is a community SoundCloud tweak by cielogic: it unlocks SoundCloud Go+ features, removes ads, adds track downloads and can fetch lyrics automatically (via LRCLIB). The tweak is opened by long-pressing the home icon.",
+      "shortDescription": "SoundCloud Go+ unlock and ad removal (unofficial build)",
+      "icon": "SoundCloud.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SoundCloud.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/nexasc/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/nexasc.json",
+      "homepage": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+      "status": "beta",
+      "featured": false,
+      "size": 107196182,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+      "sha256": null,
+      "minOSVersion": "16.4",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-07"
+      }
+    },
+    {
+      "id": "messenger-flow",
+      "slug": "messenger-flow",
+      "name": "Messenger Flow",
+      "developer": "dvntms & IPA Vault",
+      "version": "577.0.0",
+      "releaseDate": "2026-09-03",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.facebook.Messenger.flow",
+      "bundleIdentifier": "com.facebook.Messenger.flow",
+      "description": "Messenger Flow is a tweaked Facebook Messenger build by dvntms, distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The Flow tweak's feature set is defined by its build; no official public documentation exists.",
+      "shortDescription": "Facebook Messenger tweak by dvntms (unofficial build)",
+      "icon": "Messenger.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/messenger-flow/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/messenger-flow.json",
+      "homepage": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+      "status": "stable",
+      "featured": false,
+      "size": 112652101,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+      "sha256": null,
+      "minOSVersion": "15.1",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-03"
+      }
+    },
+    {
+      "id": "msgplusx",
+      "slug": "msgplusx",
+      "name": "MSGPlusX",
+      "developer": "Dens0r & IPA Vault & lucaspedrosa",
+      "version": "577.0.0",
+      "releaseDate": "2026-09-03",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.facebook.Messenger",
+      "bundleIdentifier": "com.facebook.Messenger",
+      "description": "MSGPlusX is a tweaked Facebook Messenger build (MessengerPlus lineage by Dens0r and lucaspedrosa), distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The tweak's feature set is defined by its build; no official public documentation exists.",
+      "shortDescription": "Messenger tweak by Dens0r & lucaspedrosa (unofficial build)",
+      "icon": "Messenger.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/msgplusx/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/msgplusx.json",
+      "homepage": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+      "status": "stable",
+      "featured": false,
+      "size": 112528712,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+      "sha256": null,
+      "minOSVersion": "15.1",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-03"
+      }
+    },
+    {
+      "id": "threadsaver",
+      "slug": "threadsaver",
+      "name": "ThreadSaver",
+      "developer": "swiftleopard & IPA Vault",
+      "version": "445.1",
+      "releaseDate": "2026-09-01",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.burbn.barcelona",
+      "bundleIdentifier": "com.burbn.barcelona",
+      "description": "ThreadSaver (by swiftleopard) is a tweaked Threads build distributed ready-to-sideload through the IPA Vault on a current Threads base version. The tweak's feature set is defined by its build; no official public documentation exists.",
+      "shortDescription": "Threads enhancement tweak (unofficial build)",
+      "icon": "Threads.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Threads.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/threadsaver/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/threadsaver.json",
+      "homepage": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+      "status": "stable",
+      "featured": false,
+      "size": 100461178,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+      "sha256": null,
+      "minOSVersion": "15.1",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-01"
+      }
+    },
+    {
+      "id": "ime",
+      "slug": "ime",
+      "name": "iMe MxGram",
+      "developer": "m1ronx1412 & IPA Vault",
+      "version": "12.8.1",
+      "releaseDate": "2026-09-01",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.olcorporation.olai",
+      "bundleIdentifier": "com.olcorporation.olai",
+      "description": "iMe MxGram is the third-party iMe messenger with the MxGram tweak (by m1ronx1412) injected: ghost mode with per-user exceptions, anti-revoke, saving of protected media and more, on top of the iMe Telegram client.",
+      "shortDescription": "MxGram-tweaked iMe messenger (unofficial build)",
+      "icon": "iMe.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/iMe.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/ime/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ime.json",
+      "homepage": "https://github.com/m1ronx1412/mxgram",
+      "status": "stable",
+      "featured": false,
+      "size": 148174542,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+      "sha256": null,
+      "minOSVersion": "13.0",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-01"
+      }
+    },
+    {
+      "id": "turrit-mxgram",
+      "slug": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "developer": "m1ronx1412 & IPA Vault",
+      "version": "1.5.3",
+      "releaseDate": "2026-09-01",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.seastar.turrit",
+      "bundleIdentifier": "com.seastar.turrit",
+      "description": "Turrit MxGram is the third-party Turrit messenger with the MxGram tweak (by m1ronx1412) injected: ghost mode with per-user exceptions, anti-revoke, saving of protected media and more, on top of the Turrit Telegram client.",
+      "shortDescription": "MxGram-tweaked Turrit client (unofficial build)",
+      "icon": "Turrit.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Turrit.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/turrit-mxgram/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/turrit-mxgram.json",
+      "homepage": "https://github.com/m1ronx1412/mxgram",
+      "status": "stable",
+      "featured": false,
+      "size": 94300571,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+      "sha256": null,
+      "minOSVersion": "13.0",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-01"
       }
     }
   ]

@@ -3425,6 +3425,427 @@
         "minOSVersion": "15.0",
         "descriptionTemplate": "Reddit {version} | {label}"
       }
+    },
+    {
+      "slug": "nexasc",
+      "name": "NexaSC",
+      "subtitle": "SoundCloud Go+ unlock and ad removal (unofficial build)",
+      "bundleIdentifier": "com.soundcloud.TouchApp",
+      "developerName": "cielogic & IPA Vault",
+      "category": "social",
+      "tintColor": "FF5500",
+      "icon": "SoundCloud.webp",
+      "localizedDescription": "NexaSC is a community SoundCloud tweak by cielogic: it unlocks SoundCloud Go+ features, removes ads, adds track downloads and can fetch lyrics automatically (via LRCLIB). The tweak is opened by long-pressing the home icon.",
+      "screenshots": [],
+      "featured": false,
+      "status": "beta",
+      "alternativeTo": "ttkillerplus",
+      "verification": {
+        "method": "altstore",
+        "publisher": "927tx/IPA-Vault",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.4",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "UNOFFICIAL BUILD. NexaSC has no public repository or developer feed - the only distribution channel is the IPA Vault source, so no developer-published download link exists to verify. Not affiliated with or endorsed by SoundCloud Ltd. Current SoundCloud 8.x builds require iOS 16.4 or newer (a pinned 7.68.1 build for iOS 16.0-16.3 also exists in the vault but is not tracked here). Shares com.soundcloud.TouchApp with TTKillerPlus in this catalog - install one at a time."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "appId": "com.soundcloud.TouchApp",
+        "keepVersions": 1,
+        "minOSVersion": "16.4",
+        "descriptionTemplate": "SoundCloud {version} | {label}"
+      }
+    },
+    {
+      "slug": "messenger-flow",
+      "name": "Messenger Flow",
+      "subtitle": "Facebook Messenger tweak by dvntms (unofficial build)",
+      "bundleIdentifier": "com.facebook.Messenger.flow",
+      "developerName": "dvntms & IPA Vault",
+      "category": "social",
+      "tintColor": "0084FF",
+      "icon": "Messenger.webp",
+      "localizedDescription": "Messenger Flow is a tweaked Facebook Messenger build by dvntms, distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The Flow tweak's feature set is defined by its build; no official public documentation exists.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "alternativeTo": "msgplusx",
+      "verification": {
+        "method": "altstore",
+        "publisher": "927tx/IPA-Vault",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "UNOFFICIAL BUILD. Flow has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses its own bundle identifier, so it installs alongside the stock App Store Messenger."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "appId": "com.facebook.Messenger.flow",
+        "keepVersions": 1,
+        "minOSVersion": "15.1",
+        "descriptionTemplate": "Messenger {version} | {label}"
+      }
+    },
+    {
+      "slug": "msgplusx",
+      "name": "MSGPlusX",
+      "subtitle": "Messenger tweak by Dens0r & lucaspedrosa (unofficial build)",
+      "bundleIdentifier": "com.facebook.Messenger",
+      "developerName": "Dens0r & IPA Vault & lucaspedrosa",
+      "category": "social",
+      "tintColor": "0084FF",
+      "icon": "Messenger.webp",
+      "localizedDescription": "MSGPlusX is a tweaked Facebook Messenger build (MessengerPlus lineage by Dens0r and lucaspedrosa), distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The tweak's feature set is defined by its build; no official public documentation exists.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "alternativeTo": "messenger-flow",
+      "verification": {
+        "method": "altstore",
+        "publisher": "927tx/IPA-Vault",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "UNOFFICIAL BUILD. MSGPlusX has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses the stock Messenger bundle identifier, so installing it REPLACES the App Store Messenger on device."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "appId": "com.facebook.Messenger",
+        "keepVersions": 1,
+        "minOSVersion": "15.1",
+        "descriptionTemplate": "Messenger {version} | {label}"
+      }
+    },
+    {
+      "slug": "threadsaver",
+      "name": "ThreadSaver",
+      "subtitle": "Threads enhancement tweak (unofficial build)",
+      "bundleIdentifier": "com.burbn.barcelona",
+      "developerName": "swiftleopard & IPA Vault",
+      "category": "social",
+      "tintColor": "000000",
+      "icon": "Threads.webp",
+      "localizedDescription": "ThreadSaver (by swiftleopard) is a tweaked Threads build distributed ready-to-sideload through the IPA Vault on a current Threads base version. The tweak's feature set is defined by its build; no official public documentation exists.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "verification": {
+        "method": "altstore",
+        "publisher": "927tx/IPA-Vault",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "UNOFFICIAL BUILD. ThreadSaver has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses the stock Threads bundle identifier, so installing it REPLACES the App Store Threads on device."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "appId": "com.burbn.barcelona",
+        "keepVersions": 1,
+        "minOSVersion": "15.1",
+        "descriptionTemplate": "Threads {version} | {label}"
+      }
+    },
+    {
+      "slug": "ime",
+      "name": "iMe MxGram",
+      "subtitle": "MxGram-tweaked iMe messenger (unofficial build)",
+      "bundleIdentifier": "com.olcorporation.olai",
+      "developerName": "m1ronx1412 & IPA Vault",
+      "category": "social",
+      "tintColor": "2AABEE",
+      "icon": "iMe.webp",
+      "localizedDescription": "iMe MxGram is the third-party iMe messenger with the MxGram tweak (by m1ronx1412) injected: ghost mode with per-user exceptions, anti-revoke, saving of protected media and more, on top of the iMe Telegram client.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/m1ronx1412/mxgram",
+      "alternativeTo": "turrit-mxgram",
+      "verification": {
+        "method": "altstore",
+        "publisher": "927tx/IPA-Vault",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "13.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "UNOFFICIAL BUILD - TWICE OVER. iMe is itself an unofficial third-party Telegram client (not affiliated with Telegram FZ-LLC), and this is a community rebuild of it with the MxGram tweak injected. The tweak's official project (m1ronx1412/mxgram) publishes .deb/.dylib assets only; the ready-to-sideload IPA exists solely in the IPA Vault source, so no developer-published IPA link exists to verify. Uses its own bundle identifier."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "appId": "com.olcorporation.olai",
+        "keepVersions": 1,
+        "minOSVersion": "13.0",
+        "descriptionTemplate": "iMe {version} | {label}"
+      }
+    },
+    {
+      "slug": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "subtitle": "MxGram-tweaked Turrit client (unofficial build)",
+      "bundleIdentifier": "com.seastar.turrit",
+      "developerName": "m1ronx1412 & IPA Vault",
+      "category": "social",
+      "tintColor": "0088CC",
+      "icon": "Turrit.webp",
+      "localizedDescription": "Turrit MxGram is the third-party Turrit messenger with the MxGram tweak (by m1ronx1412) injected: ghost mode with per-user exceptions, anti-revoke, saving of protected media and more, on top of the Turrit Telegram client.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/m1ronx1412/mxgram",
+      "alternativeTo": "ime",
+      "verification": {
+        "method": "altstore",
+        "publisher": "927tx/IPA-Vault",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "13.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "UNOFFICIAL BUILD - TWICE OVER. Turrit is itself an unofficial third-party Telegram client (not affiliated with Telegram FZ-LLC), and this is a community rebuild of it with the MxGram tweak injected. The tweak's official project (m1ronx1412/mxgram) publishes .deb/.dylib assets only; the ready-to-sideload IPA exists solely in the IPA Vault source, so no developer-published IPA link exists to verify. Uses its own bundle identifier."
+      },
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "appId": "com.seastar.turrit",
+        "keepVersions": 1,
+        "minOSVersion": "13.0",
+        "descriptionTemplate": "Turrit {version} | {label}"
+      }
     }
   ]
 }

@@ -1671,6 +1671,110 @@
       }
     },
     {
+      "name": "iMe MxGram",
+      "bundleIdentifier": "com.olcorporation.olai",
+      "developerName": "m1ronx1412 & IPA Vault",
+      "subtitle": "MxGram-tweaked iMe messenger (unofficial build)",
+      "localizedDescription": "iMe MxGram is the third-party iMe messenger with the MxGram tweak (by m1ronx1412) injected: ghost mode with per-user exceptions, anti-revoke, saving of protected media and more, on top of the iMe Telegram client.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/iMe.webp",
+      "tintColor": "2AABEE",
+      "category": "social",
+      "version": "12.8.1",
+      "versionDate": "2026-09-01",
+      "versionDescription": "iMe 12.8.1 | iMe-12.8.1-MxGram\n\nIPA Vault build for iMe (MxGram), version 12.8.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+      "size": 148174542,
+      "versions": [
+        {
+          "version": "12.8.1",
+          "date": "2026-09-01",
+          "localizedDescription": "iMe 12.8.1 | iMe-12.8.1-MxGram\n\nIPA Vault build for iMe (MxGram), version 12.8.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+          "size": 148174542,
+          "minOSVersion": "13.0",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "iMe-12.8.1-MxGram.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 148174542,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "ime",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/m1ronx1412/mxgram",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "13.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "UNOFFICIAL BUILD - TWICE OVER. iMe is itself an unofficial third-party Telegram client (not affiliated with Telegram FZ-LLC), and this is a community rebuild of it with the MxGram tweak injected. The tweak's official project (m1ronx1412/mxgram) publishes .deb/.dylib assets only; the ready-to-sideload IPA exists solely in the IPA Vault source, so no developer-published IPA link exists to verify. Uses its own bundle identifier."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
+        }
+      }
+    },
+    {
       "name": "Infuse Plus",
       "bundleIdentifier": "com.firecore.infuse",
       "developerName": "dayanch96 & IPA Vault",
@@ -2766,6 +2870,110 @@
       }
     },
     {
+      "name": "Messenger Flow",
+      "bundleIdentifier": "com.facebook.Messenger.flow",
+      "developerName": "dvntms & IPA Vault",
+      "subtitle": "Facebook Messenger tweak by dvntms (unofficial build)",
+      "localizedDescription": "Messenger Flow is a tweaked Facebook Messenger build by dvntms, distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The Flow tweak's feature set is defined by its build; no official public documentation exists.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
+      "tintColor": "0084FF",
+      "category": "social",
+      "version": "577.0.0",
+      "versionDate": "2026-09-03",
+      "versionDescription": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+      "size": 112652101,
+      "versions": [
+        {
+          "version": "577.0.0",
+          "date": "2026-09-03",
+          "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+          "size": 112652101,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Messenger-577.0.0-Flow.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 112652101,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "messenger-flow",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "UNOFFICIAL BUILD. Flow has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses its own bundle identifier, so it installs alongside the stock App Store Messenger."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-03",
+          "lastUpdatedAt": "2026-09-03"
+        }
+      }
+    },
+    {
       "name": "Mini vMac",
       "bundleIdentifier": "net.namedfork.minivmac",
       "developerName": "zydeco",
@@ -2854,6 +3062,110 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2024-07-09"
+        }
+      }
+    },
+    {
+      "name": "MSGPlusX",
+      "bundleIdentifier": "com.facebook.Messenger",
+      "developerName": "Dens0r & IPA Vault & lucaspedrosa",
+      "subtitle": "Messenger tweak by Dens0r & lucaspedrosa (unofficial build)",
+      "localizedDescription": "MSGPlusX is a tweaked Facebook Messenger build (MessengerPlus lineage by Dens0r and lucaspedrosa), distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The tweak's feature set is defined by its build; no official public documentation exists.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
+      "tintColor": "0084FF",
+      "category": "social",
+      "version": "577.0.0",
+      "versionDate": "2026-09-03",
+      "versionDescription": "Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 577.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+      "size": 112528712,
+      "versions": [
+        {
+          "version": "577.0.0",
+          "date": "2026-09-03",
+          "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 577.0.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+          "size": 112528712,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Messenger-577.0.0-MSGPlusX.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 112528712,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "msgplusx",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "UNOFFICIAL BUILD. MSGPlusX has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses the stock Messenger bundle identifier, so installing it REPLACES the App Store Messenger on device."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-03",
+          "lastUpdatedAt": "2026-09-03"
         }
       }
     },
@@ -2947,6 +3259,110 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2025-11-03"
+        }
+      }
+    },
+    {
+      "name": "NexaSC",
+      "bundleIdentifier": "com.soundcloud.TouchApp",
+      "developerName": "cielogic & IPA Vault",
+      "subtitle": "SoundCloud Go+ unlock and ad removal (unofficial build)",
+      "localizedDescription": "NexaSC is a community SoundCloud tweak by cielogic: it unlocks SoundCloud Go+ features, removes ads, adds track downloads and can fetch lyrics automatically (via LRCLIB). The tweak is opened by long-pressing the home icon.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SoundCloud.webp",
+      "tintColor": "FF5500",
+      "category": "social",
+      "version": "8.77.0",
+      "versionDate": "2026-09-07",
+      "versionDescription": "SoundCloud 8.77.0 | SoundCloud-8.77.0-NexaSC\n\nIPA Vault build for SoundCloud (NexaSC), version 8.77.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+      "size": 107196182,
+      "versions": [
+        {
+          "version": "8.77.0",
+          "date": "2026-09-07",
+          "localizedDescription": "SoundCloud 8.77.0 | SoundCloud-8.77.0-NexaSC\n\nIPA Vault build for SoundCloud (NexaSC), version 8.77.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+          "size": 107196182,
+          "minOSVersion": "16.4",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "SoundCloud-8.77.0-NexaSC.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 107196182,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "nexasc",
+        "status": "beta",
+        "featured": false,
+        "upstreamURL": "",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.4",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "UNOFFICIAL BUILD. NexaSC has no public repository or developer feed - the only distribution channel is the IPA Vault source, so no developer-published download link exists to verify. Not affiliated with or endorsed by SoundCloud Ltd. Current SoundCloud 8.x builds require iOS 16.4 or newer (a pinned 7.68.1 build for iOS 16.0-16.3 also exists in the vault but is not tracked here). Shares com.soundcloud.TouchApp with TTKillerPlus in this catalog - install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-09-07"
         }
       }
     },
@@ -5263,6 +5679,110 @@
       }
     },
     {
+      "name": "ThreadSaver",
+      "bundleIdentifier": "com.burbn.barcelona",
+      "developerName": "swiftleopard & IPA Vault",
+      "subtitle": "Threads enhancement tweak (unofficial build)",
+      "localizedDescription": "ThreadSaver (by swiftleopard) is a tweaked Threads build distributed ready-to-sideload through the IPA Vault on a current Threads base version. The tweak's feature set is defined by its build; no official public documentation exists.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Threads.webp",
+      "tintColor": "000000",
+      "category": "social",
+      "version": "445.1",
+      "versionDate": "2026-09-01",
+      "versionDescription": "Threads 445.1 | Threads-445.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 445.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+      "size": 100461178,
+      "versions": [
+        {
+          "version": "445.1",
+          "date": "2026-09-01",
+          "localizedDescription": "Threads 445.1 | Threads-445.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 445.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+          "size": 100461178,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Threads-445.1-ThreadSaver.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 100461178,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "threadsaver",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "UNOFFICIAL BUILD. ThreadSaver has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses the stock Threads bundle identifier, so installing it REPLACES the App Store Threads on device."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
+        }
+      }
+    },
+    {
       "name": "TTKillerPlus",
       "bundleIdentifier": "com.zhiliaoapp.musically",
       "developerName": "iKarwan",
@@ -5361,6 +5881,110 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-09"
+        }
+      }
+    },
+    {
+      "name": "Turrit MxGram",
+      "bundleIdentifier": "com.seastar.turrit",
+      "developerName": "m1ronx1412 & IPA Vault",
+      "subtitle": "MxGram-tweaked Turrit client (unofficial build)",
+      "localizedDescription": "Turrit MxGram is the third-party Turrit messenger with the MxGram tweak (by m1ronx1412) injected: ghost mode with per-user exceptions, anti-revoke, saving of protected media and more, on top of the Turrit Telegram client.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Turrit.webp",
+      "tintColor": "0088CC",
+      "category": "social",
+      "version": "1.5.3",
+      "versionDate": "2026-09-01",
+      "versionDescription": "Turrit 1.5.3 | Turrit-1.5.3-MxGram\n\nIPA Vault build for Turrit (MxGram), version 1.5.3",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+      "size": 94300571,
+      "versions": [
+        {
+          "version": "1.5.3",
+          "date": "2026-09-01",
+          "localizedDescription": "Turrit 1.5.3 | Turrit-1.5.3-MxGram\n\nIPA Vault build for Turrit (MxGram), version 1.5.3",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+          "size": 94300571,
+          "minOSVersion": "13.0",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Turrit-1.5.3-MxGram.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 94300571,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "turrit-mxgram",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/m1ronx1412/mxgram",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "13.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "UNOFFICIAL BUILD - TWICE OVER. Turrit is itself an unofficial third-party Telegram client (not affiliated with Telegram FZ-LLC), and this is a community rebuild of it with the MxGram tweak injected. The tweak's official project (m1ronx1412/mxgram) publishes .deb/.dylib assets only; the ready-to-sideload IPA exists solely in the IPA Vault source, so no developer-published IPA link exists to verify. Uses its own bundle identifier."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
         }
       }
     },
