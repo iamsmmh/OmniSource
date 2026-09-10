@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 24,
+  "count": 29,
   "levels": [
     "TRUSTED",
     "RELIABLE",
@@ -375,6 +375,26 @@
       }
     },
     {
+      "id": "ZeusLN/zeus",
+      "source": "ZeusLN/zeus",
+      "publisher": "ZeusLN/zeus",
+      "homepage": "https://github.com/ZeusLN/zeus",
+      "sourceURL": "https://github.com/ZeusLN/zeus",
+      "apps": [
+        "zeus"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
       "id": "yattee/yattee",
       "source": "yattee/yattee",
       "publisher": "yattee/yattee",
@@ -382,6 +402,26 @@
       "sourceURL": "https://github.com/yattee/yattee",
       "apps": [
         "yattee"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "saber-notes/saber",
+      "source": "saber-notes/saber",
+      "publisher": "saber-notes/saber",
+      "homepage": "https://github.com/saber-notes/saber",
+      "sourceURL": "https://github.com/saber-notes/saber",
+      "apps": [
+        "saber"
       ],
       "score": 50.0,
       "level": "AVERAGE",
@@ -482,6 +522,66 @@
       "sourceURL": "https://github.com/fredrikburmester/streamyfin",
       "apps": [
         "streamyfin"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "BlueWallet/BlueWallet",
+      "source": "BlueWallet/BlueWallet",
+      "publisher": "BlueWallet/BlueWallet",
+      "homepage": "https://github.com/BlueWallet/BlueWallet",
+      "sourceURL": "https://github.com/BlueWallet/BlueWallet",
+      "apps": [
+        "bluewallet"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Anxcye/anx-reader",
+      "source": "Anxcye/anx-reader",
+      "publisher": "Anxcye/anx-reader",
+      "homepage": "https://github.com/Anxcye/anx-reader",
+      "sourceURL": "https://github.com/Anxcye/anx-reader",
+      "apps": [
+        "anxreader"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "aeharding/voyager",
+      "source": "aeharding/voyager",
+      "publisher": "aeharding/voyager",
+      "homepage": "https://github.com/aeharding/voyager",
+      "sourceURL": "https://github.com/aeharding/voyager",
+      "apps": [
+        "voyager"
       ],
       "score": 50.0,
       "level": "AVERAGE",

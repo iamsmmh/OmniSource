@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 28,
-    "pass": 21,
+    "apps": 33,
+    "pass": 26,
     "warn": 7,
     "fail": 0,
     "rejected": 0
@@ -19,6 +19,24 @@
         "releaseId": "0.9",
         "source": "github",
         "downloadUrl": "https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "anxreader",
+      "name": "Anx Reader",
+      "asset": {
+        "sha256": "a79bd247859d6a04dae81490aa7d8d970a830af7201415f4ec6aa370b74ae69b",
+        "size": 28677588,
+        "releaseId": "1.14.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -45,6 +63,24 @@
         "reachable": true
       },
       "status": "warn"
+    },
+    {
+      "slug": "bluewallet",
+      "name": "BlueWallet",
+      "asset": {
+        "sha256": "a6d280f0e86219fd886597864691018d863c40bfc334b6ece4002cd8650e834c",
+        "size": 29811150,
+        "releaseId": "8.0.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet_8.0.1_1784575843.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
     },
     {
       "slug": "delta",
@@ -227,6 +263,24 @@
       "status": "pass"
     },
     {
+      "slug": "saber",
+      "name": "Saber",
+      "asset": {
+        "sha256": "e8432a6846230591d0f6a39ce4c370107ba68b2836135c907b82d96bcbd904ca",
+        "size": 37589281,
+        "releaseId": "1.36.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "sidestore",
       "name": "SideStore",
       "asset": {
@@ -371,6 +425,24 @@
       "status": "warn"
     },
     {
+      "slug": "voyager",
+      "name": "Voyager",
+      "asset": {
+        "sha256": "3e71607b8a945db67ef82adadcb74f087691b8f02ef2cce522f4be9a49865c87",
+        "size": 8216630,
+        "releaseId": "2.49.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "winston",
       "name": "Winston",
       "asset": {
@@ -505,6 +577,24 @@
         "releaseId": "9.36.1",
         "source": "github",
         "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa29/YTMusicUltimate_9.36.1_2.4.1.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "zeus",
+      "name": "Zeus",
+      "asset": {
+        "sha256": "7d291549ec3f35767fcf99f4104088789302742311a3905ef568fe878b3c868c",
+        "size": 80499468,
+        "releaseId": "13.2.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1.ipa"
       },
       "checks": {
         "sizePositive": true,

@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "sources": 28,
+    "sources": 33,
     "healthy": 18,
     "degraded": 4,
     "unavailable": 0,
-    "unknown": 6
+    "unknown": 11
   },
   "pipeline": {
     "status": "degraded",
     "lastBuild": "2026-09-10",
-    "appsTotal": 28,
+    "appsTotal": 33,
     "appsHealthy": 18,
     "appsFailing": 2
   },
@@ -28,7 +28,7 @@
     },
     {
       "provider": "github",
-      "apps": 26,
+      "apps": 31,
       "healthy": 16,
       "unavailable": 0,
       "lastResolvedFrom": {
@@ -48,24 +48,29 @@
         "ytkace": "github:itzzace/ytkace",
         "ytkp": "github:mrdrvt99/YouProEXTRA",
         "ytmusic": "github:mrdrvt99/YTMusicUltimate",
+        "anxreader": "github:Anxcye/anx-reader",
         "bhtwitter": "github:BandarHL/BHTwitter",
+        "bluewallet": "github:BlueWallet/BlueWallet",
         "delta": "github:RileyTestut/Delta",
         "jellify": "github:Jellify-Music/App",
         "ppsspp": "github:hrydgard/ppsspp",
         "provenance": "github:Provenance-Emu/Provenance",
+        "saber": "github:saber-notes/saber",
         "sidestore": "github:SideStore/SideStore",
         "spotube": "github:KRTirtho/spotube",
         "streamyfin": "github:fredrikburmester/streamyfin",
         "utm": "github:utmapp/UTM",
-        "yattee": "github:yattee/yattee"
+        "voyager": "github:aeharding/voyager",
+        "yattee": "github:yattee/yattee",
+        "zeus": "github:ZeusLN/zeus"
       }
     }
   ],
   "deployment": {
     "platform": "GitHub Pages (static)",
     "status": "ok",
-    "reachable": 28,
-    "total": 28
+    "reachable": 33,
+    "total": 33
   },
   "sources": [
     {
@@ -1905,6 +1910,23 @@
       ]
     },
     {
+      "id": "anxreader",
+      "app": "anxreader",
+      "name": "Anx Reader",
+      "source": "Anxcye/anx-reader",
+      "sourceURL": "https://github.com/Anxcye/anx-reader",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-03-19",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "bhtwitter",
       "app": "bhtwitter",
       "name": "BHTwitter",
@@ -2005,6 +2027,23 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "bluewallet",
+      "app": "bluewallet",
+      "name": "BlueWallet",
+      "source": "BlueWallet/BlueWallet",
+      "sourceURL": "https://github.com/BlueWallet/BlueWallet",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-07-21",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "delta",
@@ -2158,6 +2197,23 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "saber",
+      "app": "saber",
+      "name": "Saber",
+      "source": "saber-notes/saber",
+      "sourceURL": "https://github.com/saber-notes/saber",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-08-30",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "sidestore",
@@ -2398,6 +2454,23 @@
       ]
     },
     {
+      "id": "voyager",
+      "app": "voyager",
+      "name": "Voyager",
+      "source": "aeharding/voyager",
+      "sourceURL": "https://github.com/aeharding/voyager",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-06",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "yattee",
       "app": "yattee",
       "name": "Yattee",
@@ -2410,6 +2483,23 @@
       "latencyMs": null,
       "checkedAt": "",
       "lastUpdate": "2024-01-28",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "zeus",
+      "app": "zeus",
+      "name": "Zeus",
+      "source": "ZeusLN/zeus",
+      "sourceURL": "https://github.com/ZeusLN/zeus",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-02",
       "valid": true,
       "detail": "",
       "history": []

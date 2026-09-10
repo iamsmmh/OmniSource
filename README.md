@@ -10,7 +10,7 @@ One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · 
 
 <!-- omnisource:stats:start -->
 
-**28** apps · **24** upstream sources · **27** verified · **1** community verified · **28/28** downloads online · last sync **2026-09-10**.
+**33** apps · **29** upstream sources · **32** verified · **1** community verified · **33/33** downloads online · last sync **2026-09-10**.
 
 <!-- omnisource:stats:end -->
 
@@ -104,7 +104,7 @@ The complete generated catalog is below — it refreshes automatically on every 
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-10 · 28 apps · 28/28 downloads reachable._
+_Catalogue last changed 2026-09-10 · 33 apps · 33/33 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -136,6 +136,11 @@ _Catalogue last changed 2026-09-10 · 28 apps · 28/28 downloads reachable._
 | **Streamyfin** | `com.fredrikburmester.streamyfin` | `0.54.1` | 2026-06-02 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/streamyfin.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/streamyfin.json) | [`streamyfin.json`](https://iamsmmh.github.io/OmniSource/streamyfin.json) | [`streamyfin.xml`](https://iamsmmh.github.io/OmniSource/streamyfin.xml) |
 | **Spotube** | `oss.krtirtho.spotube.stable` | `5.1.2` | 2026-06-05 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/spotube.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/spotube.json) | [`spotube.json`](https://iamsmmh.github.io/OmniSource/spotube.json) | [`spotube.xml`](https://iamsmmh.github.io/OmniSource/spotube.xml) |
 | **Jellify** | `com.cosmonautical.jellify` | `1.2.10` | 2026-09-02 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/jellify.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/jellify.json) | [`jellify.json`](https://iamsmmh.github.io/OmniSource/jellify.json) | [`jellify.xml`](https://iamsmmh.github.io/OmniSource/jellify.xml) |
+| **Zeus** | `com.zeusln.zeus` | `13.2.1` | 2026-09-02 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/zeus.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/zeus.json) | [`zeus.json`](https://iamsmmh.github.io/OmniSource/zeus.json) | [`zeus.xml`](https://iamsmmh.github.io/OmniSource/zeus.xml) |
+| **BlueWallet** | `io.bluewallet.bluewallet` | `8.0.1` | 2026-07-21 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/bluewallet.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/bluewallet.json) | [`bluewallet.json`](https://iamsmmh.github.io/OmniSource/bluewallet.json) | [`bluewallet.xml`](https://iamsmmh.github.io/OmniSource/bluewallet.xml) |
+| **Voyager** | `app.vger.voyager` | `2.49.0` | 2026-09-06 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/voyager.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/voyager.json) | [`voyager.json`](https://iamsmmh.github.io/OmniSource/voyager.json) | [`voyager.xml`](https://iamsmmh.github.io/OmniSource/voyager.xml) |
+| **Saber** | `com.adilhanney.saber` | `1.36.1` | 2026-08-30 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/saber.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/saber.json) | [`saber.json`](https://iamsmmh.github.io/OmniSource/saber.json) | [`saber.xml`](https://iamsmmh.github.io/OmniSource/saber.xml) |
+| **Anx Reader** | `com.anxcye.anxReader` | `1.14.0` | 2026-03-19 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/anxreader.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/anxreader.json) | [`anxreader.json`](https://iamsmmh.github.io/OmniSource/anxreader.json) | [`anxreader.xml`](https://iamsmmh.github.io/OmniSource/anxreader.xml) |
 
 <!-- omnisource:catalog:end -->
 

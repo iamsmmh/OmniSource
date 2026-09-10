@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 24,
+  "count": 29,
   "feed": {
     "name": "OmniSource",
     "identifier": "com.iamsmmh.omnisource",
@@ -42,6 +42,21 @@
   ],
   "sources": [
     {
+      "id": "aeharding/voyager",
+      "source": "aeharding/voyager",
+      "type": "github",
+      "homepage": "https://github.com/aeharding/voyager",
+      "sourceURL": "https://github.com/aeharding/voyager",
+      "publisher": "aeharding/voyager",
+      "apps": [
+        {
+          "slug": "voyager",
+          "name": "Voyager",
+          "version": "2.49.0"
+        }
+      ]
+    },
+    {
       "id": "Aidoku/Aidoku",
       "source": "Aidoku/Aidoku",
       "type": "github",
@@ -53,6 +68,21 @@
           "slug": "aidoku",
           "name": "Aidoku",
           "version": "0.9"
+        }
+      ]
+    },
+    {
+      "id": "Anxcye/anx-reader",
+      "source": "Anxcye/anx-reader",
+      "type": "github",
+      "homepage": "https://github.com/Anxcye/anx-reader",
+      "sourceURL": "https://github.com/Anxcye/anx-reader",
+      "publisher": "Anxcye/anx-reader",
+      "apps": [
+        {
+          "slug": "anxreader",
+          "name": "Anx Reader",
+          "version": "1.14.0"
         }
       ]
     },
@@ -83,6 +113,21 @@
           "slug": "bhtwitter",
           "name": "BHTwitter",
           "version": "4.4"
+        }
+      ]
+    },
+    {
+      "id": "BlueWallet/BlueWallet",
+      "source": "BlueWallet/BlueWallet",
+      "type": "github",
+      "homepage": "https://github.com/BlueWallet/BlueWallet",
+      "sourceURL": "https://github.com/BlueWallet/BlueWallet",
+      "publisher": "BlueWallet/BlueWallet",
+      "apps": [
+        {
+          "slug": "bluewallet",
+          "name": "BlueWallet",
+          "version": "8.0.1"
         }
       ]
     },
@@ -332,6 +377,21 @@
       ]
     },
     {
+      "id": "saber-notes/saber",
+      "source": "saber-notes/saber",
+      "type": "github",
+      "homepage": "https://github.com/saber-notes/saber",
+      "sourceURL": "https://github.com/saber-notes/saber",
+      "publisher": "saber-notes/saber",
+      "apps": [
+        {
+          "slug": "saber",
+          "name": "Saber",
+          "version": "1.36.1"
+        }
+      ]
+    },
+    {
       "id": "SideStore/SideStore",
       "source": "SideStore/SideStore",
       "type": "github",
@@ -418,6 +478,21 @@
           "slug": "yattee",
           "name": "Yattee",
           "version": "1.5.1"
+        }
+      ]
+    },
+    {
+      "id": "ZeusLN/zeus",
+      "source": "ZeusLN/zeus",
+      "type": "github",
+      "homepage": "https://github.com/ZeusLN/zeus",
+      "sourceURL": "https://github.com/ZeusLN/zeus",
+      "publisher": "ZeusLN/zeus",
+      "apps": [
+        {
+          "slug": "zeus",
+          "name": "Zeus",
+          "version": "13.2.1"
         }
       ]
     }

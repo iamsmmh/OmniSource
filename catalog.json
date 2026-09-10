@@ -1778,6 +1778,249 @@
         "minOSVersion": "16.4",
         "descriptionTemplate": "Jellify {version} | {label}"
       }
+    },
+    {
+      "slug": "zeus",
+      "name": "Zeus",
+      "subtitle": "Self-custodial Bitcoin and Lightning wallet",
+      "bundleIdentifier": "com.zeusln.zeus",
+      "developerName": "Zeus LN",
+      "category": "utilities",
+      "tintColor": "FFC800",
+      "icon": "Zeus.webp",
+      "localizedDescription": "Zeus is a free and open-source, self-custodial Bitcoin and Lightning wallet for iPhone and iPad. Connect the app to your own node (LND, Core Lightning, c-lightning-REST, BTCPay Server or Lightning Terminal) or use the built-in Olympus LNDHub for a quick start, with contacts, Nostr Wallet Connect, LNURL, point-of-sale and full on-chain and Lightning payment support.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/ZeusLN/zeus",
+      "verification": {
+        "method": "github-release",
+        "publisher": "ZeusLN/zeus",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA built by the ZeusLN release pipeline (v13.x targets iOS 15.1). A self-custody wallet: point it at your own Lightning node for full sovereignty."
+      },
+      "upstream": {
+        "repo": "ZeusLN/zeus",
+        "tagPrefix": "v",
+        "assetNamePattern": "^zeus-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.1",
+        "descriptionTemplate": "Zeus {version} | {label}"
+      }
+    },
+    {
+      "slug": "bluewallet",
+      "name": "BlueWallet",
+      "subtitle": "Open-source Bitcoin wallet for iOS",
+      "bundleIdentifier": "io.bluewallet.bluewallet",
+      "developerName": "BlueWallet",
+      "category": "utilities",
+      "tintColor": "0070FF",
+      "icon": "BlueWallet.webp",
+      "localizedDescription": "BlueWallet is a free and open-source Bitcoin wallet focused on simplicity and power. Create standard on-chain wallets, watch-only wallets with full PSBT and hardware-wallet support, and Lightning wallets backed by the built-in LNDHUB or your own node — with fee control, multisig (Vault) and Tor connectivity.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/BlueWallet/BlueWallet",
+      "verification": {
+        "method": "github-release",
+        "publisher": "BlueWallet/BlueWallet",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.6",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA published by the BlueWallet team on GitHub Releases (8.x targets iOS 15.6). Uses the same bundle identifier as the App Store build: installing the sideload build replaces the store version."
+      },
+      "upstream": {
+        "repo": "BlueWallet/BlueWallet",
+        "assetNamePattern": "^BlueWallet_[0-9][^/]*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.6",
+        "descriptionTemplate": "BlueWallet {version} | {label}"
+      }
+    },
+    {
+      "slug": "voyager",
+      "name": "Voyager",
+      "subtitle": "Beautiful open-source client for Lemmy",
+      "bundleIdentifier": "app.vger.voyager",
+      "developerName": "aeharding",
+      "category": "social",
+      "tintColor": "4083BD",
+      "icon": "Voyager.webp",
+      "localizedDescription": "Voyager is a free and open-source client for Lemmy and PieFed with an iOS-native feel — swipe gestures, haptics, infinite scroll, rich markdown support, multi-account switching and deep theming. The same project powers the official Voyager App Store release; this feed tracks the developer's own GitHub build.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/aeharding/voyager",
+      "verification": {
+        "method": "github-release",
+        "publisher": "aeharding/voyager",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned iOS IPA (Voyager-iOS-<version>.ipa) from the developer's GitHub releases; 2.x targets iOS 15. The release also ships Android (apk) and watch builds which are intentionally not distributed here."
+      },
+      "upstream": {
+        "repo": "aeharding/voyager",
+        "assetNamePattern": "^Voyager-iOS-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Voyager {version} | {label}"
+      }
+    },
+    {
+      "slug": "saber",
+      "name": "Saber",
+      "subtitle": "Open-source handwritten notes",
+      "bundleIdentifier": "com.adilhanney.saber",
+      "developerName": "Adil Hanney",
+      "category": "utilities",
+      "tintColor": "F9C60A",
+      "icon": "Saber.webp",
+      "localizedDescription": "Saber is a free and open-source handwritten notes app built with Flutter. Write with your finger or Apple Pencil as if on paper, organize notes into folders, keep them private with encryption, and sync across devices using its optional Nextcloud-based sync — no vendor lock-in.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/saber-notes/saber",
+      "verification": {
+        "method": "github-release",
+        "publisher": "saber-notes/saber",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA (Saber_v<version>.ipa) from the developer's GitHub releases; 1.x targets iOS 15. Also available on the App Store under the same bundle identifier."
+      },
+      "upstream": {
+        "repo": "saber-notes/saber",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Saber_v.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Saber {version} | {label}"
+      }
+    },
+    {
+      "slug": "anxreader",
+      "name": "Anx Reader",
+      "subtitle": "Open-source e-book reader with AI",
+      "bundleIdentifier": "com.anxcye.anxReader",
+      "developerName": "Anxcye",
+      "category": "utilities",
+      "tintColor": "336393",
+      "icon": "AnxReader.webp",
+      "localizedDescription": "Anx Reader is a free and open-source e-book reader for iPhone and iPad. Read EPUB, MOBI and other formats with a polished reader engine, AI-powered summaries and translations (bring your own key), text-to-speech, highlights and notes, reading statistics, and WebDAV sync across devices.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Anxcye/anx-reader",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Anxcye/anx-reader",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.2",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned CI IPA (Anx-Reader-ios-<version>-unsigned.ipa) built by the developer's release pipeline; 1.x targets iOS 15.2."
+      },
+      "upstream": {
+        "repo": "Anxcye/anx-reader",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Anx-Reader-ios-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.2",
+        "descriptionTemplate": "Anx Reader {version} | {label}"
+      }
     }
   ]
 }

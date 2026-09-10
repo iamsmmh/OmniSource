@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 28,
+  "count": 33,
   "fuse": {
     "keys": [
       {
@@ -756,6 +756,136 @@
       "icon": "assets/Jellify.webp",
       "pageURL": "apps/jellify/",
       "version": "1.2.10",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "zeus",
+      "slug": "zeus",
+      "name": "Zeus",
+      "subtitle": "Self-custodial Bitcoin and Lightning wallet",
+      "shortDescription": "Self-custodial Bitcoin and Lightning wallet",
+      "description": "Zeus is a free and open-source, self-custodial Bitcoin and Lightning wallet for iPhone and iPad. Connect the app to your own node (LND, Core Lightning, c-lightning-REST, BTCPay Server or Lightning Terminal) or use the built-in Olympus LNDHub for a quick start, with contacts, Nostr Wallet Connect, LNURL, point-of-sale and full on-chain and Lightning payment support.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "Zeus LN",
+      "bundleId": "com.zeusln.zeus",
+      "icon": "assets/Zeus.webp",
+      "pageURL": "apps/zeus/",
+      "version": "13.2.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "bluewallet",
+      "slug": "bluewallet",
+      "name": "BlueWallet",
+      "subtitle": "Open-source Bitcoin wallet for iOS",
+      "shortDescription": "Open-source Bitcoin wallet for iOS",
+      "description": "BlueWallet is a free and open-source Bitcoin wallet focused on simplicity and power. Create standard on-chain wallets, watch-only wallets with full PSBT and hardware-wallet support, and Lightning wallets backed by the built-in LNDHUB or your own node — with fee control, multisig (Vault) and Tor connectivity.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "BlueWallet",
+      "bundleId": "io.bluewallet.bluewallet",
+      "icon": "assets/BlueWallet.webp",
+      "pageURL": "apps/bluewallet/",
+      "version": "8.0.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "voyager",
+      "slug": "voyager",
+      "name": "Voyager",
+      "subtitle": "Beautiful open-source client for Lemmy",
+      "shortDescription": "Beautiful open-source client for Lemmy",
+      "description": "Voyager is a free and open-source client for Lemmy and PieFed with an iOS-native feel — swipe gestures, haptics, infinite scroll, rich markdown support, multi-account switching and deep theming. The same project powers the official Voyager App Store release; this feed tracks the developer's own GitHub build.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "aeharding",
+      "bundleId": "app.vger.voyager",
+      "icon": "assets/Voyager.webp",
+      "pageURL": "apps/voyager/",
+      "version": "2.49.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "saber",
+      "slug": "saber",
+      "name": "Saber",
+      "subtitle": "Open-source handwritten notes",
+      "shortDescription": "Open-source handwritten notes",
+      "description": "Saber is a free and open-source handwritten notes app built with Flutter. Write with your finger or Apple Pencil as if on paper, organize notes into folders, keep them private with encryption, and sync across devices using its optional Nextcloud-based sync — no vendor lock-in.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "Adil Hanney",
+      "bundleId": "com.adilhanney.saber",
+      "icon": "assets/Saber.webp",
+      "pageURL": "apps/saber/",
+      "version": "1.36.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "anxreader",
+      "slug": "anxreader",
+      "name": "Anx Reader",
+      "subtitle": "Open-source e-book reader with AI",
+      "shortDescription": "Open-source e-book reader with AI",
+      "description": "Anx Reader is a free and open-source e-book reader for iPhone and iPad. Read EPUB, MOBI and other formats with a polished reader engine, AI-powered summaries and translations (bring your own key), text-to-speech, highlights and notes, reading statistics, and WebDAV sync across devices.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "Anxcye",
+      "bundleId": "com.anxcye.anxReader",
+      "icon": "assets/AnxReader.webp",
+      "pageURL": "apps/anxreader/",
+      "version": "1.14.0",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [

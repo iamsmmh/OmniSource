@@ -8,23 +8,12 @@
   },
   "count": 12,
   "summary": {
-    "warning": 4,
+    "warning": 5,
     "stale": 2,
     "archived": 4,
-    "critical": 2
+    "critical": 1
   },
   "deadApps": [
-    {
-      "slug": "maxmusic",
-      "name": "MaxMusic",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 0,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 9.35.2"
-      ]
-    },
     {
       "slug": "ytkp",
       "name": "YTKillerPlus",
@@ -100,6 +89,17 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 250 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "anxreader",
+      "name": "Anx Reader",
+      "lastUpdate": "2026-03-19",
+      "daysSinceUpdate": 175,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 175 days (threshold 90)"
       ]
     },
     {
@@ -236,11 +236,9 @@
       "name": "MaxMusic",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 0,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 9.35.2"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "utm",
@@ -423,6 +421,53 @@
       "classification": "healthy",
       "removedReleases": 0,
       "reasons": []
+    },
+    {
+      "slug": "zeus",
+      "name": "Zeus",
+      "lastUpdate": "2026-09-02",
+      "daysSinceUpdate": 8,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "bluewallet",
+      "name": "BlueWallet",
+      "lastUpdate": "2026-07-21",
+      "daysSinceUpdate": 51,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "voyager",
+      "name": "Voyager",
+      "lastUpdate": "2026-09-06",
+      "daysSinceUpdate": 4,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "saber",
+      "name": "Saber",
+      "lastUpdate": "2026-08-30",
+      "daysSinceUpdate": 11,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "anxreader",
+      "name": "Anx Reader",
+      "lastUpdate": "2026-03-19",
+      "daysSinceUpdate": 175,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 175 days (threshold 90)"
+      ]
     }
   ]
 }

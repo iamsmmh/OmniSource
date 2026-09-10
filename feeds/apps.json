@@ -45,13 +45,13 @@
               "fileType": "IPA",
               "size": 14731108,
               "sha256": "86405861d3a0c90876a90aa1ca668bee54f4555a56249fede4444be5382833e8",
-              "downloads": 1163,
+              "downloads": 1167,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "86405861d3a0c90876a90aa1ca668bee54f4555a56249fede4444be5382833e8",
-          "downloads": 1163
+          "downloads": 1167
         }
       ],
       "screenshotURLs": [
@@ -92,6 +92,195 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-03"
+        }
+      }
+    },
+    {
+      "name": "Anx Reader",
+      "bundleIdentifier": "com.anxcye.anxReader",
+      "developerName": "Anxcye",
+      "subtitle": "Open-source e-book reader with AI",
+      "localizedDescription": "Anx Reader is a free and open-source e-book reader for iPhone and iPad. Read EPUB, MOBI and other formats with a polished reader engine, AI-powered summaries and translations (bring your own key), text-to-speech, highlights and notes, reading statistics, and WebDAV sync across devices.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/AnxReader.webp",
+      "tintColor": "336393",
+      "category": "utilities",
+      "version": "1.14.0",
+      "versionDate": "2026-03-19",
+      "versionDescription": "Anx Reader 1.14.0 | Anx-Reader-ios-1.14.0-unsigned\n\n## 1.14.0\n- Fix(translate): Remove legacy Microsoft reverse-engineered translation service and migrate saved full-text translation preference to Microsoft Azure API\n- Fix(l10n): Remove legacy Microsoft translation localization entries\n- Feat(ai): Support separate AI reasoning content with lightweight collapsible thinking UI in chat and stream views (#787)\n- Feat(reader): Add background image fit mode setting with cover and stretch options\n- Feat(appearance): Add setting to toggle action button labels visibility in selection context menu\n- Feat(reader): Add background image blur and opacity controls in reading settings (#753)\n- Feat(tts): Add Narrator option to text selection toolbar to start TTS from selected text (#794) Thanks @deskangel\n- Feat(tts): Add click to pause/resume TTS playback on currently reading text (#794) Thanks @deskangel\n- Feat(tts): Add floating action button in reader for quick TTS controls (previous, pause/resume, next, stop) (#723)\n- Feat(reader): Add Ctrl+[ and Ctrl+] page turning shortcuts on macOS, support Logitech Options+ mouse button mapping (#794) Thanks @deskangel\n- Feat(ai): Add global AI RPM rate limiting in AI service layer\n- Feat(ai): Add AI Provider Configuration Center with support for OpenAI-compatible, Claude, and Gemini protocols\n- Feat(ai): Support multiple API keys per provider with round-robin rotation\n- Feat(ai): Add provider-level reasoning_effort configuration with auto mode and advanced settings entry\n- Feat(ai): Add provider test connection with streaming preview\n- Feat(ai): Add AI chat display mode settings with adaptive, split, and popup options\n- Feat(ai): Add resizable AI panel with drag to resize, sizes persisted\n- Feat(ai): Add AI panel position settings (bottom/right) for non-popup modes\n- Feat(ai): Add font size setting for AI chat via three-dot menu\n- Feat(ai): Add quick model switcher in AI chat input bar (tune icon button)\n- Feat(ai): Add model picker in provider detail page with showMenu dropdown after fetching\n- Fix(ui): Fix context menu action buttons layout and icon color issues when labels are hidden\n- Fix(reader): Fix background image effects not applying and switch reader background fill mode to cover (#753)\n- Fix(reader): Fix RangeError crash when read theme color is null/invalid (#759)\n- Fix(tts): Fix TTS type selection having no effect when changed in reading interface (#794) Thanks @deskangel\n- Fix(tts): Fix incorrect reading position after modifying pitch or rate (#794) Thanks @deskangel\n- Fix(tts): Fix crash when SystemTts speak() receives null text from WebView\n- Fix(ai): Fix unable to use AI for full-text translation\n- Fix(ai): Fix test connection using default provider instead of current provider\n- Fix(ai): Fix AI crash prevention by adding guards for null webViewEnvironment on Windows\n- Fix(ai): Fix type cast error when using Gemini AI with tools (#747)\n- Fix(reader): Desktop resource lifecycle, WebView stability, and scroll UX optimization (#790) Thanks @yi124773651\n- Fix(reader): Fix window close cleanup to properly stop server, dispose WebView2, close database, and destroy window\n- Fix(reader): Add scroll debounce mechanism for smoother page turning experience\n- Fix(reader): Fix image saving permission issue on Android 10+ devices by removing unnecessary storage permission requests (#793)\n- Fix(reader): Disable WebView2 right-click context menu (back, reload, save as, print) on Windows (#746)\n- Fix(reader): Fix images with large inline max-width overflowing column width and appearing on wrong page (#742)\n- Fix(reader): Fix epub heading color not following theme color when useBookStyles is disabled (#749)\n- Fix(toc): Show full chapter titles in TOC by wrapping long text instead of truncating with ellipsis (#751)\n- Fix(l10n): Fallback to English when system language is unsupported on first launch (#785)\n- Feat(reader): Support independent left/right margins and font size for header and footer reading info, with shared section-based configuration model (#791)\n- Fix(l10n): Update Russian translation in app_ru.arb (#774) Thanks @Xapitonov\n- Fix(l10n): Update full_description.txt (#775) Thanks @Xapitonov\n- L10n: Complete Romanian translation (#714) Thanks @Steinhagen\n\n- Feat(ai): AI 支持单独的思考内容字段，并在聊天与流式界面中以轻量可折叠方式展示思考过程 (#787)\n- Fix(translate): 移除旧版 Microsoft 逆向翻译服务，并将已保存的全文翻译偏好迁移到 Microsoft Azure API\n- Fix(l10n): 移除旧版 Microsoft 翻译相关本地化条目\n- Feat(appearance): 新增设置项，可开关选中文本菜单等操作按钮的底部文字提示\n- Feat(reader): 新增背景图缩放模式设置，支持 cover 和 stretch 两种模式\n- Feat(reader): 阅读设置新增背景图模糊度和透明度调节 (#753)\n- Feat(tts): 在文本选择工具栏新增朗读选项，支持从选中文本开始 TTS (#794) 感谢 @deskangel\n- Feat(tts): 新增点击正在朗读的文本以暂停/继续 TTS 播放 (#794) 感谢 @deskangel\n- Feat(tts): 新增阅读界面朗读快捷操作悬浮按钮（上一句、暂停/继续、下一句、停止）(#723)\n- Feat(reader): macOS 新增 Ctrl+[ 和 Ctrl+] 翻页快捷键，支持 Logitech Options+ 鼠标按键映射 (#794) 感谢 @deskangel\n- Feat(ai): 在 AI 服务层添加全局 AI 请求限流（RPM）\n- Feat(ai): 新增 AI 供应商配置中心，支持 OpenAI 兼容、Claude 和 Gemini 协议\n- Feat(ai): 支持每个供应商配置多个 API Key，自动轮询使用\n- Feat(ai): 新增供应商级 reasoning_effort 配置，支持自动模式并收纳到高级设置中\n- Feat(ai): 新增供应商连接测试，支持流式预览\n- Feat(ai): 新增 AI 对话显示模式设置，支持自适应、分屏和弹出三种模式\n- Feat(ai): 新增可调整尺寸的 AI 面板，支持拖动调整大小，尺寸自动保存\n- Feat(ai): 新增 AI 面板位置设置（非弹出模式下可选择底部或右侧）\n- Feat(ai): 新增 AI 对话字体大小设置，通过三点菜单访问\n- Feat(ai): 新增 AI 聊天输入栏快速切换模型按钮（调谐图标）\n- Feat(ai): 供应商详情页新增模型选择器，获取后通过下拉菜单显示\n- Fix(ui): 修复关闭文字提示时上下文菜单按钮布局及图标颜色变灰的问题\n- Fix(reader): 修复背景图效果不生效的问题，并将阅读器背景图填充方式调整为 cover (#753)\n- Fix(reader): 修复阅读主题颜色为空/无效时的 RangeError 崩溃 (#759)\n- Fix(tts): 修复在阅读界面切换 TTS 类型无效的问题 (#794) 感谢 @deskangel\n- Fix(tts): 修复调整音调或语速后朗读位置不正确的问题 (#794) 感谢 @deskangel\n- Fix(tts): 修复 SystemTts 从 WebView 获取文本为空时的崩溃问题\n- Fix(ai): 修复无法使用 AI 进行全文翻译的问题\n- Fix(ai): 修复测试连接时使用默认供应商而非当前供应商的问题\n- Fix(ai): 修复 AI 崩溃问题，为 Windows 上空 webViewEnvironment 添加防护\n- Fix(ai): 修复使用 Gemini AI 工具时的类型转换错误 (#747)\n- Fix(reader): 桌面端资源生命周期管理、WebView 稳定性及滚动体验优化 (#790) 感谢 @yi124773651\n- Fix(reader): 修复窗口关闭时的清理流程，正确停止服务器、释放 WebView2、关闭数据库并销毁窗口\n- Fix(reader): 添加滚动防抖机制，优化翻页体验\n- Fix(reader): 修复 Android 10+ 设备图片保存权限问题，移除不必要的存储权限请求 (#793)\n- Fix(reader): 修复 Windows 端右键触发 WebView2 系统上下文菜单（返回、刷新、另存为、打印）的问题 (#746)\n- Fix(reader): 修复图片内嵌大 max-width 导致宽度超出栏宽而显示到下一页的问题 (#742)\n- Fix(reader): 修复禁用书籍自带样式时 epub 标题颜色不跟随主题色的问题，智能识别黑色标题并进行覆盖 (#749)\n- Fix(toc): 目录中过长的章节标题现在会自动换行显示完整内容，不再以省略号截断 (#751)\n- Fix(l10n): 修复首次启动时系统语言不受支持会错误回退到阿拉伯语的问题，改为回退到英文 (#785)\n- Feat(reader): 页眉和页脚阅读信息支持分别设置左右边距与字体大小，并重构为共享的分区配置模型 (#791)\n- Fix(l10n): 更新俄语翻译 app_ru.arb (#774) 感谢 @Xapitonov\n- L10n: 完成罗马尼亚语翻译 (#714) 感谢 @Steinhagen",
+      "downloadURL": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa",
+      "size": 28677588,
+      "versions": [
+        {
+          "version": "1.14.0",
+          "date": "2026-03-19",
+          "localizedDescription": "Anx Reader 1.14.0 | Anx-Reader-ios-1.14.0-unsigned\n\n## 1.14.0\n- Fix(translate): Remove legacy Microsoft reverse-engineered translation service and migrate saved full-text translation preference to Microsoft Azure API\n- Fix(l10n): Remove legacy Microsoft translation localization entries\n- Feat(ai): Support separate AI reasoning content with lightweight collapsible thinking UI in chat and stream views (#787)\n- Feat(reader): Add background image fit mode setting with cover and stretch options\n- Feat(appearance): Add setting to toggle action button labels visibility in selection context menu\n- Feat(reader): Add background image blur and opacity controls in reading settings (#753)\n- Feat(tts): Add Narrator option to text selection toolbar to start TTS from selected text (#794) Thanks @deskangel\n- Feat(tts): Add click to pause/resume TTS playback on currently reading text (#794) Thanks @deskangel\n- Feat(tts): Add floating action button in reader for quick TTS controls (previous, pause/resume, next, stop) (#723)\n- Feat(reader): Add Ctrl+[ and Ctrl+] page turning shortcuts on macOS, support Logitech Options+ mouse button mapping (#794) Thanks @deskangel\n- Feat(ai): Add global AI RPM rate limiting in AI service layer\n- Feat(ai): Add AI Provider Configuration Center with support for OpenAI-compatible, Claude, and Gemini protocols\n- Feat(ai): Support multiple API keys per provider with round-robin rotation\n- Feat(ai): Add provider-level reasoning_effort configuration with auto mode and advanced settings entry\n- Feat(ai): Add provider test connection with streaming preview\n- Feat(ai): Add AI chat display mode settings with adaptive, split, and popup options\n- Feat(ai): Add resizable AI panel with drag to resize, sizes persisted\n- Feat(ai): Add AI panel position settings (bottom/right) for non-popup modes\n- Feat(ai): Add font size setting for AI chat via three-dot menu\n- Feat(ai): Add quick model switcher in AI chat input bar (tune icon button)\n- Feat(ai): Add model picker in provider detail page with showMenu dropdown after fetching\n- Fix(ui): Fix context menu action buttons layout and icon color issues when labels are hidden\n- Fix(reader): Fix background image effects not applying and switch reader background fill mode to cover (#753)\n- Fix(reader): Fix RangeError crash when read theme color is null/invalid (#759)\n- Fix(tts): Fix TTS type selection having no effect when changed in reading interface (#794) Thanks @deskangel\n- Fix(tts): Fix incorrect reading position after modifying pitch or rate (#794) Thanks @deskangel\n- Fix(tts): Fix crash when SystemTts speak() receives null text from WebView\n- Fix(ai): Fix unable to use AI for full-text translation\n- Fix(ai): Fix test connection using default provider instead of current provider\n- Fix(ai): Fix AI crash prevention by adding guards for null webViewEnvironment on Windows\n- Fix(ai): Fix type cast error when using Gemini AI with tools (#747)\n- Fix(reader): Desktop resource lifecycle, WebView stability, and scroll UX optimization (#790) Thanks @yi124773651\n- Fix(reader): Fix window close cleanup to properly stop server, dispose WebView2, close database, and destroy window\n- Fix(reader): Add scroll debounce mechanism for smoother page turning experience\n- Fix(reader): Fix image saving permission issue on Android 10+ devices by removing unnecessary storage permission requests (#793)\n- Fix(reader): Disable WebView2 right-click context menu (back, reload, save as, print) on Windows (#746)\n- Fix(reader): Fix images with large inline max-width overflowing column width and appearing on wrong page (#742)\n- Fix(reader): Fix epub heading color not following theme color when useBookStyles is disabled (#749)\n- Fix(toc): Show full chapter titles in TOC by wrapping long text instead of truncating with ellipsis (#751)\n- Fix(l10n): Fallback to English when system language is unsupported on first launch (#785)\n- Feat(reader): Support independent left/right margins and font size for header and footer reading info, with shared section-based configuration model (#791)\n- Fix(l10n): Update Russian translation in app_ru.arb (#774) Thanks @Xapitonov\n- Fix(l10n): Update full_description.txt (#775) Thanks @Xapitonov\n- L10n: Complete Romanian translation (#714) Thanks @Steinhagen\n\n- Feat(ai): AI 支持单独的思考内容字段，并在聊天与流式界面中以轻量可折叠方式展示思考过程 (#787)\n- Fix(translate): 移除旧版 Microsoft 逆向翻译服务，并将已保存的全文翻译偏好迁移到 Microsoft Azure API\n- Fix(l10n): 移除旧版 Microsoft 翻译相关本地化条目\n- Feat(appearance): 新增设置项，可开关选中文本菜单等操作按钮的底部文字提示\n- Feat(reader): 新增背景图缩放模式设置，支持 cover 和 stretch 两种模式\n- Feat(reader): 阅读设置新增背景图模糊度和透明度调节 (#753)\n- Feat(tts): 在文本选择工具栏新增朗读选项，支持从选中文本开始 TTS (#794) 感谢 @deskangel\n- Feat(tts): 新增点击正在朗读的文本以暂停/继续 TTS 播放 (#794) 感谢 @deskangel\n- Feat(tts): 新增阅读界面朗读快捷操作悬浮按钮（上一句、暂停/继续、下一句、停止）(#723)\n- Feat(reader): macOS 新增 Ctrl+[ 和 Ctrl+] 翻页快捷键，支持 Logitech Options+ 鼠标按键映射 (#794) 感谢 @deskangel\n- Feat(ai): 在 AI 服务层添加全局 AI 请求限流（RPM）\n- Feat(ai): 新增 AI 供应商配置中心，支持 OpenAI 兼容、Claude 和 Gemini 协议\n- Feat(ai): 支持每个供应商配置多个 API Key，自动轮询使用\n- Feat(ai): 新增供应商级 reasoning_effort 配置，支持自动模式并收纳到高级设置中\n- Feat(ai): 新增供应商连接测试，支持流式预览\n- Feat(ai): 新增 AI 对话显示模式设置，支持自适应、分屏和弹出三种模式\n- Feat(ai): 新增可调整尺寸的 AI 面板，支持拖动调整大小，尺寸自动保存\n- Feat(ai): 新增 AI 面板位置设置（非弹出模式下可选择底部或右侧）\n- Feat(ai): 新增 AI 对话字体大小设置，通过三点菜单访问\n- Feat(ai): 新增 AI 聊天输入栏快速切换模型按钮（调谐图标）\n- Feat(ai): 供应商详情页新增模型选择器，获取后通过下拉菜单显示\n- Fix(ui): 修复关闭文字提示时上下文菜单按钮布局及图标颜色变灰的问题\n- Fix(reader): 修复背景图效果不生效的问题，并将阅读器背景图填充方式调整为 cover (#753)\n- Fix(reader): 修复阅读主题颜色为空/无效时的 RangeError 崩溃 (#759)\n- Fix(tts): 修复在阅读界面切换 TTS 类型无效的问题 (#794) 感谢 @deskangel\n- Fix(tts): 修复调整音调或语速后朗读位置不正确的问题 (#794) 感谢 @deskangel\n- Fix(tts): 修复 SystemTts 从 WebView 获取文本为空时的崩溃问题\n- Fix(ai): 修复无法使用 AI 进行全文翻译的问题\n- Fix(ai): 修复测试连接时使用默认供应商而非当前供应商的问题\n- Fix(ai): 修复 AI 崩溃问题，为 Windows 上空 webViewEnvironment 添加防护\n- Fix(ai): 修复使用 Gemini AI 工具时的类型转换错误 (#747)\n- Fix(reader): 桌面端资源生命周期管理、WebView 稳定性及滚动体验优化 (#790) 感谢 @yi124773651\n- Fix(reader): 修复窗口关闭时的清理流程，正确停止服务器、释放 WebView2、关闭数据库并销毁窗口\n- Fix(reader): 添加滚动防抖机制，优化翻页体验\n- Fix(reader): 修复 Android 10+ 设备图片保存权限问题，移除不必要的存储权限请求 (#793)\n- Fix(reader): 修复 Windows 端右键触发 WebView2 系统上下文菜单（返回、刷新、另存为、打印）的问题 (#746)\n- Fix(reader): 修复图片内嵌大 max-width 导致宽度超出栏宽而显示到下一页的问题 (#742)\n- Fix(reader): 修复禁用书籍自带样式时 epub 标题颜色不跟随主题色的问题，智能识别黑色标题并进行覆盖 (#749)\n- Fix(toc): 目录中过长的章节标题现在会自动换行显示完整内容，不再以省略号截断 (#751)\n- Fix(l10n): 修复首次启动时系统语言不受支持会错误回退到阿拉伯语的问题，改为回退到英文 (#785)\n- Feat(reader): 页眉和页脚阅读信息支持分别设置左右边距与字体大小，并重构为共享的分区配置模型 (#791)\n- Fix(l10n): 更新俄语翻译 app_ru.arb (#774) 感谢 @Xapitonov\n- L10n: 完成罗马尼亚语翻译 (#714) 感谢 @Steinhagen",
+          "downloadURL": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa",
+          "size": 28677588,
+          "minOSVersion": "15.2",
+          "releaseUrl": "https://github.com/Anxcye/anx-reader/releases/tag/v1.14.0",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Anx-Reader-android-1.14.0-arm64-v8a.apk",
+              "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-android-1.14.0-arm64-v8a.apk",
+              "platform": "android",
+              "architecture": "arm64",
+              "fileType": "APK",
+              "size": 27520363,
+              "sha256": "ac17738ddd11c2b1834494b1a31d494384fcabefa8501c9587ab63fef20b1eb4",
+              "downloads": 16878,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Anx-Reader-android-1.14.0-armeabi-v7a.apk",
+              "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-android-1.14.0-armeabi-v7a.apk",
+              "platform": "android",
+              "architecture": "armv7",
+              "fileType": "APK",
+              "size": 27737747,
+              "sha256": "21b8bac2356b8df6b58edd947811149e91301e9d4540bda36e9a078f708a983e",
+              "downloads": 1215,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Anx-Reader-android-1.14.0-universal.apk",
+              "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-android-1.14.0-universal.apk",
+              "platform": "android",
+              "architecture": "universal",
+              "fileType": "APK",
+              "size": 54364453,
+              "sha256": "43ae699477f7805b17bab4dd0c3c115cae590a44e8a6d696c6d548fb6a23e2cf",
+              "downloads": 12969,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Anx-Reader-android-1.14.0-x86_64.apk",
+              "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-android-1.14.0-x86_64.apk",
+              "platform": "android",
+              "architecture": "x86_64",
+              "fileType": "APK",
+              "size": 27699135,
+              "sha256": "f64978c6ebfc63d671e4423b490ee64380749772c96d79f76ef4361a9e06f27b",
+              "downloads": 944,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Anx-Reader-ios-1.14.0-unsigned.ipa",
+              "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 28677588,
+              "sha256": "a79bd247859d6a04dae81490aa7d8d970a830af7201415f4ec6aa370b74ae69b",
+              "downloads": 997,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Anx-Reader-ios-1.14.0-unsigned.zip",
+              "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.zip",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 28677588,
+              "sha256": "a79bd247859d6a04dae81490aa7d8d970a830af7201415f4ec6aa370b74ae69b",
+              "downloads": 317,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "Anx-Reader-macos-1.14.0.dmg",
+              "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-macos-1.14.0.dmg",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "DMG",
+              "size": 164653955,
+              "sha256": "3fc92956b2a51cb1b12c677abb01e0464a8599b76f50aa2ca850e49116fa888a",
+              "downloads": 1296,
+              "mimeType": "application/x-apple-diskimage",
+              "installable": true
+            },
+            {
+              "filename": "Anx-Reader-macos-1.14.0.zip",
+              "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-macos-1.14.0.zip",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 45179386,
+              "sha256": "6faf45d718d337a7f23c2ccf7fbe424c13fb614147313fbe5be4cc5fcff702d7",
+              "downloads": 300,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "Anx-Reader-windows-1.14.0.exe",
+              "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-windows-1.14.0.exe",
+              "platform": "windows",
+              "architecture": null,
+              "fileType": "EXE",
+              "size": 25440912,
+              "sha256": "886579acf3e8acb56fee60cbc634c700b9fc4080b28f8f1f7c1182c746975a62",
+              "downloads": 7807,
+              "mimeType": "application/x-msdos-program",
+              "installable": true
+            },
+            {
+              "filename": "Anx-Reader-windows-1.14.0.zip",
+              "downloadUrl": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-windows-1.14.0.zip",
+              "platform": "windows",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 32976388,
+              "sha256": "052bc63717f912b6962f3b98f11f86eea3337223d54ca9a18b48be7aa0051c86",
+              "downloads": 3015,
+              "mimeType": "application/zip",
+              "installable": false
+            }
+          ],
+          "sha256": "a79bd247859d6a04dae81490aa7d8d970a830af7201415f4ec6aa370b74ae69b",
+          "downloads": 997
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "anxreader",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/Anxcye/anx-reader",
+        "sourceURL": "https://github.com/Anxcye/anx-reader",
+        "verification": {
+          "method": "github-release",
+          "publisher": "Anxcye/anx-reader",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.2",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned CI IPA (Anx-Reader-ios-<version>-unsigned.ipa) built by the developer's release pipeline; 1.x targets iOS 15.2."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-03-19",
+          "lastUpdatedAt": "2026-03-19"
         }
       }
     },
@@ -217,6 +406,123 @@
       }
     },
     {
+      "name": "BlueWallet",
+      "bundleIdentifier": "io.bluewallet.bluewallet",
+      "developerName": "BlueWallet",
+      "subtitle": "Open-source Bitcoin wallet for iOS",
+      "localizedDescription": "BlueWallet is a free and open-source Bitcoin wallet focused on simplicity and power. Create standard on-chain wallets, watch-only wallets with full PSBT and hardware-wallet support, and Lightning wallets backed by the built-in LNDHUB or your own node — with fee control, multisig (Vault) and Tor connectivity.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/BlueWallet.webp",
+      "tintColor": "0070FF",
+      "category": "utilities",
+      "version": "8.0.1",
+      "versionDate": "2026-07-21",
+      "versionDescription": "BlueWallet 8.0.1 | BlueWallet_8.0.1_1784575843\n\n### New Features\n\niOS 26 Liquid Glass design\nImport Unchained JSON as a multisig cosigner\nSupport BC-UR v2 air-gap scanning for hardware wallets (OneKey, Keystone)\nOption to redact push notification content\nArkade Lightning push notifications\nEnable RBF for single-sig watch-only wallets (HD Bech32)\nHuman-readable data on transaction status screen\n19 new languages, including Filipino, Armenian, Akan, and Sesotho\n\n### Improvements\n\nRenewed Settings UI\nBetter green success color contrast\nRemoved GroundControl server URL option from notification settings\nFaster transaction fetching for HD wallets\nReplaced crypto-js with modern @noble crypto libraries\n\n### Fixes\n\nStartup crash\nAmount input lag in RBF custom fee input\nText size on main app views and clipped wallet balance in carousel\nQR codes no longer have rounded corners\nSigned transaction hex screen stays scrollable\nArkade LNURL payment result now persists\nFloating button no longer overlaps the transaction list\nVarious modal and navigation UX polish\n\nUnder the hood: dependency updates, TypeScript coverage improvements, CI and translation tooling fixes.\n\n## What's Changed\n* FIX: startup crash by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8618\n* OPS: Bump version by @marcosrdz in https://github.com/BlueWallet/BlueWallet/pull/8621\n* fix: no round corners in qrcode by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8631\n* REF: remove GroundControl server URL option from notification settings by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8636\n* ADD: arkade ln pushes by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8634\n* REF: single-pass tx-to-address mapping in HD fetchTransactions by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8639\n* fix(deps): update dependency @noble/secp256k1 to v1.7.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8590\n* chore(deps): update actions/checkout action to v6.0.3 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8643\n* Retyui remove dead code by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8645\n* fix(deps): update dependency @arkade-os/sdk to v0.4.33 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8647\n* fix(deps): update dependency @arkade-os/boltz-swap to v0.3.38 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8646\n* fix(deps): update dependency @react-native-vector-icons/ionicons to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8650\n* fix(deps): update dependency @react-native-vector-icons/fontawesome to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8648\n* fix(deps): update dependency @react-native-vector-icons/material-design-icons to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8652\n* FIX: Remove chevron on modal open ux by @marcosrdz in https://github.com/BlueWallet/BlueWallet/pull/8651\n* fix(deps): update dependency @react-native-vector-icons/fontawesome6 to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8649\n* fix(deps): update dependency @react-native-vector-icons/material-icons to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8653\n* fix(deps): update dependency dayjs to v1.11.21 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8669\n* fix: improve typescript coverage by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8239\n* fix(deps): update dependency @react-native-vector-icons/entypo to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8617\n* OPS: bump Arkade SDKs (sdk 0.4.35, boltz-swap 0.3.40) by @Kukks in https://github.com/BlueWallet/BlueWallet/pull/8675\n* tst: fix flaky goBack in iOS e2e tests by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8569\n* ADD: support importing Unchained JSON as multisig cosigner by @r6mez in https://github.com/BlueWallet/BlueWallet/pull/8568\n* chore(deps): update dependency @react-native/js-polyfills to ^0.86.0 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8679\n* fix(deps): update react-navigation monorepo by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8678\n* FIX: persist Arkade LNURL payment result by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8635\n* fix(deps): update dependency react-native-permissions to v5.5.3 - abandoned by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8670\n* fix: key on tx list by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8687\n* feat: iOS 26 glass by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8508\n* REF: swap crypto-js for @noble/ciphers + hashes by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8566\n* FIX: Amount input lag in rbf custom fee input by @ojokne in https://github.com/BlueWallet/BlueWallet/pull/8632\n* FIX: text size on main app views by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8689\n* FIX: clipping wallet balance on carousel by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8695\n* OPS: Update dependency concurrent-ruby to '< 1.3.8' [SECURITY] by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8694\n* FIX: ark tests Premature close — drop node-fetch, use native fetch by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8726\n* FIX: keep signed transaction hex screen scrollable by @K-i-Q in https://github.com/BlueWallet/BlueWallet/pull/8700\n* FIX: repair Transifex fastlane metadata integration by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8723\n* ADD: Filipino (fil_PH) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8709\n* fix: sync language files by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8703\n* ADD: Armenian (hy) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8704\n* ADD: Akan (ak) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8714\n* fix: fastlate android  by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8724\n* ADD: Sesotho (st_ZA) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8708\n* ADD: setting to redact push notification content by @r6mez in https://github.com/BlueWallet/BlueWallet/pull/8696\n* ADD: 15 new languages by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8734\n* Updates for file loc/en.json in es_419 by @transifex-integration[bot] in https://github.com/BlueWallet/BlueWallet/pull/8736\n* FIX: stray tool artifacts in ak/fil_PH vocabularies by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8730\n* REF: Change header ownership by @marcosrdz in https://github.com/BlueWallet/BlueWallet/pull/8735\n* chore: upgrade @arkade-os sdk@0.4.41  boltz-swap@0.3.46 by @pietro909 in https://github.com/BlueWallet/BlueWallet/pull/8744\n* OPS: Update all dependencies by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8743\n* FIX: bump qr to 0.6.0 by @GladosBlueWallet in https://github.com/BlueWallet/BlueWallet/pull/8748\n* fix: passphrase term by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8738\n* REF: improve green success contrast by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8751\n* FIX: reserve floating-button space in wallet tx list on both platforms by @r6mez in https://github.com/BlueWallet/BlueWallet/pull/8742\n* feat: readable data on tx status by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8688\n* OPS: Update all dependencies by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8761\n* Updates for file loc/en.json in es_419 by @transifex-integration[bot] in https://github.com/BlueWallet/BlueWallet/pull/8763\n* ADD: Enable RBF for single sig watch only wallet(HD Bech32) by @ojokne in https://github.com/BlueWallet/BlueWallet/pull/8641\n* REF: Use new saveDocument for fs by @marcosrdz in https://gi…",
+      "downloadURL": "https://github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet_8.0.1_1784575843.ipa",
+      "size": 29811150,
+      "versions": [
+        {
+          "version": "8.0.1",
+          "date": "2026-07-21",
+          "localizedDescription": "BlueWallet 8.0.1 | BlueWallet_8.0.1_1784575843\n\n### New Features\n\niOS 26 Liquid Glass design\nImport Unchained JSON as a multisig cosigner\nSupport BC-UR v2 air-gap scanning for hardware wallets (OneKey, Keystone)\nOption to redact push notification content\nArkade Lightning push notifications\nEnable RBF for single-sig watch-only wallets (HD Bech32)\nHuman-readable data on transaction status screen\n19 new languages, including Filipino, Armenian, Akan, and Sesotho\n\n### Improvements\n\nRenewed Settings UI\nBetter green success color contrast\nRemoved GroundControl server URL option from notification settings\nFaster transaction fetching for HD wallets\nReplaced crypto-js with modern @noble crypto libraries\n\n### Fixes\n\nStartup crash\nAmount input lag in RBF custom fee input\nText size on main app views and clipped wallet balance in carousel\nQR codes no longer have rounded corners\nSigned transaction hex screen stays scrollable\nArkade LNURL payment result now persists\nFloating button no longer overlaps the transaction list\nVarious modal and navigation UX polish\n\nUnder the hood: dependency updates, TypeScript coverage improvements, CI and translation tooling fixes.\n\n## What's Changed\n* FIX: startup crash by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8618\n* OPS: Bump version by @marcosrdz in https://github.com/BlueWallet/BlueWallet/pull/8621\n* fix: no round corners in qrcode by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8631\n* REF: remove GroundControl server URL option from notification settings by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8636\n* ADD: arkade ln pushes by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8634\n* REF: single-pass tx-to-address mapping in HD fetchTransactions by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8639\n* fix(deps): update dependency @noble/secp256k1 to v1.7.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8590\n* chore(deps): update actions/checkout action to v6.0.3 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8643\n* Retyui remove dead code by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8645\n* fix(deps): update dependency @arkade-os/sdk to v0.4.33 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8647\n* fix(deps): update dependency @arkade-os/boltz-swap to v0.3.38 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8646\n* fix(deps): update dependency @react-native-vector-icons/ionicons to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8650\n* fix(deps): update dependency @react-native-vector-icons/fontawesome to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8648\n* fix(deps): update dependency @react-native-vector-icons/material-design-icons to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8652\n* FIX: Remove chevron on modal open ux by @marcosrdz in https://github.com/BlueWallet/BlueWallet/pull/8651\n* fix(deps): update dependency @react-native-vector-icons/fontawesome6 to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8649\n* fix(deps): update dependency @react-native-vector-icons/material-icons to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8653\n* fix(deps): update dependency dayjs to v1.11.21 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8669\n* fix: improve typescript coverage by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8239\n* fix(deps): update dependency @react-native-vector-icons/entypo to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8617\n* OPS: bump Arkade SDKs (sdk 0.4.35, boltz-swap 0.3.40) by @Kukks in https://github.com/BlueWallet/BlueWallet/pull/8675\n* tst: fix flaky goBack in iOS e2e tests by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8569\n* ADD: support importing Unchained JSON as multisig cosigner by @r6mez in https://github.com/BlueWallet/BlueWallet/pull/8568\n* chore(deps): update dependency @react-native/js-polyfills to ^0.86.0 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8679\n* fix(deps): update react-navigation monorepo by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8678\n* FIX: persist Arkade LNURL payment result by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8635\n* fix(deps): update dependency react-native-permissions to v5.5.3 - abandoned by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8670\n* fix: key on tx list by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8687\n* feat: iOS 26 glass by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8508\n* REF: swap crypto-js for @noble/ciphers + hashes by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8566\n* FIX: Amount input lag in rbf custom fee input by @ojokne in https://github.com/BlueWallet/BlueWallet/pull/8632\n* FIX: text size on main app views by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8689\n* FIX: clipping wallet balance on carousel by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8695\n* OPS: Update dependency concurrent-ruby to '< 1.3.8' [SECURITY] by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8694\n* FIX: ark tests Premature close — drop node-fetch, use native fetch by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8726\n* FIX: keep signed transaction hex screen scrollable by @K-i-Q in https://github.com/BlueWallet/BlueWallet/pull/8700\n* FIX: repair Transifex fastlane metadata integration by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8723\n* ADD: Filipino (fil_PH) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8709\n* fix: sync language files by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8703\n* ADD: Armenian (hy) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8704\n* ADD: Akan (ak) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8714\n* fix: fastlate android  by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8724\n* ADD: Sesotho (st_ZA) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8708\n* ADD: setting to redact push notification content by @r6mez in https://github.com/BlueWallet/BlueWallet/pull/8696\n* ADD: 15 new languages by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8734\n* Updates for file loc/en.json in es_419 by @transifex-integration[bot] in https://github.com/BlueWallet/BlueWallet/pull/8736\n* FIX: stray tool artifacts in ak/fil_PH vocabularies by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8730\n* REF: Change header ownership by @marcosrdz in https://github.com/BlueWallet/BlueWallet/pull/8735\n* chore: upgrade @arkade-os sdk@0.4.41  boltz-swap@0.3.46 by @pietro909 in https://github.com/BlueWallet/BlueWallet/pull/8744\n* OPS: Update all dependencies by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8743\n* FIX: bump qr to 0.6.0 by @GladosBlueWallet in https://github.com/BlueWallet/BlueWallet/pull/8748\n* fix: passphrase term by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8738\n* REF: improve green success contrast by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8751\n* FIX: reserve floating-button space in wallet tx list on both platforms by @r6mez in https://github.com/BlueWallet/BlueWallet/pull/8742\n* feat: readable data on tx status by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8688\n* OPS: Update all dependencies by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8761\n* Updates for file loc/en.json in es_419 by @transifex-integration[bot] in https://github.com/BlueWallet/BlueWallet/pull/8763\n* ADD: Enable RBF for single sig watch only wallet(HD Bech32) by @ojokne in https://github.com/BlueWallet/BlueWallet/pull/8641\n* REF: Use new saveDocument for fs by @marcosrdz in https://gi…",
+          "downloadURL": "https://github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet_8.0.1_1784575843.ipa",
+          "size": 29811150,
+          "minOSVersion": "15.6",
+          "releaseUrl": "https://github.com/BlueWallet/BlueWallet/releases/tag/8.0.1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "BlueWallet-8.0.1-1784558752.apk",
+              "downloadUrl": "https://github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet-8.0.1-1784558752.apk",
+              "platform": "android",
+              "architecture": "universal",
+              "fileType": "APK",
+              "size": 76694335,
+              "sha256": "3ef56aad35eacfe133fcb25efee74b6f9c8baa79d4f16f5894accc8ccf06f6d5",
+              "downloads": 3466,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "BlueWallet-8.0.1-1784558752.apk.sig",
+              "downloadUrl": "https://github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet-8.0.1-1784558752.apk.sig",
+              "platform": "android",
+              "architecture": "universal",
+              "fileType": "other",
+              "size": 833,
+              "sha256": "be4e327c1a97ea80affc8a53df372364237908fdd03c02084d988e5be1d09706",
+              "downloads": 158,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "BlueWallet_8.0.1_1784575843.ipa",
+              "downloadUrl": "https://github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet_8.0.1_1784575843.ipa",
+              "platform": "ios",
+              "architecture": "universal",
+              "fileType": "IPA",
+              "size": 29811150,
+              "sha256": "a6d280f0e86219fd886597864691018d863c40bfc334b6ece4002cd8650e834c",
+              "downloads": 83,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "BlueWallet_8.0.1_1784575843.ipa.sig",
+              "downloadUrl": "https://github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet_8.0.1_1784575843.ipa.sig",
+              "platform": "unknown",
+              "architecture": "universal",
+              "fileType": "other",
+              "size": 833,
+              "sha256": "d998a596fdbdf7141200de9d055dba4fb11d6851b0e2fd72da9467bc2ad7f51a",
+              "downloads": 42,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            }
+          ],
+          "sha256": "a6d280f0e86219fd886597864691018d863c40bfc334b6ece4002cd8650e834c",
+          "downloads": 83
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "bluewallet",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/BlueWallet/BlueWallet",
+        "sourceURL": "https://github.com/BlueWallet/BlueWallet",
+        "verification": {
+          "method": "github-release",
+          "publisher": "BlueWallet/BlueWallet",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.6",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned IPA published by the BlueWallet team on GitHub Releases (8.x targets iOS 15.6). Uses the same bundle identifier as the App Store build: installing the sideload build replaces the store version."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-07-21",
+          "lastUpdatedAt": "2026-07-21"
+        }
+      }
+    },
+    {
       "name": "Delta",
       "bundleIdentifier": "com.rileytestut.Delta",
       "developerName": "Riley Testut",
@@ -251,12 +557,12 @@
               "fileType": "IPA",
               "size": 87734964,
               "sha256": null,
-              "downloads": 70487,
+              "downloads": 70488,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
-          "downloads": 70487
+          "downloads": 70488
         }
       ],
       "screenshotURLs": [],
@@ -331,7 +637,7 @@
               "fileType": "IPA",
               "size": 14241853,
               "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
-              "downloads": 46920,
+              "downloads": 46924,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -349,7 +655,7 @@
             }
           ],
           "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
-          "downloads": 46920
+          "downloads": 46924
         }
       ],
       "screenshotURLs": [
@@ -784,7 +1090,7 @@
               "fileType": "IPA",
               "size": 35403538,
               "sha256": "97dc0fd2202fd4460efcab389943b8d5fdbb4988efff76b116b92b84a4662425",
-              "downloads": 267878,
+              "downloads": 267888,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -796,13 +1102,13 @@
               "fileType": "IPA",
               "size": 4707271,
               "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6",
-              "downloads": 76190,
+              "downloads": 76197,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6",
-          "downloads": 76190
+          "downloads": 76197
         }
       ],
       "screenshotURLs": [
@@ -890,12 +1196,13 @@
               "fileType": "IPA",
               "size": 106420283,
               "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
-              "downloads": 0,
+              "downloads": 5,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
-          "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5"
+          "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
+          "downloads": 5
         }
       ],
       "screenshotURLs": [
@@ -1124,7 +1431,7 @@
               "fileType": "other",
               "size": 60860348,
               "sha256": "4de21db3105d9d81a465a8a7e78c68ee3c0e0bf6597d1c1d530f7555f3ad8b31",
-              "downloads": 5163,
+              "downloads": 5165,
               "mimeType": "application/x-xz",
               "installable": false
             },
@@ -1136,7 +1443,7 @@
               "fileType": "IPA",
               "size": 31124277,
               "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
-              "downloads": 8302,
+              "downloads": 8304,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -1148,7 +1455,7 @@
               "fileType": "AppImage",
               "size": 48581283,
               "sha256": "18c1d515fd99b0b10ca5fa8cbab192f6d4c9d8a10381e16f5de8fb8f9d39bbe1",
-              "downloads": 5210,
+              "downloads": 5212,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -1172,7 +1479,7 @@
               "fileType": "AppImage",
               "size": 50689748,
               "sha256": "661c098e6b7f7610171a57b7c533ce8bba6f2312b71e76d61e850461973eba21",
-              "downloads": 14380,
+              "downloads": 14381,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -1184,7 +1491,7 @@
               "fileType": "other",
               "size": 173467,
               "sha256": "e2d4c9f6d238840ac6fc0da4f90769b810dd7760bae776ed5f95771fd45976be",
-              "downloads": 29380,
+              "downloads": 29381,
               "mimeType": "application/octet-stream",
               "installable": false
             },
@@ -1226,7 +1533,7 @@
             }
           ],
           "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
-          "downloads": 8302
+          "downloads": 8304
         }
       ],
       "screenshotURLs": [],
@@ -1360,6 +1667,195 @@
       }
     },
     {
+      "name": "Saber",
+      "bundleIdentifier": "com.adilhanney.saber",
+      "developerName": "Adil Hanney",
+      "subtitle": "Open-source handwritten notes",
+      "localizedDescription": "Saber is a free and open-source handwritten notes app built with Flutter. Write with your finger or Apple Pencil as if on paper, organize notes into folders, keep them private with encryption, and sync across devices using its optional Nextcloud-based sync — no vendor lock-in.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Saber.webp",
+      "tintColor": "F9C60A",
+      "category": "utilities",
+      "version": "1.36.1",
+      "versionDate": "2026-08-30",
+      "versionDescription": "Saber 1.36.1 | Saber_v1.36.1\n\n## External links\n\n[<img src='https://github.com/adil192/saber/blob/main/assets_raw/badges/google-play-badge.svg'\n    alt='Get it on Google Play'\n    height=50>][google_play]&nbsp;[<img src=\"https://github.com/adil192/saber/blob/main/assets_raw/badges/f-droid-badge.svg\"\n    alt=\"Get it on F-Droid\"\n    height=50>][f-droid]&nbsp;[<img src=\"https://github.com/adil192/saber/blob/main/assets_raw/badges/app-store-badge.svg\"\n    alt=\"Download on the App Store\"\n    height=50>][app_store]&nbsp;[<img src=\"https://github.com/adil192/saber/blob/main/assets_raw/badges/flathub-badge.svg\"\n    alt=\"Download on Flathub\"\n    height=50>][flathub]\n\nFor other downloads, scroll down and find the relevant file under \"Assets\".\n\n[f-droid]: https://f-droid.org/packages/com.adilhanney.saber/\n[flathub]: https://flathub.org/apps/details/com.adilhanney.saber\n[google_play]: https://play.google.com/store/apps/details?id=com.adilhanney.saber\n[app_store]: https://apps.apple.com/us/app/saber/id1671523739\n[releases]: https://github.com/adil192/saber/releases\n\n## Changelog\n\n- Improved the design of the login flow, making better use of space on landscape/desktop screens.\n- Tweaked scrolling friction in the editor to make it less slippery. #1785\n- Fixed handling of accounts with unlimited storage quota. #1796 \n- Fixed folders not being sorted in the browse page. #1809 \n- Fixed parts of the app using a hardcoded Ubuntu font. eafaf264b19a35cbf8e8831daa4118e1446fe16d and https://github.com/ubuntu/yaru.dart/pull/1075.\n- Fixed non-Latin language fonts and inconsistent UI elements in Flathub screenshots.\n- Improved build system... Now fewer custom patches are needed for various stores. Enabled the `--enforce-lockfile` flag for F-Droid for more reproducible builds. #1799 \n- Fixed Android 16KB page size support by forcing a newer NDK version. 87fcb037ba8792cd24ef3af66335007854dbdabc\n- Continued code cleanup, refactoring, testing, and small UX improvements.\n- Various fixes from [Flutter 3.47.2](https://github.com/flutter/flutter/blob/stable/CHANGELOG.md#3472)\n- Translations:\n  - i18n: Update French metadata by @ArTuPSly in d092314beecfbbafec179ec5b17841aa90265805\n  - i18n: Various small tweaks to fix Weblate lints (e.g. adding a trailing colon to match the English equivalent)\n\n- Full changelog: https://github.com/saber-notes/saber/compare/v1.36.0...v1.36.1",
+      "downloadURL": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.ipa",
+      "size": 37589281,
+      "versions": [
+        {
+          "version": "1.36.1",
+          "date": "2026-08-30",
+          "localizedDescription": "Saber 1.36.1 | Saber_v1.36.1\n\n## External links\n\n[<img src='https://github.com/adil192/saber/blob/main/assets_raw/badges/google-play-badge.svg'\n    alt='Get it on Google Play'\n    height=50>][google_play]&nbsp;[<img src=\"https://github.com/adil192/saber/blob/main/assets_raw/badges/f-droid-badge.svg\"\n    alt=\"Get it on F-Droid\"\n    height=50>][f-droid]&nbsp;[<img src=\"https://github.com/adil192/saber/blob/main/assets_raw/badges/app-store-badge.svg\"\n    alt=\"Download on the App Store\"\n    height=50>][app_store]&nbsp;[<img src=\"https://github.com/adil192/saber/blob/main/assets_raw/badges/flathub-badge.svg\"\n    alt=\"Download on Flathub\"\n    height=50>][flathub]\n\nFor other downloads, scroll down and find the relevant file under \"Assets\".\n\n[f-droid]: https://f-droid.org/packages/com.adilhanney.saber/\n[flathub]: https://flathub.org/apps/details/com.adilhanney.saber\n[google_play]: https://play.google.com/store/apps/details?id=com.adilhanney.saber\n[app_store]: https://apps.apple.com/us/app/saber/id1671523739\n[releases]: https://github.com/adil192/saber/releases\n\n## Changelog\n\n- Improved the design of the login flow, making better use of space on landscape/desktop screens.\n- Tweaked scrolling friction in the editor to make it less slippery. #1785\n- Fixed handling of accounts with unlimited storage quota. #1796 \n- Fixed folders not being sorted in the browse page. #1809 \n- Fixed parts of the app using a hardcoded Ubuntu font. eafaf264b19a35cbf8e8831daa4118e1446fe16d and https://github.com/ubuntu/yaru.dart/pull/1075.\n- Fixed non-Latin language fonts and inconsistent UI elements in Flathub screenshots.\n- Improved build system... Now fewer custom patches are needed for various stores. Enabled the `--enforce-lockfile` flag for F-Droid for more reproducible builds. #1799 \n- Fixed Android 16KB page size support by forcing a newer NDK version. 87fcb037ba8792cd24ef3af66335007854dbdabc\n- Continued code cleanup, refactoring, testing, and small UX improvements.\n- Various fixes from [Flutter 3.47.2](https://github.com/flutter/flutter/blob/stable/CHANGELOG.md#3472)\n- Translations:\n  - i18n: Update French metadata by @ArTuPSly in d092314beecfbbafec179ec5b17841aa90265805\n  - i18n: Various small tweaks to fix Weblate lints (e.g. adding a trailing colon to match the English equivalent)\n\n- Full changelog: https://github.com/saber-notes/saber/compare/v1.36.0...v1.36.1",
+          "downloadURL": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.ipa",
+          "size": 37589281,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/saber-notes/saber/releases/tag/v1.36.1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Saber-1.36.1-arm64.AppImage",
+              "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber-1.36.1-arm64.AppImage",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "AppImage",
+              "size": 90032648,
+              "sha256": "8a459fc993d206f0b3aeb70d9837cd535dbb3fceceb75c7c18eccc7ba907d0ba",
+              "downloads": 40,
+              "mimeType": "binary/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Saber-1.36.1-arm64.AppImage.zsync",
+              "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber-1.36.1-arm64.AppImage.zsync",
+              "platform": "unknown",
+              "architecture": "arm64",
+              "fileType": "other",
+              "size": 307949,
+              "sha256": "5f249f8c5baa5a84892fcfa24f6c770837d96dd08b2a82299932b2629046ddbd",
+              "downloads": 6,
+              "mimeType": "binary/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "Saber-1.36.1-x86_64.AppImage",
+              "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber-1.36.1-x86_64.AppImage",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "AppImage",
+              "size": 92375544,
+              "sha256": "a26e47f60fccf45be7c37e647c31f5b51f9ae077d921dbae1db93fe3a020a74e",
+              "downloads": 289,
+              "mimeType": "binary/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Saber-1.36.1-x86_64.AppImage.zsync",
+              "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber-1.36.1-x86_64.AppImage.zsync",
+              "platform": "unknown",
+              "architecture": "x86_64",
+              "fileType": "other",
+              "size": 315955,
+              "sha256": "28c0125adf6cbdc8a49d9c2160e5d09468aee6770a3fa266267adec0f3631236",
+              "downloads": 125,
+              "mimeType": "binary/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "SaberInstaller_v1.36.1.exe",
+              "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/SaberInstaller_v1.36.1.exe",
+              "platform": "windows",
+              "architecture": "universal",
+              "fileType": "EXE",
+              "size": 41802638,
+              "sha256": "7f36ef4fd31c7c48ae493d3c01aa6cfb9f00e9cef661d56676037f266ea2cc21",
+              "downloads": 937,
+              "mimeType": "binary/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Saber_FOSS_v1.36.1.apk",
+              "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_FOSS_v1.36.1.apk",
+              "platform": "android",
+              "architecture": null,
+              "fileType": "APK",
+              "size": 110269134,
+              "sha256": "45d2fe921ea19e01b10ae2f58ca340fe0490daf7f5cadfba07e50da259dadd9e",
+              "downloads": 628,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Saber_v1.36.1.apk",
+              "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.apk",
+              "platform": "android",
+              "architecture": null,
+              "fileType": "APK",
+              "size": 136252221,
+              "sha256": "1df0edc6dc6eeba4603310f242f13232aa54b88969c19099f9039082be7da726",
+              "downloads": 795,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Saber_v1.36.1.ipa",
+              "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 37589281,
+              "sha256": "e8432a6846230591d0f6a39ce4c370107ba68b2836135c907b82d96bcbd904ca",
+              "downloads": 18,
+              "mimeType": "binary/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Saber_v1.36.1_Linux_arm64.tar.gz",
+              "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1_Linux_arm64.tar.gz",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "other",
+              "size": 20554131,
+              "sha256": "3c198a9fc92cc7b0970739e255388175778b98d25d62e72ca6480e19af650305",
+              "downloads": 12,
+              "mimeType": "binary/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "Saber_v1.36.1_Linux_x86_64.tar.gz",
+              "downloadUrl": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1_Linux_x86_64.tar.gz",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "other",
+              "size": 20969178,
+              "sha256": "c57e96c7e8bcfbfd04b65a7736a9a1d40fb31078f4ef2f2701e14cc69a4cc40e",
+              "downloads": 86,
+              "mimeType": "binary/octet-stream",
+              "installable": false
+            }
+          ],
+          "sha256": "e8432a6846230591d0f6a39ce4c370107ba68b2836135c907b82d96bcbd904ca",
+          "downloads": 18
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "saber",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/saber-notes/saber",
+        "sourceURL": "https://github.com/saber-notes/saber",
+        "verification": {
+          "method": "github-release",
+          "publisher": "saber-notes/saber",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned IPA (Saber_v<version>.ipa) from the developer's GitHub releases; 1.x targets iOS 15. Also available on the App Store under the same bundle identifier."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-08-30",
+          "lastUpdatedAt": "2026-08-30"
+        }
+      }
+    },
+    {
       "name": "SideStore",
       "bundleIdentifier": "com.SideStore.SideStore",
       "developerName": "SideStore Team",
@@ -1394,13 +1890,13 @@
               "fileType": "IPA",
               "size": 28632252,
               "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
-              "downloads": 687140,
+              "downloads": 687148,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
-          "downloads": 687140
+          "downloads": 687148
         }
       ],
       "screenshotURLs": [
@@ -1491,7 +1987,7 @@
               "fileType": "APK",
               "size": 102232099,
               "sha256": "dca5575a769d0ef762a8a734bced9128cf3eb118f796aec809d2e347c767e121",
-              "downloads": 2620,
+              "downloads": 2627,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -1503,7 +1999,7 @@
               "fileType": "APK",
               "size": 81186819,
               "sha256": "5ccfa354b38cf9a7e686fc5cf0806137c83980a2aa9a803f27ecc1f4a5547003",
-              "downloads": 37377,
+              "downloads": 37453,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -1620,7 +2116,7 @@
               "fileType": "APK",
               "size": 128388471,
               "sha256": "20de38abd2eea0c0998174c8a34b324f4a9531665110f67176257e7ecc5bf0fe",
-              "downloads": 200207,
+              "downloads": 200231,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -1692,7 +2188,7 @@
               "fileType": "AppImage",
               "size": 106015224,
               "sha256": "a14dc29d7778fad748062159541cd47e797719f37175df2726c74cd3c5519a48",
-              "downloads": 3498,
+              "downloads": 3499,
               "mimeType": "raw",
               "installable": true
             },
@@ -1752,7 +2248,7 @@
               "fileType": "EXE",
               "size": 38294732,
               "sha256": "e5641f3841ec724fcb5e00a22d980f410ee507fdd00669b86db0c29f9b741162",
-              "downloads": 55817,
+              "downloads": 55819,
               "mimeType": "raw",
               "installable": true
             },
@@ -1845,13 +2341,13 @@
               "fileType": "IPA",
               "size": 12824047,
               "sha256": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845",
-              "downloads": 26244,
+              "downloads": 26250,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845",
-          "downloads": 26244
+          "downloads": 26250
         }
       ],
       "screenshotURLs": [
@@ -1930,7 +2426,7 @@
               "fileType": "APK",
               "size": 197174334,
               "sha256": "9af07d922fbf5472a9f0caa1cb45bb7d2c28f1a9911b423237aefe0948317b81",
-              "downloads": 10450,
+              "downloads": 10451,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -2209,7 +2705,7 @@
               "fileType": "IPA",
               "size": 130058389,
               "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
-              "downloads": 80310,
+              "downloads": 80313,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -2233,7 +2729,7 @@
               "fileType": "IPA",
               "size": 130058653,
               "sha256": "42c568d53f12f2d594665daa7f7382af501b97880d61f58aceca73de23f17b28",
-              "downloads": 21089,
+              "downloads": 21090,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -2257,13 +2753,13 @@
               "fileType": "DMG",
               "size": 250021057,
               "sha256": "a8435c93cfb5f8bbfeea4b134cfad1ac66b67632b75e438c63b1a8ae043bef0e",
-              "downloads": 4285648,
+              "downloads": 4285776,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
-          "downloads": 80310
+          "downloads": 80313
         }
       ],
       "screenshotURLs": [],
@@ -2424,6 +2920,207 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-08-22"
+        }
+      }
+    },
+    {
+      "name": "Voyager",
+      "bundleIdentifier": "app.vger.voyager",
+      "developerName": "aeharding",
+      "subtitle": "Beautiful open-source client for Lemmy",
+      "localizedDescription": "Voyager is a free and open-source client for Lemmy and PieFed with an iOS-native feel — swipe gestures, haptics, infinite scroll, rich markdown support, multi-account switching and deep theming. The same project powers the official Voyager App Store release; this feed tracks the developer's own GitHub build.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Voyager.webp",
+      "tintColor": "4083BD",
+      "category": "social",
+      "version": "2.49.0",
+      "versionDate": "2026-09-06",
+      "versionDescription": "Voyager 2.49.0 | Voyager-iOS-2.49.0\n\n## 🚀 Features\n\n- feat: enable rich editor by default\n   - PR: #2352\n\n## 🐛 Fixes\n\n- fix: show two column setting in desktop app\n   - PR: #2346\n- fix: stabilize navigation after ionic v9 upgrade\n   - PR: #2348\n- fix: preserve tab state during route transitions\n   - PR: #2349\n- fix: prevent random community transition flicker\n   - PR: #2353\n\n## 📝 Other Changes\n\n- chore: upgrade to ionic v9\n   - PR: #2347\n- test: expand provider matrix to comment threads, feed and search\n   - PR: #2321\n- chore: upgrade threadiverse to 0.21.2\n   - PR: #2350\n- chore: upgrade dependencies\n   - PR: #2351",
+      "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
+      "size": 8216630,
+      "versions": [
+        {
+          "version": "2.49.0",
+          "date": "2026-09-06",
+          "localizedDescription": "Voyager 2.49.0 | Voyager-iOS-2.49.0\n\n## 🚀 Features\n\n- feat: enable rich editor by default\n   - PR: #2352\n\n## 🐛 Fixes\n\n- fix: show two column setting in desktop app\n   - PR: #2346\n- fix: stabilize navigation after ionic v9 upgrade\n   - PR: #2348\n- fix: preserve tab state during route transitions\n   - PR: #2349\n- fix: prevent random community transition flicker\n   - PR: #2353\n\n## 📝 Other Changes\n\n- chore: upgrade to ionic v9\n   - PR: #2347\n- test: expand provider matrix to comment threads, feed and search\n   - PR: #2321\n- chore: upgrade threadiverse to 0.21.2\n   - PR: #2350\n- chore: upgrade dependencies\n   - PR: #2351",
+          "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
+          "size": 8216630,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/aeharding/voyager/releases/tag/2.49.0",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Voyager-Android-2.49.0.apk",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Android-2.49.0.apk",
+              "platform": "android",
+              "architecture": null,
+              "fileType": "APK",
+              "size": 8228595,
+              "sha256": "b164edc7e58b1d283f8f472aaccfabebc51dcf18588014176b18803f7d6e3b34",
+              "downloads": 1417,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-iOS-2.49.0.ipa",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 8216630,
+              "sha256": "3e71607b8a945db67ef82adadcb74f087691b8f02ef2cce522f4be9a49865c87",
+              "downloads": 4,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-Linux-aarch64-2.49.0.AppImage",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-aarch64-2.49.0.AppImage",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "AppImage",
+              "size": 96037384,
+              "sha256": "c9d8db9e3950d6260e27c091ce68d07ca762c7f8050137bbc28e6d6e03b2a71e",
+              "downloads": 2,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-Linux-aarch64-2.49.0.AppImage.zsync",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-aarch64-2.49.0.AppImage.zsync",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "other",
+              "size": 328503,
+              "sha256": "95744a7803c4c0a0320e2fa46d32401fc17c40f717187d863594944eafaf7f36",
+              "downloads": 2,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "Voyager-Linux-aarch64-2.49.0.deb",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-aarch64-2.49.0.deb",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "DEB",
+              "size": 23020672,
+              "sha256": "0329d259d25c2711453205b1fb6fa7a771b619f95b433395eda9847c5941d522",
+              "downloads": 2,
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-Linux-aarch64-2.49.0.rpm",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-aarch64-2.49.0.rpm",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "other",
+              "size": 23021869,
+              "sha256": "406d51bee688f6c07669bd942c932cc2f4de813ebaa03304415f14050cd05689",
+              "downloads": 3,
+              "mimeType": "application/x-redhat-package-manager",
+              "installable": false
+            },
+            {
+              "filename": "Voyager-Linux-x86_64-2.49.0.AppImage",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-x86_64-2.49.0.AppImage",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "AppImage",
+              "size": 98007544,
+              "sha256": "a4df58e29d9acc96210da5cb081742225ca6db6f30bd45865c7f368a36b1256f",
+              "downloads": 7,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-Linux-x86_64-2.49.0.AppImage.zsync",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-x86_64-2.49.0.AppImage.zsync",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "other",
+              "size": 335235,
+              "sha256": "20c03c193eff9ae6a2d423275bb163073603b94d517984d16b5413cde3d497af",
+              "downloads": 7,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "Voyager-Linux-x86_64-2.49.0.deb",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-x86_64-2.49.0.deb",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "DEB",
+              "size": 23247416,
+              "sha256": "5c5fcdded828f35ac71e4d6cd4fb98b1bc56803a8deaf6d084fe9ed9f79ba892",
+              "downloads": 2,
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-Linux-x86_64-2.49.0.rpm",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-x86_64-2.49.0.rpm",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "other",
+              "size": 23245655,
+              "sha256": "d572c77e6f11801ab687fe3ea795b4a01579fcbf8eed977327f200f2712f388d",
+              "downloads": 3,
+              "mimeType": "application/x-redhat-package-manager",
+              "installable": false
+            },
+            {
+              "filename": "Voyager-Web-2.49.0.zip",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Web-2.49.0.zip",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 17721347,
+              "sha256": "338994a83e6c81cedad313b4fe0c8d263f1184291bdba34d7c4443af0778c25f",
+              "downloads": 3,
+              "mimeType": "application/zip",
+              "installable": false
+            }
+          ],
+          "sha256": "3e71607b8a945db67ef82adadcb74f087691b8f02ef2cce522f4be9a49865c87",
+          "downloads": 4
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "voyager",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/aeharding/voyager",
+        "sourceURL": "https://github.com/aeharding/voyager",
+        "verification": {
+          "method": "github-release",
+          "publisher": "aeharding/voyager",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned iOS IPA (Voyager-iOS-<version>.ipa) from the developer's GitHub releases; 2.x targets iOS 15. The release also ships Android (apk) and watch builds which are intentionally not distributed here."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-06",
+          "lastUpdatedAt": "2026-09-06"
         }
       }
     },
@@ -2858,13 +3555,13 @@
               "fileType": "IPA",
               "size": 129031075,
               "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba",
-              "downloads": 235,
+              "downloads": 239,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba",
-          "downloads": 235
+          "downloads": 239
         },
         {
           "version": "20.21.6",
@@ -3333,6 +4030,171 @@
           "lastUpdatedAt": "2026-09-09"
         }
       }
+    },
+    {
+      "name": "Zeus",
+      "bundleIdentifier": "com.zeusln.zeus",
+      "developerName": "Zeus LN",
+      "subtitle": "Self-custodial Bitcoin and Lightning wallet",
+      "localizedDescription": "Zeus is a free and open-source, self-custodial Bitcoin and Lightning wallet for iPhone and iPad. Connect the app to your own node (LND, Core Lightning, c-lightning-REST, BTCPay Server or Lightning Terminal) or use the built-in Olympus LNDHub for a quick start, with contacts, Nostr Wallet Connect, LNURL, point-of-sale and full on-chain and Lightning payment support.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Zeus.webp",
+      "tintColor": "FFC800",
+      "category": "utilities",
+      "version": "13.2.1",
+      "versionDate": "2026-09-02",
+      "versionDescription": "Zeus 13.2.1 | zeus-v13.2.1\n\n<img width=\"1100\" height=\"614\" alt=\"ZEUS v13.2.1\" src=\"https://github.com/user-attachments/assets/8c7a0358-df6e-40c7-93bd-9371721143e7\" />\n\n## v13.2.1 Highlights:\n\n- LDK Node: BOLT 12 fixes\n- Boltcard fixes\n- Improved clipboard value UI\n- Further security hardening measures\n- Miscellaneous bug fixes\n- Miscellaneous UI improvements\n\n## What's Changed\n* chore(deps): bump js-yaml from 3.14.2 to 3.15.0 in /zeus_modules/@lightninglabs/lnc-core by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4206\n* deps: patch ws, js-yaml, and markdown-it security alerts by @kaloudis in https://github.com/ZeusLN/zeus/pull/4214\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4219\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4220\n* docs: add Claude Code skill library under .claude/skills by @kaloudis in https://github.com/ZeusLN/zeus/pull/4209\n* fix: poll status for free LSPS1/LSPS7 orders by @shubhamkmr04 in https://github.com/ZeusLN/zeus/pull/4204\n* fix: display units for invoice expiry and CLTV expiry by @kaloudis in https://github.com/ZeusLN/zeus/pull/4225\n* SwipeButton: lock knob in place after successful swipe by @kaloudis in https://github.com/ZeusLN/zeus/pull/4224\n* fix: use TextInput suffix for fee limit percent fields by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4228\n* backends: fix amountless invoice creation for LDK Node by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4232\n* chore(deps): bump protobufjs from 7.6.3 to 7.6.5 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4235\n* chore(deps): bump brace-expansion from 1.1.11 to 1.1.16 in /zeus_modules/@lightninglabs/lnc-core by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4234\n* chore(deps): bump brace-expansion from 5.0.6 to 5.0.7 in /zeus_modules/@lightninglabs/lnc-rn by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4236\n* [feat] LND v0.21-beta by @kaloudis in https://github.com/ZeusLN/zeus/pull/4177\n* Receive: surface Flow LSP proposal rejection as dismissable warning by @kaloudis in https://github.com/ZeusLN/zeus/pull/4233\n* chore(deps): bump shell-quote from 1.8.4 to 1.10.0 in /zeus_modules/@lightninglabs/lnc-rn by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4237\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4238\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4240\n* fix: deep links handled twice with 'Select wallet on start-up' by @kaloudis in https://github.com/ZeusLN/zeus/pull/4226\n* stores: prevent stale closeChannel error from wiping channel list by @kaloudis in https://github.com/ZeusLN/zeus/pull/4230\n* chore(deps): bump fast-uri from 3.1.2 to 3.1.4 in /zeus_modules/@lightninglabs/lnc-core by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4241\n* chore(deps): bump svgo from 3.3.3 to 3.3.4 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4242\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4243\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4244\n* ci: add Dependabot config for npm and GitHub Actions version updates by @kaloudis in https://github.com/ZeusLN/zeus/pull/4215\n* chore(deps): bump @babel/preset-env from 7.22.15 to 7.29.7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4256\n* chore(deps): bump mobx from 5.15.3 to 5.15.7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4253\n* ci: bump actions/setup-node from 6 to 7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4245\n* ci: bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4246\n* fix: prevent Security settings UI flash on open by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4239\n* chore(deps): bump events from 1.1.1 to 3.3.0 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4248\n* chore(deps): bump concurrently from 9.1.2 to 10.0.3 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4251\n* chore(deps): bump protobufjs-cli from 1.3.3 to 2.0.0 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4252\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4259\n* chore(deps): bump 47 minor and patch dependencies (slimmed #4247) by @kaloudis in https://github.com/ZeusLN/zeus/pull/4260\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4263\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4264\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4265\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4266\n* chore(deps): bump json from 2.19.2 to 2.19.9 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4267\n* chore(deps): bump valibot from 1.2.0 to 1.4.2 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4268\n* chore(deps): migrate lnc-rn from deprecated tslint to eslint v9 by @kaloudis in https://github.com/ZeusLN/zeus/pull/4271\n* chore(deps): clear Dependabot alerts on transitive dependencies by @kaloudis in https://github.com/ZeusLN/zeus/pull/4274\n* chore(deps): bump protobufjs to v8 + protobufjs-cli 2.5.1, regenerate bindings by @kaloudis in https://github.com/ZeusLN/zeus/pull/4262\n* build: fix vendored lnc-rn bob build + add mocha test suite by @kaloudis in https://github.com/ZeusLN/zeus/pull/4275\n* LDK: Add support for 24 word seed phrases by @shubhamkmr04 in https://github.com/ZeusLN/zeus/pull/4212\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4282\n* [feat] fix(LNC): route register callbacks through events to avoid new-arch crash by @kaloudis in https://github.com/ZeusLN/zeus/pull/4205\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4283\n* build: run prettier on generated proto types after gen-proto by @kaloudis in https://github.com/ZeusLN/zeus/pull/4284\n* deps: fix shell-quote DoS, clean up minimatch pins by @kaloudis in https://github.com/ZeusLN/zeus/pull/4281\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4290\n* fix(CLN): include unpaid invoices in Activity by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4291\n* fix: show the correct seed when backing up an inactive wallet by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4280\n* Lockscreen: prevent duress wipe in security management flows by @kaloudis in https://github.com/ZeusLN/zeus/pull/4293\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4295\n* views: WalletConfiguration: lock interface for initialized LDK Node by @kaloudis in https://github.com/ZeusLN/zeus/pull/4296\n* chore(deps): bump @react-native-documents/picker from 11.0.3 to 12.0.2 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4249\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4299\n* fix(nwc): fix lookup_invoice, list_transactions, and backend invoice lookup by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4294\n* docs: add SECURITY.md with vulnerability disclosure policy by @kaloudis in https://github.com/ZeusLN/zeus/pull/4310\n* fix(CLN/LND): poll lookupInvoice in the Receive payment watcher by @kaloudis in https://github.com/ZeusLN/zeus/pull/4300\n* utils: disable REST proxy in embedded LND config by @kaloudis in https://github.com/ZeusLN/zeus/pull/4311\n* fix(swaps): always generate an independent swap rescue key by @kaloudis in https://github.com/ZeusL…",
+      "downloadURL": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1.ipa",
+      "size": 80499468,
+      "versions": [
+        {
+          "version": "13.2.1",
+          "date": "2026-09-02",
+          "localizedDescription": "Zeus 13.2.1 | zeus-v13.2.1\n\n<img width=\"1100\" height=\"614\" alt=\"ZEUS v13.2.1\" src=\"https://github.com/user-attachments/assets/8c7a0358-df6e-40c7-93bd-9371721143e7\" />\n\n## v13.2.1 Highlights:\n\n- LDK Node: BOLT 12 fixes\n- Boltcard fixes\n- Improved clipboard value UI\n- Further security hardening measures\n- Miscellaneous bug fixes\n- Miscellaneous UI improvements\n\n## What's Changed\n* chore(deps): bump js-yaml from 3.14.2 to 3.15.0 in /zeus_modules/@lightninglabs/lnc-core by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4206\n* deps: patch ws, js-yaml, and markdown-it security alerts by @kaloudis in https://github.com/ZeusLN/zeus/pull/4214\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4219\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4220\n* docs: add Claude Code skill library under .claude/skills by @kaloudis in https://github.com/ZeusLN/zeus/pull/4209\n* fix: poll status for free LSPS1/LSPS7 orders by @shubhamkmr04 in https://github.com/ZeusLN/zeus/pull/4204\n* fix: display units for invoice expiry and CLTV expiry by @kaloudis in https://github.com/ZeusLN/zeus/pull/4225\n* SwipeButton: lock knob in place after successful swipe by @kaloudis in https://github.com/ZeusLN/zeus/pull/4224\n* fix: use TextInput suffix for fee limit percent fields by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4228\n* backends: fix amountless invoice creation for LDK Node by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4232\n* chore(deps): bump protobufjs from 7.6.3 to 7.6.5 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4235\n* chore(deps): bump brace-expansion from 1.1.11 to 1.1.16 in /zeus_modules/@lightninglabs/lnc-core by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4234\n* chore(deps): bump brace-expansion from 5.0.6 to 5.0.7 in /zeus_modules/@lightninglabs/lnc-rn by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4236\n* [feat] LND v0.21-beta by @kaloudis in https://github.com/ZeusLN/zeus/pull/4177\n* Receive: surface Flow LSP proposal rejection as dismissable warning by @kaloudis in https://github.com/ZeusLN/zeus/pull/4233\n* chore(deps): bump shell-quote from 1.8.4 to 1.10.0 in /zeus_modules/@lightninglabs/lnc-rn by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4237\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4238\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4240\n* fix: deep links handled twice with 'Select wallet on start-up' by @kaloudis in https://github.com/ZeusLN/zeus/pull/4226\n* stores: prevent stale closeChannel error from wiping channel list by @kaloudis in https://github.com/ZeusLN/zeus/pull/4230\n* chore(deps): bump fast-uri from 3.1.2 to 3.1.4 in /zeus_modules/@lightninglabs/lnc-core by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4241\n* chore(deps): bump svgo from 3.3.3 to 3.3.4 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4242\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4243\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4244\n* ci: add Dependabot config for npm and GitHub Actions version updates by @kaloudis in https://github.com/ZeusLN/zeus/pull/4215\n* chore(deps): bump @babel/preset-env from 7.22.15 to 7.29.7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4256\n* chore(deps): bump mobx from 5.15.3 to 5.15.7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4253\n* ci: bump actions/setup-node from 6 to 7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4245\n* ci: bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4246\n* fix: prevent Security settings UI flash on open by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4239\n* chore(deps): bump events from 1.1.1 to 3.3.0 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4248\n* chore(deps): bump concurrently from 9.1.2 to 10.0.3 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4251\n* chore(deps): bump protobufjs-cli from 1.3.3 to 2.0.0 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4252\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4259\n* chore(deps): bump 47 minor and patch dependencies (slimmed #4247) by @kaloudis in https://github.com/ZeusLN/zeus/pull/4260\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4263\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4264\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4265\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4266\n* chore(deps): bump json from 2.19.2 to 2.19.9 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4267\n* chore(deps): bump valibot from 1.2.0 to 1.4.2 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4268\n* chore(deps): migrate lnc-rn from deprecated tslint to eslint v9 by @kaloudis in https://github.com/ZeusLN/zeus/pull/4271\n* chore(deps): clear Dependabot alerts on transitive dependencies by @kaloudis in https://github.com/ZeusLN/zeus/pull/4274\n* chore(deps): bump protobufjs to v8 + protobufjs-cli 2.5.1, regenerate bindings by @kaloudis in https://github.com/ZeusLN/zeus/pull/4262\n* build: fix vendored lnc-rn bob build + add mocha test suite by @kaloudis in https://github.com/ZeusLN/zeus/pull/4275\n* LDK: Add support for 24 word seed phrases by @shubhamkmr04 in https://github.com/ZeusLN/zeus/pull/4212\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4282\n* [feat] fix(LNC): route register callbacks through events to avoid new-arch crash by @kaloudis in https://github.com/ZeusLN/zeus/pull/4205\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4283\n* build: run prettier on generated proto types after gen-proto by @kaloudis in https://github.com/ZeusLN/zeus/pull/4284\n* deps: fix shell-quote DoS, clean up minimatch pins by @kaloudis in https://github.com/ZeusLN/zeus/pull/4281\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4290\n* fix(CLN): include unpaid invoices in Activity by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4291\n* fix: show the correct seed when backing up an inactive wallet by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4280\n* Lockscreen: prevent duress wipe in security management flows by @kaloudis in https://github.com/ZeusLN/zeus/pull/4293\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4295\n* views: WalletConfiguration: lock interface for initialized LDK Node by @kaloudis in https://github.com/ZeusLN/zeus/pull/4296\n* chore(deps): bump @react-native-documents/picker from 11.0.3 to 12.0.2 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4249\n* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4299\n* fix(nwc): fix lookup_invoice, list_transactions, and backend invoice lookup by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4294\n* docs: add SECURITY.md with vulnerability disclosure policy by @kaloudis in https://github.com/ZeusLN/zeus/pull/4310\n* fix(CLN/LND): poll lookupInvoice in the Receive payment watcher by @kaloudis in https://github.com/ZeusLN/zeus/pull/4300\n* utils: disable REST proxy in embedded LND config by @kaloudis in https://github.com/ZeusLN/zeus/pull/4311\n* fix(swaps): always generate an independent swap rescue key by @kaloudis in https://github.com/ZeusL…",
+          "downloadURL": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1.ipa",
+          "size": 80499468,
+          "minOSVersion": "15.1",
+          "releaseUrl": "https://github.com/ZeusLN/zeus/releases/tag/v13.2.1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "manifest-v13.2.1.txt",
+              "downloadUrl": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/manifest-v13.2.1.txt",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "other",
+              "size": 1044,
+              "sha256": "c28cfe6d7026d079301b782394a1a1c3e6d4cacd3f89e3087b75120bc54af97d",
+              "downloads": 12,
+              "mimeType": "text/plain",
+              "installable": false
+            },
+            {
+              "filename": "manifest-v13.2.1.txt.sig",
+              "downloadUrl": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/manifest-v13.2.1.txt.sig",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "other",
+              "size": 615,
+              "sha256": "90b59c2b40add584cbc36e29bc642f84e2e0f9d75125bf024536a70e0aca2832",
+              "downloads": 10,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "zeus-v13.2.1-arm64-v8a.apk",
+              "downloadUrl": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1-arm64-v8a.apk",
+              "platform": "android",
+              "architecture": "arm64",
+              "fileType": "APK",
+              "size": 103931080,
+              "sha256": "8adc5a3894d41808c33a841d0f49939ca2bbddda60402cf63fa4e3ee4c5a3b3e",
+              "downloads": 659,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "zeus-v13.2.1-armeabi-v7a.apk",
+              "downloadUrl": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1-armeabi-v7a.apk",
+              "platform": "android",
+              "architecture": "armv7",
+              "fileType": "APK",
+              "size": 99966212,
+              "sha256": "17a6f129d2882f2f0c37b870ceee595ac03ce032c77f73214b58031758a7e0eb",
+              "downloads": 2,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "zeus-v13.2.1-universal.apk",
+              "downloadUrl": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1-universal.apk",
+              "platform": "android",
+              "architecture": "universal",
+              "fileType": "APK",
+              "size": 260868077,
+              "sha256": "5cd60bd9bcf3a45860a8fa3c28abf0cbaabac6a18f414d267317f56e18f22eb1",
+              "downloads": 12,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "zeus-v13.2.1-x86.apk",
+              "downloadUrl": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1-x86.apk",
+              "platform": "android",
+              "architecture": "x86",
+              "fileType": "APK",
+              "size": 100461520,
+              "sha256": "c002757120554cca7fea9bc465ea5bbe433c09472c01d724e50f54422330f424",
+              "downloads": 1,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "zeus-v13.2.1-x86_64.apk",
+              "downloadUrl": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1-x86_64.apk",
+              "platform": "android",
+              "architecture": "x86_64",
+              "fileType": "APK",
+              "size": 106310766,
+              "sha256": "68dc65832df8a75ebdd611a82555c867d7958407d063712d9e3c6191490781fa",
+              "downloads": 2,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "zeus-v13.2.1.ipa",
+              "downloadUrl": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 80499468,
+              "sha256": "7d291549ec3f35767fcf99f4104088789302742311a3905ef568fe878b3c868c",
+              "downloads": 4,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "7d291549ec3f35767fcf99f4104088789302742311a3905ef568fe878b3c868c",
+          "downloads": 4
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "zeus",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/ZeusLN/zeus",
+        "sourceURL": "https://github.com/ZeusLN/zeus",
+        "verification": {
+          "method": "github-release",
+          "publisher": "ZeusLN/zeus",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned IPA built by the ZeusLN release pipeline (v13.x targets iOS 15.1). A self-custody wallet: point it at your own Lightning node for full sovereignty."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-02",
+          "lastUpdatedAt": "2026-09-02"
+        }
+      }
     }
   ],
   "news": [
@@ -3418,12 +4280,12 @@
       "notify": true
     },
     {
-      "title": "Aidoku v0.9",
-      "identifier": "news-aidoku-0-9",
-      "caption": "Free and open-source manga reader",
-      "date": "2026-09-03",
-      "appID": "app.aidoku.Aidoku",
-      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Aidoku.webp",
+      "title": "Voyager v2.49.0",
+      "identifier": "news-voyager-2-49-0",
+      "caption": "Beautiful open-source client for Lemmy",
+      "date": "2026-09-06",
+      "appID": "app.vger.voyager",
+      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Voyager.webp",
       "notify": true
     }
   ]

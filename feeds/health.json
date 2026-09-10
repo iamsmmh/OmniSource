@@ -1,11 +1,11 @@
 {
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 28,
-    "reachable": 28,
+    "apps": 33,
+    "reachable": 33,
     "unreachable": 0,
     "featured": 6,
-    "healthy": 28,
+    "healthy": 33,
     "warning": 0,
     "critical": 0
   },
@@ -616,6 +616,116 @@
       "statusSince": "2026-09-02",
       "updatedDaysAgo": 8,
       "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "zeus",
+      "name": "Zeus",
+      "status": "stable",
+      "version": "13.2.1",
+      "updatedAt": "2026-09-02",
+      "sizeBytes": 80499468,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-02",
+      "updatedDaysAgo": 8,
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "bluewallet",
+      "name": "BlueWallet",
+      "status": "stable",
+      "version": "8.0.1",
+      "updatedAt": "2026-07-21",
+      "sizeBytes": 29811150,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-07-21",
+      "updatedDaysAgo": 51,
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "voyager",
+      "name": "Voyager",
+      "status": "stable",
+      "version": "2.49.0",
+      "updatedAt": "2026-09-06",
+      "sizeBytes": 8216630,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-09-06",
+      "updatedDaysAgo": 4,
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "saber",
+      "name": "Saber",
+      "status": "stable",
+      "version": "1.36.1",
+      "updatedAt": "2026-08-30",
+      "sizeBytes": 37589281,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-08-30",
+      "updatedDaysAgo": 11,
+      "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "anxreader",
+      "name": "Anx Reader",
+      "status": "stable",
+      "version": "1.14.0",
+      "updatedAt": "2026-03-19",
+      "sizeBytes": 28677588,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-03-19",
+      "updatedDaysAgo": 175,
+      "stale": true,
       "healthScore": 77,
       "healthStatus": "healthy",
       "scoreBreakdown": {

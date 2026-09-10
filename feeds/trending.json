@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 28,
+  "count": 33,
   "formula": {
     "weights": {
       "recency": 0.4,
@@ -166,14 +166,14 @@
       "downloadReachable": true
     },
     {
-      "slug": "aidoku",
-      "name": "Aidoku",
-      "category": "other",
-      "version": "0.9",
-      "releaseDate": "2026-09-03",
-      "score": 0.7533,
+      "slug": "voyager",
+      "name": "Voyager",
+      "category": "social",
+      "version": "2.49.0",
+      "releaseDate": "2026-09-06",
+      "score": 0.7733,
       "signals": {
-        "recency": 0.8833,
+        "recency": 0.9333,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -338,14 +338,14 @@
       "downloadReachable": true
     },
     {
-      "slug": "aidoku",
-      "name": "Aidoku",
-      "category": "other",
-      "version": "0.9",
-      "releaseDate": "2026-09-03",
-      "score": 0.7533,
+      "slug": "voyager",
+      "name": "Voyager",
+      "category": "social",
+      "version": "2.49.0",
+      "releaseDate": "2026-09-06",
+      "score": 0.7733,
       "signals": {
-        "recency": 0.8833,
+        "recency": 0.9333,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -510,14 +510,14 @@
       "downloadReachable": true
     },
     {
-      "slug": "aidoku",
-      "name": "Aidoku",
-      "category": "other",
-      "version": "0.9",
-      "releaseDate": "2026-09-03",
-      "score": 0.7533,
+      "slug": "voyager",
+      "name": "Voyager",
+      "category": "social",
+      "version": "2.49.0",
+      "releaseDate": "2026-09-06",
+      "score": 0.7733,
       "signals": {
-        "recency": 0.8833,
+        "recency": 0.9333,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -682,6 +682,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "voyager",
+      "name": "Voyager",
+      "category": "social",
+      "version": "2.49.0",
+      "releaseDate": "2026-09-06",
+      "score": 0.7733,
+      "signals": {
+        "recency": 0.9333,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "aidoku",
       "name": "Aidoku",
       "category": "other",
@@ -716,6 +733,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "zeus",
+      "name": "Zeus",
+      "category": "utilities",
+      "version": "13.2.1",
+      "releaseDate": "2026-09-02",
+      "score": 0.7467,
+      "signals": {
+        "recency": 0.8667,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "ytkace",
       "name": "YTKACE",
       "category": "photo-video",
@@ -724,6 +758,23 @@
       "score": 0.7333,
       "signals": {
         "recency": 0.8333,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "saber",
+      "name": "Saber",
+      "category": "utilities",
+      "version": "1.36.1",
+      "releaseDate": "2026-08-30",
+      "score": 0.7267,
+      "signals": {
+        "recency": 0.8167,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -792,6 +843,23 @@
       "score": 0.5467,
       "signals": {
         "recency": 0.3667,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "bluewallet",
+      "name": "BlueWallet",
+      "category": "utilities",
+      "version": "8.0.1",
+      "releaseDate": "2026-07-21",
+      "score": 0.46,
+      "signals": {
+        "recency": 0.15,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -993,6 +1061,23 @@
       "category": "music",
       "version": "5.1.2",
       "releaseDate": "2026-06-05",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "anxreader",
+      "name": "Anx Reader",
+      "category": "utilities",
+      "version": "1.14.0",
+      "releaseDate": "2026-03-19",
       "score": 0.4,
       "signals": {
         "recency": 0.0,

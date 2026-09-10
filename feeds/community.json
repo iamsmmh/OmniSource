@@ -131,6 +131,12 @@
       "category": "music"
     },
     {
+      "slug": "voyager",
+      "name": "Voyager",
+      "firstSeen": "2026-09-06",
+      "category": "social"
+    },
+    {
       "slug": "aidoku",
       "name": "Aidoku",
       "firstSeen": "2026-09-03",
@@ -141,12 +147,6 @@
       "name": "Jellify",
       "firstSeen": "2026-09-02",
       "category": "music"
-    },
-    {
-      "slug": "ytkace",
-      "name": "YTKACE",
-      "firstSeen": "2026-08-31",
-      "category": "photo-video"
     }
   ],
   "rising": [
@@ -155,6 +155,12 @@
       "name": "YouTubePlus",
       "category": "photo-video",
       "newThisMonth": 3
+    },
+    {
+      "slug": "zeus",
+      "name": "Zeus",
+      "category": "utilities",
+      "newThisMonth": 1
     },
     {
       "slug": "ytmusic",
@@ -187,6 +193,12 @@
       "newThisMonth": 1
     },
     {
+      "slug": "voyager",
+      "name": "Voyager",
+      "category": "social",
+      "newThisMonth": 1
+    },
+    {
       "slug": "uyouenhanced",
       "name": "uYouEnhanced",
       "category": "photo-video",
@@ -209,25 +221,13 @@
       "name": "SpotiFLAC Mobile",
       "category": "music",
       "newThisMonth": 1
-    },
-    {
-      "slug": "maxmusic",
-      "name": "MaxMusic",
-      "category": "music",
-      "newThisMonth": 1
-    },
-    {
-      "slug": "jellify",
-      "name": "Jellify",
-      "category": "music",
-      "newThisMonth": 1
     }
   ],
   "requested": [],
   "counts": {
-    "popular": 28,
-    "recentlyAdded": 13,
-    "rising": 14,
+    "popular": 33,
+    "recentlyAdded": 16,
+    "rising": 17,
     "requested": 0
   }
 }
