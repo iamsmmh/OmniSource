@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 45,
+  "count": 48,
   "feed": {
     "name": "OmniSource",
     "identifier": "com.iamsmmh.omnisource",
@@ -41,6 +41,51 @@
     }
   ],
   "sources": [
+    {
+      "id": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+      "source": "927tx/IPA-Vault",
+      "type": "altstore",
+      "homepage": "https://raw.githubusercontent.com",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "publisher": "927tx/IPA-Vault",
+      "apps": [
+        {
+          "slug": "infuseplus",
+          "name": "Infuse Plus",
+          "version": "8.5.3"
+        },
+        {
+          "slug": "glow",
+          "name": "Glow",
+          "version": "577.1"
+        },
+        {
+          "slug": "swiftgram",
+          "name": "Swiftgram",
+          "version": "12.9.2"
+        },
+        {
+          "slug": "telegram-mxgram",
+          "name": "Telegram MxGram",
+          "version": "12.9.3"
+        },
+        {
+          "slug": "iqface",
+          "name": "iQFace",
+          "version": "577.1"
+        },
+        {
+          "slug": "ryukgram",
+          "name": "RyukGram",
+          "version": "445.0.0"
+        },
+        {
+          "slug": "sparkle",
+          "name": "Sparkle",
+          "version": "445.0.0"
+        }
+      ]
+    },
     {
       "id": "aeharding/voyager",
       "source": "aeharding/voyager",
@@ -362,6 +407,21 @@
       ]
     },
     {
+      "id": "level3tjg/RedditFilter",
+      "source": "level3tjg/RedditFilter",
+      "type": "github",
+      "homepage": "https://github.com/level3tjg/RedditFilter",
+      "sourceURL": "https://github.com/level3tjg/RedditFilter",
+      "publisher": "level3tjg/RedditFilter",
+      "apps": [
+        {
+          "slug": "redditfilter",
+          "name": "RedditFilter",
+          "version": "2025.37.0"
+        }
+      ]
+    },
+    {
       "id": "LiveContainer/LiveContainer",
       "source": "LiveContainer/LiveContainer",
       "type": "github",
@@ -508,6 +568,21 @@
           "slug": "provenance",
           "name": "Provenance",
           "version": "3.3.0"
+        }
+      ]
+    },
+    {
+      "id": "raincord/RainTweak",
+      "source": "raincord/RainTweak (Codeberg)",
+      "type": "codeberg",
+      "homepage": "https://codeberg.org/raincord/RainTweak",
+      "sourceURL": "https://codeberg.org/raincord/RainTweak",
+      "publisher": "raincord/RainTweak (Codeberg)",
+      "apps": [
+        {
+          "slug": "raintweak",
+          "name": "RainTweak",
+          "version": "0.9.3"
         }
       ]
     },

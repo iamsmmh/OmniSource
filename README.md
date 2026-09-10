@@ -10,7 +10,7 @@ One AltStore-compatible source URL for **AltStore · SideStore · Feather · ESi
 
 <!-- omnisource:stats:start -->
 
-**49** apps · **45** upstream sources · **48** verified · **1** community verified · **49/49** downloads online · last sync **2026-09-10**.
+**58** apps · **48** upstream sources · **57** verified · **1** community verified · **58/58** downloads online · last sync **2026-09-10**.
 
 <!-- omnisource:stats:end -->
 
@@ -107,7 +107,7 @@ The complete generated catalog is below — it refreshes automatically on every 
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-10 · 49 apps · 49/49 downloads reachable._
+_Catalogue last changed 2026-09-10 · 58 apps · 58/58 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -160,6 +160,15 @@ _Catalogue last changed 2026-09-10 · 49 apps · 49/49 downloads reachable._
 | **Fladder** | `nl.jknaapen.fladder` | `0.11.1` | 2026-09-08 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/fladder.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/fladder.json) | [`fladder.json`](https://iamsmmh.github.io/OmniSource/feeds/fladder.json) | [`fladder.xml`](https://iamsmmh.github.io/OmniSource/feeds/fladder.xml) |
 | **AnymeX** | `com.ryan.anymex` | `3.1.7` | 2026-08-30 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/anymex.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/anymex.json) | [`anymex.json`](https://iamsmmh.github.io/OmniSource/feeds/anymex.json) | [`anymex.xml`](https://iamsmmh.github.io/OmniSource/feeds/anymex.xml) |
 | **Sora** | `me.cranci.sulfur` | `1.3.0` | 2026-08-20 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sora.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sora.json) | [`sora.json`](https://iamsmmh.github.io/OmniSource/feeds/sora.json) | [`sora.xml`](https://iamsmmh.github.io/OmniSource/feeds/sora.xml) |
+| **RainTweak** | `com.hammerandchisel.discord` | `0.9.3` | 2026-06-19 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/raintweak.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/raintweak.json) | [`raintweak.json`](https://iamsmmh.github.io/OmniSource/feeds/raintweak.json) | [`raintweak.xml`](https://iamsmmh.github.io/OmniSource/feeds/raintweak.xml) |
+| **Infuse Plus** | `com.firecore.infuse` | `8.5.3` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/infuseplus.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/infuseplus.json) | [`infuseplus.json`](https://iamsmmh.github.io/OmniSource/feeds/infuseplus.json) | [`infuseplus.xml`](https://iamsmmh.github.io/OmniSource/feeds/infuseplus.xml) |
+| **Glow** | `com.facebook.Facebook.glow` | `577.1` | 2026-09-05 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/glow.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/glow.json) | [`glow.json`](https://iamsmmh.github.io/OmniSource/feeds/glow.json) | [`glow.xml`](https://iamsmmh.github.io/OmniSource/feeds/glow.xml) |
+| **Swiftgram** | `app.swiftgram.ios` | `12.9.2` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/swiftgram.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/swiftgram.json) | [`swiftgram.json`](https://iamsmmh.github.io/OmniSource/feeds/swiftgram.json) | [`swiftgram.xml`](https://iamsmmh.github.io/OmniSource/feeds/swiftgram.xml) |
+| **Telegram MxGram** | `ph.telegra.Telegraph` | `12.9.3` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.json) | [`telegram-mxgram.json`](https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.json) | [`telegram-mxgram.xml`](https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.xml) |
+| **iQFace** | `com.facebook.Facebook` | `577.1` | 2026-09-05 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/iqface.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/iqface.json) | [`iqface.json`](https://iamsmmh.github.io/OmniSource/feeds/iqface.json) | [`iqface.xml`](https://iamsmmh.github.io/OmniSource/feeds/iqface.xml) |
+| **RyukGram** | `com.burbn.instagram` | `445.0.0` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json) | [`ryukgram.json`](https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json) | [`ryukgram.xml`](https://iamsmmh.github.io/OmniSource/feeds/ryukgram.xml) |
+| **Sparkle** | `com.burbn.instagram.sparkle` | `445.0.0` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sparkle.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sparkle.json) | [`sparkle.json`](https://iamsmmh.github.io/OmniSource/feeds/sparkle.json) | [`sparkle.xml`](https://iamsmmh.github.io/OmniSource/feeds/sparkle.xml) |
+| **RedditFilter** | `com.atebits.Tweetie2` | `2025.37.0` | 2025-09-26 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/redditfilter.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/redditfilter.json) | [`redditfilter.json`](https://iamsmmh.github.io/OmniSource/feeds/redditfilter.json) | [`redditfilter.xml`](https://iamsmmh.github.io/OmniSource/feeds/redditfilter.xml) |
 
 <!-- omnisource:catalog:end -->
 

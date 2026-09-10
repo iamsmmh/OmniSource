@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 49,
+  "count": 58,
   "baseURL": "https://iamsmmh.github.io/OmniSource",
   "apps": [
     {
@@ -2011,6 +2011,375 @@
         "reachable": true,
         "detail": "HTTP 302",
         "updatedAt": "2026-08-20"
+      }
+    },
+    {
+      "id": "raintweak",
+      "slug": "raintweak",
+      "name": "RainTweak",
+      "developer": "raincord & IPA Vault",
+      "version": "0.9.3",
+      "releaseDate": "2026-06-19",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "raincord/RainTweak (Codeberg)",
+      "sourceURL": "https://codeberg.org/raincord/RainTweak",
+      "bundleId": "com.hammerandchisel.discord",
+      "bundleIdentifier": "com.hammerandchisel.discord",
+      "description": "RainTweak injects Rain - the community Discord client mod - into the official Discord iOS app, adding themes, appearance options and quality-of-life fixes on top of a current Discord build. The ready-to-sideload IPA is built and published by the RainTweak project itself, so the download comes straight from the developer's own releases.",
+      "shortDescription": "Discord client mod with themes and QoL fixes",
+      "icon": "Discord.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Discord.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/raintweak/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/raintweak.json",
+      "homepage": "https://codeberg.org/raincord/RainTweak",
+      "status": "stable",
+      "featured": false,
+      "size": 107515564,
+      "downloads": 3807,
+      "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+      "sha256": "1ac871154ac2649158eea405f2c79e2e1d36ed7771c9b64748ce9f1c3f97703e",
+      "minOSVersion": "16.0",
+      "verificationMethod": "codeberg-release",
+      "publisher": "raincord/RainTweak (Codeberg)",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-06-19"
+      }
+    },
+    {
+      "id": "infuseplus",
+      "slug": "infuseplus",
+      "name": "Infuse Plus",
+      "developer": "dayanch96 & IPA Vault",
+      "version": "8.5.3",
+      "releaseDate": "2026-09-01",
+      "category": "photo-video",
+      "categories": [
+        "photo-video"
+      ],
+      "tags": [
+        "photo-video"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.firecore.infuse",
+      "bundleIdentifier": "com.firecore.infuse",
+      "description": "Infuse Plus (by Dayanch96) enhances the Infuse video player with extra appearance options, app icon choices and playback quality-of-life improvements on top of the stock Infuse 8 app. The build follows the latest Infuse release.",
+      "shortDescription": "Enhancer tweak for the Infuse video player",
+      "icon": "Infuse.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Infuse.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/infuseplus/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/infuseplus.json",
+      "homepage": "https://github.com/dayanch96/InfusePlus",
+      "status": "stable",
+      "featured": false,
+      "size": 100074036,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+      "sha256": null,
+      "minOSVersion": "18.0",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-01"
+      }
+    },
+    {
+      "id": "glow",
+      "slug": "glow",
+      "name": "Glow",
+      "developer": "dayanch96 & IPA Vault",
+      "version": "577.1",
+      "releaseDate": "2026-09-05",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.facebook.Facebook.glow",
+      "bundleIdentifier": "com.facebook.Facebook.glow",
+      "description": "Glow is a simple, clean and powerful tweak for Facebook by Dayanch96: it removes ads and sponsored content, adds video downloads, unlocks media quality options and hides unwanted UI elements on top of the official Facebook app.",
+      "shortDescription": "Clean, powerful Facebook tweak by dayanch96",
+      "icon": "Facebook.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/glow/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/glow.json",
+      "homepage": "https://github.com/dayanch96/Glow",
+      "status": "stable",
+      "featured": false,
+      "size": 226667533,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+      "sha256": null,
+      "minOSVersion": "15.1",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-05"
+      }
+    },
+    {
+      "id": "swiftgram",
+      "slug": "swiftgram",
+      "name": "Swiftgram",
+      "developer": "Swiftgram & IPA Vault",
+      "version": "12.9.2",
+      "releaseDate": "2026-09-01",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "app.swiftgram.ios",
+      "bundleIdentifier": "app.swiftgram.ios",
+      "description": "Swiftgram is a supercharged, open-source Telegram fork: ghost mode, hide read receipts and online status, save protected media, unlimited account switching and deep interface customization. The project officially ships through the App Store and TestFlight; this entry serves a ready-to-sideload IPA build (Swiftgram base with the MxGram tweak).",
+      "shortDescription": "Supercharged open-source Telegram fork",
+      "icon": "Swiftgram.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Swiftgram.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/swiftgram/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/swiftgram.json",
+      "homepage": "https://github.com/Swiftgram/Telegram-iOS",
+      "status": "stable",
+      "featured": false,
+      "size": 91604352,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+      "sha256": null,
+      "minOSVersion": "13.0",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-01"
+      }
+    },
+    {
+      "id": "telegram-mxgram",
+      "slug": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "developer": "m1ronx1412 & IPA Vault",
+      "version": "12.9.3",
+      "releaseDate": "2026-09-01",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "ph.telegra.Telegraph",
+      "bundleIdentifier": "ph.telegra.Telegraph",
+      "description": "MxGram injects the MxGram tweak into the official Telegram app: ghost mode with per-user exceptions, anti-revoke and anti-edit, saving of protected media, fake GPS, download boost and more, localized in 10 languages.",
+      "shortDescription": "Official Telegram with the MxGram tweak",
+      "icon": "Telegram.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Telegram.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/telegram-mxgram/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/telegram-mxgram.json",
+      "homepage": "https://github.com/m1ronx1412/mxgram",
+      "status": "stable",
+      "featured": false,
+      "size": 80615512,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+      "sha256": null,
+      "minOSVersion": "13.0",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-01"
+      }
+    },
+    {
+      "id": "iqface",
+      "slug": "iqface",
+      "name": "iQFace",
+      "developer": "7MD & IPA Vault",
+      "version": "577.1",
+      "releaseDate": "2026-09-05",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.facebook.Facebook",
+      "bundleIdentifier": "com.facebook.Facebook",
+      "description": "iQFace is a tweaked Facebook build with the iQFace tweak by 7MD, one of the Facebook modifications distributed ready-to-sideload through the IPA Vault source. Feature set is defined by the iQFace tweak.",
+      "shortDescription": "Facebook tweak build by 7MD",
+      "icon": "Facebook.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/iqface/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/iqface.json",
+      "homepage": "https://github.com/927tx/IPA-Vault",
+      "status": "stable",
+      "featured": false,
+      "size": 225312147,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+      "sha256": null,
+      "minOSVersion": "15.1",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-05"
+      }
+    },
+    {
+      "id": "ryukgram",
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "developer": "faroukbmiled & IPA Vault",
+      "version": "445.0.0",
+      "releaseDate": "2026-09-01",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.burbn.instagram",
+      "bundleIdentifier": "com.burbn.instagram",
+      "description": "RyukGram - the Instagram tweak for iOS power users by faroukbmiled - adds media saving, ghost mode, feed cleaning, download buttons and deep customization on top of the official Instagram app.",
+      "shortDescription": "Instagram tweak for power users by faroukbmiled",
+      "icon": "Instagram.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/ryukgram/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram.json",
+      "homepage": "https://github.com/faroukbmiled/RyukGram",
+      "status": "stable",
+      "featured": false,
+      "size": 324923211,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+      "sha256": null,
+      "minOSVersion": "15.1",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-01"
+      }
+    },
+    {
+      "id": "sparkle",
+      "slug": "sparkle",
+      "name": "Sparkle",
+      "developer": "efibalogh & IPA Vault",
+      "version": "445.0.0",
+      "releaseDate": "2026-09-01",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "bundleId": "com.burbn.instagram.sparkle",
+      "bundleIdentifier": "com.burbn.instagram.sparkle",
+      "description": "Sparkle (by efibalogh) brings the spark back to Instagram: downloads for reels and stories, ghost mode, ad hiding, restored classic behaviours and UI customization on top of the official Instagram app.",
+      "shortDescription": "Bring the spark back to Instagram",
+      "icon": "Instagram.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/sparkle/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/sparkle.json",
+      "homepage": "https://github.com/efibalogh/sparkle-ig",
+      "status": "stable",
+      "featured": false,
+      "size": 317653332,
+      "downloads": 0,
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+      "sha256": null,
+      "minOSVersion": "15.1",
+      "verificationMethod": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-09-01"
+      }
+    },
+    {
+      "id": "redditfilter",
+      "slug": "redditfilter",
+      "name": "RedditFilter",
+      "developer": "level3tjg",
+      "version": "2025.37.0",
+      "releaseDate": "2025-09-26",
+      "category": "social",
+      "categories": [
+        "social"
+      ],
+      "tags": [
+        "social"
+      ],
+      "source": "level3tjg/RedditFilter",
+      "sourceURL": "https://github.com/level3tjg/RedditFilter",
+      "bundleId": "com.atebits.Tweetie2",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "description": "RedditFilter (by level3tjg) filters unwanted content out of your Reddit feed - hide posts by keyword, subreddit, domain, flair or author, natively on top of the official Reddit app. The project publishes a ready-to-sideload IPA with every release.",
+      "shortDescription": "Filter unwanted content from your Reddit feed",
+      "icon": "Reddit.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Reddit.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/redditfilter/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/redditfilter.json",
+      "homepage": "https://github.com/level3tjg/RedditFilter",
+      "status": "stable",
+      "featured": false,
+      "size": 137114565,
+      "downloads": 5471,
+      "downloadURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
+      "sha256": "1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3",
+      "minOSVersion": "15.0",
+      "verificationMethod": "github-release",
+      "publisher": "level3tjg/RedditFilter",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2025-09-26"
       }
     }
   ]

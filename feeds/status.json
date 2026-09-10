@@ -2,33 +2,49 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "sources": 49,
+    "sources": 58,
     "healthy": 34,
     "degraded": 15,
     "unavailable": 0,
-    "unknown": 0
+    "unknown": 9
   },
   "pipeline": {
     "status": "ok",
     "lastBuild": "2026-09-10",
-    "appsTotal": 49,
+    "appsTotal": 58,
     "appsHealthy": 34,
     "appsFailing": 0
   },
   "providers": [
     {
       "provider": "altstore",
-      "apps": 2,
+      "apps": 9,
       "healthy": 2,
       "unavailable": 0,
       "lastResolvedFrom": {
         "inkillerplus": "altstore:https://repo.ikghd.me/repo.json",
-        "ttkillerplus": "altstore:https://repo.ikghd.me/repo.json"
+        "ttkillerplus": "altstore:https://repo.ikghd.me/repo.json",
+        "glow": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "infuseplus": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "iqface": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "ryukgram": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "sparkle": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "swiftgram": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+        "telegram-mxgram": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json"
+      }
+    },
+    {
+      "provider": "codeberg",
+      "apps": 1,
+      "healthy": 0,
+      "unavailable": 0,
+      "lastResolvedFrom": {
+        "raintweak": "github:ra1ncord/RainTweak"
       }
     },
     {
       "provider": "github",
-      "apps": 47,
+      "apps": 48,
       "healthy": 32,
       "unavailable": 0,
       "lastResolvedFrom": {
@@ -73,6 +89,7 @@
         "ppsspp": "github:hrydgard/ppsspp",
         "provenance": "github:Provenance-Emu/Provenance",
         "qbitconnect": "github:RajnishOne/qbitconnect",
+        "redditfilter": "github:level3tjg/RedditFilter",
         "sidestore": "github:SideStore/SideStore",
         "spotube": "github:KRTirtho/spotube",
         "stiknes": "github:StikEMU/StikNES-2.0",
@@ -85,8 +102,8 @@
   "deployment": {
     "platform": "GitHub Pages (static)",
     "status": "ok",
-    "reachable": 49,
-    "total": 49
+    "reachable": 58,
+    "total": 58
   },
   "sources": [
     {
@@ -3108,6 +3125,57 @@
       ]
     },
     {
+      "id": "glow",
+      "app": "glow",
+      "name": "Glow",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-05",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "infuseplus",
+      "app": "infuseplus",
+      "name": "Infuse Plus",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "iqface",
+      "app": "iqface",
+      "name": "iQFace",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-05",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "mame4ios",
       "app": "mame4ios",
       "name": "MAME4iOS",
@@ -3510,6 +3578,57 @@
       ]
     },
     {
+      "id": "raintweak",
+      "app": "raintweak",
+      "name": "RainTweak",
+      "source": "raincord/RainTweak (Codeberg)",
+      "sourceURL": "https://codeberg.org/raincord/RainTweak",
+      "type": "codeberg",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-06-19",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "redditfilter",
+      "app": "redditfilter",
+      "name": "RedditFilter",
+      "source": "level3tjg/RedditFilter",
+      "sourceURL": "https://github.com/level3tjg/RedditFilter",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2025-09-26",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "ryukgram",
+      "app": "ryukgram",
+      "name": "RyukGram",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "sidestore",
       "app": "sidestore",
       "name": "SideStore",
@@ -3610,6 +3729,23 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "sparkle",
+      "app": "sparkle",
+      "name": "Sparkle",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "spotube",
@@ -3790,6 +3926,40 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "swiftgram",
+      "app": "swiftgram",
+      "name": "Swiftgram",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "telegram-mxgram",
+      "app": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "source": "927tx/IPA-Vault",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-01",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "utm",

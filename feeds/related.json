@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 49,
+  "count": 58,
   "weights": {
     "bundle": 0.55,
     "category": 0.2,
@@ -881,6 +881,20 @@
     ],
     "inkillerplus": [
       {
+        "slug": "ryukgram",
+        "name": "RyukGram",
+        "category": "social",
+        "developer": "faroukbmiled & IPA Vault",
+        "bundleId": "com.burbn.instagram",
+        "version": "445.0.0",
+        "score": 0.7833,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
         "slug": "ttkillerplus",
         "name": "TTKillerPlus",
         "category": "social",
@@ -934,25 +948,12 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (social)",
-          "Shared tags: social"
-        ]
-      },
-      {
-        "slug": "bhtwitter",
-        "name": "BHTwitter",
-        "category": "social",
-        "developer": "BandarHL",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "4.4",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1015,12 +1016,12 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1028,12 +1029,12 @@
         ]
       },
       {
-        "slug": "bhtwitter",
-        "name": "BHTwitter",
+        "slug": "swiftgram",
+        "name": "Swiftgram",
         "category": "social",
-        "developer": "BandarHL",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "4.4",
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "version": "12.9.2",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1082,12 +1083,12 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1095,12 +1096,12 @@
         ]
       },
       {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
+        "slug": "swiftgram",
+        "name": "Swiftgram",
         "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
-        "version": "446.0.0",
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "version": "12.9.2",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1108,12 +1109,12 @@
         ]
       },
       {
-        "slug": "bhtwitter",
-        "name": "BHTwitter",
+        "slug": "sparkle",
+        "name": "Sparkle",
         "category": "social",
-        "developer": "BandarHL",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "4.4",
+        "developer": "efibalogh & IPA Vault",
+        "bundleId": "com.burbn.instagram.sparkle",
+        "version": "445.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1138,6 +1139,20 @@
       }
     ],
     "bhtwitter": [
+      {
+        "slug": "redditfilter",
+        "name": "RedditFilter",
+        "category": "social",
+        "developer": "level3tjg",
+        "bundleId": "com.atebits.Tweetie2",
+        "version": "2025.37.0",
+        "score": 0.7833,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
       {
         "slug": "neofreebird",
         "name": "NeoFreeBird",
@@ -1198,19 +1213,6 @@
         "developer": "iKarwan",
         "bundleId": "com.zhiliaoapp.musically",
         "version": "46.8.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (social)",
-          "Shared tags: social"
-        ]
-      },
-      {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
-        "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
-        "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -2182,12 +2184,12 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -2195,12 +2197,12 @@
         ]
       },
       {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
+        "slug": "swiftgram",
+        "name": "Swiftgram",
         "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
-        "version": "446.0.0",
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "version": "12.9.2",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -2208,12 +2210,12 @@
         ]
       },
       {
-        "slug": "bhtwitter",
-        "name": "BHTwitter",
+        "slug": "sparkle",
+        "name": "Sparkle",
         "category": "social",
-        "developer": "BandarHL",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "4.4",
+        "developer": "efibalogh & IPA Vault",
+        "bundleId": "com.burbn.instagram.sparkle",
+        "version": "445.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -2435,12 +2437,12 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -2448,12 +2450,12 @@
         ]
       },
       {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
+        "slug": "swiftgram",
+        "name": "Swiftgram",
         "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
-        "version": "446.0.0",
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "version": "12.9.2",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3157,12 +3159,12 @@
         ]
       },
       {
-        "slug": "neofreebird",
-        "name": "NeoFreeBird",
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
         "category": "social",
-        "developer": "NeoFreeBird contributors",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "2.2",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3170,12 +3172,12 @@
         ]
       },
       {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
+        "slug": "swiftgram",
+        "name": "Swiftgram",
         "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
-        "version": "446.0.0",
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "version": "12.9.2",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3183,12 +3185,12 @@
         ]
       },
       {
-        "slug": "bhtwitter",
-        "name": "BHTwitter",
+        "slug": "sparkle",
+        "name": "Sparkle",
         "category": "social",
-        "developer": "BandarHL",
-        "bundleId": "com.atebits.Tweetie2",
-        "version": "4.4",
+        "developer": "efibalogh & IPA Vault",
+        "bundleId": "com.burbn.instagram.sparkle",
+        "version": "445.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3197,6 +3199,20 @@
       }
     ],
     "neofreebird": [
+      {
+        "slug": "redditfilter",
+        "name": "RedditFilter",
+        "category": "social",
+        "developer": "level3tjg",
+        "bundleId": "com.atebits.Tweetie2",
+        "version": "2025.37.0",
+        "score": 0.7833,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
       {
         "slug": "bhtwitter",
         "name": "BHTwitter",
@@ -3257,19 +3273,6 @@
         "developer": "iKarwan",
         "bundleId": "com.zhiliaoapp.musically",
         "version": "46.8.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (social)",
-          "Shared tags: social"
-        ]
-      },
-      {
-        "slug": "inkillerplus",
-        "name": "iNKillerPlus",
-        "category": "social",
-        "developer": "iKarwan",
-        "bundleId": "com.burbn.instagram",
-        "version": "446.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3529,6 +3532,729 @@
         "reasons": [
           "Same category (photo-video)",
           "Shared tags: photo-video"
+        ]
+      }
+    ],
+    "raintweak": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
+        "category": "social",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "swiftgram",
+        "name": "Swiftgram",
+        "category": "social",
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "version": "12.9.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "infuseplus": [
+      {
+        "slug": "ytkp",
+        "name": "YTKillerPlus",
+        "category": "photo-video",
+        "developer": "iKarwan",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytkace",
+        "name": "YTKACE",
+        "category": "photo-video",
+        "developer": "itzzace",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.35.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytlite",
+        "name": "YouTubePlus",
+        "category": "photo-video",
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.24.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youpro",
+        "name": "YouPro",
+        "category": "photo-video",
+        "developer": "alibusut",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youmod",
+        "name": "YouMod",
+        "category": "photo-video",
+        "developer": "Tonwalter888",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "yattee",
+        "name": "Yattee",
+        "category": "photo-video",
+        "developer": "Yattee",
+        "bundleId": "stream.yattee.app",
+        "version": "1.5.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      }
+    ],
+    "glow": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
+        "category": "social",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "swiftgram",
+        "name": "Swiftgram",
+        "category": "social",
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "version": "12.9.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "swiftgram": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
+        "category": "social",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "sparkle",
+        "name": "Sparkle",
+        "category": "social",
+        "developer": "efibalogh & IPA Vault",
+        "bundleId": "com.burbn.instagram.sparkle",
+        "version": "445.0.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "telegram-mxgram": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "swiftgram",
+        "name": "Swiftgram",
+        "category": "social",
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "version": "12.9.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "sparkle",
+        "name": "Sparkle",
+        "category": "social",
+        "developer": "efibalogh & IPA Vault",
+        "bundleId": "com.burbn.instagram.sparkle",
+        "version": "445.0.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "iqface": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
+        "category": "social",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "swiftgram",
+        "name": "Swiftgram",
+        "category": "social",
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "version": "12.9.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "ryukgram": [
+      {
+        "slug": "inkillerplus",
+        "name": "iNKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.burbn.instagram",
+        "version": "446.0.0",
+        "score": 0.7833,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
+        "category": "social",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "sparkle": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
+        "category": "social",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "version": "12.9.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "swiftgram",
+        "name": "Swiftgram",
+        "category": "social",
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "version": "12.9.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "redditfilter": [
+      {
+        "slug": "neofreebird",
+        "name": "NeoFreeBird",
+        "category": "social",
+        "developer": "NeoFreeBird contributors",
+        "bundleId": "com.atebits.Tweetie2",
+        "version": "2.2",
+        "score": 0.7833,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "bhtwitter",
+        "name": "BHTwitter",
+        "category": "social",
+        "developer": "BandarHL",
+        "bundleId": "com.atebits.Tweetie2",
+        "version": "4.4",
+        "score": 0.7833,
+        "reasons": [
+          "Same bundle identifier",
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
         ]
       }
     ]

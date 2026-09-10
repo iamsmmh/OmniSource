@@ -3,19 +3,19 @@
   "generatedAt": "2026-09-10",
   "lastSync": "2026-09-10",
   "totals": {
-    "apps": 49,
-    "sources": 45,
-    "verifiedApps": 48,
+    "apps": 58,
+    "sources": 48,
+    "verifiedApps": 57,
     "communityVerifiedApps": 1,
     "unverifiedApps": 0,
-    "hashVerifiedApps": 39,
-    "verified": 48,
+    "hashVerifiedApps": 41,
+    "verified": 57,
     "community_verified": 1,
     "unverified": 0,
     "featuredApps": 6,
-    "downloadsReachable": 49,
+    "downloadsReachable": 58,
     "deadLinks": 0,
-    "newAppsThisWeek": 4,
+    "newAppsThisWeek": 6,
     "updatedAppsThisWeek": 8,
     "clientsSupported": 5
   },
@@ -43,6 +43,22 @@
       "previousVersion": "",
       "date": "2026-09-06",
       "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa"
+    },
+    {
+      "slug": "iqface",
+      "name": "iQFace",
+      "version": "577.1",
+      "previousVersion": "",
+      "date": "2026-09-05",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa"
+    },
+    {
+      "slug": "glow",
+      "name": "Glow",
+      "version": "577.1",
+      "previousVersion": "",
+      "date": "2026-09-05",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa"
     },
     {
       "slug": "aidoku",
@@ -121,19 +137,19 @@
   ],
   "topCategories": [
     {
+      "category": "social",
+      "count": 16
+    },
+    {
+      "category": "photo-video",
+      "count": 12
+    },
+    {
       "category": "utilities",
       "count": 12
     },
     {
-      "category": "photo-video",
-      "count": 11
-    },
-    {
       "category": "games",
-      "count": 8
-    },
-    {
-      "category": "social",
       "count": 8
     },
     {
@@ -154,7 +170,7 @@
     }
   ],
   "verification": {
-    "VERIFIED": 48,
+    "VERIFIED": 57,
     "COMMUNITY VERIFIED": 1,
     "UNVERIFIED": 0
   },
@@ -213,11 +229,11 @@
   "history": [
     {
       "date": "2026-09-10",
-      "apps": 49,
-      "sources": 45,
-      "verified": 48,
+      "apps": 58,
+      "sources": 48,
+      "verified": 57,
       "deadLinks": 0,
-      "newThisWeek": 4,
+      "newThisWeek": 6,
       "updatedThisWeek": 8
     }
   ]

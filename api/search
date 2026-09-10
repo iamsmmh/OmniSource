@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 49,
+  "count": 58,
   "fuse": {
     "keys": [
       {
@@ -1302,6 +1302,240 @@
       "icon": "assets/Sora.webp",
       "pageURL": "apps/sora/",
       "version": "1.3.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "raintweak",
+      "slug": "raintweak",
+      "name": "RainTweak",
+      "subtitle": "Discord client mod with themes and QoL fixes",
+      "shortDescription": "Discord client mod with themes and QoL fixes",
+      "description": "RainTweak injects Rain - the community Discord client mod - into the official Discord iOS app, adding themes, appearance options and quality-of-life fixes on top of a current Discord build. The ready-to-sideload IPA is built and published by the RainTweak project itself, so the download comes straight from the developer's own releases.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "raincord & IPA Vault",
+      "bundleId": "com.hammerandchisel.discord",
+      "icon": "assets/Discord.webp",
+      "pageURL": "apps/raintweak/",
+      "version": "0.9.3",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "infuseplus",
+      "slug": "infuseplus",
+      "name": "Infuse Plus",
+      "subtitle": "Enhancer tweak for the Infuse video player",
+      "shortDescription": "Enhancer tweak for the Infuse video player",
+      "description": "Infuse Plus (by Dayanch96) enhances the Infuse video player with extra appearance options, app icon choices and playback quality-of-life improvements on top of the stock Infuse 8 app. The build follows the latest Infuse release.",
+      "category": "photo-video",
+      "tags": [
+        "photo-video"
+      ],
+      "developer": "dayanch96 & IPA Vault",
+      "bundleId": "com.firecore.infuse",
+      "icon": "assets/Infuse.webp",
+      "pageURL": "apps/infuseplus/",
+      "version": "8.5.3",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "glow",
+      "slug": "glow",
+      "name": "Glow",
+      "subtitle": "Clean, powerful Facebook tweak by dayanch96",
+      "shortDescription": "Clean, powerful Facebook tweak by dayanch96",
+      "description": "Glow is a simple, clean and powerful tweak for Facebook by Dayanch96: it removes ads and sponsored content, adds video downloads, unlocks media quality options and hides unwanted UI elements on top of the official Facebook app.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "dayanch96 & IPA Vault",
+      "bundleId": "com.facebook.Facebook.glow",
+      "icon": "assets/Facebook.webp",
+      "pageURL": "apps/glow/",
+      "version": "577.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "swiftgram",
+      "slug": "swiftgram",
+      "name": "Swiftgram",
+      "subtitle": "Supercharged open-source Telegram fork",
+      "shortDescription": "Supercharged open-source Telegram fork",
+      "description": "Swiftgram is a supercharged, open-source Telegram fork: ghost mode, hide read receipts and online status, save protected media, unlimited account switching and deep interface customization. The project officially ships through the App Store and TestFlight; this entry serves a ready-to-sideload IPA build (Swiftgram base with the MxGram tweak).",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "Swiftgram & IPA Vault",
+      "bundleId": "app.swiftgram.ios",
+      "icon": "assets/Swiftgram.webp",
+      "pageURL": "apps/swiftgram/",
+      "version": "12.9.2",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "telegram-mxgram",
+      "slug": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "subtitle": "Official Telegram with the MxGram tweak",
+      "shortDescription": "Official Telegram with the MxGram tweak",
+      "description": "MxGram injects the MxGram tweak into the official Telegram app: ghost mode with per-user exceptions, anti-revoke and anti-edit, saving of protected media, fake GPS, download boost and more, localized in 10 languages.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "m1ronx1412 & IPA Vault",
+      "bundleId": "ph.telegra.Telegraph",
+      "icon": "assets/Telegram.webp",
+      "pageURL": "apps/telegram-mxgram/",
+      "version": "12.9.3",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "iqface",
+      "slug": "iqface",
+      "name": "iQFace",
+      "subtitle": "Facebook tweak build by 7MD",
+      "shortDescription": "Facebook tweak build by 7MD",
+      "description": "iQFace is a tweaked Facebook build with the iQFace tweak by 7MD, one of the Facebook modifications distributed ready-to-sideload through the IPA Vault source. Feature set is defined by the iQFace tweak.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "7MD & IPA Vault",
+      "bundleId": "com.facebook.Facebook",
+      "icon": "assets/Facebook.webp",
+      "pageURL": "apps/iqface/",
+      "version": "577.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "ryukgram",
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "subtitle": "Instagram tweak for power users by faroukbmiled",
+      "shortDescription": "Instagram tweak for power users by faroukbmiled",
+      "description": "RyukGram - the Instagram tweak for iOS power users by faroukbmiled - adds media saving, ghost mode, feed cleaning, download buttons and deep customization on top of the official Instagram app.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "faroukbmiled & IPA Vault",
+      "bundleId": "com.burbn.instagram",
+      "icon": "assets/Instagram.webp",
+      "pageURL": "apps/ryukgram/",
+      "version": "445.0.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "sparkle",
+      "slug": "sparkle",
+      "name": "Sparkle",
+      "subtitle": "Bring the spark back to Instagram",
+      "shortDescription": "Bring the spark back to Instagram",
+      "description": "Sparkle (by efibalogh) brings the spark back to Instagram: downloads for reels and stories, ghost mode, ad hiding, restored classic behaviours and UI customization on top of the official Instagram app.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "efibalogh & IPA Vault",
+      "bundleId": "com.burbn.instagram.sparkle",
+      "icon": "assets/Instagram.webp",
+      "pageURL": "apps/sparkle/",
+      "version": "445.0.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "redditfilter",
+      "slug": "redditfilter",
+      "name": "RedditFilter",
+      "subtitle": "Filter unwanted content from your Reddit feed",
+      "shortDescription": "Filter unwanted content from your Reddit feed",
+      "description": "RedditFilter (by level3tjg) filters unwanted content out of your Reddit feed - hide posts by keyword, subreddit, domain, flair or author, natively on top of the official Reddit app. The project publishes a ready-to-sideload IPA with every release.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "developer": "level3tjg",
+      "bundleId": "com.atebits.Tweetie2",
+      "icon": "assets/Reddit.webp",
+      "pageURL": "apps/redditfilter/",
+      "version": "2025.37.0",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [

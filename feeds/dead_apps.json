@@ -6,10 +6,10 @@
     "stale": 180,
     "archived": 365
   },
-  "count": 16,
+  "count": 17,
   "summary": {
     "warning": 5,
-    "stale": 4,
+    "stale": 5,
     "archived": 7,
     "critical": 0
   },
@@ -122,6 +122,17 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 312 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "redditfilter",
+      "name": "RedditFilter",
+      "lastUpdate": "2025-09-26",
+      "daysSinceUpdate": 349,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 349 days (threshold 180)"
       ]
     },
     {
@@ -664,6 +675,89 @@
       "classification": "healthy",
       "removedReleases": 0,
       "reasons": []
+    },
+    {
+      "slug": "raintweak",
+      "name": "RainTweak",
+      "lastUpdate": "2026-06-19",
+      "daysSinceUpdate": 83,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "infuseplus",
+      "name": "Infuse Plus",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "glow",
+      "name": "Glow",
+      "lastUpdate": "2026-09-05",
+      "daysSinceUpdate": 5,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "swiftgram",
+      "name": "Swiftgram",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "iqface",
+      "name": "iQFace",
+      "lastUpdate": "2026-09-05",
+      "daysSinceUpdate": 5,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "sparkle",
+      "name": "Sparkle",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "redditfilter",
+      "name": "RedditFilter",
+      "lastUpdate": "2025-09-26",
+      "daysSinceUpdate": 349,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 349 days (threshold 180)"
+      ]
     }
   ]
 }

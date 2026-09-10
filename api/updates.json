@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-09-10",
   "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
-  "count": 58,
+  "count": 67,
   "updates": [
     {
       "slug": "youpro",
@@ -169,6 +169,36 @@
       "shortDescription": "Beautiful open-source client for Lemmy"
     },
     {
+      "slug": "iqface",
+      "name": "iQFace",
+      "version": "577.1",
+      "previousVersion": "",
+      "date": "2026-09-05",
+      "kind": "new",
+      "changelog": "Facebook 577.1 | Facebook-577.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 577.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/iqface.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/iqface.xml",
+      "status": "stable",
+      "shortDescription": "Facebook tweak build by 7MD"
+    },
+    {
+      "slug": "glow",
+      "name": "Glow",
+      "version": "577.1",
+      "previousVersion": "",
+      "date": "2026-09-05",
+      "kind": "new",
+      "changelog": "Facebook 577.1 | Facebook-577.1-Glow\n\nIPA Vault build for Facebook (Glow), version 577.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/glow.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/glow.xml",
+      "status": "stable",
+      "shortDescription": "Clean, powerful Facebook tweak by dayanch96"
+    },
+    {
       "slug": "aidoku",
       "name": "Aidoku",
       "version": "0.9",
@@ -259,6 +289,66 @@
       "shortDescription": "TikTok with downloads, no ads and region switch"
     },
     {
+      "slug": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "version": "12.9.3",
+      "previousVersion": "",
+      "date": "2026-09-01",
+      "kind": "new",
+      "changelog": "Telegram 12.9.3 | Telegram-12.9.3-MxGram\n\nIPA Vault build for Telegram (MxGram), version 12.9.3",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Telegram.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/telegram-mxgram.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/telegram-mxgram.xml",
+      "status": "stable",
+      "shortDescription": "Official Telegram with the MxGram tweak"
+    },
+    {
+      "slug": "swiftgram",
+      "name": "Swiftgram",
+      "version": "12.9.2",
+      "previousVersion": "",
+      "date": "2026-09-01",
+      "kind": "new",
+      "changelog": "Swiftgram 12.9.2 | Swiftgram-12.9.2-MxGram\n\nIPA Vault build for Swiftgram (MxGram), version 12.9.2",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Swiftgram.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/swiftgram.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/swiftgram.xml",
+      "status": "stable",
+      "shortDescription": "Supercharged open-source Telegram fork"
+    },
+    {
+      "slug": "sparkle",
+      "name": "Sparkle",
+      "version": "445.0.0",
+      "previousVersion": "",
+      "date": "2026-09-01",
+      "kind": "new",
+      "changelog": "Instagram 445.0.0 | Instagram-445.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 445.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/sparkle.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/sparkle.xml",
+      "status": "stable",
+      "shortDescription": "Bring the spark back to Instagram"
+    },
+    {
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "version": "445.0.0",
+      "previousVersion": "",
+      "date": "2026-09-01",
+      "kind": "new",
+      "changelog": "Instagram 445.0.0 | Instagram-445.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 445.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/ryukgram.xml",
+      "status": "stable",
+      "shortDescription": "Instagram tweak for power users by faroukbmiled"
+    },
+    {
       "slug": "maxmusic",
       "name": "MaxMusic",
       "version": "9.35.2",
@@ -287,6 +377,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/inkillerplus.xml",
       "status": "stable",
       "shortDescription": "Instagram with downloads, ghost mode and no ads"
+    },
+    {
+      "slug": "infuseplus",
+      "name": "Infuse Plus",
+      "version": "8.5.3",
+      "previousVersion": "",
+      "date": "2026-09-01",
+      "kind": "new",
+      "changelog": "Infuse 8.5.3 | Infuse-8.5.3-Infuse-Plus\n\nIPA Vault build for Infuse Plus (8.5.3), version 8.5.3",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Infuse.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/infuseplus.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/infuseplus.xml",
+      "status": "stable",
+      "shortDescription": "Enhancer tweak for the Infuse video player"
     },
     {
       "slug": "conduit",
@@ -619,6 +724,21 @@
       "shortDescription": "GameCube and Wii emulator for iOS"
     },
     {
+      "slug": "raintweak",
+      "name": "RainTweak",
+      "version": "0.9.3",
+      "previousVersion": "",
+      "date": "2026-06-19",
+      "kind": "new",
+      "changelog": "Discord 0.9.3 | RainTweak",
+      "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Discord.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/raintweak.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/raintweak.xml",
+      "status": "stable",
+      "shortDescription": "Discord client mod with themes and QoL fixes"
+    },
+    {
       "slug": "spotube",
       "name": "Spotube",
       "version": "5.1.2",
@@ -767,6 +887,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/qbitconnect.xml",
       "status": "stable",
       "shortDescription": "Modern qBittorrent remote client"
+    },
+    {
+      "slug": "redditfilter",
+      "name": "RedditFilter",
+      "version": "2025.37.0",
+      "previousVersion": "",
+      "date": "2025-09-26",
+      "kind": "new",
+      "changelog": "Reddit 2025.37.0 | RedditFilter_2025.37.0-1.1.8\n\n# RedditFilter v2025.37.0-1.1.8\n\n## Changes\n\n- Fix app crash (@NicholasBly)\n- Fix ad comments showing under posts (@Laitinlok)\n- Fix popular feed not showing with recommendations disabled\n- Move RedditFilter settings to the user drawer / side bar (accessed by tapping the profile picture in the top right)\n\n## SHA256\n\n- `1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3`  packages/RedditFilter_2025.37.0-1.1.8.ipa\n- `1aabd2f0656e6ec4b26fa38f4b5e10bb2d4465c0c6e087e3d57da57a06799f83`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb\n- `e871f455aa868a25a7ea1fd40ef3b19a7a7ade21aa4162e0b26d94dab9f31c12`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb",
+      "downloadURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Reddit.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/redditfilter.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/redditfilter.xml",
+      "status": "stable",
+      "shortDescription": "Filter unwanted content from your Reddit feed"
     },
     {
       "slug": "bhtwitter",

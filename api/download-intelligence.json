@@ -5,7 +5,7 @@
   "summary": {
     "averageAvailability": 100.0,
     "averageResponseTimeMs": 341.6,
-    "mirrorCount": 50,
+    "mirrorCount": 59,
     "probes": 849
   },
   "apps": [
@@ -548,6 +548,105 @@
       "mirrorCount": 1,
       "releaseConsistency": 0.0,
       "primaryURL": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "raintweak",
+      "name": "RainTweak",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "infuseplus",
+      "name": "Infuse Plus",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "glow",
+      "name": "Glow",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "swiftgram",
+      "name": "Swiftgram",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "iqface",
+      "name": "iQFace",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "sparkle",
+      "name": "Sparkle",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "redditfilter",
+      "name": "RedditFilter",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
       "fallbackURLs": []
     }
   ]

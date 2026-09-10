@@ -1567,6 +1567,189 @@
       }
     },
     {
+      "name": "Glow",
+      "bundleIdentifier": "com.facebook.Facebook.glow",
+      "developerName": "dayanch96 & IPA Vault",
+      "subtitle": "Clean, powerful Facebook tweak by dayanch96",
+      "localizedDescription": "Glow is a simple, clean and powerful tweak for Facebook by Dayanch96: it removes ads and sponsored content, adds video downloads, unlocks media quality options and hides unwanted UI elements on top of the official Facebook app.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
+      "tintColor": "1877F2",
+      "category": "social",
+      "version": "577.1",
+      "versionDate": "2026-09-05",
+      "versionDescription": "Facebook 577.1 | Facebook-577.1-Glow\n\nIPA Vault build for Facebook (Glow), version 577.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+      "size": 226667533,
+      "versions": [
+        {
+          "version": "577.1",
+          "date": "2026-09-05",
+          "localizedDescription": "Facebook 577.1 | Facebook-577.1-Glow\n\nIPA Vault build for Facebook (Glow), version 577.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+          "size": 226667533,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Facebook-577.1-Glow.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 226667533,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "glow",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/dayanch96/Glow",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Tracks the ready-to-sideload Glow build from the IPA Vault source (the official dayanch96/Glow repo publishes the tweak as .deb only). Facebook 577.x builds require iOS 15.1 or newer. Uses its own bundle identifier, so it installs alongside the stock App Store Facebook."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-05",
+          "lastUpdatedAt": "2026-09-05"
+        }
+      }
+    },
+    {
+      "name": "Infuse Plus",
+      "bundleIdentifier": "com.firecore.infuse",
+      "developerName": "dayanch96 & IPA Vault",
+      "subtitle": "Enhancer tweak for the Infuse video player",
+      "localizedDescription": "Infuse Plus (by Dayanch96) enhances the Infuse video player with extra appearance options, app icon choices and playback quality-of-life improvements on top of the stock Infuse 8 app. The build follows the latest Infuse release.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Infuse.webp",
+      "tintColor": "FF6B00",
+      "category": "photo-video",
+      "version": "8.5.3",
+      "versionDate": "2026-09-01",
+      "versionDescription": "Infuse 8.5.3 | Infuse-8.5.3-Infuse-Plus\n\nIPA Vault build for Infuse Plus (8.5.3), version 8.5.3",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+      "size": 100074036,
+      "versions": [
+        {
+          "version": "8.5.3",
+          "date": "2026-09-01",
+          "localizedDescription": "Infuse 8.5.3 | Infuse-8.5.3-Infuse-Plus\n\nIPA Vault build for Infuse Plus (8.5.3), version 8.5.3",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+          "size": 100074036,
+          "minOSVersion": "18.0",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Infuse-8.5.3-Infuse-Plus.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 100074036,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "infuseplus",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/dayanch96/InfusePlus",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Tracks the ready-to-sideload Infuse Plus build from the IPA Vault source (the official dayanch96/InfusePlus repo publishes the tweak as .deb only). Current Infuse 8.5 builds require iOS 18 or newer; upstream also publishes an iOS 16-era 7.x build that is not tracked here. Shares com.firecore.infuse with a sideloaded stock Infuse - install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
+        }
+      }
+    },
+    {
       "name": "iNKillerPlus",
       "bundleIdentifier": "com.burbn.instagram",
       "developerName": "iKarwan",
@@ -1667,6 +1850,110 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-09"
+        }
+      }
+    },
+    {
+      "name": "iQFace",
+      "bundleIdentifier": "com.facebook.Facebook",
+      "developerName": "7MD & IPA Vault",
+      "subtitle": "Facebook tweak build by 7MD",
+      "localizedDescription": "iQFace is a tweaked Facebook build with the iQFace tweak by 7MD, one of the Facebook modifications distributed ready-to-sideload through the IPA Vault source. Feature set is defined by the iQFace tweak.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
+      "tintColor": "1877F2",
+      "category": "social",
+      "version": "577.1",
+      "versionDate": "2026-09-05",
+      "versionDescription": "Facebook 577.1 | Facebook-577.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 577.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+      "size": 225312147,
+      "versions": [
+        {
+          "version": "577.1",
+          "date": "2026-09-05",
+          "localizedDescription": "Facebook 577.1 | Facebook-577.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 577.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+          "size": 225312147,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Facebook-577.1-iQFace.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 225312147,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "iqface",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/927tx/IPA-Vault",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Tweak by 7MD; distributed ready-to-sideload via the IPA Vault source. Facebook 577.x builds require iOS 15.1 or newer. Uses its own bundle identifier, so it installs alongside the stock App Store Facebook."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-05",
+          "lastUpdatedAt": "2026-09-05"
         }
       }
     },
@@ -3297,6 +3584,358 @@
       }
     },
     {
+      "name": "RainTweak",
+      "bundleIdentifier": "com.hammerandchisel.discord",
+      "developerName": "raincord & IPA Vault",
+      "subtitle": "Discord client mod with themes and QoL fixes",
+      "localizedDescription": "RainTweak injects Rain - the community Discord client mod - into the official Discord iOS app, adding themes, appearance options and quality-of-life fixes on top of a current Discord build. The ready-to-sideload IPA is built and published by the RainTweak project itself, so the download comes straight from the developer's own releases.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Discord.webp",
+      "tintColor": "5865F2",
+      "category": "social",
+      "version": "0.9.3",
+      "versionDate": "2026-06-19",
+      "versionDescription": "Discord 0.9.3 | RainTweak",
+      "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+      "size": 107515564,
+      "versions": [
+        {
+          "version": "0.9.3",
+          "date": "2026-06-19",
+          "localizedDescription": "Discord 0.9.3 | RainTweak",
+          "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+          "size": 107515564,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/ra1ncord/RainTweak/releases/tag/v0.9.3",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "dev.raincord.tweak_1.1.0_iphoneos-arm64.deb",
+              "downloadUrl": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/dev.raincord.tweak_1.1.0_iphoneos-arm64.deb",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "DEB",
+              "size": 33170,
+              "sha256": "440b2d3be5d1d4d1585efcbc73b97150f03d8b2574afa755237f2c5b502676a6",
+              "downloads": 1085,
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "RainTweak.ipa",
+              "downloadUrl": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 107515564,
+              "sha256": "1ac871154ac2649158eea405f2c79e2e1d36ed7771c9b64748ce9f1c3f97703e",
+              "downloads": 3807,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "1ac871154ac2649158eea405f2c79e2e1d36ed7771c9b64748ce9f1c3f97703e",
+          "downloads": 3807
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "raintweak",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://codeberg.org/raincord/RainTweak",
+        "sourceURL": "https://codeberg.org/raincord/RainTweak",
+        "verification": {
+          "method": "codeberg-release",
+          "publisher": "raincord/RainTweak (Codeberg)",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA from the RainTweak project's own Codeberg releases (its GitHub mirror is tracked as a failover). Discord 343+ builds require iOS 16 or newer. Shares com.hammerandchisel.discord with any other sideloaded Discord build - install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-06-19",
+          "lastUpdatedAt": "2026-06-19"
+        }
+      }
+    },
+    {
+      "name": "RedditFilter",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "developerName": "level3tjg",
+      "subtitle": "Filter unwanted content from your Reddit feed",
+      "localizedDescription": "RedditFilter (by level3tjg) filters unwanted content out of your Reddit feed - hide posts by keyword, subreddit, domain, flair or author, natively on top of the official Reddit app. The project publishes a ready-to-sideload IPA with every release.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Reddit.webp",
+      "tintColor": "FF4500",
+      "category": "social",
+      "version": "2025.37.0",
+      "versionDate": "2025-09-26",
+      "versionDescription": "Reddit 2025.37.0 | RedditFilter_2025.37.0-1.1.8\n\n# RedditFilter v2025.37.0-1.1.8\n\n## Changes\n\n- Fix app crash (@NicholasBly)\n- Fix ad comments showing under posts (@Laitinlok)\n- Fix popular feed not showing with recommendations disabled\n- Move RedditFilter settings to the user drawer / side bar (accessed by tapping the profile picture in the top right)\n\n## SHA256\n\n- `1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3`  packages/RedditFilter_2025.37.0-1.1.8.ipa\n- `1aabd2f0656e6ec4b26fa38f4b5e10bb2d4465c0c6e087e3d57da57a06799f83`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb\n- `e871f455aa868a25a7ea1fd40ef3b19a7a7ade21aa4162e0b26d94dab9f31c12`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb",
+      "downloadURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
+      "size": 137114565,
+      "versions": [
+        {
+          "version": "2025.37.0",
+          "date": "2025-09-26",
+          "localizedDescription": "Reddit 2025.37.0 | RedditFilter_2025.37.0-1.1.8\n\n# RedditFilter v2025.37.0-1.1.8\n\n## Changes\n\n- Fix app crash (@NicholasBly)\n- Fix ad comments showing under posts (@Laitinlok)\n- Fix popular feed not showing with recommendations disabled\n- Move RedditFilter settings to the user drawer / side bar (accessed by tapping the profile picture in the top right)\n\n## SHA256\n\n- `1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3`  packages/RedditFilter_2025.37.0-1.1.8.ipa\n- `1aabd2f0656e6ec4b26fa38f4b5e10bb2d4465c0c6e087e3d57da57a06799f83`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb\n- `e871f455aa868a25a7ea1fd40ef3b19a7a7ade21aa4162e0b26d94dab9f31c12`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb",
+          "downloadURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
+          "size": 137114565,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/level3tjg/RedditFilter/releases/tag/v2025.37.0-1.1.8",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb",
+              "downloadUrl": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "DEB",
+              "size": 19086,
+              "sha256": "1aabd2f0656e6ec4b26fa38f4b5e10bb2d4465c0c6e087e3d57da57a06799f83",
+              "downloads": 845,
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb",
+              "downloadUrl": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "DEB",
+              "size": 19154,
+              "sha256": "e871f455aa868a25a7ea1fd40ef3b19a7a7ade21aa4162e0b26d94dab9f31c12",
+              "downloads": 815,
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "RedditFilter_2025.37.0-1.1.8.ipa",
+              "downloadUrl": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 137114565,
+              "sha256": "1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3",
+              "downloads": 5471,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3",
+          "downloads": 5471
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "redditfilter",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/level3tjg/RedditFilter",
+        "sourceURL": "https://github.com/level3tjg/RedditFilter",
+        "verification": {
+          "method": "github-release",
+          "publisher": "level3tjg/RedditFilter",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA from the project's GitHub releases. The current Reddit 2025.37 build targets iOS 15+ (older 11.x-era builds on the same release page still support iOS 14). Shares com.atebits.Tweetie2 with BHTwitter and NeoFreeBird in this catalog - install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2025-09-26",
+          "lastUpdatedAt": "2025-09-26"
+        }
+      }
+    },
+    {
+      "name": "RyukGram",
+      "bundleIdentifier": "com.burbn.instagram",
+      "developerName": "faroukbmiled & IPA Vault",
+      "subtitle": "Instagram tweak for power users by faroukbmiled",
+      "localizedDescription": "RyukGram - the Instagram tweak for iOS power users by faroukbmiled - adds media saving, ghost mode, feed cleaning, download buttons and deep customization on top of the official Instagram app.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "tintColor": "E1306C",
+      "category": "social",
+      "version": "445.0.0",
+      "versionDate": "2026-09-01",
+      "versionDescription": "Instagram 445.0.0 | Instagram-445.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 445.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+      "size": 324923211,
+      "versions": [
+        {
+          "version": "445.0.0",
+          "date": "2026-09-01",
+          "localizedDescription": "Instagram 445.0.0 | Instagram-445.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 445.0.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+          "size": 324923211,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Instagram-445.0.0-RyukGram.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 324923211,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "ryukgram",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/faroukbmiled/RyukGram",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official project: faroukbmiled/RyukGram (publishes .deb/.dylib assets); this source serves the ready-to-sideload IPA build from the IPA Vault. Instagram 445.x builds require iOS 15.1 or newer. Shares com.burbn.instagram with iNKillerPlus in this catalog - install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
+        }
+      }
+    },
+    {
       "name": "Saber",
       "bundleIdentifier": "com.adilhanney.saber",
       "developerName": "Adil Hanney",
@@ -3660,6 +4299,110 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-20"
+        }
+      }
+    },
+    {
+      "name": "Sparkle",
+      "bundleIdentifier": "com.burbn.instagram.sparkle",
+      "developerName": "efibalogh & IPA Vault",
+      "subtitle": "Bring the spark back to Instagram",
+      "localizedDescription": "Sparkle (by efibalogh) brings the spark back to Instagram: downloads for reels and stories, ghost mode, ad hiding, restored classic behaviours and UI customization on top of the official Instagram app.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "tintColor": "E1306C",
+      "category": "social",
+      "version": "445.0.0",
+      "versionDate": "2026-09-01",
+      "versionDescription": "Instagram 445.0.0 | Instagram-445.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 445.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+      "size": 317653332,
+      "versions": [
+        {
+          "version": "445.0.0",
+          "date": "2026-09-01",
+          "localizedDescription": "Instagram 445.0.0 | Instagram-445.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 445.0.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+          "size": 317653332,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Instagram-445.0.0-Sparkle.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 317653332,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "sparkle",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/efibalogh/sparkle-ig",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official project: efibalogh/sparkle-ig (publishes .deb assets); this source serves the ready-to-sideload IPA build from the IPA Vault. Instagram 445.x builds require iOS 15.1 or newer. Uses its own bundle identifier (com.burbn.instagram.sparkle) - installs alongside the stock app."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
         }
       }
     },
@@ -4308,6 +5051,214 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-06-02"
+        }
+      }
+    },
+    {
+      "name": "Swiftgram",
+      "bundleIdentifier": "app.swiftgram.ios",
+      "developerName": "Swiftgram & IPA Vault",
+      "subtitle": "Supercharged open-source Telegram fork",
+      "localizedDescription": "Swiftgram is a supercharged, open-source Telegram fork: ghost mode, hide read receipts and online status, save protected media, unlimited account switching and deep interface customization. The project officially ships through the App Store and TestFlight; this entry serves a ready-to-sideload IPA build (Swiftgram base with the MxGram tweak).",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Swiftgram.webp",
+      "tintColor": "F85C2C",
+      "category": "social",
+      "version": "12.9.2",
+      "versionDate": "2026-09-01",
+      "versionDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-MxGram\n\nIPA Vault build for Swiftgram (MxGram), version 12.9.2",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+      "size": 91604352,
+      "versions": [
+        {
+          "version": "12.9.2",
+          "date": "2026-09-01",
+          "localizedDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-MxGram\n\nIPA Vault build for Swiftgram (MxGram), version 12.9.2",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+          "size": 91604352,
+          "minOSVersion": "13.0",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Swiftgram-12.9.2-MxGram.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 91604352,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "swiftgram",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/Swiftgram/Telegram-iOS",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "13.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Swiftgram's official distribution channels are the App Store and TestFlight and the project publishes no sideload IPA, so this source serves a community-built IPA from the IPA Vault, clearly labelled in the feed. Telegram 12.x requires iOS 13 or newer. Uses its own bundle identifier - installs alongside the stock Telegram app."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
+        }
+      }
+    },
+    {
+      "name": "Telegram MxGram",
+      "bundleIdentifier": "ph.telegra.Telegraph",
+      "developerName": "m1ronx1412 & IPA Vault",
+      "subtitle": "Official Telegram with the MxGram tweak",
+      "localizedDescription": "MxGram injects the MxGram tweak into the official Telegram app: ghost mode with per-user exceptions, anti-revoke and anti-edit, saving of protected media, fake GPS, download boost and more, localized in 10 languages.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Telegram.webp",
+      "tintColor": "0088CC",
+      "category": "social",
+      "version": "12.9.3",
+      "versionDate": "2026-09-01",
+      "versionDescription": "Telegram 12.9.3 | Telegram-12.9.3-MxGram\n\nIPA Vault build for Telegram (MxGram), version 12.9.3",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+      "size": 80615512,
+      "versions": [
+        {
+          "version": "12.9.3",
+          "date": "2026-09-01",
+          "localizedDescription": "Telegram 12.9.3 | Telegram-12.9.3-MxGram\n\nIPA Vault build for Telegram (MxGram), version 12.9.3",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+          "size": 80615512,
+          "minOSVersion": "13.0",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Telegram-12.9.3-MxGram.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 80615512,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "telegram-mxgram",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/m1ronx1412/mxgram",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "13.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official project: m1ronx1412/mxgram (publishes the tweak as .deb/.dylib only); this source serves the ready-to-sideload IPA build from the IPA Vault. Telegram 12.x requires iOS 13 or newer. Shares ph.telegra.Telegraph with a sideloaded stock Telegram - install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-01",
+          "lastUpdatedAt": "2026-09-01"
         }
       }
     },

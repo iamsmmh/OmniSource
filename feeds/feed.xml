@@ -5,7 +5,7 @@
     <link>https://iamsmmh.github.io/OmniSource/</link>
     <description>OmniSource is a curated, automatically maintained AltStore-compatible iOS app source. Every entry is resolved from the app&#x27;s own official upstream project - GitHub Releases or the developer&#x27;s official AltStore feed - and each download link is re-verified automatically.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2026 16:59:48 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 17:55:46 +0000</lastBuildDate>
     <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>YouPro v21.36.6</title>
@@ -437,6 +437,26 @@ For the people that don't like black-bars around their videos there is now the o
       <enclosure url="https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
+      <title>iQFace v577.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/iqface.json</link>
+      <guid isPermaLink="false">iqface-577.1</guid>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Facebook 577.1 | Facebook-577.1-iQFace
+
+IPA Vault build for Facebook (iQFace), version 577.1]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>Glow v577.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/glow.json</link>
+      <guid isPermaLink="false">glow-577.1</guid>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Facebook 577.1 | Facebook-577.1-Glow
+
+IPA Vault build for Facebook (Glow), version 577.1]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
       <title>Aidoku v0.9</title>
       <link>https://iamsmmh.github.io/OmniSource/feeds/aidoku.json</link>
       <guid isPermaLink="false">aidoku-0.9</guid>
@@ -615,6 +635,46 @@ Hey music lovers! I've polished up some underlying bits and have made a key fix 
       <enclosure url="https://ikghd.site/ipa/TikTok_46.7_TTKillerPlus_2.1.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
+      <title>Telegram MxGram v12.9.3</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.json</link>
+      <guid isPermaLink="false">telegram-mxgram-12.9.3</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Telegram 12.9.3 | Telegram-12.9.3-MxGram
+
+IPA Vault build for Telegram (MxGram), version 12.9.3]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>Swiftgram v12.9.2</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/swiftgram.json</link>
+      <guid isPermaLink="false">swiftgram-12.9.2</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Swiftgram 12.9.2 | Swiftgram-12.9.2-MxGram
+
+IPA Vault build for Swiftgram (MxGram), version 12.9.2]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>Sparkle v445.0.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/sparkle.json</link>
+      <guid isPermaLink="false">sparkle-445.0.0</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Instagram 445.0.0 | Instagram-445.0.0-Sparkle
+
+IPA Vault build for Instagram (Sparkle), version 445.0.0]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>RyukGram v445.0.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json</link>
+      <guid isPermaLink="false">ryukgram-445.0.0</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Instagram 445.0.0 | Instagram-445.0.0-RyukGram
+
+IPA Vault build for Instagram (RyukGram), version 445.0.0]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
       <title>MaxMusic v9.35.2</title>
       <link>https://iamsmmh.github.io/OmniSource/feeds/maxmusic.json</link>
       <guid isPermaLink="false">maxmusic-9.35.2</guid>
@@ -651,219 +711,6 @@ YTMusic version]]></description>
 • Other fixes & improvements
 • Updated base IPA to Instagram v445.0]]></description>
       <enclosure url="https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>Conduit v4.1.4</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/conduit.json</link>
-      <guid isPermaLink="false">conduit-4.1.4</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Conduit 4.1.4 | conduit
-
-## What's Changed
-* Support Open WebUI v0.11.3 by @cogwheel0 in https://github.com/cogwheel0/conduit/pull/696
-
-
-**Full Changelog**: https://github.com/cogwheel0/conduit/compare/v4.1.3...v4.1.4]]></description>
-      <enclosure url="https://github.com/cogwheel0/conduit/releases/download/v4.1.4/conduit.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>YTKACE v21.35.3</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/ytkace.json</link>
-      <guid isPermaLink="false">ytkace-21.35.3</guid>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[YouTube 21.35.3 | YTKACE 0.9.2 | YTKACE_0.9.2_YouTube_21.35.3
-
-by @itzzace0
-
-What’s new:
-• Updated for YouTube 21.35.3
-• Added a save button to community post images, saved at full resolution
-• Added Posts to the tab bar, so it can be shown as a tab or set as the startup tab
-• Added a choice of where downloads are saved, between the YTKACE library, Photos, or asking each time
-• Added a custom hold speed with a slider from 0.25x to 5x, and the speed pill now shows the speed you set
-• Added a toggle to remove the ⋯ button from the action bar
-• Added a toggle to remove the row of buttons under the progress bar in fullscreen
-• Added a toggle to limit gestures to landscape only
-
-Fixed:
-• Fixed the app freezing while saving large videos to Photos
-• Fixed tapping an image in the comments opening the share sheet
-• Fixed a crash when rotating the player
-• Fixed a crash when leaving the app while a message was on screen
-
-YouTube 21.35.3 requires iOS 17, so there are two IPAs:
-• `YTKACE_0.9.2_YouTube_21.35.3.ipa` for iOS 17 and newer
-• `YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa` for iOS 16]]></description>
-      <enclosure url="https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>YouMod v21.35.3</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/youmod.json</link>
-      <guid isPermaLink="false">youmod-21.35.3</guid>
-      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[YouTube 21.35.3 | YouMod_21.35.3_2.0.0
-
-### Latest Release, ENJOY!!
-
-> [!NOTE]
-> - no YTUHD. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.
-> - [v2.0.0 release notes](https://github.com/Tonwalter888/YouMod/releases/tag/v2.0.0)
-> - - -
-> #### Extra Tweaks:
-> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`
-> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `VolumeBoostYT` `PleaseDontStopTheMusic`
-
-> [!WARNING]
-> - Extra tweaks that are bundled may be unstable on newer versions.
-
-> [!WARNING]
-> - 21.34.3+ builds require iOS 17+ now.]]></description>
-      <enclosure url="https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa5/YouMod_21.35.3_2.0.0.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>Saber v1.36.1</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/saber.json</link>
-      <guid isPermaLink="false">saber-1.36.1</guid>
-      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Saber 1.36.1 | Saber_v1.36.1
-
-## External links
-
-[<img src='https://github.com/adil192/saber/blob/main/assets_raw/badges/google-play-badge.svg'
-    alt='Get it on Google Play'
-    height=50>][google_play]&nbsp;[<img src="https://github.com/adil192/saber/blob/main/assets_raw/badges/f-droid-badge.svg"
-    alt="Get it on F-Droid"
-    height=50>][f-droid]&nbsp;[<img src="https://github.com/adil192/saber/blob/main/assets_raw/badges/app-store-badge.svg"
-    alt="Download on the App Store"
-    height=50>][app_store]&nbsp;[<img src="https://github.com/adil192/saber/blob/main/assets_raw/badges/flathub-badge.svg"
-    alt="Download on Flathub"
-    height=50>][flathub]
-
-For other downloads, scroll down and find the relevant file under "Assets".
-
-[f-droid]: https://f-droid.org/packages/com.adilhanney.saber/
-[flathub]: https://flathub.org/apps/details/com.adilhanney.saber
-[google_play]: https://play.google.com/store/apps/details?id=com.adilhanney.saber
-[app_store]: https://apps.apple.com/us/app/saber/id1671523739
-[releases]: https://github.com/adil192/saber/releases
-
-## Changelog
-
-- Improved the design of the login flow, making better use of space on landscape/desktop screens.
-- Tweaked scrolling friction in the editor to make it less slippery. #1785
-- Fixed handling of accounts with unlimited storage quota. #1796 
-- Fixed folders not being sorted in the browse page. #1809 
-- Fixed parts of the app using a hardcoded Ubuntu font. eafaf264b19a35cbf8e8831daa4118e1446fe16d and https://github.com/ubuntu/yaru.dart/pull/1075.
-- Fixed non-Latin language fonts and inconsistent UI elements in Flathub screenshots.
-- Improved build system... Now fewer custom patches are needed for various stores. Enabled the `--enforce-lockfile` flag for F-Droid for more reproducible builds. #1799 
-- Fixed Android 16KB page size support by forcing a newer NDK version. 87fcb037ba8792cd24ef3af66335007854dbdabc
-- Continued code cleanup, refactoring, testing, and small UX improvements.
-- Various fixes from [Flutter 3.47.2](https://github.com/flutter/flutter/blob/stable/CHANGELOG.md#3472)
-- Translations:
-  - i18n: Update French metadata by @ArTuPSly in d092314beecfbbafec179ec5b17841aa90265805
-  - i18n: Various small tweaks to fix Weblate lints (e.g. adding a trailing colon to match the English equivalent)
-
-- Full changelog: https://github.com/saber-notes/saber/compare/v1.36.0...v1.36.1]]></description>
-      <enclosure url="https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>AnymeX v3.1.7</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/anymex.json</link>
-      <guid isPermaLink="false">anymex-3.1.7</guid>
-      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[AnymeX 3.1.7 | AnymeX-iOS-v3.1.7
-
-### 🆕 Changelog
-### 🌟 Features
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/36754206) enhanced new episode released cards, fixed bugs when deleting history items and more by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/0837dcf8) server remember for episodes and some ui changes by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/e3ec2a4e) new episode released on home page for any anime you watch from app by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/91224c3f) enhanced the tab system and ui of headers on pages by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/7af109c1) nav bar layout switcher, improved ui of media type selector and organized ui settings page by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/4380f646) added extensive data of user's usage by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/97d7d054) user xp system by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/2eac3561) add AniList profile compatibility checker (#547) by @Shebyyy
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/f8226772) stats record implementation on anime and manga by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/3427750b) user app statistics by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/1774abfb) history tab implemented by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/465d66cc) new tabs system (home, discover, library, history, stats) by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/1582c7eb) sync subtitle sentence progress controller by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/20df44bf) local subtitle import by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/64740546) bottom nav bar margin adjustment setting by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/c0389949) more fields like country, popularity, source for media details and fixed issues like sequel repeating, and recommendation opening wrong pages by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/a585abee) font family change option by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/fc7649b9) improved user experience on player by consolidating audio, subs, servers by @RyanYuuki
-
-
-### 🔧 Bug Fixes & Improvements
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/5acd1120) inconsistency bug on header and major refactor of header by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/0cadc7f3) fixed a issue where offline database was not saving title of ep/chps by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/c47225a5) fixed bad redirect on manga pages when clicking on genre/tags by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/98914683) fixed manga chapter selector and chapter navigation logic by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/261af6e0) fixed join dialog behaviour by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/480eb738) hero tag duplicate fix (probably) by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/7b36bf18) fixed some stats not tracking properly by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/834a5522) fixed scanlator not being respected issue by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/0e6495fe) fixed minor desync issues between user rec section by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/ee2c22dd) fixed updater not showing proper toast and proper beta updates by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/afb580ce) fixed ui not reflecting on pallete change on theme page by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/1970de1e) fixed profile page activity opening anime page on manga entries by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/a21009b1) fixed mapper mappng to wrong medias by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/1dff1f52) fixed rpc for desktop users by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/fa60bf90) fixed show entries in community recommandation opening manga page by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/22236d7f) fixed delete entry not working by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/47d42453) fixed dupe entries in tracking lists by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/e5d0945b) fixed tracking dialog not respecting preference by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/3631e005) fixed follower, following count on profile by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/696f2991) fixed splash logo animation not applying by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/2265209a) fixed al, mal, simkl card not getting saved properly by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/895001c0) fixed speed not persisting in a session and speed configs not persisting app restarts by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/c5d70d7a) fixed anify kitsu button not reflecting instantly by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/32b8ba93) fixed cover not showing up on episodes by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/8d71bc38) fixed staff not appearing, characters not showing roles in anilist by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/63ab2d18) fixed sub parser it was not showing cues before by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/5053aaf7) fixed novel search sending to anime search by @RyanYuuki
-
-
-### 🔧 Refactors
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/24cd99eb) refactored card styles by @RyanYuuki
-
-
-### 🎨 Style Changes
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/a3614a65) minor ui tweak by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/105b5775) improved list editor ui by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/169a6122) improved library ui by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/3be13154) media mode selector ui improvement by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/a0fd1926) improved ui of image button by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/f0894ef3) added bouncy animation on tab change by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/f51ed12b) extension settings page elements harmonized with the rest of the app's ui by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/8461f0fd) improved ui and performance of all the source, audio, subtitle panes by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/6b74c1a8) improved the stretched tab bar on desktop by @RyanYuuki
-
-
-### 🚀 Performance Improvements
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/aaf2174a) snappy gestures for pan and zoom on manga pages even on continous mode by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/68eeffea) player controls overlay should feel snappier by @RyanYuuki
-
-
-### 🧹 Chores & Documentation
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/c7d2690a) bump version to v3.1.7 (patch release) by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/0bde25cf) library changes by @RyanYuuki
-- [֍](https://github.com/RyanYuuki/AnymeX/commit/704415da) update sideloading source by @ghost
-
-
-![Total Downloads](https://img.shields.io/github/downloads/RyanYuuki/AnymeX/total?style=for-the-badge&label=TOTAL%20DOWNLOADS&labelColor=black&color=white) ![Current Release](https://img.shields.io/github/downloads/RyanYuuki/AnymeX/v3.1.7/total?style=for-the-badge&label=CURRENT%20RELEASE&labelColor=black&color=white)]]></description>
-      <enclosure url="https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>StikDebug v3.1.10</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/stikdebug.json</link>
-      <guid isPermaLink="false">stikdebug-3.1.10</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[StikDebug 3.1.10 | StikDebug-3.1.10
-
-**Full Changelog**: https://github.com/StikDebug/StikDebug/compare/3.1.9...3.1.10]]></description>
-      <enclosure url="https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa" length="0" type="application/octet-stream" />
     </item>
   </channel>
 </rss>

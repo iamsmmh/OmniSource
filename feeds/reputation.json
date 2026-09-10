@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 45,
+  "count": 48,
   "levels": [
     "TRUSTED",
     "RELIABLE",
@@ -575,6 +575,26 @@
       }
     },
     {
+      "id": "raincord/RainTweak",
+      "source": "raincord/RainTweak (Codeberg)",
+      "publisher": "raincord/RainTweak (Codeberg)",
+      "homepage": "https://codeberg.org/raincord/RainTweak",
+      "sourceURL": "https://codeberg.org/raincord/RainTweak",
+      "apps": [
+        "raintweak"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
       "id": "OatmealDome/dolphin-ios",
       "source": "OatmealDome/dolphin-ios",
       "publisher": "OatmealDome/dolphin-ios",
@@ -629,6 +649,26 @@
         "uptime": 100.0,
         "probes": 7,
         "averageLatencyMs": 222.0,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "level3tjg/RedditFilter",
+      "source": "level3tjg/RedditFilter",
+      "publisher": "level3tjg/RedditFilter",
+      "homepage": "https://github.com/level3tjg/RedditFilter",
+      "sourceURL": "https://github.com/level3tjg/RedditFilter",
+      "apps": [
+        "redditfilter"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -912,6 +952,32 @@
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+      "source": "927tx/IPA-Vault",
+      "publisher": "927tx/IPA-Vault",
+      "homepage": "https://raw.githubusercontent.com",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "apps": [
+        "infuseplus",
+        "glow",
+        "swiftgram",
+        "telegram-mxgram",
+        "iqface",
+        "ryukgram",
+        "sparkle"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "7/7"
       }
     }
   ]

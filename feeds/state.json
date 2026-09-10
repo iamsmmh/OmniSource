@@ -226,11 +226,11 @@
   "analyticsHistory": [
     {
       "date": "2026-09-10",
-      "apps": 49,
-      "sources": 45,
-      "verified": 48,
+      "apps": 58,
+      "sources": 48,
+      "verified": 57,
       "deadLinks": 0,
-      "newThisWeek": 4,
+      "newThisWeek": 6,
       "updatedThisWeek": 8
     }
   ],
@@ -2016,6 +2016,72 @@
       }
     ]
   },
+  "glow": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "577.1",
+        "date": "2026-09-05",
+        "localizedDescription": "Facebook 577.1 | Facebook-577.1-Glow\n\nIPA Vault build for Facebook (Glow), version 577.1",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+        "size": 226667533,
+        "minOSVersion": "15.1",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Facebook-577.1-Glow.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 226667533,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
+  "infuseplus": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "8.5.3",
+        "date": "2026-09-01",
+        "localizedDescription": "Infuse 8.5.3 | Infuse-8.5.3-Infuse-Plus\n\nIPA Vault build for Infuse Plus (8.5.3), version 8.5.3",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+        "size": 100074036,
+        "minOSVersion": "18.0",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Infuse-8.5.3-Infuse-Plus.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 100074036,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "inkillerplus": {
     "retryCount": 0,
     "versions": [
@@ -2237,6 +2303,39 @@
       }
     ],
     "lastResolvedSource": "altstore:https://repo.ikghd.me/repo.json"
+  },
+  "iqface": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "577.1",
+        "date": "2026-09-05",
+        "localizedDescription": "Facebook 577.1 | Facebook-577.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 577.1",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+        "size": 225312147,
+        "minOSVersion": "15.1",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Facebook-577.1-iQFace.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 225312147,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
   },
   "ish": {
     "retryCount": 0,
@@ -4562,6 +4661,145 @@
       }
     ]
   },
+  "raintweak": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:ra1ncord/RainTweak",
+    "versions": [
+      {
+        "version": "0.9.3",
+        "date": "2026-06-19",
+        "localizedDescription": "Discord 0.9.3 | RainTweak",
+        "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+        "size": 107515564,
+        "minOSVersion": "16.0",
+        "releaseUrl": "https://github.com/ra1ncord/RainTweak/releases/tag/v0.9.3",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "dev.raincord.tweak_1.1.0_iphoneos-arm64.deb",
+            "downloadUrl": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/dev.raincord.tweak_1.1.0_iphoneos-arm64.deb",
+            "platform": "linux",
+            "architecture": "arm64",
+            "fileType": "DEB",
+            "size": 33170,
+            "sha256": "440b2d3be5d1d4d1585efcbc73b97150f03d8b2574afa755237f2c5b502676a6",
+            "downloads": 1085,
+            "mimeType": "application/x-debian-package",
+            "installable": true
+          },
+          {
+            "filename": "RainTweak.ipa",
+            "downloadUrl": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 107515564,
+            "sha256": "1ac871154ac2649158eea405f2c79e2e1d36ed7771c9b64748ce9f1c3f97703e",
+            "downloads": 3807,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "sha256": "1ac871154ac2649158eea405f2c79e2e1d36ed7771c9b64748ce9f1c3f97703e",
+        "downloads": 3807
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
+  "redditfilter": {
+    "retryCount": 0,
+    "lastResolvedSource": "github:level3tjg/RedditFilter",
+    "versions": [
+      {
+        "version": "2025.37.0",
+        "date": "2025-09-26",
+        "localizedDescription": "Reddit 2025.37.0 | RedditFilter_2025.37.0-1.1.8\n\n# RedditFilter v2025.37.0-1.1.8\n\n## Changes\n\n- Fix app crash (@NicholasBly)\n- Fix ad comments showing under posts (@Laitinlok)\n- Fix popular feed not showing with recommendations disabled\n- Move RedditFilter settings to the user drawer / side bar (accessed by tapping the profile picture in the top right)\n\n## SHA256\n\n- `1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3`  packages/RedditFilter_2025.37.0-1.1.8.ipa\n- `1aabd2f0656e6ec4b26fa38f4b5e10bb2d4465c0c6e087e3d57da57a06799f83`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb\n- `e871f455aa868a25a7ea1fd40ef3b19a7a7ade21aa4162e0b26d94dab9f31c12`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb",
+        "downloadURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
+        "size": 137114565,
+        "minOSVersion": "15.0",
+        "releaseUrl": "https://github.com/level3tjg/RedditFilter/releases/tag/v2025.37.0-1.1.8",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb",
+            "downloadUrl": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb",
+            "platform": "linux",
+            "architecture": null,
+            "fileType": "DEB",
+            "size": 19086,
+            "sha256": "1aabd2f0656e6ec4b26fa38f4b5e10bb2d4465c0c6e087e3d57da57a06799f83",
+            "downloads": 845,
+            "mimeType": "application/x-debian-package",
+            "installable": true
+          },
+          {
+            "filename": "com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb",
+            "downloadUrl": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb",
+            "platform": "linux",
+            "architecture": "arm64",
+            "fileType": "DEB",
+            "size": 19154,
+            "sha256": "e871f455aa868a25a7ea1fd40ef3b19a7a7ade21aa4162e0b26d94dab9f31c12",
+            "downloads": 815,
+            "mimeType": "application/x-debian-package",
+            "installable": true
+          },
+          {
+            "filename": "RedditFilter_2025.37.0-1.1.8.ipa",
+            "downloadUrl": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 137114565,
+            "sha256": "1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3",
+            "downloads": 5471,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "sha256": "1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3",
+        "downloads": 5471
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
+  "ryukgram": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "445.0.0",
+        "date": "2026-09-01",
+        "localizedDescription": "Instagram 445.0.0 | Instagram-445.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 445.0.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+        "size": 324923211,
+        "minOSVersion": "15.1",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Instagram-445.0.0-RyukGram.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 324923211,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "saber": {
     "retryCount": 0,
     "lastResolvedSource": "github:saber-notes/saber",
@@ -5065,6 +5303,39 @@
         "detail": "HTTP 302"
       }
     ]
+  },
+  "sparkle": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "445.0.0",
+        "date": "2026-09-01",
+        "localizedDescription": "Instagram 445.0.0 | Instagram-445.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 445.0.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+        "size": 317653332,
+        "minOSVersion": "15.1",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Instagram-445.0.0-Sparkle.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 317653332,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
   },
   "spotiflac": {
     "retryCount": 0,
@@ -6011,6 +6282,72 @@
       }
     ]
   },
+  "swiftgram": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "12.9.2",
+        "date": "2026-09-01",
+        "localizedDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-MxGram\n\nIPA Vault build for Swiftgram (MxGram), version 12.9.2",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+        "size": 91604352,
+        "minOSVersion": "13.0",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Swiftgram-12.9.2-MxGram.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 91604352,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
+  "telegram-mxgram": {
+    "retryCount": 0,
+    "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
+    "versions": [
+      {
+        "version": "12.9.3",
+        "date": "2026-09-01",
+        "localizedDescription": "Telegram 12.9.3 | Telegram-12.9.3-MxGram\n\nIPA Vault build for Telegram (MxGram), version 12.9.3",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+        "size": 80615512,
+        "minOSVersion": "13.0",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Telegram-12.9.3-MxGram.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 80615512,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "syncedAt": "2026-09-10"
+  },
   "ttkillerplus": {
     "retryCount": 0,
     "versions": [
@@ -6443,6 +6780,26 @@
       "kind": "new"
     },
     {
+      "appId": "iqface",
+      "name": "iQFace",
+      "version": "577.1",
+      "previousVersion": null,
+      "releaseDate": "2026-09-05",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+      "changelog": "Facebook 577.1 | Facebook-577.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 577.1",
+      "kind": "new"
+    },
+    {
+      "appId": "glow",
+      "name": "Glow",
+      "version": "577.1",
+      "previousVersion": null,
+      "releaseDate": "2026-09-05",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+      "changelog": "Facebook 577.1 | Facebook-577.1-Glow\n\nIPA Vault build for Facebook (Glow), version 577.1",
+      "kind": "new"
+    },
+    {
       "appId": "aidoku",
       "name": "Aidoku",
       "version": "0.9",
@@ -6513,6 +6870,46 @@
       "kind": "new"
     },
     {
+      "appId": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "version": "12.9.3",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+      "changelog": "Telegram 12.9.3 | Telegram-12.9.3-MxGram\n\nIPA Vault build for Telegram (MxGram), version 12.9.3",
+      "kind": "new"
+    },
+    {
+      "appId": "swiftgram",
+      "name": "Swiftgram",
+      "version": "12.9.2",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+      "changelog": "Swiftgram 12.9.2 | Swiftgram-12.9.2-MxGram\n\nIPA Vault build for Swiftgram (MxGram), version 12.9.2",
+      "kind": "new"
+    },
+    {
+      "appId": "sparkle",
+      "name": "Sparkle",
+      "version": "445.0.0",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+      "changelog": "Instagram 445.0.0 | Instagram-445.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 445.0.0",
+      "kind": "new"
+    },
+    {
+      "appId": "ryukgram",
+      "name": "RyukGram",
+      "version": "445.0.0",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+      "changelog": "Instagram 445.0.0 | Instagram-445.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 445.0.0",
+      "kind": "new"
+    },
+    {
       "appId": "maxmusic",
       "name": "MaxMusic",
       "version": "9.35.2",
@@ -6540,6 +6937,16 @@
       "releaseDate": "2026-09-01",
       "downloadUrl": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
       "changelog": "Instagram 445.0.0 | Instagram_445.0_iNKillerPlus_5.2\n\n• Fix profile bio long press to copy detect email and links\n• Fix read DM icon\n• Fix user exception for direct message\n• Add roothide & relaxin JB support\n• Add full compatibility with IG v440+\n• Add tab configuration for hide & launch\n• Fix swipe between tabs\n• Fix story mention button crashes on v440+\n• Fix story download button\n• Fix eye long-press user exception on v440+\n• Fix follow confirmation toggle\n• Fix long-press profile picture expand & download\n• Fix grid button in main navbar\n• Fix 2x2 grid handling in 3x3 position style\n• Fix photo picker with music on multiple posts for iOS 27 Liquid Glass\n• Other fixes & improvements\n• Updated base IPA to Instagram v445.0",
+      "kind": "new"
+    },
+    {
+      "appId": "infuseplus",
+      "name": "Infuse Plus",
+      "version": "8.5.3",
+      "previousVersion": null,
+      "releaseDate": "2026-09-01",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+      "changelog": "Infuse 8.5.3 | Infuse-8.5.3-Infuse-Plus\n\nIPA Vault build for Infuse Plus (8.5.3), version 8.5.3",
       "kind": "new"
     },
     {
@@ -6753,6 +7160,16 @@
       "kind": "new"
     },
     {
+      "appId": "raintweak",
+      "name": "RainTweak",
+      "version": "0.9.3",
+      "previousVersion": null,
+      "releaseDate": "2026-06-19",
+      "downloadUrl": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+      "changelog": "Discord 0.9.3 | RainTweak",
+      "kind": "new"
+    },
+    {
       "appId": "spotube",
       "name": "Spotube",
       "version": "5.1.2",
@@ -6850,6 +7267,16 @@
       "releaseDate": "2025-11-02",
       "downloadUrl": "https://github.com/RajnishOne/qbitconnect/releases/download/v1.6.6/qBitConnect.ipa",
       "changelog": "qBitConnect 1.6.6 | qBitConnect\n\nThis release includes:\n• Minor improvements and bug fixes\n• UI Enhancements",
+      "kind": "new"
+    },
+    {
+      "appId": "redditfilter",
+      "name": "RedditFilter",
+      "version": "2025.37.0",
+      "previousVersion": null,
+      "releaseDate": "2025-09-26",
+      "downloadUrl": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
+      "changelog": "Reddit 2025.37.0 | RedditFilter_2025.37.0-1.1.8\n\n# RedditFilter v2025.37.0-1.1.8\n\n## Changes\n\n- Fix app crash (@NicholasBly)\n- Fix ad comments showing under posts (@Laitinlok)\n- Fix popular feed not showing with recommendations disabled\n- Move RedditFilter settings to the user drawer / side bar (accessed by tapping the profile picture in the top right)\n\n## SHA256\n\n- `1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3`  packages/RedditFilter_2025.37.0-1.1.8.ipa\n- `1aabd2f0656e6ec4b26fa38f4b5e10bb2d4465c0c6e087e3d57da57a06799f83`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb\n- `e871f455aa868a25a7ea1fd40ef3b19a7a7ade21aa4162e0b26d94dab9f31c12`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb",
       "kind": "new"
     },
     {

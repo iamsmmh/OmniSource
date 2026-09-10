@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 49,
-    "pass": 39,
-    "warn": 10,
+    "apps": 58,
+    "pass": 41,
+    "warn": 17,
     "fail": 0,
     "rejected": 0
   },
@@ -209,6 +209,42 @@
       "status": "pass"
     },
     {
+      "slug": "glow",
+      "name": "Glow",
+      "asset": {
+        "sha256": null,
+        "size": 226667533,
+        "releaseId": "577.1",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "infuseplus",
+      "name": "Infuse Plus",
+      "asset": {
+        "sha256": null,
+        "size": 100074036,
+        "releaseId": "8.5.3",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "inkillerplus",
       "name": "iNKillerPlus",
       "asset": {
@@ -217,6 +253,24 @@
         "releaseId": "446.0.0",
         "source": "altstore",
         "downloadUrl": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "iqface",
+      "name": "iQFace",
+      "asset": {
+        "sha256": null,
+        "size": 225312147,
+        "releaseId": "577.1",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -479,6 +533,60 @@
       "status": "pass"
     },
     {
+      "slug": "raintweak",
+      "name": "RainTweak",
+      "asset": {
+        "sha256": "1ac871154ac2649158eea405f2c79e2e1d36ed7771c9b64748ce9f1c3f97703e",
+        "size": 107515564,
+        "releaseId": "0.9.3",
+        "source": "github",
+        "downloadUrl": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "redditfilter",
+      "name": "RedditFilter",
+      "asset": {
+        "sha256": "1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3",
+        "size": 137114565,
+        "releaseId": "2025.37.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "asset": {
+        "sha256": null,
+        "size": 324923211,
+        "releaseId": "445.0.0",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "saber",
       "name": "Saber",
       "asset": {
@@ -531,6 +639,24 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "sparkle",
+      "name": "Sparkle",
+      "asset": {
+        "sha256": null,
+        "size": 317653332,
+        "releaseId": "445.0.0",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "spotiflac",
@@ -621,6 +747,42 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "swiftgram",
+      "name": "Swiftgram",
+      "asset": {
+        "sha256": null,
+        "size": 91604352,
+        "releaseId": "12.9.2",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "asset": {
+        "sha256": null,
+        "size": 80615512,
+        "releaseId": "12.9.3",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "ttkillerplus",
