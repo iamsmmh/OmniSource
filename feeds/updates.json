@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-09-10",
   "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
-  "count": 71,
+  "count": 72,
   "updates": [
     {
       "slug": "youpro",
@@ -722,6 +722,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/bootstrap.xml",
       "status": "stable",
       "shortDescription": "RootHide bootstrap for iOS 15 – 17"
+    },
+    {
+      "slug": "xenios",
+      "name": "XeniOS",
+      "version": "2.0.1",
+      "previousVersion": "",
+      "date": "2026-06-08",
+      "kind": "new",
+      "changelog": "XeniOS 2.0.1 | xenios_ios_iphone_ipad\n\n# 2.0.1-9730\n\n- Channel: release\n- Stage: stable\n- Version: 2.0.1\n- Build number: 9730\n- Commit: 57c3ca140\n- Published at: 2026-06-08T03:28:01Z\n- Source ref: refs/heads/xenios",
+      "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/XeniOS.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/xenios.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/xenios.xml",
+      "status": "beta",
+      "shortDescription": "Xbox 360 emulation for iPhone and iPad"
     },
     {
       "slug": "spotube",

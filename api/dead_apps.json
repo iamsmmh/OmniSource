@@ -6,9 +6,9 @@
     "stale": 180,
     "archived": 365
   },
-  "count": 23,
+  "count": 24,
   "summary": {
-    "warning": 7,
+    "warning": 8,
     "stale": 5,
     "archived": 11,
     "critical": 0
@@ -265,6 +265,17 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 100 days (threshold 90)"
+      ]
+    },
+    {
+      "slug": "xenios",
+      "name": "XeniOS",
+      "lastUpdate": "2026-06-08",
+      "daysSinceUpdate": 94,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 94 days (threshold 90)"
       ]
     }
   ],
@@ -872,6 +883,17 @@
       "classification": "healthy",
       "removedReleases": 0,
       "reasons": []
+    },
+    {
+      "slug": "xenios",
+      "name": "XeniOS",
+      "lastUpdate": "2026-06-08",
+      "daysSinceUpdate": 94,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 94 days (threshold 90)"
+      ]
     }
   ]
 }

@@ -3504,6 +3504,60 @@
         "minOSVersion": "15.0",
         "descriptionTemplate": "Manic EMU {version} | {label}"
       }
+    },
+    {
+      "slug": "xenios",
+      "name": "XeniOS",
+      "subtitle": "Xbox 360 emulation for iPhone and iPad",
+      "bundleIdentifier": "com.xenios",
+      "developerName": "XeniOS Project (xenios-jp)",
+      "category": "games",
+      "tintColor": "107C10",
+      "icon": "XeniOS.webp",
+      "localizedDescription": "XeniOS is an experimental Apple-focused fork of Xenia, the Xbox 360 emulator research project, built for iPhone, iPad and Apple silicon Macs. The iOS build ships as an unsigned IPA and needs recent, powerful hardware: the upstream CMake configuration sets the iOS deployment target to 18.0, and the emulated PowerPC cores plus the Xbox 360 GPU workload only reach playable frame rates on A17 Pro / M-series class chips. It carries the same edge-line core as upstream Xenia and reports game compatibility on xenios.jp. As with every console emulator, you supply your own game files.",
+      "status": "beta",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/xenios-jp/XeniOS",
+      "verification": {
+        "method": "github-release",
+        "publisher": "xenios-jp/XeniOS",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "18.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA from the developer's GitHub releases (xenios_ios_iphone_ipad.ipa). The project publishes a fast-moving preview channel alongside the tagged release line; this feed tracks the stable release-* builds only. Xbox 360 emulation is demanding, so expect low frame rates outside high-end devices, and the upstream currently lists iOS 18.0 as the minimum. No game files are bundled."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "xenios-jp/XeniOS",
+        "versionPattern": "release-v([\\d.]+)-build",
+        "assetNamePattern": "^xenios_ios_.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "18.0",
+        "descriptionTemplate": "XeniOS {version} | {label}"
+      }
     }
   ]
 }

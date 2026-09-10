@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 62,
+  "count": 63,
   "baseURL": "https://iamsmmh.github.io/OmniSource",
   "apps": [
     {
@@ -2544,6 +2544,47 @@
         "reachable": true,
         "detail": "not probed",
         "updatedAt": "2026-09-03"
+      }
+    },
+    {
+      "id": "xenios",
+      "slug": "xenios",
+      "name": "XeniOS",
+      "developer": "XeniOS Project (xenios-jp)",
+      "version": "2.0.1",
+      "releaseDate": "2026-06-08",
+      "category": "games",
+      "categories": [
+        "games"
+      ],
+      "tags": [
+        "games"
+      ],
+      "source": "xenios-jp/XeniOS",
+      "sourceURL": "https://github.com/xenios-jp/XeniOS",
+      "bundleId": "com.xenios",
+      "bundleIdentifier": "com.xenios",
+      "description": "XeniOS is an experimental Apple-focused fork of Xenia, the Xbox 360 emulator research project, built for iPhone, iPad and Apple silicon Macs. The iOS build ships as an unsigned IPA and needs recent, powerful hardware: the upstream CMake configuration sets the iOS deployment target to 18.0, and the emulated PowerPC cores plus the Xbox 360 GPU workload only reach playable frame rates on A17 Pro / M-series class chips. It carries the same edge-line core as upstream Xenia and reports game compatibility on xenios.jp. As with every console emulator, you supply your own game files.",
+      "shortDescription": "Xbox 360 emulation for iPhone and iPad",
+      "icon": "XeniOS.webp",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/XeniOS.webp",
+      "pageURL": "https://iamsmmh.github.io/OmniSource/apps/xenios/",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/xenios.json",
+      "homepage": "https://github.com/xenios-jp/XeniOS",
+      "status": "beta",
+      "featured": false,
+      "size": 46253576,
+      "downloads": 25754,
+      "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+      "sha256": "61de6cfc9cf05389161272ceaa70d46662dab77de40ab11fdda3d4a2221621a7",
+      "minOSVersion": "18.0",
+      "verificationMethod": "github-release",
+      "publisher": "xenios-jp/XeniOS",
+      "checksumPublished": false,
+      "health": {
+        "reachable": true,
+        "detail": "not probed",
+        "updatedAt": "2026-06-08"
       }
     }
   ]

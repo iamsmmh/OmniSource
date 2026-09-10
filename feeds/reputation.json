@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 58,
+  "count": 59,
   "levels": [
     "TRUSTED",
     "RELIABLE",
@@ -449,6 +449,26 @@
         "uptime": 100.0,
         "probes": 7,
         "averageLatencyMs": 208.0,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "xenios-jp/XeniOS",
+      "source": "xenios-jp/XeniOS",
+      "publisher": "xenios-jp/XeniOS",
+      "homepage": "https://github.com/xenios-jp/XeniOS",
+      "sourceURL": "https://github.com/xenios-jp/XeniOS",
+      "apps": [
+        "xenios"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"

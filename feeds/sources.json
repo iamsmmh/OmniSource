@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 58,
+  "count": 59,
   "feed": {
     "name": "OmniSource",
     "identifier": "com.iamsmmh.omnisource",
@@ -853,6 +853,21 @@
           "slug": "vcmi",
           "name": "VCMI",
           "version": "1.7.5"
+        }
+      ]
+    },
+    {
+      "id": "xenios-jp/XeniOS",
+      "source": "xenios-jp/XeniOS",
+      "type": "github",
+      "homepage": "https://github.com/xenios-jp/XeniOS",
+      "sourceURL": "https://github.com/xenios-jp/XeniOS",
+      "publisher": "xenios-jp/XeniOS",
+      "apps": [
+        {
+          "slug": "xenios",
+          "name": "XeniOS",
+          "version": "2.0.1"
         }
       ]
     },

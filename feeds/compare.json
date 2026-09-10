@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 1891,
+  "count": 1953,
   "pairs": [
     {
       "left": {
@@ -3650,6 +3650,51 @@
     },
     {
       "left": {
+        "slug": "delta",
+        "name": "Delta",
+        "icon": "assets/Delta.webp",
+        "category": "games",
+        "version": "1.6",
+        "releaseDate": "2024-07-11",
+        "source": "RileyTestut/Delta",
+        "sourceURL": "https://github.com/RileyTestut/Delta",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": true
+    },
+    {
+      "left": {
         "slug": "dolphinish",
         "name": "DolphiniOS",
         "icon": "assets/DolphiniOS.webp",
@@ -3915,6 +3960,51 @@
         }
       },
       "winner": "vcmi",
+      "shareBundle": false,
+      "shareCategory": true
+    },
+    {
+      "left": {
+        "slug": "dolphinish",
+        "name": "DolphiniOS",
+        "icon": "assets/DolphiniOS.webp",
+        "category": "games",
+        "version": "5.0.0",
+        "releaseDate": "2026-06-20",
+        "source": "OatmealDome/dolphin-ios",
+        "sourceURL": "https://github.com/OatmealDome/dolphin-ios",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "dolphinish",
       "shareBundle": false,
       "shareCategory": true
     },
@@ -6530,6 +6620,96 @@
     },
     {
       "left": {
+        "slug": "mame4ios",
+        "name": "MAME4iOS",
+        "icon": "assets/MAME4iOS.webp",
+        "category": "games",
+        "version": "2022.5",
+        "releaseDate": "2022-12-12",
+        "source": "yoshisuga/MAME4iOS",
+        "sourceURL": "https://github.com/yoshisuga/MAME4iOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "13.4",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": true
+    },
+    {
+      "left": {
+        "slug": "manicemu",
+        "name": "Manic EMU",
+        "icon": "assets/ManicEMU.webp",
+        "category": "games",
+        "version": "2.0.0",
+        "releaseDate": "2026-09-03",
+        "source": "Manic-EMU/ManicEMU",
+        "sourceURL": "https://github.com/Manic-EMU/ManicEMU",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "manicemu",
+      "shareBundle": false,
+      "shareCategory": true
+    },
+    {
+      "left": {
         "slug": "maxmusic",
         "name": "MaxMusic",
         "icon": "assets/MaxMusic.webp",
@@ -6930,6 +7110,51 @@
         }
       },
       "winner": "stiknes",
+      "shareBundle": false,
+      "shareCategory": true
+    },
+    {
+      "left": {
+        "slug": "minivmac",
+        "name": "Mini vMac",
+        "icon": "assets/MiniVMac.webp",
+        "category": "games",
+        "version": "2.6",
+        "releaseDate": "2024-07-09",
+        "source": "zydeco/minivmac4ios",
+        "sourceURL": "https://github.com/zydeco/minivmac4ios",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "12.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
       "shareBundle": false,
       "shareCategory": true
     },
@@ -7430,6 +7655,51 @@
     },
     {
       "left": {
+        "slug": "ppsspp",
+        "name": "PPSSPP",
+        "icon": "assets/PPSSPP.webp",
+        "category": "games",
+        "version": "1.20.4",
+        "releaseDate": "2026-05-16",
+        "source": "hrydgard/ppsspp",
+        "sourceURL": "https://github.com/hrydgard/ppsspp",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "12.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": true
+    },
+    {
+      "left": {
         "slug": "provenance",
         "name": "Provenance",
         "icon": "assets/Provenance.webp",
@@ -7830,6 +8100,51 @@
         }
       },
       "winner": "vcmi",
+      "shareBundle": false,
+      "shareCategory": true
+    },
+    {
+      "left": {
+        "slug": "provenance",
+        "name": "Provenance",
+        "icon": "assets/Provenance.webp",
+        "category": "games",
+        "version": "3.3.0",
+        "releaseDate": "2026-03-14",
+        "source": "Provenance-Emu/Provenance",
+        "sourceURL": "https://github.com/Provenance-Emu/Provenance",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "17.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
       "shareBundle": false,
       "shareCategory": true
     },
@@ -9725,6 +10040,51 @@
     },
     {
       "left": {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "icon": "assets/SameBoy.webp",
+        "category": "games",
+        "version": "1.0.3",
+        "releaseDate": "2026-03-04",
+        "source": "LIJI32/SameBoy",
+        "sourceURL": "https://github.com/LIJI32/SameBoy",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "11.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": true
+    },
+    {
+      "left": {
         "slug": "serotonin",
         "name": "Serotonin",
         "icon": "assets/Serotonin.webp",
@@ -10890,6 +11250,51 @@
         }
       },
       "winner": "sameboy",
+      "shareBundle": false,
+      "shareCategory": true
+    },
+    {
+      "left": {
+        "slug": "stiknes",
+        "name": "StikNES",
+        "icon": "assets/StikNES.webp",
+        "category": "games",
+        "version": "2.0.2",
+        "releaseDate": "2025-02-23",
+        "source": "StikEMU/StikNES-2.0",
+        "sourceURL": "https://github.com/StikEMU/StikNES-2.0",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "17.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
       "shareBundle": false,
       "shareCategory": true
     },
@@ -12875,6 +13280,51 @@
     },
     {
       "left": {
+        "slug": "vcmi",
+        "name": "VCMI",
+        "icon": "assets/VCMI.webp",
+        "category": "games",
+        "version": "1.7.5",
+        "releaseDate": "2026-08-15",
+        "source": "vcmi/vcmi",
+        "sourceURL": "https://github.com/vcmi/vcmi",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "13.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "vcmi",
+      "shareBundle": false,
+      "shareCategory": true
+    },
+    {
+      "left": {
         "slug": "voyager",
         "name": "Voyager",
         "icon": "assets/Voyager.webp",
@@ -16990,6 +17440,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "aidoku",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "aidoku",
+        "name": "Aidoku",
+        "icon": "assets/Aidoku.webp",
+        "category": "other",
+        "version": "0.9",
+        "releaseDate": "2026-09-03",
+        "source": "Aidoku/Aidoku",
+        "sourceURL": "https://github.com/Aidoku/Aidoku",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -17870,6 +18365,51 @@
     },
     {
       "left": {
+        "slug": "anxreader",
+        "name": "Anx Reader",
+        "icon": "assets/AnxReader.webp",
+        "category": "utilities",
+        "version": "1.14.0",
+        "releaseDate": "2026-03-19",
+        "source": "Anxcye/anx-reader",
+        "sourceURL": "https://github.com/Anxcye/anx-reader",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.2",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "anymex",
         "name": "AnymeX",
         "icon": "assets/AnymeX.webp",
@@ -18488,6 +19028,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "11.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "anymex",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "anymex",
+        "name": "AnymeX",
+        "icon": "assets/AnymeX.webp",
+        "category": "other",
+        "version": "3.1.7",
+        "releaseDate": "2026-08-30",
+        "source": "RyanYuuki/AnymeX",
+        "sourceURL": "https://github.com/RyanYuuki/AnymeX",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "12.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -19523,6 +20108,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "13.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "apollo",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "apollo",
+        "name": "Apollo",
+        "icon": "assets/Apollo.webp",
+        "category": "social",
+        "version": "3.6.0",
+        "releaseDate": "2026-08-18",
+        "source": "Apollo-Reborn/Apollo-Reborn",
+        "sourceURL": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -21175,6 +21805,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "bhtwitter",
+        "name": "BHTwitter",
+        "icon": "assets/X.webp",
+        "category": "social",
+        "version": "4.4",
+        "releaseDate": "2025-05-13",
+        "source": "BandarHL/BHTwitter",
+        "sourceURL": "https://github.com/BandarHL/BHTwitter",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -22100,6 +22775,51 @@
     },
     {
       "left": {
+        "slug": "bluewallet",
+        "name": "BlueWallet",
+        "icon": "assets/BlueWallet.webp",
+        "category": "utilities",
+        "version": "8.0.1",
+        "releaseDate": "2026-07-21",
+        "source": "BlueWallet/BlueWallet",
+        "sourceURL": "https://github.com/BlueWallet/BlueWallet",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.6",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "bluewallet",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "bootstrap",
         "name": "Bootstrap",
         "icon": "assets/Bootstrap.webp",
@@ -22223,6 +22943,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "11.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "bootstrap",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "bootstrap",
+        "name": "Bootstrap",
+        "icon": "assets/Bootstrap.webp",
+        "category": "utilities",
+        "version": "2.2.1",
+        "releaseDate": "2026-06-12",
+        "source": "roothide/Bootstrap",
+        "sourceURL": "https://github.com/roothide/Bootstrap",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -22628,6 +23393,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "conduit",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "conduit",
+        "name": "Conduit",
+        "icon": "assets/Conduit.webp",
+        "category": "utilities",
+        "version": "4.1.4",
+        "releaseDate": "2026-09-01",
+        "source": "cogwheel0/conduit",
+        "sourceURL": "https://github.com/cogwheel0/conduit",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -25115,6 +25925,51 @@
     },
     {
       "left": {
+        "slug": "dopamine",
+        "name": "Dopamine",
+        "icon": "assets/Dopamine.webp",
+        "category": "utilities",
+        "version": "3.0.9",
+        "releaseDate": "2026-08-22",
+        "source": "opa334/Dopamine",
+        "sourceURL": "https://github.com/opa334/Dopamine",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "dopamine",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "dopamine-roothide",
         "name": "Dopamine (RootHide)",
         "icon": "assets/DopamineRootHide.webp",
@@ -25238,6 +26093,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "11.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "dopamine-roothide",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "dopamine-roothide",
+        "name": "Dopamine (RootHide)",
+        "icon": "assets/DopamineRootHide.webp",
+        "category": "utilities",
+        "version": "2.4.9.26",
+        "releaseDate": "2026-09-07",
+        "source": "roothide/Dopamine2-roothide",
+        "sourceURL": "https://github.com/roothide/Dopamine2-roothide",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -26440,6 +27340,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "feather",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "feather",
+        "name": "Feather",
+        "icon": "assets/Feather.webp",
+        "category": "utilities",
+        "version": "2.9.0",
+        "releaseDate": "2026-07-05",
+        "source": "claration/Feather",
+        "sourceURL": "https://github.com/claration/Feather",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -27095,6 +28040,51 @@
     },
     {
       "left": {
+        "slug": "fladder",
+        "name": "Fladder",
+        "icon": "assets/Fladder.webp",
+        "category": "photo-video",
+        "version": "0.11.1",
+        "releaseDate": "2026-09-08",
+        "source": "DonutWare/Fladder",
+        "sourceURL": "https://github.com/DonutWare/Fladder",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "fladder",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "gopeed",
         "name": "Gopeed",
         "icon": "assets/Gopeed.webp",
@@ -27135,6 +28125,51 @@
         }
       },
       "winner": "manicemu",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "gopeed",
+        "name": "Gopeed",
+        "icon": "assets/Gopeed.webp",
+        "category": "networking",
+        "version": "1.9.3",
+        "releaseDate": "2026-03-18",
+        "source": "GopeedLab/gopeed",
+        "sourceURL": "https://github.com/GopeedLab/gopeed",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
       "shareBundle": false,
       "shareCategory": false
     },
@@ -28870,6 +29905,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "inkillerplus",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "inkillerplus",
+        "name": "iNKillerPlus",
+        "icon": "assets/Instagram.webp",
+        "category": "social",
+        "version": "446.0.0",
+        "releaseDate": "2026-09-09",
+        "source": "iKarwan (repo.ikghd.me)",
+        "sourceURL": "https://repo.ikghd.me",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.3",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -30098,6 +31178,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "13.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "ish",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "ish",
+        "name": "iSH",
+        "icon": "assets/iSH.webp",
+        "category": "developer-tools",
+        "version": "813",
+        "releaseDate": "2026-08-22",
+        "source": "ish-app/ish",
+        "sourceURL": "https://github.com/ish-app/ish",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "12.2",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -32110,6 +33235,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "itorrent",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "itorrent",
+        "name": "iTorrent",
+        "icon": "assets/iTorrent.webp",
+        "category": "networking",
+        "version": "2.2.0",
+        "releaseDate": "2026-07-19",
+        "source": "XITRIX/iTorrent",
+        "sourceURL": "https://github.com/XITRIX/iTorrent",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -33685,6 +34855,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "jellify",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "jellify",
+        "name": "Jellify",
+        "icon": "assets/Jellify.webp",
+        "category": "music",
+        "version": "1.2.10",
+        "releaseDate": "2026-09-02",
+        "source": "Jellify-Music/App",
+        "sourceURL": "https://github.com/Jellify-Music/App",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.4",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "zeus",
         "name": "Zeus",
         "icon": "assets/Zeus.webp",
@@ -34875,6 +36090,51 @@
         }
       },
       "winner": "voyager",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "livecontainer",
+        "name": "LiveContainer",
+        "icon": "assets/LiveContainer.webp",
+        "category": "utilities",
+        "version": "3.8.0",
+        "releaseDate": "2026-07-17",
+        "source": "LiveContainer/LiveContainer",
+        "sourceURL": "https://github.com/LiveContainer/LiveContainer",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "livecontainer",
       "shareBundle": false,
       "shareCategory": false
     },
@@ -37915,6 +39175,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "maxmusic",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "maxmusic",
+        "name": "MaxMusic",
+        "icon": "assets/MaxMusic.webp",
+        "category": "music",
+        "version": "9.36.1",
+        "releaseDate": "2026-09-10",
+        "source": "Mark02-2012/MaxMusic",
+        "sourceURL": "https://github.com/Mark02-2012/MaxMusic",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -40165,6 +41470,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "maxtube",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "maxtube",
+        "name": "MaxTube",
+        "icon": "assets/MaxTube.webp",
+        "category": "photo-video",
+        "version": "21.31.3",
+        "releaseDate": "2026-08-03",
+        "source": "Ashreq/ashstore-repo",
+        "sourceURL": "https://github.com/Ashreq/ashstore-repo",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "ytmusic",
         "name": "YTMusicUltimate",
         "icon": "assets/YouTubeMusic.webp",
@@ -41630,6 +42980,51 @@
     },
     {
       "left": {
+        "slug": "neofreebird",
+        "name": "NeoFreeBird",
+        "icon": "assets/NeoFreeBird.webp",
+        "category": "social",
+        "version": "2.2",
+        "releaseDate": "2025-11-03",
+        "source": "NeoFreeBird/app",
+        "sourceURL": "https://github.com/NeoFreeBird/app",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "odyssey",
         "name": "Odyssey",
         "icon": "assets/Odyssey.webp",
@@ -41760,6 +43155,51 @@
         }
       },
       "winner": "sameboy",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "odyssey",
+        "name": "Odyssey",
+        "icon": "assets/Odyssey.webp",
+        "category": "utilities",
+        "version": "1.4.3",
+        "releaseDate": "2023-04-04",
+        "source": "Odyssey-Team/Odyssey",
+        "sourceURL": "https://github.com/Odyssey-Team/Odyssey",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "13.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
       "shareBundle": false,
       "shareCategory": false
     },
@@ -45230,6 +46670,51 @@
     },
     {
       "left": {
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
+        "icon": "assets/qBitConnect.webp",
+        "category": "utilities",
+        "version": "1.6.6",
+        "releaseDate": "2025-11-02",
+        "source": "RajnishOne/qbitconnect",
+        "sourceURL": "https://github.com/RajnishOne/qbitconnect",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "qbitcontrol",
         "name": "qBitControl",
         "icon": "assets/qBitControl.webp",
@@ -45905,6 +47390,51 @@
     },
     {
       "left": {
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
+        "icon": "assets/qBitControl.webp",
+        "category": "utilities",
+        "version": "1.4.1",
+        "releaseDate": "2026-07-23",
+        "source": "Michael-128/qBitControl",
+        "sourceURL": "https://github.com/Michael-128/qBitControl",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "qbitcontrol",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "qbitcontroller",
         "name": "qBitController",
         "icon": "assets/qBitController.webp",
@@ -46490,6 +48020,51 @@
     },
     {
       "left": {
+        "slug": "qbitcontroller",
+        "name": "qBitController",
+        "icon": "assets/qBitController.webp",
+        "category": "utilities",
+        "version": "2.2.1",
+        "releaseDate": "2026-07-28",
+        "source": "Bartuzen/qBitController",
+        "sourceURL": "https://github.com/Bartuzen/qBitController",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "qbitcontroller",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "ryukgram",
         "name": "RyukGram",
         "icon": "assets/Instagram.webp",
@@ -46928,6 +48503,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "11.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "ryukgram",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "ryukgram",
+        "name": "RyukGram",
+        "icon": "assets/Instagram.webp",
+        "category": "social",
+        "version": "446.0.0",
+        "releaseDate": "2026-09-09",
+        "source": "Ryuk / RyukSign (source.ryuksign.com)",
+        "sourceURL": "https://source.ryuksign.com/plugins",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -47390,6 +49010,51 @@
     },
     {
       "left": {
+        "slug": "ryukgram-ig410",
+        "name": "RyukGram (IG 410)",
+        "icon": "assets/Instagram.webp",
+        "category": "social",
+        "version": "410.1.0",
+        "releaseDate": "2026-07-25",
+        "source": "Ryuk / RyukSign (source.ryuksign.com)",
+        "sourceURL": "https://source.ryuksign.com/ig410",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "ryukgram-ig410",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "ryukgram-sidebyside",
         "name": "RyukGram Side by Side",
         "icon": "assets/Instagram.webp",
@@ -47828,6 +49493,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "11.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "ryukgram-sidebyside",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
+        "icon": "assets/Instagram.webp",
+        "category": "social",
+        "version": "446.0.0",
+        "releaseDate": "2026-09-09",
+        "source": "Ryuk / RyukSign (source.ryuksign.com)",
+        "sourceURL": "https://source.ryuksign.com/duplicate",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -48650,6 +50360,51 @@
     },
     {
       "left": {
+        "slug": "saber",
+        "name": "Saber",
+        "icon": "assets/Saber.webp",
+        "category": "utilities",
+        "version": "1.36.1",
+        "releaseDate": "2026-08-30",
+        "source": "saber-notes/saber",
+        "sourceURL": "https://github.com/saber-notes/saber",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "saber",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "sameboy",
         "name": "SameBoy",
         "icon": "assets/SameBoy.webp",
@@ -48825,6 +50580,51 @@
         }
       },
       "winner": "sameboy",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "icon": "assets/Serotonin.webp",
+        "category": "utilities",
+        "version": "1.2.1",
+        "releaseDate": "2024-01-17",
+        "source": "mineek/Serotonin",
+        "sourceURL": "https://github.com/mineek/Serotonin",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.5.1",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
       "shareBundle": false,
       "shareCategory": false
     },
@@ -50020,6 +51820,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "icon": "assets/SideStore.webp",
+        "category": "utilities",
+        "version": "0.6.3",
+        "releaseDate": "2026-05-05",
+        "source": "SideStore/SideStore",
+        "sourceURL": "https://github.com/SideStore/SideStore",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -50618,6 +52463,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "11.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "sora",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "sora",
+        "name": "Sora",
+        "icon": "assets/Sora.webp",
+        "category": "photo-video",
+        "version": "1.3.0",
+        "releaseDate": "2026-08-20",
+        "source": "cranci1/Sora",
+        "sourceURL": "https://github.com/cranci1/Sora",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -52900,6 +54790,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "spotiflac",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "spotiflac",
+        "name": "SpotiFLAC Mobile",
+        "icon": "assets/SpotiFLAC.webp",
+        "category": "music",
+        "version": "4.9.6",
+        "releaseDate": "2026-09-07",
+        "source": "spotiflacapp/SpotiFLAC-Mobile",
+        "sourceURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -54675,6 +56610,51 @@
         }
       },
       "winner": "voyager",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "spotube",
+        "name": "Spotube",
+        "icon": "assets/Spotube.webp",
+        "category": "music",
+        "version": "5.1.2",
+        "releaseDate": "2026-06-05",
+        "source": "KRTirtho/spotube",
+        "sourceURL": "https://github.com/KRTirtho/spotube",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
       "shareBundle": false,
       "shareCategory": false
     },
@@ -56655,6 +58635,51 @@
         }
       },
       "winner": "voyager",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "stikdebug",
+        "name": "StikDebug",
+        "icon": "assets/StikDebug.webp",
+        "category": "developer-tools",
+        "version": "3.1.10",
+        "releaseDate": "2026-08-27",
+        "source": "StikDebug/StikDebug",
+        "sourceURL": "https://github.com/StikDebug/StikDebug",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "17.4",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "stikdebug",
       "shareBundle": false,
       "shareCategory": false
     },
@@ -59020,6 +61045,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "streamyfin",
+        "name": "Streamyfin",
+        "icon": "assets/Streamyfin.webp",
+        "category": "photo-video",
+        "version": "0.54.1",
+        "releaseDate": "2026-06-02",
+        "source": "fredrikburmester/streamyfin",
+        "sourceURL": "https://github.com/fredrikburmester/streamyfin",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.4",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "zeus",
         "name": "Zeus",
         "icon": "assets/Zeus.webp",
@@ -59175,6 +61245,51 @@
         }
       },
       "winner": "sameboy",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "taurine",
+        "name": "Taurine",
+        "icon": "assets/Taurine.webp",
+        "category": "utilities",
+        "version": "1.1.7",
+        "releaseDate": "2023-09-23",
+        "source": "Odyssey-Team/Taurine",
+        "sourceURL": "https://github.com/Odyssey-Team/Taurine",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
       "shareBundle": false,
       "shareCategory": false
     },
@@ -60910,6 +63025,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "ttkillerplus",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "icon": "assets/TikTok.webp",
+        "category": "social",
+        "version": "46.8.0",
+        "releaseDate": "2026-09-09",
+        "source": "iKarwan (repo.ikghd.me)",
+        "sourceURL": "https://repo.ikghd.me",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -61610,6 +63770,51 @@
     },
     {
       "left": {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "icon": "assets/TAB.webp",
+        "category": "social",
+        "version": "30.7",
+        "releaseDate": "2026-08-14",
+        "source": "gunnerkidBT/TwitchAdBlock",
+        "sourceURL": "https://github.com/gunnerkidBT/TwitchAdBlock",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "twitchadblock",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "unc0ver",
         "name": "unc0ver",
         "icon": "assets/unc0ver.webp",
@@ -61740,6 +63945,51 @@
         }
       },
       "winner": "sameboy",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "icon": "assets/unc0ver.webp",
+        "category": "utilities",
+        "version": "5.2.0",
+        "releaseDate": "2020-06-09",
+        "source": "pwn20wndstuff/Undecimus",
+        "sourceURL": "https://github.com/pwn20wndstuff/Undecimus",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "11.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
       "shareBundle": false,
       "shareCategory": false
     },
@@ -63180,6 +65430,51 @@
         }
       },
       "winner": "utm",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "utm",
+        "name": "UTM",
+        "icon": "assets/UTM.webp",
+        "category": "utilities",
+        "version": "4.7.5",
+        "releaseDate": "2026-01-03T17:51:54Z",
+        "source": "utmapp/UTM",
+        "sourceURL": "https://github.com/utmapp/UTM",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
       "shareBundle": false,
       "shareCategory": false
     },
@@ -65410,6 +67705,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "uyouenhanced",
+        "name": "uYouEnhanced",
+        "icon": "assets/uYouEnhanced.webp",
+        "category": "photo-video",
+        "version": "21.14.4",
+        "releaseDate": "2026-08-22",
+        "source": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
+        "sourceURL": "https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6",
+        "verificationLevel": "COMMUNITY VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "ytmusic",
         "name": "YTMusicUltimate",
         "icon": "assets/YouTubeMusic.webp",
@@ -67415,6 +69755,51 @@
     },
     {
       "left": {
+        "slug": "voyager",
+        "name": "Voyager",
+        "icon": "assets/Voyager.webp",
+        "category": "social",
+        "version": "2.49.0",
+        "releaseDate": "2026-09-06",
+        "source": "aeharding/voyager",
+        "sourceURL": "https://github.com/aeharding/voyager",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "voyager",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
         "slug": "winston",
         "name": "Winston",
         "icon": "assets/Winston.webp",
@@ -69145,6 +71530,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "winston",
+        "name": "Winston",
+        "icon": "assets/Winston.webp",
+        "category": "social",
+        "version": "1.1.5",
+        "releaseDate": "2024-06-24",
+        "source": "lo-cafe/winston",
+        "sourceURL": "https://github.com/lo-cafe/winston",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "17.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -70720,6 +73150,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "xenios",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "yattee",
+        "name": "Yattee",
+        "icon": "assets/Yattee.webp",
+        "category": "photo-video",
+        "version": "1.5.1",
+        "releaseDate": "2024-01-28",
+        "source": "yattee/yattee",
+        "sourceURL": "https://github.com/yattee/yattee",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "zeus",
         "name": "Zeus",
         "icon": "assets/Zeus.webp",
@@ -72925,6 +75400,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "youmod",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "youmod",
+        "name": "YouMod",
+        "icon": "assets/YouTube.webp",
+        "category": "photo-video",
+        "version": "21.36.6",
+        "releaseDate": "2026-09-09",
+        "source": "mrdrvt99/YouProEXTRA",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "ytmusic",
         "name": "YTMusicUltimate",
         "icon": "assets/YouTubeMusic.webp",
@@ -75175,6 +77695,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "youpro",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "youpro",
+        "name": "YouPro",
+        "icon": "assets/YouTube.webp",
+        "category": "photo-video",
+        "version": "21.36.6",
+        "releaseDate": "2026-09-10",
+        "source": "mrdrvt99/YouProEXTRA",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "ytmusic",
         "name": "YTMusicUltimate",
         "icon": "assets/YouTubeMusic.webp",
@@ -77393,6 +79958,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "17.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "ytlite",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "ytlite",
+        "name": "YouTubePlus",
+        "icon": "assets/YouTube.webp",
+        "category": "photo-video",
+        "version": "21.24.3",
+        "releaseDate": "2026-09-09",
+        "source": "mrdrvt99/YouProEXTRA",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 1.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -79675,6 +82285,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "ytkace",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "ytkace",
+        "name": "YTKACE",
+        "icon": "assets/YouTube.webp",
+        "category": "photo-video",
+        "version": "21.35.3",
+        "releaseDate": "2026-08-31",
+        "source": "itzzace/ytkace",
+        "sourceURL": "https://github.com/itzzace/ytkace",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "17.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "ytmusic",
         "name": "YTMusicUltimate",
         "icon": "assets/YouTubeMusic.webp",
@@ -81893,6 +84548,51 @@
         "downloadReachable": true,
         "compatibility": {
           "minOSVersion": "17.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "ytkp",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "ytkp",
+        "name": "YTKillerPlus",
+        "icon": "assets/YouTube.webp",
+        "category": "photo-video",
+        "version": "21.36.6",
+        "releaseDate": "2026-09-09",
+        "source": "mrdrvt99/YouProEXTRA",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "17.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
           "devices": [
             "iphone",
             "ipad"
@@ -84175,6 +86875,51 @@
         }
       },
       "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "ytmusic",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "ytmusic",
+        "name": "YTMusicUltimate",
+        "icon": "assets/YouTubeMusic.webp",
+        "category": "music",
+        "version": "9.36.1",
+        "releaseDate": "2026-09-09",
+        "source": "mrdrvt99/YTMusicUltimate",
+        "sourceURL": "https://github.com/mrdrvt99/YTMusicUltimate",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
         "slug": "yattee",
         "name": "Yattee",
         "icon": "assets/Yattee.webp",
@@ -85095,6 +87840,51 @@
         }
       },
       "winner": "voyager",
+      "shareBundle": false,
+      "shareCategory": false
+    },
+    {
+      "left": {
+        "slug": "zeus",
+        "name": "Zeus",
+        "icon": "assets/Zeus.webp",
+        "category": "utilities",
+        "version": "13.2.1",
+        "releaseDate": "2026-09-02",
+        "source": "ZeusLN/zeus",
+        "sourceURL": "https://github.com/ZeusLN/zeus",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "right": {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "icon": "assets/XeniOS.webp",
+        "category": "games",
+        "version": "2.0.1",
+        "releaseDate": "2026-06-08",
+        "source": "xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verificationLevel": "VERIFIED",
+        "updateFrequencyDays": 0.0,
+        "downloadReachable": true,
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "devices": [
+            "iphone",
+            "ipad"
+          ]
+        }
+      },
+      "winner": "zeus",
       "shareBundle": false,
       "shareCategory": false
     }

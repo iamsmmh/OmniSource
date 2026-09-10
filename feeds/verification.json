@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 62,
-    "verified": 61,
+    "apps": 63,
+    "verified": 62,
     "communityVerified": 1,
     "unverified": 0,
-    "hashVerified": 45,
-    "avgTrustScore": 7.11,
+    "hashVerified": 46,
+    "avgTrustScore": 7.12,
     "trustLevels": [
       "Verified",
       "Trusted",
@@ -1075,6 +1075,26 @@
       "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
       "trustScore": 6.0,
       "trustBadge": "Community"
+    },
+    {
+      "app": "xenios",
+      "name": "XeniOS",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "xenios-jp/XeniOS",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "yattee",

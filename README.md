@@ -10,7 +10,7 @@ One AltStore-compatible source URL for **AltStore · SideStore · Feather · ESi
 
 <!-- omnisource:stats:start -->
 
-**62** apps · **58** upstream sources · **61** verified · **1** community verified · **62/62** downloads online · last sync **2026-09-10**.
+**63** apps · **59** upstream sources · **62** verified · **1** community verified · **63/63** downloads online · last sync **2026-09-10**.
 
 <!-- omnisource:stats:end -->
 
@@ -107,7 +107,7 @@ The complete generated catalog is below — it refreshes automatically on every 
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-10 · 62 apps · 62/62 downloads reachable._
+_Catalogue last changed 2026-09-10 · 63 apps · 63/63 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -173,6 +173,7 @@ _Catalogue last changed 2026-09-10 · 62 apps · 62/62 downloads reachable._
 | **SameBoy** | `com.github.liji32.sameboy.ios` | `1.0.3` | 2026-03-04 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sameboy.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sameboy.json) | [`sameboy.json`](https://iamsmmh.github.io/OmniSource/feeds/sameboy.json) | [`sameboy.xml`](https://iamsmmh.github.io/OmniSource/feeds/sameboy.xml) |
 | **Gopeed** | `com.gopeed.gopeed` | `1.9.3` | 2026-03-18 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/gopeed.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/gopeed.json) | [`gopeed.json`](https://iamsmmh.github.io/OmniSource/feeds/gopeed.json) | [`gopeed.xml`](https://iamsmmh.github.io/OmniSource/feeds/gopeed.xml) |
 | **Manic EMU** | `com.aoshuang.manicemu` | `2.0.0` | 2026-09-03 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/manicemu.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/manicemu.json) | [`manicemu.json`](https://iamsmmh.github.io/OmniSource/feeds/manicemu.json) | [`manicemu.xml`](https://iamsmmh.github.io/OmniSource/feeds/manicemu.xml) |
+| **XeniOS** | `com.xenios` | `2.0.1` | 2026-06-08 | 🟡 beta | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/xenios.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/xenios.json) | [`xenios.json`](https://iamsmmh.github.io/OmniSource/feeds/xenios.json) | [`xenios.xml`](https://iamsmmh.github.io/OmniSource/feeds/xenios.xml) |
 
 <!-- omnisource:catalog:end -->
 

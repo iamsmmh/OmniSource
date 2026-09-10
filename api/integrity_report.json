@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 62,
-    "pass": 45,
+    "apps": 63,
+    "pass": 46,
     "warn": 17,
     "fail": 0,
     "rejected": 0
@@ -981,6 +981,24 @@
         "reachable": true
       },
       "status": "warn"
+    },
+    {
+      "slug": "xenios",
+      "name": "XeniOS",
+      "asset": {
+        "sha256": "61de6cfc9cf05389161272ceaa70d46662dab77de40ab11fdda3d4a2221621a7",
+        "size": 46253576,
+        "releaseId": "2.0.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
     },
     {
       "slug": "yattee",

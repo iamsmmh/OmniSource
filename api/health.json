@@ -1,11 +1,11 @@
 {
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 62,
-    "reachable": 62,
+    "apps": 63,
+    "reachable": 63,
     "unreachable": 0,
     "featured": 6,
-    "healthy": 62,
+    "healthy": 63,
     "warning": 0,
     "critical": 0
   },
@@ -1364,6 +1364,28 @@
       "statusSince": "2026-09-03",
       "updatedDaysAgo": 7,
       "stale": false,
+      "healthScore": 77,
+      "healthStatus": "healthy",
+      "scoreBreakdown": {
+        "downloadSuccess": 1.0,
+        "updateFrequency": 0.5,
+        "releaseAvailability": 1.0,
+        "metadataCompleteness": 0.625,
+        "sourceReliability": 0.5
+      }
+    },
+    {
+      "slug": "xenios",
+      "name": "XeniOS",
+      "status": "beta",
+      "version": "2.0.1",
+      "updatedAt": "2026-06-08",
+      "sizeBytes": 46253576,
+      "downloadReachable": true,
+      "detail": "not probed",
+      "statusSince": "2026-06-08",
+      "updatedDaysAgo": 94,
+      "stale": true,
       "healthScore": 77,
       "healthStatus": "healthy",
       "scoreBreakdown": {

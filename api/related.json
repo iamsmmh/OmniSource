@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 62,
+  "count": 63,
   "weights": {
     "bundle": 0.55,
     "category": 0.2,
@@ -1491,6 +1491,19 @@
     ],
     "provenance": [
       {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "vcmi",
         "name": "VCMI",
         "category": "games",
@@ -1554,22 +1567,22 @@
           "Same category (games)",
           "Shared tags: games"
         ]
-      },
+      }
+    ],
+    "delta": [
       {
-        "slug": "manicemu",
-        "name": "Manic EMU",
+        "slug": "xenios",
+        "name": "XeniOS",
         "category": "games",
-        "developer": "Aoshuang Lee (Manic EMU)",
-        "bundleId": "com.aoshuang.manicemu",
-        "version": "2.0.0",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
           "Shared tags: games"
         ]
-      }
-    ],
-    "delta": [
+      },
       {
         "slug": "vcmi",
         "name": "VCMI",
@@ -1629,19 +1642,6 @@
         "developer": "Henrik Rydgård",
         "bundleId": "org.ppsspp.ppsspp",
         "version": "1.20.4",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "minivmac",
-        "name": "Mini vMac",
-        "category": "games",
-        "developer": "zydeco",
-        "bundleId": "net.namedfork.minivmac",
-        "version": "2.6",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -1651,6 +1651,19 @@
     ],
     "ppsspp": [
       {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "vcmi",
         "name": "VCMI",
         "category": "games",
@@ -1709,19 +1722,6 @@
         "developer": "zydeco",
         "bundleId": "net.namedfork.minivmac",
         "version": "2.6",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "manicemu",
-        "name": "Manic EMU",
-        "category": "games",
-        "developer": "Aoshuang Lee (Manic EMU)",
-        "bundleId": "com.aoshuang.manicemu",
-        "version": "2.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -2479,6 +2479,19 @@
     ],
     "dolphinish": [
       {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "vcmi",
         "name": "VCMI",
         "category": "games",
@@ -2537,19 +2550,6 @@
         "developer": "Henrik Rydgård",
         "bundleId": "org.ppsspp.ppsspp",
         "version": "1.20.4",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "minivmac",
-        "name": "Mini vMac",
-        "category": "games",
-        "developer": "zydeco",
-        "bundleId": "net.namedfork.minivmac",
-        "version": "2.6",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -2734,6 +2734,19 @@
     ],
     "vcmi": [
       {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "stiknes",
         "name": "StikNES",
         "category": "games",
@@ -2797,22 +2810,22 @@
           "Same category (games)",
           "Shared tags: games"
         ]
-      },
+      }
+    ],
+    "mame4ios": [
       {
-        "slug": "manicemu",
-        "name": "Manic EMU",
+        "slug": "xenios",
+        "name": "XeniOS",
         "category": "games",
-        "developer": "Aoshuang Lee (Manic EMU)",
-        "bundleId": "com.aoshuang.manicemu",
-        "version": "2.0.0",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
           "Shared tags: games"
         ]
-      }
-    ],
-    "mame4ios": [
+      },
       {
         "slug": "vcmi",
         "name": "VCMI",
@@ -2872,19 +2885,6 @@
         "developer": "Henrik Rydgård",
         "bundleId": "org.ppsspp.ppsspp",
         "version": "1.20.4",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "minivmac",
-        "name": "Mini vMac",
-        "category": "games",
-        "developer": "zydeco",
-        "bundleId": "net.namedfork.minivmac",
-        "version": "2.6",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -2974,6 +2974,19 @@
     ],
     "minivmac": [
       {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "vcmi",
         "name": "VCMI",
         "category": "games",
@@ -3037,22 +3050,22 @@
           "Same category (games)",
           "Shared tags: games"
         ]
-      },
+      }
+    ],
+    "stiknes": [
       {
-        "slug": "manicemu",
-        "name": "Manic EMU",
+        "slug": "xenios",
+        "name": "XeniOS",
         "category": "games",
-        "developer": "Aoshuang Lee (Manic EMU)",
-        "bundleId": "com.aoshuang.manicemu",
-        "version": "2.0.0",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
           "Shared tags: games"
         ]
-      }
-    ],
-    "stiknes": [
+      },
       {
         "slug": "vcmi",
         "name": "VCMI",
@@ -3112,19 +3125,6 @@
         "developer": "zydeco",
         "bundleId": "net.namedfork.minivmac",
         "version": "2.6",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
-      },
-      {
-        "slug": "manicemu",
-        "name": "Manic EMU",
-        "category": "games",
-        "developer": "Aoshuang Lee (Manic EMU)",
-        "bundleId": "com.aoshuang.manicemu",
-        "version": "2.0.0",
         "score": 0.2333,
         "reasons": [
           "Same category (games)",
@@ -4364,6 +4364,19 @@
     ],
     "sameboy": [
       {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
         "slug": "vcmi",
         "name": "VCMI",
         "category": "games",
@@ -4427,19 +4440,6 @@
           "Same category (games)",
           "Shared tags: games"
         ]
-      },
-      {
-        "slug": "manicemu",
-        "name": "Manic EMU",
-        "category": "games",
-        "developer": "Aoshuang Lee (Manic EMU)",
-        "bundleId": "com.aoshuang.manicemu",
-        "version": "2.0.0",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (games)",
-          "Shared tags: games"
-        ]
       }
     ],
     "gopeed": [
@@ -4458,6 +4458,86 @@
       }
     ],
     "manicemu": [
+      {
+        "slug": "xenios",
+        "name": "XeniOS",
+        "category": "games",
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "version": "2.0.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "vcmi",
+        "name": "VCMI",
+        "category": "games",
+        "developer": "VCMI Team",
+        "bundleId": "eu.vcmi.vcmiclient",
+        "version": "1.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "stiknes",
+        "name": "StikNES",
+        "category": "games",
+        "developer": "StikEMU",
+        "bundleId": "com.stik.StikNES",
+        "version": "2.0.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "category": "games",
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "version": "1.0.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "provenance",
+        "name": "Provenance",
+        "category": "games",
+        "developer": "Provenance Emu",
+        "bundleId": "org.provenance-emu.provenance",
+        "version": "3.3.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "ppsspp",
+        "name": "PPSSPP",
+        "category": "games",
+        "developer": "Henrik Rydgård",
+        "bundleId": "org.ppsspp.ppsspp",
+        "version": "1.20.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      }
+    ],
+    "xenios": [
       {
         "slug": "vcmi",
         "name": "VCMI",
