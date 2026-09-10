@@ -1,0 +1,144 @@
+{
+  "name": "OmniSource - Streamyfin",
+  "identifier": "com.iamsmmh.omnisource.streamyfin",
+  "apiVersion": "v2",
+  "subtitle": "Open-source Jellyfin client for iOS",
+  "description": "Standalone distribution feed for Streamyfin, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/streamyfin.json",
+  "apps": [
+    {
+      "name": "Streamyfin",
+      "bundleIdentifier": "com.fredrikburmester.streamyfin",
+      "developerName": "fredrikburmester",
+      "subtitle": "Open-source Jellyfin client for iOS",
+      "localizedDescription": "Streamyfin is an open-source Jellyfin client for iPhone and iPad built with Expo and React Native. Stream your Jellyfin server's library with offline downloads, background audio, Picture in Picture, Chromecast, intro skipping, live TV, and an optional MPV-based player — no server plugins required.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Streamyfin.webp",
+      "tintColor": "BF7BF2",
+      "category": "photo-video",
+      "version": "0.54.1",
+      "versionDate": "2026-06-02",
+      "versionDescription": "Streamyfin 0.54.1 | streamyfin-ios\n\n## What's Changed\n\nThis is a fairly substantial release, bringing major improvements to playback, TV support, mobile stability, and build infrastructure. Playback received the most attention, with MPV support on Android and iOS, hardware decoding, improved PiP and subtitle handling, chapter markers, and more reliable watch progress reporting\n\nTV support has also moved forward significantly. Streamyfin is now live on the App Store for tvOS and available for anyone to download, alongside a refreshed TV interface, better focus and navigation handling, Android TV recommendations, tvOS TopShelf support, native Apple controls, and enabled iOS / Apple TV builds\n\nAs usual, thanks to everyone filing issues, testing builds, translating strings, and helping move the project forward!\n\n\n### ✨ Highlights\n- **Streamyfin for Apple TV is now live on the App Store** and available for anyone to download\n- **MPV player on Android & iOS** with hardware decoding and PiP (with subtitles) (#1332), plus native Apple controls (#1411) and MPVKit 0.41 (#1604)\n- **Chapter markers and chapter list** in the player (#1586)\n- **Local network auto-switch** — automatically switches to your local server address (#1334)\n- **TV interface overhaul** — uniform scaling, tvOS TopShelf extension (#1561), Android TV recommendations (#1575), and iOS TV builds enabled (#1422)\n- Setting to **disable auto-play next episode** (#1342)\n- **Autorotate for landscape** (#1265)\n\n### 🎬 Player\n- Caching progress shown in the seek bar (#1376)\n- Progress throttling for MPV (#1366)\n- Fixed progress bar / watch-time reporting (#1611, #1239)\n- SubRip subtitle fixes for MPV (#1375)\n- Stop external subs from auto-selecting when added (#1349)\n- Disable subtitle embedding on iOS simulator (#1544)\n- Don't cache background media-source requests (#1602)\n- Android PiP fixes (#1605, #1628)\n- Keep landscape when opening chapter list on iOS (#1624)\n\n### 📺 TV\n- TV menu/back navigation and overlay focus fixes (#1559, #1558)\n- TV password modal fix (#1598)\n- TV native search component\n\n### 🐛 Fixes\n- Music videos and home videos now show in libraries (#1326)\n- Close modal on Android back button (#1487)\n- Clear stored user on logout (fixes empty home on relaunch) (#1622)\n- Dedupe top people sections (#1623)\n- Correct mimeType/UTI for log export (#1424)\n- Downloads refactor — less prop drilling, improved layout (#1337)\n\n### 🔧 Build & Infra\n- Expo SDK 55 → 56 upgrade (#1594, #1600)\n- iOS 26 / SDK 56 EAS build fixes (#1613)\n- Android MPV Kotlin build fix (#1614)\n- EAS build + auto-submit release workflow (#1616, #1632)\n- Xcode build script (#1296)\n\n### 🌍 Translations\n- Ongoing Crowdin sync; new strings for \"ends at\" and action sheet options; Russian updates (#1474, #1475, #1427)\n\n### 👋 New Contributors\n@quang-tran, @gallyamb, @a-collado, @stevebyatt10, @felixschndr, and @github-actions[bot] made their first contributions.\n\n**Full Changelog**: https://github.com/streamyfin/streamyfin/compare/v0.51.0...v0.54.1",
+      "downloadURL": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa",
+      "size": 53931137,
+      "versions": [
+        {
+          "version": "0.54.1",
+          "date": "2026-06-02",
+          "localizedDescription": "Streamyfin 0.54.1 | streamyfin-ios\n\n## What's Changed\n\nThis is a fairly substantial release, bringing major improvements to playback, TV support, mobile stability, and build infrastructure. Playback received the most attention, with MPV support on Android and iOS, hardware decoding, improved PiP and subtitle handling, chapter markers, and more reliable watch progress reporting\n\nTV support has also moved forward significantly. Streamyfin is now live on the App Store for tvOS and available for anyone to download, alongside a refreshed TV interface, better focus and navigation handling, Android TV recommendations, tvOS TopShelf support, native Apple controls, and enabled iOS / Apple TV builds\n\nAs usual, thanks to everyone filing issues, testing builds, translating strings, and helping move the project forward!\n\n\n### ✨ Highlights\n- **Streamyfin for Apple TV is now live on the App Store** and available for anyone to download\n- **MPV player on Android & iOS** with hardware decoding and PiP (with subtitles) (#1332), plus native Apple controls (#1411) and MPVKit 0.41 (#1604)\n- **Chapter markers and chapter list** in the player (#1586)\n- **Local network auto-switch** — automatically switches to your local server address (#1334)\n- **TV interface overhaul** — uniform scaling, tvOS TopShelf extension (#1561), Android TV recommendations (#1575), and iOS TV builds enabled (#1422)\n- Setting to **disable auto-play next episode** (#1342)\n- **Autorotate for landscape** (#1265)\n\n### 🎬 Player\n- Caching progress shown in the seek bar (#1376)\n- Progress throttling for MPV (#1366)\n- Fixed progress bar / watch-time reporting (#1611, #1239)\n- SubRip subtitle fixes for MPV (#1375)\n- Stop external subs from auto-selecting when added (#1349)\n- Disable subtitle embedding on iOS simulator (#1544)\n- Don't cache background media-source requests (#1602)\n- Android PiP fixes (#1605, #1628)\n- Keep landscape when opening chapter list on iOS (#1624)\n\n### 📺 TV\n- TV menu/back navigation and overlay focus fixes (#1559, #1558)\n- TV password modal fix (#1598)\n- TV native search component\n\n### 🐛 Fixes\n- Music videos and home videos now show in libraries (#1326)\n- Close modal on Android back button (#1487)\n- Clear stored user on logout (fixes empty home on relaunch) (#1622)\n- Dedupe top people sections (#1623)\n- Correct mimeType/UTI for log export (#1424)\n- Downloads refactor — less prop drilling, improved layout (#1337)\n\n### 🔧 Build & Infra\n- Expo SDK 55 → 56 upgrade (#1594, #1600)\n- iOS 26 / SDK 56 EAS build fixes (#1613)\n- Android MPV Kotlin build fix (#1614)\n- EAS build + auto-submit release workflow (#1616, #1632)\n- Xcode build script (#1296)\n\n### 🌍 Translations\n- Ongoing Crowdin sync; new strings for \"ends at\" and action sheet options; Russian updates (#1474, #1475, #1427)\n\n### 👋 New Contributors\n@quang-tran, @gallyamb, @a-collado, @stevebyatt10, @felixschndr, and @github-actions[bot] made their first contributions.\n\n**Full Changelog**: https://github.com/streamyfin/streamyfin/compare/v0.51.0...v0.54.1",
+          "downloadURL": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa",
+          "size": 53931137,
+          "minOSVersion": "16.4",
+          "releaseUrl": "https://github.com/streamyfin/streamyfin/releases/tag/v0.54.1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "streamyfin-android-phone-apk.apk",
+              "downloadUrl": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-android-phone-apk.apk",
+              "platform": "android",
+              "architecture": null,
+              "fileType": "APK",
+              "size": 197174334,
+              "sha256": "9af07d922fbf5472a9f0caa1cb45bb7d2c28f1a9911b423237aefe0948317b81",
+              "downloads": 10455,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "streamyfin-android-tv-apk.apk",
+              "downloadUrl": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-android-tv-apk.apk",
+              "platform": "android",
+              "architecture": null,
+              "fileType": "APK",
+              "size": 191577143,
+              "sha256": "a908b39a34b567844e03cce36ffbc3fd3a01a0757dc05ad4952ec7a16251e1b4",
+              "downloads": 1371,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "streamyfin-android.aab",
+              "downloadUrl": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-android.aab",
+              "platform": "android",
+              "architecture": null,
+              "fileType": "AAB",
+              "size": 117678831,
+              "sha256": "f2048d65a565ee5e9425b284b34e401bd21ef0e91cdb89660925eab47c40f469",
+              "downloads": 63,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "streamyfin-ios-tv.ipa",
+              "downloadUrl": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios-tv.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 39456520,
+              "sha256": "d94ed09c3fe3b4886b316f95bec3a812dbf5e76a4d9b5961f60b93c357fc78dc",
+              "downloads": 44,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "streamyfin-ios.ipa",
+              "downloadUrl": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 53931137,
+              "sha256": "706adb7f41b60565c1924deb84f6afb3fe3727dbdf291a3ece934ddb90a178b2",
+              "downloads": 96,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "706adb7f41b60565c1924deb84f6afb3fe3727dbdf291a3ece934ddb90a178b2",
+          "downloads": 96
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "streamyfin",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/fredrikburmester/streamyfin",
+        "sourceURL": "https://github.com/fredrikburmester/streamyfin",
+        "verification": {
+          "method": "github-release",
+          "publisher": "fredrikburmester/streamyfin",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.4",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned CI IPA (streamyfin-ios.ipa) built by the developer's GitHub release pipeline. Requires a Jellyfin server to connect to. The streamyfin-ios-tv.ipa asset in the same release is a separate Apple TV build and is intentionally not distributed here."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2026-06-02"
+        }
+      }
+    }
+  ],
+  "news": []
+}

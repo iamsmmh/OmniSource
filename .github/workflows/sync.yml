@@ -20,9 +20,9 @@ on:
       - scripts/**
       - src/**
       # Hand-maintained site sources live at the repository root, not in a
-      # website/ dir (see docs/website.md). Deployed-only artifacts (flat
-      # feed URLs, sitemap, robots, homepage stats) are assembled into _site/
-      # on every build and never committed, so they need no trigger here.
+      # website/ dir (see docs/website.md). The published flat/API URLs are
+      # refreshed into the root by the pipeline itself on every run, so they
+      # need no trigger here either.
       - index.html
       - compare.html
       - compare/**
@@ -135,13 +135,14 @@ jobs:
           set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Generated feeds JSON/XML (feeds/ only — the flat subscriber URLs,
-          # sitemap, robots and homepage stats are assembled into _site/ at
-          # deploy time and never committed), app detail pages, static
-          # comparison + collection pages and README blocks. The pipeline
+          # Generated feeds JSON/XML, app detail pages, static comparison +
+          # collection pages, README blocks, and the published root mirror
+          # (flat subscriber URLs, api/ + gz twins, sitemap, robots, homepage
+          # stats) that GitHub Pages serves for this branch. The pipeline
           # writes nothing else, so the allowlist stays minimal on purpose:
           # a stray file here means the build misbehaved.
-          git add -A -- '*.json' '*.xml' 'apps/**' 'compare/**' 'collections/**' README.md
+          git add -A -- '*.json' '*.xml' '*.gz' 'api/**' 'apps/**' 'compare/**' \
+            'collections/**' README.md index.html 'sitemap.xml' 'robots.txt' '.nojekyll'
 
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -200,9 +201,10 @@ jobs:
       - name: Assemble Pages site
         run: python3 scripts/build_site.py
 
-      # The deployable site (_site/) is published as a Pages artifact; the
-      # repository root stays free of generated copies. Requires Settings →
-      # Pages → Build and deployment → GitHub Actions (see workflows/README).
+      # The deployable site (_site/) is published as a Pages artifact. This
+      # path is used when Pages is set to *GitHub Actions*; while it is set to
+      # *Deploy from a branch*, GitHub serves the repository root instead —
+      # which the pipeline keeps complete (see scripts/publish_root.py).
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

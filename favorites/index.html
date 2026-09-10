@@ -172,52 +172,36 @@
   <script src="../js/core.js"></script>
   <script src="../js/features.js"></script>
   <script>
-    // Load catalog data
-    fetch('../api/catalog.json')
-      .then(r => r.json())
-      .then(data => {
-        const catalog = data.apps || data;
-        window.OS_CATALOG = catalog;
-        OS.Favorites.injectButtons();
-        OS.Ratings.injectRatingDisplays();
-        OS.Favorites.updateCount();
-        
-        // Render favorites
-        const favorites = OS.Favorites.getAll();
-        const favoriteApps = catalog.filter(app => favorites.includes(app.slug || app.id));
-        
-        const content = document.getElementById('favorites-content');
-        if (favoriteApps.length === 0) {
-          content.innerHTML = `
-            <div class="empty-state">
-              <div class="empty-icon">❤️</div>
-              <h3>No favorites yet</h3>
-              <p>Start adding apps to your favorites by clicking the heart icon on any app card.</p>
-              <a href="../" class="button primary">Browse Apps</a>
-            </div>
-          `;
-        } else {
-          content.innerHTML = `
-            <div class="apps-grid">
-              ${favoriteApps.map(app => OS.Favorites._renderAppCard(app)).join('')}
-            </div>
-          `;
-          OS.Favorites.injectButtons(content);
-          OS.Ratings.injectRatingDisplays(content);
-        }
-      })
-      .catch(() => {
-        // Fallback: try to load from feeds
-        fetch('../feeds/catalog.json')
-          .then(r => r.json())
-          .then(data => {
-            const catalog = data.apps || data;
-            window.OS_CATALOG = catalog;
-            OS.Favorites.injectButtons();
-            OS.Ratings.injectRatingDisplays();
-            OS.Favorites.updateCount();
-          });
-      });
+    // Load catalog data (api/catalog.json → feeds/discovery.json → discovery.json)
+    OS.loadCatalog().then(catalog => {
+      OS.Favorites.injectButtons();
+      OS.Ratings.injectRatingDisplays();
+      OS.Favorites.updateCount();
+
+      // Render favorites
+      const favorites = OS.Favorites.getAll();
+      const favoriteApps = catalog.filter(app => favorites.includes(app.slug || app.id));
+
+      const content = document.getElementById('favorites-content');
+      if (favoriteApps.length === 0) {
+        content.innerHTML = `
+          <div class="empty-state">
+            <div class="empty-icon">❤️</div>
+            <h3>No favorites yet</h3>
+            <p>Start adding apps to your favorites by clicking the heart icon on any app card.</p>
+            <a href="../" class="button primary">Browse Apps</a>
+          </div>
+        `;
+      } else {
+        content.innerHTML = `
+          <div class="apps-grid">
+            ${favoriteApps.map(app => OS.Favorites._renderAppCard(app)).join('')}
+          </div>
+        `;
+        OS.Favorites.injectButtons(content);
+        OS.Ratings.injectRatingDisplays(content);
+      }
+    });
   </script>
 </body>
 </html>

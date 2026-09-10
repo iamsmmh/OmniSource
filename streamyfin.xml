@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Streamyfin — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/streamyfin.json</link>
+    <description>Release feed for Streamyfin within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 15:12:15 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/streamyfin.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Streamyfin v0.54.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/streamyfin.json</link>
+      <guid isPermaLink="false">streamyfin-0.54.1</guid>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Streamyfin 0.54.1 | streamyfin-ios
+
+## What's Changed
+
+This is a fairly substantial release, bringing major improvements to playback, TV support, mobile stability, and build infrastructure. Playback received the most attention, with MPV support on Android and iOS, hardware decoding, improved PiP and subtitle handling, chapter markers, and more reliable watch progress reporting
+
+TV support has also moved forward significantly. Streamyfin is now live on the App Store for tvOS and available for anyone to download, alongside a refreshed TV interface, better focus and navigation handling, Android TV recommendations, tvOS TopShelf support, native Apple controls, and enabled iOS / Apple TV builds
+
+As usual, thanks to everyone filing issues, testing builds, translating strings, and helping move the project forward!
+
+
+### ✨ Highlights
+- **Streamyfin for Apple TV is now live on the App Store** and available for anyone to download
+- **MPV player on Android & iOS** with hardware decoding and PiP (with subtitles) (#1332), plus native Apple controls (#1411) and MPVKit 0.41 (#1604)
+- **Chapter markers and chapter list** in the player (#1586)
+- **Local network auto-switch** — automatically switches to your local server address (#1334)
+- **TV interface overhaul** — uniform scaling, tvOS TopShelf extension (#1561), Android TV recommendations (#1575), and iOS TV builds enabled (#1422)
+- Setting to **disable auto-play next episode** (#1342)
+- **Autorotate for landscape** (#1265)
+
+### 🎬 Player
+- Caching progress shown in the seek bar (#1376)
+- Progress throttling for MPV (#1366)
+- Fixed progress bar / watch-time reporting (#1611, #1239)
+- SubRip subtitle fixes for MPV (#1375)
+- Stop external subs from auto-selecting when added (#1349)
+- Disable subtitle embedding on iOS simulator (#1544)
+- Don't cache background media-source requests (#1602)
+- Android PiP fixes (#1605, #1628)
+- Keep landscape when opening chapter list on iOS (#1624)
+
+### 📺 TV
+- TV menu/back navigation and overlay focus fixes (#1559, #1558)
+- TV password modal fix (#1598)
+- TV native search component
+
+### 🐛 Fixes
+- Music videos and home videos now show in libraries (#1326)
+- Close modal on Android back button (#1487)
+- Clear stored user on logout (fixes empty home on relaunch) (#1622)
+- Dedupe top people sections (#1623)
+- Correct mimeType/UTI for log export (#1424)
+- Downloads refactor — less prop drilling, improved layout (#1337)
+
+### 🔧 Build & Infra
+- Expo SDK 55 → 56 upgrade (#1594, #1600)
+- iOS 26 / SDK 56 EAS build fixes (#1613)
+- Android MPV Kotlin build fix (#1614)
+- EAS build + auto-submit release workflow (#1616, #1632)
+- Xcode build script (#1296)
+
+### 🌍 Translations
+- Ongoing Crowdin sync; new strings for "ends at" and action sheet options; Russian updates (#1474, #1475, #1427)
+
+### 👋 New Contributors
+@quang-tran, @gallyamb, @a-collado, @stevebyatt10, @felixschndr, and @github-actions[bot] made their first contributions.
+
+**Full Changelog**: https://github.com/streamyfin/streamyfin/compare/v0.51.0...v0.54.1]]></description>
+      <enclosure url="https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

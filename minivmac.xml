@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mini vMac — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/minivmac.json</link>
+    <description>Release feed for Mini vMac within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 15:12:15 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/minivmac.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Mini vMac v2.6</title>
+      <link>https://iamsmmh.github.io/OmniSource/minivmac.json</link>
+      <guid isPermaLink="false">minivmac-2.6</guid>
+      <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
+      <description><![CDATA[Mini vMac 2.6 | minivmac4ios-2.6
+
+* Added 512×384 variant of Mac II
+* Requires iOS 13.4
+    * Dropping 32-bit support (iOS 9) made the app smaller
+* Prefer pixel-perfect scaling when display scaling filter is set to nearest
+* Auto-hide iOS home indicator
+* Partially fix some command-key shortcuts going to iOS instead of the emulated Mac (#45)
+    * ⌘-w and most others will get passed to the emulated machine if it's running
+    * ⌘-q and ⌘-h don't seem interceptable, the app doesn't receive any key events for them, but ⌘-q doesn't do anything (or maybe it does in some other configuration?), and ⌘-h will take you to the home screen
+* visionOS support (only tested in simulator)
+
+**Full Changelog**: https://github.com/zydeco/minivmac4ios/compare/v2.5...v2.6]]></description>
+      <enclosure url="https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Saber — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/saber.json</link>
+    <description>Release feed for Saber within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 15:12:15 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/saber.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Saber v1.36.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/saber.json</link>
+      <guid isPermaLink="false">saber-1.36.1</guid>
+      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Saber 1.36.1 | Saber_v1.36.1
+
+## External links
+
+[<img src='https://github.com/adil192/saber/blob/main/assets_raw/badges/google-play-badge.svg'
+    alt='Get it on Google Play'
+    height=50>][google_play]&nbsp;[<img src="https://github.com/adil192/saber/blob/main/assets_raw/badges/f-droid-badge.svg"
+    alt="Get it on F-Droid"
+    height=50>][f-droid]&nbsp;[<img src="https://github.com/adil192/saber/blob/main/assets_raw/badges/app-store-badge.svg"
+    alt="Download on the App Store"
+    height=50>][app_store]&nbsp;[<img src="https://github.com/adil192/saber/blob/main/assets_raw/badges/flathub-badge.svg"
+    alt="Download on Flathub"
+    height=50>][flathub]
+
+For other downloads, scroll down and find the relevant file under "Assets".
+
+[f-droid]: https://f-droid.org/packages/com.adilhanney.saber/
+[flathub]: https://flathub.org/apps/details/com.adilhanney.saber
+[google_play]: https://play.google.com/store/apps/details?id=com.adilhanney.saber
+[app_store]: https://apps.apple.com/us/app/saber/id1671523739
+[releases]: https://github.com/adil192/saber/releases
+
+## Changelog
+
+- Improved the design of the login flow, making better use of space on landscape/desktop screens.
+- Tweaked scrolling friction in the editor to make it less slippery. #1785
+- Fixed handling of accounts with unlimited storage quota. #1796 
+- Fixed folders not being sorted in the browse page. #1809 
+- Fixed parts of the app using a hardcoded Ubuntu font. eafaf264b19a35cbf8e8831daa4118e1446fe16d and https://github.com/ubuntu/yaru.dart/pull/1075.
+- Fixed non-Latin language fonts and inconsistent UI elements in Flathub screenshots.
+- Improved build system... Now fewer custom patches are needed for various stores. Enabled the `--enforce-lockfile` flag for F-Droid for more reproducible builds. #1799 
+- Fixed Android 16KB page size support by forcing a newer NDK version. 87fcb037ba8792cd24ef3af66335007854dbdabc
+- Continued code cleanup, refactoring, testing, and small UX improvements.
+- Various fixes from [Flutter 3.47.2](https://github.com/flutter/flutter/blob/stable/CHANGELOG.md#3472)
+- Translations:
+  - i18n: Update French metadata by @ArTuPSly in d092314beecfbbafec179ec5b17841aa90265805
+  - i18n: Various small tweaks to fix Weblate lints (e.g. adding a trailing colon to match the English equivalent)
+
+- Full changelog: https://github.com/saber-notes/saber/compare/v1.36.0...v1.36.1]]></description>
+      <enclosure url="https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

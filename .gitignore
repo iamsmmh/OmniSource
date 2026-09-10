@@ -2,11 +2,6 @@
 _site/
 *.tmp
 
-# Legacy local API mirror (no longer written by the pipeline; /api/ is
-# assembled inside _site/ by scripts/build_site.py). Kept ignored so stale
-# checkouts with an old api/ directory stay clean.
-api/
-
 # Python tooling caches
 __pycache__/
 *.py[cod]

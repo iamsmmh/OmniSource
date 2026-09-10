@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MaxMusic — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/maxmusic.json</link>
+    <description>Release feed for MaxMusic within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 15:12:15 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/maxmusic.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>MaxMusic v9.36.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/maxmusic.json</link>
+      <guid isPermaLink="false">maxmusic-9.36.1</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[MaxMusic 9.36.1 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.36.1
+
+**Changed**
+YouTube Music version]]></description>
+      <enclosure url="https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>MaxMusic v9.35.2</title>
+      <link>https://iamsmmh.github.io/OmniSource/maxmusic.json</link>
+      <guid isPermaLink="false">maxmusic-9.35.2</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[MaxMusic 9.35.2 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.35.2
+
+**Changed**
+Name of my fork
+YTMusic version]]></description>
+      <enclosure url="https://github.com/Mark02-2012/YTMUltimatePLUS/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

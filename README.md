@@ -231,7 +231,7 @@ feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)
 ```
 
 * **Data plane** — `catalog.json` is the only hand-edited data file. The pipeline syncs official upstreams, probes every download link and regenerates all feeds, intelligence documents, badges and app pages. Generated files are never hand-edited.
-* **Site plane** — hand-maintained page sources at the repository root (`index.html`, `install/`, `js/`, `sw.js`, …) plus the generated feeds and app pages. `scripts/build_site.py` (over `src/omnisource/site.py`) assembles `_site/` from that state: shared `assets/` (WebP icons, the design system), every feed at three URL families (flat root, `/feeds/`, `/api/` with gzip twins), the static app pages, `sitemap.xml`, `robots.txt` and the home page's live statistics. Nothing generated is committed at the root. GitHub Pages deploys the `_site/` artifact via `sync.yml` (GitHub Actions deployment), so there is a single publisher and plain pushes can never serve a half-built site.
+* **Site plane** — hand-maintained page sources at the repository root (`index.html`, `install/`, `js/`, `sw.js`, …) plus the generated feeds and app pages. `src/omnisource/site.py` publishes every generated URL twice from that state, because GitHub Pages supports two deployment modes: the pipeline mirrors the feeds into the repository root (`/apps.json`, `/<slug>.json`, `/<slug>.xml`, `/api/*` with gzip twins, `catalog.min.json`, `sitemap.xml`, `robots.txt`, `.nojekyll` — the *branch* deployment serves exactly these files), and `scripts/build_site.py` additionally assembles the same URLs into the `_site/` artifact that `sync.yml` deploys with `actions/deploy-pages` (the *GitHub Actions* deployment). Mirror copies are byte-identical to `feeds/` — the single source of truth — and `scripts/check_reproducible.py` fails the build if one drifts.
 * **Presentation plane** — HTML5 + modern CSS + vanilla JS with Web Components. No framework, no build step, no dependencies: GitHub Pages serves it as-is. A single design system (`assets/design-system/`) styles the website and the generated app pages alike; shared logic lives in `js/core.js` (theme, ⌘K palette, search engine, PWA) and `js/site.js` (page renderers).
 
 ## Generation flow
@@ -240,13 +240,13 @@ feeds/  (canonical JSON/XML)   apps/<slug>/  (pages)
 2. **Health** — HEAD-probe (ranged-GET fallback) every primary + fallback download URL; record reachability, latency and staleness.
 3. **Build** — render per-app AltStore feeds, `apps.json`, RSS, `updates.json`, badges, all intelligence documents and one static page per app; refresh the marked stats/catalog blocks in this README.
 4. **Validate** — the offline rule engine (`scripts/validate.py`) plus jq contract checks run on every push; `check_reproducible.py` proves an offline rebuild produces byte-identical output (date values normalized).
-5. **Deploy** — `scripts/build_site.py` assembles `_site/` and `actions/deploy-pages@v4` publishes it. Existing subscriptions keep working at the historical flat URLs.
+5. **Publish** — the root mirror (`/apps.json`, `/<slug>.json`, `/api/*`, `sitemap.xml`, `robots.txt`) is refreshed in the same run, and `scripts/build_site.py` assembles `_site/` for `actions/deploy-pages@v4`. Existing subscriptions keep working at the historical flat URLs; `/apps.json` stays the installable source URL.
 
 | Pipeline | Runs | What it does |
 | --- | --- | --- |
-| **Sync & Publish** (`.github/workflows/sync.yml`) | every 6 h · on push | Sync → health → build → assemble `_site/` → deploy Pages |
-| **Validate** (`.github/workflows/validate.yml`) | every push & PR | Offline structural checks, reproducibility, `ruff`, `actionlint` |
-| **Merge** (`.github/workflows/merge.yml`) | on `feeds/*.json` change | Rebuild the unified `feeds/apps.json` from the modular feeds |
+| **Sync & Publish** (`.github/workflows/sync.yml`) | every 6 h · on push | Sync → health → build → publish root URLs + `_site/` → deploy Pages |
+| **Validate** (`.github/workflows/validate.yml`) | every push & PR | Offline structural checks, mirror drift, reproducibility, `ruff`, `actionlint` |
+| **Merge** (`.github/workflows/merge.yml`) | on `feeds/*.json` change | Rebuild the unified `feeds/apps.json` from the modular feeds and republish the root URLs |
 | **Health Check** (`.github/workflows/health-check.yml`) | daily | Probe every download URL; open a GitHub Issue on breakage |
 
 ## Directory structure

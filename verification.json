@@ -1,0 +1,1000 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-10",
+  "totals": {
+    "apps": 49,
+    "verified": 48,
+    "communityVerified": 1,
+    "unverified": 0,
+    "hashVerified": 39,
+    "avgTrustScore": 7.22,
+    "trustLevels": [
+      "Verified",
+      "Trusted",
+      "Community",
+      "Experimental"
+    ]
+  },
+  "apps": [
+    {
+      "app": "aidoku",
+      "name": "Aidoku",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Aidoku/Aidoku",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "anxreader",
+      "name": "Anx Reader",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Anxcye/anx-reader",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "anymex",
+      "name": "AnymeX",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "RyanYuuki/AnymeX",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "apollo",
+      "name": "Apollo",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Apollo-Reborn/Apollo-Reborn",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "bhtwitter",
+      "name": "BHTwitter",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "BandarHL/BHTwitter",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-sideloaded.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "bluewallet",
+      "name": "BlueWallet",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "BlueWallet/BlueWallet",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet_8.0.1_1784575843.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "conduit",
+      "name": "Conduit",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "cogwheel0/conduit",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/conduit.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "delta",
+      "name": "Delta",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "RileyTestut/Delta",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "dolphinish",
+      "name": "DolphiniOS",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "OatmealDome/dolphin-ios",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "feather",
+      "name": "Feather",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "claration/Feather",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "fladder",
+      "name": "Fladder",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "DonutWare/Fladder",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "inkillerplus",
+      "name": "iNKillerPlus",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "iKarwan (repo.ikghd.me)",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "ish",
+      "name": "iSH",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "ish-app/ish",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "itorrent",
+      "name": "iTorrent",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "XITRIX/iTorrent",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "jellify",
+      "name": "Jellify",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Jellify-Music/App",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "livecontainer",
+      "name": "LiveContainer",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "LiveContainer/LiveContainer",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "mame4ios",
+      "name": "MAME4iOS",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "yoshisuga/MAME4iOS",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "maxmusic",
+      "name": "MaxMusic",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Mark02-2012/MaxMusic",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "maxtube",
+      "name": "MaxTube",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Ashreq/ashstore-repo",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "minivmac",
+      "name": "Mini vMac",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "zydeco/minivmac4ios",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "neofreebird",
+      "name": "NeoFreeBird",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "NeoFreeBird/app",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "ppsspp",
+      "name": "PPSSPP",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "hrydgard/ppsspp",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "provenance",
+      "name": "Provenance",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Provenance-Emu/Provenance",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Provenance-Emu/Provenance/releases/download/3.3.0/Provenance-3.3.0-iOS.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "qbitconnect",
+      "name": "qBitConnect",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "RajnishOne/qbitconnect",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/RajnishOne/qbitconnect/releases/download/v1.6.6/qBitConnect.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "qbitcontrol",
+      "name": "qBitControl",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Michael-128/qBitControl",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "qbitcontroller",
+      "name": "qBitController",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Bartuzen/qBitController",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Bartuzen/qBitController/releases/download/v2.2.1/qbitcontroller-2.2.1-ios.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "saber",
+      "name": "Saber",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "saber-notes/saber",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "sidestore",
+      "name": "SideStore",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "SideStore/SideStore",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "sora",
+      "name": "Sora",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "cranci1/Sora",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "spotiflac",
+      "name": "SpotiFLAC Mobile",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "spotiflacapp/SpotiFLAC-Mobile",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.6/SpotiFLAC-v4.9.6-ios-unsigned.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "spotube",
+      "name": "Spotube",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "KRTirtho/spotube",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/KRTirtho/spotube/releases/download/v5.1.2/Spotube-iOS.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "stikdebug",
+      "name": "StikDebug",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "StikDebug/StikDebug",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "stiknes",
+      "name": "StikNES",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "StikEMU/StikNES-2.0",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/StikEMU/StikNES-2.0/releases/download/v2.0.2/StikNES.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "streamyfin",
+      "name": "Streamyfin",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "fredrikburmester/streamyfin",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "ttkillerplus",
+      "name": "TTKillerPlus",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "iKarwan (repo.ikghd.me)",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "twitchadblock",
+      "name": "TwitchAdBlock",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "gunnerkidBT/TwitchAdBlock",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/gunnerkidBT/TwitchAdBlock/releases/download/v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "utm",
+      "name": "UTM",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "utmapp/UTM",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "vcmi",
+      "name": "VCMI",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "vcmi/vcmi",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "voyager",
+      "name": "Voyager",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "aeharding/voyager",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "winston",
+      "name": "Winston",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "lo-cafe/winston",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "yattee",
+      "name": "Yattee",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "yattee/yattee",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "youmod",
+      "name": "YouMod",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "mrdrvt99/YouProEXTRA",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "youpro",
+      "name": "YouPro",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "mrdrvt99/YouProEXTRA",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "ytlite",
+      "name": "YouTubePlus",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "mrdrvt99/YouProEXTRA",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.24.3_5.2.2.ipa",
+      "trustScore": 10.0,
+      "trustBadge": "Verified"
+    },
+    {
+      "app": "ytkace",
+      "name": "YTKACE",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "itzzace/ytkace",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "ytkp",
+      "name": "YTKillerPlus",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "mrdrvt99/YouProEXTRA",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "ytmusic",
+      "name": "YTMusicUltimate",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "mrdrvt99/YTMusicUltimate",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa29/YTMusicUltimate_9.36.1_2.4.1.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "zeus",
+      "name": "Zeus",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "ZeusLN/zeus",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "uyouenhanced",
+      "name": "uYouEnhanced",
+      "status": "COMMUNITY VERIFIED",
+      "hash_verified": false,
+      "method": "manual-mirror",
+      "publisher": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "community package (manual-mirror) — build provenance is not the upstream developer"
+      ],
+      "downloadURL": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+      "trustScore": 5.0,
+      "trustBadge": "Community"
+    }
+  ]
+}

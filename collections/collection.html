@@ -287,13 +287,8 @@
       OS.Collections._currentCollectionId = collectionId;
     }
 
-    fetch('../api/catalog.json')
-      .then(r => r.json())
-      .then(data => {
-        const catalog = data.apps || data;
-        window.OS_CATALOG = catalog;
-        return catalog;
-      })
+    // Load catalog data (api/catalog.json → feeds/discovery.json → discovery.json)
+    OS.loadCatalog()
       .then(catalog => {
         const collection = OS.Collections.getById(collectionId);
         if (!collection) {
@@ -349,7 +344,7 @@
                       <img src="${OS.asset(app.icon || 'OmniSource.png')}" alt="${app.name}" class="app-icon" width="58" height="58">
                     </div>
                     <div class="card-identity">
-                      <h3><a href="${OS.asset(`/apps/${app.slug}/`)}">${app.name}</a></h3>
+                      <h3><a href="${OS.url(`apps/${app.slug}/`)}">${app.name}</a></h3>
                       <p class="card-dev">${app.developer || 'Unknown'}</p>
                     </div>
                     <button class="favorite-btn" onclick="OS.Favorites.toggle('${app.slug || app.id}'); this.classList.toggle('active');" ${OS.Favorites.has(app.slug || app.id) ? 'class="favorite-btn active"' : ''}>
@@ -380,15 +375,6 @@
         }
 
         OS.Favorites.updateCount();
-      })
-      .catch(() => {
-        fetch('../feeds/catalog.json')
-          .then(r => r.json())
-          .then(data => {
-            const catalog = data.apps || data;
-            window.OS_CATALOG = catalog;
-            OS.Collections.renderAll();
-          });
       });
     })();
   </script>

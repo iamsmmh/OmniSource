@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VCMI — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/vcmi.json</link>
+    <description>Release feed for VCMI within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 15:12:15 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/vcmi.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>VCMI v1.7.5</title>
+      <link>https://iamsmmh.github.io/OmniSource/vcmi.json</link>
+      <guid isPermaLink="false">vcmi-1.7.5</guid>
+      <pubDate>Sat, 15 Aug 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[VCMI 1.7.5 | VCMI-iOS
+
+Note: saved games from 1.6 release can be loaded in 1.7
+
+### Changelog
+- Player Changelog: [1.7.4 -> 1.7.5](https://github.com/vcmi/vcmi/blob/master/ChangeLog.md#174---175)
+- Full Changelog: https://github.com/vcmi/vcmi/compare/1.7.4..1.7.5
+
+### Additional builds
+<!-- - Android release will be available on Google Play shortly -->
+<!-- - Linux release will be available on Flathub shortly -->
+<!-- - Ubuntu release will be available on VCMI PPA shortly -->
+<!-- - Android release is available on [Google Play](https://play.google.com/store/apps/details?id=is.xyz.vcmi) -->
+<!-- - Linux release is available on [Flathub](https://flathub.org/apps/eu.vcmi.VCMI) -->
+<!-- - Ubuntu release is available on [VCMI PPA](https://launchpad.net/~vcmi/+archive/ubuntu/ppa) -->
+
+- Android release is available on [Google Play](https://play.google.com/store/apps/details?id=is.xyz.vcmi) and [F-Droid](https://f-droid.org/en/packages/is.xyz.vcmi/)
+- iOS release is available on [TestFlight](https://testflight.apple.com/join/pJWHSbmu) (AppStore version coming soon)
+- Linux release is available on [Flathub](https://flathub.org/apps/eu.vcmi.VCMI)
+- Ubuntu release is available on [VCMI PPA](https://launchpad.net/~vcmi/+archive/ubuntu/ppa)
+- macOS release can be installed via Homebrew: `brew install --cask vcmi` (official) or `brew install --cask vcmi/vcmi/vcmi` (from our tap)]]></description>
+      <enclosure url="https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

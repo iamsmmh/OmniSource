@@ -513,28 +513,13 @@
       input.click();
     };
 
-    // Load catalog data
-    fetch('../api/catalog.json')
-      .then(r => r.json())
-      .then(data => {
-        const catalog = data.apps || data;
-        window.OS_CATALOG = catalog;
-        OS.Collections.renderAll();
-        OS.Favorites.injectButtons();
-        OS.Ratings.injectRatingDisplays();
-        OS.Favorites.updateCount();
-      })
-      .catch(() => {
-        fetch('../feeds/catalog.json')
-          .then(r => r.json())
-          .then(data => {
-            const catalog = data.apps || data;
-            window.OS_CATALOG = catalog;
-            OS.Collections.renderAll();
-            OS.Favorites.injectButtons();
-            OS.Ratings.injectRatingDisplays();
-          });
-      });
+    // Load catalog data (api/catalog.json → feeds/discovery.json → discovery.json)
+    OS.loadCatalog().then(() => {
+      OS.Collections.renderAll();
+      OS.Favorites.injectButtons();
+      OS.Ratings.injectRatingDisplays();
+      OS.Favorites.updateCount();
+    });
     })();
   </script>
 </body>

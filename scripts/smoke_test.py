@@ -12,10 +12,18 @@ contract the website and feed clients depend on:
 * the client scripts are syntactically valid JavaScript (when ``node``
   is available);
 
+``--root`` serves the repository tree instead of the ``_site/`` artifact —
+that is what GitHub Pages serves while it is configured for a *branch*
+deployment, and it is how the installable source URL
+(https://iamsmmh.github.io/OmniSource/apps.json) is reached. Both modes are
+checked against the same expectations, so the two deployment paths cannot
+drift.
+
 Usage
 -----
-    python3 scripts/smoke_test.py            # build + serve + verify
-    python3 scripts/smoke_test.py --no-build # verify an existing _site/
+    python3 scripts/smoke_test.py             # build _site/ + serve + verify
+    python3 scripts/smoke_test.py --no-build  # verify an existing _site/
+    python3 scripts/smoke_test.py --root      # verify the repository root
 """
 
 from __future__ import annotations
@@ -166,16 +174,19 @@ PAGE_IDS: dict[str, list[str]] = {
 
 
 class _QuietHandler(http.server.SimpleHTTPRequestHandler):
+    directory = _SITE
+
     def __init__(self, *args: object, **kwargs: object) -> None:
-        super().__init__(*args, directory=str(_SITE), **kwargs)
+        super().__init__(*args, directory=str(self.directory), **kwargs)
 
     def log_message(self, *args: object) -> None:
         pass
 
 
 class _Server:
-    def __init__(self) -> None:
-        self.httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), _QuietHandler)
+    def __init__(self, directory: Path = _SITE) -> None:
+        handler = type("_Handler", (_QuietHandler,), {"directory": directory})
+        self.httpd = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
         self.port = int(self.httpd.server_address[1])
         self.thread = threading.Thread(target=self.httpd.serve_forever, daemon=True)
 
@@ -226,11 +237,13 @@ def check_js_syntax() -> list[str]:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--no-build", action="store_true", help="verify an existing _site/ without rebuilding")
+    parser.add_argument("--root", action="store_true", help="verify the repository root (branch deployment view)")
     args = parser.parse_args(argv)
 
     failures: list[str] = []
+    site_root = ROOT if args.root else _SITE
 
-    if not args.no_build:
+    if not args.no_build and not args.root:
         sys.path.insert(0, str(ROOT / "src"))
         from omnisource.site import build_site
 
@@ -242,12 +255,12 @@ def main(argv: list[str] | None = None) -> int:
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
 
-    if not (_SITE / "index.html").is_file():
-        print("smoke_test: _site/index.html missing — build the site first", file=sys.stderr)
+    if not (site_root / "index.html").is_file():
+        print(f"smoke_test: {site_root}/index.html missing — build the site first", file=sys.stderr)
         return 2
 
-    with _Server() as server:
-        print(f"smoke_test: serving {_SITE} at {server.base}")
+    with _Server(site_root) as server:
+        print(f"smoke_test: serving {site_root} at {server.base}")
         checked = 0
         for path, marker in PAGES:
             status, body = fetch(server.base + path)
@@ -271,17 +284,50 @@ def main(argv: list[str] | None = None) -> int:
                 if status != 200:
                     failures.append(f"{path}: HTTP {status}")
 
+        if args.root:
+            # Every published flat URL, API document and route alias must be
+            # reachable — this is the exact surface installers and clients hit.
+            flat = sorted(
+                path.name
+                for path in (ROOT / "feeds").glob("*")
+                if path.suffix in {".json", ".xml"} and path.name != "state.json"
+            )
+            published = [
+                *flat,
+                "catalog.min.json",
+                "catalog.min.json.gz",
+                "sitemap.xml",
+                "robots.txt",
+                ".nojekyll",
+                "api/index.json",
+                *(f"api/{path.name}" for path in sorted((ROOT / "api").iterdir())),
+            ]
+            for path in published:
+                status, _body = fetch(f"{server.base}/{path}")
+                checked += 1
+                if status != 200:
+                    failures.append(f"/{path}: HTTP {status} (branch deployment would 404)")
+
+            # The gzip twin must decode to the same document as its source.
+            import gzip
+
+            status, body = fetch(f"{server.base}/api/apps.json.gz")
+            if status == 200:
+                expected = (ROOT / "feeds" / "apps.json").read_bytes()
+                if gzip.decompress(body) != expected:
+                    failures.append("api/apps.json.gz does not decode to feeds/apps.json")
+
         # Each page's renderer must find every #id it touches; catches broken
         # selectors after edits.
         for page, wanted in PAGE_IDS.items():
-            page_html = (_SITE / page).read_text(encoding="utf-8")
+            page_html = (site_root / page).read_text(encoding="utf-8")
             present = ids_in(page_html)
             for ref in sorted(set(wanted) - present):
                 failures.append(f"{page}: missing id #{ref} used by its renderer")
 
         # The sources.json repositories index must be human-readable now.
-        sources = json.loads((_SITE / "sources.json").read_text(encoding="utf-8"))
-        raw = (_SITE / "sources.json").read_text(encoding="utf-8")
+        sources = json.loads((site_root / "sources.json").read_text(encoding="utf-8"))
+        raw = (site_root / "sources.json").read_text(encoding="utf-8")
         if "\n  " not in raw:
             failures.append("sources.json is not indented (still one long line)")
         if sources.get("count") != len(sources.get("sources", [])):

@@ -1,0 +1,154 @@
+{
+  "name": "OmniSource API",
+  "version": "1",
+  "baseURL": "https://iamsmmh.github.io/OmniSource",
+  "generatedAt": "2026-09-10",
+  "endpoints": [
+    {
+      "path": "/api/analytics.json",
+      "description": "Repository-derived metrics: totals, weekly changes, trends.",
+      "format": "json"
+    },
+    {
+      "path": "/api/apps",
+      "description": "Extensionless alias of /api/apps.json (Phase 16).",
+      "format": "json"
+    },
+    {
+      "path": "/api/apps.json",
+      "description": "The unified AltStore Source v2 feed (the installable source URL).",
+      "format": "json"
+    },
+    {
+      "path": "/api/catalog",
+      "description": "Extensionless alias of /api/discovery.json (Phase 16).",
+      "format": "json"
+    },
+    {
+      "path": "/api/catalog.json",
+      "description": "Alias of /api/discovery.json. Searchable discovery catalog, generated every build. Also exposed as api/catalog.json.",
+      "format": "json"
+    },
+    {
+      "path": "/api/catalog.min.json",
+      "description": "Minified discovery catalog (Phase 13). Same data, compact encoding.",
+      "format": "json"
+    },
+    {
+      "path": "/api/collections",
+      "description": "Extensionless alias of /api/collections.json (Phase 16).",
+      "format": "json"
+    },
+    {
+      "path": "/api/collections.json",
+      "description": "Curated collections (YouTube, Music, Emulators, Utilities, Productivity).",
+      "format": "json"
+    },
+    {
+      "path": "/api/community.json",
+      "description": "Popular, recently added, rising and requested apps.",
+      "format": "json"
+    },
+    {
+      "path": "/api/compare.json",
+      "description": "Side-by-side comparison matrix.",
+      "format": "json"
+    },
+    {
+      "path": "/api/dead_apps.json",
+      "description": "Dead/stale/approaching-dead classification (90/180/365 day thresholds).",
+      "format": "json"
+    },
+    {
+      "path": "/api/discovery.json",
+      "description": "Searchable discovery catalog, generated every build. Also exposed as api/catalog.json.",
+      "format": "json"
+    },
+    {
+      "path": "/api/download-intelligence.json",
+      "description": "Per-app historical availability, latency, mirror count.",
+      "format": "json"
+    },
+    {
+      "path": "/api/duplicates.json",
+      "description": "Duplicate groups and recommended source per group.",
+      "format": "json"
+    },
+    {
+      "path": "/api/health.json",
+      "description": "Per-app download health and staleness annotations.",
+      "format": "json"
+    },
+    {
+      "path": "/api/install.json",
+      "description": "Install cards for every app and the master feed.",
+      "format": "json"
+    },
+    {
+      "path": "/api/integrity_report.json",
+      "description": "Per-asset integrity: sha256, size, release id, source and reject checks.",
+      "format": "json"
+    },
+    {
+      "path": "/api/related.json",
+      "description": "Per-app relationship graph (bundle, category, developer, tags).",
+      "format": "json"
+    },
+    {
+      "path": "/api/reputation.json",
+      "description": "Source reputation (TRUSTED / RELIABLE / AVERAGE / EXPERIMENTAL).",
+      "format": "json"
+    },
+    {
+      "path": "/api/screenshots.json",
+      "description": "Screenshot catalog + mirror URLs + WebP thumbnails.",
+      "format": "json"
+    },
+    {
+      "path": "/api/search",
+      "description": "Extensionless alias of /api/search-index.json (Phase 16).",
+      "format": "json"
+    },
+    {
+      "path": "/api/search-index.json",
+      "description": "Fuse.js-compatible search index.",
+      "format": "json"
+    },
+    {
+      "path": "/api/sources.json",
+      "description": "Source index: upstreams, publisher, clients and feed metadata.",
+      "format": "json"
+    },
+    {
+      "path": "/api/status",
+      "description": "Extensionless alias of /api/status.json (Phase 16).",
+      "format": "json"
+    },
+    {
+      "path": "/api/status.json",
+      "description": "Source health board: reachability, latency, update age.",
+      "format": "json"
+    },
+    {
+      "path": "/api/trending",
+      "description": "Extensionless alias of /api/trending.json (Phase 16).",
+      "format": "json"
+    },
+    {
+      "path": "/api/trending.json",
+      "description": "Trending apps, rising apps, recently updated.",
+      "format": "json"
+    },
+    {
+      "path": "/api/updates.json",
+      "description": "Release timeline for the website.",
+      "format": "json"
+    },
+    {
+      "path": "/api/verification.json",
+      "description": "Trust levels and checks per app.",
+      "format": "json"
+    }
+  ],
+  "docs": "https://github.com/iamsmmh/OmniSource/blob/main/docs/API.md"
+}

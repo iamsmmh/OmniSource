@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NeoFreeBird — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/neofreebird.json</link>
+    <description>Release feed for NeoFreeBird within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 15:12:15 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/neofreebird.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>NeoFreeBird v2.2</title>
+      <link>https://iamsmmh.github.io/OmniSource/neofreebird.json</link>
+      <guid isPermaLink="false">neofreebird-2.2</guid>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <description><![CDATA[Twitter 2.2 | NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin
+
+NeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.
+
+### Change log:
+
+**Twitter, version 11.35:**
+- Updated the Twitter build to 11.35
+
+**NeoFreeBird, version 2.2:**
+- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]
+- Localized the Post > Tweet replacer
+- Improved the Open in Twitter extension
+- Minor bug fixes and other minor improvements
+
+There are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.
+
+If you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.]]></description>
+      <enclosure url="https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

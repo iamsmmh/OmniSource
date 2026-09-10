@@ -307,6 +307,33 @@
   OS.Search = Search;
 
   /* ============================================================================
+     Catalog loader
+     ----------------------------------------------------------------------------
+     Pages that need the discovery catalog (the /collections/ and /favorites/
+     views) all read the same API document, but only the flat/API URL families
+     are guaranteed to exist in a deployed site — a preview served straight from
+     the sources has just feeds/. Resolve the document from every published
+     location, in order, so those pages can never be left empty by a missing
+     copy: /api/catalog.json → /feeds/discovery.json → /discovery.json.
+     ========================================================================== */
+  var CATALOG_SOURCES = ['api/catalog.json', 'feeds/discovery.json', 'discovery.json'];
+
+  OS.loadCatalog = function (timeoutMs) {
+    var chain = Promise.resolve(null);
+    CATALOG_SOURCES.forEach(function (path) {
+      chain = chain.then(function (doc) {
+        if (doc && Array.isArray(doc.apps)) return doc;
+        return OS.fetchJSON(path, timeoutMs || 6000);
+      });
+    });
+    return chain.then(function (doc) {
+      var apps = doc && Array.isArray(doc.apps) ? doc.apps : [];
+      if (apps.length) window.OS_CATALOG = apps;
+      return apps;
+    });
+  };
+
+  /* ============================================================================
      Global search palette (⌘K / Ctrl+K / "/")
      ----------------------------------------------------------------------------
      Injected once into <body>. Instant results with keyboard navigation,

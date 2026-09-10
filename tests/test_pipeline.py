@@ -19,6 +19,7 @@ from omnisource.di import Container
 from omnisource.domain import SyncReport
 from omnisource.pipeline import load_catalog, load_state, stage_build
 from omnisource.providers.registry import ProviderRegistry
+from omnisource.site import publish_repo_artifacts
 
 
 class TestPipeline(unittest.TestCase):
@@ -87,13 +88,37 @@ class TestPipeline(unittest.TestCase):
             state = load_state(container)
             report = SyncReport()
 
-            changed_feeds, _health_doc, _analytics_doc = stage_build(container, catalog, state, report)
+            changed_feeds, health_doc, analytics_doc = stage_build(container, catalog, state, report)
             self.assertGreater(len(changed_feeds), 0)
             self.assertTrue((paths.feeds / "testapp.json").exists())
             self.assertTrue((paths.feeds / "apps.json").exists())
             self.assertTrue((paths.feeds / "health.json").exists())
+            # stage_build only writes the canonical feeds; the flat/API URL
+            # families are published from them (see publish_repo_artifacts).
             self.assertFalse((paths.root / "testapp.json").exists())
             self.assertFalse((paths.root / "apps.json").exists())
+
+            # Publishing mirrors every feed into the served root byte-identical,
+            # which is what GitHub Pages serves for a branch deployment.
+            summary = publish_repo_artifacts(root, health_doc=health_doc, analytics_doc=analytics_doc)
+            self.assertGreater(summary["flat_files"], 0)
+            self.assertTrue((root / "testapp.json").is_file())
+            self.assertEqual((root / "testapp.json").read_bytes(), (paths.feeds / "testapp.json").read_bytes())
+            self.assertEqual((root / "apps.json").read_bytes(), (paths.feeds / "apps.json").read_bytes())
+            self.assertTrue((root / "api" / "apps.json").is_file())
+            self.assertEqual((root / "api" / "apps.json").read_bytes(), (paths.feeds / "apps.json").read_bytes())
+            for name in ("sitemap.xml", "robots.txt", ".nojekyll", "catalog.min.json", "api/index.json"):
+                self.assertTrue((root / name).is_file(), f"publisher did not write {name}")
+
+            # Idempotent: a second run changes nothing.
+            again = publish_repo_artifacts(root, health_doc=health_doc, analytics_doc=analytics_doc)
+            self.assertEqual(again["written"], [])
+
+            # Stale generated copies disappear instead of lingering as dead URLs.
+            stale = root / "removedapp.json"
+            stale.write_text("{}", encoding="utf-8")
+            publish_repo_artifacts(root, health_doc=health_doc, analytics_doc=analytics_doc)
+            self.assertFalse(stale.exists(), "a feed that no longer exists must not stay published")
 
 
 if __name__ == "__main__":

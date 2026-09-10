@@ -3,8 +3,9 @@
 
 The offline build (``python3 scripts/omnisource.py --no-sync --no-health``)
 must not change anything that is committed. This script snapshots the
-generated outputs (feeds JSON, app pages, README blocks), runs the offline
-build, snapshots again and compares.
+generated outputs (feeds JSON/XML, app pages, README blocks and the published
+root mirror at the flat + API URL families), runs the offline build, snapshots
+again and compares.
 
 Volatile values that are correct to refresh on every build are normalized
 before comparing — the build/sync date (``generatedAt``, ``lastSync``), the
@@ -13,8 +14,10 @@ gains a new day's entry) and the screenshot-mirror state
 (``mirrored``/``size``/``sha256``/``thumbnailSize``), which depends on
 whether *this* machine could reach the remote screenshot hosts. Any *other*
 difference means a hand-edit or a bug in the generators and fails the check.
-Untracked files under ``feeds/``/``apps/`` are also reported, because a
-generated artifact that is not committed would silently diverge after deploy.
+gzip twins are compared by the document they decode to, so the check does not
+depend on the local zlib. Untracked generated files (under ``feeds/``,
+``apps/``, ``api/`` or the flat URLs) are also reported, because an artifact
+that is not committed would silently diverge after deploy.
 
 Usage
 -----
@@ -25,7 +28,9 @@ Usage
 from __future__ import annotations
 
 import argparse
+import contextlib
 import fnmatch
+import gzip
 import hashlib
 import json
 import re
@@ -36,16 +41,25 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 # The offline build may legitimately rewrite these; nothing else is checked.
-# The pipeline commits only the canonical generated outputs (feeds/, app
-# pages, README blocks). Deployed-only artifacts — flat feed URLs, sitemap,
-# robots, homepage stats — are assembled into _site/ by scripts/build_site.py
-# and never touch the repository root, so they are intentionally not tracked.
+# Two families of generated output are committed: the canonical files under
+# feeds/ (plus app/compare/collection pages and README blocks) and the published
+# mirror of those feeds at the flat + API URL families, which the repository
+# root carries because GitHub Pages serves this branch directly.
 TRACKED_PATTERNS = (
     "feeds/*.json",
     "apps/*/index.html",
     "compare/*/index.html",
     "collections/*/index.html",
     "README.md",
+    # Published root mirror (byte-identical copies of feeds/*, sitemap,
+    # robots and the home page's live statistics).
+    "*.json",
+    "*.xml",
+    "api/*.json",
+    "api/*",
+    "robots.txt",
+    "sitemap.xml",
+    "index.html",
 )
 # state.json is runtime state (syncedAt, health history) and changes whenever
 # the scheduler runs a real sync, so it is intentionally not compared.
@@ -72,6 +86,10 @@ def _matches(path: str, pattern: str) -> bool:
     if pattern.endswith("/*/index.html"):
         parts = path.split("/")
         return len(parts) == 3 and parts[0] in {"apps", "compare", "collections"} and parts[2] == "index.html"
+    if pattern.endswith("/*"):
+        # Direct children only (e.g. the api/ mirror including its gz twins).
+        prefix = pattern[:-2]
+        return path.startswith(prefix + "/") and path.count("/") == prefix.count("/") + 1
     if "*" in pattern and "/" not in pattern:
         # Root-level glob (e.g. the flat feed copies at the repository root).
         return "/" not in path and fnmatch.fnmatch(path, pattern)
@@ -110,11 +128,17 @@ def _snapshot() -> dict[str, bytes]:
     """Map path -> normalized hash for every generated file on disk."""
     snapshot: dict[str, bytes] = {}
     for pattern in TRACKED_PATTERNS:
-        prefix = pattern[: pattern.find("*")]
-        glob = pattern[len(prefix) :]
+        star = pattern.find("*")
+        prefix = pattern[:star] if star >= 0 else ""
+        glob = pattern[star:] if star >= 0 else pattern
         for path in (ROOT / prefix).glob(glob):
             if path.is_file() and path.name != "state.json":
                 data = _norm(path.read_bytes())
+                if path.suffix == ".gz":
+                    # gzip twins: compare the document they decode to, so the
+                    # check does not depend on the local zlib's deflate output.
+                    with contextlib.suppress(OSError):
+                        data = _norm(gzip.decompress(data))
                 if path.name == "screenshots.json":
                     data = _norm_screenshots(data)
                 snapshot[str(path.relative_to(ROOT))] = hashlib.sha256(data).hexdigest()
