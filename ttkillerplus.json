@@ -1,0 +1,117 @@
+{
+  "name": "OmniSource - TTKillerPlus",
+  "identifier": "com.iamsmmh.omnisource.ttkillerplus",
+  "apiVersion": "v2",
+  "subtitle": "TikTok with downloads, no ads and region switch",
+  "description": "Standalone distribution feed for TTKillerPlus, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/ttkillerplus.json",
+  "apps": [
+    {
+      "name": "TTKillerPlus",
+      "bundleIdentifier": "com.zhiliaoapp.musically",
+      "developerName": "iKarwan",
+      "subtitle": "TikTok with downloads, no ads and region switch",
+      "localizedDescription": "TTKillerPlus is a modified TikTok by iKarwan. Download videos from the feed, stories and Explore, save photos and profile avatars, merge post photos with their music, block promoted posts and ads, toggle seen/unseen, hide tabs, browse the feed of a specific country, show country flags and post dates, and auto-like in live streams. iPadOS supported.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/TikTok.webp",
+      "tintColor": "232621",
+      "category": "social",
+      "version": "46.8.0",
+      "versionDate": "2026-09-09",
+      "versionDescription": "TikTok 46.8.0 | TikTok_46.8_TTKillerPlus_2.1\n\n• Add v46.0+ compatibility.\n• Fix like confirmation bypass on double tap.\n• Fix post date display format.\n• Fix settings localization & toggles.\n• Fix flag button not tappable.\n• Other fixes & improvements.\n• Update base IPA to TikTok v46.8",
+      "downloadURL": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
+      "size": 453011354,
+      "versions": [
+        {
+          "version": "46.8.0",
+          "date": "2026-09-09",
+          "localizedDescription": "TikTok 46.8.0 | TikTok_46.8_TTKillerPlus_2.1\n\n• Add v46.0+ compatibility.\n• Fix like confirmation bypass on double tap.\n• Fix post date display format.\n• Fix settings localization & toggles.\n• Fix flag button not tappable.\n• Other fixes & improvements.\n• Update base IPA to TikTok v46.8",
+          "downloadURL": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
+          "size": 453011354,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "TikTok_46.8_TTKillerPlus_2.1.ipa",
+              "downloadUrl": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 453011354,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/1.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/2.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ttkplus/screenshots/3.PNG"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "application-identifier",
+          "aps-environment",
+          "com.apple.developer.associated-domains",
+          "com.apple.security.application-groups",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "keychain-access-groups",
+          "com.apple.developer.team-identifier"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "You'll be able to record video.",
+          "NSContactsUsageDescription": "Sync your contacts to easily find people you know on TikTok.",
+          "NSCalendarsUsageDescription": "Add events to your device calendar to get reminders when events start.",
+          "NSFaceIDUsageDescription": "We'll use this to unlock features that require added security.",
+          "NSBluetoothAlwaysUsageDescription": "This will allow TikTok to find and connect to Bluetooth accessories."
+        }
+      },
+      "omnisource": {
+        "slug": "ttkillerplus",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/iKarwan/TTKillerPlus",
+        "sourceURL": "https://repo.ikghd.me",
+        "verification": {
+          "method": "altstore",
+          "publisher": "iKarwan (repo.ikghd.me)",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-09-09"
+        }
+      }
+    }
+  ],
+  "news": []
+}

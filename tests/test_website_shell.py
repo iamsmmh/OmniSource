@@ -1,9 +1,11 @@
 """Invariants for the static website shell (Liquid Glass + GH Pages).
 
 The repository root holds the site *sources* (index.html, install/, js/,
-feeds/, apps/, …) and ``scripts/build_site.py`` assembles the deployable
-site into ``_site/``, which ``sync.yml`` publishes via GitHub Actions
-deployment. These invariants protect the pieces the builder and the
+feeds/, apps/, …) plus the published copies of the generated feeds at the
+flat/API URL families. ``scripts/build_site.py`` additionally assembles the
+deployable site into ``_site/`` for the GitHub Actions deployment path.
+Both must expose the same URLs, because GitHub Pages is currently serving the
+branch itself. These invariants protect the pieces the builder and the
 deployed site depend on.
 """
 
@@ -81,28 +83,147 @@ class TestWebsiteShell(unittest.TestCase):
         self.assertNotIn('id="statApps" data-count>0<', home)
 
     def test_pages_deploys_from_site_artifact(self) -> None:
-        # Single-publisher invariant: Pages deploys the _site/ artifact that
-        # sync.yml assembles — never the repository root. A Jekyll config
-        # must not come back, or a managed branch build would serve the raw
-        # root (without the flat feed URLs) and fight the Actions deploy.
+        # The GitHub Actions deploy path assembles _site/ and publishes it.
+        # The same builder also mirrors the generated URLs into the root,
+        # because the repository is (also) served by GitHub's branch build.
+        # A Jekyll config must not come back: `.nojekyll` is the only Pages
+        # configuration the repository carries.
         self.assertFalse(
             (ROOT / "_config.yml").exists(),
-            "_config.yml must stay deleted: Pages deploys _site/ via GitHub Actions, not a Jekyll branch build",
+            "_config.yml must stay deleted: the generated mirror is served verbatim, not rendered by Jekyll",
         )
+        self.assertTrue((ROOT / ".nojekyll").exists(), "the deployed root must disable Jekyll processing")
         sync = (ROOT / ".github" / "workflows" / "sync.yml").read_text(encoding="utf-8")
         self.assertIn("scripts/build_site.py", sync)
         self.assertIn("actions/upload-pages-artifact", sync)
         self.assertIn("actions/deploy-pages", sync)
 
-    def test_repo_root_carries_no_generated_flat_copies(self) -> None:
-        # The flat subscriber URLs (/<feed>.json, /<feed>.xml, badges) are
-        # assembled into _site/ at deploy time; committing them at the root
-        # again would resurrect the ~70 duplicate files this layout removed.
-        # catalog.json is the hand-edited source of truth, not a copy.
-        for path in sorted(ROOT.glob("*.json")):
-            self.assertEqual(path.name, "catalog.json", f"unexpected root JSON: {path.name}")
-        self.assertEqual(list(ROOT.glob("*.xml")), [], "no generated XML belongs at the repository root")
-        self.assertFalse((ROOT / "robots.txt").exists(), "robots.txt is generated into _site/, not committed")
+    def test_installable_source_url_is_published_at_the_root(self) -> None:
+        # https://iamsmmh.github.io/OmniSource/apps.json is the URL installers
+        # register, and GitHub Pages serves it from this branch — so the file
+        # must exist in the repository, byte-identical to feeds/apps.json.
+        feed = ROOT / "feeds" / "apps.json"
+        source = ROOT / "apps.json"
+        self.assertTrue(source.is_file(), "/apps.json is missing: the installable source URL would 404")
+        self.assertEqual(source.read_bytes(), feed.read_bytes(), "/apps.json diverged from feeds/apps.json")
+
+    def test_repo_root_mirrors_every_published_url(self) -> None:
+        # Every feed is published at the flat URL family (and every JSON
+        # document under /api/) from now on, so both deployment modes serve
+        # the same URLs. Copies must stay byte-identical to feeds/.
+        from omnisource.site import API_DOCUMENTS, API_ROUTES
+
+        feeds = ROOT / "feeds"
+        for pattern in ("*.json", "*.xml"):
+            for canonical in sorted(feeds.glob(pattern)):
+                if canonical.name == "state.json":
+                    continue
+                mirror = ROOT / canonical.name
+                self.assertTrue(mirror.is_file(), f"flat URL missing from the repository root: {canonical.name}")
+                self.assertEqual(
+                    mirror.read_bytes(),
+                    canonical.read_bytes(),
+                    f"flat URL diverged from feeds/: {canonical.name}",
+                )
+
+        for name in sorted(API_DOCUMENTS):
+            source = feeds / name
+            if not source.exists():
+                continue
+            mirror = ROOT / "api" / name
+            self.assertTrue(mirror.is_file(), f"API URL missing from the repository root: api/{name}")
+            self.assertEqual(mirror.read_bytes(), source.read_bytes(), f"api/{name} diverged from feeds/{name}")
+        for name in ("catalog.json", "catalog.min.json", "index.json", *API_ROUTES):
+            self.assertTrue((ROOT / "api" / name).is_file(), f"missing API document: api/{name}")
+        for name in ("sitemap.xml", "robots.txt", "catalog.min.json"):
+            self.assertTrue((ROOT / name).is_file(), f"missing published file: {name}")
+
+    def test_root_carries_no_hand_maintained_json_besides_the_catalog(self) -> None:
+        # The publisher owns every root-level *.json/*.xml except the
+        # hand-maintained catalog.json; it prunes anything else, so a new
+        # hand-maintained root document would be deleted at the next build.
+        allowed = {"catalog.json", "catalog.min.json", "sitemap.xml"}
+        allowed.update(path.name for path in (ROOT / "feeds").glob("*.json"))
+        allowed.update(path.name for path in (ROOT / "feeds").glob("*.xml"))
+        for path in sorted(ROOT.glob("*")):
+            if path.is_file() and path.suffix.lower() in {".json", ".xml"}:
+                self.assertIn(path.name, allowed, f"unexpected hand-maintained root file: {path.name}")
+
+    def test_no_page_loads_a_non_existent_catalog_fallback(self) -> None:
+        # The catalog fallback used to be ../feeds/catalog.json, which has
+        # never existed (the discovery index lives at feeds/discovery.json):
+        # when the API copy 404'd the pages rendered empty forever.
+        for rel in ("collections/index.html", "collections/collection.html", "favorites/index.html"):
+            html = (ROOT / rel).read_text(encoding="utf-8")
+            self.assertNotIn("feeds/catalog.json", html, f"{rel}: feeds/catalog.json does not exist")
+            self.assertIn("OS.loadCatalog(", html, f"{rel}: must load the catalog through OS.loadCatalog()")
+        core = (ROOT / "js" / "core.js").read_text(encoding="utf-8")
+        self.assertIn("OS.loadCatalog = function", core)
+        for source in ("api/catalog.json", "feeds/discovery.json", "discovery.json"):
+            self.assertIn(f"'{source}'", core, f"OS.loadCatalog lost the {source} source")
+
+    def test_every_internal_reference_resolves(self) -> None:
+        # GitHub Pages serves this repository (and the _site/ artifact) as a
+        # static tree, so a local href/src/fetch() that points at a file which
+        # is not published is a guaranteed 404 — including the flat feed URLs
+        # the generated app pages and the installer buttons depend on.
+        # Schemes with their own handling (altstore://, sidestore://, …) and
+        # template interpolations are skipped.
+        attribute = re.compile(r"""(?:href|src|poster|action)\s*=\s*["']([^"'<>]+)["']""", re.I)
+        fetch = re.compile(r"""(?:fetch|fetchJSON)\(\s*[`'"]([^`'"$]+)[`'"]""")
+        os_url = re.compile(r"""OS\.url\(\s*['"]([^'"$]+)['"]""")
+        schemes = ("#", "/", "data:", "mailto:", "tel:", "javascript:", "blob:", "http://", "https://", "//")
+
+        srcset = re.compile(r"""srcset\s*=\s*["']([^"']+)["']""")
+
+        def local_refs(page: Path, text: str) -> list[str]:
+            refs = attribute.findall(text) + fetch.findall(text) + os_url.findall(text)
+            for value in srcset.findall(text):
+                refs += [part.strip().split(" ")[0] for part in value.split(",")]
+            return [
+                ref
+                for ref in refs
+                if ref
+                and not ref.startswith(schemes)
+                and not re.match(r"^[a-z][a-z0-9+.-]*:", ref, re.I)
+                and "${" not in ref
+            ]
+
+        checked = 0
+        for page in sorted(ROOT.rglob("*.html")):
+            if "_site" in page.parts:
+                continue
+            text = page.read_text(encoding="utf-8", errors="replace")
+            for ref in local_refs(page, text):
+                target = (page.parent / ref.split("#")[0].split("?")[0]).resolve()
+                if not str(target).startswith(str(ROOT)):
+                    continue
+                checked += 1
+                exists = target.is_file() or (target / "index.html").is_file()
+                self.assertTrue(exists, f"{page.relative_to(ROOT)}: broken reference {ref!r}")
+
+        # Client scripts resolve their URLs against the site root (OS.url).
+        for script in (ROOT / "js" / "core.js", ROOT / "js" / "site.js", ROOT / "js" / "features.js", ROOT / "sw.js"):
+            text = script.read_text(encoding="utf-8")
+            for ref in fetch.findall(text) + os_url.findall(text):
+                if not ref or "${" in ref or ref.startswith(schemes):
+                    continue
+                if script.name == "sw.js" and ref.startswith("./"):
+                    ref = ref[2:]
+                target = (ROOT / ref).resolve()
+                if not str(target).startswith(str(ROOT)) or target.is_dir():
+                    continue
+                checked += 1
+                self.assertTrue(target.is_file(), f"{script.name}: broken reference {ref!r}")
+
+        self.assertGreater(checked, 500, "expected the reference scan to walk every generated page")
+
+    def test_collection_cards_link_to_their_app_page(self) -> None:
+        # OS.asset('/apps/<slug>/') produced '/assets/apps/<slug>/' — a 404 on
+        # every card in a collection.
+        html = (ROOT / "collections" / "collection.html").read_text(encoding="utf-8")
+        self.assertNotIn("OS.asset(`/apps/", html)
+        self.assertIn("OS.url(`apps/${app.slug}/`)", html)
 
     def test_site_build_publishes_flat_subscriber_urls(self) -> None:
         # /apps.json is the installable source URL for existing clients; the

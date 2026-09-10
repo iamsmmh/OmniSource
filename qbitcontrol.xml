@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>qBitControl — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/qbitcontrol.json</link>
+    <description>Release feed for qBitControl within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 15:12:15 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/qbitcontrol.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>qBitControl v1.4.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/qbitcontrol.json</link>
+      <guid isPermaLink="false">qbitcontrol-1.4.1</guid>
+      <pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[qBitControl 1.4.1 | qBitControl
+
+## 📊 Performance & Efficiency
+
+- **Reduced Data Usage:** Network traffic reduced by **93%** thanks to optimized data syncing.
+- **Smooth Charts:** Statistics charts now scroll continuously and smoothly instead of updating every two seconds.
+- **Responsive Progress Bars:** Progress indicators now feature fluid animations for a more natural feel.
+
+## 🛠️ Interface & Usability
+
+- **Custom Headers:** Specify custom HTTP headers for server connections—offering seamless support for reverse proxies and zero-trust networks (e.g., Cloudflare Access, Authelia).
+- **Reworked Server Addition:** Redesigned server setup and edit screens with an updated *Advanced* settings page and deferred saving.
+- **Limit Configuration:** Configure precise speed limits, seeding time limits, and share ratios for individual torrents directly in-app.
+- **Cleaner Torrent List:** Torrent rows now adapt dynamically to show the most relevant details depending on whether a transfer is downloading, seeding, or paused.
+- **Repositioned Add Button:** Moved the "Add Torrent" button to the toolbar for cleaner, more intuitive access.
+- **Offline Banner:** A clear overlay banner now appears whenever your connection drops.
+- **In-App Logs:** Added a built-in log viewer to review and easily share system events directly inside the app.
+
+## 🐛 Fixes & Refinements
+
+- **Self-Signed Certificate Support:** Full support for untrusted and self-signed SSL certificates, making it easier to connect to home-hosted servers.
+- **Stable RSS Downloads:** Fixed an issue in the RSS view where tapping a row to download a torrent caused the confirmation sheet to glitch and reopen unexpectedly.
+- **Connection Timeouts:** Implemented strict network timeouts to prevent the app from hanging indefinitely on the launch screen if a server is unresponsive.
+- **Clearer Error Alerts:** If adding a `.torrent` file or magnet link fails, a clear error message now pops up explaining what went wrong.]]></description>
+      <enclosure url="https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

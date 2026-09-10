@@ -1,38 +1,45 @@
-"""Static site assembler for GitHub Pages.
+"""Static site assembler and publisher for GitHub Pages.
 
-Builds the complete deployable site into ``_site/`` (default) from the
-repository sources: hand-maintained pages at the root plus the generated
-feeds (``feeds/``) and app pages (``apps/``). The published site exposes
-every generated artifact at three URL families so existing subscribers
-and future API consumers both keep working:
+The site is published twice from one set of sources, because GitHub Pages
+supports two deployment modes and the repository must work under either:
+
+* ``build_site()`` assembles the complete deployable site into ``_site/``,
+  the artifact ``sync.yml`` uploads with ``actions/upload-pages-artifact``
+  (GitHub Actions deployment).
+* ``publish_repo_artifacts()`` writes the generated public URLs into the
+  repository root, which is what GitHub's *legacy* branch deployment
+  (``pages-build-deployment``) serves. Without it the live site is the raw
+  repository tree and every generated URL 404s — including ``/apps.json``,
+  the URL installers add as a source.
+
+Both publishers expose every generated artifact at the same URL families
+so existing subscribers and future API consumers keep working:
 
 * organized   ``/feeds/<file>``           — canonical generated location
 * flat        ``/<file>``                 — historical subscriber URLs
 * API         ``/api/<file>``             — machine-readable endpoints
 * app pages   ``/apps/<slug>/``           — static detail pages
 
-On top of the copy, the builder adds the pieces that make the site a
+On top of the copy, the publishers add the pieces that make the site a
 first-class web app: ``sitemap.xml`` (every page, regenerated each build),
-``robots.txt``, the home page's live statistics (baked into the deployed
-``index.html`` copy only — the committed template is never rewritten),
-gzip copies of the JSON API documents (``.json.gz``) for consumers that
-want the smallest payload, and minified copies of the design-system
-stylesheets (comments/blank lines stripped — no structural rewriting, so
-the source of truth stays readable).
+``robots.txt``, ``.nojekyll``, the home page's live statistics (baked into
+the served ``index.html`` copies), gzip copies of the JSON API documents
+(``.json.gz``) for consumers that want the smallest payload, and — in
+``_site/`` only — minified copies of the design-system stylesheets
+(comments/blank lines stripped, no structural rewriting, so the committed
+source of truth stays readable).
 
-GitHub Pages itself serves the uncompressed originals; the ``.gz`` twins
-are for API consumers who can request them explicitly.
-
-This builder is the single publisher: Pages deploys the ``_site/``
-artifact via ``sync.yml`` (GitHub Actions deployment). The repository
-root intentionally carries no generated flat feed copies, so it stays
-small and every public URL is assembled fresh on each build.
-See ``.github/workflows/README.md``.
+Because the branch deployment serves the root, the mirrored files are
+committed: they are byte-identical copies of ``feeds/`` (git stores the
+shared blob once) and ``check_reproducible.py`` fails the build if they
+ever drift. Every mirror path is a generated file; the hand-maintained
+``catalog.json`` is the only root-level JSON the publisher does not own.
 """
 
 from __future__ import annotations
 
 import argparse
+import filecmp
 import gzip
 import json
 import re
@@ -275,7 +282,8 @@ def _write_gzip(path: Path) -> Path | None:
     if len(compressed) >= len(data):
         gz_path.unlink(missing_ok=True)
         return None
-    gz_path.write_bytes(compressed)
+    if not gz_path.exists() or gz_path.read_bytes() != compressed:
+        gz_path.write_bytes(compressed)
     return gz_path
 
 
@@ -328,7 +336,129 @@ def _deployable_asset(path: Path) -> bool:
 
 
 # ---------------------------------------------------------------------------
-# Homepage live statistics (no-JS/SEO values, baked into the _site/ copy)
+# Shared publishers (used by both deployment modes)
+# ---------------------------------------------------------------------------
+
+
+def _copy_if_different(source: Path, destination: Path) -> bool:
+    """Copy ``source`` over ``destination``; return whether the bytes changed.
+
+    Byte comparison (not timestamps) keeps a rebuild from touching files whose
+    content is unchanged, which is what makes the publisher idempotent and its
+    reports trustworthy.
+    """
+    if destination.exists() and filecmp.cmp(source, destination, shallow=False):
+        return False
+    shutil.copy2(source, destination)
+    return True
+
+
+def _publish_flat_feeds(root: Path, destination: Path) -> tuple[int, list[Path]]:
+    """Copy every canonical feed to its flat historical URL name.
+
+    ``destination`` is a served site root — ``_site/`` for the Pages artifact,
+    the repository root for the branch-backed deployment. Copies are
+    byte-identical to ``feeds/`` so the organized, flat and API families can
+    never drift apart (and git stores their shared blob once). Returns
+    ``(published, changed)``.
+    """
+    published = 0
+    changed: list[Path] = []
+    for pattern in ("*.json", "*.xml"):
+        for feed in sorted((root / "feeds").glob(pattern)):
+            if feed.name == "state.json":
+                continue
+            if _copy_if_different(feed, destination / feed.name):
+                changed.append(destination / feed.name)
+            published += 1
+    return published, changed
+
+
+def _publish_api_mirror(root: Path, api_dir: Path, *, brotli: bool) -> dict[str, int]:
+    """Write the machine API surface into ``api_dir``.
+
+    Publishes every :data:`API_DOCUMENTS` entry, the ``catalog.json`` alias of
+    the discovery index, its minified twin, the extensionless :data:`API_ROUTES`
+    aliases and the ``api/index.json`` manifest — each with a ``.gz`` twin and,
+    when ``brotli`` is enabled and the optional package is importable, a ``.br``
+    twin. Returns the published file counts plus the names written, so the
+    repository-root publisher can prune files that are no longer part of the
+    API.
+    """
+    api_dir.mkdir(parents=True, exist_ok=True)
+    written: set[str] = set()  # every file the mirror owns (for pruning)
+    changed: list[Path] = []  # files whose content changed in this run
+    documents = 0
+    gz_files = 0
+    br_files = 0
+
+    def publish(destination: Path, source: Path) -> None:
+        nonlocal documents, gz_files, br_files
+        if _copy_if_different(source, destination):
+            changed.append(destination)
+        written.add(destination.name)
+        documents += 1
+        if _write_gzip(destination) is not None:
+            written.add(destination.name + ".gz")
+            gz_files += 1
+        if brotli and _write_brotli(destination) is not None:
+            written.add(destination.name + ".br")
+            br_files += 1
+
+    for name in API_DOCUMENTS:
+        source = root / "feeds" / name
+        if not source.exists():
+            continue
+        if name == "discovery.json":
+            # The discovery index is also the API consumer's catalog: document
+            # it under both names, plus a minified twin for payload-only clients.
+            minified = api_dir / "catalog.min.json"
+            payload = _minify_json(source.read_text(encoding="utf-8"))
+            if not minified.exists() or minified.read_text(encoding="utf-8") != payload:
+                changed.append(minified)
+            _write_text(minified, payload)
+            written.add(minified.name)
+            if _write_gzip(minified) is not None:
+                written.add(minified.name + ".gz")
+                gz_files += 1
+            if brotli and _write_brotli(minified) is not None:
+                written.add(minified.name + ".br")
+                br_files += 1
+            publish(api_dir / "catalog.json", source)
+        publish(api_dir / name, source)
+
+    # Extensionless routes (Phase 16): byte-identical twins for clients that
+    # prefer clean URLs (/api/apps, /api/search, ...).
+    for route, document in API_ROUTES.items():
+        source = root / "feeds" / document
+        if source.exists():
+            publish(api_dir / route, source)
+
+    manifest_path = api_dir / "index.json"
+    manifest = _api_manifest(_base_url_from_catalog(root), date.today().isoformat())
+    manifest_payload = json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"
+    if not manifest_path.exists() or manifest_path.read_text(encoding="utf-8") != manifest_payload:
+        changed.append(manifest_path)
+    _write_text(manifest_path, manifest_payload)
+    written.add(manifest_path.name)
+    if _write_gzip(manifest_path) is not None:
+        written.add(manifest_path.name + ".gz")
+        gz_files += 1
+    if brotli and _write_brotli(manifest_path) is not None:
+        written.add(manifest_path.name + ".br")
+        br_files += 1
+
+    return {
+        "documents": documents,
+        "gz_files": gz_files,
+        "br_files": br_files,
+        "published": written,
+        "changed": changed,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Homepage live statistics (no-JS/SEO values, baked into the served copy)
 # ---------------------------------------------------------------------------
 
 
@@ -394,6 +524,120 @@ def _inject_homepage_stats(path: Path, health_doc: dict[str, Any], analytics_doc
 
 
 # ---------------------------------------------------------------------------
+# Repository-root publication (branch-backed Pages deployment)
+# ---------------------------------------------------------------------------
+
+# Root-level generated files that are not feed copies. The publisher owns
+# every other root ``*.json``/``*.xml`` file; ``catalog.json`` is the
+# hand-maintained source of truth and is never touched (a unit test guards
+# the invariant that no other hand-maintained root JSON/XML exists).
+ROOT_GENERATED_FILES = ("catalog.min.json", "sitemap.xml", "robots.txt", ".nojekyll")
+ROOT_HAND_MAINTAINED = ("catalog.json",)
+
+
+def _prune_mirror(directory: Path, keep: set[str]) -> list[Path]:
+    """Remove generated files in ``directory`` that are no longer published."""
+    removed: list[Path] = []
+    if not directory.is_dir():
+        return removed
+    for path in sorted(directory.iterdir()):
+        if not path.is_file() or path.name in keep:
+            continue
+        if path.suffix.lower() not in {".json", ".xml", ".gz", ".br"}:
+            continue
+        path.unlink()
+        removed.append(path)
+    return removed
+
+
+def publish_repo_artifacts(
+    root: Path,
+    *,
+    health_doc: dict[str, Any] | None = None,
+    analytics_doc: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Publish every generated public URL into the repository root.
+
+    GitHub Pages is configured for a *branch* deployment, so the live site is
+    the repository tree itself: a file that is not committed does not exist on
+    the web. This mirrors the canonical generated artifacts into the root so
+    the installable source URL (``/apps.json``) and every other generated URL
+    (``/<feed>.json``, ``/<feed>.xml``, ``/api/*``, ``/sitemap.xml``,
+    ``/robots.txt``, ``catalog.min.json``) resolve — byte-identical to
+    ``feeds/``, which stays the single source of truth.
+
+    Called by the pipeline (so a sync can never leave the mirror stale) and by
+    ``scripts/publish_root.py`` for repair/one-off runs. Returns a summary with
+    the files written and removed.
+    """
+    root = root.resolve()
+    written: list[Path] = []
+    removed: list[Path] = []
+
+    def write(path: Path, data: str) -> None:
+        if not path.exists() or path.read_text(encoding="utf-8") != data:
+            _write_text(path, data)
+            written.append(path)
+
+    flat_files, flat_changed = _publish_flat_feeds(root, root)
+    written.extend(flat_changed)
+
+    discovery = root / "feeds" / "discovery.json"
+    if discovery.exists():
+        minified = root / "catalog.min.json"
+        write(minified, _minify_json(discovery.read_text(encoding="utf-8")))
+        twin = Path(str(minified) + ".gz")
+        before = twin.read_bytes() if twin.exists() else None
+        if _write_gzip(minified) is not None:
+            if twin.read_bytes() != before:
+                written.append(twin)
+        else:
+            twin.unlink(missing_ok=True)
+
+    api = _publish_api_mirror(root, root / "api", brotli=False)
+    written.extend(api["changed"])
+    removed.extend(_prune_mirror(root / "api", set(api["published"])))
+    keep = {*ROOT_GENERATED_FILES, *ROOT_HAND_MAINTAINED, *(p.name for p in (root / "feeds").glob("*"))}
+    keep.update(f"{name}.gz" for name in ROOT_GENERATED_FILES)
+    removed.extend(_prune_mirror(root, keep))
+
+    base_url = _base_url_from_catalog(root)
+    write(
+        root / "sitemap.xml",
+        _sitemap(
+            base_url,
+            _app_slugs(root),
+            date.today().isoformat(),
+            compare_pairs=_compare_pairs(root),
+            collection_slugs=_collection_slugs(root),
+        ),
+    )
+    write(root / "robots.txt", _robots(base_url))
+    (root / ".nojekyll").touch(exist_ok=True)
+
+    # Live statistics in the served home page (no-JS/crawler values). The
+    # committed copy must carry the real numbers because it *is* the page the
+    # branch deployment serves. A checkout without the website sources (a feed
+    # consumer consuming only feeds/) must still be publishable, so a missing
+    # home page is skipped — but a page that lost a stat marker raises.
+    if health_doc is None:
+        health_doc = _generated_doc(root, "health.json")
+    if analytics_doc is None:
+        analytics_doc = _generated_doc(root, "analytics.json")
+    home = root / "index.html"
+    if home.is_file() and _inject_homepage_stats(home, health_doc, analytics_doc):
+        written.append(home)
+
+    return {
+        "flat_files": flat_files,
+        "api_documents": api["documents"],
+        "api_gz_files": api["gz_files"],
+        "written": sorted({str(path.relative_to(root)) for path in written}),
+        "removed": sorted(str(path.relative_to(root)) for path in removed),
+    }
+
+
+# ---------------------------------------------------------------------------
 # _site/ assembly
 # ---------------------------------------------------------------------------
 
@@ -441,17 +685,8 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
 
     # Historical flat source URLs for existing subscribers (/apps.json,
     # /<slug>.json, /<slug>.xml, badges, intelligence docs): byte-identical
-    # copies of the canonical feeds/, assembled fresh on every build so the
-    # repository root itself stays free of generated duplicates.
-    flat_count = 0
-    gz_count = 0
-    br_count = 0
-    for pattern in ("*.json", "*.xml"):
-        for feed in sorted((root / "feeds").glob(pattern)):
-            if feed.name == "state.json":
-                continue
-            shutil.copy2(feed, output / feed.name)
-            flat_count += 1
+    # copies of the canonical feeds/, assembled fresh on every build.
+    flat_count, _ = _publish_flat_feeds(root, output)
 
     shutil.copy2(root / "catalog.json", output / "catalog.json")
     # Phase 13: a minified catalog twin at the flat URL (clients that only
@@ -461,62 +696,20 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
         minified_catalog = output / "catalog.min.json"
         _write_text(minified_catalog, _minify_json(discovery.read_text(encoding="utf-8")))
         flat_count += 1
-        if _write_gzip(minified_catalog) is not None:
-            gz_count += 1
 
     # Static app detail pages. (compare/ and collections/ ship via SITE_FILES.)
     if (root / "apps").is_dir():
         shutil.copytree(root / "apps", output / "apps")
 
     # Machine-readable API surface plus a small manifest.
-    api_dir = output / "api"
-    api_dir.mkdir(exist_ok=True)
-    for name in API_DOCUMENTS:
-        source = root / "feeds" / name
-        if not source.exists():
-            continue
-        destinations = [api_dir / name]
-        if name == "discovery.json":
-            # The discovery index is also the API consumer's catalog: document
-            # it at both names so clients can pick either convention.
-            destinations.append(api_dir / "catalog.json")
-            # Phase 13: a minified discovery twin for clients that only need
-            # the payload (no formatting bytes) — same data, smaller download.
-            minified_path = api_dir / "catalog.min.json"
-            _write_text(minified_path, _minify_json(source.read_text(encoding="utf-8")))
-            if _write_gzip(minified_path) is not None:
-                gz_count += 1
-            if _write_brotli(minified_path) is not None:
-                br_count += 1
-        for destination in destinations:
-            shutil.copy2(source, destination)
-            if _write_gzip(destination) is not None:
-                gz_count += 1
-            if _write_brotli(destination) is not None:
-                br_count += 1
-
-    # Extensionless routes (Phase 16): byte-identical twins of JSON documents
-    # for clients that prefer clean URLs (/api/apps, /api/search, ...).
-    for route, document in API_ROUTES.items():
-        source = root / "feeds" / document
-        if not source.exists():
-            continue
-        target = api_dir / route
-        shutil.copy2(source, target)
-        if _write_gzip(target) is not None:
-            gz_count += 1
-        if _write_brotli(target) is not None:
-            br_count += 1
-
-    manifest = _api_manifest(base_url, today)
-    manifest_path = api_dir / "index.json"
-    _write_text(manifest_path, json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
-    if _write_gzip(manifest_path) is not None:
+    api = _publish_api_mirror(root, output / "api", brotli=True)
+    gz_count = api["gz_files"]
+    br_count = api["br_files"]
+    if (output / "catalog.min.json").exists() and _write_gzip(output / "catalog.min.json") is not None:
         gz_count += 1
-    if _write_brotli(manifest_path) is not None:
-        br_count += 1
 
-    # SEO / discoverability: regenerated on every build (never committed).
+    # SEO / discoverability. The repository copy is written by
+    # publish_repo_artifacts(); this one belongs to the deployable artifact.
     _write_text(
         output / "sitemap.xml",
         _sitemap(
@@ -529,8 +722,9 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
     )
     _write_text(output / "robots.txt", _robots(base_url))
 
-    # Live statistics in the deployed home page copy (no-JS/SEO values).
-    # The committed index.html template is left untouched.
+    # Live statistics from the generated health/analytics documents, so the
+    # no-JS/crawler values in both served copies are true. (Only the six stat
+    # markers are rewritten — the hand-maintained markup is untouched.)
     stats_injected = _inject_homepage_stats(
         output / "index.html",
         _generated_doc(root, "health.json"),

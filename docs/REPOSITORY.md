@@ -14,7 +14,7 @@ OmniSource/
 │   ├── feeds/                # AltStore, RSS and updates-timeline renderers
 │   ├── providers/            # GitHub and external-feed adapters
 │   ├── utils/                # Shared helpers
-│   ├── site.py               # Static site builder (_site: sitemap, robots, API mirror, minify)
+│   ├── site.py               # Publisher: repo-root mirror + _site/ (sitemap, robots, API mirror)
 │   ├── discovery.py          # Discovery catalog + source index
 │   ├── verification.py       # Trust indicators
 │   ├── monitor.py            # Source health board + probe history
@@ -33,6 +33,7 @@ OmniSource/
 ├── scripts/                  # Thin CLI entry points over src/omnisource
 │   ├── omnisource.py         # Pipeline (sync → health → build)
 │   ├── build_site.py         # Assemble _site/ (sitemap, robots, API mirror, gz, minify)
+│   ├── publish_root.py       # Publish/verify the root mirror served by the branch deploy
 │   ├── validate.py           # Offline validator
 │   ├── validate_jq.sh        # jq-based feed contract checks
 │   ├── check_reproducible.py # Proves offline builds are deterministic
@@ -44,7 +45,11 @@ OmniSource/
 ├── feeds/                    # Generated canonical feeds, RSS, intelligence docs, state
 ├── apps/<slug>/index.html    # Generated static app detail pages (design-system styled)
 ├── index.html                # Immersive home: hero, rails, stats, catalog, timeline
-│                             #   (live stat values are baked into the _site/ copy at deploy time)
+│                             #   (stat values are refreshed by the publisher on every build)
+├── apps.json / <slug>.json   # Published mirror of feeds/ (flat subscriber URLs)
+├── <slug>.xml / feed.xml     # Published mirror of the RSS feeds
+├── api/                      # Published machine API surface (+ .gz twins, index.json)
+├── sitemap.xml / robots.txt  # Published SEO files (.nojekyll disables Jekyll)
 ├── compare.html              # Redirect shim → compare/ (preserves ?left=&right=)
 ├── compare/                  # Side-by-side app comparison (deep-linkable)
 ├── status/                   # Source Health Center (uptime, latency, sync)
@@ -93,30 +98,39 @@ Running the pipeline produces, under `feeds/`:
 
 It also renders one static App-Store-style page per app at
 `apps/<slug>/index.html` (see `src/omnisource/app_pages.py`).
-`scripts/build_site.py` (over `src/omnisource/site.py`) copies every
-distributable JSON/XML, `catalog.json`, the app pages and the machine API
-surface (`_site/api/`, with `.json.gz` twins and an `api/index.json`
-manifest) into the site, and writes `sitemap.xml` (home + 5 section pages +
-every app page), `robots.txt` and minified copies of the design-system
-stylesheets. See [`API.md`](API.md) for the endpoint contracts.
+`src/omnisource/site.py` publishes every public URL from those canonical
+files: the flat historical URLs, the `feeds/` path and the machine API
+surface (`api/`, with `.json.gz` twins and an `api/index.json` manifest),
+plus `sitemap.xml` (home + section pages + every app page), `robots.txt`,
+`.nojekyll` and the home page's live statistics. See [`API.md`](API.md) for
+the endpoint contracts.
 
 ## How are generated artifacts published?
 
 Generated files have canonical homes under `feeds/` (JSON/XML) and `apps/`
-(pages) — nothing generated is committed at the repository root, keeping it
-clean. During deployment, `scripts/build_site.py` assembles every public URL
-into `_site/`: the site root (flat historical URLs), the `feeds/` path and
-the `api/` path, plus `sitemap.xml`, `robots.txt` and the home page's live
-statistics. Existing subscriptions such as the following therefore continue
-to work:
+(pages). Both Pages deployment modes are served from one publisher:
+
+- **Branch deployment** (what GitHub currently serves): the repository tree
+  is the site, so `publish_repo_artifacts()` mirrors every generated URL into
+  the repository root — `/apps.json`, `/<slug>.json`, `/<slug>.xml`,
+  `/api/*` (with `.gz` twins), `catalog.min.json`, `sitemap.xml`,
+  `robots.txt`, `.nojekyll` and the home page's stat values. The pipeline
+  refreshes the mirror at the end of every run, `scripts/publish_root.py`
+  does the same for manual/`merge.yml` runs (`--check` reports drift) and the
+  copies are committed, because a file that is not committed does not exist
+  on the web.
+- **GitHub Actions deployment**: `scripts/build_site.py` assembles the same
+  URLs into `_site/` (plus minified CSS) and `sync.yml` deploys it with
+  `actions/deploy-pages`.
+
+Mirror copies are byte-identical to their `feeds/` originals — git stores the
+shared blob once, and `scripts/check_reproducible.py` fails a rebuild that
+would change one. Existing subscriptions such as the following therefore
+continue to work from either mode:
 
 ```text
 https://iamsmmh.github.io/OmniSource/apps.json
 ```
-
-This avoids duplicate tracked files without changing any public URL. Pages
-deploys the `_site/` artifact via GitHub Actions (`sync.yml`); the raw
-repository root is never served.
 
 ## Common commands
 
@@ -172,29 +186,32 @@ The Pages workflow calls `scripts/build_site.py`, so local and production site a
                   │
         ┌─────────┴───────────┐
         ▼                     ▼
-   feeds/                 api/            (1:1 mirror, gitignored locally)
+   feeds/                 apps/
         │                     │
         └─────────┬───────────┘
                   ▼
-          scripts/build_site.py          (src/omnisource/site.py)
-                  │                       + sitemap.xml, robots.txt,
-                  │                       .json.gz twins, CSS minify
-                  ▼
-               _site/         (GitHub Pages deployment)
+       src/omnisource/site.py
+        ├── publish_repo_artifacts()  ──▶  repository root
+        │      /apps.json · /<slug>.json|.xml · /api/* (+.gz) · sitemap.xml
+        │      robots.txt · .nojekyll · homepage stats      (branch deploy)
+        └── build_site()              ──▶  _site/            (Actions deploy)
+               same URLs + minified CSS + api/*.br
 
    The hand-maintained pages at the repository root (index.html, install/,
-   js/, sw.js, manifest) render the live experience on top of the deployed
+   js/, sw.js, manifest) render the live experience on top of the published
    feeds/ and api/; assets/design-system/ styles both the website and the
-   generated pages. GitHub Pages serves the assembled _site/ artifact only
-   (GitHub Actions deployment); the repository root is never served directly.
+   generated pages. Whichever deployment mode Pages uses, the URLs are the
+   same — the _site/ artifact and the root mirror are assembled from the same
+   canonical files.
 ```
 
 ## Generation pipeline (Make targets)
 
 | Target | What it does |
 | --- | --- |
-| `make build` | Runs the sync + health + build stages, writing everything under `feeds/`, `apps/` and the README blocks. |
-| `make site` | Calls `scripts/build_site.py` to assemble the deployable site in `_site/`. The site builder copies the root-level site files, publishes `feeds/` at the flat root and `api/` (with `.gz` twins), and generates `sitemap.xml` + `robots.txt` plus the home page's live statistics fresh on every build. |
+| `make build` | Runs the sync + health + build stages, writing everything under `feeds/`, `apps/`, the README blocks and the published root mirror. |
+| `make publish` | Calls `scripts/publish_root.py` to refresh/repair the root mirror (`/apps.json`, `/<slug>.json|.xml`, `api/`, `sitemap.xml`, `robots.txt`). |
+| `make site` | Calls `scripts/build_site.py` to assemble the deployable site in `_site/`: the root-level site files, every feed at the flat root and `api/` (with `.gz` twins), `sitemap.xml` + `robots.txt` and the home page's live statistics, fresh on every build. |
 | `make check` | Runs the offline validator (`scripts/validate.py`), the jq contract checks (`scripts/validate_jq.sh`) and the unit test suite (`python3 -m unittest discover -s tests`). |
 | `make serve` | Builds the site and serves `_site/` on a local port for development. |
 

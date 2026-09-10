@@ -407,8 +407,9 @@
     },
 
     _loadAppData() {
-      // Load from the catalog or feeds
-      // This is a simplified version - in practice, we'd fetch from /api/catalog.json
+      // The hosting page loads the discovery catalog through OS.loadCatalog()
+      // (api/catalog.json → feeds/discovery.json → discovery.json) and drops it
+      // on window.OS_CATALOG before any of this runs.
       try {
         const catalog = window.OS_CATALOG || [];
         return catalog.map(app => ({
@@ -2517,13 +2518,18 @@
       'Biometric authentication for sensitive actions'
     ],
 
+    // The API is the generated static surface published by the build; see
+    // docs/API.md. Per-app detail comes from the flat /<slug>.json feed and
+    // /api/index.json lists every endpoint.
     apiEndpoints: [
-      'GET /api/catalog.json - Get app catalog',
-      'GET /api/apps/{id}.json - Get app details',
-      'GET /api/status.json - Get source health',
-      'GET /api/updates.json - Get recent updates',
-      'POST /api/webhooks - Register webhook (backend required)',
-      'POST /api/notifications/subscribe - Subscribe to push (backend required)'
+      'GET /api/apps.json - The AltStore source feed (same as /apps.json)',
+      'GET /api/catalog.json - Discovery catalog (extensionless: /api/catalog)',
+      'GET /api/status.json - Source health board',
+      'GET /api/updates.json - Release timeline',
+      'GET /api/trending.json - Trending / recently updated apps',
+      'GET /api/search-index.json - Fuse.js-compatible search index (alias /api/search)',
+      'GET /<slug>.json - Per-app AltStore feed',
+      'GET /api/index.json - Endpoint manifest'
     ]
   };
 

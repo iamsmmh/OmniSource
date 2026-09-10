@@ -1,0 +1,108 @@
+{
+  "name": "OmniSource - iSH",
+  "identifier": "com.iamsmmh.omnisource.ish",
+  "apiVersion": "v2",
+  "subtitle": "Linux shell on iOS via x86 emulation",
+  "description": "Standalone distribution feed for iSH, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/ish.json",
+  "apps": [
+    {
+      "name": "iSH",
+      "bundleIdentifier": "app.ish.iSH",
+      "developerName": "Theodore Dubois and contributors",
+      "subtitle": "Linux shell on iOS via x86 emulation",
+      "localizedDescription": "iSH is an open-source project that runs a Linux shell environment on iOS using a user-mode x86 emulator. It provides Alpine Linux with the APK package manager, so you can install and run familiar command-line tools — ssh, git, python, vim and more — entirely on your iPhone or iPad, no jailbreak required.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/iSH.webp",
+      "tintColor": "000000",
+      "category": "developer-tools",
+      "version": "813",
+      "versionDate": "2026-08-22",
+      "versionDescription": "iSH 813 | iSH (builds/813)\n\nAutomated daily build",
+      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+      "size": 4602446,
+      "versions": [
+        {
+          "version": "813",
+          "date": "2026-08-22",
+          "localizedDescription": "iSH 813 | iSH (builds/813)\n\nAutomated daily build",
+          "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+          "size": 4602446,
+          "minOSVersion": "12.2",
+          "releaseUrl": "https://github.com/ish-app/ish/releases/tag/builds/813",
+          "source": "github",
+          "isPrerelease": true,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "iSH.app.dSYM.zip",
+              "downloadUrl": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.app.dSYM.zip",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 1512635,
+              "sha256": "8fbd2767f4de639c645a1a8f95cf93a8921832a25ef9681d1904ee38dc96b87b",
+              "downloads": 31,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "iSH.ipa",
+              "downloadUrl": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 4602446,
+              "sha256": "f2d389ca859d380e2f53259a245340e22c64dba68db73f5977f75a3464e1ee3d",
+              "downloads": 635,
+              "mimeType": "application/zip",
+              "installable": true
+            }
+          ],
+          "sha256": "f2d389ca859d380e2f53259a245340e22c64dba68db73f5977f75a3464e1ee3d",
+          "downloads": 635
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "ish",
+        "status": "beta",
+        "featured": false,
+        "upstreamURL": "https://github.com/ish-app/ish",
+        "sourceURL": "https://github.com/ish-app/ish",
+        "verification": {
+          "method": "github-release",
+          "publisher": "ish-app/ish",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "12.2",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "The official iSH AltStore source (ish.app/altstore.json) serves exactly this channel: the newest iSH.ipa from the project's builds/* GitHub releases. iSH marks trunk builds as pre-releases; the last promoted stable was 1.3.2 (build 494). Reported version is the upstream build number."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2026-08-22"
+        }
+      }
+    }
+  ],
+  "news": []
+}

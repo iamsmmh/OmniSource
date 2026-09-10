@@ -1,0 +1,156 @@
+{
+  "name": "OmniSource - Jellify",
+  "identifier": "com.iamsmmh.omnisource.jellify",
+  "apiVersion": "v2",
+  "subtitle": "Native Jellyfin music player for iOS",
+  "description": "Standalone distribution feed for Jellify, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/jellify.json",
+  "apps": [
+    {
+      "name": "Jellify",
+      "bundleIdentifier": "com.cosmonautical.jellify",
+      "developerName": "anultravioletaurora",
+      "subtitle": "Native Jellyfin music player for iOS",
+      "localizedDescription": "Jellify is a free and open-source music player for Jellyfin, built with React Native. Browse and stream your Jellyfin music libraries on iPhone and iPad with a native interface, fast search, playlists, favorites and now-playing controls — available on the App Store and as sideload builds.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Jellify.webp",
+      "tintColor": "19AFC8",
+      "category": "music",
+      "version": "1.2.10",
+      "versionDate": "2026-09-02",
+      "versionDescription": "Jellify 1.2.10 | Jellify-1.2.10\n\nWelcome to Jellify 1.2.10\n\nHey music lovers! I've polished up some underlying bits and have made a key fix to boost stability across the board. Get ready for an even smoother listening experience when you’re exploring your Jellyfin collection!\n\n*   **Android Crash Fixes:** We detected and patched out a crash that was occurring on Android devices, so you can now enjoy uninterrupted music playback no matter how deep you dive into your library.\n*   **Optimized Performance:** Several dependency updates have been implemented behind the scenes to enhance overall app performance and make navigation feel snappier than ever before.\n*   **App General Polish:** We've made various quality-of-life improvements in various components, ensuring Jellify remains robust and reliable for years of listening fun!",
+      "downloadURL": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
+      "size": 40554164,
+      "versions": [
+        {
+          "version": "1.2.10",
+          "date": "2026-09-02",
+          "localizedDescription": "Jellify 1.2.10 | Jellify-1.2.10\n\nWelcome to Jellify 1.2.10\n\nHey music lovers! I've polished up some underlying bits and have made a key fix to boost stability across the board. Get ready for an even smoother listening experience when you’re exploring your Jellyfin collection!\n\n*   **Android Crash Fixes:** We detected and patched out a crash that was occurring on Android devices, so you can now enjoy uninterrupted music playback no matter how deep you dive into your library.\n*   **Optimized Performance:** Several dependency updates have been implemented behind the scenes to enhance overall app performance and make navigation feel snappier than ever before.\n*   **App General Polish:** We've made various quality-of-life improvements in various components, ensuring Jellify remains robust and reliable for years of listening fun!",
+          "downloadURL": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
+          "size": 40554164,
+          "minOSVersion": "16.4",
+          "releaseUrl": "https://github.com/Jellify-Music/App/releases/tag/1.2.10",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Jellify-1.2.10-app-arm64-v8a-release.apk",
+              "downloadUrl": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10-app-arm64-v8a-release.apk",
+              "platform": "android",
+              "architecture": "arm64",
+              "fileType": "APK",
+              "size": 63573400,
+              "sha256": "a35ad4cc96695e0aa644899a6b4576717c6a4d468ad95b91dc41aa9131f55e20",
+              "downloads": 672,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Jellify-1.2.10-app-armeabi-v7a-release.apk",
+              "downloadUrl": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10-app-armeabi-v7a-release.apk",
+              "platform": "android",
+              "architecture": "armv7",
+              "fileType": "APK",
+              "size": 49751548,
+              "sha256": "1cce31c7fe224bfc7a37967aa96b3c7e873c206a627966ca672c94c3dba0a602",
+              "downloads": 3,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Jellify-1.2.10-app-universal-release.apk",
+              "downloadUrl": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10-app-universal-release.apk",
+              "platform": "android",
+              "architecture": "universal",
+              "fileType": "APK",
+              "size": 184023105,
+              "sha256": "c79c00b750d2ad860c1c6e2e0aef15fbdf1e0dfd9869d4a7ee476a9182aa2d02",
+              "downloads": 30,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Jellify-1.2.10-app-x86-release.apk",
+              "downloadUrl": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10-app-x86-release.apk",
+              "platform": "android",
+              "architecture": "x86",
+              "fileType": "APK",
+              "size": 63539220,
+              "sha256": "e5d86039f77b67633b0629bdac7b63d75bcfeeb817f981dad2eb5d37b5c19b14",
+              "downloads": 2,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Jellify-1.2.10-app-x86_64-release.apk",
+              "downloadUrl": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10-app-x86_64-release.apk",
+              "platform": "android",
+              "architecture": "x86_64",
+              "fileType": "APK",
+              "size": 65706728,
+              "sha256": "e31c54f03b704f4960347560b2ebd2f1d7891a7ad980b36f8dc07e672198c516",
+              "downloads": 2,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Jellify-1.2.10.ipa",
+              "downloadUrl": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 40554164,
+              "sha256": "6e56654ab690f2a4de1cca38ef3e5c73c2fcafe34c65782d7a290fa7c91c0224",
+              "downloads": 29,
+              "mimeType": "raw",
+              "installable": true
+            }
+          ],
+          "sha256": "6e56654ab690f2a4de1cca38ef3e5c73c2fcafe34c65782d7a290fa7c91c0224",
+          "downloads": 29
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "jellify",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/Jellify-Music/App",
+        "sourceURL": "https://github.com/Jellify-Music/App",
+        "verification": {
+          "method": "github-release",
+          "publisher": "Jellify-Music/App",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.4",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned IPA (Jellify-<version>.ipa) from the developer's GitHub releases. Requires a Jellyfin server to connect to. Android builds ship in the same release."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2026-09-02"
+        }
+      }
+    }
+  ],
+  "news": []
+}

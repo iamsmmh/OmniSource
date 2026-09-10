@@ -14,6 +14,12 @@ hand. A gzip-compressed twin (`*.json.gz`) is published alongside each API
 document for consumers that want the smallest payload. The endpoint manifest
 lives at `api/index.json`.
 
+Every URL above is committed: GitHub Pages serves this repository from the
+branch, so the flat and `/api/` copies are published into the repository root
+by the pipeline (`scripts/publish_root.py` refreshes or verifies them). The
+copies are byte-identical to their `feeds/` originals — if a URL 404s, run
+`python3 scripts/publish_root.py` and commit the result.
+
 ```json
 {
   "name": "OmniSource API",

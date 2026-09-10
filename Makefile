@@ -1,4 +1,4 @@
-.PHONY: all build site serve smoke validate test format lint check clean
+.PHONY: all build publish site serve smoke validate test format lint check clean
 
 PYTHON ?= python3
 PORT ?= 8000
@@ -9,6 +9,10 @@ all: build check
 # Refresh generated source feeds from their configured upstreams.
 build:
 	$(PYTHON) scripts/omnisource.py
+
+# Publish the generated flat/API URLs into the repository root (branch deploy).
+publish:
+	$(PYTHON) scripts/publish_root.py
 
 # Assemble the exact static bundle deployed to GitHub Pages.
 site:
@@ -36,6 +40,7 @@ lint:
 	$(PYTHON) -m ruff check src scripts tests
 
 check: lint validate test
+	$(PYTHON) scripts/publish_root.py --check
 	$(PYTHON) scripts/merge_feeds.py --check
 	$(PYTHON) scripts/check_reproducible.py --diff
 	$(PYTHON) scripts/smoke_test.py

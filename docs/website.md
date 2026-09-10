@@ -3,9 +3,11 @@
 The OmniSource website is a dependency-free static application: HTML5, modern
 CSS and vanilla JavaScript with Web Components — no React/Vue/Angular, no
 framework build step. The hand-maintained page *sources* live at the
-repository root next to the generated feeds, and `scripts/build_site.py`
-assembles them into the `_site/` artifact that `sync.yml` deploys to GitHub
-Pages (GitHub Actions deployment — the raw root is never served).
+repository root next to the generated feeds. The root is also where the
+generated public URLs are published (`/apps.json`, `/<slug>.json|.xml`,
+`/api/*`, `sitemap.xml`, `robots.txt`), because GitHub Pages is served from
+the branch; `scripts/build_site.py` additionally assembles the same site into
+the `_site/` artifact for the GitHub Actions deployment path.
 
 ```text
 .  (repository root: site sources)
@@ -23,8 +25,9 @@ Pages (GitHub Actions deployment — the raw root is never served).
 ├── sw.js                    # Service worker: offline shell + stale-while-revalidate feeds
 └── manifest.webmanifest     # PWA manifest with shortcuts (offline installable)
 
-feeds/ holds the canonical generated feeds; the builder publishes them at
-the flat historical URLs (/<feed>), /feeds/ and /api/ inside _site/.
+feeds/ holds the canonical generated feeds; the publisher mirrors them at the
+flat historical URLs (/<feed>), /feeds/ and /api/ both in the repository root
+(served by the branch deployment) and inside _site/ (the Actions artifact).
 ```
 
 The shared design system (`assets/design-system/`: `tokens.css`,
@@ -69,9 +72,14 @@ The interface renders everything from those files at runtime.
 From the repository root:
 
 ```bash
-make site   # assemble _site/ (flat feed URLs, sitemap.xml, robots.txt, API mirror)
-make serve  # preview on port 8000
+make publish  # refresh the root mirror (what the branch deployment serves)
+make site     # assemble _site/ (flat feed URLs, sitemap.xml, robots.txt, API mirror)
+make serve    # preview on port 8000
 ```
+
+A quick preview of the branch-served site is `python3 -m http.server 8000`
+from the repository root; `make serve` previews the assembled `_site/`
+artifact. Both serve the same pages and URLs.
 
 Keep the website dependency-free so GitHub Pages remains fast, portable,
 and simple to maintain.

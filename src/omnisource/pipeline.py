@@ -7,8 +7,10 @@ Stages
 3. ``build``      Render the AltStore Source v2 feeds (per-app + ``apps.json``).
 4. ``readme``     Refresh the generated catalog block inside README.md.
 
-The deploy builder publishes feeds at both organized and historical flat URLs;
-the repository therefore keeps one canonical generated copy under ``feeds/``.
+``feeds/`` is the single source of truth: the published flat URLs
+(``/<file>.json``, ``/<file>.xml``, ``/api/*``) are byte-identical copies that
+:func:`omnisource.site.publish_repo_artifacts` refreshes at the end of every
+run, because GitHub Pages serves this repository from the branch itself.
 
 A failing upstream degrades to "keep serving the last good build". The
 pipeline is idempotent: unchanged payloads are not written.
@@ -59,6 +61,7 @@ from omnisource.related import build_related_doc
 from omnisource.reputation import build_reputation_doc
 from omnisource.screenshots import process_screenshots
 from omnisource.search_index import build_search_index
+from omnisource.site import publish_repo_artifacts
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
 from omnisource.trending import build_trending_doc
 from omnisource.verification import build_verification_doc
@@ -543,8 +546,9 @@ def stage_build(
     }
 
     # Keep every generated JSON feed vertical/readable. The canonical files
-    # live in feeds/; the site builder creates any compatibility URL copies
-    # later, so generated artifacts never need to be stored at repository root.
+    # live in feeds/; publish_repo_artifacts() (end of run) mirrors them to the
+    # flat/API URL families at the repository root and build_site() assembles
+    # them into _site/, so this stage only ever writes feeds/.
     changed = atomic_write_many(documents, pretty=lambda path: True)
 
     # RSS 2.0 / Atom XML feeds: one combined feed plus a per-app feed.
@@ -804,9 +808,23 @@ def run(
     if stage_readme(container, catalog, health_doc, analytics_doc):
         changed.append(container.paths.readme)
 
-    # The deploy builder (scripts/build_site.py) assembles every published
-    # URL — flat feeds, sitemap, robots, homepage stats — into _site/ from
-    # these canonical outputs, so the pipeline itself writes nothing else.
+    # Publish the generated public URLs into the repository root. GitHub Pages
+    # serves this repository in *branch* mode, so the live site is the tree
+    # itself: without this mirror /apps.json — the URL installers add as a
+    # source — and every other flat/API URL would 404. scripts/build_site.py
+    # additionally assembles the same URLs into the _site/ artifact that
+    # sync.yml uploads for the GitHub Actions deployment path.
+    with Group("Publish repository-root URLs"):
+        published = publish_repo_artifacts(container.paths.root, health_doc=health_doc, analytics_doc=analytics_doc)
+        log.info(
+            "%d flat URL(s) + %d API document(s) published (%d refreshed, %d stale removed)",
+            published["flat_files"],
+            published["api_documents"],
+            len(published["written"]),
+            len(published["removed"]),
+        )
+        for name in published["removed"]:
+            log.info("removed stale root artifact: %s", name)
     report.finished_at = today()
     report.files_changed = len(changed)
     write_summary(health_doc, changed, report)

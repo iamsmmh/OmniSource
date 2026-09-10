@@ -59,7 +59,11 @@ repository/feed URL.
    ```
 
 5. Commit `catalog.json`, any new `assets/` file, and the regenerated
-   `feeds/` + `README.md` output together in one pull request.
+   `feeds/` + `README.md` output together in one pull request. The pipeline
+   also refreshes the published root mirror (`apps.json`, `<slug>.json|.xml`,
+   `api/`, `sitemap.xml`, `robots.txt`) — commit it too: GitHub Pages serves
+   the branch, so those files are the live URLs. Never hand-edit them;
+   `scripts/publish_root.py` regenerates them from `feeds/`.
 
 ### 4. Improve the pipeline or website
 
@@ -74,7 +78,9 @@ reproducibility and unit tests offline.
 ## Pull request checklist
 
 - [ ] Changed `catalog.json`, never generated files by hand.
-- [ ] Ran the pipeline and committed regenerated output.
+- [ ] Ran the pipeline and committed regenerated output (feeds/, app pages,
+      README blocks and the published root URLs — `make check` verifies the
+      mirror matches `feeds/`).
 - [ ] `make check` passes locally (or the equivalent commands).
 - [ ] Added/updated tests under `tests/` for new behaviour.
 - [ ] Updated docs (`README.md`, `docs/website.md`, `docs/REPOSITORY.md`)

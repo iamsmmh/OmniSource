@@ -1,0 +1,216 @@
+{
+  "name": "OmniSource - Voyager",
+  "identifier": "com.iamsmmh.omnisource.voyager",
+  "apiVersion": "v2",
+  "subtitle": "Beautiful open-source client for Lemmy",
+  "description": "Standalone distribution feed for Voyager, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/voyager.json",
+  "apps": [
+    {
+      "name": "Voyager",
+      "bundleIdentifier": "app.vger.voyager",
+      "developerName": "aeharding",
+      "subtitle": "Beautiful open-source client for Lemmy",
+      "localizedDescription": "Voyager is a free and open-source client for Lemmy and PieFed with an iOS-native feel — swipe gestures, haptics, infinite scroll, rich markdown support, multi-account switching and deep theming. The same project powers the official Voyager App Store release; this feed tracks the developer's own GitHub build.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Voyager.webp",
+      "tintColor": "4083BD",
+      "category": "social",
+      "version": "2.49.0",
+      "versionDate": "2026-09-06",
+      "versionDescription": "Voyager 2.49.0 | Voyager-iOS-2.49.0\n\n## 🚀 Features\n\n- feat: enable rich editor by default\n   - PR: #2352\n\n## 🐛 Fixes\n\n- fix: show two column setting in desktop app\n   - PR: #2346\n- fix: stabilize navigation after ionic v9 upgrade\n   - PR: #2348\n- fix: preserve tab state during route transitions\n   - PR: #2349\n- fix: prevent random community transition flicker\n   - PR: #2353\n\n## 📝 Other Changes\n\n- chore: upgrade to ionic v9\n   - PR: #2347\n- test: expand provider matrix to comment threads, feed and search\n   - PR: #2321\n- chore: upgrade threadiverse to 0.21.2\n   - PR: #2350\n- chore: upgrade dependencies\n   - PR: #2351",
+      "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
+      "size": 8216630,
+      "versions": [
+        {
+          "version": "2.49.0",
+          "date": "2026-09-06",
+          "localizedDescription": "Voyager 2.49.0 | Voyager-iOS-2.49.0\n\n## 🚀 Features\n\n- feat: enable rich editor by default\n   - PR: #2352\n\n## 🐛 Fixes\n\n- fix: show two column setting in desktop app\n   - PR: #2346\n- fix: stabilize navigation after ionic v9 upgrade\n   - PR: #2348\n- fix: preserve tab state during route transitions\n   - PR: #2349\n- fix: prevent random community transition flicker\n   - PR: #2353\n\n## 📝 Other Changes\n\n- chore: upgrade to ionic v9\n   - PR: #2347\n- test: expand provider matrix to comment threads, feed and search\n   - PR: #2321\n- chore: upgrade threadiverse to 0.21.2\n   - PR: #2350\n- chore: upgrade dependencies\n   - PR: #2351",
+          "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
+          "size": 8216630,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/aeharding/voyager/releases/tag/2.49.0",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Voyager-Android-2.49.0.apk",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Android-2.49.0.apk",
+              "platform": "android",
+              "architecture": null,
+              "fileType": "APK",
+              "size": 8228595,
+              "sha256": "b164edc7e58b1d283f8f472aaccfabebc51dcf18588014176b18803f7d6e3b34",
+              "downloads": 1429,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-iOS-2.49.0.ipa",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 8216630,
+              "sha256": "3e71607b8a945db67ef82adadcb74f087691b8f02ef2cce522f4be9a49865c87",
+              "downloads": 5,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-Linux-aarch64-2.49.0.AppImage",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-aarch64-2.49.0.AppImage",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "AppImage",
+              "size": 96037384,
+              "sha256": "c9d8db9e3950d6260e27c091ce68d07ca762c7f8050137bbc28e6d6e03b2a71e",
+              "downloads": 2,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-Linux-aarch64-2.49.0.AppImage.zsync",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-aarch64-2.49.0.AppImage.zsync",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "other",
+              "size": 328503,
+              "sha256": "95744a7803c4c0a0320e2fa46d32401fc17c40f717187d863594944eafaf7f36",
+              "downloads": 2,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "Voyager-Linux-aarch64-2.49.0.deb",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-aarch64-2.49.0.deb",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "DEB",
+              "size": 23020672,
+              "sha256": "0329d259d25c2711453205b1fb6fa7a771b619f95b433395eda9847c5941d522",
+              "downloads": 2,
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-Linux-aarch64-2.49.0.rpm",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-aarch64-2.49.0.rpm",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "other",
+              "size": 23021869,
+              "sha256": "406d51bee688f6c07669bd942c932cc2f4de813ebaa03304415f14050cd05689",
+              "downloads": 3,
+              "mimeType": "application/x-redhat-package-manager",
+              "installable": false
+            },
+            {
+              "filename": "Voyager-Linux-x86_64-2.49.0.AppImage",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-x86_64-2.49.0.AppImage",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "AppImage",
+              "size": 98007544,
+              "sha256": "a4df58e29d9acc96210da5cb081742225ca6db6f30bd45865c7f368a36b1256f",
+              "downloads": 7,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-Linux-x86_64-2.49.0.AppImage.zsync",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-x86_64-2.49.0.AppImage.zsync",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "other",
+              "size": 335235,
+              "sha256": "20c03c193eff9ae6a2d423275bb163073603b94d517984d16b5413cde3d497af",
+              "downloads": 7,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "Voyager-Linux-x86_64-2.49.0.deb",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-x86_64-2.49.0.deb",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "DEB",
+              "size": 23247416,
+              "sha256": "5c5fcdded828f35ac71e4d6cd4fb98b1bc56803a8deaf6d084fe9ed9f79ba892",
+              "downloads": 2,
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "Voyager-Linux-x86_64-2.49.0.rpm",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Linux-x86_64-2.49.0.rpm",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "other",
+              "size": 23245655,
+              "sha256": "d572c77e6f11801ab687fe3ea795b4a01579fcbf8eed977327f200f2712f388d",
+              "downloads": 3,
+              "mimeType": "application/x-redhat-package-manager",
+              "installable": false
+            },
+            {
+              "filename": "Voyager-Web-2.49.0.zip",
+              "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-Web-2.49.0.zip",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 17721347,
+              "sha256": "338994a83e6c81cedad313b4fe0c8d263f1184291bdba34d7c4443af0778c25f",
+              "downloads": 3,
+              "mimeType": "application/zip",
+              "installable": false
+            }
+          ],
+          "sha256": "3e71607b8a945db67ef82adadcb74f087691b8f02ef2cce522f4be9a49865c87",
+          "downloads": 5
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "voyager",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/aeharding/voyager",
+        "sourceURL": "https://github.com/aeharding/voyager",
+        "verification": {
+          "method": "github-release",
+          "publisher": "aeharding/voyager",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned iOS IPA (Voyager-iOS-<version>.ipa) from the developer's GitHub releases; 2.x targets iOS 15. The release also ships Android (apk) and watch builds which are intentionally not distributed here."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2026-09-06"
+        }
+      }
+    }
+  ],
+  "news": []
+}

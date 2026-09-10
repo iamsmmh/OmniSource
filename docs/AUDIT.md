@@ -89,17 +89,18 @@ download-URL HEAD probes, Discord/Telegram/ntfy/webhook endpoints
 
 | Workflow | Triggers | Permissions | Writes | Role |
 | --- | --- | --- | --- | --- |
-| `sync.yml` | schedule (6 h, `--incremental`) · push (catalog/scripts/site paths) · dispatch | contents | `feeds/`, `apps/`, `README.md`, **Pages deploy** | only scheduled writer; sync → tests → validate → reproducibility → commit → build `_site/` → deploy-pages |
+| `sync.yml` | schedule (6 h, `--incremental`) · push (catalog/scripts/site paths) · dispatch | contents, pages | `feeds/`, `apps/`, `README.md`, published root URLs, **Pages deploy** | only scheduled writer; sync → tests → validate → reproducibility → publish root mirror → commit → build `_site/` → deploy-pages |
 | `validate.yml` | PR · push main · dispatch | read-only | nothing | parallel offline gate: structural validation + reproducibility · unit-test matrix (py3.11/3.12) · ruff + actionlint (cached) |
-| `merge.yml` | `feeds/*.json` changed · dispatch | contents | `feeds/apps.json` | safety net re-deriving the master feed from modular feeds; fails on drift |
+| `merge.yml` | `feeds/*.json` changed · dispatch | contents | `feeds/apps.json` + its published copies | safety net re-deriving the master feed from modular feeds; republishes the root URLs; fails on drift |
 | `health-check.yml` | schedule (daily 03:30) · dispatch | issues | GitHub Issue | HEAD-probes every download URL + mirror, appends one durable issue |
 | `build-uyouenhanced.yml` | dispatch (feed-related) | contents, releases | release asset `uyouenhanced-v<ver>` | builds the uYouEnhanced IPA the catalog consumes → triggers `sync.yml` |
 | `build-tweak.yml` | dispatch (generic tooling) | contents, releases | release asset | generic IPA+deb injector; **unrelated to feed generation** (see §9) |
 
 Concurrency: `sync-publish` (never two writers), `validate-<ref>`,
-`merge-feeds`. `sync.yml` is the single publisher: Pages deploys the `_site/`
-artifact (`actions/upload-pages-artifact`), never the branch — guarded by
-`tests/test_website_shell.py`.
+`merge-feeds`. `sync.yml` is the single publisher: it both mirrors every
+generated URL into the repository root (the branch deployment GitHub serves
+today) and uploads the `_site/` artifact for the Actions deployment path.
+Both are guarded by `tests/test_website_shell.py`.
 
 **Gap (Phase 14):** deploy lives inside `sync.yml`; no independent
 `deploy.yml` with rollback. `health-check.yml` is the health job.
@@ -143,11 +144,12 @@ catalog.json ─┐
 │    Discord / Telegram / ntfy / generic webhook                      │
 └──────────────────────────────────────────────────────────────────────┘
         ▼
-scripts/build_site.py → _site/   (flat URLs, /feeds/, /api/ + .gz,
-                                  sitemap, robots, homepage stats,
-                                  minified CSS, .nojekyll)
+site.py publish_repo_artifacts() → repository root (flat URLs, /api/ + .gz,
+                                  sitemap, robots, .nojekyll, homepage stats)
+site.py build_site()            → _site/ (same URLs + minified CSS, .br)
         ▼
-sync.yml → actions/upload-pages-artifact → deploy-pages → GitHub Pages
+sync.yml → commit root mirror → actions/upload-pages-artifact → deploy-pages
+        → GitHub Pages
 ```
 
 **Idempotence:** `atomic_write_text` skips byte-identical writes; a
@@ -184,8 +186,8 @@ sync.yml → actions/upload-pages-artifact → deploy-pages → GitHub Pages
    intelligence
    docs)
         │
-        ▼  scripts/build_site.py
-  _site/  →  GitHub Pages  →  { /<flat>, /feeds/, /api/ }  →  AltStore ·
+        ▼  src/omnisource/site.py  (root mirror + _site/)
+  GitHub Pages  →  { /<flat>, /feeds/, /api/ }  →  AltStore ·
   SideStore · Feather · ESign · LiveContainer · website · future OmniStore
 ```
 
