@@ -92,14 +92,25 @@
   };
 
   /* ------------------------------------------------------------ data load */
+  // The flat source URLs (/apps.json, /discovery.json) are only assembled
+  // into the deployed site by the build step; when the repository is served
+  // directly (e.g. a local preview without building), those copies do not
+  // exist. Fall back to the canonical organized location under feeds/ so the
+  // catalog keeps loading either way.
+  function fetchFeed(primary, fallback, timeoutMs) {
+    return OS.fetchJSON(primary, timeoutMs).then(function (doc) {
+      return doc != null ? doc : OS.fetchJSON(fallback, timeoutMs);
+    });
+  }
+
   function loadData() {
-    var feed = OS.fetchJSON('apps.json');
+    var feed = fetchFeed('apps.json', 'feeds/apps.json');
     var others = [
       OS.fetchJSON('feeds/health.json', 6000),
       OS.fetchJSON('feeds/updates.json', 6000),
       OS.fetchJSON('feeds/analytics.json', 6000),
       OS.fetchJSON('feeds/verification.json', 6000),
-      OS.fetchJSON('discovery.json', 6000),
+      fetchFeed('discovery.json', 'feeds/discovery.json', 6000),
       OS.fetchJSON('feeds/trending.json', 6000),
       OS.fetchJSON('feeds/related.json', 6000),
       OS.fetchJSON('feeds/reputation.json', 6000),
@@ -755,10 +766,16 @@
           '</div></li>';
       }).join('');
       if (note) note.hidden = true;
-      list.addEventListener('click', function (event) {
-        var trigger = event.target.closest ? event.target.closest('[data-open-app]') : null;
-        if (trigger) Home.openApp(trigger.dataset.openApp);
-      }, { once: true });
+      // Delegate clicks so every "Details" / version chip keeps working
+      // (a { once: true } listener would detach after the first click and
+      // silently stop opening apps).
+      if (!list.dataset.boundTimeline) {
+        list.dataset.boundTimeline = '1';
+        list.addEventListener('click', function (event) {
+          var trigger = event.target.closest ? event.target.closest('[data-open-app]') : null;
+          if (trigger) Home.openApp(trigger.dataset.openApp);
+        });
+      }
     },
 
     renderFooterClients: function () {

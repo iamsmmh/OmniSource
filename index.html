@@ -27,7 +27,7 @@
   <link rel="icon" type="image/png" href="assets/OmniSource.png">
   <link rel="apple-touch-icon" href="assets/OmniSource.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="alternate" type="application/rss+xml" title="OmniSource releases" href="feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="OmniSource releases" href="feeds/feed.xml">
   <!-- Design system -->
   <link rel="preload" href="assets/design-system/tokens.css" as="style">
   <link rel="preload" href="assets/design-system/components.css" as="style">
@@ -85,7 +85,7 @@
         <a href="install/">Install</a>
         <a href="favorites/">Favorites</a>
         <a href="collections/">Collections</a>
-        <a href="feed.xml" title="Combined release feed (RSS)">RSS</a>
+        <a href="feeds/feed.xml" title="Combined release feed (RSS)">RSS</a>
         <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" class="nav-gh">GitHub</a>
       </div>
       <div class="nav-controls">
@@ -360,8 +360,8 @@
             <h2>What&rsquo;s <span class="grad-text">new</span></h2>
           </div>
           <div class="feed-links">
-            <a class="button small" href="updates.json" target="_blank" rel="noopener">JSON timeline</a>
-            <a class="button small" href="feed.xml" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.6"/></svg> RSS feed</a>
+            <a class="button small" href="feeds/updates.json" target="_blank" rel="noopener">JSON timeline</a>
+            <a class="button small" href="feeds/feed.xml" target="_blank" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.6"/></svg> RSS feed</a>
           </div>
         </div>
         <ol class="timeline" id="updatesList" aria-live="polite">
@@ -430,7 +430,7 @@
           <a href="analytics/">Analytics</a>
           <a href="install/">Installation center</a>
           <a href="api/index.json" target="_blank" rel="noopener">API endpoints</a>
-          <a href="feed.xml">Combined RSS</a>
+          <a href="feeds/feed.xml">Combined RSS</a>
         </div>
         <div class="footer-col">
           <h4>Project</h4>
@@ -465,7 +465,7 @@
   </div>
 
   <noscript>
-    <div class="noscript">JavaScript is required to browse the live catalog. You can still <a href="apps.json">open the source feed</a> or use your sideloading client directly.</div>
+    <div class="noscript">JavaScript is required to browse the live catalog. You can still <a href="feeds/apps.json">open the source feed</a> or use your sideloading client directly.</div>
   </noscript>
 </body>
 </html>

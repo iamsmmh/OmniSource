@@ -25,6 +25,16 @@ def dumps(data: Any) -> str:
     return json.dumps(data, separators=(",", ":"), ensure_ascii=False) + "\n"
 
 
+def dumps_pretty(data: Any) -> str:
+    """Serialize ``data`` with newlines and 2-space indentation.
+
+    Reserved for the few human-inspected index documents (currently
+    ``feeds/sources.json``, the repositories/sources list); everything else
+    stays compact because it is served to feed clients four ways.
+    """
+    return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+
+
 def write_json(path: Path, data: Any) -> bool:
     """Atomically write ``data``; return True when the file actually changed."""
     return atomic_write_text(path, dumps(data))
@@ -48,6 +58,7 @@ def atomic_write_many(
     documents: dict[Path, Any],
     *,
     validator: Callable[[Path, Any], None] | None = None,
+    pretty: Callable[[Path], bool] | None = None,
 ) -> list[Path]:
     """Validate and publish a set of JSON documents as one guarded operation.
 
@@ -55,7 +66,8 @@ def atomic_write_many(
     existing bytes are copied to a private backup before replacement; if a
     filesystem error interrupts publication, changed targets are restored.
     This gives the sync engine last-known-good recovery in addition to the
-    per-file atomicity of :func:`write_json`.
+    per-file atomicity of :func:`write_json`. Documents for which ``pretty``
+    returns True are written human-readable (indented) instead of compact.
     """
     if not documents:
         return []
@@ -63,7 +75,7 @@ def atomic_write_many(
     for path, data in sorted(documents.items(), key=lambda item: str(item[0])):
         if validator:
             validator(path, data)
-        payload = dumps(data)
+        payload = dumps_pretty(data) if pretty and pretty(path) else dumps(data)
         json.loads(payload)
         prepared[path] = payload
 

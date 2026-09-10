@@ -2552,7 +2552,8 @@
         'add-to-favorites': 'Add to favorites',
         'remove-from-favorites': 'Remove from favorites',
         'enable-notifications': 'Enable notifications',
-        'disable-notifications': 'Disable notifications'
+        'disable-notifications': 'Disable notifications',
+        'site-title': '${site} — The App Store for Sideloaded iOS'
       },
       es: {
         home: 'Inicio',
@@ -2572,7 +2573,8 @@
         'add-to-favorites': 'Añadir a favoritos',
         'remove-from-favorites': 'Eliminar de favoritos',
         'enable-notifications': 'Activar notificaciones',
-        'disable-notifications': 'Desactivar notificaciones'
+        'disable-notifications': 'Desactivar notificaciones',
+        'site-title': '${site} — La tienda de apps para iOS con sideloading'
       }
     },
 
@@ -2727,9 +2729,10 @@
       const lang = this.translations[this.currentLanguage] || this.translations.en;
       let translation = lang[key] || key;
       
-      // Replace placeholders
+      // Replace ${placeholder} tokens. The pattern is escaped so it matches
+      // the literal token instead of being read as a regexp anchor.
       for (const [placeholder, value] of Object.entries(params)) {
-        translation = translation.replace(new RegExp(`\${placeholder}`, 'g'), value);
+        translation = translation.replace(new RegExp('\\$\\{' + placeholder + '\\}', 'g'), value);
       }
       
       return translation;
@@ -2743,8 +2746,15 @@
         el.textContent = this.t(key, params ? JSON.parse(params) : {});
       });
 
-      // Update document title
-      document.title = this.t('site-title', { site: 'OmniSource' });
+      // Update the document title. Static pages (analytics, status,
+      // compare, install, search and the per-app pages) ship their own
+      // titles, so only the home page gets the generic site title — this
+      // avoids both the literal "site-title" placeholder and clobbering
+      // page-specific titles.
+      const page = document.body && document.body.dataset.page;
+      if (page === 'home') {
+        document.title = this.t('site-title', { site: 'OmniSource' });
+      }
     }
   };
 
