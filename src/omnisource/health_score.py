@@ -203,9 +203,7 @@ def annotate_health_doc(
     totals = health_doc.setdefault("totals", {})
     for status in ("healthy", "warning", "critical"):
         totals[status] = sum(
-            1
-            for item in health_doc.get("apps", [])
-            if isinstance(item, dict) and item.get("healthStatus") == status
+            1 for item in health_doc.get("apps", []) if isinstance(item, dict) and item.get("healthStatus") == status
         )
     if generated_at:
         health_doc["generatedAt"] = generated_at or health_doc.get("generatedAt") or today()

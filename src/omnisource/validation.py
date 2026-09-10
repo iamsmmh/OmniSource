@@ -825,9 +825,7 @@ def validate_doc_shape(
             if known is not None:
                 unknown = [str(s) for s in app_slugs if str(s) not in known]
                 if unknown:
-                    report.error(
-                        f"feeds/collections.json: collection '{slug}' references unknown apps {unknown}"
-                    )
+                    report.error(f"feeds/collections.json: collection '{slug}' references unknown apps {unknown}")
 
 
 # ---------------------------------------------------------------------------

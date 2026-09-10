@@ -339,7 +339,7 @@ def render_compare_page(
     </div>
 
     <table class="cmp-table">
-      <thead><tr><th></th><th>{html.escape(left['name'])}</th><th>{html.escape(right['name'])}</th></tr></thead>
+      <thead><tr><th></th><th>{html.escape(left["name"])}</th><th>{html.escape(right["name"])}</th></tr></thead>
       <tbody>
         {chr(10).join(rows)}
       </tbody>

@@ -189,8 +189,8 @@ def render_collection_page(catalog: Catalog, collection: dict[str, Any]) -> str:
   <main class="shell" id="main" style="padding-top:1.5rem;padding-bottom:3rem">
     <p><a href="../../collections/">← All collections</a> · <a href="../../">Home</a></p>
     <h1 style="font-size:1.7rem">{html.escape(title)}</h1>
-    <p style="opacity:.8">{html.escape(str(collection.get('subtitle') or ''))}</p>
-    <p style="opacity:.7">{html.escape(str(collection.get('description') or ''))}</p>
+    <p style="opacity:.8">{html.escape(str(collection.get("subtitle") or ""))}</p>
+    <p style="opacity:.7">{html.escape(str(collection.get("description") or ""))}</p>
     <div class="col-grid">
       {cards}
     </div>

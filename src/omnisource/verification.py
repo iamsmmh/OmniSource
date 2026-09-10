@@ -77,6 +77,7 @@ def compute_trust_score(
     score = round(source + history + consistency_component + uptime_component + integrity, 1)
     return score, trust_badge(score)
 
+
 # Methods whose publisher is the application's official upstream.
 OFFICIAL_METHODS = frozenset(
     {
