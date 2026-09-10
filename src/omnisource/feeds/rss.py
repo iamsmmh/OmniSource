@@ -71,7 +71,7 @@ def _collect_items(
             items.append(
                 {
                     "title": f"{app.name} v{version}",
-                    "link": f"{base}/{app.slug}.json",
+                    "link": f"{base}/feeds/{app.slug}.json",
                     "guid": guid,
                     "date": _rfc822_date(str(event.get("releaseDate") or "")),
                     "description": str(event.get("changelog") or app.short_description or ""),
@@ -98,7 +98,7 @@ def _collect_items(
             items.append(
                 {
                     "title": f"{app.name} v{version}",
-                    "link": f"{base}/{app.slug}.json",
+                    "link": f"{base}/feeds/{app.slug}.json",
                     "guid": guid,
                     "date": _rfc822_date(str(newest.get("date") or "")),
                     "description": str(newest.get("localizedDescription") or app.short_description or ""),
@@ -171,7 +171,7 @@ def render_rss_feed(
         title=f"{source_name} Updates",
         link=f"{base}/",
         description=source_desc,
-        self_link=f"{base}/feed.xml",
+        self_link=f"{base}/feeds/feed.xml",
         items=items,
     )
 
@@ -191,8 +191,8 @@ def render_app_rss_feed(
     items = _collect_items(catalog, state, limit=limit, slug=slug)
     return _render_channel(
         title=f"{app.name} — Releases",
-        link=f"{base}/{app.slug}.json",
+        link=f"{base}/feeds/{app.slug}.json",
         description=(f"Release feed for {app.name} within {source_name}, curated from official upstream sources."),
-        self_link=f"{base}/{app.slug}.xml",
+        self_link=f"{base}/feeds/{app.slug}.xml",
         items=items,
     )

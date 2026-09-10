@@ -142,7 +142,7 @@ def build_install_doc(
 
     apps = []
     for app in catalog.apps:
-        feed_url = f"{base}/{app.slug}.json"
+        feed_url = f"{base}/feeds/{app.slug}.json"
         apps.append(
             {
                 "slug": app.slug,

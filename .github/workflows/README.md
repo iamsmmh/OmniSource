@@ -48,26 +48,24 @@ build-uyouenhanced.yml   merge.yml (scripts/merge_feeds.py)
    *read repository contents*; each workflow requests more explicitly.
 3. No repository secrets are required — `github.token` covers every case.
 
-## Why the root carries published copies
+## Why `/apps.json` lives at the root
 
 GitHub Pages serves *one* of two things: the branch tree, or the uploaded
-`_site/` artifact. The branch tree is what this repository is currently
-served from, and a file that is not committed does not exist on the web —
-including `/apps.json`, the URL installers register as a source. So
-`src/omnisource/site.py` publishes the generated URLs **twice** from the
-same canonical `feeds/`:
+`_site/` artifact. `/apps.json` — the URL installers register as a source —
+must be committed, because a file that is not committed does not exist on the
+web. The repository root is otherwise kept clean: `feeds/` is the single
+source of truth, and `src/omnisource/site.py` publishes only `/apps.json`,
+the `/api/` mirror (+ `.gz` twins), `sitemap.xml`, `robots.txt`, `.nojekyll`
+and the homepage statistics there:
 
-* `publish_repo_artifacts()` mirrors them into the repository root (flat
-  feeds, `/api/` + `.gz` twins, `catalog.min.json`, `sitemap.xml`,
-  `robots.txt`, `.nojekyll`, homepage statistics). The pipeline calls it at
+* `publish_repo_artifacts()` writes the root surface. The pipeline calls it at
   the end of every run; `scripts/publish_root.py` does the same for manual or
   `merge.yml` runs, and its `--check` mode reports drift.
-* `build_site()` assembles the same URLs into `_site/` (plus minified CSS and
-  optional `.br` twins) for the Actions deployment.
+* `build_site()` assembles the full URL family — including the historical flat
+  feeds — into `_site/` (plus minified CSS and optional `.br` twins) for the
+  Actions deployment.
 
 Copies are byte-identical to `feeds/` — git stores the shared blob once — and
 `scripts/check_reproducible.py` (run by `validate.yml`, `merge.yml` and
 `sync.yml`) fails a rebuild that would change one, so a hand-edited feed can
-never be published. Never delete the root copies to "clean up": doing so
-breaks the installable source URL until the next build, and the drift check
-will fail.
+never be published.

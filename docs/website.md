@@ -3,11 +3,12 @@
 The OmniSource website is a dependency-free static application: HTML5, modern
 CSS and vanilla JavaScript with Web Components — no React/Vue/Angular, no
 framework build step. The hand-maintained page *sources* live at the
-repository root next to the generated feeds. The root is also where the
-generated public URLs are published (`/apps.json`, `/<slug>.json|.xml`,
-`/api/*`, `sitemap.xml`, `robots.txt`), because GitHub Pages is served from
-the branch; `scripts/build_site.py` additionally assembles the same site into
-the `_site/` artifact for the GitHub Actions deployment path.
+repository root next to the generated feeds. The root stays clean: `/apps.json`
+(the installable source URL) and `/api/*` are the only generated JSON published
+there. `scripts/build_site.py` assembles the full site — including the
+historical flat URL family (`/<slug>.json|.xml`, `/feed.xml`, …) — into the
+`_site/` artifact for the GitHub Actions deployment path, so every legacy
+subscriber URL keeps resolving.
 
 ```text
 .  (repository root: site sources)
@@ -25,9 +26,11 @@ the `_site/` artifact for the GitHub Actions deployment path.
 ├── sw.js                    # Service worker: offline shell + stale-while-revalidate feeds
 └── manifest.webmanifest     # PWA manifest with shortcuts (offline installable)
 
-feeds/ holds the canonical generated feeds; the publisher mirrors them at the
-flat historical URLs (/<feed>), /feeds/ and /api/ both in the repository root
-(served by the branch deployment) and inside _site/ (the Actions artifact).
+`feeds/` holds the canonical generated feeds; `api/` is the machine-readable
+mirror. The only feed mirrored at the repository root is `/apps.json`. The
+full flat URL family (every `<slug>.json`/`<slug>.xml`, `feed.xml`, …) is
+assembled into `_site/` by the build step, so the Actions artifact serves both
+the organized `/feeds/` and the historical flat URLs.
 ```
 
 The shared design system (`assets/design-system/`: `tokens.css`,
@@ -72,14 +75,15 @@ The interface renders everything from those files at runtime.
 From the repository root:
 
 ```bash
-make publish  # refresh the root mirror (what the branch deployment serves)
+make publish  # refresh /apps.json + the api/ mirror at the repository root
 make site     # assemble _site/ (flat feed URLs, sitemap.xml, robots.txt, API mirror)
 make serve    # preview on port 8000
 ```
 
-A quick preview of the branch-served site is `python3 -m http.server 8000`
-from the repository root; `make serve` previews the assembled `_site/`
-artifact. Both serve the same pages and URLs.
+`make serve` previews the assembled `_site/` artifact — the deployment shape
+with the full URL family. A branch-style preview (`python3 -m http.server 8000`
+from the repository root) serves the pages plus `/apps.json` and `/feeds/`,
+which is enough to browse the catalog.
 
 Keep the website dependency-free so GitHub Pages remains fast, portable,
 and simple to maintain.

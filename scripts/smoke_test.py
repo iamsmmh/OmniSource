@@ -15,9 +15,9 @@ contract the website and feed clients depend on:
 ``--root`` serves the repository tree instead of the ``_site/`` artifact —
 that is what GitHub Pages serves while it is configured for a *branch*
 deployment, and it is how the installable source URL
-(https://iamsmmh.github.io/OmniSource/apps.json) is reached. Both modes are
-checked against the same expectations, so the two deployment paths cannot
-drift.
+(https://iamsmmh.github.io/OmniSource/apps.json) is reached. The two modes
+share the same page/API expectations; the flat URL family is fully published
+in ``_site/`` and reduced to ``/apps.json`` at the repository root.
 
 Usage
 -----
@@ -56,7 +56,7 @@ PAGES: list[tuple[str, str]] = [
     ("/favorites/", 'id="favorites-content"'),
     ("/apps/ytlite/", 'class="app-page"'),
     ("/manifest.webmanifest", '"name": "OmniSource'),
-    ("/sw.js", "omnisource-v6"),
+    ("/sw.js", "omnisource-v7"),
     ("/sitemap.xml", "<urlset"),
     ("/robots.txt", "User-agent"),
 ]
@@ -273,11 +273,16 @@ def main(argv: list[str] | None = None) -> int:
                 failures.append(f"{path}: missing marker {marker!r}")
 
         for name in FEEDS:
-            # The /api/ mirror is JSON-only; XML feeds live at the flat and
-            # organized families but not under /api/.
-            families = [f"/{name}", f"/feeds/{name}"]
+            # The /api/ mirror is JSON-only; XML feeds live at the organized
+            # family but not under /api/. The flat family is only guaranteed
+            # for /apps.json at the repository root (the assembled _site/
+            # artifact publishes every flat URL), so the other flat URLs are
+            # checked in build mode only.
+            families = [f"/feeds/{name}"]
             if name.endswith(".json"):
                 families.append(f"/api/{name}")
+            if name == "apps.json" or not args.root:
+                families.append(f"/{name}")
             for path in families:
                 status, body = fetch(server.base + path)
                 checked += 1
@@ -285,17 +290,11 @@ def main(argv: list[str] | None = None) -> int:
                     failures.append(f"{path}: HTTP {status}")
 
         if args.root:
-            # Every published flat URL, API document and route alias must be
-            # reachable — this is the exact surface installers and clients hit.
-            flat = sorted(
-                path.name
-                for path in (ROOT / "feeds").glob("*")
-                if path.suffix in {".json", ".xml"} and path.name != "state.json"
-            )
+            # The root carries only /apps.json plus the API mirror, sitemap
+            # and robots — this is the exact surface installers and clients
+            # hit when the branch itself is served.
             published = [
-                *flat,
-                "catalog.min.json",
-                "catalog.min.json.gz",
+                "apps.json",
                 "sitemap.xml",
                 "robots.txt",
                 ".nojekyll",
@@ -326,8 +325,8 @@ def main(argv: list[str] | None = None) -> int:
                 failures.append(f"{page}: missing id #{ref} used by its renderer")
 
         # The sources.json repositories index must be human-readable now.
-        sources = json.loads((site_root / "sources.json").read_text(encoding="utf-8"))
-        raw = (site_root / "sources.json").read_text(encoding="utf-8")
+        sources = json.loads((site_root / "feeds" / "sources.json").read_text(encoding="utf-8"))
+        raw = (site_root / "feeds" / "sources.json").read_text(encoding="utf-8")
         if "\n  " not in raw:
             failures.append("sources.json is not indented (still one long line)")
         if sources.get("count") != len(sources.get("sources", [])):

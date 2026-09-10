@@ -391,8 +391,8 @@ def render_app_page(
     duplicate = group_for_app(duplicates_doc, app.slug)
 
     icon_url = f"{base}/assets/{app.icon}"
-    feed_url = f"{base}/{app.slug}.json"
-    rss_url = f"{base}/{app.slug}.xml"
+    feed_url = f"{base}/feeds/{app.slug}.json"
+    rss_url = f"{base}/feeds/{app.slug}.xml"
     page_url = f"{base}/apps/{app.slug}/"
     download_url = str(newest.get("downloadURL") or app.raw.get("downloadURL") or "")
     screenshots = [url for url in app.screenshots if str(url).startswith(("http://", "https://"))]
@@ -565,7 +565,7 @@ def render_app_page(
         f'        <a class="button" href="{html.escape(rss_url)}" target="_blank" rel="noopener">App RSS</a>\n',
         source_button,
         f'        <a class="button" href="{upstream_url}" target="_blank" rel="noopener">Upstream</a>\n',
-        f'        <a class="button" href="{html.escape(base)}/discovery.json" '
+        f'        <a class="button" href="{html.escape(base)}/feeds/discovery.json" '
         'target="_blank" rel="noopener">Discovery catalog</a>\n',
         f'        <a class="button" href="{html.escape(base)}/compare/?left={html.escape(app.slug)}" '
         'target="_blank" rel="noopener">Compare with another app</a>\n',

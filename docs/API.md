@@ -6,7 +6,7 @@ pipeline (`scripts/omnisource.py`) and published at three URL families:
 | Family | URL | Purpose |
 | --- | --- | --- |
 | Canonical | `https://iamsmmh.github.io/OmniSource/feeds/<file>.json` | generated copy in the repository |
-| Flat (legacy) | `https://iamsmmh.github.io/OmniSource/<file>.json` | existing subscribes / quick links |
+| Flat (legacy) | `https://iamsmmh.github.io/OmniSource/<file>.json` | assembled into `_site/` for existing subscribers / quick links |
 | API | `https://iamsmmh.github.io/OmniSource/api/<file>.json` | machine consumers (future mobile app) |
 
 All documents are UTF-8 JSON, regenerated automatically, and never edited by
@@ -14,10 +14,11 @@ hand. A gzip-compressed twin (`*.json.gz`) is published alongside each API
 document for consumers that want the smallest payload. The endpoint manifest
 lives at `api/index.json`.
 
-Every URL above is committed: GitHub Pages serves this repository from the
-branch, so the flat and `/api/` copies are published into the repository root
-by the pipeline (`scripts/publish_root.py` refreshes or verifies them). The
-copies are byte-identical to their `feeds/` originals — if a URL 404s, run
+The repository root commits only `/apps.json` (the installable source URL) and
+the `/api/` mirror — byte-identical to their `feeds/` originals. The full flat
+URL family is assembled into the `_site/` artifact by `scripts/build_site.py`
+for the GitHub Actions deployment. `scripts/publish_root.py` refreshes or
+verifies the root surface — if a URL 404s, run
 `python3 scripts/publish_root.py` and commit the result.
 
 ```json
