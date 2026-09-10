@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 22,
+  "count": 28,
   "weights": {
     "bundle": 0.55,
     "category": 0.2,
@@ -24,12 +24,38 @@
         ]
       },
       {
+        "slug": "spotube",
+        "name": "Spotube",
+        "category": "music",
+        "developer": "KRTirtho",
+        "bundleId": "oss.krtirtho.spotube.stable",
+        "version": "5.1.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
         "slug": "maxmusic",
         "name": "MaxMusic",
         "category": "music",
         "developer": "Mark02-2012",
         "bundleId": "com.google.ios.youtubemusic",
-        "version": "9.35.2",
+        "version": "9.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "jellify",
+        "name": "Jellify",
+        "category": "music",
+        "developer": "anultravioletaurora",
+        "bundleId": "com.cosmonautical.jellify",
+        "version": "1.2.10",
         "score": 0.2333,
         "reasons": [
           "Same category (music)",
@@ -646,10 +672,23 @@
         "category": "music",
         "developer": "Mark02-2012",
         "bundleId": "com.google.ios.youtubemusic",
-        "version": "9.35.2",
+        "version": "9.36.1",
         "score": 0.7833,
         "reasons": [
           "Same bundle identifier",
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "spotube",
+        "name": "Spotube",
+        "category": "music",
+        "developer": "KRTirtho",
+        "bundleId": "oss.krtirtho.spotube.stable",
+        "version": "5.1.2",
+        "score": 0.2333,
+        "reasons": [
           "Same category (music)",
           "Shared tags: music"
         ]
@@ -661,6 +700,19 @@
         "developer": "zarzet",
         "bundleId": "com.zarz.spotiflacAndroid",
         "version": "4.9.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "jellify",
+        "name": "Jellify",
+        "category": "music",
+        "developer": "anultravioletaurora",
+        "bundleId": "com.cosmonautical.jellify",
+        "version": "1.2.10",
         "score": 0.2333,
         "reasons": [
           "Same category (music)",
@@ -696,12 +748,38 @@
         ]
       },
       {
+        "slug": "spotube",
+        "name": "Spotube",
+        "category": "music",
+        "developer": "KRTirtho",
+        "bundleId": "oss.krtirtho.spotube.stable",
+        "version": "5.1.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
         "slug": "spotiflac",
         "name": "SpotiFLAC Mobile",
         "category": "music",
         "developer": "zarzet",
         "bundleId": "com.zarz.spotiflacAndroid",
         "version": "4.9.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "jellify",
+        "name": "Jellify",
+        "category": "music",
+        "developer": "anultravioletaurora",
+        "bundleId": "com.cosmonautical.jellify",
+        "version": "1.2.10",
         "score": 0.2333,
         "reasons": [
           "Same category (music)",
@@ -1078,7 +1156,358 @@
       }
     ],
     "aidoku": [],
-    "provenance": []
+    "provenance": [
+      {
+        "slug": "ppsspp",
+        "name": "PPSSPP",
+        "category": "games",
+        "developer": "Henrik Rydgård",
+        "bundleId": "org.ppsspp.ppsspp",
+        "version": "1.20.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "delta",
+        "name": "Delta",
+        "category": "games",
+        "developer": "Riley Testut",
+        "bundleId": "com.rileytestut.Delta",
+        "version": "1.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      }
+    ],
+    "delta": [
+      {
+        "slug": "provenance",
+        "name": "Provenance",
+        "category": "games",
+        "developer": "Provenance Emu",
+        "bundleId": "org.provenance-emu.provenance",
+        "version": "3.3.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "ppsspp",
+        "name": "PPSSPP",
+        "category": "games",
+        "developer": "Henrik Rydgård",
+        "bundleId": "org.ppsspp.ppsspp",
+        "version": "1.20.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      }
+    ],
+    "ppsspp": [
+      {
+        "slug": "provenance",
+        "name": "Provenance",
+        "category": "games",
+        "developer": "Provenance Emu",
+        "bundleId": "org.provenance-emu.provenance",
+        "version": "3.3.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      },
+      {
+        "slug": "delta",
+        "name": "Delta",
+        "category": "games",
+        "developer": "Riley Testut",
+        "bundleId": "com.rileytestut.Delta",
+        "version": "1.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (games)",
+          "Shared tags: games"
+        ]
+      }
+    ],
+    "yattee": [
+      {
+        "slug": "ytkp",
+        "name": "YTKillerPlus",
+        "category": "photo-video",
+        "developer": "iKarwan",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytkace",
+        "name": "YTKACE",
+        "category": "photo-video",
+        "developer": "itzzace",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.35.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytlite",
+        "name": "YouTubePlus",
+        "category": "photo-video",
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.24.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youpro",
+        "name": "YouPro",
+        "category": "photo-video",
+        "developer": "alibusut",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youmod",
+        "name": "YouMod",
+        "category": "photo-video",
+        "developer": "Tonwalter888",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "uyouenhanced",
+        "name": "uYouEnhanced",
+        "category": "photo-video",
+        "developer": "arichornlover",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.14.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      }
+    ],
+    "streamyfin": [
+      {
+        "slug": "ytkp",
+        "name": "YTKillerPlus",
+        "category": "photo-video",
+        "developer": "iKarwan",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytkace",
+        "name": "YTKACE",
+        "category": "photo-video",
+        "developer": "itzzace",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.35.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytlite",
+        "name": "YouTubePlus",
+        "category": "photo-video",
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.24.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youpro",
+        "name": "YouPro",
+        "category": "photo-video",
+        "developer": "alibusut",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youmod",
+        "name": "YouMod",
+        "category": "photo-video",
+        "developer": "Tonwalter888",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "yattee",
+        "name": "Yattee",
+        "category": "photo-video",
+        "developer": "Yattee",
+        "bundleId": "stream.yattee.app",
+        "version": "1.5.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      }
+    ],
+    "spotube": [
+      {
+        "slug": "ytmusic",
+        "name": "YTMusicUltimate",
+        "category": "music",
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtubemusic",
+        "version": "9.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "spotiflac",
+        "name": "SpotiFLAC Mobile",
+        "category": "music",
+        "developer": "zarzet",
+        "bundleId": "com.zarz.spotiflacAndroid",
+        "version": "4.9.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "maxmusic",
+        "name": "MaxMusic",
+        "category": "music",
+        "developer": "Mark02-2012",
+        "bundleId": "com.google.ios.youtubemusic",
+        "version": "9.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "jellify",
+        "name": "Jellify",
+        "category": "music",
+        "developer": "anultravioletaurora",
+        "bundleId": "com.cosmonautical.jellify",
+        "version": "1.2.10",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      }
+    ],
+    "jellify": [
+      {
+        "slug": "ytmusic",
+        "name": "YTMusicUltimate",
+        "category": "music",
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtubemusic",
+        "version": "9.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "spotube",
+        "name": "Spotube",
+        "category": "music",
+        "developer": "KRTirtho",
+        "bundleId": "oss.krtirtho.spotube.stable",
+        "version": "5.1.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "spotiflac",
+        "name": "SpotiFLAC Mobile",
+        "category": "music",
+        "developer": "zarzet",
+        "bundleId": "com.zarz.spotiflacAndroid",
+        "version": "4.9.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "maxmusic",
+        "name": "MaxMusic",
+        "category": "music",
+        "developer": "Mark02-2012",
+        "bundleId": "com.google.ios.youtubemusic",
+        "version": "9.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      }
+    ]
   },
   "media": {
     "label": "SpotiFLAC & Media Ecosystem",
@@ -1090,7 +1519,7 @@
         "category": "music",
         "developer": "Mark02-2012",
         "bundleId": "com.google.ios.youtubemusic",
-        "version": "9.35.2"
+        "version": "9.36.1"
       },
       {
         "slug": "maxtube",

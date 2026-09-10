@@ -10,7 +10,7 @@ One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · 
 
 <!-- omnisource:stats:start -->
 
-**22** apps · **18** upstream sources · **21** verified · **1** community verified · **22/22** downloads online · last sync **2026-09-10**.
+**28** apps · **24** upstream sources · **27** verified · **1** community verified · **28/28** downloads online · last sync **2026-09-10**.
 
 <!-- omnisource:stats:end -->
 
@@ -104,7 +104,7 @@ The complete generated catalog is below — it refreshes automatically on every 
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-10 · 22 apps · 22/22 downloads reachable._
+_Catalogue last changed 2026-09-10 · 28 apps · 28/28 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -117,7 +117,7 @@ _Catalogue last changed 2026-09-10 · 22 apps · 22/22 downloads reachable._
 | **YouMod** | `com.google.ios.youtube` | `21.36.6` | 2026-09-09 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/youmod.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/youmod.json) | [`youmod.json`](https://iamsmmh.github.io/OmniSource/youmod.json) | [`youmod.xml`](https://iamsmmh.github.io/OmniSource/youmod.xml) |
 | **MaxTube** | `com.google.ios.youtube` | `21.31.3` | 2026-08-03 | 🔵 manual | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/maxtube.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/maxtube.json) | [`maxtube.json`](https://iamsmmh.github.io/OmniSource/maxtube.json) | [`maxtube.xml`](https://iamsmmh.github.io/OmniSource/maxtube.xml) |
 | **YTMusicUltimate** | `com.google.ios.youtubemusic` | `9.36.1` | 2026-09-09 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ytmusic.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ytmusic.json) | [`ytmusic.json`](https://iamsmmh.github.io/OmniSource/ytmusic.json) | [`ytmusic.xml`](https://iamsmmh.github.io/OmniSource/ytmusic.xml) |
-| **MaxMusic** | `com.google.ios.youtubemusic` | `9.35.2` | 2026-09-01 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/maxmusic.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/maxmusic.json) | [`maxmusic.json`](https://iamsmmh.github.io/OmniSource/maxmusic.json) | [`maxmusic.xml`](https://iamsmmh.github.io/OmniSource/maxmusic.xml) |
+| **MaxMusic** | `com.google.ios.youtubemusic` | `9.36.1` | 2026-09-10 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/maxmusic.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/maxmusic.json) | [`maxmusic.json`](https://iamsmmh.github.io/OmniSource/maxmusic.json) | [`maxmusic.xml`](https://iamsmmh.github.io/OmniSource/maxmusic.xml) |
 | **UTM** | `com.utmapp.UTM` | `4.7.5` | 2026-01-03T17:51:54Z | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/utm.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/utm.json) | [`utm.json`](https://iamsmmh.github.io/OmniSource/utm.json) | [`utm.xml`](https://iamsmmh.github.io/OmniSource/utm.xml) |
 | **iNKillerPlus** | `com.burbn.instagram` | `446.0.0` | 2026-09-09 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/inkillerplus.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/inkillerplus.json) | [`inkillerplus.json`](https://iamsmmh.github.io/OmniSource/inkillerplus.json) | [`inkillerplus.xml`](https://iamsmmh.github.io/OmniSource/inkillerplus.xml) |
 | **TTKillerPlus** | `com.zhiliaoapp.musically` | `46.8.0` | 2026-09-09 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ttkillerplus.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ttkillerplus.json) | [`ttkillerplus.json`](https://iamsmmh.github.io/OmniSource/ttkillerplus.json) | [`ttkillerplus.xml`](https://iamsmmh.github.io/OmniSource/ttkillerplus.xml) |
@@ -130,6 +130,12 @@ _Catalogue last changed 2026-09-10 · 22 apps · 22/22 downloads reachable._
 | **SideStore** | `com.SideStore.SideStore` | `0.6.3` | 2026-05-05 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/sidestore.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/sidestore.json) | [`sidestore.json`](https://iamsmmh.github.io/OmniSource/sidestore.json) | [`sidestore.xml`](https://iamsmmh.github.io/OmniSource/sidestore.xml) |
 | **Aidoku** | `app.aidoku.Aidoku` | `0.9` | 2026-09-03 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/aidoku.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/aidoku.json) | [`aidoku.json`](https://iamsmmh.github.io/OmniSource/aidoku.json) | [`aidoku.xml`](https://iamsmmh.github.io/OmniSource/aidoku.xml) |
 | **Provenance** | `org.provenance-emu.provenance` | `3.3.0` | 2026-03-14 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/provenance.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/provenance.json) | [`provenance.json`](https://iamsmmh.github.io/OmniSource/provenance.json) | [`provenance.xml`](https://iamsmmh.github.io/OmniSource/provenance.xml) |
+| **Delta** | `com.rileytestut.Delta` | `1.6` | 2024-07-11 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/delta.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/delta.json) | [`delta.json`](https://iamsmmh.github.io/OmniSource/delta.json) | [`delta.xml`](https://iamsmmh.github.io/OmniSource/delta.xml) |
+| **PPSSPP** | `org.ppsspp.ppsspp` | `1.20.4` | 2026-05-16 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ppsspp.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ppsspp.json) | [`ppsspp.json`](https://iamsmmh.github.io/OmniSource/ppsspp.json) | [`ppsspp.xml`](https://iamsmmh.github.io/OmniSource/ppsspp.xml) |
+| **Yattee** | `stream.yattee.app` | `1.5.1` | 2024-01-28 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/yattee.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/yattee.json) | [`yattee.json`](https://iamsmmh.github.io/OmniSource/yattee.json) | [`yattee.xml`](https://iamsmmh.github.io/OmniSource/yattee.xml) |
+| **Streamyfin** | `com.fredrikburmester.streamyfin` | `0.54.1` | 2026-06-02 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/streamyfin.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/streamyfin.json) | [`streamyfin.json`](https://iamsmmh.github.io/OmniSource/streamyfin.json) | [`streamyfin.xml`](https://iamsmmh.github.io/OmniSource/streamyfin.xml) |
+| **Spotube** | `oss.krtirtho.spotube.stable` | `5.1.2` | 2026-06-05 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/spotube.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/spotube.json) | [`spotube.json`](https://iamsmmh.github.io/OmniSource/spotube.json) | [`spotube.xml`](https://iamsmmh.github.io/OmniSource/spotube.xml) |
+| **Jellify** | `com.cosmonautical.jellify` | `1.2.10` | 2026-09-02 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/jellify.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/jellify.json) | [`jellify.json`](https://iamsmmh.github.io/OmniSource/jellify.json) | [`jellify.xml`](https://iamsmmh.github.io/OmniSource/jellify.xml) |
 
 <!-- omnisource:catalog:end -->
 

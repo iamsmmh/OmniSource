@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 18,
+  "count": 24,
   "levels": [
     "TRUSTED",
     "RELIABLE",
@@ -19,17 +19,18 @@
       "apps": [
         "ytlite",
         "youpro",
+        "ytkp",
         "youmod"
       ],
       "score": 78.17,
       "level": "RELIABLE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 69,
-        "averageLatencyMs": 199.7,
+        "probes": 92,
+        "averageLatencyMs": 219.2,
         "averageUpdateGapDays": 1.0,
         "brokenReleases": 2,
-        "currentlyReachable": "3/3"
+        "currentlyReachable": "4/4"
       }
     },
     {
@@ -39,7 +40,6 @@
       "homepage": "https://repo.ikghd.me",
       "sourceURL": "https://repo.ikghd.me",
       "apps": [
-        "ytkp",
         "inkillerplus",
         "ttkillerplus"
       ],
@@ -47,11 +47,11 @@
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 69,
-        "averageLatencyMs": 278.3,
+        "probes": 46,
+        "averageLatencyMs": 278.5,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
-        "currentlyReachable": "3/3"
+        "currentlyReachable": "2/2"
       }
     },
     {
@@ -369,6 +369,126 @@
         "uptime": 100.0,
         "probes": 23,
         "averageLatencyMs": 183.0,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "yattee/yattee",
+      "source": "yattee/yattee",
+      "publisher": "yattee/yattee",
+      "homepage": "https://github.com/yattee/yattee",
+      "sourceURL": "https://github.com/yattee/yattee",
+      "apps": [
+        "yattee"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "RileyTestut/Delta",
+      "source": "RileyTestut/Delta",
+      "publisher": "RileyTestut/Delta",
+      "homepage": "https://github.com/RileyTestut/Delta",
+      "sourceURL": "https://github.com/RileyTestut/Delta",
+      "apps": [
+        "delta"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "KRTirtho/spotube",
+      "source": "KRTirtho/spotube",
+      "publisher": "KRTirtho/spotube",
+      "homepage": "https://github.com/KRTirtho/spotube",
+      "sourceURL": "https://github.com/KRTirtho/spotube",
+      "apps": [
+        "spotube"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Jellify-Music/App",
+      "source": "Jellify-Music/App",
+      "publisher": "Jellify-Music/App",
+      "homepage": "https://github.com/Jellify-Music/App",
+      "sourceURL": "https://github.com/Jellify-Music/App",
+      "apps": [
+        "jellify"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "hrydgard/ppsspp",
+      "source": "hrydgard/ppsspp",
+      "publisher": "hrydgard/ppsspp",
+      "homepage": "https://github.com/hrydgard/ppsspp",
+      "sourceURL": "https://github.com/hrydgard/ppsspp",
+      "apps": [
+        "ppsspp"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "fredrikburmester/streamyfin",
+      "source": "fredrikburmester/streamyfin",
+      "publisher": "fredrikburmester/streamyfin",
+      "homepage": "https://github.com/fredrikburmester/streamyfin",
+      "sourceURL": "https://github.com/fredrikburmester/streamyfin",
+      "apps": [
+        "streamyfin"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"

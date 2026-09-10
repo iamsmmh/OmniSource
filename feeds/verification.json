@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 22,
-    "verified": 21,
+    "apps": 28,
+    "verified": 27,
     "communityVerified": 1,
     "unverified": 0,
-    "hashVerified": 16,
-    "avgTrustScore": 7.16,
+    "hashVerified": 21,
+    "avgTrustScore": 7.18,
     "trustLevels": [
       "Verified",
       "Trusted",
@@ -53,6 +53,26 @@
         "official upstream (github-release)"
       ],
       "downloadURL": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-sideloaded.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "delta",
+      "name": "Delta",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "RileyTestut/Delta",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
       "trustScore": 6.0,
       "trustBadge": "Community"
     },
@@ -117,6 +137,26 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "jellify",
+      "name": "Jellify",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Jellify-Music/App",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
       "app": "livecontainer",
       "name": "LiveContainer",
       "status": "VERIFIED",
@@ -152,7 +192,7 @@
       "reasons": [
         "official upstream (github-release)"
       ],
-      "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
+      "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa",
       "trustScore": 7.5,
       "trustBadge": "Trusted"
     },
@@ -173,6 +213,26 @@
         "official upstream (github-release)"
       ],
       "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "ppsspp",
+      "name": "PPSSPP",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "hrydgard/ppsspp",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
       "trustScore": 7.5,
       "trustBadge": "Trusted"
     },
@@ -237,6 +297,26 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "spotube",
+      "name": "Spotube",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "KRTirtho/spotube",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/KRTirtho/spotube/releases/download/v5.1.2/Spotube-iOS.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
       "app": "stikdebug",
       "name": "StikDebug",
       "status": "VERIFIED",
@@ -253,6 +333,26 @@
         "official upstream (github-release)"
       ],
       "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "streamyfin",
+      "name": "Streamyfin",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "fredrikburmester/streamyfin",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa",
       "trustScore": 7.5,
       "trustBadge": "Trusted"
     },
@@ -313,6 +413,26 @@
         "official upstream (github-release)"
       ],
       "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "yattee",
+      "name": "Yattee",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "yattee/yattee",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
       "trustScore": 6.0,
       "trustBadge": "Community"
     },
@@ -400,21 +520,21 @@
       "app": "ytkp",
       "name": "YTKillerPlus",
       "status": "VERIFIED",
-      "hash_verified": false,
-      "method": "altstore",
-      "publisher": "iKarwan (repo.ikghd.me)",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "mrdrvt99/YouProEXTRA",
       "checks": {
         "metadata": true,
         "urls": true,
         "fileAvailable": true,
-        "hashVerified": false
+        "hashVerified": true
       },
       "reasons": [
-        "official upstream (altstore)"
+        "official upstream (github-release)"
       ],
-      "downloadURL": "https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa",
-      "trustScore": 6.0,
-      "trustBadge": "Community"
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
     },
     {
       "app": "ytmusic",

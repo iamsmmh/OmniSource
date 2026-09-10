@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 18,
+  "count": 24,
   "feed": {
     "name": "OmniSource",
     "identifier": "com.iamsmmh.omnisource",
@@ -117,6 +117,36 @@
       ]
     },
     {
+      "id": "fredrikburmester/streamyfin",
+      "source": "fredrikburmester/streamyfin",
+      "type": "github",
+      "homepage": "https://github.com/fredrikburmester/streamyfin",
+      "sourceURL": "https://github.com/fredrikburmester/streamyfin",
+      "publisher": "fredrikburmester/streamyfin",
+      "apps": [
+        {
+          "slug": "streamyfin",
+          "name": "Streamyfin",
+          "version": "0.54.1"
+        }
+      ]
+    },
+    {
+      "id": "hrydgard/ppsspp",
+      "source": "hrydgard/ppsspp",
+      "type": "github",
+      "homepage": "https://github.com/hrydgard/ppsspp",
+      "sourceURL": "https://github.com/hrydgard/ppsspp",
+      "publisher": "hrydgard/ppsspp",
+      "apps": [
+        {
+          "slug": "ppsspp",
+          "name": "PPSSPP",
+          "version": "1.20.4"
+        }
+      ]
+    },
+    {
       "id": "https://repo.ikghd.me/repo.json",
       "source": "iKarwan (repo.ikghd.me)",
       "type": "altstore",
@@ -124,11 +154,6 @@
       "sourceURL": "https://repo.ikghd.me",
       "publisher": "iKarwan (repo.ikghd.me)",
       "apps": [
-        {
-          "slug": "ytkp",
-          "name": "YTKillerPlus",
-          "version": "21.36.6"
-        },
         {
           "slug": "inkillerplus",
           "name": "iNKillerPlus",
@@ -153,6 +178,36 @@
           "slug": "ytkace",
           "name": "YTKACE",
           "version": "21.35.3"
+        }
+      ]
+    },
+    {
+      "id": "Jellify-Music/App",
+      "source": "Jellify-Music/App",
+      "type": "github",
+      "homepage": "https://github.com/Jellify-Music/App",
+      "sourceURL": "https://github.com/Jellify-Music/App",
+      "publisher": "Jellify-Music/App",
+      "apps": [
+        {
+          "slug": "jellify",
+          "name": "Jellify",
+          "version": "1.2.10"
+        }
+      ]
+    },
+    {
+      "id": "KRTirtho/spotube",
+      "source": "KRTirtho/spotube",
+      "type": "github",
+      "homepage": "https://github.com/KRTirtho/spotube",
+      "sourceURL": "https://github.com/KRTirtho/spotube",
+      "publisher": "KRTirtho/spotube",
+      "apps": [
+        {
+          "slug": "spotube",
+          "name": "Spotube",
+          "version": "5.1.2"
         }
       ]
     },
@@ -197,7 +252,7 @@
         {
           "slug": "maxmusic",
           "name": "MaxMusic",
-          "version": "9.35.2"
+          "version": "9.36.1"
         }
       ]
     },
@@ -217,6 +272,11 @@
         {
           "slug": "youpro",
           "name": "YouPro",
+          "version": "21.36.6"
+        },
+        {
+          "slug": "ytkp",
+          "name": "YTKillerPlus",
           "version": "21.36.6"
         },
         {
@@ -253,6 +313,21 @@
           "slug": "provenance",
           "name": "Provenance",
           "version": "3.3.0"
+        }
+      ]
+    },
+    {
+      "id": "RileyTestut/Delta",
+      "source": "RileyTestut/Delta",
+      "type": "github",
+      "homepage": "https://github.com/RileyTestut/Delta",
+      "sourceURL": "https://github.com/RileyTestut/Delta",
+      "publisher": "RileyTestut/Delta",
+      "apps": [
+        {
+          "slug": "delta",
+          "name": "Delta",
+          "version": "1.6"
         }
       ]
     },
@@ -328,6 +403,21 @@
           "slug": "itorrent",
           "name": "iTorrent",
           "version": "2.2.0"
+        }
+      ]
+    },
+    {
+      "id": "yattee/yattee",
+      "source": "yattee/yattee",
+      "type": "github",
+      "homepage": "https://github.com/yattee/yattee",
+      "sourceURL": "https://github.com/yattee/yattee",
+      "publisher": "yattee/yattee",
+      "apps": [
+        {
+          "slug": "yattee",
+          "name": "Yattee",
+          "version": "1.5.1"
         }
       ]
     }

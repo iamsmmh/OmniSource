@@ -47,11 +47,11 @@
           "name": "YTKillerPlus",
           "version": "21.36.6",
           "releaseDate": "2026-09-09",
-          "source": "iKarwan (repo.ikghd.me)",
+          "source": "mrdrvt99/YouProEXTRA",
           "developer": "iKarwan",
           "category": "photo-video",
           "status": "stable",
-          "downloadURL": "https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa"
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa"
         },
         {
           "app": "ytkace",
@@ -114,20 +114,20 @@
         {
           "app": "maxmusic",
           "name": "MaxMusic",
-          "version": "9.35.2",
-          "releaseDate": "2026-09-01",
+          "version": "9.36.1",
+          "releaseDate": "2026-09-10",
           "source": "Mark02-2012/MaxMusic",
           "developer": "Mark02-2012",
           "category": "music",
           "status": "stable",
-          "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa"
+          "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa"
         }
       ],
       "recommended": {
-        "app": "ytmusic",
-        "name": "YTMusicUltimate",
+        "app": "maxmusic",
+        "name": "MaxMusic",
         "version": "9.36.1",
-        "reason": "Newest version available (9.36.1, released 2026-09-09)"
+        "reason": "Newest version available (9.36.1, released 2026-09-10)"
       },
       "replacementRisk": true
     }
@@ -214,10 +214,10 @@
       "groupKey": "com.google.ios.youtubemusic",
       "type": "bundle-id",
       "recommended": {
-        "app": "ytmusic",
-        "name": "YTMusicUltimate",
+        "app": "maxmusic",
+        "name": "MaxMusic",
         "version": "9.36.1",
-        "reason": "Newest version available (9.36.1, released 2026-09-09)"
+        "reason": "Newest version available (9.36.1, released 2026-09-10)"
       },
       "reason": "2 apps share bundle identifier 'com.google.ios.youtubemusic'"
     },
@@ -225,10 +225,10 @@
       "groupKey": "com.google.ios.youtubemusic",
       "type": "bundle-id",
       "recommended": {
-        "app": "ytmusic",
-        "name": "YTMusicUltimate",
+        "app": "maxmusic",
+        "name": "MaxMusic",
         "version": "9.36.1",
-        "reason": "Newest version available (9.36.1, released 2026-09-09)"
+        "reason": "Newest version available (9.36.1, released 2026-09-10)"
       },
       "reason": "2 apps share bundle identifier 'com.google.ios.youtubemusic'"
     }

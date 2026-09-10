@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PPSSPP — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/ppsspp.json</link>
+    <description>Release feed for PPSSPP within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 12:36:50 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/ppsspp.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>PPSSPP v1.20.4</title>
+      <link>https://iamsmmh.github.io/OmniSource/ppsspp.json</link>
+      <guid isPermaLink="false">ppsspp-1.20.4</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[PPSSPP 1.20.4 | PPSSPP-iOS-v1.20.4
+
+PPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.]]></description>
+      <enclosure url="https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

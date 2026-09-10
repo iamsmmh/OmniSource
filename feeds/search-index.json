@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 22,
+  "count": 28,
   "fuse": {
     "keys": [
       {
@@ -287,7 +287,7 @@
       "bundleId": "com.google.ios.youtubemusic",
       "icon": "assets/MaxMusic.webp",
       "pageURL": "apps/maxmusic/",
-      "version": "9.35.2",
+      "version": "9.36.1",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [
@@ -600,6 +600,162 @@
       "icon": "assets/Provenance.webp",
       "pageURL": "apps/provenance/",
       "version": "3.3.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "delta",
+      "slug": "delta",
+      "name": "Delta",
+      "subtitle": "All-in-one retro emulator by Riley Testut",
+      "shortDescription": "All-in-one retro emulator by Riley Testut",
+      "description": "Delta is an all-in-one classic video game emulator for non-jailbroken iOS devices, developed by Riley Testut as the spiritual successor to GBA4iOS. It emulates the Nintendo systems (Game Boy Color, Game Boy Advance, Nintendo DS, Nintendo 64, SNES, NES) plus Sega Genesis and Game Gear, with save states and cheats, controller and Nintendo DS skin support, iCloud sync of saves, and full MFi/Bluetooth controller support.",
+      "category": "games",
+      "tags": [
+        "games"
+      ],
+      "developer": "Riley Testut",
+      "bundleId": "com.rileytestut.Delta",
+      "icon": "assets/Delta.webp",
+      "pageURL": "apps/delta/",
+      "version": "1.6",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "ppsspp",
+      "slug": "ppsspp",
+      "name": "PPSSPP",
+      "subtitle": "Fast PlayStation Portable (PSP) emulator",
+      "shortDescription": "Fast PlayStation Portable (PSP) emulator",
+      "description": "PPSSPP is a fast and portable PlayStation Portable (PSP) emulator developed by Henrik Rydgård. It runs PSP games at up to double native resolution with anisotropic filtering and shader effects, supports save states anywhere, hardware controllers, and needs no BIOS file thanks to its high-level emulation approach.",
+      "category": "games",
+      "tags": [
+        "games"
+      ],
+      "developer": "Henrik Rydgård",
+      "bundleId": "org.ppsspp.ppsspp",
+      "icon": "assets/PPSSPP.webp",
+      "pageURL": "apps/ppsspp/",
+      "version": "1.20.4",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "yattee",
+      "slug": "yattee",
+      "name": "Yattee",
+      "subtitle": "Privacy-oriented native video player",
+      "shortDescription": "Privacy-oriented native video player",
+      "description": "Yattee is a privacy-oriented, fully native video player for iPhone, iPad and Apple TV. It plays from user-configured Invidious or Piped backends and local video libraries, with SponsorBlock, chapters, background audio, Picture in Picture, subscriptions, and full keyboard and remote control support.",
+      "category": "photo-video",
+      "tags": [
+        "photo-video"
+      ],
+      "developer": "Yattee",
+      "bundleId": "stream.yattee.app",
+      "icon": "assets/Yattee.webp",
+      "pageURL": "apps/yattee/",
+      "version": "1.5.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "streamyfin",
+      "slug": "streamyfin",
+      "name": "Streamyfin",
+      "subtitle": "Open-source Jellyfin client for iOS",
+      "shortDescription": "Open-source Jellyfin client for iOS",
+      "description": "Streamyfin is an open-source Jellyfin client for iPhone and iPad built with Expo and React Native. Stream your Jellyfin server's library with offline downloads, background audio, Picture in Picture, Chromecast, intro skipping, live TV, and an optional MPV-based player — no server plugins required.",
+      "category": "photo-video",
+      "tags": [
+        "photo-video"
+      ],
+      "developer": "fredrikburmester",
+      "bundleId": "com.fredrikburmester.streamyfin",
+      "icon": "assets/Streamyfin.webp",
+      "pageURL": "apps/streamyfin/",
+      "version": "0.54.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "spotube",
+      "slug": "spotube",
+      "name": "Spotube",
+      "subtitle": "Open-source Spotify music client",
+      "shortDescription": "Open-source Spotify music client",
+      "description": "Spotube is an open-source, cross-platform music streaming client that combines Spotify's metadata — your playlists, albums, liked songs and recommendations — with community audio sources, so you can play your whole Spotify library without ads or telemetry. Includes lyrics and a plugin system for extending playback sources.",
+      "category": "music",
+      "tags": [
+        "music"
+      ],
+      "developer": "KRTirtho",
+      "bundleId": "oss.krtirtho.spotube.stable",
+      "icon": "assets/Spotube.webp",
+      "pageURL": "apps/spotube/",
+      "version": "5.1.2",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "jellify",
+      "slug": "jellify",
+      "name": "Jellify",
+      "subtitle": "Native Jellyfin music player for iOS",
+      "shortDescription": "Native Jellyfin music player for iOS",
+      "description": "Jellify is a free and open-source music player for Jellyfin, built with React Native. Browse and stream your Jellyfin music libraries on iPhone and iPad with a native interface, fast search, playlists, favorites and now-playing controls — available on the App Store and as sideload builds.",
+      "category": "music",
+      "tags": [
+        "music"
+      ],
+      "developer": "anultravioletaurora",
+      "bundleId": "com.cosmonautical.jellify",
+      "icon": "assets/Jellify.webp",
+      "pageURL": "apps/jellify/",
+      "version": "1.2.10",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [

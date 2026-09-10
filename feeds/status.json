@@ -2,35 +2,34 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "sources": 22,
+    "sources": 28,
     "healthy": 18,
     "degraded": 4,
     "unavailable": 0,
-    "unknown": 0
+    "unknown": 6
   },
   "pipeline": {
-    "status": "ok",
+    "status": "degraded",
     "lastBuild": "2026-09-10",
-    "appsTotal": 22,
+    "appsTotal": 28,
     "appsHealthy": 18,
-    "appsFailing": 0
+    "appsFailing": 2
   },
   "providers": [
     {
       "provider": "altstore",
-      "apps": 3,
-      "healthy": 3,
+      "apps": 2,
+      "healthy": 2,
       "unavailable": 0,
       "lastResolvedFrom": {
         "inkillerplus": "altstore:https://repo.ikghd.me/repo.json",
-        "ttkillerplus": "altstore:https://repo.ikghd.me/repo.json",
-        "ytkp": "altstore:https://repo.ikghd.me/repo.json"
+        "ttkillerplus": "altstore:https://repo.ikghd.me/repo.json"
       }
     },
     {
       "provider": "github",
-      "apps": 19,
-      "healthy": 15,
+      "apps": 26,
+      "healthy": 16,
       "unavailable": 0,
       "lastResolvedFrom": {
         "aidoku": "github:Aidoku/Aidoku",
@@ -47,19 +46,26 @@
         "youpro": "github:mrdrvt99/YouProEXTRA",
         "ytlite": "github:mrdrvt99/YouProEXTRA",
         "ytkace": "github:itzzace/ytkace",
+        "ytkp": "github:mrdrvt99/YouProEXTRA",
         "ytmusic": "github:mrdrvt99/YTMusicUltimate",
         "bhtwitter": "github:BandarHL/BHTwitter",
+        "delta": "github:RileyTestut/Delta",
+        "jellify": "github:Jellify-Music/App",
+        "ppsspp": "github:hrydgard/ppsspp",
         "provenance": "github:Provenance-Emu/Provenance",
         "sidestore": "github:SideStore/SideStore",
-        "utm": "github:utmapp/UTM"
+        "spotube": "github:KRTirtho/spotube",
+        "streamyfin": "github:fredrikburmester/streamyfin",
+        "utm": "github:utmapp/UTM",
+        "yattee": "github:yattee/yattee"
       }
     }
   ],
   "deployment": {
     "platform": "GitHub Pages (static)",
     "status": "ok",
-    "reachable": 22,
-    "total": 22
+    "reachable": 28,
+    "total": 28
   },
   "sources": [
     {
@@ -584,7 +590,7 @@
       "latency": 105,
       "latencyMs": 105,
       "checkedAt": "2026-09-07",
-      "lastUpdate": "2026-09-01",
+      "lastUpdate": "2026-09-10",
       "valid": true,
       "detail": "HTTP 302",
       "history": [
@@ -1698,9 +1704,9 @@
       "id": "ytkp",
       "app": "ytkp",
       "name": "YTKillerPlus",
-      "source": "iKarwan (repo.ikghd.me)",
-      "sourceURL": "https://repo.ikghd.me",
-      "type": "altstore",
+      "source": "mrdrvt99/YouProEXTRA",
+      "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+      "type": "github",
       "status": "healthy",
       "reachable": true,
       "latency": 207,
@@ -2001,6 +2007,57 @@
       ]
     },
     {
+      "id": "delta",
+      "app": "delta",
+      "name": "Delta",
+      "source": "RileyTestut/Delta",
+      "sourceURL": "https://github.com/RileyTestut/Delta",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2024-07-11",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "jellify",
+      "app": "jellify",
+      "name": "Jellify",
+      "source": "Jellify-Music/App",
+      "sourceURL": "https://github.com/Jellify-Music/App",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-02",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "ppsspp",
+      "app": "ppsspp",
+      "name": "PPSSPP",
+      "source": "hrydgard/ppsspp",
+      "sourceURL": "https://github.com/hrydgard/ppsspp",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-05-16",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "provenance",
       "app": "provenance",
       "name": "Provenance",
@@ -2205,6 +2262,40 @@
       ]
     },
     {
+      "id": "spotube",
+      "app": "spotube",
+      "name": "Spotube",
+      "source": "KRTirtho/spotube",
+      "sourceURL": "https://github.com/KRTirtho/spotube",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-06-05",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "streamyfin",
+      "app": "streamyfin",
+      "name": "Streamyfin",
+      "source": "fredrikburmester/streamyfin",
+      "sourceURL": "https://github.com/fredrikburmester/streamyfin",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-06-02",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "utm",
       "app": "utm",
       "name": "UTM",
@@ -2305,6 +2396,23 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "yattee",
+      "app": "yattee",
+      "name": "Yattee",
+      "source": "yattee/yattee",
+      "sourceURL": "https://github.com/yattee/yattee",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2024-01-28",
+      "valid": true,
+      "detail": "",
+      "history": []
     }
   ]
 }

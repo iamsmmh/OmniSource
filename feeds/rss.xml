@@ -5,7 +5,7 @@
     <link>https://iamsmmh.github.io/OmniSource/</link>
     <description>OmniSource is a curated, automatically maintained AltStore-compatible iOS app source. Every entry is resolved from the app&#x27;s own official upstream project - GitHub Releases or the developer&#x27;s official AltStore feed - and each download link is re-verified automatically.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2026 11:26:37 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 12:36:50 +0000</lastBuildDate>
     <atom:link href="https://iamsmmh.github.io/OmniSource/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>YouPro v21.36.6</title>
@@ -28,6 +28,17 @@
 > [!WARNING]
 > - 21.34.3+ builds require iOS 17+ now.]]></description>
       <enclosure url="https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>MaxMusic v9.36.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/maxmusic.json</link>
+      <guid isPermaLink="false">maxmusic-9.36.1</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[MaxMusic 9.36.1 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.36.1
+
+**Changed**
+YouTube Music version]]></description>
+      <enclosure url="https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
       <title>YTMusicUltimate v9.36.1</title>
@@ -77,28 +88,27 @@
       <link>https://iamsmmh.github.io/OmniSource/ytkp.json</link>
       <guid isPermaLink="false">ytkp-21.36.6</guid>
       <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[YouTube 21.36.6 | YouTube_21.36_YTKillerPlus_6.5
+      <description><![CDATA[YouTube 21.36.6 | YTKillerPlus_21.36.6_6.1
 
-• v21.34 requires iOS 17 and later now
-• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases
-• Fix save posted gif image saving only first frame in some cases
-• Fix save posted image when multiple imge in a post first image not saved correctly
-• Fix tabs Icon.
-• Fix and improve audio languages select.
-• Updated iPA to newer YouTube v21.34.6.
-• Add POST tab to tab bar.
-• Improve localization &amp; add missing languages.
-• Improve ad blocking on main Feed.
-• Improve Lyrics API speed & accuracy.
-• Improve MP3 audio handling.
-• Improve backup & restore.
-• Improve media extension importing.
-• Improve Shorts auto-skip.
-• Improve Shorts multiple-post handling.
-• Fix OLED keyboard issue on iOS 27.
-• Other fixes & cleanup.
-• Updated iPA to YouTube v21.36]]></description>
-      <enclosure url="https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa" length="0" type="application/octet-stream" />
+### Latest Release, ENJOY!!
+
+- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)
+
+> [!NOTE]
+> - **Sidestore is no longer supported!!.**
+> - **YTUHD** is not included. 4K is available for A16+ devices.
+> - use **YTKACE** for downloading. dev intentionally broke download feature.
+> - - -
+> #### Extra Tweaks:
+> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`
+> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`
+
+> [!WARNING]
+> - Extra tweaks that are bundled may be unstable on newer versions.
+
+> [!WARNING]
+> - 21.34.3+ builds require iOS 17+ now.]]></description>
+      <enclosure url="https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
       <title>YouMod v21.36.6</title>
@@ -308,6 +318,22 @@
 - Source stability fixes and disable option: the issue where sources were causing the app to crash should not happen again, and now you can even disable a source that is broken until it receives an update.
 - Many more things: see [the website](https://aidoku.app/release-notes/) for a more complete list.]]></description>
       <enclosure url="https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>Jellify v1.2.10</title>
+      <link>https://iamsmmh.github.io/OmniSource/jellify.json</link>
+      <guid isPermaLink="false">jellify-1.2.10</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Jellify 1.2.10 | Jellify-1.2.10
+
+Welcome to Jellify 1.2.10
+
+Hey music lovers! I've polished up some underlying bits and have made a key fix to boost stability across the board. Get ready for an even smoother listening experience when you’re exploring your Jellyfin collection!
+
+*   **Android Crash Fixes:** We detected and patched out a crash that was occurring on Android devices, so you can now enjoy uninterrupted music playback no matter how deep you dive into your library.
+*   **Optimized Performance:** Several dependency updates have been implemented behind the scenes to enhance overall app performance and make navigation feel snappier than ever before.
+*   **App General Polish:** We've made various quality-of-life improvements in various components, ensuring Jellify remains robust and reliable for years of listening fun!]]></description>
+      <enclosure url="https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
       <title>YTMusicUltimate v9.35.2</title>
@@ -670,120 +696,6 @@ Thank you for all your feedback and contributions!
 
 **Full Changelog**: https://github.com/claration/Feather/compare/v2.8.2...v2.9.0]]></description>
       <enclosure url="https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>SideStore v0.6.3</title>
-      <link>https://iamsmmh.github.io/OmniSource/sidestore.json</link>
-      <guid isPermaLink="false">sidestore-0.6.3</guid>
-      <pubDate>Tue, 05 May 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[SideStore 0.6.3 | SideStore
-
-# ⚠️**Please Reinstall With [iloader](https://iloader.app/)**⚠️
-If you have updated to iOS 26.4+ and are receiving VPN errors.
-## What's Changed
-* Small fixes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1020
-* Fix expired Discord link in README.md by @Or3nges in https://github.com/SideStore/SideStore/pull/1101
-* Update error codes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1078
-* LocalDevVPN by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1126
-* Sources: Update/Remove Sources from Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1131
-* Adds StikDebug AltSource by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1137
-* Update pairing file help link in alert by @basketshoe in https://github.com/SideStore/SideStore/pull/1147
-* Authentication rework by @hugeBlack in https://github.com/SideStore/SideStore/pull/1151
-* Update Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1152
-* Update trustedapps.json by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1153
-* Update Trusted Sources by @peroka-net in https://github.com/SideStore/SideStore/pull/1160
-* Feature: AppId customization during manual IPA install via "My Apps" screen by @mahee96 in https://github.com/SideStore/SideStore/pull/1158
-* Fix issues profile/afc and use main profile issue by @hugeBlack in https://github.com/SideStore/SideStore/pull/1183
-* feat: add Mona to Trusted Sources by @suprstarrd in https://github.com/SideStore/SideStore/pull/1210
-* Fix widget not working & Only run turn off data shortcut when minimuxer is not ready and below 26.4 by @hugeBlack in https://github.com/SideStore/SideStore/pull/1218
-* LC Source Update by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1253
-
-## New Contributors
-* @Or3nges made their first contribution in https://github.com/SideStore/SideStore/pull/1101
-* @basketshoe made their first contribution in https://github.com/SideStore/SideStore/pull/1147
-* @peroka-net made their first contribution in https://github.com/SideStore/SideStore/pull/1160
-* @suprstarrd made their first contribution in https://github.com/SideStore/SideStore/pull/1210
-
-**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.6.2...0.6.3]]></description>
-      <enclosure url="https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>Provenance v3.3.0</title>
-      <link>https://iamsmmh.github.io/OmniSource/provenance.json</link>
-      <guid isPermaLink="false">provenance-3.3.0</guid>
-      <pubDate>Sat, 14 Mar 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Provenance 3.3.0 | Provenance-3.3.0-iOS
-
-## What's New in 3.3.0
-
-This is a big one. Four months of work since 3.2.1 covering iCloud sync, a completely revamped tvOS interface, video filters, and a ton of core and stability fixes.
-
-### ☁️ iCloud / CloudKit Sync
-- ROMs, save states, BIOS files, and artwork now sync across devices via iCloud
-- Real-time download progress indicators when loading cloud save states
-- Auto BIOS sync on game load when available in iCloud
-- ROM metadata syncs alongside files
-- Artwork syncs after library updates
-- CloudKit records management tab in Settings
-- iCloud upsell UI for new users with empty libraries
-- Sync queue pauses during emulation and resumes after
-
-### 📺 New tvOS UI (Default)
-- Completely redesigned tvOS interface now enabled by default
-- RetroWave-themed side menu with smooth animations
-- Save states browser accessible from the main UI with artwork and core name
-- "View All" saves section with per-system filtering
-- TopShelf v2: recent games and save states with artwork and timestamps
-- Cheats UI in the pause menu
-- Game "More Info" panel
-- Log viewer tab
-- Import status view in side menu
-- Search with persistent history
-- Dozens of focus, navigation, and theming fixes throughout
-
-### 🎨 Video Filters & Shaders
-- Unified filter pipeline works across native and RetroArch cores
-- GB and VHS filters improved
-- Filters accessible from the pause menu
-- RetroArch GLES 3D cores now supported (Vecx/GLiden, etc.)
-- Dolphin shader/filter support
-- PPSSPP filter support
-
-### 🎮 Core & Controller Fixes
-- **RetroArch**: Fixed player index mapping for MFi, PS4, and Xbox controllers; PS4 start/select fixed; 32x controls added; GameCube controller responder added
-- **Mupen64Plus**: Fixed PS4 start button; fixed tvOS scaling and placement; better save error messages
-- **Dolphin**: Fixed Vulkan landscape rendering
-- **GenPluGX**: Added CHD support; added wide-screen GameGear core
-- **PicoDrive**: Fixed crash on unload; fixed 32x controller mapping
-- **FCEUmm**: Fixed start/select button mapping
-- **Mednafen**: Fixed DualShock/DualSense pause/play button mapping
-- **GameBatte / TGDB Dual**: Fixed PSX/Xbox pause/select button mapping
-
-### 🐛 Bug Fixes & Stability
-- Fixed multiple app hangs from main-thread Realm access (moved to background)
-- Fixed crash in pause menu when closing core
-- Fixed potential crash if audio ring buffer init fails
-- Fixed crash in share/import extension
-- Fixed aspect ratio issues in Stella and some other cores
-- Fixed FPS label appearing in screenshots
-- Fixed artwork not refreshing in game library after sync
-- Fixed game importer re-queuing already-imported items
-- Fixed Realm contentless core crash
-- Fixed "Continue" carousel metadata mismatch
-- Skin selector refreshes orientation previews on rotation change
-- ManicSkin/DeltaSkin files can now be opened directly from Safari
-- iPad import status modal clipped layout fixed
-- DSP audio engine fixes
-
-### ⚡ Performance
-- Artwork loading significantly faster
-- Game library UI rendering optimizations (removed unnecessary Observable wrappers)
-- Async tab bar icon loading
-- CloudKit sync deduplication and repeat-lookup fixes
-- Game importer skips MD5 hashing for large non-BIOS files
-
-**Full Changelog**: https://github.com/Provenance-Emu/Provenance/compare/3.2.1...3.3.0]]></description>
-      <enclosure url="https://github.com/Provenance-Emu/Provenance/releases/download/3.3.0/Provenance-3.3.0-iOS.ipa" length="0" type="application/octet-stream" />
     </item>
   </channel>
 </rss>

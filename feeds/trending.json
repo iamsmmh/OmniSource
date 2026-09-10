@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 22,
+  "count": 28,
   "formula": {
     "weights": {
       "recency": 0.4,
@@ -81,6 +81,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "maxmusic",
+      "name": "MaxMusic",
+      "category": "music",
+      "version": "9.36.1",
+      "releaseDate": "2026-09-10",
+      "score": 0.8,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "ytkp",
       "name": "YTKillerPlus",
       "category": "photo-video",
@@ -157,23 +174,6 @@
       "score": 0.7533,
       "signals": {
         "recency": 0.8833,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "maxmusic",
-      "name": "MaxMusic",
-      "category": "music",
-      "version": "9.35.2",
-      "releaseDate": "2026-09-01",
-      "score": 0.74,
-      "signals": {
-        "recency": 0.85,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -202,6 +202,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "maxmusic",
+      "name": "MaxMusic",
+      "category": "music",
+      "version": "9.36.1",
+      "releaseDate": "2026-09-10",
+      "score": 0.8,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "ytlite",
       "name": "YouTubePlus",
       "category": "photo-video",
@@ -329,23 +346,6 @@
       "score": 0.7533,
       "signals": {
         "recency": 0.8833,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "maxmusic",
-      "name": "MaxMusic",
-      "category": "music",
-      "version": "9.35.2",
-      "releaseDate": "2026-09-01",
-      "score": 0.74,
-      "signals": {
-        "recency": 0.85,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -374,6 +374,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "maxmusic",
+      "name": "MaxMusic",
+      "category": "music",
+      "version": "9.36.1",
+      "releaseDate": "2026-09-10",
+      "score": 0.8,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "ytlite",
       "name": "YouTubePlus",
       "category": "photo-video",
@@ -501,23 +518,6 @@
       "score": 0.7533,
       "signals": {
         "recency": 0.8833,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "maxmusic",
-      "name": "MaxMusic",
-      "category": "music",
-      "version": "9.35.2",
-      "releaseDate": "2026-09-01",
-      "score": 0.74,
-      "signals": {
-        "recency": 0.85,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -597,6 +597,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "maxmusic",
+      "name": "MaxMusic",
+      "category": "music",
+      "version": "9.36.1",
+      "releaseDate": "2026-09-10",
+      "score": 0.8,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "ytkp",
       "name": "YTKillerPlus",
       "category": "photo-video",
@@ -682,14 +699,14 @@
       "downloadReachable": true
     },
     {
-      "slug": "maxmusic",
-      "name": "MaxMusic",
+      "slug": "jellify",
+      "name": "Jellify",
       "category": "music",
-      "version": "9.35.2",
-      "releaseDate": "2026-09-01",
-      "score": 0.74,
+      "version": "1.2.10",
+      "releaseDate": "2026-09-02",
+      "score": 0.7467,
       "signals": {
-        "recency": 0.85,
+        "recency": 0.8667,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -746,6 +763,23 @@
         "verification": 0.0
       },
       "verificationLevel": "COMMUNITY VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "delta",
+      "name": "Delta",
+      "category": "games",
+      "version": "1.6",
+      "releaseDate": "2024-07-11",
+      "score": 0.6,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
       "featured": true,
       "downloadReachable": true
     },
@@ -891,6 +925,74 @@
       "category": "games",
       "version": "3.3.0",
       "releaseDate": "2026-03-14",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "ppsspp",
+      "name": "PPSSPP",
+      "category": "games",
+      "version": "1.20.4",
+      "releaseDate": "2026-05-16",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "yattee",
+      "name": "Yattee",
+      "category": "photo-video",
+      "version": "1.5.1",
+      "releaseDate": "2024-01-28",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "streamyfin",
+      "name": "Streamyfin",
+      "category": "photo-video",
+      "version": "0.54.1",
+      "releaseDate": "2026-06-02",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "spotube",
+      "name": "Spotube",
+      "category": "music",
+      "version": "5.1.2",
+      "releaseDate": "2026-06-05",
       "score": 0.4,
       "signals": {
         "recency": 0.0,

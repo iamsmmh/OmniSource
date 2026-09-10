@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-09-10",
   "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
-  "count": 28,
+  "count": 35,
   "updates": [
     {
       "slug": "youpro",
@@ -17,6 +17,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/youpro.xml",
       "status": "stable",
       "shortDescription": "Feature-rich YouTube tweak by alibusut"
+    },
+    {
+      "slug": "maxmusic",
+      "name": "MaxMusic",
+      "version": "9.36.1",
+      "previousVersion": "9.35.2",
+      "date": "2026-09-10",
+      "kind": "updated",
+      "changelog": "MaxMusic 9.36.1 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.36.1\n\n**Changed**\nYouTube Music version",
+      "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MaxMusic.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/maxmusic.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/maxmusic.xml",
+      "status": "stable",
+      "shortDescription": "YTMusicUltimate with extra tweaks"
     },
     {
       "slug": "ytmusic",
@@ -52,11 +67,11 @@
       "slug": "ytkp",
       "name": "YTKillerPlus",
       "version": "21.36.6",
-      "previousVersion": "21.35.3",
+      "previousVersion": "21.36.6",
       "date": "2026-09-09",
       "kind": "updated",
-      "changelog": "YouTube 21.36.6 | YouTube_21.36_YTKillerPlus_6.5\n\n• v21.34 requires iOS 17 and later now\n• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases\n• Fix save posted gif image saving only first frame in some cases\n• Fix save posted image when multiple imge in a post first image not saved correctly\n• Fix tabs Icon.\n• Fix and improve audio languages select.\n• Updated iPA to newer YouTube v21.34.6.\n• Add POST tab to tab bar.\n• Improve localization &amp; add missing languages.\n• Improve ad blocking on main Feed.\n• Improve Lyrics API speed & accuracy.\n• Improve MP3 audio handling.\n• Improve backup & restore.\n• Improve media extension importing.\n• Improve Shorts auto-skip.\n• Improve Shorts multiple-post handling.\n• Fix OLED keyboard issue on iOS 27.\n• Other fixes & cleanup.\n• Updated iPA to YouTube v21.36",
-      "downloadURL": "https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa",
+      "changelog": "YouTube 21.36.6 | YTKillerPlus_21.36.6_6.1\n\n### Latest Release, ENJOY!!\n\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\n\n> [!NOTE]\n> - **Sidestore is no longer supported!!.**\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
       "feedURL": "https://iamsmmh.github.io/OmniSource/ytkp.json",
       "rssURL": "https://iamsmmh.github.io/OmniSource/ytkp.xml",
@@ -137,6 +152,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/aidoku.xml",
       "status": "stable",
       "shortDescription": "Free and open-source manga reader"
+    },
+    {
+      "slug": "jellify",
+      "name": "Jellify",
+      "version": "1.2.10",
+      "previousVersion": "",
+      "date": "2026-09-02",
+      "kind": "new",
+      "changelog": "Jellify 1.2.10 | Jellify-1.2.10\n\nWelcome to Jellify 1.2.10\n\nHey music lovers! I've polished up some underlying bits and have made a key fix to boost stability across the board. Get ready for an even smoother listening experience when you’re exploring your Jellyfin collection!\n\n*   **Android Crash Fixes:** We detected and patched out a crash that was occurring on Android devices, so you can now enjoy uninterrupted music playback no matter how deep you dive into your library.\n*   **Optimized Performance:** Several dependency updates have been implemented behind the scenes to enhance overall app performance and make navigation feel snappier than ever before.\n*   **App General Polish:** We've made various quality-of-life improvements in various components, ensuring Jellify remains robust and reliable for years of listening fun!",
+      "downloadURL": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Jellify.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/jellify.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/jellify.xml",
+      "status": "stable",
+      "shortDescription": "Native Jellyfin music player for iOS"
     },
     {
       "slug": "ytmusic",
@@ -349,6 +379,51 @@
       "shortDescription": "On-device app manager, signer and installer"
     },
     {
+      "slug": "spotube",
+      "name": "Spotube",
+      "version": "5.1.2",
+      "previousVersion": "",
+      "date": "2026-06-05",
+      "kind": "new",
+      "changelog": "Spotube 5.1.2 | Spotube-iOS\n\n### Bug Fixes\n\n- **newpipe**: Fallback to muxed streams if no audio stream is available\n- Dismiss search dropdown and keyboard on submission\n- Custom image helper null exception\n\n**Full Changelog**: https://github.com/KRTirtho/spotube/compare/v5.1.1...v5.1.2",
+      "downloadURL": "https://github.com/KRTirtho/spotube/releases/download/v5.1.2/Spotube-iOS.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Spotube.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/spotube.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/spotube.xml",
+      "status": "stable",
+      "shortDescription": "Open-source Spotify music client"
+    },
+    {
+      "slug": "streamyfin",
+      "name": "Streamyfin",
+      "version": "0.54.1",
+      "previousVersion": "",
+      "date": "2026-06-02",
+      "kind": "new",
+      "changelog": "Streamyfin 0.54.1 | streamyfin-ios\n\n## What's Changed\n\nThis is a fairly substantial release, bringing major improvements to playback, TV support, mobile stability, and build infrastructure. Playback received the most attention, with MPV support on Android and iOS, hardware decoding, improved PiP and subtitle handling, chapter markers, and more reliable watch progress reporting\n\nTV support has also moved forward significantly. Streamyfin is now live on the App Store for tvOS and available for anyone to download, alongside a refreshed TV interface, better focus and navigation handling, Android TV recommendations, tvOS TopShelf support, native Apple controls, and enabled iOS / Apple TV builds\n\nAs usual, thanks to everyone filing issues, testing builds, translating strings, and helping move the project forward!\n\n\n### ✨ Highlights\n- **Streamyfin for Apple TV is now live on the App Store** and available for anyone to download\n- **MPV player on Android & iOS** with hardware decoding and PiP (with subtitles) (#1332), plus native Apple controls (#1411) and MPVKit 0.41 (#1604)\n- **Chapter markers and chapter list** in the player (#1586)\n- **Local network auto-switch** — automatically switches to your local server address (#1334)\n- **TV interface overhaul** — uniform scaling, tvOS TopShelf extension (#1561), Android TV recommendations (#1575), and iOS TV builds enabled (#1422)\n- Setting to **disable auto-play next episode** (#1342)\n- **Autorotate for landscape** (#1265)\n\n### 🎬 Player\n- Caching progress shown in the seek bar (#1376)\n- Progress throttling for MPV (#1366)\n- Fixed progress bar / watch-time reporting (#1611, #1239)\n- SubRip subtitle fixes for MPV (#1375)\n- Stop external subs from auto-selecting when added (#1349)\n- Disable subtitle embedding on iOS simulator (#1544)\n- Don't cache background media-source requests (#1602)\n- Android PiP fixes (#1605, #1628)\n- Keep landscape when opening chapter list on iOS (#1624)\n\n### 📺 TV\n- TV menu/back navigation and overlay focus fixes (#1559, #1558)\n- TV password modal fix (#1598)\n- TV native search component\n\n### 🐛 Fixes\n- Music videos and home videos now show in libraries (#1326)\n- Close modal on Android back button (#1487)\n- Clear stored user on logout (fixes empty home on relaunch) (#1622)\n- Dedupe top people sections (#1623)\n- Correct mimeType/UTI for log export (#1424)\n- Downloads refactor — less prop drilling, improved layout (#1337)\n\n### 🔧 Build & Infra\n- Expo SDK 55 → 56 upgrade (#1594, #1600)\n- iOS 26 / SDK 56 EAS build fixes (#1613)\n- Android MPV Kotlin build fix (#1614)\n- EAS build + auto-submit release workflow (#1616, #1632)\n- Xcode build script (#1296)\n\n### 🌍 Translations\n- Ongoing Crowdin sync; new strings for \"ends at\" and action sheet options; Russian updates (#1474, #1475, #1427)\n\n### 👋 New Contributors\n@quang-tran, @gallyamb, @a-collado, @stevebyatt10, @felixschndr, and @github-actions[bot] made their first contributions.\n\n**Full Changelog**: https://github.com/streamyfin/streamyfin/compare/v0.51.0...v0.54.1",
+      "downloadURL": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Streamyfin.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/streamyfin.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/streamyfin.xml",
+      "status": "stable",
+      "shortDescription": "Open-source Jellyfin client for iOS"
+    },
+    {
+      "slug": "ppsspp",
+      "name": "PPSSPP",
+      "version": "1.20.4",
+      "previousVersion": "",
+      "date": "2026-05-16",
+      "kind": "new",
+      "changelog": "PPSSPP 1.20.4 | PPSSPP-iOS-v1.20.4\n\nPPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.",
+      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/PPSSPP.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ppsspp.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/ppsspp.xml",
+      "status": "stable",
+      "shortDescription": "Fast PlayStation Portable (PSP) emulator"
+    },
+    {
       "slug": "sidestore",
       "name": "SideStore",
       "version": "0.6.3",
@@ -409,6 +484,21 @@
       "shortDescription": "X (Twitter) with no ads, downloads and the chronological timeline"
     },
     {
+      "slug": "delta",
+      "name": "Delta",
+      "version": "1.6",
+      "previousVersion": "",
+      "date": "2024-07-11",
+      "kind": "new",
+      "changelog": "Delta 1.6 | Delta_1_6\n\n## New\n\nApp Icon\n* Brand new legally-compliant app icon (thanks Caroline Moore!)\n* Includes alternative app icons designed by community members:\n* \"Halogenide\" by Sebastiaan de With\n* \"Ketchup\" by Ben McCarthy\n* \"Microchip\" by Sean Fletcher\n\niPad Support\n* Play games full screen on iPad's beautiful display\n* Brand new controller skins designed specifically for iPad (thanks Caroline Moore!)\n* Supports multiple windows in Stage Manager and Split View\n* Automatically pauses games when switching windows (optional)\n\nHandoff\n* Seamlessly switch between iPhone and iPad\n* Continues playing exactly where you left off\n* Also supports Delta on Apple Silicon Macs via Mac App Store\n\nmelonDS 0.9.5\n* Improves DS game compatibility & performance\n* BIOS files are now optional!\n* Supports \"inserting\" GBA games into DS dual-slot\n* Increased Fast Forward speed to 3x (A15 processor or later)\n\nMenu Button Gestures\n* Use gestures while holding menu button to perform quick actions\n* Menu + Horizontal Swipe: Fast Forward\n* Menu + Any Button: Hold Button\n* Menu + Double-Tap: Quick Save\n* Menu + Long-Press: Quick Load\n\nExperimental Features\n* New section in Settings for features by third-party contributors\n* Features are WIP and should be used at user’s discretion\n* Available for Patrons on \"Beta Access\" tier or higher\n\nSave States\n* Sort save states by name\n* View all incompatible screenshots on a separate screen\n* Export save states to import into other emulators\n\n“Display Full Screen” AirPlay Setting\n* Control whether Delta shows games full screen on external displays\n* Disable to use multiple windows on external display with Stage Manager\n\nMisc.\n* Supports Game Mode on iOS 18+\n* Increased DS screen size for default edge-to-edge iPhone landscape skin\n\n## Fixed\n\n* Fixed exporting save file without file extension\n* Fixed interface rotating when playing WarioWare: Twisted!\n* Fixed Pokemon Black & White (2) freezing with C-Gear enabled",
+      "downloadURL": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Delta.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/delta.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/delta.xml",
+      "status": "stable",
+      "shortDescription": "All-in-one retro emulator by Riley Testut"
+    },
+    {
       "slug": "winston",
       "name": "Winston",
       "version": "1.1.5",
@@ -422,6 +512,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/winston.xml",
       "status": "unmaintained",
       "shortDescription": "Open-source Reddit client"
+    },
+    {
+      "slug": "yattee",
+      "name": "Yattee",
+      "version": "1.5.1",
+      "previousVersion": "",
+      "date": "2024-01-28",
+      "kind": "new",
+      "changelog": "Yattee 1.5.1 | Yattee-1.5.1-iOS\n\n## What's Changed\n\n* support for private instances by @stonerl in https://github.com/yattee/yattee/pull/565\n* honour the aspect ratio when resizing by @stonerl in https://github.com/yattee/yattee/pull/562\n* make links in description clickable by @stonerl in https://github.com/yattee/yattee/pull/560\n* make description collapsible by @stonerl in https://github.com/yattee/yattee/pull/559\n* macOS: disable hit testing when not expanded by @stonerl in https://github.com/yattee/yattee/pull/578\n* disable portraitUpsideDown on iPhones by @stonerl in https://github.com/yattee/yattee/pull/569\n* make chapters collapsible and highlight current chapter by @stonerl in https://github.com/yattee/yattee/pull/564\n* more robust regex for chapters from description by @stonerl in https://github.com/yattee/yattee/pull/597\n* Translations update from Weblate\n* Added Persian, Spanish, Turkish and Russian localizations\n* Other changes and improvements\n## New Contributors\n* @stonerl made their first contribution in https://github.com/yattee/yattee/pull/565\n\n**Full Changelog**: https://github.com/yattee/yattee/compare/v1.5...v1.5.1",
+      "downloadURL": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Yattee.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/yattee.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/yattee.xml",
+      "status": "stable",
+      "shortDescription": "Privacy-oriented native video player"
     }
   ]
 }

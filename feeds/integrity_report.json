@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 22,
-    "pass": 16,
-    "warn": 6,
+    "apps": 28,
+    "pass": 21,
+    "warn": 7,
     "fail": 0,
     "rejected": 0
   },
@@ -37,6 +37,24 @@
         "releaseId": "4.4",
         "source": "github",
         "downloadUrl": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-sideloaded.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "delta",
+      "name": "Delta",
+      "asset": {
+        "sha256": null,
+        "size": 87734964,
+        "releaseId": "1.6",
+        "source": "github",
+        "downloadUrl": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -101,6 +119,24 @@
       "status": "pass"
     },
     {
+      "slug": "jellify",
+      "name": "Jellify",
+      "asset": {
+        "sha256": "6e56654ab690f2a4de1cca38ef3e5c73c2fcafe34c65782d7a290fa7c91c0224",
+        "size": 40554164,
+        "releaseId": "1.2.10",
+        "source": "github",
+        "downloadUrl": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "livecontainer",
       "name": "LiveContainer",
       "asset": {
@@ -122,11 +158,11 @@
       "slug": "maxmusic",
       "name": "MaxMusic",
       "asset": {
-        "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
-        "size": 105888307,
-        "releaseId": "9.35.2",
+        "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
+        "size": 106420283,
+        "releaseId": "9.36.1",
         "source": "github",
-        "downloadUrl": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa"
+        "downloadUrl": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -145,6 +181,24 @@
         "releaseId": "21.31.3",
         "source": "github",
         "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "ppsspp",
+      "name": "PPSSPP",
+      "asset": {
+        "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
+        "size": 31124277,
+        "releaseId": "1.20.4",
+        "source": "github",
+        "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -209,6 +263,24 @@
       "status": "pass"
     },
     {
+      "slug": "spotube",
+      "name": "Spotube",
+      "asset": {
+        "sha256": "9ec07f5ff1302567075b3c02cb3a4baac5fa475a65f71a3878f2d78744ba7bc0",
+        "size": 34853093,
+        "releaseId": "5.1.2",
+        "source": "github",
+        "downloadUrl": "https://github.com/KRTirtho/spotube/releases/download/v5.1.2/Spotube-iOS.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "stikdebug",
       "name": "StikDebug",
       "asset": {
@@ -217,6 +289,24 @@
         "releaseId": "3.1.10",
         "source": "github",
         "downloadUrl": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "streamyfin",
+      "name": "Streamyfin",
+      "asset": {
+        "sha256": "706adb7f41b60565c1924deb84f6afb3fe3727dbdf291a3ece934ddb90a178b2",
+        "size": 53931137,
+        "releaseId": "0.54.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -299,6 +389,24 @@
       "status": "warn"
     },
     {
+      "slug": "yattee",
+      "name": "Yattee",
+      "asset": {
+        "sha256": null,
+        "size": 20792685,
+        "releaseId": "1.5.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "youmod",
       "name": "YouMod",
       "asset": {
@@ -356,11 +464,11 @@
       "slug": "ytkp",
       "name": "YTKillerPlus",
       "asset": {
-        "sha256": null,
-        "size": 141108657,
+        "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
+        "size": 142497148,
         "releaseId": "21.36.6",
-        "source": "altstore",
-        "downloadUrl": "https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa"
+        "source": "github",
+        "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -368,7 +476,7 @@
         "digestFormat": true,
         "reachable": true
       },
-      "status": "warn"
+      "status": "pass"
     },
     {
       "slug": "ytlite",

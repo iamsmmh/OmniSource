@@ -1474,6 +1474,378 @@
           "instructions": "Open LiveContainer, choose Sources and paste the URL."
         }
       ]
+    },
+    {
+      "slug": "delta",
+      "name": "Delta",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/delta.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/delta.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/delta.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/delta.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/delta.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/delta.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/delta.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/delta.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/delta.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "ppsspp",
+      "name": "PPSSPP",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ppsspp.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/ppsspp.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/ppsspp.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/ppsspp.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/ppsspp.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/ppsspp.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/ppsspp.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/ppsspp.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/ppsspp.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "yattee",
+      "name": "Yattee",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/yattee.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/yattee.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/yattee.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/yattee.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/yattee.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/yattee.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/yattee.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/yattee.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/yattee.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "streamyfin",
+      "name": "Streamyfin",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/streamyfin.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/streamyfin.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/streamyfin.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/streamyfin.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/streamyfin.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/streamyfin.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/streamyfin.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/streamyfin.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/streamyfin.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "spotube",
+      "name": "Spotube",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/spotube.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/spotube.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/spotube.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/spotube.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/spotube.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/spotube.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/spotube.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/spotube.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/spotube.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "jellify",
+      "name": "Jellify",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/jellify.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/jellify.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/jellify.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/jellify.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/jellify.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/jellify.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/jellify.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/jellify.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/jellify.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
     }
   ]
 }

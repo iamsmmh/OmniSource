@@ -357,8 +357,8 @@
       "status": "stable",
       "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
       "verification": {
-        "method": "altstore",
-        "publisher": "iKarwan (repo.ikghd.me)",
+        "method": "github-release",
+        "publisher": "mrdrvt99/YouProEXTRA",
         "codeSigned": false,
         "checksumPublished": false
       },
@@ -376,7 +376,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me. YouTube 21.34+ requires iOS 17. The mrdrvt99/YouProEXTRA build stays configured as a mirror fallback."
+        "notes": "The developer's own AltStore source (repo.ikghd.me) has been unreachable, so this feed resolves from the ready-to-sideload community build of the official tweak at mrdrvt99/YouProEXTRA. YouTube 21.34+ requires iOS 17. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
       },
       "appPermissions": {
         "entitlements": [
@@ -404,24 +404,15 @@
         }
       },
       "upstream": {
-        "provider": "altstore",
-        "feedURL": "https://repo.ikghd.me/repo.json",
-        "appId": "com.google.ios.youtube",
+        "repo": "mrdrvt99/YouProEXTRA",
+        "tagPrefix": "ytkp-ipa",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 10,
         "keepVersions": 1,
-        "versionFromTag": true,
-        "descriptionTemplate": "YouTube {version} | {label}",
-        "minOSVersion": "17.0"
-      },
-      "fallbackDownloadURLs": [
-        "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa"
-      ],
-      "manualRelease": {
-        "version": "21.35.3",
-        "date": "2026-08-30",
-        "localizedDescription": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\nMirror build kept as a fallback while the developer's own source (repo.ikghd.me) is unreachable.",
-        "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
-        "size": 141939462,
-        "minOSVersion": "17.0"
+        "minOSVersion": "17.0",
+        "descriptionTemplate": "YouTube {version} | {label}"
       }
     },
     {
@@ -1495,6 +1486,297 @@
         "versionFromTag": true,
         "descriptionTemplate": "Provenance {version} | {label}",
         "minOSVersion": "17.0"
+      }
+    },
+    {
+      "slug": "delta",
+      "name": "Delta",
+      "subtitle": "All-in-one retro emulator by Riley Testut",
+      "bundleIdentifier": "com.rileytestut.Delta",
+      "developerName": "Riley Testut",
+      "category": "games",
+      "tintColor": "9564D0",
+      "icon": "Delta.webp",
+      "localizedDescription": "Delta is an all-in-one classic video game emulator for non-jailbroken iOS devices, developed by Riley Testut as the spiritual successor to GBA4iOS. It emulates the Nintendo systems (Game Boy Color, Game Boy Advance, Nintendo DS, Nintendo 64, SNES, NES) plus Sega Genesis and Game Gear, with save states and cheats, controller and Nintendo DS skin support, iCloud sync of saves, and full MFi/Bluetooth controller support.",
+      "screenshots": [],
+      "featured": true,
+      "status": "stable",
+      "upstreamURL": "https://github.com/RileyTestut/Delta",
+      "verification": {
+        "method": "github-release",
+        "publisher": "RileyTestut/Delta",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases. Uses the same bundle identifier as the App Store build of Delta: installing the sideload build replaces the store version. Delta 1.6 targets iOS 14 or newer."
+      },
+      "upstream": {
+        "repo": "RileyTestut/Delta",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Delta {version} | {label}"
+      }
+    },
+    {
+      "slug": "ppsspp",
+      "name": "PPSSPP",
+      "subtitle": "Fast PlayStation Portable (PSP) emulator",
+      "bundleIdentifier": "org.ppsspp.ppsspp",
+      "developerName": "Henrik Rydgård",
+      "category": "games",
+      "tintColor": "457D8F",
+      "icon": "PPSSPP.webp",
+      "localizedDescription": "PPSSPP is a fast and portable PlayStation Portable (PSP) emulator developed by Henrik Rydgård. It runs PSP games at up to double native resolution with anisotropic filtering and shader effects, supports save states anywhere, hardware controllers, and needs no BIOS file thanks to its high-level emulation approach.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/hrydgard/ppsspp",
+      "verification": {
+        "method": "github-release",
+        "publisher": "hrydgard/ppsspp",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "12.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official release IPA (PPSSPP-iOS-<version>.ipa) from the developer's GitHub releases, with Metal rendering via the bundled MoltenVK. The upstream CMake config sets the iOS deployment target to 12.0. The same release page also ships a jailbreak .deb package."
+      },
+      "upstream": {
+        "repo": "hrydgard/ppsspp",
+        "tagPrefix": "v",
+        "assetNamePattern": "^PPSSPP-iOS-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "12.0",
+        "descriptionTemplate": "PPSSPP {version} | {label}"
+      }
+    },
+    {
+      "slug": "yattee",
+      "name": "Yattee",
+      "subtitle": "Privacy-oriented native video player",
+      "bundleIdentifier": "stream.yattee.app",
+      "developerName": "Yattee",
+      "category": "photo-video",
+      "tintColor": "4C86DE",
+      "icon": "Yattee.webp",
+      "localizedDescription": "Yattee is a privacy-oriented, fully native video player for iPhone, iPad and Apple TV. It plays from user-configured Invidious or Piped backends and local video libraries, with SponsorBlock, chapters, background audio, Picture in Picture, subscriptions, and full keyboard and remote control support.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/yattee/yattee",
+      "verification": {
+        "method": "github-release",
+        "publisher": "yattee/yattee",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official iOS IPA (Yattee-<version>-iOS.ipa) from the developer's GitHub releases. Yattee 1.5.1 targets iOS 14 or newer. The same release ships separate macOS and tvOS builds which are not distributed here."
+      },
+      "upstream": {
+        "repo": "yattee/yattee",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Yattee-[0-9.]+-iOS\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Yattee {version} | {label}"
+      }
+    },
+    {
+      "slug": "streamyfin",
+      "name": "Streamyfin",
+      "subtitle": "Open-source Jellyfin client for iOS",
+      "bundleIdentifier": "com.fredrikburmester.streamyfin",
+      "developerName": "fredrikburmester",
+      "category": "photo-video",
+      "tintColor": "BF7BF2",
+      "icon": "Streamyfin.webp",
+      "localizedDescription": "Streamyfin is an open-source Jellyfin client for iPhone and iPad built with Expo and React Native. Stream your Jellyfin server's library with offline downloads, background audio, Picture in Picture, Chromecast, intro skipping, live TV, and an optional MPV-based player — no server plugins required.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/fredrikburmester/streamyfin",
+      "verification": {
+        "method": "github-release",
+        "publisher": "fredrikburmester/streamyfin",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.4",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned CI IPA (streamyfin-ios.ipa) built by the developer's GitHub release pipeline. Requires a Jellyfin server to connect to. The streamyfin-ios-tv.ipa asset in the same release is a separate Apple TV build and is intentionally not distributed here."
+      },
+      "upstream": {
+        "repo": "fredrikburmester/streamyfin",
+        "tagPrefix": "v",
+        "assetNamePattern": "^streamyfin-ios\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.4",
+        "descriptionTemplate": "Streamyfin {version} | {label}"
+      }
+    },
+    {
+      "slug": "spotube",
+      "name": "Spotube",
+      "subtitle": "Open-source Spotify music client",
+      "bundleIdentifier": "oss.krtirtho.spotube.stable",
+      "developerName": "KRTirtho",
+      "category": "music",
+      "tintColor": "207AB7",
+      "icon": "Spotube.webp",
+      "localizedDescription": "Spotube is an open-source, cross-platform music streaming client that combines Spotify's metadata — your playlists, albums, liked songs and recommendations — with community audio sources, so you can play your whole Spotify library without ads or telemetry. Includes lyrics and a plugin system for extending playback sources.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/KRTirtho/spotube",
+      "verification": {
+        "method": "github-release",
+        "publisher": "KRTirtho/spotube",
+        "codeSigned": false,
+        "checksumPublished": true
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official release IPA (Spotube-iOS.ipa, stable flavor) built by the developer's release pipeline and published with SHA-256/MD5 checksum files. It does not conflict with the official Spotify app. Android and desktop builds ship in the same release."
+      },
+      "upstream": {
+        "repo": "KRTirtho/spotube",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Spotube-iOS\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Spotube {version} | {label}"
+      }
+    },
+    {
+      "slug": "jellify",
+      "name": "Jellify",
+      "subtitle": "Native Jellyfin music player for iOS",
+      "bundleIdentifier": "com.cosmonautical.jellify",
+      "developerName": "anultravioletaurora",
+      "category": "music",
+      "tintColor": "19AFC8",
+      "icon": "Jellify.webp",
+      "localizedDescription": "Jellify is a free and open-source music player for Jellyfin, built with React Native. Browse and stream your Jellyfin music libraries on iPhone and iPad with a native interface, fast search, playlists, favorites and now-playing controls — available on the App Store and as sideload builds.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Jellify-Music/App",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Jellify-Music/App",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.4",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA (Jellify-<version>.ipa) from the developer's GitHub releases. Requires a Jellyfin server to connect to. Android builds ship in the same release."
+      },
+      "upstream": {
+        "repo": "Jellify-Music/App",
+        "assetNamePattern": "^Jellify-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.4",
+        "descriptionTemplate": "Jellify {version} | {label}"
       }
     }
   ]

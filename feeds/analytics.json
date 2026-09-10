@@ -3,20 +3,20 @@
   "generatedAt": "2026-09-10",
   "lastSync": "2026-09-10",
   "totals": {
-    "apps": 22,
-    "sources": 18,
-    "verifiedApps": 21,
+    "apps": 28,
+    "sources": 24,
+    "verifiedApps": 27,
     "communityVerifiedApps": 1,
     "unverifiedApps": 0,
-    "hashVerifiedApps": 16,
-    "verified": 21,
+    "hashVerifiedApps": 21,
+    "verified": 27,
     "community_verified": 1,
     "unverified": 0,
-    "featuredApps": 5,
-    "downloadsReachable": 22,
+    "featuredApps": 6,
+    "downloadsReachable": 28,
     "deadLinks": 0,
     "newAppsThisWeek": 2,
-    "updatedAppsThisWeek": 7,
+    "updatedAppsThisWeek": 8,
     "clientsSupported": 5
   },
   "newThisWeek": [
@@ -45,6 +45,14 @@
       "previousVersion": "21.24.3",
       "date": "2026-09-10",
       "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa"
+    },
+    {
+      "slug": "maxmusic",
+      "name": "MaxMusic",
+      "version": "9.36.1",
+      "previousVersion": "9.35.2",
+      "date": "2026-09-10",
+      "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa"
     },
     {
       "slug": "inkillerplus",
@@ -82,9 +90,9 @@
       "slug": "ytkp",
       "name": "YTKillerPlus",
       "version": "21.36.6",
-      "previousVersion": "21.35.3",
+      "previousVersion": "21.36.6",
       "date": "2026-09-09",
-      "downloadURL": "https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa"
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa"
     },
     {
       "slug": "ttkillerplus",
@@ -98,7 +106,11 @@
   "topCategories": [
     {
       "category": "photo-video",
-      "count": 7
+      "count": 9
+    },
+    {
+      "category": "music",
+      "count": 5
     },
     {
       "category": "social",
@@ -109,15 +121,11 @@
       "count": 4
     },
     {
-      "category": "music",
+      "category": "games",
       "count": 3
     },
     {
       "category": "developer-tools",
-      "count": 1
-    },
-    {
-      "category": "games",
       "count": 1
     },
     {
@@ -130,7 +138,7 @@
     }
   ],
   "verification": {
-    "VERIFIED": 21,
+    "VERIFIED": 27,
     "COMMUNITY VERIFIED": 1,
     "UNVERIFIED": 0
   },
@@ -143,6 +151,11 @@
     {
       "slug": "bhtwitter",
       "name": "BHTwitter",
+      "status": "VERIFIED"
+    },
+    {
+      "slug": "delta",
+      "name": "Delta",
       "status": "VERIFIED"
     },
     {
@@ -161,6 +174,11 @@
       "status": "VERIFIED"
     },
     {
+      "slug": "jellify",
+      "name": "Jellify",
+      "status": "VERIFIED"
+    },
+    {
       "slug": "livecontainer",
       "name": "LiveContainer",
       "status": "VERIFIED"
@@ -174,27 +192,17 @@
       "slug": "maxtube",
       "name": "MaxTube",
       "status": "VERIFIED"
-    },
-    {
-      "slug": "provenance",
-      "name": "Provenance",
-      "status": "VERIFIED"
-    },
-    {
-      "slug": "sidestore",
-      "name": "SideStore",
-      "status": "VERIFIED"
     }
   ],
   "history": [
     {
       "date": "2026-09-10",
-      "apps": 22,
-      "sources": 18,
-      "verified": 21,
+      "apps": 28,
+      "sources": 24,
+      "verified": 27,
       "deadLinks": 0,
       "newThisWeek": 2,
-      "updatedThisWeek": 7
+      "updatedThisWeek": 8
     }
   ]
 }

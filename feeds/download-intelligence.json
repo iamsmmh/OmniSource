@@ -5,7 +5,7 @@
   "summary": {
     "averageAvailability": 100.0,
     "averageResponseTimeMs": 223.1,
-    "mirrorCount": 24,
+    "mirrorCount": 29,
     "probes": 506
   },
   "apps": [
@@ -61,12 +61,10 @@
       "availability": 100.0,
       "probes": 23,
       "averageLatencyMs": 278.1,
-      "mirrorCount": 2,
+      "mirrorCount": 1,
       "releaseConsistency": 0.0,
-      "primaryURL": "https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa",
-      "fallbackURLs": [
-        "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa"
-      ]
+      "primaryURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
+      "fallbackURLs": []
     },
     {
       "slug": "ytkace",
@@ -120,7 +118,7 @@
       "averageLatencyMs": 206.3,
       "mirrorCount": 1,
       "releaseConsistency": 0.0,
-      "primaryURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa",
+      "primaryURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa",
       "fallbackURLs": []
     },
     {
@@ -253,6 +251,72 @@
       "mirrorCount": 1,
       "releaseConsistency": 0.0,
       "primaryURL": "https://github.com/Provenance-Emu/Provenance/releases/download/3.3.0/Provenance-3.3.0-iOS.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "delta",
+      "name": "Delta",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "ppsspp",
+      "name": "PPSSPP",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "yattee",
+      "name": "Yattee",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "streamyfin",
+      "name": "Streamyfin",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "spotube",
+      "name": "Spotube",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/KRTirtho/spotube/releases/download/v5.1.2/Spotube-iOS.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "jellify",
+      "name": "Jellify",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
       "fallbackURLs": []
     }
   ]

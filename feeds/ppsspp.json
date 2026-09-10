@@ -1,0 +1,204 @@
+{
+  "name": "OmniSource - PPSSPP",
+  "identifier": "com.iamsmmh.omnisource.ppsspp",
+  "apiVersion": "v2",
+  "subtitle": "Fast PlayStation Portable (PSP) emulator",
+  "description": "Standalone distribution feed for PPSSPP, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/ppsspp.json",
+  "apps": [
+    {
+      "name": "PPSSPP",
+      "bundleIdentifier": "org.ppsspp.ppsspp",
+      "developerName": "Henrik Rydgård",
+      "subtitle": "Fast PlayStation Portable (PSP) emulator",
+      "localizedDescription": "PPSSPP is a fast and portable PlayStation Portable (PSP) emulator developed by Henrik Rydgård. It runs PSP games at up to double native resolution with anisotropic filtering and shader effects, supports save states anywhere, hardware controllers, and needs no BIOS file thanks to its high-level emulation approach.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/PPSSPP.webp",
+      "tintColor": "457D8F",
+      "category": "games",
+      "version": "1.20.4",
+      "versionDate": "2026-05-16",
+      "versionDescription": "PPSSPP 1.20.4 | PPSSPP-iOS-v1.20.4\n\nPPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.",
+      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+      "size": 31124277,
+      "versions": [
+        {
+          "version": "1.20.4",
+          "date": "2026-05-16",
+          "localizedDescription": "PPSSPP 1.20.4 | PPSSPP-iOS-v1.20.4\n\nPPSSPP is a cross-platform PSP emulator. Visit PPSSPP [official website](https://ppsspp.org) for a [full changelog](https://ppsspp.org/index.html#news) as well as the [downloads section](https://ppsspp.org/downloads.html) for other platforms.",
+          "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+          "size": 31124277,
+          "minOSVersion": "12.0",
+          "releaseUrl": "https://github.com/hrydgard/ppsspp/releases/tag/v1.20.4",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "org.ppsspp.ppsspp-dev-latest_v1.20.4_iphoneos-arm.deb",
+              "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/org.ppsspp.ppsspp-dev-latest_v1.20.4_iphoneos-arm.deb",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "DEB",
+              "size": 23412564,
+              "sha256": "a3f888dcba0442b4d34a0ddd859747f4aa267b6249b56f5df6a7c327908371b9",
+              "downloads": 10116,
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "ppsspp-1.20.4.tar.xz",
+              "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/ppsspp-1.20.4.tar.xz",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "other",
+              "size": 60860348,
+              "sha256": "4de21db3105d9d81a465a8a7e78c68ee3c0e0bf6597d1c1d530f7555f3ad8b31",
+              "downloads": 5163,
+              "mimeType": "application/x-xz",
+              "installable": false
+            },
+            {
+              "filename": "PPSSPP-iOS-v1.20.4.ipa",
+              "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 31124277,
+              "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
+              "downloads": 8302,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "PPSSPP-v1.20.4-anylinux-aarch64.AppImage",
+              "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-v1.20.4-anylinux-aarch64.AppImage",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "AppImage",
+              "size": 48581283,
+              "sha256": "18c1d515fd99b0b10ca5fa8cbab192f6d4c9d8a10381e16f5de8fb8f9d39bbe1",
+              "downloads": 5210,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "PPSSPP-v1.20.4-anylinux-aarch64.AppImage.zsync",
+              "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-v1.20.4-anylinux-aarch64.AppImage.zsync",
+              "platform": "linux",
+              "architecture": "arm64",
+              "fileType": "other",
+              "size": 166266,
+              "sha256": "311698f7d176b15fe93f3ad7e0732ce68555877ff62ba507c365ffd5685b74fc",
+              "downloads": 1961,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "PPSSPP-v1.20.4-anylinux-x86_64.AppImage",
+              "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-v1.20.4-anylinux-x86_64.AppImage",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "AppImage",
+              "size": 50689748,
+              "sha256": "661c098e6b7f7610171a57b7c533ce8bba6f2312b71e76d61e850461973eba21",
+              "downloads": 14380,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "PPSSPP-v1.20.4-anylinux-x86_64.AppImage.zsync",
+              "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-v1.20.4-anylinux-x86_64.AppImage.zsync",
+              "platform": "linux",
+              "architecture": "x86_64",
+              "fileType": "other",
+              "size": 173467,
+              "sha256": "e2d4c9f6d238840ac6fc0da4f90769b810dd7760bae776ed5f95771fd45976be",
+              "downloads": 29380,
+              "mimeType": "application/octet-stream",
+              "installable": false
+            },
+            {
+              "filename": "PPSSPP-v1.20.4-Windows-ARM64.zip",
+              "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-v1.20.4-Windows-ARM64.zip",
+              "platform": "windows",
+              "architecture": "arm64",
+              "fileType": "ZIP",
+              "size": 20322129,
+              "sha256": "ba73fe968f06086286174539c4e127e2bd1ec602c2fbd0bc173c5193ded0960c",
+              "downloads": 2376,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "PPSSPP-v1.20.4-Windows-x64.zip",
+              "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-v1.20.4-Windows-x64.zip",
+              "platform": "windows",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 20390334,
+              "sha256": "fbc9cd2f5131b159a92424e5c458c35ce43ba603cdded64dfc98e4bd4f17ff93",
+              "downloads": 9573,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "PPSSPPSDL-macOS-v1.20.4.zip",
+              "downloadUrl": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPPSDL-macOS-v1.20.4.zip",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 37389023,
+              "sha256": "fb32a215861a293c28f641bf47f3164766ba512214025f4457796c8d14242665",
+              "downloads": 5035,
+              "mimeType": "application/zip",
+              "installable": false
+            }
+          ],
+          "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
+          "downloads": 8302
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "ppsspp",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/hrydgard/ppsspp",
+        "sourceURL": "https://github.com/hrydgard/ppsspp",
+        "verification": {
+          "method": "github-release",
+          "publisher": "hrydgard/ppsspp",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "12.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official release IPA (PPSSPP-iOS-<version>.ipa) from the developer's GitHub releases, with Metal rendering via the bundled MoltenVK. The upstream CMake config sets the iOS deployment target to 12.0. The same release page also ships a jailbreak .deb package."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-05-16",
+          "lastUpdatedAt": "2026-05-16"
+        }
+      }
+    }
+  ],
+  "news": []
+}
