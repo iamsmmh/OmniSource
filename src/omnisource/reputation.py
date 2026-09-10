@@ -23,24 +23,17 @@ The document is consumed by the website (badges throughout), the
 
 from __future__ import annotations
 
-from datetime import date, timedelta
 from typing import Any
 
 from omnisource.discovery import source_label
 from omnisource.domain import Catalog, today
+from omnisource.utils.dates import average_update_gap_days as _update_frequency
+from omnisource.utils.dates import version_dates
+from omnisource.utils.health import WINDOW_DAYS
+from omnisource.utils.health import probe_window as _health_window
 
 REPUTATION_SCHEMA_VERSION = 1
-WINDOW_DAYS = 30
 LEVELS = ("TRUSTED", "RELIABLE", "AVERAGE", "EXPERIMENTAL")
-
-
-def _parse_date(value: Any) -> date | None:
-    if not value:
-        return None
-    try:
-        return date.fromisoformat(str(value)[:10])
-    except (TypeError, ValueError):
-        return None
 
 
 def _level_for(score: float) -> str:
@@ -53,50 +46,6 @@ def _level_for(score: float) -> str:
     return "EXPERIMENTAL"
 
 
-def _health_window(state: dict[str, Any]) -> tuple[int, int, float | None]:
-    """Return (total, reachable, average_latency_ms) over the rolling window."""
-    history = state.get("healthHistory") or []
-    if not isinstance(history, list):
-        return 0, 0, None
-    cutoff = date.today() - timedelta(days=WINDOW_DAYS)
-    total = 0
-    reachable = 0
-    latencies: list[int] = []
-    for item in history:
-        if not isinstance(item, dict):
-            continue
-        when = _parse_date(item.get("date"))
-        if when is None or when < cutoff:
-            continue
-        total += 1
-        if item.get("reachable") is True:
-            reachable += 1
-        latency = item.get("latencyMs")
-        if isinstance(latency, (int, float)):
-            latencies.append(int(latency))
-    avg = sum(latencies) / len(latencies) if latencies else None
-    return total, reachable, avg
-
-
-def _update_frequency(state: dict[str, Any], slug: str) -> float:
-    versions = (state.get(slug) or {}).get("versions") or []
-    if not isinstance(versions, list) or len(versions) < 2:
-        return 0.0
-    dates: list[date] = []
-    for v in versions:
-        if isinstance(v, dict):
-            parsed = _parse_date(v.get("date"))
-            if parsed is not None:
-                dates.append(parsed)
-    dates.sort()
-    if len(dates) < 2:
-        return 0.0
-    deltas = [(dates[i] - dates[i - 1]).days for i in range(1, len(dates)) if (dates[i] - dates[i - 1]).days > 0]
-    if not deltas:
-        return 0.0
-    return sum(deltas) / len(deltas)
-
-
 def _broken_releases(state: dict[str, Any], slug: str) -> int:
     broken = (state.get(slug) or {}).get("brokenReleases")
     if isinstance(broken, int):
@@ -104,17 +53,10 @@ def _broken_releases(state: dict[str, Any], slug: str) -> int:
     # Fall back to a heuristic: count the number of times a release was
     # published and then superseded within 48 hours. This is rare but
     # usually indicates a bad release.
-    versions = (state.get(slug) or {}).get("versions") or []
-    if not isinstance(versions, list) or len(versions) < 2:
+    if len(state.get(slug, {}).get("versions") or []) < 2:
         return 0
+    dates = version_dates(state, slug)[::-1]
     rolled = 0
-    dates: list[date] = []
-    for v in versions:
-        if isinstance(v, dict):
-            parsed = _parse_date(v.get("date"))
-            if parsed is not None:
-                dates.append(parsed)
-    dates.sort(reverse=True)
     for i in range(1, len(dates)):
         delta = (dates[i - 1] - dates[i]).days
         if 0 <= delta <= 2:

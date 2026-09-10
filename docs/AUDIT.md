@@ -1,170 +1,302 @@
-# Repository audit
+# Repository audit — Phase 1
 
-*Date:* 2026-09-09 · *Scope:* full repository (`main` @ `dd1a82c` + working
-branch) · *Method:* static analysis of scripts, workflows, schemas, tests,
-generated feeds, website, README.
+*Date:* 2026-09-10 · *Scope:* full repository (`main` @ `01a8f61`, branch
+`arena/01a08a43-omnisource`) · *Method:* static analysis of the Python
+package, scripts, workflows, schemas, tests, generated feeds, website, SDKs
+and docs; automated scan for orphaned scripts, unused imports, unused
+templates/assets, obsolete workflows and unreachable code paths.
 
-Gold rule observed while auditing: `catalog.json` is the only hand-maintained
-data file; everything under `feeds/`, `apps/`, `api/` and the generated README
-blocks is produced by the pipeline. **Nothing in this audit changes that**, and
-all recommendations below are already implemented in the current branch.
+Supersedes the 2026-09-09 audit. Nothing in this audit changed any code —
+it is the report that precedes the production-upgrade phases (2–18).
+
+> **Gold rule (unchanged):** `catalog.json` is the only hand-maintained data
+> file. Everything under `feeds/`, `apps/`, `compare/*/`, `collections/*/`
+> (generated curated pages), the API mirror, `snapshots/` and the generated
+> README blocks is produced by the pipeline and never hand-edited.
 
 ---
 
-## 1. Existing features
+## 1. Dependency map
 
-| Area | Status | Notes |
+The **runtime** (feed generation, validation, site assembly) is deliberately
+**Python 3.11+ standard library only** — no `pip install` in CI, no lockfile
+drift, no third-party code executing with a write-scoped token.
+
+```text
+                    ┌─────────────────────────────┐
+                    │  Entry points (stdlib-only) │
+                    ├─────────────────────────────┤
+ scripts/omnisource.py ──► omnisource.cli ──► omnisource.pipeline
+ scripts/build_site.py  ──► omnisource.site
+ scripts/validate.py    ──► omnisource.validation
+ scripts/smoke_test.py  ──► (self-contained, http.server)
+ scripts/health_check.py ─► (self-contained, stdlib)
+ scripts/merge_feeds.py  ──► (self-contained, stdlib)
+ scripts/check_reproducible.py ─► (self-contained, stdlib)
+ scripts/notify.py      ──► omnisource.notify
+                              │
+                              ▼
+            ┌────────────────────────────────────────────┐
+            │            omnisource (src/)               │
+            │ pipeline ─► providers ─► http              │
+            │          ─► tracking ─► utils.versioning   │
+            │          ─► domain, di, config, constants  │
+            │          ─► feeds/{altstore,rss,updates}   │
+            │          ─► intelligence modules (below)   │
+            ├────────────────────────────────────────────┤
+            │ Intelligence modules (pure functions):     │
+            │ discovery · verification · monitor ·       │
+            │ duplicates · analytics · trending ·        │
+            │ related · reputation · download_intel ·    │
+            │ community · install · search_index ·       │
+            │ compare · screenshots · app_pages ·        │
+            │ notify (webhooks, urllib)                  │
+            └────────────────────────────────────────────┘
+
+ Website (browser, no build step)
+   index.html, compare/, status/, analytics/, install/, search/,
+   collections/, favorites/, apps/<slug>/
+     └─► js/core.js (fetch + search engine)
+         js/site.js (page renderers)
+         js/features.js (favorites, collections, compare, QR, i18n)
+         js/vendor/fuse.js (vendored Fuse.js 7.0.0, Apache-2.0)
+         assets/design-system/*.css (minified in _site only)
+     └─► feeds/*.json (+ /api/*.json twins)
+
+ SDKs (optional, client-side): sdk/javascript (pure JS),
+ sdk/python (stdlib + setup.py)
+```
+
+**Build-time-only** (never shipped with the runtime):
+
+| Tool | Used by | Why |
 | --- | --- | --- |
-| AltStore Source v2 feeds | ✅ | Per-app `feeds/<slug>.json` + master `feeds/apps.json`, `omnisource` extension block |
-| Clients | ✅ | AltStore, SideStore, Feather, ESign, LiveContainer; deep links + copy fallback |
-| Upstream providers | ✅ | GitHub Releases, GitHub Tags, JSON/AltStore/Feather feeds; host-scoped auth |
-| Scheduled sync | ✅ | 6-hourly, incremental when scheduled, on-push full sync, manual `workflow_dispatch` |
-| Download health | ✅ | Concurrent HEAD probes, mirrors, daily job, GitHub issue reporting |
-| RSS/Atom | ✅ | Combined + per-app feeds, sanitized `updates.json` timeline |
-| State persistence | ✅ | `state.json` (version history, update history, health), no DB |
-| Validation | ✅ | `validation.py` + jq structural lint, reproducibility check, ruff, actionlint |
-| PWA website | ✅ | Dark/light/system theme, searchable catalog, filters, sort, dialog, SW cache |
-| Release builds | ✅ | Manual uYouEnhanced compile/inject/publish workflow |
-| Notifications | ✅ | Discord/Telegram/ntfy/OmniSource webhooks on version changes |
-| Assets | ✅ | Icons served from `assets/`; catalog → asset reference validation |
+| `ruff` | `make lint`, validate.yml | formatting + lint (pinned in CI) |
+| `actionlint` | validate.yml | workflow lint |
+| `jq` | `scripts/validate_jq.sh` | feed contract checks |
+| `node` | smoke_test (optional) | JS syntax check of site scripts |
+| `coverage`/`pytest` | local dev only | test coverage; CI uses `unittest` |
+| `brotli` | site builder (optional) | `.br` API twins; skipped with a warning when absent |
 
-## 2. Missing features (pre-audit) → now implemented
+**External services (network at build time):** GitHub REST API (releases,
+repo metadata — authenticated via `GH_TOKEN`), upstream AltStore/JSON feeds,
+download-URL HEAD probes, Discord/Telegram/ntfy/webhook endpoints
+(notification delivery is fire-and-forget and never blocks the build).
 
-| Feature | File |
-| --- | --- |
-| Searchable discovery catalog (auto-generated) | `src/omnisource/discovery.py` → `feeds/discovery.json` |
-| Source index / API `sources.json` | `src/omnisource/discovery.py` → `feeds/sources.json` |
-| Trust indicators (VERIFIED / COMMUNITY VERIFIED / UNVERIFIED) | `src/omnisource/verification.py` |
-| Health monitoring board + per-source latency history | `src/omnisource/monitor.py` → `feeds/status.json` |
-| Duplicate detection with recommendations | `src/omnisource/duplicates.py` |
-| Metrics (weekly changes, dead links, verified counts, trends) | `src/omnisource/analytics.py` |
-| Static app detail pages | `src/omnisource/app_pages.py` → `apps/<slug>/index.html` |
-| Machine API surface (`api/`, gzip twins, manifest) | `scripts/build_site.py` |
-| Homepage stats from feeds (total apps/sources, sync time, verified) | `website/js/site.js` + `feeds/analytics.json` |
-| Most-downloaded sort + tag/verification search | `website/js/site.js` |
-| README live badges + stats block | `src/omnisource/pipeline.py` (`stage_readme`) |
-| Workflow matrix + caching | `.github/workflows/validate.yml`, `sync.yml` |
+---
 
-## 3. Duplicate logic
+## 2. Workflow map
 
-* Fixed: `scripts/health_check.py`, `scripts/merge_feeds.py` and
-  `src/omnisource/constants.py` each maintained their own list of
-  “non-feed JSON files”. The lists now share the same 12 names
-  (`ALTSTORE_NON_FEED` is the single source; the standalone scripts keep
-  explicit local copies so they stay runnable without importing the package).
-* Remaining (intentional): `health_check.py` implements its own probe loop
-  alongside `src/omnisource/http.py::probe`. The standalone script stays
-  dependency-free so the daily health job can run without the full pipeline;
-  both use the same `ALIVE_CODES`/`RETRYABLE_CODES` constants.
+| Workflow | Triggers | Permissions | Writes | Role |
+| --- | --- | --- | --- | --- |
+| `sync.yml` | schedule (6 h, `--incremental`) · push (catalog/scripts/site paths) · dispatch | contents | `feeds/`, `apps/`, `README.md`, **Pages deploy** | only scheduled writer; sync → tests → validate → reproducibility → commit → build `_site/` → deploy-pages |
+| `validate.yml` | PR · push main · dispatch | read-only | nothing | parallel offline gate: structural validation + reproducibility · unit-test matrix (py3.11/3.12) · ruff + actionlint (cached) |
+| `merge.yml` | `feeds/*.json` changed · dispatch | contents | `feeds/apps.json` | safety net re-deriving the master feed from modular feeds; fails on drift |
+| `health-check.yml` | schedule (daily 03:30) · dispatch | issues | GitHub Issue | HEAD-probes every download URL + mirror, appends one durable issue |
+| `build-uyouenhanced.yml` | dispatch (feed-related) | contents, releases | release asset `uyouenhanced-v<ver>` | builds the uYouEnhanced IPA the catalog consumes → triggers `sync.yml` |
+| `build-tweak.yml` | dispatch (generic tooling) | contents, releases | release asset | generic IPA+deb injector; **unrelated to feed generation** (see §9) |
 
-## 4. Dead code / not exercised
+Concurrency: `sync-publish` (never two writers), `validate-<ref>`,
+`merge-feeds`. `sync.yml` is the single publisher: Pages deploys the `_site/`
+artifact (`actions/upload-pages-artifact`), never the branch — guarded by
+`tests/test_website_shell.py`.
 
-* `Catalog.platforms`, `StandardizedApp` and the discovery/provider
-  `discover_apps()` paths are library surface for future apps — not dead, but
-  untested end-to-end.
-* The generated AltStore `assets[]` array and `downloads`/`digest` fields are
-  additive and clients ignore them; they feed the discovery catalog.
+**Gap (Phase 14):** deploy lives inside `sync.yml`; no independent
+`deploy.yml` with rollback. `health-check.yml` is the health job.
+`build-tweak.yml` should live in a dedicated builder repository.
 
-## 5. Performance
+---
 
-* Sync: parallel workers (configurable), per-repo HTTP cache, incremental
-  pagination skip, stdlib-only (no install step, no lock drift).
-* Website: single static page, `loading="lazy"` images, SW stale-while-
-  revalidate, search is an in-memory filter over < 100 entries (< 100 ms);
-  API consumers can use `.json.gz` twins.
-* GitHub Actions: validation split into parallel jobs (structural gate, unit
-  test matrix 3.11/3.12, lint); pip cache; provider metadata cache persisted
-  between sync runs.
-* **Known limitation:** GitHub Pages serves pre-built `.gz` as
-  `application/gzip`, so browsers cannot transparently decompress them; they
-  are offered to API clients, while the website uses the plain JSON.
+## 3. Feed generation flow
 
-## 6. Reliability risks
+```text
+catalog.json ─┐
+              ▼
+┌──────────────────────────── pipeline.run ────────────────────────────┐
+│ 1 SYNC (ThreadPool, N workers)                                       │
+│    for each app:                                                    │
+│      RepositoryRef.parse(catalog.upstream)                          │
+│      provider = registry.resolve(ref)   (github | github-tags |      │
+│                                          json-feed | altstore |      │
+│                                          feather)                    │
+│      provider.fetch_releases(ref)  →  select_versions()             │
+│        (assetNamePattern, assetSuffixes, tagPrefix, keepVersions)   │
+│      failure → keep last state (state.json) + retryCount            │
+│ 2 HEALTH (ThreadPool)                                               │
+│    HEAD-probe newest downloadURL (+ fallbackDownloadURLs mirrors)   │
+│    remember_probe() → state[slug].health + healthHistory (cap 30)   │
+│ 3 ASSETS                                                            │
+│    inspect_catalog() → missing/oversized/unused icon report         │
+│ 4 BUILD (all pure)                                                  │
+│    per-app AltStore v2 feeds   feeds/<slug>.json  (+ <slug>.xml RSS)│
+│    master feed                 feeds/apps.json                      │
+│    health / updates / badges / RSS (feed.xml, rss.xml)              │
+│    intelligence docs: discovery, sources, verification, status,     │
+│    duplicates, analytics, trending, related, reputation,            │
+│    download-intelligence, community, install, search-index,         │
+│    compare, screenshots                                             │
+│    app pages apps/<slug>/index.html (22)                            │
+│ 5 PERSIST                                                           │
+│    state.json (only after the whole build is valid)                 │
+│    README generated blocks (catalog table + stats)                  │
+│ 6 NOTIFY (only when versions changed)                               │
+│    Discord / Telegram / ntfy / generic webhook                      │
+└──────────────────────────────────────────────────────────────────────┘
+        ▼
+scripts/build_site.py → _site/   (flat URLs, /feeds/, /api/ + .gz,
+                                  sitemap, robots, homepage stats,
+                                  minified CSS, .nojekyll)
+        ▼
+sync.yml → actions/upload-pages-artifact → deploy-pages → GitHub Pages
+```
 
-| Risk | Mitigation |
-| --- | --- |
-| Upstream outage | last-known-good versions kept in `state.json`; `status.json` marks `unavailable`; broken links are reported via an issue |
-| Concurrent writes to `feeds/` | sync `concurrency` group; atomic writes with rollback (`io.atomic_write_many`) |
-| Stale apps | `health.json` staleness annotation + `degraded` status |
-| Duplicate bundles replacing apps on-device | validator warning, `duplicates.json` + website banners |
-| Reproducibility drift | validate job rebuilds from catalog and fails on diff |
-| RSS `lastBuildDate` churn | pre-existing; XML is excluded from the reproducibility check (`scripts/check_reproducible.py`), which normalizes date-stamped fields so a PR opened days after a build still passes |
-| Rate limits | unauthenticated fallback warning; incremental mode limits pagination |
+**Idempotence:** `atomic_write_text` skips byte-identical writes; a
+`--no-sync --no-health` rebuild from committed state must be a no-op
+(`check_reproducible.py` enforces this in CI).
 
-## 7. Security concerns
+---
 
-* Tokens are host-scoped (`AuthRule`) and never attached to third-party IPA
-  download URLs; health probes construct header dicts without `Authorization`.
-* Validator and jq lint run offline and read-only; workflows use least
-  privilege (`permissions: {}` then opt-in), no secrets needed for sync.
-* Workflow inputs are passed via environment, never interpolated into
-  shell — the `build-uyouenhanced.yml` workflow documents this explicitly.
-* Noted for the future: `screenshots` are third-party URLs rendered in HTML
-  (escaped); content is validated as HTTP(S) before use.
+## 4. Data flow diagram
 
-## 8. What was deliberately not changed
+```text
+                    ┌──────────────┐   git    ┌─────────────────────┐
+   upstream forges  │ catalog.json │          │  feeds/state.json   │
+  (releases/feeds)  │ (hand-edited │          │  runtime memory:    │
+        │           └──────┬───────┘          │  versions, update-  │
+        │                  │                  │  history, health-   │
+        │                  ▼                  │  history (cap 30)   │
+        │        ┌──────────────────┐         └──────────▲──────────┘
+        └───────►│  providers/      │ fetch_releases     │
+   HTTP JSON     │  registry        │   (per-repo cache) │ remember_probe
+                 └────────┬─────────┘                    │
+                          ▼                              │
+                 select_versions / tracking              │
+                          │                              │
+                          ▼                              │
+                 ┌───────────────────────┐               │
+                 │  stage_build (pure)   │───────────────┘
+                 └────────┬──────────────┘
+        ┌─────────────────┼──────────────────────────────────┐
+        ▼                 ▼                                  ▼
+  feeds/*.json      feeds/*.xml (RSS)              apps/<slug>/index.html
+  (22 app feeds +   feed.xml · rss.xml +           README generated blocks
+   apps.json + 14   per-app <slug>.xml             GITHUB_STEP_SUMMARY
+   intelligence
+   docs)
+        │
+        ▼  scripts/build_site.py
+  _site/  →  GitHub Pages  →  { /<flat>, /feeds/, /api/ }  →  AltStore ·
+  SideStore · Feather · ESign · LiveContainer · website · future OmniStore
+```
 
-* The hand-maintained `catalog.json` stays the source of truth (the new
-  auto-generated `discovery.json` is a *different* document and is published as
-  `api/catalog.json`, so the request “never manually maintain catalog.json”
-  applies to the discovery index).
-* Flat historical URLs (`/<slug>.json`) keep working.
-* AltStore v2 JSON byte structure is untouched apart from additive fields.
-* stdlib-only runtime is preserved; `asyncio`/`aiohttp` were not introduced
-  because the ThreadPoolExecutor + retry/backoff HTTP client already satisfies
-  the parallel-fetch/retry/timeout/rate-limit requirements without adding a
-  third-party dependency to the release pipeline.
+---
 
-## 3. Discovery v2 additions
+## 5. Catalog generation diagram
 
-The discovery engine is now a full ecosystem: trending, related apps,
-reputation, download intelligence, install cards, screenshots, search
-index, community lists and side-by-side comparison. The full set of
-generated documents is listed in `docs/API.md`.
+`catalog.json` (`source`, `clients`, 22 `apps`) is transformed, never
+mutated, into the distribution surface:
 
-| Phase | New module | Generated artifact |
+```text
+                ┌──────────────── catalog.json ────────────────┐
+                │ source ────────► feed_envelope()             │
+                │ clients ───────► install.json, sources.json  │
+                │ apps[]                                                │
+                │  ├─ identity (slug/name/bundle/developer)  ─► all    │
+                │  ├─ upstream{} ── RepositoryRef ─► providers ─► state │
+                │  ├─ verification{} ─► verification.json (levels)      │
+                │  ├─ compatibility{} ─► feeds (minOS), compare, pages  │
+                │  ├─ manualRelease{} ─► fallback when upstream empty   │
+                │  ├─ screenshots/featured/tags ─► discovery, pages     │
+                │  └─ fallbackDownloadURLs ─► feeds + mirror probes     │
+                └───────────────────────────────────────────────────────┘
+                                │
+   per app:  <slug>.json ─┬─► apps.json (master, envelope + news)
+                          ├─► <slug>.xml / feed.xml / rss.xml
+                          ├─► discovery.json · search-index.json
+                          ├─► apps/<slug>/index.html
+                          └─► compare.json (all pairs) · related.json
+```
+
+---
+
+## 6. Dead code report
+
+Automated scan (`grep -r` cross-reference of every public symbol against
+callers in `src/`, `scripts/`, `tests/`):
+
+| Symbol | Status | Finding |
 | --- | --- | --- |
-| 1 | `src/omnisource/trending.py` | `feeds/trending.json` |
-| 2 | `src/omnisource/related.py` | `feeds/related.json` |
-| 3 | `src/omnisource/screenshots.py` | `feeds/screenshots.json` + `assets/screenshots/` |
-| 4 | `src/omnisource/search_index.py` | `feeds/search-index.json` (Fuse.js compatible) |
-| 5 | `src/omnisource/compare.py` | `feeds/compare.json` |
-| 6 | `src/omnisource/reputation.py` | `feeds/reputation.json` |
-| 7 | `src/omnisource/download_intel.py` | `feeds/download-intelligence.json` |
-| 9 | `src/omnisource/install.py` | `feeds/install.json` |
-| 11 | `src/omnisource/api_mirror.py` (later removed; `_site/api/` is built by `site.py`) | `api/*.json` (gitignored local mirror at the time) |
-| 13 | `src/omnisource/community.py` | `feeds/community.json` |
-| 14 | `sdk/javascript/`, `sdk/python/` | Zero-dependency client libraries |
+| `domain.StandardizedApp` | **unused** | defined + serialized (`to_json`) but no production code constructs it; library surface only. Keep (documented in SDK examples) or fold into discovery — flagged for Phase 17. |
+| `domain.HealthSnapshot` | **unused** | no construction site anywhere. Candidate for removal (flagged; not removed — audit only). |
+| `providers.*.discover_apps()` / `discoverApps()` | **not exercised by the pipeline** | implemented on all 4 providers, covered by tests, used only as SDK/library surface (future "auto-add app" feature). Not dead. |
+| `providers.*.fetch_metadata()` / `fetchMetadata()` | **not exercised by the pipeline** | same as above. |
+| `GitHubTagsProvider` | **registered, not in catalog** | no app currently uses `provider: github-tags`; needed for tagged-only upstreams. Keep. |
+| `SourceType.GITLAB_RELEASES / CODEBERG_RELEASES / FORGEJO_RELEASES` | **declared, no provider** | `RepositoryRef.parse` accepts them, `build_default_registry` has no matching provider → `ConfigurationError` at resolve. **Broken configuration paths** (would fail at sync). Fixed in Phase 2. |
+| `App.platforms` / `StandardizedApp` canonical fields | partially used | `platforms` used by `StandardizedApp` only; `lifecycle_status` used by feeds. Keep. |
+| `scripts/notify.py` | used | imported lazily by `pipeline.run` on updates. |
+| `feeds/badge-sync.json`, `badge-verified.json` | stale outputs | written by older pipeline versions; no generator emits them anymore but the files are committed and still referenced by the validator's non-feed list. Flagged (harmless; kept for URL stability). |
+| `compare.html` | redirect shim | intentional (preserves `?left=&right=` URL). |
 
-## 4. Website v2
+**Conclusion:** no unreachable code paths in the pipeline; two library-surface
+symbols (`HealthSnapshot`, `StandardizedApp` construction) are unexercised and
+one real defect (unregistered SourceTypes) is confirmed and scheduled for
+Phase 2.
 
-The static website gained seven new sections, an instant fuzzy search
-popover and a side-by-side comparison page:
+## 7. Duplicate code report
 
-* **Trending / Featured / Recently Updated / Verified** — horizontal
-  rails with skeleton placeholders.
-* **Source Health** — reputation grid with TRUSTED / RELIABLE / AVERAGE
-  / EXPERIMENTAL badges.
-* **Statistics** — metric grid with availability, response time and
-  mirror count.
-* **Community** — popular apps, recently added, rising apps.
-* **Search popover** — Fuse.js-style fuzzy search with verified /
-  community filter chips, keyboard navigation, and result highlighting.
-* **compare/** — full side-by-side comparison page driven entirely
-  by `feeds/compare.json` (`website/compare.html` ships as a redirect shim).
-* **PWA v3** — `sw.js` pre-caches the whole site (all section pages +
-  design system), serves JSON feeds stale-while-revalidate, caches per-app
-  pages on first visit, and prompts the user to reload on a new service
-  worker.
+| Duplicate | Locations | Action |
+| --- | --- | --- |
+| `_parse_date(value)` (identical 6-line helper) | `analytics.py`, `community.py`, `compare.py`, `download_intel.py`, `reputation.py` | Extract to `omnisource/utils/dates.py::parse_date` (done in this upgrade). |
+| `_update_frequency(state, slug)` (near-identical) | `compare.py`, `reputation.py` | Extract to `omnisource/utils/dates.py::average_update_gap_days`. |
+| `_health_window`-style rolling probe stats | `reputation.py::_health_window`, `download_intel.py::_window_probe` | Extract to `omnisource/utils/health.py::probe_window`. |
+| `health_check.py::probe_url` vs `http.py::HttpClient.probe` | intentional | standalone script stays dependency-free; both use the same `ALIVE_CODES`/`RETRYABLE_CODES` constants. Keep. |
+| non-feed JSON name lists | `constants.ALTSTORE_NON_FEED`, `validate_jq.sh`, `merge_feeds.py`, `health_check.py` | `constants` is the single source; the three standalone scripts keep explicit local copies on purpose (no package import) with "keep in sync" comments. |
+| `_newest_matching_url` (github vs feed providers) | `providers/github.py`, `providers/feed.py` | small, provider-specific ordering; keep. |
 
-## 5. Validation enhancements
+## 8. Unused asset report
 
-* `validate_generated_docs` now covers every new intelligence document.
-  Critical errors (missing `id`, malformed score, out-of-range
-  reputation, missing install cards) fail the CI run; minor issues
-  (empty tag list, missing publisher) emit a warning.
-* Icon / screenshot existence is enforced by the assets inspector; the
-  validator no longer lets a broken `icon` slip through.
-* Bundle-identifier collisions are still a warning, not an error,
-  because the YouTube / YouTube Music overlap is deliberate and
-  documented.
+`assets.py::inspect_catalog` runs on every build (warnings in the pipeline
+log). Current state:
+
+* Every app icon referenced by `catalog.json` exists (PNG+WebP twin pairs).
+* WebP twins are the deployable format; PNG twins are kept as
+  `<picture>`/legacy fallbacks and are **not** reported unused
+  (`_is_paired_asset`).
+* `E-Sign.png/.webp`, `Instagram.png/.webp`, `X.png/.webp` — client/social
+  icons referenced from website HTML (not the catalog): in use.
+* No orphaned files in `assets/` at audit time (0 warnings of kind
+  `unused`). Oversized-asset warnings: none (>512 KB).
+* 10 apps declare `screenshots: []` → pipeline warning "no screenshots
+  declared" (content gap, not dead code).
+
+## 9. Unused workflow report
+
+| Workflow | Verdict |
+| --- | --- |
+| `build-tweak.yml` | **Unrelated to feed generation.** Generic "inject any .deb into any decrypted .ipa" tool, manually dispatched. No pipeline module, test, feed or doc depends on it. *Recommendation (Phase 14):* deprecate in place with a migration header pointing at a dedicated builder repository (per maintainer decision 2026-09-10: no new repository; keep working, mark deprecated). |
+| `build-uyouenhanced.yml` | **Feed-related.** Publishes the `uyouenhanced-v*` release the catalog syncs from and triggers `sync.yml` afterwards. Keep in this repository. |
+| all others | exercised by `sync.yml`/`validate.yml`/`merge.yml`/`health-check.yml` on schedule or PR; no obsolete triggers found (`schedule` crons do not collide; `concurrency` groups unique). |
+
+---
+
+## 10. Phase-coverage matrix (what exists vs what the upgrade adds)
+
+| Phase | Requirement | State at audit | Upgrade work |
+| --- | --- | --- | --- |
+| 2 | Provider redundancy + failover | GitHub/GitHub-tags/JSON/AltStore/Feather providers exist; **GitLab/Codeberg/Forgejo/Direct/Archive missing; no failover chain** | New providers + `upstream.mirrors` + failover (primary → mirror → archive → cached state), `verify()` alias, tests |
+| 3 | Integrity validation | `sha256`/`size` stored when upstream publishes them; `hashVerified` check in verification | `integrity_report.json`, per-asset records {sha256,size,release_id,source}, reject rules, weekly full-hash workflow |
+| 4 | Snapshots + rollback | none | `snapshots/{daily,weekly,monthly}`, `restore_snapshot()`, CLI, deploy rollback |
+| 5 | Duplicate detection, fail CI | duplicates engine + `duplicates.json`; shared-bundle = **warning only** | hard CI errors for duplicate download URLs / undeclared shared bundles (`alternativeTo`), tests |
+| 6 | Health score (30/25/20/15/10) | reachability health only | `health_score` engine → `health.json` + app pages + website |
+| 7 | Trust score + badges | levels VERIFIED/COMMUNITY/UNVERIFIED + 0–100 source reputation | per-app 0–10 `trustScore` + Verified/Trusted/Community/Experimental badges |
+| 8 | Dead app detection | staleness warnings only | `dead_apps.json` with 90/180/365 + removed-release rules |
+| 9 | Comparison engine | `compare.json` + `compare/?left=&right=` | generated `/compare/<a>-vs-<b>/` pages |
+| 10 | Collections | user-local collections UI only | curated `collections.json` + generated collection pages + API |
+| 11 | Trending | score engine + trending/rising/recentlyUpdated | Today/Week/Month periods + UI |
+| 12 | Indexed search (Fuse.js) | Fuse-compatible index + custom fuzzy engine | vendored Fuse.js 7.0.0 wired into search + home |
+| 13 | Performance | lazy images, SW, `.gz` twins, CSS minify | `catalog.min.json`, brotli twins, incremental hardening |
+| 14 | Workflow cleanup | sync/validate/merge/health-check + 2 builders | split `deploy.yml`, rename health job, deprecate `build-tweak.yml` |
+| 15 | Monitoring | `status.json` + status page | pipeline + provider sections in `status.json` |
+| 16 | API layer | `/api/<doc>.json` + manifest | `/api/apps|trending|collections|search|status` (no extension), per-app endpoints, collections/search endpoints |
+| 17 | OmniStore readiness | discovery API documented | versioning policy + endpoint set + `docs/OMNISTORE.md` |
+| 18 | Testing | 127 tests, all green | +tests for every new module; ≥90% coverage on `src/omnisource` |

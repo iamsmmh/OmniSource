@@ -91,6 +91,20 @@ API_DOCUMENTS = {
     "search-index.json": "Fuse.js-compatible search index.",
     "compare.json": "Side-by-side comparison matrix.",
     "screenshots.json": "Screenshot catalog + mirror URLs + WebP thumbnails.",
+    "integrity_report.json": "Per-asset integrity: sha256, size, release id, source and reject checks.",
+    "dead_apps.json": "Dead/stale/approaching-dead classification (90/180/365 day thresholds).",
+    "collections.json": "Curated collections (YouTube, Music, Emulators, Utilities, Productivity).",
+}
+
+# Extensionless API routes (Phase 16): clients that prefer clean URLs get a
+# byte-identical twin of the JSON document. Mapping of route name -> document.
+API_ROUTES = {
+    "apps": "apps.json",
+    "trending": "trending.json",
+    "collections": "collections.json",
+    "search": "search-index.json",
+    "status": "status.json",
+    "catalog": "discovery.json",
 }
 
 # Hand-maintained website sections (besides the home page), in sitemap order.
@@ -100,6 +114,8 @@ SITE_PAGES = (
     ("/analytics/", 0.5, "weekly"),
     ("/install/", 0.7, "weekly"),
     ("/search/", 0.7, "weekly"),
+    ("/collections/", 0.6, "weekly"),
+    ("/favorites/", 0.4, "monthly"),
 )
 
 
@@ -116,6 +132,21 @@ def _api_manifest(base_url: str, generated_at: str) -> dict[str, Any]:
             "format": "json",
         }
     )
+    endpoints.append(
+        {
+            "path": "/api/catalog.min.json",
+            "description": "Minified discovery catalog (Phase 13). Same data, compact encoding.",
+            "format": "json",
+        }
+    )
+    for route in sorted(API_ROUTES):
+        endpoints.append(
+            {
+                "path": f"/api/{route}",
+                "description": f"Extensionless alias of /api/{API_ROUTES[route]} (Phase 16).",
+                "format": "json",
+            }
+        )
     return {
         "name": "OmniSource API",
         "version": "1",
@@ -141,13 +172,51 @@ def _app_slugs(root: Path) -> list[str]:
     return sorted(p.name for p in apps_dir.iterdir() if p.is_dir() and (p / "index.html").is_file())
 
 
-def _sitemap(base_url: str, slugs: list[str], today: str) -> str:
+def _collection_slugs(root: Path) -> list[str]:
+    """Generated collection page slugs (collections/<slug>/index.html)."""
+    collections_dir = root / "collections"
+    if not collections_dir.is_dir():
+        return []
+    return sorted(p.name for p in collections_dir.iterdir() if p.is_dir() and (p / "index.html").is_file())
+
+
+def _compare_pairs(root: Path) -> list[str]:
+    """Canonical (alphabetical) ``a-vs-b`` pair slugs for the sitemap."""
+    compare_dir = root / "compare"
+    if not compare_dir.is_dir():
+        return []
+    pairs = []
+    for path in sorted(compare_dir.iterdir()):
+        if not (path.is_dir() and (path / "index.html").is_file()):
+            continue
+        name = path.name
+        if "-vs-" not in name:
+            continue
+        left, _, right = name.partition("-vs-")
+        # Keep only the canonical direction so the sitemap lists one URL per pair.
+        if left < right:
+            pairs.append(name)
+    return pairs
+
+
+def _sitemap(
+    base_url: str,
+    slugs: list[str],
+    today: str,
+    *,
+    compare_pairs: list[str] | None = None,
+    collection_slugs: list[str] | None = None,
+) -> str:
     base = base_url.rstrip("/")
     urls = [(f"{base}/", "1.0", "daily")]
     for path, priority, changefreq in SITE_PAGES:
         urls.append((f"{base}{path}", str(priority), changefreq))
     for slug in slugs:
         urls.append((f"{base}/apps/{slug}/", "0.9", "weekly"))
+    for slug in collection_slugs or []:
+        urls.append((f"{base}/collections/{slug}/", "0.6", "weekly"))
+    for pair in compare_pairs or []:
+        urls.append((f"{base}/compare/{pair}/", "0.5", "monthly"))
 
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -171,6 +240,15 @@ def _robots(base_url: str) -> str:
     return f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n"
 
 
+def _minify_json(text: str) -> str:
+    """Compact a pretty-printed JSON document (byte-stable, same data)."""
+    try:
+        payload = json.loads(text)
+    except json.JSONDecodeError:
+        return text
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n"
+
+
 def _minify_css(text: str) -> str:
     """Conservative CSS minification: drop comments and blank lines only.
 
@@ -183,14 +261,50 @@ def _minify_css(text: str) -> str:
 
 
 def _write_gzip(path: Path) -> Path | None:
-    """Write a deterministic gzip copy next to ``path`` (``.json.gz``)."""
-    if not path.exists():
-        Path(str(path) + ".gz").unlink(missing_ok=True)
-        return None
+    """Write a deterministic gzip copy next to ``path`` (``.gz``).
+
+    Skipped when compression would not save bytes; a stale twin is removed
+    when the source disappears, so twins never outlive their documents.
+    """
     gz_path = Path(str(path) + ".gz")
-    with path.open("rb") as source, gzip.GzipFile(filename=str(gz_path), mode="wb", compresslevel=9, mtime=0) as target:
-        shutil.copyfileobj(source, target)
+    if not path.exists():
+        gz_path.unlink(missing_ok=True)
+        return None
+    data = path.read_bytes()
+    compressed = gzip.compress(data, mtime=0)
+    if len(compressed) >= len(data):
+        gz_path.unlink(missing_ok=True)
+        return None
+    gz_path.write_bytes(compressed)
     return gz_path
+
+
+def _write_brotli(path: Path) -> Path | None:
+    """Write ``<path>.br`` when the brotli package is installed (optional).
+
+    GitHub Pages serves ``.br`` automatically for Brotli-capable clients.
+    The runtime stays stdlib-only: without the ``brotli`` package the twin is
+    simply skipped (CI can ``pip install brotli`` to opt in).
+    """
+    brotli_path = Path(str(path) + ".br")
+    try:
+        import brotli  # type: ignore[import-not-found]
+    except ImportError:
+        brotli_path.unlink(missing_ok=True)
+        return None
+    if not path.exists():
+        brotli_path.unlink(missing_ok=True)
+        return None
+    data = path.read_bytes()
+    try:
+        compressed = brotli.compress(data, quality=11)
+    except (OSError, ValueError):
+        return None
+    if len(compressed) >= len(data):
+        brotli_path.unlink(missing_ok=True)
+        return None
+    brotli_path.write_bytes(compressed)
+    return brotli_path
 
 
 def _write_text(path: Path, data: str) -> None:
@@ -330,6 +444,8 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
     # copies of the canonical feeds/, assembled fresh on every build so the
     # repository root itself stays free of generated duplicates.
     flat_count = 0
+    gz_count = 0
+    br_count = 0
     for pattern in ("*.json", "*.xml"):
         for feed in sorted((root / "feeds").glob(pattern)):
             if feed.name == "state.json":
@@ -338,15 +454,23 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
             flat_count += 1
 
     shutil.copy2(root / "catalog.json", output / "catalog.json")
+    # Phase 13: a minified catalog twin at the flat URL (clients that only
+    # want the payload skip the formatting bytes; gzip twin alongside).
+    discovery = root / "feeds" / "discovery.json"
+    if discovery.exists():
+        minified_catalog = output / "catalog.min.json"
+        _write_text(minified_catalog, _minify_json(discovery.read_text(encoding="utf-8")))
+        flat_count += 1
+        if _write_gzip(minified_catalog) is not None:
+            gz_count += 1
 
-    # Static app detail pages.
+    # Static app detail pages. (compare/ and collections/ ship via SITE_FILES.)
     if (root / "apps").is_dir():
         shutil.copytree(root / "apps", output / "apps")
 
     # Machine-readable API surface plus a small manifest.
     api_dir = output / "api"
     api_dir.mkdir(exist_ok=True)
-    gz_count = 0
     for name in API_DOCUMENTS:
         source = root / "feeds" / name
         if not source.exists():
@@ -356,19 +480,53 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
             # The discovery index is also the API consumer's catalog: document
             # it at both names so clients can pick either convention.
             destinations.append(api_dir / "catalog.json")
+            # Phase 13: a minified discovery twin for clients that only need
+            # the payload (no formatting bytes) — same data, smaller download.
+            minified_path = api_dir / "catalog.min.json"
+            _write_text(minified_path, _minify_json(source.read_text(encoding="utf-8")))
+            if _write_gzip(minified_path) is not None:
+                gz_count += 1
+            if _write_brotli(minified_path) is not None:
+                br_count += 1
         for destination in destinations:
             shutil.copy2(source, destination)
             if _write_gzip(destination) is not None:
                 gz_count += 1
+            if _write_brotli(destination) is not None:
+                br_count += 1
+
+    # Extensionless routes (Phase 16): byte-identical twins of JSON documents
+    # for clients that prefer clean URLs (/api/apps, /api/search, ...).
+    for route, document in API_ROUTES.items():
+        source = root / "feeds" / document
+        if not source.exists():
+            continue
+        target = api_dir / route
+        shutil.copy2(source, target)
+        if _write_gzip(target) is not None:
+            gz_count += 1
+        if _write_brotli(target) is not None:
+            br_count += 1
 
     manifest = _api_manifest(base_url, today)
     manifest_path = api_dir / "index.json"
     _write_text(manifest_path, json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
     if _write_gzip(manifest_path) is not None:
         gz_count += 1
+    if _write_brotli(manifest_path) is not None:
+        br_count += 1
 
     # SEO / discoverability: regenerated on every build (never committed).
-    _write_text(output / "sitemap.xml", _sitemap(base_url, slugs, today))
+    _write_text(
+        output / "sitemap.xml",
+        _sitemap(
+            base_url,
+            slugs,
+            today,
+            compare_pairs=_compare_pairs(root),
+            collection_slugs=_collection_slugs(root),
+        ),
+    )
     _write_text(output / "robots.txt", _robots(base_url))
 
     # Live statistics in the deployed home page copy (no-JS/SEO values).
@@ -391,12 +549,15 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
 
     (output / ".nojekyll").touch()
 
+    compare_pairs = _compare_pairs(root)
     return {
         "output": str(output),
-        "pages": 6 + len(slugs),
+        "pages": 6 + len(slugs) + len(compare_pairs),
         "app_pages": len(slugs),
+        "compare_pages": len(compare_pairs),
         "flat_files": flat_count,
         "gz_files": gz_count,
+        "br_files": br_count,
         "css_minified_bytes": minified,
         "stats_injected": stats_injected,
     }

@@ -56,7 +56,7 @@ class TestValidation(unittest.TestCase):
             report = validate_catalog(catalog, assets_dir=assets_dir)
             self.assertEqual(len(report.errors), 0)
 
-    def test_duplicate_bundle_identifiers_warn(self) -> None:
+    def test_duplicate_bundle_identifiers_fail(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             assets_dir = Path(tmpdir)
             (assets_dir / "Icon.png").write_bytes(PNG_MAGIC + b"data")
@@ -92,12 +92,57 @@ class TestValidation(unittest.TestCase):
                     },
                 ],
             }
+            # Phase 5: an undeclared shared bundle fails CI (one error per app).
             report = validate_catalog(catalog, assets_dir=assets_dir)
-            self.assertEqual(len(report.errors), 0)
-            messages = " | ".join(report.warnings)
+            self.assertEqual(len(report.errors), 2)
+            messages = " | ".join(report.errors)
             self.assertIn("com.example.shared", messages)
             self.assertIn("app-a", messages)
             self.assertIn("app-b", messages)
+
+    def test_declared_alternatives_pass(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            assets_dir = Path(tmpdir)
+            (assets_dir / "Icon.png").write_bytes(PNG_MAGIC + b"data")
+            catalog = {
+                "source": {
+                    "name": "OmniSource",
+                    "identifier": "com.omnisource",
+                    "baseURL": "https://example.com",
+                    "icon": "Icon.png",
+                },
+                "apps": [
+                    {
+                        "slug": "app-a",
+                        "name": "App A",
+                        "bundleIdentifier": "com.example.shared",
+                        "alternativeTo": "app-b",
+                        "developerName": "Dev",
+                        "icon": "Icon.png",
+                        "status": "stable",
+                        "localizedDescription": "An app.",
+                        "compatibility": {"minOSVersion": "16.0", "clients": ["altstore"]},
+                        "upstream": {"provider": "github", "repo": "owner/repo"},
+                    },
+                    {
+                        "slug": "app-b",
+                        "name": "App B",
+                        "bundleIdentifier": "com.example.shared",
+                        "alternativeTo": "app-a",
+                        "developerName": "Dev",
+                        "icon": "Icon.png",
+                        "status": "stable",
+                        "localizedDescription": "Another app.",
+                        "compatibility": {"minOSVersion": "16.0", "clients": ["altstore"]},
+                        "upstream": {"provider": "github", "repo": "owner/repo"},
+                    },
+                ],
+            }
+            # Declared alternatives must not error and must not warn about the
+            # shared bundle any more.
+            report = validate_catalog(catalog, assets_dir=assets_dir)
+            self.assertEqual(len(report.errors), 0)
+            self.assertNotIn("com.example.shared", " | ".join(report.warnings))
 
     def test_validate_catalog_missing_fields(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

@@ -20,17 +20,9 @@ from datetime import date, timedelta
 from typing import Any
 
 from omnisource.domain import Catalog, today
+from omnisource.utils.dates import parse_date as _parse_date
 
 COMMUNITY_SCHEMA_VERSION = 1
-
-
-def _parse_date(value: Any) -> date | None:
-    if not value:
-        return None
-    try:
-        return date.fromisoformat(str(value)[:10])
-    except (TypeError, ValueError):
-        return None
 
 
 def _popularity(state: dict[str, Any], slug: str) -> float:

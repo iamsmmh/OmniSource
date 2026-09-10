@@ -27,6 +27,7 @@ TINT_RE = re.compile(r"^[0-9A-Fa-f]{6}$")
 SHA_RE = re.compile(r"^[0-9a-fA-F]{64}$")
 FORGE_PROVIDERS = {"github", "github-tags", "gitlab", "codeberg", "forgejo"}
 FEED_PROVIDERS = {"json-feed", "altstore", "feather"}
+URL_PROVIDERS = {"direct", "mirror", "archive"}
 
 
 @dataclass
@@ -88,19 +89,32 @@ def validate_catalog(catalog: Any, *, assets_dir: Path) -> Report:
 
     # Bundle identifiers must be unique on-device: sideloading clients replace
     # an installed app whose bundleIdentifier matches, so sharing one across
-    # catalog entries silently uninstalls the other. Flag the conflicts so
-    # maintainers can decide whether the overlap is deliberate and visible.
-    bundles: dict[str, list[str]] = {}
+    # catalog entries silently uninstalls the other. Sharing is only allowed
+    # when it is *declared*: every app in a shared-bundle group must set
+    # ``alternativeTo`` to another member of the group (Phase 5 — undeclared
+    # duplicates now fail CI instead of warning).
+    bundles: dict[str, list[dict[str, Any]]] = {}
     for app in apps:
         if isinstance(app, dict) and app.get("bundleIdentifier"):
-            bundles.setdefault(str(app["bundleIdentifier"]), []).append(str(app.get("slug") or app.get("name") or "?"))
-    for bundle_id, slugs in sorted(bundles.items()):
-        if len(slugs) > 1:
-            listed = ", ".join(f"`{slug}`" for slug in slugs)
-            report.warn(
-                f"catalog.json: {len(slugs)} apps share bundleIdentifier '{bundle_id}' ({listed}) - "
-                "installing one replaces the others on device"
-            )
+            bundles.setdefault(str(app["bundleIdentifier"]), []).append(app)
+    for bundle_id, members in sorted(bundles.items()):
+        if len(members) < 2:
+            continue
+        slugs = {str(app.get("slug") or app.get("name") or "?") for app in members}
+        for app in members:
+            slug = str(app.get("slug") or "?")
+            alt = app.get("alternativeTo")
+            if not alt:
+                report.error(
+                    f"catalog.json: {slug} shares bundleIdentifier '{bundle_id}' with "
+                    f"{', '.join(sorted(slugs - {slug}))} but declares no 'alternativeTo' - "
+                    "installing one replaces the others on device"
+                )
+            elif str(alt) not in slugs - {slug}:
+                report.error(
+                    f"catalog.json: {slug} declares alternativeTo '{alt}' which is not another "
+                    f"member of its bundle group ({', '.join(sorted(slugs))})"
+                )
 
     seen_slugs: set[str] = set()
     seen_names: set[str] = set()
@@ -221,14 +235,18 @@ def _validate_upstream(prefix: str, app: dict[str, Any]) -> Report:
     if provider in FEED_PROVIDERS:
         if not is_http_url(upstream.get("feedURL") or upstream.get("feedUrl")):
             report.error(f"{prefix}: feed providers require a valid upstream.feedURL")
+    elif provider in URL_PROVIDERS:
+        if not is_http_url(upstream.get("url") or upstream.get("feedURL") or upstream.get("feedUrl")):
+            report.error(f"{prefix}: {provider} providers require a valid upstream.url")
     else:
         repo = upstream.get("repo", "")
         if not re.match(r"^[\w.-]+/[\w.-]+$", str(repo)):
             report.error(f"{prefix}: upstream.repo must be 'owner/name'")
         if provider == "forgejo" and not upstream.get("host"):
             report.error(f"{prefix}: forgejo provider requires upstream.host")
-        if provider not in FORGE_PROVIDERS | FEED_PROVIDERS | {"manual"}:
+        if provider not in FORGE_PROVIDERS | FEED_PROVIDERS | URL_PROVIDERS | {"manual"}:
             report.error(f"{prefix}: unknown upstream.provider '{provider}'")
+    report.extend(_validate_mirrors(prefix, upstream.get("mirrors")))
     if int(upstream.get("keepVersions", 1) or 0) < 0:
         report.error(f"{prefix}: upstream.keepVersions must be >= 0 (0 means keep all)")
     if "{version}" not in str(upstream.get("descriptionTemplate", "{version}")):
@@ -259,6 +277,34 @@ def _validate_upstream(prefix: str, app: dict[str, Any]) -> Report:
                     )
     if upstream.get("versionFromTag") is not None and not isinstance(upstream.get("versionFromTag"), bool):
         report.error(f"{prefix}: upstream.versionFromTag must be a boolean")
+    return report
+
+
+def _validate_mirrors(prefix: str, mirrors: Any) -> Report:
+    """Validate the optional ``upstream.mirrors`` failover legs."""
+    report = Report()
+    if mirrors is None:
+        return report
+    if not isinstance(mirrors, list):
+        report.error(f"{prefix}.mirrors must be an array of upstream blocks")
+        return report
+    for index, mirror in enumerate(mirrors):
+        label = f"{prefix}.mirrors[{index}]"
+        if not isinstance(mirror, dict):
+            report.error(f"{label} must be an object")
+            continue
+        provider = str(mirror.get("provider") or "")
+        if provider not in FORGE_PROVIDERS | FEED_PROVIDERS | URL_PROVIDERS:
+            report.error(f"{label}.provider must be one of {sorted(FORGE_PROVIDERS | FEED_PROVIDERS | URL_PROVIDERS)}")
+            continue
+        if provider in URL_PROVIDERS or provider in FEED_PROVIDERS:
+            if not is_http_url(mirror.get("url") or mirror.get("feedURL") or mirror.get("feedUrl")):
+                report.error(f"{label} requires a valid url")
+        else:
+            if not re.match(r"^[\w.-]+/[\w.-]+$", str(mirror.get("repo") or "")):
+                report.error(f"{label}.repo must be 'owner/name'")
+            if provider == "forgejo" and not mirror.get("host"):
+                report.error(f"{label}: forgejo mirrors require host")
     return report
 
 
@@ -331,6 +377,24 @@ def validate_feed(path: Path, feed: Any, *, root: Path) -> Report:
     if not isinstance(apps, list) or not apps:
         report.error(f"{label}: 'apps' must be a non-empty array")
         return report
+
+    # Phase 5: two apps in the same feed must never publish the same download
+    # URL — that is unambiguously a mistake (unlike a shared bundle, which the
+    # catalog may declare deliberately with 'alternativeTo').
+    url_owners: dict[str, str] = {}
+    for app in apps:
+        if not isinstance(app, dict):
+            continue
+        owner = str(app.get("name") or "?")
+        version_urls = [v.get("downloadURL") for v in app.get("versions", []) if isinstance(v, dict)]
+        for url in (app.get("downloadURL"), *version_urls):
+            if not isinstance(url, str) or not url:
+                continue
+            previous = url_owners.get(url)
+            if previous is not None and previous != owner:
+                report.error(f"{label}: download URL {url} is shared by '{previous}' and '{owner}'")
+            else:
+                url_owners[url] = owner
 
     for index, app in enumerate(apps):
         prefix = f"{label}: apps[{index}]"
@@ -469,6 +533,9 @@ GENERATED_DOCS = (
     "search-index.json",
     "compare.json",
     "screenshots.json",
+    "integrity_report.json",
+    "dead_apps.json",
+    "collections.json",
 )
 CHECK_KEYS = ("metadata", "urls", "fileAvailable", "hashVerified")
 
@@ -505,6 +572,21 @@ def validate_generated_docs(catalog: Any, paths: Paths) -> Report:
         if "og:title" not in content or "assets/design-system/tokens.css" not in content:
             report.error(f"apps/{slug}/index.html: looks incomplete (missing page shell)")
     return report
+
+
+def _catalog_slugs(catalog: Any) -> set[str] | None:
+    """Known app slugs, accepting either the raw catalog dict or a Catalog."""
+    if catalog is None:
+        return None
+    if isinstance(catalog, dict):
+        apps = catalog.get("apps")
+        if not isinstance(apps, list):
+            return None
+        return {str(item.get("slug")) for item in apps if isinstance(item, dict) and item.get("slug")}
+    apps = getattr(catalog, "apps", None)
+    if not isinstance(apps, (list, tuple)):
+        return None
+    return {app.slug for app in apps}
 
 
 def validate_doc_shape(
@@ -562,6 +644,12 @@ def validate_doc_shape(
     if name == "status.json":
         if doc.get("totals", {}).get("sources") != len(items("sources")):
             report.error("feeds/status.json: totals.sources does not match sources[] length")
+        # Phase 15 monitoring sections.
+        for section in ("pipeline", "deployment"):
+            if not isinstance(doc.get(section), dict):
+                report.error(f"feeds/status.json: {section} section is required")
+        if not isinstance(doc.get("providers"), list):
+            report.error("feeds/status.json: providers section must be a list")
         for source in items("sources"):
             if not isinstance(source, dict):
                 continue
@@ -670,6 +758,76 @@ def validate_doc_shape(
 
     if name == "screenshots.json" and not isinstance(doc.get("screenshots"), list):
         report.error("feeds/screenshots.json: screenshots must be a list")
+
+    if name == "integrity_report.json":
+        totals = doc.get("totals", {})
+        if not isinstance(totals, dict) or "apps" not in totals:
+            report.error("feeds/integrity_report.json: totals.apps is required")
+        if not isinstance(doc.get("apps"), list):
+            report.error("feeds/integrity_report.json: apps must be a list")
+        else:
+            for entry in doc["apps"]:
+                if not isinstance(entry, dict) or not entry.get("slug"):
+                    report.error("feeds/integrity_report.json: every entry needs a slug")
+                    continue
+                asset = entry.get("asset")
+                if not isinstance(asset, dict):
+                    report.error(f"feeds/integrity_report.json: {entry.get('slug')} asset record is missing")
+                    continue
+                for key in ("sha256", "size", "releaseId", "source"):
+                    if key not in asset:
+                        report.error(f"feeds/integrity_report.json: {entry.get('slug')} asset is missing '{key}'")
+                # Hard reject rules — a corrupted asset must fail CI, not just
+                # show up in the report.
+                if not isinstance(asset.get("size"), int) or asset["size"] <= 0:
+                    report.error(f"feeds/integrity_report.json: {entry.get('slug')} asset is zero bytes")
+                url = str(asset.get("downloadUrl") or "")
+                if url and not url.split("?", 1)[0].lower().endswith(".ipa"):
+                    report.error(f"feeds/integrity_report.json: {entry.get('slug')} primary asset is not an IPA")
+                sha = asset.get("sha256")
+                if sha is not None and not SHA_RE.match(str(sha)):
+                    report.error(f"feeds/integrity_report.json: {entry.get('slug')} sha256 is malformed")
+
+    if name == "dead_apps.json":
+        if not isinstance(doc.get("summary"), dict):
+            report.error("feeds/dead_apps.json: summary is required")
+        if not isinstance(doc.get("apps"), list):
+            report.error("feeds/dead_apps.json: apps must be a list")
+        for entry in items("apps"):
+            if isinstance(entry, dict) and entry.get("classification") not in {
+                "healthy",
+                "warning",
+                "stale",
+                "archived",
+                "critical",
+            }:
+                report.error(f"feeds/dead_apps.json: {entry.get('slug')} has unknown classification")
+
+    if name == "collections.json":
+        collections_list = doc.get("collections")
+        if not isinstance(collections_list, list):
+            report.error("feeds/collections.json: collections must be a list")
+            collections_list = []
+        known = _catalog_slugs(catalog)
+        slugs: set[str] = set()
+        for collection in collections_list:
+            if not isinstance(collection, dict) or not collection.get("slug") or not collection.get("title"):
+                report.error("feeds/collections.json: every collection needs slug + title")
+                continue
+            slug = str(collection["slug"])
+            if slug in slugs:
+                report.error(f"feeds/collections.json: duplicate collection slug '{slug}'")
+            slugs.add(slug)
+            app_slugs = collection.get("appSlugs")
+            if not isinstance(app_slugs, list) or not app_slugs:
+                report.error(f"feeds/collections.json: collection '{slug}' has no apps")
+                continue
+            if known is not None:
+                unknown = [str(s) for s in app_slugs if str(s) not in known]
+                if unknown:
+                    report.error(
+                        f"feeds/collections.json: collection '{slug}' references unknown apps {unknown}"
+                    )
 
 
 # ---------------------------------------------------------------------------

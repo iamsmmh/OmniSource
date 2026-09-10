@@ -18,18 +18,10 @@ from datetime import date, timedelta
 from typing import Any
 
 from omnisource.domain import Catalog, today
+from omnisource.utils.dates import parse_date as _date
 
 ANALYTICS_SCHEMA_VERSION = 1
 HISTORY_LIMIT = 30
-
-
-def _date(value: Any) -> date | None:
-    if not value:
-        return None
-    try:
-        return date.fromisoformat(str(value)[:10])
-    except ValueError:
-        return None
 
 
 def _week_events(state: dict[str, Any], kind: str, *, days: int = 7) -> list[dict[str, Any]]:

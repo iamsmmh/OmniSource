@@ -15,50 +15,20 @@ metric is recomputed on every build from the pipeline state.
 
 from __future__ import annotations
 
-from datetime import date, timedelta
+from datetime import date
 from typing import Any
 
 from omnisource.discovery import newest_version
 from omnisource.domain import Catalog, today
+from omnisource.utils.dates import parse_date as _parse_date
+from omnisource.utils.health import WINDOW_DAYS
+from omnisource.utils.health import probe_window as _window_probe
 
 INTEL_SCHEMA_VERSION = 1
-WINDOW_DAYS = 30
 
 
-def _parse_date(value: Any) -> date | None:
-    if not value:
-        return None
-    try:
-        return date.fromisoformat(str(value)[:10])
-    except (TypeError, ValueError):
-        return None
-
-
-def _window_probe(state: dict[str, Any]) -> tuple[int, int, float | None]:
-    history = state.get("healthHistory") or []
-    if not isinstance(history, list):
-        return 0, 0, None
-    cutoff = date.today() - timedelta(days=WINDOW_DAYS)
-    total = 0
-    reachable = 0
-    latencies: list[int] = []
-    for item in history:
-        if not isinstance(item, dict):
-            continue
-        when = _parse_date(item.get("date"))
-        if when is None or when < cutoff:
-            continue
-        total += 1
-        if item.get("reachable") is True:
-            reachable += 1
-        latency = item.get("latencyMs")
-        if isinstance(latency, (int, float)):
-            latencies.append(int(latency))
-    avg = sum(latencies) / len(latencies) if latencies else None
-    return total, reachable, avg
-
-
-def _release_consistency(state: dict[str, Any], slug: str) -> float:
+def release_consistency(state: dict[str, Any], slug: str) -> float:
+    """0..1 release-cadence consistency (lower variance = more consistent)."""
     versions = (state.get(slug) or {}).get("versions") or []
     if not isinstance(versions, list) or len(versions) < 2:
         return 0.0
@@ -108,7 +78,7 @@ def build_download_intel_doc(
         fallbacks = newest.get("fallbackDownloadURLs") or app.raw.get("fallbackDownloadURLs") or []
         fallbacks = [url for url in fallbacks if isinstance(url, str) and url.startswith(("http://", "https://"))]
         mirror_count += 1 + len(fallbacks)
-        consistency = _release_consistency(state, app.slug)
+        consistency = release_consistency(state, app.slug)
         apps.append(
             {
                 "slug": app.slug,
