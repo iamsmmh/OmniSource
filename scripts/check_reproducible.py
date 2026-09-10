@@ -123,6 +123,17 @@ def _norm_screenshots(data: bytes) -> bytes:
     return json.dumps(doc, indent=2, sort_keys=True).encode("utf-8")
 
 
+def _is_screenshots_doc(name: str) -> bool:
+    """True for ``feeds/screenshots.json`` and its published ``.gz`` twin.
+
+    Both carry the same document, so both need the mirror-state normalizer;
+    only normalizing the canonical file would let the environment-dependent
+    ``mirrored``/``size``/``sha256``/``thumbnailSize`` values leak into the
+    comparison through ``api/screenshots.json.gz``.
+    """
+    return name.startswith("screenshots.json")
+
+
 def _snapshot() -> dict[str, bytes]:
     """Map path -> normalized hash for every generated file on disk."""
     snapshot: dict[str, bytes] = {}
@@ -138,7 +149,7 @@ def _snapshot() -> dict[str, bytes]:
                     # check does not depend on the local zlib's deflate output.
                     with contextlib.suppress(OSError):
                         data = _norm(gzip.decompress(data))
-                if path.name == "screenshots.json":
+                if _is_screenshots_doc(path.name):
                     data = _norm_screenshots(data)
                 snapshot[str(path.relative_to(ROOT))] = hashlib.sha256(data).hexdigest()
     return snapshot
