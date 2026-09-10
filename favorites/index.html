@@ -1,31 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="auto">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Your favorite sideloadable iOS apps on OmniSource">
-  <title>My Favorites - OmniSource</title>
-  
-  <link rel="stylesheet" href="../assets/design-system/tokens.css">
-  <link rel="stylesheet" href="../assets/design-system/components.css">
-  <link rel="icon" type="image/png" href="../assets/OmniSource.png">
-  <meta name="theme-color" content="#e8eef8">
-  
-  <meta property="og:title" content="My Favorites - OmniSource">
-  <meta property="og:description" content="Your favorite sideloadable iOS apps">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>My Favorites — OmniSource</title>
+  <meta name="description" content="Your favorite sideloadable iOS apps on OmniSource — saved locally, always in sync.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#eef2fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#06060e" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://iamsmmh.github.io/OmniSource/favorites/">
+  <meta property="og:title" content="My Favorites — OmniSource">
+  <meta property="og:description" content="Your favorite sideloadable iOS apps, saved locally.">
   <meta property="og:image" content="https://iamsmmh.github.io/OmniSource/assets/OmniSource.png">
   <meta property="og:url" content="https://iamsmmh.github.io/OmniSource/favorites/">
   <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="../assets/OmniSource.png">
+  <link rel="apple-touch-icon" href="../assets/OmniSource.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="OmniSource releases" href="../feeds/feed.xml">
+  <link rel="stylesheet" href="../assets/design-system/tokens.css">
+  <link rel="stylesheet" href="../assets/design-system/utilities.css">
+  <link rel="stylesheet" href="../assets/design-system/animations.css">
+  <link rel="stylesheet" href="../assets/design-system/components.css">
+  <script id="theme-bootstrap">
+    (function () {
+      try {
+        var t = localStorage.getItem('omnisource-theme');
+        if (t !== 'light' && t !== 'dark') t = 'auto';
+        document.documentElement.dataset.theme = t;
+        var v = localStorage.getItem('omnisource-view');
+        if (v === 'compact') document.documentElement.dataset.view = 'compact';
+      } catch (e) {}
+    })();
+  </script>
+  <script src="../js/core.js" defer></script>
+  <script src="../js/features.js" defer></script>
 </head>
-<body>
-  <header class="site-header" id="site-header">
-    <div class="nav shell">
-      <a href="../" class="brand">
-        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="OmniSource" width="40" height="40"></picture>
+<body data-page="favorites">
+  <a class="skip-link" href="#favorites-content">Skip to favorites</a>
+
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="../" aria-label="OmniSource home">
+        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="" width="34" height="34"></picture>
         <span>OmniSource</span>
+        <span class="brand-badge">LIVE</span>
       </a>
-      <div class="nav-links">
-        <a href="../">Home</a>
+
+      <button class="icon-button nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primaryNav">
+        <svg class="icon-menu" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+
+      <div class="nav-links" id="primaryNav">
+        <a href="../#catalog">Apps</a>
+        <a href="../#trending">Trending</a>
         <a href="../compare/">Compare</a>
         <a href="../status/">Health</a>
         <a href="../install/">Install</a>
@@ -34,185 +63,244 @@
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="nav-menu" role="menu">
-            <a href="../#trending" role="menuitem">Trending</a>
+            <a href="../#whats-new" role="menuitem">What&rsquo;s new</a>
             <a href="../analytics/" role="menuitem">Analytics</a>
-            <a href="index.html" class="active" aria-current="page" role="menuitem">
-              <span>Favorites</span>
-              <span class="favorites-count" id="favorites-count">0</span>
-            </a>
-            <a href="../collections/" role="menuitem collections-nav-item">Collections</a>
+            <a href="./" aria-current="page" role="menuitem">Favorites</a>
+            <a href="../collections/" role="menuitem">Collections</a>
             <a href="../search/" role="menuitem">Search</a>
-            <a href="../feeds/feed.xml" role="menuitem" title="Combined release feed (RSS)">RSS feed</a>
-            <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" class="nav-gh" role="menuitem">GitHub &#8599;</a>
+            <a href="../feeds/feed.xml" role="menuitem">RSS feed</a>
+            <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" role="menuitem">GitHub ↗</a>
           </div>
         </details>
       </div>
+
       <div class="nav-controls">
-        <button id="themeButton" class="icon-button" aria-label="Toggle theme">
-          <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <button class="icon-button" type="button" data-open-palette aria-label="Search (Command K)" title="Search (⌘K)">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
         </button>
-        <button class="icon-button" onclick="OS.QRCode.showQR('https://iamsmmh.github.io/OmniSource/apps.json', 'OmniSource Feed')" aria-label="Show QR code">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 2.31 1.03 4.4 2.69 5.88L12 22l4.31-7.12C18.97 13.4 20 11.31 20 9c0-3.87-3.13-7-7-7zm0 14.5c-3.04 0-5.5-2.46-5.5-5.5s2.46-5.5 5.5-5.5 5.5 2.46 5.5 5.5-2.46 5.5-5.5 5.5z"/>
-            <path d="M12 6.5c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5z"/>
-          </svg>
+        <button class="icon-button" id="viewToggle" type="button" aria-label="Use compact view" title="Toggle view" aria-pressed="false">
+          <svg class="icon-grid" aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.4"/><rect x="14" y="4" width="6" height="6" rx="1.4"/><rect x="4" y="14" width="6" height="6" rx="1.4"/><rect x="14" y="14" width="6" height="6" rx="1.4"/></svg>
+          <svg class="icon-list" aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="3.4" rx="1.4"/><rect x="4" y="10.3" width="16" height="3.4" rx="1.4"/><rect x="4" y="15.6" width="16" height="3.4" rx="1.4"/></svg>
+        </button>
+        <button class="icon-button" id="themeButton" type="button" aria-label="Change color theme" title="Theme: system">
+          <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2M12 19.2v2M2.8 12h2M19.2 12h2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l1.4 1.4"/></svg>
+          <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6Z"/></svg>
+        </button>
+        <button class="install-prompt" type="button" aria-label="Install OmniSource">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v11m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Install</span>
         </button>
       </div>
-    </div>
+    </nav>
   </header>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <!-- Hero -->
+  <section class="hero" style="padding-block: 48px 36px; overflow: clip;">
+    <div class="hero-bg" aria-hidden="true"><i class="spot"></i><i class="orb o1"></i><i class="orb o2"></i><i class="hero-grid"></i></div>
+    <div class="shell hero-inner" style="position:relative; z-index:1;">
+      <span class="eyebrow"><span class="live-dot" aria-hidden="true"></span> <span id="favCountPill">0 saved</span></span>
+      <h1 style="font-size: clamp(32px, 5vw, 52px); margin-top: 22px;">Your <span class="grad-text">favorites</span></h1>
+      <p class="hero-copy" style="margin-bottom: 10px;">Saved locally on this device. Tap the heart on any app card to add or remove it — updates flow in automatically.</p>
+      <div class="hero-ctas" style="margin-bottom: 0;">
+        <a class="button primary os-press" href="../#catalog">Browse apps</a>
+        <button class="button os-press" type="button" id="exportFavs">Export favorites</button>
+        <button class="button ghost os-press" type="button" id="clearFavs" hidden>Clear all</button>
+      </div>
+    </div>
+  </section>
 
   <main class="shell">
-    <div class="section">
-      <div class="section-heading">
-        <div class="kicker">
-          <span class="dot"></span>
-          <span>Favorites</span>
+    <section class="section" id="favorites-section" aria-label="Favorite apps">
+      <div id="favorites-content" aria-live="polite">
+        <div class="apps-grid">
+          <div class="os-skeleton skeleton-card"></div><div class="os-skeleton skeleton-card"></div><div class="os-skeleton skeleton-card"></div>
+          <div class="os-skeleton skeleton-card"></div><div class="os-skeleton skeleton-card"></div><div class="os-skeleton skeleton-card"></div>
         </div>
-        <h1>My Favorites</h1>
-        <p class="lead">Save apps you love and get notified when they update.</p>
       </div>
-
-      <div id="favorites-content">
-        <!-- Content will be injected by JavaScript -->
-      </div>
-    </div>
+      <p class="text-xs text-faint mt-4" id="favsMeta" hidden></p>
+    </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-inner shell">
+    <div class="shell footer-inner">
       <div class="footer-brand">
-        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="OmniSource" width="40" height="40"></picture>
+        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="" width="40" height="40"></picture>
         <div>
           <strong>OmniSource</strong>
-          <p>The App Store for sideloaded iOS.</p>
+          <p>Curated iOS sideloading, kept current automatically. One feed for every major client.</p>
         </div>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
-          <h4>Product</h4>
-          <a href="../">Home</a>
-          <a href="../compare/">Compare</a>
-          <a href="../status/">Status</a>
+          <h4>Browse</h4>
+          <a href="../#catalog">All apps</a>
+          <a href="../#trending">Trending</a>
           <a href="../analytics/">Analytics</a>
-        </div>
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <a href="../install/">Install Center</a>
-          <a href="../search/">Search</a>
-          <a href="../favorites/">Favorites</a>
+          <a href="./" aria-current="page">Favorites</a>
           <a href="../collections/">Collections</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
+          <h4>Platform</h4>
+          <a href="../status/">Source health</a>
+          <a href="../install/">Installation center</a>
+          <a href="../feeds/feed.xml">Combined RSS</a>
+          <a href="../api/index.json" target="_blank" rel="noopener">API endpoints</a>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener">Repository</a>
           <a href="https://github.com/iamsmmh/OmniSource/blob/main/LICENSE">License</a>
-          <a href="https://github.com/iamsmmh/OmniSource">GitHub</a>
+          <a href="../search/">Search</a>
         </div>
       </div>
-      <p class="fine-print">
-        OmniSource is an independent community project. All apps, code and trademarks belong to their respective owners.
-        You are responsible for complying with applicable laws and terms of service.
-      </p>
+      <p class="fine-print">Independent community project. Apps and trademarks belong to their respective owners. © <span id="year"></span> OmniSource contributors.</p>
     </div>
   </footer>
 
-  <!-- Toast Container -->
-  <div id="toast-container"></div>
+  <!-- App detail dialog -->
+  <dialog id="appDialog" class="app-dialog os-dialog" aria-labelledby="dialogTitle">
+    <div id="dialogContent"></div>
+  </dialog>
 
-  <!-- QR Modal -->
-  <div class="qr-backdrop"></div>
-  <div class="qr-modal">
-    <h3>QR Code</h3>
-    <div class="qr-code"></div>
-    <div class="url-display"></div>
-    <div class="actions">
-      <button class="button" onclick="OS.QRCode.download()">Download</button>
-      <button class="button ghost" onclick="OS.QRCode.hideQR()">Close</button>
-    </div>
+  <!-- QR dialog -->
+  <dialog id="qrDialog" class="qr-dialog os-dialog" aria-labelledby="qrTitle">
+    <button class="dialog-close" type="button" data-close aria-label="Close"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <span class="kicker">SCAN TO ADD</span>
+    <h2 id="qrTitle">OmniSource</h2>
+    <div class="qr-image"><img id="qrImage" width="240" height="240" alt="QR code for the source URL"></div>
+    <code id="qrText"></code>
+    <button class="button primary full" id="qrCopy" type="button">Copy URL</button>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+    <span></span>
   </div>
 
-  <!-- Rating Modal -->
-  <div class="rating-backdrop"></div>
-  <div class="rating-modal">
-    <h3>Rate App</h3>
-    <p>Help others discover great apps by sharing your experience.</p>
-    <div class="rating-stars">
-      <span class="star" data-rating="1">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-      <span class="star" data-rating="2">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-      <span class="star" data-rating="3">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-      <span class="star" data-rating="4">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-      <span class="star" data-rating="5">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-    </div>
-    <div class="actions">
-      <button class="button ghost" onclick="OS.Ratings.hideRatingModal()">Cancel</button>
-      <button class="button primary" onclick="OS.Ratings.submitRating()">Submit</button>
-    </div>
-  </div>
-
-  <!-- Collections Modal -->
-  <div class="collections-backdrop"></div>
-  <div class="collections-modal">
-    <h3>Add to Collection</h3>
-    <p>Choose a collection to add this app to.</p>
-    <div class="collection-list" id="collection-list"></div>
-    <div class="actions">
-      <button class="button ghost" onclick="OS.Collections.hideModal()">Cancel</button>
-    </div>
-  </div>
-
-  <script src="../js/core.js"></script>
-  <script src="../js/features.js"></script>
   <script>
-    // Load catalog data (api/catalog.json → feeds/discovery.json → discovery.json)
-    OS.loadCatalog().then(catalog => {
-      OS.Favorites.injectButtons();
-      OS.Ratings.injectRatingDisplays();
-      OS.Favorites.updateCount();
-
-      // Render favorites
-      const favorites = OS.Favorites.getAll();
-      const favoriteApps = catalog.filter(app => favorites.includes(app.slug || app.id));
-
-      const content = document.getElementById('favorites-content');
-      if (favoriteApps.length === 0) {
-        content.innerHTML = `
-          <div class="empty-state">
-            <div class="empty-icon">❤️</div>
-            <h3>No favorites yet</h3>
-            <p>Start adding apps to your favorites by clicking the heart icon on any app card.</p>
-            <a href="../" class="button primary">Browse Apps</a>
-          </div>
-        `;
-      } else {
-        content.innerHTML = `
-          <div class="apps-grid">
-            ${favoriteApps.map(app => OS.Favorites._renderAppCard(app)).join('')}
-          </div>
-        `;
-        OS.Favorites.injectButtons(content);
-        OS.Ratings.injectRatingDisplays(content);
+    (function () {
+      function onReady(fn) {
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn, { once: true });
+        else fn();
       }
-    });
+      onReady(function () {
+        // Year
+        var y = document.getElementById('year');
+        if (y) y.textContent = new Date().getFullYear();
+
+        // Hook up core chrome (header scroll, palette, year) if OS present
+        if (window.OS && OS.loadCatalog) {
+          OS.loadCatalog().then(function (catalog) {
+            try { OS.Favorites && OS.Favorites.injectButtons && OS.Favorites.injectButtons(); } catch(e){}
+            try { OS.Ratings && OS.Ratings.injectRatingDisplays && OS.Ratings.injectRatingDisplays(); } catch(e){}
+            try { OS.Favorites && OS.Favorites.updateCount && OS.Favorites.updateCount(); } catch(e){}
+            renderFavorites(catalog);
+            wireActions(catalog);
+          }).catch(function () {
+            renderFavorites([]);
+          });
+        } else {
+          renderFavorites([]);
+        }
+
+        function renderFavorites(catalog) {
+          var content = document.getElementById('favorites-content');
+          var pill = document.getElementById('favCountPill');
+          var clearBtn = document.getElementById('clearFavs');
+          var meta = document.getElementById('favsMeta');
+          if (!content) return;
+          var favs = [];
+          try { favs = (window.OS && OS.Favorites && OS.Favorites.getAll && OS.Favorites.getAll()) || JSON.parse(localStorage.getItem('omnisource-favorites') || '[]'); } catch(e){ favs = []; }
+          var favSet = new Set(favs);
+          var favApps = (catalog || []).filter(function (a) { return favSet.has(a.slug || a.id || a.bundleID); });
+
+          if (pill) pill.textContent = favApps.length ? favApps.length + ' saved · ' + favApps.length + ' app' + (favApps.length !== 1 ? 's' : '') : '0 saved — add some apps';
+          if (clearBtn) clearBtn.hidden = favApps.length === 0;
+          if (meta) { meta.hidden = !favApps.length; meta.textContent = favApps.length + ' favorite' + (favApps.length !== 1 ? 's' : '') + ' · stored locally · ' + new Date().toLocaleDateString(); }
+
+          if (favApps.length === 0) {
+            content.innerHTML = ''
+              + '<div class="empty-state" data-reveal style="max-width:720px; margin: 12px auto 0;" data-reveal-delay="60ms">'
+              + '  <div class="empty-icon" aria-hidden="true">♡</div>'
+              + '  <h3>No favorites yet</h3>'
+              + '  <p>Tap the heart on any app card to save it here. Your favorites live on this device and update automatically when the catalog syncs.</p>'
+              + '  <a class="button primary" href="../#catalog">Browse the catalog</a>'
+              + '  <a class="button" href="../collections/" style="margin-left:8px">Explore collections</a>'
+              + '</div>';
+            // re-trigger reveal
+            if (window.OS && OS.reveal) try { OS.reveal(); } catch(e){}
+            return;
+          }
+
+          // Render via OS helpers if available for consistent cards
+          var gridHtml;
+          if (window.OS && OS.Favorites && OS.Favorites._renderAppCard) {
+            gridHtml = favApps.map(function (a) { return OS.Favorites._renderAppCard(a); }).join('');
+          } else {
+            gridHtml = favApps.map(function (a) {
+              var icon = (a.iconURL || a.icon || '../assets/OmniSource.png');
+              var name = a.name || a.localizedDescription || a.slug;
+              var dev = a.developerName || a.developer || '';
+              var ver = a.version || (a.versions && a.versions[0] && a.versions[0].version) || '';
+              return '<article class="app-card" data-reveal><div class="card-top"><div class="icon-wrap"><img class="app-icon" src="'+icon+'" alt=""></div><div class="card-identity"><h3>'+ name +'</h3><p class="card-dev">'+ dev +'</p></div></div><p class="app-description">'+ (a.subtitle || a.localizedDescription || '').slice(0,120) +'</p><div class="card-bottom"><span class="badge">'+ ver +'</span><span class="get-button" data-slug="'+ (a.slug||'') +'">View</span></div></article>';
+            }).join('');
+          }
+          content.innerHTML = '<div class="apps-grid">' + gridHtml + '</div>';
+          // Enhance with favorites buttons + ratings + reveal + install grid
+          try { OS.Favorites && OS.Favorites.injectButtons && OS.Favorites.injectButtons(content); } catch(e){}
+          try { OS.Ratings && OS.Ratings.injectRatingDisplays && OS.Ratings.injectRatingDisplays(content); } catch(e){}
+          // Let core handle reveal observer; nudge
+          if (window.OS && OS.reveal) try { OS.reveal(); } catch(e){}
+          content.querySelectorAll('[data-reveal]').forEach(function(el,i){ el.style.setProperty('--reveal-delay', (i*40)+'ms'); });
+          // force cards to reveal class after rAF so stagger works even without observer
+          requestAnimationFrame(function(){
+            content.querySelectorAll('[data-reveal]').forEach(function(el){
+              // core observer will add .is-revealed; fallback if not
+              setTimeout(function(){ el.classList.add('is-revealed'); }, 30);
+            });
+          });
+        }
+
+        function wireActions(catalog) {
+          var exportBtn = document.getElementById('exportFavs');
+          var clearBtn = document.getElementById('clearFavs');
+          if (exportBtn) exportBtn.addEventListener('click', function(){
+            var favs = [];
+            try { favs = (window.OS && OS.Favorites && OS.Favorites.getAll && OS.Favorites.getAll()) || JSON.parse(localStorage.getItem('omnisource-favorites') || '[]'); } catch(e){}
+            if (!favs.length) {
+              if (window.OS && OS.toast) OS.toast('No favorites to export');
+              return;
+            }
+            var blob = new Blob([JSON.stringify(favs, null, 2)], { type: 'application/json' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url; a.download = 'omnisource-favorites.json';
+            document.body.appendChild(a); a.click(); a.remove();
+            setTimeout(function(){ URL.revokeObjectURL(url); }, 2000);
+            if (window.OS && OS.toast) OS.toast('Favorites exported');
+          });
+          if (clearBtn) clearBtn.addEventListener('click', function(){
+            if (!confirm('Clear all favorites on this device?')) return;
+            try {
+              if (window.OS && OS.Favorites && OS.Favorites.clear) OS.Favorites.clear();
+              else localStorage.removeItem('omnisource-favorites');
+            } catch(e){}
+            // also clear via Features storage key
+            try { localStorage.setItem('omnisource-favorites', '[]'); } catch(e){}
+            renderFavorites(catalog || []);
+            try { OS.Favorites && OS.Favorites.updateCount && OS.Favorites.updateCount(); } catch(e){}
+            if (window.OS && OS.toast) OS.toast('Favorites cleared');
+          });
+          // Re-render when favorites change from cards
+          document.addEventListener('omnisource:favorites-change', function(){
+            // catalog may be needed again — re-read from cache
+            var apps = catalog || [];
+            renderFavorites(apps);
+          });
+        }
+      });
+    })();
   </script>
 </body>
 </html>

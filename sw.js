@@ -35,10 +35,16 @@
  *   • js/features.js and the favorites/collections pages join the precache
  *     so those pages work offline on first load too; the dead Fuse.js
  *     vendor bundle was removed.
+ *
+ * v9 changes (fluid glass v2):
+ *   • design-system tokens / components / animations upgraded to the
+ *     cinematic liquid-glass materials (translucent layers, chromatic
+ *     refraction, aurora diffusion, grain). Shell precache stays the
+ *     same — version bump forces clients to drop stale glass.
  */
 'use strict';
 
-const VERSION = 'omnisource-v8';
+const VERSION = 'omnisource-v9';
 const CORE_CACHE = `${VERSION}-core`;
 const DATA_CACHE = `${VERSION}-data`;
 const ASSET_CACHE = `${VERSION}-assets`;

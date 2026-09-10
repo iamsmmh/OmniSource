@@ -1,31 +1,232 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="auto">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Organize your sideloadable iOS apps into collections on OmniSource">
-  <title>Collections - OmniSource</title>
-  
-  <link rel="stylesheet" href="../assets/design-system/tokens.css">
-  <link rel="stylesheet" href="../assets/design-system/components.css">
-  <link rel="icon" type="image/png" href="../assets/OmniSource.png">
-  <meta name="theme-color" content="#e8eef8">
-  
-  <meta property="og:title" content="Collections - OmniSource">
-  <meta property="og:description" content="Organize your sideloadable iOS apps into collections">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Collections — OmniSource</title>
+  <meta name="description" content="Organize your sideloadable iOS apps into custom collections on OmniSource.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#eef2fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#06060e" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://iamsmmh.github.io/OmniSource/collections/">
+  <meta property="og:title" content="Collections — OmniSource">
+  <meta property="og:description" content="Organize your favorite apps into custom glass collections.">
   <meta property="og:image" content="https://iamsmmh.github.io/OmniSource/assets/OmniSource.png">
   <meta property="og:url" content="https://iamsmmh.github.io/OmniSource/collections/">
   <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="../assets/OmniSource.png">
+  <link rel="apple-touch-icon" href="../assets/OmniSource.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="OmniSource releases" href="../feeds/feed.xml">
+  <link rel="stylesheet" href="../assets/design-system/tokens.css">
+  <link rel="stylesheet" href="../assets/design-system/utilities.css">
+  <link rel="stylesheet" href="../assets/design-system/animations.css">
+  <link rel="stylesheet" href="../assets/design-system/components.css">
+  <script id="theme-bootstrap">
+    (function () {
+      try {
+        var t = localStorage.getItem('omnisource-theme');
+        if (t !== 'light' && t !== 'dark') t = 'auto';
+        document.documentElement.dataset.theme = t;
+        var v = localStorage.getItem('omnisource-view');
+        if (v === 'compact') document.documentElement.dataset.view = 'compact';
+      } catch (e) {}
+    })();
+  </script>
+  <script src="../js/core.js" defer></script>
+  <script src="../js/features.js" defer></script>
+  <style>
+    /* Collections page — glass cards */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .collection-card {
+      position: relative;
+      display: block;
+      padding: 22px;
+      border-radius: var(--radius-xl);
+      background: var(--glass);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      backdrop-filter: var(--blur-liquid);
+      -webkit-backdrop-filter: var(--blur-liquid);
+      text-decoration: none;
+      color: var(--text);
+      transition: transform var(--dur) var(--ease-fluid), box-shadow var(--dur) var(--ease-fluid), border-color var(--dur) var(--ease-fluid);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .collection-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1px;
+      background: var(--refraction-edge);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.45;
+      pointer-events: none;
+      transition: opacity var(--dur) var(--ease);
+    }
+    .collection-card:hover {
+      transform: translateY(-4px);
+      border-color: color-mix(in srgb, var(--accent) 32%, var(--glass-border));
+      box-shadow: var(--glass-shadow-lg), var(--glow-soft);
+    }
+    .collection-card:hover::before { opacity: 0.8; }
+    .collection-card header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 10px; }
+    .collection-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: grid; place-items: center;
+      font-size: 20px; flex: none;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+    .collection-card h3 { font-size: 16px; letter-spacing: -0.02em; margin: 0; }
+    .collection-card p { margin: 4px 0 0; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+    .collection-meta {
+      display: flex; align-items: center; gap: 10px;
+      font: 600 10.5px var(--font-mono);
+      color: var(--muted);
+      margin-top: 12px;
+    }
+    .collection-meta .count {
+      background: var(--surface-2);
+      padding: 3px 9px;
+      border-radius: 999px;
+      font: 700 10px var(--font-mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .collection-preview {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 7px;
+      margin-top: 14px;
+    }
+    .collection-preview img {
+      width: 100%; aspect-ratio: 1;
+      border-radius: 10px;
+      object-fit: cover;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+    .collection-actions {
+      display: flex; gap: 8px;
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+    .collection-actions .button { height: 32px; padding: 0 13px; font-size: 11.5px; }
+    .collection-group-title {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+      margin: 36px 0 14px;
+      font-family: var(--font-mono);
+    }
+    .collection-group-title:first-child { margin-top: 0; }
+    /* Modal glass */
+    .collections-modal-backdrop,
+    .create-collection-backdrop,
+    .add-to-collection-backdrop {
+      position: fixed; inset: 0;
+      background: color-mix(in srgb, var(--text) 22%, transparent);
+      backdrop-filter: blur(18px) saturate(1.4);
+      -webkit-backdrop-filter: blur(18px) saturate(1.4);
+      z-index: 105;
+      opacity: 0; pointer-events: none;
+      transition: opacity var(--dur) var(--ease);
+    }
+    .collections-modal-backdrop.show,
+    .create-collection-backdrop.show,
+    .add-to-collection-backdrop.show {
+      opacity: 1; pointer-events: auto;
+    }
+    .collections-modal,
+    .create-collection-modal,
+    .add-to-collection-modal {
+      position: fixed;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -46%) scale(0.98);
+      width: min(520px, calc(100% - 24px));
+      max-height: min(84vh, 640px);
+      overflow: auto;
+      background: var(--glass-heavy);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xxl);
+      box-shadow: var(--glass-shadow-xl);
+      backdrop-filter: blur(36px) saturate(1.85);
+      -webkit-backdrop-filter: blur(36px) saturate(1.85);
+      padding: 28px;
+      z-index: 106;
+      opacity: 0; pointer-events: none;
+      transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease-fluid);
+    }
+    .collections-modal.show,
+    .create-collection-modal.show,
+    .add-to-collection-modal.show {
+      opacity: 1; pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .collection-form .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+    .collection-form label { font: 700 11px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .collection-form input[type="text"],
+    .collection-form textarea {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 11px 14px;
+      font-size: 14px;
+      outline: 0;
+      transition: border-color var(--dur-fast) var(--ease);
+    }
+    .collection-form input[type="text"]:focus,
+    .collection-form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-ring); }
+    .collection-form input[type="color"] { width: 100%; height: 40px; border-radius: var(--radius-md); border: 1px solid var(--line); padding: 4px; background: var(--surface); }
+    .collection-list { display: grid; gap: 8px; max-height: 320px; overflow: auto; padding: 2px; }
+    .collection-list .collection-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      cursor: pointer;
+      transition: border-color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+    }
+    .collection-list .collection-item:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .collection-list .collection-item .info { flex: 1; min-width: 0; }
+    .collection-list .collection-item h4 { font-size: 13.5px; margin: 0; }
+    .collection-list .collection-item p { font-size: 11.5px; color: var(--muted); margin: 2px 0 0; }
+  </style>
 </head>
-<body>
-  <header class="site-header" id="site-header">
-    <div class="nav shell">
-      <a href="../" class="brand">
-        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="OmniSource" width="40" height="40"></picture>
+<body data-page="collections">
+  <a class="skip-link" href="#collections-content">Skip to collections</a>
+
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="../" aria-label="OmniSource home">
+        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="" width="34" height="34"></picture>
         <span>OmniSource</span>
+        <span class="brand-badge">LIVE</span>
       </a>
-      <div class="nav-links">
-        <a href="../">Home</a>
+
+      <button class="icon-button nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primaryNav">
+        <svg class="icon-menu" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+
+      <div class="nav-links" id="primaryNav">
+        <a href="../#catalog">Apps</a>
+        <a href="../#trending">Trending</a>
         <a href="../compare/">Compare</a>
         <a href="../status/">Health</a>
         <a href="../install/">Install</a>
@@ -34,163 +235,126 @@
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="nav-menu" role="menu">
-            <a href="../#trending" role="menuitem">Trending</a>
+            <a href="../#whats-new" role="menuitem">What&rsquo;s new</a>
             <a href="../analytics/" role="menuitem">Analytics</a>
-            <a href="index.html" class="active" aria-current="page" role="menuitem">Collections</a>
-            <a href="../favorites/" role="menuitem favorites-nav-item">
-              <span>Favorites</span>
-              <span class="favorites-count">0</span>
-            </a>
+            <a href="../favorites/" role="menuitem">Favorites</a>
+            <a href="./" aria-current="page" role="menuitem">Collections</a>
             <a href="../search/" role="menuitem">Search</a>
-            <a href="../feeds/feed.xml" role="menuitem" title="Combined release feed (RSS)">RSS feed</a>
-            <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" class="nav-gh" role="menuitem">GitHub &#8599;</a>
+            <a href="../feeds/feed.xml" role="menuitem">RSS feed</a>
+            <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" role="menuitem">GitHub ↗</a>
           </div>
         </details>
       </div>
+
       <div class="nav-controls">
-        <button id="themeButton" class="icon-button" aria-label="Toggle theme">
-          <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0 2a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <button class="icon-button" type="button" data-open-palette aria-label="Search (Command K)" title="Search (⌘K)">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
         </button>
-        <button class="icon-button" onclick="OS.QRCode.showQR('https://iamsmmh.github.io/OmniSource/apps.json', 'OmniSource Feed')" aria-label="Show QR code">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 2.31 1.03 4.4 2.69 5.88L12 22l4.31-7.12C18.97 13.4 20 11.31 20 9c0-3.87-3.13-7-7-7zm0 14.5c-3.04 0-5.5-2.46-5.5-5.5s2.46-5.5 5.5-5.5 5.5 2.46 5.5 5.5-2.46 5.5-5.5 5.5z"/>
-            <path d="M12 6.5c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5 3.5-1.57 3.5-3.5-1.57-3.5-3.5-3.5z"/>
-          </svg>
+        <button class="icon-button" id="viewToggle" type="button" aria-label="Use compact view" title="Toggle view" aria-pressed="false">
+          <svg class="icon-grid" aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.4"/><rect x="14" y="4" width="6" height="6" rx="1.4"/><rect x="4" y="14" width="6" height="6" rx="1.4"/><rect x="14" y="14" width="6" height="6" rx="1.4"/></svg>
+          <svg class="icon-list" aria-hidden="true" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="3.4" rx="1.4"/><rect x="4" y="10.3" width="16" height="3.4" rx="1.4"/><rect x="4" y="15.6" width="16" height="3.4" rx="1.4"/></svg>
+        </button>
+        <button class="icon-button" id="themeButton" type="button" aria-label="Change color theme" title="Theme: system">
+          <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2M12 19.2v2M2.8 12h2M19.2 12h2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l1.4 1.4"/></svg>
+          <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6Z"/></svg>
+        </button>
+        <button class="install-prompt" type="button" aria-label="Install OmniSource">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v11m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span>Install</span>
         </button>
       </div>
-    </div>
+    </nav>
   </header>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+
+  <!-- Hero -->
+  <section class="hero" style="padding-block: 48px 36px; overflow: clip;">
+    <div class="hero-bg" aria-hidden="true"><i class="spot"></i><i class="orb o1"></i><i class="orb o2"></i><i class="hero-grid"></i></div>
+    <div class="shell hero-inner" style="position:relative; z-index:1;">
+      <span class="eyebrow"><span class="live-dot" aria-hidden="true"></span> <span id="collectionsPill">0 collections</span></span>
+      <h1 style="font-size: clamp(32px, 5vw, 52px); margin-top: 22px;">App <span class="grad-text">collections</span></h1>
+      <p class="hero-copy" style="margin-bottom: 10px;">Curate your own sets — YouTube mods, emulators, tweaks — and share them as a group. Stored locally, exportable as JSON.</p>
+      <div class="hero-ctas" style="margin-bottom: 0;">
+        <button class="button primary os-press" type="button" onclick="OS.Collections && OS.Collections.showCreateModal && OS.Collections.showCreateModal()">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Create collection
+        </button>
+        <button class="button os-press" type="button" onclick="OS.Collections && OS.Collections.importCollections && OS.Collections.importCollections()">Import JSON</button>
+        <a class="button ghost os-press" href="../favorites/">View favorites</a>
+      </div>
+    </div>
+  </section>
 
   <main class="shell">
-    <div class="section">
-      <div class="section-heading">
-        <div class="kicker">
-          <span class="dot"></span>
-          <span>Collections</span>
+    <section class="section" aria-label="Collections">
+      <div id="collections-content" aria-live="polite">
+        <div class="collections-grid">
+          <div class="os-skeleton" style="height:200px"></div><div class="os-skeleton" style="height:200px"></div><div class="os-skeleton" style="height:200px"></div>
+          <div class="os-skeleton" style="height:200px"></div><div class="os-skeleton" style="height:200px"></div><div class="os-skeleton" style="height:200px"></div>
         </div>
-        <h1>App Collections</h1>
-        <p class="lead">Organize your favorite apps into custom collections.</p>
       </div>
-
-      <div class="section-actions" style="margin-bottom: 20px; display: flex; gap: 12px;">
-        <button class="button primary" onclick="OS.Collections.showCreateModal()">
-          <svg viewBox="0 0 24 24" width="16" height="16" style="margin-right: 6px;">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-          </svg>
-          Create Collection
-        </button>
-        <button class="button ghost" onclick="OS.Collections.importCollections()">
-          <svg viewBox="0 0 24 24" width="16" height="16" style="margin-right: 6px;">
-            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-          </svg>
-          Import
-        </button>
-      </div>
-
-      <div id="collections-content">
-        <!-- Content will be injected by JavaScript -->
-      </div>
-    </div>
+    </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-inner shell">
+    <div class="shell footer-inner">
       <div class="footer-brand">
-        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="OmniSource" width="40" height="40"></picture>
+        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="" width="40" height="40"></picture>
         <div>
           <strong>OmniSource</strong>
-          <p>The App Store for sideloaded iOS.</p>
+          <p>Curated iOS sideloading, kept current automatically. One feed for every major client.</p>
         </div>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
-          <h4>Product</h4>
-          <a href="../">Home</a>
-          <a href="../compare/">Compare</a>
-          <a href="../status/">Status</a>
+          <h4>Browse</h4>
+          <a href="../#catalog">All apps</a>
+          <a href="../#trending">Trending</a>
           <a href="../analytics/">Analytics</a>
-        </div>
-        <div class="footer-col">
-          <h4>Resources</h4>
-          <a href="../install/">Install Center</a>
-          <a href="../search/">Search</a>
           <a href="../favorites/">Favorites</a>
-          <a href="index.html">Collections</a>
+          <a href="./" aria-current="page">Collections</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
+          <h4>Platform</h4>
+          <a href="../status/">Source health</a>
+          <a href="../install/">Installation center</a>
+          <a href="../feeds/feed.xml">Combined RSS</a>
+          <a href="../api/index.json" target="_blank" rel="noopener">API endpoints</a>
+        </div>
+        <div class="footer-col">
+          <h4>Project</h4>
+          <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener">Repository</a>
           <a href="https://github.com/iamsmmh/OmniSource/blob/main/LICENSE">License</a>
-          <a href="https://github.com/iamsmmh/OmniSource">GitHub</a>
+          <a href="../search/">Search</a>
         </div>
       </div>
-      <p class="fine-print">
-        OmniSource is an independent community project. All apps, code and trademarks belong to their respective owners.
-        You are responsible for complying with applicable laws and terms of service.
-      </p>
+      <p class="fine-print">Independent community project. Apps and trademarks belong to their respective owners. © <span id="year"></span> OmniSource contributors.</p>
     </div>
   </footer>
 
-  <!-- Toast Container -->
-  <div id="toast-container"></div>
+  <!-- App detail dialog -->
+  <dialog id="appDialog" class="app-dialog os-dialog" aria-labelledby="dialogTitle">
+    <div id="dialogContent"></div>
+  </dialog>
 
-  <!-- QR Modal -->
-  <div class="qr-backdrop"></div>
-  <div class="qr-modal">
-    <h3>QR Code</h3>
-    <div class="qr-code"></div>
-    <div class="url-display"></div>
-    <div class="actions">
-      <button class="button" onclick="OS.QRCode.download()">Download</button>
-      <button class="button ghost" onclick="OS.QRCode.hideQR()">Close</button>
-    </div>
-  </div>
-
-  <!-- Rating Modal -->
-  <div class="rating-backdrop"></div>
-  <div class="rating-modal">
-    <h3>Rate App</h3>
-    <p>Help others discover great apps by sharing your experience.</p>
-    <div class="rating-stars">
-      <span class="star" data-rating="1">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-      <span class="star" data-rating="2">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-      <span class="star" data-rating="3">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-      <span class="star" data-rating="4">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-      <span class="star" data-rating="5">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-        </svg>
-      </span>
-    </div>
-    <div class="actions">
-      <button class="button ghost" onclick="OS.Ratings.hideRatingModal()">Cancel</button>
-      <button class="button primary" onclick="OS.Ratings.submitRating()">Submit</button>
-    </div>
-  </div>
+  <!-- QR dialog -->
+  <dialog id="qrDialog" class="qr-dialog os-dialog" aria-labelledby="qrTitle">
+    <button class="dialog-close" type="button" data-close aria-label="Close"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+    <span class="kicker">SCAN TO ADD</span>
+    <h2 id="qrTitle">OmniSource</h2>
+    <div class="qr-image"><img id="qrImage" width="240" height="240" alt="QR code for the source URL"></div>
+    <code id="qrText"></code>
+    <button class="button primary full" id="qrCopy" type="button">Copy URL</button>
+  </dialog>
 
   <!-- Create Collection Modal -->
-  <div class="create-collection-backdrop"></div>
-  <div class="create-collection-modal">
-    <h3>Create Collection</h3>
+  <div class="create-collection-backdrop" onclick="OS.Collections && OS.Collections.hideCreateModal && OS.Collections.hideCreateModal()"></div>
+  <div class="create-collection-modal" role="dialog" aria-modal="true" aria-labelledby="createTitle">
+    <h3 id="createTitle" style="margin:0 0 8px;">Create collection</h3>
+    <p style="color:var(--muted); font-size:13px; margin:0 0 18px;">Group apps together — themes, tweaks, or daily drivers.</p>
     <form id="create-collection-form" class="collection-form">
       <div class="field">
-        <label>Collection Name *</label>
+        <label>Collection name *</label>
         <input type="text" name="name" placeholder="My YouTube Mods" required>
       </div>
       <div class="field">
@@ -198,10 +362,10 @@
         <textarea name="description" placeholder="A collection of my favorite YouTube modification apps" rows="3"></textarea>
       </div>
       <div class="field">
-        <label>Color</label>
+        <label>Accent color</label>
         <input type="color" name="color" value="#6d5ef5">
       </div>
-      <div class="actions" style="margin-top: 20px;">
+      <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:18px;">
         <button type="button" class="button ghost" onclick="OS.Collections.hideCreateModal()">Cancel</button>
         <button type="submit" class="button primary">Create</button>
       </div>
@@ -209,328 +373,208 @@
   </div>
 
   <!-- Add to Collection Modal -->
-  <div class="add-to-collection-backdrop"></div>
-  <div class="add-to-collection-modal">
-    <h3>Add to Collection</h3>
-    <p>Select a collection to add this app to.</p>
+  <div class="add-to-collection-backdrop" onclick="OS.Collections && OS.Collections.hideAddModal && OS.Collections.hideAddModal()"></div>
+  <div class="add-to-collection-modal" role="dialog" aria-modal="true" aria-labelledby="addTitle">
+    <h3 id="addTitle" style="margin:0 0 8px;">Add to collection</h3>
+    <p style="color:var(--muted); font-size:13px; margin:0 0 16px;">Select a collection to add this app to.</p>
     <div class="collection-list" id="add-collection-list"></div>
-    <div class="actions" style="margin-top: 20px;">
-      <button type="button" class="button ghost" onclick="OS.Collections.hideAddModal()">Cancel</button>
+    <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+      <button type="button" class="button ghost" onclick="OS.Collections.hideAddModal()">Close</button>
     </div>
   </div>
 
-  <script src="../js/core.js"></script>
-  <script src="../js/features.js"></script>
+  <!-- Collections generic modal backdrop + picker (legacy hooks kept for features.js) -->
+  <div class="collections-backdrop"></div>
+  <div class="collections-modal"><h3>Add to Collection</h3><div class="collection-list" id="collection-list"></div></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg>
+    <span></span>
+  </div>
+
   <script>
-    // features.js publishes OS.Collections from its own DOMContentLoaded
-    // handler, so these page-specific extensions must be attached *after* that
-    // event. Assigning them at parse time threw "Cannot set properties of
-    // undefined (setting ...)" and aborted the rest of this script, so the
-    // catalog fetch never ran and the page rendered empty.
     (function extendCollectionsUI() {
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', extendCollectionsUI);
         return;
       }
-      if (!window.OS || !OS.Collections) {
-        console.error('OmniSource: OS.Collections is unavailable — features.js did not initialize.');
-        return;
-      }
-    // Extend Collections with UI methods
-    OS.Collections.showCreateModal = function() {
-      if (!this._createModal) {
-        this._createCreateModal();
-      }
-      this._createBackdrop.classList.add('show');
-      this._createModal.classList.add('show');
-    };
-
-    OS.Collections.hideCreateModal = function() {
-      if (this._createBackdrop) this._createBackdrop.classList.remove('show');
-      if (this._createModal) this._createModal.classList.remove('show');
-    };
-
-    OS.Collections.showAddModal = function(appId, appName) {
-      this._currentAppId = appId;
-      this._currentAppName = appName;
-      if (!this._addModal) {
-        this._createAddModal();
-      }
-      this._renderAddList();
-      this._addBackdrop.classList.add('show');
-      this._addModal.classList.add('show');
-    };
-
-    OS.Collections.hideAddModal = function() {
-      if (this._addBackdrop) this._addBackdrop.classList.remove('show');
-      if (this._addModal) this._addModal.classList.remove('show');
-    };
-
-    OS.Collections._createCreateModal = function() {
-      this._createBackdrop = document.querySelector('.create-collection-backdrop');
-      this._createModal = document.querySelector('.create-collection-modal');
-
-      const form = this._createModal.querySelector('#create-collection-form');
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = form.querySelector('[name="name"]').value;
-        const description = form.querySelector('[name="description"]').value;
-        const color = form.querySelector('[name="color"]').value;
-        
-        if (!name) {
-          OS.toast('Please enter a collection name', { type: 'error' });
+      // wait for features.js to publish OS.Collections
+      function ready() {
+        if (!window.OS || !OS.Collections) {
+          setTimeout(ready, 60);
           return;
         }
-        
-        this.create(name, description, color);
-        form.reset();
-        this.hideCreateModal();
-        OS.toast('Collection created!');
-        this.renderAll();
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') this.hideCreateModal();
-      });
-    };
-
-    OS.Collections._createAddModal = function() {
-      this._addBackdrop = document.querySelector('.add-to-collection-backdrop');
-      this._addModal = document.querySelector('.add-to-collection-modal');
-
-      this._addModal.querySelector('#add-collection-list').addEventListener('click', (e) => {
-        const item = e.target.closest('.collection-item');
-        if (item) {
-          const collectionId = item.getAttribute('data-id');
-          this.addApp(collectionId, this._currentAppId);
-          this.hideAddModal();
-          OS.toast(`Added to "${item.querySelector('h4').textContent}"`);
-          this.renderAll();
-        }
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') this.hideAddModal();
-      });
-    };
-
-    OS.Collections._renderAddList = function() {
-      const list = this._addModal.querySelector('#add-collection-list');
-      const collections = this.getAll();
-      
-      list.innerHTML = collections.map(collection => `
-        <div class="collection-item" data-id="${collection.id}">
-          <div class="collection-color" style="background: ${collection.color}; width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0;"></div>
-          <div class="info">
-            <h4>${collection.name}</h4>
-            <p>${collection.description || 'No description'}</p>
-          </div>
-          <span class="app-count">${collection.apps.length} app${collection.apps.length !== 1 ? 's' : ''}</span>
-        </div>
-      `).join('');
-    };
-
-    OS.Collections.renderAll = function() {
-      const content = document.getElementById('collections-content');
-      const collections = this.getAll();
-      const catalog = window.OS_CATALOG || [];
-      
-      if (collections.length === 0) {
-        content.innerHTML = `
-          <div class="empty-state">
-            <div class="empty-icon">📁</div>
-            <h3>No collections yet</h3>
-            <p>Create your first collection to organize your favorite apps.</p>
-            <button class="button primary" onclick="OS.Collections.showCreateModal()">Create Collection</button>
-          </div>
-        `;
-        return;
+        init();
       }
+      ready();
 
-      // Group collections by user-created vs default
-      const userCollections = collections.filter(c => !c.id.startsWith('default-'));
-      const defaultCollections = collections.filter(c => c.id.startsWith('default-'));
-      
-      const allGroups = [];
-      if (userCollections.length > 0) {
-        allGroups.push({ title: 'My Collections', collections: userCollections });
-      }
-      if (defaultCollections.length > 0) {
-        allGroups.push({ title: 'Default Collections', collections: defaultCollections });
-      }
+      function init() {
+        var y = document.getElementById('year');
+        if (y) y.textContent = new Date().getFullYear();
 
-      content.innerHTML = allGroups.map(group => `
-        <div class="collection-group">
-          <h2 style="font-size: 18px; margin: 24px 0 12px; color: var(--text);">${group.title}</h2>
-          <div class="collection-grid">
-            ${group.collections.map(collection => this._renderCollectionCard(collection, catalog)).join('')}
-          </div>
-        </div>
-      `).join('');
-
-      // Add styles for collection grid
-      const style = document.createElement('style');
-      style.textContent = `
-        .collection-group {
-          margin-bottom: 32px;
-        }
-        .collection-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-          gap: 16px;
-        }
-        .collection-card {
-          background: var(--surface);
-          border: 1px solid var(--line);
-          border-radius: var(--radius-lg);
-          padding: 16px;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          text-decoration: none;
-          color: var(--text);
-          display: block;
-        }
-        .collection-card:hover {
-          border-color: var(--line-strong);
-          transform: translateY(-2px);
-          box-shadow: var(--shadow-sm);
-        }
-        .collection-card header {
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-          margin-bottom: 8px;
-        }
-        .collection-card .collection-icon {
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
-          display: grid;
-          place-items: center;
-          font-size: 20px;
-          flex-shrink: 0;
-        }
-        .collection-card h3 {
-          margin: 0;
-          font-size: 15px;
-          font-weight: 700;
-        }
-        .collection-card p {
-          margin: 4px 0 8px;
-          font-size: 12px;
-          color: var(--muted);
-        }
-        .collection-card .meta {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          font-size: 11px;
-          color: var(--faint);
-        }
-        .collection-card .app-count {
-          background: var(--surface-2);
-          padding: 2px 8px;
-          border-radius: 999px;
-          font: 700 10px var(--font-mono);
-        }
-        .collection-card .actions {
-          display: flex;
-          gap: 6px;
-          margin-top: 12px;
-          padding-top: 12px;
-          border-top: 1px solid var(--line);
-        }
-        .collection-card .actions button {
-          height: 28px;
-          padding: 0 12px;
-          font-size: 11px;
-        }
-        .collection-preview {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-          gap: 6px;
-          margin-top: 8px;
-        }
-        .collection-preview img {
-          width: 100%;
-          height: 40px;
-          border-radius: 8px;
-          object-fit: cover;
-          background: var(--surface-2);
-        }
-      `;
-      document.head.appendChild(style);
-    };
-
-    OS.Collections._renderCollectionCard = function(collection, catalog) {
-      const appSlugs = collection.apps.slice(0, 6);
-      const apps = catalog.filter(app => appSlugs.includes(app.slug || app.id));
-      
-      return `
-        <a href="collection.html?id=${collection.id}" class="collection-card">
-          <header>
-            <div class="collection-icon" style="background: ${collection.color};">${collection.icon || '📁'}</div>
-            <div>
-              <h3>${collection.name}</h3>
-              <p>${collection.description || 'No description'}</p>
-            </div>
-          </header>
-          <div class="meta">
-            <span class="app-count">${collection.apps.length} app${collection.apps.length !== 1 ? 's' : ''}</span>
-            <span>Updated ${new Date(collection.updatedAt || collection.createdAt).toLocaleDateString()}</span>
-          </div>
-          ${apps.length > 0 ? `
-            <div class="collection-preview">
-              ${apps.map(app => `
-                <img src="${OS.asset(app.icon || 'OmniSource.png')}" alt="${app.name}" title="${app.name}">
-              `).join('')}
-            </div>
-          ` : ''}
-          <div class="actions">
-            <button class="button ghost" onclick="event.preventDefault(); event.stopPropagation(); OS.Collections.showAddModal('${collection.id}', '${collection.name}')">Add Apps</button>
-            <button class="button danger" onclick="event.preventDefault(); event.stopPropagation(); OS.Collections.delete('${collection.id}'); OS.Collections.renderAll();">Delete</button>
-          </div>
-        </a>
-      `;
-    };
-
-    OS.Collections.importCollections = function() {
-      const input = document.createElement('input');
-      input.type = 'file';
-      input.accept = '.json';
-      input.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
-        
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          try {
-            const data = JSON.parse(event.target.result);
-            if (Array.isArray(data)) {
-              const existing = this.getAll();
-              const merged = [...existing, ...data];
-              Storage.set('collections', merged);
-              this.renderAll();
-              OS.toast('Collections imported!');
-            } else {
-              OS.toast('Invalid format. Expected an array of collections.', { type: 'error' });
-            }
-          } catch (err) {
-            OS.toast('Failed to import collections.', { type: 'error' });
-          }
+        OS.Collections.showCreateModal = function() {
+          if (!this._createModal) this._createCreateModal();
+          this._createBackdrop.classList.add('show');
+          this._createModal.classList.add('show');
         };
-        reader.readAsText(file);
-      });
-      input.click();
-    };
+        OS.Collections.hideCreateModal = function() {
+          if (this._createBackdrop) this._createBackdrop.classList.remove('show');
+          if (this._createModal) this._createModal.classList.remove('show');
+        };
+        OS.Collections.showAddModal = function(appId, appName) {
+          this._currentAppId = appId;
+          this._currentAppName = appName;
+          if (!this._addModal) this._createAddModal();
+          this._renderAddList();
+          this._addBackdrop.classList.add('show');
+          this._addModal.classList.add('show');
+        };
+        OS.Collections.hideAddModal = function() {
+          if (this._addBackdrop) this._addBackdrop.classList.remove('show');
+          if (this._addModal) this._addModal.classList.remove('show');
+        };
+        OS.Collections._createCreateModal = function() {
+          this._createBackdrop = document.querySelector('.create-collection-backdrop');
+          this._createModal = document.querySelector('.create-collection-modal');
+          var form = this._createModal.querySelector('#create-collection-form');
+          if (form._bound) return;
+          form._bound = true;
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = form.querySelector('[name="name"]').value.trim();
+            var description = form.querySelector('[name="description"]').value.trim();
+            var color = form.querySelector('[name="color"]').value;
+            if (!name) { OS.toast('Please enter a collection name'); return; }
+            OS.Collections.create(name, description, color);
+            form.reset();
+            form.querySelector('[name="color"]').value = '#6d5ef5';
+            OS.Collections.hideCreateModal();
+            OS.toast('Collection created — now add apps from any card');
+            OS.Collections.renderAll();
+          });
+          document.addEventListener('keydown', function (e) { if (e.key === 'Escape') OS.Collections.hideCreateModal(); });
+        };
+        OS.Collections._createAddModal = function() {
+          this._addBackdrop = document.querySelector('.add-to-collection-backdrop');
+          this._addModal = document.querySelector('.add-to-collection-modal');
+          var list = this._addModal.querySelector('#add-collection-list');
+          if (list._bound) return;
+          list._bound = true;
+          list.addEventListener('click', function (e) {
+            var item = e.target.closest('.collection-item');
+            if (!item) return;
+            var collectionId = item.getAttribute('data-id');
+            OS.Collections.addApp(collectionId, OS.Collections._currentAppId);
+            OS.Collections.hideAddModal();
+            OS.toast('Added to “' + item.querySelector('h4').textContent + '”');
+            OS.Collections.renderAll();
+          });
+          document.addEventListener('keydown', function (e) { if (e.key === 'Escape') OS.Collections.hideAddModal(); });
+        };
+        OS.Collections._renderAddList = function() {
+          var list = this._addModal.querySelector('#add-collection-list');
+          var cols = this.getAll();
+          if (!cols.length) {
+            list.innerHTML = '<div class="empty-state" style="padding:28px; text-align:center;"><p style="color:var(--muted); margin:0 0 12px;">No collections yet.</p><button type="button" class="button primary" onclick="OS.Collections.hideAddModal(); OS.Collections.showCreateModal();">Create one</button></div>';
+            return;
+          }
+          list.innerHTML = cols.map(function (c) {
+            return '<div class="collection-item" data-id="' + OS.esc(c.id) + '">'
+              + '<div style="background:' + OS.esc(c.color || '#6d5ef5') + '; width:14px; height:14px; border-radius:4px; flex:none;"></div>'
+              + '<div class="info"><h4>' + OS.esc(c.name) + '</h4><p>' + OS.esc(c.description || 'No description') + '</p></div>'
+              + '<span class="app-count">' + c.apps.length + ' app' + (c.apps.length !== 1 ? 's' : '') + '</span>'
+              + '</div>';
+          }).join('');
+        };
+        OS.Collections.renderAll = function() {
+          var content = document.getElementById('collections-content');
+          var pill = document.getElementById('collectionsPill');
+          if (!content) return;
+          var cols = this.getAll();
+          var catalog = window.OS_CATALOG || [];
+          if (pill) pill.textContent = cols.length ? cols.length + ' collection' + (cols.length!==1?'s':'') : '0 collections — create one';
+          if (cols.length === 0) {
+            content.innerHTML = ''
+              + '<div class="empty-state" data-reveal style="max-width:720px; margin: 12px auto 0;">'
+              + '  <div class="empty-icon" aria-hidden="true">◰</div>'
+              + '  <h3>No collections yet</h3>'
+              + '  <p>Create your first collection to group apps — YouTube mods, emulators, or your daily drivers.</p>'
+              + '  <button class="button primary" type="button" onclick="OS.Collections.showCreateModal()">Create collection</button>'
+              + '</div>';
+            return;
+          }
+          var userCols = cols.filter(function(c){ return !String(c.id).startsWith('default-'); });
+          var defaultCols = cols.filter(function(c){ return String(c.id).startsWith('default-'); });
+          var groups = [];
+          if (userCols.length) groups.push({ title: 'Your collections', cols: userCols });
+          if (defaultCols.length) groups.push({ title: 'Starter collections', cols: defaultCols });
+          if (!groups.length) groups = [{ title: 'Collections', cols: cols }];
+          content.innerHTML = groups.map(function (g) {
+            return '<div class="collection-group"><h2 class="collection-group-title">' + OS.esc(g.title) + '</h2>'
+              + '<div class="collections-grid">' + g.cols.map(function (c) { return OS.Collections._renderCollectionCard(c, catalog); }).join('') + '</div></div>';
+          }).join('');
+          content.querySelectorAll('.collection-card').forEach(function(el,i){
+            el.setAttribute('data-reveal','');
+            el.style.setProperty('--reveal-delay', (i*50)+'ms');
+            setTimeout(function(){ el.classList.add('is-revealed'); }, 30 + i*12);
+          });
+        };
+        OS.Collections._renderCollectionCard = function(collection, catalog) {
+          var slugs = (collection.apps || []).slice(0, 6);
+          var apps = catalog.filter(function(a){ return slugs.indexOf(a.slug || a.id) !== -1; });
+          var icon = collection.icon || '◰';
+          var updated = collection.updatedAt || collection.createdAt;
+          var updatedLabel = updated ? new Date(updated).toLocaleDateString() : '';
+          var preview = apps.length ? '<div class="collection-preview">' + apps.map(function(a){
+            var src = OS.asset(a.icon || 'OmniSource.png');
+            return '<img src="' + OS.esc(src) + '" alt="' + OS.esc(a.name) + '" title="' + OS.esc(a.name) + '" loading="lazy">';
+          }).join('') + '</div>' : '';
+          return ''
+            + '<a href="collection.html?id=' + OS.esc(collection.id) + '" class="collection-card">'
+            + '  <header><div class="collection-icon" style="background:' + OS.esc(collection.color || '#6d5ef5') + '; color:#fff;">' + OS.esc(icon) + '</div><div><h3>' + OS.esc(collection.name) + '</h3><p>' + OS.esc(collection.description || 'No description') + '</p></div></header>'
+            + '  <div class="collection-meta"><span class="count">' + collection.apps.length + ' app' + (collection.apps.length!==1?'s':'') + '</span>' + (updatedLabel ? '<span>Updated ' + OS.esc(updatedLabel) + '</span>' : '') + '</div>'
+            + preview
+            + '  <div class="collection-actions" onclick="event.preventDefault(); event.stopPropagation();">'
+            + '    <button class="button ghost" type="button" onclick="event.preventDefault(); OS.Collections.showAddModal(\'' + OS.esc(collection.id) + '\',\'' + OS.esc(collection.name) + '\')">Add apps</button>'
+            + '    <button class="button danger" type="button" onclick="event.preventDefault(); if(confirm(\'Delete collection \\’' + OS.esc(collection.name.replace(/'/g,\"\\'\")) + '\\’?\')){ OS.Collections.delete(\'' + OS.esc(collection.id) + '\'); OS.Collections.renderAll(); OS.toast(\'Collection deleted\'); }">Delete</button>'
+            + '  </div>'
+            + '</a>';
+        };
+        OS.Collections.importCollections = function() {
+          var input = document.createElement('input');
+          input.type = 'file'; input.accept = '.json';
+          input.addEventListener('change', function (e) {
+            var file = e.target.files[0]; if (!file) return;
+            var reader = new FileReader();
+            reader.onload = function (ev) {
+              try {
+                var data = JSON.parse(ev.target.result);
+                if (!Array.isArray(data)) { OS.toast('Invalid file — expected an array'); return; }
+                var existing = OS.Collections.getAll();
+                var ids = new Set(existing.map(function(c){ return c.id; }));
+                var add = data.filter(function(c){ return c && c.id && !ids.has(c.id); });
+                if (!add.length) { OS.toast('Nothing new to import'); return; }
+                var merged = existing.concat(add);
+                try { localStorage.setItem('omnisource-collections', JSON.stringify(merged)); } catch(err){}
+                // also try features storage helper if exists
+                try { if (OS.Collections._save) OS.Collections._save(merged); } catch(err2){}
+                OS.Collections.renderAll();
+                OS.toast('Imported ' + add.length + ' collection' + (add.length!==1?'s':''));
+              } catch (err) { OS.toast('Failed to import — invalid JSON'); }
+            };
+            reader.readAsText(file);
+          });
+          input.click();
+        };
 
-    // Load catalog data (api/catalog.json → feeds/discovery.json → discovery.json)
-    OS.loadCatalog().then(() => {
-      OS.Collections.renderAll();
-      OS.Favorites.injectButtons();
-      OS.Ratings.injectRatingDisplays();
-      OS.Favorites.updateCount();
-    });
+        // Load catalog then render
+        OS.loadCatalog().then(function () {
+          OS.Collections.renderAll();
+          try { OS.Favorites && OS.Favorites.injectButtons && OS.Favorites.injectButtons(); } catch(e){}
+          try { OS.Ratings && OS.Ratings.injectRatingDisplays && OS.Ratings.injectRatingDisplays(); } catch(e){}
+          try { OS.Favorites && OS.Favorites.updateCount && OS.Favorites.updateCount(); } catch(e){}
+        });
+      }
     })();
   </script>
 </body>
