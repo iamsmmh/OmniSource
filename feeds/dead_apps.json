@@ -8,12 +8,23 @@
   },
   "count": 25,
   "summary": {
-    "warning": 8,
+    "warning": 7,
     "stale": 6,
     "archived": 11,
-    "critical": 0
+    "critical": 1
   },
   "deadApps": [
+    {
+      "slug": "sidestore",
+      "name": "SideStore",
+      "lastUpdate": "2026-09-09",
+      "daysSinceUpdate": 1,
+      "classification": "critical",
+      "removedReleases": 1,
+      "reasons": [
+        "removed upstream release(s): 0.6.3"
+      ]
+    },
     {
       "slug": "bhtwitter",
       "name": "BHTwitter",
@@ -246,17 +257,6 @@
       ]
     },
     {
-      "slug": "sidestore",
-      "name": "SideStore",
-      "lastUpdate": "2026-05-05",
-      "daysSinceUpdate": 128,
-      "classification": "warning",
-      "removedReleases": 0,
-      "reasons": [
-        "no update for 128 days (threshold 90)"
-      ]
-    },
-    {
       "slug": "spotube",
       "name": "Spotube",
       "lastUpdate": "2026-06-05",
@@ -471,12 +471,12 @@
     {
       "slug": "sidestore",
       "name": "SideStore",
-      "lastUpdate": "2026-05-05",
-      "daysSinceUpdate": 128,
-      "classification": "warning",
-      "removedReleases": 0,
+      "lastUpdate": "2026-09-09",
+      "daysSinceUpdate": 1,
+      "classification": "critical",
+      "removedReleases": 1,
       "reasons": [
-        "no update for 128 days (threshold 90)"
+        "removed upstream release(s): 0.6.3"
       ]
     },
     {

@@ -5,7 +5,7 @@
     <link>https://iamsmmh.github.io/OmniSource/</link>
     <description>OmniSource is a curated, automatically maintained AltStore-compatible iOS app source. Every entry is resolved from the app&#x27;s own official upstream project - GitHub Releases or the developer&#x27;s official AltStore feed - and each download link is re-verified automatically.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2026 20:05:20 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 20:18:00 +0000</lastBuildDate>
     <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>YouPro v21.36.6</title>
@@ -149,6 +149,41 @@ YouTube Music version]]></description>
 • Other fixes & improvements.
 • Update base IPA to TikTok v46.8]]></description>
       <enclosure url="https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>SideStore v0.6.4</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/sidestore.json</link>
+      <guid isPermaLink="false">sidestore-0.6.4</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[SideStore 0.6.4 | SideStore
+
+## Build Info
+
+Built at (UTC): `Wed Sep 09 17:59:46 2026`
+Built at (UTC date): `2026-09-09`
+Commit SHA: `f93a95c079057090bea355453ef24f6e8668dfa9`
+Version: `0.6.4`
+
+#### What's Changed:
+- **Developer Portal in Settings**: Manage your Apple Developer App IDs, Provisioning Profiles, Certificates, Devices, and App Groups directly inside the app for both paid and free team types.
+- **Manual Profile Creation**: Paid developer accounts can now create manual profiles on app without having to reach developer portal.
+- **Certificate Management**: Certificate CSR + create/revoke in developer portal, export, import, view all data including ASN1, keys, and much more metadata.
+- **Full Two-Factor Authentication**: Added support for SMS verification, Voice phone call in addition to trusted devices during login 2FA Challenge.
+- **Cellular Refresh**: Now one can enable cellular refresh with shortcuts to refresh on the go without waiting for wifi anytime anywhere (credits to @spidy123222)
+- **Health Check**: Newer dedicated Health Check section in settings to diagnose device and network communication issues quickly.
+- **On-Device Anisette**: Switched to on-device anisette data generation as the primary anisette data source of OTP requests during 2FA. No more need for Remote anisette servers.
+- **App & Mach-O Inspector**: Inspect any app's internal files, Mach-O binaries, and embedded provisioning profiles right from App Info.
+- **Storage Explorer**: Full view of all storage managed by the app and its sideloaded apps including caches, appgroups, tmp dirs, private documents dir etc.
+- **Faster VPN peer auto-discovery**: Parallel connection probing discovers your device on the local vpn network much faster by doing a parallel probe for device services like lockdown/rppairing ports.
+- **Dual Connection Modes**: Switch between LocalDevVPN/WireGuard and Remote servers as for loopback as required.
+- **Account Config Export**: Export and import your accounts and sources as `.sideconf` files for quick setup or migration.
+- **Full Liquid-Glass support**: Added smooth pill buttons, improved scroll animations, and fixed UI flickering in the My Apps tab.
+
+#### ⚠️Known Issue
+- iOS 16 users may have difficulty connecting to LocalDevVPN and is being actively worked on.
+
+#### Full Changelog: [0.6.3...0.6.4](https://github.com/SideStore/SideStore/compare/239fc7c2b7f3c319d3608bd49c30d1457216d5df...f93a95c079057090bea355453ef24f6e8668dfa9)]]></description>
+      <enclosure url="https://github.com/SideStore/SideStore/releases/download/0.6.4/SideStore.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
       <title>iNKillerPlus v446.0.0</title>
@@ -683,16 +718,6 @@ IPA Vault build for Turrit (MxGram), version 1.5.3]]></description>
 
 IPA Vault build for Threads (ThreadSaver), version 445.1]]></description>
       <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>Telegram MxGram v12.9.3</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.json</link>
-      <guid isPermaLink="false">telegram-mxgram-12.9.3</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Telegram 12.9.3 | Telegram-12.9.3-MxGram
-
-IPA Vault build for Telegram (MxGram), version 12.9.3]]></description>
-      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa" length="0" type="application/octet-stream" />
     </item>
   </channel>
 </rss>

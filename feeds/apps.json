@@ -544,7 +544,7 @@
               "fileType": "IPA",
               "size": 113136488,
               "sha256": "d72cbb2f1b815ac6e86873b837ade62e65d3046ae7fcd02554d8981eb92cf9a5",
-              "downloads": 3038,
+              "downloads": 3041,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -556,7 +556,7 @@
               "fileType": "IPA",
               "size": 123354289,
               "sha256": "c65e1dd5bb35a13878013848945346d8b7cb774b5965573db939f7bc698d4ac6",
-              "downloads": 7105,
+              "downloads": 7107,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -604,7 +604,7 @@
               "fileType": "IPA",
               "size": 95474417,
               "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8",
-              "downloads": 1228,
+              "downloads": 1229,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -634,7 +634,7 @@
             }
           ],
           "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8",
-          "downloads": 1228
+          "downloads": 1229
         }
       ],
       "screenshotURLs": [],
@@ -3478,13 +3478,13 @@
               "fileType": "IPA",
               "size": 106420283,
               "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
-              "downloads": 50,
+              "downloads": 51,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
-          "downloads": 50
+          "downloads": 51
         }
       ],
       "screenshotURLs": [
@@ -3591,13 +3591,13 @@
               "fileType": "IPA",
               "size": 133357787,
               "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-              "downloads": 112,
+              "downloads": 113,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-          "downloads": 112
+          "downloads": 113
         }
       ],
       "screenshotURLs": [
@@ -5815,39 +5815,63 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SideStore.webp",
       "tintColor": "A405FA",
       "category": "utilities",
-      "version": "0.6.3",
-      "versionDate": "2026-05-05",
-      "versionDescription": "SideStore 0.6.3 | SideStore\n\n# ⚠️**Please Reinstall With [iloader](https://iloader.app/)**⚠️\nIf you have updated to iOS 26.4+ and are receiving VPN errors.\n## What's Changed\n* Small fixes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1020\n* Fix expired Discord link in README.md by @Or3nges in https://github.com/SideStore/SideStore/pull/1101\n* Update error codes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1078\n* LocalDevVPN by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1126\n* Sources: Update/Remove Sources from Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1131\n* Adds StikDebug AltSource by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1137\n* Update pairing file help link in alert by @basketshoe in https://github.com/SideStore/SideStore/pull/1147\n* Authentication rework by @hugeBlack in https://github.com/SideStore/SideStore/pull/1151\n* Update Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1152\n* Update trustedapps.json by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1153\n* Update Trusted Sources by @peroka-net in https://github.com/SideStore/SideStore/pull/1160\n* Feature: AppId customization during manual IPA install via \"My Apps\" screen by @mahee96 in https://github.com/SideStore/SideStore/pull/1158\n* Fix issues profile/afc and use main profile issue by @hugeBlack in https://github.com/SideStore/SideStore/pull/1183\n* feat: add Mona to Trusted Sources by @suprstarrd in https://github.com/SideStore/SideStore/pull/1210\n* Fix widget not working & Only run turn off data shortcut when minimuxer is not ready and below 26.4 by @hugeBlack in https://github.com/SideStore/SideStore/pull/1218\n* LC Source Update by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1253\n\n## New Contributors\n* @Or3nges made their first contribution in https://github.com/SideStore/SideStore/pull/1101\n* @basketshoe made their first contribution in https://github.com/SideStore/SideStore/pull/1147\n* @peroka-net made their first contribution in https://github.com/SideStore/SideStore/pull/1160\n* @suprstarrd made their first contribution in https://github.com/SideStore/SideStore/pull/1210\n\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.6.2...0.6.3",
-      "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa",
-      "size": 28632252,
+      "version": "0.6.4",
+      "versionDate": "2026-09-09",
+      "versionDescription": "SideStore 0.6.4 | SideStore\n\n## Build Info\n\nBuilt at (UTC): `Wed Sep 09 17:59:46 2026`\nBuilt at (UTC date): `2026-09-09`\nCommit SHA: `f93a95c079057090bea355453ef24f6e8668dfa9`\nVersion: `0.6.4`\n\n#### What's Changed:\n- **Developer Portal in Settings**: Manage your Apple Developer App IDs, Provisioning Profiles, Certificates, Devices, and App Groups directly inside the app for both paid and free team types.\n- **Manual Profile Creation**: Paid developer accounts can now create manual profiles on app without having to reach developer portal.\n- **Certificate Management**: Certificate CSR + create/revoke in developer portal, export, import, view all data including ASN1, keys, and much more metadata.\n- **Full Two-Factor Authentication**: Added support for SMS verification, Voice phone call in addition to trusted devices during login 2FA Challenge.\n- **Cellular Refresh**: Now one can enable cellular refresh with shortcuts to refresh on the go without waiting for wifi anytime anywhere (credits to @spidy123222)\n- **Health Check**: Newer dedicated Health Check section in settings to diagnose device and network communication issues quickly.\n- **On-Device Anisette**: Switched to on-device anisette data generation as the primary anisette data source of OTP requests during 2FA. No more need for Remote anisette servers.\n- **App & Mach-O Inspector**: Inspect any app's internal files, Mach-O binaries, and embedded provisioning profiles right from App Info.\n- **Storage Explorer**: Full view of all storage managed by the app and its sideloaded apps including caches, appgroups, tmp dirs, private documents dir etc.\n- **Faster VPN peer auto-discovery**: Parallel connection probing discovers your device on the local vpn network much faster by doing a parallel probe for device services like lockdown/rppairing ports.\n- **Dual Connection Modes**: Switch between LocalDevVPN/WireGuard and Remote servers as for loopback as required.\n- **Account Config Export**: Export and import your accounts and sources as `.sideconf` files for quick setup or migration.\n- **Full Liquid-Glass support**: Added smooth pill buttons, improved scroll animations, and fixed UI flickering in the My Apps tab.\n\n#### ⚠️Known Issue\n- iOS 16 users may have difficulty connecting to LocalDevVPN and is being actively worked on.\n\n#### Full Changelog: [0.6.3...0.6.4](https://github.com/SideStore/SideStore/compare/239fc7c2b7f3c319d3608bd49c30d1457216d5df...f93a95c079057090bea355453ef24f6e8668dfa9)",
+      "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.4/SideStore.ipa",
+      "size": 27609918,
       "versions": [
         {
-          "version": "0.6.3",
-          "date": "2026-05-05",
-          "localizedDescription": "SideStore 0.6.3 | SideStore\n\n# ⚠️**Please Reinstall With [iloader](https://iloader.app/)**⚠️\nIf you have updated to iOS 26.4+ and are receiving VPN errors.\n## What's Changed\n* Small fixes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1020\n* Fix expired Discord link in README.md by @Or3nges in https://github.com/SideStore/SideStore/pull/1101\n* Update error codes by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1078\n* LocalDevVPN by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1126\n* Sources: Update/Remove Sources from Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1131\n* Adds StikDebug AltSource by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1137\n* Update pairing file help link in alert by @basketshoe in https://github.com/SideStore/SideStore/pull/1147\n* Authentication rework by @hugeBlack in https://github.com/SideStore/SideStore/pull/1151\n* Update Trusted Sources by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1152\n* Update trustedapps.json by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1153\n* Update Trusted Sources by @peroka-net in https://github.com/SideStore/SideStore/pull/1160\n* Feature: AppId customization during manual IPA install via \"My Apps\" screen by @mahee96 in https://github.com/SideStore/SideStore/pull/1158\n* Fix issues profile/afc and use main profile issue by @hugeBlack in https://github.com/SideStore/SideStore/pull/1183\n* feat: add Mona to Trusted Sources by @suprstarrd in https://github.com/SideStore/SideStore/pull/1210\n* Fix widget not working & Only run turn off data shortcut when minimuxer is not ready and below 26.4 by @hugeBlack in https://github.com/SideStore/SideStore/pull/1218\n* LC Source Update by @CelloSerenity in https://github.com/SideStore/SideStore/pull/1253\n\n## New Contributors\n* @Or3nges made their first contribution in https://github.com/SideStore/SideStore/pull/1101\n* @basketshoe made their first contribution in https://github.com/SideStore/SideStore/pull/1147\n* @peroka-net made their first contribution in https://github.com/SideStore/SideStore/pull/1160\n* @suprstarrd made their first contribution in https://github.com/SideStore/SideStore/pull/1210\n\n**Full Changelog**: https://github.com/SideStore/SideStore/compare/0.6.2...0.6.3",
-          "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa",
-          "size": 28632252,
+          "version": "0.6.4",
+          "date": "2026-09-09",
+          "localizedDescription": "SideStore 0.6.4 | SideStore\n\n## Build Info\n\nBuilt at (UTC): `Wed Sep 09 17:59:46 2026`\nBuilt at (UTC date): `2026-09-09`\nCommit SHA: `f93a95c079057090bea355453ef24f6e8668dfa9`\nVersion: `0.6.4`\n\n#### What's Changed:\n- **Developer Portal in Settings**: Manage your Apple Developer App IDs, Provisioning Profiles, Certificates, Devices, and App Groups directly inside the app for both paid and free team types.\n- **Manual Profile Creation**: Paid developer accounts can now create manual profiles on app without having to reach developer portal.\n- **Certificate Management**: Certificate CSR + create/revoke in developer portal, export, import, view all data including ASN1, keys, and much more metadata.\n- **Full Two-Factor Authentication**: Added support for SMS verification, Voice phone call in addition to trusted devices during login 2FA Challenge.\n- **Cellular Refresh**: Now one can enable cellular refresh with shortcuts to refresh on the go without waiting for wifi anytime anywhere (credits to @spidy123222)\n- **Health Check**: Newer dedicated Health Check section in settings to diagnose device and network communication issues quickly.\n- **On-Device Anisette**: Switched to on-device anisette data generation as the primary anisette data source of OTP requests during 2FA. No more need for Remote anisette servers.\n- **App & Mach-O Inspector**: Inspect any app's internal files, Mach-O binaries, and embedded provisioning profiles right from App Info.\n- **Storage Explorer**: Full view of all storage managed by the app and its sideloaded apps including caches, appgroups, tmp dirs, private documents dir etc.\n- **Faster VPN peer auto-discovery**: Parallel connection probing discovers your device on the local vpn network much faster by doing a parallel probe for device services like lockdown/rppairing ports.\n- **Dual Connection Modes**: Switch between LocalDevVPN/WireGuard and Remote servers as for loopback as required.\n- **Account Config Export**: Export and import your accounts and sources as `.sideconf` files for quick setup or migration.\n- **Full Liquid-Glass support**: Added smooth pill buttons, improved scroll animations, and fixed UI flickering in the My Apps tab.\n\n#### ⚠️Known Issue\n- iOS 16 users may have difficulty connecting to LocalDevVPN and is being actively worked on.\n\n#### Full Changelog: [0.6.3...0.6.4](https://github.com/SideStore/SideStore/compare/239fc7c2b7f3c319d3608bd49c30d1457216d5df...f93a95c079057090bea355453ef24f6e8668dfa9)",
+          "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.4/SideStore.ipa",
+          "size": 27609918,
           "minOSVersion": "15.0",
-          "releaseUrl": "https://github.com/SideStore/SideStore/releases/tag/0.6.3",
+          "releaseUrl": "https://github.com/SideStore/SideStore/releases/tag/0.6.4",
           "source": "github",
           "isPrerelease": false,
           "isDraft": false,
           "assets": [
             {
+              "filename": "build-logs.zip",
+              "downloadUrl": "https://github.com/SideStore/SideStore/releases/download/0.6.4/build-logs.zip",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 144448,
+              "sha256": "e4b288da3464fd2374480cd395fcce46433e3173007c787e9d38c129051cc180",
+              "downloads": 12,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "SideStore.dSYMs.zip",
+              "downloadUrl": "https://github.com/SideStore/SideStore/releases/download/0.6.4/SideStore.dSYMs.zip",
+              "platform": "unknown",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 25011698,
+              "sha256": "5c6f16defae96e41a86a5df185d6a6a1de82977ecb5665ffd354ea019dbe2bd8",
+              "downloads": 25,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
               "filename": "SideStore.ipa",
-              "downloadUrl": "https://github.com/SideStore/SideStore/releases/download/0.6.3/SideStore.ipa",
+              "downloadUrl": "https://github.com/SideStore/SideStore/releases/download/0.6.4/SideStore.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 28632252,
-              "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
-              "downloads": 688252,
+              "size": 27609918,
+              "sha256": "316d0dbe75ac6a5f05dc2946754cf7d5b634eeec5370f02cf1a91f9a0ed913b9",
+              "downloads": 505,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
-          "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
-          "downloads": 688252
+          "sha256": "316d0dbe75ac6a5f05dc2946754cf7d5b634eeec5370f02cf1a91f9a0ed913b9",
+          "downloads": 505
         }
       ],
       "screenshotURLs": [
@@ -5899,7 +5923,7 @@
           "downloadReachable": true,
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
-          "lastUpdatedAt": "2026-05-05"
+          "lastUpdatedAt": "2026-09-09"
         }
       }
     },
@@ -6642,7 +6666,7 @@
               "fileType": "APK",
               "size": 197174334,
               "sha256": "9af07d922fbf5472a9f0caa1cb45bb7d2c28f1a9911b423237aefe0948317b81",
-              "downloads": 10468,
+              "downloads": 10471,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -6690,13 +6714,13 @@
               "fileType": "IPA",
               "size": 53931137,
               "sha256": "706adb7f41b60565c1924deb84f6afb3fe3727dbdf291a3ece934ddb90a178b2",
-              "downloads": 106,
+              "downloads": 107,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "706adb7f41b60565c1924deb84f6afb3fe3727dbdf291a3ece934ddb90a178b2",
-          "downloads": 106
+          "downloads": 107
         }
       ],
       "screenshotURLs": [],
@@ -7385,13 +7409,13 @@
               "fileType": "IPA",
               "size": 152372292,
               "sha256": "5ddea13264259f54c7f8812ef16ddc20ddb675703826537a1e5dfd144f228181",
-              "downloads": 847,
+              "downloads": 848,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "5ddea13264259f54c7f8812ef16ddc20ddb675703826537a1e5dfd144f228181",
-          "downloads": 847
+          "downloads": 848
         }
       ],
       "screenshotURLs": [],
@@ -8618,13 +8642,13 @@
               "fileType": "IPA",
               "size": 128845098,
               "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-              "downloads": 57,
+              "downloads": 58,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-          "downloads": 57
+          "downloads": 58
         }
       ],
       "screenshotURLs": [],
@@ -8724,13 +8748,13 @@
               "fileType": "IPA",
               "size": 129007319,
               "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
-              "downloads": 32,
+              "downloads": 33,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
-          "downloads": 32
+          "downloads": 33
         }
       ],
       "screenshotURLs": [],
@@ -9134,13 +9158,13 @@
               "fileType": "IPA",
               "size": 142497148,
               "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
-              "downloads": 30,
+              "downloads": 31,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
-          "downloads": 30
+          "downloads": 31
         }
       ],
       "screenshotURLs": [
@@ -9537,6 +9561,15 @@
       "notify": true
     },
     {
+      "title": "SideStore v0.6.4",
+      "identifier": "news-sidestore-0-6-4",
+      "caption": "AltStore fork that refreshes apps without a computer",
+      "date": "2026-09-09",
+      "appID": "com.SideStore.SideStore",
+      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/SideStore.webp",
+      "notify": true
+    },
+    {
       "title": "iNKillerPlus v446.0.0",
       "identifier": "news-inkillerplus-446-0-0",
       "caption": "Instagram with downloads, ghost mode and no ads",
@@ -9552,15 +9585,6 @@
       "date": "2026-09-08",
       "appID": "nl.jknaapen.fladder",
       "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Fladder.webp",
-      "notify": true
-    },
-    {
-      "title": "SpotiFLAC Mobile v4.9.6",
-      "identifier": "news-spotiflac-4-9-6",
-      "caption": "FLAC Downloader for iOS",
-      "date": "2026-09-07",
-      "appID": "com.zarz.spotiflacAndroid",
-      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/SpotiFLAC.webp",
       "notify": true
     }
   ]
