@@ -43,6 +43,16 @@ class TestWebsiteShell(unittest.TestCase):
         self.assertIn("<title>Installation Center — OmniSource</title>", html)
         self.assertIn('content="#e8eef8"', html)
 
+    def test_source_feed_is_a_link_and_stacks_on_small_screens(self) -> None:
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        install = (ROOT / "install" / "index.html").read_text(encoding="utf-8")
+        css = (ROOT / "assets" / "design-system" / "components.css").read_text(encoding="utf-8")
+        self.assertIn('id="sourceUrlLink" href="https://iamsmmh.github.io/OmniSource/apps.json"', home)
+        self.assertIn('id="installFeedUrlLink" href="https://iamsmmh.github.io/OmniSource/apps.json"', install)
+        self.assertIn("@media (max-width: 620px)", css)
+        self.assertIn("flex-direction: column", css)
+        self.assertIn("overflow-wrap: anywhere", css)
+
     def test_service_worker_version(self) -> None:
         sw = (ROOT / "sw.js").read_text(encoding="utf-8")
         self.assertIn("omnisource-v6", sw)
