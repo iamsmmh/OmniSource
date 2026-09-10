@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 63,
-    "verified": 62,
+    "apps": 77,
+    "verified": 76,
     "communityVerified": 1,
     "unverified": 0,
-    "hashVerified": 49,
-    "avgTrustScore": 7.19,
+    "hashVerified": 50,
+    "avgTrustScore": 6.99,
     "trustLevels": [
       "Verified",
       "Trusted",
@@ -297,6 +297,26 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "glow",
+      "name": "Glow",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
       "app": "gopeed",
       "name": "Gopeed",
       "status": "VERIFIED",
@@ -317,6 +337,46 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "ime",
+      "name": "iMe MxGram",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "infuseplus",
+      "name": "Infuse Plus",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
       "app": "inkillerplus",
       "name": "iNKillerPlus",
       "status": "VERIFIED",
@@ -333,6 +393,26 @@
         "official upstream (altstore)"
       ],
       "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "iqface",
+      "name": "iQFace",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
       "trustScore": 6.0,
       "trustBadge": "Community"
     },
@@ -497,6 +577,26 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "messenger-flow",
+      "name": "Messenger Flow",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
       "app": "minivmac",
       "name": "Mini vMac",
       "status": "VERIFIED",
@@ -513,6 +613,26 @@
         "official upstream (github-release)"
       ],
       "downloadURL": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "msgplusx",
+      "name": "MSGPlusX",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
       "trustScore": 6.0,
       "trustBadge": "Community"
     },
@@ -535,6 +655,26 @@
       "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
       "trustScore": 7.5,
       "trustBadge": "Trusted"
+    },
+    {
+      "app": "nexasc",
+      "name": "NexaSC",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
     },
     {
       "app": "odyssey",
@@ -657,12 +797,12 @@
       "trustBadge": "Trusted"
     },
     {
-      "app": "ryukgram",
-      "name": "RyukGram",
+      "app": "raintweak",
+      "name": "RainTweak",
       "status": "VERIFIED",
       "hash_verified": true,
-      "method": "altstore",
-      "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+      "method": "codeberg-release",
+      "publisher": "raincord/RainTweak (Codeberg)",
       "checks": {
         "metadata": true,
         "urls": true,
@@ -670,11 +810,51 @@
         "hashVerified": true
       },
       "reasons": [
-        "official upstream (altstore)"
+        "official upstream (codeberg-release)"
       ],
-      "downloadURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa",
+      "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
       "trustScore": 7.5,
       "trustBadge": "Trusted"
+    },
+    {
+      "app": "redditfilter",
+      "name": "RedditFilter",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "level3tjg/RedditFilter",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "ryukgram",
+      "name": "RyukGram",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
     },
     {
       "app": "ryukgram-ig410",
@@ -817,6 +997,26 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "sparkle",
+      "name": "Sparkle",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
       "app": "spotiflac",
       "name": "SpotiFLAC Mobile",
       "status": "VERIFIED",
@@ -917,6 +1117,26 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "swiftgram",
+      "name": "Swiftgram",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
       "app": "taurine",
       "name": "Taurine",
       "status": "VERIFIED",
@@ -937,6 +1157,46 @@
       "trustBadge": "Community"
     },
     {
+      "app": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "threadsaver",
+      "name": "ThreadSaver",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
       "app": "ttkillerplus",
       "name": "TTKillerPlus",
       "status": "VERIFIED",
@@ -953,6 +1213,26 @@
         "official upstream (altstore)"
       ],
       "downloadURL": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
+      "app": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "altstore",
+      "publisher": "927tx/IPA-Vault",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (altstore)"
+      ],
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
       "trustScore": 6.0,
       "trustBadge": "Community"
     },

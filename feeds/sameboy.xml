@@ -5,7 +5,7 @@
     <link>https://iamsmmh.github.io/OmniSource/feeds/sameboy.json</link>
     <description>Release feed for SameBoy within OmniSource, curated from official upstream sources.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2026 18:13:59 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 18:20:27 +0000</lastBuildDate>
     <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/sameboy.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>SameBoy v1.0.3</title>
@@ -64,7 +64,7 @@ This version is backwards compatible with save states from SameBoy 0.14.3 and ne
 * Fixed compilation of the SDL frontend on `unsigned char` platforms
 * Made it possible to build the Cocoa frontend using older SDKs
 * Removed accidentally committed debugging code from the Cocoa frontend]]></description>
-      <enclosure url="https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa" length="0" type="application/octet-stream" />
+      <enclosure url="https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa" length="3170899" type="application/octet-stream" />
     </item>
   </channel>
 </rss>

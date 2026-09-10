@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 63,
-    "pass": 49,
-    "warn": 14,
+    "apps": 77,
+    "pass": 50,
+    "warn": 27,
     "fail": 0,
     "rejected": 0
   },
@@ -263,6 +263,24 @@
       "status": "pass"
     },
     {
+      "slug": "glow",
+      "name": "Glow",
+      "asset": {
+        "sha256": null,
+        "size": 226667533,
+        "releaseId": "577.1",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "gopeed",
       "name": "Gopeed",
       "asset": {
@@ -281,6 +299,42 @@
       "status": "pass"
     },
     {
+      "slug": "ime",
+      "name": "iMe MxGram",
+      "asset": {
+        "sha256": null,
+        "size": 148174542,
+        "releaseId": "12.8.1",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "infuseplus",
+      "name": "Infuse Plus",
+      "asset": {
+        "sha256": null,
+        "size": 100074036,
+        "releaseId": "8.5.3",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "inkillerplus",
       "name": "iNKillerPlus",
       "asset": {
@@ -289,6 +343,24 @@
         "releaseId": "446.0.0",
         "source": "altstore",
         "downloadUrl": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "iqface",
+      "name": "iQFace",
+      "asset": {
+        "sha256": null,
+        "size": 225312147,
+        "releaseId": "577.1",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -443,6 +515,24 @@
       "status": "pass"
     },
     {
+      "slug": "messenger-flow",
+      "name": "Messenger Flow",
+      "asset": {
+        "sha256": null,
+        "size": 112652101,
+        "releaseId": "577.0.0",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "minivmac",
       "name": "Mini vMac",
       "asset": {
@@ -451,6 +541,24 @@
         "releaseId": "2.6",
         "source": "github",
         "downloadUrl": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "msgplusx",
+      "name": "MSGPlusX",
+      "asset": {
+        "sha256": null,
+        "size": 112528712,
+        "releaseId": "577.0.0",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -477,6 +585,24 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "nexasc",
+      "name": "NexaSC",
+      "asset": {
+        "sha256": null,
+        "size": 107196182,
+        "releaseId": "8.77.0",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "odyssey",
@@ -587,14 +713,14 @@
       "status": "pass"
     },
     {
-      "slug": "ryukgram",
-      "name": "RyukGram",
+      "slug": "raintweak",
+      "name": "RainTweak",
       "asset": {
-        "sha256": "c08e27efd9ec4a6e16828557b369b5c5aa555f2ba1fe931c21803fedb9523836",
-        "size": 333670703,
-        "releaseId": "446.0.0",
-        "source": "altstore",
-        "downloadUrl": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa"
+        "sha256": "1ac871154ac2649158eea405f2c79e2e1d36ed7771c9b64748ce9f1c3f97703e",
+        "size": 107515564,
+        "releaseId": "0.9.3",
+        "source": "github",
+        "downloadUrl": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -603,6 +729,42 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "redditfilter",
+      "name": "RedditFilter",
+      "asset": {
+        "sha256": "1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3",
+        "size": 137114565,
+        "releaseId": "2025.37.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "asset": {
+        "sha256": null,
+        "size": 324923211,
+        "releaseId": "445.0.0",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "ryukgram-ig410",
@@ -731,6 +893,24 @@
       "status": "pass"
     },
     {
+      "slug": "sparkle",
+      "name": "Sparkle",
+      "asset": {
+        "sha256": null,
+        "size": 317653332,
+        "releaseId": "445.0.0",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "spotiflac",
       "name": "SpotiFLAC Mobile",
       "asset": {
@@ -821,6 +1001,24 @@
       "status": "pass"
     },
     {
+      "slug": "swiftgram",
+      "name": "Swiftgram",
+      "asset": {
+        "sha256": null,
+        "size": 91604352,
+        "releaseId": "12.9.2",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "taurine",
       "name": "Taurine",
       "asset": {
@@ -839,6 +1037,42 @@
       "status": "warn"
     },
     {
+      "slug": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "asset": {
+        "sha256": null,
+        "size": 80615512,
+        "releaseId": "12.9.3",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "threadsaver",
+      "name": "ThreadSaver",
+      "asset": {
+        "sha256": null,
+        "size": 100461178,
+        "releaseId": "445.1",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "ttkillerplus",
       "name": "TTKillerPlus",
       "asset": {
@@ -847,6 +1081,24 @@
         "releaseId": "46.8.0",
         "source": "altstore",
         "downloadUrl": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
+      "slug": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "asset": {
+        "sha256": null,
+        "size": 94300571,
+        "releaseId": "1.5.3",
+        "source": "altstore",
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa"
       },
       "checks": {
         "sizePositive": true,

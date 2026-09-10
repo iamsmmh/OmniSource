@@ -3,39 +3,23 @@
   "generatedAt": "2026-09-10",
   "lastSync": "2026-09-10",
   "totals": {
-    "apps": 63,
-    "sources": 59,
-    "verifiedApps": 62,
+    "apps": 77,
+    "sources": 61,
+    "verifiedApps": 76,
     "communityVerifiedApps": 1,
     "unverifiedApps": 0,
-    "hashVerifiedApps": 49,
-    "verified": 62,
+    "hashVerifiedApps": 50,
+    "verified": 76,
     "community_verified": 1,
     "unverified": 0,
     "featuredApps": 6,
-    "downloadsReachable": 63,
+    "downloadsReachable": 77,
     "deadLinks": 0,
-    "newAppsThisWeek": 8,
+    "newAppsThisWeek": 9,
     "updatedAppsThisWeek": 8,
     "clientsSupported": 5
   },
   "newThisWeek": [
-    {
-      "slug": "ryukgram-sidebyside",
-      "name": "RyukGram Side by Side",
-      "version": "446.0.0",
-      "previousVersion": "",
-      "date": "2026-09-09",
-      "downloadURL": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa"
-    },
-    {
-      "slug": "ryukgram",
-      "name": "RyukGram",
-      "version": "446.0.0",
-      "previousVersion": "",
-      "date": "2026-09-09",
-      "downloadURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa"
-    },
     {
       "slug": "fladder",
       "name": "Fladder",
@@ -53,12 +37,12 @@
       "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.6/SpotiFLAC-v4.9.6-ios-unsigned.ipa"
     },
     {
-      "slug": "dopamine-roothide",
-      "name": "Dopamine (RootHide)",
-      "version": "2.4.9.26",
+      "slug": "nexasc",
+      "name": "NexaSC",
+      "version": "8.77.0",
       "previousVersion": "",
       "date": "2026-09-07",
-      "downloadURL": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa"
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa"
     },
     {
       "slug": "voyager",
@@ -69,12 +53,36 @@
       "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa"
     },
     {
-      "slug": "manicemu",
-      "name": "Manic EMU",
-      "version": "2.0.0",
+      "slug": "iqface",
+      "name": "iQFace",
+      "version": "577.1",
+      "previousVersion": "",
+      "date": "2026-09-05",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa"
+    },
+    {
+      "slug": "glow",
+      "name": "Glow",
+      "version": "577.1",
+      "previousVersion": "",
+      "date": "2026-09-05",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa"
+    },
+    {
+      "slug": "messenger-flow",
+      "name": "Messenger Flow",
+      "version": "577.0.0",
       "previousVersion": "",
       "date": "2026-09-03",
-      "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa"
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa"
+    },
+    {
+      "slug": "msgplusx",
+      "name": "MSGPlusX",
+      "version": "577.0.0",
+      "previousVersion": "",
+      "date": "2026-09-03",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa"
     },
     {
       "slug": "aidoku",
@@ -153,19 +161,19 @@
   ],
   "topCategories": [
     {
+      "category": "social",
+      "count": 24
+    },
+    {
       "category": "utilities",
       "count": 19
     },
     {
-      "category": "games",
-      "count": 11
-    },
-    {
       "category": "photo-video",
-      "count": 11
+      "count": 12
     },
     {
-      "category": "social",
+      "category": "games",
       "count": 11
     },
     {
@@ -186,7 +194,7 @@
     }
   ],
   "verification": {
-    "VERIFIED": 62,
+    "VERIFIED": 76,
     "COMMUNITY VERIFIED": 1,
     "UNVERIFIED": 0
   },
@@ -245,11 +253,11 @@
   "history": [
     {
       "date": "2026-09-10",
-      "apps": 63,
-      "sources": 59,
-      "verified": 62,
+      "apps": 77,
+      "sources": 61,
+      "verified": 76,
       "deadLinks": 0,
-      "newThisWeek": 8,
+      "newThisWeek": 9,
       "updatedThisWeek": 8
     }
   ]

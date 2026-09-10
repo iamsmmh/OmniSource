@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "count": 4,
-  "appsAffected": 14,
+  "appsAffected": 15,
   "groups": [
     {
       "key": "com.google.ios.youtube",
@@ -96,56 +96,9 @@
       "replacementRisk": true
     },
     {
-      "key": "com.burbn.instagram",
-      "type": "bundle-id+similar-name",
-      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · same developer (Ryuk (@axryuk)) and category · similar names (RyukGram / RyukGram (IG 410))",
-      "apps": [
-        {
-          "app": "inkillerplus",
-          "name": "iNKillerPlus",
-          "version": "446.0.0",
-          "releaseDate": "2026-09-09",
-          "source": "iKarwan (repo.ikghd.me)",
-          "developer": "iKarwan",
-          "category": "social",
-          "status": "stable",
-          "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa"
-        },
-        {
-          "app": "ryukgram",
-          "name": "RyukGram",
-          "version": "446.0.0",
-          "releaseDate": "2026-09-09",
-          "source": "Ryuk / RyukSign (source.ryuksign.com)",
-          "developer": "Ryuk (@axryuk)",
-          "category": "social",
-          "status": "stable",
-          "downloadURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa"
-        },
-        {
-          "app": "ryukgram-ig410",
-          "name": "RyukGram (IG 410)",
-          "version": "410.1.0",
-          "releaseDate": "2026-07-25",
-          "source": "Ryuk / RyukSign (source.ryuksign.com)",
-          "developer": "Ryuk (@axryuk)",
-          "category": "social",
-          "status": "stable",
-          "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa"
-        }
-      ],
-      "recommended": {
-        "app": "inkillerplus",
-        "name": "iNKillerPlus",
-        "version": "446.0.0",
-        "reason": "Newest version available (446.0.0, released 2026-09-09)"
-      },
-      "replacementRisk": true
-    },
-    {
       "key": "com.atebits.Tweetie2",
       "type": "bundle-id",
-      "reason": "2 apps share bundle identifier 'com.atebits.Tweetie2'",
+      "reason": "3 apps share bundle identifier 'com.atebits.Tweetie2'",
       "apps": [
         {
           "app": "bhtwitter",
@@ -168,13 +121,71 @@
           "category": "social",
           "status": "stable",
           "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa"
+        },
+        {
+          "app": "redditfilter",
+          "name": "RedditFilter",
+          "version": "2025.37.0",
+          "releaseDate": "2025-09-26",
+          "source": "level3tjg/RedditFilter",
+          "developer": "level3tjg",
+          "category": "social",
+          "status": "stable",
+          "downloadURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa"
         }
       ],
       "recommended": {
-        "app": "bhtwitter",
-        "name": "BHTwitter",
-        "version": "4.4",
-        "reason": "Newest version available (4.4, released 2025-05-13)"
+        "app": "redditfilter",
+        "name": "RedditFilter",
+        "version": "2025.37.0",
+        "reason": "Newest version available (2025.37.0, released 2025-09-26)"
+      },
+      "replacementRisk": true
+    },
+    {
+      "key": "com.burbn.instagram",
+      "type": "bundle-id+similar-name",
+      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))",
+      "apps": [
+        {
+          "app": "inkillerplus",
+          "name": "iNKillerPlus",
+          "version": "446.0.0",
+          "releaseDate": "2026-09-09",
+          "source": "iKarwan (repo.ikghd.me)",
+          "developer": "iKarwan",
+          "category": "social",
+          "status": "stable",
+          "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa"
+        },
+        {
+          "app": "ryukgram",
+          "name": "RyukGram",
+          "version": "445.0.0",
+          "releaseDate": "2026-09-01",
+          "source": "927tx/IPA-Vault",
+          "developer": "faroukbmiled & IPA Vault",
+          "category": "social",
+          "status": "stable",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa"
+        },
+        {
+          "app": "ryukgram-ig410",
+          "name": "RyukGram (IG 410)",
+          "version": "410.1.0",
+          "releaseDate": "2026-07-25",
+          "source": "Ryuk / RyukSign (source.ryuksign.com)",
+          "developer": "Ryuk (@axryuk)",
+          "category": "social",
+          "status": "stable",
+          "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa"
+        }
+      ],
+      "recommended": {
+        "app": "inkillerplus",
+        "name": "iNKillerPlus",
+        "version": "446.0.0",
+        "reason": "Newest version available (446.0.0, released 2026-09-09)"
       },
       "replacementRisk": true
     },
@@ -293,6 +304,39 @@
       },
       "reason": "7 apps share bundle identifier 'com.google.ios.youtube'"
     },
+    "bhtwitter": {
+      "groupKey": "com.atebits.Tweetie2",
+      "type": "bundle-id",
+      "recommended": {
+        "app": "redditfilter",
+        "name": "RedditFilter",
+        "version": "2025.37.0",
+        "reason": "Newest version available (2025.37.0, released 2025-09-26)"
+      },
+      "reason": "3 apps share bundle identifier 'com.atebits.Tweetie2'"
+    },
+    "neofreebird": {
+      "groupKey": "com.atebits.Tweetie2",
+      "type": "bundle-id",
+      "recommended": {
+        "app": "redditfilter",
+        "name": "RedditFilter",
+        "version": "2025.37.0",
+        "reason": "Newest version available (2025.37.0, released 2025-09-26)"
+      },
+      "reason": "3 apps share bundle identifier 'com.atebits.Tweetie2'"
+    },
+    "redditfilter": {
+      "groupKey": "com.atebits.Tweetie2",
+      "type": "bundle-id",
+      "recommended": {
+        "app": "redditfilter",
+        "name": "RedditFilter",
+        "version": "2025.37.0",
+        "reason": "Newest version available (2025.37.0, released 2025-09-26)"
+      },
+      "reason": "3 apps share bundle identifier 'com.atebits.Tweetie2'"
+    },
     "inkillerplus": {
       "groupKey": "com.burbn.instagram",
       "type": "bundle-id+similar-name",
@@ -302,7 +346,7 @@
         "version": "446.0.0",
         "reason": "Newest version available (446.0.0, released 2026-09-09)"
       },
-      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · same developer (Ryuk (@axryuk)) and category · similar names (RyukGram / RyukGram (IG 410))"
+      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))"
     },
     "ryukgram": {
       "groupKey": "com.burbn.instagram",
@@ -313,7 +357,7 @@
         "version": "446.0.0",
         "reason": "Newest version available (446.0.0, released 2026-09-09)"
       },
-      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · same developer (Ryuk (@axryuk)) and category · similar names (RyukGram / RyukGram (IG 410))"
+      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))"
     },
     "ryukgram-ig410": {
       "groupKey": "com.burbn.instagram",
@@ -324,29 +368,7 @@
         "version": "446.0.0",
         "reason": "Newest version available (446.0.0, released 2026-09-09)"
       },
-      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · same developer (Ryuk (@axryuk)) and category · similar names (RyukGram / RyukGram (IG 410))"
-    },
-    "bhtwitter": {
-      "groupKey": "com.atebits.Tweetie2",
-      "type": "bundle-id",
-      "recommended": {
-        "app": "bhtwitter",
-        "name": "BHTwitter",
-        "version": "4.4",
-        "reason": "Newest version available (4.4, released 2025-05-13)"
-      },
-      "reason": "2 apps share bundle identifier 'com.atebits.Tweetie2'"
-    },
-    "neofreebird": {
-      "groupKey": "com.atebits.Tweetie2",
-      "type": "bundle-id",
-      "recommended": {
-        "app": "bhtwitter",
-        "name": "BHTwitter",
-        "version": "4.4",
-        "reason": "Newest version available (4.4, released 2025-05-13)"
-      },
-      "reason": "2 apps share bundle identifier 'com.atebits.Tweetie2'"
+      "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))"
     },
     "ytmusic": {
       "groupKey": "com.google.ios.youtubemusic",

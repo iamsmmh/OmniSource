@@ -6,10 +6,10 @@
     "stale": 180,
     "archived": 365
   },
-  "count": 24,
+  "count": 25,
   "summary": {
     "warning": 8,
-    "stale": 5,
+    "stale": 6,
     "archived": 11,
     "critical": 0
   },
@@ -166,6 +166,17 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 312 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "redditfilter",
+      "name": "RedditFilter",
+      "lastUpdate": "2025-09-26",
+      "daysSinceUpdate": 349,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 349 days (threshold 180)"
       ]
     },
     {
@@ -754,10 +765,138 @@
       "reasons": []
     },
     {
+      "slug": "raintweak",
+      "name": "RainTweak",
+      "lastUpdate": "2026-06-19",
+      "daysSinceUpdate": 83,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "infuseplus",
+      "name": "Infuse Plus",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "glow",
+      "name": "Glow",
+      "lastUpdate": "2026-09-05",
+      "daysSinceUpdate": 5,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "swiftgram",
+      "name": "Swiftgram",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "iqface",
+      "name": "iQFace",
+      "lastUpdate": "2026-09-05",
+      "daysSinceUpdate": 5,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
       "slug": "ryukgram",
       "name": "RyukGram",
-      "lastUpdate": "2026-09-09",
-      "daysSinceUpdate": 1,
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "sparkle",
+      "name": "Sparkle",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "redditfilter",
+      "name": "RedditFilter",
+      "lastUpdate": "2025-09-26",
+      "daysSinceUpdate": 349,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 349 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "nexasc",
+      "name": "NexaSC",
+      "lastUpdate": "2026-09-07",
+      "daysSinceUpdate": 3,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "messenger-flow",
+      "name": "Messenger Flow",
+      "lastUpdate": "2026-09-03",
+      "daysSinceUpdate": 7,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "msgplusx",
+      "name": "MSGPlusX",
+      "lastUpdate": "2026-09-03",
+      "daysSinceUpdate": 7,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "threadsaver",
+      "name": "ThreadSaver",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "ime",
+      "name": "iMe MxGram",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "lastUpdate": "2026-09-01",
+      "daysSinceUpdate": 9,
       "classification": "healthy",
       "removedReleases": 0,
       "reasons": []
