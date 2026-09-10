@@ -396,7 +396,10 @@
       }
 
       var sourceUrl = $('#sourceUrl');
-      if (sourceUrl) sourceUrl.textContent = OS.ROOT.replace(/\/$/, '') + '/apps.json';
+      var sourceHref = OS.ROOT.replace(/\/$/, '') + '/apps.json';
+      if (sourceUrl) sourceUrl.textContent = sourceHref;
+      var sourceUrlLink = $('#sourceUrlLink');
+      if (sourceUrlLink) sourceUrlLink.href = sourceHref;
 
       // Client chips in the hero.
       var row = $('#clientButtons');
