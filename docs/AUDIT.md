@@ -97,9 +97,9 @@ download-URL HEAD probes, Discord/Telegram/ntfy/webhook endpoints
 | `build-tweak.yml` | dispatch (generic tooling) | contents, releases | release asset | generic IPA+deb injector; **unrelated to feed generation** (see §9) |
 
 Concurrency: `sync-publish` (never two writers), `validate-<ref>`,
-`merge-feeds`. `sync.yml` is the single publisher: it both mirrors every
-generated URL into the repository root (the branch deployment GitHub serves
-today) and uploads the `_site/` artifact for the Actions deployment path.
+`merge-feeds`. `sync.yml` is the single publisher: it publishes `/apps.json`
++ the `api/` mirror into the repository root and uploads the `_site/` artifact
+(which carries the full flat URL family) for the Actions deployment path.
 Both are guarded by `tests/test_website_shell.py`.
 
 **Gap (Phase 14):** deploy lives inside `sync.yml`; no independent
@@ -144,11 +144,11 @@ catalog.json ─┐
 │    Discord / Telegram / ntfy / generic webhook                      │
 └──────────────────────────────────────────────────────────────────────┘
         ▼
-site.py publish_repo_artifacts() → repository root (flat URLs, /api/ + .gz,
+site.py publish_repo_artifacts() → repository root (/apps.json, /api/ + .gz,
                                   sitemap, robots, .nojekyll, homepage stats)
-site.py build_site()            → _site/ (same URLs + minified CSS, .br)
+site.py build_site()            → _site/ (full flat URL family + minified CSS, .br)
         ▼
-sync.yml → commit root mirror → actions/upload-pages-artifact → deploy-pages
+sync.yml → commit root surface → actions/upload-pages-artifact → deploy-pages
         → GitHub Pages
 ```
 

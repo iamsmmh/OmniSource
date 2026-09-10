@@ -636,8 +636,8 @@ def stage_readme(
         item = by_slug.get(app.slug)
         if not item:
             continue
-        feed_url = f"{base}/{app.slug}.json"
-        rss_url = f"{base}/{app.slug}.xml"
+        feed_url = f"{base}/feeds/{app.slug}.json"
+        rss_url = f"{base}/feeds/{app.slug}.xml"
         bundle = str(app.raw.get("bundleIdentifier", "—"))
         reachable = "✅" if item["downloadReachable"] else "⚠️"
         install = f"[AltStore](altstore://source?url={feed_url}) · [SideStore](sidestore://source?url={feed_url})"

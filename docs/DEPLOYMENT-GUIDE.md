@@ -83,12 +83,12 @@ git merge arena/01a086f5-omnisource
 git push origin main
 ```
 
-**GitHub Pages will auto-deploy within 1-2 minutes.** The published URLs
-(`/apps.json`, `/<app>.json`, `/<app>.xml`, `/api/*`, `sitemap.xml`,
-`robots.txt`) are committed files in the repository root, refreshed by the
-pipeline on every run, so both the branch deployment and the `_site/`
-artifact expose the same URLs. Run `python3 scripts/publish_root.py --check`
-to verify the mirror matches `feeds/` after a manual edit.
+**GitHub Pages will auto-deploy within 1-2 minutes.** The committed
+repository-root URLs (`/apps.json`, `/api/*`, `sitemap.xml`, `robots.txt`)
+are refreshed by the pipeline on every run; `scripts/build_site.py` assembles
+the full flat URL family (`/<app>.json`, `/<app>.xml`, …) into the `_site/`
+artifact for the deployment. Run `python3 scripts/publish_root.py --check` to
+verify the root surface matches `feeds/` after a manual edit.
 
 ### Option 2: Direct Deployment from Branch
 

@@ -1,19 +1,20 @@
 #!/usr/bin/env python3
-"""Publish the generated public URLs into the repository root.
+"""Publish the generated public URLs that must live at the repository root.
 
-GitHub Pages serves this repository in *branch* mode, so the live site is the
-repository tree: a file that is not committed does not exist on the web. This
-script mirrors the canonical generated artifacts into the root so the
-installable source URL (``/apps.json``) and every other generated URL resolve:
+The canonical home of every generated feed is ``feeds/`` (and the machine API
+surface under ``api/``); the repository root stays clean. The only feed
+mirrored at the root is ``/apps.json`` — the URL installers register — which
+GitHub Pages serves from this branch:
 
-    /apps.json            /<slug>.json   /<slug>.xml   /feed.xml
-    /badge-*.json         /<intelligence>.json         /catalog.min.json
+    /apps.json            (byte-identical to feeds/apps.json)
     /api/*.json + .gz     /api/<route>   /api/index.json
     /sitemap.xml          /robots.txt    /.nojekyll
 
-Every copy is byte-identical to its ``feeds/`` original (git stores the shared
-blob once, and ``check_reproducible.py`` fails the build if one drifts), and
-files that are no longer generated are removed from the mirror.
+Every copy is byte-identical to its ``feeds/`` original (``check_reproducible.py``
+fails the build if one drifts), and files that are no longer generated are
+removed from the mirror. The full historical flat URL family (``/<slug>.json``,
+``/<slug>.xml``, ``/feed.xml``, …) is still assembled into the ``_site/``
+artifact by ``scripts/build_site.py`` for the GitHub Actions deployment.
 
 The sync pipeline already calls this (see :func:`omnisource.pipeline.run`), so
 scheduled builds keep the root in step. Run it directly after a manual edit to
@@ -46,23 +47,22 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 def find_stale_mirror_files() -> list[str]:
     """Root/API mirror files that are missing, stale or no longer generated."""
     feeds = REPO_ROOT / "feeds"
-    feed_files = list(feeds.glob("*.json")) + list(feeds.glob("*.xml"))
-    flat = sorted(path.name for path in feed_files if path.name != "state.json")
     stale: list[str] = []
 
     def differs(mirror: Path, source: Path) -> bool:
         return not mirror.exists() or not filecmp.cmp(mirror, source, shallow=False)
 
-    for name in flat:
-        if differs(REPO_ROOT / name, feeds / name):
-            stale.append(name)
+    # /apps.json is the only feed mirrored at the repository root (the
+    # installable source URL); everything else lives under feeds/ and api/.
+    if differs(REPO_ROOT / "apps.json", feeds / "apps.json"):
+        stale.append("apps.json")
 
-    # A root JSON/XML that no feed or fixed publisher output owns is stale: the
-    # publisher prunes it on the next run.
-    owned = set(flat) | {"catalog.json", "catalog.min.json", "sitemap.xml"}
+    # A root JSON/XML the publisher no longer owns is stale: the publisher
+    # prunes it on the next run.
+    owned = {"apps.json", "catalog.json", "sitemap.xml"}
     for path in sorted(REPO_ROOT.glob("*")):
         if path.is_file() and path.suffix.lower() in {".json", ".xml"} and path.name not in owned:
-            stale.append(f"{path.name} (stale generated copy)")
+            stale.append(f"{path.name} (stale root copy)")
 
     # API mirror: every documented endpoint must exist and be byte-identical to
     # the canonical feed it mirrors (api/catalog.json + .min point at discovery).
@@ -84,7 +84,7 @@ def find_stale_mirror_files() -> list[str]:
         if source.exists() and differs(target, source):
             stale.append(f"api/{name}")
 
-    for name in ("sitemap.xml", "robots.txt", ".nojekyll", "catalog.min.json"):
+    for name in ("sitemap.xml", "robots.txt", ".nojekyll"):
         if not (REPO_ROOT / name).exists():
             stale.append(name)
     return sorted(set(stale))
@@ -108,7 +108,7 @@ def main(argv: list[str] | None = None) -> int:
 
     summary = publish_repo_artifacts(REPO_ROOT)
     print(
-        f"publish_root: {summary['flat_files']} flat feed URL(s), "
+        f"publish_root: /apps.json ({summary['flat_files']} flat feed URL), "
         f"{summary['api_documents']} API document(s) (+{summary['api_gz_files']} gz), "
         f"sitemap + robots + .nojekyll; {len(summary['written'])} file(s) refreshed, "
         f"{len(summary['removed'])} stale file(s) removed"

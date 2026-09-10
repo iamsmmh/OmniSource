@@ -14,7 +14,7 @@ version:
 build:
 	$(PYTHON) scripts/omnisource.py
 
-# Publish the generated flat/API URLs into the repository root (branch deploy).
+# Publish /apps.json + the api/ mirror into the repository root.
 publish:
 	$(PYTHON) scripts/publish_root.py
 
@@ -27,8 +27,8 @@ serve: site
 	$(PYTHON) -m http.server $(PORT) --bind 0.0.0.0 --directory _site
 
 # Build the site, serve it locally and verify every page/feed/API URL works.
-# `--root` additionally verifies the repository tree, which is what GitHub
-# Pages serves while it is configured for a branch deployment.
+# `--root` additionally verifies the repository tree surface (/apps.json,
+# feeds/, api/) that GitHub Pages serves without a build step.
 smoke:
 	$(PYTHON) scripts/smoke_test.py
 	$(PYTHON) scripts/smoke_test.py --root --no-build

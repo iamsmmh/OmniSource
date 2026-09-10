@@ -98,16 +98,17 @@ class TestPipeline(unittest.TestCase):
             self.assertFalse((paths.root / "testapp.json").exists())
             self.assertFalse((paths.root / "apps.json").exists())
 
-            # Publishing mirrors every feed into the served root byte-identical,
-            # which is what GitHub Pages serves for a branch deployment.
+            # Publishing keeps the repository root clean: only /apps.json (the
+            # installable source URL) is mirrored, byte-identical to feeds/.
+            # Every other feed stays in feeds/ and is served by the _site/
+            # artifact for the GitHub Actions deployment.
             summary = publish_repo_artifacts(root, health_doc=health_doc, analytics_doc=analytics_doc)
             self.assertGreater(summary["flat_files"], 0)
-            self.assertTrue((root / "testapp.json").is_file())
-            self.assertEqual((root / "testapp.json").read_bytes(), (paths.feeds / "testapp.json").read_bytes())
+            self.assertFalse((root / "testapp.json").exists(), "per-app feeds must not be mirrored to the root")
             self.assertEqual((root / "apps.json").read_bytes(), (paths.feeds / "apps.json").read_bytes())
             self.assertTrue((root / "api" / "apps.json").is_file())
             self.assertEqual((root / "api" / "apps.json").read_bytes(), (paths.feeds / "apps.json").read_bytes())
-            for name in ("sitemap.xml", "robots.txt", ".nojekyll", "catalog.min.json", "api/index.json"):
+            for name in ("apps.json", "sitemap.xml", "robots.txt", ".nojekyll", "api/index.json"):
                 self.assertTrue((root / name).is_file(), f"publisher did not write {name}")
 
             # Idempotent: a second run changes nothing.

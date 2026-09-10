@@ -76,8 +76,8 @@
 
   /* -------------------------------------------------------------- lookups */
   var slugFor = function (app) { return (app.omnisource && app.omnisource.slug) || (app.bundleIdentifier ? app.bundleIdentifier.split('.').pop().toLowerCase() : 'app'); };
-  var feedFor = function (app) { return OS.url(slugFor(app) + '.json'); };
-  var rssFor = function (app) { return OS.url(slugFor(app) + '.xml'); };
+  var feedFor = function (app) { return OS.url('feeds/' + slugFor(app) + '.json'); };
+  var rssFor = function (app) { return OS.url('feeds/' + slugFor(app) + '.xml'); };
   var healthFor = function (app) { return (state.health && state.health.apps || []).find(function (item) { return item.slug === slugFor(app); }) || {}; };
   var verificationFor = function (app) { return state.verification.get(slugFor(app)) || null; };
   var discoveryFor = function (app) { return state.discovery.get(slugFor(app)) || null; };
@@ -92,11 +92,10 @@
   };
 
   /* ------------------------------------------------------------ data load */
-  // The flat source URLs (/apps.json, /discovery.json) are only assembled
-  // into the deployed site by the build step; when the repository is served
-  // directly (e.g. a local preview without building), those copies do not
-  // exist. Fall back to the canonical organized location under feeds/ so the
-  // catalog keeps loading either way.
+  // /apps.json lives at the repository root (installable source URL) and in
+  // the deployed site; /discovery.json is only assembled into the deployed
+  // site by the build step. Fall back to the canonical organized location
+  // under feeds/ so the catalog keeps loading either way.
   function fetchFeed(primary, fallback, timeoutMs) {
     return OS.fetchJSON(primary, timeoutMs).then(function (doc) {
       return doc != null ? doc : OS.fetchJSON(fallback, timeoutMs);
@@ -1585,7 +1584,7 @@
         if (doc && doc.apps) {
           entry = doc.apps.find(function (a) { return a.slug === (slug || ''); });
         }
-        var sourceFeed = slug ? OS.ROOT.replace(/\/$/, '') + '/' + slug + '.json' : OS.ROOT.replace(/\/$/, '') + '/apps.json';
+        var sourceFeed = slug ? OS.ROOT.replace(/\/$/, '') + '/feeds/' + slug + '.json' : OS.ROOT.replace(/\/$/, '') + '/apps.json';
         if (feedLabel) feedLabel.textContent = sourceFeed;
         var appCards = (entry && entry.cards) || (doc && doc.master ? doc.master.cards : []);
         if (!appCards.length) {

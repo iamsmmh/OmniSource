@@ -3,9 +3,8 @@
 
 The offline build (``python3 scripts/omnisource.py --no-sync --no-health``)
 must not change anything that is committed. This script snapshots the
-generated outputs (feeds JSON/XML, app pages, README blocks and the published
-root mirror at the flat + API URL families), runs the offline build, snapshots
-again and compares.
+generated outputs (feeds JSON/XML, app pages, README blocks, ``/apps.json``
+and the API mirror), runs the offline build, snapshots again and compares.
 
 Volatile values that are correct to refresh on every build are normalized
 before comparing — the build/sync date (``generatedAt``, ``lastSync``), the
@@ -16,7 +15,7 @@ whether *this* machine could reach the remote screenshot hosts. Any *other*
 difference means a hand-edit or a bug in the generators and fails the check.
 gzip twins are compared by the document they decode to, so the check does not
 depend on the local zlib. Untracked generated files (under ``feeds/``,
-``apps/``, ``api/`` or the flat URLs) are also reported, because an artifact
+``apps/``, ``api/`` or ``apps.json``) are also reported, because an artifact
 that is not committed would silently diverge after deploy.
 
 Usage
@@ -42,19 +41,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 # The offline build may legitimately rewrite these; nothing else is checked.
 # Two families of generated output are committed: the canonical files under
-# feeds/ (plus app/compare/collection pages and README blocks) and the published
-# mirror of those feeds at the flat + API URL families, which the repository
-# root carries because GitHub Pages serves this branch directly.
+# feeds/ (plus app/compare/collection pages and README blocks) and the
+# published root surface — /apps.json (the installable source URL) and the
+# api/ mirror — which the repository root carries because GitHub Pages can
+# serve this branch directly.
 TRACKED_PATTERNS = (
     "feeds/*.json",
     "apps/*/index.html",
     "compare/*/index.html",
     "collections/*/index.html",
     "README.md",
-    # Published root mirror (byte-identical copies of feeds/*, sitemap,
-    # robots and the home page's live statistics).
-    "*.json",
-    "*.xml",
+    # Published root surface: /apps.json (the installable source URL),
+    # the api/ mirror, sitemap, robots and the home page's live statistics.
+    "apps.json",
     "api/*.json",
     "api/*",
     "robots.txt",

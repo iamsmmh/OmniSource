@@ -6,17 +6,16 @@ supports two deployment modes and the repository must work under either:
 * ``build_site()`` assembles the complete deployable site into ``_site/``,
   the artifact ``sync.yml`` uploads with ``actions/upload-pages-artifact``
   (GitHub Actions deployment).
-* ``publish_repo_artifacts()`` writes the generated public URLs into the
-  repository root, which is what GitHub's *legacy* branch deployment
-  (``pages-build-deployment``) serves. Without it the live site is the raw
-  repository tree and every generated URL 404s — including ``/apps.json``,
-  the URL installers add as a source.
+* ``publish_repo_artifacts()`` writes ``/apps.json``, the ``/api/`` mirror
+  and the SEO files into the repository root, which is what GitHub's *legacy*
+  branch deployment (``pages-build-deployment``) serves. ``/apps.json`` — the
+  URL installers add as a source — must therefore be committed.
 
 Both publishers expose every generated artifact at the same URL families
 so existing subscribers and future API consumers keep working:
 
 * organized   ``/feeds/<file>``           — canonical generated location
-* flat        ``/<file>``                 — historical subscriber URLs
+* flat        ``/<file>``                 — historical subscriber URLs (in ``_site/`` only)
 * API         ``/api/<file>``             — machine-readable endpoints
 * app pages   ``/apps/<slug>/``           — static detail pages
 
@@ -29,11 +28,15 @@ the served ``index.html`` copies), gzip copies of the JSON API documents
 (comments/blank lines stripped, no structural rewriting, so the committed
 source of truth stays readable).
 
-Because the branch deployment serves the root, the mirrored files are
-committed: they are byte-identical copies of ``feeds/`` (git stores the
-shared blob once) and ``check_reproducible.py`` fails the build if they
-ever drift. Every mirror path is a generated file; the hand-maintained
-``catalog.json`` is the only root-level JSON the publisher does not own.
+The repository root is kept clean: ``feeds/`` is the single source of truth
+for every generated feed, and the only feed committed at the root is
+``apps.json`` (the installable source URL, byte-identical to
+``feeds/apps.json``). The historical flat URL family is still assembled into
+``_site/`` for the GitHub Actions deployment, so existing subscribers keep
+working while the repository tree no longer duplicates ``feeds/``.
+``check_reproducible.py`` fails the build if ``apps.json`` ever drifts, and the
+hand-maintained ``catalog.json`` is the only root-level JSON the publisher
+does not own.
 """
 
 from __future__ import annotations
@@ -356,11 +359,12 @@ def _copy_if_different(source: Path, destination: Path) -> bool:
 def _publish_flat_feeds(root: Path, destination: Path) -> tuple[int, list[Path]]:
     """Copy every canonical feed to its flat historical URL name.
 
-    ``destination`` is a served site root — ``_site/`` for the Pages artifact,
-    the repository root for the branch-backed deployment. Copies are
+    ``destination`` is the ``_site/`` Pages artifact: the historical flat URL
+    family is assembled there so every legacy subscriber URL keeps resolving,
+    while the repository root itself stays clean (only ``/apps.json`` is
+    mirrored there, by :func:`publish_repo_artifacts`). Copies are
     byte-identical to ``feeds/`` so the organized, flat and API families can
-    never drift apart (and git stores their shared blob once). Returns
-    ``(published, changed)``.
+    never drift apart. Returns ``(published, changed)``.
     """
     published = 0
     changed: list[Path] = []
@@ -527,11 +531,13 @@ def _inject_homepage_stats(path: Path, health_doc: dict[str, Any], analytics_doc
 # Repository-root publication (branch-backed Pages deployment)
 # ---------------------------------------------------------------------------
 
-# Root-level generated files that are not feed copies. The publisher owns
-# every other root ``*.json``/``*.xml`` file; ``catalog.json`` is the
-# hand-maintained source of truth and is never touched (a unit test guards
-# the invariant that no other hand-maintained root JSON/XML exists).
-ROOT_GENERATED_FILES = ("catalog.min.json", "sitemap.xml", "robots.txt", ".nojekyll")
+# Root-level generated files that are not feed copies. ``apps.json`` is the
+# installable source URL and the only feed mirrored at the repository root;
+# the publisher owns every other root ``*.json``/``*.xml`` file it removes,
+# while ``catalog.json`` is the hand-maintained source of truth and is never
+# touched (a unit test guards the invariant that no other hand-maintained root
+# JSON/XML exists).
+ROOT_GENERATED_FILES = ("apps.json", "sitemap.xml", "robots.txt", ".nojekyll")
 ROOT_HAND_MAINTAINED = ("catalog.json",)
 
 
@@ -556,15 +562,20 @@ def publish_repo_artifacts(
     health_doc: dict[str, Any] | None = None,
     analytics_doc: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Publish every generated public URL into the repository root.
+    """Publish the generated URLs that must live at the repository root.
 
-    GitHub Pages is configured for a *branch* deployment, so the live site is
-    the repository tree itself: a file that is not committed does not exist on
-    the web. This mirrors the canonical generated artifacts into the root so
-    the installable source URL (``/apps.json``) and every other generated URL
-    (``/<feed>.json``, ``/<feed>.xml``, ``/api/*``, ``/sitemap.xml``,
-    ``/robots.txt``, ``catalog.min.json``) resolve — byte-identical to
-    ``feeds/``, which stays the single source of truth.
+    The canonical home of every generated feed is ``feeds/`` (and the machine
+    API surface under ``api/``); the repository root stays clean. The only
+    feed mirrored at the root is ``/apps.json`` — the URL installers register
+    — which GitHub Pages serves from this branch. The full flat URL family
+    (``/<slug>.json``, ``/<slug>.xml``, ``/feed.xml``, …) is still assembled
+    into the ``_site/`` artifact by :func:`build_site`, so the GitHub Actions
+    deployment keeps serving every historical subscriber URL while the
+    repository tree no longer carries duplicate copies of ``feeds/``.
+
+    Also writes ``/sitemap.xml``, ``/robots.txt``, ``.nojekyll`` and the live
+    homepage statistics, and prunes any root JSON/XML the publisher no longer
+    owns.
 
     Called by the pipeline (so a sync can never leave the mirror stale) and by
     ``scripts/publish_root.py`` for repair/one-off runs. Returns a summary with
@@ -579,26 +590,18 @@ def publish_repo_artifacts(
             _write_text(path, data)
             written.append(path)
 
-    flat_files, flat_changed = _publish_flat_feeds(root, root)
+    # /apps.json — the installable source URL, byte-identical to feeds/.
+    flat_changed: list[Path] = []
+    apps_feed = root / "feeds" / "apps.json"
+    if apps_feed.exists() and _copy_if_different(apps_feed, root / "apps.json"):
+        flat_changed.append(root / "apps.json")
     written.extend(flat_changed)
-
-    discovery = root / "feeds" / "discovery.json"
-    if discovery.exists():
-        minified = root / "catalog.min.json"
-        write(minified, _minify_json(discovery.read_text(encoding="utf-8")))
-        twin = Path(str(minified) + ".gz")
-        before = twin.read_bytes() if twin.exists() else None
-        if _write_gzip(minified) is not None:
-            if twin.read_bytes() != before:
-                written.append(twin)
-        else:
-            twin.unlink(missing_ok=True)
 
     api = _publish_api_mirror(root, root / "api", brotli=False)
     written.extend(api["changed"])
     removed.extend(_prune_mirror(root / "api", set(api["published"])))
-    keep = {*ROOT_GENERATED_FILES, *ROOT_HAND_MAINTAINED, *(p.name for p in (root / "feeds").glob("*"))}
-    keep.update(f"{name}.gz" for name in ROOT_GENERATED_FILES)
+    keep = {*ROOT_GENERATED_FILES, *ROOT_HAND_MAINTAINED}
+    keep.update(f"{name}.gz" for name in ROOT_GENERATED_FILES if name.endswith(".json"))
     removed.extend(_prune_mirror(root, keep))
 
     base_url = _base_url_from_catalog(root)
@@ -629,7 +632,7 @@ def publish_repo_artifacts(
         written.append(home)
 
     return {
-        "flat_files": flat_files,
+        "flat_files": 1,  # /apps.json — the only feed mirrored at the root
         "api_documents": api["documents"],
         "api_gz_files": api["gz_files"],
         "written": sorted({str(path.relative_to(root)) for path in written}),

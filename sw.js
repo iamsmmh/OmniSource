@@ -25,10 +25,15 @@
  * v6 changes (weight):
  *   • the brand logo precaches the 32 KB WebP twin instead of the 264 KB
  *     PNG; the PNG stays for favicons, feed iconURLs and non-WebP fallback.
+ *
+ * v7 changes (canonical feeds):
+ *   • the generated feeds now live only under /feeds/ (the repository root
+ *     no longer mirrors them), so the discovery catalog precache points at
+ *     ./feeds/discovery.json instead of the removed ./discovery.json.
  */
 'use strict';
 
-const VERSION = 'omnisource-v6';
+const VERSION = 'omnisource-v7';
 const CORE_CACHE = `${VERSION}-core`;
 const DATA_CACHE = `${VERSION}-data`;
 const ASSET_CACHE = `${VERSION}-assets`;
@@ -55,7 +60,7 @@ const CORE_ASSETS = [
 const DATA_URLS = [
   './apps.json',
   './catalog.json',
-  './discovery.json',
+  './feeds/discovery.json',
   './feeds/health.json',
   './feeds/updates.json',
   './feeds/analytics.json',

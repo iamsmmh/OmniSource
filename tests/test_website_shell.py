@@ -1,12 +1,11 @@
 """Invariants for the static website shell (Liquid Glass + GH Pages).
 
 The repository root holds the site *sources* (index.html, install/, js/,
-feeds/, apps/, …) plus the published copies of the generated feeds at the
-flat/API URL families. ``scripts/build_site.py`` additionally assembles the
-deployable site into ``_site/`` for the GitHub Actions deployment path.
-Both must expose the same URLs, because GitHub Pages is currently serving the
-branch itself. These invariants protect the pieces the builder and the
-deployed site depend on.
+feeds/, apps/, …) plus the published ``/apps.json`` installable source URL and
+the machine API surface under ``api/``. ``scripts/build_site.py`` additionally
+assembles the deployable site (including the full historical flat URL family)
+into ``_site/`` for the GitHub Actions deployment path. These invariants
+protect the pieces the builder and the deployed site depend on.
 """
 
 from __future__ import annotations
@@ -58,7 +57,7 @@ class TestWebsiteShell(unittest.TestCase):
 
     def test_service_worker_version(self) -> None:
         sw = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("omnisource-v6", sw)
+        self.assertIn("omnisource-v7", sw)
         # The shell precaches the lightweight WebP logo; the PNG stays for
         # favicons, feed iconURLs and non-WebP fallbacks only.
         self.assertIn("'./assets/OmniSource.webp'", sw)
@@ -107,44 +106,37 @@ class TestWebsiteShell(unittest.TestCase):
         self.assertTrue(source.is_file(), "/apps.json is missing: the installable source URL would 404")
         self.assertEqual(source.read_bytes(), feed.read_bytes(), "/apps.json diverged from feeds/apps.json")
 
-    def test_repo_root_mirrors_every_published_url(self) -> None:
-        # Every feed is published at the flat URL family (and every JSON
-        # document under /api/) from now on, so both deployment modes serve
-        # the same URLs. Copies must stay byte-identical to feeds/.
+    def test_repo_root_publishes_apps_json_and_api_mirror(self) -> None:
+        # The repository root stays clean: /apps.json (the installable source
+        # URL) is the only feed mirrored at the root, and the machine API
+        # surface lives under /api/. Every copy stays byte-identical to
+        # feeds/. The full flat URL family is assembled into _site/ by the
+        # builder instead of being committed to the tree.
         from omnisource.site import API_DOCUMENTS, API_ROUTES
 
         feeds = ROOT / "feeds"
-        for pattern in ("*.json", "*.xml"):
-            for canonical in sorted(feeds.glob(pattern)):
-                if canonical.name == "state.json":
-                    continue
-                mirror = ROOT / canonical.name
-                self.assertTrue(mirror.is_file(), f"flat URL missing from the repository root: {canonical.name}")
-                self.assertEqual(
-                    mirror.read_bytes(),
-                    canonical.read_bytes(),
-                    f"flat URL diverged from feeds/: {canonical.name}",
-                )
+        source = ROOT / "apps.json"
+        self.assertTrue(source.is_file(), "/apps.json is missing: the installable source URL would 404")
+        self.assertEqual(source.read_bytes(), (feeds / "apps.json").read_bytes(), "/apps.json diverged from feeds/")
 
         for name in sorted(API_DOCUMENTS):
-            source = feeds / name
-            if not source.exists():
+            canonical = feeds / name
+            if not canonical.exists():
                 continue
             mirror = ROOT / "api" / name
             self.assertTrue(mirror.is_file(), f"API URL missing from the repository root: api/{name}")
-            self.assertEqual(mirror.read_bytes(), source.read_bytes(), f"api/{name} diverged from feeds/{name}")
+            self.assertEqual(mirror.read_bytes(), canonical.read_bytes(), f"api/{name} diverged from feeds/{name}")
         for name in ("catalog.json", "catalog.min.json", "index.json", *API_ROUTES):
             self.assertTrue((ROOT / "api" / name).is_file(), f"missing API document: api/{name}")
-        for name in ("sitemap.xml", "robots.txt", "catalog.min.json"):
+        for name in ("sitemap.xml", "robots.txt"):
             self.assertTrue((ROOT / name).is_file(), f"missing published file: {name}")
 
     def test_root_carries_no_hand_maintained_json_besides_the_catalog(self) -> None:
         # The publisher owns every root-level *.json/*.xml except the
-        # hand-maintained catalog.json; it prunes anything else, so a new
-        # hand-maintained root document would be deleted at the next build.
-        allowed = {"catalog.json", "catalog.min.json", "sitemap.xml"}
-        allowed.update(path.name for path in (ROOT / "feeds").glob("*.json"))
-        allowed.update(path.name for path in (ROOT / "feeds").glob("*.xml"))
+        # hand-maintained catalog.json and the published apps.json/sitemap;
+        # it prunes anything else, so a new hand-maintained root document
+        # would be deleted at the next build.
+        allowed = {"catalog.json", "apps.json", "sitemap.xml"}
         for path in sorted(ROOT.glob("*")):
             if path.is_file() and path.suffix.lower() in {".json", ".xml"}:
                 self.assertIn(path.name, allowed, f"unexpected hand-maintained root file: {path.name}")

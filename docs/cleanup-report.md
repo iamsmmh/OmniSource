@@ -122,3 +122,28 @@ was reconciled with this report's fixes at merge time:
   opened), `sw.js` sub-path matching (v4), SDK CJS/MJS edge-case drift, and
   ~550 lines of duplication (`tracking.py` wrappers, a second HTTP probe,
   23 inline QR scripts → one `core.js` binding). Test suite: 102 tests.
+
+## Follow-up: repository-root reorganization (single-source `feeds/`)
+
+A later pass reorganized the repository root so that `feeds/` is the only
+home of generated feeds, while `/apps.json` stays put as the installable
+source URL:
+
+- Removed 128 generated mirror files from the repository root — every
+  `<slug>.json`/`<slug>.xml` feed, `feed.xml`, `rss.xml`, `catalog.min.json`
+  (+ `.gz`), `badge-*.json` and the intelligence-document copies. They were
+  byte-identical duplicates of `feeds/`; git stored each blob once anyway,
+  but the tree listed every URL twice.
+- `src/omnisource/site.py` now publishes only `/apps.json` + `/api/*` +
+  `sitemap.xml`/`robots.txt`/`.nojekyll` at the root and prunes root
+  JSON/XML it no longer owns. `scripts/build_site.py` still assembles the
+  full historical flat URL family into `_site/` for the GitHub Actions
+  deployment, so no subscriber URL regresses.
+- The website, RSS `self` links, per-app app pages and `feeds/install.json`
+  now reference the canonical `feeds/<slug>.json`/`feeds/<slug>.xml`
+  locations instead of the flat copies.
+- `scripts/publish_root.py`, `scripts/smoke_test.py`,
+  `scripts/check_reproducible.py`, `tests/` and the workflow docs were
+  updated to the new contract. Unit suite: 178 tests.
+- Removed the stray `image-search/` directory (scraped icon-search JPEGs that
+  were never referenced).
