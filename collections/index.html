@@ -211,6 +211,20 @@
   <script src="../js/core.js"></script>
   <script src="../js/features.js"></script>
   <script>
+    // features.js publishes OS.Collections from its own DOMContentLoaded
+    // handler, so these page-specific extensions must be attached *after* that
+    // event. Assigning them at parse time threw "Cannot set properties of
+    // undefined (setting ...)" and aborted the rest of this script, so the
+    // catalog fetch never ran and the page rendered empty.
+    (function extendCollectionsUI() {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', extendCollectionsUI);
+        return;
+      }
+      if (!window.OS || !OS.Collections) {
+        console.error('OmniSource: OS.Collections is unavailable — features.js did not initialize.');
+        return;
+      }
     // Extend Collections with UI methods
     OS.Collections.showCreateModal = function() {
       if (!this._createModal) {
@@ -457,7 +471,7 @@
           ${apps.length > 0 ? `
             <div class="collection-preview">
               ${apps.map(app => `
-                <img src="${OS.asset(app.icon || '../assets/unknown.png')}" alt="${app.name}" title="${app.name}">
+                <img src="${OS.asset(app.icon || 'OmniSource.png')}" alt="${app.name}" title="${app.name}">
               `).join('')}
             </div>
           ` : ''}
@@ -521,6 +535,7 @@
             OS.Ratings.injectRatingDisplays();
           });
       });
+    })();
   </script>
 </body>
 </html>
