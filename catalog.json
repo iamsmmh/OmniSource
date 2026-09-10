@@ -357,8 +357,8 @@
       "status": "stable",
       "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
       "verification": {
-        "method": "altstore",
-        "publisher": "iKarwan (repo.ikghd.me)",
+        "method": "github-release",
+        "publisher": "mrdrvt99/YouProEXTRA",
         "codeSigned": false,
         "checksumPublished": false
       },
@@ -376,7 +376,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me. YouTube 21.34+ requires iOS 17. The mrdrvt99/YouProEXTRA build stays configured as a mirror fallback."
+        "notes": "The developer's own AltStore source (repo.ikghd.me) has been unreachable, so this feed resolves from the ready-to-sideload community build of the official tweak at mrdrvt99/YouProEXTRA. YouTube 21.34+ requires iOS 17. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
       },
       "appPermissions": {
         "entitlements": [
@@ -404,24 +404,15 @@
         }
       },
       "upstream": {
-        "provider": "altstore",
-        "feedURL": "https://repo.ikghd.me/repo.json",
-        "appId": "com.google.ios.youtube",
+        "repo": "mrdrvt99/YouProEXTRA",
+        "tagPrefix": "ytkp-ipa",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 10,
         "keepVersions": 1,
-        "versionFromTag": true,
-        "descriptionTemplate": "YouTube {version} | {label}",
-        "minOSVersion": "17.0"
-      },
-      "fallbackDownloadURLs": [
-        "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa"
-      ],
-      "manualRelease": {
-        "version": "21.35.3",
-        "date": "2026-08-30",
-        "localizedDescription": "YouTube 21.35.3 | YTKillerPlus_21.35.3_6.1\n\nMirror build kept as a fallback while the developer's own source (repo.ikghd.me) is unreachable.",
-        "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa4/YTKillerPlus_21.35.3_6.1.ipa",
-        "size": 141939462,
-        "minOSVersion": "17.0"
+        "minOSVersion": "17.0",
+        "descriptionTemplate": "YouTube {version} | {label}"
       }
     },
     {
@@ -1200,7 +1191,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": "Official sideloaded build from BandarHL/BHTwitter. The release also ships a TrollStore .tipa, which OmniSource skips - only the -sideloaded.ipa is tracked. The bundled X app is whichever decrypted build the maintainer packaged for that tweak release."
+        "notes": "Official sideloaded build from BandarHL/BHTwitter. The release also ships a TrollStore .tipa, which OmniSource skips - only the -sideloaded.ipa is tracked. The bundled X app is whichever decrypted build the maintainer packaged for that tweak release. Shares com.atebits.Tweetie2 with NeoFreeBird: install one at a time."
       },
       "upstream": {
         "repo": "BandarHL/BHTwitter",
@@ -1212,7 +1203,8 @@
         "versionFromTag": true,
         "descriptionTemplate": "BHTwitter {version} | {label}",
         "minOSVersion": "15.0"
-      }
+      },
+      "alternativeTo": "neofreebird"
     },
     {
       "slug": "livecontainer",
@@ -1495,6 +1487,1324 @@
         "versionFromTag": true,
         "descriptionTemplate": "Provenance {version} | {label}",
         "minOSVersion": "17.0"
+      }
+    },
+    {
+      "slug": "delta",
+      "name": "Delta",
+      "subtitle": "All-in-one retro emulator by Riley Testut",
+      "bundleIdentifier": "com.rileytestut.Delta",
+      "developerName": "Riley Testut",
+      "category": "games",
+      "tintColor": "9564D0",
+      "icon": "Delta.webp",
+      "localizedDescription": "Delta is an all-in-one classic video game emulator for non-jailbroken iOS devices, developed by Riley Testut as the spiritual successor to GBA4iOS. It emulates the Nintendo systems (Game Boy Color, Game Boy Advance, Nintendo DS, Nintendo 64, SNES, NES) plus Sega Genesis and Game Gear, with save states and cheats, controller and Nintendo DS skin support, iCloud sync of saves, and full MFi/Bluetooth controller support.",
+      "screenshots": [],
+      "featured": true,
+      "status": "stable",
+      "upstreamURL": "https://github.com/RileyTestut/Delta",
+      "verification": {
+        "method": "github-release",
+        "publisher": "RileyTestut/Delta",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases. Uses the same bundle identifier as the App Store build of Delta: installing the sideload build replaces the store version. Delta 1.6 targets iOS 14 or newer."
+      },
+      "upstream": {
+        "repo": "RileyTestut/Delta",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Delta {version} | {label}"
+      }
+    },
+    {
+      "slug": "ppsspp",
+      "name": "PPSSPP",
+      "subtitle": "Fast PlayStation Portable (PSP) emulator",
+      "bundleIdentifier": "org.ppsspp.ppsspp",
+      "developerName": "Henrik Rydgård",
+      "category": "games",
+      "tintColor": "457D8F",
+      "icon": "PPSSPP.webp",
+      "localizedDescription": "PPSSPP is a fast and portable PlayStation Portable (PSP) emulator developed by Henrik Rydgård. It runs PSP games at up to double native resolution with anisotropic filtering and shader effects, supports save states anywhere, hardware controllers, and needs no BIOS file thanks to its high-level emulation approach.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/hrydgard/ppsspp",
+      "verification": {
+        "method": "github-release",
+        "publisher": "hrydgard/ppsspp",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "12.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official release IPA (PPSSPP-iOS-<version>.ipa) from the developer's GitHub releases, with Metal rendering via the bundled MoltenVK. The upstream CMake config sets the iOS deployment target to 12.0. The same release page also ships a jailbreak .deb package."
+      },
+      "upstream": {
+        "repo": "hrydgard/ppsspp",
+        "tagPrefix": "v",
+        "assetNamePattern": "^PPSSPP-iOS-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "12.0",
+        "descriptionTemplate": "PPSSPP {version} | {label}"
+      }
+    },
+    {
+      "slug": "yattee",
+      "name": "Yattee",
+      "subtitle": "Privacy-oriented native video player",
+      "bundleIdentifier": "stream.yattee.app",
+      "developerName": "Yattee",
+      "category": "photo-video",
+      "tintColor": "4C86DE",
+      "icon": "Yattee.webp",
+      "localizedDescription": "Yattee is a privacy-oriented, fully native video player for iPhone, iPad and Apple TV. It plays from user-configured Invidious or Piped backends and local video libraries, with SponsorBlock, chapters, background audio, Picture in Picture, subscriptions, and full keyboard and remote control support.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/yattee/yattee",
+      "verification": {
+        "method": "github-release",
+        "publisher": "yattee/yattee",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official iOS IPA (Yattee-<version>-iOS.ipa) from the developer's GitHub releases. Yattee 1.5.1 targets iOS 14 or newer. The same release ships separate macOS and tvOS builds which are not distributed here."
+      },
+      "upstream": {
+        "repo": "yattee/yattee",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Yattee-[0-9.]+-iOS\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Yattee {version} | {label}"
+      }
+    },
+    {
+      "slug": "streamyfin",
+      "name": "Streamyfin",
+      "subtitle": "Open-source Jellyfin client for iOS",
+      "bundleIdentifier": "com.fredrikburmester.streamyfin",
+      "developerName": "fredrikburmester",
+      "category": "photo-video",
+      "tintColor": "BF7BF2",
+      "icon": "Streamyfin.webp",
+      "localizedDescription": "Streamyfin is an open-source Jellyfin client for iPhone and iPad built with Expo and React Native. Stream your Jellyfin server's library with offline downloads, background audio, Picture in Picture, Chromecast, intro skipping, live TV, and an optional MPV-based player — no server plugins required.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/fredrikburmester/streamyfin",
+      "verification": {
+        "method": "github-release",
+        "publisher": "fredrikburmester/streamyfin",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.4",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned CI IPA (streamyfin-ios.ipa) built by the developer's GitHub release pipeline. Requires a Jellyfin server to connect to. The streamyfin-ios-tv.ipa asset in the same release is a separate Apple TV build and is intentionally not distributed here."
+      },
+      "upstream": {
+        "repo": "fredrikburmester/streamyfin",
+        "tagPrefix": "v",
+        "assetNamePattern": "^streamyfin-ios\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.4",
+        "descriptionTemplate": "Streamyfin {version} | {label}"
+      }
+    },
+    {
+      "slug": "spotube",
+      "name": "Spotube",
+      "subtitle": "Open-source Spotify music client",
+      "bundleIdentifier": "oss.krtirtho.spotube.stable",
+      "developerName": "KRTirtho",
+      "category": "music",
+      "tintColor": "207AB7",
+      "icon": "Spotube.webp",
+      "localizedDescription": "Spotube is an open-source, cross-platform music streaming client that combines Spotify's metadata — your playlists, albums, liked songs and recommendations — with community audio sources, so you can play your whole Spotify library without ads or telemetry. Includes lyrics and a plugin system for extending playback sources.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/KRTirtho/spotube",
+      "verification": {
+        "method": "github-release",
+        "publisher": "KRTirtho/spotube",
+        "codeSigned": false,
+        "checksumPublished": true
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official release IPA (Spotube-iOS.ipa, stable flavor) built by the developer's release pipeline and published with SHA-256/MD5 checksum files. It does not conflict with the official Spotify app. Android and desktop builds ship in the same release."
+      },
+      "upstream": {
+        "repo": "KRTirtho/spotube",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Spotube-iOS\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Spotube {version} | {label}"
+      }
+    },
+    {
+      "slug": "jellify",
+      "name": "Jellify",
+      "subtitle": "Native Jellyfin music player for iOS",
+      "bundleIdentifier": "com.cosmonautical.jellify",
+      "developerName": "anultravioletaurora",
+      "category": "music",
+      "tintColor": "19AFC8",
+      "icon": "Jellify.webp",
+      "localizedDescription": "Jellify is a free and open-source music player for Jellyfin, built with React Native. Browse and stream your Jellyfin music libraries on iPhone and iPad with a native interface, fast search, playlists, favorites and now-playing controls — available on the App Store and as sideload builds.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Jellify-Music/App",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Jellify-Music/App",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.4",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA (Jellify-<version>.ipa) from the developer's GitHub releases. Requires a Jellyfin server to connect to. Android builds ship in the same release."
+      },
+      "upstream": {
+        "repo": "Jellify-Music/App",
+        "assetNamePattern": "^Jellify-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.4",
+        "descriptionTemplate": "Jellify {version} | {label}"
+      }
+    },
+    {
+      "slug": "zeus",
+      "name": "Zeus",
+      "subtitle": "Self-custodial Bitcoin and Lightning wallet",
+      "bundleIdentifier": "com.zeusln.zeus",
+      "developerName": "Zeus LN",
+      "category": "utilities",
+      "tintColor": "FFC800",
+      "icon": "Zeus.webp",
+      "localizedDescription": "Zeus is a free and open-source, self-custodial Bitcoin and Lightning wallet for iPhone and iPad. Connect the app to your own node (LND, Core Lightning, c-lightning-REST, BTCPay Server or Lightning Terminal) or use the built-in Olympus LNDHub for a quick start, with contacts, Nostr Wallet Connect, LNURL, point-of-sale and full on-chain and Lightning payment support.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/ZeusLN/zeus",
+      "verification": {
+        "method": "github-release",
+        "publisher": "ZeusLN/zeus",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA built by the ZeusLN release pipeline (v13.x targets iOS 15.1). A self-custody wallet: point it at your own Lightning node for full sovereignty."
+      },
+      "upstream": {
+        "repo": "ZeusLN/zeus",
+        "tagPrefix": "v",
+        "assetNamePattern": "^zeus-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.1",
+        "descriptionTemplate": "Zeus {version} | {label}"
+      }
+    },
+    {
+      "slug": "bluewallet",
+      "name": "BlueWallet",
+      "subtitle": "Open-source Bitcoin wallet for iOS",
+      "bundleIdentifier": "io.bluewallet.bluewallet",
+      "developerName": "BlueWallet",
+      "category": "utilities",
+      "tintColor": "0070FF",
+      "icon": "BlueWallet.webp",
+      "localizedDescription": "BlueWallet is a free and open-source Bitcoin wallet focused on simplicity and power. Create standard on-chain wallets, watch-only wallets with full PSBT and hardware-wallet support, and Lightning wallets backed by the built-in LNDHUB or your own node — with fee control, multisig (Vault) and Tor connectivity.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/BlueWallet/BlueWallet",
+      "verification": {
+        "method": "github-release",
+        "publisher": "BlueWallet/BlueWallet",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.6",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA published by the BlueWallet team on GitHub Releases (8.x targets iOS 15.6). Uses the same bundle identifier as the App Store build: installing the sideload build replaces the store version."
+      },
+      "upstream": {
+        "repo": "BlueWallet/BlueWallet",
+        "assetNamePattern": "^BlueWallet_[0-9][^/]*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.6",
+        "descriptionTemplate": "BlueWallet {version} | {label}"
+      }
+    },
+    {
+      "slug": "voyager",
+      "name": "Voyager",
+      "subtitle": "Beautiful open-source client for Lemmy",
+      "bundleIdentifier": "app.vger.voyager",
+      "developerName": "aeharding",
+      "category": "social",
+      "tintColor": "4083BD",
+      "icon": "Voyager.webp",
+      "localizedDescription": "Voyager is a free and open-source client for Lemmy and PieFed with an iOS-native feel — swipe gestures, haptics, infinite scroll, rich markdown support, multi-account switching and deep theming. The same project powers the official Voyager App Store release; this feed tracks the developer's own GitHub build.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/aeharding/voyager",
+      "verification": {
+        "method": "github-release",
+        "publisher": "aeharding/voyager",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned iOS IPA (Voyager-iOS-<version>.ipa) from the developer's GitHub releases; 2.x targets iOS 15. The release also ships Android (apk) and watch builds which are intentionally not distributed here."
+      },
+      "upstream": {
+        "repo": "aeharding/voyager",
+        "assetNamePattern": "^Voyager-iOS-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Voyager {version} | {label}"
+      }
+    },
+    {
+      "slug": "saber",
+      "name": "Saber",
+      "subtitle": "Open-source handwritten notes",
+      "bundleIdentifier": "com.adilhanney.saber",
+      "developerName": "Adil Hanney",
+      "category": "utilities",
+      "tintColor": "F9C60A",
+      "icon": "Saber.webp",
+      "localizedDescription": "Saber is a free and open-source handwritten notes app built with Flutter. Write with your finger or Apple Pencil as if on paper, organize notes into folders, keep them private with encryption, and sync across devices using its optional Nextcloud-based sync — no vendor lock-in.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/saber-notes/saber",
+      "verification": {
+        "method": "github-release",
+        "publisher": "saber-notes/saber",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA (Saber_v<version>.ipa) from the developer's GitHub releases; 1.x targets iOS 15. Also available on the App Store under the same bundle identifier."
+      },
+      "upstream": {
+        "repo": "saber-notes/saber",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Saber_v.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Saber {version} | {label}"
+      }
+    },
+    {
+      "slug": "anxreader",
+      "name": "Anx Reader",
+      "subtitle": "Open-source e-book reader with AI",
+      "bundleIdentifier": "com.anxcye.anxReader",
+      "developerName": "Anxcye",
+      "category": "utilities",
+      "tintColor": "336393",
+      "icon": "AnxReader.webp",
+      "localizedDescription": "Anx Reader is a free and open-source e-book reader for iPhone and iPad. Read EPUB, MOBI and other formats with a polished reader engine, AI-powered summaries and translations (bring your own key), text-to-speech, highlights and notes, reading statistics, and WebDAV sync across devices.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Anxcye/anx-reader",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Anxcye/anx-reader",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.2",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned CI IPA (Anx-Reader-ios-<version>-unsigned.ipa) built by the developer's release pipeline; 1.x targets iOS 15.2."
+      },
+      "upstream": {
+        "repo": "Anxcye/anx-reader",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Anx-Reader-ios-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.2",
+        "descriptionTemplate": "Anx Reader {version} | {label}"
+      }
+    },
+    {
+      "slug": "apollo",
+      "name": "Apollo",
+      "subtitle": "The beloved Reddit client, continued by Apollo-Reborn",
+      "bundleIdentifier": "com.christianselig.Apollo",
+      "developerName": "Christian Selig (& Apollo-Reborn contributors)",
+      "category": "social",
+      "tintColor": "F0542D",
+      "icon": "Apollo.webp",
+      "localizedDescription": "Apollo was the beloved, award-winning Reddit client for iPhone and iPad known for its beautiful native interface, powerful gestures, jump-to-comments, inline media reading and fanatic attention to detail. After Reddit's API changes ended the original app, the Apollo-Reborn project now publishes official continuation builds that work against Reddit's public API — keeping the classic Apollo experience alive.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Apollo-Reborn/Apollo-Reborn",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official Apollo-Reborn builds from the project's own GitHub releases (deployment target iOS 14 per the build config). The standard variant is distributed here; the project also publishes Liquid Glass and icon variants on the same release. The long-standing Balackburn/Apollo AltStore source mirrors these same builds."
+      },
+      "upstream": {
+        "repo": "Apollo-Reborn/Apollo-Reborn",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Apollo-Reborn-[0-9.]+\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Apollo {version} | {label}"
+      }
+    },
+    {
+      "slug": "dolphinish",
+      "name": "DolphiniOS",
+      "subtitle": "GameCube and Wii emulator for iOS",
+      "bundleIdentifier": "me.oatmealdome.DolphiniOS-njb",
+      "developerName": "OatmealDome",
+      "category": "games",
+      "tintColor": "03A9FF",
+      "icon": "DolphiniOS.webp",
+      "localizedDescription": "DolphiniOS is the Dolphin GameCube and Wii emulator ported to iOS by OatmealDome, requiring no jailbreak. It runs the full Dolphin core with Metal rendering via MoltenVK, supports controllers, save states and high-resolution rendering, and plays your legally dumped GameCube and Wii games.",
+      "screenshots": [],
+      "featured": false,
+      "status": "beta",
+      "upstreamURL": "https://github.com/OatmealDome/dolphin-ios",
+      "verification": {
+        "method": "github-release",
+        "publisher": "OatmealDome/dolphin-ios",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official Non-Jailbroken IPA from the developer's GitHub releases (DolphiniOS 5.0 beta line, iOS 14+). This feed tracks the current 5.0 beta channel — every published build so far is tagged as a pre-release upstream. The same release also ships jailbreak .deb packages and a TrollStore .tipa."
+      },
+      "upstream": {
+        "repo": "OatmealDome/dolphin-ios",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Non-Jailbroken\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "includePrereleases": true,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "DolphiniOS {version} | {label}"
+      }
+    },
+    {
+      "slug": "ish",
+      "name": "iSH",
+      "subtitle": "Linux shell on iOS via x86 emulation",
+      "bundleIdentifier": "app.ish.iSH",
+      "developerName": "Theodore Dubois and contributors",
+      "category": "developer-tools",
+      "tintColor": "000000",
+      "icon": "iSH.webp",
+      "localizedDescription": "iSH is an open-source project that runs a Linux shell environment on iOS using a user-mode x86 emulator. It provides Alpine Linux with the APK package manager, so you can install and run familiar command-line tools — ssh, git, python, vim and more — entirely on your iPhone or iPad, no jailbreak required.",
+      "screenshots": [],
+      "featured": false,
+      "status": "beta",
+      "upstreamURL": "https://github.com/ish-app/ish",
+      "verification": {
+        "method": "github-release",
+        "publisher": "ish-app/ish",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "12.2",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "The official iSH AltStore source (ish.app/altstore.json) serves exactly this channel: the newest iSH.ipa from the project's builds/* GitHub releases. iSH marks trunk builds as pre-releases; the last promoted stable was 1.3.2 (build 494). Reported version is the upstream build number."
+      },
+      "upstream": {
+        "repo": "ish-app/ish",
+        "tagPrefix": "builds/",
+        "assetNamePattern": "^iSH\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "12.2",
+        "descriptionTemplate": "iSH {version} | {label} ({tag})",
+        "includePrereleases": true,
+        "versionPattern": "Build (\\d+)"
+      }
+    },
+    {
+      "slug": "qbitcontrol",
+      "name": "qBitControl",
+      "subtitle": "qBittorrent remote control for iOS",
+      "bundleIdentifier": "MikeMichael225.qBitControl",
+      "developerName": "Michael-128",
+      "category": "utilities",
+      "tintColor": "3C76C5",
+      "icon": "qBitControl.webp",
+      "localizedDescription": "qBitControl is a native qBittorrent remote control app for iPhone and iPad. Manage your torrents from anywhere: add, pause, resume and recheck torrents, browse files and set priorities, configure speed and seeding limits, use custom HTTP headers and self-signed certificates, and track RSS feeds — all against your own qBittorrent WebUI.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Michael-128/qBitControl",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Michael-128/qBitControl",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official release IPAs from the developer's GitHub releases (release-* tags, iOS 16+). The developer also publishes newer continuous builds under build-ci-* tags; this feed tracks the stable release channel."
+      },
+      "upstream": {
+        "repo": "Michael-128/qBitControl",
+        "tagPrefix": "release-",
+        "assetNamePattern": "^qBitControl\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.0",
+        "descriptionTemplate": "qBitControl {version} | {label}"
+      }
+    },
+    {
+      "slug": "qbitconnect",
+      "name": "qBitConnect",
+      "subtitle": "Modern qBittorrent remote client",
+      "bundleIdentifier": "com.bluematter.qbitconnect",
+      "developerName": "Rajnish Sharma",
+      "category": "utilities",
+      "tintColor": "3875C5",
+      "icon": "qBitConnect.webp",
+      "localizedDescription": "qBitConnect is a modern, open-source qBittorrent remote client for iPhone and iPad built with Flutter. Connect to your qBittorrent WebUI to add, manage and monitor torrents with a clean, adaptive interface, push notifications for finished downloads, RSS support and quick actions.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/RajnishOne/qbitconnect",
+      "verification": {
+        "method": "github-release",
+        "publisher": "RajnishOne/qbitconnect",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPAs from the developer's own GitHub releases (iOS 15+ per the Xcode project). The developer's AltStore PAL source may carry newer builds from a separate pipeline; this feed tracks the signed-off GitHub release tags."
+      },
+      "upstream": {
+        "repo": "RajnishOne/qbitconnect",
+        "tagPrefix": "v",
+        "assetNamePattern": "^qBitConnect\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "qBitConnect {version} | {label}"
+      }
+    },
+    {
+      "slug": "vcmi",
+      "name": "VCMI",
+      "subtitle": "Open-source Heroes of Might & Magic III engine",
+      "bundleIdentifier": "eu.vcmi.vcmiclient",
+      "developerName": "VCMI Team",
+      "category": "games",
+      "tintColor": "BD8F52",
+      "icon": "VCMI.webp",
+      "localizedDescription": "VCMI is an open-source engine that re-implements Heroes of Might and Magic III so the classic turn-based strategy game runs on modern hardware — with widescreen and high-resolution support, extensive modding (including the popular HotA and Era mods), stabilized multiplayer and quality-of-life improvements over the original. Requires a copy of the original game's data files.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/vcmi/vcmi",
+      "verification": {
+        "method": "github-release",
+        "publisher": "vcmi/vcmi",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "13.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official iOS IPA (VCMI-iOS.ipa) built by the VCMI project's release pipeline (iOS 13+ per the CMake configuration). You must supply data files from an original Heroes III (Shadow of Death or Complete edition) copy on first launch."
+      },
+      "upstream": {
+        "repo": "vcmi/vcmi",
+        "assetNamePattern": "^VCMI-iOS\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "13.0",
+        "descriptionTemplate": "VCMI {version} | {label}"
+      }
+    },
+    {
+      "slug": "mame4ios",
+      "name": "MAME4iOS",
+      "subtitle": "Multi-arcade machine emulator for iOS",
+      "bundleIdentifier": "com.example.mame4ios",
+      "developerName": "Yoshisuga & MAME4iOS Contributors",
+      "category": "games",
+      "tintColor": "354B60",
+      "icon": "MAME4iOS.webp",
+      "localizedDescription": "MAME4iOS brings the Multiple Arcade Machine Emulator to iPhone, iPad and Apple TV, running thousands of classic arcade games from the 70s, 80s, 90s and beyond. Includes an on-screen joystick, full MFi controller support, netplay, and a menu to organize your legally dumped ROM sets.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/yoshisuga/MAME4iOS",
+      "verification": {
+        "method": "github-release",
+        "publisher": "yoshisuga/MAME4iOS",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "13.4",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from the developer's GitHub releases (2022.5 line, iOS 13.4+ per the Xcode project; also distributed via the SideStore Community Source). The same release ships a separate MAME4tvOS build which is intentionally not distributed here."
+      },
+      "upstream": {
+        "repo": "yoshisuga/MAME4iOS",
+        "assetNamePattern": "^MAME4iOS-[0-9][^/]*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "13.4",
+        "descriptionTemplate": "MAME4iOS {version} | {label}"
+      }
+    },
+    {
+      "slug": "qbitcontroller",
+      "name": "qBitController",
+      "subtitle": "Cross-platform qBittorrent remote (Kotlin)",
+      "bundleIdentifier": "dev.bartuzen.qbitcontroller",
+      "developerName": "Bartuzen",
+      "category": "utilities",
+      "tintColor": "5389C7",
+      "icon": "qBitController.webp",
+      "localizedDescription": "qBitController is a free and open-source qBittorrent remote client built with Kotlin Multiplatform and Compose. Control your qBittorrent WebUI from iPhone or iPad: add torrents by URL or file, pause/resume and recheck, browse file lists and set priorities, and manage categories and tags with a clean Material-style interface.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Bartuzen/qBitController",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Bartuzen/qBitController",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official iOS IPA (qbitcontroller-<version>-ios.ipa) from the developer's GitHub releases; 2.x targets iOS 14. The developer's own AltStore source mirrors these builds. Distinct from qBitControl and qBitConnect, which are separate apps."
+      },
+      "upstream": {
+        "repo": "Bartuzen/qBitController",
+        "tagPrefix": "v",
+        "assetNamePattern": "^qbitcontroller-.*-ios\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "qBitController {version} | {label}"
+      }
+    },
+    {
+      "slug": "minivmac",
+      "name": "Mini vMac",
+      "subtitle": "Early Macintosh emulator for iOS",
+      "bundleIdentifier": "net.namedfork.minivmac",
+      "developerName": "zydeco",
+      "category": "games",
+      "tintColor": "B1B6EE",
+      "icon": "MiniVMac.webp",
+      "localizedDescription": "Mini vMac for iOS emulates the earliest Apple Macintosh computers (128K, 512K, Plus and II), letting you run classic System 1 through System 7 software on modern devices. Load your own ROM and disk images, with support for external keyboards, mice and multiple emulated machine variants.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/zydeco/minivmac4ios",
+      "verification": {
+        "method": "github-release",
+        "publisher": "zydeco/minivmac4ios",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "12.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from the developer's GitHub releases (2.6, 2024). Also distributed via the SideStore Community Source. Requires a Macintosh ROM image and system disks from a machine you own."
+      },
+      "upstream": {
+        "repo": "zydeco/minivmac4ios",
+        "tagPrefix": "v",
+        "assetNamePattern": "^minivmac4ios-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "12.0",
+        "descriptionTemplate": "Mini vMac {version} | {label}"
+      }
+    },
+    {
+      "slug": "stiknes",
+      "name": "StikNES",
+      "subtitle": "NES/Famicom emulator for modern iOS",
+      "bundleIdentifier": "com.stik.StikNES",
+      "developerName": "StikEMU",
+      "category": "games",
+      "tintColor": "176FBB",
+      "icon": "StikNES.webp",
+      "localizedDescription": "StikNES is a Nintendo Entertainment System / Famicom emulator for iPhone and iPad from the StikEMU team, built for modern iOS with Metal-accelerated rendering, MFi and keyboard controller support, save states and a focus on accuracy and low latency. Load your own legally dumped ROMs.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/StikEMU/StikNES-2.0",
+      "verification": {
+        "method": "github-release",
+        "publisher": "StikEMU/StikNES-2.0",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "17.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from the developer's GitHub releases (2.0 line requires iOS 17+). Also distributed via the SideStore Community Source."
+      },
+      "upstream": {
+        "repo": "StikEMU/StikNES-2.0",
+        "tagPrefix": "v",
+        "assetNamePattern": "^StikNES\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "17.0",
+        "descriptionTemplate": "StikNES {version} | {label}"
+      }
+    },
+    {
+      "slug": "twitchadblock",
+      "name": "TwitchAdBlock",
+      "subtitle": "Ad blocker for the Twitch app on iOS",
+      "bundleIdentifier": "tv.twitch",
+      "developerName": "gunnerkidBT (original by dayanch96)",
+      "category": "social",
+      "tintColor": "9146FF",
+      "icon": "TAB.webp",
+      "localizedDescription": "TwitchAdBlock is an open-source tweak for the native Twitch iOS app that blocks advert break requests at the network layer, so streams play without ads and without the purple loading screen. This fork by gunnerkidBT keeps the tweak working on the latest Twitch releases (29.x-30.x) and modern iOS versions, and publishes ready-to-sideload IPAs built from the official tweak source.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/gunnerkidBT/TwitchAdBlock",
+      "verification": {
+        "method": "github-release",
+        "publisher": "gunnerkidBT/TwitchAdBlock",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPAs from the fork's GitHub releases; the '-noplugins' variant on each release is intentionally not distributed. Replaces the App Store Twitch app (shares tv.twitch). The upstream tweak repo publishes only .deb packages for jailbroken devices; the sideload IPA comes from this maintained fork."
+      },
+      "upstream": {
+        "repo": "gunnerkidBT/TwitchAdBlock",
+        "assetNamePattern": "^(?!.*noplugins)tv\\.twitch-[0-9][^/]*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 10,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Twitch {version} | TwitchAdBlock {secondary}",
+        "versionPattern": "^tv\\.twitch-([0-9]+\\.[0-9]+)"
+      }
+    },
+    {
+      "slug": "neofreebird",
+      "name": "NeoFreeBird",
+      "subtitle": "Modified Twitter with QoL fixes and reverts",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "developerName": "NeoFreeBird contributors",
+      "category": "social",
+      "tintColor": "1D9BF0",
+      "icon": "NeoFreeBird.webp",
+      "localizedDescription": "NeoFreeBird is a modified build of the official Twitter app that reverts unpopular rebranding and interface changes, restores classic features, and bundles quality-of-life modifications including BHTwitter options — built and published automatically from the project's GitHub releases. Shares com.atebits.Tweetie2 with the App Store Twitter/X app and BHTwitter: install one at a time.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/NeoFreeBird/app",
+      "verification": {
+        "method": "github-release",
+        "publisher": "NeoFreeBird/app",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPAs from the project's GitHub releases (its own AltStore source mirrors them). The plain build is distributed here; the -noFixTwitterLogin variant on the same release is a troubleshooting fallback. Twitter 11.x builds require iOS 15+. Shares the Twitter bundle identifier with BHTwitter in this catalog — install one at a time."
+      },
+      "upstream": {
+        "repo": "NeoFreeBird/app",
+        "assetNamePattern": "^NeoFreeBird-[0-9][^/]*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Twitter {version} | {label}"
+      },
+      "alternativeTo": "bhtwitter"
+    },
+    {
+      "slug": "conduit",
+      "name": "Conduit",
+      "subtitle": "Native client for Open WebUI & Ollama",
+      "bundleIdentifier": "app.cogwheel.conduit",
+      "developerName": "cogwheel0",
+      "category": "utilities",
+      "tintColor": "7794F0",
+      "icon": "Conduit.webp",
+      "localizedDescription": "Conduit is a native, open-source iOS and Android client for Open WebUI, direct OpenAI-compatible endpoints, Ollama and Hermes. Chat with your own self-hosted local models or API-backed ones with a polished SwiftUI interface — conversations stay in sync, code blocks render properly, and your data never touches a third-party server.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/cogwheel0/conduit",
+      "verification": {
+        "method": "github-release",
+        "publisher": "cogwheel0/conduit",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA (conduit.ipa) from the developer's GitHub releases; the debug-flavored bundle (app.cogwheel.conduit.debug) is excluded. Requires a self-hosted Open WebUI/Ollama server or your own API endpoints."
+      },
+      "upstream": {
+        "repo": "cogwheel0/conduit",
+        "tagPrefix": "v",
+        "assetNamePattern": "^conduit\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.0",
+        "descriptionTemplate": "Conduit {version} | {label}"
+      }
+    },
+    {
+      "slug": "fladder",
+      "name": "Fladder",
+      "subtitle": "Cross-platform Jellyfin frontend",
+      "bundleIdentifier": "nl.jknaapen.fladder",
+      "developerName": "DonutWare",
+      "category": "photo-video",
+      "tintColor": "A34920",
+      "icon": "Fladder.webp",
+      "localizedDescription": "Fladder is a free and open-source Jellyfin frontend built on Flutter, giving you a beautiful Netflix-style interface over your own media library on iPhone and iPad. Direct play and transcode support, offline viewing with sync, multi-server switching, and full library management — no server plugins required.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/DonutWare/Fladder",
+      "verification": {
+        "method": "github-release",
+        "publisher": "DonutWare/Fladder",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official release IPA (Fladder-iOS-<version>.ipa) from the developer's GitHub releases; the 'nightly' tag is excluded so only stable builds are tracked. Requires a Jellyfin server. A natural alternative to Streamyfin."
+      },
+      "upstream": {
+        "repo": "DonutWare/Fladder",
+        "tagPrefix": "v",
+        "assetNamePattern": "^Fladder-iOS-[0-9][^/]*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Fladder {version} | {label}"
+      }
+    },
+    {
+      "slug": "anymex",
+      "name": "AnymeX",
+      "subtitle": "Anime, manga, novels & tracking, open source",
+      "bundleIdentifier": "com.ryan.anymex",
+      "developerName": "RyanYuuki",
+      "category": "other",
+      "tintColor": "131313",
+      "icon": "AnymeX.webp",
+      "localizedDescription": "AnymeX is an open-source, cross-platform app for streaming anime and reading manga, manhwa, light and web novels, with deep integration for tracking services (AniList, MyAnimeList, Simkl and Kitsu). Extensions keep sources working, and your library, progress and statistics stay in sync across services.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/RyanYuuki/AnymeX",
+      "verification": {
+        "method": "github-release",
+        "publisher": "RyanYuuki/AnymeX",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "12.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA (AnymeX-iOS-<version>.ipa) built by the developer's release pipeline; the Flutter project targets iOS 12+. Content sources are provided by community extensions."
+      },
+      "upstream": {
+        "repo": "RyanYuuki/AnymeX",
+        "tagPrefix": "v",
+        "assetNamePattern": "^AnymeX-iOS-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "12.0",
+        "descriptionTemplate": "AnymeX {version} | {label}"
+      }
+    },
+    {
+      "slug": "sora",
+      "name": "Sora",
+      "subtitle": "Modular media streaming app for iOS",
+      "bundleIdentifier": "me.cranci.sulfur",
+      "developerName": "cranci",
+      "category": "photo-video",
+      "tintColor": "EE4310",
+      "icon": "Sora.webp",
+      "localizedDescription": "Sora is a modular, open-source media player for iPhone, iPad and Mac that streams movies and shows from community-maintained modules, with AniList sync, watching collections, watch-next recommendations, bookmarks and a fast native SwiftUI interface. The current build line is distributed as Sulfur.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/cranci1/Sora",
+      "verification": {
+        "method": "github-release",
+        "publisher": "cranci1/Sora",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from the developer's GitHub releases; current builds ship as Sulfur.ipa (the project's renamed build) with bundle me.cranci.sulfur — the asset pattern also accepts Sora.ipa from older tags. Requires iOS 15+. Content modules are community-maintained."
+      },
+      "upstream": {
+        "repo": "cranci1/Sora",
+        "assetNamePattern": "^(Sulfur|Sora)\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Sora {version} | {label}"
       }
     }
   ]

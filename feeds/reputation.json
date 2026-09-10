@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 18,
+  "count": 45,
   "levels": [
     "TRUSTED",
     "RELIABLE",
@@ -19,17 +19,18 @@
       "apps": [
         "ytlite",
         "youpro",
+        "ytkp",
         "youmod"
       ],
       "score": 78.17,
       "level": "RELIABLE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 69,
-        "averageLatencyMs": 199.7,
+        "probes": 92,
+        "averageLatencyMs": 219.2,
         "averageUpdateGapDays": 1.0,
         "brokenReleases": 2,
-        "currentlyReachable": "3/3"
+        "currentlyReachable": "4/4"
       }
     },
     {
@@ -39,7 +40,6 @@
       "homepage": "https://repo.ikghd.me",
       "sourceURL": "https://repo.ikghd.me",
       "apps": [
-        "ytkp",
         "inkillerplus",
         "ttkillerplus"
       ],
@@ -47,11 +47,11 @@
       "level": "AVERAGE",
       "metrics": {
         "uptime": 100.0,
-        "probes": 69,
-        "averageLatencyMs": 278.3,
+        "probes": 46,
+        "averageLatencyMs": 278.5,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
-        "currentlyReachable": "3/3"
+        "currentlyReachable": "2/2"
       }
     },
     {
@@ -369,6 +369,546 @@
         "uptime": 100.0,
         "probes": 23,
         "averageLatencyMs": 183.0,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "zydeco/minivmac4ios",
+      "source": "zydeco/minivmac4ios",
+      "publisher": "zydeco/minivmac4ios",
+      "homepage": "https://github.com/zydeco/minivmac4ios",
+      "sourceURL": "https://github.com/zydeco/minivmac4ios",
+      "apps": [
+        "minivmac"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "ZeusLN/zeus",
+      "source": "ZeusLN/zeus",
+      "publisher": "ZeusLN/zeus",
+      "homepage": "https://github.com/ZeusLN/zeus",
+      "sourceURL": "https://github.com/ZeusLN/zeus",
+      "apps": [
+        "zeus"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "yoshisuga/MAME4iOS",
+      "source": "yoshisuga/MAME4iOS",
+      "publisher": "yoshisuga/MAME4iOS",
+      "homepage": "https://github.com/yoshisuga/MAME4iOS",
+      "sourceURL": "https://github.com/yoshisuga/MAME4iOS",
+      "apps": [
+        "mame4ios"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "yattee/yattee",
+      "source": "yattee/yattee",
+      "publisher": "yattee/yattee",
+      "homepage": "https://github.com/yattee/yattee",
+      "sourceURL": "https://github.com/yattee/yattee",
+      "apps": [
+        "yattee"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "vcmi/vcmi",
+      "source": "vcmi/vcmi",
+      "publisher": "vcmi/vcmi",
+      "homepage": "https://github.com/vcmi/vcmi",
+      "sourceURL": "https://github.com/vcmi/vcmi",
+      "apps": [
+        "vcmi"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "StikEMU/StikNES-2.0",
+      "source": "StikEMU/StikNES-2.0",
+      "publisher": "StikEMU/StikNES-2.0",
+      "homepage": "https://github.com/StikEMU/StikNES-2.0",
+      "sourceURL": "https://github.com/StikEMU/StikNES-2.0",
+      "apps": [
+        "stiknes"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "saber-notes/saber",
+      "source": "saber-notes/saber",
+      "publisher": "saber-notes/saber",
+      "homepage": "https://github.com/saber-notes/saber",
+      "sourceURL": "https://github.com/saber-notes/saber",
+      "apps": [
+        "saber"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "RyanYuuki/AnymeX",
+      "source": "RyanYuuki/AnymeX",
+      "publisher": "RyanYuuki/AnymeX",
+      "homepage": "https://github.com/RyanYuuki/AnymeX",
+      "sourceURL": "https://github.com/RyanYuuki/AnymeX",
+      "apps": [
+        "anymex"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "RileyTestut/Delta",
+      "source": "RileyTestut/Delta",
+      "publisher": "RileyTestut/Delta",
+      "homepage": "https://github.com/RileyTestut/Delta",
+      "sourceURL": "https://github.com/RileyTestut/Delta",
+      "apps": [
+        "delta"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "RajnishOne/qbitconnect",
+      "source": "RajnishOne/qbitconnect",
+      "publisher": "RajnishOne/qbitconnect",
+      "homepage": "https://github.com/RajnishOne/qbitconnect",
+      "sourceURL": "https://github.com/RajnishOne/qbitconnect",
+      "apps": [
+        "qbitconnect"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "OatmealDome/dolphin-ios",
+      "source": "OatmealDome/dolphin-ios",
+      "publisher": "OatmealDome/dolphin-ios",
+      "homepage": "https://github.com/OatmealDome/dolphin-ios",
+      "sourceURL": "https://github.com/OatmealDome/dolphin-ios",
+      "apps": [
+        "dolphinish"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "NeoFreeBird/app",
+      "source": "NeoFreeBird/app",
+      "publisher": "NeoFreeBird/app",
+      "homepage": "https://github.com/NeoFreeBird/app",
+      "sourceURL": "https://github.com/NeoFreeBird/app",
+      "apps": [
+        "neofreebird"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Michael-128/qBitControl",
+      "source": "Michael-128/qBitControl",
+      "publisher": "Michael-128/qBitControl",
+      "homepage": "https://github.com/Michael-128/qBitControl",
+      "sourceURL": "https://github.com/Michael-128/qBitControl",
+      "apps": [
+        "qbitcontrol"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "KRTirtho/spotube",
+      "source": "KRTirtho/spotube",
+      "publisher": "KRTirtho/spotube",
+      "homepage": "https://github.com/KRTirtho/spotube",
+      "sourceURL": "https://github.com/KRTirtho/spotube",
+      "apps": [
+        "spotube"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Jellify-Music/App",
+      "source": "Jellify-Music/App",
+      "publisher": "Jellify-Music/App",
+      "homepage": "https://github.com/Jellify-Music/App",
+      "sourceURL": "https://github.com/Jellify-Music/App",
+      "apps": [
+        "jellify"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "ish-app/ish",
+      "source": "ish-app/ish",
+      "publisher": "ish-app/ish",
+      "homepage": "https://github.com/ish-app/ish",
+      "sourceURL": "https://github.com/ish-app/ish",
+      "apps": [
+        "ish"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "hrydgard/ppsspp",
+      "source": "hrydgard/ppsspp",
+      "publisher": "hrydgard/ppsspp",
+      "homepage": "https://github.com/hrydgard/ppsspp",
+      "sourceURL": "https://github.com/hrydgard/ppsspp",
+      "apps": [
+        "ppsspp"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "gunnerkidBT/TwitchAdBlock",
+      "source": "gunnerkidBT/TwitchAdBlock",
+      "publisher": "gunnerkidBT/TwitchAdBlock",
+      "homepage": "https://github.com/gunnerkidBT/TwitchAdBlock",
+      "sourceURL": "https://github.com/gunnerkidBT/TwitchAdBlock",
+      "apps": [
+        "twitchadblock"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "fredrikburmester/streamyfin",
+      "source": "fredrikburmester/streamyfin",
+      "publisher": "fredrikburmester/streamyfin",
+      "homepage": "https://github.com/fredrikburmester/streamyfin",
+      "sourceURL": "https://github.com/fredrikburmester/streamyfin",
+      "apps": [
+        "streamyfin"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "DonutWare/Fladder",
+      "source": "DonutWare/Fladder",
+      "publisher": "DonutWare/Fladder",
+      "homepage": "https://github.com/DonutWare/Fladder",
+      "sourceURL": "https://github.com/DonutWare/Fladder",
+      "apps": [
+        "fladder"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "cranci1/Sora",
+      "source": "cranci1/Sora",
+      "publisher": "cranci1/Sora",
+      "homepage": "https://github.com/cranci1/Sora",
+      "sourceURL": "https://github.com/cranci1/Sora",
+      "apps": [
+        "sora"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "cogwheel0/conduit",
+      "source": "cogwheel0/conduit",
+      "publisher": "cogwheel0/conduit",
+      "homepage": "https://github.com/cogwheel0/conduit",
+      "sourceURL": "https://github.com/cogwheel0/conduit",
+      "apps": [
+        "conduit"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "BlueWallet/BlueWallet",
+      "source": "BlueWallet/BlueWallet",
+      "publisher": "BlueWallet/BlueWallet",
+      "homepage": "https://github.com/BlueWallet/BlueWallet",
+      "sourceURL": "https://github.com/BlueWallet/BlueWallet",
+      "apps": [
+        "bluewallet"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Bartuzen/qBitController",
+      "source": "Bartuzen/qBitController",
+      "publisher": "Bartuzen/qBitController",
+      "homepage": "https://github.com/Bartuzen/qBitController",
+      "sourceURL": "https://github.com/Bartuzen/qBitController",
+      "apps": [
+        "qbitcontroller"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Apollo-Reborn/Apollo-Reborn",
+      "source": "Apollo-Reborn/Apollo-Reborn",
+      "publisher": "Apollo-Reborn/Apollo-Reborn",
+      "homepage": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "sourceURL": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "apps": [
+        "apollo"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Anxcye/anx-reader",
+      "source": "Anxcye/anx-reader",
+      "publisher": "Anxcye/anx-reader",
+      "homepage": "https://github.com/Anxcye/anx-reader",
+      "sourceURL": "https://github.com/Anxcye/anx-reader",
+      "apps": [
+        "anxreader"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "aeharding/voyager",
+      "source": "aeharding/voyager",
+      "publisher": "aeharding/voyager",
+      "homepage": "https://github.com/aeharding/voyager",
+      "sourceURL": "https://github.com/aeharding/voyager",
+      "apps": [
+        "voyager"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"

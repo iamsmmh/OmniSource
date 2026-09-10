@@ -3,23 +3,31 @@
   "generatedAt": "2026-09-10",
   "lastSync": "2026-09-10",
   "totals": {
-    "apps": 22,
-    "sources": 18,
-    "verifiedApps": 21,
+    "apps": 49,
+    "sources": 45,
+    "verifiedApps": 48,
     "communityVerifiedApps": 1,
     "unverifiedApps": 0,
-    "hashVerifiedApps": 16,
-    "verified": 21,
+    "hashVerifiedApps": 39,
+    "verified": 48,
     "community_verified": 1,
     "unverified": 0,
-    "featuredApps": 5,
-    "downloadsReachable": 22,
+    "featuredApps": 6,
+    "downloadsReachable": 49,
     "deadLinks": 0,
-    "newAppsThisWeek": 2,
-    "updatedAppsThisWeek": 7,
+    "newAppsThisWeek": 4,
+    "updatedAppsThisWeek": 8,
     "clientsSupported": 5
   },
   "newThisWeek": [
+    {
+      "slug": "fladder",
+      "name": "Fladder",
+      "version": "0.11.1",
+      "previousVersion": "",
+      "date": "2026-09-08",
+      "downloadURL": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa"
+    },
     {
       "slug": "spotiflac",
       "name": "SpotiFLAC Mobile",
@@ -27,6 +35,14 @@
       "previousVersion": "",
       "date": "2026-09-07",
       "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.6/SpotiFLAC-v4.9.6-ios-unsigned.ipa"
+    },
+    {
+      "slug": "voyager",
+      "name": "Voyager",
+      "version": "2.49.0",
+      "previousVersion": "",
+      "date": "2026-09-06",
+      "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa"
     },
     {
       "slug": "aidoku",
@@ -45,6 +61,14 @@
       "previousVersion": "21.24.3",
       "date": "2026-09-10",
       "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa"
+    },
+    {
+      "slug": "maxmusic",
+      "name": "MaxMusic",
+      "version": "9.36.1",
+      "previousVersion": "9.35.2",
+      "date": "2026-09-10",
+      "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa"
     },
     {
       "slug": "inkillerplus",
@@ -82,9 +106,9 @@
       "slug": "ytkp",
       "name": "YTKillerPlus",
       "version": "21.36.6",
-      "previousVersion": "21.35.3",
+      "previousVersion": "21.36.6",
       "date": "2026-09-09",
-      "downloadURL": "https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa"
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa"
     },
     {
       "slug": "ttkillerplus",
@@ -97,40 +121,40 @@
   ],
   "topCategories": [
     {
-      "category": "photo-video",
-      "count": 7
-    },
-    {
-      "category": "social",
-      "count": 4
-    },
-    {
       "category": "utilities",
-      "count": 4
+      "count": 12
     },
     {
-      "category": "music",
-      "count": 3
-    },
-    {
-      "category": "developer-tools",
-      "count": 1
+      "category": "photo-video",
+      "count": 11
     },
     {
       "category": "games",
-      "count": 1
+      "count": 8
+    },
+    {
+      "category": "social",
+      "count": 8
+    },
+    {
+      "category": "music",
+      "count": 5
+    },
+    {
+      "category": "developer-tools",
+      "count": 2
+    },
+    {
+      "category": "other",
+      "count": 2
     },
     {
       "category": "networking",
       "count": 1
-    },
-    {
-      "category": "other",
-      "count": 1
     }
   ],
   "verification": {
-    "VERIFIED": 21,
+    "VERIFIED": 48,
     "COMMUNITY VERIFIED": 1,
     "UNVERIFIED": 0
   },
@@ -141,60 +165,60 @@
       "status": "VERIFIED"
     },
     {
+      "slug": "anxreader",
+      "name": "Anx Reader",
+      "status": "VERIFIED"
+    },
+    {
+      "slug": "anymex",
+      "name": "AnymeX",
+      "status": "VERIFIED"
+    },
+    {
+      "slug": "apollo",
+      "name": "Apollo",
+      "status": "VERIFIED"
+    },
+    {
       "slug": "bhtwitter",
       "name": "BHTwitter",
+      "status": "VERIFIED"
+    },
+    {
+      "slug": "bluewallet",
+      "name": "BlueWallet",
+      "status": "VERIFIED"
+    },
+    {
+      "slug": "conduit",
+      "name": "Conduit",
+      "status": "VERIFIED"
+    },
+    {
+      "slug": "delta",
+      "name": "Delta",
+      "status": "VERIFIED"
+    },
+    {
+      "slug": "dolphinish",
+      "name": "DolphiniOS",
       "status": "VERIFIED"
     },
     {
       "slug": "feather",
       "name": "Feather",
       "status": "VERIFIED"
-    },
-    {
-      "slug": "inkillerplus",
-      "name": "iNKillerPlus",
-      "status": "VERIFIED"
-    },
-    {
-      "slug": "itorrent",
-      "name": "iTorrent",
-      "status": "VERIFIED"
-    },
-    {
-      "slug": "livecontainer",
-      "name": "LiveContainer",
-      "status": "VERIFIED"
-    },
-    {
-      "slug": "maxmusic",
-      "name": "MaxMusic",
-      "status": "VERIFIED"
-    },
-    {
-      "slug": "maxtube",
-      "name": "MaxTube",
-      "status": "VERIFIED"
-    },
-    {
-      "slug": "provenance",
-      "name": "Provenance",
-      "status": "VERIFIED"
-    },
-    {
-      "slug": "sidestore",
-      "name": "SideStore",
-      "status": "VERIFIED"
     }
   ],
   "history": [
     {
       "date": "2026-09-10",
-      "apps": 22,
-      "sources": 18,
-      "verified": 21,
+      "apps": 49,
+      "sources": 45,
+      "verified": 48,
       "deadLinks": 0,
-      "newThisWeek": 2,
-      "updatedThisWeek": 7
+      "newThisWeek": 4,
+      "updatedThisWeek": 8
     }
   ]
 }

@@ -1,0 +1,155 @@
+{
+  "name": "OmniSource - MAME4iOS",
+  "identifier": "com.iamsmmh.omnisource.mame4ios",
+  "apiVersion": "v2",
+  "subtitle": "Multi-arcade machine emulator for iOS",
+  "description": "Standalone distribution feed for MAME4iOS, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/mame4ios.json",
+  "apps": [
+    {
+      "name": "MAME4iOS",
+      "bundleIdentifier": "com.example.mame4ios",
+      "developerName": "Yoshisuga & MAME4iOS Contributors",
+      "subtitle": "Multi-arcade machine emulator for iOS",
+      "localizedDescription": "MAME4iOS brings the Multiple Arcade Machine Emulator to iPhone, iPad and Apple TV, running thousands of classic arcade games from the 70s, 80s, 90s and beyond. Includes an on-screen joystick, full MFi controller support, netplay, and a menu to organize your legally dumped ROM sets.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MAME4iOS.webp",
+      "tintColor": "354B60",
+      "category": "games",
+      "version": "2022.5",
+      "versionDate": "2022-12-12",
+      "versionDescription": "MAME4iOS 2022.5 | MAME4iOS-2022.5-139\n\n* Updated to [MAME 250](https://www.mamedev.org/releases/whatsnew_0250.txt).\n* tvOS UX: use a Alert instead of a inline Segmented Control.\n* Show upload feedback in Web Server UX.\n* Added `Make First Favorite` to game context menu.",
+      "downloadURL": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa",
+      "size": 52332306,
+      "versions": [
+        {
+          "version": "2022.5",
+          "date": "2022-12-12",
+          "localizedDescription": "MAME4iOS 2022.5 | MAME4iOS-2022.5-139\n\n* Updated to [MAME 250](https://www.mamedev.org/releases/whatsnew_0250.txt).\n* tvOS UX: use a Alert instead of a inline Segmented Control.\n* Show upload feedback in Web Server UX.\n* Added `Make First Favorite` to game context menu.",
+          "downloadURL": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa",
+          "size": 52332306,
+          "minOSVersion": "13.4",
+          "releaseUrl": "https://github.com/yoshisuga/MAME4iOS/releases/tag/2022.5",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "MAME4iOS-2022.5-139.ipa",
+              "downloadUrl": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 52332306,
+              "sha256": null,
+              "downloads": 37351,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "MAME4iOS-2022.5-250.ipa",
+              "downloadUrl": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-250.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 107682071,
+              "sha256": null,
+              "downloads": 17259,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "MAME4mac-2022.5-139.app.zip",
+              "downloadUrl": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4mac-2022.5-139.app.zip",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 68536677,
+              "sha256": null,
+              "downloads": 2222,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "MAME4mac-2022.5-250.app.zip",
+              "downloadUrl": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4mac-2022.5-250.app.zip",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 195793428,
+              "sha256": null,
+              "downloads": 3676,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "MAME4tvOS-2022.5-139.ipa",
+              "downloadUrl": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4tvOS-2022.5-139.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 46380193,
+              "sha256": null,
+              "downloads": 902,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "MAME4tvOS-2022.5-250.ipa",
+              "downloadUrl": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4tvOS-2022.5-250.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 99480985,
+              "sha256": null,
+              "downloads": 2159,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "downloads": 37351
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "mame4ios",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/yoshisuga/MAME4iOS",
+        "sourceURL": "https://github.com/yoshisuga/MAME4iOS",
+        "verification": {
+          "method": "github-release",
+          "publisher": "yoshisuga/MAME4iOS",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "13.4",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA from the developer's GitHub releases (2022.5 line, iOS 13.4+ per the Xcode project; also distributed via the SideStore Community Source). The same release ships a separate MAME4tvOS build which is intentionally not distributed here."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2022-12-12",
+          "lastUpdatedAt": "2022-12-12"
+        }
+      }
+    }
+  ],
+  "news": []
+}

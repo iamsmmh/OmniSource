@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BlueWallet — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/bluewallet.json</link>
+    <description>Release feed for BlueWallet within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 13:45:30 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/bluewallet.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>BlueWallet v8.0.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/bluewallet.json</link>
+      <guid isPermaLink="false">bluewallet-8.0.1</guid>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[BlueWallet 8.0.1 | BlueWallet_8.0.1_1784575843
+
+### New Features
+
+iOS 26 Liquid Glass design
+Import Unchained JSON as a multisig cosigner
+Support BC-UR v2 air-gap scanning for hardware wallets (OneKey, Keystone)
+Option to redact push notification content
+Arkade Lightning push notifications
+Enable RBF for single-sig watch-only wallets (HD Bech32)
+Human-readable data on transaction status screen
+19 new languages, including Filipino, Armenian, Akan, and Sesotho
+
+### Improvements
+
+Renewed Settings UI
+Better green success color contrast
+Removed GroundControl server URL option from notification settings
+Faster transaction fetching for HD wallets
+Replaced crypto-js with modern @noble crypto libraries
+
+### Fixes
+
+Startup crash
+Amount input lag in RBF custom fee input
+Text size on main app views and clipped wallet balance in carousel
+QR codes no longer have rounded corners
+Signed transaction hex screen stays scrollable
+Arkade LNURL payment result now persists
+Floating button no longer overlaps the transaction list
+Various modal and navigation UX polish
+
+Under the hood: dependency updates, TypeScript coverage improvements, CI and translation tooling fixes.
+
+## What's Changed
+* FIX: startup crash by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8618
+* OPS: Bump version by @marcosrdz in https://github.com/BlueWallet/BlueWallet/pull/8621
+* fix: no round corners in qrcode by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8631
+* REF: remove GroundControl server URL option from notification settings by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8636
+* ADD: arkade ln pushes by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8634
+* REF: single-pass tx-to-address mapping in HD fetchTransactions by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8639
+* fix(deps): update dependency @noble/secp256k1 to v1.7.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8590
+* chore(deps): update actions/checkout action to v6.0.3 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8643
+* Retyui remove dead code by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8645
+* fix(deps): update dependency @arkade-os/sdk to v0.4.33 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8647
+* fix(deps): update dependency @arkade-os/boltz-swap to v0.3.38 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8646
+* fix(deps): update dependency @react-native-vector-icons/ionicons to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8650
+* fix(deps): update dependency @react-native-vector-icons/fontawesome to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8648
+* fix(deps): update dependency @react-native-vector-icons/material-design-icons to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8652
+* FIX: Remove chevron on modal open ux by @marcosrdz in https://github.com/BlueWallet/BlueWallet/pull/8651
+* fix(deps): update dependency @react-native-vector-icons/fontawesome6 to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8649
+* fix(deps): update dependency @react-native-vector-icons/material-icons to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8653
+* fix(deps): update dependency dayjs to v1.11.21 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8669
+* fix: improve typescript coverage by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8239
+* fix(deps): update dependency @react-native-vector-icons/entypo to v13.1.2 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8617
+* OPS: bump Arkade SDKs (sdk 0.4.35, boltz-swap 0.3.40) by @Kukks in https://github.com/BlueWallet/BlueWallet/pull/8675
+* tst: fix flaky goBack in iOS e2e tests by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8569
+* ADD: support importing Unchained JSON as multisig cosigner by @r6mez in https://github.com/BlueWallet/BlueWallet/pull/8568
+* chore(deps): update dependency @react-native/js-polyfills to ^0.86.0 by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8679
+* fix(deps): update react-navigation monorepo by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8678
+* FIX: persist Arkade LNURL payment result by @Overtorment in https://github.com/BlueWallet/BlueWallet/pull/8635
+* fix(deps): update dependency react-native-permissions to v5.5.3 - abandoned by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8670
+* fix: key on tx list by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8687
+* feat: iOS 26 glass by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8508
+* REF: swap crypto-js for @noble/ciphers + hashes by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8566
+* FIX: Amount input lag in rbf custom fee input by @ojokne in https://github.com/BlueWallet/BlueWallet/pull/8632
+* FIX: text size on main app views by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8689
+* FIX: clipping wallet balance on carousel by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8695
+* OPS: Update dependency concurrent-ruby to '< 1.3.8' [SECURITY] by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8694
+* FIX: ark tests Premature close — drop node-fetch, use native fetch by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8726
+* FIX: keep signed transaction hex screen scrollable by @K-i-Q in https://github.com/BlueWallet/BlueWallet/pull/8700
+* FIX: repair Transifex fastlane metadata integration by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8723
+* ADD: Filipino (fil_PH) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8709
+* fix: sync language files by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8703
+* ADD: Armenian (hy) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8704
+* ADD: Akan (ak) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8714
+* fix: fastlate android  by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8724
+* ADD: Sesotho (st_ZA) language by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8708
+* ADD: setting to redact push notification content by @r6mez in https://github.com/BlueWallet/BlueWallet/pull/8696
+* ADD: 15 new languages by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8734
+* Updates for file loc/en.json in es_419 by @transifex-integration[bot] in https://github.com/BlueWallet/BlueWallet/pull/8736
+* FIX: stray tool artifacts in ak/fil_PH vocabularies by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8730
+* REF: Change header ownership by @marcosrdz in https://github.com/BlueWallet/BlueWallet/pull/8735
+* chore: upgrade @arkade-os sdk@0.4.41  boltz-swap@0.3.46 by @pietro909 in https://github.com/BlueWallet/BlueWallet/pull/8744
+* OPS: Update all dependencies by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8743
+* FIX: bump qr to 0.6.0 by @GladosBlueWallet in https://github.com/BlueWallet/BlueWallet/pull/8748
+* fix: passphrase term by @limpbrains in https://github.com/BlueWallet/BlueWallet/pull/8738
+* REF: improve green success contrast by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8751
+* FIX: reserve floating-button space in wallet tx list on both platforms by @r6mez in https://github.com/BlueWallet/BlueWallet/pull/8742
+* feat: readable data on tx status by @ncoelho in https://github.com/BlueWallet/BlueWallet/pull/8688
+* OPS: Update all dependencies by @renovate[bot] in https://github.com/BlueWallet/BlueWallet/pull/8761
+* Updates for file loc/en.json in es_419 by @transifex-integration[bot] in https://github.com/BlueWallet/BlueWallet/pull/8763
+* ADD: Enable RBF for single sig watch only wallet(HD Bech32) by @ojokne in https://github.com/BlueWallet/BlueWallet/pull/8641
+* REF: Use new saveDocument for fs by @marcosrdz in https://gi…]]></description>
+      <enclosure url="https://github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet_8.0.1_1784575843.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

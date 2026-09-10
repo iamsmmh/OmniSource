@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 2,
-  "appsAffected": 9,
+  "count": 3,
+  "appsAffected": 11,
   "groups": [
     {
       "key": "com.google.ios.youtube",
@@ -47,11 +47,11 @@
           "name": "YTKillerPlus",
           "version": "21.36.6",
           "releaseDate": "2026-09-09",
-          "source": "iKarwan (repo.ikghd.me)",
+          "source": "mrdrvt99/YouProEXTRA",
           "developer": "iKarwan",
           "category": "photo-video",
           "status": "stable",
-          "downloadURL": "https://ikghd.site/ipa/YouTube_21.36_YTKillerPlus_6.5.ipa"
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa"
         },
         {
           "app": "ytkace",
@@ -96,6 +96,42 @@
       "replacementRisk": true
     },
     {
+      "key": "com.atebits.Tweetie2",
+      "type": "bundle-id",
+      "reason": "2 apps share bundle identifier 'com.atebits.Tweetie2'",
+      "apps": [
+        {
+          "app": "bhtwitter",
+          "name": "BHTwitter",
+          "version": "4.4",
+          "releaseDate": "2025-05-13",
+          "source": "BandarHL/BHTwitter",
+          "developer": "BandarHL",
+          "category": "social",
+          "status": "stable",
+          "downloadURL": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-sideloaded.ipa"
+        },
+        {
+          "app": "neofreebird",
+          "name": "NeoFreeBird",
+          "version": "2.2",
+          "releaseDate": "2025-11-03",
+          "source": "NeoFreeBird/app",
+          "developer": "NeoFreeBird contributors",
+          "category": "social",
+          "status": "stable",
+          "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa"
+        }
+      ],
+      "recommended": {
+        "app": "bhtwitter",
+        "name": "BHTwitter",
+        "version": "4.4",
+        "reason": "Newest version available (4.4, released 2025-05-13)"
+      },
+      "replacementRisk": true
+    },
+    {
       "key": "com.google.ios.youtubemusic",
       "type": "bundle-id",
       "reason": "2 apps share bundle identifier 'com.google.ios.youtubemusic'",
@@ -114,20 +150,20 @@
         {
           "app": "maxmusic",
           "name": "MaxMusic",
-          "version": "9.35.2",
-          "releaseDate": "2026-09-01",
+          "version": "9.36.1",
+          "releaseDate": "2026-09-10",
           "source": "Mark02-2012/MaxMusic",
           "developer": "Mark02-2012",
           "category": "music",
           "status": "stable",
-          "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.35.2_2.4.1_%2887%29/MaxMusic_2.4.1_9.35.2.ipa"
+          "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa"
         }
       ],
       "recommended": {
-        "app": "ytmusic",
-        "name": "YTMusicUltimate",
+        "app": "maxmusic",
+        "name": "MaxMusic",
         "version": "9.36.1",
-        "reason": "Newest version available (9.36.1, released 2026-09-09)"
+        "reason": "Newest version available (9.36.1, released 2026-09-10)"
       },
       "replacementRisk": true
     }
@@ -210,14 +246,36 @@
       },
       "reason": "7 apps share bundle identifier 'com.google.ios.youtube'"
     },
+    "bhtwitter": {
+      "groupKey": "com.atebits.Tweetie2",
+      "type": "bundle-id",
+      "recommended": {
+        "app": "bhtwitter",
+        "name": "BHTwitter",
+        "version": "4.4",
+        "reason": "Newest version available (4.4, released 2025-05-13)"
+      },
+      "reason": "2 apps share bundle identifier 'com.atebits.Tweetie2'"
+    },
+    "neofreebird": {
+      "groupKey": "com.atebits.Tweetie2",
+      "type": "bundle-id",
+      "recommended": {
+        "app": "bhtwitter",
+        "name": "BHTwitter",
+        "version": "4.4",
+        "reason": "Newest version available (4.4, released 2025-05-13)"
+      },
+      "reason": "2 apps share bundle identifier 'com.atebits.Tweetie2'"
+    },
     "ytmusic": {
       "groupKey": "com.google.ios.youtubemusic",
       "type": "bundle-id",
       "recommended": {
-        "app": "ytmusic",
-        "name": "YTMusicUltimate",
+        "app": "maxmusic",
+        "name": "MaxMusic",
         "version": "9.36.1",
-        "reason": "Newest version available (9.36.1, released 2026-09-09)"
+        "reason": "Newest version available (9.36.1, released 2026-09-10)"
       },
       "reason": "2 apps share bundle identifier 'com.google.ios.youtubemusic'"
     },
@@ -225,10 +283,10 @@
       "groupKey": "com.google.ios.youtubemusic",
       "type": "bundle-id",
       "recommended": {
-        "app": "ytmusic",
-        "name": "YTMusicUltimate",
+        "app": "maxmusic",
+        "name": "MaxMusic",
         "version": "9.36.1",
-        "reason": "Newest version available (9.36.1, released 2026-09-09)"
+        "reason": "Newest version available (9.36.1, released 2026-09-10)"
       },
       "reason": "2 apps share bundle identifier 'com.google.ios.youtubemusic'"
     }

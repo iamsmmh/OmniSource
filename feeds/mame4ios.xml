@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MAME4iOS — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/mame4ios.json</link>
+    <description>Release feed for MAME4iOS within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 13:45:30 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/mame4ios.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>MAME4iOS v2022.5</title>
+      <link>https://iamsmmh.github.io/OmniSource/mame4ios.json</link>
+      <guid isPermaLink="false">mame4ios-2022.5</guid>
+      <pubDate>Mon, 12 Dec 2022 00:00:00 +0000</pubDate>
+      <description><![CDATA[MAME4iOS 2022.5 | MAME4iOS-2022.5-139
+
+* Updated to [MAME 250](https://www.mamedev.org/releases/whatsnew_0250.txt).
+* tvOS UX: use a Alert instead of a inline Segmented Control.
+* Show upload feedback in Web Server UX.
+* Added `Make First Favorite` to game context menu.]]></description>
+      <enclosure url="https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

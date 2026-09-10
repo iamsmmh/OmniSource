@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jellify — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/jellify.json</link>
+    <description>Release feed for Jellify within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Sep 2026 13:45:30 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/jellify.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Jellify v1.2.10</title>
+      <link>https://iamsmmh.github.io/OmniSource/jellify.json</link>
+      <guid isPermaLink="false">jellify-1.2.10</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Jellify 1.2.10 | Jellify-1.2.10
+
+Welcome to Jellify 1.2.10
+
+Hey music lovers! I've polished up some underlying bits and have made a key fix to boost stability across the board. Get ready for an even smoother listening experience when you’re exploring your Jellyfin collection!
+
+*   **Android Crash Fixes:** We detected and patched out a crash that was occurring on Android devices, so you can now enjoy uninterrupted music playback no matter how deep you dive into your library.
+*   **Optimized Performance:** Several dependency updates have been implemented behind the scenes to enhance overall app performance and make navigation feel snappier than ever before.
+*   **App General Polish:** We've made various quality-of-life improvements in various components, ensuring Jellify remains robust and reliable for years of listening fun!]]></description>
+      <enclosure url="https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>
