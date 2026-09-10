@@ -9,6 +9,7 @@ deployed site depend on.
 
 from __future__ import annotations
 
+import re
 import shutil
 import sys
 import tempfile
@@ -154,6 +155,108 @@ class TestWebsiteShell(unittest.TestCase):
         self.assertIn(".nav-controls .language-selector { display: none; }", features)
         self.assertIn(".nav-links .nav-lang { display: flex; }", features)
         self.assertIn("syncLanguageSelects", features)
+
+    def test_os_search_engine_is_not_shadowed_by_features(self) -> None:
+        # js/core.js publishes the search *engine* as OS.Search and js/site.js
+        # plus core.js call OS.Search.load()/search()/highlight()/.docs.
+        # js/features.js runs last, so when it also assigned OS.Search it
+        # replaced the engine with its operator UI and every engine call threw
+        # "OS.Search.load is not a function" (the /search/ page died). The UI
+        # now lives at OS.SearchUI; keep the namespaces disjoint.
+        core = (ROOT / "js" / "core.js").read_text(encoding="utf-8")
+        features = (ROOT / "js" / "features.js").read_text(encoding="utf-8")
+        site = (ROOT / "js" / "site.js").read_text(encoding="utf-8")
+
+        self.assertIn("OS.Search = Search;", core, "core.js must publish the search engine")
+        self.assertNotIn("OS.Search =", features, "features.js must not reassign OS.Search")
+        self.assertIn("OS.SearchUI = SearchUI;", features, "features.js must export its UI as OS.SearchUI")
+
+        engine_members = {"load", "search", "highlight", "fetchTrending", "score", "popular", "topCategories", "docs"}
+        for name in sorted(engine_members):
+            self.assertRegex(core, rf"\b{name}: (function|\[)", f"core.js search engine lost {name}")
+
+        # Every OS.Search.<member> call site must resolve on the engine.
+        called = {m.group(1) for m in re.finditer(r"OS\.Search\.([A-Za-z_$][\w$]*)", core + features + site)}
+        self.assertTrue(called, "expected OS.Search call sites in the client scripts")
+        for name in sorted(called):
+            self.assertIn(name, engine_members, f"OS.Search.{name} is not part of the core engine")
+
+        # Every OS.SearchUI.<member> call site must resolve on the UI module.
+        ui_called = {m.group(1) for m in re.finditer(r"OS\.SearchUI\.([A-Za-z_$][\w$]*)", core + features + site)}
+        for name in sorted(ui_called):
+            self.assertRegex(features, rf"\b{name}\(\) \{{", f"OS.SearchUI.{name} is not defined in features.js")
+
+    def test_collections_pages_extend_os_collections_after_features_init(self) -> None:
+        # features.js only assigns OS.Collections from its DOMContentLoaded
+        # init, but these two pages load core.js/features.js synchronously and
+        # then extend OS.Collections from an inline <script>. Running that at
+        # parse time threw "Cannot set properties of undefined (setting
+        # 'showCreateModal')", which aborted the rest of the block — so the
+        # catalog fetch never ran and the page rendered empty. The inline
+        # block must therefore defer to DOMContentLoaded.
+        for rel in ("collections/index.html", "collections/collection.html"):
+            html = (ROOT / rel).read_text(encoding="utf-8")
+            self.assertIn("OS.Collections.", html, f"{rel}: expected page-specific Collections extensions")
+            body = html.split("<script>", 1)[1].split("</script>", 1)[0]
+            self.assertIn("document.addEventListener('DOMContentLoaded'", body, f"{rel}: inline block is not deferred")
+            # The guard must precede the first assignment, not follow it.
+            self.assertLess(
+                body.index("document.addEventListener('DOMContentLoaded'"),
+                body.index("OS.Collections."),
+                f"{rel}: OS.Collections is touched before the DOMContentLoaded guard",
+            )
+            self.assertIn("if (!window.OS || !OS.Collections)", body, f"{rel}: missing OS.Collections guard")
+
+    def test_client_scripts_reference_only_shipped_assets(self) -> None:
+        # Only the WebP twins plus OmniSource.png are deployed (see
+        # site._deployable_asset), so a literal asset reference that resolves
+        # to anything else is a guaranteed 404 in production. This catches the
+        # 'assets/unknown.png' icon fallback, which never shipped, and the
+        # OS.asset('../assets/...') values that the helper turned into
+        # 'assets/../assets/...' because it only strips a leading 'assets/'.
+        from omnisource.site import _deployable_asset
+
+        asset_arg = re.compile(r"""OS\.asset\(\s*['"]([^'"${}]+?)['"]""")
+        html_ref = re.compile(
+            r"""(?:href|src|srcset)\s*=\s*["']((?:\.\./)*assets/[^"'${}]+?\.(?:png|webp|svg|jpg|ico))["']"""
+        )
+        checked = 0
+
+        def resolve_asset(arg: str) -> Path:
+            """Mirror js/core.js asset(): strip one leading 'assets/', re-add it."""
+            return ROOT / "assets" / re.sub(r"^assets/", "", arg)
+
+        for source in [ROOT / "js" / "core.js", ROOT / "js" / "features.js", ROOT / "js" / "site.js"]:
+            for arg in asset_arg.findall(source.read_text(encoding="utf-8")):
+                target = resolve_asset(arg)
+                checked += 1
+                where = f"{source.name}: OS.asset({arg!r})"
+                self.assertFalse(arg.startswith(("../", "/")), f"{where} must not be path-prefixed")
+                self.assertTrue(target.is_file(), f"{where} resolves to a missing file")
+                self.assertTrue(_deployable_asset(target), f"{where} is not deployed to _site/")
+
+        # Static markup resolves ../assets/ against the page's own directory.
+        for page in sorted(ROOT.rglob("*.html")):
+            if "_site" in page.parts:
+                continue
+            for raw in html_ref.findall(page.read_text(encoding="utf-8")):
+                target = (page.parent / raw).resolve()
+                checked += 1
+                self.assertTrue(target.is_file(), f"{page.relative_to(ROOT)}: missing asset {raw}")
+                self.assertTrue(_deployable_asset(target), f"{page.relative_to(ROOT)}: {raw} is not deployed to _site/")
+
+        self.assertGreater(checked, 10, "expected the asset-reference scan to find the icon literals")
+
+    def test_exported_favorites_page_links_real_stylesheets(self) -> None:
+        # getFavoritesPageHTML() writes a standalone document; it used to link
+        # css/site.css and css/design-system.css, which have never existed in
+        # this repository, so every exported page came out unstyled.
+        features = (ROOT / "js" / "features.js").read_text(encoding="utf-8")
+        self.assertNotIn("css/site.css", features)
+        self.assertNotIn("css/design-system.css", features)
+        for sheet in ("tokens.css", "utilities.css", "animations.css", "components.css"):
+            self.assertIn(f"design-system/{sheet}", features, f"exported favorites page is missing {sheet}")
+            self.assertTrue((ROOT / "assets" / "design-system" / sheet).is_file(), f"{sheet} is not a real stylesheet")
 
     def test_liquid_glass_tokens(self) -> None:
         tokens = (ROOT / "assets" / "design-system" / "tokens.css").read_text(encoding="utf-8")

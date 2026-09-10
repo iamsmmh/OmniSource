@@ -324,23 +324,25 @@
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>My Favorites - OmniSource</title>
-          <link rel="stylesheet" href="${OS.asset('css/site.css')}">
-          <link rel="stylesheet" href="${OS.asset('css/design-system.css')}">
+          <link rel="stylesheet" href="${OS.asset('design-system/tokens.css')}">
+          <link rel="stylesheet" href="${OS.asset('design-system/utilities.css')}">
+          <link rel="stylesheet" href="${OS.asset('design-system/animations.css')}">
+          <link rel="stylesheet" href="${OS.asset('design-system/components.css')}">
         </head>
         <body>
           <header class="site-header" id="site-header">
             <div class="nav shell">
-              <a href="${OS.asset('/')}" class="brand">
+              <a href="${OS.url('/')}" class="brand">
                 <picture><source srcset="${OS.asset('assets/OmniSource.webp')}" type="image/webp"><img src="${OS.asset('assets/OmniSource.png')}" alt="OmniSource" width="40" height="40"></picture>
                 <span>OmniSource</span>
               </a>
               <nav class="nav-links">
-                <a href="${OS.asset('/')}">Home</a>
-                <a href="${OS.asset('/compare/')}">Compare</a>
-                <a href="${OS.asset('/status/')}">Status</a>
-                <a href="${OS.asset('/analytics/')}">Analytics</a>
-                <a href="${OS.asset('/install/')}">Install</a>
-                <a href="${OS.asset('/favorites/')}" class="active" aria-current="page">
+                <a href="${OS.url('/')}">Home</a>
+                <a href="${OS.url('/compare/')}">Compare</a>
+                <a href="${OS.url('/status/')}">Status</a>
+                <a href="${OS.url('/analytics/')}">Analytics</a>
+                <a href="${OS.url('/install/')}">Install</a>
+                <a href="${OS.url('/favorites/')}" class="active" aria-current="page">
                   <span>Favorites</span>
                   <span class="favorites-count">${favorites.length}</span>
                 </a>
@@ -366,7 +368,7 @@
                   <div class="empty-icon">❤️</div>
                   <h3>No favorites yet</h3>
                   <p>Start adding apps to your favorites by clicking the heart icon on any app card.</p>
-                  <a href="${OS.asset('/')}" class="button primary">Browse Apps</a>
+                  <a href="${OS.url('/')}" class="button primary">Browse Apps</a>
                 </div>
               ` : `
                 <div class="apps-grid">
@@ -391,7 +393,7 @@
             </div>
           </footer>
           
-          <script src="${OS.asset('js/core.js')}"></script>
+          <script src="${OS.url('js/core.js')}"></script>
           <script>
             // Initialize favorites on this page
             document.addEventListener('DOMContentLoaded', () => {
@@ -431,7 +433,7 @@
         <article class="app-card" data-app-id="${app.id}">
           <div class="card-top">
             <div class="icon-wrap">
-              <img src="${OS.asset(app.icon || 'assets/unknown.png')}" alt="${app.name}" class="app-icon" width="58" height="58">
+              <img src="${OS.asset(app.icon || 'OmniSource.png')}" alt="${app.name}" class="app-icon" width="58" height="58">
             </div>
             <div class="card-identity">
               <h3><a href="${OS.asset(`/apps/${app.id}/`)}">${app.name}</a></h3>
@@ -747,7 +749,7 @@
       return `
         <div class="cmp-side">
           <header>
-            <img src="${OS.asset(app.icon || 'assets/unknown.png')}" alt="${app.name}" width="68" height="68">
+            <img src="${OS.asset(app.icon || 'OmniSource.png')}" alt="${app.name}" width="68" height="68">
             <div>
               <h2>${app.name}</h2>
               <p>${app.developer || 'Unknown'}</p>
@@ -1007,9 +1009,16 @@
 
   // ============================================================================
   // SEARCH OPERATORS (P1)
+  //
+  // This module is the operator UI layered on top of the search engine that
+  // js/core.js publishes as OS.Search (load / search / highlight / docs). It
+  // must NOT be exported under that name: features.js runs after core.js, so
+  // assigning OS.Search here replaced the engine object and every call site
+  // in site.js and core.js threw "OS.Search.load is not a function". The UI is
+  // therefore exported as OS.SearchUI and keeps the engine untouched.
   // ============================================================================
 
-  const Search = {
+  const SearchUI = {
     init() {
       this._injectUI();
       this._setupListeners();
@@ -1308,7 +1317,7 @@
       resultsContainer.innerHTML = `
         <div class="results-meta">
           <span>${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"</span>
-          <button class="text-button" onclick="OS.Search.clearResults()">Clear</button>
+          <button class="text-button" onclick="OS.SearchUI.clearResults()">Clear</button>
         </div>
         <div class="apps-grid">
           ${results.map(app => this._renderAppCard(app)).join('')}
@@ -1336,7 +1345,7 @@
         <article class="app-card" data-app-id="${app.slug || app.id}">
           <div class="card-top">
             <div class="icon-wrap">
-              <img src="${OS.asset(app.icon || 'assets/unknown.png')}" alt="${app.name}" class="app-icon" width="58" height="58">
+              <img src="${OS.asset(app.icon || 'OmniSource.png')}" alt="${app.name}" class="app-icon" width="58" height="58">
             </div>
             <div class="card-identity">
               <h3><a href="${OS.asset(`/apps/${app.slug}/`)}">${app.name}</a></h3>
@@ -1916,10 +1925,12 @@
 
     async _registerSW() {
       try {
-        this._swRegistration = await navigator.serviceWorker.register(
-          OS.asset('sw.js'),
-          { scope: '/' }
-        );
+        // OS.url(), not OS.asset(): the worker lives at the site root, and
+        // OS.asset() would have requested /assets/sw.js (404). The explicit
+        // { scope: '/' } is also invalid here — on the GitHub Pages subpath
+        // the worker's maximum scope is the site root, so a broader scope is
+        // rejected with a SecurityError and push subscriptions never worked.
+        this._swRegistration = await navigator.serviceWorker.register(OS.url('sw.js'));
         
         this._swRegistration.onupdatefound = () => {
           console.log('Service Worker update found');
@@ -2876,7 +2887,7 @@
     Collections.init();
     Compare.init();
     QRCode.init();
-    Search.init();
+    SearchUI.init();
     Ratings.init();
     Charts.init();
     Notifications.init();
@@ -2888,7 +2899,9 @@
     OS.Collections = Collections;
     OS.Compare = Compare;
     OS.QRCode = QRCode;
-    OS.Search = Search;
+    // Deliberately OS.SearchUI, not OS.Search: the search engine lives in
+    // js/core.js and site.js/core.js call OS.Search.load()/search()/highlight().
+    OS.SearchUI = SearchUI;
     OS.Ratings = Ratings;
     OS.Charts = Charts;
     OS.Notifications = Notifications;
@@ -2925,6 +2938,6 @@
 
   // Export for module usage
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { Favorites, Collections, Compare, QRCode, Search, Ratings, Charts, Notifications, Webhooks, I18n };
+    module.exports = { Favorites, Collections, Compare, QRCode, SearchUI, Ratings, Charts, Notifications, Webhooks, I18n };
   }
 })();
