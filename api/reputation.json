@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 45,
+  "count": 58,
   "levels": [
     "TRUSTED",
     "RELIABLE",
@@ -515,6 +515,66 @@
       }
     },
     {
+      "id": "https://source.ryuksign.com/plugins",
+      "source": "Ryuk / RyukSign (source.ryuksign.com)",
+      "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+      "homepage": "https://source.ryuksign.com/plugins",
+      "sourceURL": "https://source.ryuksign.com/plugins",
+      "apps": [
+        "ryukgram"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "https://source.ryuksign.com/ig410",
+      "source": "Ryuk / RyukSign (source.ryuksign.com)",
+      "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+      "homepage": "https://source.ryuksign.com/ig410",
+      "sourceURL": "https://source.ryuksign.com/ig410",
+      "apps": [
+        "ryukgram-ig410"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "https://source.ryuksign.com/duplicate",
+      "source": "Ryuk / RyukSign (source.ryuksign.com)",
+      "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+      "homepage": "https://source.ryuksign.com/duplicate",
+      "sourceURL": "https://source.ryuksign.com/duplicate",
+      "apps": [
+        "ryukgram-sidebyside"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
       "id": "RyanYuuki/AnymeX",
       "source": "RyanYuuki/AnymeX",
       "publisher": "RyanYuuki/AnymeX",
@@ -529,6 +589,46 @@
         "uptime": 100.0,
         "probes": 7,
         "averageLatencyMs": 228.0,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "roothide/Dopamine2-roothide",
+      "source": "roothide/Dopamine2-roothide",
+      "publisher": "roothide/Dopamine2-roothide",
+      "homepage": "https://github.com/roothide/Dopamine2-roothide",
+      "sourceURL": "https://github.com/roothide/Dopamine2-roothide",
+      "apps": [
+        "dopamine-roothide"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "roothide/Bootstrap",
+      "source": "roothide/Bootstrap",
+      "publisher": "roothide/Bootstrap",
+      "homepage": "https://github.com/roothide/Bootstrap",
+      "sourceURL": "https://github.com/roothide/Bootstrap",
+      "apps": [
+        "bootstrap"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -575,6 +675,86 @@
       }
     },
     {
+      "id": "pwn20wndstuff/Undecimus",
+      "source": "pwn20wndstuff/Undecimus",
+      "publisher": "pwn20wndstuff/Undecimus",
+      "homepage": "https://github.com/pwn20wndstuff/Undecimus",
+      "sourceURL": "https://github.com/pwn20wndstuff/Undecimus",
+      "apps": [
+        "unc0ver"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "opa334/Dopamine",
+      "source": "opa334/Dopamine",
+      "publisher": "opa334/Dopamine",
+      "homepage": "https://github.com/opa334/Dopamine",
+      "sourceURL": "https://github.com/opa334/Dopamine",
+      "apps": [
+        "dopamine"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Odyssey-Team/Taurine",
+      "source": "Odyssey-Team/Taurine",
+      "publisher": "Odyssey-Team/Taurine",
+      "homepage": "https://github.com/Odyssey-Team/Taurine",
+      "sourceURL": "https://github.com/Odyssey-Team/Taurine",
+      "apps": [
+        "taurine"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Odyssey-Team/Odyssey",
+      "source": "Odyssey-Team/Odyssey",
+      "publisher": "Odyssey-Team/Odyssey",
+      "homepage": "https://github.com/Odyssey-Team/Odyssey",
+      "sourceURL": "https://github.com/Odyssey-Team/Odyssey",
+      "apps": [
+        "odyssey"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
       "id": "OatmealDome/dolphin-ios",
       "source": "OatmealDome/dolphin-ios",
       "publisher": "OatmealDome/dolphin-ios",
@@ -615,6 +795,26 @@
       }
     },
     {
+      "id": "mineek/Serotonin",
+      "source": "mineek/Serotonin",
+      "publisher": "mineek/Serotonin",
+      "homepage": "https://github.com/mineek/Serotonin",
+      "sourceURL": "https://github.com/mineek/Serotonin",
+      "apps": [
+        "serotonin"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
       "id": "Michael-128/qBitControl",
       "source": "Michael-128/qBitControl",
       "publisher": "Michael-128/qBitControl",
@@ -629,6 +829,46 @@
         "uptime": 100.0,
         "probes": 7,
         "averageLatencyMs": 222.0,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Manic-EMU/ManicEMU",
+      "source": "Manic-EMU/ManicEMU",
+      "publisher": "Manic-EMU/ManicEMU",
+      "homepage": "https://github.com/Manic-EMU/ManicEMU",
+      "sourceURL": "https://github.com/Manic-EMU/ManicEMU",
+      "apps": [
+        "manicemu"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "LIJI32/SameBoy",
+      "source": "LIJI32/SameBoy",
+      "publisher": "LIJI32/SameBoy",
+      "homepage": "https://github.com/LIJI32/SameBoy",
+      "sourceURL": "https://github.com/LIJI32/SameBoy",
+      "apps": [
+        "sameboy"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"
@@ -729,6 +969,26 @@
         "uptime": 100.0,
         "probes": 7,
         "averageLatencyMs": 901.0,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "GopeedLab/gopeed",
+      "source": "GopeedLab/gopeed",
+      "publisher": "GopeedLab/gopeed",
+      "homepage": "https://github.com/GopeedLab/gopeed",
+      "sourceURL": "https://github.com/GopeedLab/gopeed",
+      "apps": [
+        "gopeed"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1"

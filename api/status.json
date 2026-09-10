@@ -2,33 +2,36 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "sources": 49,
+    "sources": 62,
     "healthy": 34,
     "degraded": 15,
     "unavailable": 0,
-    "unknown": 0
+    "unknown": 13
   },
   "pipeline": {
-    "status": "ok",
+    "status": "degraded",
     "lastBuild": "2026-09-10",
-    "appsTotal": 49,
+    "appsTotal": 62,
     "appsHealthy": 34,
-    "appsFailing": 0
+    "appsFailing": 3
   },
   "providers": [
     {
       "provider": "altstore",
-      "apps": 2,
+      "apps": 5,
       "healthy": 2,
       "unavailable": 0,
       "lastResolvedFrom": {
         "inkillerplus": "altstore:https://repo.ikghd.me/repo.json",
-        "ttkillerplus": "altstore:https://repo.ikghd.me/repo.json"
+        "ttkillerplus": "altstore:https://repo.ikghd.me/repo.json",
+        "ryukgram": "manual",
+        "ryukgram-ig410": "manual",
+        "ryukgram-sidebyside": "manual"
       }
     },
     {
       "provider": "github",
-      "apps": 47,
+      "apps": 57,
       "healthy": 32,
       "unavailable": 0,
       "lastResolvedFrom": {
@@ -66,17 +69,27 @@
         "zeus": "github:ZeusLN/zeus",
         "anxreader": "github:Anxcye/anx-reader",
         "bhtwitter": "github:BandarHL/BHTwitter",
+        "bootstrap": "github:roothide/Bootstrap",
         "delta": "github:RileyTestut/Delta",
+        "dopamine": "github:opa334/Dopamine",
+        "dopamine-roothide": "github:roothide/Dopamine2-roothide",
+        "gopeed": "github:GopeedLab/gopeed",
         "mame4ios": "github:yoshisuga/MAME4iOS",
+        "manicemu": "github:Manic-EMU/ManicEMU",
         "minivmac": "github:zydeco/minivmac4ios",
         "neofreebird": "github:NeoFreeBird/app",
+        "odyssey": "github:Odyssey-Team/Odyssey",
         "ppsspp": "github:hrydgard/ppsspp",
         "provenance": "github:Provenance-Emu/Provenance",
         "qbitconnect": "github:RajnishOne/qbitconnect",
+        "sameboy": "github:LIJI32/SameBoy",
+        "serotonin": "github:mineek/Serotonin",
         "sidestore": "github:SideStore/SideStore",
         "spotube": "github:KRTirtho/spotube",
         "stiknes": "github:StikEMU/StikNES-2.0",
         "streamyfin": "github:fredrikburmester/streamyfin",
+        "taurine": "github:Odyssey-Team/Taurine",
+        "unc0ver": "github:pwn20wndstuff/Undecimus",
         "utm": "github:utmapp/UTM",
         "yattee": "github:yattee/yattee"
       }
@@ -85,8 +98,8 @@
   "deployment": {
     "platform": "GitHub Pages (static)",
     "status": "ok",
-    "reachable": 49,
-    "total": 49
+    "reachable": 62,
+    "total": 62
   },
   "sources": [
     {
@@ -3048,6 +3061,23 @@
       ]
     },
     {
+      "id": "bootstrap",
+      "app": "bootstrap",
+      "name": "Bootstrap",
+      "source": "roothide/Bootstrap",
+      "sourceURL": "https://github.com/roothide/Bootstrap",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-06-12",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "delta",
       "app": "delta",
       "name": "Delta",
@@ -3108,6 +3138,57 @@
       ]
     },
     {
+      "id": "dopamine",
+      "app": "dopamine",
+      "name": "Dopamine",
+      "source": "opa334/Dopamine",
+      "sourceURL": "https://github.com/opa334/Dopamine",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-08-22",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "dopamine-roothide",
+      "app": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "source": "roothide/Dopamine2-roothide",
+      "sourceURL": "https://github.com/roothide/Dopamine2-roothide",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-07",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "gopeed",
+      "app": "gopeed",
+      "name": "Gopeed",
+      "source": "GopeedLab/gopeed",
+      "sourceURL": "https://github.com/GopeedLab/gopeed",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-03-18",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "mame4ios",
       "app": "mame4ios",
       "name": "MAME4iOS",
@@ -3166,6 +3247,23 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "manicemu",
+      "app": "manicemu",
+      "name": "Manic EMU",
+      "source": "Manic-EMU/ManicEMU",
+      "sourceURL": "https://github.com/Manic-EMU/ManicEMU",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-03",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "minivmac",
@@ -3286,6 +3384,23 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "odyssey",
+      "app": "odyssey",
+      "name": "Odyssey",
+      "source": "Odyssey-Team/Odyssey",
+      "sourceURL": "https://github.com/Odyssey-Team/Odyssey",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2023-04-04",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "ppsspp",
@@ -3508,6 +3623,91 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "ryukgram",
+      "app": "ryukgram",
+      "name": "RyukGram",
+      "source": "Ryuk / RyukSign (source.ryuksign.com)",
+      "sourceURL": "https://source.ryuksign.com/plugins",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-09",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "ryukgram-ig410",
+      "app": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "source": "Ryuk / RyukSign (source.ryuksign.com)",
+      "sourceURL": "https://source.ryuksign.com/ig410",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-07-25",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "ryukgram-sidebyside",
+      "app": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "source": "Ryuk / RyukSign (source.ryuksign.com)",
+      "sourceURL": "https://source.ryuksign.com/duplicate",
+      "type": "altstore",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-09",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "sameboy",
+      "app": "sameboy",
+      "name": "SameBoy",
+      "source": "LIJI32/SameBoy",
+      "sourceURL": "https://github.com/LIJI32/SameBoy",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-03-04",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "serotonin",
+      "app": "serotonin",
+      "name": "Serotonin",
+      "source": "mineek/Serotonin",
+      "sourceURL": "https://github.com/mineek/Serotonin",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2024-01-17",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "sidestore",
@@ -3790,6 +3990,40 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "taurine",
+      "app": "taurine",
+      "name": "Taurine",
+      "source": "Odyssey-Team/Taurine",
+      "sourceURL": "https://github.com/Odyssey-Team/Taurine",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2023-09-23",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "unc0ver",
+      "app": "unc0ver",
+      "name": "unc0ver",
+      "source": "pwn20wndstuff/Undecimus",
+      "sourceURL": "https://github.com/pwn20wndstuff/Undecimus",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2020-06-09",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "utm",

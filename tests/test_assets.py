@@ -30,10 +30,13 @@ class TestAssetUtils(unittest.TestCase):
         self.assertEqual(detect_file_type("https://example.com/app.apk?raw=true"), "APK")
         self.assertEqual(detect_file_type("archive.zip"), "ZIP")
         self.assertEqual(detect_file_type("package.deb"), "DEB")
+        # .tipa is a TrollStore-named .ipa and stays an installable IPA.
+        self.assertEqual(detect_file_type("Bootstrap.tipa"), "IPA")
         self.assertEqual(detect_file_type("unknown.bin"), "other")
 
     def test_detect_platform(self) -> None:
         self.assertEqual(detect_platform("app.ipa"), "ios")
+        self.assertEqual(detect_platform("Bootstrap.tipa"), "ios")
         self.assertEqual(detect_platform("app.apk"), "android")
         self.assertEqual(detect_platform("setup.exe"), "windows")
         self.assertEqual(detect_platform("tool.dmg"), "macos")

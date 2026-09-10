@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 49,
+  "count": 62,
   "formula": {
     "weights": {
       "recency": 0.4,
@@ -166,14 +166,14 @@
       "downloadReachable": true
     },
     {
-      "slug": "fladder",
-      "name": "Fladder",
-      "category": "photo-video",
-      "version": "0.11.1",
-      "releaseDate": "2026-09-08",
-      "score": 0.7867,
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "category": "social",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-09",
+      "score": 0.7933,
       "signals": {
-        "recency": 0.9667,
+        "recency": 0.9833,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -321,14 +321,14 @@
       "downloadReachable": true
     },
     {
-      "slug": "fladder",
-      "name": "Fladder",
-      "category": "photo-video",
-      "version": "0.11.1",
-      "releaseDate": "2026-09-08",
-      "score": 0.7867,
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "category": "social",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-09",
+      "score": 0.7933,
       "signals": {
-        "recency": 0.9667,
+        "recency": 0.9833,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -338,20 +338,20 @@
       "downloadReachable": true
     },
     {
-      "slug": "spotiflac",
-      "name": "SpotiFLAC Mobile",
-      "category": "music",
-      "version": "4.9.6",
-      "releaseDate": "2026-09-07",
-      "score": 0.98,
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "category": "social",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-09",
+      "score": 0.7933,
       "signals": {
-        "recency": 0.95,
+        "recency": 0.9833,
         "availability": 1.0,
-        "featured": 1.0,
+        "featured": 0.0,
         "verification": 1.0
       },
       "verificationLevel": "VERIFIED",
-      "featured": true,
+      "featured": false,
       "downloadReachable": true
     }
   ],
@@ -493,14 +493,14 @@
       "downloadReachable": true
     },
     {
-      "slug": "fladder",
-      "name": "Fladder",
-      "category": "photo-video",
-      "version": "0.11.1",
-      "releaseDate": "2026-09-08",
-      "score": 0.7867,
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "category": "social",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-09",
+      "score": 0.7933,
       "signals": {
-        "recency": 0.9667,
+        "recency": 0.9833,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -510,20 +510,20 @@
       "downloadReachable": true
     },
     {
-      "slug": "spotiflac",
-      "name": "SpotiFLAC Mobile",
-      "category": "music",
-      "version": "4.9.6",
-      "releaseDate": "2026-09-07",
-      "score": 0.98,
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "category": "social",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-09",
+      "score": 0.7933,
       "signals": {
-        "recency": 0.95,
+        "recency": 0.9833,
         "availability": 1.0,
-        "featured": 1.0,
+        "featured": 0.0,
         "verification": 1.0
       },
       "verificationLevel": "VERIFIED",
-      "featured": true,
+      "featured": false,
       "downloadReachable": true
     }
   ],
@@ -682,6 +682,40 @@
       "downloadReachable": true
     },
     {
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "category": "social",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-09",
+      "score": 0.7933,
+      "signals": {
+        "recency": 0.9833,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "category": "social",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-09",
+      "score": 0.7933,
+      "signals": {
+        "recency": 0.9833,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "fladder",
       "name": "Fladder",
       "category": "photo-video",
@@ -690,6 +724,23 @@
       "score": 0.7867,
       "signals": {
         "recency": 0.9667,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "category": "utilities",
+      "version": "2.4.9.26",
+      "releaseDate": "2026-09-07",
+      "score": 0.78,
+      "signals": {
+        "recency": 0.95,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -720,6 +771,23 @@
       "name": "Aidoku",
       "category": "other",
       "version": "0.9",
+      "releaseDate": "2026-09-03",
+      "score": 0.7533,
+      "signals": {
+        "recency": 0.8833,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "manicemu",
+      "name": "Manic EMU",
+      "category": "games",
+      "version": "2.0.0",
       "releaseDate": "2026-09-03",
       "score": 0.7533,
       "signals": {
@@ -886,6 +954,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "dopamine",
+      "name": "Dopamine",
+      "category": "utilities",
+      "version": "3.0.9",
+      "releaseDate": "2026-08-22",
+      "score": 0.6733,
+      "signals": {
+        "recency": 0.6833,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "sora",
       "name": "Sora",
       "category": "photo-video",
@@ -996,6 +1081,23 @@
       "score": 0.5067,
       "signals": {
         "recency": 0.2667,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "category": "social",
+      "version": "410.1.0",
+      "releaseDate": "2026-07-25",
+      "score": 0.4867,
+      "signals": {
+        "recency": 0.2167,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -1350,6 +1452,125 @@
       "category": "social",
       "version": "2.2",
       "releaseDate": "2025-11-03",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "bootstrap",
+      "name": "Bootstrap",
+      "category": "utilities",
+      "version": "2.2.1",
+      "releaseDate": "2026-06-12",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "serotonin",
+      "name": "Serotonin",
+      "category": "utilities",
+      "version": "1.2.1",
+      "releaseDate": "2024-01-17",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "taurine",
+      "name": "Taurine",
+      "category": "utilities",
+      "version": "1.1.7",
+      "releaseDate": "2023-09-23",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "odyssey",
+      "name": "Odyssey",
+      "category": "utilities",
+      "version": "1.4.3",
+      "releaseDate": "2023-04-04",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "unc0ver",
+      "name": "unc0ver",
+      "category": "utilities",
+      "version": "5.2.0",
+      "releaseDate": "2020-06-09",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "sameboy",
+      "name": "SameBoy",
+      "category": "games",
+      "version": "1.0.3",
+      "releaseDate": "2026-03-04",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "gopeed",
+      "name": "Gopeed",
+      "category": "networking",
+      "version": "1.9.3",
+      "releaseDate": "2026-03-18",
       "score": 0.4,
       "signals": {
         "recency": 0.0,

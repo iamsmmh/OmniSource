@@ -1,0 +1,80 @@
+{
+  "name": "OmniSource - RyukGram",
+  "identifier": "com.iamsmmh.omnisource.ryukgram",
+  "apiVersion": "v2",
+  "subtitle": "Instagram, supercharged with RyukGram",
+  "description": "Standalone distribution feed for RyukGram, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/ryukgram.json",
+  "apps": [
+    {
+      "name": "RyukGram",
+      "bundleIdentifier": "com.burbn.instagram",
+      "developerName": "Ryuk (@axryuk)",
+      "subtitle": "Instagram, supercharged with RyukGram",
+      "localizedDescription": "RyukGram is an enhanced Instagram client for iOS by @axryuk — the full Instagram app with a built-in suite of privacy, logging and customisation tools that all run on-device. It adds follow-request tracking, read-receipt and seen-state control, device-ID masking, a deleted-message log, story-viewer insights and a stories archive, media downloading for posts, reels, stories and DMs, custom chat themes and fonts, per-account setting profiles, an Instagram mobile-config browser and a configurable tab bar. The release notes for each build are carried through from the developer's own source.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "tintColor": "E1306C",
+      "category": "social",
+      "version": "446.0.0",
+      "versionDate": "2026-09-09",
+      "versionDescription": "Instagram 446.0.0 | RyukGram v1.4.0 — fallback snapshot of the developer's source.\n\nSetting profiles, mobile-config browser, story stats, custom fonts, full-resolution photo downloads, reorderable post and reel buttons, view-once media capture while the app is closed and an update checker. See the live RyukSign source for the full release notes.",
+      "downloadURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa",
+      "size": 333670703,
+      "versions": [
+        {
+          "version": "446.0.0",
+          "date": "2026-09-09",
+          "localizedDescription": "Instagram 446.0.0 | RyukGram v1.4.0 — fallback snapshot of the developer's source.\n\nSetting profiles, mobile-config browser, story stats, custom fonts, full-resolution photo downloads, reorderable post and reel buttons, view-once media capture while the app is closed and an update checker. See the live RyukSign source for the full release notes.",
+          "downloadURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa",
+          "size": 333670703,
+          "minOSVersion": "15.0"
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "ryukgram",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://store.ryuksign.com/",
+        "sourceURL": "https://source.ryuksign.com/plugins",
+        "verification": {
+          "method": "altstore",
+          "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Resolved from the developer's own AltStore source at source.ryuksign.com (the /plugins variant, which keeps the plugin loader enabled). The IPA shares com.burbn.instagram with iNKillerPlus — installing one replaces the other, so keep a single Instagram mod installed. Modified third-party client: sideloading means trusting the developer, and the base app's own terms still apply."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-09",
+          "lastUpdatedAt": "2026-09-09"
+        }
+      }
+    }
+  ],
+  "news": []
+}

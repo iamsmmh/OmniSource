@@ -5,7 +5,7 @@
   "summary": {
     "averageAvailability": 100.0,
     "averageResponseTimeMs": 341.6,
-    "mirrorCount": 50,
+    "mirrorCount": 63,
     "probes": 849
   },
   "apps": [
@@ -548,6 +548,149 @@
       "mirrorCount": 1,
       "releaseConsistency": 0.0,
       "primaryURL": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "dopamine",
+      "name": "Dopamine",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "bootstrap",
+      "name": "Bootstrap",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "serotonin",
+      "name": "Serotonin",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "taurine",
+      "name": "Taurine",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "odyssey",
+      "name": "Odyssey",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "unc0ver",
+      "name": "unc0ver",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "sameboy",
+      "name": "SameBoy",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "gopeed",
+      "name": "Gopeed",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa",
+      "fallbackURLs": []
+    },
+    {
+      "slug": "manicemu",
+      "name": "Manic EMU",
+      "availability": 0.0,
+      "probes": 0,
+      "averageLatencyMs": null,
+      "mirrorCount": 1,
+      "releaseConsistency": 0.0,
+      "primaryURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
       "fallbackURLs": []
     }
   ]

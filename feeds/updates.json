@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-09-10",
   "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
-  "count": 58,
+  "count": 71,
   "updates": [
     {
       "slug": "youpro",
@@ -109,6 +109,36 @@
       "shortDescription": "TikTok with downloads, no ads and region switch"
     },
     {
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "version": "446.0.0",
+      "previousVersion": "",
+      "date": "2026-09-09",
+      "kind": "new",
+      "changelog": "Instagram 446.0.0 | RyukGram v1.4.0 (side-by-side, no plugins) — fallback snapshot of the developer's source.\n\nThe same build under its own bundle identifier so it installs next to the real Instagram app. See the live RyukSign source for the full release notes.",
+      "downloadURL": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram-sidebyside.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/ryukgram-sidebyside.xml",
+      "status": "stable",
+      "shortDescription": "RyukGram under its own bundle id, next to Instagram"
+    },
+    {
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "version": "446.0.0",
+      "previousVersion": "",
+      "date": "2026-09-09",
+      "kind": "new",
+      "changelog": "Instagram 446.0.0 | RyukGram v1.4.0 — fallback snapshot of the developer's source.\n\nSetting profiles, mobile-config browser, story stats, custom fonts, full-resolution photo downloads, reorderable post and reel buttons, view-once media capture while the app is closed and an update checker. See the live RyukSign source for the full release notes.",
+      "downloadURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/ryukgram.xml",
+      "status": "stable",
+      "shortDescription": "Instagram, supercharged with RyukGram"
+    },
+    {
       "slug": "inkillerplus",
       "name": "iNKillerPlus",
       "version": "446.0.0",
@@ -154,6 +184,21 @@
       "shortDescription": "FLAC Downloader for iOS"
     },
     {
+      "slug": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "version": "2.4.9.26",
+      "previousVersion": "",
+      "date": "2026-09-07",
+      "kind": "new",
+      "changelog": "Dopamine (RootHide) 2.4.9.26 | Dopamine\n\n1: fix state consistency issues\n\n2: fix library trusting issues (eg: UTM)\n\n3: hide more jailbreak traces",
+      "downloadURL": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/DopamineRootHide.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/dopamine-roothide.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/dopamine-roothide.xml",
+      "status": "stable",
+      "shortDescription": "Dopamine fork that hides the jailbreak from apps"
+    },
+    {
       "slug": "voyager",
       "name": "Voyager",
       "version": "2.49.0",
@@ -167,6 +212,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/voyager.xml",
       "status": "stable",
       "shortDescription": "Beautiful open-source client for Lemmy"
+    },
+    {
+      "slug": "manicemu",
+      "name": "Manic EMU",
+      "version": "2.0.0",
+      "previousVersion": "",
+      "date": "2026-09-03",
+      "kind": "new",
+      "changelog": "Manic EMU 2.0.0 | ManicEMU.v2.0.0.SideloadJIT\n\n> [!NOTE]\n> Starting from version 2.0.0, we no longer provide builds of TrollStore JIT. You can package it yourself by following the [guide](https://github.com/Rednick16/TrollStoreJITEnabler).\n\nThis is a major release focused on a redesigned interface, expanded platform support, and advanced features. Landscape browsing, library management, and external controller navigation have been rebuilt. It also adds several new systems and brings Netplay to eligible Libretro cores.\n\n\n### Before You Update\n\n- Dreamcast (Flycast): Existing save states will no longer work as of 2.0.0. Convert important save states to in-game saves before updating, or back up the `Flycast/dc` folder yourself.\n- Wii: A BootMii-format `keys.bin` is required.\n- Symbian: Install firmware in Settings first (`.ROM`; S60v2 and later also need `.RPKG`).\n- GameCube / Wii: The core is still being optimized, so heat and frame drops should still be expected.\n- MAME: A number of lesser-used arcade systems have been trimmed. Some obscure titles may no longer run.\n\n### Interface\n\nLandscape\n\n- A new landscape library, with most landscape pages redesigned.\n- Built-in dynamic backgrounds. You can use or upload ShaderToy (GLSL) scripts to customize them. Only single-Image scripts are supported; complex scripts may increase battery use or heat.\n- Multiple customizable card carousel styles.\n- Focused background: when a game is selected, its banner can be used as the landscape focus backdrop.\n- background music feature in landscape mode—besides built-in tracks, you can upload your own music files to use as background music.\n- built in 12 sets of navigation and focus sound effects.\n\nGame Options and Shortcuts\n\n- A unified options list and interaction model throughout the app.\n- Available actions are automatically arranged and regrouped for the current context.\n- Advanced reordering: customize the order and grouping of options.\n- A redesigned in-game shortcut menu. Shortcuts can appear on supported skins and in the in-game menu.\n\nNavigation and Input\n\n- A global focus and navigation system for iPhone and iPad. You can browse and interact entirely with a controller or keyboard.\n- Hold Command or the controller’s Select button to view the shortcut cheatsheet.\n- A unified navigation bar for more consistent browsing and editing.\n- Many long-press and hidden actions have been replaced with more conventional, iOS-style interactions.\n- Batch management and actions.\n- Adaptive rotation throughout the app.\n- Controllers can be assigned to a player slot. On cores that expect a keyboard, controller inputs can be mapped to keyboard events.\n\n### Features\n\nLibrary and Artwork\n\n- Covers now support separate icon and banner artwork. Box art is used in regular lists, icons in square layouts, and banners as the landscape focus backdrop.\n- Online artwork from Libretro Thumbnails and SteamGridDB (Grids / Heroes / Logos / Icons; SteamGridDB requires your own API key).\n- Switching platform or category rematches cover art.\n\nGame Data\n\n- Game metadata: auto-match, search the database, or edit it yourself (developer, publisher, series, genre, release date, region, overview, and more).\n- ESRB ratings and matching icons. Rating icons can be hidden in Settings.\n- A redesigned save-state manager with import and export.\n- Scoped settings: the same option can be stored at game, platform, or global level, and each can be cleared or reset independently.\n- batch scraping for covers, icons, and banners.\n- \n\nShaders and Skins\n\n- Real-time shader preview, without loading the shader first.\n- Redesigned default GBA skin.\n- Flex skins now support customizing button size and position.\n\nAchievements, Cheats, and Netplay\n\n- RetroAchievements pages are easier to read and load faster.\n- MultiSet support: earn subset achievements without a patched ROM. Switching the achievement list only changes what is shown; it does not affect which sets you can unlock while playing.\n- Online cheat database: search, multi-select add, and bookmarks.\n- Netplay for many Libretro cores: host or join a room, public lobby, LAN scan, relay, spectator mode, and room password. Your Adventurer Card nickname is used as the Netplay display name. You can now trade treasured Pokémon with friends over the network, or go head-to-head on arcade systems.\n- Rewind: add it to the shortcut menu, a controller mapping, or TriggerPro, then touch and hold to use it.\n\nAdvanced Features and Import\n\n- Core Settings: intended for advanced users. Incorrect values may prevent games from launching. Settings can be reset per game or per platform.\n- Settings now include an Adventurer Card, with a customizable nickname and avatar.\n- Import games from DukeX.\n- Import games from Armsx2.\n- PS1 now supports importing `.bin` files directly.\n\n\n### New Systems and Cores\n\nSymbian (EKA2L1)\n\n- Supports S60v1, N-Gage 1.0, S60v2, S60v3, N-Gage 2.0, S60v5, and Symbian^3.\n- Touch input, firmware management, and system apps.\n- Legacy / PPL / TXM JIT.\n\nPC Engine (Beetle PCE)\n\n- Supports TurboGrafx-16, TurboGrafx-CD, and SuperGrafx, with subcategory switching.\n\nNeo Geo Pocket / Color (Beetle NeoPop)\n\n- Supports Neo Geo Pocket and Neo Geo Pocket Color, with subcategory switching.\n\nCommodore 64 (VICE x64sc)\n\n- Full keyboard support, with switching between gamepad and keyboard skins.\n\nAmiga (PUAE)\n\n- Full keyboard support, with switching between gamepad and keyboard skins.\n\nGameCube / Wii (Dolphin)\n\n- Legacy / PPL / TXM JIT.\n- Wii: Wiimote sideways mode.\n- Dolphin cheats, including Action Replay Max decryption.\n- Wiimote skins for Wii\n\nOther Cores\n\n- Mesen-S added for SNES / GB / GBC.\n- gpSP added for GBA, and can be switched with mGBA and VBA-M.\n\n### JIT Fixes and Improvements\n\n- Fixed JIT failing on TXM devices running iOS 26.6 and later.\n- Revised TXM device detection.\n- N64 GLideN64 and ParaLLEl RDP now both support JIT.\n\n### Core Updates\n\nThe following cores have been updated to the latest upstream stable releases.\n\n- 3DS (Azahar, Citra)\n- PS1 (Beetle PSX HW)\n- DOS (DOSBox Pure)\n- Dreamcast (Flycast) — see the save-state migration note above\n- NDS (melonDS)\n- PSP (PPSSPP)\n- N64 (Mupen64Plus)\n\n### Fixes\n\n- Numerous bug fixes and performance optimizations",
+      "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/ManicEMU.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/manicemu.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/manicemu.xml",
+      "status": "stable",
+      "shortDescription": "All-in-one retro game emulator"
     },
     {
       "slug": "aidoku",
@@ -409,6 +469,21 @@
       "shortDescription": "Linux shell on iOS via x86 emulation"
     },
     {
+      "slug": "dopamine",
+      "name": "Dopamine",
+      "version": "3.0.9",
+      "previousVersion": "",
+      "date": "2026-08-22",
+      "kind": "new",
+      "changelog": "Dopamine 3.0.9 | Dopamine\n\n- Fix jailbreak apps not being removed from home screen when removing the jailbreak on iOS 18.0 - 18.3.1 too",
+      "downloadURL": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Dopamine.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/dopamine.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/dopamine.xml",
+      "status": "stable",
+      "shortDescription": "Semi-untethered jailbreak for iOS 15 – 26"
+    },
+    {
       "slug": "ish",
       "name": "iSH",
       "version": "813",
@@ -529,6 +604,21 @@
       "shortDescription": "Cross-platform qBittorrent remote (Kotlin)"
     },
     {
+      "slug": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "version": "410.1.0",
+      "previousVersion": "",
+      "date": "2026-07-25",
+      "kind": "new",
+      "changelog": "Instagram 410.1.0 | RyukGram (IG 410) v1.3.3 — fallback snapshot of the developer's source.\n\nThe RyukGram feature set on the Instagram 410 base for iOS 15 and later. See the live RyukSign source for the full release notes.",
+      "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram-ig410.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/ryukgram-ig410.xml",
+      "status": "stable",
+      "shortDescription": "RyukGram built on the Instagram 410 app"
+    },
+    {
       "slug": "qbitcontrol",
       "name": "qBitControl",
       "version": "1.4.1",
@@ -617,6 +707,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/dolphinish.xml",
       "status": "beta",
       "shortDescription": "GameCube and Wii emulator for iOS"
+    },
+    {
+      "slug": "bootstrap",
+      "name": "Bootstrap",
+      "version": "2.2.1",
+      "previousVersion": "",
+      "date": "2026-06-12",
+      "kind": "new",
+      "changelog": "Bootstrap 2.2.1 | Bootstrap.tipa\n\n1: add procursus(alt) repo by default\n\n2: hide more jailbreak traces",
+      "downloadURL": "https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Bootstrap.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/bootstrap.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/bootstrap.xml",
+      "status": "stable",
+      "shortDescription": "RootHide bootstrap for iOS 15 – 17"
     },
     {
       "slug": "spotube",
@@ -709,6 +814,21 @@
       "shortDescription": "Open-source e-book reader with AI"
     },
     {
+      "slug": "gopeed",
+      "name": "Gopeed",
+      "version": "1.9.3",
+      "previousVersion": "",
+      "date": "2026-03-18",
+      "kind": "new",
+      "changelog": "Gopeed 1.9.3 | Gopeed-v1.9.3-ios\n\n<table>\n  <tbody>\n    <tr>\n      <td rowspan=\"4\">🪟 Windows</td>\n      <td rowspan=\"2\"><code>EXE</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>Portable</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-amd64-portable.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-windows-arm64-portable.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"3\">🍎 MacOS</td>\n      <td rowspan=\"3\"><code>DMG</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos-amd64.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-macos-arm64.dmg\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"6\">🐧 Linux</td>\n      <td><code>Flathub</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://flathub.org/apps/com.gopeed.Gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td><code>SNAP</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://snapcraft.io/gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>DEB</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-amd64.deb\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-arm64.deb\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>AppImage</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-amd64.AppImage\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-linux-arm64.AppImage\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"4\">🤖 Android</td>\n      <td rowspan=\"4\"><code>APK</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>armeabi-v7a</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-armeabi-v7a.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64-v8a</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-arm64-v8a.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>x86_64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-android-x86_64.apk\">📥</a></td>\n    </tr>\n    <tr>\n      <td>📱 iOS</td>\n      <td><code>IPA</code></td>\n      <td>universal</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=Gopeed-v1.9.3-ios.ipa\">📥</a></td>\n    </tr>\n    <tr>\n      <td>🐳 Docker</td>\n      <td>-</td>\n      <td>universal</td>\n      <td><a href=\"https://hub.docker.com/r/liwei2633/gopeed\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\">💾 Qnap</td>\n      <td rowspan=\"2\"><code>QPKG</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-v1.9.3-qnap-amd64.qpkg\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-v1.9.3-qnap-arm64.qpkg\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"8\">🌐 Web</td>\n      <td rowspan=\"3\"><code>Windows</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>386</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-windows-386.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"2\"><code>MacOS</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-macos-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-macos-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td rowspan=\"3\"><code>Linux</code></td>\n      <td>amd64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-amd64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>arm64</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-arm64.zip\">📥</a></td>\n    </tr>\n    <tr>\n      <td>386</td>\n      <td><a href=\"https://gopeed.com/api/download?tpl=gopeed-web-v1.9.3-linux-386.zip\">📥</a></td>\n    </tr>\n  </tbody>\n</table>\n\n# Release notes\n\n## 🆕 Features\n\n- feat: ed2k protocol support (important!!!) @monkeyWie (#1316)\n\n## 🐛 Bug Fixes\n\n- fix: non-range HTTP downloaded bytes exceeding total file size @monkeyWie (#1317)\n- fix: update isCreate logic for pending tasks @Roxym3 (#1314)\n- fix: update RPM icon path @monkeyWie (#1309)\n\n## 📖 Document\n\n- docs: migrate docs.gopeed.com links to gopeed.com/docs equivalents @copilot-swe-agent (#1311)\n\n## 🌎 Internationalization\n\n- feat(lang): Catalan language added @kayron8 (#1303)\n- feat(lang): update Turkish translation @Hweord (#1304)\n\n# 更新日志\n\n## 🆕 新特性\n\n- feat: ed2k 协议支持 (重大特性！！！) @monkeyWie (#1316)\n\n## 🐛 Bug Fixes\n\n- fix: 不支持断点下载的 HTTP 链接下载超出文件总大小 @monkeyWie (#1317)\n- fix: 更新 isCreate 逻辑用于等待中的任务 @Roxym3 (#1314)\n- fix: 更新 RPM 图标路径 @monkeyWie (#1309)\n\n## 📖 Document\n\n- docs: 迁移 docs.gopeed.com 链接至 gopeed.com/docs @copilot-swe-agent (#1311)\n\n## 🌎 Internationalization\n\n- feat(lang): 添加加泰罗尼亚语言 @kayron8 (#1303)\n- feat(lang): 更新土耳其语言 @Hweord (#1304)",
+      "downloadURL": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Gopeed.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/gopeed.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/gopeed.xml",
+      "status": "stable",
+      "shortDescription": "Modern download manager for HTTP, BitTorrent and more"
+    },
+    {
       "slug": "provenance",
       "name": "Provenance",
       "version": "3.3.0",
@@ -722,6 +842,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/provenance.xml",
       "status": "stable",
       "shortDescription": "Multi-system retro game emulator"
+    },
+    {
+      "slug": "sameboy",
+      "name": "SameBoy",
+      "version": "1.0.3",
+      "previousVersion": "",
+      "date": "2026-03-04",
+      "kind": "new",
+      "changelog": "SameBoy 1.0.3 | sameboy_ios_v1.0.3\n\nThis version is backwards compatible with save states from SameBoy 0.14.3 and newer, as well as save states from any BESS compliant emulator\n\n## New/Improved Features\n* Added support for more controllers in the iOS frontend, including singular Joy-Cons\n* Pressing buttons while in a locked rewind state now exits rewind mode in the iOS frontend\n* The iOS frontend now handles save conflicts with a dialog, making syncing saves across different machines and emulators easier\n* An `examine`/`x` command can now use the `/s` modifier to change its output style to RGBDS-compatible assembly\n* An `examine`/`x` command can now use `$` in its modifier to use hexadecimal count values\n* It is now possible to adjust the maximum rumble strength\n* It is now possible to modify and save a running ROM file from the Memory Viewer in the Cocoa frontend\n* Controller buttons can now be assigned to one of 4 hotkey commands in the iOS frontend\n* Periodic saves were added to the iOS frontend\n* A new screenshot hotkey was added to the SDL frontend\n* Controller UI hiding in the iOS frontend can now optionally disable the centering of the game screen\n* The Cocoa and SDL frontends now save the battery more frequently\n\n## Accuracy Improvements/Fixes\n* Added silence detection to eliminate rounding artifacts when playing nothing but frequencies above Nyquist\n* Prevented abnormal vblank events from updating the SNES-side buffers prematurely\n* Fixed a bug that made reading the PCM registers non-deterministic when emulating a CGB in CPU revision C or older\n* Fixed a bug that caused ROMs to be running in the background under some cases in the Cocoa frontend\n* Fixed a bug that caused channel `PCM12` to output incorrect channel 2 values when emulating CGB in CPU revision C or older\n* Improved the accuracy of the `PCM` registers when emulating CGB in CPU revision C or older\n* Emulated a new quirk where volume envelope ticks are delayed while emulating a CGB in CPU revisions D or E\n* Corrected the channel alignment of channels 1 and 2 while emulating CGB in CPU revision C or older\n* Fixed a bug where a volume envelope quirk that was only applicable to channels 1 and 2 was also applied to channel 4\n* Major improvements to emulation of channel 4 start delays\n* Emulated a quirk where one of channel 4's internal counters counts while the channel is inactive\n* Emulated LFSR corruptions and \"zombie steps\" when writing to `NR43`, including revision differences\n\n## Bug Fixes\n* Fixed mouse cursor hiding behavior while debugging in the Cocoa frontend\n* Fixed an issue where rewinding could reset the ROM under some circumstances in the iOS frontend\n* Fixed a visual glitch in the reverse search functionality of the Cocoa debugger console\n* Fixed a memory leak in scenarios where `getline` fails on some platforms\n* Fixed a resource leak in scenarios where loading a cheat file fails\n* Fixed resource leaks in certain scenarios where loading a battery save or an ISX ROM fails\n* Fixed a bug that caused the SDL frontend to be stuck on the greyscale palette\n* Fixed a bug where starting an audio recording could crash on Windows on some systems\n* Fixed a bug where the Game Boy Camera could not be emulated correctly on some iPhone models\n* Fixed a spelling mistake in an iOS tip message\n* Fixed a bug where certain versions of macOS did not display SameBoy's icon\n* Fixed an issue that made it impossible to change the RTC mode in link mode in the libretro frontend\n\n## Misc Internal Changes\n* Updated the boot ROMs so they can be built with the latest version of RGBDS\n* Removed code for supporting legacy Windows save states from versions no longer compatible with modern versions of SameBoy\n* Fixed compilation of the SDL frontend on `unsigned char` platforms\n* Made it possible to build the Cocoa frontend using older SDKs\n* Removed accidentally committed debugging code from the Cocoa frontend",
+      "downloadURL": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SameBoy.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/sameboy.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/sameboy.xml",
+      "status": "stable",
+      "shortDescription": "High-accuracy Game Boy and Game Boy Color emulator"
     },
     {
       "slug": "utm",
@@ -859,6 +994,51 @@
       "shortDescription": "Privacy-oriented native video player"
     },
     {
+      "slug": "serotonin",
+      "name": "Serotonin",
+      "version": "1.2.1",
+      "previousVersion": "",
+      "date": "2024-01-17",
+      "kind": "new",
+      "changelog": "Serotonin 1.2.1 | Serotonin.tipa\n\n# Serotonin 1.2.1\n## Changelog\n### Cleanup\n\n- Fixed memory hogger\n- Fixed exploit picker\n- Fixed launchd entitlements\n- Remove a bunch of unused code\n- Slight UI changes",
+      "downloadURL": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Serotonin.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/serotonin.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/serotonin.xml",
+      "status": "unmaintained",
+      "shortDescription": "Semi-jailbreak for iOS 16.5.1 – 17.0"
+    },
+    {
+      "slug": "taurine",
+      "name": "Taurine",
+      "version": "1.1.7",
+      "previousVersion": "",
+      "date": "2023-09-23",
+      "kind": "new",
+      "changelog": "Taurine 1.1.7 | Taurine.1.1.7-3\n\nFix kfd change being implemented incorrectly",
+      "downloadURL": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Taurine.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/taurine.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/taurine.xml",
+      "status": "unmaintained",
+      "shortDescription": "Semi-untethered jailbreak for iOS 14"
+    },
+    {
+      "slug": "odyssey",
+      "name": "Odyssey",
+      "version": "1.4.3",
+      "previousVersion": "",
+      "date": "2023-04-04",
+      "kind": "new",
+      "changelog": "Odyssey 1.4.3 | Odyssey-1.4.3\n\n- Update Sileo to 2.3-1",
+      "downloadURL": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Odyssey.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/odyssey.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/odyssey.xml",
+      "status": "unmaintained",
+      "shortDescription": "Semi-untethered jailbreak for iOS 13"
+    },
+    {
       "slug": "mame4ios",
       "name": "MAME4iOS",
       "version": "2022.5",
@@ -872,6 +1052,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/mame4ios.xml",
       "status": "stable",
       "shortDescription": "Multi-arcade machine emulator for iOS"
+    },
+    {
+      "slug": "unc0ver",
+      "name": "unc0ver",
+      "version": "5.2.0",
+      "previousVersion": "",
+      "date": "2020-06-09",
+      "kind": "new",
+      "changelog": "unc0ver 5.2.0 | unc0ver_5.2.0\n\nLast updated at: 06/09/2020\n\n06/09/2020 - v5.2.0 was released for production with the following changes:\n\n### ⚠️ Support development with https://phonerebel.com ⚠️\n\n- Enable iOS 13.5.5~b1 support\n- Fix a logic bug in disabling auto updates\n- Update bundled Cydia to fix crashes on iOS 13.5 with Hardware Keyboard enabled",
+      "downloadURL": "https://github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/unc0ver.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/unc0ver.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/unc0ver.xml",
+      "status": "unmaintained",
+      "shortDescription": "Jailbreak for iOS 11 – 14.8.1"
     }
   ]
 }

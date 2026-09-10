@@ -887,7 +887,7 @@
           "esign",
           "livecontainer"
         ],
-        "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me."
+        "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me. Shares com.burbn.instagram with the RyukGram entries — keep only one Instagram mod installed."
       },
       "appPermissions": {
         "entitlements": [
@@ -926,7 +926,8 @@
         "downloadURL": "https://ikghd.site/ipa/Instagram_445.0_iNKillerPlus_5.2.ipa",
         "size": 247159162,
         "minOSVersion": "16.3"
-      }
+      },
+      "alternativeTo": "ryukgram"
     },
     {
       "slug": "ttkillerplus",
@@ -2805,6 +2806,703 @@
         "keepVersions": 1,
         "minOSVersion": "15.0",
         "descriptionTemplate": "Sora {version} | {label}"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "ryukgram",
+      "name": "RyukGram",
+      "subtitle": "Instagram, supercharged with RyukGram",
+      "bundleIdentifier": "com.burbn.instagram",
+      "alternativeTo": "inkillerplus",
+      "developerName": "Ryuk (@axryuk)",
+      "category": "social",
+      "tintColor": "E1306C",
+      "icon": "Instagram.webp",
+      "localizedDescription": "RyukGram is an enhanced Instagram client for iOS by @axryuk — the full Instagram app with a built-in suite of privacy, logging and customisation tools that all run on-device. It adds follow-request tracking, read-receipt and seen-state control, device-ID masking, a deleted-message log, story-viewer insights and a stories archive, media downloading for posts, reels, stories and DMs, custom chat themes and fonts, per-account setting profiles, an Instagram mobile-config browser and a configurable tab bar. The release notes for each build are carried through from the developer's own source.",
+      "status": "stable",
+      "upstreamURL": "https://store.ryuksign.com/",
+      "sourceURL": "https://source.ryuksign.com/plugins",
+      "verification": {
+        "method": "altstore",
+        "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Resolved from the developer's own AltStore source at source.ryuksign.com (the /plugins variant, which keeps the plugin loader enabled). The IPA shares com.burbn.instagram with iNKillerPlus — installing one replaces the other, so keep a single Instagram mod installed. Modified third-party client: sideloading means trusting the developer, and the base app's own terms still apply."
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://source.ryuksign.com/plugins",
+        "appId": "RyukGram",
+        "keepVersions": 1,
+        "descriptionTemplate": "Instagram {version} | RyukGram",
+        "minOSVersion": "15.0"
+      },
+      "manualRelease": {
+        "version": "446.0.0",
+        "date": "2026-09-09",
+        "localizedDescription": "Instagram 446.0.0 | RyukGram v1.4.0 — fallback snapshot of the developer's source.\n\nSetting profiles, mobile-config browser, story stats, custom fonts, full-resolution photo downloads, reorderable post and reel buttons, view-once media capture while the app is closed and an update checker. See the live RyukSign source for the full release notes.",
+        "downloadURL": "https://source.ryuksign.com/ipas/860f89d45a5481efd30b.ipa",
+        "size": 333670703,
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "ryukgram-ig410",
+      "name": "RyukGram (IG 410)",
+      "subtitle": "RyukGram built on the Instagram 410 app",
+      "bundleIdentifier": "com.burbn.instagram",
+      "alternativeTo": "ryukgram",
+      "developerName": "Ryuk (@axryuk)",
+      "category": "social",
+      "tintColor": "C13584",
+      "icon": "Instagram.webp",
+      "localizedDescription": "RyukGram (IG 410) is the same enhanced Instagram client ported to the Instagram 410.1.0 app for iOS 15 and later. It carries the full RyukGram feature set — follow-request tracking, read receipts, story-viewer insights, deleted-message logs, device-ID masking, media downloading, custom chat themes and a configurable tab bar — on top of the older Instagram base, which is what you want if the current Instagram builds are unstable on your device or you deliberately stay on an older app version.",
+      "status": "stable",
+      "upstreamURL": "https://store.ryuksign.com/",
+      "sourceURL": "https://source.ryuksign.com/ig410",
+      "verification": {
+        "method": "altstore",
+        "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "The IG 410 line from the developer's own source (source.ryuksign.com/ig410); versions track the Instagram base build rather than the RyukGram tweak version. Shares com.burbn.instagram with RyukGram, RyukGram Side by Side's sibling builds and iNKillerPlus — install one Instagram mod at a time."
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://source.ryuksign.com/ig410",
+        "appId": "RyukGram (IG 410)",
+        "keepVersions": 1,
+        "descriptionTemplate": "Instagram {version} | RyukGram (IG 410)",
+        "minOSVersion": "15.0"
+      },
+      "manualRelease": {
+        "version": "410.1.0",
+        "date": "2026-07-25",
+        "localizedDescription": "Instagram 410.1.0 | RyukGram (IG 410) v1.3.3 — fallback snapshot of the developer's source.\n\nThe RyukGram feature set on the Instagram 410 base for iOS 15 and later. See the live RyukSign source for the full release notes.",
+        "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+        "size": 267074754,
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "ryukgram-sidebyside",
+      "name": "RyukGram Side by Side",
+      "subtitle": "RyukGram under its own bundle id, next to Instagram",
+      "bundleIdentifier": "com.ryuk.ryukgram",
+      "developerName": "Ryuk (@axryuk)",
+      "category": "social",
+      "tintColor": "E1306C",
+      "icon": "Instagram.webp",
+      "localizedDescription": "RyukGram Side by Side is the RyukGram build packaged under its own bundle identifier, com.ryuk.ryukgram, so it installs alongside the real Instagram app instead of replacing it. Both apps get their own name, icon and login, so you can stay signed into a stock account and a modded one at the same time. This variant ships the no-plugin-loader build.",
+      "status": "stable",
+      "upstreamURL": "https://store.ryuksign.com/",
+      "sourceURL": "https://source.ryuksign.com/duplicate",
+      "verification": {
+        "method": "altstore",
+        "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Distinct bundle identifier (com.ryuk.ryukgram) from the developer's own source, so it does not clash with Instagram or the other Instagram mods in this catalog. iPadOS is supported by the upstream build."
+      },
+      "upstream": {
+        "provider": "altstore",
+        "feedURL": "https://source.ryuksign.com/duplicate",
+        "appId": "RyukGram",
+        "keepVersions": 1,
+        "descriptionTemplate": "Instagram {version} | RyukGram Side by Side",
+        "minOSVersion": "15.0"
+      },
+      "manualRelease": {
+        "version": "446.0.0",
+        "date": "2026-09-09",
+        "localizedDescription": "Instagram 446.0.0 | RyukGram v1.4.0 (side-by-side, no plugins) — fallback snapshot of the developer's source.\n\nThe same build under its own bundle identifier so it installs next to the real Instagram app. See the live RyukSign source for the full release notes.",
+        "downloadURL": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa",
+        "size": 259670417,
+        "minOSVersion": "15.0"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "dopamine",
+      "name": "Dopamine",
+      "subtitle": "Semi-untethered jailbreak for iOS 15 – 26",
+      "bundleIdentifier": "com.opa334.Dopamine",
+      "developerName": "opa334 & contributors",
+      "category": "utilities",
+      "tintColor": "6A4CFF",
+      "icon": "Dopamine.webp",
+      "localizedDescription": "Dopamine is the modern semi-untethered, rootless jailbreak for iOS and iPadOS 15.0 through 26.0.1. It bootstraps a Procursus environment (Sileo and friends) on supported arm64e and arm64 devices, keeps passcode, Touch ID/Face ID and Apple Pay working, and hides its filesystem changes well enough to stay through a userspace reboot. This entry tracks the official Dopamine app the developer publishes on GitHub Releases.",
+      "status": "stable",
+      "upstreamURL": "https://github.com/opa334/Dopamine",
+      "verification": {
+        "method": "github-release",
+        "publisher": "opa334/Dopamine",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA from opa334/Dopamine (the upstream also publishes an identical .tipa for TrollStore; this source serves the .ipa). Supported firmware and device lists change between releases — check the release notes before updating. Sign with your own certificate through SideStore, AltStore, Feather or ESign."
+      },
+      "upstream": {
+        "repo": "opa334/Dopamine",
+        "assetNamePattern": "^Dopamine\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Dopamine {version} | {label}"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "subtitle": "Dopamine fork that hides the jailbreak from apps",
+      "bundleIdentifier": "com.opa334.Dopamine-roothide",
+      "developerName": "roothide",
+      "category": "utilities",
+      "tintColor": "7B4DFF",
+      "icon": "DopamineRootHide.webp",
+      "localizedDescription": "Dopamine (RootHide) is roothide's hardened Dopamine 2 build for iOS 15.0 through 16.7.x. It runs the jailbreak in a hidden, per-app environment: App Store apps do not see the bootstrap or your tweaks unless you explicitly patch them, and extra work is done to hide jailbreak traces from detection. It keeps the usual Dopamine toolchain — Sileo, rootless tweaks and userspace reboots — under a separate bundle identifier so it can sit next to the stock Dopamine app.",
+      "status": "stable",
+      "upstreamURL": "https://github.com/roothide/Dopamine2-roothide",
+      "verification": {
+        "method": "github-release",
+        "publisher": "roothide/Dopamine2-roothide",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA from roothide/Dopamine2-roothide. Upstream tags releases by iOS generation (26, 25, …) while the release name carries the real Dopamine version, so this source reads the version from the release name. Installs as com.opa334.Dopamine-roothide, next to (not over) Dopamine — run only one jailbreak environment at a time."
+      },
+      "upstream": {
+        "repo": "roothide/Dopamine2-roothide",
+        "assetNamePattern": "^Dopamine\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "versionPattern": "2\\.\\d+\\.\\d+\\.\\d+",
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Dopamine (RootHide) {version} | {label}"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "bootstrap",
+      "name": "Bootstrap",
+      "subtitle": "RootHide bootstrap for iOS 15 – 17",
+      "bundleIdentifier": "com.roothide.Bootstrap",
+      "developerName": "roothide",
+      "category": "utilities",
+      "tintColor": "0A84FF",
+      "icon": "Bootstrap.webp",
+      "localizedDescription": "Bootstrap is roothide's semi-jailbreak bootstrap for iOS and iPadOS 15.0 through 17.0 on A8 to A17 Pro and M1/M2 devices. Instead of jailbreaking the whole system it builds a hidden environment that boots Sileo, Zebra and rootless tweaks while App Store apps stay untouched — so banking, streaming and game apps that refuse to run on a jailbroken device keep working. Apps are patched one at a time when you want tweaks inside them, and the whole environment can be removed again.",
+      "status": "stable",
+      "upstreamURL": "https://github.com/roothide/Bootstrap",
+      "verification": {
+        "method": "github-release",
+        "publisher": "roothide/Bootstrap",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned .tipa from roothide/Bootstrap, signed on install like any other sideloaded app. Supports iOS/iPadOS 15.0 – 17.0; requires the Kernel File Descriptor (kfd) exploit support present in the upstream build for your device. Do not combine with a full jailbreak on the same device. Upstream only publishes the TrollStore-named .tipa (the same container as an .ipa); clients that insist on the .ipa extension can rename the downloaded file before installing."
+      },
+      "upstream": {
+        "repo": "roothide/Bootstrap",
+        "assetNamePattern": "^Bootstrap\\.tipa$",
+        "assetSuffixes": [
+          ".tipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Bootstrap {version} | {label}"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "serotonin",
+      "name": "Serotonin",
+      "subtitle": "Semi-jailbreak for iOS 16.5.1 – 17.0",
+      "bundleIdentifier": "pisshill.usprebooter",
+      "developerName": "mineek",
+      "category": "utilities",
+      "tintColor": "FF6B9A",
+      "icon": "Serotonin.webp",
+      "localizedDescription": "Serotonin is a semi-untethered 'semi-jailbreak' for iOS 16.5.1 through 16.7 RC and iOS 17.0 on arm64e devices. Built on the Fugu15 code base, it gives you tweak injection and a Procursus bootstrap without a full jailbreak: tweaks load into the apps you patch, and the device keeps working normally everywhere else.",
+      "status": "unmaintained",
+      "upstreamURL": "https://github.com/mineek/Serotonin",
+      "verification": {
+        "method": "github-release",
+        "publisher": "mineek/Serotonin",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.5.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official .tipa from mineek/Serotonin. Supported firmware is iOS 16.5.1 – 16.7 RC and 17.0; the upstream release line stopped in January 2024 and later Dopamine versions cover much of the same range, so treat this as a legacy option for devices that cannot run Dopamine. Upstream ships the TrollStore-named .tipa (identical container to an .ipa); rename it to .ipa if your client rejects the extension."
+      },
+      "upstream": {
+        "repo": "mineek/Serotonin",
+        "assetNamePattern": "^Serotonin.*\\.tipa$",
+        "assetSuffixes": [
+          ".tipa"
+        ],
+        "maxPages": 2,
+        "keepVersions": 1,
+        "minOSVersion": "16.5.1",
+        "descriptionTemplate": "Serotonin {version} | {label}"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "taurine",
+      "name": "Taurine",
+      "subtitle": "Semi-untethered jailbreak for iOS 14",
+      "bundleIdentifier": "org.coolstar.taurine",
+      "developerName": "Odyssey Team (coolstar)",
+      "category": "utilities",
+      "tintColor": "FF9500",
+      "icon": "Taurine.webp",
+      "localizedDescription": "Taurine is the Odyssey Team's semi-untethered jailbreak for iOS 14.0 – 14.3 on A9 to A14 devices using the cicuta_virosa and amfid exploits. It installs Sileo and a libhooker-based tweak environment, keeps passcode support, and boots into a userspace jailbreak from the app. Useful for keeping vintage firmwares usable on older iPhones and iPads.",
+      "status": "unmaintained",
+      "upstreamURL": "https://github.com/Odyssey-Team/Taurine",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Odyssey-Team/Taurine",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official signed-for-sideloading IPA from Odyssey-Team/Taurine, last released in September 2023 — it is the final upstream build, kept here for iOS 14.0 – 14.3 devices. Sideload with AltStore, SideStore, Feather or ESign; a 7-day certificate works because the jailbreak is re-applied from the app."
+      },
+      "upstream": {
+        "repo": "Odyssey-Team/Taurine",
+        "assetNamePattern": "^Taurine.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 2,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Taurine {version} | {label}"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "odyssey",
+      "name": "Odyssey",
+      "subtitle": "Semi-untethered jailbreak for iOS 13",
+      "bundleIdentifier": "org.coolstar.odyssey",
+      "developerName": "Odyssey Team (coolstar)",
+      "category": "utilities",
+      "tintColor": "A855F7",
+      "icon": "Odyssey.webp",
+      "localizedDescription": "Odyssey is the Odyssey Team's semi-untethered jailbreak for iOS 13.0 – 13.7 on A9 through A13 devices. It uses the same modern approach as Taurine — libhooker tweak injection, Sileo as the package manager and a userspace jailbreak you re-apply after a reboot — and remains the standard choice for iOS 13 firmwares that unc0ver and checkra1n handle less comfortably.",
+      "status": "unmaintained",
+      "upstreamURL": "https://github.com/Odyssey-Team/Odyssey",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Odyssey-Team/Odyssey",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "13.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from Odyssey-Team/Odyssey (last release April 2023, kept for iOS 13.0 – 13.7 devices). Sideloaded like any other app and re-signed every 7 days when using a free certificate."
+      },
+      "upstream": {
+        "repo": "Odyssey-Team/Odyssey",
+        "assetNamePattern": "^Odyssey.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 2,
+        "keepVersions": 1,
+        "minOSVersion": "13.0",
+        "descriptionTemplate": "Odyssey {version} | {label}"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "unc0ver",
+      "name": "unc0ver",
+      "subtitle": "Jailbreak for iOS 11 – 14.8.1",
+      "bundleIdentifier": "science.xnu.undecimus",
+      "developerName": "pwn20wnd",
+      "category": "utilities",
+      "tintColor": "1E90FF",
+      "icon": "unc0ver.webp",
+      "localizedDescription": "unc0ver is the long-running semi-untethered jailbreak by pwn20wnd for iOS 11.0 through 14.8.1. Its final 5.2.0 release covers the widest firmware range of the classic jailbreaks, installing Cydia or Sileo depending on the chosen bootstrap, and it stays useful for the 32-bit era iPhones and iPads that are otherwise stuck without a package manager.",
+      "status": "unmaintained",
+      "upstreamURL": "https://github.com/pwn20wndstuff/Undecimus",
+      "verification": {
+        "method": "github-release",
+        "publisher": "pwn20wndstuff/Undecimus",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "11.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from pwn20wndstuff/Undecimus. Development stopped with version 5.2.0 (June 2020), which is the build served here — it covers iOS 11.0 – 14.8.1 depending on the device. Sign with your own certificate and keep in mind that free certificates expire after seven days, after which the app must be re-signed to re-apply the jailbreak."
+      },
+      "upstream": {
+        "repo": "pwn20wndstuff/Undecimus",
+        "assetNamePattern": "^unc0ver.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 2,
+        "keepVersions": 1,
+        "minOSVersion": "11.0",
+        "descriptionTemplate": "unc0ver {version} | {label}"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "sameboy",
+      "name": "SameBoy",
+      "subtitle": "High-accuracy Game Boy and Game Boy Color emulator",
+      "bundleIdentifier": "com.github.liji32.sameboy.ios",
+      "developerName": "LIJI32",
+      "category": "games",
+      "tintColor": "4CAF50",
+      "icon": "SameBoy.webp",
+      "localizedDescription": "SameBoy is a highly accurate Game Boy and Game Boy Color emulator by LIJI32, ported to iPhone and iPad. It emulates the original hardware closely enough to pass hardware test ROMs, supports Super Game Boy palettes and link-cable emulation between its own instances, ships a built-in debugger, rewinding, save states and cheat support, and lets you import your own ROMs from Files.",
+      "status": "stable",
+      "upstreamURL": "https://github.com/LIJI32/SameBoy",
+      "verification": {
+        "method": "github-release",
+        "publisher": "LIJI32/SameBoy",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "11.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned iOS IPA published on the project's GitHub releases (sameboy_ios_v…). The upstream build targets iOS 11.0 and later (IOS_MIN in the project's Makefile). Brought to you by the same developer whose Game Boy boot ROM is used by other emulators."
+      },
+      "upstream": {
+        "repo": "LIJI32/SameBoy",
+        "assetNamePattern": "^sameboy_ios_v[\\d.]+\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "11.0",
+        "descriptionTemplate": "SameBoy {version} | {label}"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "gopeed",
+      "name": "Gopeed",
+      "subtitle": "Modern download manager for HTTP, BitTorrent and more",
+      "bundleIdentifier": "com.gopeed.gopeed",
+      "developerName": "GopeedLab",
+      "category": "networking",
+      "tintColor": "1E88E5",
+      "icon": "Gopeed.webp",
+      "localizedDescription": "Gopeed is a modern, open-source download manager written in Go with a Flutter interface. On iOS it handles HTTP/HTTPS, BitTorrent and magnet links, splits downloads into multiple connections, resumes interrupted transfers, and lets you queue and manage everything with upload and download limits. It is the maintained alternative to iTorrent when you want torrents plus ordinary file downloads in the same app.",
+      "status": "stable",
+      "upstreamURL": "https://github.com/GopeedLab/gopeed",
+      "verification": {
+        "method": "github-release",
+        "publisher": "GopeedLab/gopeed",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned iOS IPA from GopeedLab/gopeed (asset Gopeed-<version>-ios.ipa); pre-release tags such as 2.0.0-beta.1 are skipped so only stable builds are served. GPL-3.0 licensed."
+      },
+      "upstream": {
+        "repo": "GopeedLab/gopeed",
+        "assetNamePattern": "^Gopeed-v?[\\d.]+-ios\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "Gopeed {version} | {label}"
+      }
+    },
+    {
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "slug": "manicemu",
+      "name": "Manic EMU",
+      "subtitle": "All-in-one retro game emulator",
+      "bundleIdentifier": "com.aoshuang.manicemu",
+      "developerName": "Aoshuang Lee (Manic EMU)",
+      "category": "games",
+      "tintColor": "7E57C2",
+      "icon": "ManicEMU.webp",
+      "localizedDescription": "Manic EMU is an all-in-one retro emulator for iPhone and iPad. One app covers NES, SNES, N64, Game Boy and Game Boy Advance, Nintendo DS and 3DS, PlayStation, PSP, Dreamcast, Arcade and more through libretro cores, with a game library that imports your own ROMs, per-core control mapping, cheat support, save states and controller support. The upstream project is AGPL-3.0 and publishes its own signed-for-testing builds.",
+      "status": "stable",
+      "upstreamURL": "https://github.com/Manic-EMU/ManicEMU",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Manic-EMU/ManicEMU",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official unsigned IPA from Manic-EMU/ManicEMU. Upstream ships two variants per release: SideloadJIT (served here, for AltStore, SideStore, Feather and ESign) and TrollStoreJIT (TrollStore only). Some consoles need a JIT enabler such as StikDebug after installation."
+      },
+      "upstream": {
+        "repo": "Manic-EMU/ManicEMU",
+        "assetNamePattern": "SideloadJIT\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Manic EMU {version} | {label}"
       }
     }
   ]

@@ -33,6 +33,7 @@ import hashlib
 import time
 from typing import Any
 
+from omnisource.constants import INSTALLABLE_SUFFIXES
 from omnisource.discovery import newest_version
 from omnisource.domain import Catalog, today
 from omnisource.logutil import log
@@ -44,7 +45,7 @@ HARD = "fail"
 SOFT = "warn"
 OK = "pass"
 
-INSTALLABLE_SUFFIXES = (".ipa",)
+# .tipa is a renamed .ipa (TrollStore); both are installable downloads.
 SHA256_HEX_LEN = 64
 
 

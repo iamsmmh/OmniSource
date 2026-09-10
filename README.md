@@ -10,7 +10,7 @@ One AltStore-compatible source URL for **AltStore · SideStore · Feather · ESi
 
 <!-- omnisource:stats:start -->
 
-**49** apps · **45** upstream sources · **48** verified · **1** community verified · **49/49** downloads online · last sync **2026-09-10**.
+**62** apps · **58** upstream sources · **61** verified · **1** community verified · **62/62** downloads online · last sync **2026-09-10**.
 
 <!-- omnisource:stats:end -->
 
@@ -107,7 +107,7 @@ The complete generated catalog is below — it refreshes automatically on every 
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-10 · 49 apps · 49/49 downloads reachable._
+_Catalogue last changed 2026-09-10 · 62 apps · 62/62 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -160,6 +160,19 @@ _Catalogue last changed 2026-09-10 · 49 apps · 49/49 downloads reachable._
 | **Fladder** | `nl.jknaapen.fladder` | `0.11.1` | 2026-09-08 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/fladder.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/fladder.json) | [`fladder.json`](https://iamsmmh.github.io/OmniSource/feeds/fladder.json) | [`fladder.xml`](https://iamsmmh.github.io/OmniSource/feeds/fladder.xml) |
 | **AnymeX** | `com.ryan.anymex` | `3.1.7` | 2026-08-30 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/anymex.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/anymex.json) | [`anymex.json`](https://iamsmmh.github.io/OmniSource/feeds/anymex.json) | [`anymex.xml`](https://iamsmmh.github.io/OmniSource/feeds/anymex.xml) |
 | **Sora** | `me.cranci.sulfur` | `1.3.0` | 2026-08-20 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sora.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sora.json) | [`sora.json`](https://iamsmmh.github.io/OmniSource/feeds/sora.json) | [`sora.xml`](https://iamsmmh.github.io/OmniSource/feeds/sora.xml) |
+| **RyukGram** | `com.burbn.instagram` | `446.0.0` | 2026-09-09 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json) | [`ryukgram.json`](https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json) | [`ryukgram.xml`](https://iamsmmh.github.io/OmniSource/feeds/ryukgram.xml) |
+| **RyukGram (IG 410)** | `com.burbn.instagram` | `410.1.0` | 2026-07-25 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram-ig410.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram-ig410.json) | [`ryukgram-ig410.json`](https://iamsmmh.github.io/OmniSource/feeds/ryukgram-ig410.json) | [`ryukgram-ig410.xml`](https://iamsmmh.github.io/OmniSource/feeds/ryukgram-ig410.xml) |
+| **RyukGram Side by Side** | `com.ryuk.ryukgram` | `446.0.0` | 2026-09-09 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram-sidebyside.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/ryukgram-sidebyside.json) | [`ryukgram-sidebyside.json`](https://iamsmmh.github.io/OmniSource/feeds/ryukgram-sidebyside.json) | [`ryukgram-sidebyside.xml`](https://iamsmmh.github.io/OmniSource/feeds/ryukgram-sidebyside.xml) |
+| **Dopamine** | `com.opa334.Dopamine` | `3.0.9` | 2026-08-22 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/dopamine.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/dopamine.json) | [`dopamine.json`](https://iamsmmh.github.io/OmniSource/feeds/dopamine.json) | [`dopamine.xml`](https://iamsmmh.github.io/OmniSource/feeds/dopamine.xml) |
+| **Dopamine (RootHide)** | `com.opa334.Dopamine-roothide` | `2.4.9.26` | 2026-09-07 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.json) | [`dopamine-roothide.json`](https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.json) | [`dopamine-roothide.xml`](https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.xml) |
+| **Bootstrap** | `com.roothide.Bootstrap` | `2.2.1` | 2026-06-12 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/bootstrap.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/bootstrap.json) | [`bootstrap.json`](https://iamsmmh.github.io/OmniSource/feeds/bootstrap.json) | [`bootstrap.xml`](https://iamsmmh.github.io/OmniSource/feeds/bootstrap.xml) |
+| **Serotonin** | `pisshill.usprebooter` | `1.2.1` | 2024-01-17 | 🔴 unmaintained | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/serotonin.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/serotonin.json) | [`serotonin.json`](https://iamsmmh.github.io/OmniSource/feeds/serotonin.json) | [`serotonin.xml`](https://iamsmmh.github.io/OmniSource/feeds/serotonin.xml) |
+| **Taurine** | `org.coolstar.taurine` | `1.1.7` | 2023-09-23 | 🔴 unmaintained | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/taurine.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/taurine.json) | [`taurine.json`](https://iamsmmh.github.io/OmniSource/feeds/taurine.json) | [`taurine.xml`](https://iamsmmh.github.io/OmniSource/feeds/taurine.xml) |
+| **Odyssey** | `org.coolstar.odyssey` | `1.4.3` | 2023-04-04 | 🔴 unmaintained | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/odyssey.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/odyssey.json) | [`odyssey.json`](https://iamsmmh.github.io/OmniSource/feeds/odyssey.json) | [`odyssey.xml`](https://iamsmmh.github.io/OmniSource/feeds/odyssey.xml) |
+| **unc0ver** | `science.xnu.undecimus` | `5.2.0` | 2020-06-09 | 🔴 unmaintained | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/unc0ver.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/unc0ver.json) | [`unc0ver.json`](https://iamsmmh.github.io/OmniSource/feeds/unc0ver.json) | [`unc0ver.xml`](https://iamsmmh.github.io/OmniSource/feeds/unc0ver.xml) |
+| **SameBoy** | `com.github.liji32.sameboy.ios` | `1.0.3` | 2026-03-04 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sameboy.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/sameboy.json) | [`sameboy.json`](https://iamsmmh.github.io/OmniSource/feeds/sameboy.json) | [`sameboy.xml`](https://iamsmmh.github.io/OmniSource/feeds/sameboy.xml) |
+| **Gopeed** | `com.gopeed.gopeed` | `1.9.3` | 2026-03-18 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/gopeed.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/gopeed.json) | [`gopeed.json`](https://iamsmmh.github.io/OmniSource/feeds/gopeed.json) | [`gopeed.xml`](https://iamsmmh.github.io/OmniSource/feeds/gopeed.xml) |
+| **Manic EMU** | `com.aoshuang.manicemu` | `2.0.0` | 2026-09-03 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/feeds/manicemu.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/feeds/manicemu.json) | [`manicemu.json`](https://iamsmmh.github.io/OmniSource/feeds/manicemu.json) | [`manicemu.xml`](https://iamsmmh.github.io/OmniSource/feeds/manicemu.xml) |
 
 <!-- omnisource:catalog:end -->
 
@@ -290,7 +303,7 @@ Golden rule: change `catalog.json`, never the generated files. Scripts are Pytho
 
 **Adding an app**
 
-1. Add an entry to `catalog.json`: `slug`, identity, `icon` (add a PNG under `assets/` and a WebP twin), `verification` (source method + publisher), `compatibility`, and an `upstream` block pointing at the **official** source (`repo` + matching `assetSuffixes` for GitHub releases, or `feedURL` for a developer AltStore feed; `manualRelease` only when no live upstream exists).
+1. Add an entry to `catalog.json`: `slug`, identity, `icon` (add a PNG under `assets/` and a WebP twin), `verification` (source method + publisher), `compatibility`, and an `upstream` block pointing at the **official** source (`repo` + matching `assetSuffixes` for GitHub releases, or `feedURL` for a developer AltStore feed; `manualRelease` for a last-resort snapshot when no live upstream exists).
 2. Run `python3 scripts/omnisource.py` and commit the regenerated feeds, app page and README blocks.
 
 Useful optional `upstream` knobs:
