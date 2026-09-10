@@ -483,10 +483,10 @@ def stage_build(
         "color": "2ea043" if verified == len(catalog.apps) else "d29922",
     }
 
-    # sources.json is the human-readable repositories/sources index; write it
-    # indented so it reads vertically instead of one long line. Every other
-    # generated document stays compact for feed clients.
-    changed = atomic_write_many(documents, pretty=lambda path: path.name == "sources.json")
+    # Keep every generated JSON feed vertical/readable. The canonical files
+    # live in feeds/; the site builder creates any compatibility URL copies
+    # later, so generated artifacts never need to be stored at repository root.
+    changed = atomic_write_many(documents, pretty=lambda path: True)
 
     # RSS 2.0 / Atom XML feeds: one combined feed plus a per-app feed.
     rss_content = render_rss_feed(catalog, state, limit=25)

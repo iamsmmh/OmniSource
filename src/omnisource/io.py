@@ -19,25 +19,18 @@ def read_json(path: Path) -> Any | None:
 
 
 def dumps(data: Any) -> str:
-    # Compact by design: the feeds are published four ways (feeds/, flat root
-    # copies, /api/ mirror and .gz twins) and served to feed clients, so the
-    # byte count matters. Structure and key order stay fully deterministic.
+    """Serialize compact deterministic JSON for generic callers."""
     return json.dumps(data, separators=(",", ":"), ensure_ascii=False) + "\n"
 
 
 def dumps_pretty(data: Any) -> str:
-    """Serialize ``data`` with newlines and 2-space indentation.
-
-    Reserved for the few human-inspected index documents (currently
-    ``feeds/sources.json``, the repositories/sources list); everything else
-    stays compact because it is served to feed clients four ways.
-    """
+    """Serialize a document as readable, deterministic UTF-8 JSON."""
     return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
 
 
 def write_json(path: Path, data: Any) -> bool:
     """Atomically write ``data``; return True when the file actually changed."""
-    return atomic_write_text(path, dumps(data))
+    return atomic_write_text(path, dumps_pretty(data))
 
 
 def atomic_write_text(path: Path, payload: str) -> bool:
