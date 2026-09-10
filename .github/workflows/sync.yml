@@ -214,6 +214,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    # GitHub's own managed branch deployment ("pages build and deployment")
+    # deploys the same Pages site. Sharing its `pages` concurrency group stops
+    # the two deploys racing — a lost race fails the run with
+    # "deployment in progress" even though nothing is broken — while
+    # cancel-in-progress stays off so a queued deployment is never dropped.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     permissions:
       pages: write
       id-token: write
