@@ -23,8 +23,11 @@ serve: site
 	$(PYTHON) -m http.server $(PORT) --bind 0.0.0.0 --directory _site
 
 # Build the site, serve it locally and verify every page/feed/API URL works.
+# `--root` additionally verifies the repository tree, which is what GitHub
+# Pages serves while it is configured for a branch deployment.
 smoke:
 	$(PYTHON) scripts/smoke_test.py
+	$(PYTHON) scripts/smoke_test.py --root --no-build
 
 validate:
 	$(PYTHON) scripts/validate.py
@@ -44,6 +47,7 @@ check: lint validate test
 	$(PYTHON) scripts/merge_feeds.py --check
 	$(PYTHON) scripts/check_reproducible.py --diff
 	$(PYTHON) scripts/smoke_test.py
+	$(PYTHON) scripts/smoke_test.py --root --no-build
 	$(PYTHON) -m ruff format --check src scripts tests
 
 clean:

@@ -49,6 +49,11 @@ jobs:
       - name: Verify published root URLs match feeds/
         run: python3 scripts/publish_root.py --check
 
+      # Serve the repository tree the way the branch deployment does and
+      # request every page, flat feed, API document and gz twin.
+      - name: Smoke-test the branch-served site
+        run: python3 scripts/smoke_test.py --root --no-build
+
       # Guards the invariant that feeds/ and apps/ are generated, never
       # hand-edited: a rebuild from committed state must be a no-op.
       # Date-stamped values (generatedAt, lastSync, RSS timestamps, analytics
