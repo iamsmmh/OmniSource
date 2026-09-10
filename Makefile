@@ -1,4 +1,4 @@
-.PHONY: all build site serve validate test format lint check clean
+.PHONY: all build site serve smoke validate test format lint check clean
 
 PYTHON ?= python3
 PORT ?= 8000
@@ -18,6 +18,10 @@ site:
 serve: site
 	$(PYTHON) -m http.server $(PORT) --bind 0.0.0.0 --directory _site
 
+# Build the site, serve it locally and verify every page/feed/API URL works.
+smoke:
+	$(PYTHON) scripts/smoke_test.py
+
 validate:
 	$(PYTHON) scripts/validate.py
 	bash scripts/validate_jq.sh
@@ -34,6 +38,7 @@ lint:
 check: lint validate test
 	$(PYTHON) scripts/merge_feeds.py --check
 	$(PYTHON) scripts/check_reproducible.py --diff
+	$(PYTHON) scripts/smoke_test.py
 	$(PYTHON) -m ruff format --check src scripts tests
 
 clean:

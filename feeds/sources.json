@@ -1,1 +1,335 @@
-{"schemaVersion":1,"generatedAt":"2026-09-10","count":18,"feed":{"name":"OmniSource","identifier":"com.iamsmmh.omnisource","baseURL":"https://iamsmmh.github.io/OmniSource","appsURL":"https://iamsmmh.github.io/OmniSource/apps.json","website":"https://iamsmmh.github.io/OmniSource/"},"clients":[{"id":"altstore","name":"AltStore","icon":"AltStore.webp","url":"https://altstore.io"},{"id":"sidestore","name":"SideStore","icon":"SideStore.webp","url":"https://sidestore.io"},{"id":"feather","name":"Feather","icon":"Feather.webp","url":"https://github.com/claration/Feather"},{"id":"esign","name":"ESign","icon":"E-Sign.webp"},{"id":"livecontainer","name":"LiveContainer","icon":"LiveContainer.webp","url":"https://github.com/LiveContainer/LiveContainer"}],"sources":[{"id":"Aidoku/Aidoku","source":"Aidoku/Aidoku","type":"github","homepage":"https://github.com/Aidoku/Aidoku","sourceURL":"https://github.com/Aidoku/Aidoku","publisher":"Aidoku/Aidoku","apps":[{"slug":"aidoku","name":"Aidoku","version":"0.9"}]},{"id":"Ashreq/ashstore-repo","source":"Ashreq/ashstore-repo","type":"github","homepage":"https://github.com/Ashreq/ashstore-repo","sourceURL":"https://github.com/Ashreq/ashstore-repo","publisher":"Ashreq/ashstore-repo","apps":[{"slug":"maxtube","name":"MaxTube","version":"21.31.3"}]},{"id":"BandarHL/BHTwitter","source":"BandarHL/BHTwitter","type":"github","homepage":"https://github.com/BandarHL/BHTwitter","sourceURL":"https://github.com/BandarHL/BHTwitter","publisher":"BandarHL/BHTwitter","apps":[{"slug":"bhtwitter","name":"BHTwitter","version":"4.4"}]},{"id":"claration/Feather","source":"claration/Feather","type":"github","homepage":"https://github.com/claration/Feather","sourceURL":"https://github.com/claration/Feather","publisher":"claration/Feather","apps":[{"slug":"feather","name":"Feather","version":"2.9.0"}]},{"id":"iamsmmh/OmniSource","source":"Community build of arichornlover/uYouEnhanced, mirrored on archive.org","type":"github","homepage":"https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6","sourceURL":"https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6","publisher":"Community build of arichornlover/uYouEnhanced, mirrored on archive.org","apps":[{"slug":"uyouenhanced","name":"uYouEnhanced","version":"21.14.4"}]},{"id":"https://repo.ikghd.me/repo.json","source":"iKarwan (repo.ikghd.me)","type":"altstore","homepage":"https://repo.ikghd.me","sourceURL":"https://repo.ikghd.me","publisher":"iKarwan (repo.ikghd.me)","apps":[{"slug":"ytkp","name":"YTKillerPlus","version":"21.36.6"},{"slug":"inkillerplus","name":"iNKillerPlus","version":"446.0.0"},{"slug":"ttkillerplus","name":"TTKillerPlus","version":"46.8.0"}]},{"id":"itzzace/ytkace","source":"itzzace/ytkace","type":"github","homepage":"https://github.com/itzzace/ytkace","sourceURL":"https://github.com/itzzace/ytkace","publisher":"itzzace/ytkace","apps":[{"slug":"ytkace","name":"YTKACE","version":"21.35.3"}]},{"id":"LiveContainer/LiveContainer","source":"LiveContainer/LiveContainer","type":"github","homepage":"https://github.com/LiveContainer/LiveContainer","sourceURL":"https://github.com/LiveContainer/LiveContainer","publisher":"LiveContainer/LiveContainer","apps":[{"slug":"livecontainer","name":"LiveContainer","version":"3.8.0"}]},{"id":"lo-cafe/winston","source":"lo-cafe/winston","type":"github","homepage":"https://github.com/lo-cafe/winston","sourceURL":"https://github.com/lo-cafe/winston","publisher":"lo-cafe/winston","apps":[{"slug":"winston","name":"Winston","version":"1.1.5"}]},{"id":"Mark02-2012/MaxMusic","source":"Mark02-2012/MaxMusic","type":"github","homepage":"https://github.com/Mark02-2012/MaxMusic","sourceURL":"https://github.com/Mark02-2012/MaxMusic","publisher":"Mark02-2012/MaxMusic","apps":[{"slug":"maxmusic","name":"MaxMusic","version":"9.35.2"}]},{"id":"mrdrvt99/YouProEXTRA","source":"mrdrvt99/YouProEXTRA","type":"github","homepage":"https://github.com/mrdrvt99/YouProEXTRA","sourceURL":"https://github.com/mrdrvt99/YouProEXTRA","publisher":"mrdrvt99/YouProEXTRA","apps":[{"slug":"ytlite","name":"YouTubePlus","version":"21.24.3"},{"slug":"youpro","name":"YouPro","version":"21.36.6"},{"slug":"youmod","name":"YouMod","version":"21.36.6"}]},{"id":"mrdrvt99/YTMusicUltimate","source":"mrdrvt99/YTMusicUltimate","type":"github","homepage":"https://github.com/mrdrvt99/YTMusicUltimate","sourceURL":"https://github.com/mrdrvt99/YTMusicUltimate","publisher":"mrdrvt99/YTMusicUltimate","apps":[{"slug":"ytmusic","name":"YTMusicUltimate","version":"9.36.1"}]},{"id":"Provenance-Emu/Provenance","source":"Provenance-Emu/Provenance","type":"github","homepage":"https://github.com/Provenance-Emu/Provenance","sourceURL":"https://github.com/Provenance-Emu/Provenance","publisher":"Provenance-Emu/Provenance","apps":[{"slug":"provenance","name":"Provenance","version":"3.3.0"}]},{"id":"SideStore/SideStore","source":"SideStore/SideStore","type":"github","homepage":"https://github.com/SideStore/SideStore","sourceURL":"https://github.com/SideStore/SideStore","publisher":"SideStore/SideStore","apps":[{"slug":"sidestore","name":"SideStore","version":"0.6.3"}]},{"id":"spotiflacapp/SpotiFLAC-Mobile","source":"spotiflacapp/SpotiFLAC-Mobile","type":"github","homepage":"https://github.com/spotiflacapp/SpotiFLAC-Mobile","sourceURL":"https://github.com/spotiflacapp/SpotiFLAC-Mobile","publisher":"spotiflacapp/SpotiFLAC-Mobile","apps":[{"slug":"spotiflac","name":"SpotiFLAC Mobile","version":"4.9.6"}]},{"id":"StikDebug/StikDebug","source":"StikDebug/StikDebug","type":"github","homepage":"https://github.com/StikDebug/StikDebug","sourceURL":"https://github.com/StikDebug/StikDebug","publisher":"StikDebug/StikDebug","apps":[{"slug":"stikdebug","name":"StikDebug","version":"3.1.10"}]},{"id":"utmapp/UTM","source":"utmapp/UTM","type":"github","homepage":"https://github.com/utmapp/UTM","sourceURL":"https://github.com/utmapp/UTM","publisher":"utmapp/UTM","apps":[{"slug":"utm","name":"UTM","version":"4.7.5"}]},{"id":"XITRIX/iTorrent","source":"XITRIX/iTorrent","type":"github","homepage":"https://github.com/XITRIX/iTorrent","sourceURL":"https://github.com/XITRIX/iTorrent","publisher":"XITRIX/iTorrent","apps":[{"slug":"itorrent","name":"iTorrent","version":"2.2.0"}]}]}
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-10",
+  "count": 18,
+  "feed": {
+    "name": "OmniSource",
+    "identifier": "com.iamsmmh.omnisource",
+    "baseURL": "https://iamsmmh.github.io/OmniSource",
+    "appsURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+    "website": "https://iamsmmh.github.io/OmniSource/"
+  },
+  "clients": [
+    {
+      "id": "altstore",
+      "name": "AltStore",
+      "icon": "AltStore.webp",
+      "url": "https://altstore.io"
+    },
+    {
+      "id": "sidestore",
+      "name": "SideStore",
+      "icon": "SideStore.webp",
+      "url": "https://sidestore.io"
+    },
+    {
+      "id": "feather",
+      "name": "Feather",
+      "icon": "Feather.webp",
+      "url": "https://github.com/claration/Feather"
+    },
+    {
+      "id": "esign",
+      "name": "ESign",
+      "icon": "E-Sign.webp"
+    },
+    {
+      "id": "livecontainer",
+      "name": "LiveContainer",
+      "icon": "LiveContainer.webp",
+      "url": "https://github.com/LiveContainer/LiveContainer"
+    }
+  ],
+  "sources": [
+    {
+      "id": "Aidoku/Aidoku",
+      "source": "Aidoku/Aidoku",
+      "type": "github",
+      "homepage": "https://github.com/Aidoku/Aidoku",
+      "sourceURL": "https://github.com/Aidoku/Aidoku",
+      "publisher": "Aidoku/Aidoku",
+      "apps": [
+        {
+          "slug": "aidoku",
+          "name": "Aidoku",
+          "version": "0.9"
+        }
+      ]
+    },
+    {
+      "id": "Ashreq/ashstore-repo",
+      "source": "Ashreq/ashstore-repo",
+      "type": "github",
+      "homepage": "https://github.com/Ashreq/ashstore-repo",
+      "sourceURL": "https://github.com/Ashreq/ashstore-repo",
+      "publisher": "Ashreq/ashstore-repo",
+      "apps": [
+        {
+          "slug": "maxtube",
+          "name": "MaxTube",
+          "version": "21.31.3"
+        }
+      ]
+    },
+    {
+      "id": "BandarHL/BHTwitter",
+      "source": "BandarHL/BHTwitter",
+      "type": "github",
+      "homepage": "https://github.com/BandarHL/BHTwitter",
+      "sourceURL": "https://github.com/BandarHL/BHTwitter",
+      "publisher": "BandarHL/BHTwitter",
+      "apps": [
+        {
+          "slug": "bhtwitter",
+          "name": "BHTwitter",
+          "version": "4.4"
+        }
+      ]
+    },
+    {
+      "id": "claration/Feather",
+      "source": "claration/Feather",
+      "type": "github",
+      "homepage": "https://github.com/claration/Feather",
+      "sourceURL": "https://github.com/claration/Feather",
+      "publisher": "claration/Feather",
+      "apps": [
+        {
+          "slug": "feather",
+          "name": "Feather",
+          "version": "2.9.0"
+        }
+      ]
+    },
+    {
+      "id": "iamsmmh/OmniSource",
+      "source": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
+      "type": "github",
+      "homepage": "https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6",
+      "sourceURL": "https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6",
+      "publisher": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
+      "apps": [
+        {
+          "slug": "uyouenhanced",
+          "name": "uYouEnhanced",
+          "version": "21.14.4"
+        }
+      ]
+    },
+    {
+      "id": "https://repo.ikghd.me/repo.json",
+      "source": "iKarwan (repo.ikghd.me)",
+      "type": "altstore",
+      "homepage": "https://repo.ikghd.me",
+      "sourceURL": "https://repo.ikghd.me",
+      "publisher": "iKarwan (repo.ikghd.me)",
+      "apps": [
+        {
+          "slug": "ytkp",
+          "name": "YTKillerPlus",
+          "version": "21.36.6"
+        },
+        {
+          "slug": "inkillerplus",
+          "name": "iNKillerPlus",
+          "version": "446.0.0"
+        },
+        {
+          "slug": "ttkillerplus",
+          "name": "TTKillerPlus",
+          "version": "46.8.0"
+        }
+      ]
+    },
+    {
+      "id": "itzzace/ytkace",
+      "source": "itzzace/ytkace",
+      "type": "github",
+      "homepage": "https://github.com/itzzace/ytkace",
+      "sourceURL": "https://github.com/itzzace/ytkace",
+      "publisher": "itzzace/ytkace",
+      "apps": [
+        {
+          "slug": "ytkace",
+          "name": "YTKACE",
+          "version": "21.35.3"
+        }
+      ]
+    },
+    {
+      "id": "LiveContainer/LiveContainer",
+      "source": "LiveContainer/LiveContainer",
+      "type": "github",
+      "homepage": "https://github.com/LiveContainer/LiveContainer",
+      "sourceURL": "https://github.com/LiveContainer/LiveContainer",
+      "publisher": "LiveContainer/LiveContainer",
+      "apps": [
+        {
+          "slug": "livecontainer",
+          "name": "LiveContainer",
+          "version": "3.8.0"
+        }
+      ]
+    },
+    {
+      "id": "lo-cafe/winston",
+      "source": "lo-cafe/winston",
+      "type": "github",
+      "homepage": "https://github.com/lo-cafe/winston",
+      "sourceURL": "https://github.com/lo-cafe/winston",
+      "publisher": "lo-cafe/winston",
+      "apps": [
+        {
+          "slug": "winston",
+          "name": "Winston",
+          "version": "1.1.5"
+        }
+      ]
+    },
+    {
+      "id": "Mark02-2012/MaxMusic",
+      "source": "Mark02-2012/MaxMusic",
+      "type": "github",
+      "homepage": "https://github.com/Mark02-2012/MaxMusic",
+      "sourceURL": "https://github.com/Mark02-2012/MaxMusic",
+      "publisher": "Mark02-2012/MaxMusic",
+      "apps": [
+        {
+          "slug": "maxmusic",
+          "name": "MaxMusic",
+          "version": "9.35.2"
+        }
+      ]
+    },
+    {
+      "id": "mrdrvt99/YouProEXTRA",
+      "source": "mrdrvt99/YouProEXTRA",
+      "type": "github",
+      "homepage": "https://github.com/mrdrvt99/YouProEXTRA",
+      "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+      "publisher": "mrdrvt99/YouProEXTRA",
+      "apps": [
+        {
+          "slug": "ytlite",
+          "name": "YouTubePlus",
+          "version": "21.24.3"
+        },
+        {
+          "slug": "youpro",
+          "name": "YouPro",
+          "version": "21.36.6"
+        },
+        {
+          "slug": "youmod",
+          "name": "YouMod",
+          "version": "21.36.6"
+        }
+      ]
+    },
+    {
+      "id": "mrdrvt99/YTMusicUltimate",
+      "source": "mrdrvt99/YTMusicUltimate",
+      "type": "github",
+      "homepage": "https://github.com/mrdrvt99/YTMusicUltimate",
+      "sourceURL": "https://github.com/mrdrvt99/YTMusicUltimate",
+      "publisher": "mrdrvt99/YTMusicUltimate",
+      "apps": [
+        {
+          "slug": "ytmusic",
+          "name": "YTMusicUltimate",
+          "version": "9.36.1"
+        }
+      ]
+    },
+    {
+      "id": "Provenance-Emu/Provenance",
+      "source": "Provenance-Emu/Provenance",
+      "type": "github",
+      "homepage": "https://github.com/Provenance-Emu/Provenance",
+      "sourceURL": "https://github.com/Provenance-Emu/Provenance",
+      "publisher": "Provenance-Emu/Provenance",
+      "apps": [
+        {
+          "slug": "provenance",
+          "name": "Provenance",
+          "version": "3.3.0"
+        }
+      ]
+    },
+    {
+      "id": "SideStore/SideStore",
+      "source": "SideStore/SideStore",
+      "type": "github",
+      "homepage": "https://github.com/SideStore/SideStore",
+      "sourceURL": "https://github.com/SideStore/SideStore",
+      "publisher": "SideStore/SideStore",
+      "apps": [
+        {
+          "slug": "sidestore",
+          "name": "SideStore",
+          "version": "0.6.3"
+        }
+      ]
+    },
+    {
+      "id": "spotiflacapp/SpotiFLAC-Mobile",
+      "source": "spotiflacapp/SpotiFLAC-Mobile",
+      "type": "github",
+      "homepage": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+      "sourceURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+      "publisher": "spotiflacapp/SpotiFLAC-Mobile",
+      "apps": [
+        {
+          "slug": "spotiflac",
+          "name": "SpotiFLAC Mobile",
+          "version": "4.9.6"
+        }
+      ]
+    },
+    {
+      "id": "StikDebug/StikDebug",
+      "source": "StikDebug/StikDebug",
+      "type": "github",
+      "homepage": "https://github.com/StikDebug/StikDebug",
+      "sourceURL": "https://github.com/StikDebug/StikDebug",
+      "publisher": "StikDebug/StikDebug",
+      "apps": [
+        {
+          "slug": "stikdebug",
+          "name": "StikDebug",
+          "version": "3.1.10"
+        }
+      ]
+    },
+    {
+      "id": "utmapp/UTM",
+      "source": "utmapp/UTM",
+      "type": "github",
+      "homepage": "https://github.com/utmapp/UTM",
+      "sourceURL": "https://github.com/utmapp/UTM",
+      "publisher": "utmapp/UTM",
+      "apps": [
+        {
+          "slug": "utm",
+          "name": "UTM",
+          "version": "4.7.5"
+        }
+      ]
+    },
+    {
+      "id": "XITRIX/iTorrent",
+      "source": "XITRIX/iTorrent",
+      "type": "github",
+      "homepage": "https://github.com/XITRIX/iTorrent",
+      "sourceURL": "https://github.com/XITRIX/iTorrent",
+      "publisher": "XITRIX/iTorrent",
+      "apps": [
+        {
+          "slug": "itorrent",
+          "name": "iTorrent",
+          "version": "2.2.0"
+        }
+      ]
+    }
+  ]
+}

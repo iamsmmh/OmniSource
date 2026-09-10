@@ -14,7 +14,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from omnisource.io import atomic_write_many, dumps, read_json, write_json
+from omnisource.io import atomic_write_many, dumps, dumps_pretty, read_json, write_json
 
 
 class TestIO(unittest.TestCase):
@@ -23,6 +23,29 @@ class TestIO(unittest.TestCase):
         rendered = dumps(data)
         self.assertTrue(rendered.endswith("\n"))
         self.assertEqual(json.loads(rendered), data)
+
+    def test_dumps_pretty_indents(self) -> None:
+        data = {"name": "test", "apps": [1, 2]}
+        rendered = dumps_pretty(data)
+        self.assertTrue(rendered.endswith("\n"))
+        self.assertIn("\n  ", rendered)  # multi-line / indented, not compact
+        self.assertEqual(json.loads(rendered), data)
+
+    def test_atomic_write_many_pretty_selective(self) -> None:
+        # Only documents the ``pretty`` predicate accepts are indented; the
+        # rest stay compact so feed clients keep their single-line payloads.
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            pretty_doc = root / "sources.json"
+            compact_doc = root / "apps.json"
+            docs = {
+                pretty_doc: {"sources": [{"id": "a/b", "apps": []}]},
+                compact_doc: {"apps": [{"name": "A"}]},
+            }
+            changed = atomic_write_many(docs, pretty=lambda path: path.name == "sources.json")
+            self.assertEqual(len(changed), 2)
+            self.assertIn("\n  ", pretty_doc.read_text(encoding="utf-8"))
+            self.assertNotIn("\n  ", compact_doc.read_text(encoding="utf-8"))
 
     def test_write_and_read_json(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
