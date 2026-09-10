@@ -1,10 +1,14 @@
-.PHONY: all build publish site serve smoke validate test format lint check clean
+.PHONY: all build publish site serve smoke validate test format lint check clean version
 
 PYTHON ?= python3
 PORT ?= 8000
 export PYTHONPATH := src
 
 all: build check
+
+# Print the installed OmniSource version.
+version:
+	$(PYTHON) -m omnisource --version
 
 # Refresh generated source feeds from their configured upstreams.
 build:

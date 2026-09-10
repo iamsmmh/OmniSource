@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import sys
 
+from omnisource import __version__
 from omnisource.errors import SyncError
 from omnisource.logutil import configure_logging, log
 from omnisource.pipeline import run
@@ -34,11 +35,17 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument("--workers", type=int, default=8, help="concurrent link probes (default: 8)")
     parser.add_argument("-v", "--verbose", action="store_true", help="debug logging")
+    parser.add_argument(
+        "--version", action="store_true", help="show the OmniSource version and exit"
+    )
     return parser.parse_args(argv)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+    if args.version:
+        print(__version__)
+        return 0
     configure_logging(args.verbose)
     try:
         code, _report = run(
