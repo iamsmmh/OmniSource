@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 38,
+  "count": 43,
   "formula": {
     "weights": {
       "recency": 0.4,
@@ -852,6 +852,23 @@
       "downloadReachable": true
     },
     {
+      "slug": "vcmi",
+      "name": "VCMI",
+      "category": "games",
+      "version": "1.7.5",
+      "releaseDate": "2026-08-15",
+      "score": 0.6267,
+      "signals": {
+        "recency": 0.5667,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
       "slug": "delta",
       "name": "Delta",
       "category": "games",
@@ -877,6 +894,23 @@
       "score": 0.5467,
       "signals": {
         "recency": 0.3667,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "qbitcontroller",
+      "name": "qBitController",
+      "category": "utilities",
+      "version": "2.2.1",
+      "releaseDate": "2026-07-28",
+      "score": 0.5067,
+      "signals": {
+        "recency": 0.2667,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0
@@ -1163,6 +1197,57 @@
       "category": "utilities",
       "version": "1.6.6",
       "releaseDate": "2025-11-02",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "mame4ios",
+      "name": "MAME4iOS",
+      "category": "games",
+      "version": "2022.5",
+      "releaseDate": "2022-12-12",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "minivmac",
+      "name": "Mini vMac",
+      "category": "games",
+      "version": "2.6",
+      "releaseDate": "2024-07-09",
+      "score": 0.4,
+      "signals": {
+        "recency": 0.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
+      "downloadReachable": true
+    },
+    {
+      "slug": "stiknes",
+      "name": "StikNES",
+      "category": "games",
+      "version": "2.0.2",
+      "releaseDate": "2025-02-23",
       "score": 0.4,
       "signals": {
         "recency": 0.0,

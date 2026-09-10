@@ -2466,6 +2466,316 @@
           "instructions": "Open LiveContainer, choose Sources and paste the URL."
         }
       ]
+    },
+    {
+      "slug": "vcmi",
+      "name": "VCMI",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/vcmi.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/vcmi.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/vcmi.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/vcmi.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/vcmi.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/vcmi.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/vcmi.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/vcmi.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/vcmi.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "mame4ios",
+      "name": "MAME4iOS",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/mame4ios.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/mame4ios.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/mame4ios.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/mame4ios.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/mame4ios.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/mame4ios.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/mame4ios.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/mame4ios.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/mame4ios.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "qbitcontroller",
+      "name": "qBitController",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/qbitcontroller.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/qbitcontroller.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/qbitcontroller.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/qbitcontroller.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/qbitcontroller.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/qbitcontroller.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/qbitcontroller.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/qbitcontroller.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/qbitcontroller.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "minivmac",
+      "name": "Mini vMac",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/minivmac.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/minivmac.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/minivmac.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/minivmac.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/minivmac.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/minivmac.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/minivmac.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/minivmac.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/minivmac.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
+    },
+    {
+      "slug": "stiknes",
+      "name": "StikNES",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/stiknes.json",
+      "cards": [
+        {
+          "client": "altstore",
+          "name": "AltStore",
+          "icon": "AltStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "altstore://source?url=https://iamsmmh.github.io/OmniSource/stiknes.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/stiknes.json",
+          "instructions": "Tap to add the source to AltStore."
+        },
+        {
+          "client": "sidestore",
+          "name": "SideStore",
+          "icon": "SideStore.webp",
+          "compatible": true,
+          "recommended": true,
+          "manualSetup": false,
+          "url": "sidestore://source?url=https://iamsmmh.github.io/OmniSource/stiknes.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/stiknes.json",
+          "instructions": "Tap to add the source to SideStore."
+        },
+        {
+          "client": "feather",
+          "name": "Feather",
+          "icon": "Feather.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": false,
+          "url": "feather://source/iamsmmh.github.io/OmniSource/stiknes.json",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/stiknes.json",
+          "instructions": "Tap to add the source to Feather."
+        },
+        {
+          "client": "esign",
+          "name": "ESign",
+          "icon": "E-Sign.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/stiknes.json",
+          "instructions": "Open ESign, choose Sources and paste the URL."
+        },
+        {
+          "client": "livecontainer",
+          "name": "LiveContainer",
+          "icon": "LiveContainer.webp",
+          "compatible": true,
+          "recommended": false,
+          "manualSetup": true,
+          "url": "",
+          "feedURL": "https://iamsmmh.github.io/OmniSource/stiknes.json",
+          "instructions": "Open LiveContainer, choose Sources and paste the URL."
+        }
+      ]
     }
   ]
 }

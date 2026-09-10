@@ -10,7 +10,7 @@ One AltStore-compatible feed for **AltStore · SideStore · Feather · ESign · 
 
 <!-- omnisource:stats:start -->
 
-**38** apps · **34** upstream sources · **37** verified · **1** community verified · **38/38** downloads online · last sync **2026-09-10**.
+**43** apps · **39** upstream sources · **42** verified · **1** community verified · **43/43** downloads online · last sync **2026-09-10**.
 
 <!-- omnisource:stats:end -->
 
@@ -104,7 +104,7 @@ The complete generated catalog is below — it refreshes automatically on every 
 
 <!-- omnisource:catalog:start -->
 
-_Catalogue last changed 2026-09-10 · 38 apps · 38/38 downloads reachable._
+_Catalogue last changed 2026-09-10 · 43 apps · 43/43 downloads reachable._
 
 | App | Bundle ID | Version | Updated | Status | Download | Install | Feed | RSS |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -146,6 +146,11 @@ _Catalogue last changed 2026-09-10 · 38 apps · 38/38 downloads reachable._
 | **iSH** | `app.ish.iSH` | `813` | 2026-08-22 | 🟡 beta | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/ish.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/ish.json) | [`ish.json`](https://iamsmmh.github.io/OmniSource/ish.json) | [`ish.xml`](https://iamsmmh.github.io/OmniSource/ish.xml) |
 | **qBitControl** | `MikeMichael225.qBitControl` | `1.4.1` | 2026-07-23 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/qbitcontrol.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/qbitcontrol.json) | [`qbitcontrol.json`](https://iamsmmh.github.io/OmniSource/qbitcontrol.json) | [`qbitcontrol.xml`](https://iamsmmh.github.io/OmniSource/qbitcontrol.xml) |
 | **qBitConnect** | `com.bluematter.qbitconnect` | `1.6.6` | 2025-11-02 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/qbitconnect.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/qbitconnect.json) | [`qbitconnect.json`](https://iamsmmh.github.io/OmniSource/qbitconnect.json) | [`qbitconnect.xml`](https://iamsmmh.github.io/OmniSource/qbitconnect.xml) |
+| **VCMI** | `eu.vcmi.vcmiclient` | `1.7.5` | 2026-08-15 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/vcmi.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/vcmi.json) | [`vcmi.json`](https://iamsmmh.github.io/OmniSource/vcmi.json) | [`vcmi.xml`](https://iamsmmh.github.io/OmniSource/vcmi.xml) |
+| **MAME4iOS** | `com.example.mame4ios` | `2022.5` | 2022-12-12 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/mame4ios.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/mame4ios.json) | [`mame4ios.json`](https://iamsmmh.github.io/OmniSource/mame4ios.json) | [`mame4ios.xml`](https://iamsmmh.github.io/OmniSource/mame4ios.xml) |
+| **qBitController** | `dev.bartuzen.qbitcontroller` | `2.2.1` | 2026-07-28 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/qbitcontroller.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/qbitcontroller.json) | [`qbitcontroller.json`](https://iamsmmh.github.io/OmniSource/qbitcontroller.json) | [`qbitcontroller.xml`](https://iamsmmh.github.io/OmniSource/qbitcontroller.xml) |
+| **Mini vMac** | `net.namedfork.minivmac` | `2.6` | 2024-07-09 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/minivmac.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/minivmac.json) | [`minivmac.json`](https://iamsmmh.github.io/OmniSource/minivmac.json) | [`minivmac.xml`](https://iamsmmh.github.io/OmniSource/minivmac.xml) |
+| **StikNES** | `com.stik.StikNES` | `2.0.2` | 2025-02-23 | 🟢 stable | ✅ | [AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/stiknes.json) · [SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/stiknes.json) | [`stiknes.json`](https://iamsmmh.github.io/OmniSource/stiknes.json) | [`stiknes.xml`](https://iamsmmh.github.io/OmniSource/stiknes.xml) |
 
 <!-- omnisource:catalog:end -->
 

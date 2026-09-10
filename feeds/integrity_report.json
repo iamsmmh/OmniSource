@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 38,
-    "pass": 31,
-    "warn": 7,
+    "apps": 43,
+    "pass": 33,
+    "warn": 10,
     "fail": 0,
     "rejected": 0
   },
@@ -245,6 +245,24 @@
       "status": "pass"
     },
     {
+      "slug": "mame4ios",
+      "name": "MAME4iOS",
+      "asset": {
+        "sha256": null,
+        "size": 52332306,
+        "releaseId": "2022.5",
+        "source": "github",
+        "downloadUrl": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "maxmusic",
       "name": "MaxMusic",
       "asset": {
@@ -279,6 +297,24 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "minivmac",
+      "name": "Mini vMac",
+      "asset": {
+        "sha256": null,
+        "size": 668434,
+        "releaseId": "2.6",
+        "source": "github",
+        "downloadUrl": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "ppsspp",
@@ -343,6 +379,24 @@
         "releaseId": "1.4.1",
         "source": "github",
         "downloadUrl": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "qbitcontroller",
+      "name": "qBitController",
+      "asset": {
+        "sha256": "1b4acd90d9fcf81ec093eaa7530cad1479f53ffd5ff2c2e0ad348462ae77a383",
+        "size": 18243979,
+        "releaseId": "2.2.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/Bartuzen/qBitController/releases/download/v2.2.1/qbitcontroller-2.2.1-ios.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -443,6 +497,24 @@
       "status": "pass"
     },
     {
+      "slug": "stiknes",
+      "name": "StikNES",
+      "asset": {
+        "sha256": null,
+        "size": 7141231,
+        "releaseId": "2.0.2",
+        "source": "github",
+        "downloadUrl": "https://github.com/StikEMU/StikNES-2.0/releases/download/v2.0.2/StikNES.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
+    },
+    {
       "slug": "streamyfin",
       "name": "Streamyfin",
       "asset": {
@@ -513,6 +585,24 @@
         "reachable": true
       },
       "status": "warn"
+    },
+    {
+      "slug": "vcmi",
+      "name": "VCMI",
+      "asset": {
+        "sha256": "dd4313a76d79a125ed5405cd0603c34f8ed4155dba22695f1f24a39a7104875c",
+        "size": 28187923,
+        "releaseId": "1.7.5",
+        "source": "github",
+        "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
     },
     {
       "slug": "voyager",

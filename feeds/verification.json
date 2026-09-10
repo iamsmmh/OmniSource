@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "apps": 38,
-    "verified": 37,
+    "apps": 43,
+    "verified": 42,
     "communityVerified": 1,
     "unverified": 0,
-    "hashVerified": 31,
-    "avgTrustScore": 7.26,
+    "hashVerified": 33,
+    "avgTrustScore": 7.19,
     "trustLevels": [
       "Verified",
       "Trusted",
@@ -277,6 +277,26 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "mame4ios",
+      "name": "MAME4iOS",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "yoshisuga/MAME4iOS",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
       "app": "maxmusic",
       "name": "MaxMusic",
       "status": "VERIFIED",
@@ -315,6 +335,26 @@
       "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
       "trustScore": 7.5,
       "trustBadge": "Trusted"
+    },
+    {
+      "app": "minivmac",
+      "name": "Mini vMac",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "zydeco/minivmac4ios",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
     },
     {
       "app": "ppsspp",
@@ -393,6 +433,26 @@
         "official upstream (github-release)"
       ],
       "downloadURL": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "qbitcontroller",
+      "name": "qBitController",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "Bartuzen/qBitController",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/Bartuzen/qBitController/releases/download/v2.2.1/qbitcontroller-2.2.1-ios.ipa",
       "trustScore": 7.5,
       "trustBadge": "Trusted"
     },
@@ -497,6 +557,26 @@
       "trustBadge": "Trusted"
     },
     {
+      "app": "stiknes",
+      "name": "StikNES",
+      "status": "VERIFIED",
+      "hash_verified": false,
+      "method": "github-release",
+      "publisher": "StikEMU/StikNES-2.0",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": false
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/StikEMU/StikNES-2.0/releases/download/v2.0.2/StikNES.ipa",
+      "trustScore": 6.0,
+      "trustBadge": "Community"
+    },
+    {
       "app": "streamyfin",
       "name": "Streamyfin",
       "status": "VERIFIED",
@@ -553,6 +633,26 @@
         "official upstream (github-release)"
       ],
       "downloadURL": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa",
+      "trustScore": 7.5,
+      "trustBadge": "Trusted"
+    },
+    {
+      "app": "vcmi",
+      "name": "VCMI",
+      "status": "VERIFIED",
+      "hash_verified": true,
+      "method": "github-release",
+      "publisher": "vcmi/vcmi",
+      "checks": {
+        "metadata": true,
+        "urls": true,
+        "fileAvailable": true,
+        "hashVerified": true
+      },
+      "reasons": [
+        "official upstream (github-release)"
+      ],
+      "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa",
       "trustScore": 7.5,
       "trustBadge": "Trusted"
     },

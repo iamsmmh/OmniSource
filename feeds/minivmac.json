@@ -1,0 +1,107 @@
+{
+  "name": "OmniSource - Mini vMac",
+  "identifier": "com.iamsmmh.omnisource.minivmac",
+  "apiVersion": "v2",
+  "subtitle": "Early Macintosh emulator for iOS",
+  "description": "Standalone distribution feed for Mini vMac, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/minivmac.json",
+  "apps": [
+    {
+      "name": "Mini vMac",
+      "bundleIdentifier": "net.namedfork.minivmac",
+      "developerName": "zydeco",
+      "subtitle": "Early Macintosh emulator for iOS",
+      "localizedDescription": "Mini vMac for iOS emulates the earliest Apple Macintosh computers (128K, 512K, Plus and II), letting you run classic System 1 through System 7 software on modern devices. Load your own ROM and disk images, with support for external keyboards, mice and multiple emulated machine variants.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MiniVMac.webp",
+      "tintColor": "B1B6EE",
+      "category": "games",
+      "version": "2.6",
+      "versionDate": "2024-07-09",
+      "versionDescription": "Mini vMac 2.6 | minivmac4ios-2.6\n\n* Added 512×384 variant of Mac II\n* Requires iOS 13.4\n    * Dropping 32-bit support (iOS 9) made the app smaller\n* Prefer pixel-perfect scaling when display scaling filter is set to nearest\n* Auto-hide iOS home indicator\n* Partially fix some command-key shortcuts going to iOS instead of the emulated Mac (#45)\n    * ⌘-w and most others will get passed to the emulated machine if it's running\n    * ⌘-q and ⌘-h don't seem interceptable, the app doesn't receive any key events for them, but ⌘-q doesn't do anything (or maybe it does in some other configuration?), and ⌘-h will take you to the home screen\n* visionOS support (only tested in simulator)\n\n**Full Changelog**: https://github.com/zydeco/minivmac4ios/compare/v2.5...v2.6",
+      "downloadURL": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa",
+      "size": 668434,
+      "versions": [
+        {
+          "version": "2.6",
+          "date": "2024-07-09",
+          "localizedDescription": "Mini vMac 2.6 | minivmac4ios-2.6\n\n* Added 512×384 variant of Mac II\n* Requires iOS 13.4\n    * Dropping 32-bit support (iOS 9) made the app smaller\n* Prefer pixel-perfect scaling when display scaling filter is set to nearest\n* Auto-hide iOS home indicator\n* Partially fix some command-key shortcuts going to iOS instead of the emulated Mac (#45)\n    * ⌘-w and most others will get passed to the emulated machine if it's running\n    * ⌘-q and ⌘-h don't seem interceptable, the app doesn't receive any key events for them, but ⌘-q doesn't do anything (or maybe it does in some other configuration?), and ⌘-h will take you to the home screen\n* visionOS support (only tested in simulator)\n\n**Full Changelog**: https://github.com/zydeco/minivmac4ios/compare/v2.5...v2.6",
+          "downloadURL": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa",
+          "size": 668434,
+          "minOSVersion": "12.0",
+          "releaseUrl": "https://github.com/zydeco/minivmac4ios/releases/tag/v2.6",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "minivmac4ios-2.6.deb",
+              "downloadUrl": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.deb",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "DEB",
+              "size": 659644,
+              "sha256": null,
+              "downloads": 278,
+              "mimeType": "application/x-deb",
+              "installable": true
+            },
+            {
+              "filename": "minivmac4ios-2.6.ipa",
+              "downloadUrl": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 668434,
+              "sha256": null,
+              "downloads": 3552,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "downloads": 3552
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "minivmac",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/zydeco/minivmac4ios",
+        "sourceURL": "https://github.com/zydeco/minivmac4ios",
+        "verification": {
+          "method": "github-release",
+          "publisher": "zydeco/minivmac4ios",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "12.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA from the developer's GitHub releases (2.6, 2024). Also distributed via the SideStore Community Source. Requires a Macintosh ROM image and system disks from a machine you own."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2024-07-09",
+          "lastUpdatedAt": "2024-07-09"
+        }
+      }
+    }
+  ],
+  "news": []
+}

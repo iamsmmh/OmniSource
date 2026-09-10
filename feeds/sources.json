@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 34,
+  "count": 39,
   "feed": {
     "name": "OmniSource",
     "identifier": "com.iamsmmh.omnisource",
@@ -128,6 +128,21 @@
           "slug": "bhtwitter",
           "name": "BHTwitter",
           "version": "4.4"
+        }
+      ]
+    },
+    {
+      "id": "Bartuzen/qBitController",
+      "source": "Bartuzen/qBitController",
+      "type": "github",
+      "homepage": "https://github.com/Bartuzen/qBitController",
+      "sourceURL": "https://github.com/Bartuzen/qBitController",
+      "publisher": "Bartuzen/qBitController",
+      "apps": [
+        {
+          "slug": "qbitcontroller",
+          "name": "qBitController",
+          "version": "2.2.1"
         }
       ]
     },
@@ -512,6 +527,21 @@
       ]
     },
     {
+      "id": "StikEMU/StikNES-2.0",
+      "source": "StikEMU/StikNES-2.0",
+      "type": "github",
+      "homepage": "https://github.com/StikEMU/StikNES-2.0",
+      "sourceURL": "https://github.com/StikEMU/StikNES-2.0",
+      "publisher": "StikEMU/StikNES-2.0",
+      "apps": [
+        {
+          "slug": "stiknes",
+          "name": "StikNES",
+          "version": "2.0.2"
+        }
+      ]
+    },
+    {
       "id": "utmapp/UTM",
       "source": "utmapp/UTM",
       "type": "github",
@@ -523,6 +553,21 @@
           "slug": "utm",
           "name": "UTM",
           "version": "4.7.5"
+        }
+      ]
+    },
+    {
+      "id": "vcmi/vcmi",
+      "source": "vcmi/vcmi",
+      "type": "github",
+      "homepage": "https://github.com/vcmi/vcmi",
+      "sourceURL": "https://github.com/vcmi/vcmi",
+      "publisher": "vcmi/vcmi",
+      "apps": [
+        {
+          "slug": "vcmi",
+          "name": "VCMI",
+          "version": "1.7.5"
         }
       ]
     },
@@ -557,6 +602,21 @@
       ]
     },
     {
+      "id": "yoshisuga/MAME4iOS",
+      "source": "yoshisuga/MAME4iOS",
+      "type": "github",
+      "homepage": "https://github.com/yoshisuga/MAME4iOS",
+      "sourceURL": "https://github.com/yoshisuga/MAME4iOS",
+      "publisher": "yoshisuga/MAME4iOS",
+      "apps": [
+        {
+          "slug": "mame4ios",
+          "name": "MAME4iOS",
+          "version": "2022.5"
+        }
+      ]
+    },
+    {
       "id": "ZeusLN/zeus",
       "source": "ZeusLN/zeus",
       "type": "github",
@@ -568,6 +628,21 @@
           "slug": "zeus",
           "name": "Zeus",
           "version": "13.2.1"
+        }
+      ]
+    },
+    {
+      "id": "zydeco/minivmac4ios",
+      "source": "zydeco/minivmac4ios",
+      "type": "github",
+      "homepage": "https://github.com/zydeco/minivmac4ios",
+      "sourceURL": "https://github.com/zydeco/minivmac4ios",
+      "publisher": "zydeco/minivmac4ios",
+      "apps": [
+        {
+          "slug": "minivmac",
+          "name": "Mini vMac",
+          "version": "2.6"
         }
       ]
     }

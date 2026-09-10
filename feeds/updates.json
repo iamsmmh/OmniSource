@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-09-10",
   "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
-  "count": 46,
+  "count": 51,
   "updates": [
     {
       "slug": "youpro",
@@ -409,6 +409,21 @@
       "shortDescription": "Feature-rich YouTube tweak by alibusut"
     },
     {
+      "slug": "vcmi",
+      "name": "VCMI",
+      "version": "1.7.5",
+      "previousVersion": "",
+      "date": "2026-08-15",
+      "kind": "new",
+      "changelog": "VCMI 1.7.5 | VCMI-iOS\n\nNote: saved games from 1.6 release can be loaded in 1.7\n\n### Changelog\n- Player Changelog: [1.7.4 -> 1.7.5](https://github.com/vcmi/vcmi/blob/master/ChangeLog.md#174---175)\n- Full Changelog: https://github.com/vcmi/vcmi/compare/1.7.4..1.7.5\n\n### Additional builds\n<!-- - Android release will be available on Google Play shortly -->\n<!-- - Linux release will be available on Flathub shortly -->\n<!-- - Ubuntu release will be available on VCMI PPA shortly -->\n<!-- - Android release is available on [Google Play](https://play.google.com/store/apps/details?id=is.xyz.vcmi) -->\n<!-- - Linux release is available on [Flathub](https://flathub.org/apps/eu.vcmi.VCMI) -->\n<!-- - Ubuntu release is available on [VCMI PPA](https://launchpad.net/~vcmi/+archive/ubuntu/ppa) -->\n\n- Android release is available on [Google Play](https://play.google.com/store/apps/details?id=is.xyz.vcmi) and [F-Droid](https://f-droid.org/en/packages/is.xyz.vcmi/)\n- iOS release is available on [TestFlight](https://testflight.apple.com/join/pJWHSbmu) (AppStore version coming soon)\n- Linux release is available on [Flathub](https://flathub.org/apps/eu.vcmi.VCMI)\n- Ubuntu release is available on [VCMI PPA](https://launchpad.net/~vcmi/+archive/ubuntu/ppa)\n- macOS release can be installed via Homebrew: `brew install --cask vcmi` (official) or `brew install --cask vcmi/vcmi/vcmi` (from our tap)",
+      "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/VCMI.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/vcmi.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/vcmi.xml",
+      "status": "stable",
+      "shortDescription": "Open-source Heroes of Might & Magic III engine"
+    },
+    {
       "slug": "maxtube",
       "name": "MaxTube",
       "version": "21.31.3",
@@ -422,6 +437,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/maxtube.xml",
       "status": "manual",
       "shortDescription": "YTPlus with ten extra tweaks"
+    },
+    {
+      "slug": "qbitcontroller",
+      "name": "qBitController",
+      "version": "2.2.1",
+      "previousVersion": "",
+      "date": "2026-07-28",
+      "kind": "new",
+      "changelog": "qBitController 2.2.1 | qbitcontroller-2.2.1-ios\n\n- Updated translations",
+      "downloadURL": "https://github.com/Bartuzen/qBitController/releases/download/v2.2.1/qbitcontroller-2.2.1-ios.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/qBitController.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/qbitcontroller.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/qbitcontroller.xml",
+      "status": "stable",
+      "shortDescription": "Cross-platform qBittorrent remote (Kotlin)"
     },
     {
       "slug": "qbitcontrol",
@@ -649,6 +679,21 @@
       "shortDescription": "X (Twitter) with no ads, downloads and the chronological timeline"
     },
     {
+      "slug": "stiknes",
+      "name": "StikNES",
+      "version": "2.0.2",
+      "previousVersion": "",
+      "date": "2025-02-23",
+      "kind": "new",
+      "changelog": "StikNES 2.0.2 | StikNES\n\nFixed some crashes and removed the network requirement.",
+      "downloadURL": "https://github.com/StikEMU/StikNES-2.0/releases/download/v2.0.2/StikNES.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/StikNES.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/stiknes.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/stiknes.xml",
+      "status": "stable",
+      "shortDescription": "NES/Famicom emulator for modern iOS"
+    },
+    {
       "slug": "delta",
       "name": "Delta",
       "version": "1.6",
@@ -662,6 +707,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/delta.xml",
       "status": "stable",
       "shortDescription": "All-in-one retro emulator by Riley Testut"
+    },
+    {
+      "slug": "minivmac",
+      "name": "Mini vMac",
+      "version": "2.6",
+      "previousVersion": "",
+      "date": "2024-07-09",
+      "kind": "new",
+      "changelog": "Mini vMac 2.6 | minivmac4ios-2.6\n\n* Added 512×384 variant of Mac II\n* Requires iOS 13.4\n    * Dropping 32-bit support (iOS 9) made the app smaller\n* Prefer pixel-perfect scaling when display scaling filter is set to nearest\n* Auto-hide iOS home indicator\n* Partially fix some command-key shortcuts going to iOS instead of the emulated Mac (#45)\n    * ⌘-w and most others will get passed to the emulated machine if it's running\n    * ⌘-q and ⌘-h don't seem interceptable, the app doesn't receive any key events for them, but ⌘-q doesn't do anything (or maybe it does in some other configuration?), and ⌘-h will take you to the home screen\n* visionOS support (only tested in simulator)\n\n**Full Changelog**: https://github.com/zydeco/minivmac4ios/compare/v2.5...v2.6",
+      "downloadURL": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MiniVMac.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/minivmac.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/minivmac.xml",
+      "status": "stable",
+      "shortDescription": "Early Macintosh emulator for iOS"
     },
     {
       "slug": "winston",
@@ -692,6 +752,21 @@
       "rssURL": "https://iamsmmh.github.io/OmniSource/yattee.xml",
       "status": "stable",
       "shortDescription": "Privacy-oriented native video player"
+    },
+    {
+      "slug": "mame4ios",
+      "name": "MAME4iOS",
+      "version": "2022.5",
+      "previousVersion": "",
+      "date": "2022-12-12",
+      "kind": "new",
+      "changelog": "MAME4iOS 2022.5 | MAME4iOS-2022.5-139\n\n* Updated to [MAME 250](https://www.mamedev.org/releases/whatsnew_0250.txt).\n* tvOS UX: use a Alert instead of a inline Segmented Control.\n* Show upload feedback in Web Server UX.\n* Added `Make First Favorite` to game context menu.",
+      "downloadURL": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MAME4iOS.webp",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/mame4ios.json",
+      "rssURL": "https://iamsmmh.github.io/OmniSource/mame4ios.xml",
+      "status": "stable",
+      "shortDescription": "Multi-arcade machine emulator for iOS"
     }
   ]
 }

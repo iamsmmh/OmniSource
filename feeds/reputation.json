@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 34,
+  "count": 39,
   "levels": [
     "TRUSTED",
     "RELIABLE",
@@ -375,6 +375,26 @@
       }
     },
     {
+      "id": "zydeco/minivmac4ios",
+      "source": "zydeco/minivmac4ios",
+      "publisher": "zydeco/minivmac4ios",
+      "homepage": "https://github.com/zydeco/minivmac4ios",
+      "sourceURL": "https://github.com/zydeco/minivmac4ios",
+      "apps": [
+        "minivmac"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
       "id": "ZeusLN/zeus",
       "source": "ZeusLN/zeus",
       "publisher": "ZeusLN/zeus",
@@ -395,6 +415,26 @@
       }
     },
     {
+      "id": "yoshisuga/MAME4iOS",
+      "source": "yoshisuga/MAME4iOS",
+      "publisher": "yoshisuga/MAME4iOS",
+      "homepage": "https://github.com/yoshisuga/MAME4iOS",
+      "sourceURL": "https://github.com/yoshisuga/MAME4iOS",
+      "apps": [
+        "mame4ios"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
       "id": "yattee/yattee",
       "source": "yattee/yattee",
       "publisher": "yattee/yattee",
@@ -402,6 +442,46 @@
       "sourceURL": "https://github.com/yattee/yattee",
       "apps": [
         "yattee"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "vcmi/vcmi",
+      "source": "vcmi/vcmi",
+      "publisher": "vcmi/vcmi",
+      "homepage": "https://github.com/vcmi/vcmi",
+      "sourceURL": "https://github.com/vcmi/vcmi",
+      "apps": [
+        "vcmi"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "StikEMU/StikNES-2.0",
+      "source": "StikEMU/StikNES-2.0",
+      "publisher": "StikEMU/StikNES-2.0",
+      "homepage": "https://github.com/StikEMU/StikNES-2.0",
+      "sourceURL": "https://github.com/StikEMU/StikNES-2.0",
+      "apps": [
+        "stiknes"
       ],
       "score": 50.0,
       "level": "AVERAGE",
@@ -622,6 +702,26 @@
       "sourceURL": "https://github.com/BlueWallet/BlueWallet",
       "apps": [
         "bluewallet"
+      ],
+      "score": 50.0,
+      "level": "AVERAGE",
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1"
+      }
+    },
+    {
+      "id": "Bartuzen/qBitController",
+      "source": "Bartuzen/qBitController",
+      "publisher": "Bartuzen/qBitController",
+      "homepage": "https://github.com/Bartuzen/qBitController",
+      "sourceURL": "https://github.com/Bartuzen/qBitController",
+      "apps": [
+        "qbitcontroller"
       ],
       "score": 50.0,
       "level": "AVERAGE",

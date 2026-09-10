@@ -2269,6 +2269,249 @@
         "minOSVersion": "15.0",
         "descriptionTemplate": "qBitConnect {version} | {label}"
       }
+    },
+    {
+      "slug": "vcmi",
+      "name": "VCMI",
+      "subtitle": "Open-source Heroes of Might & Magic III engine",
+      "bundleIdentifier": "eu.vcmi.vcmiclient",
+      "developerName": "VCMI Team",
+      "category": "games",
+      "tintColor": "BD8F52",
+      "icon": "VCMI.webp",
+      "localizedDescription": "VCMI is an open-source engine that re-implements Heroes of Might and Magic III so the classic turn-based strategy game runs on modern hardware — with widescreen and high-resolution support, extensive modding (including the popular HotA and Era mods), stabilized multiplayer and quality-of-life improvements over the original. Requires a copy of the original game's data files.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/vcmi/vcmi",
+      "verification": {
+        "method": "github-release",
+        "publisher": "vcmi/vcmi",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "13.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official iOS IPA (VCMI-iOS.ipa) built by the VCMI project's release pipeline (iOS 13+ per the CMake configuration). You must supply data files from an original Heroes III (Shadow of Death or Complete edition) copy on first launch."
+      },
+      "upstream": {
+        "repo": "vcmi/vcmi",
+        "assetNamePattern": "^VCMI-iOS\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "13.0",
+        "descriptionTemplate": "VCMI {version} | {label}"
+      }
+    },
+    {
+      "slug": "mame4ios",
+      "name": "MAME4iOS",
+      "subtitle": "Multi-arcade machine emulator for iOS",
+      "bundleIdentifier": "com.example.mame4ios",
+      "developerName": "Yoshisuga & MAME4iOS Contributors",
+      "category": "games",
+      "tintColor": "354B60",
+      "icon": "MAME4iOS.webp",
+      "localizedDescription": "MAME4iOS brings the Multiple Arcade Machine Emulator to iPhone, iPad and Apple TV, running thousands of classic arcade games from the 70s, 80s, 90s and beyond. Includes an on-screen joystick, full MFi controller support, netplay, and a menu to organize your legally dumped ROM sets.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/yoshisuga/MAME4iOS",
+      "verification": {
+        "method": "github-release",
+        "publisher": "yoshisuga/MAME4iOS",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "13.4",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from the developer's GitHub releases (2022.5 line, iOS 13.4+ per the Xcode project; also distributed via the SideStore Community Source). The same release ships a separate MAME4tvOS build which is intentionally not distributed here."
+      },
+      "upstream": {
+        "repo": "yoshisuga/MAME4iOS",
+        "assetNamePattern": "^MAME4iOS-[0-9][^/]*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "13.4",
+        "descriptionTemplate": "MAME4iOS {version} | {label}"
+      }
+    },
+    {
+      "slug": "qbitcontroller",
+      "name": "qBitController",
+      "subtitle": "Cross-platform qBittorrent remote (Kotlin)",
+      "bundleIdentifier": "dev.bartuzen.qbitcontroller",
+      "developerName": "Bartuzen",
+      "category": "utilities",
+      "tintColor": "5389C7",
+      "icon": "qBitController.webp",
+      "localizedDescription": "qBitController is a free and open-source qBittorrent remote client built with Kotlin Multiplatform and Compose. Control your qBittorrent WebUI from iPhone or iPad: add torrents by URL or file, pause/resume and recheck, browse file lists and set priorities, and manage categories and tags with a clean Material-style interface.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/Bartuzen/qBitController",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Bartuzen/qBitController",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official iOS IPA (qbitcontroller-<version>-ios.ipa) from the developer's GitHub releases; 2.x targets iOS 14. The developer's own AltStore source mirrors these builds. Distinct from qBitControl and qBitConnect, which are separate apps."
+      },
+      "upstream": {
+        "repo": "Bartuzen/qBitController",
+        "tagPrefix": "v",
+        "assetNamePattern": "^qbitcontroller-.*-ios\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "qBitController {version} | {label}"
+      }
+    },
+    {
+      "slug": "minivmac",
+      "name": "Mini vMac",
+      "subtitle": "Early Macintosh emulator for iOS",
+      "bundleIdentifier": "net.namedfork.minivmac",
+      "developerName": "zydeco",
+      "category": "games",
+      "tintColor": "B1B6EE",
+      "icon": "MiniVMac.webp",
+      "localizedDescription": "Mini vMac for iOS emulates the earliest Apple Macintosh computers (128K, 512K, Plus and II), letting you run classic System 1 through System 7 software on modern devices. Load your own ROM and disk images, with support for external keyboards, mice and multiple emulated machine variants.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/zydeco/minivmac4ios",
+      "verification": {
+        "method": "github-release",
+        "publisher": "zydeco/minivmac4ios",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "12.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from the developer's GitHub releases (2.6, 2024). Also distributed via the SideStore Community Source. Requires a Macintosh ROM image and system disks from a machine you own."
+      },
+      "upstream": {
+        "repo": "zydeco/minivmac4ios",
+        "tagPrefix": "v",
+        "assetNamePattern": "^minivmac4ios-.*\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "12.0",
+        "descriptionTemplate": "Mini vMac {version} | {label}"
+      }
+    },
+    {
+      "slug": "stiknes",
+      "name": "StikNES",
+      "subtitle": "NES/Famicom emulator for modern iOS",
+      "bundleIdentifier": "com.stik.StikNES",
+      "developerName": "StikEMU",
+      "category": "games",
+      "tintColor": "176FBB",
+      "icon": "StikNES.webp",
+      "localizedDescription": "StikNES is a Nintendo Entertainment System / Famicom emulator for iPhone and iPad from the StikEMU team, built for modern iOS with Metal-accelerated rendering, MFi and keyboard controller support, save states and a focus on accuracy and low latency. Load your own legally dumped ROMs.",
+      "screenshots": [],
+      "featured": false,
+      "status": "stable",
+      "upstreamURL": "https://github.com/StikEMU/StikNES-2.0",
+      "verification": {
+        "method": "github-release",
+        "publisher": "StikEMU/StikNES-2.0",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "17.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from the developer's GitHub releases (2.0 line requires iOS 17+). Also distributed via the SideStore Community Source."
+      },
+      "upstream": {
+        "repo": "StikEMU/StikNES-2.0",
+        "tagPrefix": "v",
+        "assetNamePattern": "^StikNES\\.ipa$",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "17.0",
+        "descriptionTemplate": "StikNES {version} | {label}"
+      }
     }
   ]
 }

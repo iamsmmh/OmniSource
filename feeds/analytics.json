@@ -3,17 +3,17 @@
   "generatedAt": "2026-09-10",
   "lastSync": "2026-09-10",
   "totals": {
-    "apps": 38,
-    "sources": 34,
-    "verifiedApps": 37,
+    "apps": 43,
+    "sources": 39,
+    "verifiedApps": 42,
     "communityVerifiedApps": 1,
     "unverifiedApps": 0,
-    "hashVerifiedApps": 31,
-    "verified": 37,
+    "hashVerifiedApps": 33,
+    "verified": 42,
     "community_verified": 1,
     "unverified": 0,
     "featuredApps": 6,
-    "downloadsReachable": 38,
+    "downloadsReachable": 43,
     "deadLinks": 0,
     "newAppsThisWeek": 3,
     "updatedAppsThisWeek": 8,
@@ -114,11 +114,15 @@
   "topCategories": [
     {
       "category": "utilities",
-      "count": 10
+      "count": 11
     },
     {
       "category": "photo-video",
       "count": 9
+    },
+    {
+      "category": "games",
+      "count": 8
     },
     {
       "category": "social",
@@ -127,10 +131,6 @@
     {
       "category": "music",
       "count": 5
-    },
-    {
-      "category": "games",
-      "count": 4
     },
     {
       "category": "developer-tools",
@@ -146,7 +146,7 @@
     }
   ],
   "verification": {
-    "VERIFIED": 37,
+    "VERIFIED": 42,
     "COMMUNITY VERIFIED": 1,
     "UNVERIFIED": 0
   },
@@ -205,9 +205,9 @@
   "history": [
     {
       "date": "2026-09-10",
-      "apps": 38,
-      "sources": 34,
-      "verified": 37,
+      "apps": 43,
+      "sources": 39,
+      "verified": 42,
       "deadLinks": 0,
       "newThisWeek": 3,
       "updatedThisWeek": 8

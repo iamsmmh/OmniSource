@@ -6,25 +6,14 @@
     "stale": 180,
     "archived": 365
   },
-  "count": 14,
+  "count": 16,
   "summary": {
     "warning": 5,
     "stale": 3,
-    "archived": 4,
-    "critical": 2
+    "archived": 7,
+    "critical": 1
   },
   "deadApps": [
-    {
-      "slug": "ish",
-      "name": "iSH",
-      "lastUpdate": "2026-08-22",
-      "daysSinceUpdate": 19,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 2026-08-22"
-      ]
-    },
     {
       "slug": "ytkp",
       "name": "YTKillerPlus",
@@ -56,6 +45,39 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 791 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "mame4ios",
+      "name": "MAME4iOS",
+      "lastUpdate": "2022-12-12",
+      "daysSinceUpdate": 1368,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 1368 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "minivmac",
+      "name": "Mini vMac",
+      "lastUpdate": "2024-07-09",
+      "daysSinceUpdate": 793,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 793 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "stiknes",
+      "name": "StikNES",
+      "lastUpdate": "2025-02-23",
+      "daysSinceUpdate": 564,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 564 days (threshold 365)"
       ]
     },
     {
@@ -514,11 +536,9 @@
       "name": "iSH",
       "lastUpdate": "2026-08-22",
       "daysSinceUpdate": 19,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 2026-08-22"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "qbitcontrol",
@@ -538,6 +558,57 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 312 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "vcmi",
+      "name": "VCMI",
+      "lastUpdate": "2026-08-15",
+      "daysSinceUpdate": 26,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "mame4ios",
+      "name": "MAME4iOS",
+      "lastUpdate": "2022-12-12",
+      "daysSinceUpdate": 1368,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 1368 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "qbitcontroller",
+      "name": "qBitController",
+      "lastUpdate": "2026-07-28",
+      "daysSinceUpdate": 44,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "minivmac",
+      "name": "Mini vMac",
+      "lastUpdate": "2024-07-09",
+      "daysSinceUpdate": 793,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 793 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "stiknes",
+      "name": "StikNES",
+      "lastUpdate": "2025-02-23",
+      "daysSinceUpdate": 564,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 564 days (threshold 365)"
       ]
     }
   ]

@@ -2,16 +2,16 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
   "totals": {
-    "sources": 38,
+    "sources": 43,
     "healthy": 18,
     "degraded": 4,
     "unavailable": 0,
-    "unknown": 16
+    "unknown": 21
   },
   "pipeline": {
     "status": "degraded",
     "lastBuild": "2026-09-10",
-    "appsTotal": 38,
+    "appsTotal": 43,
     "appsHealthy": 18,
     "appsFailing": 2
   },
@@ -28,7 +28,7 @@
     },
     {
       "provider": "github",
-      "apps": 36,
+      "apps": 41,
       "healthy": 16,
       "unavailable": 0,
       "lastResolvedFrom": {
@@ -56,15 +56,20 @@
         "dolphinish": "github:OatmealDome/dolphin-ios",
         "ish": "github:ish-app/ish",
         "jellify": "github:Jellify-Music/App",
+        "mame4ios": "github:yoshisuga/MAME4iOS",
+        "minivmac": "github:zydeco/minivmac4ios",
         "ppsspp": "github:hrydgard/ppsspp",
         "provenance": "github:Provenance-Emu/Provenance",
         "qbitconnect": "github:RajnishOne/qbitconnect",
         "qbitcontrol": "github:Michael-128/qBitControl",
+        "qbitcontroller": "github:Bartuzen/qBitController",
         "saber": "github:saber-notes/saber",
         "sidestore": "github:SideStore/SideStore",
         "spotube": "github:KRTirtho/spotube",
+        "stiknes": "github:StikEMU/StikNES-2.0",
         "streamyfin": "github:fredrikburmester/streamyfin",
         "utm": "github:utmapp/UTM",
+        "vcmi": "github:vcmi/vcmi",
         "voyager": "github:aeharding/voyager",
         "yattee": "github:yattee/yattee",
         "zeus": "github:ZeusLN/zeus"
@@ -74,8 +79,8 @@
   "deployment": {
     "platform": "GitHub Pages (static)",
     "status": "ok",
-    "reachable": 38,
-    "total": 38
+    "reachable": 43,
+    "total": 43
   },
   "sources": [
     {
@@ -2136,6 +2141,40 @@
       "history": []
     },
     {
+      "id": "mame4ios",
+      "app": "mame4ios",
+      "name": "MAME4iOS",
+      "source": "yoshisuga/MAME4iOS",
+      "sourceURL": "https://github.com/yoshisuga/MAME4iOS",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2022-12-12",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "minivmac",
+      "app": "minivmac",
+      "name": "Mini vMac",
+      "source": "zydeco/minivmac4ios",
+      "sourceURL": "https://github.com/zydeco/minivmac4ios",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2024-07-09",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "ppsspp",
       "app": "ppsspp",
       "name": "PPSSPP",
@@ -2289,6 +2328,23 @@
       "history": []
     },
     {
+      "id": "qbitcontroller",
+      "app": "qbitcontroller",
+      "name": "qBitController",
+      "source": "Bartuzen/qBitController",
+      "sourceURL": "https://github.com/Bartuzen/qBitController",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-07-28",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "saber",
       "app": "saber",
       "name": "Saber",
@@ -2425,6 +2481,23 @@
       "history": []
     },
     {
+      "id": "stiknes",
+      "app": "stiknes",
+      "name": "StikNES",
+      "source": "StikEMU/StikNES-2.0",
+      "sourceURL": "https://github.com/StikEMU/StikNES-2.0",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2025-02-23",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "streamyfin",
       "app": "streamyfin",
       "name": "Streamyfin",
@@ -2542,6 +2615,23 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "vcmi",
+      "app": "vcmi",
+      "name": "VCMI",
+      "source": "vcmi/vcmi",
+      "sourceURL": "https://github.com/vcmi/vcmi",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-08-15",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "voyager",

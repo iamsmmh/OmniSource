@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-10",
-  "count": 38,
+  "count": 43,
   "fuse": {
     "keys": [
       {
@@ -1016,6 +1016,136 @@
       "icon": "assets/qBitConnect.webp",
       "pageURL": "apps/qbitconnect/",
       "version": "1.6.6",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "vcmi",
+      "slug": "vcmi",
+      "name": "VCMI",
+      "subtitle": "Open-source Heroes of Might & Magic III engine",
+      "shortDescription": "Open-source Heroes of Might & Magic III engine",
+      "description": "VCMI is an open-source engine that re-implements Heroes of Might and Magic III so the classic turn-based strategy game runs on modern hardware — with widescreen and high-resolution support, extensive modding (including the popular HotA and Era mods), stabilized multiplayer and quality-of-life improvements over the original. Requires a copy of the original game's data files.",
+      "category": "games",
+      "tags": [
+        "games"
+      ],
+      "developer": "VCMI Team",
+      "bundleId": "eu.vcmi.vcmiclient",
+      "icon": "assets/VCMI.webp",
+      "pageURL": "apps/vcmi/",
+      "version": "1.7.5",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "mame4ios",
+      "slug": "mame4ios",
+      "name": "MAME4iOS",
+      "subtitle": "Multi-arcade machine emulator for iOS",
+      "shortDescription": "Multi-arcade machine emulator for iOS",
+      "description": "MAME4iOS brings the Multiple Arcade Machine Emulator to iPhone, iPad and Apple TV, running thousands of classic arcade games from the 70s, 80s, 90s and beyond. Includes an on-screen joystick, full MFi controller support, netplay, and a menu to organize your legally dumped ROM sets.",
+      "category": "games",
+      "tags": [
+        "games"
+      ],
+      "developer": "Yoshisuga & MAME4iOS Contributors",
+      "bundleId": "com.example.mame4ios",
+      "icon": "assets/MAME4iOS.webp",
+      "pageURL": "apps/mame4ios/",
+      "version": "2022.5",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "qbitcontroller",
+      "slug": "qbitcontroller",
+      "name": "qBitController",
+      "subtitle": "Cross-platform qBittorrent remote (Kotlin)",
+      "shortDescription": "Cross-platform qBittorrent remote (Kotlin)",
+      "description": "qBitController is a free and open-source qBittorrent remote client built with Kotlin Multiplatform and Compose. Control your qBittorrent WebUI from iPhone or iPad: add torrents by URL or file, pause/resume and recheck, browse file lists and set priorities, and manage categories and tags with a clean Material-style interface.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "developer": "Bartuzen",
+      "bundleId": "dev.bartuzen.qbitcontroller",
+      "icon": "assets/qBitController.webp",
+      "pageURL": "apps/qbitcontroller/",
+      "version": "2.2.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "minivmac",
+      "slug": "minivmac",
+      "name": "Mini vMac",
+      "subtitle": "Early Macintosh emulator for iOS",
+      "shortDescription": "Early Macintosh emulator for iOS",
+      "description": "Mini vMac for iOS emulates the earliest Apple Macintosh computers (128K, 512K, Plus and II), letting you run classic System 1 through System 7 software on modern devices. Load your own ROM and disk images, with support for external keyboards, mice and multiple emulated machine variants.",
+      "category": "games",
+      "tags": [
+        "games"
+      ],
+      "developer": "zydeco",
+      "bundleId": "net.namedfork.minivmac",
+      "icon": "assets/MiniVMac.webp",
+      "pageURL": "apps/minivmac/",
+      "version": "2.6",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "stiknes",
+      "slug": "stiknes",
+      "name": "StikNES",
+      "subtitle": "NES/Famicom emulator for modern iOS",
+      "shortDescription": "NES/Famicom emulator for modern iOS",
+      "description": "StikNES is a Nintendo Entertainment System / Famicom emulator for iPhone and iPad from the StikEMU team, built for modern iOS with Metal-accelerated rendering, MFi and keyboard controller support, save states and a focus on accuracy and low latency. Load your own legally dumped ROMs.",
+      "category": "games",
+      "tags": [
+        "games"
+      ],
+      "developer": "StikEMU",
+      "bundleId": "com.stik.StikNES",
+      "icon": "assets/StikNES.webp",
+      "pageURL": "apps/stiknes/",
+      "version": "2.0.2",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [
