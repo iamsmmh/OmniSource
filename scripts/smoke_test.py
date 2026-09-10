@@ -38,16 +38,16 @@ _SITE = ROOT / "_site"
 
 # (path, substring that must be present in the 200 response)
 PAGES: list[tuple[str, str]] = [
-    ("/", "id=\"appsGrid\""),
-    ("/compare/", "id=\"compareForm\""),
-    ("/status/", "id=\"stTable\""),
-    ("/analytics/", "id=\"anKpis\""),
-    ("/install/", "id=\"installClients\""),
-    ("/search/", "id=\"searchPageInput\""),
-    ("/collections/", "id=\"collections-content\""),
-    ("/favorites/", "id=\"favorites-content\""),
-    ("/apps/ytlite/", "class=\"app-page\""),
-    ("/manifest.webmanifest", "\"name\": \"OmniSource"),
+    ("/", 'id="appsGrid"'),
+    ("/compare/", 'id="compareForm"'),
+    ("/status/", 'id="stTable"'),
+    ("/analytics/", 'id="anKpis"'),
+    ("/install/", 'id="installClients"'),
+    ("/search/", 'id="searchPageInput"'),
+    ("/collections/", 'id="collections-content"'),
+    ("/favorites/", 'id="favorites-content"'),
+    ("/apps/ytlite/", 'class="app-page"'),
+    ("/manifest.webmanifest", '"name": "OmniSource'),
     ("/sw.js", "omnisource-v6"),
     ("/sitemap.xml", "<urlset"),
     ("/robots.txt", "User-agent"),
@@ -80,30 +80,86 @@ FEEDS: list[str] = [
 # so a page only needs the ids that renderer touches).
 PAGE_IDS: dict[str, list[str]] = {
     "index.html": [
-        "appsGrid", "searchInput", "sortSelect", "osSelect", "categoryFilters",
-        "statusFilters", "clearFilters", "resultCount", "emptyState",
-        "collisionSummary", "updatesList", "updatesNote", "footerClients",
-        "guideClients", "installGuide", "clientButtons", "sourceUrl",
-        "statApps", "statSources", "statOnline", "statVerified", "statSyncLabel",
-        "healthLabel", "metricsGrid", "statistics", "sourceHealth", "sourceGrid",
-        "sourceHealthMore", "trendingRail", "recentRail", "featuredRail",
-        "verifiedRail", "trending", "recent", "featured", "verifiedApps",
-        "appDialog", "dialogContent", "qrDialog", "qrTitle", "qrText", "qrImage",
-        "qrCopy", "sourceQr",
+        "appsGrid",
+        "searchInput",
+        "sortSelect",
+        "osSelect",
+        "categoryFilters",
+        "statusFilters",
+        "clearFilters",
+        "resultCount",
+        "emptyState",
+        "collisionSummary",
+        "updatesList",
+        "updatesNote",
+        "footerClients",
+        "guideClients",
+        "installGuide",
+        "clientButtons",
+        "sourceUrl",
+        "statApps",
+        "statSources",
+        "statOnline",
+        "statVerified",
+        "statSyncLabel",
+        "healthLabel",
+        "metricsGrid",
+        "statistics",
+        "sourceHealth",
+        "sourceGrid",
+        "sourceHealthMore",
+        "trendingRail",
+        "recentRail",
+        "featuredRail",
+        "verifiedRail",
+        "trending",
+        "recent",
+        "featured",
+        "verifiedApps",
+        "appDialog",
+        "dialogContent",
+        "qrDialog",
+        "qrTitle",
+        "qrText",
+        "qrImage",
+        "qrCopy",
+        "sourceQr",
     ],
     "compare/index.html": [
-        "compareForm", "leftSelect", "rightSelect", "pairList", "pairs",
-        "result", "cmpEmpty", "resultGrid", "cmpMetaRow",
+        "compareForm",
+        "leftSelect",
+        "rightSelect",
+        "pairList",
+        "pairs",
+        "result",
+        "cmpEmpty",
+        "resultGrid",
+        "cmpMetaRow",
     ],
     "status/index.html": [
-        "stOverview", "stTableWrap", "stSyncGrid", "stTable", "stMetaRow", "statusContent",
+        "stOverview",
+        "stTableWrap",
+        "stSyncGrid",
+        "stTable",
+        "stMetaRow",
+        "statusContent",
     ],
     "analytics/index.html": [
-        "anKpis", "trendChart", "updateBars", "categoryBars", "verificationDonut",
-        "weekLists", "anMetaRow", "analyticsContent",
+        "anKpis",
+        "trendChart",
+        "updateBars",
+        "categoryBars",
+        "verificationDonut",
+        "weekLists",
+        "anMetaRow",
+        "analyticsContent",
     ],
     "install/index.html": [
-        "installClients", "installAppSelect", "installAppCards", "installAppFeed", "installQr",
+        "installClients",
+        "installAppSelect",
+        "installAppCards",
+        "installAppFeed",
+        "installQr",
     ],
     "search/index.html": ["searchPageInput", "searchResults", "searchCount"],
 }
@@ -123,7 +179,7 @@ class _Server:
         self.port = int(self.httpd.server_address[1])
         self.thread = threading.Thread(target=self.httpd.serve_forever, daemon=True)
 
-    def __enter__(self) -> "_Server":
+    def __enter__(self) -> _Server:
         self.thread.start()
         return self
 
@@ -138,11 +194,11 @@ class _Server:
 
 def fetch(url: str) -> tuple[int, bytes]:
     try:
-        with urllib.request.urlopen(url, timeout=10) as response:  # noqa: S310
+        with urllib.request.urlopen(url, timeout=10) as response:
             return response.status, response.read()
     except urllib.error.HTTPError as exc:
         return exc.code, b""
-    except Exception:  # noqa: BLE001
+    except Exception:
         return 0, b""
 
 
@@ -234,7 +290,7 @@ def main(argv: list[str] | None = None) -> int:
     for error in check_js_syntax():
         failures.append(error)
 
-    print(f"smoke_test: checked {checked} URL(s), {len(PAGES)} page(s), {len(FEEDS)} feed(s) × 3 families")
+    print(f"smoke_test: checked {checked} URL(s), {len(PAGES)} page(s), {len(FEEDS)} feed(s) x 3 families")
     if failures:
         print(f"smoke_test: {len(failures)} failure(s):", file=sys.stderr)
         for failure in failures:
