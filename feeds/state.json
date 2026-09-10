@@ -22,13 +22,13 @@
             "fileType": "IPA",
             "size": 14731108,
             "sha256": "86405861d3a0c90876a90aa1ca668bee54f4555a56249fede4444be5382833e8",
-            "downloads": 1114,
+            "downloads": 1116,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "86405861d3a0c90876a90aa1ca668bee54f4555a56249fede4444be5382833e8",
-        "downloads": 1114
+        "downloads": 1116
       }
     ],
     "syncedAt": "2026-09-10",
@@ -36,7 +36,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 268,
+      "latencyMs": 226,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -159,6 +159,12 @@
         "reachable": true,
         "latencyMs": 268,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 226,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -196,7 +202,7 @@
             "fileType": "IPA",
             "size": 167001383,
             "sha256": null,
-            "downloads": 16725,
+            "downloads": 16726,
             "mimeType": "application/octet-stream",
             "installable": true
           },
@@ -237,7 +243,7 @@
             "installable": true
           }
         ],
-        "downloads": 16725
+        "downloads": 16726
       }
     ],
     "syncedAt": "2026-09-10",
@@ -245,7 +251,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 252,
+      "latencyMs": 240,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -368,6 +374,12 @@
         "reachable": true,
         "latencyMs": 252,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 240,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -394,7 +406,7 @@
             "fileType": "IPA",
             "size": 14241853,
             "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
-            "downloads": 46725,
+            "downloads": 46737,
             "mimeType": "application/octet-stream",
             "installable": true
           },
@@ -406,13 +418,13 @@
             "fileType": "ZIP",
             "size": 22801338,
             "sha256": "618ae6eb1304b8154319f62d5acb7a841c3332ce775065ef7d60f1747deddff7",
-            "downloads": 1152,
+            "downloads": 1154,
             "mimeType": "application/zip",
             "installable": false
           }
         ],
         "sha256": "833c57d3c4bf4b4a9fe408be72e1c720cbb949f736a00286750f50e7915730ea",
-        "downloads": 46725
+        "downloads": 46737
       }
     ],
     "syncedAt": "2026-09-10",
@@ -420,7 +432,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 240,
+      "latencyMs": 294,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -543,6 +555,12 @@
         "reachable": true,
         "latencyMs": 240,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 294,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -581,7 +599,7 @@
       "reachable": true,
       "detail": "HTTP 200",
       "since": "2026-09-07",
-      "latencyMs": 227,
+      "latencyMs": 228,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -704,6 +722,12 @@
         "reachable": true,
         "latencyMs": 227,
         "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 228,
+        "detail": "HTTP 200"
       }
     ]
   },
@@ -742,7 +766,7 @@
             "fileType": "IPA",
             "size": 24288935,
             "sha256": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7",
-            "downloads": 10748,
+            "downloads": 10750,
             "mimeType": "application/octet-stream",
             "installable": true
           },
@@ -760,7 +784,7 @@
           }
         ],
         "sha256": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7",
-        "downloads": 10748
+        "downloads": 10750
       }
     ],
     "syncedAt": "2026-09-10",
@@ -768,7 +792,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 295,
+      "latencyMs": 280,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -891,6 +915,12 @@
         "reachable": true,
         "latencyMs": 295,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 280,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -917,7 +947,7 @@
             "fileType": "IPA",
             "size": 35403538,
             "sha256": "97dc0fd2202fd4460efcab389943b8d5fdbb4988efff76b116b92b84a4662425",
-            "downloads": 267628,
+            "downloads": 267643,
             "mimeType": "application/octet-stream",
             "installable": true
           },
@@ -929,13 +959,13 @@
             "fileType": "IPA",
             "size": 4707271,
             "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6",
-            "downloads": 76002,
+            "downloads": 76012,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6",
-        "downloads": 76002
+        "downloads": 76012
       }
     ],
     "syncedAt": "2026-09-10",
@@ -1066,6 +1096,12 @@
         "reachable": true,
         "latencyMs": 240,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 240,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1092,13 +1128,13 @@
             "fileType": "IPA",
             "size": 105888307,
             "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
-            "downloads": 714,
+            "downloads": 715,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "58ee0bfb7da8fa7bd76db595f83e54ce26f651e39bbde3a456eb9cc3c53c5727",
-        "downloads": 714
+        "downloads": 715
       }
     ],
     "syncedAt": "2026-09-10",
@@ -1106,7 +1142,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 316,
+      "latencyMs": 254,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1229,6 +1265,12 @@
         "reachable": true,
         "latencyMs": 316,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 254,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1267,13 +1309,13 @@
             "fileType": "IPA",
             "size": 133357787,
             "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-            "downloads": 97,
+            "downloads": 98,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-        "downloads": 97
+        "downloads": 98
       }
     ],
     "syncedAt": "2026-09-10",
@@ -1281,7 +1323,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 254,
+      "latencyMs": 256,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1404,6 +1446,12 @@
         "reachable": true,
         "latencyMs": 254,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 256,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1430,7 +1478,7 @@
             "fileType": "IPA",
             "size": 1076407494,
             "sha256": "2aaf7fe05cbe86a5d8c5c012c4b87a688d68fd160f53cca1f486d2e7d0f70f8c",
-            "downloads": 9617,
+            "downloads": 9619,
             "mimeType": "application/octet-stream",
             "installable": true
           },
@@ -1448,7 +1496,7 @@
           }
         ],
         "sha256": "2aaf7fe05cbe86a5d8c5c012c4b87a688d68fd160f53cca1f486d2e7d0f70f8c",
-        "downloads": 9617
+        "downloads": 9619
       }
     ],
     "syncedAt": "2026-09-10",
@@ -1456,7 +1504,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 269,
+      "latencyMs": 266,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1579,6 +1627,12 @@
         "reachable": true,
         "latencyMs": 269,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 266,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1605,13 +1659,13 @@
             "fileType": "IPA",
             "size": 28632252,
             "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
-            "downloads": 686923,
+            "downloads": 686937,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "d7f8fa2bfafcb7f976071410c695ccac7df613a220cd27a870b29ac010a0b0f4",
-        "downloads": 686923
+        "downloads": 686937
       }
     ],
     "syncedAt": "2026-09-10",
@@ -1619,7 +1673,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 249,
+      "latencyMs": 235,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1742,6 +1796,12 @@
         "reachable": true,
         "latencyMs": 249,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 235,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1768,7 +1828,7 @@
             "fileType": "APK",
             "size": 102232099,
             "sha256": "dca5575a769d0ef762a8a734bced9128cf3eb118f796aec809d2e347c767e121",
-            "downloads": 2464,
+            "downloads": 2479,
             "mimeType": "application/vnd.android.package-archive",
             "installable": true
           },
@@ -1780,7 +1840,7 @@
             "fileType": "APK",
             "size": 81186819,
             "sha256": "5ccfa354b38cf9a7e686fc5cf0806137c83980a2aa9a803f27ecc1f4a5547003",
-            "downloads": 35384,
+            "downloads": 35510,
             "mimeType": "application/vnd.android.package-archive",
             "installable": true
           },
@@ -1792,13 +1852,13 @@
             "fileType": "IPA",
             "size": 34171700,
             "sha256": "c25683b5d36f8d1d55deb29058cd601ee23a8b1e3a9e67ded75d8d53f9fa8bef",
-            "downloads": 808,
+            "downloads": 812,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "c25683b5d36f8d1d55deb29058cd601ee23a8b1e3a9e67ded75d8d53f9fa8bef",
-        "downloads": 808
+        "downloads": 812
       }
     ],
     "syncedAt": "2026-09-10",
@@ -1806,7 +1866,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 271,
+      "latencyMs": 245,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -1929,6 +1989,12 @@
         "reachable": true,
         "latencyMs": 271,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 245,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1955,13 +2021,13 @@
             "fileType": "IPA",
             "size": 12824047,
             "sha256": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845",
-            "downloads": 26015,
+            "downloads": 26034,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845",
-        "downloads": 26015
+        "downloads": 26034
       }
     ],
     "syncedAt": "2026-09-10",
@@ -1969,7 +2035,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 226,
+      "latencyMs": 256,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -2092,6 +2158,12 @@
         "reachable": true,
         "latencyMs": 226,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 256,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -2130,7 +2202,7 @@
       "reachable": true,
       "detail": "HTTP 200",
       "since": "2026-09-07",
-      "latencyMs": 235,
+      "latencyMs": 246,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -2252,6 +2324,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 235,
+        "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 246,
         "detail": "HTTP 200"
       }
     ]
@@ -2629,7 +2707,7 @@
             "fileType": "IPA",
             "size": 130058389,
             "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
-            "downloads": 80262,
+            "downloads": 80263,
             "mimeType": "application/octet-stream",
             "installable": true
           },
@@ -2677,13 +2755,13 @@
             "fileType": "DMG",
             "size": 250021057,
             "sha256": "a8435c93cfb5f8bbfeea4b134cfad1ac66b67632b75e438c63b1a8ae043bef0e",
-            "downloads": 4280973,
+            "downloads": 4281263,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "999d17d735af7e19db2029661c4d68fe0dcec003e3fc646899d7a569e48ec101",
-        "downloads": 80262
+        "downloads": 80263
       }
     ],
     "syncedAt": "2026-09-10",
@@ -2691,7 +2769,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 259,
+      "latencyMs": 248,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -2814,6 +2892,12 @@
         "reachable": true,
         "latencyMs": 259,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 248,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -2837,7 +2921,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 396,
+      "latencyMs": 212,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -2960,6 +3044,12 @@
         "reachable": true,
         "latencyMs": 396,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 212,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -2986,12 +3076,12 @@
             "fileType": "IPA",
             "size": 50003343,
             "sha256": null,
-            "downloads": 12331,
+            "downloads": 12332,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
-        "downloads": 12331
+        "downloads": 12332
       }
     ],
     "syncedAt": "2026-09-10",
@@ -2999,7 +3089,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 284,
+      "latencyMs": 261,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3122,6 +3212,12 @@
         "reachable": true,
         "latencyMs": 284,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 261,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3148,13 +3244,13 @@
             "fileType": "IPA",
             "size": 128845098,
             "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-            "downloads": 22,
+            "downloads": 24,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-        "downloads": 22
+        "downloads": 24
       }
     ],
     "syncedAt": "2026-09-10",
@@ -3162,7 +3258,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 301,
+      "latencyMs": 266,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3285,6 +3381,12 @@
         "reachable": true,
         "latencyMs": 301,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 266,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3311,13 +3413,13 @@
             "fileType": "IPA",
             "size": 129007319,
             "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
-            "downloads": 9,
+            "downloads": 10,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
-        "downloads": 9
+        "downloads": 10
       }
     ],
     "syncedAt": "2026-09-10",
@@ -3325,7 +3427,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 270,
+      "latencyMs": 278,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3448,6 +3550,12 @@
         "reachable": true,
         "latencyMs": 270,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 278,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3498,7 +3606,7 @@
             "fileType": "IPA",
             "size": 134278975,
             "sha256": "ca8579d26a89d6b00009df92aa55d08571b0ceca7632eccbb5903c51e803adbd",
-            "downloads": 2052,
+            "downloads": 2056,
             "mimeType": "application/octet-stream",
             "installable": true
           },
@@ -3516,7 +3624,7 @@
           }
         ],
         "sha256": "ca8579d26a89d6b00009df92aa55d08571b0ceca7632eccbb5903c51e803adbd",
-        "downloads": 2052
+        "downloads": 2056
       }
     ],
     "syncedAt": "2026-09-10",
@@ -3524,7 +3632,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 257,
+      "latencyMs": 241,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3647,6 +3755,12 @@
         "reachable": true,
         "latencyMs": 257,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 241,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3685,7 +3799,7 @@
       "reachable": true,
       "detail": "HTTP 200",
       "since": "2026-09-07",
-      "latencyMs": 324,
+      "latencyMs": 315,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -3808,6 +3922,12 @@
         "reachable": true,
         "latencyMs": 324,
         "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 315,
+        "detail": "HTTP 200"
       }
     ]
   },
@@ -3834,13 +3954,13 @@
             "fileType": "IPA",
             "size": 129031075,
             "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba",
-            "downloads": 131,
+            "downloads": 137,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba",
-        "downloads": 131
+        "downloads": 137
       },
       {
         "version": "20.21.6",
@@ -3904,7 +4024,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 293,
+      "latencyMs": 317,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -4027,6 +4147,12 @@
         "reachable": true,
         "latencyMs": 293,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 317,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -4053,13 +4179,13 @@
             "fileType": "IPA",
             "size": 104992686,
             "sha256": "c098eb3877d4e6526af83cfb1ff2e3eaa547c3e266dd01770a87acd2f9cf3944",
-            "downloads": 16,
+            "downloads": 18,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "c098eb3877d4e6526af83cfb1ff2e3eaa547c3e266dd01770a87acd2f9cf3944",
-        "downloads": 16
+        "downloads": 18
       }
     ],
     "syncedAt": "2026-09-10",
@@ -4067,7 +4193,7 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 262,
+      "latencyMs": 274,
       "measuredAt": "2026-09-10"
     },
     "healthHistory": [
@@ -4189,6 +4315,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 262,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-10",
+        "reachable": true,
+        "latencyMs": 274,
         "detail": "HTTP 302"
       }
     ]
