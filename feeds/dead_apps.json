@@ -6,36 +6,14 @@
     "stale": 180,
     "archived": 365
   },
-  "count": 18,
+  "count": 16,
   "summary": {
     "warning": 5,
     "stale": 4,
     "archived": 7,
-    "critical": 2
+    "critical": 0
   },
   "deadApps": [
-    {
-      "slug": "twitchadblock",
-      "name": "TwitchAdBlock",
-      "lastUpdate": "2026-08-14",
-      "daysSinceUpdate": 27,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 29.4.2"
-      ]
-    },
-    {
-      "slug": "ytkp",
-      "name": "YTKillerPlus",
-      "lastUpdate": "2026-09-09",
-      "daysSinceUpdate": 1,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 21.36.6"
-      ]
-    },
     {
       "slug": "bhtwitter",
       "name": "BHTwitter",
@@ -255,11 +233,9 @@
       "name": "YTKillerPlus",
       "lastUpdate": "2026-09-09",
       "daysSinceUpdate": 1,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 21.36.6"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "ytkace",
@@ -638,11 +614,9 @@
       "name": "TwitchAdBlock",
       "lastUpdate": "2026-08-14",
       "daysSinceUpdate": 27,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 29.4.2"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "neofreebird",

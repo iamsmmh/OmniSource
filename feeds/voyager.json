@@ -45,7 +45,7 @@
               "fileType": "APK",
               "size": 8228595,
               "sha256": "b164edc7e58b1d283f8f472aaccfabebc51dcf18588014176b18803f7d6e3b34",
-              "downloads": 1422,
+              "downloads": 1423,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -205,8 +205,8 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "not probed",
-          "statusSince": "2026-09-06",
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-06"
         }
       }

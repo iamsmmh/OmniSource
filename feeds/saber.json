@@ -93,7 +93,7 @@
               "fileType": "EXE",
               "size": 41802638,
               "sha256": "7f36ef4fd31c7c48ae493d3c01aa6cfb9f00e9cef661d56676037f266ea2cc21",
-              "downloads": 942,
+              "downloads": 943,
               "mimeType": "binary/octet-stream",
               "installable": true
             },
@@ -193,8 +193,8 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "not probed",
-          "statusSince": "2026-08-30",
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-30"
         }
       }

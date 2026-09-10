@@ -45,7 +45,7 @@
               "fileType": "DEB",
               "size": 23412564,
               "sha256": "a3f888dcba0442b4d34a0ddd859747f4aa267b6249b56f5df6a7c327908371b9",
-              "downloads": 10120,
+              "downloads": 10121,
               "mimeType": "application/x-debian-package",
               "installable": true
             },
@@ -81,7 +81,7 @@
               "fileType": "AppImage",
               "size": 48581283,
               "sha256": "18c1d515fd99b0b10ca5fa8cbab192f6d4c9d8a10381e16f5de8fb8f9d39bbe1",
-              "downloads": 5215,
+              "downloads": 5216,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -105,7 +105,7 @@
               "fileType": "AppImage",
               "size": 50689748,
               "sha256": "661c098e6b7f7610171a57b7c533ce8bba6f2312b71e76d61e850461973eba21",
-              "downloads": 14384,
+              "downloads": 14386,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -117,7 +117,7 @@
               "fileType": "other",
               "size": 173467,
               "sha256": "e2d4c9f6d238840ac6fc0da4f90769b810dd7760bae776ed5f95771fd45976be",
-              "downloads": 29388,
+              "downloads": 29391,
               "mimeType": "application/octet-stream",
               "installable": false
             },
@@ -141,7 +141,7 @@
               "fileType": "ZIP",
               "size": 20390334,
               "sha256": "fbc9cd2f5131b159a92424e5c458c35ce43ba603cdded64dfc98e4bd4f17ff93",
-              "downloads": 9574,
+              "downloads": 9575,
               "mimeType": "application/zip",
               "installable": false
             },
@@ -193,8 +193,8 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "not probed",
-          "statusSince": "2026-05-16",
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-05-16"
         }
       }

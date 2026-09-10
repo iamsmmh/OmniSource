@@ -45,7 +45,7 @@
               "fileType": "APK",
               "size": 37702413,
               "sha256": "cb19e0b910a53da5a8b8c7616565b4c014fdb4cb9b013df32c20e924b2b0c715",
-              "downloads": 8308,
+              "downloads": 8319,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -141,7 +141,7 @@
               "fileType": "ZIP",
               "size": 52983094,
               "sha256": "4777e6bc19df964e0d2d1c9411bb1ba23a4ca7c09ff947844d0ccb594d73bb8b",
-              "downloads": 693,
+              "downloads": 696,
               "mimeType": "raw",
               "installable": false
             },
@@ -153,7 +153,7 @@
               "fileType": "EXE",
               "size": 39141844,
               "sha256": "c1780331d3614177b92286563b6788ef90ff566b3ba3a8ddf116ba73ea5611e7",
-              "downloads": 1079,
+              "downloads": 1081,
               "mimeType": "raw",
               "installable": true
             },
@@ -217,8 +217,8 @@
         },
         "health": {
           "downloadReachable": true,
-          "detail": "not probed",
-          "statusSince": "2026-08-30",
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-30"
         }
       }
