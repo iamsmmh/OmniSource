@@ -1481,12 +1481,12 @@
           min-width: 0;
         }
         .language-selector select {
-          height: 36px;
+          height: 38px;
           border: 1px solid var(--line);
           background: var(--surface-solid);
           color: var(--text);
           border-radius: var(--radius-md);
-          padding: 0 10px;
+          padding: 0 28px 0 12px;
           font-size: 12px;
           cursor: pointer;
           appearance: none;

@@ -840,6 +840,8 @@ html[data-view="compact"] #viewToggle .icon-grid { display: none; }
 .stat-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 5px;
   padding: 22px 12px 20px;
   background: var(--glass);
@@ -1052,6 +1054,7 @@ html[data-view="compact"] #viewToggle .icon-grid { display: none; }
   flex-wrap: wrap;
   font-size: 11.5px;
   color: var(--muted);
+  padding-right: 56px;
 }
 .featured-card .fc-meta b { font-family: var(--font-mono); color: var(--text); }
 .featured-card .fc-cta {
@@ -2326,7 +2329,7 @@ html[data-view="compact"] .card-mini { display: none; }
 .footer-brand div { display: flex; flex-direction: column; gap: 4px; }
 .footer-brand strong { font-size: 15.5px; letter-spacing: -0.02em; }
 .footer-brand p { font-size: 12.5px; color: var(--muted); max-width: 30ch; line-height: 1.55; }
-.footer-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.footer-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 24px; }
 .footer-col { display: flex; flex-direction: column; gap: 9px; }
 .footer-col h4 {
   font-size: 10px;
@@ -2766,7 +2769,7 @@ a.ap-source-link:focus-visible {
 }
 .pair-list button {
   display: grid;
-  grid-template-columns: 34px 1fr auto;
+  grid-template-columns: 34px minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 13px;
   width: 100%;
@@ -3190,11 +3193,10 @@ a.ap-source-link:focus-visible {
   .stats-grid { grid-template-columns: 1fr 1fr; row-gap: 10px; }
   .apps-grid { grid-template-columns: 1fr; }
   .hero-copy { font-size: 15px; }
-  .source-box { padding: 9px 9px 9px 16px; }
-  .source-box .button span { display: none; }
-  .source-box .button { width: 46px; padding: 0; }
-  .client-row { display: grid; grid-template-columns: repeat(3, 1fr); width: min(100%, 540px); }
-  .client-hint { grid-column: 1 / -1; }
+  .client-row { display: flex; flex-wrap: wrap; justify-content: center; width: 100%; }
+  html[data-view="compact"] .app-card { grid-template-columns: 44px minmax(0, 1fr) auto; }
+  html[data-view="compact"] .favorite { grid-column: 3; grid-row: 1; align-self: start; }
+  html[data-view="compact"] .card-bottom { grid-column: 2 / 4; grid-row: 2; justify-self: start; margin-top: 2px; }
   .footer-inner { grid-template-columns: 1fr; }
   .fine-print { grid-column: 1; }
   .footer-cols { grid-template-columns: repeat(2, 1fr); }
@@ -3213,8 +3215,6 @@ a.ap-source-link:focus-visible {
   .result-grid { grid-template-columns: 1fr; }
   .cmp-picker { flex-direction: column; align-items: stretch; }
   .cmp-picker .vs { display: none; }
-  html[data-view="compact"] .app-card { grid-template-columns: 44px 1fr; }
-  html[data-view="compact"] .card-bottom { grid-column: 2; grid-row: 2; justify-self: start; margin-top: 2px; }
   .ap-hero { grid-template-columns: 1fr; text-align: left; padding: 26px; }
   .ap-icon { width: 88px; height: 88px; border-radius: 22px; }
   .ap-main { padding: 22px 14px 70px; }
@@ -4187,4 +4187,161 @@ body.nav-open .nav-backdrop {
 /* Fix: hero inner stagger uses fluid easing now */
 .os-hero > * {
   animation-timing-function: var(--ease-fluid);
+}
+
+/* ===========================================================================
+   Alignment pass — later cascade wins
+   ---------------------------------------------------------------------------
+   Fixes that must beat earlier Fluid Glass / 760px rules:
+   • 4-col homepage footer
+   • source-box stacks at 620px (after 760px button-width rule)
+   • compact cards keep heart + VIEW on one row
+   • dark-mode glass uses tokens, not hardcoded whites
+   • mobile nav: controls + hamburger pack to the right
+   • install dialog grid, catalog help overlap, language select
+   ========================================================================== */
+
+html[data-view="compact"] .app-card {
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+}
+html[data-view="compact"] .favorite {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: center;
+}
+html[data-view="compact"] .card-bottom {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.install-grid {
+  grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+}
+.install-grid .button.download,
+.install-grid .button.primary.download { grid-column: 1 / -1; }
+
+/* Catalog in-page search: SearchUI help (?) is absolutely positioned. */
+#catalog .search-box { padding-right: 42px; }
+
+.page-head .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 700 var(--text-2xs) var(--font-mono);
+  letter-spacing: var(--track-widest);
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  padding: 5px 13px 5px 11px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+  box-shadow: var(--highlight-inset);
+}
+.page-head .kicker::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--accent-grad);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+
+.hero-logo-wrap {
+  display: inline-flex;
+  margin-bottom: 30px;
+}
+.hero-logo-wrap .hero-logo { margin-bottom: 0; }
+
+/* Dark-mode: replace hardcoded light whites from Fluid Glass v2. */
+.app-card {
+  background: var(--glass);
+}
+.site-header .nav,
+.app-dialog,
+.qr-dialog,
+.os-palette-panel,
+.ap-hero,
+.ap-section {
+  border-color: var(--glass-border);
+}
+.hero-logo {
+  border-color: var(--glass-border);
+  background: var(--surface-solid);
+}
+
+/* Language selector wrap (features.js injects a <select> inside). */
+.language-selector {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+}
+.nav-controls .language-selector select {
+  height: 38px;
+  padding: 0 28px 0 12px;
+  border-radius: var(--radius-pill);
+  border-color: var(--glass-border);
+  background: var(--glass-subtle);
+}
+
+@media (max-width: 1100px) {
+  .site-header .nav,
+  .ap-header-inner {
+    display: flex;
+  }
+  .brand { order: 1; }
+  .nav-links { order: 2; }
+  .nav-controls {
+    order: 5;
+    margin-left: auto;
+    flex: none;
+  }
+  .nav-toggle {
+    order: 10;
+    flex: none;
+  }
+}
+
+@media (max-width: 760px) {
+  html[data-view="compact"] .app-card {
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+  }
+  html[data-view="compact"] .favorite {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+  }
+  html[data-view="compact"] .card-bottom {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    justify-self: start;
+    margin-top: 2px;
+  }
+}
+
+/* Re-assert the 620px source-box stack AFTER the 760px compact-button rule. */
+@media (max-width: 620px) {
+  .source-box {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+    gap: 10px;
+  }
+  .source-box .source-address { width: 100%; }
+  .source-box code {
+    white-space: normal;
+    overflow: visible;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    line-height: 1.55;
+  }
+  .source-box .button,
+  .source-box .button.square,
+  .source-box .button.primary {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+  }
+  .source-box .button span { display: inline; }
 }
