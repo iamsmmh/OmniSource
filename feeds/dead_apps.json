@@ -6,25 +6,14 @@
     "stale": 180,
     "archived": 365
   },
-  "count": 35,
+  "count": 33,
   "summary": {
     "warning": 7,
     "stale": 6,
     "archived": 11,
-    "critical": 11
+    "critical": 9
   },
   "deadApps": [
-    {
-      "slug": "apollo",
-      "name": "Apollo",
-      "lastUpdate": "2026-09-11",
-      "daysSinceUpdate": 0,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 3.6.0"
-      ]
-    },
     {
       "slug": "iqface",
       "name": "iQFace",
@@ -67,17 +56,6 @@
       "removedReleases": 1,
       "reasons": [
         "removed upstream release(s): 445.0.0"
-      ]
-    },
-    {
-      "slug": "sidestore",
-      "name": "SideStore",
-      "lastUpdate": "2026-09-09",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 0.6.3"
       ]
     },
     {
@@ -583,11 +561,9 @@
       "name": "SideStore",
       "lastUpdate": "2026-09-09",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 0.6.3"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "aidoku",
@@ -725,11 +701,9 @@
       "name": "Apollo",
       "lastUpdate": "2026-09-11",
       "daysSinceUpdate": 0,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 3.6.0"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "dolphinish",
