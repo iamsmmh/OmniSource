@@ -32,6 +32,9 @@ on:
       - analytics/**
       - search/**
       - status/**
+      - discover/**
+      - graph/**
+      - api/v2/**
       - js/**
       - manifest.webmanifest
       - sw.js
@@ -142,7 +145,8 @@ jobs:
           # nothing else, so the allowlist stays minimal on purpose: a stray
           # file here means the build misbehaved.
           git add -A -- '*.json' '*.xml' '*.gz' 'api/**' 'apps/**' 'compare/**' \
-            'collections/**' README.md index.html 'sitemap.xml' 'robots.txt' '.nojekyll'
+            'collections/**' 'discover/**' 'graph/**' README.md index.html \
+            'sitemap.xml' 'robots.txt' '.nojekyll'
 
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"

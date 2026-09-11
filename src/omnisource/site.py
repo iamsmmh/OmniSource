@@ -72,7 +72,10 @@ SITE_FILES = (
     "analytics",
     "search",
     "status",
+    "discover",
+    "graph",
     "js",
+    "src",
 )
 
 # Assets that must ship even though the site HTML does not reference them:
@@ -99,12 +102,28 @@ API_DOCUMENTS = {
     "community.json": "Popular, recently added, rising and requested apps.",
     "install.json": "Install cards for every app and the master feed.",
     "search-index.json": "Fuse.js-compatible search index.",
-    "compare.json": "Side-by-side comparison matrix.",
+    "compare.json": "Side-by-side comparison matrix (app summaries only; pairs computed client-side).",
     "screenshots.json": "Screenshot catalog + mirror URLs + WebP thumbnails.",
     "integrity_report.json": "Per-asset integrity: sha256, size, release id, source and reject checks.",
     "dead_apps.json": "Dead/stale/approaching-dead classification (90/180/365 day thresholds).",
     "collections.json": "Curated collections (YouTube, Music, Emulators, Utilities, Productivity).",
 }
+
+# V2 API mapping: canonical file in feeds/ -> published name under api/v2/.
+# These are aliases that share bytes with the v1 documents where possible so
+# OmniStore clients can rely on stable versioned paths without duplicating
+# payloads. The graph/trust/recommendations v2 endpoints are assembled
+# client-side-aware (from related.json + verification.json + trending.json).
+API_V2_ALIASES = {
+    "apps.json": "discovery.json",
+    "sources.json": "sources.json",
+    "trending.json": "trending.json",
+    "status.json": "status.json",
+    "recommendations.json": "related.json",
+    "trust.json": "verification.json",
+}
+
+API_V2_STANDALONE = {"index.json", "graph.json"}
 
 # Extensionless API routes (Phase 16): clients that prefer clean URLs get a
 # byte-identical twin of the JSON document. Mapping of route name -> document.
@@ -191,22 +210,14 @@ def _collection_slugs(root: Path) -> list[str]:
 
 
 def _compare_pairs(root: Path) -> list[str]:
-    """Canonical (alphabetical) ``a-vs-b`` pair slugs for the sitemap."""
-    compare_dir = root / "compare"
-    if not compare_dir.is_dir():
-        return []
-    pairs = []
-    for path in sorted(compare_dir.iterdir()):
-        if not (path.is_dir() and (path / "index.html").is_file()):
-            continue
-        name = path.name
-        if "-vs-" not in name:
-            continue
-        left, _, right = name.partition("-vs-")
-        # Keep only the canonical direction so the sitemap lists one URL per pair.
-        if left < right:
-            pairs.append(name)
-    return pairs
+    """Return the list of compare-pair slugs.
+
+    In v2 the 5,800+ static pair pages are no longer generated: the
+    /compare/?app1=a&app2=b URL renders everything client-side. The sitemap
+    therefore no longer lists individual pair URLs, which keeps sitemap.xml
+    small and relevant.
+    """
+    return []
 
 
 def _sitemap(
@@ -438,6 +449,20 @@ def _publish_api_mirror(root: Path, api_dir: Path, *, brotli: bool) -> dict[str,
         if source.exists():
             publish(api_dir / route, source)
 
+    # V2 API (api/v2/): stable, versioned surface for OmniStore clients.
+    v2_dir = api_dir / "v2"
+    v2_dir.mkdir(parents=True, exist_ok=True)
+    for v2_name, feeds_name in API_V2_ALIASES.items():
+        source = root / "feeds" / feeds_name
+        if source.exists():
+            publish(v2_dir / v2_name, source)
+    # Copy the api/v2/index.json manifest that ships in the repository.
+    v2_index_src = root / "api" / "v2" / "index.json"
+    if v2_index_src.exists():
+        publish(v2_dir / "index.json", v2_index_src)
+    # graph.json is assembled on demand from discovery + related + sources.
+    _publish_v2_graph(root, v2_dir, written)
+
     manifest_path = api_dir / "index.json"
     manifest = _api_manifest(_base_url_from_catalog(root), date.today().isoformat())
     manifest_payload = json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"
@@ -459,6 +484,100 @@ def _publish_api_mirror(root: Path, api_dir: Path, *, brotli: bool) -> dict[str,
         "published": written,
         "changed": changed,
     }
+
+
+# ---------------------------------------------------------------------------
+# V2 API graph document
+# ---------------------------------------------------------------------------
+
+
+def _publish_v2_graph(root: Path, v2_dir: Path, written_set: set[str]) -> None:
+    """Assemble api/v2/graph.json from the existing intelligence documents."""
+    discovery = _generated_doc(root, "discovery.json")
+    related = _generated_doc(root, "related.json")
+    apps_list = discovery.get("apps") if isinstance(discovery, dict) else []
+    if not apps_list:
+        return
+
+    nodes: list[dict[str, Any]] = []
+    edges: list[dict[str, Any]] = []
+    nodes_set: set[str] = set()
+    dev_map: dict[str, str] = {}
+    source_map: dict[str, str] = {}
+
+    def add_node(node_id: str, kind: str, label: str, **extra: Any) -> None:
+        if node_id in nodes_set:
+            return
+        nodes_set.add(node_id)
+        entry: dict[str, Any] = {"id": node_id, "type": kind, "label": label}
+        entry.update(extra)
+        nodes.append(entry)
+
+    for app in apps_list:
+        slug = app.get("slug") or app.get("id")
+        if not slug:
+            continue
+        add_node(
+            f"app:{slug}",
+            "app",
+            app.get("name") or slug,
+            slug=slug,
+            bundleId=app.get("bundleId") or app.get("bundleIdentifier") or "",
+            category=app.get("category") or "other",
+            version=app.get("version") or "",
+        )
+        dev = app.get("developerName") or app.get("developer") or "unknown"
+        dev_key = dev.lower().replace(" ", "-")
+        dev_id = f"dev:{dev_key}"
+        if dev_key not in dev_map:
+            dev_map[dev_key] = dev_id
+            add_node(dev_id, "developer", dev)
+        edges.append({"source": f"app:{slug}", "target": dev_id, "type": "developer"})
+        src_label = app.get("source") or "unknown"
+        src_key = "".join(ch for ch in src_label.lower() if ch.isalnum())[:30]
+        src_id = f"source:{src_key}"
+        if src_key not in source_map:
+            source_map[src_key] = src_id
+            add_node(src_id, "source", src_label, url=app.get("sourceURL") or "")
+        edges.append({"source": f"app:{slug}", "target": src_id, "type": "source"})
+
+    bundles: dict[str, list[str]] = {}
+    for app in apps_list:
+        bid = app.get("bundleId") or app.get("bundleIdentifier")
+        slug = app.get("slug") or app.get("id")
+        if bid and slug:
+            bundles.setdefault(bid, []).append(slug)
+    for bid, slugs in bundles.items():
+        for i in range(len(slugs)):
+            for j in range(i + 1, len(slugs)):
+                edges.append({"source": f"app:{slugs[i]}", "target": f"app:{slugs[j]}", "type": "bundle", "bundleId": bid})
+
+    rel = related.get("related") if isinstance(related, dict) else None
+    if isinstance(rel, dict):
+        for slug, related_list in rel.items():
+            if not isinstance(related_list, list):
+                continue
+            for target in related_list:
+                tslug = target if isinstance(target, str) else target.get("slug")
+                if not tslug:
+                    continue
+                if f"app:{slug}" in nodes_set and f"app:{tslug}" in nodes_set:
+                    edges.append({"source": f"app:{slug}", "target": f"app:{tslug}", "type": "related"})
+
+    payload = {
+        "schemaVersion": 2,
+        "generatedAt": date.today().isoformat(),
+        "count": len(nodes),
+        "edgeCount": len(edges),
+        "nodes": nodes,
+        "edges": edges,
+    }
+    target = v2_dir / "graph.json"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    text = json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
+    if not target.exists() or target.read_text(encoding="utf-8") != text:
+        _write_text(target, text)
+    written_set.add(target.name)
 
 
 # ---------------------------------------------------------------------------

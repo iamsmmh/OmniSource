@@ -198,6 +198,26 @@
   --z-palette: 100;
   --z-dialog: 110;
   --z-toast: 120;
+
+  /* Semantic aliases requested by the OmniStore architecture spec.
+     These map cleanly onto the existing color system so no component has
+     to hard-code hex or know light from dark. */
+  --success: var(--green);
+  --success-soft: var(--green-soft);
+  --warning: var(--amber);
+  --warning-soft: var(--amber-soft);
+  --danger: var(--red);
+  --danger-soft: var(--red-soft);
+  --info: var(--blue);
+  --info-soft: var(--blue-soft);
+
+  /* Trust-score grade bands (used by trust badges). */
+  --grade-ap: var(--green);
+  --grade-a:  var(--green);
+  --grade-b:  var(--cyan);
+  --grade-c:  var(--amber);
+  --grade-d:  var(--red);
+  --grade-f:  var(--red);
 }
 
 /* ── Dark palette — explicit choice ──────────────────────────────────────── */

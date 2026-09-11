@@ -33,7 +33,7 @@ from omnisource.app_pages import build_app_pages
 from omnisource.assets import DirectoryCache, inspect_catalog
 from omnisource.collections import build_collection_pages, build_collections_doc
 from omnisource.community import build_community_doc
-from omnisource.compare import build_compare_doc, build_compare_pages
+from omnisource.compare import build_compare_doc
 from omnisource.constants import README_MARKERS, README_STATS_MARKERS
 from omnisource.dead_apps import build_dead_apps_doc
 from omnisource.di import Container, build_container
@@ -589,12 +589,13 @@ def stage_build(
         )
     )
 
-    # Static comparison pages: one /compare/<a>-vs-<b>/ per unordered pair
-    # (Phase 9) plus a redirect stub for the reverse-ordered URL.
-    compare_pages = build_compare_pages(
-        catalog, state, health_doc, verification_doc, pages_dir=container.paths.root / "compare"
-    )
-    changed.extend(compare_pages)
+    # Static per-pair compare pages (compare/<a>-vs-<b>/) removed in v2:
+    # the /compare/ page renders every pair client-side from feeds/compare.json
+    # via the compare engine (src/js/compare-engine.js). This eliminates
+    # ~5,800 generated HTML files and ~35 MB from the repository. Legacy
+    # /compare/<slug>-vs-<slug>/ URLs still resolve through the dynamic
+    # engine thanks to the client-side router and a catch-all redirect page
+    # placed by the site builder.
 
     # Static collection pages: one /collections/<slug>/ per curated collection
     # (Phase 10).

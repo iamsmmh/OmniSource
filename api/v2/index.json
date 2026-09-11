@@ -1,0 +1,52 @@
+{
+  "name": "OmniSource API v2",
+  "version": "2",
+  "description": "Production-grade metadata intelligence API for OmniStore clients.",
+  "baseURL": "https://iamsmmh.github.io/OmniSource/api/v2",
+  "generatedAt": "auto-generated",
+  "endpoints": [
+    {
+      "path": "/api/v2/apps.json",
+      "description": "Full discovery catalog with trust scores, health, and relationships.",
+      "format": "json",
+      "stable": true
+    },
+    {
+      "path": "/api/v2/sources.json",
+      "description": "Source index with health and reputation.",
+      "format": "json",
+      "stable": true
+    },
+    {
+      "path": "/api/v2/trending.json",
+      "description": "Trending, rising, and recently updated apps.",
+      "format": "json",
+      "stable": true
+    },
+    {
+      "path": "/api/v2/recommendations.json",
+      "description": "Related apps, alternatives, and per-app recommendations.",
+      "format": "json",
+      "stable": true
+    },
+    {
+      "path": "/api/v2/status.json",
+      "description": "Source health status, uptime, latency, and pipeline state.",
+      "format": "json",
+      "stable": true
+    },
+    {
+      "path": "/api/v2/graph.json",
+      "description": "App relationship graph: apps, developers, sources, edges.",
+      "format": "json",
+      "stable": true
+    },
+    {
+      "path": "/api/v2/trust.json",
+      "description": "Per-app trust, security, and maintenance scores.",
+      "format": "json",
+      "stable": true
+    }
+  ],
+  "notes": "v2 endpoints are generated on every sync by the OmniSource pipeline. Clients should use these URLs for OmniStore and third-party integrations."
+}
