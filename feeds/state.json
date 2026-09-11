@@ -36,16 +36,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 209,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 147,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 243,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -219,19 +213,25 @@
         "reachable": true,
         "latencyMs": 209,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 147,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:Aidoku/Aidoku"
   },
   "analyticsHistory": [
     {
-      "date": "2026-09-10",
+      "date": "2026-09-11",
       "apps": 77,
       "sources": 61,
-      "verified": 70,
-      "deadLinks": 6,
-      "newThisWeek": 9,
-      "updatedThisWeek": 9
+      "verified": 76,
+      "deadLinks": 0,
+      "newThisWeek": 6,
+      "updatedThisWeek": 19
     }
   ],
   "anxreader": {
@@ -379,8 +379,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 254,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 160,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -448,6 +448,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 254,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 160,
         "detail": "HTTP 302"
       }
     ]
@@ -621,8 +627,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 271,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 127,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -691,6 +697,12 @@
         "reachable": true,
         "latencyMs": 271,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 127,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -699,136 +711,136 @@
     "lastResolvedSource": "github:Apollo-Reborn/Apollo-Reborn",
     "versions": [
       {
-        "version": "3.6.0",
-        "date": "2026-08-18",
-        "localizedDescription": "Apollo 3.6.0 | Apollo-Reborn-3.6.0\n\n### Features\n\n- Add **Gallery View** to the Home feed, Popular, All, Moderator Posts, and user profiles, with real video controls, rotation, and sort inherited from the feed you opened it from (#904: @icpryde)\n  - Adds a universal \"...\" menu to your own profile holding Gallery View, Edit Profile, Recently Read, hidden and deleted content, and Share Profile, so the floating Edit pill and the nav-bar clock and eye icons are gone\n- Add **Live Interactive Posts** so Reddit's Developer Platform posts — live match threads, games, and other custom widgets — render inline in comments and the feed instead of the \"not supported on old Reddit\" placeholder (#920, #939: @icpryde)\n- Add a **Feed Video Scrubber** that makes an inline video's own progress bar grabbable, so you can slide to seek without opening the player (#938: @icpryde)\n  - Adds **Unmute Videos in Feed** alongside it, with Never, Always, and Remember modes\n- Redesign the **App Icon** picker around browsable pack cards, a daily-rotating Spotlight row, an adaptive iPad grid, and clearer selection state and haptics (#912, #941: @IllIIllIllIllII)\n- Add an **Icon Appearance** menu so any icon can be pinned to its Light or Dark artwork instead of always following the device appearance (#894: @IllIIllIllIllII)\n- Add **Wallpapers** to Settings for browsing and saving Apollo's Goodbye wallpaper collections for iPhone, iPad, and Mac (#947: @IllIIllIllIllII)\n- Add a configurable **Share Link Host** so Copy Link, the share sheet, and Share as Image can share through Reddit, old.reddit, vxReddit, or fxreddit (#857: @JamesLautner)\n- Add a **Blur NSFW Media** setting with Reddit Setting, Always, and Never options, covering mature media while leaving the post title readable (#874: @jordanearle)\n- Add **Swipe Past Gallery to Navigate** so swiping past the first or last image of a feed gallery goes back or forward instead of rubber-banding (#934: @icpryde)\n- Add swipe navigation between **Notifications and Chat** in the Inbox, and keep the title from sliding across when switching tabs (#900: @icpryde)\n- Add **Prefer Native Images** to Comment Link Host, so comment images upload natively wherever a subreddit allows image comments and only fall back to the link host where it doesn't (#952: @icpryde)\n- Add the **Right to Repair** app icon, overhaul the **Classics** Liquid Glass pack with more faithful recreations and four new icons, and refresh **Synthwave** (#888, #915, #927, #928: @IllIIllIllIllII, @bajader)\n- Move **Icon-Only Tab Bar** under Settings > Interface alongside the rest of the tab bar options (#867: @JeffreyCA)\n\n### Fixes\n\n- Fix five crashes reported against 3.5.1 — Filters & Blocks Edit and the Tag Filters toggle, switching accounts from the Inbox, token refresh, and Liquid Glass nav titles — plus a crash on malformed multireddit responses (#864, #897: @jordanearle)\n- Stop hidden scrape web views letting a Reddit video ad take over the screen while **Community Highlights**, Badge Book, Social Links, User Flair, or the sidebar load in the background (#908: @jordanearle)\n- Stop the **theme crash kill-switch** disabling a custom theme after force-quits, iOS prewarm discards, or jetsams, while still tripping on a real crash loop (#923: @icpryde)\n- Fix **Community Highlights** stalling at two entries when Reddit serves its bot challenge, plus the collapsed bar's excess padding and the layout snap the first time a subreddit opens (#925, #926: @icpryde)\n- Fix **A–Z scrubbing** in the Subreddits list going dead mid-drag on non-Liquid-Glass builds, along with the black bands behind its section headers (#936: @icpryde)\n- Fix images being cropped in multi-image **feed carousels** — every page now shows the complete picture, letterboxed in the theme's card color (#922: @icpryde)\n- Fix **link previews** rendering as mojibake for pages served in a legacy charset such as EUC-KR, Shift_JIS, GB18030, or Big5 (#950: @icpryde)\n- Fix **tweet previews** not rendering at all after x.com changed its guest-token flow, and show them on posts with 40 or fewer upvotes too (#873: @DeltAndy123)\n- Fix **Picture in Picture** taking over for silent v.redd.it clips while Activate For is set to Unmuted Videos Only (#951: @JeffreyCA)\n- Play more **sports clips** inline: add MLB's cuts-diamond CDN, restore streamain posters, and follow dubz's and streamin's split CDNs instead of assuming a single host (#929, #944: @icpryde)\n- Fix Apollo's native **NSFW blur** ignoring your Reddit preference on API-Key-Free accounts, and the Search tab pill painting its light-mode color on dark themes (#866: @jordanearle)\n- Fix **custom themes** greying out primary text in Pure Black Dark Mode and leaving the GIF and gallery-count pills unreadable on compact posts (#869: @DeltAndy123)\n- Fix **Recently Read** opening with a black background and mis-sized stats, and apply custom theme text colors to the remaining tweak-owned settings rows that ignored them (#860: @JeffreyCA)\n- Fix mature listings returning the placeholder user on **API-Key-Free** accounts configured with a custom User-Agent (#889: @Thetromboneman1)\n- Fix cloud **AI Summaries** failing on newer OpenAI models, and bound streaming responses so a malformed endpoint can't exhaust memory (#887, #890: @Thetromboneman1, @jaredrossberg)\n- Improve scrolling and launch smoothness by tightening shared-state synchronization and keeping cache serialization and image decoding off the critical path (#859: @ryannair05)\n- Fix the **Public Sticky from Subreddit** row eating the gap above Cancel on the legacy \"Notify user via...\" sheet (#862: @DeltAndy123)",
-        "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
-        "size": 95474417,
+        "version": "3.7.0",
+        "date": "2026-09-11",
+        "localizedDescription": "Apollo 3.7.0 | Apollo-Reborn-3.7.0\n\n### Features\n\n- Add **Floating Post Tabs** (Posts & Feeds → Floating Tabs, off by default) — keep up to five posts open as draggable bubbles from any post or feed ⋯ menu, and tap one to land exactly where you left off (#984, #1061: @icpryde)\n  - Bubbles snap to the screen edges, tuck away when dragged past them, stack magnetically, and hold-to-preview the post; drop one on the ✕ to close it\n  - Match threads wear the two teams' crests on their bubble, and two text posts from the same subreddit get a big letter each so they don't look like twins\n- Add a **Feed Shortcuts** screen (Features → Subreddits) with Classic, Circle, Tinted, Soft Tile, and Solid Tile icon styles, Rows, Grid, Side-by-Side, and Icon Dock layouts, a live preview, and visibility toggles for Popular, All, and Moderator Posts (#988: @IllIIllIllIllII)\n- Add a **Subreddit Sections** screen (Features → Subreddits) — give followed users their own FOLLOWING section with **Separate Followed Users**, drag Favorites, Multireddits, Moderator, and Following into any order, and watch a pinned live preview follow every change (#997, #1020: @icpryde)\n  - Subreddit List Enhancements, Modern Subreddit Dividers, and Hide Multireddit Descriptions move here, and the A–Z index stays visible and themed with Enhancements off\n- Add **Per-Account Favorites** and **Sort Favorites Alphabetically** (Subreddits → Favorites), so each account can keep its own subreddit favorites and keep them in A–Z order (#1017, #1042: @IllIIllIllIllII)\n- Add Fade, Down, and Off styles to **Hide Bars on Scroll** for the Liquid Glass tab bar alongside Left and Right, plus a **Scroll Behavior** picker that restores Apollo's Classic one-gesture hide next to the Two-Gesture default (#972: @IllIIllIllIllII)\n  - Interface settings regroup into Tab Bar and Display & Navigation, and Profile Layout opens straight from the Apollo Reborn hub\n- Rework **Liquid Glass navigation** around a collapsible action pill — the ⋯ button expands into translate, moderator, sort, and more actions, so titles stay centered and stop resizing between screens (#1035, #1047: @IllIIllIllIllII)\n  - Navigation buttons match the back button and title, moderator controls turn a brighter green with readable menu text, the pill collapses while subreddit search is open, and a cancelled swipe-back no longer jumps the page\n  - Replaces the Center Title Between Buttons setting with automatic placement; standard builds keep their expanded actions\n- Replace the Liquid Glass **feed search bar** with the native glass pill — it activates in place, compresses as you scroll, and reveals on a pull at the top, fixing the feed sliding under the field and the bar floating detached after cancel (#1002, #1026: @icpryde)\n  - Results and the query survive opening a post, the quick-switcher's autocomplete highlight stays legible on near-white accents, and the bar is in place from the first frame when a feed re-appears at its top\n  - Tapping the Posts tab scrolls to the top and a second tap returns to the subreddit list, including from followed-user profiles (#1021, #1040: @IllIIllIllIllII)\n  - The Keep Search Bar Visible setting is retired; in-place activation is simply how glass search works now\n- Add **Bold Post Titles** (Appearance → Posts) — feed post titles in Semibold for large and compact posts, every theme and theme font, Liquid Glass or legacy chrome; flips live without a relaunch (#1033: @icpryde)\n- Show read state on **Community Highlights** — unread dots, a New badge for posts under 24 hours old, a theme-colored +N count for comments added since your last visit, and dimmed titles once a highlight is read (#1041: @IllIIllIllIllII)\n- Add a live **Profile Layout** preview for Immersive, Compact, and a restored Native layout that updates as you change avatar and visibility options, with optional pinning (#1034: @IllIIllIllIllII)\n  - Also fixes copying your username on Immersive and Compact layouts and removes duplicated usernames on profiles\n- Add pinned live previews to **Subreddit Layout** too — a header preview for the Immersive, Compact, and Native **Header Style**, a Community Highlights preview for Full, Partial, and Off, and separate User Flair, Sidebar, Subtitle, and Description toggles that update open subreddits without reopening them (#1019: @IllIIllIllIllII)\n- Add **Microsoft Translator** as a bring-your-own-key translation provider, retry Google through a second endpoint when its free one rate-limits you, and show a Translation Limit Reached notice instead of silently giving up (#998: @icpryde)\n  - Moves off the shut-down default LibreTranslate instance and names dead or redirected instances instead of failing quietly\n- Add a **Source** picker to the Feed and Post **widgets** — Home, Popular, All, or a subreddit — and let every widget's subreddit field take several subreddits at once, a pasted link, or a multireddit (#1051: @icpryde)\n  - Copy Widget Setup Code now offers a with-account code, which is what unlocks Home and your private multireddits\n- Add pinned live previews to the **Inline Media** and **Rich Link Previews** settings screens that follow every control as you scroll, with tap to pin or unpin, and let the size and Apollo AI sliders select a stop from a tap (#1022, #1023, #1025: @icpryde)\n- Add **Forget Forward Swipe After Scrolling** (Posts & Feeds, off by default) so a forward swipe stops reopening a post you backed out of many posts ago; **Swipe Past Gallery to Navigate** now defaults to off (#996: @icpryde)\n- Improve **Find in Comments** — the selected match stays in view while rows load in, a comma-separated query matches any of its terms, and the docked bar follows the theme (#992, #1036: @icpryde)\n  - On Liquid Glass it is now the same native search bar the feed uses: it activates in place, the match count sits inside the field, and the More pill turns into up and down chevrons while a search is live\n- Add nine never-released **Ultra** icons — Safari, Space Paws, Grumpy Space Paws, and sequels to Explorer of Smiles, Gorilla Gus, The Little Prince, Under the Tree, and Wish Maker — move SPCA into Ultra, and list the EverythingApplePro Icons Drop Test icon in Sekrit (#969, #971, #989: @IllIIllIllIllII)\n\n### Fixes\n\n- Fix Apollo **freezing** on a loading spinner or a loaded comments screen when navigating between subreddits or opening posts on iOS 26 and later (#1024: @IllIIllIllIllII)\n- Fix **Gallery View** getting killed for memory on animated GIFs — GIFs now stream instead of holding every frame in RAM, and oversized stills are downsampled (#1001: @icpryde)\n- Fix a launch crash when the trending-subreddits table can't be written (LiveContainer and other read-only setups), and a crash opening a feed on older iOS versions that lack ActivityKit, WeatherKit, or VisionKit (#968: @icpryde)\n- Fix **Live Interactive Posts** — post-match threads render as normal text posts instead of an endless spinner, finished match threads no longer leave a hole in feed cards, the external-link confirmation works, and rotation relays out (#991, #1046: @icpryde)\n  - Opening a live post from the feed hands its already-loaded widget to the thread instead of reloading it, widgets stay warm between feed and thread, and Apollo AI no longer tries to summarize the hidden fallback text under one\n- Fix the in-app **Safari** browser flashing a white page while a link loads in dark mode; it stays black until content paints (#1052: @icpryde)\n- Fix **Liquid Glass** top fades vanishing during tab switches, and make swipe-back track the nav bar so the title and search bar no longer snap to the previous screen the moment a swipe starts (#1018: @icpryde)\n- Fix **Account Switcher** reordering quietly switching the signed-in account, plus drag handles that scrolled the page and rows that overlapped (#1011: @IllIIllIllIllII)\n- Fix duplicate items in **Saved** after a pull-to-refresh (#1005: @Thetromboneman1)\n- Fix the **subreddit list**'s section headers overlapping rows and labels slidin…",
+        "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
+        "size": 96105993,
         "minOSVersion": "14.0",
-        "releaseUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.6.0",
+        "releaseUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.7.0",
         "source": "github",
         "isPrerelease": false,
         "isDraft": false,
         "assets": [
           {
-            "filename": "Apollo-Reborn-3.6.0-dSYMs.zip",
-            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-dSYMs.zip",
+            "filename": "Apollo-Reborn-3.7.0-dSYMs.zip",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-dSYMs.zip",
             "platform": "unknown",
             "architecture": null,
             "fileType": "ZIP",
-            "size": 18360443,
-            "sha256": "45bd2a66e693a18b2cefeca7146024a5f6abe93f920aad1b478c1fa7197450e0",
-            "downloads": 50,
+            "size": 20210832,
+            "sha256": "3e28268abc8bdadb4ff213a560d4a5d119792bfa53c50dbfd47f2ccf98487e95",
+            "downloads": 1,
             "mimeType": "application/zip",
             "installable": false
           },
           {
-            "filename": "Apollo-Reborn-3.6.0-GLASS-NOEXTENSIONS.ipa",
-            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-GLASS-NOEXTENSIONS.ipa",
+            "filename": "Apollo-Reborn-3.7.0-GLASS-NOEXTENSIONS.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASS-NOEXTENSIONS.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 113136488,
-            "sha256": "d72cbb2f1b815ac6e86873b837ade62e65d3046ae7fcd02554d8981eb92cf9a5",
-            "downloads": 3041,
+            "size": 114445492,
+            "sha256": "91cd42e46b9a0adb0198464095bf09d702173c82e57a74633f823caf9c85d552",
+            "downloads": 26,
             "mimeType": "application/octet-stream",
             "installable": true
           },
           {
-            "filename": "Apollo-Reborn-3.6.0-GLASS.ipa",
-            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-GLASS.ipa",
+            "filename": "Apollo-Reborn-3.7.0-GLASS.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASS.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 123354289,
-            "sha256": "c65e1dd5bb35a13878013848945346d8b7cb774b5965573db939f7bc698d4ac6",
-            "downloads": 7107,
+            "size": 124696561,
+            "sha256": "b9af6cb4e17fbb9843487f4c09d1982e61bda511a6eabf82c3da1b98e0e8f18f",
+            "downloads": 74,
             "mimeType": "application/octet-stream",
             "installable": true
           },
           {
-            "filename": "Apollo-Reborn-3.6.0-GLASSICONS-NOEXTENSIONS.ipa",
-            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-GLASSICONS-NOEXTENSIONS.ipa",
+            "filename": "Apollo-Reborn-3.7.0-GLASSICONS-NOEXTENSIONS.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASSICONS-NOEXTENSIONS.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 113136342,
-            "sha256": "0314da676879ab7e088869699bd1845c504e02eaf749604a4054b3b2a18d5a4c",
-            "downloads": 138,
+            "size": 114445347,
+            "sha256": "e3c412f1182670f0623361db91cedea82079a9c406674434700e4253bc149a42",
+            "downloads": 1,
             "mimeType": "application/octet-stream",
             "installable": true
           },
           {
-            "filename": "Apollo-Reborn-3.6.0-GLASSICONS.ipa",
-            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-GLASSICONS.ipa",
+            "filename": "Apollo-Reborn-3.7.0-GLASSICONS.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASSICONS.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 123354144,
-            "sha256": "a80003950996ed9baaf61f74bddce79ce39e234d9fce978a0ca015ba270a4a92",
-            "downloads": 274,
+            "size": 124696417,
+            "sha256": "6c0e463a4f6a6a901a2c8d3a820b11cb41b61fc2e6f0a3b63edacdd33859b78d",
+            "downloads": 3,
             "mimeType": "application/octet-stream",
             "installable": true
           },
           {
-            "filename": "Apollo-Reborn-3.6.0-NOEXTENSIONS.ipa",
-            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-NOEXTENSIONS.ipa",
+            "filename": "Apollo-Reborn-3.7.0-NOEXTENSIONS.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-NOEXTENSIONS.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 85256616,
-            "sha256": "f7108deadcf70cd5d2943fc4367bbc432bbb475f7e307fb279ebf48b782fa0a4",
-            "downloads": 888,
+            "size": 85854925,
+            "sha256": "54c89328db3397cd62b275c5e99488b678318b4c51e91bc30d91235b888276cb",
+            "downloads": 12,
             "mimeType": "application/octet-stream",
             "installable": true
           },
           {
-            "filename": "Apollo-Reborn-3.6.0.ipa",
-            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
+            "filename": "Apollo-Reborn-3.7.0.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 95474417,
-            "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8",
-            "downloads": 1229,
+            "size": 96105993,
+            "sha256": "3435f0c47f299f6f5637600c557ef3790ca75a8fe70d3d456023f97f0fb6ee15",
+            "downloads": 8,
             "mimeType": "application/octet-stream",
             "installable": true
           },
           {
-            "filename": "com.apollo.reborn_3.6.0_iphoneos-arm.deb",
-            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/com.apollo.reborn_3.6.0_iphoneos-arm.deb",
+            "filename": "com.apollo.reborn_3.7.0_iphoneos-arm.deb",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/com.apollo.reborn_3.7.0_iphoneos-arm.deb",
             "platform": "linux",
             "architecture": null,
             "fileType": "DEB",
-            "size": 11730132,
-            "sha256": "274bde6d2c9b7d69cd3d93d1069301948d9acf23677b0fc1b25847dc54a746a4",
-            "downloads": 61,
+            "size": 12176810,
+            "sha256": "26a493edbc53b512f1f08f96aca98b281c74c6a275e351261258ee3be307537c",
+            "downloads": 2,
             "mimeType": "application/octet-stream",
             "installable": true
           },
           {
-            "filename": "com.apollo.reborn_3.6.0_iphoneos-arm64_rootless.deb",
-            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/com.apollo.reborn_3.6.0_iphoneos-arm64_rootless.deb",
+            "filename": "com.apollo.reborn_3.7.0_iphoneos-arm64_rootless.deb",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/com.apollo.reborn_3.7.0_iphoneos-arm64_rootless.deb",
             "platform": "linux",
             "architecture": "arm64",
             "fileType": "DEB",
-            "size": 11724532,
-            "sha256": "3b43defeb89797d0cf32b7b5fddef0e407e1a67372292766a04dd0dc25278d17",
-            "downloads": 67,
+            "size": 12175314,
+            "sha256": "8f6becdcc3ebb8597d2b6f326196064636fe29951509311660760828b7534ebe",
+            "downloads": 1,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
-        "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8",
-        "downloads": 1229
+        "sha256": "3435f0c47f299f6f5637600c557ef3790ca75a8fe70d3d456023f97f0fb6ee15",
+        "downloads": 8
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 241,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 134,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -897,6 +909,19 @@
         "reachable": true,
         "latencyMs": 241,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 134,
+        "detail": "HTTP 302"
+      }
+    ],
+    "removedReleases": [
+      {
+        "version": "3.6.0",
+        "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
+        "at": "2026-09-11"
       }
     ]
   },
@@ -972,16 +997,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 236,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 155,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 258,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -1155,6 +1174,12 @@
         "reachable": true,
         "latencyMs": 236,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 155,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:BandarHL/BHTwitter"
@@ -1232,8 +1257,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 248,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 154,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -1302,6 +1327,12 @@
         "reachable": true,
         "latencyMs": 248,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 154,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1342,8 +1373,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 224,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 122,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -1375,6 +1406,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 224,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 122,
         "detail": "HTTP 302"
       }
     ]
@@ -1464,8 +1501,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 236,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 148,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -1534,6 +1571,12 @@
         "reachable": true,
         "latencyMs": 236,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 148,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1573,8 +1616,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 247,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 151,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -1642,6 +1685,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 247,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 151,
         "detail": "HTTP 302"
       }
     ]
@@ -1719,8 +1768,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 221,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 149,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -1789,6 +1838,12 @@
         "reachable": true,
         "latencyMs": 221,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 149,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -1841,8 +1896,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 209,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 170,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -1874,6 +1929,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 209,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 170,
         "detail": "HTTP 302"
       }
     ]
@@ -1927,8 +1988,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 193,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 157,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -1960,6 +2021,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 193,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 157,
         "detail": "HTTP 302"
       }
     ]
@@ -2013,16 +2080,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 203,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 119,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 232,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -2195,6 +2256,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 203,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 119,
         "detail": "HTTP 302"
       }
     ],
@@ -2381,8 +2448,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 233,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 158,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -2451,6 +2518,12 @@
         "reachable": true,
         "latencyMs": 233,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 158,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -2489,8 +2562,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 200",
-      "latencyMs": 288,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 260,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -2516,6 +2589,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 288,
+        "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 260,
         "detail": "HTTP 200"
       }
     ]
@@ -2905,8 +2984,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 232,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 193,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -2938,6 +3017,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 232,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 193,
         "detail": "HTTP 302"
       }
     ]
@@ -2977,8 +3062,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 200",
-      "latencyMs": 100,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 94,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -3004,6 +3089,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 100,
+        "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 94,
         "detail": "HTTP 200"
       }
     ]
@@ -3043,8 +3134,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 200",
-      "latencyMs": 129,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 237,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -3070,6 +3161,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 129,
+        "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 237,
         "detail": "HTTP 200"
       }
     ]
@@ -3109,16 +3206,10 @@
       "reachable": true,
       "detail": "HTTP 200",
       "since": "2026-09-07",
-      "latencyMs": 968,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 230,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 228,
-        "detail": "HTTP 200"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -3292,6 +3383,12 @@
         "reachable": true,
         "latencyMs": 968,
         "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 230,
+        "detail": "HTTP 200"
       }
     ],
     "lastResolvedSource": "altstore:https://repo.ikghd.me/repo.json"
@@ -3301,11 +3398,11 @@
     "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
     "versions": [
       {
-        "version": "577.1",
-        "date": "2026-09-05",
-        "localizedDescription": "Facebook 577.1 | Facebook-577.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 577.1",
-        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
-        "size": 225312147,
+        "version": "578.1",
+        "date": "2026-09-10",
+        "localizedDescription": "Facebook 578.1 | Facebook-578.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 578.1",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
+        "size": 227188596,
         "minOSVersion": "15.1",
         "releaseUrl": null,
         "source": "altstore",
@@ -3313,12 +3410,12 @@
         "isDraft": false,
         "assets": [
           {
-            "filename": "Facebook-577.1-iQFace.ipa",
-            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+            "filename": "Facebook-578.1-iQFace.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 225312147,
+            "size": 227188596,
             "sha256": null,
             "downloads": 0,
             "mimeType": null,
@@ -3327,13 +3424,13 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
-      "reachable": false,
-      "detail": "HTTP 404",
-      "latencyMs": 97,
-      "measuredAt": "2026-09-10",
-      "since": "2026-09-10"
+      "reachable": true,
+      "detail": "HTTP 200",
+      "latencyMs": 188,
+      "measuredAt": "2026-09-11",
+      "since": "2026-09-11"
     },
     "healthHistory": [
       {
@@ -3359,6 +3456,19 @@
         "reachable": false,
         "latencyMs": 97,
         "detail": "HTTP 404"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 188,
+        "detail": "HTTP 200"
+      }
+    ],
+    "removedReleases": [
+      {
+        "version": "577.1",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+        "at": "2026-09-11"
       }
     ]
   },
@@ -3411,8 +3521,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 244,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 121,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -3481,6 +3591,12 @@
         "reachable": true,
         "latencyMs": 244,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 121,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3545,16 +3661,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 240,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 164,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 257,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -3728,6 +3838,12 @@
         "reachable": true,
         "latencyMs": 240,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 164,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:XITRIX/iTorrent"
@@ -3829,8 +3945,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 238,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 149,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -3899,6 +4015,12 @@
         "reachable": true,
         "latencyMs": 238,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 149,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -3951,16 +4073,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 204,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 137,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 238,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -4134,6 +4250,12 @@
         "reachable": true,
         "latencyMs": 204,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 137,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:LiveContainer/LiveContainer"
@@ -4234,8 +4356,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 247,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 144,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -4304,6 +4426,12 @@
         "reachable": true,
         "latencyMs": 247,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 144,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -4344,8 +4472,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 228,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 178,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -4378,6 +4506,12 @@
         "reachable": true,
         "latencyMs": 228,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 178,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -4404,30 +4538,24 @@
             "fileType": "IPA",
             "size": 106420283,
             "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
-            "downloads": 51,
+            "downloads": 67,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
-        "downloads": 51
+        "downloads": 67
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 236,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 194,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 265,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -4601,6 +4729,12 @@
         "reachable": true,
         "latencyMs": 236,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 194,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:Mark02-2012/MaxMusic"
@@ -4640,30 +4774,24 @@
             "fileType": "IPA",
             "size": 133357787,
             "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-            "downloads": 113,
+            "downloads": 114,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-        "downloads": 113
+        "downloads": 114
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 253,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 167,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 275,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -4837,6 +4965,12 @@
         "reachable": true,
         "latencyMs": 253,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 167,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:Ashreq/ashstore-repo"
@@ -4846,11 +4980,11 @@
     "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
     "versions": [
       {
-        "version": "577.0.0",
-        "date": "2026-09-03",
-        "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
-        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
-        "size": 112652101,
+        "version": "578.1.0",
+        "date": "2026-09-10",
+        "localizedDescription": "Messenger 578.1.0 | Messenger-578.1.0-Flow\n\nIPA Vault build for Messenger (Flow), version 578.1.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
+        "size": 113359444,
         "minOSVersion": "15.1",
         "releaseUrl": null,
         "source": "altstore",
@@ -4858,12 +4992,12 @@
         "isDraft": false,
         "assets": [
           {
-            "filename": "Messenger-577.0.0-Flow.ipa",
-            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+            "filename": "Messenger-578.1.0-Flow.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 112652101,
+            "size": 113359444,
             "sha256": null,
             "downloads": 0,
             "mimeType": null,
@@ -4872,13 +5006,13 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
-      "reachable": false,
-      "detail": "HTTP 404",
-      "latencyMs": 86,
-      "measuredAt": "2026-09-10",
-      "since": "2026-09-10"
+      "reachable": true,
+      "detail": "HTTP 200",
+      "latencyMs": 94,
+      "measuredAt": "2026-09-11",
+      "since": "2026-09-11"
     },
     "healthHistory": [
       {
@@ -4904,6 +5038,19 @@
         "reachable": false,
         "latencyMs": 86,
         "detail": "HTTP 404"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 94,
+        "detail": "HTTP 200"
+      }
+    ],
+    "removedReleases": [
+      {
+        "version": "577.0.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+        "at": "2026-09-11"
       }
     ]
   },
@@ -4955,8 +5102,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 246,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 156,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -5025,6 +5172,12 @@
         "reachable": true,
         "latencyMs": 246,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 156,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -5033,11 +5186,11 @@
     "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
     "versions": [
       {
-        "version": "577.0.0",
-        "date": "2026-09-03",
-        "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 577.0.0",
-        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
-        "size": 112528712,
+        "version": "578.1.0",
+        "date": "2026-09-10",
+        "localizedDescription": "Messenger 578.1.0 | Messenger-578.1.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 578.1.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
+        "size": 113236064,
         "minOSVersion": "15.1",
         "releaseUrl": null,
         "source": "altstore",
@@ -5045,12 +5198,12 @@
         "isDraft": false,
         "assets": [
           {
-            "filename": "Messenger-577.0.0-MSGPlusX.ipa",
-            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+            "filename": "Messenger-578.1.0-MSGPlusX.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 112528712,
+            "size": 113236064,
             "sha256": null,
             "downloads": 0,
             "mimeType": null,
@@ -5059,13 +5212,13 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
-      "reachable": false,
-      "detail": "HTTP 404",
-      "latencyMs": 88,
-      "measuredAt": "2026-09-10",
-      "since": "2026-09-10"
+      "reachable": true,
+      "detail": "HTTP 200",
+      "latencyMs": 96,
+      "measuredAt": "2026-09-11",
+      "since": "2026-09-11"
     },
     "healthHistory": [
       {
@@ -5091,6 +5244,19 @@
         "reachable": false,
         "latencyMs": 88,
         "detail": "HTTP 404"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 96,
+        "detail": "HTTP 200"
+      }
+    ],
+    "removedReleases": [
+      {
+        "version": "577.0.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+        "at": "2026-09-11"
       }
     ]
   },
@@ -5143,8 +5309,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 260,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 131,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -5213,6 +5379,12 @@
         "reachable": true,
         "latencyMs": 260,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 131,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -5251,8 +5423,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 200",
-      "latencyMs": 269,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 105,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -5278,6 +5450,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 269,
+        "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 105,
         "detail": "HTTP 200"
       }
     ]
@@ -5318,8 +5496,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 230,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 166,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -5351,6 +5529,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 230,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 166,
         "detail": "HTTP 302"
       }
     ]
@@ -5500,8 +5684,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 230,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 144,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -5570,6 +5754,12 @@
         "reachable": true,
         "latencyMs": 230,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 144,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -5622,16 +5812,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 222,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 148,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 274,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -5805,6 +5989,12 @@
         "reachable": true,
         "latencyMs": 222,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 148,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:Provenance-Emu/Provenance"
@@ -5870,8 +6060,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 254,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 159,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -5940,6 +6130,12 @@
         "reachable": true,
         "latencyMs": 254,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 159,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -5980,8 +6176,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 243,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 172,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -6049,6 +6245,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 243,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 172,
         "detail": "HTTP 302"
       }
     ]
@@ -6174,8 +6376,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 250,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 154,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -6244,6 +6446,12 @@
         "reachable": true,
         "latencyMs": 250,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 154,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -6296,8 +6504,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 264,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 161,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -6323,6 +6531,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 264,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 161,
         "detail": "HTTP 302"
       }
     ]
@@ -6388,8 +6602,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 241,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 163,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -6416,6 +6630,12 @@
         "reachable": true,
         "latencyMs": 241,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 163,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -6424,11 +6644,11 @@
     "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
     "versions": [
       {
-        "version": "445.0.0",
-        "date": "2026-09-01",
-        "localizedDescription": "Instagram 445.0.0 | Instagram-445.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 445.0.0",
-        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
-        "size": 324923211,
+        "version": "446.0.0",
+        "date": "2026-09-10",
+        "localizedDescription": "Instagram 446.0.0 | Instagram-446.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 446.0.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa",
+        "size": 325835336,
         "minOSVersion": "15.1",
         "releaseUrl": null,
         "source": "altstore",
@@ -6436,12 +6656,12 @@
         "isDraft": false,
         "assets": [
           {
-            "filename": "Instagram-445.0.0-RyukGram.ipa",
-            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+            "filename": "Instagram-446.0.0-RyukGram.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 324923211,
+            "size": 325835336,
             "sha256": null,
             "downloads": 0,
             "mimeType": null,
@@ -6450,13 +6670,13 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
-      "reachable": false,
-      "detail": "HTTP 404",
-      "latencyMs": 121,
-      "measuredAt": "2026-09-10",
-      "since": "2026-09-10"
+      "reachable": true,
+      "detail": "HTTP 200",
+      "latencyMs": 183,
+      "measuredAt": "2026-09-11",
+      "since": "2026-09-11"
     },
     "healthHistory": [
       {
@@ -6482,6 +6702,19 @@
         "reachable": false,
         "latencyMs": 121,
         "detail": "HTTP 404"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 183,
+        "detail": "HTTP 200"
+      }
+    ],
+    "removedReleases": [
+      {
+        "version": "445.0.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+        "at": "2026-09-11"
       }
     ]
   },
@@ -6521,8 +6754,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 200",
-      "latencyMs": 539,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 487,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -6554,6 +6787,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 539,
+        "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 487,
         "detail": "HTTP 200"
       }
     ]
@@ -6594,8 +6833,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 200",
-      "latencyMs": 529,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 502,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -6627,6 +6866,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 529,
+        "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 502,
         "detail": "HTTP 200"
       }
     ]
@@ -6776,8 +7021,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 232,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 143,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -6845,6 +7090,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 232,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 143,
         "detail": "HTTP 302"
       }
     ]
@@ -6934,8 +7185,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 269,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 175,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -6967,6 +7218,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 269,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 175,
         "detail": "HTTP 302"
       }
     ]
@@ -7007,8 +7264,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 222,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 193,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -7040,6 +7297,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 222,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 193,
         "detail": "HTTP 302"
       }
     ]
@@ -7105,16 +7368,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 221,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 119,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 228,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -7288,6 +7545,12 @@
         "reachable": true,
         "latencyMs": 221,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 119,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:SideStore/SideStore",
@@ -7336,8 +7599,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 238,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 141,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -7406,6 +7669,12 @@
         "reachable": true,
         "latencyMs": 238,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 141,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -7414,11 +7683,11 @@
     "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
     "versions": [
       {
-        "version": "445.0.0",
-        "date": "2026-09-01",
-        "localizedDescription": "Instagram 445.0.0 | Instagram-445.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 445.0.0",
-        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
-        "size": 317653332,
+        "version": "446.0.0",
+        "date": "2026-09-10",
+        "localizedDescription": "Instagram 446.0.0 | Instagram-446.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 446.0.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
+        "size": 318531474,
         "minOSVersion": "15.1",
         "releaseUrl": null,
         "source": "altstore",
@@ -7426,12 +7695,12 @@
         "isDraft": false,
         "assets": [
           {
-            "filename": "Instagram-445.0.0-Sparkle.ipa",
-            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+            "filename": "Instagram-446.0.0-Sparkle.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 317653332,
+            "size": 318531474,
             "sha256": null,
             "downloads": 0,
             "mimeType": null,
@@ -7440,13 +7709,13 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
-      "reachable": false,
-      "detail": "HTTP 404",
-      "latencyMs": 176,
-      "measuredAt": "2026-09-10",
-      "since": "2026-09-10"
+      "reachable": true,
+      "detail": "HTTP 200",
+      "latencyMs": 195,
+      "measuredAt": "2026-09-11",
+      "since": "2026-09-11"
     },
     "healthHistory": [
       {
@@ -7472,6 +7741,19 @@
         "reachable": false,
         "latencyMs": 176,
         "detail": "HTTP 404"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 195,
+        "detail": "HTTP 200"
+      }
+    ],
+    "removedReleases": [
+      {
+        "version": "445.0.0",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+        "at": "2026-09-11"
       }
     ]
   },
@@ -7536,16 +7818,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 215,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 135,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 250,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -7718,6 +7994,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 215,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 135,
         "detail": "HTTP 302"
       }
     ],
@@ -7928,8 +8210,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 282,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 136,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -7998,6 +8280,12 @@
         "reachable": true,
         "latencyMs": 282,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 136,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -8038,16 +8326,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 250,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 140,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 258,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -8221,6 +8503,12 @@
         "reachable": true,
         "latencyMs": 250,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 140,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:StikDebug/StikDebug"
@@ -8261,8 +8549,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 221,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 148,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -8331,6 +8619,12 @@
         "reachable": true,
         "latencyMs": 221,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 148,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -8358,7 +8652,7 @@
             "fileType": "APK",
             "size": 197174334,
             "sha256": "9af07d922fbf5472a9f0caa1cb45bb7d2c28f1a9911b423237aefe0948317b81",
-            "downloads": 10471,
+            "downloads": 10484,
             "mimeType": "application/vnd.android.package-archive",
             "installable": true
           },
@@ -8370,7 +8664,7 @@
             "fileType": "APK",
             "size": 191577143,
             "sha256": "a908b39a34b567844e03cce36ffbc3fd3a01a0757dc05ad4952ec7a16251e1b4",
-            "downloads": 1375,
+            "downloads": 1377,
             "mimeType": "application/vnd.android.package-archive",
             "installable": true
           },
@@ -8406,21 +8700,21 @@
             "fileType": "IPA",
             "size": 53931137,
             "sha256": "706adb7f41b60565c1924deb84f6afb3fe3727dbdf291a3ece934ddb90a178b2",
-            "downloads": 107,
+            "downloads": 108,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "706adb7f41b60565c1924deb84f6afb3fe3727dbdf291a3ece934ddb90a178b2",
-        "downloads": 107
+        "downloads": 108
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 234,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 162,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -8489,6 +8783,12 @@
         "reachable": true,
         "latencyMs": 234,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 162,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -8498,10 +8798,10 @@
     "versions": [
       {
         "version": "12.9.2",
-        "date": "2026-09-01",
-        "localizedDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-MxGram\n\nIPA Vault build for Swiftgram (MxGram), version 12.9.2",
-        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
-        "size": 91604352,
+        "date": "2026-09-05",
+        "localizedDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-iQTele\n\nIPA Vault build for Swiftgram (iQTele), version 12.9.2",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
+        "size": 82653568,
         "minOSVersion": "13.0",
         "releaseUrl": null,
         "source": "altstore",
@@ -8509,12 +8809,12 @@
         "isDraft": false,
         "assets": [
           {
-            "filename": "Swiftgram-12.9.2-MxGram.ipa",
-            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+            "filename": "Swiftgram-12.9.2-iQTele.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 91604352,
+            "size": 82653568,
             "sha256": null,
             "downloads": 0,
             "mimeType": null,
@@ -8523,12 +8823,12 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 200",
-      "latencyMs": 104,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 210,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -8555,6 +8855,19 @@
         "reachable": true,
         "latencyMs": 104,
         "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 210,
+        "detail": "HTTP 200"
+      }
+    ],
+    "removedReleases": [
+      {
+        "version": "12.9.2",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+        "at": "2026-09-11"
       }
     ]
   },
@@ -8594,8 +8907,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 223,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 216,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -8628,6 +8941,12 @@
         "reachable": true,
         "latencyMs": 223,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 216,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -8637,10 +8956,10 @@
     "versions": [
       {
         "version": "12.9.3",
-        "date": "2026-09-01",
-        "localizedDescription": "Telegram 12.9.3 | Telegram-12.9.3-MxGram\n\nIPA Vault build for Telegram (MxGram), version 12.9.3",
-        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
-        "size": 80615512,
+        "date": "2026-09-05",
+        "localizedDescription": "Telegram 12.9.3 | Telegram-12.9.3-iQTele\n\nIPA Vault build for Telegram (iQTele), version 12.9.3",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
+        "size": 71665753,
         "minOSVersion": "13.0",
         "releaseUrl": null,
         "source": "altstore",
@@ -8648,12 +8967,12 @@
         "isDraft": false,
         "assets": [
           {
-            "filename": "Telegram-12.9.3-MxGram.ipa",
-            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+            "filename": "Telegram-12.9.3-iQTele.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 80615512,
+            "size": 71665753,
             "sha256": null,
             "downloads": 0,
             "mimeType": null,
@@ -8662,12 +8981,12 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 200",
-      "latencyMs": 81,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 182,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -8694,6 +9013,19 @@
         "reachable": true,
         "latencyMs": 81,
         "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 182,
+        "detail": "HTTP 200"
+      }
+    ],
+    "removedReleases": [
+      {
+        "version": "12.9.3",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+        "at": "2026-09-11"
       }
     ]
   },
@@ -8702,11 +9034,11 @@
     "lastResolvedSource": "altstore:https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
     "versions": [
       {
-        "version": "445.1",
-        "date": "2026-09-01",
-        "localizedDescription": "Threads 445.1 | Threads-445.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 445.1",
-        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
-        "size": 100461178,
+        "version": "446.1",
+        "date": "2026-09-10",
+        "localizedDescription": "Threads 446.1 | Threads-446.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 446.1",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa",
+        "size": 105719166,
         "minOSVersion": "15.1",
         "releaseUrl": null,
         "source": "altstore",
@@ -8714,12 +9046,12 @@
         "isDraft": false,
         "assets": [
           {
-            "filename": "Threads-445.1-ThreadSaver.ipa",
-            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+            "filename": "Threads-446.1-ThreadSaver.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 100461178,
+            "size": 105719166,
             "sha256": null,
             "downloads": 0,
             "mimeType": null,
@@ -8728,13 +9060,13 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
-      "reachable": false,
-      "detail": "HTTP 404",
-      "latencyMs": 92,
-      "measuredAt": "2026-09-10",
-      "since": "2026-09-10"
+      "reachable": true,
+      "detail": "HTTP 200",
+      "latencyMs": 167,
+      "measuredAt": "2026-09-11",
+      "since": "2026-09-11"
     },
     "healthHistory": [
       {
@@ -8760,6 +9092,19 @@
         "reachable": false,
         "latencyMs": 92,
         "detail": "HTTP 404"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 167,
+        "detail": "HTTP 200"
+      }
+    ],
+    "removedReleases": [
+      {
+        "version": "445.1",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+        "at": "2026-09-11"
       }
     ]
   },
@@ -8798,16 +9143,10 @@
       "reachable": true,
       "detail": "HTTP 200",
       "since": "2026-09-07",
-      "latencyMs": 245,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 238,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 242,
-        "detail": "HTTP 200"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -8981,6 +9320,12 @@
         "reachable": true,
         "latencyMs": 245,
         "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 238,
+        "detail": "HTTP 200"
       }
     ],
     "lastResolvedSource": "altstore:https://repo.ikghd.me/repo.json"
@@ -8991,10 +9336,10 @@
     "versions": [
       {
         "version": "1.5.3",
-        "date": "2026-09-01",
-        "localizedDescription": "Turrit 1.5.3 | Turrit-1.5.3-MxGram\n\nIPA Vault build for Turrit (MxGram), version 1.5.3",
-        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
-        "size": 94300571,
+        "date": "2026-09-05",
+        "localizedDescription": "Turrit 1.5.3 | Turrit-1.5.3-iQTele\n\nIPA Vault build for Turrit (iQTele), version 1.5.3",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
+        "size": 85350833,
         "minOSVersion": "13.0",
         "releaseUrl": null,
         "source": "altstore",
@@ -9002,12 +9347,12 @@
         "isDraft": false,
         "assets": [
           {
-            "filename": "Turrit-1.5.3-MxGram.ipa",
-            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+            "filename": "Turrit-1.5.3-iQTele.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
             "platform": "ios",
             "architecture": null,
             "fileType": "IPA",
-            "size": 94300571,
+            "size": 85350833,
             "sha256": null,
             "downloads": 0,
             "mimeType": null,
@@ -9016,12 +9361,12 @@
         ]
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 200",
-      "latencyMs": 411,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 99,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -9048,6 +9393,19 @@
         "reachable": true,
         "latencyMs": 411,
         "detail": "HTTP 200"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 99,
+        "detail": "HTTP 200"
+      }
+    ],
+    "removedReleases": [
+      {
+        "version": "1.5.3",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+        "at": "2026-09-11"
       }
     ]
   },
@@ -9075,7 +9433,7 @@
             "fileType": "IPA",
             "size": 143381478,
             "sha256": "d01020aa34ddf4517a1a0e5fef430120450148b7cd8346024b50a8445d7f6bf4",
-            "downloads": 402,
+            "downloads": 407,
             "mimeType": "application/octet-stream",
             "installable": true
           },
@@ -9087,21 +9445,21 @@
             "fileType": "IPA",
             "size": 152372292,
             "sha256": "5ddea13264259f54c7f8812ef16ddc20ddb675703826537a1e5dfd144f228181",
-            "downloads": 848,
+            "downloads": 854,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "5ddea13264259f54c7f8812ef16ddc20ddb675703826537a1e5dfd144f228181",
-        "downloads": 848
+        "downloads": 854
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 270,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 152,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -9170,6 +9528,12 @@
         "reachable": true,
         "latencyMs": 270,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 152,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -9209,8 +9573,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 279,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 167,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -9243,10 +9607,26 @@
         "reachable": true,
         "latencyMs": 279,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 167,
+        "detail": "HTTP 302"
       }
     ]
   },
   "updateHistory": [
+    {
+      "appId": "apollo",
+      "name": "Apollo",
+      "version": "3.7.0",
+      "previousVersion": "3.6.0",
+      "releaseDate": "2026-09-11",
+      "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
+      "changelog": "Apollo 3.7.0 | Apollo-Reborn-3.7.0\n\n### Features\n\n- Add **Floating Post Tabs** (Posts & Feeds → Floating Tabs, off by default) — keep up to five posts open as draggable bubbles from any post or feed ⋯ menu, and tap one to land exactly where you left off (#984, #1061: @icpryde)\n  - Bubbles snap to the screen edges, tuck away when dragged past them, stack magnetically, and hold-to-preview the post; drop one on the ✕ to close it\n  - Match threads wear the two teams' crests on their bubble, and two text posts from the same subreddit get a big letter each so they don't look like twins\n- Add a **Feed Shortcuts** screen (Features → Subreddits) with Classic, Circle, Tinted, Soft Tile, and Solid Tile icon styles, Rows, Grid, Side-by-Side, and Icon Dock layouts, a live preview, and visibility toggles for Popular, All, and Moderator Posts (#988: @IllIIllIllIllII)\n- Add a **Subreddit Sections** screen (Features → Subreddits) — give followed users their own FOLLOWING section with **Separate Followed Users**, drag Favorites, Multireddits, Moderator, and Following into any order, and watch a pinned live preview follow every change (#997, #1020: @icpryde)\n  - Subreddit List Enhancements, Modern Subreddit Dividers, and Hide Multireddit Descriptions move here, and the A–Z index stays visible and themed with Enhancements off\n- Add **Per-Account Favorites** and **Sort Favorites Alphabetically** (Subreddits → Favorites), so each account can keep its own subreddit favorites and keep them in A–Z order (#1017, #1042: @IllIIllIllIllII)\n- Add Fade, Down, and Off styles to **Hide Bars on Scroll** for the Liquid Glass tab bar alongside Left and Right, plus a **Scroll Behavior** picker that restores Apollo's Classic one-gesture hide next to the Two-Gesture default (#972: @IllIIllIllIllII)\n  - Interface settings regroup into Tab Bar and Display & Navigation, and Profile Layout opens straight from the Apollo Reborn hub\n- Rework **Liquid Glass navigation** around a collapsible action pill — the ⋯ button expands into translate, moderator, sort, and more actions, so titles stay centered and stop resizing between screens (#1035, #1047: @IllIIllIllIllII)\n  - Navigation buttons match the back button and title, moderator controls turn a brighter green with readable menu text, the pill collapses while subreddit search is open, and a cancelled swipe-back no longer jumps the page\n  - Replaces the Center Title Between Buttons setting with automatic placement; standard builds keep their expanded actions\n- Replace the Liquid Glass **feed search bar** with the native glass pill — it activates in place, compresses as you scroll, and reveals on a pull at the top, fixing the feed sliding under the field and the bar floating detached after cancel (#1002, #1026: @icpryde)\n  - Results and the query survive opening a post, the quick-switcher's autocomplete highlight stays legible on near-white accents, and the bar is in place from the first frame when a feed re-appears at its top\n  - Tapping the Posts tab scrolls to the top and a second tap returns to the subreddit list, including from followed-user profiles (#1021, #1040: @IllIIllIllIllII)\n  - The Keep Search Bar Visible setting is retired; in-place activation is simply how glass search works now\n- Add **Bold Post Titles** (Appearance → Posts) — feed post titles in Semibold for large and compact posts, every theme and theme font, Liquid Glass or legacy chrome; flips live without a relaunch (#1033: @icpryde)\n- Show read state on **Community Highlights** — unread dots, a New badge for posts under 24 hours old, a theme-colored +N count for comments added since your last visit, and dimmed titles once a highlight is read (#1041: @IllIIllIllIllII)\n- Add a live **Profile Layout** preview for Immersive, Compact, and a restored Native layout that updates as you change avatar and visibility options, with optional pinning (#1034: @IllIIllIllIllII)\n  - Also fixes copying your username on Immersive and Compact layouts and removes duplicated usernames on profiles\n- Add pinned live previews to **Subreddit Layout** too — a header preview for the Immersive, Compact, and Native **Header Style**, a Community Highlights preview for Full, Partial, and Off, and separate User Flair, Sidebar, Subtitle, and Description toggles that update open subreddits without reopening them (#1019: @IllIIllIllIllII)\n- Add **Microsoft Translator** as a bring-your-own-key translation provider, retry Google through a second endpoint when its free one rate-limits you, and show a Translation Limit Reached notice instead of silently giving up (#998: @icpryde)\n  - Moves off the shut-down default LibreTranslate instance and names dead or redirected instances instead of failing quietly\n- Add a **Source** picker to the Feed and Post **widgets** — Home, Popular, All, or a subreddit — and let every widget's subreddit field take several subreddits at once, a pasted link, or a multireddit (#1051: @icpryde)\n  - Copy Widget Setup Code now offers a with-account code, which is what unlocks Home and your private multireddits\n- Add pinned live previews to the **Inline Media** and **Rich Link Previews** settings screens that follow every control as you scroll, with tap to pin or unpin, and let the size and Apollo AI sliders select a stop from a tap (#1022, #1023, #1025: @icpryde)\n- Add **Forget Forward Swipe After Scrolling** (Posts & Feeds, off by default) so a forward swipe stops reopening a post you backed out of many posts ago; **Swipe Past Gallery to Navigate** now defaults to off (#996: @icpryde)\n- Improve **Find in Comments** — the selected match stays in view while rows load in, a comma-separated query matches any of its terms, and the docked bar follows the theme (#992, #1036: @icpryde)\n  - On Liquid Glass it is now the same native search bar the feed uses: it activates in place, the match count sits inside the field, and the More pill turns into up and down chevrons while a search is live\n- Add nine never-released **Ultra** icons — Safari, Space Paws, Grumpy Space Paws, and sequels to Explorer of Smiles, Gorilla Gus, The Little Prince, Under the Tree, and Wish Maker — move SPCA into Ultra, and list the EverythingApplePro Icons Drop Test icon in Sekrit (#969, #971, #989: @IllIIllIllIllII)\n\n### Fixes\n\n- Fix Apollo **freezing** on a loading spinner or a loaded comments screen when navigating between subreddits or opening posts on iOS 26 and later (#1024: @IllIIllIllIllII)\n- Fix **Gallery View** getting killed for memory on animated GIFs — GIFs now stream instead of holding every frame in RAM, and oversized stills are downsampled (#1001: @icpryde)\n- Fix a launch crash when the trending-subreddits table can't be written (LiveContainer and other read-only setups), and a crash opening a feed on older iOS versions that lack ActivityKit, WeatherKit, or VisionKit (#968: @icpryde)\n- Fix **Live Interactive Posts** — post-match threads render as normal text posts instead of an endless spinner, finished match threads no longer leave a hole in feed cards, the external-link confirmation works, and rotation relays out (#991, #1046: @icpryde)\n  - Opening a live post from the feed hands its already-loaded widget to the thread instead of reloading it, widgets stay warm between feed and thread, and Apollo AI no longer tries to summarize the hidden fallback text under one\n- Fix the in-app **Safari** browser flashing a white page while a link loads in dark mode; it stays black until content paints (#1052: @icpryde)\n- Fix **Liquid Glass** top fades vanishing during tab switches, and make swipe-back track the nav bar so the title and search bar no longer snap to the previous screen the moment a swipe starts (#1018: @icpryde)\n- Fix **Account Switcher** reordering quietly switching the signed-in account, plus drag handles that scrolled the page and rows that overlapped (#1011: @IllIIllIllIllII)\n- Fix duplicate items in **Saved** after a pull-to-refresh (#1005: @Thetromboneman1)\n- Fix the **subreddit list**'s section headers overlapping rows and labels slidin…",
+      "kind": "updated"
+    },
     {
       "appId": "youpro",
       "name": "YouPro",
@@ -9258,6 +9638,56 @@
       "kind": "updated"
     },
     {
+      "appId": "threadsaver",
+      "name": "ThreadSaver",
+      "version": "446.1",
+      "previousVersion": "445.1",
+      "releaseDate": "2026-09-10",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa",
+      "changelog": "Threads 446.1 | Threads-446.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 446.1",
+      "kind": "updated"
+    },
+    {
+      "appId": "sparkle",
+      "name": "Sparkle",
+      "version": "446.0.0",
+      "previousVersion": "445.0.0",
+      "releaseDate": "2026-09-10",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
+      "changelog": "Instagram 446.0.0 | Instagram-446.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 446.0.0",
+      "kind": "updated"
+    },
+    {
+      "appId": "ryukgram",
+      "name": "RyukGram",
+      "version": "446.0.0",
+      "previousVersion": "445.0.0",
+      "releaseDate": "2026-09-10",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa",
+      "changelog": "Instagram 446.0.0 | Instagram-446.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 446.0.0",
+      "kind": "updated"
+    },
+    {
+      "appId": "msgplusx",
+      "name": "MSGPlusX",
+      "version": "578.1.0",
+      "previousVersion": "577.0.0",
+      "releaseDate": "2026-09-10",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
+      "changelog": "Messenger 578.1.0 | Messenger-578.1.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 578.1.0",
+      "kind": "updated"
+    },
+    {
+      "appId": "messenger-flow",
+      "name": "Messenger Flow",
+      "version": "578.1.0",
+      "previousVersion": "577.0.0",
+      "releaseDate": "2026-09-10",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
+      "changelog": "Messenger 578.1.0 | Messenger-578.1.0-Flow\n\nIPA Vault build for Messenger (Flow), version 578.1.0",
+      "kind": "updated"
+    },
+    {
       "appId": "maxmusic",
       "name": "MaxMusic",
       "version": "9.36.1",
@@ -9265,6 +9695,16 @@
       "releaseDate": "2026-09-10",
       "downloadUrl": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa",
       "changelog": "MaxMusic 9.36.1 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.36.1\n\n**Changed**\nYouTube Music version",
+      "kind": "updated"
+    },
+    {
+      "appId": "iqface",
+      "name": "iQFace",
+      "version": "578.1",
+      "previousVersion": "577.1",
+      "releaseDate": "2026-09-10",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
+      "changelog": "Facebook 578.1 | Facebook-578.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 578.1",
       "kind": "updated"
     },
     {
@@ -9376,6 +9816,36 @@
       "downloadUrl": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
       "changelog": "Voyager 2.49.0 | Voyager-iOS-2.49.0\n\n## 🚀 Features\n\n- feat: enable rich editor by default\n   - PR: #2352\n\n## 🐛 Fixes\n\n- fix: show two column setting in desktop app\n   - PR: #2346\n- fix: stabilize navigation after ionic v9 upgrade\n   - PR: #2348\n- fix: preserve tab state during route transitions\n   - PR: #2349\n- fix: prevent random community transition flicker\n   - PR: #2353\n\n## 📝 Other Changes\n\n- chore: upgrade to ionic v9\n   - PR: #2347\n- test: expand provider matrix to comment threads, feed and search\n   - PR: #2321\n- chore: upgrade threadiverse to 0.21.2\n   - PR: #2350\n- chore: upgrade dependencies\n   - PR: #2351",
       "kind": "new"
+    },
+    {
+      "appId": "turrit-mxgram",
+      "name": "Turrit MxGram",
+      "version": "1.5.3",
+      "previousVersion": "1.5.3",
+      "releaseDate": "2026-09-05",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
+      "changelog": "Turrit 1.5.3 | Turrit-1.5.3-iQTele\n\nIPA Vault build for Turrit (iQTele), version 1.5.3",
+      "kind": "updated"
+    },
+    {
+      "appId": "telegram-mxgram",
+      "name": "Telegram MxGram",
+      "version": "12.9.3",
+      "previousVersion": "12.9.3",
+      "releaseDate": "2026-09-05",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
+      "changelog": "Telegram 12.9.3 | Telegram-12.9.3-iQTele\n\nIPA Vault build for Telegram (iQTele), version 12.9.3",
+      "kind": "updated"
+    },
+    {
+      "appId": "swiftgram",
+      "name": "Swiftgram",
+      "version": "12.9.2",
+      "previousVersion": "12.9.2",
+      "releaseDate": "2026-09-05",
+      "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
+      "changelog": "Swiftgram 12.9.2 | Swiftgram-12.9.2-iQTele\n\nIPA Vault build for Swiftgram (iQTele), version 12.9.2",
+      "kind": "updated"
     },
     {
       "appId": "iqface",
@@ -10131,16 +10601,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 216,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 158,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 234,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -10314,6 +10778,12 @@
         "reachable": true,
         "latencyMs": 216,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 158,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:utmapp/UTM"
@@ -10338,16 +10808,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 218,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 200,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 500,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -10520,6 +10984,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 218,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 200,
         "detail": "HTTP 302"
       }
     ],
@@ -10742,8 +11212,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 233,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 133,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -10811,6 +11281,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 233,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 133,
         "detail": "HTTP 302"
       }
     ]
@@ -10972,8 +11448,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 234,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 154,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -11042,6 +11518,12 @@
         "reachable": true,
         "latencyMs": 234,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 154,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -11081,16 +11563,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 245,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 158,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 294,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -11264,6 +11740,12 @@
         "reachable": true,
         "latencyMs": 245,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 158,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:lo-cafe/winston"
@@ -11341,8 +11823,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 218,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 156,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -11374,6 +11856,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 218,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 156,
         "detail": "HTTP 302"
       }
     ]
@@ -11438,8 +11926,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 214,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 145,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -11508,6 +11996,12 @@
         "reachable": true,
         "latencyMs": 214,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 145,
+        "detail": "HTTP 302"
       }
     ]
   },
@@ -11534,30 +12028,24 @@
             "fileType": "IPA",
             "size": 128845098,
             "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-            "downloads": 58,
+            "downloads": 70,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-        "downloads": 58
+        "downloads": 70
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 261,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 149,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 261,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -11731,6 +12219,12 @@
         "reachable": true,
         "latencyMs": 261,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 149,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:mrdrvt99/YouProEXTRA"
@@ -11758,30 +12252,24 @@
             "fileType": "IPA",
             "size": 129007319,
             "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
-            "downloads": 33,
+            "downloads": 39,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
-        "downloads": 33
+        "downloads": 39
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 269,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 170,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 251,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -11955,6 +12443,12 @@
         "reachable": true,
         "latencyMs": 269,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 170,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:mrdrvt99/YouProEXTRA"
@@ -12032,16 +12526,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 256,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 132,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 242,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -12215,6 +12703,12 @@
         "reachable": true,
         "latencyMs": 256,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 132,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:itzzace/ytkace"
@@ -12242,30 +12736,24 @@
             "fileType": "IPA",
             "size": 142497148,
             "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
-            "downloads": 31,
+            "downloads": 39,
             "mimeType": "application/octet-stream",
             "installable": true
           }
         ],
         "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
-        "downloads": 31
+        "downloads": 39
       }
     ],
-    "syncedAt": "2026-09-10",
+    "syncedAt": "2026-09-11",
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 285,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 146,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 278,
-        "detail": "HTTP 200"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -12439,6 +12927,12 @@
         "reachable": true,
         "latencyMs": 285,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 146,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:mrdrvt99/YouProEXTRA"
@@ -12536,16 +13030,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 223,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 153,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 241,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -12719,6 +13207,12 @@
         "reachable": true,
         "latencyMs": 223,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 153,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:mrdrvt99/YouProEXTRA"
@@ -12760,16 +13254,10 @@
       "reachable": true,
       "detail": "HTTP 302",
       "since": "2026-09-07",
-      "latencyMs": 278,
-      "measuredAt": "2026-09-10"
+      "latencyMs": 171,
+      "measuredAt": "2026-09-11"
     },
     "healthHistory": [
-      {
-        "at": "2026-09-09",
-        "reachable": true,
-        "latencyMs": 254,
-        "detail": "HTTP 302"
-      },
       {
         "at": "2026-09-09",
         "reachable": true,
@@ -12943,6 +13431,12 @@
         "reachable": true,
         "latencyMs": 278,
         "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 171,
+        "detail": "HTTP 302"
       }
     ],
     "lastResolvedSource": "github:mrdrvt99/YTMusicUltimate"
@@ -13068,8 +13562,8 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "latencyMs": 278,
-      "measuredAt": "2026-09-10",
+      "latencyMs": 136,
+      "measuredAt": "2026-09-11",
       "since": "2026-09-10"
     },
     "healthHistory": [
@@ -13137,6 +13631,12 @@
         "at": "2026-09-10",
         "reachable": true,
         "latencyMs": 278,
+        "detail": "HTTP 302"
+      },
+      {
+        "at": "2026-09-11",
+        "reachable": true,
+        "latencyMs": 136,
         "detail": "HTTP 302"
       }
     ]

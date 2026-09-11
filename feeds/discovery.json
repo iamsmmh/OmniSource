@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-10",
+  "generatedAt": "2026-09-11",
   "count": 77,
   "baseURL": "https://iamsmmh.github.io/OmniSource",
   "apps": [
@@ -155,7 +155,7 @@
       "status": "stable",
       "featured": true,
       "size": 129007319,
-      "downloads": 33,
+      "downloads": 39,
       "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
       "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
       "minOSVersion": "16.0",
@@ -196,7 +196,7 @@
       "status": "stable",
       "featured": false,
       "size": 142497148,
-      "downloads": 31,
+      "downloads": 39,
       "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
       "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
       "minOSVersion": "17.0",
@@ -278,7 +278,7 @@
       "status": "stable",
       "featured": false,
       "size": 128845098,
-      "downloads": 58,
+      "downloads": 70,
       "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
       "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
       "minOSVersion": "16.0",
@@ -319,7 +319,7 @@
       "status": "manual",
       "featured": false,
       "size": 133357787,
-      "downloads": 113,
+      "downloads": 114,
       "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
       "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
       "minOSVersion": "16.0",
@@ -401,7 +401,7 @@
       "status": "stable",
       "featured": false,
       "size": 106420283,
-      "downloads": 51,
+      "downloads": 67,
       "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa",
       "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
       "minOSVersion": "16.0",
@@ -1057,7 +1057,7 @@
       "status": "stable",
       "featured": false,
       "size": 53931137,
-      "downloads": 107,
+      "downloads": 108,
       "downloadURL": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa",
       "sha256": "706adb7f41b60565c1924deb84f6afb3fe3727dbdf291a3ece934ddb90a178b2",
       "minOSVersion": "16.4",
@@ -1362,8 +1362,8 @@
       "slug": "apollo",
       "name": "Apollo",
       "developer": "Christian Selig (& Apollo-Reborn contributors)",
-      "version": "3.6.0",
-      "releaseDate": "2026-08-18",
+      "version": "3.7.0",
+      "releaseDate": "2026-09-11",
       "category": "social",
       "categories": [
         "social"
@@ -1384,10 +1384,10 @@
       "homepage": "https://github.com/Apollo-Reborn/Apollo-Reborn",
       "status": "stable",
       "featured": false,
-      "size": 95474417,
-      "downloads": 1229,
-      "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
-      "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8",
+      "size": 96105993,
+      "downloads": 8,
+      "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
+      "sha256": "3435f0c47f299f6f5637600c557ef3790ca75a8fe70d3d456023f97f0fb6ee15",
       "minOSVersion": "14.0",
       "verificationMethod": "github-release",
       "publisher": "Apollo-Reborn/Apollo-Reborn",
@@ -1395,7 +1395,7 @@
       "health": {
         "reachable": true,
         "detail": "HTTP 302",
-        "updatedAt": "2026-08-18"
+        "updatedAt": "2026-09-11"
       }
     },
     {
@@ -1795,7 +1795,7 @@
       "status": "stable",
       "featured": false,
       "size": 152372292,
-      "downloads": 848,
+      "downloads": 854,
       "downloadURL": "https://github.com/gunnerkidBT/TwitchAdBlock/releases/download/v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa",
       "sha256": "5ddea13264259f54c7f8812ef16ddc20ddb675703826537a1e5dfd144f228181",
       "minOSVersion": "14.0",
@@ -2142,7 +2142,7 @@
       "name": "Swiftgram",
       "developer": "Swiftgram & IPA Vault",
       "version": "12.9.2",
-      "releaseDate": "2026-09-01",
+      "releaseDate": "2026-09-05",
       "category": "social",
       "categories": [
         "social"
@@ -2163,9 +2163,9 @@
       "homepage": "https://github.com/Swiftgram/Telegram-iOS",
       "status": "stable",
       "featured": false,
-      "size": 91604352,
+      "size": 82653568,
       "downloads": 0,
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
       "sha256": null,
       "minOSVersion": "13.0",
       "verificationMethod": "altstore",
@@ -2174,7 +2174,7 @@
       "health": {
         "reachable": true,
         "detail": "HTTP 200",
-        "updatedAt": "2026-09-01"
+        "updatedAt": "2026-09-05"
       }
     },
     {
@@ -2183,7 +2183,7 @@
       "name": "Telegram MxGram",
       "developer": "m1ronx1412 & IPA Vault",
       "version": "12.9.3",
-      "releaseDate": "2026-09-01",
+      "releaseDate": "2026-09-05",
       "category": "social",
       "categories": [
         "social"
@@ -2204,9 +2204,9 @@
       "homepage": "https://github.com/m1ronx1412/mxgram",
       "status": "stable",
       "featured": false,
-      "size": 80615512,
+      "size": 71665753,
       "downloads": 0,
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
       "sha256": null,
       "minOSVersion": "13.0",
       "verificationMethod": "altstore",
@@ -2215,7 +2215,7 @@
       "health": {
         "reachable": true,
         "detail": "HTTP 200",
-        "updatedAt": "2026-09-01"
+        "updatedAt": "2026-09-05"
       }
     },
     {
@@ -2223,8 +2223,8 @@
       "slug": "iqface",
       "name": "iQFace",
       "developer": "7MD & IPA Vault",
-      "version": "577.1",
-      "releaseDate": "2026-09-05",
+      "version": "578.1",
+      "releaseDate": "2026-09-10",
       "category": "social",
       "categories": [
         "social"
@@ -2245,18 +2245,18 @@
       "homepage": "https://github.com/927tx/IPA-Vault",
       "status": "stable",
       "featured": false,
-      "size": 225312147,
+      "size": 227188596,
       "downloads": 0,
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
       "sha256": null,
       "minOSVersion": "15.1",
       "verificationMethod": "altstore",
       "publisher": "927tx/IPA-Vault",
       "checksumPublished": false,
       "health": {
-        "reachable": false,
-        "detail": "HTTP 404",
-        "updatedAt": "2026-09-05"
+        "reachable": true,
+        "detail": "HTTP 200",
+        "updatedAt": "2026-09-10"
       }
     },
     {
@@ -2264,8 +2264,8 @@
       "slug": "ryukgram",
       "name": "RyukGram",
       "developer": "faroukbmiled & IPA Vault",
-      "version": "445.0.0",
-      "releaseDate": "2026-09-01",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-10",
       "category": "social",
       "categories": [
         "social"
@@ -2286,18 +2286,18 @@
       "homepage": "https://github.com/faroukbmiled/RyukGram",
       "status": "stable",
       "featured": false,
-      "size": 324923211,
+      "size": 325835336,
       "downloads": 0,
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa",
       "sha256": null,
       "minOSVersion": "15.1",
       "verificationMethod": "altstore",
       "publisher": "927tx/IPA-Vault",
       "checksumPublished": false,
       "health": {
-        "reachable": false,
-        "detail": "HTTP 404",
-        "updatedAt": "2026-09-01"
+        "reachable": true,
+        "detail": "HTTP 200",
+        "updatedAt": "2026-09-10"
       }
     },
     {
@@ -2305,8 +2305,8 @@
       "slug": "sparkle",
       "name": "Sparkle",
       "developer": "efibalogh & IPA Vault",
-      "version": "445.0.0",
-      "releaseDate": "2026-09-01",
+      "version": "446.0.0",
+      "releaseDate": "2026-09-10",
       "category": "social",
       "categories": [
         "social"
@@ -2327,18 +2327,18 @@
       "homepage": "https://github.com/efibalogh/sparkle-ig",
       "status": "stable",
       "featured": false,
-      "size": 317653332,
+      "size": 318531474,
       "downloads": 0,
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
       "sha256": null,
       "minOSVersion": "15.1",
       "verificationMethod": "altstore",
       "publisher": "927tx/IPA-Vault",
       "checksumPublished": false,
       "health": {
-        "reachable": false,
-        "detail": "HTTP 404",
-        "updatedAt": "2026-09-01"
+        "reachable": true,
+        "detail": "HTTP 200",
+        "updatedAt": "2026-09-10"
       }
     },
     {
@@ -2428,8 +2428,8 @@
       "slug": "messenger-flow",
       "name": "Messenger Flow",
       "developer": "dvntms & IPA Vault",
-      "version": "577.0.0",
-      "releaseDate": "2026-09-03",
+      "version": "578.1.0",
+      "releaseDate": "2026-09-10",
       "category": "social",
       "categories": [
         "social"
@@ -2450,18 +2450,18 @@
       "homepage": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
       "status": "stable",
       "featured": false,
-      "size": 112652101,
+      "size": 113359444,
       "downloads": 0,
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
       "sha256": null,
       "minOSVersion": "15.1",
       "verificationMethod": "altstore",
       "publisher": "927tx/IPA-Vault",
       "checksumPublished": false,
       "health": {
-        "reachable": false,
-        "detail": "HTTP 404",
-        "updatedAt": "2026-09-03"
+        "reachable": true,
+        "detail": "HTTP 200",
+        "updatedAt": "2026-09-10"
       }
     },
     {
@@ -2469,8 +2469,8 @@
       "slug": "msgplusx",
       "name": "MSGPlusX",
       "developer": "Dens0r & IPA Vault & lucaspedrosa",
-      "version": "577.0.0",
-      "releaseDate": "2026-09-03",
+      "version": "578.1.0",
+      "releaseDate": "2026-09-10",
       "category": "social",
       "categories": [
         "social"
@@ -2491,18 +2491,18 @@
       "homepage": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
       "status": "stable",
       "featured": false,
-      "size": 112528712,
+      "size": 113236064,
       "downloads": 0,
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
       "sha256": null,
       "minOSVersion": "15.1",
       "verificationMethod": "altstore",
       "publisher": "927tx/IPA-Vault",
       "checksumPublished": false,
       "health": {
-        "reachable": false,
-        "detail": "HTTP 404",
-        "updatedAt": "2026-09-03"
+        "reachable": true,
+        "detail": "HTTP 200",
+        "updatedAt": "2026-09-10"
       }
     },
     {
@@ -2510,8 +2510,8 @@
       "slug": "threadsaver",
       "name": "ThreadSaver",
       "developer": "swiftleopard & IPA Vault",
-      "version": "445.1",
-      "releaseDate": "2026-09-01",
+      "version": "446.1",
+      "releaseDate": "2026-09-10",
       "category": "social",
       "categories": [
         "social"
@@ -2532,18 +2532,18 @@
       "homepage": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
       "status": "stable",
       "featured": false,
-      "size": 100461178,
+      "size": 105719166,
       "downloads": 0,
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa",
       "sha256": null,
       "minOSVersion": "15.1",
       "verificationMethod": "altstore",
       "publisher": "927tx/IPA-Vault",
       "checksumPublished": false,
       "health": {
-        "reachable": false,
-        "detail": "HTTP 404",
-        "updatedAt": "2026-09-01"
+        "reachable": true,
+        "detail": "HTTP 200",
+        "updatedAt": "2026-09-10"
       }
     },
     {
@@ -2593,7 +2593,7 @@
       "name": "Turrit MxGram",
       "developer": "m1ronx1412 & IPA Vault",
       "version": "1.5.3",
-      "releaseDate": "2026-09-01",
+      "releaseDate": "2026-09-05",
       "category": "social",
       "categories": [
         "social"
@@ -2614,9 +2614,9 @@
       "homepage": "https://github.com/m1ronx1412/mxgram",
       "status": "stable",
       "featured": false,
-      "size": 94300571,
+      "size": 85350833,
       "downloads": 0,
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
       "sha256": null,
       "minOSVersion": "13.0",
       "verificationMethod": "altstore",
@@ -2625,7 +2625,7 @@
       "health": {
         "reachable": true,
         "detail": "HTTP 200",
-        "updatedAt": "2026-09-01"
+        "updatedAt": "2026-09-05"
       }
     },
     {

@@ -19,18 +19,18 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
       "tintColor": "0084FF",
       "category": "social",
-      "version": "577.0.0",
-      "versionDate": "2026-09-03",
-      "versionDescription": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
-      "size": 112652101,
+      "version": "578.1.0",
+      "versionDate": "2026-09-10",
+      "versionDescription": "Messenger 578.1.0 | Messenger-578.1.0-Flow\n\nIPA Vault build for Messenger (Flow), version 578.1.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
+      "size": 113359444,
       "versions": [
         {
-          "version": "577.0.0",
-          "date": "2026-09-03",
-          "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
-          "size": 112652101,
+          "version": "578.1.0",
+          "date": "2026-09-10",
+          "localizedDescription": "Messenger 578.1.0 | Messenger-578.1.0-Flow\n\nIPA Vault build for Messenger (Flow), version 578.1.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
+          "size": 113359444,
           "minOSVersion": "15.1",
           "releaseUrl": null,
           "source": "altstore",
@@ -38,12 +38,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Messenger-577.0.0-Flow.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+              "filename": "Messenger-578.1.0-Flow.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 112652101,
+              "size": 113359444,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -107,10 +107,10 @@
           "notes": "UNOFFICIAL BUILD. Flow has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses its own bundle identifier, so it installs alongside the stock App Store Messenger."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "HTTP 404",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-03"
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-11",
+          "lastUpdatedAt": "2026-09-10"
         }
       }
     }

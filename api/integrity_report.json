@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-10",
+  "generatedAt": "2026-09-11",
   "totals": {
     "apps": 77,
     "pass": 50,
@@ -68,11 +68,11 @@
       "slug": "apollo",
       "name": "Apollo",
       "asset": {
-        "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8",
-        "size": 95474417,
-        "releaseId": "3.6.0",
+        "sha256": "3435f0c47f299f6f5637600c557ef3790ca75a8fe70d3d456023f97f0fb6ee15",
+        "size": 96105993,
+        "releaseId": "3.7.0",
         "source": "github",
-        "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa"
+        "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -357,16 +357,16 @@
       "name": "iQFace",
       "asset": {
         "sha256": null,
-        "size": 225312147,
-        "releaseId": "577.1",
+        "size": 227188596,
+        "releaseId": "578.1",
         "source": "altstore",
-        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa"
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa"
       },
       "checks": {
         "sizePositive": true,
         "installable": true,
         "digestFormat": true,
-        "reachable": false
+        "reachable": true
       },
       "status": "warn"
     },
@@ -519,16 +519,16 @@
       "name": "Messenger Flow",
       "asset": {
         "sha256": null,
-        "size": 112652101,
-        "releaseId": "577.0.0",
+        "size": 113359444,
+        "releaseId": "578.1.0",
         "source": "altstore",
-        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa"
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa"
       },
       "checks": {
         "sizePositive": true,
         "installable": true,
         "digestFormat": true,
-        "reachable": false
+        "reachable": true
       },
       "status": "warn"
     },
@@ -555,16 +555,16 @@
       "name": "MSGPlusX",
       "asset": {
         "sha256": null,
-        "size": 112528712,
-        "releaseId": "577.0.0",
+        "size": 113236064,
+        "releaseId": "578.1.0",
         "source": "altstore",
-        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa"
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa"
       },
       "checks": {
         "sizePositive": true,
         "installable": true,
         "digestFormat": true,
-        "reachable": false
+        "reachable": true
       },
       "status": "warn"
     },
@@ -753,16 +753,16 @@
       "name": "RyukGram",
       "asset": {
         "sha256": null,
-        "size": 324923211,
-        "releaseId": "445.0.0",
+        "size": 325835336,
+        "releaseId": "446.0.0",
         "source": "altstore",
-        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa"
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa"
       },
       "checks": {
         "sizePositive": true,
         "installable": true,
         "digestFormat": true,
-        "reachable": false
+        "reachable": true
       },
       "status": "warn"
     },
@@ -897,16 +897,16 @@
       "name": "Sparkle",
       "asset": {
         "sha256": null,
-        "size": 317653332,
-        "releaseId": "445.0.0",
+        "size": 318531474,
+        "releaseId": "446.0.0",
         "source": "altstore",
-        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa"
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa"
       },
       "checks": {
         "sizePositive": true,
         "installable": true,
         "digestFormat": true,
-        "reachable": false
+        "reachable": true
       },
       "status": "warn"
     },
@@ -1005,10 +1005,10 @@
       "name": "Swiftgram",
       "asset": {
         "sha256": null,
-        "size": 91604352,
+        "size": 82653568,
         "releaseId": "12.9.2",
         "source": "altstore",
-        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa"
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -1041,10 +1041,10 @@
       "name": "Telegram MxGram",
       "asset": {
         "sha256": null,
-        "size": 80615512,
+        "size": 71665753,
         "releaseId": "12.9.3",
         "source": "altstore",
-        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa"
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -1059,16 +1059,16 @@
       "name": "ThreadSaver",
       "asset": {
         "sha256": null,
-        "size": 100461178,
-        "releaseId": "445.1",
+        "size": 105719166,
+        "releaseId": "446.1",
         "source": "altstore",
-        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa"
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa"
       },
       "checks": {
         "sizePositive": true,
         "installable": true,
         "digestFormat": true,
-        "reachable": false
+        "reachable": true
       },
       "status": "warn"
     },
@@ -1095,10 +1095,10 @@
       "name": "Turrit MxGram",
       "asset": {
         "sha256": null,
-        "size": 94300571,
+        "size": 85350833,
         "releaseId": "1.5.3",
         "source": "altstore",
-        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa"
+        "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa"
       },
       "checks": {
         "sizePositive": true,

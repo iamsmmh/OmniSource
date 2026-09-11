@@ -5,8 +5,62 @@
     <link>https://iamsmmh.github.io/OmniSource/</link>
     <description>OmniSource is a curated, automatically maintained AltStore-compatible iOS app source. Every entry is resolved from the app&#x27;s own official upstream project - GitHub Releases or the developer&#x27;s official AltStore feed - and each download link is re-verified automatically.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Sep 2026 20:18:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2026 02:21:00 +0000</lastBuildDate>
     <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Apollo v3.7.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/apollo.json</link>
+      <guid isPermaLink="false">apollo-3.7.0</guid>
+      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Apollo 3.7.0 | Apollo-Reborn-3.7.0
+
+### Features
+
+- Add **Floating Post Tabs** (Posts & Feeds → Floating Tabs, off by default) — keep up to five posts open as draggable bubbles from any post or feed ⋯ menu, and tap one to land exactly where you left off (#984, #1061: @icpryde)
+  - Bubbles snap to the screen edges, tuck away when dragged past them, stack magnetically, and hold-to-preview the post; drop one on the ✕ to close it
+  - Match threads wear the two teams' crests on their bubble, and two text posts from the same subreddit get a big letter each so they don't look like twins
+- Add a **Feed Shortcuts** screen (Features → Subreddits) with Classic, Circle, Tinted, Soft Tile, and Solid Tile icon styles, Rows, Grid, Side-by-Side, and Icon Dock layouts, a live preview, and visibility toggles for Popular, All, and Moderator Posts (#988: @IllIIllIllIllII)
+- Add a **Subreddit Sections** screen (Features → Subreddits) — give followed users their own FOLLOWING section with **Separate Followed Users**, drag Favorites, Multireddits, Moderator, and Following into any order, and watch a pinned live preview follow every change (#997, #1020: @icpryde)
+  - Subreddit List Enhancements, Modern Subreddit Dividers, and Hide Multireddit Descriptions move here, and the A–Z index stays visible and themed with Enhancements off
+- Add **Per-Account Favorites** and **Sort Favorites Alphabetically** (Subreddits → Favorites), so each account can keep its own subreddit favorites and keep them in A–Z order (#1017, #1042: @IllIIllIllIllII)
+- Add Fade, Down, and Off styles to **Hide Bars on Scroll** for the Liquid Glass tab bar alongside Left and Right, plus a **Scroll Behavior** picker that restores Apollo's Classic one-gesture hide next to the Two-Gesture default (#972: @IllIIllIllIllII)
+  - Interface settings regroup into Tab Bar and Display & Navigation, and Profile Layout opens straight from the Apollo Reborn hub
+- Rework **Liquid Glass navigation** around a collapsible action pill — the ⋯ button expands into translate, moderator, sort, and more actions, so titles stay centered and stop resizing between screens (#1035, #1047: @IllIIllIllIllII)
+  - Navigation buttons match the back button and title, moderator controls turn a brighter green with readable menu text, the pill collapses while subreddit search is open, and a cancelled swipe-back no longer jumps the page
+  - Replaces the Center Title Between Buttons setting with automatic placement; standard builds keep their expanded actions
+- Replace the Liquid Glass **feed search bar** with the native glass pill — it activates in place, compresses as you scroll, and reveals on a pull at the top, fixing the feed sliding under the field and the bar floating detached after cancel (#1002, #1026: @icpryde)
+  - Results and the query survive opening a post, the quick-switcher's autocomplete highlight stays legible on near-white accents, and the bar is in place from the first frame when a feed re-appears at its top
+  - Tapping the Posts tab scrolls to the top and a second tap returns to the subreddit list, including from followed-user profiles (#1021, #1040: @IllIIllIllIllII)
+  - The Keep Search Bar Visible setting is retired; in-place activation is simply how glass search works now
+- Add **Bold Post Titles** (Appearance → Posts) — feed post titles in Semibold for large and compact posts, every theme and theme font, Liquid Glass or legacy chrome; flips live without a relaunch (#1033: @icpryde)
+- Show read state on **Community Highlights** — unread dots, a New badge for posts under 24 hours old, a theme-colored +N count for comments added since your last visit, and dimmed titles once a highlight is read (#1041: @IllIIllIllIllII)
+- Add a live **Profile Layout** preview for Immersive, Compact, and a restored Native layout that updates as you change avatar and visibility options, with optional pinning (#1034: @IllIIllIllIllII)
+  - Also fixes copying your username on Immersive and Compact layouts and removes duplicated usernames on profiles
+- Add pinned live previews to **Subreddit Layout** too — a header preview for the Immersive, Compact, and Native **Header Style**, a Community Highlights preview for Full, Partial, and Off, and separate User Flair, Sidebar, Subtitle, and Description toggles that update open subreddits without reopening them (#1019: @IllIIllIllIllII)
+- Add **Microsoft Translator** as a bring-your-own-key translation provider, retry Google through a second endpoint when its free one rate-limits you, and show a Translation Limit Reached notice instead of silently giving up (#998: @icpryde)
+  - Moves off the shut-down default LibreTranslate instance and names dead or redirected instances instead of failing quietly
+- Add a **Source** picker to the Feed and Post **widgets** — Home, Popular, All, or a subreddit — and let every widget's subreddit field take several subreddits at once, a pasted link, or a multireddit (#1051: @icpryde)
+  - Copy Widget Setup Code now offers a with-account code, which is what unlocks Home and your private multireddits
+- Add pinned live previews to the **Inline Media** and **Rich Link Previews** settings screens that follow every control as you scroll, with tap to pin or unpin, and let the size and Apollo AI sliders select a stop from a tap (#1022, #1023, #1025: @icpryde)
+- Add **Forget Forward Swipe After Scrolling** (Posts & Feeds, off by default) so a forward swipe stops reopening a post you backed out of many posts ago; **Swipe Past Gallery to Navigate** now defaults to off (#996: @icpryde)
+- Improve **Find in Comments** — the selected match stays in view while rows load in, a comma-separated query matches any of its terms, and the docked bar follows the theme (#992, #1036: @icpryde)
+  - On Liquid Glass it is now the same native search bar the feed uses: it activates in place, the match count sits inside the field, and the More pill turns into up and down chevrons while a search is live
+- Add nine never-released **Ultra** icons — Safari, Space Paws, Grumpy Space Paws, and sequels to Explorer of Smiles, Gorilla Gus, The Little Prince, Under the Tree, and Wish Maker — move SPCA into Ultra, and list the EverythingApplePro Icons Drop Test icon in Sekrit (#969, #971, #989: @IllIIllIllIllII)
+
+### Fixes
+
+- Fix Apollo **freezing** on a loading spinner or a loaded comments screen when navigating between subreddits or opening posts on iOS 26 and later (#1024: @IllIIllIllIllII)
+- Fix **Gallery View** getting killed for memory on animated GIFs — GIFs now stream instead of holding every frame in RAM, and oversized stills are downsampled (#1001: @icpryde)
+- Fix a launch crash when the trending-subreddits table can't be written (LiveContainer and other read-only setups), and a crash opening a feed on older iOS versions that lack ActivityKit, WeatherKit, or VisionKit (#968: @icpryde)
+- Fix **Live Interactive Posts** — post-match threads render as normal text posts instead of an endless spinner, finished match threads no longer leave a hole in feed cards, the external-link confirmation works, and rotation relays out (#991, #1046: @icpryde)
+  - Opening a live post from the feed hands its already-loaded widget to the thread instead of reloading it, widgets stay warm between feed and thread, and Apollo AI no longer tries to summarize the hidden fallback text under one
+- Fix the in-app **Safari** browser flashing a white page while a link loads in dark mode; it stays black until content paints (#1052: @icpryde)
+- Fix **Liquid Glass** top fades vanishing during tab switches, and make swipe-back track the nav bar so the title and search bar no longer snap to the previous screen the moment a swipe starts (#1018: @icpryde)
+- Fix **Account Switcher** reordering quietly switching the signed-in account, plus drag handles that scrolled the page and rows that overlapped (#1011: @IllIIllIllIllII)
+- Fix duplicate items in **Saved** after a pull-to-refresh (#1005: @Thetromboneman1)
+- Fix the **subreddit list**'s section headers overlapping rows and labels slidin…]]></description>
+      <enclosure url="https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa" length="0" type="application/octet-stream" />
+    </item>
     <item>
       <title>YouPro v21.36.6</title>
       <link>https://iamsmmh.github.io/OmniSource/feeds/youpro.json</link>
@@ -30,6 +84,56 @@
       <enclosure url="https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
+      <title>ThreadSaver v446.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json</link>
+      <guid isPermaLink="false">threadsaver-446.1</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Threads 446.1 | Threads-446.1-ThreadSaver
+
+IPA Vault build for Threads (ThreadSaver), version 446.1]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>Sparkle v446.0.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/sparkle.json</link>
+      <guid isPermaLink="false">sparkle-446.0.0</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Instagram 446.0.0 | Instagram-446.0.0-Sparkle
+
+IPA Vault build for Instagram (Sparkle), version 446.0.0]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>RyukGram v446.0.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/ryukgram.json</link>
+      <guid isPermaLink="false">ryukgram-446.0.0</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Instagram 446.0.0 | Instagram-446.0.0-RyukGram
+
+IPA Vault build for Instagram (RyukGram), version 446.0.0]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>MSGPlusX v578.1.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json</link>
+      <guid isPermaLink="false">msgplusx-578.1.0</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Messenger 578.1.0 | Messenger-578.1.0-MSGPlusX
+
+IPA Vault build for Messenger (MSGPlusX), version 578.1.0]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>Messenger Flow v578.1.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json</link>
+      <guid isPermaLink="false">messenger-flow-578.1.0</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Messenger 578.1.0 | Messenger-578.1.0-Flow
+
+IPA Vault build for Messenger (Flow), version 578.1.0]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
       <title>MaxMusic v9.36.1</title>
       <link>https://iamsmmh.github.io/OmniSource/feeds/maxmusic.json</link>
       <guid isPermaLink="false">maxmusic-9.36.1</guid>
@@ -39,6 +143,16 @@
 **Changed**
 YouTube Music version]]></description>
       <enclosure url="https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>iQFace v578.1</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/iqface.json</link>
+      <guid isPermaLink="false">iqface-578.1</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Facebook 578.1 | Facebook-578.1-iQFace
+
+IPA Vault build for Facebook (iQFace), version 578.1]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
       <title>YTMusicUltimate v9.36.1</title>
@@ -482,6 +596,36 @@ IPA Vault build for SoundCloud (NexaSC), version 8.77.0]]></description>
       <enclosure url="https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa" length="0" type="application/octet-stream" />
     </item>
     <item>
+      <title>Turrit MxGram v1.5.3</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json</link>
+      <guid isPermaLink="false">turrit-mxgram-1.5.3</guid>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Turrit 1.5.3 | Turrit-1.5.3-iQTele
+
+IPA Vault build for Turrit (iQTele), version 1.5.3]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>Telegram MxGram v12.9.3</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/telegram-mxgram.json</link>
+      <guid isPermaLink="false">telegram-mxgram-12.9.3</guid>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Telegram 12.9.3 | Telegram-12.9.3-iQTele
+
+IPA Vault build for Telegram (iQTele), version 12.9.3]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
+      <title>Swiftgram v12.9.2</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/swiftgram.json</link>
+      <guid isPermaLink="false">swiftgram-12.9.2</guid>
+      <pubDate>Sat, 05 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Swiftgram 12.9.2 | Swiftgram-12.9.2-iQTele
+
+IPA Vault build for Swiftgram (iQTele), version 12.9.2]]></description>
+      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa" length="0" type="application/octet-stream" />
+    </item>
+    <item>
       <title>iQFace v577.1</title>
       <link>https://iamsmmh.github.io/OmniSource/feeds/iqface.json</link>
       <guid isPermaLink="false">iqface-577.1</guid>
@@ -500,224 +644,6 @@ IPA Vault build for Facebook (iQFace), version 577.1]]></description>
 
 IPA Vault build for Facebook (Glow), version 577.1]]></description>
       <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>MSGPlusX v577.0.0</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/msgplusx.json</link>
-      <guid isPermaLink="false">msgplusx-577.0.0</guid>
-      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX
-
-IPA Vault build for Messenger (MSGPlusX), version 577.0.0]]></description>
-      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>Messenger Flow v577.0.0</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/messenger-flow.json</link>
-      <guid isPermaLink="false">messenger-flow-577.0.0</guid>
-      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Messenger 577.0.0 | Messenger-577.0.0-Flow
-
-IPA Vault build for Messenger (Flow), version 577.0.0]]></description>
-      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>Aidoku v0.9</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/aidoku.json</link>
-      <guid isPermaLink="false">aidoku-0.9</guid>
-      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Aidoku 0.9 | Aidoku
-
-- OCR dictionary support (iOS 18+): import Yomitan-compatible dictionaries in the app and look up words while reading.
-- Suwayomi built-in source: read and track from a Suwayomi instance, just like Komga and Kavita.
-- Auto scroll for webtoon reader: enable and press the play button to scroll without touching your device.
-- Fixed CloudFlare handling: CloudFlare issues that caused external sources to break should be resolved.
-- Overall performance improvements: the library loads much faster (@Amqx), and the webtoon reader was improved.
-- Source stability fixes and disable option: the issue where sources were causing the app to crash should not happen again, and now you can even disable a source that is broken until it receives an update.
-- Many more things: see [the website](https://aidoku.app/release-notes/) for a more complete list.]]></description>
-      <enclosure url="https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>Zeus v13.2.1</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/zeus.json</link>
-      <guid isPermaLink="false">zeus-13.2.1</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Zeus 13.2.1 | zeus-v13.2.1
-
-<img width="1100" height="614" alt="ZEUS v13.2.1" src="https://github.com/user-attachments/assets/8c7a0358-df6e-40c7-93bd-9371721143e7" />
-
-## v13.2.1 Highlights:
-
-- LDK Node: BOLT 12 fixes
-- Boltcard fixes
-- Improved clipboard value UI
-- Further security hardening measures
-- Miscellaneous bug fixes
-- Miscellaneous UI improvements
-
-## What's Changed
-* chore(deps): bump js-yaml from 3.14.2 to 3.15.0 in /zeus_modules/@lightninglabs/lnc-core by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4206
-* deps: patch ws, js-yaml, and markdown-it security alerts by @kaloudis in https://github.com/ZeusLN/zeus/pull/4214
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4219
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4220
-* docs: add Claude Code skill library under .claude/skills by @kaloudis in https://github.com/ZeusLN/zeus/pull/4209
-* fix: poll status for free LSPS1/LSPS7 orders by @shubhamkmr04 in https://github.com/ZeusLN/zeus/pull/4204
-* fix: display units for invoice expiry and CLTV expiry by @kaloudis in https://github.com/ZeusLN/zeus/pull/4225
-* SwipeButton: lock knob in place after successful swipe by @kaloudis in https://github.com/ZeusLN/zeus/pull/4224
-* fix: use TextInput suffix for fee limit percent fields by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4228
-* backends: fix amountless invoice creation for LDK Node by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4232
-* chore(deps): bump protobufjs from 7.6.3 to 7.6.5 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4235
-* chore(deps): bump brace-expansion from 1.1.11 to 1.1.16 in /zeus_modules/@lightninglabs/lnc-core by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4234
-* chore(deps): bump brace-expansion from 5.0.6 to 5.0.7 in /zeus_modules/@lightninglabs/lnc-rn by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4236
-* [feat] LND v0.21-beta by @kaloudis in https://github.com/ZeusLN/zeus/pull/4177
-* Receive: surface Flow LSP proposal rejection as dismissable warning by @kaloudis in https://github.com/ZeusLN/zeus/pull/4233
-* chore(deps): bump shell-quote from 1.8.4 to 1.10.0 in /zeus_modules/@lightninglabs/lnc-rn by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4237
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4238
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4240
-* fix: deep links handled twice with 'Select wallet on start-up' by @kaloudis in https://github.com/ZeusLN/zeus/pull/4226
-* stores: prevent stale closeChannel error from wiping channel list by @kaloudis in https://github.com/ZeusLN/zeus/pull/4230
-* chore(deps): bump fast-uri from 3.1.2 to 3.1.4 in /zeus_modules/@lightninglabs/lnc-core by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4241
-* chore(deps): bump svgo from 3.3.3 to 3.3.4 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4242
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4243
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4244
-* ci: add Dependabot config for npm and GitHub Actions version updates by @kaloudis in https://github.com/ZeusLN/zeus/pull/4215
-* chore(deps): bump @babel/preset-env from 7.22.15 to 7.29.7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4256
-* chore(deps): bump mobx from 5.15.3 to 5.15.7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4253
-* ci: bump actions/setup-node from 6 to 7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4245
-* ci: bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4246
-* fix: prevent Security settings UI flash on open by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4239
-* chore(deps): bump events from 1.1.1 to 3.3.0 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4248
-* chore(deps): bump concurrently from 9.1.2 to 10.0.3 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4251
-* chore(deps): bump protobufjs-cli from 1.3.3 to 2.0.0 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4252
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4259
-* chore(deps): bump 47 minor and patch dependencies (slimmed #4247) by @kaloudis in https://github.com/ZeusLN/zeus/pull/4260
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4263
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4264
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4265
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4266
-* chore(deps): bump json from 2.19.2 to 2.19.9 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4267
-* chore(deps): bump valibot from 1.2.0 to 1.4.2 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4268
-* chore(deps): migrate lnc-rn from deprecated tslint to eslint v9 by @kaloudis in https://github.com/ZeusLN/zeus/pull/4271
-* chore(deps): clear Dependabot alerts on transitive dependencies by @kaloudis in https://github.com/ZeusLN/zeus/pull/4274
-* chore(deps): bump protobufjs to v8 + protobufjs-cli 2.5.1, regenerate bindings by @kaloudis in https://github.com/ZeusLN/zeus/pull/4262
-* build: fix vendored lnc-rn bob build + add mocha test suite by @kaloudis in https://github.com/ZeusLN/zeus/pull/4275
-* LDK: Add support for 24 word seed phrases by @shubhamkmr04 in https://github.com/ZeusLN/zeus/pull/4212
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4282
-* [feat] fix(LNC): route register callbacks through events to avoid new-arch crash by @kaloudis in https://github.com/ZeusLN/zeus/pull/4205
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4283
-* build: run prettier on generated proto types after gen-proto by @kaloudis in https://github.com/ZeusLN/zeus/pull/4284
-* deps: fix shell-quote DoS, clean up minimatch pins by @kaloudis in https://github.com/ZeusLN/zeus/pull/4281
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4290
-* fix(CLN): include unpaid invoices in Activity by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4291
-* fix: show the correct seed when backing up an inactive wallet by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4280
-* Lockscreen: prevent duress wipe in security management flows by @kaloudis in https://github.com/ZeusLN/zeus/pull/4293
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4295
-* views: WalletConfiguration: lock interface for initialized LDK Node by @kaloudis in https://github.com/ZeusLN/zeus/pull/4296
-* chore(deps): bump @react-native-documents/picker from 11.0.3 to 12.0.2 by @dependabot[bot] in https://github.com/ZeusLN/zeus/pull/4249
-* [Transifex] Updates for project ZEUS by @transifex-integration[bot] in https://github.com/ZeusLN/zeus/pull/4299
-* fix(nwc): fix lookup_invoice, list_transactions, and backend invoice lookup by @ajaysehwal in https://github.com/ZeusLN/zeus/pull/4294
-* docs: add SECURITY.md with vulnerability disclosure policy by @kaloudis in https://github.com/ZeusLN/zeus/pull/4310
-* fix(CLN/LND): poll lookupInvoice in the Receive payment watcher by @kaloudis in https://github.com/ZeusLN/zeus/pull/4300
-* utils: disable REST proxy in embedded LND config by @kaloudis in https://github.com/ZeusLN/zeus/pull/4311
-* fix(swaps): always generate an independent swap rescue key by @kaloudis in https://github.com/ZeusL…]]></description>
-      <enclosure url="https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>Jellify v1.2.10</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/jellify.json</link>
-      <guid isPermaLink="false">jellify-1.2.10</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Jellify 1.2.10 | Jellify-1.2.10
-
-Welcome to Jellify 1.2.10
-
-Hey music lovers! I've polished up some underlying bits and have made a key fix to boost stability across the board. Get ready for an even smoother listening experience when you’re exploring your Jellyfin collection!
-
-*   **Android Crash Fixes:** We detected and patched out a crash that was occurring on Android devices, so you can now enjoy uninterrupted music playback no matter how deep you dive into your library.
-*   **Optimized Performance:** Several dependency updates have been implemented behind the scenes to enhance overall app performance and make navigation feel snappier than ever before.
-*   **App General Polish:** We've made various quality-of-life improvements in various components, ensuring Jellify remains robust and reliable for years of listening fun!]]></description>
-      <enclosure url="https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>YTMusicUltimate v9.35.2</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/ytmusic.json</link>
-      <guid isPermaLink="false">ytmusic-9.35.2</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[YTMusicUltimate 9.35.2 | YTMusic 2.4.1 | YTMusicUltimate_9.35.2_2.4.1
-
-> [!NOTE]
-> ### Extra tweaks:
-> - Return YouTubeMusic Dislikes
-> - YTMABConfig
-> - VolumeBoostYT
-- - -
-- YouMusicPiP is only available in custom build
-- iOS14+ build is available in releases page]]></description>
-      <enclosure url="https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa28/YTMusicUltimate_9.35.2_2.4.1.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>YTKillerPlus v21.35.3</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/ytkp.json</link>
-      <guid isPermaLink="false">ytkp-21.35.3</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[YouTube 21.35.3 | YouTube_21.35_YTKillerPlus_6.5
-
-• v21.34 requires iOS 17 and later now
-• Fix HLS CKU clear known url for audio mp3 and 2k-4k capable devices fails on v21.31+ in some cases
-• Fix save posted gif image saving only first frame in some cases
-• Fix save posted image when multiple imge in a post first image not saved correctly
-• Fix tabs Icon.
-• Fix and improve audio languages select.
-• Updated iPA to newer YouTube v21.34.6.
-• Add POST tab to tab bar.
-• Improve localization &amp; add missing languages.
-• Improve ad blocking on main Feed.
-• Improve Lyrics API speed & accuracy.
-• Improve MP3 audio handling.
-• Improve backup & restore.
-• Improve media extension importing.
-• Improve Shorts auto-skip.
-• Improve Shorts multiple-post handling.
-• Fix OLED keyboard issue on iOS 27.
-• Other fixes & cleanup.
-• Updated iPA to YouTube v21.35]]></description>
-      <enclosure url="https://ikghd.site/ipa/YouTube_21.35_YTKillerPlus_6.5.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>Turrit MxGram v1.5.3</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/turrit-mxgram.json</link>
-      <guid isPermaLink="false">turrit-mxgram-1.5.3</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Turrit 1.5.3 | Turrit-1.5.3-MxGram
-
-IPA Vault build for Turrit (MxGram), version 1.5.3]]></description>
-      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>TTKillerPlus v46.7.0</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/ttkillerplus.json</link>
-      <guid isPermaLink="false">ttkillerplus-46.7.0</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[TikTok 46.7.0 | TikTok_46.7_TTKillerPlus_2.1
-
-• Add v46.0+ compatibility.
-• Fix like confirmation bypass on double tap.
-• Fix post date display format.
-• Fix settings localization & toggles.
-• Fix flag button not tappable.
-• Other fixes & improvements.
-• Update base IPA to TikTok v46.7]]></description>
-      <enclosure url="https://ikghd.site/ipa/TikTok_46.7_TTKillerPlus_2.1.ipa" length="0" type="application/octet-stream" />
-    </item>
-    <item>
-      <title>ThreadSaver v445.1</title>
-      <link>https://iamsmmh.github.io/OmniSource/feeds/threadsaver.json</link>
-      <guid isPermaLink="false">threadsaver-445.1</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <description><![CDATA[Threads 445.1 | Threads-445.1-ThreadSaver
-
-IPA Vault build for Threads (ThreadSaver), version 445.1]]></description>
-      <enclosure url="https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa" length="0" type="application/octet-stream" />
     </item>
   </channel>
 </rss>

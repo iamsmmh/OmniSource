@@ -19,18 +19,18 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
       "tintColor": "0084FF",
       "category": "social",
-      "version": "577.0.0",
-      "versionDate": "2026-09-03",
-      "versionDescription": "Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 577.0.0",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
-      "size": 112528712,
+      "version": "578.1.0",
+      "versionDate": "2026-09-10",
+      "versionDescription": "Messenger 578.1.0 | Messenger-578.1.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 578.1.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
+      "size": 113236064,
       "versions": [
         {
-          "version": "577.0.0",
-          "date": "2026-09-03",
-          "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 577.0.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
-          "size": 112528712,
+          "version": "578.1.0",
+          "date": "2026-09-10",
+          "localizedDescription": "Messenger 578.1.0 | Messenger-578.1.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 578.1.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
+          "size": 113236064,
           "minOSVersion": "15.1",
           "releaseUrl": null,
           "source": "altstore",
@@ -38,12 +38,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Messenger-577.0.0-MSGPlusX.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+              "filename": "Messenger-578.1.0-MSGPlusX.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 112528712,
+              "size": 113236064,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -107,10 +107,10 @@
           "notes": "UNOFFICIAL BUILD. MSGPlusX has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses the stock Messenger bundle identifier, so installing it REPLACES the App Store Messenger on device."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "HTTP 404",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-03"
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-11",
+          "lastUpdatedAt": "2026-09-10"
         }
       }
     }

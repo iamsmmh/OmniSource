@@ -506,135 +506,135 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Apollo.webp",
       "tintColor": "F0542D",
       "category": "social",
-      "version": "3.6.0",
-      "versionDate": "2026-08-18",
-      "versionDescription": "Apollo 3.6.0 | Apollo-Reborn-3.6.0\n\n### Features\n\n- Add **Gallery View** to the Home feed, Popular, All, Moderator Posts, and user profiles, with real video controls, rotation, and sort inherited from the feed you opened it from (#904: @icpryde)\n  - Adds a universal \"...\" menu to your own profile holding Gallery View, Edit Profile, Recently Read, hidden and deleted content, and Share Profile, so the floating Edit pill and the nav-bar clock and eye icons are gone\n- Add **Live Interactive Posts** so Reddit's Developer Platform posts — live match threads, games, and other custom widgets — render inline in comments and the feed instead of the \"not supported on old Reddit\" placeholder (#920, #939: @icpryde)\n- Add a **Feed Video Scrubber** that makes an inline video's own progress bar grabbable, so you can slide to seek without opening the player (#938: @icpryde)\n  - Adds **Unmute Videos in Feed** alongside it, with Never, Always, and Remember modes\n- Redesign the **App Icon** picker around browsable pack cards, a daily-rotating Spotlight row, an adaptive iPad grid, and clearer selection state and haptics (#912, #941: @IllIIllIllIllII)\n- Add an **Icon Appearance** menu so any icon can be pinned to its Light or Dark artwork instead of always following the device appearance (#894: @IllIIllIllIllII)\n- Add **Wallpapers** to Settings for browsing and saving Apollo's Goodbye wallpaper collections for iPhone, iPad, and Mac (#947: @IllIIllIllIllII)\n- Add a configurable **Share Link Host** so Copy Link, the share sheet, and Share as Image can share through Reddit, old.reddit, vxReddit, or fxreddit (#857: @JamesLautner)\n- Add a **Blur NSFW Media** setting with Reddit Setting, Always, and Never options, covering mature media while leaving the post title readable (#874: @jordanearle)\n- Add **Swipe Past Gallery to Navigate** so swiping past the first or last image of a feed gallery goes back or forward instead of rubber-banding (#934: @icpryde)\n- Add swipe navigation between **Notifications and Chat** in the Inbox, and keep the title from sliding across when switching tabs (#900: @icpryde)\n- Add **Prefer Native Images** to Comment Link Host, so comment images upload natively wherever a subreddit allows image comments and only fall back to the link host where it doesn't (#952: @icpryde)\n- Add the **Right to Repair** app icon, overhaul the **Classics** Liquid Glass pack with more faithful recreations and four new icons, and refresh **Synthwave** (#888, #915, #927, #928: @IllIIllIllIllII, @bajader)\n- Move **Icon-Only Tab Bar** under Settings > Interface alongside the rest of the tab bar options (#867: @JeffreyCA)\n\n### Fixes\n\n- Fix five crashes reported against 3.5.1 — Filters & Blocks Edit and the Tag Filters toggle, switching accounts from the Inbox, token refresh, and Liquid Glass nav titles — plus a crash on malformed multireddit responses (#864, #897: @jordanearle)\n- Stop hidden scrape web views letting a Reddit video ad take over the screen while **Community Highlights**, Badge Book, Social Links, User Flair, or the sidebar load in the background (#908: @jordanearle)\n- Stop the **theme crash kill-switch** disabling a custom theme after force-quits, iOS prewarm discards, or jetsams, while still tripping on a real crash loop (#923: @icpryde)\n- Fix **Community Highlights** stalling at two entries when Reddit serves its bot challenge, plus the collapsed bar's excess padding and the layout snap the first time a subreddit opens (#925, #926: @icpryde)\n- Fix **A–Z scrubbing** in the Subreddits list going dead mid-drag on non-Liquid-Glass builds, along with the black bands behind its section headers (#936: @icpryde)\n- Fix images being cropped in multi-image **feed carousels** — every page now shows the complete picture, letterboxed in the theme's card color (#922: @icpryde)\n- Fix **link previews** rendering as mojibake for pages served in a legacy charset such as EUC-KR, Shift_JIS, GB18030, or Big5 (#950: @icpryde)\n- Fix **tweet previews** not rendering at all after x.com changed its guest-token flow, and show them on posts with 40 or fewer upvotes too (#873: @DeltAndy123)\n- Fix **Picture in Picture** taking over for silent v.redd.it clips while Activate For is set to Unmuted Videos Only (#951: @JeffreyCA)\n- Play more **sports clips** inline: add MLB's cuts-diamond CDN, restore streamain posters, and follow dubz's and streamin's split CDNs instead of assuming a single host (#929, #944: @icpryde)\n- Fix Apollo's native **NSFW blur** ignoring your Reddit preference on API-Key-Free accounts, and the Search tab pill painting its light-mode color on dark themes (#866: @jordanearle)\n- Fix **custom themes** greying out primary text in Pure Black Dark Mode and leaving the GIF and gallery-count pills unreadable on compact posts (#869: @DeltAndy123)\n- Fix **Recently Read** opening with a black background and mis-sized stats, and apply custom theme text colors to the remaining tweak-owned settings rows that ignored them (#860: @JeffreyCA)\n- Fix mature listings returning the placeholder user on **API-Key-Free** accounts configured with a custom User-Agent (#889: @Thetromboneman1)\n- Fix cloud **AI Summaries** failing on newer OpenAI models, and bound streaming responses so a malformed endpoint can't exhaust memory (#887, #890: @Thetromboneman1, @jaredrossberg)\n- Improve scrolling and launch smoothness by tightening shared-state synchronization and keeping cache serialization and image decoding off the critical path (#859: @ryannair05)\n- Fix the **Public Sticky from Subreddit** row eating the gap above Cancel on the legacy \"Notify user via...\" sheet (#862: @DeltAndy123)",
-      "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
-      "size": 95474417,
+      "version": "3.7.0",
+      "versionDate": "2026-09-11",
+      "versionDescription": "Apollo 3.7.0 | Apollo-Reborn-3.7.0\n\n### Features\n\n- Add **Floating Post Tabs** (Posts & Feeds → Floating Tabs, off by default) — keep up to five posts open as draggable bubbles from any post or feed ⋯ menu, and tap one to land exactly where you left off (#984, #1061: @icpryde)\n  - Bubbles snap to the screen edges, tuck away when dragged past them, stack magnetically, and hold-to-preview the post; drop one on the ✕ to close it\n  - Match threads wear the two teams' crests on their bubble, and two text posts from the same subreddit get a big letter each so they don't look like twins\n- Add a **Feed Shortcuts** screen (Features → Subreddits) with Classic, Circle, Tinted, Soft Tile, and Solid Tile icon styles, Rows, Grid, Side-by-Side, and Icon Dock layouts, a live preview, and visibility toggles for Popular, All, and Moderator Posts (#988: @IllIIllIllIllII)\n- Add a **Subreddit Sections** screen (Features → Subreddits) — give followed users their own FOLLOWING section with **Separate Followed Users**, drag Favorites, Multireddits, Moderator, and Following into any order, and watch a pinned live preview follow every change (#997, #1020: @icpryde)\n  - Subreddit List Enhancements, Modern Subreddit Dividers, and Hide Multireddit Descriptions move here, and the A–Z index stays visible and themed with Enhancements off\n- Add **Per-Account Favorites** and **Sort Favorites Alphabetically** (Subreddits → Favorites), so each account can keep its own subreddit favorites and keep them in A–Z order (#1017, #1042: @IllIIllIllIllII)\n- Add Fade, Down, and Off styles to **Hide Bars on Scroll** for the Liquid Glass tab bar alongside Left and Right, plus a **Scroll Behavior** picker that restores Apollo's Classic one-gesture hide next to the Two-Gesture default (#972: @IllIIllIllIllII)\n  - Interface settings regroup into Tab Bar and Display & Navigation, and Profile Layout opens straight from the Apollo Reborn hub\n- Rework **Liquid Glass navigation** around a collapsible action pill — the ⋯ button expands into translate, moderator, sort, and more actions, so titles stay centered and stop resizing between screens (#1035, #1047: @IllIIllIllIllII)\n  - Navigation buttons match the back button and title, moderator controls turn a brighter green with readable menu text, the pill collapses while subreddit search is open, and a cancelled swipe-back no longer jumps the page\n  - Replaces the Center Title Between Buttons setting with automatic placement; standard builds keep their expanded actions\n- Replace the Liquid Glass **feed search bar** with the native glass pill — it activates in place, compresses as you scroll, and reveals on a pull at the top, fixing the feed sliding under the field and the bar floating detached after cancel (#1002, #1026: @icpryde)\n  - Results and the query survive opening a post, the quick-switcher's autocomplete highlight stays legible on near-white accents, and the bar is in place from the first frame when a feed re-appears at its top\n  - Tapping the Posts tab scrolls to the top and a second tap returns to the subreddit list, including from followed-user profiles (#1021, #1040: @IllIIllIllIllII)\n  - The Keep Search Bar Visible setting is retired; in-place activation is simply how glass search works now\n- Add **Bold Post Titles** (Appearance → Posts) — feed post titles in Semibold for large and compact posts, every theme and theme font, Liquid Glass or legacy chrome; flips live without a relaunch (#1033: @icpryde)\n- Show read state on **Community Highlights** — unread dots, a New badge for posts under 24 hours old, a theme-colored +N count for comments added since your last visit, and dimmed titles once a highlight is read (#1041: @IllIIllIllIllII)\n- Add a live **Profile Layout** preview for Immersive, Compact, and a restored Native layout that updates as you change avatar and visibility options, with optional pinning (#1034: @IllIIllIllIllII)\n  - Also fixes copying your username on Immersive and Compact layouts and removes duplicated usernames on profiles\n- Add pinned live previews to **Subreddit Layout** too — a header preview for the Immersive, Compact, and Native **Header Style**, a Community Highlights preview for Full, Partial, and Off, and separate User Flair, Sidebar, Subtitle, and Description toggles that update open subreddits without reopening them (#1019: @IllIIllIllIllII)\n- Add **Microsoft Translator** as a bring-your-own-key translation provider, retry Google through a second endpoint when its free one rate-limits you, and show a Translation Limit Reached notice instead of silently giving up (#998: @icpryde)\n  - Moves off the shut-down default LibreTranslate instance and names dead or redirected instances instead of failing quietly\n- Add a **Source** picker to the Feed and Post **widgets** — Home, Popular, All, or a subreddit — and let every widget's subreddit field take several subreddits at once, a pasted link, or a multireddit (#1051: @icpryde)\n  - Copy Widget Setup Code now offers a with-account code, which is what unlocks Home and your private multireddits\n- Add pinned live previews to the **Inline Media** and **Rich Link Previews** settings screens that follow every control as you scroll, with tap to pin or unpin, and let the size and Apollo AI sliders select a stop from a tap (#1022, #1023, #1025: @icpryde)\n- Add **Forget Forward Swipe After Scrolling** (Posts & Feeds, off by default) so a forward swipe stops reopening a post you backed out of many posts ago; **Swipe Past Gallery to Navigate** now defaults to off (#996: @icpryde)\n- Improve **Find in Comments** — the selected match stays in view while rows load in, a comma-separated query matches any of its terms, and the docked bar follows the theme (#992, #1036: @icpryde)\n  - On Liquid Glass it is now the same native search bar the feed uses: it activates in place, the match count sits inside the field, and the More pill turns into up and down chevrons while a search is live\n- Add nine never-released **Ultra** icons — Safari, Space Paws, Grumpy Space Paws, and sequels to Explorer of Smiles, Gorilla Gus, The Little Prince, Under the Tree, and Wish Maker — move SPCA into Ultra, and list the EverythingApplePro Icons Drop Test icon in Sekrit (#969, #971, #989: @IllIIllIllIllII)\n\n### Fixes\n\n- Fix Apollo **freezing** on a loading spinner or a loaded comments screen when navigating between subreddits or opening posts on iOS 26 and later (#1024: @IllIIllIllIllII)\n- Fix **Gallery View** getting killed for memory on animated GIFs — GIFs now stream instead of holding every frame in RAM, and oversized stills are downsampled (#1001: @icpryde)\n- Fix a launch crash when the trending-subreddits table can't be written (LiveContainer and other read-only setups), and a crash opening a feed on older iOS versions that lack ActivityKit, WeatherKit, or VisionKit (#968: @icpryde)\n- Fix **Live Interactive Posts** — post-match threads render as normal text posts instead of an endless spinner, finished match threads no longer leave a hole in feed cards, the external-link confirmation works, and rotation relays out (#991, #1046: @icpryde)\n  - Opening a live post from the feed hands its already-loaded widget to the thread instead of reloading it, widgets stay warm between feed and thread, and Apollo AI no longer tries to summarize the hidden fallback text under one\n- Fix the in-app **Safari** browser flashing a white page while a link loads in dark mode; it stays black until content paints (#1052: @icpryde)\n- Fix **Liquid Glass** top fades vanishing during tab switches, and make swipe-back track the nav bar so the title and search bar no longer snap to the previous screen the moment a swipe starts (#1018: @icpryde)\n- Fix **Account Switcher** reordering quietly switching the signed-in account, plus drag handles that scrolled the page and rows that overlapped (#1011: @IllIIllIllIllII)\n- Fix duplicate items in **Saved** after a pull-to-refresh (#1005: @Thetromboneman1)\n- Fix the **subreddit list**'s section headers overlapping rows and labels slidin…",
+      "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
+      "size": 96105993,
       "versions": [
         {
-          "version": "3.6.0",
-          "date": "2026-08-18",
-          "localizedDescription": "Apollo 3.6.0 | Apollo-Reborn-3.6.0\n\n### Features\n\n- Add **Gallery View** to the Home feed, Popular, All, Moderator Posts, and user profiles, with real video controls, rotation, and sort inherited from the feed you opened it from (#904: @icpryde)\n  - Adds a universal \"...\" menu to your own profile holding Gallery View, Edit Profile, Recently Read, hidden and deleted content, and Share Profile, so the floating Edit pill and the nav-bar clock and eye icons are gone\n- Add **Live Interactive Posts** so Reddit's Developer Platform posts — live match threads, games, and other custom widgets — render inline in comments and the feed instead of the \"not supported on old Reddit\" placeholder (#920, #939: @icpryde)\n- Add a **Feed Video Scrubber** that makes an inline video's own progress bar grabbable, so you can slide to seek without opening the player (#938: @icpryde)\n  - Adds **Unmute Videos in Feed** alongside it, with Never, Always, and Remember modes\n- Redesign the **App Icon** picker around browsable pack cards, a daily-rotating Spotlight row, an adaptive iPad grid, and clearer selection state and haptics (#912, #941: @IllIIllIllIllII)\n- Add an **Icon Appearance** menu so any icon can be pinned to its Light or Dark artwork instead of always following the device appearance (#894: @IllIIllIllIllII)\n- Add **Wallpapers** to Settings for browsing and saving Apollo's Goodbye wallpaper collections for iPhone, iPad, and Mac (#947: @IllIIllIllIllII)\n- Add a configurable **Share Link Host** so Copy Link, the share sheet, and Share as Image can share through Reddit, old.reddit, vxReddit, or fxreddit (#857: @JamesLautner)\n- Add a **Blur NSFW Media** setting with Reddit Setting, Always, and Never options, covering mature media while leaving the post title readable (#874: @jordanearle)\n- Add **Swipe Past Gallery to Navigate** so swiping past the first or last image of a feed gallery goes back or forward instead of rubber-banding (#934: @icpryde)\n- Add swipe navigation between **Notifications and Chat** in the Inbox, and keep the title from sliding across when switching tabs (#900: @icpryde)\n- Add **Prefer Native Images** to Comment Link Host, so comment images upload natively wherever a subreddit allows image comments and only fall back to the link host where it doesn't (#952: @icpryde)\n- Add the **Right to Repair** app icon, overhaul the **Classics** Liquid Glass pack with more faithful recreations and four new icons, and refresh **Synthwave** (#888, #915, #927, #928: @IllIIllIllIllII, @bajader)\n- Move **Icon-Only Tab Bar** under Settings > Interface alongside the rest of the tab bar options (#867: @JeffreyCA)\n\n### Fixes\n\n- Fix five crashes reported against 3.5.1 — Filters & Blocks Edit and the Tag Filters toggle, switching accounts from the Inbox, token refresh, and Liquid Glass nav titles — plus a crash on malformed multireddit responses (#864, #897: @jordanearle)\n- Stop hidden scrape web views letting a Reddit video ad take over the screen while **Community Highlights**, Badge Book, Social Links, User Flair, or the sidebar load in the background (#908: @jordanearle)\n- Stop the **theme crash kill-switch** disabling a custom theme after force-quits, iOS prewarm discards, or jetsams, while still tripping on a real crash loop (#923: @icpryde)\n- Fix **Community Highlights** stalling at two entries when Reddit serves its bot challenge, plus the collapsed bar's excess padding and the layout snap the first time a subreddit opens (#925, #926: @icpryde)\n- Fix **A–Z scrubbing** in the Subreddits list going dead mid-drag on non-Liquid-Glass builds, along with the black bands behind its section headers (#936: @icpryde)\n- Fix images being cropped in multi-image **feed carousels** — every page now shows the complete picture, letterboxed in the theme's card color (#922: @icpryde)\n- Fix **link previews** rendering as mojibake for pages served in a legacy charset such as EUC-KR, Shift_JIS, GB18030, or Big5 (#950: @icpryde)\n- Fix **tweet previews** not rendering at all after x.com changed its guest-token flow, and show them on posts with 40 or fewer upvotes too (#873: @DeltAndy123)\n- Fix **Picture in Picture** taking over for silent v.redd.it clips while Activate For is set to Unmuted Videos Only (#951: @JeffreyCA)\n- Play more **sports clips** inline: add MLB's cuts-diamond CDN, restore streamain posters, and follow dubz's and streamin's split CDNs instead of assuming a single host (#929, #944: @icpryde)\n- Fix Apollo's native **NSFW blur** ignoring your Reddit preference on API-Key-Free accounts, and the Search tab pill painting its light-mode color on dark themes (#866: @jordanearle)\n- Fix **custom themes** greying out primary text in Pure Black Dark Mode and leaving the GIF and gallery-count pills unreadable on compact posts (#869: @DeltAndy123)\n- Fix **Recently Read** opening with a black background and mis-sized stats, and apply custom theme text colors to the remaining tweak-owned settings rows that ignored them (#860: @JeffreyCA)\n- Fix mature listings returning the placeholder user on **API-Key-Free** accounts configured with a custom User-Agent (#889: @Thetromboneman1)\n- Fix cloud **AI Summaries** failing on newer OpenAI models, and bound streaming responses so a malformed endpoint can't exhaust memory (#887, #890: @Thetromboneman1, @jaredrossberg)\n- Improve scrolling and launch smoothness by tightening shared-state synchronization and keeping cache serialization and image decoding off the critical path (#859: @ryannair05)\n- Fix the **Public Sticky from Subreddit** row eating the gap above Cancel on the legacy \"Notify user via...\" sheet (#862: @DeltAndy123)",
-          "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
-          "size": 95474417,
+          "version": "3.7.0",
+          "date": "2026-09-11",
+          "localizedDescription": "Apollo 3.7.0 | Apollo-Reborn-3.7.0\n\n### Features\n\n- Add **Floating Post Tabs** (Posts & Feeds → Floating Tabs, off by default) — keep up to five posts open as draggable bubbles from any post or feed ⋯ menu, and tap one to land exactly where you left off (#984, #1061: @icpryde)\n  - Bubbles snap to the screen edges, tuck away when dragged past them, stack magnetically, and hold-to-preview the post; drop one on the ✕ to close it\n  - Match threads wear the two teams' crests on their bubble, and two text posts from the same subreddit get a big letter each so they don't look like twins\n- Add a **Feed Shortcuts** screen (Features → Subreddits) with Classic, Circle, Tinted, Soft Tile, and Solid Tile icon styles, Rows, Grid, Side-by-Side, and Icon Dock layouts, a live preview, and visibility toggles for Popular, All, and Moderator Posts (#988: @IllIIllIllIllII)\n- Add a **Subreddit Sections** screen (Features → Subreddits) — give followed users their own FOLLOWING section with **Separate Followed Users**, drag Favorites, Multireddits, Moderator, and Following into any order, and watch a pinned live preview follow every change (#997, #1020: @icpryde)\n  - Subreddit List Enhancements, Modern Subreddit Dividers, and Hide Multireddit Descriptions move here, and the A–Z index stays visible and themed with Enhancements off\n- Add **Per-Account Favorites** and **Sort Favorites Alphabetically** (Subreddits → Favorites), so each account can keep its own subreddit favorites and keep them in A–Z order (#1017, #1042: @IllIIllIllIllII)\n- Add Fade, Down, and Off styles to **Hide Bars on Scroll** for the Liquid Glass tab bar alongside Left and Right, plus a **Scroll Behavior** picker that restores Apollo's Classic one-gesture hide next to the Two-Gesture default (#972: @IllIIllIllIllII)\n  - Interface settings regroup into Tab Bar and Display & Navigation, and Profile Layout opens straight from the Apollo Reborn hub\n- Rework **Liquid Glass navigation** around a collapsible action pill — the ⋯ button expands into translate, moderator, sort, and more actions, so titles stay centered and stop resizing between screens (#1035, #1047: @IllIIllIllIllII)\n  - Navigation buttons match the back button and title, moderator controls turn a brighter green with readable menu text, the pill collapses while subreddit search is open, and a cancelled swipe-back no longer jumps the page\n  - Replaces the Center Title Between Buttons setting with automatic placement; standard builds keep their expanded actions\n- Replace the Liquid Glass **feed search bar** with the native glass pill — it activates in place, compresses as you scroll, and reveals on a pull at the top, fixing the feed sliding under the field and the bar floating detached after cancel (#1002, #1026: @icpryde)\n  - Results and the query survive opening a post, the quick-switcher's autocomplete highlight stays legible on near-white accents, and the bar is in place from the first frame when a feed re-appears at its top\n  - Tapping the Posts tab scrolls to the top and a second tap returns to the subreddit list, including from followed-user profiles (#1021, #1040: @IllIIllIllIllII)\n  - The Keep Search Bar Visible setting is retired; in-place activation is simply how glass search works now\n- Add **Bold Post Titles** (Appearance → Posts) — feed post titles in Semibold for large and compact posts, every theme and theme font, Liquid Glass or legacy chrome; flips live without a relaunch (#1033: @icpryde)\n- Show read state on **Community Highlights** — unread dots, a New badge for posts under 24 hours old, a theme-colored +N count for comments added since your last visit, and dimmed titles once a highlight is read (#1041: @IllIIllIllIllII)\n- Add a live **Profile Layout** preview for Immersive, Compact, and a restored Native layout that updates as you change avatar and visibility options, with optional pinning (#1034: @IllIIllIllIllII)\n  - Also fixes copying your username on Immersive and Compact layouts and removes duplicated usernames on profiles\n- Add pinned live previews to **Subreddit Layout** too — a header preview for the Immersive, Compact, and Native **Header Style**, a Community Highlights preview for Full, Partial, and Off, and separate User Flair, Sidebar, Subtitle, and Description toggles that update open subreddits without reopening them (#1019: @IllIIllIllIllII)\n- Add **Microsoft Translator** as a bring-your-own-key translation provider, retry Google through a second endpoint when its free one rate-limits you, and show a Translation Limit Reached notice instead of silently giving up (#998: @icpryde)\n  - Moves off the shut-down default LibreTranslate instance and names dead or redirected instances instead of failing quietly\n- Add a **Source** picker to the Feed and Post **widgets** — Home, Popular, All, or a subreddit — and let every widget's subreddit field take several subreddits at once, a pasted link, or a multireddit (#1051: @icpryde)\n  - Copy Widget Setup Code now offers a with-account code, which is what unlocks Home and your private multireddits\n- Add pinned live previews to the **Inline Media** and **Rich Link Previews** settings screens that follow every control as you scroll, with tap to pin or unpin, and let the size and Apollo AI sliders select a stop from a tap (#1022, #1023, #1025: @icpryde)\n- Add **Forget Forward Swipe After Scrolling** (Posts & Feeds, off by default) so a forward swipe stops reopening a post you backed out of many posts ago; **Swipe Past Gallery to Navigate** now defaults to off (#996: @icpryde)\n- Improve **Find in Comments** — the selected match stays in view while rows load in, a comma-separated query matches any of its terms, and the docked bar follows the theme (#992, #1036: @icpryde)\n  - On Liquid Glass it is now the same native search bar the feed uses: it activates in place, the match count sits inside the field, and the More pill turns into up and down chevrons while a search is live\n- Add nine never-released **Ultra** icons — Safari, Space Paws, Grumpy Space Paws, and sequels to Explorer of Smiles, Gorilla Gus, The Little Prince, Under the Tree, and Wish Maker — move SPCA into Ultra, and list the EverythingApplePro Icons Drop Test icon in Sekrit (#969, #971, #989: @IllIIllIllIllII)\n\n### Fixes\n\n- Fix Apollo **freezing** on a loading spinner or a loaded comments screen when navigating between subreddits or opening posts on iOS 26 and later (#1024: @IllIIllIllIllII)\n- Fix **Gallery View** getting killed for memory on animated GIFs — GIFs now stream instead of holding every frame in RAM, and oversized stills are downsampled (#1001: @icpryde)\n- Fix a launch crash when the trending-subreddits table can't be written (LiveContainer and other read-only setups), and a crash opening a feed on older iOS versions that lack ActivityKit, WeatherKit, or VisionKit (#968: @icpryde)\n- Fix **Live Interactive Posts** — post-match threads render as normal text posts instead of an endless spinner, finished match threads no longer leave a hole in feed cards, the external-link confirmation works, and rotation relays out (#991, #1046: @icpryde)\n  - Opening a live post from the feed hands its already-loaded widget to the thread instead of reloading it, widgets stay warm between feed and thread, and Apollo AI no longer tries to summarize the hidden fallback text under one\n- Fix the in-app **Safari** browser flashing a white page while a link loads in dark mode; it stays black until content paints (#1052: @icpryde)\n- Fix **Liquid Glass** top fades vanishing during tab switches, and make swipe-back track the nav bar so the title and search bar no longer snap to the previous screen the moment a swipe starts (#1018: @icpryde)\n- Fix **Account Switcher** reordering quietly switching the signed-in account, plus drag handles that scrolled the page and rows that overlapped (#1011: @IllIIllIllIllII)\n- Fix duplicate items in **Saved** after a pull-to-refresh (#1005: @Thetromboneman1)\n- Fix the **subreddit list**'s section headers overlapping rows and labels slidin…",
+          "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
+          "size": 96105993,
           "minOSVersion": "14.0",
-          "releaseUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.6.0",
+          "releaseUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.7.0",
           "source": "github",
           "isPrerelease": false,
           "isDraft": false,
           "assets": [
             {
-              "filename": "Apollo-Reborn-3.6.0-dSYMs.zip",
-              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-dSYMs.zip",
+              "filename": "Apollo-Reborn-3.7.0-dSYMs.zip",
+              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-dSYMs.zip",
               "platform": "unknown",
               "architecture": null,
               "fileType": "ZIP",
-              "size": 18360443,
-              "sha256": "45bd2a66e693a18b2cefeca7146024a5f6abe93f920aad1b478c1fa7197450e0",
-              "downloads": 50,
+              "size": 20210832,
+              "sha256": "3e28268abc8bdadb4ff213a560d4a5d119792bfa53c50dbfd47f2ccf98487e95",
+              "downloads": 1,
               "mimeType": "application/zip",
               "installable": false
             },
             {
-              "filename": "Apollo-Reborn-3.6.0-GLASS-NOEXTENSIONS.ipa",
-              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-GLASS-NOEXTENSIONS.ipa",
+              "filename": "Apollo-Reborn-3.7.0-GLASS-NOEXTENSIONS.ipa",
+              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASS-NOEXTENSIONS.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 113136488,
-              "sha256": "d72cbb2f1b815ac6e86873b837ade62e65d3046ae7fcd02554d8981eb92cf9a5",
-              "downloads": 3041,
+              "size": 114445492,
+              "sha256": "91cd42e46b9a0adb0198464095bf09d702173c82e57a74633f823caf9c85d552",
+              "downloads": 26,
               "mimeType": "application/octet-stream",
               "installable": true
             },
             {
-              "filename": "Apollo-Reborn-3.6.0-GLASS.ipa",
-              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-GLASS.ipa",
+              "filename": "Apollo-Reborn-3.7.0-GLASS.ipa",
+              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASS.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 123354289,
-              "sha256": "c65e1dd5bb35a13878013848945346d8b7cb774b5965573db939f7bc698d4ac6",
-              "downloads": 7107,
+              "size": 124696561,
+              "sha256": "b9af6cb4e17fbb9843487f4c09d1982e61bda511a6eabf82c3da1b98e0e8f18f",
+              "downloads": 74,
               "mimeType": "application/octet-stream",
               "installable": true
             },
             {
-              "filename": "Apollo-Reborn-3.6.0-GLASSICONS-NOEXTENSIONS.ipa",
-              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-GLASSICONS-NOEXTENSIONS.ipa",
+              "filename": "Apollo-Reborn-3.7.0-GLASSICONS-NOEXTENSIONS.ipa",
+              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASSICONS-NOEXTENSIONS.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 113136342,
-              "sha256": "0314da676879ab7e088869699bd1845c504e02eaf749604a4054b3b2a18d5a4c",
-              "downloads": 138,
+              "size": 114445347,
+              "sha256": "e3c412f1182670f0623361db91cedea82079a9c406674434700e4253bc149a42",
+              "downloads": 1,
               "mimeType": "application/octet-stream",
               "installable": true
             },
             {
-              "filename": "Apollo-Reborn-3.6.0-GLASSICONS.ipa",
-              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-GLASSICONS.ipa",
+              "filename": "Apollo-Reborn-3.7.0-GLASSICONS.ipa",
+              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASSICONS.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 123354144,
-              "sha256": "a80003950996ed9baaf61f74bddce79ce39e234d9fce978a0ca015ba270a4a92",
-              "downloads": 274,
+              "size": 124696417,
+              "sha256": "6c0e463a4f6a6a901a2c8d3a820b11cb41b61fc2e6f0a3b63edacdd33859b78d",
+              "downloads": 3,
               "mimeType": "application/octet-stream",
               "installable": true
             },
             {
-              "filename": "Apollo-Reborn-3.6.0-NOEXTENSIONS.ipa",
-              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0-NOEXTENSIONS.ipa",
+              "filename": "Apollo-Reborn-3.7.0-NOEXTENSIONS.ipa",
+              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-NOEXTENSIONS.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 85256616,
-              "sha256": "f7108deadcf70cd5d2943fc4367bbc432bbb475f7e307fb279ebf48b782fa0a4",
-              "downloads": 888,
+              "size": 85854925,
+              "sha256": "54c89328db3397cd62b275c5e99488b678318b4c51e91bc30d91235b888276cb",
+              "downloads": 12,
               "mimeType": "application/octet-stream",
               "installable": true
             },
             {
-              "filename": "Apollo-Reborn-3.6.0.ipa",
-              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/Apollo-Reborn-3.6.0.ipa",
+              "filename": "Apollo-Reborn-3.7.0.ipa",
+              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 95474417,
-              "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8",
-              "downloads": 1229,
+              "size": 96105993,
+              "sha256": "3435f0c47f299f6f5637600c557ef3790ca75a8fe70d3d456023f97f0fb6ee15",
+              "downloads": 8,
               "mimeType": "application/octet-stream",
               "installable": true
             },
             {
-              "filename": "com.apollo.reborn_3.6.0_iphoneos-arm.deb",
-              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/com.apollo.reborn_3.6.0_iphoneos-arm.deb",
+              "filename": "com.apollo.reborn_3.7.0_iphoneos-arm.deb",
+              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/com.apollo.reborn_3.7.0_iphoneos-arm.deb",
               "platform": "linux",
               "architecture": null,
               "fileType": "DEB",
-              "size": 11730132,
-              "sha256": "274bde6d2c9b7d69cd3d93d1069301948d9acf23677b0fc1b25847dc54a746a4",
-              "downloads": 61,
+              "size": 12176810,
+              "sha256": "26a493edbc53b512f1f08f96aca98b281c74c6a275e351261258ee3be307537c",
+              "downloads": 2,
               "mimeType": "application/octet-stream",
               "installable": true
             },
             {
-              "filename": "com.apollo.reborn_3.6.0_iphoneos-arm64_rootless.deb",
-              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.6.0/com.apollo.reborn_3.6.0_iphoneos-arm64_rootless.deb",
+              "filename": "com.apollo.reborn_3.7.0_iphoneos-arm64_rootless.deb",
+              "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/com.apollo.reborn_3.7.0_iphoneos-arm64_rootless.deb",
               "platform": "linux",
               "architecture": "arm64",
               "fileType": "DEB",
-              "size": 11724532,
-              "sha256": "3b43defeb89797d0cf32b7b5fddef0e407e1a67372292766a04dd0dc25278d17",
-              "downloads": 67,
+              "size": 12175314,
+              "sha256": "8f6becdcc3ebb8597d2b6f326196064636fe29951509311660760828b7534ebe",
+              "downloads": 1,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
-          "sha256": "5badca0a3b1d32fc2f3cd2f6397aa7925fadeb306bc15f33071b40495a2f88b8",
-          "downloads": 1229
+          "sha256": "3435f0c47f299f6f5637600c557ef3790ca75a8fe70d3d456023f97f0fb6ee15",
+          "downloads": 8
         }
       ],
       "screenshotURLs": [],
@@ -670,7 +670,7 @@
           "downloadReachable": true,
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-08-18"
+          "lastUpdatedAt": "2026-09-11"
         }
       }
     },
@@ -2678,18 +2678,18 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
       "tintColor": "1877F2",
       "category": "social",
-      "version": "577.1",
-      "versionDate": "2026-09-05",
-      "versionDescription": "Facebook 577.1 | Facebook-577.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 577.1",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
-      "size": 225312147,
+      "version": "578.1",
+      "versionDate": "2026-09-10",
+      "versionDescription": "Facebook 578.1 | Facebook-578.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 578.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
+      "size": 227188596,
       "versions": [
         {
-          "version": "577.1",
-          "date": "2026-09-05",
-          "localizedDescription": "Facebook 577.1 | Facebook-577.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 577.1",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
-          "size": 225312147,
+          "version": "578.1",
+          "date": "2026-09-10",
+          "localizedDescription": "Facebook 578.1 | Facebook-578.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 578.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
+          "size": 227188596,
           "minOSVersion": "15.1",
           "releaseUrl": null,
           "source": "altstore",
@@ -2697,12 +2697,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Facebook-577.1-iQFace.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+              "filename": "Facebook-578.1-iQFace.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 225312147,
+              "size": 227188596,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -2766,10 +2766,10 @@
           "notes": "Tweak by 7MD; distributed ready-to-sideload via the IPA Vault source. Facebook 577.x builds require iOS 15.1 or newer. Uses its own bundle identifier, so it installs alongside the stock App Store Facebook."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "HTTP 404",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-05"
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-11",
+          "lastUpdatedAt": "2026-09-10"
         }
       }
     },
@@ -3478,13 +3478,13 @@
               "fileType": "IPA",
               "size": 106420283,
               "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
-              "downloads": 51,
+              "downloads": 67,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
-          "downloads": 51
+          "downloads": 67
         }
       ],
       "screenshotURLs": [
@@ -3591,13 +3591,13 @@
               "fileType": "IPA",
               "size": 133357787,
               "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-              "downloads": 113,
+              "downloads": 114,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-          "downloads": 113
+          "downloads": 114
         }
       ],
       "screenshotURLs": [
@@ -3675,18 +3675,18 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
       "tintColor": "0084FF",
       "category": "social",
-      "version": "577.0.0",
-      "versionDate": "2026-09-03",
-      "versionDescription": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
-      "size": 112652101,
+      "version": "578.1.0",
+      "versionDate": "2026-09-10",
+      "versionDescription": "Messenger 578.1.0 | Messenger-578.1.0-Flow\n\nIPA Vault build for Messenger (Flow), version 578.1.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
+      "size": 113359444,
       "versions": [
         {
-          "version": "577.0.0",
-          "date": "2026-09-03",
-          "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-Flow\n\nIPA Vault build for Messenger (Flow), version 577.0.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
-          "size": 112652101,
+          "version": "578.1.0",
+          "date": "2026-09-10",
+          "localizedDescription": "Messenger 578.1.0 | Messenger-578.1.0-Flow\n\nIPA Vault build for Messenger (Flow), version 578.1.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
+          "size": 113359444,
           "minOSVersion": "15.1",
           "releaseUrl": null,
           "source": "altstore",
@@ -3694,12 +3694,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Messenger-577.0.0-Flow.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-Flow.ipa",
+              "filename": "Messenger-578.1.0-Flow.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 112652101,
+              "size": 113359444,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -3763,10 +3763,10 @@
           "notes": "UNOFFICIAL BUILD. Flow has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses its own bundle identifier, so it installs alongside the stock App Store Messenger."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "HTTP 404",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-03"
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-11",
+          "lastUpdatedAt": "2026-09-10"
         }
       }
     },
@@ -3871,18 +3871,18 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
       "tintColor": "0084FF",
       "category": "social",
-      "version": "577.0.0",
-      "versionDate": "2026-09-03",
-      "versionDescription": "Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 577.0.0",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
-      "size": 112528712,
+      "version": "578.1.0",
+      "versionDate": "2026-09-10",
+      "versionDescription": "Messenger 578.1.0 | Messenger-578.1.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 578.1.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
+      "size": 113236064,
       "versions": [
         {
-          "version": "577.0.0",
-          "date": "2026-09-03",
-          "localizedDescription": "Messenger 577.0.0 | Messenger-577.0.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 577.0.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
-          "size": 112528712,
+          "version": "578.1.0",
+          "date": "2026-09-10",
+          "localizedDescription": "Messenger 578.1.0 | Messenger-578.1.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 578.1.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
+          "size": 113236064,
           "minOSVersion": "15.1",
           "releaseUrl": null,
           "source": "altstore",
@@ -3890,12 +3890,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Messenger-577.0.0-MSGPlusX.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-577.0.0-MSGPlusX.ipa",
+              "filename": "Messenger-578.1.0-MSGPlusX.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 112528712,
+              "size": 113236064,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -3959,10 +3959,10 @@
           "notes": "UNOFFICIAL BUILD. MSGPlusX has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses the stock Messenger bundle identifier, so installing it REPLACES the App Store Messenger on device."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "HTTP 404",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-03"
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-11",
+          "lastUpdatedAt": "2026-09-10"
         }
       }
     },
@@ -5137,18 +5137,18 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
       "tintColor": "E1306C",
       "category": "social",
-      "version": "445.0.0",
-      "versionDate": "2026-09-01",
-      "versionDescription": "Instagram 445.0.0 | Instagram-445.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 445.0.0",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
-      "size": 324923211,
+      "version": "446.0.0",
+      "versionDate": "2026-09-10",
+      "versionDescription": "Instagram 446.0.0 | Instagram-446.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 446.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa",
+      "size": 325835336,
       "versions": [
         {
-          "version": "445.0.0",
-          "date": "2026-09-01",
-          "localizedDescription": "Instagram 445.0.0 | Instagram-445.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 445.0.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
-          "size": 324923211,
+          "version": "446.0.0",
+          "date": "2026-09-10",
+          "localizedDescription": "Instagram 446.0.0 | Instagram-446.0.0-RyukGram\n\nIPA Vault build for Instagram (RyukGram), version 446.0.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa",
+          "size": 325835336,
           "minOSVersion": "15.1",
           "releaseUrl": null,
           "source": "altstore",
@@ -5156,12 +5156,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Instagram-445.0.0-RyukGram.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa",
+              "filename": "Instagram-446.0.0-RyukGram.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 324923211,
+              "size": 325835336,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -5225,10 +5225,10 @@
           "notes": "Official project: faroukbmiled/RyukGram (publishes .deb/.dylib assets); this source serves the ready-to-sideload IPA build from the IPA Vault. Instagram 445.x builds require iOS 15.1 or newer. Shares com.burbn.instagram with iNKillerPlus in this catalog - install one at a time."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "HTTP 404",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-01"
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-11",
+          "lastUpdatedAt": "2026-09-10"
         }
       }
     },
@@ -6017,18 +6017,18 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
       "tintColor": "E1306C",
       "category": "social",
-      "version": "445.0.0",
-      "versionDate": "2026-09-01",
-      "versionDescription": "Instagram 445.0.0 | Instagram-445.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 445.0.0",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
-      "size": 317653332,
+      "version": "446.0.0",
+      "versionDate": "2026-09-10",
+      "versionDescription": "Instagram 446.0.0 | Instagram-446.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 446.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
+      "size": 318531474,
       "versions": [
         {
-          "version": "445.0.0",
-          "date": "2026-09-01",
-          "localizedDescription": "Instagram 445.0.0 | Instagram-445.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 445.0.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
-          "size": 317653332,
+          "version": "446.0.0",
+          "date": "2026-09-10",
+          "localizedDescription": "Instagram 446.0.0 | Instagram-446.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 446.0.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
+          "size": 318531474,
           "minOSVersion": "15.1",
           "releaseUrl": null,
           "source": "altstore",
@@ -6036,12 +6036,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Instagram-445.0.0-Sparkle.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+              "filename": "Instagram-446.0.0-Sparkle.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 317653332,
+              "size": 318531474,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -6105,10 +6105,10 @@
           "notes": "Official project: efibalogh/sparkle-ig (publishes .deb assets); this source serves the ready-to-sideload IPA build from the IPA Vault. Instagram 445.x builds require iOS 15.1 or newer. Uses its own bundle identifier (com.burbn.instagram.sparkle) - installs alongside the stock app."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "HTTP 404",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-01"
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-11",
+          "lastUpdatedAt": "2026-09-10"
         }
       }
     },
@@ -6666,7 +6666,7 @@
               "fileType": "APK",
               "size": 197174334,
               "sha256": "9af07d922fbf5472a9f0caa1cb45bb7d2c28f1a9911b423237aefe0948317b81",
-              "downloads": 10471,
+              "downloads": 10484,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -6678,7 +6678,7 @@
               "fileType": "APK",
               "size": 191577143,
               "sha256": "a908b39a34b567844e03cce36ffbc3fd3a01a0757dc05ad4952ec7a16251e1b4",
-              "downloads": 1375,
+              "downloads": 1377,
               "mimeType": "application/vnd.android.package-archive",
               "installable": true
             },
@@ -6714,13 +6714,13 @@
               "fileType": "IPA",
               "size": 53931137,
               "sha256": "706adb7f41b60565c1924deb84f6afb3fe3727dbdf291a3ece934ddb90a178b2",
-              "downloads": 107,
+              "downloads": 108,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "706adb7f41b60565c1924deb84f6afb3fe3727dbdf291a3ece934ddb90a178b2",
-          "downloads": 107
+          "downloads": 108
         }
       ],
       "screenshotURLs": [],
@@ -6770,17 +6770,17 @@
       "tintColor": "F85C2C",
       "category": "social",
       "version": "12.9.2",
-      "versionDate": "2026-09-01",
-      "versionDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-MxGram\n\nIPA Vault build for Swiftgram (MxGram), version 12.9.2",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
-      "size": 91604352,
+      "versionDate": "2026-09-05",
+      "versionDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-iQTele\n\nIPA Vault build for Swiftgram (iQTele), version 12.9.2",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
+      "size": 82653568,
       "versions": [
         {
           "version": "12.9.2",
-          "date": "2026-09-01",
-          "localizedDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-MxGram\n\nIPA Vault build for Swiftgram (MxGram), version 12.9.2",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
-          "size": 91604352,
+          "date": "2026-09-05",
+          "localizedDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-iQTele\n\nIPA Vault build for Swiftgram (iQTele), version 12.9.2",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
+          "size": 82653568,
           "minOSVersion": "13.0",
           "releaseUrl": null,
           "source": "altstore",
@@ -6788,12 +6788,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Swiftgram-12.9.2-MxGram.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-MxGram.ipa",
+              "filename": "Swiftgram-12.9.2-iQTele.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 91604352,
+              "size": 82653568,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -6860,7 +6860,7 @@
           "downloadReachable": true,
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-01"
+          "lastUpdatedAt": "2026-09-05"
         }
       }
     },
@@ -6958,17 +6958,17 @@
       "tintColor": "0088CC",
       "category": "social",
       "version": "12.9.3",
-      "versionDate": "2026-09-01",
-      "versionDescription": "Telegram 12.9.3 | Telegram-12.9.3-MxGram\n\nIPA Vault build for Telegram (MxGram), version 12.9.3",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
-      "size": 80615512,
+      "versionDate": "2026-09-05",
+      "versionDescription": "Telegram 12.9.3 | Telegram-12.9.3-iQTele\n\nIPA Vault build for Telegram (iQTele), version 12.9.3",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
+      "size": 71665753,
       "versions": [
         {
           "version": "12.9.3",
-          "date": "2026-09-01",
-          "localizedDescription": "Telegram 12.9.3 | Telegram-12.9.3-MxGram\n\nIPA Vault build for Telegram (MxGram), version 12.9.3",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
-          "size": 80615512,
+          "date": "2026-09-05",
+          "localizedDescription": "Telegram 12.9.3 | Telegram-12.9.3-iQTele\n\nIPA Vault build for Telegram (iQTele), version 12.9.3",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
+          "size": 71665753,
           "minOSVersion": "13.0",
           "releaseUrl": null,
           "source": "altstore",
@@ -6976,12 +6976,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Telegram-12.9.3-MxGram.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-MxGram.ipa",
+              "filename": "Telegram-12.9.3-iQTele.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 80615512,
+              "size": 71665753,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -7048,7 +7048,7 @@
           "downloadReachable": true,
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-01"
+          "lastUpdatedAt": "2026-09-05"
         }
       }
     },
@@ -7061,18 +7061,18 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Threads.webp",
       "tintColor": "000000",
       "category": "social",
-      "version": "445.1",
-      "versionDate": "2026-09-01",
-      "versionDescription": "Threads 445.1 | Threads-445.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 445.1",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
-      "size": 100461178,
+      "version": "446.1",
+      "versionDate": "2026-09-10",
+      "versionDescription": "Threads 446.1 | Threads-446.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 446.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa",
+      "size": 105719166,
       "versions": [
         {
-          "version": "445.1",
-          "date": "2026-09-01",
-          "localizedDescription": "Threads 445.1 | Threads-445.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 445.1",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
-          "size": 100461178,
+          "version": "446.1",
+          "date": "2026-09-10",
+          "localizedDescription": "Threads 446.1 | Threads-446.1-ThreadSaver\n\nIPA Vault build for Threads (ThreadSaver), version 446.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa",
+          "size": 105719166,
           "minOSVersion": "15.1",
           "releaseUrl": null,
           "source": "altstore",
@@ -7080,12 +7080,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Threads-445.1-ThreadSaver.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-445.1-ThreadSaver.ipa",
+              "filename": "Threads-446.1-ThreadSaver.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 100461178,
+              "size": 105719166,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -7149,10 +7149,10 @@
           "notes": "UNOFFICIAL BUILD. ThreadSaver has no public repository or developer feed - the IPA Vault source is the only distribution channel, so no developer-published download link exists to verify. Not affiliated with or endorsed by Meta. Uses the stock Threads bundle identifier, so installing it REPLACES the App Store Threads on device."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "HTTP 404",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-01"
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-11",
+          "lastUpdatedAt": "2026-09-10"
         }
       }
     },
@@ -7268,17 +7268,17 @@
       "tintColor": "0088CC",
       "category": "social",
       "version": "1.5.3",
-      "versionDate": "2026-09-01",
-      "versionDescription": "Turrit 1.5.3 | Turrit-1.5.3-MxGram\n\nIPA Vault build for Turrit (MxGram), version 1.5.3",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
-      "size": 94300571,
+      "versionDate": "2026-09-05",
+      "versionDescription": "Turrit 1.5.3 | Turrit-1.5.3-iQTele\n\nIPA Vault build for Turrit (iQTele), version 1.5.3",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
+      "size": 85350833,
       "versions": [
         {
           "version": "1.5.3",
-          "date": "2026-09-01",
-          "localizedDescription": "Turrit 1.5.3 | Turrit-1.5.3-MxGram\n\nIPA Vault build for Turrit (MxGram), version 1.5.3",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
-          "size": 94300571,
+          "date": "2026-09-05",
+          "localizedDescription": "Turrit 1.5.3 | Turrit-1.5.3-iQTele\n\nIPA Vault build for Turrit (iQTele), version 1.5.3",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
+          "size": 85350833,
           "minOSVersion": "13.0",
           "releaseUrl": null,
           "source": "altstore",
@@ -7286,12 +7286,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Turrit-1.5.3-MxGram.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-MxGram.ipa",
+              "filename": "Turrit-1.5.3-iQTele.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 94300571,
+              "size": 85350833,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -7358,7 +7358,7 @@
           "downloadReachable": true,
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-01"
+          "lastUpdatedAt": "2026-09-05"
         }
       }
     },
@@ -7397,7 +7397,7 @@
               "fileType": "IPA",
               "size": 143381478,
               "sha256": "d01020aa34ddf4517a1a0e5fef430120450148b7cd8346024b50a8445d7f6bf4",
-              "downloads": 402,
+              "downloads": 407,
               "mimeType": "application/octet-stream",
               "installable": true
             },
@@ -7409,13 +7409,13 @@
               "fileType": "IPA",
               "size": 152372292,
               "sha256": "5ddea13264259f54c7f8812ef16ddc20ddb675703826537a1e5dfd144f228181",
-              "downloads": 848,
+              "downloads": 854,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "5ddea13264259f54c7f8812ef16ddc20ddb675703826537a1e5dfd144f228181",
-          "downloads": 848
+          "downloads": 854
         }
       ],
       "screenshotURLs": [],
@@ -8642,13 +8642,13 @@
               "fileType": "IPA",
               "size": 128845098,
               "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-              "downloads": 58,
+              "downloads": 70,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-          "downloads": 58
+          "downloads": 70
         }
       ],
       "screenshotURLs": [],
@@ -8748,13 +8748,13 @@
               "fileType": "IPA",
               "size": 129007319,
               "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
-              "downloads": 33,
+              "downloads": 39,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
-          "downloads": 33
+          "downloads": 39
         }
       ],
       "screenshotURLs": [],
@@ -9158,13 +9158,13 @@
               "fileType": "IPA",
               "size": 142497148,
               "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
-              "downloads": 31,
+              "downloads": 39,
               "mimeType": "application/octet-stream",
               "installable": true
             }
           ],
           "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
-          "downloads": 31
+          "downloads": 39
         }
       ],
       "screenshotURLs": [
@@ -9498,12 +9498,66 @@
   ],
   "news": [
     {
+      "title": "Apollo v3.7.0",
+      "identifier": "news-apollo-3-7-0",
+      "caption": "The beloved Reddit client, continued by Apollo-Reborn",
+      "date": "2026-09-11",
+      "appID": "com.christianselig.Apollo",
+      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Apollo.webp",
+      "notify": true
+    },
+    {
       "title": "YouPro v21.36.6",
       "identifier": "news-youpro-21-36-6",
       "caption": "Feature-rich YouTube tweak by alibusut",
       "date": "2026-09-10",
       "appID": "com.google.ios.youtube",
       "imageURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
+      "notify": true
+    },
+    {
+      "title": "ThreadSaver v446.1",
+      "identifier": "news-threadsaver-446-1",
+      "caption": "Threads enhancement tweak (unofficial build)",
+      "date": "2026-09-10",
+      "appID": "com.burbn.barcelona",
+      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Threads.webp",
+      "notify": true
+    },
+    {
+      "title": "Sparkle v446.0.0",
+      "identifier": "news-sparkle-446-0-0",
+      "caption": "Bring the spark back to Instagram",
+      "date": "2026-09-10",
+      "appID": "com.burbn.instagram.sparkle",
+      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "notify": true
+    },
+    {
+      "title": "RyukGram v446.0.0",
+      "identifier": "news-ryukgram-446-0-0",
+      "caption": "Instagram tweak for power users by faroukbmiled",
+      "date": "2026-09-10",
+      "appID": "com.burbn.instagram",
+      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "notify": true
+    },
+    {
+      "title": "MSGPlusX v578.1.0",
+      "identifier": "news-msgplusx-578-1-0",
+      "caption": "Messenger tweak by Dens0r & lucaspedrosa (unofficial build)",
+      "date": "2026-09-10",
+      "appID": "com.facebook.Messenger",
+      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
+      "notify": true
+    },
+    {
+      "title": "Messenger Flow v578.1.0",
+      "identifier": "news-messenger-flow-578-1-0",
+      "caption": "Facebook Messenger tweak by dvntms (unofficial build)",
+      "date": "2026-09-10",
+      "appID": "com.facebook.Messenger.flow",
+      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
       "notify": true
     },
     {
@@ -9516,75 +9570,21 @@
       "notify": true
     },
     {
+      "title": "iQFace v578.1",
+      "identifier": "news-iqface-578-1",
+      "caption": "Facebook tweak build by 7MD",
+      "date": "2026-09-10",
+      "appID": "com.facebook.Facebook",
+      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
+      "notify": true
+    },
+    {
       "title": "YTMusicUltimate v9.36.1",
       "identifier": "news-ytmusic-9-36-1",
       "caption": "Lightweight YouTube Music tweak",
       "date": "2026-09-09",
       "appID": "com.google.ios.youtubemusic",
       "imageURL": "https://iamsmmh.github.io/OmniSource/assets/YouTubeMusic.webp",
-      "notify": true
-    },
-    {
-      "title": "YouTubePlus v21.24.3",
-      "identifier": "news-ytlite-21-24-3",
-      "caption": "Lightweight YouTube tweak with no ads and PiP",
-      "date": "2026-09-09",
-      "appID": "com.google.ios.youtube",
-      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
-      "notify": true
-    },
-    {
-      "title": "YTKillerPlus v21.36.6",
-      "identifier": "news-ytkp-21-36-6",
-      "caption": "Advanced YouTube tweak with extensive controls",
-      "date": "2026-09-09",
-      "appID": "com.google.ios.youtube",
-      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
-      "notify": true
-    },
-    {
-      "title": "YouMod v21.36.6",
-      "identifier": "news-youmod-21-36-6",
-      "caption": "All-in-one YouTube enhancement tweak",
-      "date": "2026-09-09",
-      "appID": "com.google.ios.youtube",
-      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
-      "notify": true
-    },
-    {
-      "title": "TTKillerPlus v46.8.0",
-      "identifier": "news-ttkillerplus-46-8-0",
-      "caption": "TikTok with downloads, no ads and region switch",
-      "date": "2026-09-09",
-      "appID": "com.zhiliaoapp.musically",
-      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/TikTok.webp",
-      "notify": true
-    },
-    {
-      "title": "SideStore v0.6.4",
-      "identifier": "news-sidestore-0-6-4",
-      "caption": "AltStore fork that refreshes apps without a computer",
-      "date": "2026-09-09",
-      "appID": "com.SideStore.SideStore",
-      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/SideStore.webp",
-      "notify": true
-    },
-    {
-      "title": "iNKillerPlus v446.0.0",
-      "identifier": "news-inkillerplus-446-0-0",
-      "caption": "Instagram with downloads, ghost mode and no ads",
-      "date": "2026-09-09",
-      "appID": "com.burbn.instagram",
-      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
-      "notify": true
-    },
-    {
-      "title": "Fladder v0.11.1",
-      "identifier": "news-fladder-0-11-1",
-      "caption": "Cross-platform Jellyfin frontend",
-      "date": "2026-09-08",
-      "appID": "nl.jknaapen.fladder",
-      "imageURL": "https://iamsmmh.github.io/OmniSource/assets/Fladder.webp",
       "notify": true
     }
   ]

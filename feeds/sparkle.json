@@ -19,18 +19,18 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
       "tintColor": "E1306C",
       "category": "social",
-      "version": "445.0.0",
-      "versionDate": "2026-09-01",
-      "versionDescription": "Instagram 445.0.0 | Instagram-445.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 445.0.0",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
-      "size": 317653332,
+      "version": "446.0.0",
+      "versionDate": "2026-09-10",
+      "versionDescription": "Instagram 446.0.0 | Instagram-446.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 446.0.0",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
+      "size": 318531474,
       "versions": [
         {
-          "version": "445.0.0",
-          "date": "2026-09-01",
-          "localizedDescription": "Instagram 445.0.0 | Instagram-445.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 445.0.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
-          "size": 317653332,
+          "version": "446.0.0",
+          "date": "2026-09-10",
+          "localizedDescription": "Instagram 446.0.0 | Instagram-446.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 446.0.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
+          "size": 318531474,
           "minOSVersion": "15.1",
           "releaseUrl": null,
           "source": "altstore",
@@ -38,12 +38,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Instagram-445.0.0-Sparkle.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-Sparkle.ipa",
+              "filename": "Instagram-446.0.0-Sparkle.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 317653332,
+              "size": 318531474,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -107,10 +107,10 @@
           "notes": "Official project: efibalogh/sparkle-ig (publishes .deb assets); this source serves the ready-to-sideload IPA build from the IPA Vault. Instagram 445.x builds require iOS 15.1 or newer. Uses its own bundle identifier (com.burbn.instagram.sparkle) - installs alongside the stock app."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "HTTP 404",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-01"
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-11",
+          "lastUpdatedAt": "2026-09-10"
         }
       }
     }

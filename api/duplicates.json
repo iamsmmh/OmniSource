@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-10",
+  "generatedAt": "2026-09-11",
   "count": 4,
   "appsAffected": 15,
   "groups": [
@@ -161,13 +161,13 @@
         {
           "app": "ryukgram",
           "name": "RyukGram",
-          "version": "445.0.0",
-          "releaseDate": "2026-09-01",
+          "version": "446.0.0",
+          "releaseDate": "2026-09-10",
           "source": "927tx/IPA-Vault",
           "developer": "faroukbmiled & IPA Vault",
           "category": "social",
           "status": "stable",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-445.0.0-RyukGram.ipa"
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa"
         },
         {
           "app": "ryukgram-ig410",
@@ -182,10 +182,10 @@
         }
       ],
       "recommended": {
-        "app": "inkillerplus",
-        "name": "iNKillerPlus",
+        "app": "ryukgram",
+        "name": "RyukGram",
         "version": "446.0.0",
-        "reason": "Newest version available (446.0.0, released 2026-09-09)"
+        "reason": "Newest version available (446.0.0, released 2026-09-10)"
       },
       "replacementRisk": true
     },
@@ -341,10 +341,10 @@
       "groupKey": "com.burbn.instagram",
       "type": "bundle-id+similar-name",
       "recommended": {
-        "app": "inkillerplus",
-        "name": "iNKillerPlus",
+        "app": "ryukgram",
+        "name": "RyukGram",
         "version": "446.0.0",
-        "reason": "Newest version available (446.0.0, released 2026-09-09)"
+        "reason": "Newest version available (446.0.0, released 2026-09-10)"
       },
       "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))"
     },
@@ -352,10 +352,10 @@
       "groupKey": "com.burbn.instagram",
       "type": "bundle-id+similar-name",
       "recommended": {
-        "app": "inkillerplus",
-        "name": "iNKillerPlus",
+        "app": "ryukgram",
+        "name": "RyukGram",
         "version": "446.0.0",
-        "reason": "Newest version available (446.0.0, released 2026-09-09)"
+        "reason": "Newest version available (446.0.0, released 2026-09-10)"
       },
       "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))"
     },
@@ -363,10 +363,10 @@
       "groupKey": "com.burbn.instagram",
       "type": "bundle-id+similar-name",
       "recommended": {
-        "app": "inkillerplus",
-        "name": "iNKillerPlus",
+        "app": "ryukgram",
+        "name": "RyukGram",
         "version": "446.0.0",
-        "reason": "Newest version available (446.0.0, released 2026-09-09)"
+        "reason": "Newest version available (446.0.0, released 2026-09-10)"
       },
       "reason": "3 apps share bundle identifier 'com.burbn.instagram' · similar names (RyukGram / RyukGram (IG 410))"
     },

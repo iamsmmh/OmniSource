@@ -19,18 +19,18 @@
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
       "tintColor": "1877F2",
       "category": "social",
-      "version": "577.1",
-      "versionDate": "2026-09-05",
-      "versionDescription": "Facebook 577.1 | Facebook-577.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 577.1",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
-      "size": 225312147,
+      "version": "578.1",
+      "versionDate": "2026-09-10",
+      "versionDescription": "Facebook 578.1 | Facebook-578.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 578.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
+      "size": 227188596,
       "versions": [
         {
-          "version": "577.1",
-          "date": "2026-09-05",
-          "localizedDescription": "Facebook 577.1 | Facebook-577.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 577.1",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
-          "size": 225312147,
+          "version": "578.1",
+          "date": "2026-09-10",
+          "localizedDescription": "Facebook 578.1 | Facebook-578.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 578.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
+          "size": 227188596,
           "minOSVersion": "15.1",
           "releaseUrl": null,
           "source": "altstore",
@@ -38,12 +38,12 @@
           "isDraft": false,
           "assets": [
             {
-              "filename": "Facebook-577.1-iQFace.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-iQFace.ipa",
+              "filename": "Facebook-578.1-iQFace.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
               "platform": "ios",
               "architecture": null,
               "fileType": "IPA",
-              "size": 225312147,
+              "size": 227188596,
               "sha256": null,
               "downloads": 0,
               "mimeType": null,
@@ -107,10 +107,10 @@
           "notes": "Tweak by 7MD; distributed ready-to-sideload via the IPA Vault source. Facebook 577.x builds require iOS 15.1 or newer. Uses its own bundle identifier, so it installs alongside the stock App Store Facebook."
         },
         "health": {
-          "downloadReachable": false,
-          "detail": "HTTP 404",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-09-05"
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-11",
+          "lastUpdatedAt": "2026-09-10"
         }
       }
     }
