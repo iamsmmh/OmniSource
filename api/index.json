@@ -130,6 +130,11 @@
       "format": "json"
     },
     {
+      "path": "/api/translation-status.json",
+      "description": "Per-locale translation coverage (percent of canonical English keys defined).",
+      "format": "json"
+    },
+    {
       "path": "/api/trending",
       "description": "Extensionless alias of /api/trending.json (Phase 16).",
       "format": "json"

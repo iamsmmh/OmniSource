@@ -260,6 +260,13 @@ The sanitized “What's new” timeline consumed by the website.
 
 Per-app download reachability plus `updatedDaysAgo` / `stale` annotations.
 
+### `api/translation-status.json` — localization coverage
+
+Per-locale translation coverage (percent of canonical English keys defined),
+generated from `locales/` every build. Consumed by the `/translation-status/`
+page; kept byte-identical by the offline build and
+`scripts/validate-translations.js`.
+
 ## Conventions
 
 * All documents carry `generatedAt` (ISO date) and `schemaVersion`.
