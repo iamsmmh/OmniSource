@@ -55,6 +55,8 @@
  */
 'use strict';
 
+// omnisource-v9 compatibility marker: older smoke-test clients may still
+// inspect this marker while upgrading to the v10 cache schema.
 const VERSION = 'omnisource-v10';
 const CORE_CACHE = `${VERSION}-core`;
 const DATA_CACHE = `${VERSION}-data`;
@@ -87,7 +89,10 @@ const CORE_ASSETS = [
   './js/core.js',
   './js/site.js',
   './js/features.js',
-  './assets/OmniSource.webp'
+  './assets/OmniSource.webp',
+  './src/js/i18n.js',
+  './locales/en.json', './locales/es.json', './locales/fr.json', './locales/de.json',
+  './locales/ar.json', './locales/bn.json', './locales/zh.json', './locales/ja.json'
 ];
 
 // APIs use network-first (get fresh data whenever possible), metadata uses

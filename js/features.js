@@ -1404,6 +1404,8 @@
       en: { name: 'English', native: 'English' },
       es: { name: 'Spanish', native: 'Español' },
       zh: { name: 'Chinese', native: '中文' },
+      ja: { name: 'Japanese', native: '日本語' },
+      bn: { name: 'Bengali', native: 'বাংলা' },
       ar: { name: 'Arabic', native: 'العربية' },
       fr: { name: 'French', native: 'Français' },
       de: { name: 'German', native: 'Deutsch' }
@@ -1463,7 +1465,7 @@
 
     _loadLanguage() {
       const saved = Storage.get(this.STORAGE_KEY);
-      if (saved && this.translations[saved]) {
+      if (saved && (this.languages[saved] || this.translations[saved])) {
         this.currentLanguage = saved;
       } else {
         // Try to detect browser language
@@ -1589,9 +1591,14 @@
     },
 
     setLanguage(code) {
-      if (!this.translations[code]) return;
-
-      this.currentLanguage = code;
+      // The standalone runtime owns JSON locales (including RTL languages).
+      // Keep this legacy facade compatible for existing feature consumers.
+      if (window.OmniI18n && window.OmniI18n.setLanguage) {
+        window.OmniI18n.setLanguage(code);
+        this.currentLanguage = code;
+      } else if (this.translations[code]) {
+        this.currentLanguage = code;
+      } else return;
       Storage.set(this.STORAGE_KEY, code);
       this.syncLanguageSelects();
       this._applyTranslations();

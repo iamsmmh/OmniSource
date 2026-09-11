@@ -572,3 +572,9 @@ kbd {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Unicode coverage for localized UI (loaded from Google Fonts when online;
+   system fallbacks keep installed PWAs readable offline). */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Sans+Bengali:wght@400;500;700&display=swap');
+:root { --font-sans: Inter, "Noto Sans", "Noto Sans Bengali", "Noto Sans Arabic", system-ui, sans-serif; }
+[dir="rtl"] { text-align: start; }

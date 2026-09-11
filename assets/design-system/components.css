@@ -4345,3 +4345,26 @@ html[data-view="compact"] .card-bottom {
   }
   .source-box .button span { display: inline; }
 }
+
+/* Mobile menu readability: nested More links participate in the drawer
+   flow instead of remaining an absolutely positioned desktop dropdown. */
+@media (max-width: 1100px) {
+  .nav-links .nav-more { width: 100%; }
+  .nav-links .nav-more > summary { display: none; }
+  .nav-links .nav-more > .nav-menu {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    padding: 0;
+    gap: 4px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .nav-links .nav-menu a { display: flex; width: 100%; box-sizing: border-box; }
+  .nav-links .nav-lang { width: 100%; box-sizing: border-box; }
+}

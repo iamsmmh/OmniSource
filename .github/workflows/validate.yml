@@ -39,6 +39,9 @@ jobs:
       - name: Validate catalog and feeds
         run: python3 scripts/validate.py
 
+      - name: Validate translations
+        run: node scripts/validate-translations.js
+
       # jq-only lint + AltStore v2 structural assertions. Offline and read-only.
       - name: Lint JSON with jq
         run: bash scripts/validate_jq.sh
