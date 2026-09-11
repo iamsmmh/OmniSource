@@ -57,11 +57,15 @@ class TestWebsiteShell(unittest.TestCase):
 
     def test_service_worker_version(self) -> None:
         sw = (ROOT / "sw.js").read_text(encoding="utf-8")
-        self.assertIn("omnisource-v9", sw)
+        self.assertIn("omnisource-v10", sw)
         # The shell precaches the lightweight WebP logo; the PNG stays for
         # favicons, feed iconURLs and non-WebP fallbacks only.
         self.assertIn("'./assets/OmniSource.webp'", sw)
         self.assertNotIn("'./assets/OmniSource.png'", sw)
+        # v10 must precache the new engines and pages.
+        self.assertIn("discover/index.html", sw)
+        self.assertIn("graph/index.html", sw)
+        self.assertIn("src/js/data-layer.js", sw)
 
     def test_homepage_stat_markers(self) -> None:
         # The site builder (site._inject_homepage_stats) rewrites these

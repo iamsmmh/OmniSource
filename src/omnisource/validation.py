@@ -760,8 +760,21 @@ def validate_doc_shape(
                 if not isinstance(entry, dict) or not entry.get("id"):
                     report.error("feeds/search-index.json: every document must have an id")
 
-    if name == "compare.json" and doc.get("count") != len(items("pairs")):
-        report.error("feeds/compare.json: count does not match pairs[] length")
+    if name == "compare.json":
+        # In v2, count is the number of app summaries (not the number of pairs)
+        # and pairs[] only holds bundle-sharing pairs (~28) — the full matrix is
+        # computed client-side by src/js/compare-engine.js to keep the payload
+        # under 150 KB. Accept both v1 (count = pairs.length) and v2
+        # (schemaVersion >= 2, count = apps.length).
+        schema_v = doc.get("schemaVersion", 1)
+        if schema_v >= 2:
+            if doc.get("count") != len(items("apps")):
+                report.error("feeds/compare.json: count does not match apps[] length (v2 schema)")
+            if not isinstance(doc.get("bundlePairs"), list):
+                report.error("feeds/compare.json: bundlePairs must be a list (v2 schema)")
+        else:
+            if doc.get("count") != len(items("pairs")):
+                report.error("feeds/compare.json: count does not match pairs[] length")
 
     if name == "screenshots.json" and not isinstance(doc.get("screenshots"), list):
         report.error("feeds/screenshots.json: screenshots must be a list")

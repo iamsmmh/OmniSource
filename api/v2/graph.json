@@ -1,0 +1,4456 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "count": 204,
+  "edgeCount": 606,
+  "nodes": [
+    {
+      "id": "app:spotiflac",
+      "type": "app",
+      "label": "SpotiFLAC Mobile",
+      "slug": "spotiflac",
+      "bundleId": "com.zarz.spotiflacAndroid",
+      "category": "music",
+      "version": "4.9.6"
+    },
+    {
+      "id": "dev:zarzet",
+      "type": "developer",
+      "label": "zarzet"
+    },
+    {
+      "id": "source:spotiflacappspotiflacmobile",
+      "type": "source",
+      "label": "spotiflacapp/SpotiFLAC-Mobile",
+      "url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile"
+    },
+    {
+      "id": "app:uyouenhanced",
+      "type": "app",
+      "label": "uYouEnhanced",
+      "slug": "uyouenhanced",
+      "bundleId": "com.google.ios.youtube",
+      "category": "photo-video",
+      "version": "21.14.4"
+    },
+    {
+      "id": "dev:arichornlover",
+      "type": "developer",
+      "label": "arichornlover"
+    },
+    {
+      "id": "source:communitybuildofarichornloveru",
+      "type": "source",
+      "label": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
+      "url": "https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6"
+    },
+    {
+      "id": "app:ytlite",
+      "type": "app",
+      "label": "YouTubePlus",
+      "slug": "ytlite",
+      "bundleId": "com.google.ios.youtube",
+      "category": "photo-video",
+      "version": "21.24.3"
+    },
+    {
+      "id": "dev:dayanch96",
+      "type": "developer",
+      "label": "dayanch96"
+    },
+    {
+      "id": "source:mrdrvt99youproextra",
+      "type": "source",
+      "label": "mrdrvt99/YouProEXTRA",
+      "url": "https://github.com/mrdrvt99/YouProEXTRA"
+    },
+    {
+      "id": "app:youpro",
+      "type": "app",
+      "label": "YouPro",
+      "slug": "youpro",
+      "bundleId": "com.google.ios.youtube",
+      "category": "photo-video",
+      "version": "21.36.6"
+    },
+    {
+      "id": "dev:alibusut",
+      "type": "developer",
+      "label": "alibusut"
+    },
+    {
+      "id": "app:ytkp",
+      "type": "app",
+      "label": "YTKillerPlus",
+      "slug": "ytkp",
+      "bundleId": "com.google.ios.youtube",
+      "category": "photo-video",
+      "version": "21.36.6"
+    },
+    {
+      "id": "dev:ikarwan",
+      "type": "developer",
+      "label": "iKarwan"
+    },
+    {
+      "id": "app:ytkace",
+      "type": "app",
+      "label": "YTKACE",
+      "slug": "ytkace",
+      "bundleId": "com.google.ios.youtube",
+      "category": "photo-video",
+      "version": "21.35.3"
+    },
+    {
+      "id": "dev:itzzace",
+      "type": "developer",
+      "label": "itzzace"
+    },
+    {
+      "id": "source:itzzaceytkace",
+      "type": "source",
+      "label": "itzzace/ytkace",
+      "url": "https://github.com/itzzace/ytkace"
+    },
+    {
+      "id": "app:youmod",
+      "type": "app",
+      "label": "YouMod",
+      "slug": "youmod",
+      "bundleId": "com.google.ios.youtube",
+      "category": "photo-video",
+      "version": "21.36.6"
+    },
+    {
+      "id": "dev:tonwalter888",
+      "type": "developer",
+      "label": "Tonwalter888"
+    },
+    {
+      "id": "app:maxtube",
+      "type": "app",
+      "label": "MaxTube",
+      "slug": "maxtube",
+      "bundleId": "com.google.ios.youtube",
+      "category": "photo-video",
+      "version": "21.31.3"
+    },
+    {
+      "id": "dev:mark02-2012",
+      "type": "developer",
+      "label": "Mark02-2012"
+    },
+    {
+      "id": "source:ashreqashstorerepo",
+      "type": "source",
+      "label": "Ashreq/ashstore-repo",
+      "url": "https://github.com/Ashreq/ashstore-repo"
+    },
+    {
+      "id": "app:ytmusic",
+      "type": "app",
+      "label": "YTMusicUltimate",
+      "slug": "ytmusic",
+      "bundleId": "com.google.ios.youtubemusic",
+      "category": "music",
+      "version": "9.36.1"
+    },
+    {
+      "id": "source:mrdrvt99ytmusicultimate",
+      "type": "source",
+      "label": "mrdrvt99/YTMusicUltimate",
+      "url": "https://github.com/mrdrvt99/YTMusicUltimate"
+    },
+    {
+      "id": "app:maxmusic",
+      "type": "app",
+      "label": "MaxMusic",
+      "slug": "maxmusic",
+      "bundleId": "com.google.ios.youtubemusic",
+      "category": "music",
+      "version": "9.36.1"
+    },
+    {
+      "id": "source:mark022012maxmusic",
+      "type": "source",
+      "label": "Mark02-2012/MaxMusic",
+      "url": "https://github.com/Mark02-2012/MaxMusic"
+    },
+    {
+      "id": "app:utm",
+      "type": "app",
+      "label": "UTM",
+      "slug": "utm",
+      "bundleId": "com.utmapp.UTM",
+      "category": "utilities",
+      "version": "4.7.5"
+    },
+    {
+      "id": "dev:utm-team",
+      "type": "developer",
+      "label": "UTM Team"
+    },
+    {
+      "id": "source:utmapputm",
+      "type": "source",
+      "label": "utmapp/UTM",
+      "url": "https://github.com/utmapp/UTM"
+    },
+    {
+      "id": "app:inkillerplus",
+      "type": "app",
+      "label": "iNKillerPlus",
+      "slug": "inkillerplus",
+      "bundleId": "com.burbn.instagram",
+      "category": "social",
+      "version": "446.0.0"
+    },
+    {
+      "id": "source:ikarwanrepoikghdme",
+      "type": "source",
+      "label": "iKarwan (repo.ikghd.me)",
+      "url": "https://repo.ikghd.me"
+    },
+    {
+      "id": "app:ttkillerplus",
+      "type": "app",
+      "label": "TTKillerPlus",
+      "slug": "ttkillerplus",
+      "bundleId": "com.zhiliaoapp.musically",
+      "category": "social",
+      "version": "46.8.0"
+    },
+    {
+      "id": "app:winston",
+      "type": "app",
+      "label": "Winston",
+      "slug": "winston",
+      "bundleId": "lo.cafe.winston",
+      "category": "social",
+      "version": "1.1.5"
+    },
+    {
+      "id": "dev:lo.cafe",
+      "type": "developer",
+      "label": "lo.cafe"
+    },
+    {
+      "id": "source:locafewinston",
+      "type": "source",
+      "label": "lo-cafe/winston",
+      "url": "https://github.com/lo-cafe/winston"
+    },
+    {
+      "id": "app:itorrent",
+      "type": "app",
+      "label": "iTorrent",
+      "slug": "itorrent",
+      "bundleId": "com.xitrix.iTorrent2",
+      "category": "networking",
+      "version": "2.2.0"
+    },
+    {
+      "id": "dev:xitrix",
+      "type": "developer",
+      "label": "XITRIX"
+    },
+    {
+      "id": "source:xitrixitorrent",
+      "type": "source",
+      "label": "XITRIX/iTorrent",
+      "url": "https://github.com/XITRIX/iTorrent"
+    },
+    {
+      "id": "app:stikdebug",
+      "type": "app",
+      "label": "StikDebug",
+      "slug": "stikdebug",
+      "bundleId": "com.stik.stikdebug",
+      "category": "developer-tools",
+      "version": "3.1.10"
+    },
+    {
+      "id": "dev:stikdebug",
+      "type": "developer",
+      "label": "StikDebug"
+    },
+    {
+      "id": "source:stikdebugstikdebug",
+      "type": "source",
+      "label": "StikDebug/StikDebug",
+      "url": "https://github.com/StikDebug/StikDebug"
+    },
+    {
+      "id": "app:bhtwitter",
+      "type": "app",
+      "label": "BHTwitter",
+      "slug": "bhtwitter",
+      "bundleId": "com.atebits.Tweetie2",
+      "category": "social",
+      "version": "4.4"
+    },
+    {
+      "id": "dev:bandarhl",
+      "type": "developer",
+      "label": "BandarHL"
+    },
+    {
+      "id": "source:bandarhlbhtwitter",
+      "type": "source",
+      "label": "BandarHL/BHTwitter",
+      "url": "https://github.com/BandarHL/BHTwitter"
+    },
+    {
+      "id": "app:livecontainer",
+      "type": "app",
+      "label": "LiveContainer",
+      "slug": "livecontainer",
+      "bundleId": "com.kdt.livecontainer",
+      "category": "utilities",
+      "version": "3.8.0"
+    },
+    {
+      "id": "dev:livecontainer-team",
+      "type": "developer",
+      "label": "LiveContainer Team"
+    },
+    {
+      "id": "source:livecontainerlivecontainer",
+      "type": "source",
+      "label": "LiveContainer/LiveContainer",
+      "url": "https://github.com/LiveContainer/LiveContainer"
+    },
+    {
+      "id": "app:feather",
+      "type": "app",
+      "label": "Feather",
+      "slug": "feather",
+      "bundleId": "thewonderofyou.Feather",
+      "category": "utilities",
+      "version": "2.9.0"
+    },
+    {
+      "id": "dev:samara",
+      "type": "developer",
+      "label": "Samara"
+    },
+    {
+      "id": "source:clarationfeather",
+      "type": "source",
+      "label": "claration/Feather",
+      "url": "https://github.com/claration/Feather"
+    },
+    {
+      "id": "app:sidestore",
+      "type": "app",
+      "label": "SideStore",
+      "slug": "sidestore",
+      "bundleId": "com.SideStore.SideStore",
+      "category": "utilities",
+      "version": "0.6.4"
+    },
+    {
+      "id": "dev:sidestore-team",
+      "type": "developer",
+      "label": "SideStore Team"
+    },
+    {
+      "id": "source:sidestoresidestore",
+      "type": "source",
+      "label": "SideStore/SideStore",
+      "url": "https://github.com/SideStore/SideStore"
+    },
+    {
+      "id": "app:aidoku",
+      "type": "app",
+      "label": "Aidoku",
+      "slug": "aidoku",
+      "bundleId": "app.aidoku.Aidoku",
+      "category": "other",
+      "version": "0.9"
+    },
+    {
+      "id": "dev:skitty",
+      "type": "developer",
+      "label": "Skitty"
+    },
+    {
+      "id": "source:aidokuaidoku",
+      "type": "source",
+      "label": "Aidoku/Aidoku",
+      "url": "https://github.com/Aidoku/Aidoku"
+    },
+    {
+      "id": "app:provenance",
+      "type": "app",
+      "label": "Provenance",
+      "slug": "provenance",
+      "bundleId": "org.provenance-emu.provenance",
+      "category": "games",
+      "version": "3.3.0"
+    },
+    {
+      "id": "dev:provenance-emu",
+      "type": "developer",
+      "label": "Provenance Emu"
+    },
+    {
+      "id": "source:provenanceemuprovenance",
+      "type": "source",
+      "label": "Provenance-Emu/Provenance",
+      "url": "https://github.com/Provenance-Emu/Provenance"
+    },
+    {
+      "id": "app:delta",
+      "type": "app",
+      "label": "Delta",
+      "slug": "delta",
+      "bundleId": "com.rileytestut.Delta",
+      "category": "games",
+      "version": "1.6"
+    },
+    {
+      "id": "dev:riley-testut",
+      "type": "developer",
+      "label": "Riley Testut"
+    },
+    {
+      "id": "source:rileytestutdelta",
+      "type": "source",
+      "label": "RileyTestut/Delta",
+      "url": "https://github.com/RileyTestut/Delta"
+    },
+    {
+      "id": "app:ppsspp",
+      "type": "app",
+      "label": "PPSSPP",
+      "slug": "ppsspp",
+      "bundleId": "org.ppsspp.ppsspp",
+      "category": "games",
+      "version": "1.20.4"
+    },
+    {
+      "id": "dev:henrik-rydgård",
+      "type": "developer",
+      "label": "Henrik Rydgård"
+    },
+    {
+      "id": "source:hrydgardppsspp",
+      "type": "source",
+      "label": "hrydgard/ppsspp",
+      "url": "https://github.com/hrydgard/ppsspp"
+    },
+    {
+      "id": "app:yattee",
+      "type": "app",
+      "label": "Yattee",
+      "slug": "yattee",
+      "bundleId": "stream.yattee.app",
+      "category": "photo-video",
+      "version": "1.5.1"
+    },
+    {
+      "id": "dev:yattee",
+      "type": "developer",
+      "label": "Yattee"
+    },
+    {
+      "id": "source:yatteeyattee",
+      "type": "source",
+      "label": "yattee/yattee",
+      "url": "https://github.com/yattee/yattee"
+    },
+    {
+      "id": "app:streamyfin",
+      "type": "app",
+      "label": "Streamyfin",
+      "slug": "streamyfin",
+      "bundleId": "com.fredrikburmester.streamyfin",
+      "category": "photo-video",
+      "version": "0.54.1"
+    },
+    {
+      "id": "dev:fredrikburmester",
+      "type": "developer",
+      "label": "fredrikburmester"
+    },
+    {
+      "id": "source:fredrikburmesterstreamyfin",
+      "type": "source",
+      "label": "fredrikburmester/streamyfin",
+      "url": "https://github.com/fredrikburmester/streamyfin"
+    },
+    {
+      "id": "app:spotube",
+      "type": "app",
+      "label": "Spotube",
+      "slug": "spotube",
+      "bundleId": "oss.krtirtho.spotube.stable",
+      "category": "music",
+      "version": "5.1.2"
+    },
+    {
+      "id": "dev:krtirtho",
+      "type": "developer",
+      "label": "KRTirtho"
+    },
+    {
+      "id": "source:krtirthospotube",
+      "type": "source",
+      "label": "KRTirtho/spotube",
+      "url": "https://github.com/KRTirtho/spotube"
+    },
+    {
+      "id": "app:jellify",
+      "type": "app",
+      "label": "Jellify",
+      "slug": "jellify",
+      "bundleId": "com.cosmonautical.jellify",
+      "category": "music",
+      "version": "1.2.10"
+    },
+    {
+      "id": "dev:anultravioletaurora",
+      "type": "developer",
+      "label": "anultravioletaurora"
+    },
+    {
+      "id": "source:jellifymusicapp",
+      "type": "source",
+      "label": "Jellify-Music/App",
+      "url": "https://github.com/Jellify-Music/App"
+    },
+    {
+      "id": "app:zeus",
+      "type": "app",
+      "label": "Zeus",
+      "slug": "zeus",
+      "bundleId": "com.zeusln.zeus",
+      "category": "utilities",
+      "version": "13.2.1"
+    },
+    {
+      "id": "dev:zeus-ln",
+      "type": "developer",
+      "label": "Zeus LN"
+    },
+    {
+      "id": "source:zeuslnzeus",
+      "type": "source",
+      "label": "ZeusLN/zeus",
+      "url": "https://github.com/ZeusLN/zeus"
+    },
+    {
+      "id": "app:bluewallet",
+      "type": "app",
+      "label": "BlueWallet",
+      "slug": "bluewallet",
+      "bundleId": "io.bluewallet.bluewallet",
+      "category": "utilities",
+      "version": "8.0.1"
+    },
+    {
+      "id": "dev:bluewallet",
+      "type": "developer",
+      "label": "BlueWallet"
+    },
+    {
+      "id": "source:bluewalletbluewallet",
+      "type": "source",
+      "label": "BlueWallet/BlueWallet",
+      "url": "https://github.com/BlueWallet/BlueWallet"
+    },
+    {
+      "id": "app:voyager",
+      "type": "app",
+      "label": "Voyager",
+      "slug": "voyager",
+      "bundleId": "app.vger.voyager",
+      "category": "social",
+      "version": "2.49.0"
+    },
+    {
+      "id": "dev:aeharding",
+      "type": "developer",
+      "label": "aeharding"
+    },
+    {
+      "id": "source:aehardingvoyager",
+      "type": "source",
+      "label": "aeharding/voyager",
+      "url": "https://github.com/aeharding/voyager"
+    },
+    {
+      "id": "app:saber",
+      "type": "app",
+      "label": "Saber",
+      "slug": "saber",
+      "bundleId": "com.adilhanney.saber",
+      "category": "utilities",
+      "version": "1.36.1"
+    },
+    {
+      "id": "dev:adil-hanney",
+      "type": "developer",
+      "label": "Adil Hanney"
+    },
+    {
+      "id": "source:sabernotessaber",
+      "type": "source",
+      "label": "saber-notes/saber",
+      "url": "https://github.com/saber-notes/saber"
+    },
+    {
+      "id": "app:anxreader",
+      "type": "app",
+      "label": "Anx Reader",
+      "slug": "anxreader",
+      "bundleId": "com.anxcye.anxReader",
+      "category": "utilities",
+      "version": "1.14.0"
+    },
+    {
+      "id": "dev:anxcye",
+      "type": "developer",
+      "label": "Anxcye"
+    },
+    {
+      "id": "source:anxcyeanxreader",
+      "type": "source",
+      "label": "Anxcye/anx-reader",
+      "url": "https://github.com/Anxcye/anx-reader"
+    },
+    {
+      "id": "app:apollo",
+      "type": "app",
+      "label": "Apollo",
+      "slug": "apollo",
+      "bundleId": "com.christianselig.Apollo",
+      "category": "social",
+      "version": "3.7.0"
+    },
+    {
+      "id": "dev:christian-selig-(&-apollo-reborn-contributors)",
+      "type": "developer",
+      "label": "Christian Selig (& Apollo-Reborn contributors)"
+    },
+    {
+      "id": "source:apollorebornapolloreborn",
+      "type": "source",
+      "label": "Apollo-Reborn/Apollo-Reborn",
+      "url": "https://github.com/Apollo-Reborn/Apollo-Reborn"
+    },
+    {
+      "id": "app:dolphinish",
+      "type": "app",
+      "label": "DolphiniOS",
+      "slug": "dolphinish",
+      "bundleId": "me.oatmealdome.DolphiniOS-njb",
+      "category": "games",
+      "version": "5.0.0"
+    },
+    {
+      "id": "dev:oatmealdome",
+      "type": "developer",
+      "label": "OatmealDome"
+    },
+    {
+      "id": "source:oatmealdomedolphinios",
+      "type": "source",
+      "label": "OatmealDome/dolphin-ios",
+      "url": "https://github.com/OatmealDome/dolphin-ios"
+    },
+    {
+      "id": "app:ish",
+      "type": "app",
+      "label": "iSH",
+      "slug": "ish",
+      "bundleId": "app.ish.iSH",
+      "category": "developer-tools",
+      "version": "813"
+    },
+    {
+      "id": "dev:theodore-dubois-and-contributors",
+      "type": "developer",
+      "label": "Theodore Dubois and contributors"
+    },
+    {
+      "id": "source:ishappish",
+      "type": "source",
+      "label": "ish-app/ish",
+      "url": "https://github.com/ish-app/ish"
+    },
+    {
+      "id": "app:qbitcontrol",
+      "type": "app",
+      "label": "qBitControl",
+      "slug": "qbitcontrol",
+      "bundleId": "MikeMichael225.qBitControl",
+      "category": "utilities",
+      "version": "1.4.1"
+    },
+    {
+      "id": "dev:michael-128",
+      "type": "developer",
+      "label": "Michael-128"
+    },
+    {
+      "id": "source:michael128qbitcontrol",
+      "type": "source",
+      "label": "Michael-128/qBitControl",
+      "url": "https://github.com/Michael-128/qBitControl"
+    },
+    {
+      "id": "app:qbitconnect",
+      "type": "app",
+      "label": "qBitConnect",
+      "slug": "qbitconnect",
+      "bundleId": "com.bluematter.qbitconnect",
+      "category": "utilities",
+      "version": "1.6.6"
+    },
+    {
+      "id": "dev:rajnish-sharma",
+      "type": "developer",
+      "label": "Rajnish Sharma"
+    },
+    {
+      "id": "source:rajnishoneqbitconnect",
+      "type": "source",
+      "label": "RajnishOne/qbitconnect",
+      "url": "https://github.com/RajnishOne/qbitconnect"
+    },
+    {
+      "id": "app:vcmi",
+      "type": "app",
+      "label": "VCMI",
+      "slug": "vcmi",
+      "bundleId": "eu.vcmi.vcmiclient",
+      "category": "games",
+      "version": "1.7.5"
+    },
+    {
+      "id": "dev:vcmi-team",
+      "type": "developer",
+      "label": "VCMI Team"
+    },
+    {
+      "id": "source:vcmivcmi",
+      "type": "source",
+      "label": "vcmi/vcmi",
+      "url": "https://github.com/vcmi/vcmi"
+    },
+    {
+      "id": "app:mame4ios",
+      "type": "app",
+      "label": "MAME4iOS",
+      "slug": "mame4ios",
+      "bundleId": "com.example.mame4ios",
+      "category": "games",
+      "version": "2022.5"
+    },
+    {
+      "id": "dev:yoshisuga-&-mame4ios-contributors",
+      "type": "developer",
+      "label": "Yoshisuga & MAME4iOS Contributors"
+    },
+    {
+      "id": "source:yoshisugamame4ios",
+      "type": "source",
+      "label": "yoshisuga/MAME4iOS",
+      "url": "https://github.com/yoshisuga/MAME4iOS"
+    },
+    {
+      "id": "app:qbitcontroller",
+      "type": "app",
+      "label": "qBitController",
+      "slug": "qbitcontroller",
+      "bundleId": "dev.bartuzen.qbitcontroller",
+      "category": "utilities",
+      "version": "2.2.1"
+    },
+    {
+      "id": "dev:bartuzen",
+      "type": "developer",
+      "label": "Bartuzen"
+    },
+    {
+      "id": "source:bartuzenqbitcontroller",
+      "type": "source",
+      "label": "Bartuzen/qBitController",
+      "url": "https://github.com/Bartuzen/qBitController"
+    },
+    {
+      "id": "app:minivmac",
+      "type": "app",
+      "label": "Mini vMac",
+      "slug": "minivmac",
+      "bundleId": "net.namedfork.minivmac",
+      "category": "games",
+      "version": "2.6"
+    },
+    {
+      "id": "dev:zydeco",
+      "type": "developer",
+      "label": "zydeco"
+    },
+    {
+      "id": "source:zydecominivmac4ios",
+      "type": "source",
+      "label": "zydeco/minivmac4ios",
+      "url": "https://github.com/zydeco/minivmac4ios"
+    },
+    {
+      "id": "app:stiknes",
+      "type": "app",
+      "label": "StikNES",
+      "slug": "stiknes",
+      "bundleId": "com.stik.StikNES",
+      "category": "games",
+      "version": "2.0.2"
+    },
+    {
+      "id": "dev:stikemu",
+      "type": "developer",
+      "label": "StikEMU"
+    },
+    {
+      "id": "source:stikemustiknes20",
+      "type": "source",
+      "label": "StikEMU/StikNES-2.0",
+      "url": "https://github.com/StikEMU/StikNES-2.0"
+    },
+    {
+      "id": "app:twitchadblock",
+      "type": "app",
+      "label": "TwitchAdBlock",
+      "slug": "twitchadblock",
+      "bundleId": "tv.twitch",
+      "category": "social",
+      "version": "30.7"
+    },
+    {
+      "id": "dev:gunnerkidbt-(original-by-dayanch96)",
+      "type": "developer",
+      "label": "gunnerkidBT (original by dayanch96)"
+    },
+    {
+      "id": "source:gunnerkidbttwitchadblock",
+      "type": "source",
+      "label": "gunnerkidBT/TwitchAdBlock",
+      "url": "https://github.com/gunnerkidBT/TwitchAdBlock"
+    },
+    {
+      "id": "app:neofreebird",
+      "type": "app",
+      "label": "NeoFreeBird",
+      "slug": "neofreebird",
+      "bundleId": "com.atebits.Tweetie2",
+      "category": "social",
+      "version": "2.2"
+    },
+    {
+      "id": "dev:neofreebird-contributors",
+      "type": "developer",
+      "label": "NeoFreeBird contributors"
+    },
+    {
+      "id": "source:neofreebirdapp",
+      "type": "source",
+      "label": "NeoFreeBird/app",
+      "url": "https://github.com/NeoFreeBird/app"
+    },
+    {
+      "id": "app:conduit",
+      "type": "app",
+      "label": "Conduit",
+      "slug": "conduit",
+      "bundleId": "app.cogwheel.conduit",
+      "category": "utilities",
+      "version": "4.1.4"
+    },
+    {
+      "id": "dev:cogwheel0",
+      "type": "developer",
+      "label": "cogwheel0"
+    },
+    {
+      "id": "source:cogwheel0conduit",
+      "type": "source",
+      "label": "cogwheel0/conduit",
+      "url": "https://github.com/cogwheel0/conduit"
+    },
+    {
+      "id": "app:fladder",
+      "type": "app",
+      "label": "Fladder",
+      "slug": "fladder",
+      "bundleId": "nl.jknaapen.fladder",
+      "category": "photo-video",
+      "version": "0.11.1"
+    },
+    {
+      "id": "dev:donutware",
+      "type": "developer",
+      "label": "DonutWare"
+    },
+    {
+      "id": "source:donutwarefladder",
+      "type": "source",
+      "label": "DonutWare/Fladder",
+      "url": "https://github.com/DonutWare/Fladder"
+    },
+    {
+      "id": "app:anymex",
+      "type": "app",
+      "label": "AnymeX",
+      "slug": "anymex",
+      "bundleId": "com.ryan.anymex",
+      "category": "other",
+      "version": "3.1.7"
+    },
+    {
+      "id": "dev:ryanyuuki",
+      "type": "developer",
+      "label": "RyanYuuki"
+    },
+    {
+      "id": "source:ryanyuukianymex",
+      "type": "source",
+      "label": "RyanYuuki/AnymeX",
+      "url": "https://github.com/RyanYuuki/AnymeX"
+    },
+    {
+      "id": "app:sora",
+      "type": "app",
+      "label": "Sora",
+      "slug": "sora",
+      "bundleId": "me.cranci.sulfur",
+      "category": "photo-video",
+      "version": "1.3.0"
+    },
+    {
+      "id": "dev:cranci",
+      "type": "developer",
+      "label": "cranci"
+    },
+    {
+      "id": "source:cranci1sora",
+      "type": "source",
+      "label": "cranci1/Sora",
+      "url": "https://github.com/cranci1/Sora"
+    },
+    {
+      "id": "app:raintweak",
+      "type": "app",
+      "label": "RainTweak",
+      "slug": "raintweak",
+      "bundleId": "com.hammerandchisel.discord",
+      "category": "social",
+      "version": "0.9.3"
+    },
+    {
+      "id": "dev:raincord-&-ipa-vault",
+      "type": "developer",
+      "label": "raincord & IPA Vault"
+    },
+    {
+      "id": "source:raincordraintweakcodeberg",
+      "type": "source",
+      "label": "raincord/RainTweak (Codeberg)",
+      "url": "https://codeberg.org/raincord/RainTweak"
+    },
+    {
+      "id": "app:infuseplus",
+      "type": "app",
+      "label": "Infuse Plus",
+      "slug": "infuseplus",
+      "bundleId": "com.firecore.infuse",
+      "category": "photo-video",
+      "version": "8.5.3"
+    },
+    {
+      "id": "dev:dayanch96-&-ipa-vault",
+      "type": "developer",
+      "label": "dayanch96 & IPA Vault"
+    },
+    {
+      "id": "source:927txipavault",
+      "type": "source",
+      "label": "927tx/IPA-Vault",
+      "url": "https://raw.githubusercontent.com"
+    },
+    {
+      "id": "app:glow",
+      "type": "app",
+      "label": "Glow",
+      "slug": "glow",
+      "bundleId": "com.facebook.Facebook.glow",
+      "category": "social",
+      "version": "577.1"
+    },
+    {
+      "id": "app:swiftgram",
+      "type": "app",
+      "label": "Swiftgram",
+      "slug": "swiftgram",
+      "bundleId": "app.swiftgram.ios",
+      "category": "social",
+      "version": "12.9.2"
+    },
+    {
+      "id": "dev:swiftgram-&-ipa-vault",
+      "type": "developer",
+      "label": "Swiftgram & IPA Vault"
+    },
+    {
+      "id": "app:telegram-mxgram",
+      "type": "app",
+      "label": "Telegram MxGram",
+      "slug": "telegram-mxgram",
+      "bundleId": "ph.telegra.Telegraph",
+      "category": "social",
+      "version": "12.9.3"
+    },
+    {
+      "id": "dev:m1ronx1412-&-ipa-vault",
+      "type": "developer",
+      "label": "m1ronx1412 & IPA Vault"
+    },
+    {
+      "id": "app:iqface",
+      "type": "app",
+      "label": "iQFace",
+      "slug": "iqface",
+      "bundleId": "com.facebook.Facebook",
+      "category": "social",
+      "version": "578.1"
+    },
+    {
+      "id": "dev:7md-&-ipa-vault",
+      "type": "developer",
+      "label": "7MD & IPA Vault"
+    },
+    {
+      "id": "app:ryukgram",
+      "type": "app",
+      "label": "RyukGram",
+      "slug": "ryukgram",
+      "bundleId": "com.burbn.instagram",
+      "category": "social",
+      "version": "446.0.0"
+    },
+    {
+      "id": "dev:faroukbmiled-&-ipa-vault",
+      "type": "developer",
+      "label": "faroukbmiled & IPA Vault"
+    },
+    {
+      "id": "app:sparkle",
+      "type": "app",
+      "label": "Sparkle",
+      "slug": "sparkle",
+      "bundleId": "com.burbn.instagram.sparkle",
+      "category": "social",
+      "version": "446.0.0"
+    },
+    {
+      "id": "dev:efibalogh-&-ipa-vault",
+      "type": "developer",
+      "label": "efibalogh & IPA Vault"
+    },
+    {
+      "id": "app:redditfilter",
+      "type": "app",
+      "label": "RedditFilter",
+      "slug": "redditfilter",
+      "bundleId": "com.atebits.Tweetie2",
+      "category": "social",
+      "version": "2025.37.0"
+    },
+    {
+      "id": "dev:level3tjg",
+      "type": "developer",
+      "label": "level3tjg"
+    },
+    {
+      "id": "source:level3tjgredditfilter",
+      "type": "source",
+      "label": "level3tjg/RedditFilter",
+      "url": "https://github.com/level3tjg/RedditFilter"
+    },
+    {
+      "id": "app:nexasc",
+      "type": "app",
+      "label": "NexaSC",
+      "slug": "nexasc",
+      "bundleId": "com.soundcloud.TouchApp",
+      "category": "social",
+      "version": "8.77.0"
+    },
+    {
+      "id": "dev:cielogic-&-ipa-vault",
+      "type": "developer",
+      "label": "cielogic & IPA Vault"
+    },
+    {
+      "id": "app:messenger-flow",
+      "type": "app",
+      "label": "Messenger Flow",
+      "slug": "messenger-flow",
+      "bundleId": "com.facebook.Messenger.flow",
+      "category": "social",
+      "version": "578.1.0"
+    },
+    {
+      "id": "dev:dvntms-&-ipa-vault",
+      "type": "developer",
+      "label": "dvntms & IPA Vault"
+    },
+    {
+      "id": "app:msgplusx",
+      "type": "app",
+      "label": "MSGPlusX",
+      "slug": "msgplusx",
+      "bundleId": "com.facebook.Messenger",
+      "category": "social",
+      "version": "578.1.0"
+    },
+    {
+      "id": "dev:dens0r-&-ipa-vault-&-lucaspedrosa",
+      "type": "developer",
+      "label": "Dens0r & IPA Vault & lucaspedrosa"
+    },
+    {
+      "id": "app:threadsaver",
+      "type": "app",
+      "label": "ThreadSaver",
+      "slug": "threadsaver",
+      "bundleId": "com.burbn.barcelona",
+      "category": "social",
+      "version": "446.1"
+    },
+    {
+      "id": "dev:swiftleopard-&-ipa-vault",
+      "type": "developer",
+      "label": "swiftleopard & IPA Vault"
+    },
+    {
+      "id": "app:ime",
+      "type": "app",
+      "label": "iMe MxGram",
+      "slug": "ime",
+      "bundleId": "com.olcorporation.olai",
+      "category": "social",
+      "version": "12.8.1"
+    },
+    {
+      "id": "app:turrit-mxgram",
+      "type": "app",
+      "label": "Turrit MxGram",
+      "slug": "turrit-mxgram",
+      "bundleId": "com.seastar.turrit",
+      "category": "social",
+      "version": "1.5.3"
+    },
+    {
+      "id": "app:ryukgram-ig410",
+      "type": "app",
+      "label": "RyukGram (IG 410)",
+      "slug": "ryukgram-ig410",
+      "bundleId": "com.burbn.instagram",
+      "category": "social",
+      "version": "410.1.0"
+    },
+    {
+      "id": "dev:ryuk-(@axryuk)",
+      "type": "developer",
+      "label": "Ryuk (@axryuk)"
+    },
+    {
+      "id": "source:ryukryuksignsourceryuksigncom",
+      "type": "source",
+      "label": "Ryuk / RyukSign (source.ryuksign.com)",
+      "url": "https://source.ryuksign.com/ig410"
+    },
+    {
+      "id": "app:ryukgram-sidebyside",
+      "type": "app",
+      "label": "RyukGram Side by Side",
+      "slug": "ryukgram-sidebyside",
+      "bundleId": "com.ryuk.ryukgram",
+      "category": "social",
+      "version": "446.0.0"
+    },
+    {
+      "id": "app:dopamine",
+      "type": "app",
+      "label": "Dopamine",
+      "slug": "dopamine",
+      "bundleId": "com.opa334.Dopamine",
+      "category": "utilities",
+      "version": "3.0.9"
+    },
+    {
+      "id": "dev:opa334-&-contributors",
+      "type": "developer",
+      "label": "opa334 & contributors"
+    },
+    {
+      "id": "source:opa334dopamine",
+      "type": "source",
+      "label": "opa334/Dopamine",
+      "url": "https://github.com/opa334/Dopamine"
+    },
+    {
+      "id": "app:dopamine-roothide",
+      "type": "app",
+      "label": "Dopamine (RootHide)",
+      "slug": "dopamine-roothide",
+      "bundleId": "com.opa334.Dopamine-roothide",
+      "category": "utilities",
+      "version": "2.4.9.26"
+    },
+    {
+      "id": "dev:roothide",
+      "type": "developer",
+      "label": "roothide"
+    },
+    {
+      "id": "source:roothidedopamine2roothide",
+      "type": "source",
+      "label": "roothide/Dopamine2-roothide",
+      "url": "https://github.com/roothide/Dopamine2-roothide"
+    },
+    {
+      "id": "app:bootstrap",
+      "type": "app",
+      "label": "Bootstrap",
+      "slug": "bootstrap",
+      "bundleId": "com.roothide.Bootstrap",
+      "category": "utilities",
+      "version": "2.2.1"
+    },
+    {
+      "id": "source:roothidebootstrap",
+      "type": "source",
+      "label": "roothide/Bootstrap",
+      "url": "https://github.com/roothide/Bootstrap"
+    },
+    {
+      "id": "app:serotonin",
+      "type": "app",
+      "label": "Serotonin",
+      "slug": "serotonin",
+      "bundleId": "pisshill.usprebooter",
+      "category": "utilities",
+      "version": "1.2.1"
+    },
+    {
+      "id": "dev:mineek",
+      "type": "developer",
+      "label": "mineek"
+    },
+    {
+      "id": "source:mineekserotonin",
+      "type": "source",
+      "label": "mineek/Serotonin",
+      "url": "https://github.com/mineek/Serotonin"
+    },
+    {
+      "id": "app:taurine",
+      "type": "app",
+      "label": "Taurine",
+      "slug": "taurine",
+      "bundleId": "org.coolstar.taurine",
+      "category": "utilities",
+      "version": "1.1.7"
+    },
+    {
+      "id": "dev:odyssey-team-(coolstar)",
+      "type": "developer",
+      "label": "Odyssey Team (coolstar)"
+    },
+    {
+      "id": "source:odysseyteamtaurine",
+      "type": "source",
+      "label": "Odyssey-Team/Taurine",
+      "url": "https://github.com/Odyssey-Team/Taurine"
+    },
+    {
+      "id": "app:odyssey",
+      "type": "app",
+      "label": "Odyssey",
+      "slug": "odyssey",
+      "bundleId": "org.coolstar.odyssey",
+      "category": "utilities",
+      "version": "1.4.3"
+    },
+    {
+      "id": "source:odysseyteamodyssey",
+      "type": "source",
+      "label": "Odyssey-Team/Odyssey",
+      "url": "https://github.com/Odyssey-Team/Odyssey"
+    },
+    {
+      "id": "app:unc0ver",
+      "type": "app",
+      "label": "unc0ver",
+      "slug": "unc0ver",
+      "bundleId": "science.xnu.undecimus",
+      "category": "utilities",
+      "version": "5.2.0"
+    },
+    {
+      "id": "dev:pwn20wnd",
+      "type": "developer",
+      "label": "pwn20wnd"
+    },
+    {
+      "id": "source:pwn20wndstuffundecimus",
+      "type": "source",
+      "label": "pwn20wndstuff/Undecimus",
+      "url": "https://github.com/pwn20wndstuff/Undecimus"
+    },
+    {
+      "id": "app:sameboy",
+      "type": "app",
+      "label": "SameBoy",
+      "slug": "sameboy",
+      "bundleId": "com.github.liji32.sameboy.ios",
+      "category": "games",
+      "version": "1.0.3"
+    },
+    {
+      "id": "dev:liji32",
+      "type": "developer",
+      "label": "LIJI32"
+    },
+    {
+      "id": "source:liji32sameboy",
+      "type": "source",
+      "label": "LIJI32/SameBoy",
+      "url": "https://github.com/LIJI32/SameBoy"
+    },
+    {
+      "id": "app:gopeed",
+      "type": "app",
+      "label": "Gopeed",
+      "slug": "gopeed",
+      "bundleId": "com.gopeed.gopeed",
+      "category": "networking",
+      "version": "1.9.3"
+    },
+    {
+      "id": "dev:gopeedlab",
+      "type": "developer",
+      "label": "GopeedLab"
+    },
+    {
+      "id": "source:gopeedlabgopeed",
+      "type": "source",
+      "label": "GopeedLab/gopeed",
+      "url": "https://github.com/GopeedLab/gopeed"
+    },
+    {
+      "id": "app:manicemu",
+      "type": "app",
+      "label": "Manic EMU",
+      "slug": "manicemu",
+      "bundleId": "com.aoshuang.manicemu",
+      "category": "games",
+      "version": "2.0.0"
+    },
+    {
+      "id": "dev:aoshuang-lee-(manic-emu)",
+      "type": "developer",
+      "label": "Aoshuang Lee (Manic EMU)"
+    },
+    {
+      "id": "source:manicemumanicemu",
+      "type": "source",
+      "label": "Manic-EMU/ManicEMU",
+      "url": "https://github.com/Manic-EMU/ManicEMU"
+    },
+    {
+      "id": "app:xenios",
+      "type": "app",
+      "label": "XeniOS",
+      "slug": "xenios",
+      "bundleId": "com.xenios",
+      "category": "games",
+      "version": "2.0.1"
+    },
+    {
+      "id": "dev:xenios-project-(xenios-jp)",
+      "type": "developer",
+      "label": "XeniOS Project (xenios-jp)"
+    },
+    {
+      "id": "source:xeniosjpxenios",
+      "type": "source",
+      "label": "xenios-jp/XeniOS",
+      "url": "https://github.com/xenios-jp/XeniOS"
+    }
+  ],
+  "edges": [
+    {
+      "source": "app:spotiflac",
+      "target": "dev:zarzet",
+      "type": "developer"
+    },
+    {
+      "source": "app:spotiflac",
+      "target": "source:spotiflacappspotiflacmobile",
+      "type": "source"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "dev:arichornlover",
+      "type": "developer"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "source:communitybuildofarichornloveru",
+      "type": "source"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "dev:dayanch96",
+      "type": "developer"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "source:mrdrvt99youproextra",
+      "type": "source"
+    },
+    {
+      "source": "app:youpro",
+      "target": "dev:alibusut",
+      "type": "developer"
+    },
+    {
+      "source": "app:youpro",
+      "target": "source:mrdrvt99youproextra",
+      "type": "source"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "dev:ikarwan",
+      "type": "developer"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "source:mrdrvt99youproextra",
+      "type": "source"
+    },
+    {
+      "source": "app:ytkace",
+      "target": "dev:itzzace",
+      "type": "developer"
+    },
+    {
+      "source": "app:ytkace",
+      "target": "source:itzzaceytkace",
+      "type": "source"
+    },
+    {
+      "source": "app:youmod",
+      "target": "dev:tonwalter888",
+      "type": "developer"
+    },
+    {
+      "source": "app:youmod",
+      "target": "source:mrdrvt99youproextra",
+      "type": "source"
+    },
+    {
+      "source": "app:maxtube",
+      "target": "dev:mark02-2012",
+      "type": "developer"
+    },
+    {
+      "source": "app:maxtube",
+      "target": "source:ashreqashstorerepo",
+      "type": "source"
+    },
+    {
+      "source": "app:ytmusic",
+      "target": "dev:dayanch96",
+      "type": "developer"
+    },
+    {
+      "source": "app:ytmusic",
+      "target": "source:mrdrvt99ytmusicultimate",
+      "type": "source"
+    },
+    {
+      "source": "app:maxmusic",
+      "target": "dev:mark02-2012",
+      "type": "developer"
+    },
+    {
+      "source": "app:maxmusic",
+      "target": "source:mark022012maxmusic",
+      "type": "source"
+    },
+    {
+      "source": "app:utm",
+      "target": "dev:utm-team",
+      "type": "developer"
+    },
+    {
+      "source": "app:utm",
+      "target": "source:utmapputm",
+      "type": "source"
+    },
+    {
+      "source": "app:inkillerplus",
+      "target": "dev:ikarwan",
+      "type": "developer"
+    },
+    {
+      "source": "app:inkillerplus",
+      "target": "source:ikarwanrepoikghdme",
+      "type": "source"
+    },
+    {
+      "source": "app:ttkillerplus",
+      "target": "dev:ikarwan",
+      "type": "developer"
+    },
+    {
+      "source": "app:ttkillerplus",
+      "target": "source:ikarwanrepoikghdme",
+      "type": "source"
+    },
+    {
+      "source": "app:winston",
+      "target": "dev:lo.cafe",
+      "type": "developer"
+    },
+    {
+      "source": "app:winston",
+      "target": "source:locafewinston",
+      "type": "source"
+    },
+    {
+      "source": "app:itorrent",
+      "target": "dev:xitrix",
+      "type": "developer"
+    },
+    {
+      "source": "app:itorrent",
+      "target": "source:xitrixitorrent",
+      "type": "source"
+    },
+    {
+      "source": "app:stikdebug",
+      "target": "dev:stikdebug",
+      "type": "developer"
+    },
+    {
+      "source": "app:stikdebug",
+      "target": "source:stikdebugstikdebug",
+      "type": "source"
+    },
+    {
+      "source": "app:bhtwitter",
+      "target": "dev:bandarhl",
+      "type": "developer"
+    },
+    {
+      "source": "app:bhtwitter",
+      "target": "source:bandarhlbhtwitter",
+      "type": "source"
+    },
+    {
+      "source": "app:livecontainer",
+      "target": "dev:livecontainer-team",
+      "type": "developer"
+    },
+    {
+      "source": "app:livecontainer",
+      "target": "source:livecontainerlivecontainer",
+      "type": "source"
+    },
+    {
+      "source": "app:feather",
+      "target": "dev:samara",
+      "type": "developer"
+    },
+    {
+      "source": "app:feather",
+      "target": "source:clarationfeather",
+      "type": "source"
+    },
+    {
+      "source": "app:sidestore",
+      "target": "dev:sidestore-team",
+      "type": "developer"
+    },
+    {
+      "source": "app:sidestore",
+      "target": "source:sidestoresidestore",
+      "type": "source"
+    },
+    {
+      "source": "app:aidoku",
+      "target": "dev:skitty",
+      "type": "developer"
+    },
+    {
+      "source": "app:aidoku",
+      "target": "source:aidokuaidoku",
+      "type": "source"
+    },
+    {
+      "source": "app:provenance",
+      "target": "dev:provenance-emu",
+      "type": "developer"
+    },
+    {
+      "source": "app:provenance",
+      "target": "source:provenanceemuprovenance",
+      "type": "source"
+    },
+    {
+      "source": "app:delta",
+      "target": "dev:riley-testut",
+      "type": "developer"
+    },
+    {
+      "source": "app:delta",
+      "target": "source:rileytestutdelta",
+      "type": "source"
+    },
+    {
+      "source": "app:ppsspp",
+      "target": "dev:henrik-rydgård",
+      "type": "developer"
+    },
+    {
+      "source": "app:ppsspp",
+      "target": "source:hrydgardppsspp",
+      "type": "source"
+    },
+    {
+      "source": "app:yattee",
+      "target": "dev:yattee",
+      "type": "developer"
+    },
+    {
+      "source": "app:yattee",
+      "target": "source:yatteeyattee",
+      "type": "source"
+    },
+    {
+      "source": "app:streamyfin",
+      "target": "dev:fredrikburmester",
+      "type": "developer"
+    },
+    {
+      "source": "app:streamyfin",
+      "target": "source:fredrikburmesterstreamyfin",
+      "type": "source"
+    },
+    {
+      "source": "app:spotube",
+      "target": "dev:krtirtho",
+      "type": "developer"
+    },
+    {
+      "source": "app:spotube",
+      "target": "source:krtirthospotube",
+      "type": "source"
+    },
+    {
+      "source": "app:jellify",
+      "target": "dev:anultravioletaurora",
+      "type": "developer"
+    },
+    {
+      "source": "app:jellify",
+      "target": "source:jellifymusicapp",
+      "type": "source"
+    },
+    {
+      "source": "app:zeus",
+      "target": "dev:zeus-ln",
+      "type": "developer"
+    },
+    {
+      "source": "app:zeus",
+      "target": "source:zeuslnzeus",
+      "type": "source"
+    },
+    {
+      "source": "app:bluewallet",
+      "target": "dev:bluewallet",
+      "type": "developer"
+    },
+    {
+      "source": "app:bluewallet",
+      "target": "source:bluewalletbluewallet",
+      "type": "source"
+    },
+    {
+      "source": "app:voyager",
+      "target": "dev:aeharding",
+      "type": "developer"
+    },
+    {
+      "source": "app:voyager",
+      "target": "source:aehardingvoyager",
+      "type": "source"
+    },
+    {
+      "source": "app:saber",
+      "target": "dev:adil-hanney",
+      "type": "developer"
+    },
+    {
+      "source": "app:saber",
+      "target": "source:sabernotessaber",
+      "type": "source"
+    },
+    {
+      "source": "app:anxreader",
+      "target": "dev:anxcye",
+      "type": "developer"
+    },
+    {
+      "source": "app:anxreader",
+      "target": "source:anxcyeanxreader",
+      "type": "source"
+    },
+    {
+      "source": "app:apollo",
+      "target": "dev:christian-selig-(&-apollo-reborn-contributors)",
+      "type": "developer"
+    },
+    {
+      "source": "app:apollo",
+      "target": "source:apollorebornapolloreborn",
+      "type": "source"
+    },
+    {
+      "source": "app:dolphinish",
+      "target": "dev:oatmealdome",
+      "type": "developer"
+    },
+    {
+      "source": "app:dolphinish",
+      "target": "source:oatmealdomedolphinios",
+      "type": "source"
+    },
+    {
+      "source": "app:ish",
+      "target": "dev:theodore-dubois-and-contributors",
+      "type": "developer"
+    },
+    {
+      "source": "app:ish",
+      "target": "source:ishappish",
+      "type": "source"
+    },
+    {
+      "source": "app:qbitcontrol",
+      "target": "dev:michael-128",
+      "type": "developer"
+    },
+    {
+      "source": "app:qbitcontrol",
+      "target": "source:michael128qbitcontrol",
+      "type": "source"
+    },
+    {
+      "source": "app:qbitconnect",
+      "target": "dev:rajnish-sharma",
+      "type": "developer"
+    },
+    {
+      "source": "app:qbitconnect",
+      "target": "source:rajnishoneqbitconnect",
+      "type": "source"
+    },
+    {
+      "source": "app:vcmi",
+      "target": "dev:vcmi-team",
+      "type": "developer"
+    },
+    {
+      "source": "app:vcmi",
+      "target": "source:vcmivcmi",
+      "type": "source"
+    },
+    {
+      "source": "app:mame4ios",
+      "target": "dev:yoshisuga-&-mame4ios-contributors",
+      "type": "developer"
+    },
+    {
+      "source": "app:mame4ios",
+      "target": "source:yoshisugamame4ios",
+      "type": "source"
+    },
+    {
+      "source": "app:qbitcontroller",
+      "target": "dev:bartuzen",
+      "type": "developer"
+    },
+    {
+      "source": "app:qbitcontroller",
+      "target": "source:bartuzenqbitcontroller",
+      "type": "source"
+    },
+    {
+      "source": "app:minivmac",
+      "target": "dev:zydeco",
+      "type": "developer"
+    },
+    {
+      "source": "app:minivmac",
+      "target": "source:zydecominivmac4ios",
+      "type": "source"
+    },
+    {
+      "source": "app:stiknes",
+      "target": "dev:stikemu",
+      "type": "developer"
+    },
+    {
+      "source": "app:stiknes",
+      "target": "source:stikemustiknes20",
+      "type": "source"
+    },
+    {
+      "source": "app:twitchadblock",
+      "target": "dev:gunnerkidbt-(original-by-dayanch96)",
+      "type": "developer"
+    },
+    {
+      "source": "app:twitchadblock",
+      "target": "source:gunnerkidbttwitchadblock",
+      "type": "source"
+    },
+    {
+      "source": "app:neofreebird",
+      "target": "dev:neofreebird-contributors",
+      "type": "developer"
+    },
+    {
+      "source": "app:neofreebird",
+      "target": "source:neofreebirdapp",
+      "type": "source"
+    },
+    {
+      "source": "app:conduit",
+      "target": "dev:cogwheel0",
+      "type": "developer"
+    },
+    {
+      "source": "app:conduit",
+      "target": "source:cogwheel0conduit",
+      "type": "source"
+    },
+    {
+      "source": "app:fladder",
+      "target": "dev:donutware",
+      "type": "developer"
+    },
+    {
+      "source": "app:fladder",
+      "target": "source:donutwarefladder",
+      "type": "source"
+    },
+    {
+      "source": "app:anymex",
+      "target": "dev:ryanyuuki",
+      "type": "developer"
+    },
+    {
+      "source": "app:anymex",
+      "target": "source:ryanyuukianymex",
+      "type": "source"
+    },
+    {
+      "source": "app:sora",
+      "target": "dev:cranci",
+      "type": "developer"
+    },
+    {
+      "source": "app:sora",
+      "target": "source:cranci1sora",
+      "type": "source"
+    },
+    {
+      "source": "app:raintweak",
+      "target": "dev:raincord-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:raintweak",
+      "target": "source:raincordraintweakcodeberg",
+      "type": "source"
+    },
+    {
+      "source": "app:infuseplus",
+      "target": "dev:dayanch96-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:infuseplus",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:glow",
+      "target": "dev:dayanch96-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:glow",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:swiftgram",
+      "target": "dev:swiftgram-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:swiftgram",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:telegram-mxgram",
+      "target": "dev:m1ronx1412-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:telegram-mxgram",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:iqface",
+      "target": "dev:7md-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:iqface",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:ryukgram",
+      "target": "dev:faroukbmiled-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:ryukgram",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:sparkle",
+      "target": "dev:efibalogh-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:sparkle",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:redditfilter",
+      "target": "dev:level3tjg",
+      "type": "developer"
+    },
+    {
+      "source": "app:redditfilter",
+      "target": "source:level3tjgredditfilter",
+      "type": "source"
+    },
+    {
+      "source": "app:nexasc",
+      "target": "dev:cielogic-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:nexasc",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:messenger-flow",
+      "target": "dev:dvntms-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:messenger-flow",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:msgplusx",
+      "target": "dev:dens0r-&-ipa-vault-&-lucaspedrosa",
+      "type": "developer"
+    },
+    {
+      "source": "app:msgplusx",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:threadsaver",
+      "target": "dev:swiftleopard-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:threadsaver",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:ime",
+      "target": "dev:m1ronx1412-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:ime",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:turrit-mxgram",
+      "target": "dev:m1ronx1412-&-ipa-vault",
+      "type": "developer"
+    },
+    {
+      "source": "app:turrit-mxgram",
+      "target": "source:927txipavault",
+      "type": "source"
+    },
+    {
+      "source": "app:ryukgram-ig410",
+      "target": "dev:ryuk-(@axryuk)",
+      "type": "developer"
+    },
+    {
+      "source": "app:ryukgram-ig410",
+      "target": "source:ryukryuksignsourceryuksigncom",
+      "type": "source"
+    },
+    {
+      "source": "app:ryukgram-sidebyside",
+      "target": "dev:ryuk-(@axryuk)",
+      "type": "developer"
+    },
+    {
+      "source": "app:ryukgram-sidebyside",
+      "target": "source:ryukryuksignsourceryuksigncom",
+      "type": "source"
+    },
+    {
+      "source": "app:dopamine",
+      "target": "dev:opa334-&-contributors",
+      "type": "developer"
+    },
+    {
+      "source": "app:dopamine",
+      "target": "source:opa334dopamine",
+      "type": "source"
+    },
+    {
+      "source": "app:dopamine-roothide",
+      "target": "dev:roothide",
+      "type": "developer"
+    },
+    {
+      "source": "app:dopamine-roothide",
+      "target": "source:roothidedopamine2roothide",
+      "type": "source"
+    },
+    {
+      "source": "app:bootstrap",
+      "target": "dev:roothide",
+      "type": "developer"
+    },
+    {
+      "source": "app:bootstrap",
+      "target": "source:roothidebootstrap",
+      "type": "source"
+    },
+    {
+      "source": "app:serotonin",
+      "target": "dev:mineek",
+      "type": "developer"
+    },
+    {
+      "source": "app:serotonin",
+      "target": "source:mineekserotonin",
+      "type": "source"
+    },
+    {
+      "source": "app:taurine",
+      "target": "dev:odyssey-team-(coolstar)",
+      "type": "developer"
+    },
+    {
+      "source": "app:taurine",
+      "target": "source:odysseyteamtaurine",
+      "type": "source"
+    },
+    {
+      "source": "app:odyssey",
+      "target": "dev:odyssey-team-(coolstar)",
+      "type": "developer"
+    },
+    {
+      "source": "app:odyssey",
+      "target": "source:odysseyteamodyssey",
+      "type": "source"
+    },
+    {
+      "source": "app:unc0ver",
+      "target": "dev:pwn20wnd",
+      "type": "developer"
+    },
+    {
+      "source": "app:unc0ver",
+      "target": "source:pwn20wndstuffundecimus",
+      "type": "source"
+    },
+    {
+      "source": "app:sameboy",
+      "target": "dev:liji32",
+      "type": "developer"
+    },
+    {
+      "source": "app:sameboy",
+      "target": "source:liji32sameboy",
+      "type": "source"
+    },
+    {
+      "source": "app:gopeed",
+      "target": "dev:gopeedlab",
+      "type": "developer"
+    },
+    {
+      "source": "app:gopeed",
+      "target": "source:gopeedlabgopeed",
+      "type": "source"
+    },
+    {
+      "source": "app:manicemu",
+      "target": "dev:aoshuang-lee-(manic-emu)",
+      "type": "developer"
+    },
+    {
+      "source": "app:manicemu",
+      "target": "source:manicemumanicemu",
+      "type": "source"
+    },
+    {
+      "source": "app:xenios",
+      "target": "dev:xenios-project-(xenios-jp)",
+      "type": "developer"
+    },
+    {
+      "source": "app:xenios",
+      "target": "source:xeniosjpxenios",
+      "type": "source"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:ytlite",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:youpro",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:ytkp",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:ytkace",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:youmod",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:maxtube",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:youpro",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:ytkp",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:ytkace",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:youmod",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:maxtube",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:youpro",
+      "target": "app:ytkp",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:youpro",
+      "target": "app:ytkace",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:youpro",
+      "target": "app:youmod",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:youpro",
+      "target": "app:maxtube",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "app:ytkace",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "app:youmod",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "app:maxtube",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytkace",
+      "target": "app:youmod",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytkace",
+      "target": "app:maxtube",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:youmod",
+      "target": "app:maxtube",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtube"
+    },
+    {
+      "source": "app:ytmusic",
+      "target": "app:maxmusic",
+      "type": "bundle",
+      "bundleId": "com.google.ios.youtubemusic"
+    },
+    {
+      "source": "app:inkillerplus",
+      "target": "app:ryukgram",
+      "type": "bundle",
+      "bundleId": "com.burbn.instagram"
+    },
+    {
+      "source": "app:inkillerplus",
+      "target": "app:ryukgram-ig410",
+      "type": "bundle",
+      "bundleId": "com.burbn.instagram"
+    },
+    {
+      "source": "app:ryukgram",
+      "target": "app:ryukgram-ig410",
+      "type": "bundle",
+      "bundleId": "com.burbn.instagram"
+    },
+    {
+      "source": "app:bhtwitter",
+      "target": "app:neofreebird",
+      "type": "bundle",
+      "bundleId": "com.atebits.Tweetie2"
+    },
+    {
+      "source": "app:bhtwitter",
+      "target": "app:redditfilter",
+      "type": "bundle",
+      "bundleId": "com.atebits.Tweetie2"
+    },
+    {
+      "source": "app:neofreebird",
+      "target": "app:redditfilter",
+      "type": "bundle",
+      "bundleId": "com.atebits.Tweetie2"
+    },
+    {
+      "source": "app:spotiflac",
+      "target": "app:ytmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:spotiflac",
+      "target": "app:spotube",
+      "type": "related"
+    },
+    {
+      "source": "app:spotiflac",
+      "target": "app:maxmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:spotiflac",
+      "target": "app:jellify",
+      "type": "related"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:uyouenhanced",
+      "target": "app:maxtube",
+      "type": "related"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:uyouenhanced",
+      "type": "related"
+    },
+    {
+      "source": "app:ytlite",
+      "target": "app:maxtube",
+      "type": "related"
+    },
+    {
+      "source": "app:youpro",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:youpro",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:youpro",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:youpro",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:youpro",
+      "target": "app:uyouenhanced",
+      "type": "related"
+    },
+    {
+      "source": "app:youpro",
+      "target": "app:maxtube",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "app:uyouenhanced",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkp",
+      "target": "app:maxtube",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkace",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkace",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkace",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkace",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkace",
+      "target": "app:uyouenhanced",
+      "type": "related"
+    },
+    {
+      "source": "app:ytkace",
+      "target": "app:maxtube",
+      "type": "related"
+    },
+    {
+      "source": "app:youmod",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:youmod",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:youmod",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:youmod",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:youmod",
+      "target": "app:uyouenhanced",
+      "type": "related"
+    },
+    {
+      "source": "app:youmod",
+      "target": "app:maxtube",
+      "type": "related"
+    },
+    {
+      "source": "app:maxtube",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:maxtube",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:maxtube",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:maxtube",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:maxtube",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:maxtube",
+      "target": "app:uyouenhanced",
+      "type": "related"
+    },
+    {
+      "source": "app:ytmusic",
+      "target": "app:maxmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:ytmusic",
+      "target": "app:spotube",
+      "type": "related"
+    },
+    {
+      "source": "app:ytmusic",
+      "target": "app:spotiflac",
+      "type": "related"
+    },
+    {
+      "source": "app:ytmusic",
+      "target": "app:jellify",
+      "type": "related"
+    },
+    {
+      "source": "app:ytmusic",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:maxmusic",
+      "target": "app:ytmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:maxmusic",
+      "target": "app:spotube",
+      "type": "related"
+    },
+    {
+      "source": "app:maxmusic",
+      "target": "app:spotiflac",
+      "type": "related"
+    },
+    {
+      "source": "app:maxmusic",
+      "target": "app:jellify",
+      "type": "related"
+    },
+    {
+      "source": "app:maxmusic",
+      "target": "app:maxtube",
+      "type": "related"
+    },
+    {
+      "source": "app:utm",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:utm",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:utm",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:utm",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:utm",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:utm",
+      "target": "app:saber",
+      "type": "related"
+    },
+    {
+      "source": "app:inkillerplus",
+      "target": "app:ryukgram-ig410",
+      "type": "related"
+    },
+    {
+      "source": "app:inkillerplus",
+      "target": "app:ryukgram",
+      "type": "related"
+    },
+    {
+      "source": "app:inkillerplus",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:inkillerplus",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:inkillerplus",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:inkillerplus",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:ttkillerplus",
+      "target": "app:inkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:ttkillerplus",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:ttkillerplus",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:ttkillerplus",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:ttkillerplus",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:ttkillerplus",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:winston",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:winston",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:winston",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:winston",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:winston",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:winston",
+      "target": "app:telegram-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:itorrent",
+      "target": "app:gopeed",
+      "type": "related"
+    },
+    {
+      "source": "app:stikdebug",
+      "target": "app:ish",
+      "type": "related"
+    },
+    {
+      "source": "app:bhtwitter",
+      "target": "app:redditfilter",
+      "type": "related"
+    },
+    {
+      "source": "app:bhtwitter",
+      "target": "app:neofreebird",
+      "type": "related"
+    },
+    {
+      "source": "app:bhtwitter",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:bhtwitter",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:bhtwitter",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:bhtwitter",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:livecontainer",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:livecontainer",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:livecontainer",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:livecontainer",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:livecontainer",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:livecontainer",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:feather",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:feather",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:feather",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:feather",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:feather",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:feather",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:sidestore",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:sidestore",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:sidestore",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:sidestore",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:sidestore",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:sidestore",
+      "target": "app:saber",
+      "type": "related"
+    },
+    {
+      "source": "app:aidoku",
+      "target": "app:anymex",
+      "type": "related"
+    },
+    {
+      "source": "app:provenance",
+      "target": "app:xenios",
+      "type": "related"
+    },
+    {
+      "source": "app:provenance",
+      "target": "app:vcmi",
+      "type": "related"
+    },
+    {
+      "source": "app:provenance",
+      "target": "app:stiknes",
+      "type": "related"
+    },
+    {
+      "source": "app:provenance",
+      "target": "app:sameboy",
+      "type": "related"
+    },
+    {
+      "source": "app:provenance",
+      "target": "app:ppsspp",
+      "type": "related"
+    },
+    {
+      "source": "app:provenance",
+      "target": "app:minivmac",
+      "type": "related"
+    },
+    {
+      "source": "app:delta",
+      "target": "app:xenios",
+      "type": "related"
+    },
+    {
+      "source": "app:delta",
+      "target": "app:vcmi",
+      "type": "related"
+    },
+    {
+      "source": "app:delta",
+      "target": "app:stiknes",
+      "type": "related"
+    },
+    {
+      "source": "app:delta",
+      "target": "app:sameboy",
+      "type": "related"
+    },
+    {
+      "source": "app:delta",
+      "target": "app:provenance",
+      "type": "related"
+    },
+    {
+      "source": "app:delta",
+      "target": "app:ppsspp",
+      "type": "related"
+    },
+    {
+      "source": "app:ppsspp",
+      "target": "app:xenios",
+      "type": "related"
+    },
+    {
+      "source": "app:ppsspp",
+      "target": "app:vcmi",
+      "type": "related"
+    },
+    {
+      "source": "app:ppsspp",
+      "target": "app:stiknes",
+      "type": "related"
+    },
+    {
+      "source": "app:ppsspp",
+      "target": "app:sameboy",
+      "type": "related"
+    },
+    {
+      "source": "app:ppsspp",
+      "target": "app:provenance",
+      "type": "related"
+    },
+    {
+      "source": "app:ppsspp",
+      "target": "app:minivmac",
+      "type": "related"
+    },
+    {
+      "source": "app:yattee",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:yattee",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:yattee",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:yattee",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:yattee",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:yattee",
+      "target": "app:uyouenhanced",
+      "type": "related"
+    },
+    {
+      "source": "app:streamyfin",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:streamyfin",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:streamyfin",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:streamyfin",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:streamyfin",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:streamyfin",
+      "target": "app:yattee",
+      "type": "related"
+    },
+    {
+      "source": "app:spotube",
+      "target": "app:ytmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:spotube",
+      "target": "app:spotiflac",
+      "type": "related"
+    },
+    {
+      "source": "app:spotube",
+      "target": "app:maxmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:spotube",
+      "target": "app:jellify",
+      "type": "related"
+    },
+    {
+      "source": "app:jellify",
+      "target": "app:ytmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:jellify",
+      "target": "app:spotube",
+      "type": "related"
+    },
+    {
+      "source": "app:jellify",
+      "target": "app:spotiflac",
+      "type": "related"
+    },
+    {
+      "source": "app:jellify",
+      "target": "app:maxmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:zeus",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:zeus",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:zeus",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:zeus",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:zeus",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:zeus",
+      "target": "app:saber",
+      "type": "related"
+    },
+    {
+      "source": "app:bluewallet",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:bluewallet",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:bluewallet",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:bluewallet",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:bluewallet",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:bluewallet",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:voyager",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:voyager",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:voyager",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:voyager",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:voyager",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:voyager",
+      "target": "app:telegram-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:saber",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:saber",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:saber",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:saber",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:saber",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:saber",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:anxreader",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:anxreader",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:anxreader",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:anxreader",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:anxreader",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:anxreader",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:apollo",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:apollo",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:apollo",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:apollo",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:apollo",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:apollo",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:dolphinish",
+      "target": "app:xenios",
+      "type": "related"
+    },
+    {
+      "source": "app:dolphinish",
+      "target": "app:vcmi",
+      "type": "related"
+    },
+    {
+      "source": "app:dolphinish",
+      "target": "app:stiknes",
+      "type": "related"
+    },
+    {
+      "source": "app:dolphinish",
+      "target": "app:sameboy",
+      "type": "related"
+    },
+    {
+      "source": "app:dolphinish",
+      "target": "app:provenance",
+      "type": "related"
+    },
+    {
+      "source": "app:dolphinish",
+      "target": "app:ppsspp",
+      "type": "related"
+    },
+    {
+      "source": "app:ish",
+      "target": "app:stikdebug",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontrol",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontrol",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontrol",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontrol",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontrol",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontrol",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitconnect",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitconnect",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitconnect",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitconnect",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitconnect",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitconnect",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:vcmi",
+      "target": "app:xenios",
+      "type": "related"
+    },
+    {
+      "source": "app:vcmi",
+      "target": "app:stiknes",
+      "type": "related"
+    },
+    {
+      "source": "app:vcmi",
+      "target": "app:sameboy",
+      "type": "related"
+    },
+    {
+      "source": "app:vcmi",
+      "target": "app:provenance",
+      "type": "related"
+    },
+    {
+      "source": "app:vcmi",
+      "target": "app:ppsspp",
+      "type": "related"
+    },
+    {
+      "source": "app:vcmi",
+      "target": "app:minivmac",
+      "type": "related"
+    },
+    {
+      "source": "app:mame4ios",
+      "target": "app:xenios",
+      "type": "related"
+    },
+    {
+      "source": "app:mame4ios",
+      "target": "app:vcmi",
+      "type": "related"
+    },
+    {
+      "source": "app:mame4ios",
+      "target": "app:stiknes",
+      "type": "related"
+    },
+    {
+      "source": "app:mame4ios",
+      "target": "app:sameboy",
+      "type": "related"
+    },
+    {
+      "source": "app:mame4ios",
+      "target": "app:provenance",
+      "type": "related"
+    },
+    {
+      "source": "app:mame4ios",
+      "target": "app:ppsspp",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontroller",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontroller",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontroller",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontroller",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontroller",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:qbitcontroller",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:minivmac",
+      "target": "app:xenios",
+      "type": "related"
+    },
+    {
+      "source": "app:minivmac",
+      "target": "app:vcmi",
+      "type": "related"
+    },
+    {
+      "source": "app:minivmac",
+      "target": "app:stiknes",
+      "type": "related"
+    },
+    {
+      "source": "app:minivmac",
+      "target": "app:sameboy",
+      "type": "related"
+    },
+    {
+      "source": "app:minivmac",
+      "target": "app:provenance",
+      "type": "related"
+    },
+    {
+      "source": "app:minivmac",
+      "target": "app:ppsspp",
+      "type": "related"
+    },
+    {
+      "source": "app:stiknes",
+      "target": "app:xenios",
+      "type": "related"
+    },
+    {
+      "source": "app:stiknes",
+      "target": "app:vcmi",
+      "type": "related"
+    },
+    {
+      "source": "app:stiknes",
+      "target": "app:sameboy",
+      "type": "related"
+    },
+    {
+      "source": "app:stiknes",
+      "target": "app:provenance",
+      "type": "related"
+    },
+    {
+      "source": "app:stiknes",
+      "target": "app:ppsspp",
+      "type": "related"
+    },
+    {
+      "source": "app:stiknes",
+      "target": "app:minivmac",
+      "type": "related"
+    },
+    {
+      "source": "app:twitchadblock",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:twitchadblock",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:twitchadblock",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:twitchadblock",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:twitchadblock",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:twitchadblock",
+      "target": "app:telegram-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:neofreebird",
+      "target": "app:redditfilter",
+      "type": "related"
+    },
+    {
+      "source": "app:neofreebird",
+      "target": "app:bhtwitter",
+      "type": "related"
+    },
+    {
+      "source": "app:neofreebird",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:neofreebird",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:neofreebird",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:neofreebird",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:conduit",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:conduit",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:conduit",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:conduit",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:conduit",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:conduit",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:fladder",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:fladder",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:fladder",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:fladder",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:fladder",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:fladder",
+      "target": "app:yattee",
+      "type": "related"
+    },
+    {
+      "source": "app:anymex",
+      "target": "app:aidoku",
+      "type": "related"
+    },
+    {
+      "source": "app:sora",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:sora",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:sora",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:sora",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:sora",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:sora",
+      "target": "app:yattee",
+      "type": "related"
+    },
+    {
+      "source": "app:raintweak",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:raintweak",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:raintweak",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:raintweak",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:raintweak",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:raintweak",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:infuseplus",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:infuseplus",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:infuseplus",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:infuseplus",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:infuseplus",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:infuseplus",
+      "target": "app:yattee",
+      "type": "related"
+    },
+    {
+      "source": "app:glow",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:glow",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:glow",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:glow",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:glow",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:glow",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:swiftgram",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:swiftgram",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:swiftgram",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:swiftgram",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:swiftgram",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:swiftgram",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:telegram-mxgram",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:telegram-mxgram",
+      "target": "app:ime",
+      "type": "related"
+    },
+    {
+      "source": "app:telegram-mxgram",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:telegram-mxgram",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:telegram-mxgram",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:telegram-mxgram",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:iqface",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:iqface",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:iqface",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:iqface",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:iqface",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:iqface",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram",
+      "target": "app:ryukgram-ig410",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram",
+      "target": "app:inkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:sparkle",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:sparkle",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:sparkle",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:sparkle",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:sparkle",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:sparkle",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:redditfilter",
+      "target": "app:neofreebird",
+      "type": "related"
+    },
+    {
+      "source": "app:redditfilter",
+      "target": "app:bhtwitter",
+      "type": "related"
+    },
+    {
+      "source": "app:redditfilter",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:redditfilter",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:redditfilter",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:redditfilter",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:nexasc",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:nexasc",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:nexasc",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:nexasc",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:nexasc",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:nexasc",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:messenger-flow",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:messenger-flow",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:messenger-flow",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:messenger-flow",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:messenger-flow",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:messenger-flow",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:msgplusx",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:msgplusx",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:msgplusx",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:msgplusx",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:msgplusx",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:msgplusx",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:threadsaver",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:threadsaver",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:threadsaver",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:threadsaver",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:threadsaver",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:threadsaver",
+      "target": "app:telegram-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:ime",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:ime",
+      "target": "app:telegram-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:ime",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:ime",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:ime",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:ime",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:turrit-mxgram",
+      "target": "app:telegram-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:turrit-mxgram",
+      "target": "app:ime",
+      "type": "related"
+    },
+    {
+      "source": "app:turrit-mxgram",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:turrit-mxgram",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:turrit-mxgram",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:turrit-mxgram",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-ig410",
+      "target": "app:ryukgram",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-ig410",
+      "target": "app:inkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-ig410",
+      "target": "app:ryukgram-sidebyside",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-ig410",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-ig410",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-ig410",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-sidebyside",
+      "target": "app:ryukgram-ig410",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-sidebyside",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-sidebyside",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-sidebyside",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-sidebyside",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:ryukgram-sidebyside",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine-roothide",
+      "target": "app:bootstrap",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine-roothide",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine-roothide",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine-roothide",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine-roothide",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:dopamine-roothide",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:bootstrap",
+      "target": "app:dopamine-roothide",
+      "type": "related"
+    },
+    {
+      "source": "app:bootstrap",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:bootstrap",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:bootstrap",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:bootstrap",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:bootstrap",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:serotonin",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:serotonin",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:serotonin",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:serotonin",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:serotonin",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:serotonin",
+      "target": "app:saber",
+      "type": "related"
+    },
+    {
+      "source": "app:taurine",
+      "target": "app:odyssey",
+      "type": "related"
+    },
+    {
+      "source": "app:taurine",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:taurine",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:taurine",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:taurine",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:taurine",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:odyssey",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:odyssey",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:odyssey",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:odyssey",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:odyssey",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:odyssey",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:unc0ver",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:unc0ver",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:unc0ver",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:unc0ver",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:unc0ver",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:unc0ver",
+      "target": "app:saber",
+      "type": "related"
+    },
+    {
+      "source": "app:sameboy",
+      "target": "app:xenios",
+      "type": "related"
+    },
+    {
+      "source": "app:sameboy",
+      "target": "app:vcmi",
+      "type": "related"
+    },
+    {
+      "source": "app:sameboy",
+      "target": "app:stiknes",
+      "type": "related"
+    },
+    {
+      "source": "app:sameboy",
+      "target": "app:provenance",
+      "type": "related"
+    },
+    {
+      "source": "app:sameboy",
+      "target": "app:ppsspp",
+      "type": "related"
+    },
+    {
+      "source": "app:sameboy",
+      "target": "app:minivmac",
+      "type": "related"
+    },
+    {
+      "source": "app:gopeed",
+      "target": "app:itorrent",
+      "type": "related"
+    },
+    {
+      "source": "app:manicemu",
+      "target": "app:xenios",
+      "type": "related"
+    },
+    {
+      "source": "app:manicemu",
+      "target": "app:vcmi",
+      "type": "related"
+    },
+    {
+      "source": "app:manicemu",
+      "target": "app:stiknes",
+      "type": "related"
+    },
+    {
+      "source": "app:manicemu",
+      "target": "app:sameboy",
+      "type": "related"
+    },
+    {
+      "source": "app:manicemu",
+      "target": "app:provenance",
+      "type": "related"
+    },
+    {
+      "source": "app:manicemu",
+      "target": "app:ppsspp",
+      "type": "related"
+    },
+    {
+      "source": "app:xenios",
+      "target": "app:vcmi",
+      "type": "related"
+    },
+    {
+      "source": "app:xenios",
+      "target": "app:stiknes",
+      "type": "related"
+    },
+    {
+      "source": "app:xenios",
+      "target": "app:sameboy",
+      "type": "related"
+    },
+    {
+      "source": "app:xenios",
+      "target": "app:provenance",
+      "type": "related"
+    },
+    {
+      "source": "app:xenios",
+      "target": "app:ppsspp",
+      "type": "related"
+    },
+    {
+      "source": "app:xenios",
+      "target": "app:minivmac",
+      "type": "related"
+    }
+  ]
+}

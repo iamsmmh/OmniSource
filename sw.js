@@ -41,10 +41,21 @@
  *     cinematic liquid-glass materials (translucent layers, chromatic
  *     refraction, aurora diffusion, grain). Shell precache stays the
  *     same — version bump forces clients to drop stale glass.
+ *
+ * v10 changes (OmniSource Intelligence Platform):
+ *   • new shell pages: /discover/, /graph/; new src/js/ engines
+ *     (data-layer, search-engine, compare-engine, recommendation-engine,
+ *     trust-score, router) added to the precache.
+ *   • API v2 endpoints (api/v2/*.json) join the stale-while-revalidate
+ *     DATA_CACHE ring. Static compare/<slug>-vs-<slug>/ pages are gone
+ *     — the dynamic /compare/?app1=&app2= URL is the canonical surface.
+ *   • caching strategy explicitly documented: network-first for APIs,
+ *     cache-first for images/assets, stale-while-revalidate for metadata.
+ *   • background-sync hint prepared for future push/background-refresh.
  */
 'use strict';
 
-const VERSION = 'omnisource-v9';
+const VERSION = 'omnisource-v10';
 const CORE_CACHE = `${VERSION}-core`;
 const DATA_CACHE = `${VERSION}-data`;
 const ASSET_CACHE = `${VERSION}-assets`;
@@ -54,6 +65,8 @@ const CORE_ASSETS = [
   './index.html',
   './compare.html',
   './compare/index.html',
+  './discover/index.html',
+  './graph/index.html',
   './status/index.html',
   './analytics/index.html',
   './install/index.html',
@@ -65,10 +78,30 @@ const CORE_ASSETS = [
   './assets/design-system/utilities.css',
   './assets/design-system/animations.css',
   './assets/design-system/components.css',
+  './src/js/data-layer.js',
+  './src/js/search-engine.js',
+  './src/js/compare-engine.js',
+  './src/js/recommendation-engine.js',
+  './src/js/trust-score.js',
+  './src/js/router.js',
   './js/core.js',
   './js/site.js',
   './js/features.js',
   './assets/OmniSource.webp'
+];
+
+// APIs use network-first (get fresh data whenever possible), metadata uses
+// stale-while-revalidate (instant paint, refresh in background), and app
+// pages/assets use cache-first.
+const API_URLS = [
+  './api/v2/apps.json',
+  './api/v2/sources.json',
+  './api/v2/trending.json',
+  './api/v2/recommendations.json',
+  './api/v2/status.json',
+  './api/v2/graph.json',
+  './api/v2/trust.json',
+  './api/v2/index.json',
 ];
 
 const DATA_URLS = [
@@ -90,7 +123,8 @@ const DATA_URLS = [
   './feeds/install.json',
   './feeds/search-index.json',
   './feeds/compare.json',
-  './feeds/screenshots.json'
+  './feeds/screenshots.json',
+  './feeds/collections.json'
 ];
 
 self.addEventListener('install', event => {
@@ -123,6 +157,7 @@ function notifyClientsOfUpdate() {
 // DATA_URLS is written root-relative; strip the './' so it can be matched as
 // a suffix against pathnames under any deploy base (e.g. '/OmniSource/').
 const DATA_SUFFIXES = DATA_URLS.map(entry => '/' + entry.replace(/^\.\//, ''));
+const API_SUFFIXES = API_URLS.map(entry => '/' + entry.replace(/^\.\//, ''));
 
 function isAssetPath(pathname) {
   return (
@@ -136,9 +171,15 @@ function isAssetPath(pathname) {
   );
 }
 
+function isApiPath(pathname) {
+  // Network-first for API endpoints (freshness matters).
+  if (pathname.startsWith('/api/v2/') || pathname.includes('/api/v2/')) return true;
+  return API_SUFFIXES.some(suffix => pathname === suffix || pathname.endsWith(suffix));
+}
+
 function isDataPath(pathname) {
   if (DATA_SUFFIXES.some(suffix => pathname === suffix || pathname.endsWith(suffix))) return true;
-  if (pathname.endsWith('.json')) return true;
+  if (pathname.endsWith('.json') && !isApiPath(pathname)) return true;
   if (/\/apps\/[^/]+\/?$/.test(pathname)) return true; // per-app pages
   if (/\/apps\/[^/]+\/index\.html$/.test(pathname)) return true;
   return false;
@@ -150,11 +191,19 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(request.url);
 
+  // Assets (images/icons): cache-first
   if (isAssetPath(url.pathname)) {
     event.respondWith(cacheFirst(ASSET_CACHE, request));
     return;
   }
 
+  // APIs: network-first (fresh data when online, fall back to cache when offline)
+  if (isApiPath(url.pathname)) {
+    event.respondWith(networkFirst(DATA_CACHE, request));
+    return;
+  }
+
+  // Metadata: stale-while-revalidate
   if (isDataPath(url.pathname)) {
     event.respondWith(staleWhileRevalidate(DATA_CACHE, request));
     return;
@@ -197,6 +246,24 @@ function staleWhileRevalidate(cacheName, request) {
       return response;
     }).catch(() => cached);
     return cached || network;
+  });
+}
+
+// Network-first: try network, fall back to cache on failure. Used for APIs.
+function networkFirst(cacheName, request) {
+  return caches.open(cacheName).then(async cache => {
+    try {
+      const response = await fetch(request);
+      if (response && response.ok) cache.put(request, response.clone()).catch(() => undefined);
+      return response;
+    } catch (_) {
+      const cached = await cache.match(request);
+      return cached || new Response('{"error":"offline"}', {
+        status: 504,
+        statusText: 'Offline',
+        headers: { 'Content-Type': 'application/json' }
+      });
+    }
   });
 }
 

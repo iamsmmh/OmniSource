@@ -51,7 +51,7 @@
     },
     {
       "path": "/api/compare.json",
-      "description": "Side-by-side comparison matrix.",
+      "description": "Side-by-side comparison matrix (app summaries only; pairs computed client-side).",
       "format": "json"
     },
     {
