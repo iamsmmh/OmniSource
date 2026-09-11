@@ -107,6 +107,7 @@ API_DOCUMENTS = {
     "integrity_report.json": "Per-asset integrity: sha256, size, release id, source and reject checks.",
     "dead_apps.json": "Dead/stale/approaching-dead classification (90/180/365 day thresholds).",
     "collections.json": "Curated collections (YouTube, Music, Emulators, Utilities, Productivity).",
+    "translation-status.json": "Per-locale translation coverage (%) against the canonical English locale.",
 }
 
 # V2 API mapping: canonical file in feeds/ -> published name under api/v2/.
