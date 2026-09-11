@@ -65,6 +65,7 @@ from omnisource.screenshots import process_screenshots
 from omnisource.search_index import build_search_index
 from omnisource.site import publish_repo_artifacts
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
+from omnisource.translations import build_translation_status_doc
 from omnisource.trending import build_trending_doc
 from omnisource.verification import build_verification_doc
 
@@ -511,6 +512,19 @@ def stage_build(
     # Phase 10 curated collections (YouTube, Music, Emulators, Utilities,
     # Productivity) — static JSON plus generated pages in the site builder.
     collections_doc = build_collections_doc(catalog, state)
+    # Translation coverage against the canonical en locale. A pure function
+    # of the committed locale files (locales/*.json); CI only cross-checks
+    # the committed document (scripts/validate-translations.js) and never
+    # writes it. Checkouts without the website sources skip the document so
+    # a feeds-only consumer stays buildable.
+    locales_dir = container.paths.root / "locales"
+    translation_doc: dict[str, int] | None
+    try:
+        translation_doc = build_translation_status_doc(locales_dir)
+    except ValueError as exc:
+        translation_doc = None
+        if locales_dir.is_dir():
+            log.warning("Skipping translation-status.json: %s", exc)
     # Screenshot pipeline (validation + mirror + thumbnail). The function
     # itself never raises; issues are recorded inside the resulting doc.
     # The previous document seeds keep-last-good: offline rebuilds reuse
@@ -540,6 +554,8 @@ def stage_build(
         ("collections.json", collections_doc),
     ):
         documents[feeds_dir / name] = doc
+    if translation_doc is not None:
+        documents[feeds_dir / "translation-status.json"] = translation_doc
 
     # Additional Shields.io-compatible badges for the README.
     documents[feeds_dir / "badge-sync.json"] = {

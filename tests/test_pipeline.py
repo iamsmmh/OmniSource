@@ -35,6 +35,10 @@ class TestPipeline(unittest.TestCase):
             (paths.assets / "OmniSource.png").write_bytes(PNG_MAGIC + b"source-icon")
             (paths.assets / "TestApp.png").write_bytes(PNG_MAGIC + b"app-icon")
 
+            (root / "locales").mkdir()
+            (root / "locales" / "en.json").write_text('{"nav":{"home":"Home"}}', encoding="utf-8")
+            (root / "locales" / "es.json").write_text('{"nav":{"home":"Inicio"}}', encoding="utf-8")
+
             catalog_data = {
                 "source": {
                     "name": "OmniSource",
@@ -95,6 +99,12 @@ class TestPipeline(unittest.TestCase):
             self.assertTrue((paths.feeds / "testapp.json").exists())
             self.assertTrue((paths.feeds / "apps.json").exists())
             self.assertTrue((paths.feeds / "health.json").exists())
+            # Translation coverage is a build document derived from locales/.
+            self.assertTrue((paths.feeds / "translation-status.json").exists())
+            self.assertEqual(
+                json.loads((paths.feeds / "translation-status.json").read_text(encoding="utf-8")),
+                {"en": 100, "es": 100},
+            )
             # stage_build only writes the canonical feeds; the flat/API URL
             # families are published from them (see publish_repo_artifacts).
             self.assertFalse((paths.root / "testapp.json").exists())
@@ -110,12 +120,21 @@ class TestPipeline(unittest.TestCase):
             self.assertEqual((root / "apps.json").read_bytes(), (paths.feeds / "apps.json").read_bytes())
             self.assertTrue((root / "api" / "apps.json").is_file())
             self.assertEqual((root / "api" / "apps.json").read_bytes(), (paths.feeds / "apps.json").read_bytes())
+            # Publisher-owned API documents are mirrored byte-for-byte.
+            self.assertTrue((root / "api" / "translation-status.json").is_file())
+            self.assertEqual(
+                (root / "api" / "translation-status.json").read_bytes(),
+                (paths.feeds / "translation-status.json").read_bytes(),
+            )
             for name in ("apps.json", "sitemap.xml", "robots.txt", ".nojekyll", "api/index.json"):
                 self.assertTrue((root / name).is_file(), f"publisher did not write {name}")
 
             # Idempotent: a second run changes nothing.
             again = publish_repo_artifacts(root, health_doc=health_doc, analytics_doc=analytics_doc)
             self.assertEqual(again["written"], [])
+            # ...and the prune never drops a document the publisher owns
+            # (the historical api/translation-status.json failure).
+            self.assertTrue((root / "api" / "translation-status.json").is_file())
 
             # Stale generated copies disappear instead of lingering as dead URLs.
             stale = root / "removedapp.json"

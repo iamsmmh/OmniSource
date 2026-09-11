@@ -79,6 +79,7 @@ ALTSTORE_NON_FEED = frozenset(
         "integrity_report.json",
         "dead_apps.json",
         "collections.json",
+        "translation-status.json",
     }
 )
 

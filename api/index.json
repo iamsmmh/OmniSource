@@ -130,6 +130,11 @@
       "format": "json"
     },
     {
+      "path": "/api/translation-status.json",
+      "description": "Per-locale translation coverage (%) against the canonical English locale.",
+      "format": "json"
+    },
+    {
       "path": "/api/trending",
       "description": "Extensionless alias of /api/trending.json (Phase 16).",
       "format": "json"
