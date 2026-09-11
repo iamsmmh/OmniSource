@@ -550,7 +550,9 @@ def _publish_v2_graph(root: Path, v2_dir: Path, written_set: set[str]) -> None:
     for bid, slugs in bundles.items():
         for i in range(len(slugs)):
             for j in range(i + 1, len(slugs)):
-                edges.append({"source": f"app:{slugs[i]}", "target": f"app:{slugs[j]}", "type": "bundle", "bundleId": bid})
+                edges.append(
+                    {"source": f"app:{slugs[i]}", "target": f"app:{slugs[j]}", "type": "bundle", "bundleId": bid}
+                )
 
     rel = related.get("related") if isinstance(related, dict) else None
     if isinstance(rel, dict):

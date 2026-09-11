@@ -87,14 +87,10 @@ NORMALIZERS = (
 def _matches(path: str, pattern: str) -> bool:
     if pattern.endswith("/*.json") or pattern.endswith("/*.gz") or pattern.endswith("/*.xml"):
         # e.g. feeds/*.json, api/v2/*.gz — direct children matching an extension.
-        suffix = pattern[pattern.rfind("*."):]
+        suffix = pattern[pattern.rfind("*.") :]
         ext = suffix[1:]  # ".json" / ".gz" / ".xml"
         prefix = pattern[: pattern.rfind("/")]
-        return (
-            path.startswith(prefix + "/")
-            and path.count("/") == prefix.count("/") + 1
-            and path.endswith(ext)
-        )
+        return path.startswith(prefix + "/") and path.count("/") == prefix.count("/") + 1 and path.endswith(ext)
     if pattern.endswith("/*/index.html"):
         parts = path.split("/")
         return len(parts) == 3 and parts[0] in {"apps", "compare", "collections"} and parts[2] == "index.html"
