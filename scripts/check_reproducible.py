@@ -49,9 +49,17 @@ TRACKED_PATTERNS = (
     "feeds/*.json",
     "feeds/*.gz",
     "feeds/*.xml",
+    # OmniStore Pro contract (generated into feeds/api/v2/ by the pipeline).
+    "feeds/api/v2/*.json",
+    "feeds/api/v2/apps/*.json",
     "apps/*/index.html",
     "compare/*/index.html",
     "collections/*/index.html",
+    # Monitoring ledger: latest.json is deterministic (only generatedAt is
+    # volatile, normalized below); history.json only gains a row when the
+    # build state actually changes, and the "history" normalizer covers
+    # that like the analytics history.
+    "reports/*.json",
     "README.md",
     # Published root surface: /apps.json (the installable source URL),
     # the api/ mirror (including v2), sitemap, robots and the home page stats.
@@ -60,8 +68,11 @@ TRACKED_PATTERNS = (
     "api/*.gz",
     "api/v2/*.json",
     "api/v2/*.gz",
+    "api/v2/apps/*.json",
+    "api/v2/apps/*.gz",
     "api/*",
     "api/v2/*",
+    "api/v2/apps/*",
     "robots.txt",
     "sitemap.xml",
     "index.html",

@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/app.schema.json",
+  "title": "OmniSource normalized app record",
+  "description": "Centralized schema for the normalized per-app record consumed by the OmniSource website and OmniStore Pro clients (feeds/api/v2/apps.json and feeds/api/v2/apps/<id>.json). AltStore distribution feeds keep their own shape (schemas/altstore-feed.schema.json); this schema is the stable client contract. The pipeline enforces it in src/omnisource/app_schema.py and the build fails when a record violates it.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "bundleIdentifier",
+    "version",
+    "versionDate",
+    "description",
+    "category",
+    "icon",
+    "screenshots",
+    "downloadURL",
+    "source",
+    "checksum"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable catalog slug; globally unique within the feed.",
+      "pattern": "^[a-z0-9][a-z0-9-]{1,31}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "developer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "bundleIdentifier": {
+      "type": "string",
+      "description": "On-device identity. Unique unless the catalog declares an alternativeTo group (e.g. YouTube tweaks).",
+      "pattern": "^[A-Za-z0-9.-]+$"
+    },
+    "version": {
+      "type": "string",
+      "description": "Newest distributable version. Must contain at least one digit and no whitespace.",
+      "minLength": 1,
+      "pattern": "^(?=.*\\d)\\S+$"
+    },
+    "versionDate": {
+      "$ref": "#/definitions/isoDate"
+    },
+    "description": {
+      "type": "string",
+      "description": "Long description. Falls back to subtitle/name so the field is never missing.",
+      "minLength": 1
+    },
+    "shortDescription": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "icon": {
+      "type": "string",
+      "description": "Absolute icon URL. Never empty: missing icons resolve to the placeholder asset.",
+      "format": "uri",
+      "minLength": 1
+    },
+    "screenshots": {
+      "type": "array",
+      "description": "Screenshot URLs. The field is always present; it may be empty when the app ships none.",
+      "items": { "type": "string", "format": "uri" }
+    },
+    "downloadURL": {
+      "type": "string",
+      "format": "uri"
+    },
+    "size": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source": {
+      "type": "string",
+      "description": "Upstream identity (e.g. owner/repo or feed host).",
+      "minLength": 1
+    },
+    "sourceURL": {
+      "type": "string",
+      "format": "uri"
+    },
+    "checksum": {
+      "description": "SHA-256 of the newest asset, or null when the upstream publishes none.",
+      "type": ["string", "null"],
+      "pattern": "^[0-9a-fA-F]{64}$"
+    },
+    "checksumPublished": {
+      "type": "boolean"
+    },
+    "minOSVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+(\\.[0-9]+)*$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["stable", "beta", "manual", "unmaintained", "deprecated"]
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "pageURL": {
+      "type": "string",
+      "format": "uri"
+    },
+    "feedURL": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "definitions": {
+    "isoDate": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}([Tt ][0-9]{2}:[0-9]{2}(:[0-9]{2})?(\\.[0-9]+)?([Zz]|[+-][0-9]{2}:?[0-9]{2})?)?$"
+    }
+  }
+}

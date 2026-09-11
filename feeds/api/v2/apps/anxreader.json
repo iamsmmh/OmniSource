@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "anxreader",
+    "name": "Anx Reader",
+    "developer": "Anxcye",
+    "subtitle": "Open-source e-book reader with AI",
+    "bundleIdentifier": "com.anxcye.anxReader",
+    "version": "1.14.0",
+    "versionDate": "2026-03-19",
+    "description": "Anx Reader is a free and open-source e-book reader for iPhone and iPad. Read EPUB, MOBI and other formats with a polished reader engine, AI-powered summaries and translations (bring your own key), text-to-speech, highlights and notes, reading statistics, and WebDAV sync across devices.",
+    "shortDescription": "Open-source e-book reader with AI",
+    "category": "utilities",
+    "tags": [
+      "utilities"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/AnxReader.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa",
+    "size": 28677588,
+    "source": "Anxcye/anx-reader",
+    "sourceURL": "https://github.com/Anxcye/anx-reader",
+    "checksum": "a79bd247859d6a04dae81490aa7d8d970a830af7201415f4ec6aa370b74ae69b",
+    "checksumPublished": false,
+    "minOSVersion": "15.2",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/anxreader/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/anxreader.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-03-19"
+    }
+  },
+  "newest": {
+    "version": "1.14.0",
+    "date": "2026-03-19",
+    "downloadURL": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa",
+    "size": 28677588,
+    "sha256": "a79bd247859d6a04dae81490aa7d8d970a830af7201415f4ec6aa370b74ae69b"
+  },
+  "versions": [
+    {
+      "version": "1.14.0",
+      "date": "2026-03-19",
+      "downloadURL": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa",
+      "size": 28677588,
+      "sha256": "a79bd247859d6a04dae81490aa7d8d970a830af7201415f4ec6aa370b74ae69b"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

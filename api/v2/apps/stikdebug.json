@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "stikdebug",
+    "name": "StikDebug",
+    "developer": "StikDebug",
+    "subtitle": "On-device JIT enabler and debugger",
+    "bundleIdentifier": "com.stik.stikdebug",
+    "version": "3.1.10",
+    "versionDate": "2026-08-27",
+    "description": "StikDebug attaches a debugger to your sideloaded apps directly on device, which enables JIT for emulators and other apps that need it. It uses a pairing file and an on-device VPN loop, so no computer is required after the initial setup. Requires iOS 17.4 or newer.",
+    "shortDescription": "On-device JIT enabler and debugger",
+    "category": "developer-tools",
+    "tags": [
+      "developer-tools"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/StikDebug.webp",
+    "screenshots": [
+      "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/HomeScreen.PNG",
+      "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/AppsList.PNG",
+      "https://raw.githubusercontent.com/StikDebug/StikDebug/main/assets/views/dark/Settings.PNG"
+    ],
+    "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
+    "size": 12824047,
+    "source": "StikDebug/StikDebug",
+    "sourceURL": "https://github.com/StikDebug/StikDebug",
+    "checksum": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845",
+    "checksumPublished": false,
+    "minOSVersion": "17.4",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/stikdebug/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/stikdebug.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-08-27"
+    }
+  },
+  "newest": {
+    "version": "3.1.10",
+    "date": "2026-08-27",
+    "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
+    "size": 12824047,
+    "sha256": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845"
+  },
+  "versions": [
+    {
+      "version": "3.1.10",
+      "date": "2026-08-27",
+      "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
+      "size": 12824047,
+      "sha256": "2f2e0bec9648b593fe95b55b21d3521b8ecc3b5889b0be53fe6cd22ecf76d845"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

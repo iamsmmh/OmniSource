@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "youpro",
+    "name": "YouPro",
+    "developer": "alibusut",
+    "subtitle": "Feature-rich YouTube tweak by alibusut",
+    "bundleIdentifier": "com.google.ios.youtube",
+    "version": "21.36.6",
+    "versionDate": "2026-09-10",
+    "description": "YouPro is an advanced YouTube modification tweak developed by alibusut. It features background playback, ad-free streaming, inline download capabilities, OLED true dark theme, SponsorBlock, and enhanced media playback controls.",
+    "shortDescription": "Feature-rich YouTube tweak by alibusut",
+    "category": "photo-video",
+    "tags": [
+      "photo-video"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
+    "size": 129007319,
+    "source": "mrdrvt99/YouProEXTRA",
+    "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+    "checksum": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
+    "checksumPublished": false,
+    "minOSVersion": "16.0",
+    "status": "stable",
+    "featured": true,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/youpro/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/youpro.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-09-10"
+    }
+  },
+  "newest": {
+    "version": "21.36.6",
+    "date": "2026-09-10",
+    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
+    "size": 129007319,
+    "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de"
+  },
+  "versions": [
+    {
+      "version": "21.36.6",
+      "date": "2026-09-10",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
+      "size": 129007319,
+      "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

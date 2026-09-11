@@ -1411,66 +1411,38 @@
       de: { name: 'German', native: 'Deutsch' }
     },
 
-    translations: {
-      en: {
-        // English translations (default)
-        home: 'Home',
-        compare: 'Compare',
-        status: 'Status',
-        analytics: 'Analytics',
-        install: 'Install',
-        favorites: 'Favorites',
-        collections: 'Collections',
-        search: 'Search',
-        'no-results': 'No results found',
-        'loading': 'Loading...',
-        'app-updated': 'App updated',
-        'new-app': 'New app added',
-        'source-down': 'Source is down',
-        'rate-app': 'Rate this app',
-        'add-to-favorites': 'Add to favorites',
-        'remove-from-favorites': 'Remove from favorites',
-        'enable-notifications': 'Enable notifications',
-        'disable-notifications': 'Disable notifications',
-        'site-title': '${site} — The App Store for Sideloaded iOS'
-      },
-      es: {
-        home: 'Inicio',
-        compare: 'Comparar',
-        status: 'Estado',
-        analytics: 'Analíticas',
-        install: 'Instalar',
-        favorites: 'Favoritos',
-        collections: 'Colecciones',
-        search: 'Buscar',
-        'no-results': 'No se encontraron resultados',
-        'loading': 'Cargando...',
-        'app-updated': 'Aplicación actualizada',
-        'new-app': 'Nueva aplicación añadida',
-        'source-down': 'Fuente no disponible',
-        'rate-app': 'Calificar esta aplicación',
-        'add-to-favorites': 'Añadir a favoritos',
-        'remove-from-favorites': 'Eliminar de favoritos',
-        'enable-notifications': 'Activar notificaciones',
-        'disable-notifications': 'Desactivar notificaciones',
-        'site-title': '${site} — La tienda de apps para iOS con sideloading'
-      }
-    },
+    // NOTE: translations live in locales/*.json and are served by the
+    // standalone runtime (src/js/i18n.js, window.OmniI18n). This module used
+    // to carry its own hardcoded en/es table with flat keys, which drifted
+    // from the canonical dotted keys and left every other language showing
+    // English. It now delegates: t()/setLanguage() proxy OmniI18n, and the
+    // language switcher below is the only UI this module owns.
 
     init() {
       this._loadLanguage();
       this._injectUI();
       this._applyTranslations();
+      // Re-apply once the locale bundles arrive (and on every later
+      // language switch): init runs before OmniI18n finishes fetching.
+      window.addEventListener('i18n:changed', () => {
+        this.currentLanguage = (window.OmniI18n && window.OmniI18n.language) || this.currentLanguage;
+        this.syncLanguageSelects();
+        this._applyTranslations();
+      });
     },
 
     _loadLanguage() {
+      if (window.OmniI18n && window.OmniI18n.language) {
+        this.currentLanguage = window.OmniI18n.language;
+        return;
+      }
       const saved = Storage.get(this.STORAGE_KEY);
-      if (saved && (this.languages[saved] || this.translations[saved])) {
+      if (saved && this.languages[saved]) {
         this.currentLanguage = saved;
       } else {
         // Try to detect browser language
         const browserLang = navigator.language.split('-')[0];
-        this.currentLanguage = this.translations[browserLang] ? browserLang : 'en';
+        this.currentLanguage = this.languages[browserLang] ? browserLang : 'en';
       }
     },
 
@@ -1537,6 +1509,9 @@
         const select = document.createElement('select');
         select.className = 'lang-select';
         select.setAttribute('aria-label', 'Language');
+        // OmniI18n.apply() picks these injected nodes up by attribute, so
+        // the switcher follows the active language with no extra listeners.
+        select.setAttribute('data-i18n-aria-label', 'nav.language');
         Object.entries(this.languages).forEach(([code, lang]) => {
           const option = document.createElement('option');
           option.value = code;
@@ -1571,6 +1546,7 @@
         row.className = 'nav-lang';
         const label = document.createElement('span');
         label.textContent = 'Language';
+        label.setAttribute('data-i18n', 'nav.language');
         const wrap = buildWrap();
         row.appendChild(label);
         row.appendChild(wrap);
@@ -1593,14 +1569,17 @@
     setLanguage(code) {
       // The standalone runtime owns JSON locales (including RTL languages).
       // Keep this legacy facade compatible for existing feature consumers.
-      if (window.OmniI18n && window.OmniI18n.setLanguage) {
-        window.OmniI18n.setLanguage(code);
-        this.currentLanguage = code;
-      } else if (this.translations[code]) {
-        this.currentLanguage = code;
-      } else return;
+      if (!this.languages[code]) return;
+      this.currentLanguage = code;
       Storage.set(this.STORAGE_KEY, code);
       this.syncLanguageSelects();
+      if (window.OmniI18n && window.OmniI18n.setLanguage) {
+        // setLanguage re-applies the page itself and emits i18n:changed,
+        // which this module listens for (see init) to finish the update.
+        window.OmniI18n.setLanguage(code);
+        OS.emit('language:changed', code);
+        return;
+      }
       this._applyTranslations();
       OS.emit('language:changed', code);
     },
@@ -1609,35 +1588,32 @@
       return this.currentLanguage;
     },
 
+    // Delegate to the runtime so dotted canonical keys resolve. When the
+    // locale bundles have not loaded yet this echoes the key back to the
+    // caller — the same contract OS.t has, minus the English fallback.
     t(key, params = {}) {
-      const lang = this.translations[this.currentLanguage] || this.translations.en;
-      let translation = lang[key] || key;
-      
-      // Replace ${placeholder} tokens. The pattern is escaped so it matches
-      // the literal token instead of being read as a regexp anchor.
-      for (const [placeholder, value] of Object.entries(params)) {
-        translation = translation.replace(new RegExp('\\$\\{' + placeholder + '\\}', 'g'), value);
+      if (window.OmniI18n && window.OmniI18n.loaded && window.OmniI18n.loaded('en')) {
+        return window.OmniI18n.t(key, params);
       }
-      
-      return translation;
+      return key;
     },
 
     _applyTranslations() {
-      // Translate all elements with data-i18n attributes
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const params = el.getAttribute('data-i18n-params');
-        el.textContent = this.t(key, params ? JSON.parse(params) : {});
-      });
+      // OmniI18n.apply owns every [data-i18n*] attribute variant, so defer
+      // to it entirely — including the no-locale state, where the static
+      // English markup is the correct content and must not be replaced by
+      // raw keys.
+      if (window.OmniI18n && window.OmniI18n.loaded && window.OmniI18n.loaded('en')) {
+        window.OmniI18n.apply();
+      }
 
       // Update the document title. Static pages (analytics, status,
       // compare, install, search and the per-app pages) ship their own
-      // titles, so only the home page gets the generic site title — this
-      // avoids both the literal "site-title" placeholder and clobbering
-      // page-specific titles.
+      // titles, so only the home page gets the localized site title —
+      // guarded on a loaded EN bundle so the key never leaks into the tab.
       const page = document.body && document.body.dataset.page;
-      if (page === 'home') {
-        document.title = this.t('site-title', { site: 'OmniSource' });
+      if (page === 'home' && window.OmniI18n && window.OmniI18n.loaded && window.OmniI18n.loaded('en')) {
+        document.title = window.OmniI18n.t('site.title', { site: 'OmniSource' });
       }
     }
   };

@@ -7,7 +7,17 @@ const fs=require('fs'), path=require('path');
 const dir=path.join(__dirname,'..','locales'); let errors=0;
 function parse(file){let dup=[]; let text=fs.readFileSync(file,'utf8'); try { return JSON.parse(text,(k,v)=>v); } catch(e){ console.error(`[ERROR] ${path.basename(file)} invalid JSON: ${e.message}`); errors++; return {}; }}
 function flat(o,p='',out={}){Object.entries(o).forEach(([k,v])=>{let key=p?`${p}.${k}`:k;if(v&&typeof v==='object'&&!Array.isArray(v))flat(v,key,out);else out[key]=v;});return out;}
-function duplicates(file){let s=fs.readFileSync(file,'utf8'), re=/\"([^\"\\]+)\"\s*:/g,m, seen=new Set(), d=new Set(); while((m=re.exec(s))){if(seen.has(m[1]))d.add(m[1]);seen.add(m[1]);} if(d.size){console.error(`[ERROR] ${path.basename(file)} duplicate keys: ${[...d].join(', ')}`);errors++;}}
+function duplicates(file){let s=fs.readFileSync(file,'utf8'), d=new Set(), stack=[], i=0, n=s.length;
+  function skipString(){i++; while(i<n){let c=s[i]; if(c==='\\'){i+=2; continue;} i++; if(c==='"')break;}}
+  while(i<n){let c=s[i];
+    if(c==='"'){let start=i; skipString(); let j=i; while(j<n&&/\s/.test(s[j]))j++;
+      if(s[j]===':'&&stack.length&&stack[stack.length-1].obj){let key=s.slice(start,i);
+        let scope=stack[stack.length-1]; if(scope.keys.has(key))d.add(key.slice(1,-1)); scope.keys.add(key);}}
+    else if(c==='{'){stack.push({obj:true,keys:new Set()}); i++;}
+    else if(c==='['){stack.push({obj:false}); i++;}
+    else if(c==='}'||c===']'){stack.pop(); i++;}
+    else i++;}
+  if(d.size){console.error(`[ERROR] ${path.basename(file)} duplicate keys: ${[...d].join(', ')}`);errors++;}}
 if(!fs.existsSync(dir)){console.error('[ERROR] locales directory missing');process.exit(1)}
 let files=fs.readdirSync(dir).filter(x=>x.endsWith('.json')).sort(); if(!files.includes('en.json')){console.error('[ERROR] en.json is required');process.exit(1)}
 let en=flat(parse(path.join(dir,'en.json'))), report={};

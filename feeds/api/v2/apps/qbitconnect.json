@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "qbitconnect",
+    "name": "qBitConnect",
+    "developer": "Rajnish Sharma",
+    "subtitle": "Modern qBittorrent remote client",
+    "bundleIdentifier": "com.bluematter.qbitconnect",
+    "version": "1.6.6",
+    "versionDate": "2025-11-02",
+    "description": "qBitConnect is a modern, open-source qBittorrent remote client for iPhone and iPad built with Flutter. Connect to your qBittorrent WebUI to add, manage and monitor torrents with a clean, adaptive interface, push notifications for finished downloads, RSS support and quick actions.",
+    "shortDescription": "Modern qBittorrent remote client",
+    "category": "utilities",
+    "tags": [
+      "utilities"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/qBitConnect.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/RajnishOne/qbitconnect/releases/download/v1.6.6/qBitConnect.ipa",
+    "size": 11798221,
+    "source": "RajnishOne/qbitconnect",
+    "sourceURL": "https://github.com/RajnishOne/qbitconnect",
+    "checksum": "683361416e6816c167f4dd72b5d4742a59c3a10faaa0823f8c5ec0754ba941c4",
+    "checksumPublished": false,
+    "minOSVersion": "15.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/qbitconnect/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/qbitconnect.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2025-11-02"
+    }
+  },
+  "newest": {
+    "version": "1.6.6",
+    "date": "2025-11-02",
+    "downloadURL": "https://github.com/RajnishOne/qbitconnect/releases/download/v1.6.6/qBitConnect.ipa",
+    "size": 11798221,
+    "sha256": "683361416e6816c167f4dd72b5d4742a59c3a10faaa0823f8c5ec0754ba941c4"
+  },
+  "versions": [
+    {
+      "version": "1.6.6",
+      "date": "2025-11-02",
+      "downloadURL": "https://github.com/RajnishOne/qbitconnect/releases/download/v1.6.6/qBitConnect.ipa",
+      "size": 11798221,
+      "sha256": "683361416e6816c167f4dd72b5d4742a59c3a10faaa0823f8c5ec0754ba941c4"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

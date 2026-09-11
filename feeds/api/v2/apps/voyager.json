@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "voyager",
+    "name": "Voyager",
+    "developer": "aeharding",
+    "subtitle": "Beautiful open-source client for Lemmy",
+    "bundleIdentifier": "app.vger.voyager",
+    "version": "2.49.0",
+    "versionDate": "2026-09-06",
+    "description": "Voyager is a free and open-source client for Lemmy and PieFed with an iOS-native feel — swipe gestures, haptics, infinite scroll, rich markdown support, multi-account switching and deep theming. The same project powers the official Voyager App Store release; this feed tracks the developer's own GitHub build.",
+    "shortDescription": "Beautiful open-source client for Lemmy",
+    "category": "social",
+    "tags": [
+      "social"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Voyager.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
+    "size": 8216630,
+    "source": "aeharding/voyager",
+    "sourceURL": "https://github.com/aeharding/voyager",
+    "checksum": "3e71607b8a945db67ef82adadcb74f087691b8f02ef2cce522f4be9a49865c87",
+    "checksumPublished": false,
+    "minOSVersion": "15.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/voyager/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/voyager.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-09-06"
+    }
+  },
+  "newest": {
+    "version": "2.49.0",
+    "date": "2026-09-06",
+    "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
+    "size": 8216630,
+    "sha256": "3e71607b8a945db67ef82adadcb74f087691b8f02ef2cce522f4be9a49865c87"
+  },
+  "versions": [
+    {
+      "version": "2.49.0",
+      "date": "2026-09-06",
+      "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
+      "size": 8216630,
+      "sha256": "3e71607b8a945db67ef82adadcb74f087691b8f02ef2cce522f4be9a49865c87"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

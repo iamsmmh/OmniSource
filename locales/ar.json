@@ -1,1 +1,122 @@
-{"nav":{"home":"الرئيسية","compare":"مقارنة","status":"الحالة","analytics":"التحليلات","install":"تثبيت","favorites":"المفضلة","collections":"المجموعات","search":"بحث","discover":"استكشاف","sources":"المصادر"},"common":{"language":"اللغة","loading":"جار التحميل…","noResults":"لم يتم العثور على نتائج","close":"إغلاق","menu":"القائمة","offline":"أنت غير متصل"},"pages":{"translationStatus":"حالة الترجمة","coverage":"تغطية الترجمة"}}
+{
+  "nav": {
+    "apps": "التطبيقات",
+    "catalog": "الفهرس",
+    "discover": "استكشاف",
+    "trending": "الرائج",
+    "compare": "مقارنة",
+    "graph": "الرسم",
+    "health": "الحالة",
+    "install": "تثبيت",
+    "more": "المزيد",
+    "whatsNew": "ما الجديد",
+    "analytics": "التحليلات",
+    "favorites": "المفضلة",
+    "collections": "المجموعات",
+    "search": "بحث",
+    "rss": "خلاصة RSS",
+    "github": "GitHub ↗",
+    "language": "اللغة"
+  },
+  "common": {
+    "close": "إغلاق",
+    "today": "اليوم",
+    "yesterday": "أمس",
+    "daysAgo": "قبل ${count} يوم",
+    "monthsAgo": "قبل ${count} شهر",
+    "yearsAgo": "قبل ${count} سنة"
+  },
+  "hero": {
+    "titleA": "متجر التطبيقات",
+    "titleB": "لـ iOS المحمّل جانبيًا.",
+    "copy": "كتالوج iOS منتقى بعناية، يُزامَن من الإصدارات الرسمية كل ست ساعات — موثّق ومُراقَب وقابل للتثبيت دائمًا.",
+    "browse": "تصفح الكتالوج",
+    "howTo": "طريقة التثبيت",
+    "searchPlaceholder": "ابحث عن التطبيقات ومعرّفات الحزم والمطورين…",
+    "sourceLabel": "رابط المصدر",
+    "copySource": "نسخ",
+    "sourceHint": "أضف المصدر في عميلك"
+  },
+  "stats": {
+    "apps": "إجمالي التطبيقات",
+    "sources": "المصادر الأصلية",
+    "online": "تنزيلات متاحة",
+    "verified": "تطبيقات موثقة"
+  },
+  "search": {
+    "history": "الأخيرة",
+    "popular": "الشائعة",
+    "categories": "الفئات",
+    "clear": "مسح",
+    "recentSearch": "بحث أخير",
+    "noMatches": "لا نتائج لـ «${q}».",
+    "noResultsHint": "جرّب اسمًا أو معرّف حزمة أو مطورًا أو وسمًا."
+  },
+  "catalog": {
+    "kicker": "الكتالوج",
+    "titleA": "اكتشف",
+    "titleB": "التطبيقات",
+    "lead": "إصدارات رسمية ونسخ مجتمعية موسومة بوضوح، مع المصدر والتوافق والحالة.",
+    "filterPlaceholder": "صفِّ التطبيقات والميزات والمطورين ومعرّفات الحزم…",
+    "anyOS": "أي iOS",
+    "worksOnIOS": "يعمل على iOS ${level}+",
+    "sortFeatured": "المميزة أولًا",
+    "sortUpdated": "المحدّثة أخيرًا",
+    "sortDownloads": "الأكثر تنزيلًا",
+    "sortVersion": "الأحدث إصدارًا",
+    "sortName": "الاسم أ–ي",
+    "sortSize": "الأصغر أولًا",
+    "clearFilters": "مسح المرشحات",
+    "emptyTitle": "لا توجد تطبيقات",
+    "emptyText": "جرّب كلمة أخرى أو أزل المرشحات.",
+    "emptyReset": "إعادة ضبط البحث",
+    "results": "${count} تطبيق معروض",
+    "resultsCompact": "${count} تطبيق مدرج",
+    "resultsOne": "تطبيق واحد معروض",
+    "resultsOneCompact": "تطبيق واحد مدرج",
+    "loading": "جارٍ تحميل الكتالوج…"
+  },
+  "dialog": {
+    "scanToAdd": "امسح للإضافة",
+    "copyUrl": "نسخ الرابط",
+    "qrAria": "عرض رمز QR لرابط المصدر",
+    "qrAlt": "رمز QR لرابط المصدر"
+  },
+  "footer": {
+    "tagline": "تحميل جانبي منتقى لـ iOS، يُحدَّث تلقائيًا. مصدر واحد لكل عميل رئيسي.",
+    "clients": "العملاء",
+    "browse": "تصفح",
+    "platform": "المنصة",
+    "project": "المشروع",
+    "allApps": "كل التطبيقات",
+    "releaseTimeline": "سجل الإصدارات",
+    "compareApps": "مقارنة التطبيقات",
+    "relationGraph": "رسم العلاقات",
+    "sourceHealth": "صحة المصدر",
+    "installationCenter": "مركز التثبيت",
+    "apiEndpoints": "نقاط API",
+    "combinedRSS": "RSS موحّد",
+    "repository": "المستودع",
+    "contributing": "المساهمة",
+    "security": "الأمان",
+    "catalogJson": "كتالوج JSON",
+    "finePrint": "مشروع مجتمعي مستقل. التطبيقات والعلامات ملك لأصحابها. قد تحتاج تطبيقات التحميل الجانبي إلى إعادة توقيع كل 7 أو 90 يومًا حسب عميلك.",
+    "contributors": "مساهمو OmniSource"
+  },
+  "pages": {
+    "translationStatus": "حالة الترجمة",
+    "coverage": "تغطية الترجمة"
+  },
+  "a11y": {
+    "skipLink": "تخطَّ إلى الكتالوج",
+    "search": "بحث",
+    "theme": "تغيير سمة الألوان",
+    "view": "تبديل العرض",
+    "install": "تثبيت OmniSource",
+    "filterCatalog": "تصفية الكتالوج",
+    "sortApps": "ترتيب التطبيقات"
+  },
+  "site": {
+    "title": "${site} — متجر تطبيقات iOS المحمّل جانبيًا"
+  }
+}

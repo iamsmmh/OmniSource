@@ -13,7 +13,7 @@ import hashlib
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Protocol
+from typing import Any, Protocol
 from urllib.parse import urlparse
 
 from omnisource.constants import IMAGE_EXTENSIONS, JPEG_MAGIC, PNG_MAGIC
@@ -197,3 +197,77 @@ def probe_screenshot_urls(
             if not result.reachable:
                 issues.append(AssetIssue(app.slug, "dead-link", f"screenshot unreachable ({result.detail})", url))
     return issues
+
+
+ASSET_MANIFEST_SCHEMA_VERSION = 1
+
+#: Fallback artwork shipped with the repository. The frontend AssetManager
+#: swaps these in when an icon 404s, so a missing file degrades to branded
+#: artwork instead of a broken image.
+PLACEHOLDER_ASSETS = ("app.svg", "category.svg", "banner.svg")
+
+
+def _file_fingerprint(path: Path) -> dict[str, Any]:
+    try:
+        payload = path.read_bytes()
+    except OSError:
+        return {"exists": False, "bytes": 0, "sha256": None}
+    return {
+        "exists": True,
+        "bytes": len(payload),
+        "sha256": hashlib.sha256(payload).hexdigest(),
+    }
+
+
+def build_asset_manifest_doc(catalog: Catalog, *, assets_dir: Path, base_url: str) -> dict[str, Any]:
+    """Build ``feeds/asset-manifest.json``: icon health + fallback map.
+
+    The website AssetManager consumes this document to resolve missing logos
+    to placeholders without probing the network first; CI consumes it for
+    the missing-assets report. Pure function of ``catalog.json`` + ``assets/``.
+    """
+    from omnisource.domain import today
+
+    base = base_url.rstrip("/")
+    icons: dict[str, dict[str, Any]] = {}
+    missing: list[str] = []
+    for app in sorted(catalog.apps, key=lambda item: item.slug):
+        fingerprint = _file_fingerprint(assets_dir / app.icon) if app.icon else {"exists": False}
+        exists = bool(fingerprint.get("exists"))
+        if not exists:
+            missing.append(app.slug)
+        icons[app.slug] = {
+            "file": app.icon,
+            "url": f"{base}/assets/{app.icon}" if app.icon else "",
+            "fallback": f"{base}/assets/placeholders/app.svg",
+            **fingerprint,
+        }
+    placeholders = {
+        name: {
+            "url": f"{base}/assets/placeholders/{name}",
+            **_file_fingerprint(assets_dir / "placeholders" / name),
+        }
+        for name in PLACEHOLDER_ASSETS
+    }
+    categories: dict[str, dict[str, Any]] = {}
+    for app in catalog.apps:
+        category = app.category or "other"
+        entry = categories.setdefault(category, {"icon": placeholders["category.svg"]["url"], "apps": []})
+        entry["apps"].append(app.slug)
+    for entry in categories.values():
+        entry["apps"] = sorted(entry["apps"])
+        entry["count"] = len(entry["apps"])
+    return {
+        "schemaVersion": ASSET_MANIFEST_SCHEMA_VERSION,
+        "generatedAt": today(),
+        "icons": icons,
+        "placeholders": placeholders,
+        "categories": dict(sorted(categories.items())),
+        "missing": sorted(missing),
+        "totals": {
+            "apps": len(icons),
+            "iconsOk": sum(1 for item in icons.values() if item.get("exists")),
+            "iconsMissing": len(missing),
+            "placeholdersOk": sum(1 for item in placeholders.values() if item.get("exists")),
+        },
+    }

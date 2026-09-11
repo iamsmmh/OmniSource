@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "qbitcontrol",
+    "name": "qBitControl",
+    "developer": "Michael-128",
+    "subtitle": "qBittorrent remote control for iOS",
+    "bundleIdentifier": "MikeMichael225.qBitControl",
+    "version": "1.4.1",
+    "versionDate": "2026-07-23",
+    "description": "qBitControl is a native qBittorrent remote control app for iPhone and iPad. Manage your torrents from anywhere: add, pause, resume and recheck torrents, browse files and set priorities, configure speed and seeding limits, use custom HTTP headers and self-signed certificates, and track RSS feeds — all against your own qBittorrent WebUI.",
+    "shortDescription": "qBittorrent remote control for iOS",
+    "category": "utilities",
+    "tags": [
+      "utilities"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/qBitControl.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
+    "size": 4777720,
+    "source": "Michael-128/qBitControl",
+    "sourceURL": "https://github.com/Michael-128/qBitControl",
+    "checksum": "4a218f22120e5251fac7383c36169adbbf0503453aac339cc5573df4bb6dc6c3",
+    "checksumPublished": false,
+    "minOSVersion": "16.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/qbitcontrol/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/qbitcontrol.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-07-23"
+    }
+  },
+  "newest": {
+    "version": "1.4.1",
+    "date": "2026-07-23",
+    "downloadURL": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
+    "size": 4777720,
+    "sha256": "4a218f22120e5251fac7383c36169adbbf0503453aac339cc5573df4bb6dc6c3"
+  },
+  "versions": [
+    {
+      "version": "1.4.1",
+      "date": "2026-07-23",
+      "downloadURL": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
+      "size": 4777720,
+      "sha256": "4a218f22120e5251fac7383c36169adbbf0503453aac339cc5573df4bb6dc6c3"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

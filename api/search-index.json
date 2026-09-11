@@ -1,36 +1,40 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generatedAt": "2026-09-11",
   "count": 77,
   "fuse": {
     "keys": [
       {
         "name": "name",
-        "weight": 0.35
+        "weight": 0.32
       },
       {
         "name": "shortDescription",
-        "weight": 0.15
+        "weight": 0.13
       },
       {
         "name": "description",
-        "weight": 0.1
+        "weight": 0.09
       },
       {
         "name": "category",
-        "weight": 0.08
+        "weight": 0.07
       },
       {
         "name": "tags",
+        "weight": 0.09
+      },
+      {
+        "name": "keywords",
         "weight": 0.1
       },
       {
         "name": "developer",
-        "weight": 0.1
+        "weight": 0.09
       },
       {
         "name": "bundleId",
-        "weight": 0.12
+        "weight": 0.11
       }
     ],
     "threshold": 0.38,
@@ -48,6 +52,16 @@
       "category": "music",
       "tags": [
         "music"
+      ],
+      "keywords": [
+        "downloader",
+        "flac",
+        "for",
+        "ios",
+        "mobile",
+        "music",
+        "spotiflac",
+        "zarzet"
       ],
       "developer": "zarzet",
       "bundleId": "com.zarz.spotiflacAndroid",
@@ -75,6 +89,17 @@
       "tags": [
         "photo-video"
       ],
+      "keywords": [
+        "arichornlover",
+        "even",
+        "features",
+        "more",
+        "photo",
+        "uyouenhanced",
+        "uyouplus",
+        "video",
+        "with"
+      ],
       "developer": "arichornlover",
       "bundleId": "com.google.ios.youtube",
       "icon": "assets/uYouEnhanced.webp",
@@ -100,6 +125,20 @@
       "category": "photo-video",
       "tags": [
         "photo-video"
+      ],
+      "keywords": [
+        "ads",
+        "and",
+        "dayanch96",
+        "lightweight",
+        "no",
+        "photo",
+        "pip",
+        "tweak",
+        "video",
+        "with",
+        "youtube",
+        "youtubeplus"
       ],
       "developer": "dayanch96",
       "bundleId": "com.google.ios.youtube",
@@ -127,6 +166,17 @@
       "tags": [
         "photo-video"
       ],
+      "keywords": [
+        "alibusut",
+        "by",
+        "feature",
+        "photo",
+        "rich",
+        "tweak",
+        "video",
+        "youpro",
+        "youtube"
+      ],
       "developer": "alibusut",
       "bundleId": "com.google.ios.youtube",
       "icon": "assets/YouTube.webp",
@@ -152,6 +202,18 @@
       "category": "photo-video",
       "tags": [
         "photo-video"
+      ],
+      "keywords": [
+        "advanced",
+        "controls",
+        "extensive",
+        "ikarwan",
+        "photo",
+        "tweak",
+        "video",
+        "with",
+        "youtube",
+        "ytkillerplus"
       ],
       "developer": "iKarwan",
       "bundleId": "com.google.ios.youtube",
@@ -179,6 +241,12 @@
       "tags": [
         "photo-video"
       ],
+      "keywords": [
+        "itzzace",
+        "photo",
+        "video",
+        "ytkace"
+      ],
       "developer": "itzzace",
       "bundleId": "com.google.ios.youtube",
       "icon": "assets/YouTube.webp",
@@ -204,6 +272,18 @@
       "category": "photo-video",
       "tags": [
         "photo-video"
+      ],
+      "keywords": [
+        "all",
+        "enhancement",
+        "in",
+        "one",
+        "photo",
+        "tonwalter888",
+        "tweak",
+        "video",
+        "youmod",
+        "youtube"
       ],
       "developer": "Tonwalter888",
       "bundleId": "com.google.ios.youtube",
@@ -231,6 +311,18 @@
       "tags": [
         "photo-video"
       ],
+      "keywords": [
+        "2012",
+        "extra",
+        "mark02",
+        "maxtube",
+        "photo",
+        "ten",
+        "tweaks",
+        "video",
+        "with",
+        "ytplus"
+      ],
       "developer": "Mark02-2012",
       "bundleId": "com.google.ios.youtube",
       "icon": "assets/MaxTube.webp",
@@ -256,6 +348,14 @@
       "category": "music",
       "tags": [
         "music"
+      ],
+      "keywords": [
+        "dayanch96",
+        "lightweight",
+        "music",
+        "tweak",
+        "youtube",
+        "ytmusicultimate"
       ],
       "developer": "dayanch96",
       "bundleId": "com.google.ios.youtubemusic",
@@ -283,6 +383,16 @@
       "tags": [
         "music"
       ],
+      "keywords": [
+        "2012",
+        "extra",
+        "mark02",
+        "maxmusic",
+        "music",
+        "tweaks",
+        "with",
+        "ytmusicultimate"
+      ],
       "developer": "Mark02-2012",
       "bundleId": "com.google.ios.youtubemusic",
       "icon": "assets/MaxMusic.webp",
@@ -308,6 +418,15 @@
       "category": "utilities",
       "tags": [
         "utilities"
+      ],
+      "keywords": [
+        "for",
+        "ios",
+        "machines",
+        "team",
+        "utilities",
+        "utm",
+        "virtual"
       ],
       "developer": "UTM Team",
       "bundleId": "com.utmapp.UTM",
@@ -335,6 +454,19 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "ads",
+        "and",
+        "downloads",
+        "ghost",
+        "ikarwan",
+        "inkillerplus",
+        "instagram",
+        "mode",
+        "no",
+        "social",
+        "with"
+      ],
       "developer": "iKarwan",
       "bundleId": "com.burbn.instagram",
       "icon": "assets/Instagram.webp",
@@ -360,6 +492,19 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "ads",
+        "and",
+        "downloads",
+        "ikarwan",
+        "no",
+        "region",
+        "social",
+        "switch",
+        "tiktok",
+        "ttkillerplus",
+        "with"
       ],
       "developer": "iKarwan",
       "bundleId": "com.zhiliaoapp.musically",
@@ -387,6 +532,16 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "cafe",
+        "client",
+        "lo",
+        "open",
+        "reddit",
+        "social",
+        "source",
+        "winston"
+      ],
       "developer": "lo.cafe",
       "bundleId": "lo.cafe.winston",
       "icon": "assets/Winston.webp",
@@ -412,6 +567,17 @@
       "category": "networking",
       "tags": [
         "networking"
+      ],
+      "keywords": [
+        "built",
+        "client",
+        "in",
+        "itorrent",
+        "networking",
+        "player",
+        "torrent",
+        "with",
+        "xitrix"
       ],
       "developer": "XITRIX",
       "bundleId": "com.xitrix.iTorrent2",
@@ -439,6 +605,17 @@
       "tags": [
         "developer-tools"
       ],
+      "keywords": [
+        "and",
+        "debugger",
+        "developer",
+        "device",
+        "enabler",
+        "jit",
+        "on",
+        "stikdebug",
+        "tools"
+      ],
       "developer": "StikDebug",
       "bundleId": "com.stik.stikdebug",
       "icon": "assets/StikDebug.webp",
@@ -464,6 +641,20 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "ads",
+        "and",
+        "bandarhl",
+        "bhtwitter",
+        "chronological",
+        "downloads",
+        "no",
+        "social",
+        "the",
+        "timeline",
+        "twitter",
+        "with"
       ],
       "developer": "BandarHL",
       "bundleId": "com.atebits.Tweetie2",
@@ -491,6 +682,18 @@
       "tags": [
         "utilities"
       ],
+      "keywords": [
+        "actually",
+        "apps",
+        "installing",
+        "ios",
+        "livecontainer",
+        "run",
+        "team",
+        "them",
+        "utilities",
+        "without"
+      ],
       "developer": "LiveContainer Team",
       "bundleId": "com.kdt.livecontainer",
       "icon": "assets/LiveContainer.webp",
@@ -515,6 +718,18 @@
       "description": "Feather is a free on-device iOS and iPadOS application manager built with UIKit. Import your own developer or enterprise certificate to sign and install IPAs directly from the device, add AltStore-compatible repositories to browse and update apps, keep a library of signed and imported apps, and tweak bundle identifiers, display names, icons and injected dylibs per app - no computer or AltServer required.",
       "category": "utilities",
       "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "and",
+        "app",
+        "device",
+        "feather",
+        "installer",
+        "manager",
+        "on",
+        "samara",
+        "signer",
         "utilities"
       ],
       "developer": "Samara",
@@ -543,6 +758,18 @@
       "tags": [
         "utilities"
       ],
+      "keywords": [
+        "altstore",
+        "apps",
+        "computer",
+        "fork",
+        "refreshes",
+        "sidestore",
+        "team",
+        "that",
+        "utilities",
+        "without"
+      ],
       "developer": "SideStore Team",
       "bundleId": "com.SideStore.SideStore",
       "icon": "assets/SideStore.webp",
@@ -568,6 +795,17 @@
       "category": "other",
       "tags": [
         "other"
+      ],
+      "keywords": [
+        "aidoku",
+        "and",
+        "free",
+        "manga",
+        "open",
+        "other",
+        "reader",
+        "skitty",
+        "source"
       ],
       "developer": "Skitty",
       "bundleId": "app.aidoku.Aidoku",
@@ -595,6 +833,16 @@
       "tags": [
         "games"
       ],
+      "keywords": [
+        "emu",
+        "emulator",
+        "game",
+        "games",
+        "multi",
+        "provenance",
+        "retro",
+        "system"
+      ],
       "developer": "Provenance Emu",
       "bundleId": "org.provenance-emu.provenance",
       "icon": "assets/Provenance.webp",
@@ -620,6 +868,18 @@
       "category": "games",
       "tags": [
         "games"
+      ],
+      "keywords": [
+        "all",
+        "by",
+        "delta",
+        "emulator",
+        "games",
+        "in",
+        "one",
+        "retro",
+        "riley",
+        "testut"
       ],
       "developer": "Riley Testut",
       "bundleId": "com.rileytestut.Delta",
@@ -647,6 +907,18 @@
       "tags": [
         "games"
       ],
+      "keywords": [
+        "emulator",
+        "fast",
+        "games",
+        "henrik",
+        "playstation",
+        "portable",
+        "ppsspp",
+        "psp",
+        "rd",
+        "rydg"
+      ],
       "developer": "Henrik Rydgård",
       "bundleId": "org.ppsspp.ppsspp",
       "icon": "assets/PPSSPP.webp",
@@ -672,6 +944,15 @@
       "category": "photo-video",
       "tags": [
         "photo-video"
+      ],
+      "keywords": [
+        "native",
+        "oriented",
+        "photo",
+        "player",
+        "privacy",
+        "video",
+        "yattee"
       ],
       "developer": "Yattee",
       "bundleId": "stream.yattee.app",
@@ -699,6 +980,18 @@
       "tags": [
         "photo-video"
       ],
+      "keywords": [
+        "client",
+        "for",
+        "fredrikburmester",
+        "ios",
+        "jellyfin",
+        "open",
+        "photo",
+        "source",
+        "streamyfin",
+        "video"
+      ],
       "developer": "fredrikburmester",
       "bundleId": "com.fredrikburmester.streamyfin",
       "icon": "assets/Streamyfin.webp",
@@ -724,6 +1017,15 @@
       "category": "music",
       "tags": [
         "music"
+      ],
+      "keywords": [
+        "client",
+        "krtirtho",
+        "music",
+        "open",
+        "source",
+        "spotify",
+        "spotube"
       ],
       "developer": "KRTirtho",
       "bundleId": "oss.krtirtho.spotube.stable",
@@ -751,6 +1053,16 @@
       "tags": [
         "music"
       ],
+      "keywords": [
+        "anultravioletaurora",
+        "for",
+        "ios",
+        "jellify",
+        "jellyfin",
+        "music",
+        "native",
+        "player"
+      ],
       "developer": "anultravioletaurora",
       "bundleId": "com.cosmonautical.jellify",
       "icon": "assets/Jellify.webp",
@@ -776,6 +1088,17 @@
       "category": "utilities",
       "tags": [
         "utilities"
+      ],
+      "keywords": [
+        "and",
+        "bitcoin",
+        "custodial",
+        "lightning",
+        "ln",
+        "self",
+        "utilities",
+        "wallet",
+        "zeus"
       ],
       "developer": "Zeus LN",
       "bundleId": "com.zeusln.zeus",
@@ -803,6 +1126,16 @@
       "tags": [
         "utilities"
       ],
+      "keywords": [
+        "bitcoin",
+        "bluewallet",
+        "for",
+        "ios",
+        "open",
+        "source",
+        "utilities",
+        "wallet"
+      ],
       "developer": "BlueWallet",
       "bundleId": "io.bluewallet.bluewallet",
       "icon": "assets/BlueWallet.webp",
@@ -829,6 +1162,17 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "aeharding",
+        "beautiful",
+        "client",
+        "for",
+        "lemmy",
+        "open",
+        "social",
+        "source",
+        "voyager"
+      ],
       "developer": "aeharding",
       "bundleId": "app.vger.voyager",
       "icon": "assets/Voyager.webp",
@@ -853,6 +1197,16 @@
       "description": "Saber is a free and open-source handwritten notes app built with Flutter. Write with your finger or Apple Pencil as if on paper, organize notes into folders, keep them private with encryption, and sync across devices using its optional Nextcloud-based sync — no vendor lock-in.",
       "category": "utilities",
       "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "adil",
+        "handwritten",
+        "hanney",
+        "notes",
+        "open",
+        "saber",
+        "source",
         "utilities"
       ],
       "developer": "Adil Hanney",
@@ -881,6 +1235,17 @@
       "tags": [
         "utilities"
       ],
+      "keywords": [
+        "ai",
+        "anx",
+        "anxcye",
+        "book",
+        "open",
+        "reader",
+        "source",
+        "utilities",
+        "with"
+      ],
       "developer": "Anxcye",
       "bundleId": "com.anxcye.anxReader",
       "icon": "assets/AnxReader.webp",
@@ -906,6 +1271,20 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "apollo",
+        "beloved",
+        "by",
+        "christian",
+        "client",
+        "continued",
+        "contributors",
+        "reborn",
+        "reddit",
+        "selig",
+        "social",
+        "the"
       ],
       "developer": "Christian Selig (& Apollo-Reborn contributors)",
       "bundleId": "com.christianselig.Apollo",
@@ -933,6 +1312,17 @@
       "tags": [
         "games"
       ],
+      "keywords": [
+        "and",
+        "dolphinios",
+        "emulator",
+        "for",
+        "gamecube",
+        "games",
+        "ios",
+        "oatmealdome",
+        "wii"
+      ],
       "developer": "OatmealDome",
       "bundleId": "me.oatmealdome.DolphiniOS-njb",
       "icon": "assets/DolphiniOS.webp",
@@ -959,6 +1349,22 @@
       "tags": [
         "developer-tools"
       ],
+      "keywords": [
+        "and",
+        "contributors",
+        "developer",
+        "dubois",
+        "emulation",
+        "ios",
+        "ish",
+        "linux",
+        "on",
+        "shell",
+        "theodore",
+        "tools",
+        "via",
+        "x86"
+      ],
       "developer": "Theodore Dubois and contributors",
       "bundleId": "app.ish.iSH",
       "icon": "assets/iSH.webp",
@@ -983,6 +1389,17 @@
       "description": "qBitControl is a native qBittorrent remote control app for iPhone and iPad. Manage your torrents from anywhere: add, pause, resume and recheck torrents, browse files and set priorities, configure speed and seeding limits, use custom HTTP headers and self-signed certificates, and track RSS feeds — all against your own qBittorrent WebUI.",
       "category": "utilities",
       "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "128",
+        "control",
+        "for",
+        "ios",
+        "michael",
+        "qbitcontrol",
+        "qbittorrent",
+        "remote",
         "utilities"
       ],
       "developer": "Michael-128",
@@ -1011,6 +1428,16 @@
       "tags": [
         "utilities"
       ],
+      "keywords": [
+        "client",
+        "modern",
+        "qbitconnect",
+        "qbittorrent",
+        "rajnish",
+        "remote",
+        "sharma",
+        "utilities"
+      ],
       "developer": "Rajnish Sharma",
       "bundleId": "com.bluematter.qbitconnect",
       "icon": "assets/qBitConnect.webp",
@@ -1036,6 +1463,19 @@
       "category": "games",
       "tags": [
         "games"
+      ],
+      "keywords": [
+        "engine",
+        "games",
+        "heroes",
+        "iii",
+        "magic",
+        "might",
+        "of",
+        "open",
+        "source",
+        "team",
+        "vcmi"
       ],
       "developer": "VCMI Team",
       "bundleId": "eu.vcmi.vcmiclient",
@@ -1063,6 +1503,18 @@
       "tags": [
         "games"
       ],
+      "keywords": [
+        "arcade",
+        "contributors",
+        "emulator",
+        "for",
+        "games",
+        "ios",
+        "machine",
+        "mame4ios",
+        "multi",
+        "yoshisuga"
+      ],
       "developer": "Yoshisuga & MAME4iOS Contributors",
       "bundleId": "com.example.mame4ios",
       "icon": "assets/MAME4iOS.webp",
@@ -1087,6 +1539,16 @@
       "description": "qBitController is a free and open-source qBittorrent remote client built with Kotlin Multiplatform and Compose. Control your qBittorrent WebUI from iPhone or iPad: add torrents by URL or file, pause/resume and recheck, browse file lists and set priorities, and manage categories and tags with a clean Material-style interface.",
       "category": "utilities",
       "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "bartuzen",
+        "cross",
+        "kotlin",
+        "platform",
+        "qbitcontroller",
+        "qbittorrent",
+        "remote",
         "utilities"
       ],
       "developer": "Bartuzen",
@@ -1115,6 +1577,17 @@
       "tags": [
         "games"
       ],
+      "keywords": [
+        "early",
+        "emulator",
+        "for",
+        "games",
+        "ios",
+        "macintosh",
+        "mini",
+        "vmac",
+        "zydeco"
+      ],
       "developer": "zydeco",
       "bundleId": "net.namedfork.minivmac",
       "icon": "assets/MiniVMac.webp",
@@ -1140,6 +1613,17 @@
       "category": "games",
       "tags": [
         "games"
+      ],
+      "keywords": [
+        "emulator",
+        "famicom",
+        "for",
+        "games",
+        "ios",
+        "modern",
+        "nes",
+        "stikemu",
+        "stiknes"
       ],
       "developer": "StikEMU",
       "bundleId": "com.stik.StikNES",
@@ -1167,6 +1651,22 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "ad",
+        "app",
+        "blocker",
+        "by",
+        "dayanch96",
+        "for",
+        "gunnerkidbt",
+        "ios",
+        "on",
+        "original",
+        "social",
+        "the",
+        "twitch",
+        "twitchadblock"
+      ],
       "developer": "gunnerkidBT (original by dayanch96)",
       "bundleId": "tv.twitch",
       "icon": "assets/TAB.webp",
@@ -1192,6 +1692,18 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "and",
+        "contributors",
+        "fixes",
+        "modified",
+        "neofreebird",
+        "qol",
+        "reverts",
+        "social",
+        "twitter",
+        "with"
       ],
       "developer": "NeoFreeBird contributors",
       "bundleId": "com.atebits.Tweetie2",
@@ -1219,6 +1731,17 @@
       "tags": [
         "utilities"
       ],
+      "keywords": [
+        "client",
+        "cogwheel0",
+        "conduit",
+        "for",
+        "native",
+        "ollama",
+        "open",
+        "utilities",
+        "webui"
+      ],
       "developer": "cogwheel0",
       "bundleId": "app.cogwheel.conduit",
       "icon": "assets/Conduit.webp",
@@ -1244,6 +1767,16 @@
       "category": "photo-video",
       "tags": [
         "photo-video"
+      ],
+      "keywords": [
+        "cross",
+        "donutware",
+        "fladder",
+        "frontend",
+        "jellyfin",
+        "photo",
+        "platform",
+        "video"
       ],
       "developer": "DonutWare",
       "bundleId": "nl.jknaapen.fladder",
@@ -1271,6 +1804,17 @@
       "tags": [
         "other"
       ],
+      "keywords": [
+        "anime",
+        "anymex",
+        "manga",
+        "novels",
+        "open",
+        "other",
+        "ryanyuuki",
+        "source",
+        "tracking"
+      ],
       "developer": "RyanYuuki",
       "bundleId": "com.ryan.anymex",
       "icon": "assets/AnymeX.webp",
@@ -1296,6 +1840,18 @@
       "category": "photo-video",
       "tags": [
         "photo-video"
+      ],
+      "keywords": [
+        "app",
+        "cranci",
+        "for",
+        "ios",
+        "media",
+        "modular",
+        "photo",
+        "sora",
+        "streaming",
+        "video"
       ],
       "developer": "cranci",
       "bundleId": "me.cranci.sulfur",
@@ -1323,6 +1879,21 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "and",
+        "client",
+        "discord",
+        "fixes",
+        "ipa",
+        "mod",
+        "qol",
+        "raincord",
+        "raintweak",
+        "social",
+        "themes",
+        "vault",
+        "with"
+      ],
       "developer": "raincord & IPA Vault",
       "bundleId": "com.hammerandchisel.discord",
       "icon": "assets/Discord.webp",
@@ -1348,6 +1919,20 @@
       "category": "photo-video",
       "tags": [
         "photo-video"
+      ],
+      "keywords": [
+        "dayanch96",
+        "enhancer",
+        "for",
+        "infuse",
+        "ipa",
+        "photo",
+        "player",
+        "plus",
+        "the",
+        "tweak",
+        "vault",
+        "video"
       ],
       "developer": "dayanch96 & IPA Vault",
       "bundleId": "com.firecore.infuse",
@@ -1375,6 +1960,18 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "by",
+        "clean",
+        "dayanch96",
+        "facebook",
+        "glow",
+        "ipa",
+        "powerful",
+        "social",
+        "tweak",
+        "vault"
+      ],
       "developer": "dayanch96 & IPA Vault",
       "bundleId": "com.facebook.Facebook.glow",
       "icon": "assets/Facebook.webp",
@@ -1400,6 +1997,17 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "fork",
+        "ipa",
+        "open",
+        "social",
+        "source",
+        "supercharged",
+        "swiftgram",
+        "telegram",
+        "vault"
       ],
       "developer": "Swiftgram & IPA Vault",
       "bundleId": "app.swiftgram.ios",
@@ -1427,6 +2035,18 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "ipa",
+        "m1ronx1412",
+        "mxgram",
+        "official",
+        "social",
+        "telegram",
+        "the",
+        "tweak",
+        "vault",
+        "with"
+      ],
       "developer": "m1ronx1412 & IPA Vault",
       "bundleId": "ph.telegra.Telegraph",
       "icon": "assets/Telegram.webp",
@@ -1452,6 +2072,17 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "7md",
+        "build",
+        "by",
+        "facebook",
+        "ipa",
+        "iqface",
+        "social",
+        "tweak",
+        "vault"
       ],
       "developer": "7MD & IPA Vault",
       "bundleId": "com.facebook.Facebook",
@@ -1479,6 +2110,19 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "by",
+        "faroukbmiled",
+        "for",
+        "instagram",
+        "ipa",
+        "power",
+        "ryukgram",
+        "social",
+        "tweak",
+        "users",
+        "vault"
+      ],
       "developer": "faroukbmiled & IPA Vault",
       "bundleId": "com.burbn.instagram",
       "icon": "assets/Instagram.webp",
@@ -1504,6 +2148,19 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "back",
+        "bring",
+        "efibalogh",
+        "instagram",
+        "ipa",
+        "social",
+        "spark",
+        "sparkle",
+        "the",
+        "to",
+        "vault"
       ],
       "developer": "efibalogh & IPA Vault",
       "bundleId": "com.burbn.instagram.sparkle",
@@ -1531,6 +2188,18 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "content",
+        "feed",
+        "filter",
+        "from",
+        "level3tjg",
+        "reddit",
+        "redditfilter",
+        "social",
+        "unwanted",
+        "your"
+      ],
       "developer": "level3tjg",
       "bundleId": "com.atebits.Tweetie2",
       "icon": "assets/Reddit.webp",
@@ -1556,6 +2225,21 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "ad",
+        "and",
+        "build",
+        "cielogic",
+        "go",
+        "ipa",
+        "nexasc",
+        "removal",
+        "social",
+        "soundcloud",
+        "unlock",
+        "unofficial",
+        "vault"
       ],
       "developer": "cielogic & IPA Vault",
       "bundleId": "com.soundcloud.TouchApp",
@@ -1583,6 +2267,19 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "build",
+        "by",
+        "dvntms",
+        "facebook",
+        "flow",
+        "ipa",
+        "messenger",
+        "social",
+        "tweak",
+        "unofficial",
+        "vault"
+      ],
       "developer": "dvntms & IPA Vault",
       "bundleId": "com.facebook.Messenger.flow",
       "icon": "assets/Messenger.webp",
@@ -1608,6 +2305,19 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "build",
+        "by",
+        "dens0r",
+        "ipa",
+        "lucaspedrosa",
+        "messenger",
+        "msgplusx",
+        "social",
+        "tweak",
+        "unofficial",
+        "vault"
       ],
       "developer": "Dens0r & IPA Vault & lucaspedrosa",
       "bundleId": "com.facebook.Messenger",
@@ -1635,6 +2345,18 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "build",
+        "enhancement",
+        "ipa",
+        "social",
+        "swiftleopard",
+        "threads",
+        "threadsaver",
+        "tweak",
+        "unofficial",
+        "vault"
+      ],
       "developer": "swiftleopard & IPA Vault",
       "bundleId": "com.burbn.barcelona",
       "icon": "assets/Threads.webp",
@@ -1660,6 +2382,18 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "build",
+        "ime",
+        "ipa",
+        "m1ronx1412",
+        "messenger",
+        "mxgram",
+        "social",
+        "tweaked",
+        "unofficial",
+        "vault"
       ],
       "developer": "m1ronx1412 & IPA Vault",
       "bundleId": "com.olcorporation.olai",
@@ -1687,6 +2421,18 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "build",
+        "client",
+        "ipa",
+        "m1ronx1412",
+        "mxgram",
+        "social",
+        "turrit",
+        "tweaked",
+        "unofficial",
+        "vault"
+      ],
       "developer": "m1ronx1412 & IPA Vault",
       "bundleId": "com.seastar.turrit",
       "icon": "assets/Turrit.webp",
@@ -1712,6 +2458,19 @@
       "category": "social",
       "tags": [
         "social"
+      ],
+      "keywords": [
+        "410",
+        "app",
+        "axryuk",
+        "built",
+        "ig",
+        "instagram",
+        "on",
+        "ryuk",
+        "ryukgram",
+        "social",
+        "the"
       ],
       "developer": "Ryuk (@axryuk)",
       "bundleId": "com.burbn.instagram",
@@ -1739,6 +2498,22 @@
       "tags": [
         "social"
       ],
+      "keywords": [
+        "axryuk",
+        "bundle",
+        "by",
+        "id",
+        "instagram",
+        "its",
+        "next",
+        "own",
+        "ryuk",
+        "ryukgram",
+        "side",
+        "social",
+        "to",
+        "under"
+      ],
       "developer": "Ryuk (@axryuk)",
       "bundleId": "com.ryuk.ryukgram",
       "icon": "assets/Instagram.webp",
@@ -1763,6 +2538,19 @@
       "description": "Dopamine is the modern semi-untethered, rootless jailbreak for iOS and iPadOS 15.0 through 26.0.1. It bootstraps a Procursus environment (Sileo and friends) on supported arm64e and arm64 devices, keeps passcode, Touch ID/Face ID and Apple Pay working, and hides its filesystem changes well enough to stay through a userspace reboot. This entry tracks the official Dopamine app the developer publishes on GitHub Releases.",
       "category": "utilities",
       "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "15",
+        "26",
+        "contributors",
+        "dopamine",
+        "for",
+        "ios",
+        "jailbreak",
+        "opa334",
+        "semi",
+        "untethered",
         "utilities"
       ],
       "developer": "opa334 & contributors",
@@ -1791,6 +2579,18 @@
       "tags": [
         "utilities"
       ],
+      "keywords": [
+        "apps",
+        "dopamine",
+        "fork",
+        "from",
+        "hides",
+        "jailbreak",
+        "roothide",
+        "that",
+        "the",
+        "utilities"
+      ],
       "developer": "roothide",
       "bundleId": "com.opa334.Dopamine-roothide",
       "icon": "assets/DopamineRootHide.webp",
@@ -1815,6 +2615,15 @@
       "description": "Bootstrap is roothide's semi-jailbreak bootstrap for iOS and iPadOS 15.0 through 17.0 on A8 to A17 Pro and M1/M2 devices. Instead of jailbreaking the whole system it builds a hidden environment that boots Sileo, Zebra and rootless tweaks while App Store apps stay untouched — so banking, streaming and game apps that refuse to run on a jailbroken device keep working. Apps are patched one at a time when you want tweaks inside them, and the whole environment can be removed again.",
       "category": "utilities",
       "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "15",
+        "17",
+        "bootstrap",
+        "for",
+        "ios",
+        "roothide",
         "utilities"
       ],
       "developer": "roothide",
@@ -1843,6 +2652,17 @@
       "tags": [
         "utilities"
       ],
+      "keywords": [
+        "16",
+        "17",
+        "for",
+        "ios",
+        "jailbreak",
+        "mineek",
+        "semi",
+        "serotonin",
+        "utilities"
+      ],
       "developer": "mineek",
       "bundleId": "pisshill.usprebooter",
       "icon": "assets/Serotonin.webp",
@@ -1867,6 +2687,19 @@
       "description": "Taurine is the Odyssey Team's semi-untethered jailbreak for iOS 14.0 – 14.3 on A9 to A14 devices using the cicuta_virosa and amfid exploits. It installs Sileo and a libhooker-based tweak environment, keeps passcode support, and boots into a userspace jailbreak from the app. Useful for keeping vintage firmwares usable on older iPhones and iPads.",
       "category": "utilities",
       "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "14",
+        "coolstar",
+        "for",
+        "ios",
+        "jailbreak",
+        "odyssey",
+        "semi",
+        "taurine",
+        "team",
+        "untethered",
         "utilities"
       ],
       "developer": "Odyssey Team (coolstar)",
@@ -1895,6 +2728,18 @@
       "tags": [
         "utilities"
       ],
+      "keywords": [
+        "13",
+        "coolstar",
+        "for",
+        "ios",
+        "jailbreak",
+        "odyssey",
+        "semi",
+        "team",
+        "untethered",
+        "utilities"
+      ],
       "developer": "Odyssey Team (coolstar)",
       "bundleId": "org.coolstar.odyssey",
       "icon": "assets/Odyssey.webp",
@@ -1919,6 +2764,16 @@
       "description": "unc0ver is the long-running semi-untethered jailbreak by pwn20wnd for iOS 11.0 through 14.8.1. Its final 5.2.0 release covers the widest firmware range of the classic jailbreaks, installing Cydia or Sileo depending on the chosen bootstrap, and it stays useful for the 32-bit era iPhones and iPads that are otherwise stuck without a package manager.",
       "category": "utilities",
       "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "11",
+        "14",
+        "for",
+        "ios",
+        "jailbreak",
+        "pwn20wnd",
+        "unc0ver",
         "utilities"
       ],
       "developer": "pwn20wnd",
@@ -1947,6 +2802,18 @@
       "tags": [
         "games"
       ],
+      "keywords": [
+        "accuracy",
+        "and",
+        "boy",
+        "color",
+        "emulator",
+        "game",
+        "games",
+        "high",
+        "liji32",
+        "sameboy"
+      ],
       "developer": "LIJI32",
       "bundleId": "com.github.liji32.sameboy.ios",
       "icon": "assets/SameBoy.webp",
@@ -1971,6 +2838,19 @@
       "description": "Gopeed is a modern, open-source download manager written in Go with a Flutter interface. On iOS it handles HTTP/HTTPS, BitTorrent and magnet links, splits downloads into multiple connections, resumes interrupted transfers, and lets you queue and manage everything with upload and download limits. It is the maintained alternative to iTorrent when you want torrents plus ordinary file downloads in the same app.",
       "category": "networking",
       "tags": [
+        "networking"
+      ],
+      "keywords": [
+        "and",
+        "bittorrent",
+        "download",
+        "for",
+        "gopeed",
+        "gopeedlab",
+        "http",
+        "manager",
+        "modern",
+        "more",
         "networking"
       ],
       "developer": "GopeedLab",
@@ -1999,6 +2879,19 @@
       "tags": [
         "games"
       ],
+      "keywords": [
+        "all",
+        "aoshuang",
+        "emu",
+        "emulator",
+        "game",
+        "games",
+        "in",
+        "lee",
+        "manic",
+        "one",
+        "retro"
+      ],
       "developer": "Aoshuang Lee (Manic EMU)",
       "bundleId": "com.aoshuang.manicemu",
       "icon": "assets/ManicEMU.webp",
@@ -2024,6 +2917,19 @@
       "category": "games",
       "tags": [
         "games"
+      ],
+      "keywords": [
+        "360",
+        "and",
+        "emulation",
+        "for",
+        "games",
+        "ipad",
+        "iphone",
+        "jp",
+        "project",
+        "xbox",
+        "xenios"
       ],
       "developer": "XeniOS Project (xenios-jp)",
       "bundleId": "com.xenios",

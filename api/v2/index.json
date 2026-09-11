@@ -12,6 +12,12 @@
       "stable": true
     },
     {
+      "path": "/api/v2/apps/{id}.json",
+      "description": "One normalized app record (schemas/app.schema.json) plus versions and health. One document per catalog id.",
+      "format": "json",
+      "stable": true
+    },
+    {
       "path": "/api/v2/sources.json",
       "description": "Source index with health and reputation.",
       "format": "json",
@@ -20,6 +26,30 @@
     {
       "path": "/api/v2/trending.json",
       "description": "Trending, rising, and recently updated apps.",
+      "format": "json",
+      "stable": true
+    },
+    {
+      "path": "/api/v2/featured.json",
+      "description": "Featured apps (slim records) for storefront shelves.",
+      "format": "json",
+      "stable": true
+    },
+    {
+      "path": "/api/v2/categories.json",
+      "description": "Categories with counts and member slugs.",
+      "format": "json",
+      "stable": true
+    },
+    {
+      "path": "/api/v2/updates.json",
+      "description": "Sequenced release timeline for incremental (delta) sync. Persist sequenceHigh and apply newer sequences only.",
+      "format": "json",
+      "stable": true
+    },
+    {
+      "path": "/api/v2/manifest.json",
+      "description": "Feed manifest: schemaVersion, feedVersion, minimumClientVersion and per-document SHA-256 checksums.",
       "format": "json",
       "stable": true
     },

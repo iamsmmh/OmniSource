@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "anymex",
+    "name": "AnymeX",
+    "developer": "RyanYuuki",
+    "subtitle": "Anime, manga, novels & tracking, open source",
+    "bundleIdentifier": "com.ryan.anymex",
+    "version": "3.1.7",
+    "versionDate": "2026-08-30",
+    "description": "AnymeX is an open-source, cross-platform app for streaming anime and reading manga, manhwa, light and web novels, with deep integration for tracking services (AniList, MyAnimeList, Simkl and Kitsu). Extensions keep sources working, and your library, progress and statistics stay in sync across services.",
+    "shortDescription": "Anime, manga, novels & tracking, open source",
+    "category": "other",
+    "tags": [
+      "other"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/AnymeX.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa",
+    "size": 39662751,
+    "source": "RyanYuuki/AnymeX",
+    "sourceURL": "https://github.com/RyanYuuki/AnymeX",
+    "checksum": "72d546ba01fb33c82c80fa02332bd9aecc80fd16157d39ac4af901e28f554ece",
+    "checksumPublished": false,
+    "minOSVersion": "12.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/anymex/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/anymex.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-08-30"
+    }
+  },
+  "newest": {
+    "version": "3.1.7",
+    "date": "2026-08-30",
+    "downloadURL": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa",
+    "size": 39662751,
+    "sha256": "72d546ba01fb33c82c80fa02332bd9aecc80fd16157d39ac4af901e28f554ece"
+  },
+  "versions": [
+    {
+      "version": "3.1.7",
+      "date": "2026-08-30",
+      "downloadURL": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa",
+      "size": 39662751,
+      "sha256": "72d546ba01fb33c82c80fa02332bd9aecc80fd16157d39ac4af901e28f554ece"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

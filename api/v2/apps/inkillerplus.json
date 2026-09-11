@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "inkillerplus",
+    "name": "iNKillerPlus",
+    "developer": "iKarwan",
+    "subtitle": "Instagram with downloads, ghost mode and no ads",
+    "bundleIdentifier": "com.burbn.instagram",
+    "version": "446.0.0",
+    "versionDate": "2026-09-09",
+    "description": "iNKillerPlus is a modified Instagram by iKarwan. Download posts, reels, stories and DM media, save profile pictures, block promoted posts and ads, toggle seen/unseen for stories and DMs, ghost typing, hide tabs, copy comments and bios, confirmation prompts before liking or calling, and a profile analyzer. iPadOS supported.",
+    "shortDescription": "Instagram with downloads, ghost mode and no ads",
+    "category": "social",
+    "tags": [
+      "social"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+    "screenshots": [
+      "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/1.PNG",
+      "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/2.PNG",
+      "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/4.PNG"
+    ],
+    "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa",
+    "size": 247800840,
+    "source": "iKarwan (repo.ikghd.me)",
+    "sourceURL": "https://github.com/iKarwan/iNKillerPlus",
+    "checksum": null,
+    "checksumPublished": false,
+    "minOSVersion": "16.3",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/inkillerplus/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/inkillerplus.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 200",
+      "updatedAt": "2026-09-09"
+    }
+  },
+  "newest": {
+    "version": "446.0.0",
+    "date": "2026-09-09",
+    "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa",
+    "size": 247800840,
+    "sha256": null
+  },
+  "versions": [
+    {
+      "version": "446.0.0",
+      "date": "2026-09-09",
+      "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa",
+      "size": 247800840,
+      "sha256": null
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "altstore"
+  }
+}

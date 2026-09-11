@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "ryukgram-ig410",
+    "name": "RyukGram (IG 410)",
+    "developer": "Ryuk (@axryuk)",
+    "subtitle": "RyukGram built on the Instagram 410 app",
+    "bundleIdentifier": "com.burbn.instagram",
+    "version": "410.1.0",
+    "versionDate": "2026-07-25",
+    "description": "RyukGram (IG 410) is the same enhanced Instagram client ported to the Instagram 410.1.0 app for iOS 15 and later. It carries the full RyukGram feature set — follow-request tracking, read receipts, story-viewer insights, deleted-message logs, device-ID masking, media downloading, custom chat themes and a configurable tab bar — on top of the older Instagram base, which is what you want if the current Instagram builds are unstable on your device or you deliberately stay on an older app version.",
+    "shortDescription": "RyukGram built on the Instagram 410 app",
+    "category": "social",
+    "tags": [
+      "social"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+    "screenshots": [],
+    "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+    "size": 267074754,
+    "source": "Ryuk / RyukSign (source.ryuksign.com)",
+    "sourceURL": "https://store.ryuksign.com/",
+    "checksum": "5e365019d7bf29b3a4ee3064b45f86876c878c52c960daa370b2092328871f9d",
+    "checksumPublished": false,
+    "minOSVersion": "15.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/ryukgram-ig410/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/ryukgram-ig410.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 200",
+      "updatedAt": "2026-07-25"
+    }
+  },
+  "newest": {
+    "version": "410.1.0",
+    "date": "2026-07-25",
+    "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+    "size": 267074754,
+    "sha256": "5e365019d7bf29b3a4ee3064b45f86876c878c52c960daa370b2092328871f9d"
+  },
+  "versions": [
+    {
+      "version": "410.1.0",
+      "date": "2026-07-25",
+      "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
+      "size": 267074754,
+      "sha256": "5e365019d7bf29b3a4ee3064b45f86876c878c52c960daa370b2092328871f9d"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "altstore"
+  }
+}

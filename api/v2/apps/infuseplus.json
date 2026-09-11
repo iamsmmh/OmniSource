@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "infuseplus",
+    "name": "Infuse Plus",
+    "developer": "dayanch96 & IPA Vault",
+    "subtitle": "Enhancer tweak for the Infuse video player",
+    "bundleIdentifier": "com.firecore.infuse",
+    "version": "8.5.3",
+    "versionDate": "2026-09-01",
+    "description": "Infuse Plus (by Dayanch96) enhances the Infuse video player with extra appearance options, app icon choices and playback quality-of-life improvements on top of the stock Infuse 8 app. The build follows the latest Infuse release.",
+    "shortDescription": "Enhancer tweak for the Infuse video player",
+    "category": "photo-video",
+    "tags": [
+      "photo-video"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Infuse.webp",
+    "screenshots": [],
+    "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+    "size": 100074036,
+    "source": "927tx/IPA-Vault",
+    "sourceURL": "https://github.com/dayanch96/InfusePlus",
+    "checksum": null,
+    "checksumPublished": false,
+    "minOSVersion": "18.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/infuseplus/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/infuseplus.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 200",
+      "updatedAt": "2026-09-01"
+    }
+  },
+  "newest": {
+    "version": "8.5.3",
+    "date": "2026-09-01",
+    "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+    "size": 100074036,
+    "sha256": null
+  },
+  "versions": [
+    {
+      "version": "8.5.3",
+      "date": "2026-09-01",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+      "size": 100074036,
+      "sha256": null
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "altstore"
+  }
+}

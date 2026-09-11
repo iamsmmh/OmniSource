@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "itorrent",
+    "name": "iTorrent",
+    "developer": "XITRIX",
+    "subtitle": "Torrent client with a built-in player",
+    "bundleIdentifier": "com.xitrix.iTorrent2",
+    "version": "2.2.0",
+    "versionDate": "2026-07-19",
+    "description": "iTorrent is a fully featured open-source torrent client for iOS. It keeps downloading in the background, integrates with the Files app, supports magnet links, sequential download and per-file selection, and ships a built-in VLC-based player with Picture in Picture, audio and subtitle tracks and playback speed control.",
+    "shortDescription": "Torrent client with a built-in player",
+    "category": "networking",
+    "tags": [
+      "networking"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/iTorrent.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
+    "size": 24288935,
+    "source": "XITRIX/iTorrent",
+    "sourceURL": "https://github.com/XITRIX/iTorrent",
+    "checksum": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7",
+    "checksumPublished": false,
+    "minOSVersion": "16.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/itorrent/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/itorrent.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-07-19"
+    }
+  },
+  "newest": {
+    "version": "2.2.0",
+    "date": "2026-07-19",
+    "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
+    "size": 24288935,
+    "sha256": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7"
+  },
+  "versions": [
+    {
+      "version": "2.2.0",
+      "date": "2026-07-19",
+      "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
+      "size": 24288935,
+      "sha256": "50457a89299bd62836ca1eb1ae0a5adbe097454c58ce67605bbe6710c37193d7"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

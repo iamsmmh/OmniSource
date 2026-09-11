@@ -543,6 +543,7 @@ GENERATED_DOCS = (
     "integrity_report.json",
     "dead_apps.json",
     "collections.json",
+    "asset-manifest.json",
 )
 CHECK_KEYS = ("metadata", "urls", "fileAvailable", "hashVerified")
 
@@ -847,6 +848,143 @@ def validate_doc_shape(
                 if unknown:
                     report.error(f"feeds/collections.json: collection '{slug}' references unknown apps {unknown}")
 
+    if name == "asset-manifest.json":
+        icons = doc.get("icons")
+        if not isinstance(icons, dict) or not icons:
+            report.error("feeds/asset-manifest.json: icons must be a non-empty object")
+        else:
+            for slug, entry in icons.items():
+                if not isinstance(entry, dict):
+                    report.error(f"feeds/asset-manifest.json: icons.{slug} must be an object")
+                    continue
+                if not entry.get("url"):
+                    report.error(f"feeds/asset-manifest.json: icons.{slug} has no url")
+                if not entry.get("fallback"):
+                    report.error(f"feeds/asset-manifest.json: icons.{slug} has no fallback")
+                if entry.get("exists") is False:
+                    report.error(f"feeds/asset-manifest.json: icons.{slug} points at a missing file")
+        placeholders = doc.get("placeholders")
+        if not isinstance(placeholders, dict):
+            report.error("feeds/asset-manifest.json: placeholders must be an object")
+        else:
+            for key in ("app.svg", "category.svg", "banner.svg"):
+                entry = placeholders.get(key)
+                if not isinstance(entry, dict) or entry.get("exists") is not True:
+                    report.error(f"feeds/asset-manifest.json: placeholder '{key}' is missing")
+        if not isinstance(doc.get("missing"), list):
+            report.error("feeds/asset-manifest.json: missing must be a list")
+        elif doc["missing"]:
+            report.error(f"feeds/asset-manifest.json: {len(doc['missing'])} icon(s) missing: {doc['missing'][:5]}")
+        totals = doc.get("totals", {})
+        if not isinstance(totals, dict) or totals.get("iconsMissing"):
+            report.error("feeds/asset-manifest.json: totals.iconsMissing must be 0")
+
+
+# ---------------------------------------------------------------------------
+# OmniStore Pro API contract (feeds/api/v2/) + normalized app records
+# ---------------------------------------------------------------------------
+FEED_VERSION_RE = re.compile(r"^[0-9a-f]{12}$")
+
+
+def validate_api_v2(catalog: Any, paths: Paths) -> Report:
+    """Validate the generated v2 contract: manifest, checksums, per-app docs."""
+    import hashlib
+
+    from omnisource.app_schema import validate_app_records
+
+    report = Report()
+    contract = paths.feeds / "api" / "v2"
+    manifest_path = contract / "manifest.json"
+    manifest = load_json(manifest_path, report, root=paths.root)
+    if manifest is None:
+        return report
+    if not isinstance(manifest, dict):
+        report.error("feeds/api/v2/manifest.json: root must be a JSON object")
+        return report
+    if manifest.get("schemaVersion") != 2:
+        report.error("feeds/api/v2/manifest.json: schemaVersion must be 2")
+    feed_version = str(manifest.get("feedVersion") or "")
+    if not FEED_VERSION_RE.match(feed_version):
+        report.error("feeds/api/v2/manifest.json: feedVersion must be 12 hex chars")
+    if not manifest.get("minimumClientVersion"):
+        report.error("feeds/api/v2/manifest.json: minimumClientVersion is required")
+    if not manifest.get("generatedAt"):
+        report.error("feeds/api/v2/manifest.json: missing generatedAt")
+
+    documents = manifest.get("documents")
+    if not isinstance(documents, list) or not documents:
+        report.error("feeds/api/v2/manifest.json: documents must be a non-empty list")
+    else:
+        for entry in documents:
+            if not isinstance(entry, dict):
+                report.error("feeds/api/v2/manifest.json: every documents[] entry must be an object")
+                continue
+            rel = str(entry.get("path") or "")
+            if not rel.startswith("/api/v2/"):
+                report.error(f"feeds/api/v2/manifest.json: unexpected document path '{rel}'")
+                continue
+            target = contract / rel[len("/api/v2/") :]
+            try:
+                payload = target.read_bytes()
+            except OSError:
+                report.error(f"feeds/api/v2/manifest.json: listed document missing: {rel}")
+                continue
+            digest = hashlib.sha256(payload).hexdigest()
+            if entry.get("sha256") != digest:
+                report.error(f"feeds/api/v2/manifest.json: checksum mismatch for {rel} - rebuild the contract")
+            if entry.get("bytes") != len(payload):
+                report.error(f"feeds/api/v2/manifest.json: byte size mismatch for {rel}")
+
+    for name in ("featured.json", "categories.json", "updates.json"):
+        doc = load_json(contract / name, report, root=paths.root)
+        if not isinstance(doc, dict):
+            continue
+        if doc.get("schemaVersion") != 2:
+            report.error(f"feeds/api/v2/{name}: schemaVersion must be 2")
+        if doc.get("feedVersion") != feed_version:
+            report.error(f"feeds/api/v2/{name}: feedVersion does not match the manifest")
+
+    slugs = _catalog_slugs(catalog) or set()
+    records: list[dict[str, Any]] = []
+    for slug in sorted(slugs):
+        doc = load_json(contract / "apps" / f"{slug}.json", report, root=paths.root)
+        if not isinstance(doc, dict):
+            continue
+        if doc.get("feedVersion") != feed_version:
+            report.error(f"feeds/api/v2/apps/{slug}.json: feedVersion does not match the manifest")
+        record = doc.get("app")
+        if not isinstance(record, dict):
+            report.error(f"feeds/api/v2/apps/{slug}.json: app record is missing")
+            continue
+        if str(record.get("id") or "") != slug:
+            report.error(f"feeds/api/v2/apps/{slug}.json: record id does not match the file name")
+        records.append(record)
+    if records:
+        report.extend(validate_app_records(records, catalog, prefix="api/v2/apps"))
+    return report
+
+
+def validate_published_app_records(catalog: Any, paths: Paths) -> Report:
+    """Validate the *published* master feed against the client contract."""
+    from omnisource.app_schema import (
+        record_from_feed_entry,
+        validate_app_records,
+    )
+
+    report = Report()
+    feed = load_json(paths.feeds / "apps.json", report, root=paths.root)
+    if not isinstance(feed, dict):
+        return report
+    apps = feed.get("apps")
+    if not isinstance(apps, list):
+        return report
+    slugs = _catalog_slugs(catalog) or set()
+    records = [record_from_feed_entry(entry) for entry in apps if isinstance(entry, dict)]
+    if len(records) != len(slugs):
+        report.warn(f"feeds/apps.json: {len(records)} published app(s) for {len(slugs)} catalog app(s)")
+    report.extend(validate_app_records(records, catalog, prefix="apps"))
+    return report
+
 
 # ---------------------------------------------------------------------------
 # Entry
@@ -897,6 +1035,8 @@ def validate_tree(paths: Paths) -> Report:
             report.extend(validate_feed(path, feed, root=paths.root))
 
     report.extend(validate_generated_docs(catalog, paths))
+    report.extend(validate_published_app_records(catalog, paths))
+    report.extend(validate_api_v2(catalog, paths))
     print(f"Validated catalog.json, {len(feed_paths)} AltStore feed(s) and the derived intelligence documents.")
     return report
 

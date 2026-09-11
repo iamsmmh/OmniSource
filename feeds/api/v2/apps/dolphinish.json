@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "dolphinish",
+    "name": "DolphiniOS",
+    "developer": "OatmealDome",
+    "subtitle": "GameCube and Wii emulator for iOS",
+    "bundleIdentifier": "me.oatmealdome.DolphiniOS-njb",
+    "version": "5.0.0",
+    "versionDate": "2026-06-20",
+    "description": "DolphiniOS is the Dolphin GameCube and Wii emulator ported to iOS by OatmealDome, requiring no jailbreak. It runs the full Dolphin core with Metal rendering via MoltenVK, supports controllers, save states and high-resolution rendering, and plays your legally dumped GameCube and Wii games.",
+    "shortDescription": "GameCube and Wii emulator for iOS",
+    "category": "games",
+    "tags": [
+      "games"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/DolphiniOS.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
+    "size": 17963367,
+    "source": "OatmealDome/dolphin-ios",
+    "sourceURL": "https://github.com/OatmealDome/dolphin-ios",
+    "checksum": "8460c194f0b24ab3a15594e800e1533cb14e90e0aa51527b3609c7ac0f9745c2",
+    "checksumPublished": false,
+    "minOSVersion": "14.0",
+    "status": "beta",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/dolphinish/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/dolphinish.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-06-20"
+    }
+  },
+  "newest": {
+    "version": "5.0.0",
+    "date": "2026-06-20",
+    "downloadURL": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
+    "size": 17963367,
+    "sha256": "8460c194f0b24ab3a15594e800e1533cb14e90e0aa51527b3609c7ac0f9745c2"
+  },
+  "versions": [
+    {
+      "version": "5.0.0",
+      "date": "2026-06-20",
+      "downloadURL": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
+      "size": 17963367,
+      "sha256": "8460c194f0b24ab3a15594e800e1533cb14e90e0aa51527b3609c7ac0f9745c2"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

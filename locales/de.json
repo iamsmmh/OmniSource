@@ -1,1 +1,122 @@
-{"nav":{"home":"Startseite","compare":"Vergleichen","status":"Status","analytics":"Analysen","install":"Installieren","favorites":"Favoriten","collections":"Sammlungen","search":"Suchen","discover":"Entdecken","sources":"Quellen"},"common":{"language":"Sprache","loading":"Laden…","noResults":"Keine Ergebnisse","close":"Schließen","menu":"Menü","offline":"Du bist offline"},"pages":{"translationStatus":"Übersetzungsstatus","coverage":"Übersetzungsabdeckung"}}
+{
+  "nav": {
+    "apps": "Apps",
+    "catalog": "Katalog",
+    "discover": "Entdecken",
+    "trending": "Trends",
+    "compare": "Vergleichen",
+    "graph": "Graph",
+    "health": "Status",
+    "install": "Installieren",
+    "more": "Mehr",
+    "whatsNew": "Neuigkeiten",
+    "analytics": "Analysen",
+    "favorites": "Favoriten",
+    "collections": "Sammlungen",
+    "search": "Suchen",
+    "rss": "RSS-Feed",
+    "github": "GitHub ↗",
+    "language": "Sprache"
+  },
+  "common": {
+    "close": "Schließen",
+    "today": "heute",
+    "yesterday": "gestern",
+    "daysAgo": "vor ${count} T.",
+    "monthsAgo": "vor ${count} Mon.",
+    "yearsAgo": "vor ${count} J."
+  },
+  "hero": {
+    "titleA": "Der App Store für",
+    "titleB": "Sideloading auf iOS.",
+    "copy": "Ein sorgfältig kuratierter iOS-Katalog, alle sechs Stunden aus offiziellen Releases synchronisiert — geprüft, überwacht und immer installierbar.",
+    "browse": "Katalog durchsuchen",
+    "howTo": "Installationsanleitung",
+    "searchPlaceholder": "Apps, Bundle-IDs, Entwickler suchen…",
+    "sourceLabel": "QUELL-URL",
+    "copySource": "Kopieren",
+    "sourceHint": "Füge die Quelle in deinem Client hinzu"
+  },
+  "stats": {
+    "apps": "Apps gesamt",
+    "sources": "Upstream-Quellen",
+    "online": "Downloads online",
+    "verified": "Geprüfte Apps"
+  },
+  "search": {
+    "history": "Zuletzt",
+    "popular": "Beliebt",
+    "categories": "Kategorien",
+    "clear": "Löschen",
+    "recentSearch": "letzte Suche",
+    "noMatches": "Keine Treffer für „${q}“.",
+    "noResultsHint": "Versuch es mit Name, Bundle-ID, Entwickler oder Tag."
+  },
+  "catalog": {
+    "kicker": "DER KATALOG",
+    "titleA": "Apps",
+    "titleB": "entdecken",
+    "lead": "Offizielle Releases und klar gekennzeichnete Community-Builds, mit Herkunft, Kompatibilität und Status.",
+    "filterPlaceholder": "Apps, Funktionen, Entwickler, Bundle-IDs filtern…",
+    "anyOS": "Beliebiges iOS",
+    "worksOnIOS": "Läuft ab iOS ${level}",
+    "sortFeatured": "Empfohlene zuerst",
+    "sortUpdated": "Zuletzt aktualisiert",
+    "sortDownloads": "Meiste Downloads",
+    "sortVersion": "Neueste Version",
+    "sortName": "Name A–Z",
+    "sortSize": "Kleinste zuerst",
+    "clearFilters": "Filter zurücksetzen",
+    "emptyTitle": "Keine Apps gefunden",
+    "emptyText": "Versuch ein anderes Stichwort oder entferne deine Filter.",
+    "emptyReset": "Suche zurücksetzen",
+    "results": "${count} Apps angezeigt",
+    "resultsCompact": "${count} Apps aufgelistet",
+    "resultsOne": "1 App angezeigt",
+    "resultsOneCompact": "1 App aufgelistet",
+    "loading": "Katalog wird geladen…"
+  },
+  "dialog": {
+    "scanToAdd": "SCANNEN ZUM HINZUFÜGEN",
+    "copyUrl": "URL kopieren",
+    "qrAria": "QR-Code für die Quell-URL anzeigen",
+    "qrAlt": "QR-Code für die Source-URL"
+  },
+  "footer": {
+    "tagline": "Kuratiertes iOS-Sideloading, automatisch aktuell. Eine Quelle für jeden großen Client.",
+    "clients": "Clients",
+    "browse": "Stöbern",
+    "platform": "Plattform",
+    "project": "Projekt",
+    "allApps": "Alle Apps",
+    "releaseTimeline": "Release-Verlauf",
+    "compareApps": "Apps vergleichen",
+    "relationGraph": "Beziehungsgraph",
+    "sourceHealth": "Quell-Status",
+    "installationCenter": "Installationszentrum",
+    "apiEndpoints": "API-Endpunkte",
+    "combinedRSS": "Kombinierter RSS",
+    "repository": "Repository",
+    "contributing": "Mitmachen",
+    "security": "Sicherheit",
+    "catalogJson": "Katalog-JSON",
+    "finePrint": "Unabhängiges Community-Projekt. Apps und Marken gehören ihren jeweiligen Eigentümern. Sideloaded Apps müssen je nach Client alle 7 oder 90 Tage neu signiert werden.",
+    "contributors": "OmniSource-Mitwirkende"
+  },
+  "pages": {
+    "translationStatus": "Übersetzungsstatus",
+    "coverage": "Übersetzungsabdeckung"
+  },
+  "a11y": {
+    "skipLink": "Zum Katalog springen",
+    "search": "Suchen",
+    "theme": "Farbthema wechseln",
+    "view": "Ansicht wechseln",
+    "install": "OmniSource installieren",
+    "filterCatalog": "Katalog filtern",
+    "sortApps": "Apps sortieren"
+  },
+  "site": {
+    "title": "${site} — Der App Store für Sideloading auf iOS"
+  }
+}

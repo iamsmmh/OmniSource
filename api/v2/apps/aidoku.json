@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "aidoku",
+    "name": "Aidoku",
+    "developer": "Skitty",
+    "subtitle": "Free and open-source manga reader",
+    "bundleIdentifier": "app.aidoku.Aidoku",
+    "version": "0.9",
+    "versionDate": "2026-09-03",
+    "description": "Aidoku is a free and open-source manga reader for iOS and iPadOS with no ads and no tracking. Content comes from community-maintained source lists that you add yourself, so nothing is bundled with the app. It downloads chapters for offline reading, syncs library, history and settings through iCloud, supports external trackers, and offers paged, vertical and continuous reading modes with customisable layouts.",
+    "shortDescription": "Free and open-source manga reader",
+    "category": "other",
+    "tags": [
+      "other"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Aidoku.webp",
+    "screenshots": [
+      "https://aidoku.app/images/library.png",
+      "https://aidoku.app/images/source.png",
+      "https://aidoku.app/images/reader.png"
+    ],
+    "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa",
+    "size": 14731108,
+    "source": "Aidoku/Aidoku",
+    "sourceURL": "https://github.com/Aidoku/Aidoku",
+    "checksum": "86405861d3a0c90876a90aa1ca668bee54f4555a56249fede4444be5382833e8",
+    "checksumPublished": false,
+    "minOSVersion": "15.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/aidoku/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/aidoku.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-09-03"
+    }
+  },
+  "newest": {
+    "version": "0.9",
+    "date": "2026-09-03",
+    "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa",
+    "size": 14731108,
+    "sha256": "86405861d3a0c90876a90aa1ca668bee54f4555a56249fede4444be5382833e8"
+  },
+  "versions": [
+    {
+      "version": "0.9",
+      "date": "2026-09-03",
+      "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa",
+      "size": 14731108,
+      "sha256": "86405861d3a0c90876a90aa1ca668bee54f4555a56249fede4444be5382833e8"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}
