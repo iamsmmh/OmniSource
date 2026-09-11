@@ -17,7 +17,9 @@
   'use strict';
   var RTL = { ar: 1, fa: 1, ur: 1 };
   var supported = ['en', 'es', 'fr', 'de', 'ar', 'bn', 'zh', 'ja'];
-  var base = location.hostname.indexOf('github.io') !== -1 ? '/OmniSource' : '';
+  // Suffix match (not substring): a host like evil-github.io.example.com
+  // must not be mistaken for GitHub Pages.
+  var base = /\.github\.io$/.test(location.hostname) ? '/OmniSource' : '';
   var cache = {};
   var lang = 'en';
   var loading = {};
