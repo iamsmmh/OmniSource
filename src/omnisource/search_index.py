@@ -1,8 +1,9 @@
 """Search index builder.
 
 The website search runs entirely on the client; the only thing the build
-pipeline needs to publish is a precomputed search index that Fuse.js (or
-any other fuzzy-search library) can consume without any extra normalization.
+pipeline needs to publish is a precomputed search index that the builtin
+fuzzy-search engines (``js/core.js``, ``src/js/search-engine.js``,
+``website/search/``) consume without any extra normalization.
 
 The index carries the fields the user can search on:
 
@@ -11,29 +12,51 @@ The index carries the fields the user can search on:
 * ``description``       — long description
 * ``category``          — primary category
 * ``tags``              — declared tags
+* ``keywords``          — normalized keyword tokens (name + tags + category)
 * ``developer``         — author name
 * ``bundleId``          — bundle identifier
 * ``verificationLevel`` — community / verified / manual / unverified
-* ``clientCompatibility`` — list of clients that can install the app
+* ``clientCompatibility`` — per-app list of clients that can install the app
 """
 
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from omnisource.discovery import newest_version
-from omnisource.domain import Catalog, today
+from omnisource.domain import App, Catalog, today
 
-SEARCH_INDEX_VERSION = 1
+SEARCH_INDEX_VERSION = 2
+
+_TOKEN_RE = re.compile(r"[^a-z0-9]+")
 
 
-def _clients_for(app: Any, catalog: Catalog) -> list[str]:
-    out: list[str] = []
-    for client in catalog.clients:
-        cid = str(client.get("id") or "")
-        if cid:
-            out.append(cid)
-    return out
+def _clients_for(app: App, catalog: Catalog) -> list[str]:
+    """Clients that can install this app, from its compatibility block.
+
+    Falls back to the feed-wide client list only when the app declares no
+    compatibility block at all (legacy rows); an explicitly empty client
+    list stays empty instead of silently claiming universal support.
+    """
+    compatibility = app.raw.get("compatibility")
+    if isinstance(compatibility, dict) and isinstance(compatibility.get("clients"), list):
+        return [str(cid) for cid in compatibility["clients"] if cid]
+    return [str(client.get("id") or "") for client in catalog.clients if client.get("id")]
+
+
+def _keywords_for(app: App) -> list[str]:
+    """Normalized keyword tokens: name + tags + category + developer.
+
+    Lowercased alphanumeric tokens, deduplicated, capped at 24 so the
+    index stays small while fuzzy search still matches on partial words.
+    """
+    seen: dict[str, None] = {}
+    for source in (app.name, app.developer, app.category, *app.tags, app.short_description):
+        for token in _TOKEN_RE.split(str(source or "").casefold()):
+            if len(token) >= 2 and token not in seen and len(seen) < 24:
+                seen[token] = None
+    return sorted(seen)
 
 
 def build_search_index(
@@ -62,6 +85,7 @@ def build_search_index(
                 "description": app.description,
                 "category": app.category,
                 "tags": list(app.tags),
+                "keywords": _keywords_for(app),
                 "developer": app.developer,
                 "bundleId": app.bundle_id,
                 "icon": f"assets/{app.icon}" if app.icon else "",
@@ -78,13 +102,14 @@ def build_search_index(
         "count": len(docs),
         "fuse": {
             "keys": [
-                {"name": "name", "weight": 0.35},
-                {"name": "shortDescription", "weight": 0.15},
-                {"name": "description", "weight": 0.10},
-                {"name": "category", "weight": 0.08},
-                {"name": "tags", "weight": 0.10},
-                {"name": "developer", "weight": 0.10},
-                {"name": "bundleId", "weight": 0.12},
+                {"name": "name", "weight": 0.32},
+                {"name": "shortDescription", "weight": 0.13},
+                {"name": "description", "weight": 0.09},
+                {"name": "category", "weight": 0.07},
+                {"name": "tags", "weight": 0.09},
+                {"name": "keywords", "weight": 0.10},
+                {"name": "developer", "weight": 0.09},
+                {"name": "bundleId", "weight": 0.11},
             ],
             "threshold": 0.38,
             "ignoreLocation": True,

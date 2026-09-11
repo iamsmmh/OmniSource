@@ -74,8 +74,11 @@ SITE_FILES = (
     "status",
     "discover",
     "graph",
+    "translation-status",
     "js",
     "src",
+    "locales",
+    "website",
 )
 
 # Assets that must ship even though the site HTML does not reference them:
@@ -108,6 +111,7 @@ API_DOCUMENTS = {
     "dead_apps.json": "Dead/stale/approaching-dead classification (90/180/365 day thresholds).",
     "collections.json": "Curated collections (YouTube, Music, Emulators, Utilities, Productivity).",
     "translation-status.json": "Per-locale translation coverage (%) against the canonical English locale.",
+    "asset-manifest.json": "Icon health, placeholder fallbacks and per-category asset maps.",
 }
 
 # V2 API mapping: canonical file in feeds/ -> published name under api/v2/.
@@ -125,6 +129,12 @@ API_V2_ALIASES = {
 }
 
 API_V2_STANDALONE = {"index.json", "graph.json"}
+
+# OmniStore Pro contract documents generated into feeds/api/v2/ on every
+# build (see omnisource.api_v2) and mirrored byte-identical to api/v2/.
+# Per-app records live under api/v2/apps/<id>.json (one per catalog slug).
+API_V2_CONTRACT = ("manifest.json", "featured.json", "categories.json", "updates.json")
+API_V2_APPS_ROUTE = "apps"
 
 # Extensionless API routes (Phase 16): clients that prefer clean URLs get a
 # byte-identical twin of the JSON document. Mapping of route name -> document.
@@ -177,6 +187,21 @@ def _api_manifest(base_url: str, generated_at: str) -> dict[str, Any]:
                 "format": "json",
             }
         )
+    for name in API_V2_CONTRACT:
+        endpoints.append(
+            {
+                "path": f"/api/v2/{name}",
+                "description": f"OmniStore Pro contract document (schema v2): {name}.",
+                "format": "json",
+            }
+        )
+    endpoints.append(
+        {
+            "path": "/api/v2/apps/{id}.json",
+            "description": "OmniStore Pro per-app record (schema v2), one document per catalog id.",
+            "format": "json",
+        }
+    )
     return {
         "name": "OmniSource API",
         "version": "1",
@@ -453,16 +478,33 @@ def _publish_api_mirror(root: Path, api_dir: Path, *, brotli: bool) -> dict[str,
     # V2 API (api/v2/): stable, versioned surface for OmniStore clients.
     v2_dir = api_dir / "v2"
     v2_dir.mkdir(parents=True, exist_ok=True)
+    v2_written: set[str] = set()
+
+    def publish_v2(destination: Path, source: Path) -> None:
+        nonlocal documents, gz_files, br_files
+        if _copy_if_different(source, destination):
+            changed.append(destination)
+        v2_written.add(destination.name)
+        documents += 1
+        if _write_gzip(destination) is not None:
+            v2_written.add(destination.name + ".gz")
+            gz_files += 1
+        if brotli and _write_brotli(destination) is not None:
+            v2_written.add(destination.name + ".br")
+            br_files += 1
+
     for v2_name, feeds_name in API_V2_ALIASES.items():
         source = root / "feeds" / feeds_name
         if source.exists():
-            publish(v2_dir / v2_name, source)
+            publish_v2(v2_dir / v2_name, source)
     # Copy the api/v2/index.json manifest that ships in the repository.
     v2_index_src = root / "api" / "v2" / "index.json"
     if v2_index_src.exists():
-        publish(v2_dir / "index.json", v2_index_src)
+        publish_v2(v2_dir / "index.json", v2_index_src)
     # graph.json is assembled on demand from discovery + related + sources.
-    _publish_v2_graph(root, v2_dir, written)
+    _publish_v2_graph(root, v2_dir, v2_written)
+    # OmniStore Pro contract: generated feeds/api/v2/* mirrored verbatim.
+    v2_apps_written = _publish_v2_contract(root, v2_dir, publish_v2, v2_written)
 
     manifest_path = api_dir / "index.json"
     manifest = _api_manifest(_base_url_from_catalog(root), date.today().isoformat())
@@ -483,8 +525,45 @@ def _publish_api_mirror(root: Path, api_dir: Path, *, brotli: bool) -> dict[str,
         "gz_files": gz_files,
         "br_files": br_files,
         "published": written,
+        "v2_published": v2_written,
+        "v2_apps_published": v2_apps_written,
         "changed": changed,
     }
+
+
+def _publish_v2_contract(
+    root: Path,
+    v2_dir: Path,
+    publish_v2: Any,
+    v2_written: set[str],
+) -> set[str]:
+    """Mirror the generated OmniStore Pro contract into ``api/v2/``.
+
+    Top-level documents land next to the existing aliases; per-app records
+    land under ``apps/<id>.json``. Returns the owned names inside ``apps/``
+    so the repository-root publisher can prune records of removed apps.
+    """
+    contract_src = root / "feeds" / "api" / "v2"
+    for name in API_V2_CONTRACT:
+        source = contract_src / name
+        if source.exists():
+            publish_v2(v2_dir / name, source)
+    apps_src = contract_src / API_V2_APPS_ROUTE
+    apps_dir = v2_dir / API_V2_APPS_ROUTE
+    apps_written: set[str] = set()
+    if apps_src.is_dir():
+        apps_dir.mkdir(parents=True, exist_ok=True)
+        for source in sorted(apps_src.glob("*.json")):
+            target = apps_dir / source.name
+            # Track per-app twins separately: v2_written holds names relative
+            # to v2_dir (for pruning it), while apps_written is relative to
+            # v2_dir/apps/ (for pruning that).
+            seen = set(v2_written)
+            publish_v2(target, source)
+            for owned in v2_written - seen:
+                apps_written.add(owned)
+                v2_written.discard(owned)
+    return apps_written
 
 
 # ---------------------------------------------------------------------------
@@ -722,6 +801,10 @@ def publish_repo_artifacts(
     api = _publish_api_mirror(root, root / "api", brotli=False)
     written.extend(api["changed"])
     removed.extend(_prune_mirror(root / "api", set(api["published"])))
+    # The v2 directory keeps the hand-maintained index.json plus everything
+    # the mirror just published; per-app records of removed apps are pruned.
+    removed.extend(_prune_mirror(root / "api" / "v2", set(api["v2_published"]) | {"index.json"}))
+    removed.extend(_prune_mirror(root / "api" / "v2" / "apps", set(api["v2_apps_published"])))
     keep = {*ROOT_GENERATED_FILES, *ROOT_HAND_MAINTAINED}
     keep.update(f"{name}.gz" for name in ROOT_GENERATED_FILES if name.endswith(".json"))
     removed.extend(_prune_mirror(root, keep))

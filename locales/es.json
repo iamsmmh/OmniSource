@@ -1,1 +1,122 @@
-{"nav":{"home":"Inicio","compare":"Comparar","status":"Estado","analytics":"Analíticas","install":"Instalar","favorites":"Favoritos","collections":"Colecciones","search":"Buscar","discover":"Descubrir","sources":"Fuentes"},"common":{"language":"Idioma","loading":"Cargando…","noResults":"No se encontraron resultados","close":"Cerrar","menu":"Menú","offline":"Estás sin conexión"},"pages":{"translationStatus":"Estado de traducciones","coverage":"Cobertura de traducción"}}
+{
+  "nav": {
+    "apps": "Apps",
+    "catalog": "Catálogo",
+    "discover": "Descubrir",
+    "trending": "Tendencias",
+    "compare": "Comparar",
+    "graph": "Grafo",
+    "health": "Estado",
+    "install": "Instalar",
+    "more": "Más",
+    "whatsNew": "Novedades",
+    "analytics": "Analíticas",
+    "favorites": "Favoritos",
+    "collections": "Colecciones",
+    "search": "Buscar",
+    "rss": "Fuente RSS",
+    "github": "GitHub ↗",
+    "language": "Idioma"
+  },
+  "common": {
+    "close": "Cerrar",
+    "today": "hoy",
+    "yesterday": "ayer",
+    "daysAgo": "hace ${count} d",
+    "monthsAgo": "hace ${count} meses",
+    "yearsAgo": "hace ${count} a"
+  },
+  "hero": {
+    "titleA": "La tienda de apps para",
+    "titleB": "iOS con sideloading.",
+    "copy": "Un catálogo de iOS cuidadosamente seleccionado, sincronizado con versiones oficiales cada seis horas — verificado, supervisado y siempre instalable.",
+    "browse": "Explorar el catálogo",
+    "howTo": "Cómo instalar",
+    "searchPlaceholder": "Busca apps, bundle ID, desarrolladores…",
+    "sourceLabel": "URL DE LA FUENTE",
+    "copySource": "Copiar",
+    "sourceHint": "Añade la fuente en tu cliente"
+  },
+  "stats": {
+    "apps": "Apps totales",
+    "sources": "Fuentes upstream",
+    "online": "Descargas en línea",
+    "verified": "Apps verificadas"
+  },
+  "search": {
+    "history": "Recientes",
+    "popular": "Populares",
+    "categories": "Categorías",
+    "clear": "Borrar",
+    "recentSearch": "búsqueda reciente",
+    "noMatches": "Sin resultados para «${q}».",
+    "noResultsHint": "Prueba con un nombre, bundle ID, desarrollador o etiqueta."
+  },
+  "catalog": {
+    "kicker": "EL CATÁLOGO",
+    "titleA": "Descubre",
+    "titleB": "apps",
+    "lead": "Versiones oficiales y compilaciones comunitarias claramente etiquetadas, con procedencia, compatibilidad y estado.",
+    "filterPlaceholder": "Filtra apps, funciones, desarrolladores, bundle ID…",
+    "anyOS": "Cualquier iOS",
+    "worksOnIOS": "Funciona en iOS ${level}+",
+    "sortFeatured": "Destacadas primero",
+    "sortUpdated": "Actualizadas recientemente",
+    "sortDownloads": "Más descargadas",
+    "sortVersion": "Versión más reciente",
+    "sortName": "Nombre A–Z",
+    "sortSize": "Más pequeñas primero",
+    "clearFilters": "Borrar filtros",
+    "emptyTitle": "Sin apps",
+    "emptyText": "Prueba con otra palabra o quita los filtros.",
+    "emptyReset": "Restablecer búsqueda",
+    "results": "${count} apps mostradas",
+    "resultsCompact": "${count} apps listadas",
+    "resultsOne": "1 app mostrada",
+    "resultsOneCompact": "1 app listada",
+    "loading": "Cargando el catálogo…"
+  },
+  "dialog": {
+    "scanToAdd": "ESCANEA PARA AÑADIR",
+    "copyUrl": "Copiar URL",
+    "qrAria": "Mostrar el código QR de la URL de la fuente",
+    "qrAlt": "Código QR de la URL de la fuente"
+  },
+  "footer": {
+    "tagline": "Sideloading de iOS seleccionado, siempre actualizado. Una fuente para cada cliente importante.",
+    "clients": "Clientes",
+    "browse": "Explorar",
+    "platform": "Plataforma",
+    "project": "Proyecto",
+    "allApps": "Todas las apps",
+    "releaseTimeline": "Historial de versiones",
+    "compareApps": "Comparar apps",
+    "relationGraph": "Grafo de relaciones",
+    "sourceHealth": "Estado de la fuente",
+    "installationCenter": "Centro de instalación",
+    "apiEndpoints": "Endpoints de la API",
+    "combinedRSS": "RSS combinado",
+    "repository": "Repositorio",
+    "contributing": "Cómo contribuir",
+    "security": "Seguridad",
+    "catalogJson": "Catálogo JSON",
+    "finePrint": "Proyecto comunitario independiente. Las apps y marcas pertenecen a sus respectivos propietarios. Las apps con sideloading pueden requerir un nuevo firmado cada 7 o 90 días según tu cliente.",
+    "contributors": "colaboradores de OmniSource"
+  },
+  "pages": {
+    "translationStatus": "Estado de traducciones",
+    "coverage": "Cobertura de traducción"
+  },
+  "a11y": {
+    "skipLink": "Saltar al catálogo",
+    "search": "Buscar",
+    "theme": "Cambiar el tema de color",
+    "view": "Cambiar vista",
+    "install": "Instalar OmniSource",
+    "filterCatalog": "Filtrar el catálogo",
+    "sortApps": "Ordenar apps"
+  },
+  "site": {
+    "title": "${site} — La tienda de apps para iOS con sideloading"
+  }
+}

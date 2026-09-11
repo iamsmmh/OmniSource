@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "ppsspp",
+    "name": "PPSSPP",
+    "developer": "Henrik Rydgård",
+    "subtitle": "Fast PlayStation Portable (PSP) emulator",
+    "bundleIdentifier": "org.ppsspp.ppsspp",
+    "version": "1.20.4",
+    "versionDate": "2026-05-16",
+    "description": "PPSSPP is a fast and portable PlayStation Portable (PSP) emulator developed by Henrik Rydgård. It runs PSP games at up to double native resolution with anisotropic filtering and shader effects, supports save states anywhere, hardware controllers, and needs no BIOS file thanks to its high-level emulation approach.",
+    "shortDescription": "Fast PlayStation Portable (PSP) emulator",
+    "category": "games",
+    "tags": [
+      "games"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/PPSSPP.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+    "size": 31124277,
+    "source": "hrydgard/ppsspp",
+    "sourceURL": "https://github.com/hrydgard/ppsspp",
+    "checksum": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51",
+    "checksumPublished": false,
+    "minOSVersion": "12.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/ppsspp/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/ppsspp.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-05-16"
+    }
+  },
+  "newest": {
+    "version": "1.20.4",
+    "date": "2026-05-16",
+    "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+    "size": 31124277,
+    "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51"
+  },
+  "versions": [
+    {
+      "version": "1.20.4",
+      "date": "2026-05-16",
+      "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
+      "size": 31124277,
+      "sha256": "822c7042311ff47710c9148c8edb5aab649cf85ce6ba96b9e8190feb91f45a51"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

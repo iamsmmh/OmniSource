@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "delta",
+    "name": "Delta",
+    "developer": "Riley Testut",
+    "subtitle": "All-in-one retro emulator by Riley Testut",
+    "bundleIdentifier": "com.rileytestut.Delta",
+    "version": "1.6",
+    "versionDate": "2024-07-11",
+    "description": "Delta is an all-in-one classic video game emulator for non-jailbroken iOS devices, developed by Riley Testut as the spiritual successor to GBA4iOS. It emulates the Nintendo systems (Game Boy Color, Game Boy Advance, Nintendo DS, Nintendo 64, SNES, NES) plus Sega Genesis and Game Gear, with save states and cheats, controller and Nintendo DS skin support, iCloud sync of saves, and full MFi/Bluetooth controller support.",
+    "shortDescription": "All-in-one retro emulator by Riley Testut",
+    "category": "games",
+    "tags": [
+      "games"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Delta.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
+    "size": 87734964,
+    "source": "RileyTestut/Delta",
+    "sourceURL": "https://github.com/RileyTestut/Delta",
+    "checksum": null,
+    "checksumPublished": false,
+    "minOSVersion": "14.0",
+    "status": "stable",
+    "featured": true,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/delta/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/delta.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2024-07-11"
+    }
+  },
+  "newest": {
+    "version": "1.6",
+    "date": "2024-07-11",
+    "downloadURL": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
+    "size": 87734964,
+    "sha256": null
+  },
+  "versions": [
+    {
+      "version": "1.6",
+      "date": "2024-07-11",
+      "downloadURL": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
+      "size": 87734964,
+      "sha256": null
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

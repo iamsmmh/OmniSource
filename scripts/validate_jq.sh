@@ -63,7 +63,7 @@ for f in feeds/*.json; do
   # (discovery, sources, verification, status, duplicates, analytics, trending,
   # related, reputation, download-intelligence, community, install,
   # search-index, compare, screenshots, integrity_report, dead_apps,
-  # collections, translation-status) are machine-readable datasets, not
+  # collections, translation-status, asset-manifest) are machine-readable datasets, not
   # AltStore v2 distribution feeds. Keep in sync with ALTSTORE_NON_FEED in
   # src/omnisource/constants.py (the standalone script keeps an explicit local
   # copy so it stays runnable without importing the package).
@@ -72,7 +72,7 @@ for f in feeds/*.json; do
   related.json | reputation.json | download-intelligence.json | community.json | \
   install.json | search-index.json | compare.json | screenshots.json | \
   integrity_report.json | dead_apps.json | collections.json | \
-  translation-status.json) continue ;;
+  translation-status.json | asset-manifest.json) continue ;;
     *) feeds+=("$f") ;;
   esac
 done

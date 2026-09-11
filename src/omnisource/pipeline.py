@@ -29,8 +29,10 @@ from pathlib import Path
 from typing import Any
 
 from omnisource.analytics import build_analytics_doc, remember_analytics_snapshot
+from omnisource.api_v2 import build_api_v2_documents
 from omnisource.app_pages import build_app_pages
-from omnisource.assets import DirectoryCache, inspect_catalog
+from omnisource.app_schema import build_app_records, validate_app_records
+from omnisource.assets import DirectoryCache, build_asset_manifest_doc, inspect_catalog
 from omnisource.collections import build_collection_pages, build_collections_doc
 from omnisource.community import build_community_doc
 from omnisource.compare import build_compare_doc
@@ -60,6 +62,7 @@ from omnisource.logutil import Group, log
 from omnisource.monitor import build_status_doc, remember_probe
 from omnisource.providers.failover import FailoverChain
 from omnisource.related import build_related_doc
+from omnisource.reports import write_reports
 from omnisource.reputation import build_reputation_doc
 from omnisource.screenshots import process_screenshots
 from omnisource.search_index import build_search_index
@@ -452,10 +455,26 @@ def stage_build(
     _annotate_staleness(health_doc, stale_after_days=container.settings.stale_after_days)
     documents[feeds_dir / "health.json"] = health_doc
 
-    # Website updates timeline (sanitized history + newest versions).
-    documents[feeds_dir / "updates.json"] = render_updates_doc(
-        catalog, state, limit=max(10, container.settings.max_update_history)
+    # Hard gate: the normalized client records must satisfy the centralized
+    # app schema before anything is published. A failing record means a
+    # broken upstream or a catalog bug — publishing it would ship a
+    # half-empty app to the website and OmniStore Pro clients.
+    app_records = build_app_records(catalog, state, health_doc)
+    rendered_slugs = {app.slug for app, _ in rendered}
+    schema_report = validate_app_records(
+        [record for record in app_records if record.get("id") in rendered_slugs],
+        catalog,
+        prefix="apps",
     )
+    for warning in schema_report.warnings:
+        log.warning("app-schema: %s", warning)
+    if schema_report.errors:
+        details = "; ".join(schema_report.errors[:8])
+        raise SyncError(f"{len(schema_report.errors)} app record(s) violate schemas/app.schema.json: {details}")
+
+    # Website updates timeline (sanitized history + newest versions).
+    updates_doc = render_updates_doc(catalog, state, limit=max(10, container.settings.max_update_history))
+    documents[feeds_dir / "updates.json"] = updates_doc
 
     # Dynamic badge documents
     badges = render_badge_docs(rendered, health_doc)
@@ -512,6 +531,9 @@ def stage_build(
     # Phase 10 curated collections (YouTube, Music, Emulators, Utilities,
     # Productivity) — static JSON plus generated pages in the site builder.
     collections_doc = build_collections_doc(catalog, state)
+    # Asset manifest: icon health + placeholder fallback map for the website
+    # AssetManager and the missing-assets report.
+    asset_manifest_doc = build_asset_manifest_doc(catalog, assets_dir=container.paths.assets, base_url=catalog.base_url)
     # Translation coverage against the canonical en locale. A pure function
     # of the committed locale files (locales/*.json); CI only cross-checks
     # the committed document (scripts/validate-translations.js) and never
@@ -552,10 +574,22 @@ def stage_build(
         ("integrity_report.json", integrity_doc),
         ("dead_apps.json", dead_apps_doc),
         ("collections.json", collections_doc),
+        ("asset-manifest.json", asset_manifest_doc),
     ):
         documents[feeds_dir / name] = doc
     if translation_doc is not None:
         documents[feeds_dir / "translation-status.json"] = translation_doc
+
+    # OmniStore Pro API contract (feeds/api/v2/): versioned endpoints +
+    # feed manifest with per-document checksums for incremental sync.
+    for rel_path, doc in build_api_v2_documents(
+        catalog,
+        state,
+        health_doc=health_doc,
+        verification_doc=verification_doc,
+        updates_doc=updates_doc,
+    ).items():
+        documents[feeds_dir / rel_path] = doc
 
     # Additional Shields.io-compatible badges for the README.
     documents[feeds_dir / "badge-sync.json"] = {
@@ -621,6 +655,7 @@ def stage_build(
         "Built %d AltStore feed(s) + apps.json + health.json + updates.json + badges + RSS + "
         "discovery/verification/status/duplicates/analytics + "
         "trending/related/reputation/download-intel/community/search-index/install/compare/screenshots + "
+        "asset-manifest/api-v2-contract + "
         "%d app page(s) (%d file(s) changed)",
         len(rendered),
         len(rendered),
@@ -821,6 +856,21 @@ def run(
 
     if stage_readme(container, catalog, health_doc, analytics_doc):
         changed.append(container.paths.readme)
+
+    # Monitoring ledger: per-build snapshot + rolling history. Written from
+    # the same deterministic inputs as the feeds, so a rebuild from
+    # committed state is a byte-level no-op (consecutive identical history
+    # rows are skipped).
+    with Group("Write monitoring reports"):
+        changed.extend(
+            write_reports(
+                root=container.paths.root,
+                feeds_dir=container.paths.feeds,
+                health_doc=health_doc,
+                analytics_doc=analytics_doc,
+                sync_report=report,
+            )
+        )
 
     # Publish the generated public URLs into the repository root. GitHub Pages
     # serves this repository in *branch* mode, so the live site is the tree

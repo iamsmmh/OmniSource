@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "fladder",
+    "name": "Fladder",
+    "developer": "DonutWare",
+    "subtitle": "Cross-platform Jellyfin frontend",
+    "bundleIdentifier": "nl.jknaapen.fladder",
+    "version": "0.11.1",
+    "versionDate": "2026-09-08",
+    "description": "Fladder is a free and open-source Jellyfin frontend built on Flutter, giving you a beautiful Netflix-style interface over your own media library on iPhone and iPad. Direct play and transcode support, offline viewing with sync, multi-server switching, and full library management — no server plugins required.",
+    "shortDescription": "Cross-platform Jellyfin frontend",
+    "category": "photo-video",
+    "tags": [
+      "photo-video"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Fladder.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa",
+    "size": 41137245,
+    "source": "DonutWare/Fladder",
+    "sourceURL": "https://github.com/DonutWare/Fladder",
+    "checksum": "e9538c2a3a7acc1d6d3d97ab69b6bddcf6bc5763dcd520139c8450ce8604fc3c",
+    "checksumPublished": false,
+    "minOSVersion": "14.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/fladder/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/fladder.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-09-08"
+    }
+  },
+  "newest": {
+    "version": "0.11.1",
+    "date": "2026-09-08",
+    "downloadURL": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa",
+    "size": 41137245,
+    "sha256": "e9538c2a3a7acc1d6d3d97ab69b6bddcf6bc5763dcd520139c8450ce8604fc3c"
+  },
+  "versions": [
+    {
+      "version": "0.11.1",
+      "date": "2026-09-08",
+      "downloadURL": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa",
+      "size": 41137245,
+      "sha256": "e9538c2a3a7acc1d6d3d97ab69b6bddcf6bc5763dcd520139c8450ce8604fc3c"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

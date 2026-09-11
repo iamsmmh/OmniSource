@@ -450,7 +450,7 @@
       // Client chips in the hero.
       var row = $('#clientButtons');
       if (row) {
-        row.innerHTML = '<span class="client-hint">Add the source in your client</span>' +
+        row.innerHTML = '<span class="client-hint">' + OS.esc(OS.t('hero.sourceHint', null, 'Add the source in your client')) + '</span>' +
           state.clients.map(function (client) {
             return clientButton(client, OS.ROOT.replace(/\/$/, '') + '/apps.json');
           }).join('');
@@ -715,8 +715,10 @@
       var osSelect = $('#osSelect');
       if (osSelect && osLevels.length) {
         var current = osSelect.value;
-        osSelect.innerHTML = '<option value="any">Any iOS</option>' +
-          osLevels.map(function (level) { return '<option value="' + level + '">Works on iOS ' + level + '+</option>'; }).join('');
+        osSelect.innerHTML = '<option value="any">' + OS.esc(OS.t('catalog.anyOS', null, 'Any iOS')) + '</option>' +
+          osLevels.map(function (level) {
+            return '<option value="' + level + '">' + OS.esc(OS.t('catalog.worksOnIOS', { level: level }, 'Works on iOS ${level}+')) + '</option>';
+          }).join('');
         osSelect.value = osLevels.indexOf(Number(current)) !== -1 ? String(current) : 'any';
       }
     },
@@ -806,8 +808,15 @@
       }
       var count = $('#resultCount');
       if (count) {
-        count.textContent = apps.length + ' ' + (apps.length === 1 ? 'app' : 'apps') +
-          (document.documentElement.dataset.view === 'compact' ? ' listed' : ' shown');
+        // i18n-keys: catalog.results, catalog.resultsOne, catalog.resultsCompact, catalog.resultsOneCompact
+        var compact = document.documentElement.dataset.view === 'compact';
+        var key = apps.length === 1
+          ? (compact ? 'catalog.resultsOneCompact' : 'catalog.resultsOne')
+          : (compact ? 'catalog.resultsCompact' : 'catalog.results');
+        var fallback = apps.length === 1
+          ? (compact ? '1 app listed' : '1 app shown')
+          : '${count} apps ' + (compact ? 'listed' : 'shown');
+        count.textContent = OS.t(key, { count: apps.length }, fallback);
       }
       var filtered = state.category !== 'all' || state.statusFilter !== 'all' || state.provenance !== 'all' || state.os !== 'any' || Boolean(state.query);
       var clearButton = $('#clearFilters');
@@ -1823,6 +1832,17 @@
     if (event.key === FAVORITES_KEY || event.key === FAVORITES_LEGACY_KEY) {
       syncFavoritesFromStorage();
     }
+  });
+
+  /* Re-render locale-dependent chrome when the language changes after boot
+     (static [data-i18n] markup is handled by OmniI18n itself). */
+  window.addEventListener('i18n:changed', function () {
+    try {
+      if (document.body.dataset.page !== 'home' || !state.apps.length) return;
+      Home.renderHero();
+      Home.renderFilters();
+      Home.filterAndRender();
+    } catch (e) { /* home renderers not ready on this page */ }
   });
 
   /* ------------------------------------------------------------------ boot */

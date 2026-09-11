@@ -20,6 +20,11 @@
       "format": "json"
     },
     {
+      "path": "/api/asset-manifest.json",
+      "description": "Icon health, placeholder fallbacks and per-category asset maps.",
+      "format": "json"
+    },
+    {
       "path": "/api/catalog",
       "description": "Extensionless alias of /api/discovery.json (Phase 16).",
       "format": "json"
@@ -147,6 +152,31 @@
     {
       "path": "/api/updates.json",
       "description": "Release timeline for the website.",
+      "format": "json"
+    },
+    {
+      "path": "/api/v2/apps/{id}.json",
+      "description": "OmniStore Pro per-app record (schema v2), one document per catalog id.",
+      "format": "json"
+    },
+    {
+      "path": "/api/v2/categories.json",
+      "description": "OmniStore Pro contract document (schema v2): categories.json.",
+      "format": "json"
+    },
+    {
+      "path": "/api/v2/featured.json",
+      "description": "OmniStore Pro contract document (schema v2): featured.json.",
+      "format": "json"
+    },
+    {
+      "path": "/api/v2/manifest.json",
+      "description": "OmniStore Pro contract document (schema v2): manifest.json.",
+      "format": "json"
+    },
+    {
+      "path": "/api/v2/updates.json",
+      "description": "OmniStore Pro contract document (schema v2): updates.json.",
       "format": "json"
     },
     {

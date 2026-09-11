@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "qbitcontroller",
+    "name": "qBitController",
+    "developer": "Bartuzen",
+    "subtitle": "Cross-platform qBittorrent remote (Kotlin)",
+    "bundleIdentifier": "dev.bartuzen.qbitcontroller",
+    "version": "2.2.1",
+    "versionDate": "2026-07-28",
+    "description": "qBitController is a free and open-source qBittorrent remote client built with Kotlin Multiplatform and Compose. Control your qBittorrent WebUI from iPhone or iPad: add torrents by URL or file, pause/resume and recheck, browse file lists and set priorities, and manage categories and tags with a clean Material-style interface.",
+    "shortDescription": "Cross-platform qBittorrent remote (Kotlin)",
+    "category": "utilities",
+    "tags": [
+      "utilities"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/qBitController.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/Bartuzen/qBitController/releases/download/v2.2.1/qbitcontroller-2.2.1-ios.ipa",
+    "size": 18243979,
+    "source": "Bartuzen/qBitController",
+    "sourceURL": "https://github.com/Bartuzen/qBitController",
+    "checksum": "1b4acd90d9fcf81ec093eaa7530cad1479f53ffd5ff2c2e0ad348462ae77a383",
+    "checksumPublished": false,
+    "minOSVersion": "14.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/qbitcontroller/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/qbitcontroller.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-07-28"
+    }
+  },
+  "newest": {
+    "version": "2.2.1",
+    "date": "2026-07-28",
+    "downloadURL": "https://github.com/Bartuzen/qBitController/releases/download/v2.2.1/qbitcontroller-2.2.1-ios.ipa",
+    "size": 18243979,
+    "sha256": "1b4acd90d9fcf81ec093eaa7530cad1479f53ffd5ff2c2e0ad348462ae77a383"
+  },
+  "versions": [
+    {
+      "version": "2.2.1",
+      "date": "2026-07-28",
+      "downloadURL": "https://github.com/Bartuzen/qBitController/releases/download/v2.2.1/qbitcontroller-2.2.1-ios.ipa",
+      "size": 18243979,
+      "sha256": "1b4acd90d9fcf81ec093eaa7530cad1479f53ffd5ff2c2e0ad348462ae77a383"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

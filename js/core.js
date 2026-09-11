@@ -81,6 +81,25 @@
       } catch (e) { return '#'; }
     },
 
+    /* Translate a UI string through the runtime locale (src/js/i18n.js).
+     * Falls back to the embedded English template when the locale bundle
+     * has not loaded yet (or i18n.js failed), so renderers never flash raw
+     * translation keys. Templates use ${name} placeholders. */
+    t: function (key, params, fallback) {
+      try {
+        if (window.OmniI18n && window.OmniI18n.loaded && window.OmniI18n.loaded('en')) {
+          return window.OmniI18n.t(key, params);
+        }
+      } catch (e) { /* fall through to the English fallback */ }
+      var out = String(fallback != null ? fallback : key);
+      if (params) {
+        Object.keys(params).forEach(function (name) {
+          out = out.split('${' + name + '}').join(String(params[name]));
+        });
+      }
+      return out;
+    },
+
     parseDate: function (value) {
       if (!value) return null;
       var d = new Date(String(value).length === 10 ? String(value) + 'T12:00:00Z' : value);
@@ -98,11 +117,11 @@
       var d = OS.parseDate(value);
       if (!d) return 'Unknown';
       var days = Math.max(0, Math.round((Date.now() - d.getTime()) / 86400000));
-      if (days === 0) return 'today';
-      if (days === 1) return 'yesterday';
-      if (days < 30) return days + 'd ago';
-      if (days < 365) return Math.round(days / 30) + 'mo ago';
-      return Math.round(days / 365) + 'y ago';
+      if (days === 0) return OS.t('common.today', null, 'today');
+      if (days === 1) return OS.t('common.yesterday', null, 'yesterday');
+      if (days < 30) return OS.t('common.daysAgo', { count: days }, '${count}d ago');
+      if (days < 365) return OS.t('common.monthsAgo', { count: Math.round(days / 30) }, '${count}mo ago');
+      return OS.t('common.yearsAgo', { count: Math.round(days / 365) }, '${count}y ago');
     },
 
     fmtBytes: function (bytes) {
@@ -482,7 +501,7 @@
         '<svg viewBox="0 0 24 24" width="38" height="38" style="flex:none" aria-hidden="true">' +
         '<circle cx="12" cy="12" r="9" fill="none" stroke="var(--faint)" stroke-width="1.4"/>' +
         '<path d="M12 7v5l3.2 2" fill="none" stroke="var(--faint)" stroke-width="1.4" stroke-linecap="round"/></svg>' +
-        '<span class="info"><b>' + OS.esc(item.q) + '</b><span>recent search</span></span>' +
+        '<span class="info"><b>' + OS.esc(item.q) + '</b><span>' + OS.esc(OS.t('search.recentSearch', null, 'recent search')) + '</span></span>' +
         '<span class="meta">' + (item.name ? OS.esc(item.name) : '') + '</span>' +
         '</button>';
     },
@@ -500,12 +519,13 @@
         if (!Palette.isOpen) return;
         var results = Search.search(q);
         if (!results.length) {
-          Palette.body.innerHTML = '<div class="os-palette-empty">No matches for “' +
-            OS.esc(q) + '”. Try a name, bundle ID, developer or tag.</div>';
+          Palette.body.innerHTML = '<div class="os-palette-empty">' +
+            OS.esc(OS.t('search.noMatches', { q: q }, 'No matches for “${q}”.')) + ' ' +
+            OS.esc(OS.t('search.noResultsHint', null, 'Try a name, bundle ID, developer or tag.')) + '</div>';
           Palette.rows = [];
           return;
         }
-        var html = '<div class="os-palette-group"><h4 class="os-palette-heading">Apps</h4>' +
+        var html = '<div class="os-palette-group"><h4 class="os-palette-heading">' + OS.esc(OS.t('nav.apps', null, 'Apps')) + '</h4>' +
           results.map(function (item, i) { return Palette.appRow(item.doc, q, i); }).join('') +
           '</div>';
         Palette.body.innerHTML = html;
@@ -524,14 +544,14 @@
       var html = '';
 
       if (history.length) {
-        html += '<div class="os-palette-group"><h4 class="os-palette-heading">Recent ' +
-          '<button type="button" data-clear-history>Clear</button></h4>' +
+        html += '<div class="os-palette-group"><h4 class="os-palette-heading">' + OS.esc(OS.t('search.history', null, 'Recent')) + ' ' +
+          '<button type="button" data-clear-history>' + OS.esc(OS.t('search.clear', null, 'Clear')) + '</button></h4>' +
           history.map(function (item, i) { return this.historyRow(item, i); }, this).join('') +
           '</div>';
       }
 
       if (popular.length) {
-        html += '<div class="os-palette-group"><h4 class="os-palette-heading">Popular</h4>' +
+        html += '<div class="os-palette-group"><h4 class="os-palette-heading">' + OS.esc(OS.t('search.popular', null, 'Popular')) + '</h4>' +
           '<div class="os-palette-chips">' + popular.map(function (p) {
             return '<button type="button" class="os-palette-chip" data-chip="' + OS.esc(p.label) + '">' +
               OS.esc(p.label) + '</button>';
@@ -539,7 +559,7 @@
       }
 
       if (categories.length) {
-        html += '<div class="os-palette-group"><h4 class="os-palette-heading">Categories</h4>' +
+        html += '<div class="os-palette-group"><h4 class="os-palette-heading">' + OS.esc(OS.t('search.categories', null, 'Categories')) + '</h4>' +
           '<div class="os-palette-chips">' + categories.map(function (c) {
             return '<button type="button" class="os-palette-chip" data-chip="' + OS.esc(c) + '">' +
               OS.esc(c.charAt(0).toUpperCase() + c.slice(1)) + '</button>';
@@ -547,7 +567,7 @@
       }
 
       if (!html) {
-        html = '<div class="os-palette-empty">Search apps by name, bundle ID, developer, source, category or tag.</div>';
+        html = '<div class="os-palette-empty">' + OS.esc(OS.t('search.noResultsHint', null, 'Try a name, bundle ID, developer or tag.')) + '</div>';
       }
       this.body.innerHTML = html;
       this.rows = history.map(function (item) {
@@ -949,6 +969,15 @@
     setupReveal();
     setupCounts();
     registerServiceWorker();
+
+    // When the language changes after boot, re-render the open palette so
+    // its chrome (Recent / Popular / Categories / empty states) follows.
+    // Static [data-i18n] markup is handled by OmniI18n itself.
+    window.addEventListener('i18n:changed', function () {
+      try {
+        if (Palette.isOpen && Palette.input) Palette.render(Palette.input.value || '');
+      } catch (e) { /* palette not initialized on this page */ }
+    });
   }
 
   if (document.readyState === 'loading') {

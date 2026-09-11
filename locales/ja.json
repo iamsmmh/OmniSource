@@ -1,1 +1,122 @@
-{"nav":{"home":"ホーム","compare":"比較","status":"ステータス","analytics":"分析","install":"インストール","favorites":"お気に入り","collections":"コレクション","search":"検索","discover":"発見","sources":"ソース"},"common":{"language":"言語","loading":"読み込み中…","noResults":"結果がありません","close":"閉じる","menu":"メニュー","offline":"オフラインです"},"pages":{"translationStatus":"翻訳ステータス","coverage":"翻訳カバレッジ"}}
+{
+  "nav": {
+    "apps": "アプリ",
+    "catalog": "カタログ",
+    "discover": "見つける",
+    "trending": "トレンド",
+    "compare": "比較",
+    "graph": "グラフ",
+    "health": "ステータス",
+    "install": "インストール",
+    "more": "その他",
+    "whatsNew": "新着",
+    "analytics": "分析",
+    "favorites": "お気に入り",
+    "collections": "コレクション",
+    "search": "検索",
+    "rss": "RSS フィード",
+    "github": "GitHub ↗",
+    "language": "言語"
+  },
+  "common": {
+    "close": "閉じる",
+    "today": "今日",
+    "yesterday": "昨日",
+    "daysAgo": "${count}日前",
+    "monthsAgo": "${count}か月前",
+    "yearsAgo": "${count}年前"
+  },
+  "hero": {
+    "titleA": "サイドロード iOS のための",
+    "titleB": "App Store。",
+    "copy": "厳選された iOS カタログ。公式アップストリームのリリースから6時間ごとに同期 — 検証・ヘルスチェック済みでいつでもインストール可能。",
+    "browse": "カタログを見る",
+    "howTo": "インストール方法",
+    "searchPlaceholder": "アプリ、バンドルID、開発者を検索…",
+    "sourceLabel": "ソース URL",
+    "copySource": "コピー",
+    "sourceHint": "クライアントにソースを追加"
+  },
+  "stats": {
+    "apps": "アプリ総数",
+    "sources": "アップストリーム",
+    "online": "オンライン",
+    "verified": "検証済みアプリ"
+  },
+  "search": {
+    "history": "最近",
+    "popular": "人気",
+    "categories": "カテゴリ",
+    "clear": "クリア",
+    "recentSearch": "最近の検索",
+    "noMatches": "「${q}」に一致する結果がありません。",
+    "noResultsHint": "名前、バンドルID、開発者、タグで試してください。"
+  },
+  "catalog": {
+    "kicker": "カタログ",
+    "titleA": "アプリを",
+    "titleB": "見つける",
+    "lead": "公式リリースと明示されたコミュニティビルドを、由来・互換性・ヘルス情報とともに。",
+    "filterPlaceholder": "アプリ、機能、開発者、バンドルIDで絞り込み…",
+    "anyOS": "すべての iOS",
+    "worksOnIOS": "iOS ${level} 以降に対応",
+    "sortFeatured": "おすすめ順",
+    "sortUpdated": "更新が新しい順",
+    "sortDownloads": "ダウンロード数順",
+    "sortVersion": "バージョンが新しい順",
+    "sortName": "名前順 A–Z",
+    "sortSize": "サイズが小さい順",
+    "clearFilters": "フィルターをクリア",
+    "emptyTitle": "アプリが見つかりません",
+    "emptyText": "別のキーワードを試すか、フィルターを外してください。",
+    "emptyReset": "検索をリセット",
+    "results": "${count} 件のアプリを表示",
+    "resultsCompact": "${count} 件のアプリを一覧表示",
+    "resultsOne": "1 件のアプリを表示",
+    "resultsOneCompact": "1 件のアプリを一覧表示",
+    "loading": "カタログを読み込み中…"
+  },
+  "dialog": {
+    "scanToAdd": "スキャンして追加",
+    "copyUrl": "URL をコピー",
+    "qrAria": "ソース URL の QR コードを表示",
+    "qrAlt": "ソース URL の QR コード"
+  },
+  "footer": {
+    "tagline": "厳選された iOS サイドローディングを自動で最新に。主要クライアントすべてに1つのフィードで対応。",
+    "clients": "クライアント",
+    "browse": "見る",
+    "platform": "プラットフォーム",
+    "project": "プロジェクト",
+    "allApps": "すべてのアプリ",
+    "releaseTimeline": "リリース履歴",
+    "compareApps": "アプリを比較",
+    "relationGraph": "関連グラフ",
+    "sourceHealth": "ソースの状態",
+    "installationCenter": "インストールセンター",
+    "apiEndpoints": "API エンドポイント",
+    "combinedRSS": "統合 RSS",
+    "repository": "リポジトリ",
+    "contributing": "コントリビュート",
+    "security": "セキュリティ",
+    "catalogJson": "カタログ JSON",
+    "finePrint": "独立したコミュニティプロジェクトです。アプリと商標は各所有者に帰属します。クライアントによっては7日または90日ごとに再署名が必要です。",
+    "contributors": "OmniSource コントリビューター"
+  },
+  "pages": {
+    "translationStatus": "翻訳ステータス",
+    "coverage": "翻訳カバレッジ"
+  },
+  "a11y": {
+    "skipLink": "カタログへ移動",
+    "search": "検索",
+    "theme": "カラーテーマを変更",
+    "view": "表示を切り替え",
+    "install": "OmniSource をインストール",
+    "filterCatalog": "カタログを絞り込む",
+    "sortApps": "アプリを並べ替え"
+  },
+  "site": {
+    "title": "${site} — サイドロード iOS のための App Store"
+  }
+}

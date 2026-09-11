@@ -8,7 +8,9 @@ the ``apps/`` directory into the deployed site, so each app has a permanent
 URL: ``https://iamsmmh.github.io/OmniSource/apps/<slug>/``.
 
 Pages are self-contained (shared design-system CSS, ``js/core.js`` for
-theme / clipboard / search palette / QR dialog / service worker) and link back to the
+theme / clipboard / search palette / QR dialog / service worker,
+``src/js/i18n.js`` + ``js/features.js`` for localization and favorites, and a
+Content-Security-Policy meta tag matching the landing page) and link back to the
 landing page, per-app feed, RSS and direct download, so they work with or
 without JavaScript. The visual language is App Store-style: a tinted glass
 hero, a capsule "Get" button, numbered sections and trust checklist.
@@ -28,6 +30,23 @@ from omnisource.domain import Catalog
 from omnisource.duplicates import group_for_app
 from omnisource.install import install_url
 from omnisource.io import atomic_write_text
+
+# Content-Security-Policy served on every app page via <meta>. Keep in sync
+# with the landing page and section pages (index.html, */index.html):
+# same-origin scripts/styles (inline allowed for the theme bootstrap),
+# images/data from self + https, API calls to self + https.
+CSP_DIRECTIVES = (
+    "default-src 'self'",
+    "base-uri 'self'",
+    "object-src 'none'",
+    "script-src 'self' 'unsafe-inline'",
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: https:",
+    "media-src 'self' data:",
+    "connect-src 'self' https:",
+    "font-src 'self' data:",
+    "form-action 'self'",
+)
 
 
 def _fmt_bytes(size: int) -> str:
@@ -350,6 +369,10 @@ def _head(
   <link rel="icon" type="image/png" href="../../assets/OmniSource.png">
   <link rel="apple-touch-icon" href="../../assets/OmniSource.png">
   <link rel="alternate" type="application/rss+xml" title="{title} releases" href="{html.escape(rss_url)}">
+  <!-- Content Security Policy: same-origin scripts/styles (inline allowed for the
+       theme bootstrap), images/data from self + https, API calls to self + https.
+       All dynamic markup is escaped via OS.esc. -->
+  <meta http-equiv=\"Content-Security-Policy\" content=\"{"; ".join(CSP_DIRECTIVES)}\">
   <link rel="preload" href="../../assets/design-system/tokens.css" as="style">
   <link rel="preload" href="../../assets/design-system/components.css" as="style">
   <link rel="stylesheet" href="../../assets/design-system/tokens.css">
@@ -483,20 +506,20 @@ def render_app_page(
         "        <span>OmniSource</span>\n",
         "      </a>\n",
         '      <div class="nav-links">\n',
-        '        <a href="../../#catalog">Catalog</a>\n',
-        '        <a href="../../compare/">Compare</a>\n',
-        '        <a href="../../status/">Health</a>\n',
-        '        <a href="../../install/">Install</a>\n',
+        '        <a href="../../#catalog" data-i18n="nav.catalog">Catalog</a>\n',
+        '        <a href="../../compare/" data-i18n="nav.compare">Compare</a>\n',
+        '        <a href="../../status/" data-i18n="nav.health">Health</a>\n',
+        '        <a href="../../install/" data-i18n="nav.install">Install</a>\n',
         '        <details class="nav-more">\n',
-        '          <summary aria-haspopup="menu" aria-label="More pages">More\n',
+        '          <summary aria-haspopup="menu" aria-label="More pages"><span data-i18n="nav.more">More</span>\n',
         '            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>\n',
         "          </summary>\n",
         '          <div class="nav-menu" role="menu">\n',
-        '            <a href="../../#trending" role="menuitem">Trending</a>\n',
-        '            <a href="../../analytics/" role="menuitem">Analytics</a>\n',
-        '            <a href="../../favorites/" role="menuitem">Favorites</a>\n',
-        '            <a href="../../collections/" role="menuitem">Collections</a>\n',
-        '            <a href="../../search/" role="menuitem">Search</a>\n',
+        '            <a href="../../#trending" role="menuitem" data-i18n="nav.trending">Trending</a>\n',
+        '            <a href="../../analytics/" role="menuitem" data-i18n="nav.analytics">Analytics</a>\n',
+        '            <a href="../../favorites/" role="menuitem" data-i18n="nav.favorites">Favorites</a>\n',
+        '            <a href="../../collections/" role="menuitem" data-i18n="nav.collections">Collections</a>\n',
+        '            <a href="../../search/" role="menuitem" data-i18n="nav.search">Search</a>\n',
         '            <a href="'
         + f"{html.escape(rss_url)}"
         + '" target="_blank" rel="noopener" role="menuitem">RSS</a>\n',
@@ -507,12 +530,13 @@ def render_app_page(
         '            <a href="'
         + f"{html.escape(repo_url)}"
         + '" target="_blank" rel="noopener" class="nav-gh" '
-        + 'role="menuitem">GitHub ↗</a>\n',
+        + 'role="menuitem" data-i18n="nav.github">GitHub ↗</a>\n',
         "          </div>\n",
         "        </details>\n",
         "      </div>\n",
         '      <button class="icon-button theme-toggle" id="themeButton" type="button" '
-        'aria-label="Change color theme" title="Theme: system">\n',
+        'aria-label="Change color theme" title="Theme: system" '
+        'data-i18n-aria-label="a11y.theme" data-i18n-title="a11y.theme">\n',
         '        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24">'
         '<circle cx="12" cy="12" r="4.2"/>'
         '<path d="M12 2.8v2M12 19.2v2M2.8 12h2M19.2 12h2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4'
@@ -634,13 +658,15 @@ def render_app_page(
         "    </div>\n",
         "  </footer>\n\n",
         '  <dialog id="qrDialog" class="qr-dialog os-dialog" aria-labelledby="qrTitle">\n',
-        '    <button class="dialog-close" type="button" data-close aria-label="Close">'
+        '    <button class="dialog-close" type="button" data-close aria-label="Close" '
+        'data-i18n-aria-label="common.close">'
         '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg></button>\n',
-        '    <span class="kicker">SCAN TO ADD</span>\n',
+        '    <span class="kicker" data-i18n="dialog.scanToAdd">SCAN TO ADD</span>\n',
         f'    <h2 id="qrTitle">{title} — source feed</h2>\n',
-        '    <div class="qr-image"><img id="qrImage" width="240" height="240" alt="QR code for the app feed"></div>\n',
+        '    <div class="qr-image"><img id="qrImage" width="240" height="240" alt="QR code for the app feed" '
+        'loading="lazy" decoding="async" data-i18n-alt="dialog.qrAlt"></div>\n',
         f"    <code>{html.escape(feed_url)}</code>\n",
-        '    <button class="button primary full" type="button" data-copy="'
+        '    <button class="button primary full" type="button" data-i18n="dialog.copyUrl" data-copy="'
         + html.escape(feed_url)
         + '">Copy URL</button>\n',
         "  </dialog>\n\n",
@@ -648,6 +674,9 @@ def render_app_page(
         '    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span></span>\n',
         "  </div>\n\n",
         '  <script src="../../js/core.js" defer></script>\n',
+        '  <script src="../../src/js/i18n.js" defer></script>\n',
+        '  <script src="../../js/features.js" defer></script>\n',
+        '  <script src="../../website/assets/AssetManager.js" defer></script>\n',
         "</body>\n",
         "</html>\n",
     ]

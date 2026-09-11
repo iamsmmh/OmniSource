@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "stiknes",
+    "name": "StikNES",
+    "developer": "StikEMU",
+    "subtitle": "NES/Famicom emulator for modern iOS",
+    "bundleIdentifier": "com.stik.StikNES",
+    "version": "2.0.2",
+    "versionDate": "2025-02-23",
+    "description": "StikNES is a Nintendo Entertainment System / Famicom emulator for iPhone and iPad from the StikEMU team, built for modern iOS with Metal-accelerated rendering, MFi and keyboard controller support, save states and a focus on accuracy and low latency. Load your own legally dumped ROMs.",
+    "shortDescription": "NES/Famicom emulator for modern iOS",
+    "category": "games",
+    "tags": [
+      "games"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/StikNES.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/StikEMU/StikNES-2.0/releases/download/v2.0.2/StikNES.ipa",
+    "size": 7141231,
+    "source": "StikEMU/StikNES-2.0",
+    "sourceURL": "https://github.com/StikEMU/StikNES-2.0",
+    "checksum": null,
+    "checksumPublished": false,
+    "minOSVersion": "17.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/stiknes/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/stiknes.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2025-02-23"
+    }
+  },
+  "newest": {
+    "version": "2.0.2",
+    "date": "2025-02-23",
+    "downloadURL": "https://github.com/StikEMU/StikNES-2.0/releases/download/v2.0.2/StikNES.ipa",
+    "size": 7141231,
+    "sha256": null
+  },
+  "versions": [
+    {
+      "version": "2.0.2",
+      "date": "2025-02-23",
+      "downloadURL": "https://github.com/StikEMU/StikNES-2.0/releases/download/v2.0.2/StikNES.ipa",
+      "size": 7141231,
+      "sha256": null
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

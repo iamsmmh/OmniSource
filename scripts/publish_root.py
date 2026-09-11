@@ -39,7 +39,15 @@ if _SRC in sys.path:
     sys.path.remove(_SRC)
 sys.path.insert(0, _SRC)
 
-from omnisource.site import API_DOCUMENTS, API_ROUTES, publish_repo_artifacts
+from omnisource.site import (
+    API_DOCUMENTS,
+    API_ROUTES,
+    API_V2_ALIASES,
+    API_V2_APPS_ROUTE,
+    API_V2_CONTRACT,
+    API_V2_STANDALONE,
+    publish_repo_artifacts,
+)
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 
@@ -83,6 +91,37 @@ def find_stale_mirror_files() -> list[str]:
             continue
         if source.exists() and differs(target, source):
             stale.append(f"api/{name}")
+
+    # V2 API mirror: aliases + standalone docs + the generated OmniStore Pro
+    # contract (feeds/api/v2/*) plus one per-app record per catalog slug.
+    v2_dir = REPO_ROOT / "api" / "v2"
+    for v2_name, feeds_name in sorted(API_V2_ALIASES.items()):
+        source = feeds / feeds_name
+        if source.exists() and differs(v2_dir / v2_name, source):
+            stale.append(f"api/v2/{v2_name}")
+    for name in sorted(API_V2_STANDALONE):
+        if name == "index.json":
+            if not (v2_dir / name).exists():
+                stale.append("api/v2/index.json")
+            continue
+        if not (v2_dir / name).exists():
+            stale.append(f"api/v2/{name}")
+    contract_src = feeds / "api" / "v2"
+    for name in sorted(API_V2_CONTRACT):
+        source = contract_src / name
+        if source.exists() and differs(v2_dir / name, source):
+            stale.append(f"api/v2/{name}")
+    try:
+        import json as _json
+
+        catalog = _json.loads((REPO_ROOT / "catalog.json").read_text(encoding="utf-8"))
+        slugs = [str(item.get("slug")) for item in catalog.get("apps", []) if item.get("slug")]
+    except (OSError, ValueError):
+        slugs = []
+    for slug in sorted(slugs):
+        source = contract_src / API_V2_APPS_ROUTE / f"{slug}.json"
+        if source.exists() and differs(v2_dir / API_V2_APPS_ROUTE / f"{slug}.json", source):
+            stale.append(f"api/v2/{API_V2_APPS_ROUTE}/{slug}.json")
 
     for name in ("sitemap.xml", "robots.txt", ".nojekyll"):
         if not (REPO_ROOT / name).exists():

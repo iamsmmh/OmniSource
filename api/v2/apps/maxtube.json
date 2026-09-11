@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "maxtube",
+    "name": "MaxTube",
+    "developer": "Mark02-2012",
+    "subtitle": "YTPlus with ten extra tweaks",
+    "bundleIdentifier": "com.google.ios.youtube",
+    "version": "21.31.3",
+    "versionDate": "2026-08-03",
+    "description": "MaxTube (formerly YTPlusM) is Mark02-2012's fork of YTPlus/YTLite, the enhancer for the YouTube app on iOS. On top of the YTPlus feature set — video/audio/thumbnail downloads, SponsorBlock, PiP, YTUHD, YouQuality, Return YouTube Dislike, YTABConfig, DontEatMyContent and over 100 configurable options without a subscription — MaxTube integrates ten extra tweaks: YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, YTPlaybackFix, YouChooseQuality, YouShare and PleaseDontStopTheMusic. Settings live inside YouTube under Settings.",
+    "shortDescription": "YTPlus with ten extra tweaks",
+    "category": "photo-video",
+    "tags": [
+      "photo-video"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/MaxTube.webp",
+    "screenshots": [
+      "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr1.jpg",
+      "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr2.jpg",
+      "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr3.jpg"
+    ],
+    "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+    "size": 133357787,
+    "source": "Ashreq/ashstore-repo",
+    "sourceURL": "https://github.com/Mark02-2012/MaxTube",
+    "checksum": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
+    "checksumPublished": true,
+    "minOSVersion": "16.0",
+    "status": "manual",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/maxtube/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/maxtube.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-08-03"
+    }
+  },
+  "newest": {
+    "version": "21.31.3",
+    "date": "2026-08-03",
+    "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+    "size": 133357787,
+    "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f"
+  },
+  "versions": [
+    {
+      "version": "21.31.3",
+      "date": "2026-08-03",
+      "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+      "size": 133357787,
+      "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

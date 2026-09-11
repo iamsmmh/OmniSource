@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "manicemu",
+    "name": "Manic EMU",
+    "developer": "Aoshuang Lee (Manic EMU)",
+    "subtitle": "All-in-one retro game emulator",
+    "bundleIdentifier": "com.aoshuang.manicemu",
+    "version": "2.0.0",
+    "versionDate": "2026-09-03",
+    "description": "Manic EMU is an all-in-one retro emulator for iPhone and iPad. One app covers NES, SNES, N64, Game Boy and Game Boy Advance, Nintendo DS and 3DS, PlayStation, PSP, Dreamcast, Arcade and more through libretro cores, with a game library that imports your own ROMs, per-core control mapping, cheat support, save states and controller support. The upstream project is AGPL-3.0 and publishes its own signed-for-testing builds.",
+    "shortDescription": "All-in-one retro game emulator",
+    "category": "games",
+    "tags": [
+      "games"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/ManicEMU.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+    "size": 273393210,
+    "source": "Manic-EMU/ManicEMU",
+    "sourceURL": "https://github.com/Manic-EMU/ManicEMU",
+    "checksum": "7f2adf280dba286ef1374fac874b87af9be535bae39f62139e0e68b4ae324a9f",
+    "checksumPublished": false,
+    "minOSVersion": "15.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/manicemu/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/manicemu.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-09-03"
+    }
+  },
+  "newest": {
+    "version": "2.0.0",
+    "date": "2026-09-03",
+    "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+    "size": 273393210,
+    "sha256": "7f2adf280dba286ef1374fac874b87af9be535bae39f62139e0e68b4ae324a9f"
+  },
+  "versions": [
+    {
+      "version": "2.0.0",
+      "date": "2026-09-03",
+      "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
+      "size": 273393210,
+      "sha256": "7f2adf280dba286ef1374fac874b87af9be535bae39f62139e0e68b4ae324a9f"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

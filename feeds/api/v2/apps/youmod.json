@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "youmod",
+    "name": "YouMod",
+    "developer": "Tonwalter888",
+    "subtitle": "All-in-one YouTube enhancement tweak",
+    "bundleIdentifier": "com.google.ios.youtube",
+    "version": "21.36.6",
+    "versionDate": "2026-09-09",
+    "description": "YouMod is a customizable YouTube enhancement tweak by Tonwalter888. It includes ad blocking, background playback, PiP support, UI customization, integrated download manager, and sponsor segment skipping.",
+    "shortDescription": "All-in-one YouTube enhancement tweak",
+    "category": "photo-video",
+    "tags": [
+      "photo-video"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
+    "size": 128845098,
+    "source": "mrdrvt99/YouProEXTRA",
+    "sourceURL": "https://github.com/Tonwalter888/YouMod",
+    "checksum": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
+    "checksumPublished": false,
+    "minOSVersion": "16.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/youmod/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/youmod.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-09-09"
+    }
+  },
+  "newest": {
+    "version": "21.36.6",
+    "date": "2026-09-09",
+    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
+    "size": 128845098,
+    "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386"
+  },
+  "versions": [
+    {
+      "version": "21.36.6",
+      "date": "2026-09-09",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
+      "size": 128845098,
+      "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

@@ -1,1 +1,122 @@
-{"nav":{"home":"হোম","compare":"তুলনা","status":"স্ট্যাটাস","analytics":"বিশ্লেষণ","install":"ইনস্টল","favorites":"পছন্দের","collections":"সংগ্রহ","search":"অনুসন্ধান","discover":"আবিষ্কার","sources":"উৎস"},"common":{"language":"ভাষা","loading":"লোড হচ্ছে…","noResults":"কোনো ফলাফল পাওয়া যায়নি","close":"বন্ধ করুন","menu":"মেনু","offline":"আপনি অফলাইনে আছেন"},"pages":{"translationStatus":"অনুবাদ অবস্থা","coverage":"অনুবাদ কভারেজ"}}
+{
+  "nav": {
+    "apps": "অ্যাপস",
+    "catalog": "ক্যাটালগ",
+    "discover": "আবিষ্কার",
+    "trending": "ট্রেন্ডিং",
+    "compare": "তুলনা",
+    "graph": "গ্রাফ",
+    "health": "স্ট্যাটাস",
+    "install": "ইনস্টল",
+    "more": "আরও",
+    "whatsNew": "নতুন কী",
+    "analytics": "বিশ্লেষণ",
+    "favorites": "পছন্দের",
+    "collections": "সংগ্রহ",
+    "search": "অনুসন্ধান",
+    "rss": "আরএসএস ফিড",
+    "github": "GitHub ↗",
+    "language": "ভাষা"
+  },
+  "common": {
+    "close": "বন্ধ করুন",
+    "today": "আজ",
+    "yesterday": "গতকাল",
+    "daysAgo": "${count} দিন আগে",
+    "monthsAgo": "${count} মাস আগে",
+    "yearsAgo": "${count} বছর আগে"
+  },
+  "hero": {
+    "titleA": "সাইডলোডেড iOS-এর জন্য",
+    "titleB": "অ্যাপ স্টোর।",
+    "copy": "যত্নে বাছাই করা iOS ক্যাটালগ, প্রতি ছয় ঘণ্টায় অফিসিয়াল রিলিজ থেকে সিঙ্ক হয় — যাচাইকৃত, পর্যবেক্ষিত এবং সবসময় ইনস্টলযোগ্য।",
+    "browse": "ক্যাটালগ দেখুন",
+    "howTo": "ইনস্টল নির্দেশিকা",
+    "searchPlaceholder": "অ্যাপ, বান্ডেল আইডি, ডেভেলপার খুঁজুন…",
+    "sourceLabel": "সোর্স URL",
+    "copySource": "কপি",
+    "sourceHint": "আপনার ক্লায়েন্টে সোর্স যোগ করুন"
+  },
+  "stats": {
+    "apps": "মোট অ্যাপ",
+    "sources": "আপস্ট্রিম সোর্স",
+    "online": "অনলাইন ডাউনলোড",
+    "verified": "যাচাইকৃত অ্যাপ"
+  },
+  "search": {
+    "history": "সাম্প্রতিক",
+    "popular": "জনপ্রিয়",
+    "categories": "বিভাগ",
+    "clear": "মুছুন",
+    "recentSearch": "সাম্প্রতিক অনুসন্ধান",
+    "noMatches": "“${q}”-এর জন্য কোনো ফল নেই।",
+    "noResultsHint": "নাম, বান্ডেল আইডি, ডেভেলপার বা ট্যাগ দিয়ে চেষ্টা করুন।"
+  },
+  "catalog": {
+    "kicker": "ক্যাটালগ",
+    "titleA": "অ্যাপ",
+    "titleB": "আবিষ্কার করুন",
+    "lead": "অফিসিয়াল রিলিজ এবং স্পষ্টভাবে চিহ্নিত কমিউনিটি বিল্ড — উৎস, সামঞ্জস্য ও স্বাস্থ্য তথ্যসহ।",
+    "filterPlaceholder": "অ্যাপ, ফিচার, ডেভেলপার, বান্ডেল আইডি ছাঁকুন…",
+    "anyOS": "যেকোনো iOS",
+    "worksOnIOS": "iOS ${level}+ এ চলে",
+    "sortFeatured": "ফিচার্ড আগে",
+    "sortUpdated": "সম্প্রতি হালনাগাদ",
+    "sortDownloads": "সর্বাধিক ডাউনলোড",
+    "sortVersion": "নতুন সংস্করণ",
+    "sortName": "নাম অ–হ",
+    "sortSize": "ছোট আগে",
+    "clearFilters": "ফিল্টার মুছুন",
+    "emptyTitle": "কোনো অ্যাপ পাওয়া যায়নি",
+    "emptyText": "অন্য কিওয়ার্ড চেষ্টা করুন বা ফিল্টার সরান।",
+    "emptyReset": "অনুসন্ধান রিসেট",
+    "results": "${count}টি অ্যাপ দেখানো হচ্ছে",
+    "resultsCompact": "${count}টি অ্যাপ তালিকাভুক্ত",
+    "resultsOne": "১টি অ্যাপ দেখানো হচ্ছে",
+    "resultsOneCompact": "১টি অ্যাপ তালিকাভুক্ত",
+    "loading": "ক্যাটালগ লোড হচ্ছে…"
+  },
+  "dialog": {
+    "scanToAdd": "যোগ করতে স্ক্যান করুন",
+    "copyUrl": "URL কপি",
+    "qrAria": "সোর্স URL-এর QR কোড দেখান",
+    "qrAlt": "উৎস URL-এর QR কোড"
+  },
+  "footer": {
+    "tagline": "বাছাই করা iOS সাইডলোডিং, স্বয়ংক্রিয়ভাবে হালনাগাদ। প্রতিটি বড় ক্লায়েন্টের জন্য একটি ফিড।",
+    "clients": "ক্লায়েন্ট",
+    "browse": "ব্রাউজ",
+    "platform": "প্ল্যাটফর্ম",
+    "project": "প্রকল্প",
+    "allApps": "সব অ্যাপ",
+    "releaseTimeline": "রিলিজ টাইমলাইন",
+    "compareApps": "অ্যাপ তুলনা",
+    "relationGraph": "সম্পর্ক গ্রাফ",
+    "sourceHealth": "সোর্স স্বাস্থ্য",
+    "installationCenter": "ইনস্টল কেন্দ্র",
+    "apiEndpoints": "API এন্ডপয়েন্ট",
+    "combinedRSS": "সম্মিলিত RSS",
+    "repository": "রিপোজিটরি",
+    "contributing": "অবদান",
+    "security": "নিরাপত্তা",
+    "catalogJson": "ক্যাটালগ JSON",
+    "finePrint": "স্বাধীন কমিউনিটি প্রকল্প। অ্যাপ ও ট্রেডমার্ক তাদের নিজ নিজ মালিকের। ক্লায়েন্ট অনুযায়ী সাইডলোডেড অ্যাপ প্রতি ৭ বা ৯০ দিনে পুনরায় সাইন করতে হতে পারে।",
+    "contributors": "OmniSource অবদানকারী"
+  },
+  "pages": {
+    "translationStatus": "অনুবাদ অবস্থা",
+    "coverage": "অনুবাদ কভারেজ"
+  },
+  "a11y": {
+    "skipLink": "ক্যাটালগে যান",
+    "search": "অনুসন্ধান",
+    "theme": "কালার থিম বদলান",
+    "view": "ভিউ বদলান",
+    "install": "OmniSource ইনস্টল করুন",
+    "filterCatalog": "ক্যাটালগ ছাঁকুন",
+    "sortApps": "অ্যাপ সাজান"
+  },
+  "site": {
+    "title": "${site} — সাইডলোডেড iOS-এর অ্যাপ স্টোর"
+  }
+}

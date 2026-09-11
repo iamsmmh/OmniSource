@@ -1,1 +1,122 @@
-{"nav":{"home":"首页","compare":"比较","status":"状态","analytics":"分析","install":"安装","favorites":"收藏","collections":"集合","search":"搜索","discover":"发现","sources":"来源"},"common":{"language":"语言","loading":"加载中…","noResults":"未找到结果","close":"关闭","menu":"菜单","offline":"您处于离线状态"},"pages":{"translationStatus":"翻译状态","coverage":"翻译覆盖率"}}
+{
+  "nav": {
+    "apps": "应用",
+    "catalog": "目录",
+    "discover": "发现",
+    "trending": "热门",
+    "compare": "比较",
+    "graph": "关系图",
+    "health": "状态",
+    "install": "安装",
+    "more": "更多",
+    "whatsNew": "最新动态",
+    "analytics": "分析",
+    "favorites": "收藏",
+    "collections": "合集",
+    "search": "搜索",
+    "rss": "RSS 订阅",
+    "github": "GitHub ↗",
+    "language": "语言"
+  },
+  "common": {
+    "close": "关闭",
+    "today": "今天",
+    "yesterday": "昨天",
+    "daysAgo": "${count} 天前",
+    "monthsAgo": "${count} 个月前",
+    "yearsAgo": "${count} 年前"
+  },
+  "hero": {
+    "titleA": "侧载 iOS 的",
+    "titleB": "应用商店。",
+    "copy": "精心策划的 iOS 目录，每六小时从官方上游版本同步——经过验证、健康检查，随时可安装。",
+    "browse": "浏览目录",
+    "howTo": "安装指南",
+    "searchPlaceholder": "搜索应用、Bundle ID、开发者…",
+    "sourceLabel": "源地址",
+    "copySource": "复制",
+    "sourceHint": "在您的客户端中添加该源"
+  },
+  "stats": {
+    "apps": "应用总数",
+    "sources": "上游来源",
+    "online": "可下载",
+    "verified": "已验证应用"
+  },
+  "search": {
+    "history": "最近",
+    "popular": "热门",
+    "categories": "分类",
+    "clear": "清除",
+    "recentSearch": "最近搜索",
+    "noMatches": "未找到与“${q}”匹配的结果。",
+    "noResultsHint": "试试名称、Bundle ID、开发者或标签。"
+  },
+  "catalog": {
+    "kicker": "应用目录",
+    "titleA": "发现",
+    "titleB": "应用",
+    "lead": "官方版本与明确标注的社区构建，附带来源、兼容性与健康信息。",
+    "filterPlaceholder": "筛选应用、功能、开发者、Bundle ID…",
+    "anyOS": "任意 iOS",
+    "worksOnIOS": "支持 iOS ${level}+",
+    "sortFeatured": "精选优先",
+    "sortUpdated": "最近更新",
+    "sortDownloads": "下载最多",
+    "sortVersion": "版本最新",
+    "sortName": "名称 A–Z",
+    "sortSize": "体积最小优先",
+    "clearFilters": "清除筛选",
+    "emptyTitle": "未找到应用",
+    "emptyText": "换个关键词或移除筛选条件试试。",
+    "emptyReset": "重置搜索",
+    "results": "显示 ${count} 个应用",
+    "resultsCompact": "列出 ${count} 个应用",
+    "resultsOne": "显示 1 个应用",
+    "resultsOneCompact": "列出 1 个应用",
+    "loading": "正在加载目录…"
+  },
+  "dialog": {
+    "scanToAdd": "扫码添加",
+    "copyUrl": "复制链接",
+    "qrAria": "显示源地址的二维码",
+    "qrAlt": "源 URL 的二维码"
+  },
+  "footer": {
+    "tagline": "精选 iOS 侧载，自动保持最新。一个源适配所有主流客户端。",
+    "clients": "客户端",
+    "browse": "浏览",
+    "platform": "平台",
+    "project": "项目",
+    "allApps": "全部应用",
+    "releaseTimeline": "版本时间线",
+    "compareApps": "应用比较",
+    "relationGraph": "关系图谱",
+    "sourceHealth": "源健康状态",
+    "installationCenter": "安装中心",
+    "apiEndpoints": "API 端点",
+    "combinedRSS": "合并 RSS",
+    "repository": "代码仓库",
+    "contributing": "参与贡献",
+    "security": "安全",
+    "catalogJson": "目录 JSON",
+    "finePrint": "独立社区项目。应用与商标归各自所有者所有。根据客户端不同，侧载应用可能需要每 7 天或 90 天重新签名。",
+    "contributors": "OmniSource 贡献者"
+  },
+  "pages": {
+    "translationStatus": "翻译状态",
+    "coverage": "翻译覆盖率"
+  },
+  "a11y": {
+    "skipLink": "跳到目录",
+    "search": "搜索",
+    "theme": "切换颜色主题",
+    "view": "切换视图",
+    "install": "安装 OmniSource",
+    "filterCatalog": "筛选目录",
+    "sortApps": "应用排序"
+  },
+  "site": {
+    "title": "${site} — 侧载 iOS 的应用商店"
+  }
+}

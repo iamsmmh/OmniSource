@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "winston",
+    "name": "Winston",
+    "developer": "lo.cafe",
+    "subtitle": "Open-source Reddit client",
+    "bundleIdentifier": "lo.cafe.winston",
+    "version": "1.1.5",
+    "versionDate": "2024-06-24",
+    "description": "Winston is a beautiful open-source Reddit client for iOS built in SwiftUI, with themes, gestures, an inline media viewer and a fast comment thread reader. Because Reddit charges for API access, Winston asks you to create your own free Reddit API credentials on first launch.",
+    "shortDescription": "Open-source Reddit client",
+    "category": "social",
+    "tags": [
+      "social"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Winston.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+    "size": 50003343,
+    "source": "lo-cafe/winston",
+    "sourceURL": "https://github.com/lo-cafe/winston",
+    "checksum": null,
+    "checksumPublished": false,
+    "minOSVersion": "17.0",
+    "status": "unmaintained",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/winston/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/winston.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2024-06-24"
+    }
+  },
+  "newest": {
+    "version": "1.1.5",
+    "date": "2024-06-24",
+    "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+    "size": 50003343,
+    "sha256": null
+  },
+  "versions": [
+    {
+      "version": "1.1.5",
+      "date": "2024-06-24",
+      "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+      "size": 50003343,
+      "sha256": null
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "yattee",
+    "name": "Yattee",
+    "developer": "Yattee",
+    "subtitle": "Privacy-oriented native video player",
+    "bundleIdentifier": "stream.yattee.app",
+    "version": "1.5.1",
+    "versionDate": "2024-01-28",
+    "description": "Yattee is a privacy-oriented, fully native video player for iPhone, iPad and Apple TV. It plays from user-configured Invidious or Piped backends and local video libraries, with SponsorBlock, chapters, background audio, Picture in Picture, subscriptions, and full keyboard and remote control support.",
+    "shortDescription": "Privacy-oriented native video player",
+    "category": "photo-video",
+    "tags": [
+      "photo-video"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Yattee.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
+    "size": 20792685,
+    "source": "yattee/yattee",
+    "sourceURL": "https://github.com/yattee/yattee",
+    "checksum": null,
+    "checksumPublished": false,
+    "minOSVersion": "14.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/yattee/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/yattee.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2024-01-28"
+    }
+  },
+  "newest": {
+    "version": "1.5.1",
+    "date": "2024-01-28",
+    "downloadURL": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
+    "size": 20792685,
+    "sha256": null
+  },
+  "versions": [
+    {
+      "version": "1.5.1",
+      "date": "2024-01-28",
+      "downloadURL": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
+      "size": 20792685,
+      "sha256": null
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

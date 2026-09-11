@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="Banner placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f1f3d"/>
+      <stop offset="0.55" stop-color="#5b5bd6"/>
+      <stop offset="1" stop-color="#0d3320"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="400" fill="url(#g)"/>
+  <circle cx="1020" cy="90" r="150" fill="#ffffff" opacity="0.08"/>
+  <circle cx="180" cy="330" r="190" fill="#ffffff" opacity="0.06"/>
+  <text x="80" y="225" font-family="system-ui,-apple-system,sans-serif" font-size="72" font-weight="700" fill="#ffffff" opacity="0.9">OmniSource</text>
+</svg>

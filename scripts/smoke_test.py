@@ -56,6 +56,8 @@ PAGES: list[tuple[str, str]] = [
     ("/favorites/", 'id="favorites-content"'),
     ("/apps/ytlite/", 'class="app-page"'),
     ("/manifest.webmanifest", '"name": "OmniSource'),
+    ("/locales/en.json", '"nav"'),
+    ("/website/assets/AssetManager.js", "AssetManager"),
     ("/sw.js", "omnisource-v9"),
     ("/sitemap.xml", "<urlset"),
     ("/robots.txt", "User-agent"),
@@ -79,8 +81,24 @@ FEEDS: list[str] = [
     "install.json",
     "search-index.json",
     "compare.json",
+    "asset-manifest.json",
     "feed.xml",
     "rss.xml",
+]
+
+# OmniStore Pro contract URLs (organized + API families; no flat twins).
+V2_URLS: list[str] = [
+    "/feeds/api/v2/manifest.json",
+    "/feeds/api/v2/featured.json",
+    "/feeds/api/v2/categories.json",
+    "/feeds/api/v2/updates.json",
+    "/feeds/api/v2/apps/ytlite.json",
+    "/api/v2/manifest.json",
+    "/api/v2/featured.json",
+    "/api/v2/categories.json",
+    "/api/v2/updates.json",
+    "/api/v2/apps/ytlite.json",
+    "/api/v2/index.json",
 ]
 
 # The subset of #ids each page's renderer actually uses (site.js loads on
@@ -222,7 +240,10 @@ def check_js_syntax() -> list[str]:
     if not node:
         return []
     errors = []
-    for script in ("js/core.js", "js/site.js", "js/features.js"):
+    scripts = ["js/core.js", "js/site.js", "js/features.js"]
+    scripts += sorted(str(path.relative_to(ROOT)) for path in (ROOT / "src" / "js").glob("*.js"))
+    scripts += sorted(str(path.relative_to(ROOT)) for path in (ROOT / "website").rglob("*.js"))
+    for script in scripts:
         result = subprocess.run(
             [node, "--check", str(ROOT / script)],
             capture_output=True,
@@ -288,6 +309,22 @@ def main(argv: list[str] | None = None) -> int:
                 checked += 1
                 if status != 200:
                     failures.append(f"{path}: HTTP {status}")
+
+        for path in V2_URLS:
+            status, body = fetch(server.base + path)
+            checked += 1
+            if status != 200:
+                failures.append(f"{path}: HTTP {status}")
+                continue
+            try:
+                doc = json.loads(body.decode("utf-8"))
+            except ValueError:
+                failures.append(f"{path}: invalid JSON")
+                continue
+            if path.endswith("/manifest.json") and doc.get("schemaVersion") != 2:
+                failures.append(f"{path}: schemaVersion must be 2")
+            if path.endswith("/apps/ytlite.json") and (doc.get("app") or {}).get("id") != "ytlite":
+                failures.append(f"{path}: app record id mismatch")
 
         if args.root:
             # The root carries only /apps.json plus the API mirror, sitemap

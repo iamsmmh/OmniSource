@@ -1,5 +1,122 @@
 {
-  "nav": {"home":"Home","compare":"Compare","status":"Status","analytics":"Analytics","install":"Install","favorites":"Favorites","collections":"Collections","search":"Search","discover":"Discover","sources":"Sources"},
-  "common": {"language":"Language","loading":"Loading…","noResults":"No results found","close":"Close","menu":"Menu","offline":"You are offline"},
-  "pages": {"translationStatus":"Translation status","coverage":"Translation coverage"}
+  "nav": {
+    "apps": "Apps",
+    "catalog": "Catalog",
+    "discover": "Discover",
+    "trending": "Trending",
+    "compare": "Compare",
+    "graph": "Graph",
+    "health": "Health",
+    "install": "Install",
+    "more": "More",
+    "whatsNew": "What’s new",
+    "analytics": "Analytics",
+    "favorites": "Favorites",
+    "collections": "Collections",
+    "search": "Search",
+    "rss": "RSS feed",
+    "github": "GitHub ↗",
+    "language": "Language"
+  },
+  "common": {
+    "close": "Close",
+    "today": "today",
+    "yesterday": "yesterday",
+    "daysAgo": "${count}d ago",
+    "monthsAgo": "${count}mo ago",
+    "yearsAgo": "${count}y ago"
+  },
+  "hero": {
+    "titleA": "The App Store for",
+    "titleB": "sideloaded iOS.",
+    "copy": "A carefully curated iOS catalog, synced from official upstream releases every six hours — verified, health-checked and always installable.",
+    "browse": "Browse the catalog",
+    "howTo": "How to install",
+    "searchPlaceholder": "Search apps, bundle IDs, developers…",
+    "sourceLabel": "SOURCE URL",
+    "copySource": "Copy",
+    "sourceHint": "Add the source in your client"
+  },
+  "stats": {
+    "apps": "Total apps",
+    "sources": "Upstream sources",
+    "online": "Downloads online",
+    "verified": "Verified apps"
+  },
+  "search": {
+    "history": "Recent",
+    "popular": "Popular",
+    "categories": "Categories",
+    "clear": "Clear",
+    "recentSearch": "recent search",
+    "noMatches": "No matches for “${q}”.",
+    "noResultsHint": "Try a name, bundle ID, developer or tag."
+  },
+  "catalog": {
+    "kicker": "THE CATALOG",
+    "titleA": "Discover",
+    "titleB": "apps",
+    "lead": "Official releases and clearly labeled community builds, with provenance, compatibility and health details.",
+    "filterPlaceholder": "Filter apps, features, developers, bundle IDs…",
+    "anyOS": "Any iOS",
+    "worksOnIOS": "Works on iOS ${level}+",
+    "sortFeatured": "Featured first",
+    "sortUpdated": "Recently updated",
+    "sortDownloads": "Most downloaded",
+    "sortVersion": "Newest version",
+    "sortName": "Name A–Z",
+    "sortSize": "Smallest first",
+    "clearFilters": "Clear filters",
+    "emptyTitle": "No apps found",
+    "emptyText": "Try another keyword or remove your filters.",
+    "emptyReset": "Reset search",
+    "results": "${count} apps shown",
+    "resultsCompact": "${count} apps listed",
+    "resultsOne": "1 app shown",
+    "resultsOneCompact": "1 app listed",
+    "loading": "Loading catalog…"
+  },
+  "dialog": {
+    "scanToAdd": "SCAN TO ADD",
+    "copyUrl": "Copy URL",
+    "qrAria": "Show QR code for the source URL",
+    "qrAlt": "QR code for the source URL"
+  },
+  "footer": {
+    "tagline": "Curated iOS sideloading, kept current automatically. One feed for every major client.",
+    "clients": "Clients",
+    "browse": "Browse",
+    "platform": "Platform",
+    "project": "Project",
+    "allApps": "All apps",
+    "releaseTimeline": "Release timeline",
+    "compareApps": "Compare apps",
+    "relationGraph": "Relationship graph",
+    "sourceHealth": "Source health",
+    "installationCenter": "Installation center",
+    "apiEndpoints": "API endpoints",
+    "combinedRSS": "Combined RSS",
+    "repository": "Repository",
+    "contributing": "Contributing",
+    "security": "Security",
+    "catalogJson": "Catalog JSON",
+    "finePrint": "Independent community project. Apps and trademarks belong to their respective owners. Sideloaded apps may require re-signing every 7 or 90 days depending on your client.",
+    "contributors": "OmniSource contributors"
+  },
+  "pages": {
+    "translationStatus": "Translation status",
+    "coverage": "Translation coverage"
+  },
+  "a11y": {
+    "skipLink": "Skip to catalog",
+    "search": "Search",
+    "theme": "Change color theme",
+    "view": "Toggle view",
+    "install": "Install OmniSource",
+    "filterCatalog": "Filter the catalog",
+    "sortApps": "Sort apps"
+  },
+  "site": {
+    "title": "${site} — The App Store for Sideloaded iOS"
+  }
 }

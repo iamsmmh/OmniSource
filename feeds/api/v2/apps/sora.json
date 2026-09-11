@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "sora",
+    "name": "Sora",
+    "developer": "cranci",
+    "subtitle": "Modular media streaming app for iOS",
+    "bundleIdentifier": "me.cranci.sulfur",
+    "version": "1.3.0",
+    "versionDate": "2026-08-20",
+    "description": "Sora is a modular, open-source media player for iPhone, iPad and Mac that streams movies and shows from community-maintained modules, with AniList sync, watching collections, watch-next recommendations, bookmarks and a fast native SwiftUI interface. The current build line is distributed as Sulfur.",
+    "shortDescription": "Modular media streaming app for iOS",
+    "category": "photo-video",
+    "tags": [
+      "photo-video"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Sora.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa",
+    "size": 3112338,
+    "source": "cranci1/Sora",
+    "sourceURL": "https://github.com/cranci1/Sora",
+    "checksum": "8bcdf430a58fb2aa55e9b841266a6aff731af7623fcbb90a8bc4654a10d7c1ce",
+    "checksumPublished": false,
+    "minOSVersion": "15.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/sora/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/sora.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-08-20"
+    }
+  },
+  "newest": {
+    "version": "1.3.0",
+    "date": "2026-08-20",
+    "downloadURL": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa",
+    "size": 3112338,
+    "sha256": "8bcdf430a58fb2aa55e9b841266a6aff731af7623fcbb90a8bc4654a10d7c1ce"
+  },
+  "versions": [
+    {
+      "version": "1.3.0",
+      "date": "2026-08-20",
+      "downloadURL": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa",
+      "size": 3112338,
+      "sha256": "8bcdf430a58fb2aa55e9b841266a6aff731af7623fcbb90a8bc4654a10d7c1ce"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

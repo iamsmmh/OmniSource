@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "livecontainer",
+    "name": "LiveContainer",
+    "developer": "LiveContainer Team",
+    "subtitle": "Run iOS apps without actually installing them",
+    "bundleIdentifier": "com.kdt.livecontainer",
+    "version": "3.8.0",
+    "versionDate": "2026-07-17",
+    "description": "LiveContainer runs other iOS apps inside itself instead of installing them, so a single app slot on your certificate can host many sideloaded apps and you stop burning through the 3-app limit. When JIT is available it bypasses codesigning entirely; otherwise guest apps are signed with the same certificate as LiveContainer. It supports multiple data containers per app, tweak injection, adding guest apps to the Home Screen, and multitasking windows on iPadOS 16 and later.",
+    "shortDescription": "Run iOS apps without actually installing them",
+    "category": "utilities",
+    "tags": [
+      "utilities"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/LiveContainer.webp",
+    "screenshots": [
+      "https://raw.githubusercontent.com/LiveContainer/LiveContainer/main/screenshots/1.png"
+    ],
+    "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
+    "size": 4707271,
+    "source": "LiveContainer/LiveContainer",
+    "sourceURL": "https://github.com/LiveContainer/LiveContainer",
+    "checksum": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6",
+    "checksumPublished": false,
+    "minOSVersion": "15.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/livecontainer/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/livecontainer.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-07-17"
+    }
+  },
+  "newest": {
+    "version": "3.8.0",
+    "date": "2026-07-17",
+    "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
+    "size": 4707271,
+    "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6"
+  },
+  "versions": [
+    {
+      "version": "3.8.0",
+      "date": "2026-07-17",
+      "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
+      "size": 4707271,
+      "sha256": "b6fea95e30083382e29ffef88fa1aaa40b5069e1112e5307d490dab04648bba6"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

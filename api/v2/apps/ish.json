@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "ish",
+    "name": "iSH",
+    "developer": "Theodore Dubois and contributors",
+    "subtitle": "Linux shell on iOS via x86 emulation",
+    "bundleIdentifier": "app.ish.iSH",
+    "version": "813",
+    "versionDate": "2026-08-22",
+    "description": "iSH is an open-source project that runs a Linux shell environment on iOS using a user-mode x86 emulator. It provides Alpine Linux with the APK package manager, so you can install and run familiar command-line tools — ssh, git, python, vim and more — entirely on your iPhone or iPad, no jailbreak required.",
+    "shortDescription": "Linux shell on iOS via x86 emulation",
+    "category": "developer-tools",
+    "tags": [
+      "developer-tools"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/iSH.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+    "size": 4602446,
+    "source": "ish-app/ish",
+    "sourceURL": "https://github.com/ish-app/ish",
+    "checksum": "f2d389ca859d380e2f53259a245340e22c64dba68db73f5977f75a3464e1ee3d",
+    "checksumPublished": false,
+    "minOSVersion": "12.2",
+    "status": "beta",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/ish/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/ish.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-08-22"
+    }
+  },
+  "newest": {
+    "version": "813",
+    "date": "2026-08-22",
+    "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+    "size": 4602446,
+    "sha256": "f2d389ca859d380e2f53259a245340e22c64dba68db73f5977f75a3464e1ee3d"
+  },
+  "versions": [
+    {
+      "version": "813",
+      "date": "2026-08-22",
+      "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
+      "size": 4602446,
+      "sha256": "f2d389ca859d380e2f53259a245340e22c64dba68db73f5977f75a3464e1ee3d"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

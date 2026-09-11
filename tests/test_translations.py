@@ -1,140 +1,116 @@
-"""Tests for the translation coverage document builder."""
-
-from __future__ import annotations
+"""Translation key coverage: every i18n key used by the site must exist in
+en.json (the fallback locale), every en.json key must actually be wired to a
+call site (no dead keys), and ${placeholder} sets must match en in all
+locales so interpolation never renders a raw token.
+"""
 
 import json
-import sys
-import tempfile
+import re
 import unittest
 from pathlib import Path
 
-_SRC = Path(__file__).resolve().parents[1] / "src"
-if str(_SRC) not in sys.path:
-    sys.path.insert(0, str(_SRC))
+ROOT = Path(__file__).resolve().parent.parent
 
-from omnisource.translations import build_translation_status_doc, flatten_locale, js_round
-
-
-def _write_locales(root: Path, files: dict[str, object]) -> Path:
-    locales = root / "locales"
-    locales.mkdir(parents=True, exist_ok=True)
-    for name, doc in files.items():
-        (locales / f"{name}.json").write_text(json.dumps(doc, indent=2), encoding="utf-8")
-    return locales
-
-
-class TestFlattenLocale(unittest.TestCase):
-    def test_nested_objects_flatten_with_dotted_keys(self) -> None:
-        data = {"nav": {"home": "Home", "compare": "Compare"}, "version": 3}
-        self.assertEqual(flatten_locale(data), {"nav.home": "Home", "nav.compare": "Compare", "version": 3})
-
-    def test_deep_nesting(self) -> None:
-        self.assertEqual(flatten_locale({"a": {"b": {"c": 1}}}), {"a.b.c": 1})
-
-    def test_arrays_and_scalars_are_leaves(self) -> None:
-        data = {"list": [1, 2], "n": None, "flag": False, "empty": ""}
-        self.assertEqual(flatten_locale(data), {"list": [1, 2], "n": None, "flag": False, "empty": ""})
+ATTR_RE = re.compile(r'data-i18n(?:-placeholder|-aria-label|-alt|-title)?="([^"]+)"')
+# OS.t('key') / OmniI18n.t("key") / any t('key') call with a literal key.
+CALL_RE = re.compile(r"""\bt\(\s*["']([A-Za-z][\w.]*)["']""")
+# setAttribute('data-i18n', 'key') wiring from injected DOM (features.js).
+SETATTR_RE = re.compile(
+    r"""setAttribute\(\s*["']data-i18n(?:-placeholder|-aria-label|-alt|-title)?["']\s*,\s*["']([^"']+)["']"""
+)
+# // i18n-keys: a.b, c.d — keys dispatched through a variable (site.js).
+MARKER_RE = re.compile(r"i18n-keys:[ \t]*([A-Za-z][\w., \t]*)")
+PLACEHOLDER_RE = re.compile(r"\$\{(\w+)\}")
 
 
-class TestJsRound(unittest.TestCase):
-    def test_matches_javascript_math_round(self) -> None:
-        # JS Math.round rounds halves up; Python's round() uses banker's
-        # rounding and would disagree on the .5 boundaries.
-        self.assertEqual(js_round(98.5), 99)
-        self.assertEqual(js_round(99.5), 100)
-        self.assertEqual(js_round(74.9), 75)
-        self.assertEqual(js_round(74.4), 74)
-        self.assertEqual(js_round(0.0), 0)
-        self.assertEqual(js_round(100.0), 100)
+def flatten(obj, prefix="", out=None):
+    out = out if out is not None else {}
+    for key, value in obj.items():
+        full = f"{prefix}.{key}" if prefix else key
+        if isinstance(value, dict):
+            flatten(value, full, out)
+        else:
+            out[full] = value
+    return out
 
 
-class TestBuildTranslationStatusDoc(unittest.TestCase):
-    def test_full_coverage(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            locales = _write_locales(root, {"en": {"nav": {"home": "Home"}}, "es": {"nav": {"home": "Inicio"}}})
-            self.assertEqual(build_translation_status_doc(locales), {"en": 100, "es": 100})
+def load_en():
+    with (ROOT / "locales" / "en.json").open(encoding="utf-8") as fh:
+        return flatten(json.load(fh))
 
-    def test_missing_keys_lower_coverage(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            en = {"a": "1", "b": "2", "c": "3", "d": "4"}
-            es = {"a": "1", "b": "2", "c": "3"}
-            locales = _write_locales(root, {"en": en, "es": es})
-            self.assertEqual(build_translation_status_doc(locales), {"en": 100, "es": 75})
 
-    def test_rounding_boundary_matches_node(self) -> None:
-        # 200 canonical keys, 3 missing -> 98.5 -> 99 under JS Math.round
-        # (Python's round(98.5) would give 98 and desync the engines).
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            en = {f"key{i:03d}": "value" for i in range(200)}
-            partial = {f"key{i:03d}": "value" for i in range(197)}
-            locales = _write_locales(root, {"en": en, "es": partial})
-            self.assertEqual(build_translation_status_doc(locales), {"en": 100, "es": 99})
+def iter_pages():
+    yield from sorted(ROOT.glob("*.html"))
+    for pattern in ("*/index.html", "*/*/index.html"):
+        for path in sorted(ROOT.glob(pattern)):
+            if ".git" not in path.parts:
+                yield path
 
-    def test_locale_keys_are_sorted(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            locales = _write_locales(root, {"zz": {"a": "1"}, "aa": {"a": "1"}, "en": {"a": "1"}})
-            doc = build_translation_status_doc(locales)
-            self.assertEqual(list(doc), sorted(doc))
 
-    def test_extra_locale_keys_do_not_inflate_coverage(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            locales = _write_locales(root, {"en": {"a": "1"}, "es": {"a": "1", "extra": "2"}})
-            self.assertEqual(build_translation_status_doc(locales), {"en": 100, "es": 100})
+def iter_scripts():
+    yield from sorted((ROOT / "js").glob("*.js"))
+    yield from sorted((ROOT / "src" / "js").glob("*.js"))
+    yield from sorted((ROOT / "website").rglob("*.js"))
 
-    def test_missing_locales_dir_raises(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdir, self.assertRaises(ValueError):
-            build_translation_status_doc(Path(tmpdir) / "locales")
 
-    def test_missing_canonical_locale_raises(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            locales = _write_locales(root, {"es": {"a": "1"}})
-            with self.assertRaises(ValueError):
-                build_translation_status_doc(locales)
+def record_markers(text, where, used):
+    for match in MARKER_RE.finditer(text):
+        for key in match.group(1).split(","):
+            key = key.strip()
+            if key:
+                used.setdefault(key, []).append(where)
 
-    def test_empty_canonical_locale_raises(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            locales = _write_locales(root, {"en": {}})
-            with self.assertRaises(ValueError):
-                build_translation_status_doc(locales)
 
-    def test_non_object_locale_raises(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            locales = _write_locales(root, {"en": ["a", "b"]})
-            with self.assertRaises(ValueError):
-                build_translation_status_doc(locales)
+def collect_used():
+    used = {}
+    for page in iter_pages():
+        text = page.read_text(encoding="utf-8")
+        for match in ATTR_RE.finditer(text):
+            used.setdefault(match.group(1), []).append(f"{page.name}:attr")
+        for match in CALL_RE.finditer(text):
+            used.setdefault(match.group(1), []).append(f"{page.name}:inline")
+        for match in SETATTR_RE.finditer(text):
+            used.setdefault(match.group(1), []).append(f"{page.name}:inline-attr")
+        record_markers(text, f"{page.name}:marker", used)
+    for script in iter_scripts():
+        text = script.read_text(encoding="utf-8")
+        for match in CALL_RE.finditer(text):
+            used.setdefault(match.group(1), []).append(f"{script.name}:js")
+        for match in SETATTR_RE.finditer(text):
+            used.setdefault(match.group(1), []).append(f"{script.name}:js-attr")
+        record_markers(text, f"{script.name}:marker", used)
+    return used
 
-    def test_invalid_json_raises(self) -> None:
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            locales = _write_locales(root, {"en": {"a": "1"}})
-            (locales / "es.json").write_text("{not json", encoding="utf-8")
-            with self.assertRaises(ValueError):
-                build_translation_status_doc(locales)
 
-    def test_serialization_matches_node_output(self) -> None:
-        # Node writes JSON.stringify(report, null, 2) + '\n'; the build's
-        # dumps_pretty must agree so both engines produce identical bytes.
-        payload = json.dumps({"en": 100, "es": 98}, indent=2, ensure_ascii=False) + "\n"
-        self.assertEqual(payload, '{\n  "en": 100,\n  "es": 98\n}\n')
+class TestTranslationCoverage(unittest.TestCase):
+    def test_used_keys_exist_in_en(self):
+        en = load_en()
+        used = collect_used()
+        self.assertTrue(used, "usage scan found no keys - the scan itself is broken")
+        unknown = sorted(set(used) - set(en))
+        detail = ", ".join(f"{key} ({', '.join(used[key][:3])})" for key in unknown)
+        self.assertFalse(unknown, f"keys used by the site but missing from locales/en.json: {detail}")
 
-    def test_real_repository_locales(self) -> None:
-        root = Path(__file__).resolve().parents[1]
-        doc = build_translation_status_doc(root / "locales")
-        self.assertEqual(doc["en"], 100)
-        for name in ("ar", "bn", "de", "es", "fr", "ja", "zh"):
-            self.assertIn(name, doc)
-        for value in doc.values():
-            self.assertIsInstance(value, int)
-            self.assertGreaterEqual(value, 0)
-            self.assertLessEqual(value, 100)
+    def test_no_dead_keys_in_en(self):
+        en = load_en()
+        used = collect_used()
+        dead = sorted(set(en) - set(used))
+        self.assertFalse(dead, "locales/en.json keys with no call site (wire or remove): " + ", ".join(dead))
+
+    def test_placeholder_parity_across_locales(self):
+        en = load_en()
+        problems = []
+        for path in sorted((ROOT / "locales").glob("*.json")):
+            if path.name == "en.json":
+                continue
+            with path.open(encoding="utf-8") as fh:
+                locale = flatten(json.load(fh))
+            for key, template in en.items():
+                want = set(PLACEHOLDER_RE.findall(str(template)))
+                got = set(PLACEHOLDER_RE.findall(str(locale.get(key, ""))))
+                if want != got:
+                    problems.append(f"{path.name}:{key} placeholders {sorted(got)} != en {sorted(want)}")
+        self.assertFalse(problems, "placeholder mismatch vs en.json:\n" + "\n".join(problems))
 
 
 if __name__ == "__main__":

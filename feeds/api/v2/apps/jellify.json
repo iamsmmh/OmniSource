@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-11",
+  "feedVersion": "ee6398e4f19f",
+  "app": {
+    "id": "jellify",
+    "name": "Jellify",
+    "developer": "anultravioletaurora",
+    "subtitle": "Native Jellyfin music player for iOS",
+    "bundleIdentifier": "com.cosmonautical.jellify",
+    "version": "1.2.10",
+    "versionDate": "2026-09-02",
+    "description": "Jellify is a free and open-source music player for Jellyfin, built with React Native. Browse and stream your Jellyfin music libraries on iPhone and iPad with a native interface, fast search, playlists, favorites and now-playing controls — available on the App Store and as sideload builds.",
+    "shortDescription": "Native Jellyfin music player for iOS",
+    "category": "music",
+    "tags": [
+      "music"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Jellify.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
+    "size": 40554164,
+    "source": "Jellify-Music/App",
+    "sourceURL": "https://github.com/Jellify-Music/App",
+    "checksum": "6e56654ab690f2a4de1cca38ef3e5c73c2fcafe34c65782d7a290fa7c91c0224",
+    "checksumPublished": false,
+    "minOSVersion": "16.4",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/jellify/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/jellify.json",
+    "health": {
+      "reachable": true,
+      "detail": "HTTP 302",
+      "updatedAt": "2026-09-02"
+    }
+  },
+  "newest": {
+    "version": "1.2.10",
+    "date": "2026-09-02",
+    "downloadURL": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
+    "size": 40554164,
+    "sha256": "6e56654ab690f2a4de1cca38ef3e5c73c2fcafe34c65782d7a290fa7c91c0224"
+  },
+  "versions": [
+    {
+      "version": "1.2.10",
+      "date": "2026-09-02",
+      "downloadURL": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
+      "size": 40554164,
+      "sha256": "6e56654ab690f2a4de1cca38ef3e5c73c2fcafe34c65782d7a290fa7c91c0224"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}
