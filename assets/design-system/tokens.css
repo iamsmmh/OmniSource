@@ -1,3 +1,8 @@
+/* Web fonts. @import must precede every other rule or browsers drop it —
+   it previously sat at the bottom of this file and never fetched. The CSP
+   on every page allows fonts.googleapis.com (style-src) and
+   fonts.gstatic.com (font-src) so this request is not blocked either. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Sans+Bengali:wght@400;500;700&display=swap');
 /* ============================================================================
    OmniSource Design System — tokens
    ---------------------------------
@@ -575,6 +580,5 @@ kbd {
 
 /* Unicode coverage for localized UI (loaded from Google Fonts when online;
    system fallbacks keep installed PWAs readable offline). */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;700&family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Sans+Bengali:wght@400;500;700&display=swap');
 :root { --font-sans: Inter, "Noto Sans", "Noto Sans Bengali", "Noto Sans Arabic", system-ui, sans-serif; }
 [dir="rtl"] { text-align: start; }

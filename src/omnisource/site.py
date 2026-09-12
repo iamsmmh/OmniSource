@@ -148,12 +148,16 @@ API_ROUTES = {
 }
 
 # Hand-maintained website sections (besides the home page), in sitemap order.
+# /discover/ and /graph/ are linked from the main navigation, so they belong
+# here too — they were missing, which left two indexable pages unlisted.
 SITE_PAGES = (
     ("/compare/", 0.8, "weekly"),
+    ("/discover/", 0.7, "weekly"),
     ("/status/", 0.6, "daily"),
     ("/analytics/", 0.5, "weekly"),
     ("/install/", 0.7, "weekly"),
     ("/search/", 0.7, "weekly"),
+    ("/graph/", 0.5, "weekly"),
     ("/collections/", 0.6, "weekly"),
     ("/favorites/", 0.4, "monthly"),
 )

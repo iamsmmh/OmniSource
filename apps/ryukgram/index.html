@@ -26,7 +26,7 @@
   <!-- Content Security Policy: same-origin scripts/styles (inline allowed for the
        theme bootstrap), images/data from self + https, API calls to self + https.
        All dynamic markup is escaped via OS.esc. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self' data:; connect-src 'self' https:; font-src 'self' data:; form-action 'self'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; media-src 'self' data:; connect-src 'self' https:; font-src 'self' data: https://fonts.gstatic.com; form-action 'self'">
   <link rel="preload" href="../../assets/design-system/tokens.css" as="style">
   <link rel="preload" href="../../assets/design-system/components.css" as="style">
   <link rel="stylesheet" href="../../assets/design-system/tokens.css">

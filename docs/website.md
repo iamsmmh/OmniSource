@@ -55,6 +55,22 @@ components as the hand-maintained pages.
 
 The interface renders everything from those files at runtime.
 
+### How they are fetched
+
+`js/site.js` keeps a `FEEDS` registry: each document declares the state slot it
+fills and the pages that render it, so `/analytics/` no longer downloads the
+comparison matrix and `/install/` no longer downloads the search index. The home
+page splits its feeds into a **first paint** set (`apps.json`, health,
+analytics, verification, trending — the hero stats and the rails) and a
+deferred set that streams in behind a debounced re-render, so the catalog is
+interactive after ~1 MB instead of after the whole bundle. `OS.fetchJSON`
+memoizes per page load, which is what removed the duplicate fetches several
+modules used to make for the same document.
+
+Sections whose feed has not landed yet stay `hidden`; `setupDeferredAnchors()`
+in `js/core.js` queues navigation to them so the drawer's **Trending** link
+still scrolls once the rail appears instead of doing nothing.
+
 ## Features
 
 - Auto / light / dark themes, reduced-motion aware, WCAG AA focus states.

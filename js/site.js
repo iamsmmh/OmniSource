@@ -142,52 +142,176 @@
     });
   }
 
-  function loadData() {
-    var feed = fetchFeed('apps.json', 'feeds/apps.json');
-    var others = [
-      OS.fetchJSON('feeds/health.json', 6000),
-      OS.fetchJSON('feeds/updates.json', 6000),
-      OS.fetchJSON('feeds/analytics.json', 6000),
-      OS.fetchJSON('feeds/verification.json', 6000),
-      fetchFeed('discovery.json', 'feeds/discovery.json', 6000),
-      OS.fetchJSON('feeds/trending.json', 6000),
-      OS.fetchJSON('feeds/related.json', 6000),
-      OS.fetchJSON('feeds/reputation.json', 6000),
-      OS.fetchJSON('feeds/download-intelligence.json', 6000),
-      OS.fetchJSON('feeds/community.json', 6000),
-      OS.fetchJSON('feeds/install.json', 6000),
-      OS.fetchJSON('feeds/status.json', 6000),
-      OS.fetchJSON('feeds/compare.json', 6000),
-      OS.fetchJSON('feeds/search-index.json', 6000)
-    ];
+  /* Feed registry. Each entry declares the document it loads, the state slot
+     it fills, the pages that actually render it, and whether it belongs to the
+     first paint.
 
-    return Promise.all([feed].concat(others)).then(function (docs) {
-      var feedDoc = docs[0];
+     This replaces a single Promise.all over all 16 documents: every page used
+     to download the whole 2.09 MB bundle and draw nothing until the slowest
+     file landed, so on a phone the catalog and every rail sat as skeletons for
+     seconds and the nav's #trending anchor pointed at a still-hidden section.
+     Now the catalog plus the four feeds behind the hero stats and the rails
+     paint first (~825 KB), the long tail streams in behind a debounced
+     re-render, and the other pages fetch only what they render. */
+  var FEEDS = [
+    {
+      key: 'health', path: 'feeds/health.json', firstPaint: true,
+      pages: ['home'],
+      set: function (doc) { state.health = doc; }
+    },
+    {
+      key: 'analytics', path: 'feeds/analytics.json', firstPaint: true,
+      pages: ['home', 'status', 'analytics'],
+      set: function (doc) { state.analytics = doc; }
+    },
+    {
+      key: 'verification', path: 'feeds/verification.json', firstPaint: true,
+      pages: ['home', 'search'],
+      set: function (doc) {
+        if (doc && Array.isArray(doc.apps)) {
+          doc.apps.forEach(function (entry) { state.verification.set(entry.app, entry); });
+        }
+      }
+    },
+    {
+      key: 'trending', path: 'feeds/trending.json', firstPaint: true,
+      pages: ['home'],
+      set: function (doc) { state.trending = doc; }
+    },
+    {
+      key: 'updates', path: 'feeds/updates.json',
+      pages: ['home'],
+      set: function (doc) { state.updates = doc; }
+    },
+    {
+      key: 'discovery', primary: 'discovery.json', fallback: 'feeds/discovery.json',
+      pages: ['home'],
+      set: function (doc) {
+        if (doc && Array.isArray(doc.apps)) {
+          window.OS_CATALOG = doc.apps;
+          doc.apps.forEach(function (entry) { state.discovery.set(entry.id || entry.slug, entry); });
+        }
+      }
+    },
+    {
+      key: 'related', path: 'feeds/related.json',
+      pages: ['home'],
+      set: function (doc) { state.related = doc; }
+    },
+    {
+      key: 'reputation', path: 'feeds/reputation.json',
+      pages: ['home', 'status'],
+      set: function (doc) { state.reputation = doc; }
+    },
+    {
+      key: 'downloadIntel', path: 'feeds/download-intelligence.json',
+      pages: ['home'],
+      set: function (doc) { state.downloadIntel = doc; }
+    },
+    {
+      key: 'community', path: 'feeds/community.json',
+      pages: ['home'],
+      set: function (doc) { state.community = doc; }
+    },
+    {
+      key: 'install', path: 'feeds/install.json',
+      pages: ['home', 'install'],
+      set: function (doc) { state.install = doc; }
+    },
+    {
+      key: 'status', path: 'feeds/status.json',
+      pages: ['status'],
+      set: function (doc) { state.status = doc; }
+    },
+    {
+      key: 'compare', path: 'feeds/compare.json',
+      pages: ['compare'],
+      set: function (doc) { state.compare = doc; }
+    },
+    {
+      key: 'searchIndex', path: 'feeds/search-index.json',
+      pages: ['home', 'search'],
+      set: function (doc) {
+        if (doc && Array.isArray(doc.documents)) OS.Search.docs = doc.documents;
+      }
+    }
+  ];
+
+  function feedsForPage(page) {
+    return FEEDS.filter(function (feed) { return feed.pages.indexOf(page) !== -1; });
+  }
+
+  function loadFeed(feed) {
+    var request = feed.fallback
+      ? fetchFeed(feed.primary, feed.fallback, 6000)
+      : OS.fetchJSON(feed.path, 6000);
+    return request.then(function (doc) {
+      if (doc) feed.set(doc);
+      return doc;
+    });
+  }
+
+  /* Re-render after background feeds land. Debounced so a burst of arrivals
+     causes one pass instead of fourteen. The hero is deliberately excluded —
+     its numbers come from the first-paint feeds and re-running it would replay
+     the count-up animation a second time. */
+  var refreshTimer = null;
+  function scheduleRefresh() {
+    if (refreshTimer) clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(function () {
+      refreshTimer = null;
+      refreshPage();
+    }, 120);
+  }
+
+  function refreshPage() {
+    var page = (document.body && document.body.dataset.page) || '';
+    try {
+      if (page === 'home') {
+        Home.renderRails();
+        Home.renderMetrics();
+        Home.renderSourceHealth();
+        Home.renderInstallGuide();
+        Home.renderTimeline();
+        Home.filterAndRender();
+      } else if (page === 'status') {
+        StatusPage.render();
+      } else if (page === 'analytics') {
+        Analytics.render();
+      } else if (page === 'install') {
+        Install.render();
+      } else if (page === 'search') {
+        SearchPage.render();
+      } else if (page === 'compare') {
+        Compare.load();
+      }
+    } catch (error) {
+      /* renderer not ready on this page */
+    }
+  }
+
+  function loadData() {
+    var page = (document.body && document.body.dataset.page) || 'home';
+    var wanted = feedsForPage(page);
+    // Only the home page has enough feeds to be worth splitting: the other
+    // pages need one or two documents, and their renderers bind listeners, so
+    // they render exactly once with everything present.
+    var split = page === 'home';
+    var primary = split ? wanted.filter(function (feed) { return feed.firstPaint; }) : wanted;
+    var deferred = split ? wanted.filter(function (feed) { return !feed.firstPaint; }) : [];
+
+    var catalog = fetchFeed('apps.json', 'feeds/apps.json').then(function (feedDoc) {
       if (!feedDoc || !Array.isArray(feedDoc.apps)) throw new Error('Feed unavailable');
       state.apps = feedDoc.apps;
-      var health = docs[1]; if (health) state.health = health;
-      var updates = docs[2]; if (updates) state.updates = updates;
-      var analytics = docs[3]; if (analytics) state.analytics = analytics;
-      var verification = docs[4];
-      if (verification && Array.isArray(verification.apps)) {
-        verification.apps.forEach(function (entry) { state.verification.set(entry.app, entry); });
-      }
-      var discovery = docs[5];
-      if (discovery && Array.isArray(discovery.apps)) {
-        window.OS_CATALOG = discovery.apps;
-        discovery.apps.forEach(function (entry) { state.discovery.set(entry.id || entry.slug, entry); });
-      }
-      state.trending = docs[6];
-      state.related = docs[7];
-      state.reputation = docs[8];
-      state.downloadIntel = docs[9];
-      state.community = docs[10];
-      state.install = docs[11];
-      state.status = docs[12];
-      state.compare = docs[13];
-      var index = docs[14];
-      if (index && Array.isArray(index.documents)) OS.Search.docs = index.documents;
     });
+
+    // Background feeds never block the first paint; each one re-renders the
+    // widgets that need it as it arrives.
+    deferred.forEach(function (feed) {
+      loadFeed(feed).then(scheduleRefresh);
+    });
+
+    return Promise.all([catalog].concat(primary.map(loadFeed)));
   }
 
   function loadCatalogMeta() {
