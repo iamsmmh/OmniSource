@@ -23,18 +23,31 @@ def parse_date(value: Any) -> date | None:
 
 
 def version_dates(state: dict[str, Any], slug: str) -> list[date]:
-    """Sorted list of parseable release dates recorded for ``slug``."""
-    versions = (state.get(slug) or {}).get("versions") or []
-    if not isinstance(versions, list):
-        return []
-    parsed: list[date] = []
-    for version in versions:
-        if isinstance(version, dict):
-            when = parse_date(version.get("date"))
-            if when is not None:
-                parsed.append(when)
-    parsed.sort()
-    return parsed
+    """Sorted list of parseable release dates recorded for ``slug``.
+
+    Combines the resolved ``versions`` retained in ``state[slug]`` with the
+    global ``updateHistory`` release log. ``upstream.keepVersions`` retains a
+    single newest version for most apps, so the per-app ``versions`` list is
+    usually one entry deep; the release log keeps every update event the sync
+    has ever recorded, which is what makes cadence and release-activity
+    signals meaningful without retaining historical versions.
+    """
+    parsed: set[date] = set()
+    versions = (state.get(slug) or {}).get("versions")
+    if isinstance(versions, list):
+        for version in versions:
+            if isinstance(version, dict):
+                when = parse_date(version.get("date"))
+                if when is not None:
+                    parsed.add(when)
+    history = state.get("updateHistory")
+    if isinstance(history, list):
+        for event in history:
+            if isinstance(event, dict) and str(event.get("appId") or "") == slug:
+                when = parse_date(event.get("releaseDate"))
+                if when is not None:
+                    parsed.add(when)
+    return sorted(parsed)
 
 
 def average_update_gap_days(state: dict[str, Any], slug: str) -> float:

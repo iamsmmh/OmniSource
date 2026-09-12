@@ -19,7 +19,7 @@ from omnisource.constants import PNG_MAGIC, Paths
 from omnisource.di import Container
 from omnisource.domain import SourceType, SyncReport
 from omnisource.errors import ProviderError, SyncError
-from omnisource.pipeline import load_catalog, load_state, stage_build, sync_app
+from omnisource.pipeline import _is_rollback, load_catalog, load_state, stage_build, sync_app
 from omnisource.providers.registry import ProviderRegistry
 from omnisource.site import publish_repo_artifacts
 
@@ -214,6 +214,28 @@ class TestManualReleaseFallback(unittest.TestCase):
             # behaviour still wins: a transient outage must not rewrite state.
             with self.assertRaises(SyncError):
                 sync_app(container, app, incremental=False, previous={"versions": versions})
+
+
+class TestRemovedReleaseClassification(unittest.TestCase):
+    """A removed-release signal must only fire on a real rollback/takedown.
+
+    Normal version bumps (previous < current) and failover renames (same
+    version, different URL) are supersessions and must not mark an app dead.
+    """
+
+    def test_normal_version_bump_is_not_a_rollback(self) -> None:
+        self.assertFalse(_is_rollback("577.1", "578.1"))
+        self.assertFalse(_is_rollback("445.0.0", "446.0.0"))
+        self.assertFalse(_is_rollback("1.5.3", "1.5.3"))
+
+    def test_rollback_is_detected(self) -> None:
+        self.assertTrue(_is_rollback("578.1", "577.1"))
+        self.assertTrue(_is_rollback("12.9.3", "12.9.2"))
+
+    def test_empty_or_unparsable_versions_are_not_rollbacks(self) -> None:
+        self.assertFalse(_is_rollback("", "1.0"))
+        self.assertFalse(_is_rollback("1.0", ""))
+        self.assertFalse(_is_rollback("", ""))
 
 
 if __name__ == "__main__":

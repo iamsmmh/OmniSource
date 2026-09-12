@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-11",
+  "generatedAt": "2026-09-12",
   "totals": {
     "apps": 77,
     "reachable": 77,
     "unreachable": 0,
     "featured": 6,
-    "healthy": 71,
-    "warning": 6,
+    "healthy": 77,
+    "warning": 0,
     "critical": 0
   },
   "apps": [
@@ -88,11 +88,11 @@
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 2,
       "stale": false,
-      "healthScore": 77,
+      "healthScore": 86,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.8482,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5
@@ -110,11 +110,11 @@
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 3,
       "stale": false,
-      "healthScore": 79,
+      "healthScore": 91,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.9916,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.75,
         "sourceReliability": 0.5
@@ -154,11 +154,11 @@
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 3,
       "stale": false,
-      "healthScore": 77,
+      "healthScore": 89,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.9747,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5
@@ -198,11 +198,11 @@
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 3,
       "stale": false,
-      "healthScore": 77,
+      "healthScore": 89,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.9916,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5
@@ -220,11 +220,11 @@
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 2,
       "stale": false,
-      "healthScore": 79,
+      "healthScore": 91,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.9831,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.75,
         "sourceReliability": 0.5
@@ -264,11 +264,11 @@
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 3,
       "stale": false,
-      "healthScore": 79,
+      "healthScore": 91,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.9916,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.75,
         "sourceReliability": 0.5
@@ -286,11 +286,11 @@
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 3,
       "stale": false,
-      "healthScore": 79,
+      "healthScore": 91,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.9916,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.75,
         "sourceReliability": 0.5
@@ -440,11 +440,11 @@
       "statusSince": "2026-09-07",
       "updatedDaysAgo": 3,
       "stale": false,
-      "healthScore": 79,
+      "healthScore": 73,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.2596,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.75,
         "sourceReliability": 0.5
@@ -748,11 +748,11 @@
       "statusSince": "2026-09-10",
       "updatedDaysAgo": 1,
       "stale": false,
-      "healthScore": 77,
+      "healthScore": 86,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.8566,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5
@@ -968,11 +968,11 @@
       "statusSince": "2026-09-10",
       "updatedDaysAgo": 29,
       "stale": false,
-      "healthScore": 77,
+      "healthScore": 72,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.3,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5
@@ -1166,11 +1166,11 @@
       "statusSince": "2026-09-10",
       "updatedDaysAgo": 7,
       "stale": false,
-      "healthScore": 77,
+      "healthScore": 89,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 1.0,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5
@@ -1188,11 +1188,11 @@
       "statusSince": "2026-09-10",
       "updatedDaysAgo": 7,
       "stale": false,
-      "healthScore": 77,
+      "healthScore": 89,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 1.0,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5
@@ -1210,11 +1210,11 @@
       "statusSince": "2026-09-11",
       "updatedDaysAgo": 2,
       "stale": false,
-      "healthScore": 66,
-      "healthStatus": "warning",
+      "healthScore": 78,
+      "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 0.6364,
-        "updateFrequency": 0.5,
+        "updateFrequency": 1.0,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5
@@ -1232,11 +1232,11 @@
       "statusSince": "2026-09-11",
       "updatedDaysAgo": 2,
       "stale": false,
-      "healthScore": 66,
-      "healthStatus": "warning",
+      "healthScore": 78,
+      "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 0.6364,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.9831,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5
@@ -1254,11 +1254,11 @@
       "statusSince": "2026-09-11",
       "updatedDaysAgo": 2,
       "stale": false,
-      "healthScore": 66,
-      "healthStatus": "warning",
+      "healthScore": 78,
+      "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 0.6364,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.9831,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5
@@ -1320,11 +1320,11 @@
       "statusSince": "2026-09-11",
       "updatedDaysAgo": 2,
       "stale": false,
-      "healthScore": 64,
-      "healthStatus": "warning",
+      "healthScore": 77,
+      "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 0.6364,
-        "updateFrequency": 0.5,
+        "updateFrequency": 1.0,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.5,
         "sourceReliability": 0.5
@@ -1342,11 +1342,11 @@
       "statusSince": "2026-09-11",
       "updatedDaysAgo": 2,
       "stale": false,
-      "healthScore": 64,
-      "healthStatus": "warning",
+      "healthScore": 77,
+      "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 0.6364,
-        "updateFrequency": 0.5,
+        "updateFrequency": 1.0,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.5,
         "sourceReliability": 0.5
@@ -1364,11 +1364,11 @@
       "statusSince": "2026-09-11",
       "updatedDaysAgo": 2,
       "stale": false,
-      "healthScore": 64,
-      "healthStatus": "warning",
+      "healthScore": 76,
+      "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 0.6364,
-        "updateFrequency": 0.5,
+        "updateFrequency": 0.9831,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.5,
         "sourceReliability": 0.5
@@ -1408,11 +1408,11 @@
       "statusSince": "2026-09-10",
       "updatedDaysAgo": 7,
       "stale": false,
-      "healthScore": 77,
+      "healthScore": 89,
       "healthStatus": "healthy",
       "scoreBreakdown": {
         "downloadSuccess": 1.0,
-        "updateFrequency": 0.5,
+        "updateFrequency": 1.0,
         "releaseAvailability": 1.0,
         "metadataCompleteness": 0.625,
         "sourceReliability": 0.5

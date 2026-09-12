@@ -1,0 +1,96 @@
+# -----------------------------------------------------------------------------
+# Full integrity verification (Phase 3).
+#
+# Streams every app's newest IPA, recomputes SHA-256 and byte count, and
+# records the outcome in feeds/state.json (`lastFullVerification`) so the
+# integrity report, status board and badges reflect real download results —
+# not just upstream-published digests. Referenced by src/omnisource/integrity.py
+# and src/omnisource/pipeline.py; kept weekly because the full catalog is
+# ~8 GB of IPAs and a complete pass is expensive.
+# -----------------------------------------------------------------------------
+name: Verify Downloads
+
+on:
+  schedule:
+    # Weekly, Sunday 05:30 UTC — off the 6-hourly sync cadence.
+    - cron: "30 5 * * 0"
+  workflow_dispatch:
+
+# Never let two verify runs hash the catalog at the same time.
+concurrency:
+  group: verify-downloads
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    name: Stream and hash every IPA
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # src/omnisource is stdlib-only on purpose: no pip install, no third-party
+      # code executing with a write-scoped token. `--verify-downloads` runs the
+      # full pipeline plus the stream-and-hash pass, and fails the run (exit 1)
+      # when any IPA is rejected, so a broken download can never be published
+      # as verified. Scheduled runs skip pagination for unchanged assets.
+      - name: Verify downloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          EXTRA=""
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            EXTRA="--incremental"
+          fi
+          python3 scripts/omnisource.py --verify-downloads $EXTRA
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests
+
+      - name: Validate output
+        run: python3 scripts/validate.py
+
+      - name: Commit verification results
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*.json' '*.xml' '*.gz' 'api/**' 'reports/**' README.md 'sitemap.xml' 'robots.txt' '.nojekyll'
+
+          if git diff --cached --quiet; then
+            echo "No verification changes."
+            exit 0
+          fi
+
+          git commit -m "chore(integrity): record full download verification [skip ci]"
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "::error::git pull --rebase failed after 3 attempts"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+          done
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "::error::git push failed after 3 attempts"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          done

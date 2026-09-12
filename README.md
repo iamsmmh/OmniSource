@@ -78,7 +78,7 @@ Browse the full **77-app catalog** on the [website](https://iamsmmh.github.io/Om
 - Substrate docs: [`feeds/sources.json`](./feeds/sources.json), [`feeds/discovery.json`](./feeds/discovery.json), [`feeds/health.json`](./feeds/health.json), [`feeds/updates.json`](./feeds/updates.json), [`feeds/verification.json`](./feeds/verification.json)
 - Per-app feeds at `feeds/<slug>.json` and `feeds/<slug>.xml` — e.g. [`feeds/esign.json`](./feeds/esign.json)
 
-_Last sync 2026-09-11 · 77/77 downloads reachable._
+_Last sync 2026-09-12 · 77/77 downloads reachable._
 
 <!-- omnisource:catalog:end -->
 

@@ -10,7 +10,7 @@ _SRC = Path(__file__).resolve().parents[1] / "src"
 if str(_SRC) not in sys.path:
     sys.path.insert(0, str(_SRC))
 
-from omnisource.domain import App, Catalog
+from omnisource.domain import App, Catalog, today
 from omnisource.feeds.altstore import (
     feed_envelope,
     render_altstore_app,
@@ -125,6 +125,9 @@ class TestAltStoreFeed(unittest.TestCase):
         self.assertEqual(doc["totals"]["apps"], 1)
         self.assertEqual(doc["totals"]["reachable"], 1)
         self.assertEqual(doc["totals"]["unreachable"], 0)
+        # ``generatedAt`` is the build timestamp, not the newest app release
+        # date: it must match the other documents produced by the same run.
+        self.assertEqual(doc["generatedAt"], today())
 
     def test_render_news_items(self) -> None:
         state = {
