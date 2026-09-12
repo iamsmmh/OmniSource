@@ -142,6 +142,12 @@ def _render_channel(
     </item>"""
         )
 
+    # ``lastBuildDate`` is derived from the newest item's pubDate rather than
+    # wall-clock time, so rebuilding from unchanged state is a byte-for-byte
+    # no-op (a wall-clock stamp would dirty every feed on every 6-hour sync
+    # even when nothing upstream moved).
+    last_build_date = items[0]["date"] if items else _now_rfc822()
+
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -149,7 +155,7 @@ def _render_channel(
     <link>{html.escape(link)}</link>
     <description>{html.escape(description)}</description>
     <language>en-us</language>
-    <lastBuildDate>{_now_rfc822()}</lastBuildDate>
+    <lastBuildDate>{last_build_date}</lastBuildDate>
     <atom:link href="{html.escape(self_link)}" rel="self" type="application/rss+xml"/>
 {chr(10).join(item_xml_lines)}
   </channel>

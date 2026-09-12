@@ -5,6 +5,14 @@
 # the aggregate document from per-app feeds whenever feeds/*.json changes, then
 # re-validates the result. It is the safety net for direct edits and hotfixes;
 # the full sync pipeline produces the same output on its own schedule.
+#
+# Split into two jobs so a pull request can never execute its own code with a
+# write-scoped token:
+#   * `check`   — pull_request / workflow_dispatch. Read-only, no persisted
+#                 credentials: rebuilds apps.json from the checked-out feeds and
+#                 verifies the result, but writes nothing back.
+#   * `publish` — push to main. The only path that carries `contents: write`
+#                 and commits the merged feeds back to the repository.
 # -----------------------------------------------------------------------------
 name: Merge Feeds
 
@@ -22,14 +30,50 @@ concurrency:
   group: merge-feeds
   cancel-in-progress: false
 
+# Read-only by default; only the publish job opts into write access.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  merge:
-    name: Rebuild apps.json from feeds/
+  check:
+    name: Rebuild and validate apps.json (read-only)
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    if: github.event_name != 'push'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Merge modular feeds into apps.json
+        run: python3 scripts/merge_feeds.py
+
+      - name: Publish repository-root URLs
+        run: python3 scripts/publish_root.py
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests
+
+      - name: Validate merged feeds
+        run: |
+          python3 scripts/validate.py
+          bash scripts/validate_jq.sh
+
+      - name: Verify generated artifacts are reproducible
+        run: python3 scripts/check_reproducible.py
+
+  publish:
+    name: Merge and commit apps.json
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -64,7 +108,6 @@ jobs:
         run: python3 scripts/check_reproducible.py
 
       - name: Commit merged apps.json
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           set -euo pipefail
           git config user.name  "github-actions[bot]"

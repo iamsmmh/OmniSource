@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from omnisource.domain import App, Catalog
+from omnisource.domain import App, Catalog, today
 
 
 def render_altstore_app(
@@ -99,11 +99,11 @@ def feed_envelope(
 
 def render_health_doc(rendered: list[tuple[App, dict[str, Any]]]) -> dict[str, Any]:
     reachable = sum(1 for _, entry in rendered if entry["omnisource"]["health"]["downloadReachable"])
+    # ``generatedAt`` is the build timestamp: it must match every sibling
+    # document from the same run, not the newest app release date (which can
+    # lag a day behind and made the feed look stale whenever no app shipped).
     return {
-        "generatedAt": max(
-            [entry["omnisource"]["health"]["statusSince"] for _, entry in rendered]
-            + [entry["versionDate"] for _, entry in rendered]
-        ),
+        "generatedAt": today(),
         "totals": {
             "apps": len(rendered),
             "reachable": reachable,

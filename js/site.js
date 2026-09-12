@@ -1113,10 +1113,12 @@
       ['Requires iOS', osMajor !== null ? osMajor + '+' : 'Not listed'],
       ['Category', categoryLabel(app.category)],
       ['Developer', app.developerName || '—'],
-      ['Bundle ID', '<button type="button" data-copy="' + OS.esc(app.bundleIdentifier || '') + '">' + OS.esc(app.bundleIdentifier || '—') + ' <svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>'],
+      // The third element marks a cell whose value is pre-built, trusted HTML;
+      // every other value is escaped at the render site (see below).
+      ['Bundle ID', '<button type="button" data-copy="' + OS.esc(app.bundleIdentifier || '') + '">' + OS.esc(app.bundleIdentifier || '—') + ' <svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>', true],
       ['Checksum', version.sha256
         ? '<button type="button" data-copy="' + OS.esc(version.sha256) + '">' + OS.esc(version.sha256.slice(0, 16)) + '…</button>'
-        : 'Not published'],
+        : 'Not published', !!version.sha256],
       ['Health', (health.downloadReachable ? 'Online' : 'Unavailable') + (health.detail ? ' · ' + OS.esc(health.detail) : '')],
       ['Last release', OS.timeAgo(app.versionDate) + (health.updatedDaysAgo ? ' (' + health.updatedDaysAgo + 'd)' : '')]
     ];
@@ -1132,7 +1134,8 @@
     var privacyEntries = privacy ? Object.entries(privacy) : [];
     var legacyPerms = Array.isArray(app.permissions) ? app.permissions : [];
     return '<div class="info-grid">' + cells.map(function (cell) {
-      return '<div class="info-cell"><span>' + OS.esc(cell[0]) + '</span><strong>' + cell[1] + '</strong></div>';
+      var value = cell[2] ? cell[1] : OS.esc(cell[1]);
+      return '<div class="info-cell"><span>' + OS.esc(cell[0]) + '</span><strong>' + value + '</strong></div>';
     }).join('') + '</div>' +
       '<div class="detail-section"><h3>Build provenance</h3>' +
       '<p class="body">Published by ' + OS.esc(verification.publisher || app.developerName || 'the upstream developer') + ' · ' +

@@ -6,113 +6,14 @@
     "stale": 180,
     "archived": 365
   },
-  "count": 33,
+  "count": 24,
   "summary": {
     "warning": 7,
     "stale": 6,
     "archived": 11,
-    "critical": 9
+    "critical": 0
   },
   "deadApps": [
-    {
-      "slug": "iqface",
-      "name": "iQFace",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 577.1"
-      ]
-    },
-    {
-      "slug": "messenger-flow",
-      "name": "Messenger Flow",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 577.0.0"
-      ]
-    },
-    {
-      "slug": "msgplusx",
-      "name": "MSGPlusX",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 577.0.0"
-      ]
-    },
-    {
-      "slug": "ryukgram",
-      "name": "RyukGram",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 445.0.0"
-      ]
-    },
-    {
-      "slug": "sparkle",
-      "name": "Sparkle",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 445.0.0"
-      ]
-    },
-    {
-      "slug": "swiftgram",
-      "name": "Swiftgram",
-      "lastUpdate": "2026-09-05",
-      "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 12.9.2"
-      ]
-    },
-    {
-      "slug": "telegram-mxgram",
-      "name": "Telegram MxGram",
-      "lastUpdate": "2026-09-05",
-      "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 12.9.3"
-      ]
-    },
-    {
-      "slug": "threadsaver",
-      "name": "ThreadSaver",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 445.1"
-      ]
-    },
-    {
-      "slug": "turrit-mxgram",
-      "name": "Turrit MxGram",
-      "lastUpdate": "2026-09-05",
-      "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 1.5.3"
-      ]
-    },
     {
       "slug": "bhtwitter",
       "name": "BHTwitter",
@@ -882,55 +783,45 @@
       "name": "Swiftgram",
       "lastUpdate": "2026-09-05",
       "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 12.9.2"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "telegram-mxgram",
       "name": "Telegram MxGram",
       "lastUpdate": "2026-09-05",
       "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 12.9.3"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "iqface",
       "name": "iQFace",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 577.1"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "ryukgram",
       "name": "RyukGram",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 445.0.0"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "sparkle",
       "name": "Sparkle",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 445.0.0"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "redditfilter",
@@ -957,33 +848,27 @@
       "name": "Messenger Flow",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 577.0.0"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "msgplusx",
       "name": "MSGPlusX",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 577.0.0"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "threadsaver",
       "name": "ThreadSaver",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 445.1"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "ime",
@@ -999,11 +884,9 @@
       "name": "Turrit MxGram",
       "lastUpdate": "2026-09-05",
       "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 1.5.3"
-      ]
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     },
     {
       "slug": "ryukgram-ig410",

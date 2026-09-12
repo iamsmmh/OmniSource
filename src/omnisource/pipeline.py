@@ -72,6 +72,7 @@ from omnisource.source_pages import build_source_pages, build_sources_doc
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
 from omnisource.translations import build_translation_status_doc
 from omnisource.trending import build_trending_doc
+from omnisource.utils.versioning import is_newer
 from omnisource.verification import build_verification_doc
 
 
@@ -196,6 +197,22 @@ def _sync_result(
         return app.slug, None, str(error), None
 
 
+def _is_rollback(previous_version: str, current_version: str) -> bool:
+    """Whether ``previous_version`` is genuinely newer than ``current_version``.
+
+    Used to tell a real upstream takedown (the newest release was rolled back
+    to an older one) apart from an ordinary supersession: a normal version
+    bump, or a failover rename of the same build under a different URL. Both
+    are routine and must not be recorded as a removed release.
+    """
+    if not previous_version or not current_version:
+        return False
+    try:
+        return is_newer(previous_version, current_version)
+    except (TypeError, ValueError):
+        return False
+
+
 def _remember_update(state: dict[str, Any], event: UpdateEvent, *, limit: int) -> None:
     history = state.setdefault("updateHistory", [])
     if not isinstance(history, list):
@@ -283,6 +300,7 @@ def stage_sync(
             # engine classifies such apps as critical.
             if isinstance(previous_versions, list) and previous_versions and isinstance(versions, list):
                 previous_latest = previous_versions[0]
+                current_latest = versions[0] if versions else {}
                 current_keys = {
                     (str(v.get("version") or ""), str(v.get("downloadURL") or ""))
                     for v in versions
@@ -293,19 +311,37 @@ def stage_sync(
                     str(previous_latest.get("downloadURL") or ""),
                 )
                 if previous_key not in current_keys:
-                    removed = entry.setdefault("removedReleases", [])
-                    if not isinstance(removed, list):
-                        removed = []
-                        entry["removedReleases"] = removed
-                    removed.append(
-                        {
-                            "version": str(previous_latest.get("version") or ""),
-                            "downloadURL": str(previous_latest.get("downloadURL") or ""),
-                            "at": today(),
-                        }
-                    )
-                    del removed[:-10]
-                    log.warning("%s: previous latest %s no longer published upstream", app.slug, previous_version)
+                    # The previously newest release is no longer offered. A
+                    # normal version bump (previous < current) or a failover
+                    # rename (same version, different URL) supersedes the old
+                    # entry — that is routine, not a takedown. Only a rollback
+                    # (the previous newest is *newer* than what the upstream
+                    # now offers) means a release was genuinely deleted.
+                    prev_ver = str(previous_latest.get("version") or "")
+                    curr_ver = str(current_latest.get("version") or "")
+                    if _is_rollback(prev_ver, curr_ver):
+                        removed = entry.setdefault("removedReleases", [])
+                        if not isinstance(removed, list):
+                            removed = []
+                            entry["removedReleases"] = removed
+                        removed.append(
+                            {
+                                "version": prev_ver,
+                                "downloadURL": str(previous_latest.get("downloadURL") or ""),
+                                "at": today(),
+                            }
+                        )
+                        del removed[:-10]
+                        log.warning(
+                            "%s: previous latest %s rolled back upstream (now offers %s)",
+                            app.slug,
+                            prev_ver,
+                            curr_ver,
+                        )
+                    else:
+                        # Superseded by a newer or equivalent release: clear any
+                        # stale removal flag left over from an earlier rollback.
+                        entry.pop("removedReleases", None)
                 else:
                     entry.pop("removedReleases", None)
             entry["versions"] = versions
