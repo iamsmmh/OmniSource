@@ -18,6 +18,9 @@ on:
       - catalog.json
       - feeds/**
       - data/security.json
+      - data/discovered_sources.json
+      - data/quarantine/**
+      - data/published_sources.json
       - scripts/build_*.py
       - scripts/enrich_metadata.py
       - scripts/analytics_rollup.py
@@ -65,6 +68,8 @@ jobs:
           python3 scripts/reputation/score.py
           python3 scripts/build_client_feeds.py
           python3 scripts/build_api_v3.py
+          python3 scripts/registry/build_registry.py
+          python3 scripts/intelligence/build_intelligence.py
 
       - name: Validate derived artifacts
         run: |
@@ -79,8 +84,16 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/canonical_apps.json data/release_history.json data/enriched_apps.json \
-            data/source_reputation.json feeds/clients/ api/v3/
+          paths=(
+            data/canonical_apps.json data/release_history.json data/enriched_apps.json
+            data/source_reputation.json data/published_sources.json data/source_registry.json data/source_intelligence.json
+            data/package_intelligence.json data/source_timeline.json feeds/clients/ feeds/single/ feeds/collections/ api/v3/
+          )
+          for path in "${paths[@]}"; do
+            if [ -e "${path}" ] || git ls-files --error-unmatch -- "${path}" >/dev/null 2>&1; then
+              git add -A -- "${path}"
+            fi
+          done
           if git diff --cached --quiet; then
             echo "Derived artifacts unchanged."
             exit 0

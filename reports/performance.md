@@ -19,34 +19,34 @@ sizes are listed. Budgets are the Lighthouse-95 targets from the modernization b
 | --- | --- | --- |
 | `feeds/anxreader.json` | 25 KiB | — (root mirror only) |
 | `feeds/anymex.json` | 25 KiB | — (root mirror only) |
-| `feeds/api/v2/updates.json` | 35 KiB | — (root mirror only) |
+| `feeds/api/v2/updates.json` | 37 KiB | — (root mirror only) |
 | `feeds/apollo.json` | 25 KiB | — (root mirror only) |
-| `feeds/apps.json` | 679 KiB | — (root mirror only) |
-| `feeds/asset-manifest.json` | 29 KiB | — (root mirror only) |
+| `feeds/apps.json` | 805 KiB | — (root mirror only) |
+| `feeds/asset-manifest.json` | 35 KiB | — (root mirror only) |
 | `feeds/bluewallet.json` | 21 KiB | — (root mirror only) |
-| `feeds/compare.json` | 110 KiB | — (root mirror only) |
-| `feeds/dead_apps.json` | 27 KiB | — (root mirror only) |
-| `feeds/discovery.json` | 134 KiB | — (root mirror only) |
-| `feeds/download-intelligence.json` | 26 KiB | — (root mirror only) |
+| `feeds/clients/altstore.json` | 805 KiB | — (root mirror only) |
+| `feeds/clients/esign.json` | 805 KiB | — (root mirror only) |
+| `feeds/clients/feather.json` | 805 KiB | — (root mirror only) |
+| `feeds/clients/livecontainer.json` | 809 KiB | — (root mirror only) |
+| `feeds/clients/sidestore.json` | 805 KiB | — (root mirror only) |
+| `feeds/collections/emulators.json` | 36 KiB | — (root mirror only) |
+| `feeds/collections/music.json` | 24 KiB | — (root mirror only) |
+| `feeds/collections/utilities.json` | 37 KiB | — (root mirror only) |
+| `feeds/collections/youtube.json` | 61 KiB | — (root mirror only) |
+| `feeds/compare.json` | 119 KiB | — (root mirror only) |
+| `feeds/dead_apps.json` | 33 KiB | — (root mirror only) |
+| `feeds/discovery.json` | 161 KiB | — (root mirror only) |
+| `feeds/download-intelligence.json` | 31 KiB | — (root mirror only) |
 | `feeds/fladder.json` | 24 KiB | — (root mirror only) |
 | `feeds/gopeed.json` | 33 KiB | — (root mirror only) |
-| `feeds/health.json` | 45 KiB | — (root mirror only) |
-| `feeds/install.json` | 200 KiB | — (root mirror only) |
-| `feeds/integrity_report.json` | 39 KiB | — (root mirror only) |
-| `feeds/related.json` | 148 KiB | — (root mirror only) |
-| `feeds/reputation.json` | 56 KiB | — (root mirror only) |
+| `feeds/health.json` | 54 KiB | — (root mirror only) |
+| `feeds/install.json` | 243 KiB | — (root mirror only) |
+| `feeds/integrity_report.json` | 48 KiB | — (root mirror only) |
+| `feeds/related.json` | 184 KiB | — (root mirror only) |
+| `feeds/reputation.json` | 71 KiB | — (root mirror only) |
 | `feeds/ryukgram-ig410.json` | 20 KiB | — (root mirror only) |
 | `feeds/ryukgram-sidebyside.json` | 20 KiB | — (root mirror only) |
-| `feeds/screenshots.json` | 42 KiB | — (root mirror only) |
-| `feeds/search-index.json` | 94 KiB | — (root mirror only) |
-| `feeds/sources.json` | 53 KiB | — (root mirror only) |
-| `feeds/state.json` | 680 KiB | — (root mirror only) |
-| `feeds/status.json` | 176 KiB | — (root mirror only) |
-| `feeds/trending.json` | 43 KiB | — (root mirror only) |
-| `feeds/updates.json` | 207 KiB | — (root mirror only) |
-| `feeds/utm.json` | 25 KiB | — (root mirror only) |
-| `feeds/verification.json` | 46 KiB | — (root mirror only) |
-| `feeds/zeus.json` | 23 KiB | — (root mirror only) |
+| `feeds/screenshots.json` | 48 KiB | — (root mirror only) |
 
 Every client fetches these through the gzip twin when present; the raw files exist for
 Git diffability and for consumers that request them directly. The home page loads a
@@ -57,6 +57,8 @@ page-tailored feed set (`feedsForPage()` in `js/site.js`), never the whole API s
 | Image | Size | Smaller twin |
 | --- | --- | --- |
 | `assets/Apollo.png` | 139 KiB | `assets/Apollo.webp` |
+| `assets/Chan.png` | 53 KiB | `assets/Chan.webp` |
+| `assets/Cosmos.png` | 45 KiB | `assets/Cosmos.webp` |
 | `assets/Delta.png` | 55 KiB | `assets/Delta.webp` |
 | `assets/Discord.png` | 219 KiB | `assets/Discord.webp` |
 | `assets/DolphiniOS.png` | 46 KiB | `assets/DolphiniOS.webp` |
@@ -67,20 +69,18 @@ page-tailored feed set (`feedsForPage()` in `js/site.js`), never the whole API s
 | `assets/Infuse.png` | 53 KiB | `assets/Infuse.webp` |
 | `assets/Instagram.png` | 45 KiB | `assets/Instagram.webp` |
 | `assets/Jellify.png` | 54 KiB | `assets/Jellify.webp` |
+| `assets/JellyBook.png` | 47 KiB | `assets/JellyBook.webp` |
+| `assets/Ksign.png` | 189 KiB | `assets/Ksign.webp` |
 | `assets/MAME4iOS.png` | 219 KiB | `assets/MAME4iOS.webp` |
+| `assets/Mangayomi.png` | 193 KiB | `assets/Mangayomi.webp` |
 | `assets/MaxTube.png` | 283 KiB | `assets/MaxTube.webp` |
 | `assets/Messenger.png` | 193 KiB | `assets/Messenger.webp` |
+| `assets/Monal.png` | 41 KiB | `assets/Monal.webp` |
+| `assets/Nebulo.png` | 281 KiB | `assets/Nebulo.webp` |
 | `assets/Odyssey.png` | 48 KiB | `assets/Odyssey.webp` |
 | `assets/OmniSource.png` | 263 KiB | `assets/OmniSource.webp` |
 | `assets/PPSSPP.png` | 65 KiB | `assets/PPSSPP.webp` |
-| `assets/Provenance.png` | 58 KiB | `assets/Provenance.webp` |
-| `assets/Reddit.png` | 49 KiB | `assets/Reddit.webp` |
-| `assets/SameBoy.png` | 103 KiB | `assets/SameBoy.webp` |
-| `assets/Sora.png` | 73 KiB | `assets/Sora.webp` |
-| `assets/SoundCloud.png` | 183 KiB | `assets/SoundCloud.webp` |
-| `assets/Spotube.png` | 115 KiB | `assets/Spotube.webp` |
-| `assets/StikDebug.png` | 101 KiB | `assets/StikDebug.webp` |
-| `assets/StikNES.png` | 105 KiB | `assets/StikNES.webp` |
+| `assets/PikaTorrent.png` | 45 KiB | `assets/PikaTorrent.webp` |
 
 ## Script loading
 
@@ -91,7 +91,7 @@ All committed page scripts are `defer`ed or inline bootstrap only — first pain
 
 - Version: omnisource-v11
 - Rings: core (precached shell), data (stale-while-revalidate), assets (cache-first).
-- Precache entries: 71; missing from the tree: none.
+- Precache entries: 72; missing from the tree: none.
 
 ## Budgets (Lighthouse 95 targets)
 

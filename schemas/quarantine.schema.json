@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/quarantine.schema.json",
+  "title": "OmniSource quarantined source candidates",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "count", "sources"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "generatedAt": { "type": "string" },
+    "count": { "type": "integer", "minimum": 0 },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "source_url", "status", "errors"],
+        "properties": {
+          "source_id": { "type": "string" },
+          "source_url": { "type": "string", "format": "uri" },
+          "status": { "enum": ["discovered", "validating", "quarantined", "verified", "published", "rejected"] },
+          "errors": { "type": "array", "items": { "type": "string" } },
+          "warnings": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

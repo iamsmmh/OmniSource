@@ -1,0 +1,2590 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-12T18:15:03Z",
+  "count": 78,
+  "classifications": {
+    "Official": 0,
+    "Verified": 1,
+    "Community": 1,
+    "Experimental": 71,
+    "Archived": 5
+  },
+  "sources": [
+    {
+      "source_id": "https-raw-githubusercontent-com-927tx-ipa-vault-main-ipavaultsou",
+      "source_name": "927tx/IPA-Vault",
+      "source_type": "altstore",
+      "source_url": "https://raw.githubusercontent.com",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 82.2,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-10",
+      "app_count": 13,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "infuseplus",
+          "name": "Infuse Plus",
+          "version": "8.5.3"
+        },
+        {
+          "id": "glow",
+          "name": "Glow",
+          "version": "577.1"
+        },
+        {
+          "id": "swiftgram",
+          "name": "Swiftgram",
+          "version": "12.9.2"
+        },
+        {
+          "id": "telegram-mxgram",
+          "name": "Telegram MxGram",
+          "version": "12.9.3"
+        },
+        {
+          "id": "iqface",
+          "name": "iQFace",
+          "version": "578.1"
+        },
+        {
+          "id": "ryukgram",
+          "name": "RyukGram",
+          "version": "446.0.0"
+        },
+        {
+          "id": "sparkle",
+          "name": "Sparkle",
+          "version": "446.0.0"
+        },
+        {
+          "id": "nexasc",
+          "name": "NexaSC",
+          "version": "8.77.0"
+        },
+        {
+          "id": "messenger-flow",
+          "name": "Messenger Flow",
+          "version": "578.1.0"
+        },
+        {
+          "id": "msgplusx",
+          "name": "MSGPlusX",
+          "version": "578.1.0"
+        },
+        {
+          "id": "threadsaver",
+          "name": "ThreadSaver",
+          "version": "446.1"
+        },
+        {
+          "id": "ime",
+          "name": "iMe MxGram",
+          "version": "12.8.1"
+        },
+        {
+          "id": "turrit-mxgram",
+          "name": "Turrit MxGram",
+          "version": "1.5.3"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 82.2,
+          "appCount": 13,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "aeharding-voyager",
+      "source_name": "aeharding/voyager",
+      "source_type": "github",
+      "source_url": "https://github.com/aeharding/voyager",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-06",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "voyager",
+          "name": "Voyager",
+          "version": "2.49.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "aidoku-aidoku",
+      "source_name": "Aidoku/Aidoku",
+      "source_type": "github",
+      "source_url": "https://github.com/Aidoku/Aidoku",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-03",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "aidoku",
+          "name": "Aidoku",
+          "version": "0.9"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "anxcye-anx-reader",
+      "source_name": "Anxcye/anx-reader",
+      "source_type": "github",
+      "source_url": "https://github.com/Anxcye/anx-reader",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-03-19",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "anxreader",
+          "name": "Anx Reader",
+          "version": "1.14.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "apollo-reborn-apollo-reborn",
+      "source_name": "Apollo-Reborn/Apollo-Reborn",
+      "source_type": "github",
+      "source_url": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-11",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "apollo",
+          "name": "Apollo",
+          "version": "3.7.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "ashreq-ashstore-repo",
+      "source_name": "Ashreq/ashstore-repo",
+      "source_type": "github",
+      "source_url": "https://github.com/Ashreq/ashstore-repo",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-03",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "maxtube",
+          "name": "MaxTube",
+          "version": "21.31.3"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "ayman708-ux-playtorriov3",
+      "source_name": "ayman708-UX/PlayTorrioV3",
+      "source_type": "github",
+      "source_url": "https://github.com/ayman708-UX/PlayTorrioV3",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-09",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "playtorrio",
+          "name": "PlayTorrio",
+          "version": "1.1.5"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "bandarhl-bhtwitter",
+      "source_name": "BandarHL/BHTwitter",
+      "source_type": "github",
+      "source_url": "https://github.com/BandarHL/BHTwitter",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2025-05-13",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "bhtwitter",
+          "name": "BHTwitter",
+          "version": "4.4"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "bartuzen-qbitcontroller",
+      "source_name": "Bartuzen/qBitController",
+      "source_type": "github",
+      "source_url": "https://github.com/Bartuzen/qBitController",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-07-28",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "qbitcontroller",
+          "name": "qBitController",
+          "version": "2.2.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "bluewallet-bluewallet",
+      "source_name": "BlueWallet/BlueWallet",
+      "source_type": "github",
+      "source_url": "https://github.com/BlueWallet/BlueWallet",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-07-21",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "bluewallet",
+          "name": "BlueWallet",
+          "version": "8.0.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "chatsen-chatsen",
+      "source_name": "chatsen/chatsen",
+      "source_type": "github",
+      "source_url": "https://github.com/chatsen/chatsen",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-12",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "chatsen",
+          "name": "Chatsen",
+          "version": "1.1.107"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "claration-feather",
+      "source_name": "claration/Feather",
+      "source_type": "github",
+      "source_url": "https://github.com/claration/Feather",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-07-05",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "feather",
+          "name": "Feather",
+          "version": "2.9.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "clquwu-cosmos-music-player",
+      "source_name": "clquwu/Cosmos-Music-Player",
+      "source_type": "github",
+      "source_url": "https://github.com/clquwu/Cosmos-Music-Player",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-08",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "cosmos",
+          "name": "Cosmos Music Player",
+          "version": "1.2.5"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "cogwheel0-conduit",
+      "source_name": "cogwheel0/conduit",
+      "source_type": "github",
+      "source_url": "https://github.com/cogwheel0/conduit",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-01",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "conduit",
+          "name": "Conduit",
+          "version": "4.1.4"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "iamsmmh-omnisource",
+      "source_name": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
+      "source_type": "github",
+      "source_url": "https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6",
+      "classification": "Community",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-22",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "uyouenhanced",
+          "name": "uYouEnhanced",
+          "version": "21.14.4"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "cranci1-animegen",
+      "source_name": "cranci1/AnimeGen",
+      "source_type": "github",
+      "source_url": "https://github.com/cranci1/AnimeGen",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2025-03-04",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "animegen",
+          "name": "AnimeGen",
+          "version": "3.0.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "cranci1-sora",
+      "source_name": "cranci1/Sora",
+      "source_type": "github",
+      "source_url": "https://github.com/cranci1/Sora",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-20",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "sora",
+          "name": "Sora",
+          "version": "1.3.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "donutware-fladder",
+      "source_name": "DonutWare/Fladder",
+      "source_type": "github",
+      "source_url": "https://github.com/DonutWare/Fladder",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-08",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "fladder",
+          "name": "Fladder",
+          "version": "0.11.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "fredrikburmester-streamyfin",
+      "source_name": "fredrikburmester/streamyfin",
+      "source_type": "github",
+      "source_url": "https://github.com/fredrikburmester/streamyfin",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-06-02",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "streamyfin",
+          "name": "Streamyfin",
+          "version": "0.54.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "g-ray-pikatorrent",
+      "source_name": "G-Ray/pikatorrent",
+      "source_type": "github",
+      "source_url": "https://github.com/G-Ray/pikatorrent",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-01-11",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "pikatorrent",
+          "name": "PikaTorrent",
+          "version": "0.15.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "gopeedlab-gopeed",
+      "source_name": "GopeedLab/gopeed",
+      "source_type": "github",
+      "source_url": "https://github.com/GopeedLab/gopeed",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-03-18",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "gopeed",
+          "name": "Gopeed",
+          "version": "1.9.3"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "gunnerkidbt-twitchadblock",
+      "source_name": "gunnerkidBT/TwitchAdBlock",
+      "source_type": "github",
+      "source_url": "https://github.com/gunnerkidBT/TwitchAdBlock",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-14",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "twitchadblock",
+          "name": "TwitchAdBlock",
+          "version": "30.7"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "hrydgard-ppsspp",
+      "source_name": "hrydgard/ppsspp",
+      "source_type": "github",
+      "source_url": "https://github.com/hrydgard/ppsspp",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-05-16",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "ppsspp",
+          "name": "PPSSPP",
+          "version": "1.20.4"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "https-repo-ikghd-me-repo-json",
+      "source_name": "iKarwan (repo.ikghd.me)",
+      "source_type": "altstore",
+      "source_url": "https://repo.ikghd.me",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 76.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-09",
+      "app_count": 2,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "inkillerplus",
+          "name": "iNKillerPlus",
+          "version": "446.0.0"
+        },
+        {
+          "id": "ttkillerplus",
+          "name": "TTKillerPlus",
+          "version": "46.8.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 76.4,
+          "appCount": 2,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "ish-app-ish",
+      "source_name": "ish-app/ish",
+      "source_type": "github",
+      "source_url": "https://github.com/ish-app/ish",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-22",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "ish",
+          "name": "iSH",
+          "version": "813"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "itzzace-ytkace",
+      "source_name": "itzzace/ytkace",
+      "source_type": "github",
+      "source_url": "https://github.com/itzzace/ytkace",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-31",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "ytkace",
+          "name": "YTKACE",
+          "version": "21.35.3"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "jellify-music-app",
+      "source_name": "Jellify-Music/App",
+      "source_type": "github",
+      "source_url": "https://github.com/Jellify-Music/App",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-02",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "jellify",
+          "name": "Jellify",
+          "version": "1.2.10"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "jellybookorg-jellybook",
+      "source_name": "JellyBookOrg/JellyBook",
+      "source_type": "github",
+      "source_url": "https://github.com/JellyBookOrg/JellyBook",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-09",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "jellybook",
+          "name": "JellyBook",
+          "version": "1.4.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "kodjodevf-mangayomi",
+      "source_name": "kodjodevf/mangayomi",
+      "source_type": "github",
+      "source_url": "https://github.com/kodjodevf/mangayomi",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-03",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "mangayomi",
+          "name": "Mangayomi",
+          "version": "0.9.2"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "krtirtho-spotube",
+      "source_name": "KRTirtho/spotube",
+      "source_type": "github",
+      "source_url": "https://github.com/KRTirtho/spotube",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-06-05",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "spotube",
+          "name": "Spotube",
+          "version": "5.1.2"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "level3tjg-redditfilter",
+      "source_name": "level3tjg/RedditFilter",
+      "source_type": "github",
+      "source_url": "https://github.com/level3tjg/RedditFilter",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2025-09-26",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "redditfilter",
+          "name": "RedditFilter",
+          "version": "2025.37.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "liji32-sameboy",
+      "source_name": "LIJI32/SameBoy",
+      "source_type": "github",
+      "source_url": "https://github.com/LIJI32/SameBoy",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-03-04",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "sameboy",
+          "name": "SameBoy",
+          "version": "1.0.3"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "livecontainer-livecontainer",
+      "source_name": "LiveContainer/LiveContainer",
+      "source_type": "github",
+      "source_url": "https://github.com/LiveContainer/LiveContainer",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-07-17",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "livecontainer",
+          "name": "LiveContainer",
+          "version": "3.8.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "lo-cafe-winston",
+      "source_name": "lo-cafe/winston",
+      "source_type": "github",
+      "source_url": "https://github.com/lo-cafe/winston",
+      "classification": "Archived",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2024-06-24",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "winston",
+          "name": "Winston",
+          "version": "1.1.5"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "lotusprey-otraku",
+      "source_name": "lotusprey/otraku",
+      "source_type": "github",
+      "source_url": "https://github.com/lotusprey/otraku",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-03-20",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "otraku",
+          "name": "Otraku",
+          "version": "1.12.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "lrdsnow-purekfd",
+      "source_name": "Lrdsnow/PureKFD",
+      "source_type": "github",
+      "source_url": "https://github.com/Lrdsnow/PureKFD",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2024-11-23",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "purekfd",
+          "name": "PureKFD",
+          "version": "6.0.2"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "manic-emu-manicemu",
+      "source_name": "Manic-EMU/ManicEMU",
+      "source_type": "github",
+      "source_url": "https://github.com/Manic-EMU/ManicEMU",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-03",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "manicemu",
+          "name": "Manic EMU",
+          "version": "2.0.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "mark02-2012-maxmusic",
+      "source_name": "Mark02-2012/MaxMusic",
+      "source_type": "github",
+      "source_url": "https://github.com/Mark02-2012/MaxMusic",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-10",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "maxmusic",
+          "name": "MaxMusic",
+          "version": "9.36.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "michael-128-qbitcontrol",
+      "source_name": "Michael-128/qBitControl",
+      "source_type": "github",
+      "source_url": "https://github.com/Michael-128/qBitControl",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-07-23",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "qbitcontrol",
+          "name": "qBitControl",
+          "version": "1.4.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "mineek-muffinstore",
+      "source_name": "mineek/MuffinStore",
+      "source_type": "github",
+      "source_url": "https://github.com/mineek/MuffinStore",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-07-12",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "muffinstore",
+          "name": "MuffinStore",
+          "version": "1.3"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "mineek-serotonin",
+      "source_name": "mineek/Serotonin",
+      "source_type": "github",
+      "source_url": "https://github.com/mineek/Serotonin",
+      "classification": "Archived",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2024-01-17",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "serotonin",
+          "name": "Serotonin",
+          "version": "1.2.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "moffatman-chan",
+      "source_name": "moffatman/chan",
+      "source_type": "github",
+      "source_url": "https://github.com/moffatman/chan",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-28",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "chan",
+          "name": "Chan",
+          "version": "1.2.9"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "monal-im-monal",
+      "source_name": "monal-im/Monal",
+      "source_type": "github",
+      "source_url": "https://github.com/monal-im/Monal",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-05-27",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "monal",
+          "name": "Monal",
+          "version": "6.4.21"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "mongoosemonke504-nebuloiptv",
+      "source_name": "mongoosemonke504/NebuloIPTV",
+      "source_type": "github",
+      "source_url": "https://github.com/mongoosemonke504/NebuloIPTV",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-02-01",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "nebuloiptv",
+          "name": "Nebulo",
+          "version": "2.3"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "mrdrvt99-youproextra",
+      "source_name": "mrdrvt99/YouProEXTRA",
+      "source_type": "github",
+      "source_url": "https://github.com/mrdrvt99/YouProEXTRA",
+      "classification": "Verified",
+      "verification_status": "unverified",
+      "reputation_score": 96.9,
+      "health_status": "degraded",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-10",
+      "app_count": 4,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "ytlite",
+          "name": "YouTubePlus",
+          "version": "21.24.3"
+        },
+        {
+          "id": "youpro",
+          "name": "YouPro",
+          "version": "21.36.6"
+        },
+        {
+          "id": "ytkp",
+          "name": "YTKillerPlus",
+          "version": "21.36.6"
+        },
+        {
+          "id": "youmod",
+          "name": "YouMod",
+          "version": "21.36.6"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "degraded",
+          "reputation": 96.9,
+          "appCount": 4,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "mrdrvt99-ytmusicultimate",
+      "source_name": "mrdrvt99/YTMusicUltimate",
+      "source_type": "github",
+      "source_url": "https://github.com/mrdrvt99/YTMusicUltimate",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-09",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "ytmusic",
+          "name": "YTMusicUltimate",
+          "version": "9.36.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "neofreebird-app",
+      "source_name": "NeoFreeBird/app",
+      "source_type": "github",
+      "source_url": "https://github.com/NeoFreeBird/app",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2025-11-03",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "neofreebird",
+          "name": "NeoFreeBird",
+          "version": "2.2"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "nyasami-ksign",
+      "source_name": "Nyasami/Ksign",
+      "source_type": "github",
+      "source_url": "https://github.com/Nyasami/Ksign",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-05-24",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "ksign",
+          "name": "Ksign",
+          "version": "1.6"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "oatmealdome-dolphin-ios",
+      "source_name": "OatmealDome/dolphin-ios",
+      "source_type": "github",
+      "source_url": "https://github.com/OatmealDome/dolphin-ios",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-06-20",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "dolphinish",
+          "name": "DolphiniOS",
+          "version": "5.0.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "odyssey-team-odyssey",
+      "source_name": "Odyssey-Team/Odyssey",
+      "source_type": "github",
+      "source_url": "https://github.com/Odyssey-Team/Odyssey",
+      "classification": "Archived",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2023-04-04",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "odyssey",
+          "name": "Odyssey",
+          "version": "1.4.3"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "odyssey-team-taurine",
+      "source_name": "Odyssey-Team/Taurine",
+      "source_type": "github",
+      "source_url": "https://github.com/Odyssey-Team/Taurine",
+      "classification": "Archived",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2023-09-23",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "taurine",
+          "name": "Taurine",
+          "version": "1.1.7"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "oolxg-hanami",
+      "source_name": "oolxg/Hanami",
+      "source_type": "github",
+      "source_url": "https://github.com/oolxg/Hanami",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2024-06-03",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "hanami",
+          "name": "Hanami",
+          "version": "0.28.2"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "opa334-dopamine",
+      "source_name": "opa334/Dopamine",
+      "source_type": "github",
+      "source_url": "https://github.com/opa334/Dopamine",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-22",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "dopamine",
+          "name": "Dopamine",
+          "version": "3.0.9"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "provenance-emu-provenance",
+      "source_name": "Provenance-Emu/Provenance",
+      "source_type": "github",
+      "source_url": "https://github.com/Provenance-Emu/Provenance",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-03-14",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "provenance",
+          "name": "Provenance",
+          "version": "3.3.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "pwn20wndstuff-undecimus",
+      "source_name": "pwn20wndstuff/Undecimus",
+      "source_type": "github",
+      "source_url": "https://github.com/pwn20wndstuff/Undecimus",
+      "classification": "Archived",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2020-06-09",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "unc0ver",
+          "name": "unc0ver",
+          "version": "5.2.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "raincord-raintweak",
+      "source_name": "raincord/RainTweak (Codeberg)",
+      "source_type": "codeberg",
+      "source_url": "https://codeberg.org/raincord/RainTweak",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-06-19",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "raintweak",
+          "name": "RainTweak",
+          "version": "0.9.3"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "rajnishone-qbitconnect",
+      "source_name": "RajnishOne/qbitconnect",
+      "source_type": "github",
+      "source_url": "https://github.com/RajnishOne/qbitconnect",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2025-11-02",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "qbitconnect",
+          "name": "qBitConnect",
+          "version": "1.6.6"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "rileytestut-delta",
+      "source_name": "RileyTestut/Delta",
+      "source_type": "github",
+      "source_url": "https://github.com/RileyTestut/Delta",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2024-07-11",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "delta",
+          "name": "Delta",
+          "version": "1.6"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "roothide-bootstrap",
+      "source_name": "roothide/Bootstrap",
+      "source_type": "github",
+      "source_url": "https://github.com/roothide/Bootstrap",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-06-12",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "bootstrap",
+          "name": "Bootstrap",
+          "version": "2.2.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "roothide-dopamine2-roothide",
+      "source_name": "roothide/Dopamine2-roothide",
+      "source_type": "github",
+      "source_url": "https://github.com/roothide/Dopamine2-roothide",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-12",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "dopamine-roothide",
+          "name": "Dopamine (RootHide)",
+          "version": "2.4.9.27"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "ryanyuuki-anymex",
+      "source_name": "RyanYuuki/AnymeX",
+      "source_type": "github",
+      "source_url": "https://github.com/RyanYuuki/AnymeX",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-30",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "anymex",
+          "name": "AnymeX",
+          "version": "3.1.7"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "https-source-ryuksign-com-duplicate",
+      "source_name": "Ryuk / RyukSign (source.ryuksign.com)",
+      "source_type": "altstore",
+      "source_url": "https://source.ryuksign.com/duplicate",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-09",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "ryukgram-sidebyside",
+          "name": "RyukGram Side by Side",
+          "version": "446.0.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "https-source-ryuksign-com-ig410",
+      "source_name": "Ryuk / RyukSign (source.ryuksign.com)",
+      "source_type": "altstore",
+      "source_url": "https://source.ryuksign.com/ig410",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-07-25",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "ryukgram-ig410",
+          "name": "RyukGram (IG 410)",
+          "version": "410.1.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "saber-notes-saber",
+      "source_name": "saber-notes/saber",
+      "source_type": "github",
+      "source_url": "https://github.com/saber-notes/saber",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-30",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "saber",
+          "name": "Saber",
+          "version": "1.36.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "sidestore-sidestore",
+      "source_name": "SideStore/SideStore",
+      "source_type": "github",
+      "source_url": "https://github.com/SideStore/SideStore",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-09",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "sidestore",
+          "name": "SideStore",
+          "version": "0.6.4"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "spotiflacapp-spotiflac-mobile",
+      "source_name": "spotiflacapp/SpotiFLAC-Mobile",
+      "source_type": "github",
+      "source_url": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-07",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "spotiflac",
+          "name": "SpotiFLAC Mobile",
+          "version": "4.9.6"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "stikdebug-stikdebug",
+      "source_name": "StikDebug/StikDebug",
+      "source_type": "github",
+      "source_url": "https://github.com/StikDebug/StikDebug",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-27",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "stikdebug",
+          "name": "StikDebug",
+          "version": "3.1.10"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "stikemu-stiknes-2-0",
+      "source_name": "StikEMU/StikNES-2.0",
+      "source_type": "github",
+      "source_url": "https://github.com/StikEMU/StikNES-2.0",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2025-02-23",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "stiknes",
+          "name": "StikNES",
+          "version": "2.0.2"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "thunder-app-thunder",
+      "source_name": "thunder-app/thunder",
+      "source_type": "github",
+      "source_url": "https://github.com/thunder-app/thunder",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-01-07",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "thunder",
+          "name": "Thunder",
+          "version": "0.8.6"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "utmapp-utm",
+      "source_name": "utmapp/UTM",
+      "source_type": "github",
+      "source_url": "https://github.com/utmapp/UTM",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-01-03",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "utm",
+          "name": "UTM",
+          "version": "4.7.5"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "vcmi-vcmi",
+      "source_name": "vcmi/vcmi",
+      "source_type": "github",
+      "source_url": "https://github.com/vcmi/vcmi",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-08-15",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "vcmi",
+          "name": "VCMI",
+          "version": "1.7.5"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "xenios-jp-xenios",
+      "source_name": "xenios-jp/XeniOS",
+      "source_type": "github",
+      "source_url": "https://github.com/xenios-jp/XeniOS",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-06-08",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "xenios",
+          "name": "XeniOS",
+          "version": "2.0.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "xitrix-itorrent",
+      "source_name": "XITRIX/iTorrent",
+      "source_type": "github",
+      "source_url": "https://github.com/XITRIX/iTorrent",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-07-19",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "itorrent",
+          "name": "iTorrent",
+          "version": "2.2.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "yattee-yattee",
+      "source_name": "yattee/yattee",
+      "source_type": "github",
+      "source_url": "https://github.com/yattee/yattee",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2024-01-28",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "yattee",
+          "name": "Yattee",
+          "version": "1.5.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "yoshisuga-mame4ios",
+      "source_name": "yoshisuga/MAME4iOS",
+      "source_type": "github",
+      "source_url": "https://github.com/yoshisuga/MAME4iOS",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2022-12-12",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "mame4ios",
+          "name": "MAME4iOS",
+          "version": "2022.5"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "yuroyami-syncplay-mobile",
+      "source_name": "yuroyami/syncplay-mobile",
+      "source_type": "github",
+      "source_url": "https://github.com/yuroyami/syncplay-mobile",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-06",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "synkplay",
+          "name": "Synkplay",
+          "version": "0.24.0"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "zeusln-zeus",
+      "source_name": "ZeusLN/zeus",
+      "source_type": "github",
+      "source_url": "https://github.com/ZeusLN/zeus",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 73.9,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2026-09-02",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "zeus",
+          "name": "Zeus",
+          "version": "13.2.1"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 73.9,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    },
+    {
+      "source_id": "zydeco-minivmac4ios",
+      "source_name": "zydeco/minivmac4ios",
+      "source_type": "github",
+      "source_url": "https://github.com/zydeco/minivmac4ios",
+      "classification": "Experimental",
+      "verification_status": "unverified",
+      "reputation_score": 71.4,
+      "health_status": "unknown",
+      "uptime": null,
+      "first_seen": "2026-09-12T18:15:03Z",
+      "last_seen": "2026-09-12T18:15:03Z",
+      "last_sync": "2024-07-09",
+      "app_count": 1,
+      "release_count": 0,
+      "apps": [
+        {
+          "id": "minivmac",
+          "name": "Mini vMac",
+          "version": "2.6"
+        }
+      ],
+      "history": [
+        {
+          "at": "2026-09-12T18:15:03Z",
+          "health": "unknown",
+          "reputation": 71.4,
+          "appCount": 1,
+          "verification": "unverified"
+        }
+      ]
+    }
+  ]
+}

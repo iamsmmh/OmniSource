@@ -47,21 +47,41 @@ def match_keys(app: dict[str, Any]) -> list[str]:
     bundle = str(app.get("bundleIdentifier", "") or "").strip()
     if bundle:
         keys.append(f"bundle:{bundle}")
-    for field in ("appID", "id", "slug"):
+    for field in ("appID", "appIdentifier", "applicationIdentifier", "identifier", "id", "slug"):
         value = str(app.get(field, "") or "").strip()
         if value:
-            keys.append(f"{field}:{value}")
+            keys.append(f"{field}:{value.casefold()}")
     omni = app.get("omnisource")
     candidates: list[Any] = []
     if isinstance(omni, dict):
-        candidates.append(omni.get("upstream"))
-        candidates.append(omni.get("sourceURL"))
-        candidates.append(omni.get("repository"))
-    candidates.append(app.get("website"))
+        candidates.extend((omni.get("upstream"), omni.get("sourceURL"), omni.get("source_url"), omni.get("repository")))
+    candidates.extend(
+        app.get(field)
+        for field in (
+            "website",
+            "sourceURL",
+            "source_url",
+            "repositoryURL",
+            "repository_url",
+            "repositoryUrl",
+            "releaseURL",
+            "release_url",
+            "releaseUrl",
+        )
+    )
     for candidate in candidates:
         repo = _repo_key(candidate)
         if repo and repo not in keys:
             keys.append(repo)
+        if isinstance(candidate, str) and candidate.startswith("https://"):
+            try:
+                parsed_candidate = urllib.parse.urlparse(candidate)
+            except ValueError:
+                parsed_candidate = None
+            if parsed_candidate and parsed_candidate.hostname:
+                url_key = f"url:{parsed_candidate.hostname.casefold()}{parsed_candidate.path.rstrip('/')}"
+                if url_key not in keys:
+                    keys.append(url_key)
     download = str(app.get("downloadURL", "") or "")
     if download.startswith("https://"):
         try:
@@ -100,6 +120,14 @@ def merge_group(records: list[dict[str, Any]]) -> dict[str, Any]:
         for version in record.get("versions", []) or []:
             if isinstance(version, dict) and version.get("version"):
                 versions.setdefault(str(version["version"]), dict(version))
+    repository_urls = sorted(
+        {
+            str(record.get(field) or "")
+            for record in ordered
+            for field in ("sourceURL", "source_url", "repositoryURL", "repository_url", "releaseURL", "release_url")
+            if str(record.get(field) or "").startswith("https://")
+        }
+    )
     canonical = {
         "id": _prefer(base.get("slug"), base.get("id"), base.get("bundleIdentifier")),
         "name": base.get("name", ""),
@@ -111,7 +139,10 @@ def merge_group(records: list[dict[str, Any]]) -> dict[str, Any]:
         "downloadURL": base.get("downloadURL", ""),
         "size": base.get("size", 0),
         "iconURL": base.get("iconURL", ""),
+        "matchKeys": match_keys(base),
+        "repositoryURLs": repository_urls,
         "sources": sources,
+        "sourceCount": len(sources),
         "duplicates": len(records),
         "versions": [versions[key] for key in sorted(versions, reverse=True)],
     }

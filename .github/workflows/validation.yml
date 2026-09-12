@@ -1,0 +1,71 @@
+# Publication gate for discovered, quarantined, and generated metadata.
+# validate.yml remains the broad repository/PR suite; this focused workflow
+# gives the source lifecycle a named, independently observable gate.
+name: Validation Engine
+
+on:
+  pull_request:
+    paths:
+      - catalog.json
+      - feeds/**
+      - data/quarantine/**
+      - scripts/validation/**
+      - src/omnisource/metadata_validation.py
+      - src/omnisource/remote_validation.py
+      - .github/workflows/validation.yml
+  push:
+    branches: [main]
+    paths:
+      - catalog.json
+      - feeds/**
+      - data/quarantine/**
+      - scripts/validation/**
+      - src/omnisource/metadata_validation.py
+      - src/omnisource/remote_validation.py
+      - .github/workflows/validation.yml
+  workflow_dispatch:
+
+concurrency:
+  group: validation-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validation:
+    name: Validate feeds and metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate discovery registry
+        run: |
+          set -euo pipefail
+          python3 scripts/validation/validate_source.py
+
+      - name: Validate feed structure
+        run: |
+          set -euo pipefail
+          python3 scripts/validation/validate_feed.py feeds/apps.json --allow-duplicates
+          for client in altstore sidestore feather esign livecontainer; do
+            test -f "feeds/clients/${client}.json"
+            python3 scripts/validation/validate_feed.py "feeds/clients/${client}.json" --allow-duplicates
+          done
+
+      - name: Validate metadata contract
+        run: |
+          set -euo pipefail
+          python3 scripts/validation/validate_metadata.py feeds/apps.json
+
+      - name: Run unit tests
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s tests

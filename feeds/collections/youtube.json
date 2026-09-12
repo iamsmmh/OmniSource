@@ -1,0 +1,1062 @@
+{
+  "name": "YouTube",
+  "identifier": "com.iamsmmh.omnisource.collection.youtube",
+  "apiVersion": "v2",
+  "subtitle": "Ad-free YouTube, YouTube Music and Music clients",
+  "description": "Every enhanced YouTube client in the catalog: background playback, ad blocking, downloads and sponsor-block for the main app and YouTube Music.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+  "collection": "youtube",
+  "apps": [
+    {
+      "name": "MaxMusic",
+      "bundleIdentifier": "com.google.ios.youtubemusic",
+      "developerName": "Mark02-2012",
+      "subtitle": "YTMusicUltimate with extra tweaks",
+      "localizedDescription": "MaxMusic (formerly YTMUltimate+) is Mark02-2012's fork of Dayanch96's YTMusicUltimate for the YouTube Music app on iOS. It keeps everything YTMusicUltimate provides — no ads, background playback, download manager, audio quality selection — and adds Return YouTube Music Dislike, YouMusicPiP, YTMABConfig and VolumeBoostYT, plus fixed in-app downloads on newer YouTube Music versions. Settings live inside YouTube Music under Settings.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MaxMusic.webp",
+      "tintColor": "FF0033",
+      "category": "music",
+      "version": "9.36.1",
+      "versionDate": "2026-09-10",
+      "versionDescription": "MaxMusic 9.36.1 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.36.1\n\n**Changed**\nYouTube Music version",
+      "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa",
+      "size": 106420283,
+      "versions": [
+        {
+          "version": "9.36.1",
+          "date": "2026-09-10",
+          "localizedDescription": "MaxMusic 9.36.1 | YTMusic 2.4.1 | MaxMusic_2.4.1_9.36.1\n\n**Changed**\nYouTube Music version",
+          "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa",
+          "size": 106420283,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/Mark02-2012/MaxMusic/releases/tag/MaxMusic_9.36.1_2.4.1_(90)",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "MaxMusic_2.4.1_9.36.1.ipa",
+              "downloadUrl": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 106420283,
+              "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
+              "downloads": 191,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "677272934813c6f1890fa73ae1c8c47aead4630f266d27dc9002a0e278ccf4b5",
+          "downloads": 191
+        }
+      ],
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn2.png",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn3.png",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxMusic/MYmain/Resources/scrn4.png"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.storekit.request-data",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used to connect to Bluetooth headphones and audio devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and cast audio to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "maxmusic",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/Mark02-2012/MaxMusic",
+        "sourceURL": "https://github.com/Mark02-2012/MaxMusic",
+        "verification": {
+          "method": "github-release",
+          "publisher": "Mark02-2012/MaxMusic",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Full MaxMusic build including YouMusicPiP; upstream also publishes a no-YouMusicPiP variant if PiP causes background-playback issues. Shares com.google.ios.youtubemusic with YTMusicUltimate: install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-09-10"
+        }
+      }
+    },
+    {
+      "name": "MaxTube",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "Mark02-2012",
+      "subtitle": "YTPlus with ten extra tweaks",
+      "localizedDescription": "MaxTube (formerly YTPlusM) is Mark02-2012's fork of YTPlus/YTLite, the enhancer for the YouTube app on iOS. On top of the YTPlus feature set — video/audio/thumbnail downloads, SponsorBlock, PiP, YTUHD, YouQuality, Return YouTube Dislike, YTABConfig, DontEatMyContent and over 100 configurable options without a subscription — MaxTube integrates ten extra tweaks: YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, YTPlaybackFix, YouChooseQuality, YouShare and PleaseDontStopTheMusic. Settings live inside YouTube under Settings.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MaxTube.webp",
+      "tintColor": "EFA5A5",
+      "category": "photo-video",
+      "version": "21.31.3",
+      "versionDate": "2026-08-03",
+      "versionDescription": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
+      "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+      "size": 133357787,
+      "versions": [
+        {
+          "version": "21.31.3",
+          "date": "2026-08-03",
+          "localizedDescription": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
+          "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+          "size": 133357787,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/Ashreq/ashstore-repo/releases/tag/v1.0.8",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault.ipa",
+              "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg%40tubevault.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 142219559,
+              "sha256": "99d3847be6653d58723d1465c0fc4ab87079d341b3a80973e9c1647d4cffdb38",
+              "downloads": 5,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "YTPlusM_21.31.3_5.2.2.tg@tubevault.ipa",
+              "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 133357787,
+              "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
+              "downloads": 132,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
+          "downloads": 132
+        }
+      ],
+      "screenshotURLs": [
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr1.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr2.jpg",
+        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr3.jpg"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "maxtube",
+        "status": "manual",
+        "featured": false,
+        "upstreamURL": "https://github.com/Mark02-2012/MaxTube",
+        "sourceURL": "https://github.com/Ashreq/ashstore-repo",
+        "verification": {
+          "method": "github-release",
+          "publisher": "Ashreq/ashstore-repo",
+          "codeSigned": false,
+          "checksumPublished": true
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "The upstream repository removed its IPA release assets for legal reasons and now publishes builds on Telegram/TubeVault, so this entry tracks the GitHub mirror of the TubeVault build (MaxTube 1.4.2, YouTube 21.31.3, YTPlus 5.2.2), which publishes a SHA-256. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-08-03"
+        }
+      }
+    },
+    {
+      "name": "uYouEnhanced",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "arichornlover",
+      "subtitle": "uYouPlus with even more features!",
+      "localizedDescription": "uYou is the best tweak for the YouTube app. uYouEnhanced is a modified version of qnblackcat's uYouPlus & MiRO92's uYou with even more features. Additional features include skipping sponsorships in videos, more PiP options, unlocking higher resolutions, disabling overlays, removing upsell alerts, dimming the UI, enabling the miniplayer, preventing notch issues, configuring A/B settings, and adding a timestamp button.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/uYouEnhanced.webp",
+      "tintColor": "E81E8A",
+      "category": "photo-video",
+      "version": "21.14.4",
+      "versionDate": "2026-08-22",
+      "versionDescription": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
+      "downloadURL": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+      "size": 135840058,
+      "versions": [
+        {
+          "version": "21.14.4",
+          "date": "2026-08-22",
+          "localizedDescription": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
+          "downloadURL": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
+          "fallbackDownloadURLs": [
+            "https://dn720705.ca.archive.org/0/items/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
+          ],
+          "size": 135840058,
+          "minOSVersion": "16.0"
+        }
+      ],
+      "screenshotURLs": [
+        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus1.jpeg?raw=true",
+        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus2.jpeg?raw=true",
+        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus3.jpeg?raw=true",
+        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus4.jpeg?raw=true",
+        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus5.jpeg?raw=true",
+        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus6.jpeg?raw=true"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "get-task-allow",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
+          "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices.",
+          "NSCameraUsageDescription": "This lets you create videos using the app.",
+          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
+          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
+          "NSLocationWhenInUseUsageDescription": "Makes it easier for you to attach location information to your videos and live streams and allows for features such as improved recommendations and ads.",
+          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
+          "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created.",
+          "NSUserTrackingUsageDescription": "A message that informs the user why an app is requesting permission to use data for tracking the user or the device."
+        }
+      },
+      "fallbackDownloadURLs": [
+        "https://dn720705.ca.archive.org/0/items/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
+      ],
+      "omnisource": {
+        "slug": "uyouenhanced",
+        "status": "manual",
+        "featured": true,
+        "upstreamURL": "https://github.com/arichornlover/uYouEnhanced",
+        "sourceURL": "https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6",
+        "verification": {
+          "method": "manual-mirror",
+          "publisher": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
+          "codeSigned": false,
+          "checksumPublished": true
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "uYouEnhanced's official GitHub releases publish release notes only - no .ipa assets - so the IPA served here is a community build of the official release tag (YouTube 21.14.4 / uYou 3.0.5), mirrored on archive.org. Once a 'Build uYouEnhanced' run publishes an IPA in this repository (tag uyouenhanced-v*), the self-built artifact takes over automatically."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-08-22"
+        }
+      }
+    },
+    {
+      "name": "YouMod",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "Tonwalter888",
+      "subtitle": "All-in-one YouTube enhancement tweak",
+      "localizedDescription": "YouMod is a customizable YouTube enhancement tweak by Tonwalter888. It includes ad blocking, background playback, PiP support, UI customization, integrated download manager, and sponsor segment skipping.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
+      "tintColor": "FF0000",
+      "category": "photo-video",
+      "version": "21.36.6",
+      "versionDate": "2026-09-09",
+      "versionDescription": "YouTube 21.36.6 | YouMod_21.36.6_2.0.0\n\n### Latest Release, ENJOY!!\n\n> [!NOTE]\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - [v2.0.0 release notes](https://github.com/Tonwalter888/YouMod/releases/tag/v2.0.0)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
+      "size": 128845098,
+      "versions": [
+        {
+          "version": "21.36.6",
+          "date": "2026-09-09",
+          "localizedDescription": "YouTube 21.36.6 | YouMod_21.36.6_2.0.0\n\n### Latest Release, ENJOY!!\n\n> [!NOTE]\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - [v2.0.0 release notes](https://github.com/Tonwalter888/YouMod/releases/tag/v2.0.0)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
+          "size": 128845098,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youmod-ipa1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "YouMod_21.36.6_2.0.0.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 128845098,
+              "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
+              "downloads": 145,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
+          "downloads": 145
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "youmod",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/Tonwalter888/YouMod",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+        "verification": {
+          "method": "github-release",
+          "publisher": "mrdrvt99/YouProEXTRA",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official project: Tonwalter888/YouMod. The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-09-09"
+        }
+      }
+    },
+    {
+      "name": "YouPro",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "alibusut",
+      "subtitle": "Feature-rich YouTube tweak by alibusut",
+      "localizedDescription": "YouPro is an advanced YouTube modification tweak developed by alibusut. It features background playback, ad-free streaming, inline download capabilities, OLED true dark theme, SponsorBlock, and enhanced media playback controls.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
+      "tintColor": "FF0000",
+      "category": "photo-video",
+      "version": "21.36.6",
+      "versionDate": "2026-09-10",
+      "versionDescription": "YouTube 21.36.6 | YouProExtra_21.36.6_1.3.1\n\n### Latest Release, ENJOY!!\n> [!NOTE]\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - if you're signed out you can sign in manually. \n> - no iSponsorBlock. \n> - for <A15 devices press share button in the arrow down panel and use external player for downloaded videos.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
+      "size": 129007319,
+      "versions": [
+        {
+          "version": "21.36.6",
+          "date": "2026-09-10",
+          "localizedDescription": "YouTube 21.36.6 | YouProExtra_21.36.6_1.3.1\n\n### Latest Release, ENJOY!!\n> [!NOTE]\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - if you're signed out you can sign in manually. \n> - no iSponsorBlock. \n> - for <A15 devices press share button in the arrow down panel and use external player for downloaded videos.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YouSlider` `YTweaks` `YouSpeed` `YouMute` `YouLoop` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` \n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` \n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
+          "size": 129007319,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youproextra-ipa0",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "YouProExtra_21.36.6_1.3.1.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 129007319,
+              "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
+              "downloads": 65,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "cd05240a400b2739f8894da894cf5f3c5a7d67511814538533ac4863165563de",
+          "downloads": 65
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "youpro",
+        "status": "stable",
+        "featured": true,
+        "upstreamURL": "https://github.com/mrdrvt99/YouProEXTRA",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+        "verification": {
+          "method": "github-release",
+          "publisher": "mrdrvt99/YouProEXTRA",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "YouPro is developed by alibusut (distributed via the developer's Telegram). This source serves a ready-to-sideload IPA built from the official YouPro tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-09-10"
+        }
+      }
+    },
+    {
+      "name": "YouTubePlus",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "dayanch96",
+      "subtitle": "Lightweight YouTube tweak with no ads and PiP",
+      "localizedDescription": "YouTubePlus (formerly YTLite) is a lightweight enhancer for YouTube developed by Dayanch96. It provides complete ad blocking, background playback, offline video and audio downloads, Picture-in-Picture (PiP), SponsorBlock integration, gesture controls, and customizable interface settings.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
+      "tintColor": "FF0000",
+      "category": "photo-video",
+      "version": "21.24.3",
+      "versionDate": "2026-09-09",
+      "versionDescription": "YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - :key: no subscription required\n> - ✅ Working Download Manager, switch to overlay button before downloading.\n> - 🎥 Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - 🔧 Updated Gonerino and YT Headers\n> - Enable \"**Both** Download button placement\" under Downloading setting\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.24.3_5.2.2.ipa",
+      "size": 129031075,
+      "versions": [
+        {
+          "version": "21.24.3",
+          "date": "2026-09-09",
+          "localizedDescription": "YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - :key: no subscription required\n> - ✅ Working Download Manager, switch to overlay button before downloading.\n> - 🎥 Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - 🔧 Updated Gonerino and YT Headers\n> - Enable \"**Both** Download button placement\" under Downloading setting\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.24.3_5.2.2.ipa",
+          "size": 129031075,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytl-ipa5",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "YouTubePlus_21.24.3_5.2.2.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.24.3_5.2.2.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 129031075,
+              "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba",
+              "downloads": 1149,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba",
+          "downloads": 1149
+        },
+        {
+          "version": "20.21.6",
+          "date": "2026-09-10",
+          "localizedDescription": "YouTube 20.21.6 | YouTubePlus_20.21.6_5.2.2\n\n### iOS15+ build, ENJOY!!\n\n**Cracked by** [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - VolumeBoostYT is not included. \n> - YTUHD has more options than latest releases. 4K60HDR full support.\n> - to edit gonerino settings sideload a newer yt version before reverting to v20\n>\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `PleaseDontStopTheMusic`  \n\n> [!WARNING]\n> -  build may break in future when YT update backend.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa1/YouTubePlus_20.21.6_5.2.2.ipa",
+          "size": 115566999,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytl-ipa1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "YouTubePlus_20.21.6_5.2.2.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa1/YouTubePlus_20.21.6_5.2.2.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 115566999,
+              "sha256": "9b97fdef5a336ef784621efa8f6afa8e30eff6dbe414a4924ef8020409628355",
+              "downloads": 24,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "9b97fdef5a336ef784621efa8f6afa8e30eff6dbe414a4924ef8020409628355",
+          "downloads": 24
+        },
+        {
+          "version": "19.20.2",
+          "date": "2026-09-10",
+          "localizedDescription": "YouTube 19.20.2 | YouTubePlus_19.20.2_5.2.2\n\n### iOS14+ build, ENJOY!!\n\n**Cracked by** [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - VolumeBoostYT, Gonerino and YTweaks are not included. \n> - YTUHD has more options than latest releases. 4K60HDR full support.\n> - Full reinstall is recommended if you're downgrading from YT v21 to v19. \n>\n> - - -\n> #### Extra Tweaks: \n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality` `YouGetCaption` `YTHoldForSpeed`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `PleaseDontStopTheMusic` \n\n> [!WARNING]\n> -  build may break in future when YT update backend.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa0/YouTubePlus_19.20.2_5.2.2.ipa",
+          "size": 106247621,
+          "minOSVersion": "14.0",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytl-ipa0",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "YouTubePlus_19.20.2_5.2.2.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa0/YouTubePlus_19.20.2_5.2.2.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 106247621,
+              "sha256": "f77d827ff61a44fa9a995c5a2aaa0f97968aed7f254cba9d06761b23b70cf1b6",
+              "downloads": 12,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "f77d827ff61a44fa9a995c5a2aaa0f97968aed7f254cba9d06761b23b70cf1b6",
+          "downloads": 12
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "ytlite",
+        "status": "stable",
+        "featured": true,
+        "upstreamURL": "https://github.com/Dayanch96/YTLite",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+        "verification": {
+          "method": "github-release",
+          "publisher": "mrdrvt99/YouProEXTRA",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official project: dayanch96/YTLite ('YouTube Plus'). The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-09-09"
+        }
+      }
+    },
+    {
+      "name": "YTKACE",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "itzzace",
+      "subtitle": "YTKACE",
+      "localizedDescription": "YTKACE is a free, open-source YouTube enhancer and downloader for iOS. No ads, background playback, video and audio downloads, SponsorBlock, Picture in Picture, player gestures and deep interface customization.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
+      "tintColor": "FF0000",
+      "category": "photo-video",
+      "version": "21.35.3",
+      "versionDate": "2026-08-31",
+      "versionDescription": "YouTube 21.35.3 | YTKACE 0.9.2 | YTKACE_0.9.2_YouTube_21.35.3\n\nby @itzzace0\n\nWhat’s new:\n• Updated for YouTube 21.35.3\n• Added a save button to community post images, saved at full resolution\n• Added Posts to the tab bar, so it can be shown as a tab or set as the startup tab\n• Added a choice of where downloads are saved, between the YTKACE library, Photos, or asking each time\n• Added a custom hold speed with a slider from 0.25x to 5x, and the speed pill now shows the speed you set\n• Added a toggle to remove the ⋯ button from the action bar\n• Added a toggle to remove the row of buttons under the progress bar in fullscreen\n• Added a toggle to limit gestures to landscape only\n\nFixed:\n• Fixed the app freezing while saving large videos to Photos\n• Fixed tapping an image in the comments opening the share sheet\n• Fixed a crash when rotating the player\n• Fixed a crash when leaving the app while a message was on screen\n\nYouTube 21.35.3 requires iOS 17, so there are two IPAs:\n• `YTKACE_0.9.2_YouTube_21.35.3.ipa` for iOS 17 and newer\n• `YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa` for iOS 16",
+      "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
+      "size": 134278975,
+      "versions": [
+        {
+          "version": "21.35.3",
+          "date": "2026-08-31",
+          "localizedDescription": "YouTube 21.35.3 | YTKACE 0.9.2 | YTKACE_0.9.2_YouTube_21.35.3\n\nby @itzzace0\n\nWhat’s new:\n• Updated for YouTube 21.35.3\n• Added a save button to community post images, saved at full resolution\n• Added Posts to the tab bar, so it can be shown as a tab or set as the startup tab\n• Added a choice of where downloads are saved, between the YTKACE library, Photos, or asking each time\n• Added a custom hold speed with a slider from 0.25x to 5x, and the speed pill now shows the speed you set\n• Added a toggle to remove the ⋯ button from the action bar\n• Added a toggle to remove the row of buttons under the progress bar in fullscreen\n• Added a toggle to limit gestures to landscape only\n\nFixed:\n• Fixed the app freezing while saving large videos to Photos\n• Fixed tapping an image in the comments opening the share sheet\n• Fixed a crash when rotating the player\n• Fixed a crash when leaving the app while a message was on screen\n\nYouTube 21.35.3 requires iOS 17, so there are two IPAs:\n• `YTKACE_0.9.2_YouTube_21.35.3.ipa` for iOS 17 and newer\n• `YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa` for iOS 16",
+          "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
+          "size": 134278975,
+          "minOSVersion": "17.0",
+          "releaseUrl": "https://github.com/itzzace/ytkace/releases/tag/v0.9.2",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "com.itzzace.ytkace_0.9.2_roothide.deb",
+              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/com.itzzace.ytkace_0.9.2_roothide.deb",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "DEB",
+              "size": 877834,
+              "sha256": "1021efd74bb20e6388f37fb13a12b0cfed08c275820bfc0d5843cdce9d38449a",
+              "downloads": 63,
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "com.itzzace.ytkace_0.9.2_rootless.deb",
+              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/com.itzzace.ytkace_0.9.2_rootless.deb",
+              "platform": "linux",
+              "architecture": null,
+              "fileType": "DEB",
+              "size": 878030,
+              "sha256": "43a8efa81448a66587106f449e128bf7a03d11a28e70c60f60925e19cbace38c",
+              "downloads": 101,
+              "mimeType": "application/x-debian-package",
+              "installable": true
+            },
+            {
+              "filename": "YTKACE_0.9.2_YouTube_21.35.3.ipa",
+              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 134278975,
+              "sha256": "ca8579d26a89d6b00009df92aa55d08571b0ceca7632eccbb5903c51e803adbd",
+              "downloads": 2497,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa",
+              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 132496316,
+              "sha256": "261c9df7d96c0691cbe198d04bcfbca4e8ce1ccf081b022a6c064a0d0f500575",
+              "downloads": 295,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "ca8579d26a89d6b00009df92aa55d08571b0ceca7632eccbb5903c51e803adbd",
+          "downloads": 2497
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "ytkace",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/itzzace/ytkace",
+        "sourceURL": "https://github.com/itzzace/ytkace",
+        "verification": {
+          "method": "github-release",
+          "publisher": "itzzace/ytkace",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "17.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Tracks the official itzzace/ytkace releases. The published build follows the latest YouTube release and needs iOS 17 or newer; upstream also ships a separate iOS 16 IPA (YTKACE_<version>_YouTube_iOS16_<youtube>.ipa) on the same release page."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-08-31"
+        }
+      }
+    },
+    {
+      "name": "YTKillerPlus",
+      "bundleIdentifier": "com.google.ios.youtube",
+      "developerName": "iKarwan",
+      "subtitle": "Advanced YouTube tweak with extensive controls",
+      "localizedDescription": "YTKillerPlus is an advanced feature-packed YouTube tweak by iKarwan. It offers comprehensive ad blocking, background playback, high-speed downloads, PiP, custom player actions, OLED dark theme, and granular privacy controls.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
+      "tintColor": "FF0000",
+      "category": "photo-video",
+      "version": "21.36.6",
+      "versionDate": "2026-09-09",
+      "versionDescription": "YouTube 21.36.6 | YTKillerPlus_21.36.6_6.1\n\n### Latest Release, ENJOY!!\n\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\n\n> [!NOTE]\n> - **Sidestore is no longer supported!!.**\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
+      "size": 142497148,
+      "versions": [
+        {
+          "version": "21.36.6",
+          "date": "2026-09-09",
+          "localizedDescription": "YouTube 21.36.6 | YTKillerPlus_21.36.6_6.1\n\n### Latest Release, ENJOY!!\n\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\n\n> [!NOTE]\n> - **Sidestore is no longer supported!!.**\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
+          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
+          "size": 142497148,
+          "minOSVersion": "17.0",
+          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytkp-ipa1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "YTKillerPlus_21.36.6_6.1.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 142497148,
+              "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
+              "downloads": 102,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
+          "downloads": 102
+        }
+      ],
+      "screenshotURLs": [
+        "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/1.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/2.PNG",
+        "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/3.PNG"
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "ytkp",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
+        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
+        "verification": {
+          "method": "github-release",
+          "publisher": "mrdrvt99/YouProEXTRA",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "17.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "The developer's own AltStore source (repo.ikghd.me) has been unreachable, so this feed resolves from the ready-to-sideload community build of the official tweak at mrdrvt99/YouProEXTRA. YouTube 21.34+ requires iOS 17. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-09-09"
+        }
+      }
+    },
+    {
+      "name": "YTMusicUltimate",
+      "bundleIdentifier": "com.google.ios.youtubemusic",
+      "developerName": "dayanch96",
+      "subtitle": "Lightweight YouTube Music tweak",
+      "localizedDescription": "YTMusicUltimate is a lightweight enhancer for YouTube Music by Dayanch96. It unlocks background audio playback, removes in-app advertisements, enables premium audio streaming quality, and provides customizable player themes.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTubeMusic.webp",
+      "tintColor": "FF0000",
+      "category": "music",
+      "version": "9.36.1",
+      "versionDate": "2026-09-09",
+      "versionDescription": "YTMusicUltimate 9.36.1 | YTMusic 2.4.1 | YTMusicUltimate_9.36.1_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
+      "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa29/YTMusicUltimate_9.36.1_2.4.1.ipa",
+      "size": 104992686,
+      "versions": [
+        {
+          "version": "9.36.1",
+          "date": "2026-09-09",
+          "localizedDescription": "YTMusicUltimate 9.36.1 | YTMusic 2.4.1 | YTMusicUltimate_9.36.1_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
+          "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa29/YTMusicUltimate_9.36.1_2.4.1.ipa",
+          "size": 104992686,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/tag/ytmu-ipa29",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "YTMusicUltimate_9.36.1_2.4.1.ipa",
+              "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa29/YTMusicUltimate_9.36.1_2.4.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 104992686,
+              "sha256": "c098eb3877d4e6526af83cfb1ff2e3eaa547c3e266dd01770a87acd2f9cf3944",
+              "downloads": 133,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "c098eb3877d4e6526af83cfb1ff2e3eaa547c3e266dd01770a87acd2f9cf3944",
+          "downloads": 133
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.storekit.request-data",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth headphones and audio devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and cast audio to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "ytmusic",
+        "status": "stable",
+        "featured": true,
+        "upstreamURL": "https://github.com/Dayanch96/YTMusicUltimate",
+        "sourceURL": "https://github.com/mrdrvt99/YTMusicUltimate",
+        "verification": {
+          "method": "github-release",
+          "publisher": "mrdrvt99/YTMusicUltimate",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official project: dayanch96/YTMusicUltimate. The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by the mrdrvt99/YTMusicUltimate build fork. Shares com.google.ios.youtubemusic with MaxMusic: install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-07",
+          "lastUpdatedAt": "2026-09-09"
+        }
+      }
+    }
+  ],
+  "news": []
+}

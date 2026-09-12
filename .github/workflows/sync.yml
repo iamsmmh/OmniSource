@@ -126,19 +126,27 @@ jobs:
       # a dispatch run can never publish feeds, pages or README changes that
       # would fail a pull request.
       - name: Run unit tests
-        run: python3 -m unittest discover -s tests
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s tests
 
       - name: Validate output
-        run: python3 scripts/validate.py
+        run: |
+          set -euo pipefail
+          python3 scripts/validate.py
 
       # jq-only lint + AltStore v2 structural assertions.
       - name: Lint JSON with jq
-        run: bash scripts/validate_jq.sh
+        run: |
+          set -euo pipefail
+          bash scripts/validate_jq.sh
 
       # A rebuild from the freshly generated state must be a no-op: proves
       # the build is deterministic and nothing was hand-edited mid-run.
       - name: Verify generated artifacts are reproducible
-        run: python3 scripts/check_reproducible.py
+        run: |
+          set -euo pipefail
+          python3 scripts/check_reproducible.py
 
       - name: Commit changes
         id: commit
@@ -213,7 +221,9 @@ jobs:
           retention-days: 7
 
       - name: Assemble Pages site
-        run: python3 scripts/build_site.py
+        run: |
+          set -euo pipefail
+          python3 scripts/build_site.py
 
       # The deployable site (_site/) is published as a Pages artifact. This
       # path is used when Pages is set to *GitHub Actions*; while it is set to

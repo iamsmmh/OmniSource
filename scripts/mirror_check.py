@@ -26,7 +26,7 @@ if _SRC in sys.path:
 sys.path.insert(0, _SRC)
 
 from omnisource.io import read_json, write_json_stable
-from omnisource.mirrors import build_status, default_registry
+from omnisource.mirrors import build_status, default_registry, tier_rank
 from omnisource.probes import probe_url
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,7 +56,7 @@ def main(argv: list[str] | None = None) -> int:
     health: dict[str, bool] = {}
     if not args.offline:
         roots = set()
-        for entry in registry.get("mirrors", []) or []:
+        for entry in sorted(registry.get("mirrors", []) or [], key=tier_rank):
             if isinstance(entry, dict):
                 template = str(entry.get("urlTemplate") or entry.get("url") or "")
                 if template.startswith("https://"):

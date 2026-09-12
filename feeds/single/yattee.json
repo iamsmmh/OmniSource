@@ -1,0 +1,118 @@
+{
+  "name": "OmniSource — Yattee",
+  "identifier": "com.iamsmmh.omnisource.yattee",
+  "apiVersion": "v2",
+  "subtitle": "Single-app source",
+  "description": "Single-app feed for Yattee.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Yattee.webp",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+  "apps": [
+    {
+      "name": "Yattee",
+      "bundleIdentifier": "stream.yattee.app",
+      "developerName": "Yattee",
+      "subtitle": "Privacy-oriented native video player",
+      "localizedDescription": "Yattee is a privacy-oriented, fully native video player for iPhone, iPad and Apple TV. It plays from user-configured Invidious or Piped backends and local video libraries, with SponsorBlock, chapters, background audio, Picture in Picture, subscriptions, and full keyboard and remote control support.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Yattee.webp",
+      "tintColor": "4C86DE",
+      "category": "photo-video",
+      "version": "1.5.1",
+      "versionDate": "2024-01-28",
+      "versionDescription": "Yattee 1.5.1 | Yattee-1.5.1-iOS\n\n## What's Changed\n\n* support for private instances by @stonerl in https://github.com/yattee/yattee/pull/565\n* honour the aspect ratio when resizing by @stonerl in https://github.com/yattee/yattee/pull/562\n* make links in description clickable by @stonerl in https://github.com/yattee/yattee/pull/560\n* make description collapsible by @stonerl in https://github.com/yattee/yattee/pull/559\n* macOS: disable hit testing when not expanded by @stonerl in https://github.com/yattee/yattee/pull/578\n* disable portraitUpsideDown on iPhones by @stonerl in https://github.com/yattee/yattee/pull/569\n* make chapters collapsible and highlight current chapter by @stonerl in https://github.com/yattee/yattee/pull/564\n* more robust regex for chapters from description by @stonerl in https://github.com/yattee/yattee/pull/597\n* Translations update from Weblate\n* Added Persian, Spanish, Turkish and Russian localizations\n* Other changes and improvements\n## New Contributors\n* @stonerl made their first contribution in https://github.com/yattee/yattee/pull/565\n\n**Full Changelog**: https://github.com/yattee/yattee/compare/v1.5...v1.5.1",
+      "downloadURL": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
+      "size": 20792685,
+      "versions": [
+        {
+          "version": "1.5.1",
+          "date": "2024-01-28",
+          "localizedDescription": "Yattee 1.5.1 | Yattee-1.5.1-iOS\n\n## What's Changed\n\n* support for private instances by @stonerl in https://github.com/yattee/yattee/pull/565\n* honour the aspect ratio when resizing by @stonerl in https://github.com/yattee/yattee/pull/562\n* make links in description clickable by @stonerl in https://github.com/yattee/yattee/pull/560\n* make description collapsible by @stonerl in https://github.com/yattee/yattee/pull/559\n* macOS: disable hit testing when not expanded by @stonerl in https://github.com/yattee/yattee/pull/578\n* disable portraitUpsideDown on iPhones by @stonerl in https://github.com/yattee/yattee/pull/569\n* make chapters collapsible and highlight current chapter by @stonerl in https://github.com/yattee/yattee/pull/564\n* more robust regex for chapters from description by @stonerl in https://github.com/yattee/yattee/pull/597\n* Translations update from Weblate\n* Added Persian, Spanish, Turkish and Russian localizations\n* Other changes and improvements\n## New Contributors\n* @stonerl made their first contribution in https://github.com/yattee/yattee/pull/565\n\n**Full Changelog**: https://github.com/yattee/yattee/compare/v1.5...v1.5.1",
+          "downloadURL": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
+          "size": 20792685,
+          "minOSVersion": "14.0",
+          "releaseUrl": "https://github.com/yattee/yattee/releases/tag/v1.5.1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Yattee-1.5.1-iOS.ipa",
+              "downloadUrl": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 20792685,
+              "sha256": null,
+              "downloads": 9834,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "Yattee-1.5.1-macOS.zip",
+              "downloadUrl": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-macOS.zip",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "ZIP",
+              "size": 25359639,
+              "sha256": null,
+              "downloads": 11754,
+              "mimeType": "application/zip",
+              "installable": false
+            },
+            {
+              "filename": "Yattee-1.5.1-tvOS.ipa",
+              "downloadUrl": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-tvOS.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 16222375,
+              "sha256": null,
+              "downloads": 1379,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "downloads": 9834
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "yattee",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/yattee/yattee",
+        "sourceURL": "https://github.com/yattee/yattee",
+        "verification": {
+          "method": "github-release",
+          "publisher": "yattee/yattee",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official iOS IPA (Yattee-<version>-iOS.ipa) from the developer's GitHub releases. Yattee 1.5.1 targets iOS 14 or newer. The same release ships separate macOS and tvOS builds which are not distributed here."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2024-01-28"
+        }
+      }
+    }
+  ],
+  "news": []
+}

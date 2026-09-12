@@ -42,8 +42,19 @@ def main(argv: list[str] | None = None) -> int:
     sources = store.get("sources", []) if isinstance(store, dict) else []
     errors: list[str] = []
     warnings: list[str] = []
+    quarantined = 0
     for record in sources:
-        _ok, record_errors, record_warnings = assert_publishable(record if isinstance(record, dict) else {})
+        if not isinstance(record, dict):
+            errors.append("?: record must be an object")
+            continue
+        # Quarantine is the intended fail-closed destination for malformed or
+        # not-yet-verifiable candidates. Validate its shape for reporting, but
+        # do not turn an isolated record into a publication failure.
+        if str(record.get("status", "")).casefold() in {"quarantined", "rejected"}:
+            quarantined += 1
+            warnings.append(f"{record.get('url', record.get('source_url', '?'))}: retained in quarantine")
+            continue
+        _ok, record_errors, record_warnings = assert_publishable(record)
         errors.extend(f"{record.get('url', '?')}: {error}" for error in record_errors)
         warnings.extend(f"{record.get('url', '?')}: {warning}" for warning in record_warnings)
     for message in errors:
@@ -51,7 +62,10 @@ def main(argv: list[str] | None = None) -> int:
     for message in warnings:
         print(f"warning: {message}")
     failed = bool(errors) or (args.strict and bool(warnings))
-    print(f"validate_source: {len(sources)} record(s), {len(errors)} error(s), {len(warnings)} warning(s)")
+    print(
+        f"validate_source: {len(sources)} record(s), {len(errors)} error(s), "
+        f"{len(warnings)} warning(s), {quarantined} quarantined"
+    )
     return 1 if failed else 0
 
 

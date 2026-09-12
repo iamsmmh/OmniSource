@@ -39,19 +39,25 @@ jobs:
           python-version: "3.12"
 
       - name: Merge modular feeds into apps.json
-        run: python3 scripts/merge_feeds.py
+        run: |
+          set -euo pipefail
+          python3 scripts/merge_feeds.py
 
       # The historical flat URL (the installable source, /apps.json) and the
       # /api/ mirror are committed copies of feeds/: GitHub Pages serves this
       # branch, so they must be refreshed whenever the master feed changes.
       - name: Publish repository-root URLs
-        run: python3 scripts/publish_root.py
+        run: |
+          set -euo pipefail
+          python3 scripts/publish_root.py
 
       # Test gate: the commit step below only runs if every check here is
       # green (GitHub Actions skips the rest of the job on any failure).
       # Same suite validate.yml requires on PRs.
       - name: Run unit tests
-        run: python3 -m unittest discover -s tests
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s tests
 
       - name: Validate merged feeds
         run: |
@@ -62,7 +68,9 @@ jobs:
       # A rebuild from committed state must be a no-op: a hand-edited feed
       # drifts and fails here instead of being published to main.
       - name: Verify generated artifacts are reproducible
-        run: python3 scripts/check_reproducible.py
+        run: |
+          set -euo pipefail
+          python3 scripts/check_reproducible.py
 
       - name: Commit merged apps.json
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'

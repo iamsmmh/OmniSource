@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/feature-flags.schema.json",
+  "title": "OmniSource feature flags",
+  "type": "object",
+  "required": ["schemaVersion", "flags"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "flags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["enabled", "rollout"],
+        "properties": {
+          "enabled": { "type": "boolean" },
+          "rollout": { "type": "integer", "minimum": 0, "maximum": 100 },
+          "environments": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": true
+}

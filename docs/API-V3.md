@@ -1,76 +1,68 @@
 # OmniSource API v3
 
-Versioned, paginated, cache-friendly REST for OmniStore Pro clients and
-third-party integrators. Served two ways:
-
-1. **Static** — pre-rendered `api/v3/*.json` (181 documents, rebuilt by
-   `publish.yml` via `scripts/build_api_v3.py`). Works from GitHub Pages.
-2. **Dynamic** — `web/src/app/api/v3/[...route]/route.ts` (Next.js).
-   Full query semantics. Works on any Node host.
-
-Both share the envelope and the pure helpers in
-`src/omnisource/api_v3.py` (unit-tested in `tests/test_api_v3.py`).
+API v3 is the versioned, paginated, cache-friendly surface for source and
+release consumers. It is static-hostable and also implemented by the Next.js
+route handler. It exposes deterministic catalog/search results and operational
+intelligence; it does not expose user activity or personalized recommendations.
 
 ## Endpoints
 
 | Endpoint | Description |
 |---|---|
-| `GET /api/v3` or `/api/v3/index.json` | Registry + `feedVersion` (compare to skip refresh) |
-| `GET /api/v3/apps` | Paginated app catalog |
-| `GET /api/v3/apps/{id}` | One normalized app record + versions |
-| `GET /api/v3/sources` | Upstream sources |
-| `GET /api/v3/sources/{id}` | One source record |
-| `GET /api/v3/trending` | Trending / rising / recently updated |
-| `GET /api/v3/search?q=…` | Ranked search results |
-| `GET /api/v3/status` | Health board snapshot |
-| `GET /api/v3/security` | Security posture snapshot |
-| `GET /api/v3/analytics` | Live totals + rollup windows |
-| `GET /api/v3/releases` | Sequenced release timeline |
+| `/api/v3` or `/api/v3/index.json` | version and endpoint registry |
+| `/api/v3/apps` | paginated app catalog |
+| `/api/v3/apps/{id}` | normalized app plus versions |
+| `/api/v3/sources` | global source registry |
+| `/api/v3/sources/{id}` | source detail, history, health and score |
+| `/api/v3/search?q=...` | weighted search over declared metadata |
+| `/api/v3/releases` | release timeline sorted by release date |
+| `/api/v3/status` | monitor and feed health snapshot |
+| `/api/v3/security` | digest, provenance and integrity posture |
+| `/api/v3/analytics` | catalog and pipeline rollups |
 
-## Query semantics (dynamic routes)
+`/api/v3/trending` is retained as a deprecated legacy snapshot only so old
+clients do not fail during migration. It is deliberately absent from the web
+navigation and from new endpoint documentation.
 
-```
+## Query semantics
+
+```text
 GET /api/v3/apps?page=2&per_page=20&sort=-versionDate&category=Games&q=youtube
 GET /api/v3/apps?developer=acme&sort=name
 GET /api/v3/sources?status=verified&sort=-score
-GET /api/v3/search?q=trollstore
+GET /api/v3/search?q=trollstore&per_page=10
 ```
 
-- **Pagination** — `page` (1-based), `per_page` (1–200, default 50).
-  Response carries `pagination: {page, per_page, total, pages}`.
-- **Sorting** — `sort=field` / `sort=-field`. Apps: `name` (default),
-  `version`, `versionDate`, `category`, `developerName`, `size`.
-  Sources: `source`, `score` (default `-score`).
-- **Filtering** — exact (`category`, `status`) and substring
-  (`developer`, `q`/`query`) matches; search uses the fuzzy ranker.
-- **Envelope** — `{apiVersion: "3.0.0", schemaVersion: 3, feedVersion?,
-  pagination?, data}`. Errors: `{error: "not_found"}` + HTTP 404.
+- `page` is 1-based; `per_page` is clamped to 1–200 (default 50).
+- `sort=field` and `sort=-field` support name, version, versionDate,
+  category, developerName, size, and source score.
+- app filters are exact category/status values and substring developer/query
+  values; source filters include status.
+- search uses name, bundle ID, developer, category, tags, description, and
+  source metadata only. It does not use clicks, downloads, accounts, or
+  behavioral profiles.
+- response data is wrapped in `{apiVersion, schemaVersion, feedVersion,
+  pagination?, data}`.
 
-## Caching & freshness
+## Caching
 
-- `ETag: W/"…"` on every response; `If-None-Match` → `304`.
-- `Cache-Control: public, s-maxage=300, stale-while-revalidate=3600`.
-- Compression: Next.js negotiates gzip/brotli automatically.
-- Static snapshots carry per-document SHA-256 in `index.json`
-  (`checksums`) for conditional refresh without HTTP ETags.
-- `feedVersion` (12 hex chars) changes if and only if content changed.
+- Every dynamic response includes a weak SHA-256 ETag.
+- Send `If-None-Match` to receive `304 Not Modified` when unchanged.
+- Cache policy is `public, s-maxage=300, stale-while-revalidate=3600`.
+- Static v3 documents include per-document SHA-256 checksums in `index.json`.
+- `feedVersion` changes when the generated source documents change.
 
 ## Examples
 
 ```bash
-# First page of Games, newest first
-curl "https://HOST/api/v3/apps?category=Games&sort=-versionDate&per_page=5"
-
-# Conditional refresh (empty 304 when unchanged)
-ETAG=$(curl -sI "https://HOST/api/v3/apps" | grep -i etag | awk '{print $2}' | tr -d '\r')
-curl -H "If-None-Match: $ETAG" -o /dev/null -w "%{http_code}\n" "https://HOST/api/v3/apps"
-
-# Static snapshot from GitHub Pages
-curl "https://iamsmmh.github.io/OmniSource/api/v3/index.json"
+curl 'https://iamsmmh.github.io/OmniSource/api/v3/index.json'
+curl 'https://iamsmmh.github.io/OmniSource/api/v3/apps.json'
+curl 'https://HOST/api/v3/search?q=music&per_page=5'
 ```
 
 ## Relationship to v2
 
-v2 (`api/v2/`, delta-sync oriented) is unchanged and supported alongside
-v3. New integrations should use v3. Both are generated from the same
-`feeds/` source of truth; neither is hand-edited.
+`api/v2/` remains unchanged for delta-sync consumers. Both versions are
+projections of the same validated catalog and never read quarantine records.
+New integrations should use v3 and select `/releases`, `/status`,
+`/security`, or `/analytics` for operational views.

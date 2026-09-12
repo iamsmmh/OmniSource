@@ -1,0 +1,99 @@
+{
+  "name": "OmniSource — Ksign",
+  "identifier": "com.iamsmmh.omnisource.ksign",
+  "apiVersion": "v2",
+  "subtitle": "Single-app source",
+  "description": "Single-app feed for Ksign.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Ksign.webp",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+  "apps": [
+    {
+      "name": "Ksign",
+      "bundleIdentifier": "nya.asami.ksign",
+      "developerName": "Nyasami",
+      "subtitle": "ESign-style app signer",
+      "localizedDescription": "Ksign is a community “cleaner” take on ESign — an iOS app signer and installer. Import IPA files, sign them with your own certificate and install them on device, with Feather-based app-icon styles.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Ksign.webp",
+      "tintColor": "F5A623",
+      "category": "utilities",
+      "version": "1.6",
+      "versionDate": "2026-05-24",
+      "versionDescription": "Ksign 1.6 | Ksign\n\nHawoo everywan its been half a year since the last release I'm really sorry because ever since beta build I got lazy from release a new version, anyways \n\n## What's Changed\n* fix: handle empty display name in info.plist\n* fix: url scheme for ksign\n* fix: signing on a few apps with weird bundles\n* feat: injection path & inject into extensions\n* feat: optimized for iOS 26 by @Nyasami in https://github.com/Nyasami/Ksign/pull/87\n* feat: bulk install by @Nyasami in https://github.com/Nyasami/Ksign/pull/88\n* feat: idevice installation method by @Nyasami in https://github.com/Nyasami/Ksign/pull/96\n* feat: Add support for .bundle files as tweaks (copy into .app) by @Mikasa-san in https://github.com/Nyasami/Ksign/pull/112\n* chore: update language: German, Russian by @MrCookie-For-Programmers in https://github.com/Nyasami/Ksign/pull/105\n* chore: update Arabic translation by @mohammed1d1 in https://github.com/Nyasami/Ksign/pull/108\n* chore: update Vietnamese localizations by @Astear17 in https://github.com/Nyasami/Ksign/pull/109\n* feat: rsd support by @claration in https://github.com/Nyasami/Ksign/pull/117\n\n## New Contributors\n* @MrCookie-For-Programmers made their first contribution in https://github.com/Nyasami/Ksign/pull/76\n* @mohammed1d1 made their first contribution in https://github.com/Nyasami/Ksign/pull/108\n* @Mikasa-san made their first contribution in https://github.com/Nyasami/Ksign/pull/112\n* @Astear17 made their first contribution in https://github.com/Nyasami/Ksign/pull/109\n* @claration made their first contribution in https://github.com/Nyasami/Ksign/pull/117\n\n**Full Changelog**: https://github.com/Nyasami/Ksign/compare/v1.5.1...v1.6",
+      "downloadURL": "https://github.com/Nyasami/Ksign/releases/download/v1.6/Ksign.ipa",
+      "size": 16394645,
+      "versions": [
+        {
+          "version": "1.6",
+          "date": "2026-05-24",
+          "localizedDescription": "Ksign 1.6 | Ksign\n\nHawoo everywan its been half a year since the last release I'm really sorry because ever since beta build I got lazy from release a new version, anyways \n\n## What's Changed\n* fix: handle empty display name in info.plist\n* fix: url scheme for ksign\n* fix: signing on a few apps with weird bundles\n* feat: injection path & inject into extensions\n* feat: optimized for iOS 26 by @Nyasami in https://github.com/Nyasami/Ksign/pull/87\n* feat: bulk install by @Nyasami in https://github.com/Nyasami/Ksign/pull/88\n* feat: idevice installation method by @Nyasami in https://github.com/Nyasami/Ksign/pull/96\n* feat: Add support for .bundle files as tweaks (copy into .app) by @Mikasa-san in https://github.com/Nyasami/Ksign/pull/112\n* chore: update language: German, Russian by @MrCookie-For-Programmers in https://github.com/Nyasami/Ksign/pull/105\n* chore: update Arabic translation by @mohammed1d1 in https://github.com/Nyasami/Ksign/pull/108\n* chore: update Vietnamese localizations by @Astear17 in https://github.com/Nyasami/Ksign/pull/109\n* feat: rsd support by @claration in https://github.com/Nyasami/Ksign/pull/117\n\n## New Contributors\n* @MrCookie-For-Programmers made their first contribution in https://github.com/Nyasami/Ksign/pull/76\n* @mohammed1d1 made their first contribution in https://github.com/Nyasami/Ksign/pull/108\n* @Mikasa-san made their first contribution in https://github.com/Nyasami/Ksign/pull/112\n* @Astear17 made their first contribution in https://github.com/Nyasami/Ksign/pull/109\n* @claration made their first contribution in https://github.com/Nyasami/Ksign/pull/117\n\n**Full Changelog**: https://github.com/Nyasami/Ksign/compare/v1.5.1...v1.6",
+          "downloadURL": "https://github.com/Nyasami/Ksign/releases/download/v1.6/Ksign.ipa",
+          "size": 16394645,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/Nyasami/Ksign/releases/tag/v1.6",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Ksign.ipa",
+              "downloadUrl": "https://github.com/Nyasami/Ksign/releases/download/v1.6/Ksign.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 16394645,
+              "sha256": "57fbab135bdcd584faf095099f0913df634ce17081bc164ce82f3d91e3978483",
+              "downloads": 85628,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "57fbab135bdcd584faf095099f0913df634ce17081bc164ce82f3d91e3978483",
+          "downloads": 85628
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "ksign",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/Nyasami/Ksign",
+        "sourceURL": "https://github.com/Nyasami/Ksign",
+        "verification": {
+          "method": "github-release",
+          "publisher": "Nyasami/Ksign",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA published by the developer on GitHub Releases."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-05-24",
+          "lastUpdatedAt": "2026-05-24"
+        }
+      }
+    }
+  ],
+  "news": []
+}

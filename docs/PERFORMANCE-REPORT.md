@@ -1,50 +1,64 @@
-# Performance Report — OmniSource 3.2.0
+# Performance report
 
-Targets: **1,000+ sources / 10,000+ applications** with minimal API usage.
+**Assessment date:** 2026-09-12
+**Target:** at least 1,000 monitored sources, 10,000 applications, and
+100,000 requests/day without rebuilding unchanged catalog records.
 
-## Architecture for scale
+## Design
 
-| Layer | Mechanism |
-|---|---|
-| Sync | Incremental mode (`--incremental` skips pagination when the newest asset URL is unchanged) + `.cache/omnisource` HTTP cache shared across runs |
-| Probing | Thread-pool concurrency (default 16–32 workers), HEAD-first with GET fallback, 3xx-without-follow for release hosts (no IPA streaming into the runner) |
-| Bulk fetch | `src/omnisource/async_http.py` — asyncio + optional `aiohttp` connection pooling (keep-alive, DNS cache, bounded connector); stdlib `to_thread` fallback with semaphore when aiohttp is absent |
-| Payload caps | 2 MB feed cap, 1 MB HTML cap, 4 KB probe reads — a hostile host cannot exhaust the runner |
-| Writes | Content-stable writers (`write_json_stable`) — unchanged documents are not rewritten, so scheduled runs don't churn git or CDN caches |
-| API | Static pre-render + `s-maxage`/`stale-while-revalidate`, ETag/`304`, per-document checksums for conditional refresh |
+- Provider HTTP uses retries with exponential backoff, conditional cache
+  headers, capped response bodies, and host-scoped connection policy.
+- `src/omnisource/async_http.py` exposes one async API. It uses an
+  `aiohttp` `TCPConnector` pool when available and a bounded stdlib thread
+  fallback otherwise.
+- Monitoring uses bounded concurrency and probes HEAD first, falling back to a
+  one-byte/ranged GET rather than downloading IPA payloads.
+- JSON output uses stable serialization and content comparison; volatile
+  timestamps do not create empty commits.
+- Release history is append-only, but feeds are projected from changed app
+  records. Static API snapshots are paginated in v3 and cacheable with ETags.
+- Search builds a field-weighted index once and performs bounded fuzzy ranking;
+  the client supports source/developer/category/tag filters.
+- Images and feeds have cacheable static URLs, gzip twins, PWA caching, and
+  lazy locale loading.
 
-## Measured (2026-09-12, this checkout)
+## Build complexity
 
-- Full unit suite: **328 tests in ~6 s**.
-- Offline rebuild reproducibility: **697 files stable**.
-- Derived rebuilds (`make derived`): **< 2 s** total (canonical 83 apps,
-  ledger 96 releases, enrichment 94, reputation 78, 5 client feeds,
-  181 API v3 docs).
-- `next build`: **186 pages in ~25 s**; first-load JS **~103 kB** shared.
-- Root smoke test: **134 URLs green**.
+| Stage | Current approach | Scale behavior |
+|---|---|---|
+| Discovery | bounded pages per search term + dedupe by URL | shard terms/pages at high rate limits |
+| Validation | linear records, bounded app checks | O(sources + apps) |
+| Canonicalization | indexed identity keys with union-like grouping | O(records × identity signals) |
+| Release history | append/merge by release key | O(releases) per changed app |
+| Monitoring | bounded concurrent source/download probes | O(targets / workers) wall time |
+| Search | prebuilt tokens + weighted fuzzy candidates | bounded by index candidates and limit |
+| Website | static snapshots + server-rendered Next.js routes | CDN/cache friendly |
 
-## API budget
+## Measurement procedure
 
-- Scheduled syncs are incremental; discovery sleeps between code-search
-  pages and degrades to empty on rate-limit instead of retry-storming.
-- Monitoring probes are HEAD-first (no body transfer) and anonymous.
-- GitHub API calls scale with *changed* upstreams, not catalog size.
+Run the offline suite and inspect generated report sizes:
 
-## Scaling guidance
+```bash
+python3 -m unittest discover -s tests
+python3 scripts/audit.py --only perf
+python3 scripts/check_reproducible.py --diff
+```
 
-1. Past ~1,000 sources, run discovery/monitoring through
-   `async_http.fetch_many()` (`limit=32`, `timeout=15`) instead of the
-   thread pools — same result shape, pooled connections.
-2. Raise `--workers` for probes before raising timeouts; latency, not
-   bandwidth, dominates.
-3. Keep `max_bytes` caps tight; feeds are KB-scale — anything larger is
-   abuse or misconfiguration.
-4. Prefer the static API snapshots + CDN caching for read-heavy clients;
-   reserve dynamic routes for filtered/paginated queries.
+The audit writes raw/gzip JSON weights, image sizes, service-worker cache
+coverage, script loading, and budget observations to `reports/performance.md`.
+Live latency and uptime are intentionally recorded by `data/status.json` and
+not fabricated in this document.
 
-## Known ceilings
+## Operational limits
 
-- Single-runner GitHub Actions (no distributed queue) — acceptable to
-  the 10k-app target given incremental sync + caching.
-- `api/v3` static detail docs grow linearly with apps (~2 KB each) —
-  negligible for git/Pages at this scale.
+- GitHub API rate limits are the first likely ceiling for discovery. Use a
+  token only for GitHub API hosts and respect `Retry-After`.
+- The stdlib fallback has no shared HTTP connection pool; install the optional
+  async HTTP dependency for high-volume monitoring deployments.
+- GitHub Pages is a static origin. Dynamic API filtering is available on a
+  Node deployment; Pages clients use generated v3 snapshots.
+- IPA binary verification is intentionally opt-in because it consumes network,
+  disk, and runner time. Regular monitoring probes do not fetch payloads.
+- The checked-in catalog is small today, so benchmark results at 10,000 apps
+  must be measured in the target deployment rather than inferred from the
+  current checkout.

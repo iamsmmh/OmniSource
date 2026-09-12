@@ -70,13 +70,39 @@ newest). Rollback plan for any previously seen version:
 python3 scripts/build_release_history.py --rollback ytlite --to 2.1.0
 ```
 
-## Reputation & quarantine
+## Verification & quarantine
 
-`scripts/reputation/score.py` maps the 0–100 score onto
-`verified ≥85 / trusted ≥70 / good ≥50 / warning ≥25 / untrusted <25`
-(`data/source_reputation.json`). Scores below 25 are **quarantined**:
-kept for audit, never auto-published. Weights and signals are documented
-in `src/omnisource/reputation.py`.
+Discovery has two separate gates. Structural candidates are stored as
+`VALIDATING` or `QUARANTINED`; they do not enter the source registry or any
+client feed. The scheduled verifier fetches the candidate HTTPS JSON feed,
+validates the envelope/apps, records a canonical feed SHA-256, then promotes
+only clean records to `VERIFIED` and (with `--publish`) `PUBLISHED`:
+
+```bash
+python3 scripts/validation/validate_source.py
+python3 scripts/discovery/verify_sources.py --publish
+python3 scripts/registry/build_registry.py
+```
+
+`data/published_sources.json` is the only discovered-source projection used by
+registry/intelligence builders. A repository or GitHub Pages page without a
+verified JSON feed stays quarantined. Scores below 25 are also retained as
+quarantine evidence; no missing hash or mirror is fabricated. Weights and
+signals are documented in `src/omnisource/reputation.py`.
+
+## Backups and rollback
+
+Create and verify a metadata-only recovery snapshot before a deployment or
+incident drill:
+
+```bash
+python3 scripts/backup/create_backup.py create --label drill --destination /tmp/omni-backup
+python3 scripts/backup/create_backup.py verify --backup /tmp/omni-backup
+python3 scripts/backup/create_backup.py restore --backup /tmp/omni-backup --destination /tmp/restore --dry-run
+```
+
+Snapshots exclude IPA/TIPA payloads, caches, credentials, and build outputs.
+CI retains daily/weekly/monthly artifacts for 90 days.
 
 ## Incident quick-reference
 

@@ -20,7 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 
 from omnisource.io import read_json, write_json
-from omnisource.security import build_security_report
+from omnisource.security import build_security_report, verify_file, verify_url
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -33,7 +33,18 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--catalog", default=str(ROOT / "catalog.json"))
     parser.add_argument("--health", default=str(ROOT / "feeds" / "health.json"))
     parser.add_argument("--out", default=str(ROOT / "data" / "security.json"))
+    parser.add_argument(
+        "--alias", default=str(ROOT / "security-report.json"), help="backward-compatible top-level report copy"
+    )
     parser.add_argument("--fail-on", default="critical", choices=sorted(SEVERITY_RANK))
+    parser.add_argument(
+        "--verify-downloads", action="store_true", help="stream and hash newest assets (network and disk intensive)"
+    )
+    parser.add_argument(
+        "--verify-file", action="append", default=[], help="verify a local binary (repeatable; useful in offline CI)"
+    )
+    parser.add_argument("--verify-timeout", type=float, default=300.0)
+    parser.add_argument("--max-download-bytes", type=int, default=512 * 1024 * 1024)
     return parser.parse_args(argv)
 
 
@@ -44,12 +55,59 @@ def main(argv: list[str] | None = None) -> int:
     catalog = read_json(Path(args.catalog))
     catalog_apps = catalog.get("apps", []) if isinstance(catalog, dict) else []
     health = read_json(Path(args.health))
+    app_records = [item for item in apps if isinstance(item, dict)]
     report = build_security_report(
-        apps=[item for item in apps if isinstance(item, dict)],
+        apps=app_records,
         catalog_apps=[item for item in catalog_apps if isinstance(item, dict)],
         health=health if isinstance(health, dict) else None,
     )
+    if args.verify_file:
+        local_results = []
+        for filename in args.verify_file:
+            result = verify_file(Path(filename))
+            result["id"] = str(filename)
+            local_results.append(result)
+            if not result.get("ok"):
+                report["findings"].append(
+                    {
+                        "severity": "critical",
+                        "check": "local-binary-integrity",
+                        "id": str(filename),
+                        "detail": result["detail"],
+                    }
+                )
+        report["localFileVerification"] = local_results
+    if args.verify_downloads:
+        verification_results = []
+        for app in app_records:
+            versions = app.get("versions") if isinstance(app.get("versions"), list) else []
+            newest = versions[0] if versions and isinstance(versions[0], dict) else app
+            result = verify_url(
+                str(newest.get("downloadURL") or app.get("downloadURL") or ""),
+                sha256=str(newest.get("sha256") or app.get("sha256") or ""),
+                sha512=str(newest.get("sha512") or app.get("sha512") or ""),
+                expected_size=int(newest.get("size") or app.get("size") or 0) or None,
+                timeout=max(1.0, args.verify_timeout),
+                max_bytes=max(1, args.max_download_bytes),
+            )
+            result["id"] = str(app.get("slug") or app.get("id") or app.get("name") or "?")
+            verification_results.append(result)
+            if not result.get("ok"):
+                report["findings"].append(
+                    {
+                        "severity": "critical",
+                        "check": "binary-integrity",
+                        "id": result["id"],
+                        "detail": result["detail"],
+                    }
+                )
+        report["binaryVerification"] = verification_results
+        report["verdict"] = (
+            "fail" if any(item["severity"] == "critical" for item in report["findings"]) else report["verdict"]
+        )
     write_json(Path(args.out), report)
+    if args.alias and Path(args.alias) != Path(args.out):
+        write_json(Path(args.alias), report)
     floor = SEVERITY_RANK[args.fail_on]
     blocking = [item for item in report["findings"] if SEVERITY_RANK[item["severity"]] >= floor]
     for item in report["findings"]:

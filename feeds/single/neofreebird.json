@@ -1,0 +1,107 @@
+{
+  "name": "OmniSource — NeoFreeBird",
+  "identifier": "com.iamsmmh.omnisource.neofreebird",
+  "apiVersion": "v2",
+  "subtitle": "Single-app source",
+  "description": "Single-app feed for NeoFreeBird.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/NeoFreeBird.webp",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+  "apps": [
+    {
+      "name": "NeoFreeBird",
+      "bundleIdentifier": "com.atebits.Tweetie2",
+      "developerName": "NeoFreeBird contributors",
+      "subtitle": "Modified Twitter with QoL fixes and reverts",
+      "localizedDescription": "NeoFreeBird is a modified build of the official Twitter app that reverts unpopular rebranding and interface changes, restores classic features, and bundles quality-of-life modifications including BHTwitter options — built and published automatically from the project's GitHub releases. Shares com.atebits.Tweetie2 with the App Store Twitter/X app and BHTwitter: install one at a time.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/NeoFreeBird.webp",
+      "tintColor": "1D9BF0",
+      "category": "social",
+      "version": "2.2",
+      "versionDate": "2025-11-03",
+      "versionDescription": "Twitter 2.2 | NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin\n\nNeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\n\n### Change log:\n\n**Twitter, version 11.35:**\n- Updated the Twitter build to 11.35\n\n**NeoFreeBird, version 2.2:**\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\n- Localized the Post > Tweet replacer\n- Improved the Open in Twitter extension\n- Minor bug fixes and other minor improvements\n\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\n\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
+      "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
+      "size": 158452402,
+      "versions": [
+        {
+          "version": "2.2",
+          "date": "2025-11-03",
+          "localizedDescription": "Twitter 2.2 | NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin\n\nNeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\n\n### Change log:\n\n**Twitter, version 11.35:**\n- Updated the Twitter build to 11.35\n\n**NeoFreeBird, version 2.2:**\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\n- Localized the Post > Tweet replacer\n- Improved the Open in Twitter extension\n- Minor bug fixes and other minor improvements\n\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\n\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
+          "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
+          "size": 158452402,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/NeoFreeBird/app/releases/tag/2.2",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
+              "downloadUrl": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 158452402,
+              "sha256": "e5592371a53e770a0ac99242a44b4f6ea27a521058470491f18e1ed661acdaa2",
+              "downloads": 22370,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "NeoFreeBird-2.2-Twitter-11.35.ipa",
+              "downloadUrl": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 153108663,
+              "sha256": "964d8e009113dea7c29924a746bebbf5f50c29d61c1fd8656a91a8a765231db0",
+              "downloads": 21648,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "e5592371a53e770a0ac99242a44b4f6ea27a521058470491f18e1ed661acdaa2",
+          "downloads": 22370
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "neofreebird",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/NeoFreeBird/app",
+        "sourceURL": "https://github.com/NeoFreeBird/app",
+        "verification": {
+          "method": "github-release",
+          "publisher": "NeoFreeBird/app",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPAs from the project's GitHub releases (its own AltStore source mirrors them). The plain build is distributed here; the -noFixTwitterLogin variant on the same release is a troubleshooting fallback. Twitter 11.x builds require iOS 15+. Shares the Twitter bundle identifier with BHTwitter in this catalog — install one at a time."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2025-11-03"
+        }
+      }
+    }
+  ],
+  "news": []
+}

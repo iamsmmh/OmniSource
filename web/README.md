@@ -1,75 +1,76 @@
-# OmniSource Web — modern website (Next.js 15 + TypeScript + Tailwind PWA)
+# OmniSource Web
 
-The modern companion to the zero-dependency static site at the repository
-root (which keeps deploying to GitHub Pages unchanged). This app adds
-server rendering, a dynamic REST API, 8-locale i18n and installable-PWA
-offline support.
+Next.js 15, TypeScript, Tailwind, and an installable PWA for the validated
+OmniSource catalog. The root static site remains the GitHub Pages compatibility
+path. This application is source-first: it provides catalog browsing, source
+health, release/security evidence, operational statistics, and install links.
+It does not provide accounts, ratings, reviews, comments, social activity,
+marketplace transactions, or personalized recommendations.
 
 ## Routes
 
 | Route | Page |
 |---|---|
-| `/` | Home (hero, client deep-links, stats, status) |
-| `/apps` + `/apps/[id]` | Catalog with category/sort filters + app detail |
-| `/sources` + `/sources/[id]` | Source explorer with reputation + health |
-| `/collections` | Curated collections |
-| `/categories` | Category browser |
-| `/trending` | Trending / rising / recently updated |
-| `/search` | Fuzzy multi-field search (ranking, filters, sorting) |
-| `/status` | Source/download availability board |
-| `/security` | Security posture (verdict, findings, dup binaries) |
-| `/statistics` | Daily / weekly / monthly analytics windows |
-| `/about` | Project overview + pipeline |
-| `/api/v3/*` | Dynamic REST API (see `docs/API-V3.md`) |
+| `/` | Home, client deep-links, catalog summary, pipeline status |
+| `/apps` + `/apps/[id]` | validated app catalog and release details |
+| `/sources` + `/sources/[id]` | source registry, health, sync, history and reputation |
+| `/collections` | committed source/category collections |
+| `/categories` | category browser |
+| `/developers` | publisher/developer index |
+| `/search` | deterministic metadata search |
+| `/status` | source/feed/download availability |
+| `/security` | hashes, provenance, integrity and gate findings |
+| `/statistics` | daily/weekly/monthly operational analytics |
+| `/about` | scope, architecture and limitations |
+| `/api/v3/*` | cacheable dynamic API (see `docs/API-V3.md`) |
 
 ## Data flow
 
-`prebuild` / `predev` run `scripts/sync-data.mjs`, which copies the
+`prebuild` and `predev` run `scripts/sync-data.mjs`. It copies validated
 pipeline outputs into `web/`:
 
-- `src/data/*.json` — server-bundled snapshots (`../feeds`, `../data`)
-- `public/data/v3/*.json` — client-fetchable API snapshot (search, PWA)
+- `src/data/*.json` — server-bundled snapshots from `feeds/` and `data/`;
+- `public/data/v3/*.json` — client-fetchable API snapshots for search/PWA.
 
-The app therefore builds and runs anywhere without reaching outside its
-own directory.
+The app builds without reaching localhost or an external database. Production
+browser requests remain relative to the deployed origin.
 
 ## Develop
 
 ```bash
 cd web
-npm install
-npm run dev        # http://localhost:3000
+npm ci
 npm run typecheck
 npm run lint
+npm run dev                 # binds Next's normal development port
 npm run build && npm start
 ```
 
-## API v3 (dynamic)
+The live preview environment should start Next with `--hostname 0.0.0.0` and
+an allowed preview origin when used in a sandbox.
 
-`src/app/api/v3/[...route]/route.ts` implements the full contract:
+## API v3
 
-- `GET /api/v3/apps?page=2&per_page=20&sort=-versionDate&category=Games&q=youtube`
-- `GET /api/v3/apps/{id}`, `/sources`, `/sources/{id}`, `/trending`,
-  `/search?q=…`, `/status`, `/security`, `/analytics`, `/releases`
-- Pagination envelopes, `sort`/`-sort`, `ETag` + `304` conditional
-  responses, `Cache-Control: s-maxage=300, stale-while-revalidate=3600`
-  (Next.js compresses gzip/brotli automatically).
+The route handler supports:
 
-## i18n
+- `GET /api/v3/apps?page=2&per_page=20&sort=-versionDate&category=Games&q=youtube`;
+- `GET /api/v3/apps/{id}`, `/sources`, `/sources/{id}`;
+- `GET /api/v3/search?q=...`, `/status`, `/security`, `/analytics`, `/releases`;
+- pagination envelopes, deterministic sorting/filtering, ETags and `304`
+  responses, and `Cache-Control: s-maxage=300, stale-while-revalidate=3600`.
 
-English, Bangla, Arabic, Spanish, French, German, Japanese, Chinese.
-Dictionaries load lazily per locale (`src/i18n/locales/*.ts`), fall back
-to English, and render from the `omnisource-lang` cookie on the server so
-hydration never mismatches. RTL is enabled automatically for Arabic.
+## i18n and accessibility
 
-## PWA
+English, Bangla, Arabic, Spanish, French, German, Japanese, and Chinese
+locale modules are loaded lazily. Missing strings fall back to English and
+Arabic sets RTL document direction. Pages use semantic headings, labels,
+keyboard-focusable controls, contrast-aware colors, responsive grids, and
+text alternatives for icons/images.
 
-`manifest.webmanifest` + `sw.js` (cache-first shell/data, network-first
-API) registered in production only (`PwaRegister`).
+## PWA and deployment
 
-## Deploy
-
-Any Node host (Vercel, Cloudflare, self-hosted `npm run build && npm start`).
-`output: "export"` static hosting is possible but disables the query-string
-API semantics (use the pre-rendered `/api/v3/*.json` + `/data/v3/*.json`
-snapshots instead).
+`manifest.webmanifest` plus the service worker provide a cache-first shell and
+network-first API snapshots. It is registered only in production. Deploy on
+Vercel, Cloudflare, or a self-hosted Node 22 host with `npm run build && npm
+start`. Static hosting can use generated `/api/v3/*.json` snapshots; dynamic
+query semantics require Node.

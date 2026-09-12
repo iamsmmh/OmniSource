@@ -1,0 +1,45 @@
+# Metadata-only disaster-recovery snapshots. IPA payloads, caches, and secrets
+# are excluded by src/omnisource/backup.py.
+name: Backup and Recovery
+
+on:
+  schedule:
+    - cron: "45 1 * * *"
+    - cron: "0 2 * * 0"
+    - cron: "15 2 1 * *"
+  workflow_dispatch:
+
+concurrency:
+  group: backup
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  backup:
+    name: Create verified snapshot
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Snapshot catalog, feeds, data, and API
+        run: |
+          set -euo pipefail
+          python3 scripts/backup/create_backup.py create --label scheduled --destination "$RUNNER_TEMP/omnisource-backups"
+
+      - name: Upload verified snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: omnisource-backup-${{ github.run_id }}
+          path: ${{ runner.temp }}/omnisource-backups
+          if-no-files-found: error
+          retention-days: 90

@@ -6,9 +6,9 @@
 # LiveContainer sources every 12 hours, validates every candidate, and
 # merges the survivors into data/discovered_sources.json.
 #
-# Discoveries are NEVER auto-published to user-facing feeds: validation
-# failures fail this job before anything is committed, and promotion into
-# catalog.json stays an explicit human (or pinned-policy) step.
+# Discoveries are never copied directly into a client feed. Structural
+# validation, remote feed verification, and the explicit publication projection
+# run as separate gates; catalog changes still require a reviewed source entry.
 # -----------------------------------------------------------------------------
 name: Discovery
 
@@ -45,6 +45,14 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Run repository discovery pass
+        if: inputs.skip_github != true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python3 scripts/discovery/discover_repositories.py
+
       - name: Run discovery passes
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -62,12 +70,19 @@ jobs:
           set -euo pipefail
           python3 scripts/validation/validate_source.py
 
-      - name: Commit discovery store
+      - name: Verify and publish only clean feeds
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python3 scripts/discovery/verify_sources.py --publish
+
+      - name: Commit discovery and publication projections
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/discovered_sources.json
+          git add data/discovered_sources.json data/quarantine/sources.json data/published_sources.json
           if git diff --cached --quiet; then
             echo "No new discoveries."
             exit 0

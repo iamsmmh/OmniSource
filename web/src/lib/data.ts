@@ -12,7 +12,6 @@ import searchIndex from "../data/search-index.json";
 import securityDoc from "../data/security.json";
 import sourceReputation from "../data/source_reputation.json";
 import statusDoc from "../data/status.json";
-import trendingDoc from "../data/trending.json";
 import sourcesDoc from "../data/sources.json";
 
 export interface AltApp {
@@ -120,8 +119,20 @@ export function getCategories(): Array<{ name: string; count: number }> {
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 }
 
-export function getTrending(): Record<string, unknown> {
-  return trendingDoc as Record<string, unknown>;
+export function getDevelopers(): Array<{ name: string; appCount: number; sourceCount: number }> {
+  const apps = getApps();
+  const sourcesByDeveloper = new Map<string, Set<string>>();
+  const appCounts = new Map<string, number>();
+  for (const app of apps) {
+    const name = app.developerName?.trim() || "Unknown developer";
+    appCounts.set(name, (appCounts.get(name) ?? 0) + 1);
+    const source = String((app as AltApp & { sourceURL?: string; source?: string }).sourceURL || (app as AltApp & { source?: string }).source || "");
+    if (!sourcesByDeveloper.has(name)) sourcesByDeveloper.set(name, new Set());
+    if (source) sourcesByDeveloper.get(name)?.add(source);
+  }
+  return [...appCounts.entries()]
+    .map(([name, appCount]) => ({ name, appCount, sourceCount: sourcesByDeveloper.get(name)?.size ?? 0 }))
+    .sort((a, b) => b.appCount - a.appCount || a.name.localeCompare(b.name));
 }
 
 export function getStatus(): Record<string, unknown> {
@@ -165,7 +176,7 @@ export function getCatalog(): Record<string, unknown> {
 }
 
 export function getGeneratedAt(): string {
-  const docs = [discoveryDoc, statusDoc, trendingDoc] as Array<Record<string, unknown>>;
+  const docs = [discoveryDoc, statusDoc] as Array<Record<string, unknown>>;
   for (const doc of docs) {
     if (typeof doc.generatedAt === "string" && doc.generatedAt) return doc.generatedAt;
   }

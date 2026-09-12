@@ -9,7 +9,6 @@ import {
   getSourceById,
   getSources,
   getStatus,
-  getTrending,
   type AltApp,
 } from "@/lib/data";
 import { scoreApp } from "@/lib/search";
@@ -102,7 +101,6 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
         "/api/v3/apps/{id}",
         "/api/v3/sources",
         "/api/v3/sources/{id}",
-        "/api/v3/trending",
         "/api/v3/search",
         "/api/v3/status",
         "/api/v3/security",
@@ -158,7 +156,6 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
     );
   }
 
-  if (resource === "trending") return json(request, envelope(getTrending()));
   if (resource === "status") return json(request, envelope(getStatus()));
   if (resource === "security") return json(request, envelope(getSecurity()));
   if (resource === "analytics") {

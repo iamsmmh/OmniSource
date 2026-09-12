@@ -146,10 +146,14 @@ jobs:
           xcodebuild -version
 
       - name: Install Homebrew dependencies
-        run: brew install ldid dpkg make wget unzip jq pipx xz
+        run: |
+          set -euo pipefail
+          brew install ldid dpkg make wget unzip jq pipx xz
 
       - name: Put GNU make on PATH
-        run: echo "$(brew --prefix make)/libexec/gnubin" >> "$GITHUB_PATH"
+        run: |
+          set -euo pipefail
+          printf '%s\n' "$(brew --prefix make)/libexec/gnubin" >> "$GITHUB_PATH"
 
       # -----------------------------------------------------------------------
       # 3. Theos — cross-compilation root for iOS tweaks.
@@ -198,7 +202,9 @@ jobs:
           persist-credentials: false
 
       - name: Install theos-jailed
-        run: bash ./theos-jailed/install
+        run: |
+          set -euo pipefail
+          bash ./theos-jailed/install
 
       # Theos scripts pipe through `head`, which can SIGPIPE under `set -e`.
       - name: Patch Theos broken-pipe (`| head`) issue
@@ -638,7 +644,12 @@ jobs:
       - name: Trigger feed sync
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run sync.yml --repo "${{ github.repository }}" --ref main || true
+          GH_REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          if ! gh workflow run sync.yml --repo "${GH_REPOSITORY}" --ref main; then
+            echo "::warning::sync workflow dispatch failed; the next scheduled sync will reconcile outputs"
+          fi
 
       - name: Job summary
         if: always()

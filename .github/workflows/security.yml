@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      contents: write
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -75,21 +75,51 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: security-report
-          path: data/security.json
+          path: |
+            data/security.json
+            security-report.json
           if-no-files-found: error
           retention-days: 30
 
+  commit:
+    name: Publish security report
+    needs: scan
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: security-report
+          path: security-artifact
+
       - name: Commit security report
-        if: github.event_name != 'pull_request'
         run: |
           set -euo pipefail
+          cp security-artifact/data/security.json data/security.json
+          cp security-artifact/security-report.json security-report.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/security.json
+          git add data/security.json security-report.json
           if git diff --cached --quiet; then
             echo "Security report unchanged."
             exit 0
           fi
           git commit -m "chore(security): refresh security posture report [skip ci]"
-          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            if [ "${attempt}" -eq 3 ]; then
+              echo "::error::security report push failed after 3 attempts"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+          done

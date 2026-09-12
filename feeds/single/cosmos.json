@@ -1,0 +1,99 @@
+{
+  "name": "OmniSource — Cosmos Music Player",
+  "identifier": "com.iamsmmh.omnisource.cosmos",
+  "apiVersion": "v2",
+  "subtitle": "Single-app source",
+  "description": "Single-app feed for Cosmos Music Player.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Cosmos.webp",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+  "apps": [
+    {
+      "name": "Cosmos Music Player",
+      "bundleIdentifier": "dev.clq.Cosmos-Music-Player",
+      "developerName": "clquwu",
+      "subtitle": "Music player",
+      "localizedDescription": "Cosmos Music Player is a premium music player for iOS built on iCloud Drive and local storage. It gives you a clean, modern player for the music you keep on your device and in iCloud.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Cosmos.webp",
+      "tintColor": "3F51B5",
+      "category": "music",
+      "version": "1.2.5",
+      "versionDate": "2026-09-08",
+      "versionDescription": "Cosmos Music Player 1.2.5 | Cosmos-Music-Player\n\n- Search is now available across songs, favorites, artists, albums, and playlists.\n- Lyrics have been redesigned with smoother synchronization, tap-to-seek, instrumental breaks, offline caching, and alternate versions.\n- Added broader support for Opus, Ogg, FLAC, AAC/M4A, DSF, and DFF files.\n- Improved playback stability, gapless transitions, seeking, Bluetooth, CarPlay, and audio interruption handling.\n- Added appearance options: System, Light, and Dark.\n- Added controls for automatic library scan frequency and artist organization.\n- Added a Create Playlist button when no playlists exist.\n- Improved artwork loading for iCloud and externally imported music.\n- Improved Siri, widgets, CarPlay, and Share extension reliability.\n- Fixed library issues involving moved, renamed, restored, or temporarily unavailable files.\n- Added and improved translations across all supported languages.\n- Includes numerous performance improvements and bug fixes.",
+      "downloadURL": "https://github.com/clquwu/Cosmos-Music-Player/releases/download/1.2.5/Cosmos-Music-Player.ipa",
+      "size": 12056869,
+      "versions": [
+        {
+          "version": "1.2.5",
+          "date": "2026-09-08",
+          "localizedDescription": "Cosmos Music Player 1.2.5 | Cosmos-Music-Player\n\n- Search is now available across songs, favorites, artists, albums, and playlists.\n- Lyrics have been redesigned with smoother synchronization, tap-to-seek, instrumental breaks, offline caching, and alternate versions.\n- Added broader support for Opus, Ogg, FLAC, AAC/M4A, DSF, and DFF files.\n- Improved playback stability, gapless transitions, seeking, Bluetooth, CarPlay, and audio interruption handling.\n- Added appearance options: System, Light, and Dark.\n- Added controls for automatic library scan frequency and artist organization.\n- Added a Create Playlist button when no playlists exist.\n- Improved artwork loading for iCloud and externally imported music.\n- Improved Siri, widgets, CarPlay, and Share extension reliability.\n- Fixed library issues involving moved, renamed, restored, or temporarily unavailable files.\n- Added and improved translations across all supported languages.\n- Includes numerous performance improvements and bug fixes.",
+          "downloadURL": "https://github.com/clquwu/Cosmos-Music-Player/releases/download/1.2.5/Cosmos-Music-Player.ipa",
+          "size": 12056869,
+          "minOSVersion": "18.5",
+          "releaseUrl": "https://github.com/clquwu/Cosmos-Music-Player/releases/tag/1.2.5",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Cosmos-Music-Player.ipa",
+              "downloadUrl": "https://github.com/clquwu/Cosmos-Music-Player/releases/download/1.2.5/Cosmos-Music-Player.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 12056869,
+              "sha256": "e8e2862e1b3a900e96569faf87c9c3e02d90b2c5b52ad854f6710d0ea36c91e9",
+              "downloads": 14,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "e8e2862e1b3a900e96569faf87c9c3e02d90b2c5b52ad854f6710d0ea36c91e9",
+          "downloads": 14
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "cosmos",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/clquwu/Cosmos-Music-Player",
+        "sourceURL": "https://github.com/clquwu/Cosmos-Music-Player",
+        "verification": {
+          "method": "github-release",
+          "publisher": "clquwu/Cosmos-Music-Player",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "18.5",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA published by the developer on GitHub Releases."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-09-08",
+          "lastUpdatedAt": "2026-09-08"
+        }
+      }
+    }
+  ],
+  "news": []
+}

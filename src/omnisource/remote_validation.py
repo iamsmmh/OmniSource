@@ -62,20 +62,34 @@ def validate_source_record(record: Any) -> list[str]:
     errors: list[str] = []
     if not isinstance(record, dict):
         return ["record must be an object"]
+    aliases = {
+        "source_id": ("source_id", "sourceId"),
+        "name": ("name", "source_name", "sourceName"),
+        "url": ("url", "source_url", "sourceUrl"),
+        "type": ("type", "source_type", "sourceType"),
+        "discovered_at": ("discovered_at", "first_seen", "firstSeen"),
+        "last_checked": ("last_checked", "last_seen", "lastSeen"),
+        "health": ("health", "health_status", "healthStatus"),
+        "reputation": ("reputation", "reputation_score", "reputationScore"),
+    }
+    values = {
+        field: next((record.get(alias) for alias in names if record.get(alias) is not None), None)
+        for field, names in aliases.items()
+    }
     for field in REQUIRED_RECORD_FIELDS:
-        if not record.get(field) and record.get(field) != 0:
+        if values.get(field) in (None, "") and values.get(field) != 0:
             errors.append(f"missing required field '{field}'")
-    url = record.get("url", "")
+    url = values.get("url", "")
     if url and not _is_https(url):
         errors.append("url must be an https URL")
-    if record.get("type") not in ALLOWED_TYPES:
+    if values.get("type") not in ALLOWED_TYPES:
         errors.append(f"type must be one of {sorted(ALLOWED_TYPES)}")
-    if record.get("health") not in ALLOWED_HEALTH:
+    if values.get("health") not in ALLOWED_HEALTH:
         errors.append(f"health must be one of {sorted(ALLOWED_HEALTH)}")
-    reputation = record.get("reputation")
-    if not isinstance(reputation, int) or not 0 <= reputation <= 100:
+    reputation = values.get("reputation")
+    if not isinstance(reputation, int) or isinstance(reputation, bool) or not 0 <= reputation <= 100:
         errors.append("reputation must be an integer 0..100")
-    source_id = record.get("source_id", "")
+    source_id = values.get("source_id", "")
     if source_id and not SLUG_RE.match(str(source_id)):
         errors.append("source_id must be a lowercase slug")
     return errors
