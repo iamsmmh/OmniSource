@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-12T17:13:52Z",
-  "count": 83,
+  "generatedAt": "2026-09-12T18:51:36Z",
+  "count": 71,
   "inputRecords": 94,
-  "mergedDuplicates": 11,
+  "mergedDuplicates": 23,
   "apps": [
     {
       "id": "app.aidoku.Aidoku",
@@ -16,9 +16,17 @@
       "downloadURL": "https://github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa",
       "size": 14731108,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Aidoku.webp",
+      "matchKeys": [
+        "bundle:app.aidoku.Aidoku",
+        "github:aidoku/aidoku",
+        "url:github.com/Aidoku/Aidoku",
+        "binary:github.com/Aidoku/Aidoku/releases/download/v0.9/Aidoku.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Aidoku/Aidoku"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -62,9 +70,17 @@
       "downloadURL": "https://github.com/cranci1/AnimeGen/releases/download/v3.0.0/AnimeGen.ipa",
       "size": 3026218,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/AnimeGen.webp",
+      "matchKeys": [
+        "bundle:me.cranci.AnimeGen",
+        "github:cranci1/animegen",
+        "url:github.com/cranci1/AnimeGen",
+        "binary:github.com/cranci1/AnimeGen/releases/download/v3.0.0/AnimeGen.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/cranci1/AnimeGen"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -107,9 +123,17 @@
       "downloadURL": "https://github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa",
       "size": 28677588,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/AnxReader.webp",
+      "matchKeys": [
+        "bundle:com.anxcye.anxReader",
+        "github:anxcye/anx-reader",
+        "url:github.com/Anxcye/anx-reader",
+        "binary:github.com/Anxcye/anx-reader/releases/download/v1.14.0/Anx-Reader-ios-1.14.0-unsigned.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Anxcye/anx-reader"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -261,9 +285,17 @@
       "downloadURL": "https://github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa",
       "size": 39662751,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/AnymeX.webp",
+      "matchKeys": [
+        "bundle:com.ryan.anymex",
+        "github:ryanyuuki/anymex",
+        "url:github.com/RyanYuuki/AnymeX",
+        "binary:github.com/RyanYuuki/AnymeX/releases/download/v3.1.7/AnymeX-iOS-v3.1.7.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/RyanYuuki/AnymeX"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -439,9 +471,17 @@
       "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
       "size": 96105993,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Apollo.webp",
+      "matchKeys": [
+        "bundle:com.christianselig.Apollo",
+        "github:apollo-reborn/apollo-reborn",
+        "url:github.com/Apollo-Reborn/Apollo-Reborn",
+        "binary:github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Apollo-Reborn/Apollo-Reborn"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -581,9 +621,17 @@
       "downloadURL": "https://github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet_8.0.1_1784575843.ipa",
       "size": 29811150,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/BlueWallet.webp",
+      "matchKeys": [
+        "bundle:io.bluewallet.bluewallet",
+        "github:bluewallet/bluewallet",
+        "url:github.com/BlueWallet/BlueWallet",
+        "binary:github.com/BlueWallet/BlueWallet/releases/download/8.0.1/BlueWallet_8.0.1_1784575843.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/BlueWallet/BlueWallet"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -663,9 +711,17 @@
       "downloadURL": "https://github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa",
       "size": 55704386,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Bootstrap.webp",
+      "matchKeys": [
+        "bundle:com.roothide.Bootstrap",
+        "github:roothide/bootstrap",
+        "url:github.com/roothide/Bootstrap",
+        "binary:github.com/roothide/Bootstrap/releases/download/2.2.1/Bootstrap.tipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/roothide/Bootstrap"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -709,9 +765,17 @@
       "downloadURL": "https://github.com/moffatman/chan/releases/download/v1.2.9%2B124-forked-engine/Chance.ipa",
       "size": 32710607,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Chan.webp",
+      "matchKeys": [
+        "bundle:com.moffatman.chan",
+        "github:moffatman/chan",
+        "url:github.com/moffatman/chan",
+        "binary:github.com/moffatman/chan/releases/download/v1.2.9%2B124-forked-engine/Chance.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/moffatman/chan"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -791,9 +855,17 @@
       "downloadURL": "https://github.com/chatsen/chatsen/releases/download/1.1.107%2B107/iOS.ipa",
       "size": 10009593,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Chatsen.webp",
+      "matchKeys": [
+        "bundle:com.chatsen.chatsen",
+        "github:chatsen/chatsen",
+        "url:github.com/chatsen/chatsen",
+        "binary:github.com/chatsen/chatsen/releases/download/1.1.107%2B107/iOS.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/chatsen/chatsen"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -849,9 +921,17 @@
       "downloadURL": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/conduit.ipa",
       "size": 35794270,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Conduit.webp",
+      "matchKeys": [
+        "bundle:app.cogwheel.conduit",
+        "github:cogwheel0/conduit",
+        "url:github.com/cogwheel0/conduit",
+        "binary:github.com/cogwheel0/conduit/releases/download/v4.1.4/conduit.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/cogwheel0/conduit"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -943,9 +1023,17 @@
       "downloadURL": "https://github.com/clquwu/Cosmos-Music-Player/releases/download/1.2.5/Cosmos-Music-Player.ipa",
       "size": 12056869,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Cosmos.webp",
+      "matchKeys": [
+        "bundle:dev.clq.Cosmos-Music-Player",
+        "github:clquwu/cosmos-music-player",
+        "url:github.com/clquwu/Cosmos-Music-Player",
+        "binary:github.com/clquwu/Cosmos-Music-Player/releases/download/1.2.5/Cosmos-Music-Player.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/clquwu/Cosmos-Music-Player"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -989,9 +1077,17 @@
       "downloadURL": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
       "size": 87734964,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Delta.webp",
+      "matchKeys": [
+        "bundle:com.rileytestut.Delta",
+        "github:rileytestut/delta",
+        "url:github.com/RileyTestut/Delta",
+        "binary:github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/RileyTestut/Delta"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -1034,9 +1130,17 @@
       "downloadURL": "https://github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa",
       "size": 17963367,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/DolphiniOS.webp",
+      "matchKeys": [
+        "bundle:me.oatmealdome.DolphiniOS-njb",
+        "github:oatmealdome/dolphin-ios",
+        "url:github.com/OatmealDome/dolphin-ios",
+        "binary:github.com/OatmealDome/dolphin-ios/releases/download/v5.0.0b6/Non-Jailbroken.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/OatmealDome/dolphin-ios"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -1116,9 +1220,17 @@
       "downloadURL": "https://github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa",
       "size": 55409206,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Dopamine.webp",
+      "matchKeys": [
+        "bundle:com.opa334.Dopamine",
+        "github:opa334/dopamine",
+        "url:github.com/opa334/Dopamine",
+        "binary:github.com/opa334/Dopamine/releases/download/3.0.9/Dopamine.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/opa334/Dopamine"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -1174,9 +1286,17 @@
       "downloadURL": "https://github.com/roothide/Dopamine2-roothide/releases/download/27/Dopamine.ipa",
       "size": 54863273,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/DopamineRootHide.webp",
+      "matchKeys": [
+        "bundle:com.opa334.Dopamine-roothide",
+        "github:roothide/dopamine2-roothide",
+        "url:github.com/roothide/Dopamine2-roothide",
+        "binary:github.com/roothide/Dopamine2-roothide/releases/download/27/Dopamine.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/roothide/Dopamine2-roothide"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -1232,9 +1352,17 @@
       "downloadURL": "https://github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa",
       "size": 14241853,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Feather.webp",
+      "matchKeys": [
+        "bundle:thewonderofyou.Feather",
+        "github:claration/feather",
+        "url:github.com/claration/Feather",
+        "binary:github.com/claration/Feather/releases/download/v2.9.0/Feather.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/claration/Feather"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -1290,9 +1418,17 @@
       "downloadURL": "https://github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa",
       "size": 41137245,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Fladder.webp",
+      "matchKeys": [
+        "bundle:nl.jknaapen.fladder",
+        "github:donutware/fladder",
+        "url:github.com/DonutWare/Fladder",
+        "binary:github.com/DonutWare/Fladder/releases/download/v0.11.1/Fladder-iOS-0.11.1.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/DonutWare/Fladder"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -1470,50 +1606,6 @@
       ]
     },
     {
-      "id": "com.facebook.Facebook.glow",
-      "name": "Glow",
-      "bundleIdentifier": "com.facebook.Facebook.glow",
-      "developerName": "dayanch96 & IPA Vault",
-      "category": "social",
-      "version": "577.1",
-      "versionDate": "2026-09-05",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
-      "size": 226667533,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "577.1",
-          "date": "2026-09-05",
-          "localizedDescription": "Facebook 577.1 | Facebook-577.1-Glow\n\nIPA Vault build for Facebook (Glow), version 577.1",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
-          "size": 226667533,
-          "minOSVersion": "15.1",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "Facebook-577.1-Glow.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 226667533,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "com.gopeed.gopeed",
       "name": "Gopeed",
       "bundleIdentifier": "com.gopeed.gopeed",
@@ -1524,9 +1616,17 @@
       "downloadURL": "https://github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa",
       "size": 27488140,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Gopeed.webp",
+      "matchKeys": [
+        "bundle:com.gopeed.gopeed",
+        "github:gopeedlab/gopeed",
+        "url:github.com/GopeedLab/gopeed",
+        "binary:github.com/GopeedLab/gopeed/releases/download/v1.9.3/Gopeed-v1.9.3-ios.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/GopeedLab/gopeed"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -1918,9 +2018,17 @@
       "downloadURL": "https://github.com/oolxg/Hanami/releases/download/v0.28.2/Hanami.ipa",
       "size": 6305751,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Hanami.webp",
+      "matchKeys": [
+        "bundle:moe.mkpwnz.Hanami",
+        "github:oolxg/hanami",
+        "url:github.com/oolxg/Hanami",
+        "binary:github.com/oolxg/Hanami/releases/download/v0.28.2/Hanami.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/oolxg/Hanami"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -1953,138 +2061,6 @@
       ]
     },
     {
-      "id": "com.olcorporation.olai",
-      "name": "iMe MxGram",
-      "bundleIdentifier": "com.olcorporation.olai",
-      "developerName": "m1ronx1412 & IPA Vault",
-      "category": "social",
-      "version": "12.8.1",
-      "versionDate": "2026-09-01",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
-      "size": 148174542,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/iMe.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "12.8.1",
-          "date": "2026-09-01",
-          "localizedDescription": "iMe 12.8.1 | iMe-12.8.1-MxGram\n\nIPA Vault build for iMe (MxGram), version 12.8.1",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
-          "size": 148174542,
-          "minOSVersion": "13.0",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "iMe-12.8.1-MxGram.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 148174542,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "com.firecore.infuse",
-      "name": "Infuse Plus",
-      "bundleIdentifier": "com.firecore.infuse",
-      "developerName": "dayanch96 & IPA Vault",
-      "category": "photo-video",
-      "version": "8.5.3",
-      "versionDate": "2026-09-01",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
-      "size": 100074036,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Infuse.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "8.5.3",
-          "date": "2026-09-01",
-          "localizedDescription": "Infuse 8.5.3 | Infuse-8.5.3-Infuse-Plus\n\nIPA Vault build for Infuse Plus (8.5.3), version 8.5.3",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
-          "size": 100074036,
-          "minOSVersion": "18.0",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "Infuse-8.5.3-Infuse-Plus.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 100074036,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "com.facebook.Facebook",
-      "name": "iQFace",
-      "bundleIdentifier": "com.facebook.Facebook",
-      "developerName": "7MD & IPA Vault",
-      "category": "social",
-      "version": "578.1",
-      "versionDate": "2026-09-10",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
-      "size": 227188596,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "578.1",
-          "date": "2026-09-10",
-          "localizedDescription": "Facebook 578.1 | Facebook-578.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 578.1",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
-          "size": 227188596,
-          "minOSVersion": "15.1",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "Facebook-578.1-iQFace.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 227188596,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "app.ish.iSH",
       "name": "iSH",
       "bundleIdentifier": "app.ish.iSH",
@@ -2095,9 +2071,17 @@
       "downloadURL": "https://github.com/ish-app/ish/releases/download/builds/813/iSH.ipa",
       "size": 4602446,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/iSH.webp",
+      "matchKeys": [
+        "bundle:app.ish.iSH",
+        "github:ish-app/ish",
+        "url:github.com/ish-app/ish",
+        "binary:github.com/ish-app/ish/releases/download/builds/813/iSH.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/ish-app/ish"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -2153,9 +2137,17 @@
       "downloadURL": "https://github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa",
       "size": 24288935,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/iTorrent.webp",
+      "matchKeys": [
+        "bundle:com.xitrix.iTorrent2",
+        "github:xitrix/itorrent",
+        "url:github.com/XITRIX/iTorrent",
+        "binary:github.com/XITRIX/iTorrent/releases/download/v2.2.0-1/iTorrent.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/XITRIX/iTorrent"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -2223,9 +2215,17 @@
       "downloadURL": "https://github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa",
       "size": 40554164,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Jellify.webp",
+      "matchKeys": [
+        "bundle:com.cosmonautical.jellify",
+        "github:jellify-music/app",
+        "url:github.com/Jellify-Music/App",
+        "binary:github.com/Jellify-Music/App/releases/download/1.2.10/Jellify-1.2.10.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Jellify-Music/App"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -2329,9 +2329,17 @@
       "downloadURL": "https://github.com/JellyBookOrg/JellyBook/releases/download/v1.4.1/JellyBook-Release.ipa",
       "size": 14640159,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/JellyBook.webp",
+      "matchKeys": [
+        "bundle:com.KaraWilson.JellyBook",
+        "github:jellybookorg/jellybook",
+        "url:github.com/JellyBookOrg/JellyBook",
+        "binary:github.com/JellyBookOrg/JellyBook/releases/download/v1.4.1/JellyBook-Release.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/JellyBookOrg/JellyBook"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -2507,9 +2515,17 @@
       "downloadURL": "https://github.com/Nyasami/Ksign/releases/download/v1.6/Ksign.ipa",
       "size": 16394645,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Ksign.webp",
+      "matchKeys": [
+        "bundle:nya.asami.ksign",
+        "github:nyasami/ksign",
+        "url:github.com/Nyasami/Ksign",
+        "binary:github.com/Nyasami/Ksign/releases/download/v1.6/Ksign.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Nyasami/Ksign"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -2553,9 +2569,17 @@
       "downloadURL": "https://github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa",
       "size": 4707271,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/LiveContainer.webp",
+      "matchKeys": [
+        "bundle:com.kdt.livecontainer",
+        "github:livecontainer/livecontainer",
+        "url:github.com/LiveContainer/LiveContainer",
+        "binary:github.com/LiveContainer/LiveContainer/releases/download/3.8.0/LiveContainer.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/LiveContainer/LiveContainer"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -2611,9 +2635,17 @@
       "downloadURL": "https://github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa",
       "size": 52332306,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MAME4iOS.webp",
+      "matchKeys": [
+        "bundle:com.example.mame4ios",
+        "github:yoshisuga/mame4ios",
+        "url:github.com/yoshisuga/MAME4iOS",
+        "binary:github.com/yoshisuga/MAME4iOS/releases/download/2022.5/MAME4iOS-2022.5-139.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/yoshisuga/MAME4iOS"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -2716,9 +2748,17 @@
       "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.2/Mangayomi-v0.9.2-ios.ipa",
       "size": 114010180,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Mangayomi.webp",
+      "matchKeys": [
+        "bundle:com.kodjodevf.mangayomi",
+        "github:kodjodevf/mangayomi",
+        "url:github.com/kodjodevf/mangayomi",
+        "binary:github.com/kodjodevf/mangayomi/releases/download/v0.9.2/Mangayomi-v0.9.2-ios.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/kodjodevf/mangayomi"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -2918,9 +2958,17 @@
       "downloadURL": "https://github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa",
       "size": 273393210,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/ManicEMU.webp",
+      "matchKeys": [
+        "bundle:com.aoshuang.manicemu",
+        "github:manic-emu/manicemu",
+        "url:github.com/Manic-EMU/ManicEMU",
+        "binary:github.com/Manic-EMU/ManicEMU/releases/download/v2.0.0/ManicEMU.v2.0.0.SideloadJIT.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Manic-EMU/ManicEMU"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -2964,10 +3012,18 @@
       "downloadURL": "https://github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa",
       "size": 106420283,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MaxMusic.webp",
+      "matchKeys": [
+        "bundle:com.google.ios.youtubemusic",
+        "github:mark02-2012/maxmusic",
+        "url:github.com/Mark02-2012/MaxMusic",
+        "binary:github.com/Mark02-2012/MaxMusic/releases/download/MaxMusic_9.36.1_2.4.1_%2890%29/MaxMusic_2.4.1_9.36.1.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/mrdrvt99/YTMusicUltimate",
         "https://github.com/Mark02-2012/MaxMusic"
       ],
+      "sourceCount": 2,
       "duplicates": 2,
       "versions": [
         {
@@ -3001,50 +3057,6 @@
       ]
     },
     {
-      "id": "com.facebook.Messenger.flow",
-      "name": "Messenger Flow",
-      "bundleIdentifier": "com.facebook.Messenger.flow",
-      "developerName": "dvntms & IPA Vault",
-      "category": "social",
-      "version": "578.1.0",
-      "versionDate": "2026-09-10",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
-      "size": 113359444,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "578.1.0",
-          "date": "2026-09-10",
-          "localizedDescription": "Messenger 578.1.0 | Messenger-578.1.0-Flow\n\nIPA Vault build for Messenger (Flow), version 578.1.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
-          "size": 113359444,
-          "minOSVersion": "15.1",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "Messenger-578.1.0-Flow.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 113359444,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "net.namedfork.minivmac",
       "name": "Mini vMac",
       "bundleIdentifier": "net.namedfork.minivmac",
@@ -3055,9 +3067,17 @@
       "downloadURL": "https://github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa",
       "size": 668434,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MiniVMac.webp",
+      "matchKeys": [
+        "bundle:net.namedfork.minivmac",
+        "github:zydeco/minivmac4ios",
+        "url:github.com/zydeco/minivmac4ios",
+        "binary:github.com/zydeco/minivmac4ios/releases/download/v2.6/minivmac4ios-2.6.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/zydeco/minivmac4ios"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -3112,9 +3132,17 @@
       "downloadURL": "https://github.com/monal-im/Monal/releases/download/Build_iOS_1092/Monal.ipa",
       "size": 38349660,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Monal.webp",
+      "matchKeys": [
+        "bundle:G7YU7X7KRJ.SworIM",
+        "github:monal-im/monal",
+        "url:github.com/monal-im/Monal",
+        "binary:github.com/monal-im/Monal/releases/download/Build_iOS_1092/Monal.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/monal-im/Monal"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -3196,50 +3224,6 @@
       ]
     },
     {
-      "id": "com.facebook.Messenger",
-      "name": "MSGPlusX",
-      "bundleIdentifier": "com.facebook.Messenger",
-      "developerName": "Dens0r & IPA Vault & lucaspedrosa",
-      "category": "social",
-      "version": "578.1.0",
-      "versionDate": "2026-09-10",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
-      "size": 113236064,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Messenger.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "578.1.0",
-          "date": "2026-09-10",
-          "localizedDescription": "Messenger 578.1.0 | Messenger-578.1.0-MSGPlusX\n\nIPA Vault build for Messenger (MSGPlusX), version 578.1.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
-          "size": 113236064,
-          "minOSVersion": "15.1",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "Messenger-578.1.0-MSGPlusX.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-MSGPlusX.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 113236064,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "dev.mineek.muffinstore",
       "name": "MuffinStore",
       "bundleIdentifier": "dev.mineek.muffinstore",
@@ -3250,9 +3234,17 @@
       "downloadURL": "https://github.com/mineek/MuffinStore/releases/download/1.3/MuffinStore_v1.3.tipa",
       "size": 126091,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MuffinStore.webp",
+      "matchKeys": [
+        "bundle:dev.mineek.muffinstore",
+        "github:mineek/muffinstore",
+        "url:github.com/mineek/MuffinStore",
+        "binary:github.com/mineek/MuffinStore/releases/download/1.3/MuffinStore_v1.3.tipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/mineek/MuffinStore"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -3296,9 +3288,17 @@
       "downloadURL": "https://github.com/mongoosemonke504/NebuloIPTV/releases/download/V2.3/Nebulo_V2.3.ipa",
       "size": 56279112,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Nebulo.webp",
+      "matchKeys": [
+        "bundle:personal.Nebulo-V2-3",
+        "github:mongoosemonke504/nebuloiptv",
+        "url:github.com/mongoosemonke504/NebuloIPTV",
+        "binary:github.com/mongoosemonke504/NebuloIPTV/releases/download/V2.3/Nebulo_V2.3.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/mongoosemonke504/NebuloIPTV"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -3354,11 +3354,19 @@
       "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
       "size": 158452402,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/NeoFreeBird.webp",
+      "matchKeys": [
+        "bundle:com.atebits.Tweetie2",
+        "github:neofreebird/app",
+        "url:github.com/NeoFreeBird/app",
+        "binary:github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/BandarHL/BHTwitter",
         "https://github.com/level3tjg/RedditFilter",
         "https://github.com/NeoFreeBird/app"
       ],
+      "sourceCount": 3,
       "duplicates": 3,
       "versions": [
         {
@@ -3519,50 +3527,6 @@
       ]
     },
     {
-      "id": "com.soundcloud.TouchApp",
-      "name": "NexaSC",
-      "bundleIdentifier": "com.soundcloud.TouchApp",
-      "developerName": "cielogic & IPA Vault",
-      "category": "social",
-      "version": "8.77.0",
-      "versionDate": "2026-09-07",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
-      "size": 107196182,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SoundCloud.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "8.77.0",
-          "date": "2026-09-07",
-          "localizedDescription": "SoundCloud 8.77.0 | SoundCloud-8.77.0-NexaSC\n\nIPA Vault build for SoundCloud (NexaSC), version 8.77.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
-          "size": 107196182,
-          "minOSVersion": "16.4",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "SoundCloud-8.77.0-NexaSC.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 107196182,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "org.coolstar.odyssey",
       "name": "Odyssey",
       "bundleIdentifier": "org.coolstar.odyssey",
@@ -3573,9 +3537,17 @@
       "downloadURL": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
       "size": 27204395,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Odyssey.webp",
+      "matchKeys": [
+        "bundle:org.coolstar.odyssey",
+        "github:odyssey-team/odyssey",
+        "url:github.com/Odyssey-Team/Odyssey",
+        "binary:github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Odyssey-Team/Odyssey"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -3618,9 +3590,17 @@
       "downloadURL": "https://github.com/lotusprey/otraku/releases/download/v.1.12.1/Otraku-v.1.12.1-ios15%2B.ipa",
       "size": 9414861,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Otraku.webp",
+      "matchKeys": [
+        "bundle:com.otraku.app",
+        "github:lotusprey/otraku",
+        "url:github.com/lotusprey/otraku",
+        "binary:github.com/lotusprey/otraku/releases/download/v.1.12.1/Otraku-v.1.12.1-ios15%2B.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/lotusprey/otraku"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -3712,9 +3692,17 @@
       "downloadURL": "https://github.com/G-Ray/pikatorrent/releases/download/v0.15.0/PikaTorrent-v0.15.0-ios.ipa",
       "size": 38053348,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/PikaTorrent.webp",
+      "matchKeys": [
+        "bundle:com.pikatorrent.PikaTorrent",
+        "github:g-ray/pikatorrent",
+        "url:github.com/G-Ray/pikatorrent",
+        "binary:github.com/G-Ray/pikatorrent/releases/download/v0.15.0/PikaTorrent-v0.15.0-ios.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/G-Ray/pikatorrent"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -3830,9 +3818,17 @@
       "downloadURL": "https://github.com/ayman708-UX/PlayTorrioV3/releases/download/v1.1.5/PlayTorrio-iOS.ipa",
       "size": 48421258,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/PlayTorrio.webp",
+      "matchKeys": [
+        "bundle:com.example.playtorrio",
+        "github:ayman708-ux/playtorriov3",
+        "url:github.com/ayman708-UX/PlayTorrioV3",
+        "binary:github.com/ayman708-UX/PlayTorrioV3/releases/download/v1.1.5/PlayTorrio-iOS.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/ayman708-UX/PlayTorrioV3"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -3996,9 +3992,17 @@
       "downloadURL": "https://github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa",
       "size": 31124277,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/PPSSPP.webp",
+      "matchKeys": [
+        "bundle:org.ppsspp.ppsspp",
+        "github:hrydgard/ppsspp",
+        "url:github.com/hrydgard/ppsspp",
+        "binary:github.com/hrydgard/ppsspp/releases/download/v1.20.4/PPSSPP-iOS-v1.20.4.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/hrydgard/ppsspp"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4150,9 +4154,17 @@
       "downloadURL": "https://github.com/Provenance-Emu/Provenance/releases/download/3.3.0/Provenance-3.3.0-iOS.ipa",
       "size": 1076407494,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Provenance.webp",
+      "matchKeys": [
+        "bundle:org.provenance-emu.provenance",
+        "github:provenance-emu/provenance",
+        "url:github.com/Provenance-Emu/Provenance",
+        "binary:github.com/Provenance-Emu/Provenance/releases/download/3.3.0/Provenance-3.3.0-iOS.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Provenance-Emu/Provenance"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4208,9 +4220,17 @@
       "downloadURL": "https://github.com/Lrdsnow/PureKFD/releases/download/6.0.2/PureKFD.ipa",
       "size": 10806164,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/PureKFD.webp",
+      "matchKeys": [
+        "bundle:uwu.lrdsnow.purekfdiOS",
+        "github:lrdsnow/purekfd",
+        "url:github.com/Lrdsnow/PureKFD",
+        "binary:github.com/Lrdsnow/PureKFD/releases/download/6.0.2/PureKFD.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Lrdsnow/PureKFD"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4277,9 +4297,17 @@
       "downloadURL": "https://github.com/RajnishOne/qbitconnect/releases/download/v1.6.6/qBitConnect.ipa",
       "size": 11798221,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/qBitConnect.webp",
+      "matchKeys": [
+        "bundle:com.bluematter.qbitconnect",
+        "github:rajnishone/qbitconnect",
+        "url:github.com/RajnishOne/qbitconnect",
+        "binary:github.com/RajnishOne/qbitconnect/releases/download/v1.6.6/qBitConnect.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/RajnishOne/qbitconnect"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4347,9 +4375,17 @@
       "downloadURL": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
       "size": 4777720,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/qBitControl.webp",
+      "matchKeys": [
+        "bundle:MikeMichael225.qBitControl",
+        "github:michael-128/qbitcontrol",
+        "url:github.com/Michael-128/qBitControl",
+        "binary:github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Michael-128/qBitControl"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4393,9 +4429,17 @@
       "downloadURL": "https://github.com/Bartuzen/qBitController/releases/download/v2.2.1/qbitcontroller-2.2.1-ios.ipa",
       "size": 18243979,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/qBitController.webp",
+      "matchKeys": [
+        "bundle:dev.bartuzen.qbitcontroller",
+        "github:bartuzen/qbitcontroller",
+        "url:github.com/Bartuzen/qBitController",
+        "binary:github.com/Bartuzen/qBitController/releases/download/v2.2.1/qbitcontroller-2.2.1-ios.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Bartuzen/qBitController"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4523,9 +4567,16 @@
       "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
       "size": 107515564,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Discord.webp",
+      "matchKeys": [
+        "bundle:com.hammerandchisel.discord",
+        "url:codeberg.org/raincord/RainTweak",
+        "binary:github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://codeberg.org/raincord/RainTweak"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4581,13 +4632,46 @@
       "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa",
       "size": 325835336,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "matchKeys": [
+        "bundle:com.burbn.instagram",
+        "url:raw.githubusercontent.com",
+        "binary:pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-RyukGram.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://source.ryuksign.com/ig410",
         "https://repo.ikghd.me",
         "https://raw.githubusercontent.com"
       ],
-      "duplicates": 3,
+      "sourceCount": 3,
+      "duplicates": 4,
       "versions": [
+        {
+          "version": "46.8.0",
+          "date": "2026-09-09",
+          "localizedDescription": "TikTok 46.8.0 | TikTok_46.8_TTKillerPlus_2.1\n\n• Add v46.0+ compatibility.\n• Fix like confirmation bypass on double tap.\n• Fix post date display format.\n• Fix settings localization & toggles.\n• Fix flag button not tappable.\n• Other fixes & improvements.\n• Update base IPA to TikTok v46.8",
+          "downloadURL": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
+          "size": 453011354,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "TikTok_46.8_TTKillerPlus_2.1.ipa",
+              "downloadUrl": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 453011354,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        },
         {
           "version": "446.0.0",
           "date": "2026-09-09",
@@ -4654,9 +4738,16 @@
       "downloadURL": "https://source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa",
       "size": 259670417,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
+      "matchKeys": [
+        "bundle:com.ryuk.ryukgram",
+        "url:source.ryuksign.com/duplicate",
+        "binary:source.ryuksign.com/ipas/86bd8282219bf3b32dca.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://source.ryuksign.com/duplicate"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4699,9 +4790,17 @@
       "downloadURL": "https://github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.ipa",
       "size": 37589281,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Saber.webp",
+      "matchKeys": [
+        "bundle:com.adilhanney.saber",
+        "github:saber-notes/saber",
+        "url:github.com/saber-notes/saber",
+        "binary:github.com/saber-notes/saber/releases/download/v1.36.1/Saber_v1.36.1.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/saber-notes/saber"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4853,9 +4952,17 @@
       "downloadURL": "https://github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa",
       "size": 3170899,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SameBoy.webp",
+      "matchKeys": [
+        "bundle:com.github.liji32.sameboy.ios",
+        "github:liji32/sameboy",
+        "url:github.com/LIJI32/SameBoy",
+        "binary:github.com/LIJI32/SameBoy/releases/download/v1.0.3/sameboy_ios_v1.0.3.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/LIJI32/SameBoy"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4947,9 +5054,17 @@
       "downloadURL": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
       "size": 14986482,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Serotonin.webp",
+      "matchKeys": [
+        "bundle:pisshill.usprebooter",
+        "github:mineek/serotonin",
+        "url:github.com/mineek/Serotonin",
+        "binary:github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/mineek/Serotonin"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -4992,9 +5107,17 @@
       "downloadURL": "https://github.com/SideStore/SideStore/releases/download/0.6.4/SideStore.ipa",
       "size": 27609918,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SideStore.webp",
+      "matchKeys": [
+        "bundle:com.SideStore.SideStore",
+        "github:sidestore/sidestore",
+        "url:github.com/SideStore/SideStore",
+        "binary:github.com/SideStore/SideStore/releases/download/0.6.4/SideStore.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/SideStore/SideStore"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -5062,9 +5185,17 @@
       "downloadURL": "https://github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa",
       "size": 3112338,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Sora.webp",
+      "matchKeys": [
+        "bundle:me.cranci.sulfur",
+        "github:cranci1/sora",
+        "url:github.com/cranci1/Sora",
+        "binary:github.com/cranci1/Sora/releases/download/1.3.0/Sulfur.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/cranci1/Sora"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -5098,50 +5229,6 @@
       ]
     },
     {
-      "id": "com.burbn.instagram.sparkle",
-      "name": "Sparkle",
-      "bundleIdentifier": "com.burbn.instagram.sparkle",
-      "developerName": "efibalogh & IPA Vault",
-      "category": "social",
-      "version": "446.0.0",
-      "versionDate": "2026-09-10",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
-      "size": 318531474,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "446.0.0",
-          "date": "2026-09-10",
-          "localizedDescription": "Instagram 446.0.0 | Instagram-446.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 446.0.0",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
-          "size": 318531474,
-          "minOSVersion": "15.1",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "Instagram-446.0.0-Sparkle.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 318531474,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "com.zarz.spotiflacAndroid",
       "name": "SpotiFLAC Mobile",
       "bundleIdentifier": "com.zarz.spotiflacAndroid",
@@ -5152,9 +5239,17 @@
       "downloadURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.6/SpotiFLAC-v4.9.6-ios-unsigned.ipa",
       "size": 34171700,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/SpotiFLAC.webp",
+      "matchKeys": [
+        "bundle:com.zarz.spotiflacAndroid",
+        "github:spotiflacapp/spotiflac-mobile",
+        "url:github.com/spotiflacapp/SpotiFLAC-Mobile",
+        "binary:github.com/spotiflacapp/SpotiFLAC-Mobile/releases/download/v4.9.6/SpotiFLAC-v4.9.6-ios-unsigned.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/spotiflacapp/SpotiFLAC-Mobile"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -5222,9 +5317,17 @@
       "downloadURL": "https://github.com/KRTirtho/spotube/releases/download/v5.1.2/Spotube-iOS.ipa",
       "size": 34853093,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Spotube.webp",
+      "matchKeys": [
+        "bundle:oss.krtirtho.spotube.stable",
+        "github:krtirtho/spotube",
+        "url:github.com/KRTirtho/spotube",
+        "binary:github.com/KRTirtho/spotube/releases/download/v5.1.2/Spotube-iOS.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/KRTirtho/spotube"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -5436,9 +5539,17 @@
       "downloadURL": "https://github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa",
       "size": 12824047,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/StikDebug.webp",
+      "matchKeys": [
+        "bundle:com.stik.stikdebug",
+        "github:stikdebug/stikdebug",
+        "url:github.com/StikDebug/StikDebug",
+        "binary:github.com/StikDebug/StikDebug/releases/download/3.1.10/StikDebug-3.1.10.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/StikDebug/StikDebug"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -5482,9 +5593,17 @@
       "downloadURL": "https://github.com/StikEMU/StikNES-2.0/releases/download/v2.0.2/StikNES.ipa",
       "size": 7141231,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/StikNES.webp",
+      "matchKeys": [
+        "bundle:com.stik.StikNES",
+        "github:stikemu/stiknes-2.0",
+        "url:github.com/StikEMU/StikNES-2.0",
+        "binary:github.com/StikEMU/StikNES-2.0/releases/download/v2.0.2/StikNES.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/StikEMU/StikNES-2.0"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -5527,9 +5646,17 @@
       "downloadURL": "https://github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa",
       "size": 53931137,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Streamyfin.webp",
+      "matchKeys": [
+        "bundle:com.fredrikburmester.streamyfin",
+        "github:fredrikburmester/streamyfin",
+        "url:github.com/fredrikburmester/streamyfin",
+        "binary:github.com/streamyfin/streamyfin/releases/download/v0.54.1/streamyfin-ios.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/fredrikburmester/streamyfin"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -5611,50 +5738,6 @@
       ]
     },
     {
-      "id": "app.swiftgram.ios",
-      "name": "Swiftgram",
-      "bundleIdentifier": "app.swiftgram.ios",
-      "developerName": "Swiftgram & IPA Vault",
-      "category": "social",
-      "version": "12.9.2",
-      "versionDate": "2026-09-05",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
-      "size": 82653568,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Swiftgram.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "12.9.2",
-          "date": "2026-09-05",
-          "localizedDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-iQTele\n\nIPA Vault build for Swiftgram (iQTele), version 12.9.2",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
-          "size": 82653568,
-          "minOSVersion": "13.0",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "Swiftgram-12.9.2-iQTele.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 82653568,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "com.yuroyami.syncplay.iosApp",
       "name": "Synkplay",
       "bundleIdentifier": "com.yuroyami.syncplay.iosApp",
@@ -5665,9 +5748,17 @@
       "downloadURL": "https://github.com/yuroyami/syncplay-mobile/releases/download/v0.24.0/synkplay-0.24.0-ios.ipa",
       "size": 89476842,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Synkplay.webp",
+      "matchKeys": [
+        "bundle:com.yuroyami.syncplay.iosApp",
+        "github:yuroyami/syncplay-mobile",
+        "url:github.com/yuroyami/syncplay-mobile",
+        "binary:github.com/yuroyami/syncplay-mobile/releases/download/v0.24.0/synkplay-0.24.0-ios.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/yuroyami/syncplay-mobile"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -5735,9 +5826,17 @@
       "downloadURL": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
       "size": 32244737,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Taurine.webp",
+      "matchKeys": [
+        "bundle:org.coolstar.taurine",
+        "github:odyssey-team/taurine",
+        "url:github.com/Odyssey-Team/Taurine",
+        "binary:github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Odyssey-Team/Taurine"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -5770,50 +5869,6 @@
       ]
     },
     {
-      "id": "ph.telegra.Telegraph",
-      "name": "Telegram MxGram",
-      "bundleIdentifier": "ph.telegra.Telegraph",
-      "developerName": "m1ronx1412 & IPA Vault",
-      "category": "social",
-      "version": "12.9.3",
-      "versionDate": "2026-09-05",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
-      "size": 71665753,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Telegram.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "12.9.3",
-          "date": "2026-09-05",
-          "localizedDescription": "Telegram 12.9.3 | Telegram-12.9.3-iQTele\n\nIPA Vault build for Telegram (iQTele), version 12.9.3",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
-          "size": 71665753,
-          "minOSVersion": "13.0",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "Telegram-12.9.3-iQTele.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 71665753,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "com.burbn.barcelona",
       "name": "ThreadSaver",
       "bundleIdentifier": "com.burbn.barcelona",
@@ -5824,11 +5879,148 @@
       "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa",
       "size": 105719166,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Threads.webp",
+      "matchKeys": [
+        "bundle:com.burbn.barcelona",
+        "url:raw.githubusercontent.com",
+        "binary:pub-dd800571175348b6a2745b3396360028.r2.dev/Threads-446.1-ThreadSaver.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://raw.githubusercontent.com"
       ],
-      "duplicates": 1,
+      "sourceCount": 1,
+      "duplicates": 12,
       "versions": [
+        {
+          "version": "8.77.0",
+          "date": "2026-09-07",
+          "localizedDescription": "SoundCloud 8.77.0 | SoundCloud-8.77.0-NexaSC\n\nIPA Vault build for SoundCloud (NexaSC), version 8.77.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+          "size": 107196182,
+          "minOSVersion": "16.4",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "SoundCloud-8.77.0-NexaSC.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/SoundCloud-8.77.0-NexaSC.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 107196182,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        },
+        {
+          "version": "8.5.3",
+          "date": "2026-09-01",
+          "localizedDescription": "Infuse 8.5.3 | Infuse-8.5.3-Infuse-Plus\n\nIPA Vault build for Infuse Plus (8.5.3), version 8.5.3",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+          "size": 100074036,
+          "minOSVersion": "18.0",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Infuse-8.5.3-Infuse-Plus.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 100074036,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        },
+        {
+          "version": "578.1.0",
+          "date": "2026-09-10",
+          "localizedDescription": "Messenger 578.1.0 | Messenger-578.1.0-Flow\n\nIPA Vault build for Messenger (Flow), version 578.1.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
+          "size": 113359444,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Messenger-578.1.0-Flow.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Messenger-578.1.0-Flow.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 113359444,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        },
+        {
+          "version": "578.1",
+          "date": "2026-09-10",
+          "localizedDescription": "Facebook 578.1 | Facebook-578.1-iQFace\n\nIPA Vault build for Facebook (iQFace), version 578.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
+          "size": 227188596,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Facebook-578.1-iQFace.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-578.1-iQFace.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 227188596,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        },
+        {
+          "version": "577.1",
+          "date": "2026-09-05",
+          "localizedDescription": "Facebook 577.1 | Facebook-577.1-Glow\n\nIPA Vault build for Facebook (Glow), version 577.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+          "size": 226667533,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Facebook-577.1-Glow.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 226667533,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        },
         {
           "version": "446.1",
           "date": "2026-09-10",
@@ -5854,6 +6046,136 @@
               "installable": true
             }
           ]
+        },
+        {
+          "version": "446.0.0",
+          "date": "2026-09-10",
+          "localizedDescription": "Instagram 446.0.0 | Instagram-446.0.0-Sparkle\n\nIPA Vault build for Instagram (Sparkle), version 446.0.0",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
+          "size": 318531474,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Instagram-446.0.0-Sparkle.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Instagram-446.0.0-Sparkle.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 318531474,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        },
+        {
+          "version": "12.9.3",
+          "date": "2026-09-05",
+          "localizedDescription": "Telegram 12.9.3 | Telegram-12.9.3-iQTele\n\nIPA Vault build for Telegram (iQTele), version 12.9.3",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
+          "size": 71665753,
+          "minOSVersion": "13.0",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Telegram-12.9.3-iQTele.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Telegram-12.9.3-iQTele.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 71665753,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        },
+        {
+          "version": "12.9.2",
+          "date": "2026-09-05",
+          "localizedDescription": "Swiftgram 12.9.2 | Swiftgram-12.9.2-iQTele\n\nIPA Vault build for Swiftgram (iQTele), version 12.9.2",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
+          "size": 82653568,
+          "minOSVersion": "13.0",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Swiftgram-12.9.2-iQTele.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Swiftgram-12.9.2-iQTele.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 82653568,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        },
+        {
+          "version": "12.8.1",
+          "date": "2026-09-01",
+          "localizedDescription": "iMe 12.8.1 | iMe-12.8.1-MxGram\n\nIPA Vault build for iMe (MxGram), version 12.8.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+          "size": 148174542,
+          "minOSVersion": "13.0",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "iMe-12.8.1-MxGram.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/iMe-12.8.1-MxGram.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 148174542,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        },
+        {
+          "version": "1.5.3",
+          "date": "2026-09-05",
+          "localizedDescription": "Turrit 1.5.3 | Turrit-1.5.3-iQTele\n\nIPA Vault build for Turrit (iQTele), version 1.5.3",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
+          "size": 85350833,
+          "minOSVersion": "13.0",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Turrit-1.5.3-iQTele.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 85350833,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
         }
       ]
     },
@@ -5868,9 +6190,17 @@
       "downloadURL": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6.ipa",
       "size": 17830940,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Thunder.webp",
+      "matchKeys": [
+        "bundle:com.hjiangsu.thunder",
+        "github:thunder-app/thunder",
+        "url:github.com/thunder-app/thunder",
+        "binary:github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/thunder-app/thunder"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -5940,94 +6270,6 @@
       ]
     },
     {
-      "id": "com.zhiliaoapp.musically",
-      "name": "TTKillerPlus",
-      "bundleIdentifier": "com.zhiliaoapp.musically",
-      "developerName": "iKarwan",
-      "category": "social",
-      "version": "46.8.0",
-      "versionDate": "2026-09-09",
-      "downloadURL": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
-      "size": 453011354,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/TikTok.webp",
-      "sources": [
-        "https://repo.ikghd.me"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "46.8.0",
-          "date": "2026-09-09",
-          "localizedDescription": "TikTok 46.8.0 | TikTok_46.8_TTKillerPlus_2.1\n\n• Add v46.0+ compatibility.\n• Fix like confirmation bypass on double tap.\n• Fix post date display format.\n• Fix settings localization & toggles.\n• Fix flag button not tappable.\n• Other fixes & improvements.\n• Update base IPA to TikTok v46.8",
-          "downloadURL": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
-          "size": 453011354,
-          "minOSVersion": "15.1",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "TikTok_46.8_TTKillerPlus_2.1.ipa",
-              "downloadUrl": "https://ikghd.site/ipa/TikTok_46.8_TTKillerPlus_2.1.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 453011354,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "com.seastar.turrit",
-      "name": "Turrit MxGram",
-      "bundleIdentifier": "com.seastar.turrit",
-      "developerName": "m1ronx1412 & IPA Vault",
-      "category": "social",
-      "version": "1.5.3",
-      "versionDate": "2026-09-05",
-      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
-      "size": 85350833,
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Turrit.webp",
-      "sources": [
-        "https://raw.githubusercontent.com"
-      ],
-      "duplicates": 1,
-      "versions": [
-        {
-          "version": "1.5.3",
-          "date": "2026-09-05",
-          "localizedDescription": "Turrit 1.5.3 | Turrit-1.5.3-iQTele\n\nIPA Vault build for Turrit (iQTele), version 1.5.3",
-          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
-          "size": 85350833,
-          "minOSVersion": "13.0",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "Turrit-1.5.3-iQTele.ipa",
-              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Turrit-1.5.3-iQTele.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 85350833,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "tv.twitch",
       "name": "TwitchAdBlock",
       "bundleIdentifier": "tv.twitch",
@@ -6038,9 +6280,17 @@
       "downloadURL": "https://github.com/gunnerkidBT/TwitchAdBlock/releases/download/v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa",
       "size": 152372292,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/TAB.webp",
+      "matchKeys": [
+        "bundle:tv.twitch",
+        "github:gunnerkidbt/twitchadblock",
+        "url:github.com/gunnerkidBT/TwitchAdBlock",
+        "binary:github.com/gunnerkidBT/TwitchAdBlock/releases/download/v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/gunnerkidBT/TwitchAdBlock"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -6096,9 +6346,17 @@
       "downloadURL": "https://github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa",
       "size": 43235739,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/unc0ver.webp",
+      "matchKeys": [
+        "bundle:science.xnu.undecimus",
+        "github:pwn20wndstuff/undecimus",
+        "url:github.com/pwn20wndstuff/Undecimus",
+        "binary:github.com/pwn20wndstuff/Undecimus/releases/download/v5.2.0/unc0ver_5.2.0.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/pwn20wndstuff/Undecimus"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -6141,9 +6399,17 @@
       "downloadURL": "https://github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa",
       "size": 130058389,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/UTM.webp",
+      "matchKeys": [
+        "bundle:com.utmapp.UTM",
+        "github:utmapp/utm",
+        "url:github.com/utmapp/UTM",
+        "binary:github.com/utmapp/UTM/releases/download/v4.7.5/UTM.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/utmapp/UTM"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -6283,9 +6549,17 @@
       "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa",
       "size": 28187923,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/VCMI.webp",
+      "matchKeys": [
+        "bundle:eu.vcmi.vcmiclient",
+        "github:vcmi/vcmi",
+        "url:github.com/vcmi/vcmi",
+        "binary:github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/vcmi/vcmi"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -6509,9 +6783,17 @@
       "downloadURL": "https://github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa",
       "size": 8216630,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Voyager.webp",
+      "matchKeys": [
+        "bundle:app.vger.voyager",
+        "github:aeharding/voyager",
+        "url:github.com/aeharding/voyager",
+        "binary:github.com/aeharding/voyager/releases/download/2.49.0/Voyager-iOS-2.49.0.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/aeharding/voyager"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -6675,9 +6957,17 @@
       "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
       "size": 50003343,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Winston.webp",
+      "matchKeys": [
+        "bundle:lo.cafe.winston",
+        "github:lo-cafe/winston",
+        "url:github.com/lo-cafe/winston",
+        "binary:github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/lo-cafe/winston"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -6720,9 +7010,17 @@
       "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
       "size": 46253576,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/XeniOS.webp",
+      "matchKeys": [
+        "bundle:com.xenios",
+        "github:xenios-jp/xenios",
+        "url:github.com/xenios-jp/XeniOS",
+        "binary:github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/xenios-jp/XeniOS"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -6802,9 +7100,17 @@
       "downloadURL": "https://github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa",
       "size": 20792685,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Yattee.webp",
+      "matchKeys": [
+        "bundle:stream.yattee.app",
+        "github:yattee/yattee",
+        "url:github.com/yattee/yattee",
+        "binary:github.com/yattee/yattee/releases/download/v1.5.1/Yattee-1.5.1-iOS.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/yattee/yattee"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
@@ -6871,12 +7177,20 @@
       "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa",
       "size": 129007319,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
+      "matchKeys": [
+        "bundle:com.google.ios.youtube",
+        "github:mrdrvt99/youproextra",
+        "url:github.com/mrdrvt99/YouProEXTRA",
+        "binary:github.com/mrdrvt99/YouProEXTRA/releases/download/youproextra-ipa0/YouProExtra_21.36.6_1.3.1.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/Ashreq/ashstore-repo",
         "https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6",
         "https://github.com/itzzace/ytkace",
         "https://github.com/mrdrvt99/YouProEXTRA"
       ],
+      "sourceCount": 4,
       "duplicates": 7,
       "versions": [
         {
@@ -7119,9 +7433,17 @@
       "downloadURL": "https://github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1.ipa",
       "size": 80499468,
       "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Zeus.webp",
+      "matchKeys": [
+        "bundle:com.zeusln.zeus",
+        "github:zeusln/zeus",
+        "url:github.com/ZeusLN/zeus",
+        "binary:github.com/ZeusLN/zeus/releases/download/v13.2.1/zeus-v13.2.1.ipa"
+      ],
+      "repositoryURLs": [],
       "sources": [
         "https://github.com/ZeusLN/zeus"
       ],
+      "sourceCount": 1,
       "duplicates": 1,
       "versions": [
         {
