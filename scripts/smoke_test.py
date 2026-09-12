@@ -236,7 +236,7 @@ def ids_in(html: str) -> set[str]:
     return set(re.findall(r'id="([A-Za-z0-9_-]+)"', html))
 
 
-INLINE_SCRIPT_RE = re.compile(r"<script\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\s*>", re.DOTALL | re.IGNORECASE)
+INLINE_SCRIPT_RE = re.compile(r"<script\b(?P<attrs>[^>]*)>(?P<body>.*?)</script[^>]*>", re.DOTALL | re.IGNORECASE)
 
 
 def check_js_syntax(site_root: Path = _SITE) -> list[str]:
