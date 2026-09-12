@@ -59,6 +59,16 @@
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
 
+  /* Per-page JSON memo. Several modules ask for the same document (site.js,
+     the src/js data layer, per-page widgets); before this, /compare/ fetched
+     11 feeds twice — 34 requests and 3.4 MB for one page. In-flight requests
+     share a single promise and finished ones are reused for JSON_TTL_MS, so a
+     feed is downloaded once per page load. Callers treat these documents as
+     read-only; the memo hands out the same object rather than a copy because
+     cloning a 700 KB catalog on every read costs more than it saves. */
+  var jsonMemo = Object.create(null);
+  var JSON_TTL_MS = 5 * 60 * 1000;
+
   var OS = {
     ROOT: ROOT,
     url: url,
@@ -132,12 +142,22 @@
     },
 
     fetchJSON: function (path, timeoutMs) {
+      var hit = jsonMemo[path];
+      if (hit) {
+        if (hit.pending) return hit.pending;
+        if (Date.now() - hit.at < JSON_TTL_MS) return Promise.resolve(hit.value);
+      }
       var controller = new AbortController();
       var id = setTimeout(function () { controller.abort(); }, timeoutMs || 8000);
-      return fetch(url(path), { signal: controller.signal, headers: { Accept: 'application/json' } })
+      var pending = fetch(url(path), { signal: controller.signal, headers: { Accept: 'application/json' } })
         .then(function (res) { return res.ok ? res.json() : null; })
         .catch(function () { return null; })
         .finally(function () { clearTimeout(id); });
+      jsonMemo[path] = { pending: pending, at: 0, value: null };
+      pending.then(function (value) {
+        jsonMemo[path] = { pending: null, at: Date.now(), value: value };
+      });
+      return pending;
     },
 
     toast: function (message) {
@@ -937,6 +957,50 @@
     });
   }
 
+  /* Nav anchors (#catalog, #trending, #whats-new, …) point at sections that
+     stay hidden until their feed arrives. Browsers refuse to scroll to a
+     display:none element, so on a phone the drawer's "Trending" link looked
+     completely dead for the seconds the feeds took: the drawer closed, the
+     hash changed, nothing moved. Queue the jump and perform it the moment the
+     section is revealed. */
+  function setupDeferredAnchors() {
+    var pending = null;
+    var observer = null;
+
+    function jumpTo(id) {
+      var node = document.getElementById(id);
+      if (!node || node.hidden) return false;
+      node.scrollIntoView({ behavior: OS.reducedMotion ? 'auto' : 'smooth', block: 'start' });
+      return true;
+    }
+
+    function stopWatching() {
+      pending = null;
+      if (observer) { observer.disconnect(); observer = null; }
+    }
+
+    function watch() {
+      if (observer || !pending || !('MutationObserver' in window)) return;
+      observer = new MutationObserver(function () {
+        if (pending && jumpTo(pending)) stopWatching();
+      });
+      observer.observe(document.body, { subtree: true, attributes: true, attributeFilter: ['hidden'] });
+      // A feed that never lands must not leave a watcher behind.
+      setTimeout(stopWatching, 20000);
+    }
+
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest && event.target.closest('a[href^="#"]');
+      if (!link) return;
+      var id = decodeURIComponent(link.getAttribute('href').slice(1));
+      if (!id) return;
+      var node = document.getElementById(id);
+      if (!node || !node.hidden) return;
+      pending = id;
+      watch();
+    });
+  }
+
   /* ------------------------------------------------------------------ boot */
   function boot() {
     // Theme (also applied pre-paint by the inline bootstrap in <head>).
@@ -966,6 +1030,7 @@
     setupQrButton();
     setupHeaderState();
     setupMobileNav();
+    setupDeferredAnchors();
     setupReveal();
     setupCounts();
     registerServiceWorker();

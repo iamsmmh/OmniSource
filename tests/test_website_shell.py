@@ -10,8 +10,10 @@ protect the pieces the builder and the deployed site depend on.
 
 from __future__ import annotations
 
+import importlib.util
 import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -389,6 +391,190 @@ class TestWebsiteShell(unittest.TestCase):
         self.assertIn(".nav-toggle", css)
         self.assertIn("@media (max-width: 1100px)", css)
         self.assertIn("var(--glass-nav)", css)
+
+    # -- regressions from the website audit ---------------------------------
+    # Each of these failed in production while `make check` was green.
+
+    def test_inline_scripts_are_syntactically_valid(self) -> None:
+        # collections/index.html shipped an over-escaped string literal that
+        # made its only <script> block a syntax error, so the page's entire
+        # logic never ran and the grid stayed as skeletons forever. The smoke
+        # test passed because it only syntax-checked external files.
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("node is not installed")
+        block = re.compile(r"<script\b(?P<attrs>[^>]*)>(?P<body>.*?)</script[^>]*>", re.DOTALL | re.IGNORECASE)
+        checked = 0
+        with tempfile.TemporaryDirectory() as tmp:
+            for page in sorted(ROOT.rglob("*.html")):
+                if "_site" in page.parts or any(part.startswith(".") for part in page.parts):
+                    continue
+                text = page.read_text(encoding="utf-8", errors="replace")
+                for index, match in enumerate(block.finditer(text)):
+                    attrs = match.group("attrs") or ""
+                    body = match.group("body") or ""
+                    if "src=" in attrs or "application/ld+json" in attrs or not body.strip():
+                        continue
+                    scratch = Path(tmp) / f"{page.parent.name}-{page.stem}-{index}.js"
+                    scratch.write_text(body, encoding="utf-8")
+                    result = subprocess.run(
+                        [node, "--check", str(scratch)],
+                        capture_output=True,
+                        text=True,
+                        check=False,
+                    )
+                    checked += 1
+                    self.assertEqual(
+                        result.returncode,
+                        0,
+                        f"{page.relative_to(ROOT)} inline script #{index}: {result.stderr.strip()[:200]}",
+                    )
+        self.assertGreater(checked, 80, "expected every section and app page's inline script to be checked")
+
+    def test_language_change_listener_does_not_reapply_translations(self) -> None:
+        # OmniI18n.apply() dispatches i18n:changed as its last step, so a
+        # listener that calls _applyTranslations() re-enters apply(): measured
+        # 610 dispatches per boot, 631 per language switch, ending in an
+        # uncaught "Maximum call stack size exceeded" on every page.
+        features = (ROOT / "js" / "features.js").read_text(encoding="utf-8")
+        listener = re.search(r"addEventListener\('i18n:changed', \(\) => \{(.*?)\n {6}\}\);", features, re.DOTALL)
+        self.assertIsNotNone(listener, "the i18n:changed listener disappeared from features.js")
+        self.assertNotIn("_applyTranslations", listener.group(1))
+        self.assertIn("_applyTitle()", listener.group(1))
+
+    def test_design_system_font_import_precedes_every_rule(self) -> None:
+        # @import is only honoured before all other rules. At the bottom of
+        # tokens.css browsers dropped it and the declared Inter/Noto stack
+        # silently fell back to system fonts.
+        tokens = (ROOT / "assets" / "design-system" / "tokens.css").read_text(encoding="utf-8")
+        stripped = re.sub(r"/\*.*?\*/", "", tokens, flags=re.DOTALL).lstrip()
+        self.assertTrue(stripped.startswith("@import"), "the webfont @import must be the first rule in tokens.css")
+
+    def test_csp_allows_the_webfont_hosts(self) -> None:
+        # Otherwise the @import above is blocked a second time over: style-src
+        # governs the imported sheet, font-src the files it references.
+        from omnisource.app_pages import CSP_DIRECTIVES
+
+        style = next(directive for directive in CSP_DIRECTIVES if directive.startswith("style-src"))
+        font = next(directive for directive in CSP_DIRECTIVES if directive.startswith("font-src"))
+        self.assertIn("https://fonts.googleapis.com", style)
+        self.assertIn("https://fonts.gstatic.com", font)
+
+        index = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn("style-src 'self' 'unsafe-inline' https://fonts.googleapis.com", index)
+        self.assertIn("font-src 'self' data: https://fonts.gstatic.com", index)
+
+    def test_social_preview_images_are_absolute(self) -> None:
+        # og:image has to be an absolute URL for scrapers, and on the section
+        # pages the relative path resolved to a 404 as well.
+        meta = re.compile(r'(?:property="og:image"|name="twitter:image")\s+content="([^"]+)"')
+        checked = 0
+        for page in sorted(ROOT.rglob("*.html")):
+            if "_site" in page.parts or any(part.startswith(".") for part in page.parts):
+                continue
+            for value in meta.findall(page.read_text(encoding="utf-8", errors="replace")):
+                checked += 1
+                self.assertTrue(
+                    value.startswith("https://"),
+                    f"{page.relative_to(ROOT)}: preview image is not absolute: {value!r}",
+                )
+        self.assertGreater(checked, 80, "expected every generated page to declare a preview image")
+
+    def test_sitemap_lists_every_navigable_section(self) -> None:
+        # /discover/ and /graph/ are linked from the main navigation but were
+        # missing from the sitemap, leaving two indexable pages unlisted.
+        from omnisource.site import SITE_PAGES
+
+        sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        for path, _priority, _changefreq in SITE_PAGES:
+            self.assertIn(f"<loc>https://iamsmmh.github.io/OmniSource{path}</loc>", sitemap)
+
+    def test_page_data_load_is_scoped_and_progressive(self) -> None:
+        # Every page used to Promise.all the whole feed bundle (~2 MB) before
+        # drawing anything, so the catalog and the rails sat as skeletons for
+        # seconds and the nav's #trending anchor pointed at a hidden section.
+        site = (ROOT / "js" / "site.js").read_text(encoding="utf-8")
+        self.assertIn("var FEEDS = [", site)
+        self.assertIn("function feedsForPage(page)", site)
+        self.assertIn("firstPaint: true", site)
+        self.assertIn("function scheduleRefresh()", site)
+
+        core = (ROOT / "js" / "core.js").read_text(encoding="utf-8")
+        self.assertIn("jsonMemo", core)  # one request per feed per page load
+        self.assertIn("setupDeferredAnchors()", core)  # scroll once a section is revealed
+
+    def test_collection_templates_escape_every_interpolation(self) -> None:
+        # The collection pages build their markup by assigning template literals
+        # to innerHTML. collection.html had no escaping at all, so a collection
+        # or app name could break out of an attribute and inject markup —
+        # CodeQL reported it as soon as the pages became analysable.
+        #
+        # Rule: on any line that emits markup (contains "<"), any ${…} that
+        # reaches user-controlled data (app/collection fields, the collection
+        # id) or a URL helper must pass through OS.esc()/jsAttr() somewhere in
+        # the expression. The non-HTML uses of the same values (download
+        # filename, Web Share title/text, clipboard fallback) emit no markup.
+        safe_prefix = ("OS.Favorites.has(",)
+        user_data = ("app.", "collection.", "collectionId")
+
+        def interpolations(line: str) -> list[str]:
+            found = []
+            cursor = 0
+            while True:
+                start = line.find("${", cursor)
+                if start == -1:
+                    return found
+                depth = 0
+                end = start + 1
+                while end < len(line):
+                    if line[end] == "{":
+                        depth += 1
+                    elif line[end] == "}":
+                        depth -= 1
+                        if depth == 0:
+                            break
+                    end += 1
+                found.append(line[start + 2 : end].strip())
+                cursor = end + 1
+
+        checked = 0
+        for page in (ROOT / "collections" / "index.html", ROOT / "collections" / "collection.html"):
+            for number, line in enumerate(page.read_text(encoding="utf-8").splitlines(), start=1):
+                if "<" not in line or "${" not in line:
+                    continue
+                for expression in interpolations(line):
+                    if not expression:
+                        continue
+                    checked += 1
+                    if not any(token in expression for token in user_data):
+                        continue  # literal, count or date — nothing to escape
+                    self.assertTrue(
+                        "OS.esc(" in expression or "jsAttr(" in expression or expression.startswith(safe_prefix),
+                        f"{page.name}:{number}: unescaped markup interpolation ${{{expression}}}",
+                    )
+        self.assertGreater(checked, 20, "expected the collection templates to be scanned")
+
+    def test_inline_script_regex_tolerates_real_html(self) -> None:
+        # CodeQL flagged the extraction regex used by smoke_test: "</script>"
+        # does not match "</script >", and HTML lets an end tag carry junk
+        # before its ">" that parsers ignore. A page spelled that way would
+        # silently skip its syntax check — the same blind spot that let the
+        # broken Collections script through in the first place. Load the real
+        # regex rather than restating it.
+        spec = importlib.util.spec_from_file_location("smoke_test", ROOT / "scripts" / "smoke_test.py")
+        assert spec and spec.loader, "cannot load scripts/smoke_test.py"
+        smoke = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(smoke)
+
+        def bodies(html: str) -> list[str]:
+            return [body for _attrs, body in smoke.INLINE_SCRIPT_RE.findall(html)]
+
+        self.assertEqual(bodies("<script >var a = 1;</script >"), ["var a = 1;"])
+        self.assertEqual(bodies('<script type="module">var b = 2;</SCRIPT>'), ["var b = 2;"])
+        self.assertEqual(bodies("<script>var d = 4;</script\t\n bar>"), ["var d = 4;"])
+
+        # …and it must not treat an unrelated tag as a script element.
+        self.assertEqual(bodies("<scriptx>var c = 3;</scriptx>"), [])
 
 
 if __name__ == "__main__":

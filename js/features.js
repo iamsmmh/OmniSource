@@ -1422,12 +1422,20 @@
       this._loadLanguage();
       this._injectUI();
       this._applyTranslations();
-      // Re-apply once the locale bundles arrive (and on every later
+      // Sync the chrome once the locale bundles arrive (and on every later
       // language switch): init runs before OmniI18n finishes fetching.
+      //
+      // Do NOT call _applyTranslations() here. OmniI18n.apply() dispatches
+      // i18n:changed as its last step, so re-applying from this listener
+      // re-enters apply() forever — it measured ~610 dispatches per boot and
+      // ended in an uncaught "Maximum call stack size exceeded" on every
+      // page. The [data-i18n*] markup is already translated by the apply()
+      // that fired this event; only the widgets this module owns (the
+      // language <select>s and the document title) need refreshing.
       window.addEventListener('i18n:changed', () => {
         this.currentLanguage = (window.OmniI18n && window.OmniI18n.language) || this.currentLanguage;
         this.syncLanguageSelects();
-        this._applyTranslations();
+        this._applyTitle();
       });
     },
 
@@ -1606,11 +1614,16 @@
       if (window.OmniI18n && window.OmniI18n.loaded && window.OmniI18n.loaded('en')) {
         window.OmniI18n.apply();
       }
+      this._applyTitle();
+    },
 
-      // Update the document title. Static pages (analytics, status,
-      // compare, install, search and the per-app pages) ship their own
-      // titles, so only the home page gets the localized site title —
-      // guarded on a loaded EN bundle so the key never leaks into the tab.
+    // Title-only refresh. Safe to call from the i18n:changed listener
+    // because it never calls back into OmniI18n.apply().
+    _applyTitle() {
+      // Static pages (analytics, status, compare, install, search and the
+      // per-app pages) ship their own titles, so only the home page gets the
+      // localized site title — guarded on a loaded EN bundle so the key never
+      // leaks into the tab.
       const page = document.body && document.body.dataset.page;
       if (page === 'home' && window.OmniI18n && window.OmniI18n.loaded && window.OmniI18n.loaded('en')) {
         document.title = window.OmniI18n.t('site.title', { site: 'OmniSource' });

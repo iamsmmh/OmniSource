@@ -9,8 +9,9 @@ contract the website and feed clients depend on:
 * the live catalog data is reachable at all three URL families
   (flat ``/apps.json``, organized ``/feeds/apps.json``, API ``/api/apps.json``);
 * each page carries the markers and ``#id`` elements its renderer needs;
-* the client scripts are syntactically valid JavaScript (when ``node``
-  is available);
+* the client scripts — external files *and* the inline ``<script>``
+  blocks the section pages carry — are syntactically valid JavaScript
+  (when ``node`` is available);
 
 ``--root`` serves the repository tree instead of the ``_site/`` artifact —
 that is what GitHub Pages serves while it is configured for a *branch*
@@ -235,7 +236,10 @@ def ids_in(html: str) -> set[str]:
     return set(re.findall(r'id="([A-Za-z0-9_-]+)"', html))
 
 
-def check_js_syntax() -> list[str]:
+INLINE_SCRIPT_RE = re.compile(r"<script\b(?P<attrs>[^>]*)>(?P<body>.*?)</script[^>]*>", re.DOTALL | re.IGNORECASE)
+
+
+def check_js_syntax(site_root: Path = _SITE) -> list[str]:
     node = shutil.which("node")
     if not node:
         return []
@@ -252,6 +256,39 @@ def check_js_syntax() -> list[str]:
         )
         if result.returncode != 0:
             errors.append(f"{script}: {result.stderr.strip()}")
+
+    # Inline <script> blocks too. The hand-maintained section pages carry
+    # their whole page logic inline, and an over-escaped string literal in
+    # collections/index.html silently killed that page while this check only
+    # looked at external files.
+    if site_root.is_dir():
+        with tempfile.TemporaryDirectory() as tmp:
+            for page in sorted(site_root.rglob("*.html")):
+                parts = set(page.relative_to(site_root).parts)
+                if parts & {"_site", "node_modules"} or any(p.startswith(".") for p in parts):
+                    continue  # build output / vendored code, checked separately
+                html = page.read_text(encoding="utf-8", errors="replace")
+                for index, match in enumerate(INLINE_SCRIPT_RE.finditer(html)):
+                    attrs = match.group("attrs") or ""
+                    body = match.group("body") or ""
+                    if "src=" in attrs or "application/ld+json" in attrs or not body.strip():
+                        continue
+                    scratch = Path(tmp) / f"inline-{index}.js"
+                    scratch.write_text(body, encoding="utf-8")
+                    result = subprocess.run(
+                        [node, "--check", str(scratch)],
+                        capture_output=True,
+                        text=True,
+                        check=False,
+                    )
+                    if result.returncode != 0:
+                        line = html[: match.start()].count("\n") + 1
+                        detail = next(
+                            (ln for ln in result.stderr.splitlines() if "SyntaxError" in ln),
+                            result.stderr.strip(),
+                        )
+                        rel = page.relative_to(site_root).as_posix()
+                        errors.append(f"{rel} inline script #{index} (line {line}): {detail.strip()}")
     return errors
 
 
@@ -369,7 +406,7 @@ def main(argv: list[str] | None = None) -> int:
         if sources.get("count") != len(sources.get("sources", [])):
             failures.append("sources.json: count does not match sources[] length")
 
-    for error in check_js_syntax():
+    for error in check_js_syntax(site_root):
         failures.append(error)
 
     print(f"smoke_test: checked {checked} URL(s), {len(PAGES)} page(s), {len(FEEDS)} feed(s) x 3 families")

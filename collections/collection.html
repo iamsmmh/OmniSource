@@ -189,6 +189,12 @@
     // undefined (setting ...)" and aborted the rest of this script, so the
     // catalog fetch never ran and the page rendered empty.
     (function extendCollectionsUI() {
+      // Escape a value for a single-quoted JS string that itself sits inside
+      // an HTML attribute (the inline handlers below): JS-escape the quotes
+      // first, then HTML-escape the result. Same pattern as
+      // collections/index.html — without it a collection or app name could
+      // break out of the attribute and inject markup.
+      const jsAttr = (value) => OS.esc(String(value == null ? '' : value).replace(/\\/g, "\\\\").replace(/'/g, "\\'"));
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', extendCollectionsUI);
         return;
@@ -275,11 +281,11 @@
         </div>
         <div class="app-list" id="available-apps-list" style="max-height: 300px; overflow-y: auto; margin-top: 12px;">
           ${availableApps.slice(0, 20).map(app => `
-            <div class="app-item" data-id="${app.slug || app.id}" style="display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; cursor: pointer;" onclick="OS.Collections.addApp('${collectionId}', '${app.slug || app.id}'); OS.Collections.hideAddModal(); OS.Collections.renderAll();">
-              <img src="${OS.asset(app.icon || 'OmniSource.png')}" alt="${app.name}" width="32" height="32" style="border-radius: 8px; object-fit: cover; background: var(--surface-2);">
+            <div class="app-item" data-id="${OS.esc(app.slug || app.id)}" style="display: flex; align-items: center; gap: 12px; padding: 8px; border-radius: 8px; cursor: pointer;" onclick="OS.Collections.addApp('${jsAttr(collectionId)}', '${jsAttr(app.slug || app.id)}'); OS.Collections.hideAddModal(); OS.Collections.renderAll();">
+              <img src="${OS.esc(OS.asset(app.icon || 'OmniSource.png'))}" alt="${OS.esc(app.name)}" width="32" height="32" style="border-radius: 8px; object-fit: cover; background: var(--surface-2);">
               <div>
-                <h4 style="margin: 0; font-size: 13px; font-weight: 600;">${app.name}</h4>
-                <p style="margin: 0; font-size: 11px; color: var(--muted);">${app.developer || 'Unknown'}</p>
+                <h4 style="margin: 0; font-size: 13px; font-weight: 600;">${OS.esc(app.name)}</h4>
+                <p style="margin: 0; font-size: 11px; color: var(--muted);">${OS.esc(app.developer || 'Unknown')}</p>
               </div>
             </div>
           `).join('')}
@@ -335,18 +341,18 @@
         
         header.innerHTML = `
           <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
-            <div style="width: 64px; height: 64px; border-radius: 16px; background: ${collection.color}; display: grid; place-items: center; font-size: 32px; flex-shrink: 0;">
-              ${collection.icon || '📁'}
+            <div style="width: 64px; height: 64px; border-radius: 16px; background: ${OS.esc(collection.color)}; display: grid; place-items: center; font-size: 32px; flex-shrink: 0;">
+              ${OS.esc(collection.icon || '📁')}
             </div>
             <div>
-              <h1 style="margin: 0; font-size: 28px;">${collection.name}</h1>
-              <p style="margin: 4px 0 0; color: var(--muted);">${collection.description || 'No description'}</p>
+              <h1 style="margin: 0; font-size: 28px;">${OS.esc(collection.name)}</h1>
+              <p style="margin: 4px 0 0; color: var(--muted);">${OS.esc(collection.description || 'No description')}</p>
             </div>
           </div>
           <div style="display: flex; gap: 16px; margin-top: 16px; font-size: 13px; color: var(--muted);">
             <span><strong>${apps.length}</strong> app${apps.length !== 1 ? 's' : ''}</span>
-            <span>Created ${new Date(collection.createdAt || Date.now()).toLocaleDateString()}</span>
-            ${collection.updatedAt ? `<span>Updated ${new Date(collection.updatedAt).toLocaleDateString()}</span>` : ''}
+            <span>Created ${OS.esc(new Date(collection.createdAt || Date.now()).toLocaleDateString())}</span>
+            ${collection.updatedAt ? `<span>Updated ${OS.esc(new Date(collection.updatedAt).toLocaleDateString())}</span>` : ''}
           </div>
         `;
 
@@ -364,31 +370,31 @@
           content.innerHTML = `
             <div class="apps-grid">
               ${apps.map(app => `
-                <article class="app-card" data-app-id="${app.slug || app.id}">
+                <article class="app-card" data-app-id="${OS.esc(app.slug || app.id)}">
                   <div class="card-top">
                     <div class="icon-wrap">
-                      <img src="${OS.asset(app.icon || 'OmniSource.png')}" alt="${app.name}" class="app-icon" width="58" height="58">
+                      <img src="${OS.esc(OS.asset(app.icon || 'OmniSource.png'))}" alt="${OS.esc(app.name)}" class="app-icon" width="58" height="58">
                     </div>
                     <div class="card-identity">
-                      <h3><a href="${OS.url(`apps/${app.slug}/`)}">${app.name}</a></h3>
-                      <p class="card-dev">${app.developer || 'Unknown'}</p>
+                      <h3><a href="${OS.esc(OS.url(`apps/${app.slug}/`))}">${OS.esc(app.name)}</a></h3>
+                      <p class="card-dev">${OS.esc(app.developer || 'Unknown')}</p>
                     </div>
-                    <button class="favorite-btn" onclick="OS.Favorites.toggle('${app.slug || app.id}'); this.classList.toggle('active');" ${OS.Favorites.has(app.slug || app.id) ? 'class="favorite-btn active"' : ''}>
+                    <button type="button" class="favorite-btn${OS.Favorites.has(app.slug || app.id) ? ' active' : ''}" aria-label="Toggle favourite for ${OS.esc(app.name)}" title="Toggle favourite" onclick="OS.Favorites.toggle('${jsAttr(app.slug || app.id)}'); this.classList.toggle('active');">
                       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                       </svg>
                     </button>
                   </div>
-                  <p class="app-description">${app.description || 'No description available.'}</p>
+                  <p class="app-description">${OS.esc(app.description || 'No description available.')}</p>
                   <div class="card-meta">
-                    <span class="meta-item"><b>${app.version || 'N/A'}</b> version</span>
-                    <span class="meta-item"><b>${app.status || 'unknown'}</b> status</span>
-                    <span class="meta-item"><b>${app.source || 'N/A'}</b> source</span>
+                    <span class="meta-item"><b>${OS.esc(app.version || 'N/A')}</b> version</span>
+                    <span class="meta-item"><b>${OS.esc(app.status || 'unknown')}</b> status</span>
+                    <span class="meta-item"><b>${OS.esc(app.source || 'N/A')}</b> source</span>
                   </div>
                   <div class="card-bottom">
                     <div class="card-actions">
-                      <button class="button ghost" onclick="OS.Collections.removeApp('${collectionId}', '${app.slug || app.id}'); OS.Collections.renderAll();">Remove</button>
-                      <button class="rate-btn" onclick="OS.Ratings.showRatingModal('${app.slug || app.id}', '${app.name}')">Rate</button>
+                      <button class="button ghost" onclick="OS.Collections.removeApp('${jsAttr(collectionId)}', '${jsAttr(app.slug || app.id)}'); OS.Collections.renderAll();">Remove</button>
+                      <button class="rate-btn" onclick="OS.Ratings.showRatingModal('${jsAttr(app.slug || app.id)}', '${jsAttr(app.name)}')">Rate</button>
                     </div>
                   </div>
                 </article>

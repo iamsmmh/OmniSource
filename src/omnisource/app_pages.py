@@ -40,11 +40,11 @@ CSP_DIRECTIVES = (
     "base-uri 'self'",
     "object-src 'none'",
     "script-src 'self' 'unsafe-inline'",
-    "style-src 'self' 'unsafe-inline'",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "img-src 'self' data: https:",
     "media-src 'self' data:",
     "connect-src 'self' https:",
-    "font-src 'self' data:",
+    "font-src 'self' data: https://fonts.gstatic.com",
     "form-action 'self'",
 )
 
