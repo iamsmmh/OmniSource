@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 ATTR_RE = re.compile(r'data-i18n(?:-placeholder|-aria-label|-alt|-title)?="([^"]+)"')
 # OS.t('key') / OmniI18n.t("key") / any t('key') call with a literal key.
-CALL_RE = re.compile(r"""\bt\(\s*["']([A-Za-z][\w.]*)["']""")
+CALL_RE = re.compile(r"""\b(?:t|translate)\(\s*["']([A-Za-z][\w.]*)["']""")
 # setAttribute('data-i18n', 'key') wiring from injected DOM (features.js).
 SETATTR_RE = re.compile(
     r"""setAttribute\(\s*["']data-i18n(?:-placeholder|-aria-label|-alt|-title)?["']\s*,\s*["']([^"']+)["']"""
@@ -49,6 +49,7 @@ def iter_pages():
 
 def iter_scripts():
     yield from sorted((ROOT / "js").glob("*.js"))
+    yield from sorted((ROOT / "js" / "modules").glob("*.js"))
     yield from sorted((ROOT / "src" / "js").glob("*.js"))
     yield from sorted((ROOT / "website").rglob("*.js"))
 

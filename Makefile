@@ -1,4 +1,4 @@
-.PHONY: all build publish site serve smoke validate test format lint check clean version
+.PHONY: all build publish site serve smoke validate test format lint check audit clean version
 
 PYTHON ?= python3
 PORT ?= 8000
@@ -53,6 +53,11 @@ check: lint validate test
 	$(PYTHON) scripts/smoke_test.py
 	$(PYTHON) scripts/smoke_test.py --root --no-build
 	$(PYTHON) -m ruff format --check src scripts tests
+
+# Structural audits (dead code, duplication, i18n, performance, workflows,
+# accessibility, links/SEO) into reports/*.md — read-only over the tree.
+audit:
+	$(PYTHON) scripts/audit.py
 
 clean:
 	rm -rf _site

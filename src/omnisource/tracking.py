@@ -295,19 +295,3 @@ def detect_update(previous: list[dict[str, Any]] | None, current: list[dict[str,
     if is_newer(new, old) or old_url != new_url:
         return "updated"
     return "unchanged"
-
-
-def validate_version_entry(entry: dict[str, Any]) -> list[str]:
-    """Return problems with a version entry (empty list = valid)."""
-    problems: list[str] = []
-    if not entry.get("version"):
-        problems.append("missing version")
-    if not entry.get("downloadURL"):
-        problems.append("missing downloadURL")
-    size = entry.get("size")
-    if not isinstance(size, int) or isinstance(size, bool) or size < 0:
-        problems.append("size must be a non-negative integer")
-    sha = entry.get("sha256")
-    if sha is not None and not re.fullmatch(r"[0-9a-fA-F]{64}", str(sha)):
-        problems.append("sha256 is not a 64-char hex digest")
-    return problems

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Source Explorer — OmniSource</title>
+  <meta name="description" content="Reputation, health and verification for every upstream source in the OmniSource catalog. One page per source: maintainer, feed URL, app count, update cadence and last update.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#e8eef8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#07070f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#07070f" id="themeColor">
+  <link rel="canonical" href="https://iamsmmh.github.io/OmniSource/sources/">
+  <meta property="og:site_name" content="OmniSource">
+  <meta property="og:title" content="Source Explorer — OmniSource">
+  <meta property="og:description" content="Uptime, reputation, verification and app count for every upstream source behind the catalog.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://iamsmmh.github.io/OmniSource/sources/">
+  <meta property="og:image" content="https://iamsmmh.github.io/OmniSource/assets/OmniSource.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Source Explorer — OmniSource">
+  <meta name="twitter:description" content="Uptime, reputation, verification and app count for every upstream source behind the catalog.">
+  <meta name="twitter:image" content="https://iamsmmh.github.io/OmniSource/assets/OmniSource.png">
+  <link rel="icon" type="image/png" href="../assets/OmniSource.png">
+  <link rel="apple-touch-icon" href="../assets/OmniSource.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <!-- Content Security Policy: same-origin scripts/styles (inline allowed for the
+       theme bootstrap + page widgets), images/data from self + https, API calls
+       to self + https. All dynamic markup is escaped via the shared esc() helper. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; media-src 'self' data:; connect-src 'self' https:; font-src 'self' data: https://fonts.gstatic.com; form-action 'self'">
+  <link rel="preload" href="../assets/design-system/tokens.css" as="style">
+  <link rel="preload" href="../assets/design-system/components.css" as="style">
+  <link rel="stylesheet" href="../assets/design-system/tokens.css">
+  <link rel="stylesheet" href="../assets/design-system/utilities.css">
+  <link rel="stylesheet" href="../assets/design-system/animations.css">
+  <link rel="stylesheet" href="../assets/design-system/components.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "OmniSource Source Explorer",
+    "description": "Reputation, health and verification for every upstream source in the OmniSource catalog.",
+    "url": "https://iamsmmh.github.io/OmniSource/sources/",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Source Explorer", "url": "https://iamsmmh.github.io/OmniSource/sources/" },
+      { "@type": "ListItem", "position": 2, "name": "Status", "url": "https://iamsmmh.github.io/OmniSource/status/" },
+      { "@type": "ListItem", "position": 3, "name": "Docs", "url": "https://iamsmmh.github.io/OmniSource/docs/" }
+    ]
+  }
+  </script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('omnisource-theme');
+        if (t !== 'light' && t !== 'dark') t = 'auto';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+  <script src="../js/core.js" defer></script>
+  <script src="../js/site.js" defer></script>
+  <script src="../src/js/i18n.js" defer></script>
+  <script src="../js/features.js" defer></script>
+  <script type="module" src="../js/modules/sources.js"></script>
+</head>
+<body data-page="sources">
+  <a class="skip-link" href="#main">Skip to sources</a>
+
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="../" aria-label="OmniSource home">
+        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="" width="34" height="34"></picture>
+        <span>OmniSource</span>
+        <span class="brand-badge">SOURCES</span>
+      </a>
+      <div class="nav-links">
+        <a href="../" data-i18n="nav.home">Home</a>
+        <a href="../#catalog" data-i18n="nav.apps">Apps</a>
+        <a href="../collections/" data-i18n="nav.collections">Collections</a>
+        <a href="./" class="active" aria-current="page" data-i18n="nav.sources">Sources</a>
+        <a href="../status/" data-i18n="nav.health">Status</a>
+        <a href="../docs/" data-i18n="nav.docs">Docs</a>
+        <details class="nav-more">
+          <summary aria-haspopup="menu" aria-label="More pages"><span data-i18n="nav.more">More</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+          <div class="nav-menu" role="menu">
+            <a href="../analytics/" role="menuitem" data-i18n="nav.analytics">Analytics</a>
+            <a href="../compare/" role="menuitem" data-i18n="nav.compare">Compare</a>
+            <a href="../favorites/" role="menuitem" data-i18n="nav.favorites">Favorites</a>
+            <a href="../discover/" role="menuitem" data-i18n="nav.discover">Discover</a>
+            <a href="../api/community.json" role="menuitem" data-i18n="nav.community">Community</a>
+            <a href="../#whats-new" role="menuitem" data-i18n="nav.whatsNew">What&rsquo;s new</a>
+            <a href="../#trending" role="menuitem" data-i18n="nav.trending">Trending</a>
+            <a href="../graph/" role="menuitem" data-i18n="nav.graph">Graph</a>
+            <a href="../install/" role="menuitem" data-i18n="nav.install">Install</a>
+            <a href="../search/" role="menuitem" data-i18n="nav.search">Search</a>
+            <a href="../feeds/feed.xml" role="menuitem" data-i18n="nav.rss">RSS feed</a>
+            <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" role="menuitem" class="nav-gh" data-i18n="nav.github">GitHub ↗</a>
+          </div>
+        </details>
+      </div>
+      <div class="nav-controls">
+        <button class="icon-button" id="searchToggle" type="button" data-open-palette aria-label="Open instant search" title="Instant search (⌘K)" data-i18n-aria-label="a11y.search" data-i18n-title="a11y.search">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+        </button>
+        <button class="icon-button" id="themeButton" type="button" aria-label="Change color theme" title="Theme: system" data-i18n-aria-label="a11y.theme" data-i18n-title="a11y.theme">
+          <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.8v2M12 19.2v2M2.8 12h2M19.2 12h2M5.4 5.4l1.4 1.4M17.2 17.2l1.4 1.4M18.6 5.4l-1.4 1.4M6.8 17.2l1.4 1.4"/></svg>
+          <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6Z"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="shell sources-page">
+    <section class="sources-hero">
+      <span class="kicker" data-i18n="sources.kicker">SOURCE EXPLORER</span>
+      <h1><span data-i18n="sources.title">Every source behind the catalog.</span></h1>
+      <p class="lead" data-i18n="sources.lead">One page per upstream: maintainer, feed URL, app count, update cadence, health, verification and the reputation score that drives its badge.</p>
+      <div class="src-stats" id="srcStats" aria-live="polite">
+        <div class="stat-card"><b class="num" id="srcStatTotal" data-count>0</b><small data-i18n="stats.sources">Upstream sources</small></div>
+        <div class="stat-card"><b class="num" id="srcStatVerified" data-count>0</b><small data-i18n="stats.verified">Verified apps</small></div>
+        <div class="stat-card"><b class="num" id="srcStatHealth" data-count>0</b><small data-i18n="sources.health">Health</small></div>
+        <div class="stat-card"><b class="num" id="srcStatReputation" data-count>0</b><small data-i18n="sources.reputation">Reputation</small></div>
+      </div>
+    </section>
+
+    <section class="sources-tools" aria-label="Source filters">
+      <label class="sr-only" for="srcFilter" data-i18n="a11y.filterSources">Filter sources</label>
+      <input class="input" id="srcFilter" type="search" autocomplete="off" placeholder="Filter sources by name, maintainer or feed URL…" data-i18n-placeholder="sources.filterPlaceholder">
+      <label class="sr-only" for="srcStatus" data-i18n="sources.allStatuses">All statuses</label>
+      <select class="sort-select" id="srcStatus"></select>
+      <label class="sr-only" for="srcSort" data-i18n="a11y.sortSources">Sort sources</label>
+      <select class="sort-select" id="srcSort">
+        <option value="reputation" data-i18n="sources.sortByReputation">Reputation</option>
+        <option value="health" data-i18n="sources.sortByHealth">Health score</option>
+        <option value="apps" data-i18n="sources.sortByApps">Most apps</option>
+        <option value="updated" data-i18n="sources.sortByUpdated">Recently updated</option>
+      </select>
+      <div class="status-chips" id="srcChips" role="group" aria-label="Status legend"></div>
+    </section>
+
+    <section aria-label="Sources">
+      <div class="sources-grid" id="srcGrid" aria-busy="true">
+        <p class="text-muted" data-i18n="sources.noData">Source data is still loading.</p>
+      </div>
+      <div class="sources-empty panel" id="srcEmpty" hidden>
+        <h3 data-i18n="sources.emptyTitle">No sources found</h3>
+        <p class="text-muted" data-i18n="sources.emptyText">Try another keyword or remove the status filter.</p>
+        <button class="button small" type="button" id="srcReset" data-i18n="catalog.clearFilters">Clear filters</button>
+      </div>
+      <noscript>
+        <div class="sources-static" id="srcStatic">
+        <!-- sources:static:start -->
+<table class="table">
+  <thead><tr><th>Source</th><th>Apps</th><th>Reputation</th><th>Status</th><th>Last update</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https-raw-githubusercontent-com-927tx-ipa-vault/">927tx/IPA-Vault</a></td><td>13</td><td>82/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-10</td></tr>
+    <tr><td><a href="aeharding-voyager/">aeharding/voyager</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-06</td></tr>
+    <tr><td><a href="aidoku-aidoku/">Aidoku/Aidoku</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-03</td></tr>
+    <tr><td><a href="anxcye-anx-reader/">Anxcye/anx-reader</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-03-19</td></tr>
+    <tr><td><a href="apollo-reborn-apollo-reborn/">Apollo-Reborn/Apollo-Reborn</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-11</td></tr>
+    <tr><td><a href="ashreq-ashstore-repo/">Ashreq/ashstore-repo</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-03</td></tr>
+    <tr><td><a href="bandarhl-bhtwitter/">BandarHL/BHTwitter</a></td><td>1</td><td>71/100</td><td><span class="badge neutral">Inactive</span></td><td>2025-05-13</td></tr>
+    <tr><td><a href="bartuzen-qbitcontroller/">Bartuzen/qBitController</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-07-28</td></tr>
+    <tr><td><a href="bluewallet-bluewallet/">BlueWallet/BlueWallet</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-07-21</td></tr>
+    <tr><td><a href="claration-feather/">claration/Feather</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-07-05</td></tr>
+    <tr><td><a href="cogwheel0-conduit/">cogwheel0/conduit</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-01</td></tr>
+    <tr><td><a href="iamsmmh-omnisource/">Community build of arichornlover/uYouEnhanced, mirrored on archive.org</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-22</td></tr>
+    <tr><td><a href="cranci1-sora/">cranci1/Sora</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-20</td></tr>
+    <tr><td><a href="donutware-fladder/">DonutWare/Fladder</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-08</td></tr>
+    <tr><td><a href="fredrikburmester-streamyfin/">fredrikburmester/streamyfin</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-06-02</td></tr>
+    <tr><td><a href="gopeedlab-gopeed/">GopeedLab/gopeed</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-03-18</td></tr>
+    <tr><td><a href="gunnerkidbt-twitchadblock/">gunnerkidBT/TwitchAdBlock</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-14</td></tr>
+    <tr><td><a href="hrydgard-ppsspp/">hrydgard/ppsspp</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-05-16</td></tr>
+    <tr><td><a href="https-repo-ikghd-me-repo-json/">iKarwan (repo.ikghd.me)</a></td><td>2</td><td>76/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-09</td></tr>
+    <tr><td><a href="ish-app-ish/">ish-app/ish</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-22</td></tr>
+    <tr><td><a href="itzzace-ytkace/">itzzace/ytkace</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-31</td></tr>
+    <tr><td><a href="jellify-music-app/">Jellify-Music/App</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-02</td></tr>
+    <tr><td><a href="krtirtho-spotube/">KRTirtho/spotube</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-06-05</td></tr>
+    <tr><td><a href="level3tjg-redditfilter/">level3tjg/RedditFilter</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2025-09-26</td></tr>
+    <tr><td><a href="liji32-sameboy/">LIJI32/SameBoy</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-03-04</td></tr>
+    <tr><td><a href="livecontainer-livecontainer/">LiveContainer/LiveContainer</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-07-17</td></tr>
+    <tr><td><a href="lo-cafe-winston/">lo-cafe/winston</a></td><td>1</td><td>71/100</td><td><span class="badge deprecated">Deprecated</span></td><td>2024-06-24</td></tr>
+    <tr><td><a href="manic-emu-manicemu/">Manic-EMU/ManicEMU</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-03</td></tr>
+    <tr><td><a href="mark02-2012-maxmusic/">Mark02-2012/MaxMusic</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-10</td></tr>
+    <tr><td><a href="michael-128-qbitcontrol/">Michael-128/qBitControl</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-07-23</td></tr>
+    <tr><td><a href="mineek-serotonin/">mineek/Serotonin</a></td><td>1</td><td>71/100</td><td><span class="badge deprecated">Deprecated</span></td><td>2024-01-17</td></tr>
+    <tr><td><a href="mrdrvt99-youproextra/">mrdrvt99/YouProEXTRA</a></td><td>4</td><td>97/100</td><td><span class="badge warn">Warning</span></td><td>2026-09-10</td></tr>
+    <tr><td><a href="mrdrvt99-ytmusicultimate/">mrdrvt99/YTMusicUltimate</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-09</td></tr>
+    <tr><td><a href="neofreebird-app/">NeoFreeBird/app</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2025-11-03</td></tr>
+    <tr><td><a href="oatmealdome-dolphin-ios/">OatmealDome/dolphin-ios</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-06-20</td></tr>
+    <tr><td><a href="odyssey-team-odyssey/">Odyssey-Team/Odyssey</a></td><td>1</td><td>71/100</td><td><span class="badge deprecated">Deprecated</span></td><td>2023-04-04</td></tr>
+    <tr><td><a href="odyssey-team-taurine/">Odyssey-Team/Taurine</a></td><td>1</td><td>71/100</td><td><span class="badge deprecated">Deprecated</span></td><td>2023-09-23</td></tr>
+    <tr><td><a href="opa334-dopamine/">opa334/Dopamine</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-22</td></tr>
+    <tr><td><a href="provenance-emu-provenance/">Provenance-Emu/Provenance</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-03-14</td></tr>
+    <tr><td><a href="pwn20wndstuff-undecimus/">pwn20wndstuff/Undecimus</a></td><td>1</td><td>71/100</td><td><span class="badge deprecated">Deprecated</span></td><td>2020-06-09</td></tr>
+    <tr><td><a href="raincord-raintweak/">raincord/RainTweak (Codeberg)</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-06-19</td></tr>
+    <tr><td><a href="rajnishone-qbitconnect/">RajnishOne/qbitconnect</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2025-11-02</td></tr>
+    <tr><td><a href="rileytestut-delta/">RileyTestut/Delta</a></td><td>1</td><td>71/100</td><td><span class="badge neutral">Inactive</span></td><td>2024-07-11</td></tr>
+    <tr><td><a href="roothide-bootstrap/">roothide/Bootstrap</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-06-12</td></tr>
+    <tr><td><a href="roothide-dopamine2-roothide/">roothide/Dopamine2-roothide</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-07</td></tr>
+    <tr><td><a href="ryanyuuki-anymex/">RyanYuuki/AnymeX</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-30</td></tr>
+    <tr><td><a href="https-source-ryuksign-com-duplicate/">Ryuk / RyukSign (source.ryuksign.com)</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-09</td></tr>
+    <tr><td><a href="https-source-ryuksign-com-ig410/">Ryuk / RyukSign (source.ryuksign.com)</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-07-25</td></tr>
+    <tr><td><a href="saber-notes-saber/">saber-notes/saber</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-30</td></tr>
+    <tr><td><a href="sidestore-sidestore/">SideStore/SideStore</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-09</td></tr>
+    <tr><td><a href="spotiflacapp-spotiflac-mobile/">spotiflacapp/SpotiFLAC-Mobile</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-07</td></tr>
+    <tr><td><a href="stikdebug-stikdebug/">StikDebug/StikDebug</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-27</td></tr>
+    <tr><td><a href="stikemu-stiknes-2-0/">StikEMU/StikNES-2.0</a></td><td>1</td><td>71/100</td><td><span class="badge neutral">Inactive</span></td><td>2025-02-23</td></tr>
+    <tr><td><a href="utmapp-utm/">utmapp/UTM</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-01-03</td></tr>
+    <tr><td><a href="vcmi-vcmi/">vcmi/vcmi</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-08-15</td></tr>
+    <tr><td><a href="xenios-jp-xenios/">xenios-jp/XeniOS</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-06-08</td></tr>
+    <tr><td><a href="xitrix-itorrent/">XITRIX/iTorrent</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-07-19</td></tr>
+    <tr><td><a href="yattee-yattee/">yattee/yattee</a></td><td>1</td><td>71/100</td><td><span class="badge neutral">Inactive</span></td><td>2024-01-28</td></tr>
+    <tr><td><a href="yoshisuga-mame4ios/">yoshisuga/MAME4iOS</a></td><td>1</td><td>71/100</td><td><span class="badge neutral">Inactive</span></td><td>2022-12-12</td></tr>
+    <tr><td><a href="zeusln-zeus/">ZeusLN/zeus</a></td><td>1</td><td>74/100</td><td><span class="badge community">Community Verified</span></td><td>2026-09-02</td></tr>
+    <tr><td><a href="zydeco-minivmac4ios/">zydeco/minivmac4ios</a></td><td>1</td><td>71/100</td><td><span class="badge neutral">Inactive</span></td><td>2024-07-09</td></tr>
+  </tbody>
+</table>  <!-- sources:static:end -->
+        </div>
+      </noscript>
+    </section>
+
+    <p class="sources-fine">Live data: <a href="../feeds/sources.json">sources.json</a> ·
+      <a href="../feeds/reputation.json">reputation.json</a> ·
+      <a href="../feeds/health.json">health.json</a> — regenerated on every build.
+      Machine contract: <a href="../api/v2/sources.json">/api/v2/sources</a>.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <picture><source srcset="../assets/OmniSource.webp" type="image/webp"><img src="../assets/OmniSource.png" alt="" width="40" height="40" loading="lazy" decoding="async"></picture>
+        <div>
+          <strong>OmniSource</strong>
+          <p data-i18n="footer.tagline">Curated iOS sideloading, kept current automatically. One feed for every major client.</p>
+        </div>
+      </div>
+      <p class="fine-print"><a href="../" data-i18n="nav.home">Home</a> ·
+        <a href="../status/" data-i18n="nav.health">Status</a> ·
+        <a href="../docs/" data-i18n="nav.docs">Docs</a> ·
+        <a href="../install/" data-i18n="hero.howTo">How to install</a></p>
+    </div>
+  </footer>
+  <!-- i18n-keys: sources.page, sources.pageDescription, sources.feed, sources.open, sources.verification, sources.apps, sources.appOne, hero.howTo -->
+</body>
+</html>

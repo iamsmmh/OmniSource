@@ -67,6 +67,7 @@ SITE_FILES = (
     "sw.js",
     "compare",
     "collections",
+    "sources",
     "favorites",
     "install",
     "analytics",
@@ -79,6 +80,7 @@ SITE_FILES = (
     "src",
     "locales",
     "website",
+    "docs",
 )
 
 # Assets that must ship even though the site HTML does not reference them:
@@ -91,7 +93,8 @@ ASSET_ALWAYS_PNG = ("OmniSource.png",)
 API_DOCUMENTS = {
     "apps.json": "The unified AltStore Source v2 feed (the installable source URL).",
     "discovery.json": "Searchable discovery catalog, generated every build. Also exposed as api/catalog.json.",
-    "sources.json": "Source index: upstreams, publisher, clients and feed metadata.",
+    "sources.json": "Source index: upstreams, publisher, clients, feed metadata and "
+    "the Source Explorer roll-up (slug, status, reputation, health, last update).",
     "verification.json": "Trust levels and checks per app.",
     "status.json": "Source health board: reachability, latency, update age.",
     "duplicates.json": "Duplicate groups and recommended source per group.",
@@ -151,6 +154,8 @@ API_ROUTES = {
 # /discover/ and /graph/ are linked from the main navigation, so they belong
 # here too — they were missing, which left two indexable pages unlisted.
 SITE_PAGES = (
+    ("/sources/", 0.8, "weekly"),
+    ("/docs/", 0.6, "monthly"),
     ("/compare/", 0.8, "weekly"),
     ("/discover/", 0.7, "weekly"),
     ("/status/", 0.6, "daily"),
@@ -239,6 +244,14 @@ def _collection_slugs(root: Path) -> list[str]:
     return sorted(p.name for p in collections_dir.iterdir() if p.is_dir() and (p / "index.html").is_file())
 
 
+def _source_slugs(root: Path) -> list[str]:
+    """Generated Source Explorer page slugs (sources/<slug>/index.html)."""
+    sources_dir = root / "sources"
+    if not sources_dir.is_dir():
+        return []
+    return sorted(p.name for p in sources_dir.iterdir() if p.is_dir() and (p / "index.html").is_file())
+
+
 def _compare_pairs(root: Path) -> list[str]:
     """Return the list of compare-pair slugs.
 
@@ -257,6 +270,7 @@ def _sitemap(
     *,
     compare_pairs: list[str] | None = None,
     collection_slugs: list[str] | None = None,
+    source_slugs: list[str] | None = None,
 ) -> str:
     base = base_url.rstrip("/")
     urls = [(f"{base}/", "1.0", "daily")]
@@ -266,6 +280,8 @@ def _sitemap(
         urls.append((f"{base}/apps/{slug}/", "0.9", "weekly"))
     for slug in collection_slugs or []:
         urls.append((f"{base}/collections/{slug}/", "0.6", "weekly"))
+    for slug in source_slugs or []:
+        urls.append((f"{base}/sources/{slug}/", "0.7", "weekly"))
     for pair in compare_pairs or []:
         urls.append((f"{base}/compare/{pair}/", "0.5", "monthly"))
 
@@ -732,6 +748,48 @@ def _inject_homepage_stats(path: Path, health_doc: dict[str, Any], analytics_doc
     return changed
 
 
+def _inject_sources_table(path: Path, sources_doc: dict[str, Any]) -> bool:
+    """Refresh the static fallback table inside ``sources/index.html``.
+
+    The interactive explorer replaces this block at runtime, but crawlers and
+    no-JS visitors read the server-rendered rows — so the committed copy must
+    not drift. Markers delimit the region; a missing marker raises so a silent
+    template change cannot disable the fallback.
+    """
+    from omnisource.source_pages import render_sources_table
+
+    if not path.is_file():
+        return False
+    text = path.read_text(encoding="utf-8")
+    start = "<!-- sources:static:start -->"
+    end = "<!-- sources:static:end -->"
+    if start not in text or end not in text:
+        raise ValueError(f"sources page markers missing: {path}")
+    block = "\n" + render_sources_table(_CatalogShell(path.parents[1]), sources_doc) + "  "
+    updated, _ = re.subn(
+        re.escape(start) + ".*?" + re.escape(end),
+        lambda _m: start + block + end,
+        text,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if updated != text:
+        _write_text(path, updated)
+        return True
+    return False
+
+
+class _CatalogShell:
+    """Minimal ``base_url`` view for the table renderer (relative links)."""
+
+    def __init__(self, root: Path) -> None:
+        self.root = root
+
+    @property
+    def base_url(self) -> str:
+        return _base_url_from_catalog(self.root)
+
+
 # ---------------------------------------------------------------------------
 # Repository-root publication (branch-backed Pages deployment)
 # ---------------------------------------------------------------------------
@@ -822,10 +880,18 @@ def publish_repo_artifacts(
             date.today().isoformat(),
             compare_pairs=_compare_pairs(root),
             collection_slugs=_collection_slugs(root),
+            source_slugs=_source_slugs(root),
         ),
     )
     write(root / "robots.txt", _robots(base_url))
     (root / ".nojekyll").touch(exist_ok=True)
+
+    # Source Explorer static table (branch-deployed sources/index.html copy).
+    sources_page = root / "sources" / "index.html"
+    if sources_page.is_file():
+        sources_doc = _generated_doc(root, "sources.json")
+        if sources_doc and _inject_sources_table(sources_page, sources_doc):
+            written.append(sources_page)
 
     # Live statistics in the served home page (no-JS/crawler values). The
     # committed copy must carry the real numbers because it *is* the page the
@@ -930,6 +996,7 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
             today,
             compare_pairs=_compare_pairs(root),
             collection_slugs=_collection_slugs(root),
+            source_slugs=_source_slugs(root),
         ),
     )
     _write_text(output / "robots.txt", _robots(base_url))
@@ -942,6 +1009,12 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
         _generated_doc(root, "health.json"),
         _generated_doc(root, "analytics.json"),
     )
+    # Source Explorer static table (deployed copy).
+    sources_page = output / "sources" / "index.html"
+    sources_doc = _generated_doc(root, "sources.json")
+    sources_injected = False
+    if sources_page.is_file() and sources_doc:
+        sources_injected = _inject_sources_table(sources_page, sources_doc)
 
     # Minify the design-system stylesheets in the deployed copy only.
     minified = 0
@@ -966,6 +1039,8 @@ def build_site(output: Path, *, root: Path | None = None) -> dict[str, Any]:
         "br_files": br_count,
         "css_minified_bytes": minified,
         "stats_injected": stats_injected,
+        "sources_table_injected": sources_injected,
+        "source_pages": len(_source_slugs(root)),
     }
 
 

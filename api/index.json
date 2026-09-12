@@ -2,7 +2,7 @@
   "name": "OmniSource API",
   "version": "1",
   "baseURL": "https://iamsmmh.github.io/OmniSource",
-  "generatedAt": "2026-09-11",
+  "generatedAt": "2026-09-12",
   "endpoints": [
     {
       "path": "/api/analytics.json",
@@ -121,7 +121,7 @@
     },
     {
       "path": "/api/sources.json",
-      "description": "Source index: upstreams, publisher, clients and feed metadata.",
+      "description": "Source index: upstreams, publisher, clients, feed metadata and the Source Explorer roll-up (slug, status, reputation, health, last update).",
       "format": "json"
     },
     {
