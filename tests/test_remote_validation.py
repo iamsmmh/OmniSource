@@ -2,6 +2,11 @@
 
 from __future__ import annotations
 
+import json
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
 from unittest import TestCase
 
 from omnisource import autodiscovery
@@ -111,6 +116,44 @@ class PublishableTests(TestCase):
     def test_non_url_unreachable(self) -> None:
         ok, _detail = check_url_reachable("not-a-url")
         self.assertFalse(ok)
+
+
+class ValidateFeedCliTests(TestCase):
+    """The validate_feed.py CLI must treat local files as payloads, not URLs."""
+
+    def _run_cli(self, feed: dict, *extra: str) -> subprocess.CompletedProcess[str]:
+        root = Path(__file__).resolve().parents[1]
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as handle:
+            json.dump(feed, handle)
+            path = handle.name
+        try:
+            return subprocess.run(
+                [sys.executable, str(root / "scripts" / "validation" / "validate_feed.py"), path, *extra],
+                capture_output=True,
+                text=True,
+                cwd=root,
+                check=False,
+            )
+        finally:
+            Path(path).unlink(missing_ok=True)
+
+    def test_local_file_skips_record_url_check(self) -> None:
+        feed = {"name": "X", "identifier": "com.x", "apps": [_app()]}
+        completed = self._run_cli(feed)
+        self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
+        self.assertIn("publishable=True", completed.stdout)
+
+    def test_duplicate_bundles_strict_by_default(self) -> None:
+        feed = {"name": "X", "identifier": "com.x", "apps": [_app(), _app()]}
+        completed = self._run_cli(feed)
+        self.assertEqual(completed.returncode, 1)
+        self.assertIn("duplicate bundleIdentifier", completed.stdout)
+
+    def test_allow_duplicates_for_merged_feeds(self) -> None:
+        feed = {"name": "X", "identifier": "com.x", "apps": [_app(), _app()]}
+        completed = self._run_cli(feed, "--allow-duplicates")
+        self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
+        self.assertIn("publishable=True", completed.stdout)
 
 
 if __name__ == "__main__":

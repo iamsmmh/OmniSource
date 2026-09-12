@@ -56,10 +56,13 @@ jobs:
       - name: Validate distribution feeds
         run: |
           set -euo pipefail
-          python3 scripts/validation/validate_feed.py feeds/apps.json
+          # Our own merged feeds legitimately share bundle IDs across tweaks
+          # (documented limitation), so duplicates are warnings here — while
+          # every other discovery rule still fails closed.
+          python3 scripts/validation/validate_feed.py feeds/apps.json --allow-duplicates
           for client in altstore sidestore feather esign livecontainer; do
             if [ -f "feeds/clients/${client}.json" ]; then
-              python3 scripts/validation/validate_feed.py "feeds/clients/${client}.json"
+              python3 scripts/validation/validate_feed.py "feeds/clients/${client}.json" --allow-duplicates
             fi
           done
 

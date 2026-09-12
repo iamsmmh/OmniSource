@@ -70,7 +70,7 @@ monitoring:
 	$(PYTHON) scripts/mirror_check.py --offline
 
 security:
-	$(PYTHON) scripts/validation/validate_feed.py feeds/apps.json
+	$(PYTHON) scripts/validation/validate_feed.py feeds/apps.json --allow-duplicates
 	$(PYTHON) scripts/security/scan.py
 
 analytics:
