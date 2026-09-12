@@ -502,6 +502,57 @@ class TestWebsiteShell(unittest.TestCase):
         self.assertIn("jsonMemo", core)  # one request per feed per page load
         self.assertIn("setupDeferredAnchors()", core)  # scroll once a section is revealed
 
+    def test_collection_templates_escape_every_interpolation(self) -> None:
+        # The collection pages build their markup by assigning template literals
+        # to innerHTML. collection.html had no escaping at all, so a collection
+        # or app name could break out of an attribute and inject markup —
+        # CodeQL reported it as soon as the pages became analysable.
+        #
+        # Rule: on any line that emits markup (contains "<"), any ${…} that
+        # reaches user-controlled data (app/collection fields, the collection
+        # id) or a URL helper must pass through OS.esc()/jsAttr() somewhere in
+        # the expression. The non-HTML uses of the same values (download
+        # filename, Web Share title/text, clipboard fallback) emit no markup.
+        safe_prefix = ("OS.Favorites.has(",)
+        user_data = ("app.", "collection.", "collectionId")
+
+        def interpolations(line: str) -> list[str]:
+            found = []
+            cursor = 0
+            while True:
+                start = line.find("${", cursor)
+                if start == -1:
+                    return found
+                depth = 0
+                end = start + 1
+                while end < len(line):
+                    if line[end] == "{":
+                        depth += 1
+                    elif line[end] == "}":
+                        depth -= 1
+                        if depth == 0:
+                            break
+                    end += 1
+                found.append(line[start + 2 : end].strip())
+                cursor = end + 1
+
+        checked = 0
+        for page in (ROOT / "collections" / "index.html", ROOT / "collections" / "collection.html"):
+            for number, line in enumerate(page.read_text(encoding="utf-8").splitlines(), start=1):
+                if "<" not in line or "${" not in line:
+                    continue
+                for expression in interpolations(line):
+                    if not expression:
+                        continue
+                    checked += 1
+                    if not any(token in expression for token in user_data):
+                        continue  # literal, count or date — nothing to escape
+                    self.assertTrue(
+                        "OS.esc(" in expression or "jsAttr(" in expression or expression.startswith(safe_prefix),
+                        f"{page.name}:{number}: unescaped markup interpolation ${{{expression}}}",
+                    )
+        self.assertGreater(checked, 20, "expected the collection templates to be scanned")
+
 
 if __name__ == "__main__":
     unittest.main()
