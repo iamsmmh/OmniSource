@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-09-12",
-  "count": 204,
-  "edgeCount": 606,
+  "count": 254,
+  "edgeCount": 748,
   "nodes": [
     {
       "id": "app:spotiflac",
@@ -1209,7 +1209,7 @@
       "slug": "dopamine-roothide",
       "bundleId": "com.opa334.Dopamine-roothide",
       "category": "utilities",
-      "version": "2.4.9.26"
+      "version": "2.4.9.27"
     },
     {
       "id": "dev:roothide",
@@ -1391,6 +1391,341 @@
       "type": "source",
       "label": "xenios-jp/XeniOS",
       "url": "https://github.com/xenios-jp/XeniOS"
+    },
+    {
+      "id": "app:pikatorrent",
+      "type": "app",
+      "label": "PikaTorrent",
+      "slug": "pikatorrent",
+      "bundleId": "com.pikatorrent.PikaTorrent",
+      "category": "networking",
+      "version": "0.15.0"
+    },
+    {
+      "id": "dev:g-ray",
+      "type": "developer",
+      "label": "G-Ray"
+    },
+    {
+      "id": "source:graypikatorrent",
+      "type": "source",
+      "label": "G-Ray/pikatorrent",
+      "url": "https://github.com/G-Ray/pikatorrent"
+    },
+    {
+      "id": "app:thunder",
+      "type": "app",
+      "label": "Thunder",
+      "slug": "thunder",
+      "bundleId": "com.hjiangsu.thunder",
+      "category": "social",
+      "version": "0.8.6"
+    },
+    {
+      "id": "dev:thunder-app",
+      "type": "developer",
+      "label": "Thunder App"
+    },
+    {
+      "id": "source:thunderappthunder",
+      "type": "source",
+      "label": "thunder-app/thunder",
+      "url": "https://github.com/thunder-app/thunder"
+    },
+    {
+      "id": "app:chan",
+      "type": "app",
+      "label": "Chan",
+      "slug": "chan",
+      "bundleId": "com.moffatman.chan",
+      "category": "social",
+      "version": "1.2.9"
+    },
+    {
+      "id": "dev:moffatman",
+      "type": "developer",
+      "label": "moffatman"
+    },
+    {
+      "id": "source:moffatmanchan",
+      "type": "source",
+      "label": "moffatman/chan",
+      "url": "https://github.com/moffatman/chan"
+    },
+    {
+      "id": "app:monal",
+      "type": "app",
+      "label": "Monal",
+      "slug": "monal",
+      "bundleId": "G7YU7X7KRJ.SworIM",
+      "category": "social",
+      "version": "6.4.21"
+    },
+    {
+      "id": "dev:monal-im",
+      "type": "developer",
+      "label": "Monal IM"
+    },
+    {
+      "id": "source:monalimmonal",
+      "type": "source",
+      "label": "monal-im/Monal",
+      "url": "https://github.com/monal-im/Monal"
+    },
+    {
+      "id": "app:jellybook",
+      "type": "app",
+      "label": "JellyBook",
+      "slug": "jellybook",
+      "bundleId": "com.KaraWilson.JellyBook",
+      "category": "other",
+      "version": "1.4.1"
+    },
+    {
+      "id": "dev:jellybook",
+      "type": "developer",
+      "label": "JellyBook"
+    },
+    {
+      "id": "source:jellybookorgjellybook",
+      "type": "source",
+      "label": "JellyBookOrg/JellyBook",
+      "url": "https://github.com/JellyBookOrg/JellyBook"
+    },
+    {
+      "id": "app:hanami",
+      "type": "app",
+      "label": "Hanami",
+      "slug": "hanami",
+      "bundleId": "moe.mkpwnz.Hanami",
+      "category": "other",
+      "version": "0.28.2"
+    },
+    {
+      "id": "dev:oolxg",
+      "type": "developer",
+      "label": "oolxg"
+    },
+    {
+      "id": "source:oolxghanami",
+      "type": "source",
+      "label": "oolxg/Hanami",
+      "url": "https://github.com/oolxg/Hanami"
+    },
+    {
+      "id": "app:otraku",
+      "type": "app",
+      "label": "Otraku",
+      "slug": "otraku",
+      "bundleId": "com.otraku.app",
+      "category": "other",
+      "version": "1.12.1"
+    },
+    {
+      "id": "dev:lotusprey",
+      "type": "developer",
+      "label": "lotusprey"
+    },
+    {
+      "id": "source:lotuspreyotraku",
+      "type": "source",
+      "label": "lotusprey/otraku",
+      "url": "https://github.com/lotusprey/otraku"
+    },
+    {
+      "id": "app:purekfd",
+      "type": "app",
+      "label": "PureKFD",
+      "slug": "purekfd",
+      "bundleId": "uwu.lrdsnow.purekfdiOS",
+      "category": "utilities",
+      "version": "6.0.2"
+    },
+    {
+      "id": "dev:lrdsnow",
+      "type": "developer",
+      "label": "Lrdsnow"
+    },
+    {
+      "id": "source:lrdsnowpurekfd",
+      "type": "source",
+      "label": "Lrdsnow/PureKFD",
+      "url": "https://github.com/Lrdsnow/PureKFD"
+    },
+    {
+      "id": "app:synkplay",
+      "type": "app",
+      "label": "Synkplay",
+      "slug": "synkplay",
+      "bundleId": "com.yuroyami.syncplay.iosApp",
+      "category": "photo-video",
+      "version": "0.24.0"
+    },
+    {
+      "id": "dev:yuroyami",
+      "type": "developer",
+      "label": "yuroyami"
+    },
+    {
+      "id": "source:yuroyamisyncplaymobile",
+      "type": "source",
+      "label": "yuroyami/syncplay-mobile",
+      "url": "https://github.com/yuroyami/syncplay-mobile"
+    },
+    {
+      "id": "app:ksign",
+      "type": "app",
+      "label": "Ksign",
+      "slug": "ksign",
+      "bundleId": "nya.asami.ksign",
+      "category": "utilities",
+      "version": "1.6"
+    },
+    {
+      "id": "dev:nyasami",
+      "type": "developer",
+      "label": "Nyasami"
+    },
+    {
+      "id": "source:nyasamiksign",
+      "type": "source",
+      "label": "Nyasami/Ksign",
+      "url": "https://github.com/Nyasami/Ksign"
+    },
+    {
+      "id": "app:cosmos",
+      "type": "app",
+      "label": "Cosmos Music Player",
+      "slug": "cosmos",
+      "bundleId": "dev.clq.Cosmos-Music-Player",
+      "category": "music",
+      "version": "1.2.5"
+    },
+    {
+      "id": "dev:clquwu",
+      "type": "developer",
+      "label": "clquwu"
+    },
+    {
+      "id": "source:clquwucosmosmusicplayer",
+      "type": "source",
+      "label": "clquwu/Cosmos-Music-Player",
+      "url": "https://github.com/clquwu/Cosmos-Music-Player"
+    },
+    {
+      "id": "app:animegen",
+      "type": "app",
+      "label": "AnimeGen",
+      "slug": "animegen",
+      "bundleId": "me.cranci.AnimeGen",
+      "category": "photo-video",
+      "version": "3.0.0"
+    },
+    {
+      "id": "dev:cranci1",
+      "type": "developer",
+      "label": "cranci1"
+    },
+    {
+      "id": "source:cranci1animegen",
+      "type": "source",
+      "label": "cranci1/AnimeGen",
+      "url": "https://github.com/cranci1/AnimeGen"
+    },
+    {
+      "id": "app:muffinstore",
+      "type": "app",
+      "label": "MuffinStore",
+      "slug": "muffinstore",
+      "bundleId": "dev.mineek.muffinstore",
+      "category": "utilities",
+      "version": "1.3"
+    },
+    {
+      "id": "source:mineekmuffinstore",
+      "type": "source",
+      "label": "mineek/MuffinStore",
+      "url": "https://github.com/mineek/MuffinStore"
+    },
+    {
+      "id": "app:playtorrio",
+      "type": "app",
+      "label": "PlayTorrio",
+      "slug": "playtorrio",
+      "bundleId": "com.example.playtorrio",
+      "category": "photo-video",
+      "version": "1.1.5"
+    },
+    {
+      "id": "dev:ayman708",
+      "type": "developer",
+      "label": "ayman708"
+    },
+    {
+      "id": "source:ayman708uxplaytorriov3",
+      "type": "source",
+      "label": "ayman708-UX/PlayTorrioV3",
+      "url": "https://github.com/ayman708-UX/PlayTorrioV3"
+    },
+    {
+      "id": "app:mangayomi",
+      "type": "app",
+      "label": "Mangayomi",
+      "slug": "mangayomi",
+      "bundleId": "com.kodjodevf.mangayomi",
+      "category": "other",
+      "version": "0.9.2"
+    },
+    {
+      "id": "dev:kodjodevf",
+      "type": "developer",
+      "label": "kodjodevf"
+    },
+    {
+      "id": "source:kodjodevfmangayomi",
+      "type": "source",
+      "label": "kodjodevf/mangayomi",
+      "url": "https://github.com/kodjodevf/mangayomi"
+    },
+    {
+      "id": "app:nebuloiptv",
+      "type": "app",
+      "label": "Nebulo",
+      "slug": "nebuloiptv",
+      "bundleId": "personal.Nebulo-V2-3",
+      "category": "photo-video",
+      "version": "2.3"
+    },
+    {
+      "id": "dev:mongoosemonke504",
+      "type": "developer",
+      "label": "mongoosemonke504"
+    },
+    {
+      "id": "source:mongoosemonke504nebuloiptv",
+      "type": "source",
+      "label": "mongoosemonke504/NebuloIPTV",
+      "url": "https://github.com/mongoosemonke504/NebuloIPTV"
+    },
+    {
+      "id": "app:chatsen",
+      "type": "app",
+      "label": "Chatsen",
+      "slug": "chatsen",
+      "bundleId": "com.chatsen.chatsen",
+      "category": "social",
+      "version": "1.1.107"
+    },
+    {
+      "id": "dev:chatsen",
+      "type": "developer",
+      "label": "chatsen"
+    },
+    {
+      "id": "source:chatsenchatsen",
+      "type": "source",
+      "label": "chatsen/chatsen",
+      "url": "https://github.com/chatsen/chatsen"
     }
   ],
   "edges": [
@@ -2165,6 +2500,176 @@
       "type": "source"
     },
     {
+      "source": "app:pikatorrent",
+      "target": "dev:g-ray",
+      "type": "developer"
+    },
+    {
+      "source": "app:pikatorrent",
+      "target": "source:graypikatorrent",
+      "type": "source"
+    },
+    {
+      "source": "app:thunder",
+      "target": "dev:thunder-app",
+      "type": "developer"
+    },
+    {
+      "source": "app:thunder",
+      "target": "source:thunderappthunder",
+      "type": "source"
+    },
+    {
+      "source": "app:chan",
+      "target": "dev:moffatman",
+      "type": "developer"
+    },
+    {
+      "source": "app:chan",
+      "target": "source:moffatmanchan",
+      "type": "source"
+    },
+    {
+      "source": "app:monal",
+      "target": "dev:monal-im",
+      "type": "developer"
+    },
+    {
+      "source": "app:monal",
+      "target": "source:monalimmonal",
+      "type": "source"
+    },
+    {
+      "source": "app:jellybook",
+      "target": "dev:jellybook",
+      "type": "developer"
+    },
+    {
+      "source": "app:jellybook",
+      "target": "source:jellybookorgjellybook",
+      "type": "source"
+    },
+    {
+      "source": "app:hanami",
+      "target": "dev:oolxg",
+      "type": "developer"
+    },
+    {
+      "source": "app:hanami",
+      "target": "source:oolxghanami",
+      "type": "source"
+    },
+    {
+      "source": "app:otraku",
+      "target": "dev:lotusprey",
+      "type": "developer"
+    },
+    {
+      "source": "app:otraku",
+      "target": "source:lotuspreyotraku",
+      "type": "source"
+    },
+    {
+      "source": "app:purekfd",
+      "target": "dev:lrdsnow",
+      "type": "developer"
+    },
+    {
+      "source": "app:purekfd",
+      "target": "source:lrdsnowpurekfd",
+      "type": "source"
+    },
+    {
+      "source": "app:synkplay",
+      "target": "dev:yuroyami",
+      "type": "developer"
+    },
+    {
+      "source": "app:synkplay",
+      "target": "source:yuroyamisyncplaymobile",
+      "type": "source"
+    },
+    {
+      "source": "app:ksign",
+      "target": "dev:nyasami",
+      "type": "developer"
+    },
+    {
+      "source": "app:ksign",
+      "target": "source:nyasamiksign",
+      "type": "source"
+    },
+    {
+      "source": "app:cosmos",
+      "target": "dev:clquwu",
+      "type": "developer"
+    },
+    {
+      "source": "app:cosmos",
+      "target": "source:clquwucosmosmusicplayer",
+      "type": "source"
+    },
+    {
+      "source": "app:animegen",
+      "target": "dev:cranci1",
+      "type": "developer"
+    },
+    {
+      "source": "app:animegen",
+      "target": "source:cranci1animegen",
+      "type": "source"
+    },
+    {
+      "source": "app:muffinstore",
+      "target": "dev:mineek",
+      "type": "developer"
+    },
+    {
+      "source": "app:muffinstore",
+      "target": "source:mineekmuffinstore",
+      "type": "source"
+    },
+    {
+      "source": "app:playtorrio",
+      "target": "dev:ayman708",
+      "type": "developer"
+    },
+    {
+      "source": "app:playtorrio",
+      "target": "source:ayman708uxplaytorriov3",
+      "type": "source"
+    },
+    {
+      "source": "app:mangayomi",
+      "target": "dev:kodjodevf",
+      "type": "developer"
+    },
+    {
+      "source": "app:mangayomi",
+      "target": "source:kodjodevfmangayomi",
+      "type": "source"
+    },
+    {
+      "source": "app:nebuloiptv",
+      "target": "dev:mongoosemonke504",
+      "type": "developer"
+    },
+    {
+      "source": "app:nebuloiptv",
+      "target": "source:mongoosemonke504nebuloiptv",
+      "type": "source"
+    },
+    {
+      "source": "app:chatsen",
+      "target": "dev:chatsen",
+      "type": "developer"
+    },
+    {
+      "source": "app:chatsen",
+      "target": "source:chatsenchatsen",
+      "type": "source"
+    },
+    {
       "source": "app:uyouenhanced",
       "target": "app:ytlite",
       "type": "bundle",
@@ -2353,6 +2858,11 @@
       "type": "related"
     },
     {
+      "source": "app:spotiflac",
+      "target": "app:cosmos",
+      "type": "related"
+    },
+    {
       "source": "app:uyouenhanced",
       "target": "app:ytkp",
       "type": "related"
@@ -2584,6 +3094,11 @@
     },
     {
       "source": "app:ytmusic",
+      "target": "app:cosmos",
+      "type": "related"
+    },
+    {
+      "source": "app:ytmusic",
       "target": "app:ytlite",
       "type": "related"
     },
@@ -2605,6 +3120,11 @@
     {
       "source": "app:maxmusic",
       "target": "app:jellify",
+      "type": "related"
+    },
+    {
+      "source": "app:maxmusic",
+      "target": "app:cosmos",
       "type": "related"
     },
     {
@@ -2699,7 +3219,7 @@
     },
     {
       "source": "app:ttkillerplus",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -2724,12 +3244,17 @@
     },
     {
       "source": "app:winston",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
       "source": "app:winston",
-      "target": "app:telegram-mxgram",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:itorrent",
+      "target": "app:pikatorrent",
       "type": "related"
     },
     {
@@ -2860,6 +3385,26 @@
     {
       "source": "app:sidestore",
       "target": "app:saber",
+      "type": "related"
+    },
+    {
+      "source": "app:aidoku",
+      "target": "app:otraku",
+      "type": "related"
+    },
+    {
+      "source": "app:aidoku",
+      "target": "app:mangayomi",
+      "type": "related"
+    },
+    {
+      "source": "app:aidoku",
+      "target": "app:jellybook",
+      "type": "related"
+    },
+    {
+      "source": "app:aidoku",
+      "target": "app:hanami",
       "type": "related"
     },
     {
@@ -3038,6 +3583,11 @@
       "type": "related"
     },
     {
+      "source": "app:spotube",
+      "target": "app:cosmos",
+      "type": "related"
+    },
+    {
       "source": "app:jellify",
       "target": "app:ytmusic",
       "type": "related"
@@ -3055,6 +3605,11 @@
     {
       "source": "app:jellify",
       "target": "app:maxmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:jellify",
+      "target": "app:cosmos",
       "type": "related"
     },
     {
@@ -3139,12 +3694,12 @@
     },
     {
       "source": "app:voyager",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
       "source": "app:voyager",
-      "target": "app:telegram-mxgram",
+      "target": "app:threadsaver",
       "type": "related"
     },
     {
@@ -3234,7 +3789,7 @@
     },
     {
       "source": "app:apollo",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -3504,12 +4059,12 @@
     },
     {
       "source": "app:twitchadblock",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
       "source": "app:twitchadblock",
-      "target": "app:telegram-mxgram",
+      "target": "app:threadsaver",
       "type": "related"
     },
     {
@@ -3604,6 +4159,26 @@
     },
     {
       "source": "app:anymex",
+      "target": "app:otraku",
+      "type": "related"
+    },
+    {
+      "source": "app:anymex",
+      "target": "app:mangayomi",
+      "type": "related"
+    },
+    {
+      "source": "app:anymex",
+      "target": "app:jellybook",
+      "type": "related"
+    },
+    {
+      "source": "app:anymex",
+      "target": "app:hanami",
+      "type": "related"
+    },
+    {
+      "source": "app:anymex",
       "target": "app:aidoku",
       "type": "related"
     },
@@ -3664,7 +4239,7 @@
     },
     {
       "source": "app:raintweak",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -3724,7 +4299,7 @@
     },
     {
       "source": "app:glow",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -3754,7 +4329,7 @@
     },
     {
       "source": "app:swiftgram",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -3814,7 +4389,7 @@
     },
     {
       "source": "app:iqface",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -3874,7 +4449,7 @@
     },
     {
       "source": "app:sparkle",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -3934,7 +4509,7 @@
     },
     {
       "source": "app:nexasc",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -3964,7 +4539,7 @@
     },
     {
       "source": "app:messenger-flow",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -3994,7 +4569,7 @@
     },
     {
       "source": "app:msgplusx",
-      "target": "app:threadsaver",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -4024,7 +4599,7 @@
     },
     {
       "source": "app:threadsaver",
-      "target": "app:telegram-mxgram",
+      "target": "app:thunder",
       "type": "related"
     },
     {
@@ -4239,6 +4814,11 @@
     },
     {
       "source": "app:serotonin",
+      "target": "app:muffinstore",
+      "type": "related"
+    },
+    {
+      "source": "app:serotonin",
       "target": "app:zeus",
       "type": "related"
     },
@@ -4260,11 +4840,6 @@
     {
       "source": "app:serotonin",
       "target": "app:sidestore",
-      "type": "related"
-    },
-    {
-      "source": "app:serotonin",
-      "target": "app:saber",
       "type": "related"
     },
     {
@@ -4389,6 +4964,11 @@
     },
     {
       "source": "app:gopeed",
+      "target": "app:pikatorrent",
+      "type": "related"
+    },
+    {
+      "source": "app:gopeed",
       "target": "app:itorrent",
       "type": "related"
     },
@@ -4450,6 +5030,471 @@
     {
       "source": "app:xenios",
       "target": "app:minivmac",
+      "type": "related"
+    },
+    {
+      "source": "app:pikatorrent",
+      "target": "app:itorrent",
+      "type": "related"
+    },
+    {
+      "source": "app:pikatorrent",
+      "target": "app:gopeed",
+      "type": "related"
+    },
+    {
+      "source": "app:thunder",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:thunder",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:thunder",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:thunder",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:thunder",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:thunder",
+      "target": "app:threadsaver",
+      "type": "related"
+    },
+    {
+      "source": "app:chan",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:chan",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:chan",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:chan",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:chan",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:chan",
+      "target": "app:thunder",
+      "type": "related"
+    },
+    {
+      "source": "app:monal",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:monal",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:monal",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:monal",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:monal",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:monal",
+      "target": "app:thunder",
+      "type": "related"
+    },
+    {
+      "source": "app:jellybook",
+      "target": "app:otraku",
+      "type": "related"
+    },
+    {
+      "source": "app:jellybook",
+      "target": "app:mangayomi",
+      "type": "related"
+    },
+    {
+      "source": "app:jellybook",
+      "target": "app:hanami",
+      "type": "related"
+    },
+    {
+      "source": "app:jellybook",
+      "target": "app:anymex",
+      "type": "related"
+    },
+    {
+      "source": "app:jellybook",
+      "target": "app:aidoku",
+      "type": "related"
+    },
+    {
+      "source": "app:hanami",
+      "target": "app:otraku",
+      "type": "related"
+    },
+    {
+      "source": "app:hanami",
+      "target": "app:mangayomi",
+      "type": "related"
+    },
+    {
+      "source": "app:hanami",
+      "target": "app:jellybook",
+      "type": "related"
+    },
+    {
+      "source": "app:hanami",
+      "target": "app:anymex",
+      "type": "related"
+    },
+    {
+      "source": "app:hanami",
+      "target": "app:aidoku",
+      "type": "related"
+    },
+    {
+      "source": "app:otraku",
+      "target": "app:mangayomi",
+      "type": "related"
+    },
+    {
+      "source": "app:otraku",
+      "target": "app:jellybook",
+      "type": "related"
+    },
+    {
+      "source": "app:otraku",
+      "target": "app:hanami",
+      "type": "related"
+    },
+    {
+      "source": "app:otraku",
+      "target": "app:anymex",
+      "type": "related"
+    },
+    {
+      "source": "app:otraku",
+      "target": "app:aidoku",
+      "type": "related"
+    },
+    {
+      "source": "app:purekfd",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:purekfd",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:purekfd",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:purekfd",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:purekfd",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:purekfd",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:synkplay",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:synkplay",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:synkplay",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:synkplay",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:synkplay",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:synkplay",
+      "target": "app:yattee",
+      "type": "related"
+    },
+    {
+      "source": "app:ksign",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:ksign",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:ksign",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:ksign",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:ksign",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:ksign",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:cosmos",
+      "target": "app:ytmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:cosmos",
+      "target": "app:spotube",
+      "type": "related"
+    },
+    {
+      "source": "app:cosmos",
+      "target": "app:spotiflac",
+      "type": "related"
+    },
+    {
+      "source": "app:cosmos",
+      "target": "app:maxmusic",
+      "type": "related"
+    },
+    {
+      "source": "app:cosmos",
+      "target": "app:jellify",
+      "type": "related"
+    },
+    {
+      "source": "app:animegen",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:animegen",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:animegen",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:animegen",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:animegen",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:animegen",
+      "target": "app:yattee",
+      "type": "related"
+    },
+    {
+      "source": "app:muffinstore",
+      "target": "app:serotonin",
+      "type": "related"
+    },
+    {
+      "source": "app:muffinstore",
+      "target": "app:zeus",
+      "type": "related"
+    },
+    {
+      "source": "app:muffinstore",
+      "target": "app:utm",
+      "type": "related"
+    },
+    {
+      "source": "app:muffinstore",
+      "target": "app:unc0ver",
+      "type": "related"
+    },
+    {
+      "source": "app:muffinstore",
+      "target": "app:taurine",
+      "type": "related"
+    },
+    {
+      "source": "app:muffinstore",
+      "target": "app:sidestore",
+      "type": "related"
+    },
+    {
+      "source": "app:playtorrio",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:playtorrio",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:playtorrio",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:playtorrio",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:playtorrio",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:playtorrio",
+      "target": "app:yattee",
+      "type": "related"
+    },
+    {
+      "source": "app:mangayomi",
+      "target": "app:otraku",
+      "type": "related"
+    },
+    {
+      "source": "app:mangayomi",
+      "target": "app:jellybook",
+      "type": "related"
+    },
+    {
+      "source": "app:mangayomi",
+      "target": "app:hanami",
+      "type": "related"
+    },
+    {
+      "source": "app:mangayomi",
+      "target": "app:anymex",
+      "type": "related"
+    },
+    {
+      "source": "app:mangayomi",
+      "target": "app:aidoku",
+      "type": "related"
+    },
+    {
+      "source": "app:nebuloiptv",
+      "target": "app:ytkp",
+      "type": "related"
+    },
+    {
+      "source": "app:nebuloiptv",
+      "target": "app:ytkace",
+      "type": "related"
+    },
+    {
+      "source": "app:nebuloiptv",
+      "target": "app:ytlite",
+      "type": "related"
+    },
+    {
+      "source": "app:nebuloiptv",
+      "target": "app:youpro",
+      "type": "related"
+    },
+    {
+      "source": "app:nebuloiptv",
+      "target": "app:youmod",
+      "type": "related"
+    },
+    {
+      "source": "app:nebuloiptv",
+      "target": "app:yattee",
+      "type": "related"
+    },
+    {
+      "source": "app:chatsen",
+      "target": "app:winston",
+      "type": "related"
+    },
+    {
+      "source": "app:chatsen",
+      "target": "app:voyager",
+      "type": "related"
+    },
+    {
+      "source": "app:chatsen",
+      "target": "app:twitchadblock",
+      "type": "related"
+    },
+    {
+      "source": "app:chatsen",
+      "target": "app:turrit-mxgram",
+      "type": "related"
+    },
+    {
+      "source": "app:chatsen",
+      "target": "app:ttkillerplus",
+      "type": "related"
+    },
+    {
+      "source": "app:chatsen",
+      "target": "app:thunder",
       "type": "related"
     }
   ]

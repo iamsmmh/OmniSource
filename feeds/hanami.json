@@ -1,0 +1,99 @@
+{
+  "name": "OmniSource - Hanami",
+  "identifier": "com.iamsmmh.omnisource.hanami",
+  "apiVersion": "v2",
+  "subtitle": "Manga reader",
+  "description": "Standalone distribution feed for Hanami, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/hanami.json",
+  "apps": [
+    {
+      "name": "Hanami",
+      "bundleIdentifier": "moe.mkpwnz.Hanami",
+      "developerName": "oolxg",
+      "subtitle": "Manga reader",
+      "localizedDescription": "Hanami is an app for reading and saving manga on iOS and iPadOS. It works with self-hosted Komga and Kavita servers and supports offline downloads, library tracking and a fast native reader.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Hanami.webp",
+      "tintColor": "E91E63",
+      "category": "other",
+      "version": "0.28.2",
+      "versionDate": "2024-06-03",
+      "versionDescription": "Hanami 0.28.2 | Hanami\n\n# Fixes\n- fixed crash #10\n- bump package versions",
+      "downloadURL": "https://github.com/oolxg/Hanami/releases/download/v0.28.2/Hanami.ipa",
+      "size": 6305751,
+      "versions": [
+        {
+          "version": "0.28.2",
+          "date": "2024-06-03",
+          "localizedDescription": "Hanami 0.28.2 | Hanami\n\n# Fixes\n- fixed crash #10\n- bump package versions",
+          "downloadURL": "https://github.com/oolxg/Hanami/releases/download/v0.28.2/Hanami.ipa",
+          "size": 6305751,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/oolxg/Hanami/releases/tag/v0.28.2",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Hanami.ipa",
+              "downloadUrl": "https://github.com/oolxg/Hanami/releases/download/v0.28.2/Hanami.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 6305751,
+              "sha256": null,
+              "downloads": 1514,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "downloads": 1514
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "hanami",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/oolxg/Hanami",
+        "sourceURL": "https://github.com/oolxg/Hanami",
+        "verification": {
+          "method": "github-release",
+          "publisher": "oolxg/Hanami",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA published by the developer on GitHub Releases."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2024-06-03",
+          "lastUpdatedAt": "2024-06-03"
+        }
+      }
+    }
+  ],
+  "news": []
+}

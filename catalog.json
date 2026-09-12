@@ -4538,6 +4538,892 @@
         "minOSVersion": "18.0",
         "descriptionTemplate": "XeniOS {version} | {label}"
       }
+    },
+    {
+      "slug": "pikatorrent",
+      "name": "PikaTorrent",
+      "subtitle": "BitTorrent client",
+      "bundleIdentifier": "com.pikatorrent.PikaTorrent",
+      "developerName": "G-Ray",
+      "category": "networking",
+      "tintColor": "0A7EA4",
+      "icon": "PikaTorrent.webp",
+      "localizedDescription": "PikaTorrent is a modern cross-platform BitTorrent client for iOS and Android. Pick a torrent and stream or download it on all your devices, with support for magnet links, .torrent files and pairing with a self-hosted bridge.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/G-Ray/pikatorrent",
+      "verification": {
+        "method": "github-release",
+        "publisher": "G-Ray/pikatorrent",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "12.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "G-Ray/pikatorrent",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "12.0",
+        "descriptionTemplate": "PikaTorrent {version} | {label}"
+      }
+    },
+    {
+      "slug": "thunder",
+      "name": "Thunder",
+      "subtitle": "Lemmy & PieFed client",
+      "bundleIdentifier": "com.hjiangsu.thunder",
+      "developerName": "Thunder App",
+      "category": "social",
+      "tintColor": "2ECC71",
+      "icon": "Thunder.webp",
+      "localizedDescription": "Thunder is an open-source, cross-platform Lemmy and PieFed client for iOS and Android built with Flutter. It supports multiple accounts, customizable feeds and gesture-based navigation against any Lemmy or PieFed instance.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/thunder-app/thunder",
+      "verification": {
+        "method": "github-release",
+        "publisher": "thunder-app/thunder",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "thunder-app/thunder",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Thunder {version} | {label}"
+      }
+    },
+    {
+      "slug": "chan",
+      "name": "Chan",
+      "subtitle": "4chan imageboard browser",
+      "bundleIdentifier": "com.moffatman.chan",
+      "developerName": "moffatman",
+      "category": "social",
+      "tintColor": "FF6B00",
+      "icon": "Chan.webp",
+      "localizedDescription": "Chan is a Flutter imageboard browser for iOS and Android. Browse 4chan threads and boards with media galleries, saved posts, pass login and a fast, native-feeling interface.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/moffatman/chan",
+      "verification": {
+        "method": "github-release",
+        "publisher": "moffatman/chan",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "13.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "moffatman/chan",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "13.0",
+        "descriptionTemplate": "Chan {version} | {label}"
+      }
+    },
+    {
+      "slug": "monal",
+      "name": "Monal",
+      "subtitle": "XMPP instant messenger",
+      "bundleIdentifier": "G7YU7X7KRJ.SworIM",
+      "developerName": "Monal IM",
+      "category": "social",
+      "tintColor": "00A8E8",
+      "icon": "Monal.webp",
+      "localizedDescription": "Monal is a free, open-source XMPP (Jabber) instant messenger for iOS and macOS. It offers OMEMO end-to-end encryption, multiple accounts, group chat and push notifications without a central server.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/monal-im/Monal",
+      "verification": {
+        "method": "github-release",
+        "publisher": "monal-im/Monal",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "monal-im/Monal",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.1",
+        "descriptionTemplate": "Monal {version} | {label}"
+      }
+    },
+    {
+      "slug": "jellybook",
+      "name": "JellyBook",
+      "subtitle": "Jellyfin e-book reader",
+      "bundleIdentifier": "com.KaraWilson.JellyBook",
+      "developerName": "JellyBook",
+      "category": "other",
+      "tintColor": "8E44AD",
+      "icon": "JellyBook.webp",
+      "localizedDescription": "JellyBook is a nice way to read books and comics from Jellyfin. It streams EPUB, CBZ and PDF titles from your Jellyfin server to your iPhone or iPad with a clean reading interface.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/JellyBookOrg/JellyBook",
+      "verification": {
+        "method": "github-release",
+        "publisher": "JellyBookOrg/JellyBook",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases. The feed tracks the Release build (not the Debug build)."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "JellyBookOrg/JellyBook",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "JellyBook {version} | {label}",
+        "assetNamePattern": "Release"
+      }
+    },
+    {
+      "slug": "hanami",
+      "name": "Hanami",
+      "subtitle": "Manga reader",
+      "bundleIdentifier": "moe.mkpwnz.Hanami",
+      "developerName": "oolxg",
+      "category": "other",
+      "tintColor": "E91E63",
+      "icon": "Hanami.webp",
+      "localizedDescription": "Hanami is an app for reading and saving manga on iOS and iPadOS. It works with self-hosted Komga and Kavita servers and supports offline downloads, library tracking and a fast native reader.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/oolxg/Hanami",
+      "verification": {
+        "method": "github-release",
+        "publisher": "oolxg/Hanami",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "oolxg/Hanami",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Hanami {version} | {label}"
+      }
+    },
+    {
+      "slug": "otraku",
+      "name": "Otraku",
+      "subtitle": "AniList client",
+      "bundleIdentifier": "com.otraku.app",
+      "developerName": "lotusprey",
+      "category": "other",
+      "tintColor": "00BFA5",
+      "icon": "Otraku.webp",
+      "localizedDescription": "Otraku is an unofficial AniList client for Android and iOS built with Flutter. Browse, search and update your anime and manga lists with a polished native interface.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/lotusprey/otraku",
+      "verification": {
+        "method": "github-release",
+        "publisher": "lotusprey/otraku",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "lotusprey/otraku",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.0",
+        "descriptionTemplate": "Otraku {version} | {label}"
+      }
+    },
+    {
+      "slug": "purekfd",
+      "name": "PureKFD",
+      "subtitle": "Jailed package manager",
+      "bundleIdentifier": "uwu.lrdsnow.purekfdiOS",
+      "developerName": "Lrdsnow",
+      "category": "utilities",
+      "tintColor": "9C27B0",
+      "icon": "PureKFD.webp",
+      "localizedDescription": "PureKFD is an exploit-based jailed package manager for iOS 15.0 through 18.x. It applies Misaka-style tweaks, themes and packages to compatible devices without a full jailbreak.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/Lrdsnow/PureKFD",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Lrdsnow/PureKFD",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases. Exploit-based package manager for iOS 15.0–18.x; requires a kernel file descriptor (kfd) compatible device."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "Lrdsnow/PureKFD",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "PureKFD {version} | {label}"
+      }
+    },
+    {
+      "slug": "synkplay",
+      "name": "Synkplay",
+      "subtitle": "Synced video playback",
+      "bundleIdentifier": "com.yuroyami.syncplay.iosApp",
+      "developerName": "yuroyami",
+      "category": "photo-video",
+      "tintColor": "FF5722",
+      "icon": "Synkplay.webp",
+      "localizedDescription": "Synkplay (Syncplay Mobile) is a Syncplay client for Android and iOS. Watch videos in sync with your friends — playback, pause and seeking are kept synchronized across everyone in the room.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/yuroyami/syncplay-mobile",
+      "verification": {
+        "method": "github-release",
+        "publisher": "yuroyami/syncplay-mobile",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "yuroyami/syncplay-mobile",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.1",
+        "descriptionTemplate": "Synkplay {version} | {label}"
+      }
+    },
+    {
+      "slug": "ksign",
+      "name": "Ksign",
+      "subtitle": "ESign-style app signer",
+      "bundleIdentifier": "nya.asami.ksign",
+      "developerName": "Nyasami",
+      "category": "utilities",
+      "tintColor": "F5A623",
+      "icon": "Ksign.webp",
+      "localizedDescription": "Ksign is a community “cleaner” take on ESign — an iOS app signer and installer. Import IPA files, sign them with your own certificate and install them on device, with Feather-based app-icon styles.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/Nyasami/Ksign",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Nyasami/Ksign",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "Nyasami/Ksign",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "16.0",
+        "descriptionTemplate": "Ksign {version} | {label}"
+      }
+    },
+    {
+      "slug": "cosmos",
+      "name": "Cosmos Music Player",
+      "subtitle": "Music player",
+      "bundleIdentifier": "dev.clq.Cosmos-Music-Player",
+      "developerName": "clquwu",
+      "category": "music",
+      "tintColor": "3F51B5",
+      "icon": "Cosmos.webp",
+      "localizedDescription": "Cosmos Music Player is a premium music player for iOS built on iCloud Drive and local storage. It gives you a clean, modern player for the music you keep on your device and in iCloud.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/clquwu/Cosmos-Music-Player",
+      "verification": {
+        "method": "github-release",
+        "publisher": "clquwu/Cosmos-Music-Player",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "18.5",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "clquwu/Cosmos-Music-Player",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "18.5",
+        "descriptionTemplate": "Cosmos Music Player {version} | {label}"
+      }
+    },
+    {
+      "slug": "animegen",
+      "name": "AnimeGen",
+      "subtitle": "Anime art generator",
+      "bundleIdentifier": "me.cranci.AnimeGen",
+      "developerName": "cranci1",
+      "category": "photo-video",
+      "tintColor": "FF4081",
+      "icon": "AnimeGen.webp",
+      "localizedDescription": "AnimeGen is a simple way to enjoy anime art. Generate anime-style images on your device using local AI models, with a gallery and save-to-photos workflow.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/cranci1/AnimeGen",
+      "verification": {
+        "method": "github-release",
+        "publisher": "cranci1/AnimeGen",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.2",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "cranci1/AnimeGen",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.2",
+        "descriptionTemplate": "AnimeGen {version} | {label}"
+      }
+    },
+    {
+      "slug": "muffinstore",
+      "name": "MuffinStore",
+      "subtitle": "App Store downgrader",
+      "bundleIdentifier": "dev.mineek.muffinstore",
+      "developerName": "mineek",
+      "category": "utilities",
+      "tintColor": "607D8B",
+      "icon": "MuffinStore.webp",
+      "localizedDescription": "MuffinStore is a TrollStore app for downgrading App Store apps. It lets you install older versions of apps from the App Store without a jailbreak, shipped as a TrollStore-named .tipa package.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/mineek/MuffinStore",
+      "verification": {
+        "method": "github-release",
+        "publisher": "mineek/MuffinStore",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "TrollStore-named .tipa (byte-identical to an .ipa) from mineek/MuffinStore; install with TrollStore, or rename to .ipa if your client rejects the extension."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "mineek/MuffinStore",
+        "assetSuffixes": [
+          ".tipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "MuffinStore {version} | TrollStore",
+        "assetNamePattern": "^MuffinStore.*\\.tipa$"
+      }
+    },
+    {
+      "slug": "playtorrio",
+      "name": "PlayTorrio",
+      "subtitle": "Streaming client",
+      "bundleIdentifier": "com.example.playtorrio",
+      "developerName": "ayman708",
+      "category": "photo-video",
+      "tintColor": "D32F2F",
+      "icon": "PlayTorrio.webp",
+      "localizedDescription": "PlayTorrio is a movies, TV and anime streaming client for iOS. It aggregates content into a browsable home-screen library with a native player.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/ayman708-UX/PlayTorrioV3",
+      "verification": {
+        "method": "github-release",
+        "publisher": "ayman708-UX/PlayTorrioV3",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "ayman708-UX/PlayTorrioV3",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "14.0",
+        "descriptionTemplate": "PlayTorrio {version} | {label}"
+      }
+    },
+    {
+      "slug": "mangayomi",
+      "name": "Mangayomi",
+      "subtitle": "Manga, novel & anime reader",
+      "bundleIdentifier": "com.kodjodevf.mangayomi",
+      "developerName": "kodjodevf",
+      "category": "other",
+      "tintColor": "4CAF50",
+      "icon": "Mangayomi.webp",
+      "localizedDescription": "Mangayomi is a free, open-source app for reading manga and novels and watching anime, available on Android, iOS, macOS, Linux and Windows. It supports extensions for a wide range of sources.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/kodjodevf/mangayomi",
+      "verification": {
+        "method": "github-release",
+        "publisher": "kodjodevf/mangayomi",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "kodjodevf/mangayomi",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "15.0",
+        "descriptionTemplate": "Mangayomi {version} | {label}"
+      }
+    },
+    {
+      "slug": "nebuloiptv",
+      "name": "Nebulo",
+      "subtitle": "IPTV player",
+      "bundleIdentifier": "personal.Nebulo-V2-3",
+      "developerName": "mongoosemonke504",
+      "category": "photo-video",
+      "tintColor": "1B5E20",
+      "icon": "Nebulo.webp",
+      "localizedDescription": "Nebulo is a clean IPTV player for iOS with a built-in sports score center. Load your M3U playlists and watch live channels with a simple, focused interface.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/mongoosemonke504/NebuloIPTV",
+      "verification": {
+        "method": "github-release",
+        "publisher": "mongoosemonke504/NebuloIPTV",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "26.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "mongoosemonke504/NebuloIPTV",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "26.0",
+        "descriptionTemplate": "Nebulo {version} | {label}"
+      }
+    },
+    {
+      "slug": "chatsen",
+      "name": "Chatsen",
+      "subtitle": "Twitch chat client",
+      "bundleIdentifier": "com.chatsen.chatsen",
+      "developerName": "chatsen",
+      "category": "social",
+      "tintColor": "6C5CE7",
+      "icon": "Chatsen.webp",
+      "localizedDescription": "Chatsen is a cross-platform Twitch chat application with third-party addon support. Follow chat in real time with support for BetterTTV, FrankerFaceZ and 7TV emotes and themes.",
+      "status": "stable",
+      "screenshots": [],
+      "featured": false,
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "upstreamURL": "https://github.com/chatsen/chatsen",
+      "verification": {
+        "method": "github-release",
+        "publisher": "chatsen/chatsen",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "13.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases as iOS.ipa."
+      },
+      "upstream": {
+        "provider": "github",
+        "repo": "chatsen/chatsen",
+        "assetSuffixes": [
+          ".ipa"
+        ],
+        "maxPages": 3,
+        "keepVersions": 1,
+        "minOSVersion": "13.0",
+        "descriptionTemplate": "Chatsen {version} | {label}"
+      }
     }
   ]
 }

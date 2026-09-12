@@ -1,0 +1,112 @@
+{
+  "name": "OmniSource - Chatsen",
+  "identifier": "com.iamsmmh.omnisource.chatsen",
+  "apiVersion": "v2",
+  "subtitle": "Twitch chat client",
+  "description": "Standalone distribution feed for Chatsen, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/chatsen.json",
+  "apps": [
+    {
+      "name": "Chatsen",
+      "bundleIdentifier": "com.chatsen.chatsen",
+      "developerName": "chatsen",
+      "subtitle": "Twitch chat client",
+      "localizedDescription": "Chatsen is a cross-platform Twitch chat application with third-party addon support. Follow chat in real time with support for BetterTTV, FrankerFaceZ and 7TV emotes and themes.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Chatsen.webp",
+      "tintColor": "6C5CE7",
+      "category": "social",
+      "version": "1.1.107",
+      "versionDate": "2026-08-12",
+      "versionDescription": "Chatsen 1.1.107 | iOS",
+      "downloadURL": "https://github.com/chatsen/chatsen/releases/download/1.1.107%2B107/iOS.ipa",
+      "size": 10009593,
+      "versions": [
+        {
+          "version": "1.1.107",
+          "date": "2026-08-12",
+          "localizedDescription": "Chatsen 1.1.107 | iOS",
+          "downloadURL": "https://github.com/chatsen/chatsen/releases/download/1.1.107%2B107/iOS.ipa",
+          "size": 10009593,
+          "minOSVersion": "13.0",
+          "releaseUrl": "https://github.com/chatsen/chatsen/releases/tag/1.1.107%2B107",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Android.apk",
+              "downloadUrl": "https://github.com/chatsen/chatsen/releases/download/1.1.107%2B107/Android.apk",
+              "platform": "android",
+              "architecture": null,
+              "fileType": "APK",
+              "size": 58858324,
+              "sha256": "dd0e8ba5271832b526c745943db2929fe1b12b62931def00a64ef29cf8b43951",
+              "downloads": 86,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "iOS.ipa",
+              "downloadUrl": "https://github.com/chatsen/chatsen/releases/download/1.1.107%2B107/iOS.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 10009593,
+              "sha256": "b258794c5f34317eb9f725081537f3f8cbeadb0f950dba25d058f23640ff2bcd",
+              "downloads": 6,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "b258794c5f34317eb9f725081537f3f8cbeadb0f950dba25d058f23640ff2bcd",
+          "downloads": 6
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "chatsen",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/chatsen/chatsen",
+        "sourceURL": "https://github.com/chatsen/chatsen",
+        "verification": {
+          "method": "github-release",
+          "publisher": "chatsen/chatsen",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "13.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA published by the developer on GitHub Releases as iOS.ipa."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-08-12",
+          "lastUpdatedAt": "2026-08-12"
+        }
+      }
+    }
+  ],
+  "news": []
+}

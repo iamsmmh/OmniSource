@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12",
+  "feedVersion": "248817408e19",
+  "app": {
+    "id": "thunder",
+    "name": "Thunder",
+    "developer": "Thunder App",
+    "subtitle": "Lemmy & PieFed client",
+    "bundleIdentifier": "com.hjiangsu.thunder",
+    "version": "0.8.6",
+    "versionDate": "2026-01-07",
+    "description": "Thunder is an open-source, cross-platform Lemmy and PieFed client for iOS and Android built with Flutter. It supports multiple accounts, customizable feeds and gesture-based navigation against any Lemmy or PieFed instance.",
+    "shortDescription": "Lemmy & PieFed client",
+    "category": "social",
+    "tags": [
+      "social"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Thunder.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6.ipa",
+    "size": 17830940,
+    "source": "thunder-app/thunder",
+    "sourceURL": "https://github.com/thunder-app/thunder",
+    "checksum": "d5f28944d00224afc600ce8a34bdcb8503c380d5b0ec891d98ef71dec4e8541d",
+    "checksumPublished": false,
+    "minOSVersion": "15.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/thunder/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/thunder.json",
+    "health": {
+      "reachable": true,
+      "detail": "not probed",
+      "updatedAt": "2026-01-07"
+    }
+  },
+  "newest": {
+    "version": "0.8.6",
+    "date": "2026-01-07",
+    "downloadURL": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6.ipa",
+    "size": 17830940,
+    "sha256": "d5f28944d00224afc600ce8a34bdcb8503c380d5b0ec891d98ef71dec4e8541d"
+  },
+  "versions": [
+    {
+      "version": "0.8.6",
+      "date": "2026-01-07",
+      "downloadURL": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6.ipa",
+      "size": 17830940,
+      "sha256": "d5f28944d00224afc600ce8a34bdcb8503c380d5b0ec891d98ef71dec4e8541d"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

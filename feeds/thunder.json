@@ -1,0 +1,136 @@
+{
+  "name": "OmniSource - Thunder",
+  "identifier": "com.iamsmmh.omnisource.thunder",
+  "apiVersion": "v2",
+  "subtitle": "Lemmy & PieFed client",
+  "description": "Standalone distribution feed for Thunder, curated within OmniSource.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.webp",
+  "bannerURL": "https://iamsmmh.github.io/OmniSource/assets/OmniSource.png",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/thunder.json",
+  "apps": [
+    {
+      "name": "Thunder",
+      "bundleIdentifier": "com.hjiangsu.thunder",
+      "developerName": "Thunder App",
+      "subtitle": "Lemmy & PieFed client",
+      "localizedDescription": "Thunder is an open-source, cross-platform Lemmy and PieFed client for iOS and Android built with Flutter. It supports multiple accounts, customizable feeds and gesture-based navigation against any Lemmy or PieFed instance.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Thunder.webp",
+      "tintColor": "2ECC71",
+      "category": "social",
+      "version": "0.8.6",
+      "versionDate": "2026-01-07",
+      "versionDescription": "Thunder 0.8.6 | thunder-v0.8.6\n\nHey everyone! Sorry for the back-to-back releases again. This hotfix fixes another issue related to grey screens when navigating to comments from the inbox or user profile. As always, if you encounter any issues or have feedback, please share them with the Thunder community or on GitHub.\n\nIf you're enjoying Thunder and would like to show some support, star this project on GitHub! This helps gain visibility for the project and allows more contributors to help with the continued development of Thunder. If you'd like to show some appreciation, you can sponsor me on [GitHub](https://github.com/sponsors/hjiangsu) or donate via [Liberapay](https://en.liberapay.com/hjiangsu/) or [Ko-fi](https://ko-fi.com/hjiangsu).\n\nWe have a [Matrix space](https://matrix.to/#/#thunderapp:matrix.org) if you would like to join in on discussions!\n\n---\n\n## Fixes\n* Fixed grey screen when navigating to comment by @hjiangsu in #2029\n\n**Full Changelog**: https://github.com/thunder-app/thunder/compare/0.8.5...0.8.6",
+      "downloadURL": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6.ipa",
+      "size": 17830940,
+      "versions": [
+        {
+          "version": "0.8.6",
+          "date": "2026-01-07",
+          "localizedDescription": "Thunder 0.8.6 | thunder-v0.8.6\n\nHey everyone! Sorry for the back-to-back releases again. This hotfix fixes another issue related to grey screens when navigating to comments from the inbox or user profile. As always, if you encounter any issues or have feedback, please share them with the Thunder community or on GitHub.\n\nIf you're enjoying Thunder and would like to show some support, star this project on GitHub! This helps gain visibility for the project and allows more contributors to help with the continued development of Thunder. If you'd like to show some appreciation, you can sponsor me on [GitHub](https://github.com/sponsors/hjiangsu) or donate via [Liberapay](https://en.liberapay.com/hjiangsu/) or [Ko-fi](https://ko-fi.com/hjiangsu).\n\nWe have a [Matrix space](https://matrix.to/#/#thunderapp:matrix.org) if you would like to join in on discussions!\n\n---\n\n## Fixes\n* Fixed grey screen when navigating to comment by @hjiangsu in #2029\n\n**Full Changelog**: https://github.com/thunder-app/thunder/compare/0.8.5...0.8.6",
+          "downloadURL": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6.ipa",
+          "size": 17830940,
+          "minOSVersion": "15.0",
+          "releaseUrl": "https://github.com/thunder-app/thunder/releases/tag/0.8.6",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "thunder-v0.8.6-arm64-v8a.apk",
+              "downloadUrl": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6-arm64-v8a.apk",
+              "platform": "android",
+              "architecture": "arm64",
+              "fileType": "APK",
+              "size": 37103446,
+              "sha256": "295650b8df38cd7ce31da3330388abc0670e719c4a4e3b1c2858392cd595b0d6",
+              "downloads": 2287,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "thunder-v0.8.6-armeabi-v7a.apk",
+              "downloadUrl": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6-armeabi-v7a.apk",
+              "platform": "android",
+              "architecture": "armv7",
+              "fileType": "APK",
+              "size": 35088224,
+              "sha256": "903b8d3d2c2234867be8814962f58b5e0773652a8a622dc7cf23173c633e0ced",
+              "downloads": 170,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "thunder-v0.8.6-x86_64.apk",
+              "downloadUrl": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6-x86_64.apk",
+              "platform": "android",
+              "architecture": "x86_64",
+              "fileType": "APK",
+              "size": 40777543,
+              "sha256": "3fe6d1f4acdd80b4a4c218556443fec04b975bed91e6216e557172641186e7d7",
+              "downloads": 202,
+              "mimeType": "application/vnd.android.package-archive",
+              "installable": true
+            },
+            {
+              "filename": "thunder-v0.8.6.ipa",
+              "downloadUrl": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 17830940,
+              "sha256": "d5f28944d00224afc600ce8a34bdcb8503c380d5b0ec891d98ef71dec4e8541d",
+              "downloads": 93,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "d5f28944d00224afc600ce8a34bdcb8503c380d5b0ec891d98ef71dec4e8541d",
+          "downloads": 93
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "thunder",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/thunder-app/thunder",
+        "sourceURL": "https://github.com/thunder-app/thunder",
+        "verification": {
+          "method": "github-release",
+          "publisher": "thunder-app/thunder",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA published by the developer on GitHub Releases."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "not probed",
+          "statusSince": "2026-01-07",
+          "lastUpdatedAt": "2026-01-07"
+        }
+      }
+    }
+  ],
+  "news": []
+}

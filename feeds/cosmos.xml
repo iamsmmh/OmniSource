@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cosmos Music Player — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/cosmos.json</link>
+    <description>Release feed for Cosmos Music Player within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Sep 2026 14:49:11 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/cosmos.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Cosmos Music Player v1.2.5</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/cosmos.json</link>
+      <guid isPermaLink="false">cosmos-1.2.5</guid>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Cosmos Music Player 1.2.5 | Cosmos-Music-Player
+
+- Search is now available across songs, favorites, artists, albums, and playlists.
+- Lyrics have been redesigned with smoother synchronization, tap-to-seek, instrumental breaks, offline caching, and alternate versions.
+- Added broader support for Opus, Ogg, FLAC, AAC/M4A, DSF, and DFF files.
+- Improved playback stability, gapless transitions, seeking, Bluetooth, CarPlay, and audio interruption handling.
+- Added appearance options: System, Light, and Dark.
+- Added controls for automatic library scan frequency and artist organization.
+- Added a Create Playlist button when no playlists exist.
+- Improved artwork loading for iCloud and externally imported music.
+- Improved Siri, widgets, CarPlay, and Share extension reliability.
+- Fixed library issues involving moved, renamed, restored, or temporarily unavailable files.
+- Added and improved translations across all supported languages.
+- Includes numerous performance improvements and bug fixes.]]></description>
+      <enclosure url="https://github.com/clquwu/Cosmos-Music-Player/releases/download/1.2.5/Cosmos-Music-Player.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

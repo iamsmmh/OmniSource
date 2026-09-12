@@ -2,18 +2,18 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-12",
   "totals": {
-    "sources": 77,
+    "sources": 94,
     "healthy": 58,
     "degraded": 19,
     "unavailable": 0,
-    "unknown": 0
+    "unknown": 17
   },
   "pipeline": {
-    "status": "ok",
-    "lastBuild": "2026-09-11",
-    "appsTotal": 77,
+    "status": "degraded",
+    "lastBuild": "2026-09-12",
+    "appsTotal": 94,
     "appsHealthy": 58,
-    "appsFailing": 0
+    "appsFailing": 17
   },
   "providers": [
     {
@@ -52,7 +52,7 @@
     },
     {
       "provider": "github",
-      "apps": 59,
+      "apps": 76,
       "healthy": 40,
       "unavailable": 0,
       "lastResolvedFrom": {
@@ -96,22 +96,39 @@
         "ytkp": "github:mrdrvt99/YouProEXTRA",
         "ytmusic": "github:mrdrvt99/YTMusicUltimate",
         "zeus": "github:ZeusLN/zeus",
+        "animegen": "github:cranci1/AnimeGen",
         "anxreader": "github:Anxcye/anx-reader",
         "bhtwitter": "github:BandarHL/BHTwitter",
         "bootstrap": "github:roothide/Bootstrap",
+        "chan": "github:moffatman/chan",
+        "chatsen": "github:chatsen/chatsen",
+        "cosmos": "github:clquwu/Cosmos-Music-Player",
         "delta": "github:RileyTestut/Delta",
         "gopeed": "github:GopeedLab/gopeed",
+        "hanami": "github:oolxg/Hanami",
+        "jellybook": "github:JellyBookOrg/JellyBook",
+        "ksign": "github:Nyasami/Ksign",
         "mame4ios": "github:yoshisuga/MAME4iOS",
+        "mangayomi": "github:kodjodevf/mangayomi",
         "minivmac": "github:zydeco/minivmac4ios",
+        "monal": "github:monal-im/Monal",
+        "muffinstore": "github:mineek/MuffinStore",
+        "nebuloiptv": "github:mongoosemonke504/NebuloIPTV",
         "neofreebird": "github:NeoFreeBird/app",
+        "otraku": "github:lotusprey/otraku",
+        "pikatorrent": "github:G-Ray/pikatorrent",
+        "playtorrio": "github:ayman708-UX/PlayTorrioV3",
         "ppsspp": "github:hrydgard/ppsspp",
         "provenance": "github:Provenance-Emu/Provenance",
+        "purekfd": "github:Lrdsnow/PureKFD",
         "qbitconnect": "github:RajnishOne/qbitconnect",
         "redditfilter": "github:level3tjg/RedditFilter",
         "sameboy": "github:LIJI32/SameBoy",
         "spotube": "github:KRTirtho/spotube",
         "stiknes": "github:StikEMU/StikNES-2.0",
         "streamyfin": "github:fredrikburmester/streamyfin",
+        "synkplay": "github:yuroyami/syncplay-mobile",
+        "thunder": "github:thunder-app/thunder",
         "utm": "github:utmapp/UTM",
         "xenios": "github:xenios-jp/XeniOS",
         "yattee": "github:yattee/yattee"
@@ -121,8 +138,8 @@
   "deployment": {
     "platform": "GitHub Pages (static)",
     "status": "ok",
-    "reachable": 77,
-    "total": 77
+    "reachable": 94,
+    "total": 94
   },
   "sources": [
     {
@@ -839,7 +856,7 @@
       "latency": 109,
       "latencyMs": 109,
       "checkedAt": "2026-09-10",
-      "lastUpdate": "2026-09-07",
+      "lastUpdate": "2026-09-12",
       "valid": true,
       "detail": "HTTP 302",
       "history": [
@@ -5682,6 +5699,23 @@
       ]
     },
     {
+      "id": "animegen",
+      "app": "animegen",
+      "name": "AnimeGen",
+      "source": "cranci1/AnimeGen",
+      "sourceURL": "https://github.com/cranci1/AnimeGen",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2025-03-04",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "anxreader",
       "app": "anxreader",
       "name": "Anx Reader",
@@ -5976,6 +6010,57 @@
       ]
     },
     {
+      "id": "chan",
+      "app": "chan",
+      "name": "Chan",
+      "source": "moffatman/chan",
+      "sourceURL": "https://github.com/moffatman/chan",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-08-28",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "chatsen",
+      "app": "chatsen",
+      "name": "Chatsen",
+      "source": "chatsen/chatsen",
+      "sourceURL": "https://github.com/chatsen/chatsen",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-08-12",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "cosmos",
+      "app": "cosmos",
+      "name": "Cosmos Music Player",
+      "source": "clquwu/Cosmos-Music-Player",
+      "sourceURL": "https://github.com/clquwu/Cosmos-Music-Player",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-08",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "delta",
       "app": "delta",
       "name": "Delta",
@@ -6168,6 +6253,57 @@
       ]
     },
     {
+      "id": "hanami",
+      "app": "hanami",
+      "name": "Hanami",
+      "source": "oolxg/Hanami",
+      "sourceURL": "https://github.com/oolxg/Hanami",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2024-06-03",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "jellybook",
+      "app": "jellybook",
+      "name": "JellyBook",
+      "source": "JellyBookOrg/JellyBook",
+      "sourceURL": "https://github.com/JellyBookOrg/JellyBook",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-09",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "ksign",
+      "app": "ksign",
+      "name": "Ksign",
+      "source": "Nyasami/Ksign",
+      "sourceURL": "https://github.com/Nyasami/Ksign",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-05-24",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "mame4ios",
       "app": "mame4ios",
       "name": "MAME4iOS",
@@ -6268,6 +6404,23 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "mangayomi",
+      "app": "mangayomi",
+      "name": "Mangayomi",
+      "source": "kodjodevf/mangayomi",
+      "sourceURL": "https://github.com/kodjodevf/mangayomi",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-03",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "minivmac",
@@ -6372,6 +6525,57 @@
       ]
     },
     {
+      "id": "monal",
+      "app": "monal",
+      "name": "Monal",
+      "source": "monal-im/Monal",
+      "sourceURL": "https://github.com/monal-im/Monal",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-05-27",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "muffinstore",
+      "app": "muffinstore",
+      "name": "MuffinStore",
+      "source": "mineek/MuffinStore",
+      "sourceURL": "https://github.com/mineek/MuffinStore",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-07-12",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "nebuloiptv",
+      "app": "nebuloiptv",
+      "name": "Nebulo",
+      "source": "mongoosemonke504/NebuloIPTV",
+      "sourceURL": "https://github.com/mongoosemonke504/NebuloIPTV",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-02-01",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
       "id": "neofreebird",
       "app": "neofreebird",
       "name": "NeoFreeBird",
@@ -6472,6 +6676,57 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "otraku",
+      "app": "otraku",
+      "name": "Otraku",
+      "source": "lotusprey/otraku",
+      "sourceURL": "https://github.com/lotusprey/otraku",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-03-20",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "pikatorrent",
+      "app": "pikatorrent",
+      "name": "PikaTorrent",
+      "source": "G-Ray/pikatorrent",
+      "sourceURL": "https://github.com/G-Ray/pikatorrent",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-01-11",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "playtorrio",
+      "app": "playtorrio",
+      "name": "PlayTorrio",
+      "source": "ayman708-UX/PlayTorrioV3",
+      "sourceURL": "https://github.com/ayman708-UX/PlayTorrioV3",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-09",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "ppsspp",
@@ -6676,6 +6931,23 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "purekfd",
+      "app": "purekfd",
+      "name": "PureKFD",
+      "source": "Lrdsnow/PureKFD",
+      "sourceURL": "https://github.com/Lrdsnow/PureKFD",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2024-11-23",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "qbitconnect",
@@ -7258,6 +7530,40 @@
           "detail": "HTTP 302"
         }
       ]
+    },
+    {
+      "id": "synkplay",
+      "app": "synkplay",
+      "name": "Synkplay",
+      "source": "yuroyami/syncplay-mobile",
+      "sourceURL": "https://github.com/yuroyami/syncplay-mobile",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-09-06",
+      "valid": true,
+      "detail": "",
+      "history": []
+    },
+    {
+      "id": "thunder",
+      "app": "thunder",
+      "name": "Thunder",
+      "source": "thunder-app/thunder",
+      "sourceURL": "https://github.com/thunder-app/thunder",
+      "type": "github",
+      "status": "unknown",
+      "reachable": null,
+      "latency": null,
+      "latencyMs": null,
+      "checkedAt": "",
+      "lastUpdate": "2026-01-07",
+      "valid": true,
+      "detail": "",
+      "history": []
     },
     {
       "id": "utm",

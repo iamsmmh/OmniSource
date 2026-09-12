@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-09-12",
-  "count": 77,
+  "count": 94,
   "fuse": {
     "keys": [
       {
@@ -2595,7 +2595,7 @@
       "bundleId": "com.opa334.Dopamine-roothide",
       "icon": "assets/DopamineRootHide.webp",
       "pageURL": "apps/dopamine-roothide/",
-      "version": "2.4.9.26",
+      "version": "2.4.9.27",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [
@@ -2936,6 +2936,580 @@
       "icon": "assets/XeniOS.webp",
       "pageURL": "apps/xenios/",
       "version": "2.0.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "pikatorrent",
+      "slug": "pikatorrent",
+      "name": "PikaTorrent",
+      "subtitle": "BitTorrent client",
+      "shortDescription": "BitTorrent client",
+      "description": "PikaTorrent is a modern cross-platform BitTorrent client for iOS and Android. Pick a torrent and stream or download it on all your devices, with support for magnet links, .torrent files and pairing with a self-hosted bridge.",
+      "category": "networking",
+      "tags": [
+        "networking"
+      ],
+      "keywords": [
+        "bittorrent",
+        "client",
+        "networking",
+        "pikatorrent",
+        "ray"
+      ],
+      "developer": "G-Ray",
+      "bundleId": "com.pikatorrent.PikaTorrent",
+      "icon": "assets/PikaTorrent.webp",
+      "pageURL": "apps/pikatorrent/",
+      "version": "0.15.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "thunder",
+      "slug": "thunder",
+      "name": "Thunder",
+      "subtitle": "Lemmy & PieFed client",
+      "shortDescription": "Lemmy & PieFed client",
+      "description": "Thunder is an open-source, cross-platform Lemmy and PieFed client for iOS and Android built with Flutter. It supports multiple accounts, customizable feeds and gesture-based navigation against any Lemmy or PieFed instance.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "keywords": [
+        "app",
+        "client",
+        "lemmy",
+        "piefed",
+        "social",
+        "thunder"
+      ],
+      "developer": "Thunder App",
+      "bundleId": "com.hjiangsu.thunder",
+      "icon": "assets/Thunder.webp",
+      "pageURL": "apps/thunder/",
+      "version": "0.8.6",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "chan",
+      "slug": "chan",
+      "name": "Chan",
+      "subtitle": "4chan imageboard browser",
+      "shortDescription": "4chan imageboard browser",
+      "description": "Chan is a Flutter imageboard browser for iOS and Android. Browse 4chan threads and boards with media galleries, saved posts, pass login and a fast, native-feeling interface.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "keywords": [
+        "4chan",
+        "browser",
+        "chan",
+        "imageboard",
+        "moffatman",
+        "social"
+      ],
+      "developer": "moffatman",
+      "bundleId": "com.moffatman.chan",
+      "icon": "assets/Chan.webp",
+      "pageURL": "apps/chan/",
+      "version": "1.2.9",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "monal",
+      "slug": "monal",
+      "name": "Monal",
+      "subtitle": "XMPP instant messenger",
+      "shortDescription": "XMPP instant messenger",
+      "description": "Monal is a free, open-source XMPP (Jabber) instant messenger for iOS and macOS. It offers OMEMO end-to-end encryption, multiple accounts, group chat and push notifications without a central server.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "keywords": [
+        "im",
+        "instant",
+        "messenger",
+        "monal",
+        "social",
+        "xmpp"
+      ],
+      "developer": "Monal IM",
+      "bundleId": "G7YU7X7KRJ.SworIM",
+      "icon": "assets/Monal.webp",
+      "pageURL": "apps/monal/",
+      "version": "6.4.21",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "jellybook",
+      "slug": "jellybook",
+      "name": "JellyBook",
+      "subtitle": "Jellyfin e-book reader",
+      "shortDescription": "Jellyfin e-book reader",
+      "description": "JellyBook is a nice way to read books and comics from Jellyfin. It streams EPUB, CBZ and PDF titles from your Jellyfin server to your iPhone or iPad with a clean reading interface.",
+      "category": "other",
+      "tags": [
+        "other"
+      ],
+      "keywords": [
+        "book",
+        "jellybook",
+        "jellyfin",
+        "other",
+        "reader"
+      ],
+      "developer": "JellyBook",
+      "bundleId": "com.KaraWilson.JellyBook",
+      "icon": "assets/JellyBook.webp",
+      "pageURL": "apps/jellybook/",
+      "version": "1.4.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "hanami",
+      "slug": "hanami",
+      "name": "Hanami",
+      "subtitle": "Manga reader",
+      "shortDescription": "Manga reader",
+      "description": "Hanami is an app for reading and saving manga on iOS and iPadOS. It works with self-hosted Komga and Kavita servers and supports offline downloads, library tracking and a fast native reader.",
+      "category": "other",
+      "tags": [
+        "other"
+      ],
+      "keywords": [
+        "hanami",
+        "manga",
+        "oolxg",
+        "other",
+        "reader"
+      ],
+      "developer": "oolxg",
+      "bundleId": "moe.mkpwnz.Hanami",
+      "icon": "assets/Hanami.webp",
+      "pageURL": "apps/hanami/",
+      "version": "0.28.2",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "otraku",
+      "slug": "otraku",
+      "name": "Otraku",
+      "subtitle": "AniList client",
+      "shortDescription": "AniList client",
+      "description": "Otraku is an unofficial AniList client for Android and iOS built with Flutter. Browse, search and update your anime and manga lists with a polished native interface.",
+      "category": "other",
+      "tags": [
+        "other"
+      ],
+      "keywords": [
+        "anilist",
+        "client",
+        "lotusprey",
+        "other",
+        "otraku"
+      ],
+      "developer": "lotusprey",
+      "bundleId": "com.otraku.app",
+      "icon": "assets/Otraku.webp",
+      "pageURL": "apps/otraku/",
+      "version": "1.12.1",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "purekfd",
+      "slug": "purekfd",
+      "name": "PureKFD",
+      "subtitle": "Jailed package manager",
+      "shortDescription": "Jailed package manager",
+      "description": "PureKFD is an exploit-based jailed package manager for iOS 15.0 through 18.x. It applies Misaka-style tweaks, themes and packages to compatible devices without a full jailbreak.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "jailed",
+        "lrdsnow",
+        "manager",
+        "package",
+        "purekfd",
+        "utilities"
+      ],
+      "developer": "Lrdsnow",
+      "bundleId": "uwu.lrdsnow.purekfdiOS",
+      "icon": "assets/PureKFD.webp",
+      "pageURL": "apps/purekfd/",
+      "version": "6.0.2",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "synkplay",
+      "slug": "synkplay",
+      "name": "Synkplay",
+      "subtitle": "Synced video playback",
+      "shortDescription": "Synced video playback",
+      "description": "Synkplay (Syncplay Mobile) is a Syncplay client for Android and iOS. Watch videos in sync with your friends — playback, pause and seeking are kept synchronized across everyone in the room.",
+      "category": "photo-video",
+      "tags": [
+        "photo-video"
+      ],
+      "keywords": [
+        "photo",
+        "playback",
+        "synced",
+        "synkplay",
+        "video",
+        "yuroyami"
+      ],
+      "developer": "yuroyami",
+      "bundleId": "com.yuroyami.syncplay.iosApp",
+      "icon": "assets/Synkplay.webp",
+      "pageURL": "apps/synkplay/",
+      "version": "0.24.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "ksign",
+      "slug": "ksign",
+      "name": "Ksign",
+      "subtitle": "ESign-style app signer",
+      "shortDescription": "ESign-style app signer",
+      "description": "Ksign is a community “cleaner” take on ESign — an iOS app signer and installer. Import IPA files, sign them with your own certificate and install them on device, with Feather-based app-icon styles.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "app",
+        "esign",
+        "ksign",
+        "nyasami",
+        "signer",
+        "style",
+        "utilities"
+      ],
+      "developer": "Nyasami",
+      "bundleId": "nya.asami.ksign",
+      "icon": "assets/Ksign.webp",
+      "pageURL": "apps/ksign/",
+      "version": "1.6",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "cosmos",
+      "slug": "cosmos",
+      "name": "Cosmos Music Player",
+      "subtitle": "Music player",
+      "shortDescription": "Music player",
+      "description": "Cosmos Music Player is a premium music player for iOS built on iCloud Drive and local storage. It gives you a clean, modern player for the music you keep on your device and in iCloud.",
+      "category": "music",
+      "tags": [
+        "music"
+      ],
+      "keywords": [
+        "clquwu",
+        "cosmos",
+        "music",
+        "player"
+      ],
+      "developer": "clquwu",
+      "bundleId": "dev.clq.Cosmos-Music-Player",
+      "icon": "assets/Cosmos.webp",
+      "pageURL": "apps/cosmos/",
+      "version": "1.2.5",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "animegen",
+      "slug": "animegen",
+      "name": "AnimeGen",
+      "subtitle": "Anime art generator",
+      "shortDescription": "Anime art generator",
+      "description": "AnimeGen is a simple way to enjoy anime art. Generate anime-style images on your device using local AI models, with a gallery and save-to-photos workflow.",
+      "category": "photo-video",
+      "tags": [
+        "photo-video"
+      ],
+      "keywords": [
+        "anime",
+        "animegen",
+        "art",
+        "cranci1",
+        "generator",
+        "photo",
+        "video"
+      ],
+      "developer": "cranci1",
+      "bundleId": "me.cranci.AnimeGen",
+      "icon": "assets/AnimeGen.webp",
+      "pageURL": "apps/animegen/",
+      "version": "3.0.0",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "muffinstore",
+      "slug": "muffinstore",
+      "name": "MuffinStore",
+      "subtitle": "App Store downgrader",
+      "shortDescription": "App Store downgrader",
+      "description": "MuffinStore is a TrollStore app for downgrading App Store apps. It lets you install older versions of apps from the App Store without a jailbreak, shipped as a TrollStore-named .tipa package.",
+      "category": "utilities",
+      "tags": [
+        "utilities"
+      ],
+      "keywords": [
+        "app",
+        "downgrader",
+        "mineek",
+        "muffinstore",
+        "store",
+        "utilities"
+      ],
+      "developer": "mineek",
+      "bundleId": "dev.mineek.muffinstore",
+      "icon": "assets/MuffinStore.webp",
+      "pageURL": "apps/muffinstore/",
+      "version": "1.3",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "playtorrio",
+      "slug": "playtorrio",
+      "name": "PlayTorrio",
+      "subtitle": "Streaming client",
+      "shortDescription": "Streaming client",
+      "description": "PlayTorrio is a movies, TV and anime streaming client for iOS. It aggregates content into a browsable home-screen library with a native player.",
+      "category": "photo-video",
+      "tags": [
+        "photo-video"
+      ],
+      "keywords": [
+        "ayman708",
+        "client",
+        "photo",
+        "playtorrio",
+        "streaming",
+        "video"
+      ],
+      "developer": "ayman708",
+      "bundleId": "com.example.playtorrio",
+      "icon": "assets/PlayTorrio.webp",
+      "pageURL": "apps/playtorrio/",
+      "version": "1.1.5",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "mangayomi",
+      "slug": "mangayomi",
+      "name": "Mangayomi",
+      "subtitle": "Manga, novel & anime reader",
+      "shortDescription": "Manga, novel & anime reader",
+      "description": "Mangayomi is a free, open-source app for reading manga and novels and watching anime, available on Android, iOS, macOS, Linux and Windows. It supports extensions for a wide range of sources.",
+      "category": "other",
+      "tags": [
+        "other"
+      ],
+      "keywords": [
+        "anime",
+        "kodjodevf",
+        "manga",
+        "mangayomi",
+        "novel",
+        "other",
+        "reader"
+      ],
+      "developer": "kodjodevf",
+      "bundleId": "com.kodjodevf.mangayomi",
+      "icon": "assets/Mangayomi.webp",
+      "pageURL": "apps/mangayomi/",
+      "version": "0.9.2",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "nebuloiptv",
+      "slug": "nebuloiptv",
+      "name": "Nebulo",
+      "subtitle": "IPTV player",
+      "shortDescription": "IPTV player",
+      "description": "Nebulo is a clean IPTV player for iOS with a built-in sports score center. Load your M3U playlists and watch live channels with a simple, focused interface.",
+      "category": "photo-video",
+      "tags": [
+        "photo-video"
+      ],
+      "keywords": [
+        "iptv",
+        "mongoosemonke504",
+        "nebulo",
+        "photo",
+        "player",
+        "video"
+      ],
+      "developer": "mongoosemonke504",
+      "bundleId": "personal.Nebulo-V2-3",
+      "icon": "assets/Nebulo.webp",
+      "pageURL": "apps/nebuloiptv/",
+      "version": "2.3",
+      "verificationLevel": "VERIFIED",
+      "downloadReachable": true,
+      "clientCompatibility": [
+        "altstore",
+        "sidestore",
+        "feather",
+        "esign",
+        "livecontainer"
+      ]
+    },
+    {
+      "id": "chatsen",
+      "slug": "chatsen",
+      "name": "Chatsen",
+      "subtitle": "Twitch chat client",
+      "shortDescription": "Twitch chat client",
+      "description": "Chatsen is a cross-platform Twitch chat application with third-party addon support. Follow chat in real time with support for BetterTTV, FrankerFaceZ and 7TV emotes and themes.",
+      "category": "social",
+      "tags": [
+        "social"
+      ],
+      "keywords": [
+        "chat",
+        "chatsen",
+        "client",
+        "social",
+        "twitch"
+      ],
+      "developer": "chatsen",
+      "bundleId": "com.chatsen.chatsen",
+      "icon": "assets/Chatsen.webp",
+      "pageURL": "apps/chatsen/",
+      "version": "1.1.107",
       "verificationLevel": "VERIFIED",
       "downloadReachable": true,
       "clientCompatibility": [

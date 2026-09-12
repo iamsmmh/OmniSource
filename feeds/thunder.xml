@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thunder — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/thunder.json</link>
+    <description>Release feed for Thunder within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Sep 2026 14:49:11 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/thunder.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Thunder v0.8.6</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/thunder.json</link>
+      <guid isPermaLink="false">thunder-0.8.6</guid>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Thunder 0.8.6 | thunder-v0.8.6
+
+Hey everyone! Sorry for the back-to-back releases again. This hotfix fixes another issue related to grey screens when navigating to comments from the inbox or user profile. As always, if you encounter any issues or have feedback, please share them with the Thunder community or on GitHub.
+
+If you're enjoying Thunder and would like to show some support, star this project on GitHub! This helps gain visibility for the project and allows more contributors to help with the continued development of Thunder. If you'd like to show some appreciation, you can sponsor me on [GitHub](https://github.com/sponsors/hjiangsu) or donate via [Liberapay](https://en.liberapay.com/hjiangsu/) or [Ko-fi](https://ko-fi.com/hjiangsu).
+
+We have a [Matrix space](https://matrix.to/#/#thunderapp:matrix.org) if you would like to join in on discussions!
+
+---
+
+## Fixes
+* Fixed grey screen when navigating to comment by @hjiangsu in #2029
+
+**Full Changelog**: https://github.com/thunder-app/thunder/compare/0.8.5...0.8.6]]></description>
+      <enclosure url="https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12",
+  "feedVersion": "248817408e19",
+  "app": {
+    "id": "pikatorrent",
+    "name": "PikaTorrent",
+    "developer": "G-Ray",
+    "subtitle": "BitTorrent client",
+    "bundleIdentifier": "com.pikatorrent.PikaTorrent",
+    "version": "0.15.0",
+    "versionDate": "2026-01-11",
+    "description": "PikaTorrent is a modern cross-platform BitTorrent client for iOS and Android. Pick a torrent and stream or download it on all your devices, with support for magnet links, .torrent files and pairing with a self-hosted bridge.",
+    "shortDescription": "BitTorrent client",
+    "category": "networking",
+    "tags": [
+      "networking"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/PikaTorrent.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/G-Ray/pikatorrent/releases/download/v0.15.0/PikaTorrent-v0.15.0-ios.ipa",
+    "size": 38053348,
+    "source": "G-Ray/pikatorrent",
+    "sourceURL": "https://github.com/G-Ray/pikatorrent",
+    "checksum": "0c02f3de181df9c77a03bfa8326449feddf66bc1b1508f65ffde6b86eb72cd89",
+    "checksumPublished": false,
+    "minOSVersion": "12.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/pikatorrent/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/pikatorrent.json",
+    "health": {
+      "reachable": true,
+      "detail": "not probed",
+      "updatedAt": "2026-01-11"
+    }
+  },
+  "newest": {
+    "version": "0.15.0",
+    "date": "2026-01-11",
+    "downloadURL": "https://github.com/G-Ray/pikatorrent/releases/download/v0.15.0/PikaTorrent-v0.15.0-ios.ipa",
+    "size": 38053348,
+    "sha256": "0c02f3de181df9c77a03bfa8326449feddf66bc1b1508f65ffde6b86eb72cd89"
+  },
+  "versions": [
+    {
+      "version": "0.15.0",
+      "date": "2026-01-11",
+      "downloadURL": "https://github.com/G-Ray/pikatorrent/releases/download/v0.15.0/PikaTorrent-v0.15.0-ios.ipa",
+      "size": 38053348,
+      "sha256": "0c02f3de181df9c77a03bfa8326449feddf66bc1b1508f65ffde6b86eb72cd89"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

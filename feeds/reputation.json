@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-09-12",
-  "count": 61,
+  "count": 78,
   "levels": [
     "TRUSTED",
     "RELIABLE",
@@ -175,6 +175,39 @@
       }
     },
     {
+      "id": "yuroyami/syncplay-mobile",
+      "source": "yuroyami/syncplay-mobile",
+      "publisher": "yuroyami/syncplay-mobile",
+      "homepage": "https://github.com/yuroyami/syncplay-mobile",
+      "sourceURL": "https://github.com/yuroyami/syncplay-mobile",
+      "apps": [
+        "synkplay"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-09-06",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 6,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
+      }
+    },
+    {
       "id": "XITRIX/iTorrent",
       "source": "XITRIX/iTorrent",
       "publisher": "XITRIX/iTorrent",
@@ -304,6 +337,39 @@
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
         "legacyScore": 60.0
+      }
+    },
+    {
+      "id": "thunder-app/thunder",
+      "source": "thunder-app/thunder",
+      "publisher": "thunder-app/thunder",
+      "homepage": "https://github.com/thunder-app/thunder",
+      "sourceURL": "https://github.com/thunder-app/thunder",
+      "apps": [
+        "thunder"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-01-07",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 248,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
       }
     },
     {
@@ -549,12 +615,12 @@
       "score": 73.9,
       "level": "RELIABLE",
       "status": "Community Verified",
-      "lastUpdate": "2026-09-07",
+      "lastUpdate": "2026-09-12",
       "signals": {
         "jsonValidity": 100.0,
         "uptime": 100.0,
         "updateFrequencyDays": null,
-        "lastReleaseDaysAgo": 5,
+        "lastReleaseDaysAgo": 0,
         "brokenLinks": 0,
         "releasesPastYear": 1,
         "metadataCompleteness": 96,
@@ -769,6 +835,39 @@
       }
     },
     {
+      "id": "Nyasami/Ksign",
+      "source": "Nyasami/Ksign",
+      "publisher": "Nyasami/Ksign",
+      "homepage": "https://github.com/Nyasami/Ksign",
+      "sourceURL": "https://github.com/Nyasami/Ksign",
+      "apps": [
+        "ksign"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-05-24",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 111,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
+      }
+    },
+    {
       "id": "NeoFreeBird/app",
       "source": "NeoFreeBird/app",
       "publisher": "NeoFreeBird/app",
@@ -832,6 +931,138 @@
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
         "legacyScore": 60.0
+      }
+    },
+    {
+      "id": "mongoosemonke504/NebuloIPTV",
+      "source": "mongoosemonke504/NebuloIPTV",
+      "publisher": "mongoosemonke504/NebuloIPTV",
+      "homepage": "https://github.com/mongoosemonke504/NebuloIPTV",
+      "sourceURL": "https://github.com/mongoosemonke504/NebuloIPTV",
+      "apps": [
+        "nebuloiptv"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-02-01",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 223,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
+      }
+    },
+    {
+      "id": "monal-im/Monal",
+      "source": "monal-im/Monal",
+      "publisher": "monal-im/Monal",
+      "homepage": "https://github.com/monal-im/Monal",
+      "sourceURL": "https://github.com/monal-im/Monal",
+      "apps": [
+        "monal"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-05-27",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 108,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
+      }
+    },
+    {
+      "id": "moffatman/chan",
+      "source": "moffatman/chan",
+      "publisher": "moffatman/chan",
+      "homepage": "https://github.com/moffatman/chan",
+      "sourceURL": "https://github.com/moffatman/chan",
+      "apps": [
+        "chan"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-08-28",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 15,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
+      }
+    },
+    {
+      "id": "mineek/MuffinStore",
+      "source": "mineek/MuffinStore",
+      "publisher": "mineek/MuffinStore",
+      "homepage": "https://github.com/mineek/MuffinStore",
+      "sourceURL": "https://github.com/mineek/MuffinStore",
+      "apps": [
+        "muffinstore"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-07-12",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 62,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
       }
     },
     {
@@ -931,6 +1162,39 @@
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
         "legacyScore": 55.0
+      }
+    },
+    {
+      "id": "lotusprey/otraku",
+      "source": "lotusprey/otraku",
+      "publisher": "lotusprey/otraku",
+      "homepage": "https://github.com/lotusprey/otraku",
+      "sourceURL": "https://github.com/lotusprey/otraku",
+      "apps": [
+        "otraku"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-03-20",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 176,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
       }
     },
     {
@@ -1063,6 +1327,72 @@
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
         "legacyScore": 55.0
+      }
+    },
+    {
+      "id": "kodjodevf/mangayomi",
+      "source": "kodjodevf/mangayomi",
+      "publisher": "kodjodevf/mangayomi",
+      "homepage": "https://github.com/kodjodevf/mangayomi",
+      "sourceURL": "https://github.com/kodjodevf/mangayomi",
+      "apps": [
+        "mangayomi"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-09-03",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 9,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
+      }
+    },
+    {
+      "id": "JellyBookOrg/JellyBook",
+      "source": "JellyBookOrg/JellyBook",
+      "publisher": "JellyBookOrg/JellyBook",
+      "homepage": "https://github.com/JellyBookOrg/JellyBook",
+      "sourceURL": "https://github.com/JellyBookOrg/JellyBook",
+      "apps": [
+        "jellybook"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-09-09",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 3,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
       }
     },
     {
@@ -1264,6 +1594,39 @@
       }
     },
     {
+      "id": "G-Ray/pikatorrent",
+      "source": "G-Ray/pikatorrent",
+      "publisher": "G-Ray/pikatorrent",
+      "homepage": "https://github.com/G-Ray/pikatorrent",
+      "sourceURL": "https://github.com/G-Ray/pikatorrent",
+      "apps": [
+        "pikatorrent"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-01-11",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 244,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
+      }
+    },
+    {
       "id": "fredrikburmester/streamyfin",
       "source": "fredrikburmester/streamyfin",
       "publisher": "fredrikburmester/streamyfin",
@@ -1429,6 +1792,39 @@
       }
     },
     {
+      "id": "clquwu/Cosmos-Music-Player",
+      "source": "clquwu/Cosmos-Music-Player",
+      "publisher": "clquwu/Cosmos-Music-Player",
+      "homepage": "https://github.com/clquwu/Cosmos-Music-Player",
+      "sourceURL": "https://github.com/clquwu/Cosmos-Music-Player",
+      "apps": [
+        "cosmos"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-09-08",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 4,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
+      }
+    },
+    {
       "id": "claration/Feather",
       "source": "claration/Feather",
       "publisher": "claration/Feather",
@@ -1459,6 +1855,39 @@
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
         "legacyScore": 60.0
+      }
+    },
+    {
+      "id": "chatsen/chatsen",
+      "source": "chatsen/chatsen",
+      "publisher": "chatsen/chatsen",
+      "homepage": "https://github.com/chatsen/chatsen",
+      "sourceURL": "https://github.com/chatsen/chatsen",
+      "apps": [
+        "chatsen"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-08-12",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 31,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
       }
     },
     {
@@ -1525,6 +1954,39 @@
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
         "legacyScore": 55.0
+      }
+    },
+    {
+      "id": "ayman708-UX/PlayTorrioV3",
+      "source": "ayman708-UX/PlayTorrioV3",
+      "publisher": "ayman708-UX/PlayTorrioV3",
+      "homepage": "https://github.com/ayman708-UX/PlayTorrioV3",
+      "sourceURL": "https://github.com/ayman708-UX/PlayTorrioV3",
+      "apps": [
+        "playtorrio"
+      ],
+      "score": 73.9,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-09-09",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 3,
+        "brokenLinks": 0,
+        "releasesPastYear": 1,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
       }
     },
     {
@@ -1891,6 +2353,39 @@
       }
     },
     {
+      "id": "oolxg/Hanami",
+      "source": "oolxg/Hanami",
+      "publisher": "oolxg/Hanami",
+      "homepage": "https://github.com/oolxg/Hanami",
+      "sourceURL": "https://github.com/oolxg/Hanami",
+      "apps": [
+        "hanami"
+      ],
+      "score": 71.4,
+      "level": "RELIABLE",
+      "status": "Inactive",
+      "lastUpdate": "2024-06-03",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 831,
+        "brokenLinks": 0,
+        "releasesPastYear": 0,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
+      }
+    },
+    {
       "id": "Odyssey-Team/Taurine",
       "source": "Odyssey-Team/Taurine",
       "publisher": "Odyssey-Team/Taurine",
@@ -1990,6 +2485,39 @@
       }
     },
     {
+      "id": "Lrdsnow/PureKFD",
+      "source": "Lrdsnow/PureKFD",
+      "publisher": "Lrdsnow/PureKFD",
+      "homepage": "https://github.com/Lrdsnow/PureKFD",
+      "sourceURL": "https://github.com/Lrdsnow/PureKFD",
+      "apps": [
+        "purekfd"
+      ],
+      "score": 71.4,
+      "level": "RELIABLE",
+      "status": "Inactive",
+      "lastUpdate": "2024-11-23",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 658,
+        "brokenLinks": 0,
+        "releasesPastYear": 0,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
+      }
+    },
+    {
       "id": "lo-cafe/winston",
       "source": "lo-cafe/winston",
       "publisher": "lo-cafe/winston",
@@ -2020,6 +2548,39 @@
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
         "legacyScore": 60.0
+      }
+    },
+    {
+      "id": "cranci1/AnimeGen",
+      "source": "cranci1/AnimeGen",
+      "publisher": "cranci1/AnimeGen",
+      "homepage": "https://github.com/cranci1/AnimeGen",
+      "sourceURL": "https://github.com/cranci1/AnimeGen",
+      "apps": [
+        "animegen"
+      ],
+      "score": 71.4,
+      "level": "RELIABLE",
+      "status": "Inactive",
+      "lastUpdate": "2025-03-04",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": null,
+        "lastReleaseDaysAgo": 557,
+        "brokenLinks": 0,
+        "releasesPastYear": 0,
+        "metadataCompleteness": 96,
+        "probes": 0
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 0,
+        "averageLatencyMs": null,
+        "averageUpdateGapDays": null,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 50.0
       }
     },
     {
