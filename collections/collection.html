@@ -194,7 +194,7 @@
       // first, then HTML-escape the result. Same pattern as
       // collections/index.html — without it a collection or app name could
       // break out of the attribute and inject markup.
-      const jsAttr = (value) => OS.esc(String(value == null ? '' : value).replace(/'/g, "\\'"));
+      const jsAttr = (value) => OS.esc(String(value == null ? '' : value).replace(/\\/g, "\\\\").replace(/'/g, "\\'"));
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', extendCollectionsUI);
         return;

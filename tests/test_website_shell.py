@@ -10,6 +10,7 @@ protect the pieces the builder and the deployed site depend on.
 
 from __future__ import annotations
 
+import importlib.util
 import re
 import shutil
 import subprocess
@@ -402,7 +403,7 @@ class TestWebsiteShell(unittest.TestCase):
         node = shutil.which("node")
         if not node:
             self.skipTest("node is not installed")
-        block = re.compile(r"<script(?P<attrs>[^>]*)>(?P<body>.*?)</script>", re.DOTALL | re.IGNORECASE)
+        block = re.compile(r"<script\b(?P<attrs>[^>]*)>(?P<body>.*?)</script\s*>", re.DOTALL | re.IGNORECASE)
         checked = 0
         with tempfile.TemporaryDirectory() as tmp:
             for page in sorted(ROOT.rglob("*.html")):
@@ -552,6 +553,26 @@ class TestWebsiteShell(unittest.TestCase):
                         f"{page.name}:{number}: unescaped markup interpolation ${{{expression}}}",
                     )
         self.assertGreater(checked, 20, "expected the collection templates to be scanned")
+
+    def test_inline_script_regex_tolerates_real_html(self) -> None:
+        # CodeQL flagged the extraction regex used by smoke_test: "</script>"
+        # does not match "</script >" (whitespace before ">"), so a page using
+        # that spelling would silently skip its syntax check — the same blind
+        # spot that let the broken Collections script through in the first
+        # place. Load the real regex rather than restating it.
+        spec = importlib.util.spec_from_file_location("smoke_test", ROOT / "scripts" / "smoke_test.py")
+        assert spec and spec.loader, "cannot load scripts/smoke_test.py"
+        smoke = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(smoke)
+
+        found = smoke.INLINE_SCRIPT_RE.findall("<script >var a = 1;</script >")
+        self.assertEqual([body for _attrs, body in found], ["var a = 1;"])
+
+        found = smoke.INLINE_SCRIPT_RE.findall('<script type="module">var b = 2;</SCRIPT>')
+        self.assertEqual([body for _attrs, body in found], ["var b = 2;"])
+
+        # …and it must not treat an unrelated tag as a script element.
+        self.assertEqual(smoke.INLINE_SCRIPT_RE.findall("<scriptx>var c = 3;</scriptx>"), [])
 
 
 if __name__ == "__main__":

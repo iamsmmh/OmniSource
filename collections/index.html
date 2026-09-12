@@ -542,7 +542,7 @@
             + preview
             + '  <div class="collection-actions" onclick="event.preventDefault(); event.stopPropagation();">'
             + '    <button class="button ghost" type="button" onclick="event.preventDefault(); OS.Collections.showAddModal(\'' + OS.esc(collection.id) + '\',\'' + OS.esc(collection.name) + '\')">Add apps</button>'
-            + '    <button class="button danger" type="button" onclick="event.preventDefault(); if(confirm(\'Delete collection \\’' + OS.esc(collection.name.replace(/'/g,"\\'")) + '\\’?\')){ OS.Collections.delete(\'' + OS.esc(collection.id) + '\'); OS.Collections.renderAll(); OS.toast(\'Collection deleted\'); }">Delete</button>'
+            + '    <button class="button danger" type="button" onclick="event.preventDefault(); if(confirm(\'Delete collection \\’' + OS.esc(collection.name.replace(/\\/g, "\\\\").replace(/'/g, "\\'")) + '\\’?\')){ OS.Collections.delete(\'' + OS.esc(collection.id) + '\'); OS.Collections.renderAll(); OS.toast(\'Collection deleted\'); }">Delete</button>'
             + '  </div>'
             + '</a>';
         };
