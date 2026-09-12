@@ -643,9 +643,12 @@ def write_performance() -> Report:
         if rel(path).startswith(("apps/", "feeds/")):
             continue
         text = read(ROOT / path)
-        for match in re.finditer(r"<script\b[^>]*>", text):
+        # Case-insensitive: HTML tags and attribute names are not, in fact,
+        # case sensitive — an uppercase <SCRIPT SRC=...> must not slip past the
+        # blocking-script scan (CodeQL flagged the literal-only version).
+        for match in re.finditer(r"<script\b[^>]*>", text, re.IGNORECASE):
             tag = match.group(0)
-            src = re.search(r'src="([^"]+)"', tag)
+            src = re.search(r'src="([^"]+)"', tag, re.IGNORECASE)
             if (
                 src
                 and "defer" not in tag
@@ -949,7 +952,7 @@ def audit_page(page: Path) -> list[str]:
     # A `<dialog>` driven by showModal() from a shared script is modal by
     # definition, so the check only fires when no script in the tree opens it.
     if (
-        re.search(r"<dialog\b", text)
+        re.search(r"<dialog\b", text, re.IGNORECASE)
         and "aria-modal" not in text
         and "showModal" not in text
         and "showModal" not in _shared_js()
@@ -1058,7 +1061,8 @@ def write_links() -> Report:
     seo_missing: dict[str, list[str]] = {}
     external_refs = 0
     for page, text in walk_pages():
-        for match in re.finditer(r'(?:href|src|data-feed)="([^"]+)"', text):
+        # Attribute names are case-insensitive in HTML, so scan them that way.
+        for match in re.finditer(r'(?:href|src|data-feed)="([^"]+)"', text, re.IGNORECASE):
             url = match.group(1)
             if not url.startswith(("#", "/OmniSource", "/", "./", "../")):
                 # Custom client schemes (altstore://, sidestore://, feather://,
@@ -1074,7 +1078,7 @@ def write_links() -> Report:
             ok, _kind = resolve_target(page, url)
             if not ok:
                 broken.append(f"`{rel(page)}` → `{url}`")
-        for match in re.finditer(r"srcset=\"([^\"]+)\"", text):
+        for match in re.finditer(r'srcset="([^"]+)"', text, re.IGNORECASE):
             for cand in match.group(1).split(","):
                 u = cand.strip().split(" ")[0]
                 if u and not u.startswith(("http", "//", "data:")):
