@@ -106,6 +106,18 @@ V2_URLS: list[str] = [
 # every page but boot() only calls the renderer for the current data-page,
 # so a page only needs the ids that renderer touches).
 PAGE_IDS: dict[str, list[str]] = {
+    "sources/index.html": [
+        "srcGrid",
+        "srcFilter",
+        "srcStatus",
+        "srcSort",
+        "srcChips",
+        "srcEmpty",
+        "srcReset",
+        "srcStatic",
+        "srcStats",
+        "srcStatTotal",
+    ],
     "index.html": [
         "appsGrid",
         "searchInput",
@@ -405,6 +417,19 @@ def main(argv: list[str] | None = None) -> int:
             failures.append("sources.json is not indented (still one long line)")
         if sources.get("count") != len(sources.get("sources", [])):
             failures.append("sources.json: count does not match sources[] length")
+
+        # Phase 4: every source in the index must have a static detail page,
+        # and every detail page must carry the explorer contract fields.
+        for entry in sources.get("sources", [])[:5]:
+            slug = entry.get("slug") or ""
+            detail = site_root / "sources" / slug / "index.html"
+            if not slug or not detail.is_file():
+                failures.append(f"sources.json: no static page for source {entry.get('id')!r}")
+                continue
+            page_html = detail.read_text(encoding="utf-8")
+            for needle in ('data-page="source-detail"', "og:title", 'rel="canonical"', "Maintainer", "Reputation"):
+                if needle not in page_html:
+                    failures.append(f"sources/{slug}/index.html: missing {needle!r}")
 
     for error in check_js_syntax(site_root):
         failures.append(error)

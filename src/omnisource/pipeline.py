@@ -39,7 +39,8 @@ from omnisource.compare import build_compare_doc
 from omnisource.constants import README_MARKERS, README_STATS_MARKERS
 from omnisource.dead_apps import build_dead_apps_doc
 from omnisource.di import Container, build_container
-from omnisource.discovery import build_discovery_doc, build_sources_doc
+from omnisource.discovery import build_discovery_doc
+from omnisource.docs_index import build_docs_index
 from omnisource.domain import App, Catalog, SyncReport, UpdateEvent, today
 from omnisource.download_intel import build_download_intel_doc
 from omnisource.duplicates import build_duplicates_doc
@@ -67,6 +68,7 @@ from omnisource.reputation import build_reputation_doc
 from omnisource.screenshots import process_screenshots
 from omnisource.search_index import build_search_index
 from omnisource.site import publish_repo_artifacts
+from omnisource.source_pages import build_source_pages, build_sources_doc
 from omnisource.tracking import compile_version_pattern, detect_update, select_versions
 from omnisource.translations import build_translation_status_doc
 from omnisource.trending import build_trending_doc
@@ -486,8 +488,11 @@ def stage_build(
     # All of them are generated from the same in-memory dataset; none is
     # hand-edited. See docs/API.md for the contracts.
     discovery_doc = build_discovery_doc(catalog, state, health_doc)
-    sources_doc = build_sources_doc(catalog, state)
     verification_doc = build_verification_doc(catalog, state, health_doc)
+    # The source index (feeds/sources.json) is the Source Explorer's contract.
+    # Enrichment fields (slug/page/status/score/health/…) are additive; the
+    # base grouping stays owned by omnisource.discovery.
+    sources_doc = build_sources_doc(catalog, state, health_doc=health_doc, verification_doc=verification_doc)
     status_doc = build_status_doc(catalog, state, health_doc)
     duplicates_doc = build_duplicates_doc(catalog, state)
     analytics_doc = build_analytics_doc(catalog, state, health_doc, verification_doc)
@@ -517,6 +522,18 @@ def stage_build(
     trending_doc = build_trending_doc(catalog, state, health_doc, verification_doc)
     related_doc = build_related_doc(catalog, state)
     reputation_doc = build_reputation_doc(catalog, state, health_doc)
+    # sources.json carries the reputation summary per source so the /sources/
+    # pages and the explorer need no extra join (reputation exists only from
+    # here on; this is the one documented second pass of the additive build).
+    sources_doc = build_sources_doc(
+        catalog,
+        state,
+        reputation_doc=reputation_doc,
+        health_doc=health_doc,
+        verification_doc=verification_doc,
+    )
+    # (documents["feeds/sources.json"] is replaced with this enriched copy
+    # in the second intelligence loop below — one dict, one writer.)
     download_intel_doc = build_download_intel_doc(catalog, state, health_doc)
     community_doc = build_community_doc(catalog, state)
     search_index_doc = build_search_index(catalog, state, health_doc, verification_doc)
@@ -526,6 +543,17 @@ def stage_build(
     # trust score (inside verification_doc above) and dead-app classification.
     health_scores = build_health_scores(catalog, state, health_doc, reputation_doc)
     annotate_health_doc(health_doc, health_scores)
+    # sources.json carries the reputation summary per source so the /sources/
+    # pages and the explorer need no extra join (reputation/annotation exist
+    # only from here on; the second pass replaces the pre-annotation copy in
+    # the documents dict below — one dict, one writer).
+    sources_doc = build_sources_doc(
+        catalog,
+        state,
+        reputation_doc=reputation_doc,
+        health_doc=health_doc,
+        verification_doc=verification_doc,
+    )
     integrity_doc = build_integrity_doc(catalog, state, health_doc)
     dead_apps_doc = build_dead_apps_doc(catalog, state)
     # Phase 10 curated collections (YouTube, Music, Emulators, Utilities,
@@ -575,6 +603,7 @@ def stage_build(
         ("dead_apps.json", dead_apps_doc),
         ("collections.json", collections_doc),
         ("asset-manifest.json", asset_manifest_doc),
+        ("sources.json", sources_doc),
     ):
         documents[feeds_dir / name] = doc
     if translation_doc is not None:
@@ -650,6 +679,10 @@ def stage_build(
     # Static collection pages: one /collections/<slug>/ per curated collection
     # (Phase 10).
     changed.extend(build_collection_pages(catalog, state, pages_dir=container.paths.root / "collections"))
+
+    # Static Source Explorer pages (sources/<slug>/index.html, Phase 4),
+    # rendered from the enriched source index built above.
+    changed.extend(build_source_pages(catalog, sources_doc, pages_dir=container.paths.root / "sources"))
 
     log.info(
         "Built %d AltStore feed(s) + apps.json + health.json + updates.json + badges + RSS + "
@@ -879,6 +912,8 @@ def run(
     # additionally assembles the same URLs into the _site/ artifact that
     # sync.yml uploads for the GitHub Actions deployment path.
     with Group("Publish repository-root URLs"):
+        # Regenerate the docs hub from the Markdown on disk, then publish.
+        build_docs_index(container.paths.root / "docs", base_url=catalog.base_url.rstrip("/"))
         published = publish_repo_artifacts(container.paths.root, health_doc=health_doc, analytics_doc=analytics_doc)
         log.info(
             "%d flat URL(s) + %d API document(s) published (%d refreshed, %d stale removed)",

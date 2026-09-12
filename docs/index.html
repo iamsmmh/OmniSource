@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#e8eef8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#07070f" media="(prefers-color-scheme: dark)">
+  <title>Documentation — OmniSource</title>
+  <meta name="description" content="Documentation for OmniSource: architecture, API reference, feed contracts, localization, deployment and the modernization roadmap.">
+  <link rel="canonical" href="https://iamsmmh.github.io/OmniSource/docs/">
+  <meta property="og:site_name" content="OmniSource">
+  <meta property="og:title" content="Documentation — OmniSource">
+  <meta property="og:description" content="Architecture, API, deployment and feed contracts for the OmniSource platform.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://iamsmmh.github.io/OmniSource/docs/">
+  <meta property="og:image" content="https://iamsmmh.github.io/OmniSource/assets/OmniSource.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="https://iamsmmh.github.io/OmniSource/assets/OmniSource.png">
+  <link rel="icon" type="image/png" href="../assets/OmniSource.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; connect-src 'self' https:; font-src 'self' data: https://fonts.gstatic.com; form-action 'self'">
+  <link rel="stylesheet" href="../assets/design-system/tokens.css">
+  <link rel="stylesheet" href="../assets/design-system/utilities.css">
+  <link rel="stylesheet" href="../assets/design-system/animations.css">
+  <link rel="stylesheet" href="../assets/design-system/components.css">
+  <style>
+    .docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+    .docs-card{display:flex;flex-direction:column;gap:8px;padding:20px;text-decoration:none;color:inherit;transition:transform var(--dur-fast) var(--ease)}
+    .docs-card:hover,.docs-card:focus-visible{transform:translateY(-2px)}
+    .docs-card h2{font-size:17px;margin:0}
+    .docs-card code{font-size:11px;color:var(--muted)}
+    .docs-archive{margin-top:24px;color:var(--muted);font-size:13px}
+  </style>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('omnisource-theme');
+        if (t !== 'light' && t !== 'dark') t = 'auto';
+        document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to documentation</a>
+  <main class="shell page-main" id="main" style="padding-top:44px;padding-bottom:56px">
+    <p style="margin-bottom:18px"><a href="../">&larr; Back to OmniSource</a></p>
+    <span class="kicker">DOCS</span>
+    <h1 style="margin:6px 0 6px;letter-spacing:var(--track-tighter)">Documentation</h1>
+    <p class="lead text-muted">Everything about how OmniSource generates, validates and publishes its catalog — each page is a Markdown document rendered straight from the repository, so it always matches the code.</p>
+    <div class="docs-grid" style="margin-top:24px">
+      <a class="docs-card panel" href="README-FEATURES.md">
+        <h2>Feature map</h2>
+        <p class="text-muted">What the platform ships: catalog, health, APIs and pages.</p>
+        <code>README-FEATURES.md</code>
+      </a>
+      <a class="docs-card panel" href="ARCHITECTURE.md">
+        <h2>Architecture</h2>
+        <p class="text-muted">Modules, data flow and the pipeline stages behind every feed.</p>
+        <code>ARCHITECTURE.md</code>
+      </a>
+      <a class="docs-card panel" href="API.md">
+        <h2>API reference</h2>
+        <p class="text-muted">Every endpoint, schema, gzip twin and versioning rule.</p>
+        <code>API.md</code>
+      </a>
+      <a class="docs-card panel" href="REPOSITORY.md">
+        <h2>Repository layout</h2>
+        <p class="text-muted">Which directory is canonical and which are generated mirrors.</p>
+        <code>REPOSITORY.md</code>
+      </a>
+      <a class="docs-card panel" href="DEPLOYMENT-GUIDE.md">
+        <h2>Deployment</h2>
+        <p class="text-muted">GitHub Pages wiring, the sync workflow and rollback notes.</p>
+        <code>DEPLOYMENT-GUIDE.md</code>
+      </a>
+      <a class="docs-card panel" href="localization.md">
+        <h2>Localization</h2>
+        <p class="text-muted">Locale files, coverage policy and the translation pipeline.</p>
+        <code>localization.md</code>
+      </a>
+      <a class="docs-card panel" href="website.md">
+        <h2>Website</h2>
+        <p class="text-muted">Pages, design system tokens and the client-side module map.</p>
+        <code>website.md</code>
+      </a>
+      <a class="docs-card panel" href="FEATURES-P0-P3.md">
+        <h2>Feature tiers</h2>
+        <p class="text-muted">The P0-P3 breakdown of the modernization roadmap.</p>
+        <code>FEATURES-P0-P3.md</code>
+      </a>
+      <a class="docs-card panel" href="AUDIT.md">
+        <h2>Audit log</h2>
+        <p class="text-muted">Findings and fixes from the repository audit.</p>
+        <code>AUDIT.md</code>
+      </a>
+      <a class="docs-card panel" href="CHANGES.md">
+        <h2>Changelog</h2>
+        <p class="text-muted">Notable changes between builds.</p>
+        <code>CHANGES.md</code>
+      </a>
+      <a class="docs-card panel" href="SOURCING-REPORT.md">
+        <h2>Sourcing report</h2>
+        <p class="text-muted">How upstream sources were selected and validated.</p>
+        <code>SOURCING-REPORT.md</code>
+      </a>
+    </div>
+    <p class="docs-archive">Archive: <a href="IMPLEMENTATION-SUMMARY.md">IMPLEMENTATION-SUMMARY</a> · <a href="cleanup-report.md">cleanup-report</a></p>
+  </main>
+</body>
+</html>

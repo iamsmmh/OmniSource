@@ -1010,7 +1010,12 @@
 
     // Theme + view toggles.
     var themeButton = $('#themeButton');
-    if (themeButton) themeButton.addEventListener('click', cycleTheme);
+    if (themeButton) {
+      // Marks the button as claimed so js/modules/theme.js (module entry)
+      // never binds a second toggle handler.
+      themeButton.dataset.themeClaimed = '1';
+      themeButton.addEventListener('click', cycleTheme);
+    }
     var viewToggle = $('#viewToggle');
     if (viewToggle) {
       viewToggle.addEventListener('click', function () {

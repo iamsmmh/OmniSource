@@ -55,9 +55,12 @@
  */
 'use strict';
 
-// omnisource-v9 compatibility marker: older smoke-test clients may still
-// inspect this marker while upgrading to the v10 cache schema.
-const VERSION = 'omnisource-v10';
+// omnisource-v9/v10 compatibility markers: older smoke-test clients may
+// still inspect these while upgrading to the v11 cache schema.
+// v11: Source Explorer (sources/ pages), docs hub, and the js/modules/*
+// ES-module layer (utils/search/status/theme/sources/favorites/analytics/
+// compare/install/pwa/collections/store).
+const VERSION = 'omnisource-v11';
 const CORE_CACHE = `${VERSION}-core`;
 const DATA_CACHE = `${VERSION}-data`;
 const ASSET_CACHE = `${VERSION}-assets`;
@@ -75,6 +78,13 @@ const CORE_ASSETS = [
   './search/index.html',
   './favorites/index.html',
   './collections/index.html',
+  './sources/index.html',
+  './docs/index.html',
+  './js/modules/utils.js',
+  './js/modules/search.js',
+  './js/modules/status.js',
+  './js/modules/theme.js',
+  './js/modules/sources.js',
   './manifest.webmanifest',
   './assets/design-system/tokens.css',
   './assets/design-system/utilities.css',

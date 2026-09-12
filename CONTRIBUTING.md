@@ -73,7 +73,26 @@ first so the direction is agreed before a large change lands. Code lives in
 (static site: `index.html`, section pages, `js/`, `sw.js`) and `tests/`.
 Run `make check` before pushing; CI runs the same
 lint (`ruff`), structural validation (`validate.py`, `validate_jq.sh`),
-reproducibility and unit tests offline.
+reproducibility and unit tests offline. `make audit` writes the structural
+reports (`reports/*.md`: dead code, duplication, localization, performance,
+workflows, accessibility, links/SEO).
+
+Website conventions introduced by the modernization pass:
+
+- **New client code lives in `js/modules/`** — ES modules with named exports,
+  no `window` assignments, no build step. The legacy `js/*.js` facade keeps
+  its existing contracts (95 pages and saved bookmarks depend on them), so
+  extend the modules instead of growing the legacy scripts.
+- **Localization is a hard contract.** Any user-visible string needs a key in
+  *all eight* `locales/*.json` files (parity + `${placeholder}` parity are
+  enforced) and must be referenced via `data-i18n*`, `t()`/`translate()` or a
+  page `<!-- i18n-keys: … -->` marker — `tests/test_translations.py` fails on
+  both dead and missing keys. The header nav is localized on every page,
+  including the generated `apps/` and `sources/` trees.
+- **`sources/<slug>/` pages and `feeds/sources.json` are generated** by
+  `src/omnisource/source_pages.py` during the build stage; the `<noscript>`
+  table in `sources/index.html` is refreshed between
+  `<!-- sources:static:start/end -->` markers. Never hand-edit either.
 
 ## Pull request checklist
 

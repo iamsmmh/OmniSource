@@ -154,8 +154,14 @@ def render_collection_page(catalog: Catalog, collection: dict[str, Any]) -> str:
   <link rel="canonical" href="{html.escape(page_url)}">
   <meta property="og:site_name" content="OmniSource">
   <meta property="og:title" content="{html.escape(title)} — OmniSource">
+  <meta property="og:description" content="{html.escape(meta_desc)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{html.escape(page_url)}">
+  <meta property="og:image" content="{html.escape(catalog.base_url)}/assets/OmniSource.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{html.escape(title)} — OmniSource">
+  <meta name="twitter:description" content="{html.escape(meta_desc)}">
+  <meta name="twitter:image" content="{html.escape(catalog.base_url)}/assets/OmniSource.png">
   <link rel="icon" type="image/png" href="../../assets/OmniSource.png">
   <link rel="apple-touch-icon" href="../../assets/OmniSource.png">
   <link rel="preload" href="../../assets/design-system/tokens.css" as="style">

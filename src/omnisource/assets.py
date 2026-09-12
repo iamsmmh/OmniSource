@@ -18,7 +18,7 @@ from urllib.parse import urlparse
 
 from omnisource.constants import IMAGE_EXTENSIONS, JPEG_MAGIC, PNG_MAGIC
 from omnisource.domain import App, Catalog
-from omnisource.http import HttpClient, is_http_url
+from omnisource.http import is_http_url
 
 _SHA256_HEX = re.compile(r"^[0-9a-f]{64}$")
 
@@ -181,22 +181,6 @@ def _inspect_app(app: App, assets_dir: Path, report: AssetReport, referenced: se
             report.issues.append(AssetIssue(app.slug, "screenshot", f"URL does not look like an image: {url}", url))
             continue
         report.screenshots_ok += 1
-
-
-def probe_screenshot_urls(
-    catalog: Catalog,
-    http: HttpClient,
-    *,
-    limit_per_app: int = 1,
-) -> list[AssetIssue]:
-    """Optional live probe of screenshot URLs. Off by default in CI."""
-    issues: list[AssetIssue] = []
-    for app in catalog.apps:
-        for url in app.screenshots[:limit_per_app]:
-            result = http.probe(url)
-            if not result.reachable:
-                issues.append(AssetIssue(app.slug, "dead-link", f"screenshot unreachable ({result.detail})", url))
-    return issues
 
 
 ASSET_MANIFEST_SCHEMA_VERSION = 1

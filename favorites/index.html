@@ -54,20 +54,26 @@
       </a>
 
       <div class="nav-links" id="primaryNav">
+        <a href="../" data-i18n="nav.home">Home</a>
         <a href="../#catalog" data-i18n="nav.apps">Apps</a>
-        <a href="../#trending" data-i18n="nav.trending">Trending</a>
-        <a href="../compare/" data-i18n="nav.compare">Compare</a>
-        <a href="../status/" data-i18n="nav.health">Health</a>
-        <a href="../install/" data-i18n="nav.install">Install</a>
+        <a href="../collections/" data-i18n="nav.collections">Collections</a>
+        <a href="../sources/" data-i18n="nav.sources">Sources</a>
+        <a href="../status/" data-i18n="nav.health">Status</a>
+        <a href="../docs/" data-i18n="nav.docs">Docs</a>
         <details class="nav-more">
           <summary aria-haspopup="menu" aria-label="More pages"><span data-i18n="nav.more">More</span>
             <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
           </summary>
           <div class="nav-menu" role="menu">
-            <a href="../#whats-new" role="menuitem" data-i18n="nav.whatsNew">What&rsquo;s new</a>
             <a href="../analytics/" role="menuitem" data-i18n="nav.analytics">Analytics</a>
-            <a href="./" aria-current="page" role="menuitem" data-i18n="nav.favorites">Favorites</a>
-            <a href="../collections/" role="menuitem" data-i18n="nav.collections">Collections</a>
+            <a href="../compare/" role="menuitem" data-i18n="nav.compare">Compare</a>
+            <a href="./" class="active" aria-current="page" role="menuitem" data-i18n="nav.favorites">Favorites</a>
+            <a href="../discover/" role="menuitem" data-i18n="nav.discover">Discover</a>
+            <a href="../api/community.json" role="menuitem" data-i18n="nav.community">Community</a>
+            <a href="../#whats-new" role="menuitem" data-i18n="nav.whatsNew">What&rsquo;s new</a>
+            <a href="../#trending" role="menuitem" data-i18n="nav.trending">Trending</a>
+            <a href="../graph/" role="menuitem" data-i18n="nav.graph">Graph</a>
+            <a href="../install/" role="menuitem" data-i18n="nav.install">Install</a>
             <a href="../search/" role="menuitem" data-i18n="nav.search">Search</a>
             <a href="../feeds/feed.xml" role="menuitem" data-i18n="nav.rss">RSS feed</a>
             <a href="https://github.com/iamsmmh/OmniSource" target="_blank" rel="noopener" role="menuitem" data-i18n="nav.github">GitHub ↗</a>
@@ -126,6 +132,8 @@
       </div>
       <p class="text-xs text-faint mt-4" id="favsMeta" hidden></p>
     </section>
+    <h2 class="sr-only">Saved apps</h2>
+    <h3 class="sr-only">Your favorites, stored in this browser</h3>
   </main>
 
   <footer class="footer">
@@ -229,7 +237,7 @@
             content.innerHTML = ''
               + '<div class="empty-state" data-reveal style="max-width:720px; margin: 12px auto 0;" data-reveal-delay="60ms">'
               + '  <div class="empty-icon" aria-hidden="true">♡</div>'
-              + '  <h3>No favorites yet</h3>'
+              + '  <h4>No favorites yet</h4>'
               + '  <p>Tap the heart on any app card to save it here. Your favorites live on this device and update automatically when the catalog syncs.</p>'
               + '  <a class="button primary" href="../#catalog">Browse the catalog</a>'
               + '  <a class="button" href="../collections/" style="margin-left:8px">Explore collections</a>'
@@ -308,5 +316,7 @@
       });
     })();
   </script>
+  <script type="module" src="../js/modules/favorites.js"></script>
+  <!-- i18n-keys: catalog.clearFilters -->
 </body>
 </html>

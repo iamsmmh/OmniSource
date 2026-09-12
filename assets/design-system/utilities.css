@@ -4,35 +4,31 @@
    Small composable helpers: layout, text, spacing, visibility, page
    scaffolding (page hero + main padding) and print. Keep this file to
    one-liners — anything bigger belongs in components.css.
+
+   Dead-rule sweep (modernization pass): rules with zero usages across every
+   committed page, script, generator and doc were removed here — grid-3,
+   stack-md, row-wrap, wrap-ellipsis, min-w-0, flex-none, text-small,
+   text-tight, text-nowrap, text-center, font-bold, font-semibold, mt-1,
+   mt-5, mb-0, mb-2, mb-3, mb-4, break-anywhere. Re-add them (or better:
+   a component) when a page actually needs the rule. `scripts/audit.py`
+   re-scans for unreferenced selectors on every run.
    ========================================================================== */
 
 /* --- layout ---------------------------------------------------------------- */
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap-md); }
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-md); }
 .stack { display: flex; flex-direction: column; }
 .stack-sm { display: flex; flex-direction: column; gap: var(--gap-sm); }
-.stack-md { display: flex; flex-direction: column; gap: var(--gap-md); }
 .row { display: flex; align-items: center; gap: var(--gap-sm); }
-.row-wrap { display: flex; align-items: center; flex-wrap: wrap; gap: var(--gap-sm); }
 .spread { display: flex; align-items: center; justify-content: space-between; gap: var(--gap-md); }
 .grow { flex: 1; min-width: 0; }
 .center { display: grid; place-items: center; }
-.wrap-ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.min-w-0 { min-width: 0; }
-.flex-none { flex: none; }
 
 /* --- text ------------------------------------------------------------------ */
 .text-muted { color: var(--muted); }
 .text-faint { color: var(--faint); }
-.text-small { font-size: var(--text-sm); }
 .text-xs { font-size: var(--text-xs); }
 .text-mono { font-family: var(--font-mono); }
-.text-tight { letter-spacing: var(--track-tight); }
-.text-nowrap { white-space: nowrap; }
-.text-center { text-align: center; }
 .num { font-variant-numeric: tabular-nums; }
-.font-bold { font-weight: 800; }
-.font-semibold { font-weight: 700; }
 
 .kicker {
   display: inline-block;
@@ -43,21 +39,12 @@
 }
 
 /* --- spacing --------------------------------------------------------------- */
-.mt-1 { margin-top: var(--gap-xs); }
 .mt-2 { margin-top: var(--gap-sm); }
 .mt-3 { margin-top: var(--gap-md); }
 .mt-4 { margin-top: var(--gap-lg); }
-.mt-5 { margin-top: var(--gap-xl); }
-.mb-0 { margin-bottom: 0; }
-.mb-2 { margin-bottom: var(--gap-sm); }
-.mb-3 { margin-bottom: var(--gap-md); }
-.mb-4 { margin-bottom: var(--gap-lg); }
 
 /* --- visibility ------------------------------------------------------------ */
 [hidden] { display: none !important; }
-
-/* Long code / URLs can break out of cards. */
-.break-anywhere { overflow-wrap: anywhere; }
 
 /* --- page scaffolding (compare / status / analytics / install / search) ---- */
 .page-main { padding-bottom: var(--section-pad); }
@@ -142,6 +129,6 @@ pre code { background: none; padding: 0; }
 
 /* --- responsive helpers ------------------------------------------------------ */
 @media (max-width: 760px) {
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
   .page-head.split { grid-template-columns: 1fr; align-items: start; }
 }

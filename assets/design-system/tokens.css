@@ -543,9 +543,6 @@ kbd {
 }
 *::-webkit-scrollbar-track { background: transparent; }
 
-.hairline-top { border-top: 1px solid var(--line); }
-.hairline-bottom { border-bottom: 1px solid var(--line); }
-
 .grad-text {
   background: var(--accent-grad);
   -webkit-background-clip: text;

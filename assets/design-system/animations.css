@@ -197,13 +197,7 @@
 .os-press:hover { transform: translateY(-2px) scale(1.01); }
 .os-press:active { transform: translateY(0) scale(0.97); }
 
-/* Animated gradient surfaces. */
-.os-grad-anim {
-  background-size: 180% 180%;
-  animation: os-gradient-pan 9s ease-in-out infinite;
-}
-
-/* Skeletons — glass shimmer effect. */
+/* /* Skeletons — glass shimmer effect. */
 .os-skeleton {
   border-radius: var(--radius-lg);
   border: 1px solid var(--glass-border);
@@ -279,8 +273,7 @@ dialog.os-dialog::backdrop {
   transition: transform 0.8s var(--ease-out);
   transition-delay: var(--bar-delay, 0ms);
 }
-.is-revealed .os-bar,
-.os-bars.is-revealed .os-bar {
+.is-revealed .os-bar {
   transform: scaleY(1);
 }
 

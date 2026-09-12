@@ -62,7 +62,7 @@ OmniSource is a **metadata intelligence platform** that curates sideloaded iOS a
                          │  │  └──────────┘ └────────┘│  │
                          │  └────────────────────────┘  │
                          │                              │
-                         │  Service Worker v10          │
+                         │  Service Worker v11          │
                          │  ┌────────────────────────┐  │
                          │  │ Network-first: APIs    │  │
                          │  │ Cache-first: assets    │  │
@@ -82,9 +82,16 @@ OmniSource is a **metadata intelligence platform** that curates sideloaded iOS a
 
 1. **Sync** — Resolve newest releases from GitHub releases, AltStore feeds, Gitea/GitLab registries, and direct URLs. Uses failover chains so dead mirrors don't kill an app.
 2. **Health** — Concurrently probe every download URL, record latency and reachability.
-3. **Build** — Render AltStore v2 feeds, per-app JSON/XML, RSS, and all intelligence documents.
+3. **Build** — Render AltStore v2 feeds, per-app JSON/XML, RSS, and all intelligence documents
+   (reputation emits `Verified / Community Verified / Maintained / Warning / Inactive /
+   Deprecated` from six weighted signals; `feeds/sources.json` joins health, verification and
+   reputation so `sources/<slug>/index.html` pages and the /sources/ explorer render from one
+   document).
 4. **Validate** — Unit tests, JSON schema checks, reproducible-build check, jq lint.
-5. **Publish** — Mirror canonical feeds to flat URLs and the v1/v2 API surface, write sitemap/robots/homepage stats.
+5. **Publish** — Mirror canonical feeds to flat URLs and the v1/v2 API surface, write
+   sitemap/robots/homepage stats, refresh the generated page trees (`apps/`, `collections/`,
+   `sources/`), the static fallback table in `sources/index.html`, and the `docs/index.html`
+   hub (rendered from the Markdown on disk).
 6. **Deploy** — GitHub Actions assembles `_site/` and deploys to Pages.
 
 ## Data Contracts
@@ -102,7 +109,7 @@ OmniSource is a **metadata intelligence platform** that curates sideloaded iOS a
 | `/feeds/compare.json` | App summaries + bundle pairs (v2: slimmed) |
 | `/feeds/analytics.json` | Metrics + history |
 | `/feeds/status.json` | Source health board |
-| `/feeds/sources.json` | Source index |
+| `/feeds/sources.json` | Source index + Source Explorer roll-up (v2: `slug`, `page`, `status`, `score`, `healthScore`, `appCount`, `verifiedApps`, `updateFrequencyDays`, `lastUpdate`, per-source `statuses` map) |
 | `/feeds/collections.json` | Curated collections |
 
 ### v2 API (new, for OmniStore)
@@ -138,7 +145,30 @@ router.js  ──►  (dispatches to pages)
 - **trust-score.js** — Composite 0–100 score with letter-grade security (A+–F) and maintenance labels (Excellent/Good/Fair/Neglected/Unmaintained).
 - **router.js** — Lightweight History-API router for deep links like `/compare?app1=x&app2=y`.
 
-## Caching Strategy (Service Worker v10)
+### Module layer (`js/modules/`)
+
+ES modules added by the modernization pass; they are the canonical home for
+all *new* client logic (the legacy scripts above keep their contracts so
+existing pages and bookmarks never break). Rules: named exports only, no
+`window` writes, no build step — pages reference them with
+`<script type="module">`.
+
+```
+utils.js ── esc / fetchJSON / countUp / translate / localize
+   ├── search.js    fuzzy core: bigram Dice + capped Levenshtein, field weights
+   ├── status.js    reputation statuses → badge classes, score formatting
+   ├── theme.js     light/dark/auto (defers to core.js when that has the button)
+   ├── store.js     localStorage contract shared with features.js (favorites)
+   ├── sources.js   /sources/ controller (Phase 4): search + filters + stats
+   ├── favorites.js favorites read/toggle for module pages
+   ├── analytics.js /analytics/ progressive enhancement (sparklines)
+   ├── compare.js   ?left=&right= URL contract + winner marking
+   ├── install.js   per-client install URLs + copy helper
+   ├── collections.js collection-card hydration fallback
+   └── pwa.js       service-worker status reporting
+```
+
+## Caching Strategy (Service Worker v11)
 
 | Strategy | Used for |
 |---|---|
