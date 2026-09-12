@@ -3,207 +3,215 @@
 <img src="assets/OmniSource.png" width="120" alt="OmniSource">
 
 # OmniSource
-**The App Store for sideloaded iOS — one feed, five clients, always current.**
 
-One source URL for **AltStore · SideStore · Feather · ESign · LiveContainer**.
+**An automated, source-first aggregation platform for iOS sideloading clients.**
 
-<!-- omnisource:stats:start -->
+AltStore · SideStore · Feather · ESign · LiveContainer
 
-**94** apps · **78** upstream sources · **93** verified · **1** community verified · **94/94** downloads online · last sync **2026-09-12**.
-
-<!-- omnisource:stats:end -->
-
-[![Sync & Publish](https://github.com/iamsmmh/OmniSource/actions/workflows/sync.yml/badge.svg)](https://github.com/iamsmmh/OmniSource/actions/workflows/sync.yml)
 [![Validate](https://github.com/iamsmmh/OmniSource/actions/workflows/validate.yml/badge.svg)](https://github.com/iamsmmh/OmniSource/actions/workflows/validate.yml)
 [![Security](https://github.com/iamsmmh/OmniSource/actions/workflows/security.yml/badge.svg)](https://github.com/iamsmmh/OmniSource/actions/workflows/security.yml)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2F&label=website)](https://iamsmmh.github.io/OmniSource/)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fiamsmmh.github.io%2FOmniSource%2F)](https://iamsmmh.github.io/OmniSource/)
 [![License](https://img.shields.io/github/license/iamsmmh/OmniSource)](LICENSE)
 
-[Add the Source](#-add-the-source) · [Website](https://iamsmmh.github.io/OmniSource/) · [API](#-api) · [Docs](#-documentation) · [Contributing](CONTRIBUTING.md)
+[Website](https://iamsmmh.github.io/OmniSource/) · [Install](https://iamsmmh.github.io/OmniSource/install/) · [API](docs/API.md) · [Contributing](CONTRIBUTING.md)
 
 </div>
 
 ---
 
-## 🚀 Add the Source
+## What OmniSource does
 
-**Source URL**
+OmniSource discovers and aggregates public iOS sources, validates their feed
+and release metadata, tracks release history, enriches records, verifies
+provenance and hashes, monitors availability, and publishes deterministic
+feeds and machine-readable health reports.
 
-```
+It is deliberately **not** a social or marketplace product. There are no
+accounts, comments, reviews, ratings, behavioral profiles, personalized
+recommendation feeds, or marketplace transactions. Catalog collections are
+committed, transparent source groupings; analytics describe repository and
+release observations rather than user activity.
+
+## Add the source
+
+The compatibility feed is:
+
+```text
 https://iamsmmh.github.io/OmniSource/apps.json
 ```
 
-Tap to add in one go:
+Client-specific feeds are available at
+`feeds/clients/{altstore,sidestore,feather,esign,livecontainer}.json`.
+Single-app feeds live at `feeds/single/<slug>.json`; collection feeds live at
+`feeds/collections/<slug>.json`. All of these are generated and validated
+before publication.
 
-| Client | Link |
+| Client | Install link |
 |---|---|
-| **AltStore** | [➕ Add to AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/apps.json) |
-| **SideStore** | [➕ Add to SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/apps.json) |
-| **Feather** | [➕ Add to Feather](feather://source/iamsmmh.github.io/OmniSource/apps.json) |
-| **ESign** | [➕ Add to ESign](esign://addsource?url=https://iamsmmh.github.io/OmniSource/apps.json) |
-| **LiveContainer** | [➕ Add to LiveContainer](livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/apps.json) |
+| AltStore | [Add to AltStore](altstore://source?url=https://iamsmmh.github.io/OmniSource/apps.json) |
+| SideStore | [Add to SideStore](sidestore://source?url=https://iamsmmh.github.io/OmniSource/apps.json) |
+| Feather | [Add to Feather](feather://source/iamsmmh.github.io/OmniSource/apps.json) |
+| ESign | [Add to ESign](esign://addsource?url=https://iamsmmh.github.io/OmniSource/apps.json) |
+| LiveContainer | [Add to LiveContainer](livecontainer://sources?url=https://iamsmmh.github.io/OmniSource/apps.json) |
 
-Prefer a feed tuned to your client? Use `feeds/clients/<client>.json`
-(`altstore`, `sidestore`, `feather`, `esign`, `livecontainer`) — same
-AltStore v2 shape, client-appropriate filtering, each validated before publish.
+## Architecture
 
-> **Tip:** YouTube tweaks share a bundle ID and overwrite each other. Use a single-app feed at `feeds/<slug>.json` — each app page has a **Copy source link** button.
-
-Full guides, QR codes and per-app links: **[Installation Center](https://iamsmmh.github.io/OmniSource/install/)**
-
----
-
-## ✨ Why OmniSource?
-
-- **Official upstreams only** — every release resolves from the developer's own GitHub Releases or AltStore feed. Community-built IPAs are clearly labeled *Community build*.
-- **Verified & health-checked** — SHA-256, verification labels and automated probes keep every download installable.
-- **Fully autonomous** — discovery (12h), sync (6h), monitoring (30m), security gates and publishing run with no human in the loop; self-healing retries, repairs and rebuilds automatically.
-- **A real PWA, not just JSON** — search (⌘K), compare, health, analytics, favorites, collections and offline support — plus a modern Next.js app in [`web/`](web/).
-
----
-
-## 🌐 Website
-
-**Classic PWA** (GitHub Pages, zero frameworks): [Home](https://iamsmmh.github.io/OmniSource/) · [Apps](https://iamsmmh.github.io/OmniSource/#catalog) · [Collections](https://iamsmmh.github.io/OmniSource/collections/) · [Sources](https://iamsmmh.github.io/OmniSource/sources/) · [Status](https://iamsmmh.github.io/OmniSource/status/) · [Docs](https://iamsmmh.github.io/OmniSource/docs/) — plus [Compare](https://iamsmmh.github.io/OmniSource/compare/), [Analytics](https://iamsmmh.github.io/OmniSource/analytics/), [Install](https://iamsmmh.github.io/OmniSource/install/), [Search](https://iamsmmh.github.io/OmniSource/search/), [Favorites](https://iamsmmh.github.io/OmniSource/favorites/), [Discover](https://iamsmmh.github.io/OmniSource/discover/) and [Community](https://iamsmmh.github.io/OmniSource/api/community.json) under “More”.
-
-**Modern app** ([`web/`](web/) — Next.js 15 + TypeScript + Tailwind PWA): Home, Apps, Sources, Collections, Categories, Trending, Search, Status, Security, Statistics, About — with 8 lazy locales (EN/BN/AR/ES/FR/DE/JA/ZH), offline support and a dynamic REST API. See [web/README.md](web/README.md).
-
----
-
-## 📚 Catalog
-
-<!-- omnisource:catalog:start -->
-
-Browse the full **94-app catalog** on the [website](https://iamsmmh.github.io/OmniSource/#catalog) — all installable with one tap.
-
-- Combined feeds: [`feeds/apps.json`](./feeds/apps.json), [`feeds/feed.xml`](./feeds/feed.xml), [`Catalog.json`](./Catalog.json)
-- Substrate docs: [`feeds/sources.json`](./feeds/sources.json), [`feeds/discovery.json`](./feeds/discovery.json), [`feeds/health.json`](./feeds/health.json), [`feeds/updates.json`](./feeds/updates.json), [`feeds/verification.json`](./feeds/verification.json)
-- Per-app feeds at `feeds/<slug>.json` and `feeds/<slug>.xml` — e.g. [`feeds/esign.json`](./feeds/esign.json)
-
-_Last sync 2026-09-12 · 94/94 downloads reachable._
-
-<!-- omnisource:catalog:end -->
-
----
-
-## 🏗️ Architecture
-
-```
-Discovery (12h) ──▶ Validation ──▶ catalog.json (explicit promotion only)
-                                          │
-catalog.json → sync (6h) → feeds/*.json → publish → data/* + feeds/clients/* + api/v3/*
-                                          │                      │
-                                          ▼                      ▼
-                                   static PWA → Pages     web/ Next.js → Node host
-monitoring (30m) → data/status.json + self-heal │ security gate │ analytics (daily)
+```mermaid
+flowchart LR
+    A[GitHub search and feed probes] --> B[data/discovered_sources.json]
+    B --> C[Validation engine]
+    C -->|invalid| Q[data/quarantine/]
+    C --> D[Verification and registry]
+    D --> E[Canonical app and release ledgers]
+    E --> F[Metadata enrichment]
+    F --> G[Reputation and security gates]
+    G --> H[Incremental feed generation]
+    H --> I[AltStore-family feeds]
+    H --> J[Static API and Next.js web]
+    K[30-minute monitoring] --> L[data/status.json]
+    L --> M[Self-healing and mirror failover]
+    M --> H
 ```
 
-- **Discovery** — GitHub code search, feed probes, release scans, web catalogs → `data/discovered_sources.json`. [Docs](docs/DISCOVERY.md)
-- **Validation** — schema, URLs, bundle IDs, digests, duplicates. Invalid feeds never publish.
-- **Deduplication** — canonical app DB (`data/canonical_apps.json`, 83 apps from 94 records).
-- **Release tracking** — append-only ledger with rollback (`data/release_history.json`).
-- **Reputation** — 0–100 → verified/trusted/good/warning/untrusted + quarantine (`data/source_reputation.json`).
-- **Health** — 30-minute probes → `data/status.json` (online/degraded/offline).
-- **Self-healing** — retry/repair/replace/rebuild plans (`data/selfheal_report.json`).
-- **Mirrors** — tiered failover registry (`data/mirrors.json`).
-- **Security** — SHA-256/512, duplicate binaries, integrity, provenance → `data/security.json`, fails closed on critical.
-- **Analytics** — daily/weekly/monthly windows (`data/analytics_rollup.json`).
+The source of truth is the hand-maintained `catalog.json` plus append-only
+operational records. Generated feeds and pages are never hand-edited.
 
-Details: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · [Operations runbook](docs/OPERATIONS.md) · [Audit report](audit-report.md)
+| Concern | Implementation | Durable output |
+|---|---|---|
+| Discovery | `scripts/discovery/` (12-hour GitHub/feed/repository passes) | `data/discovered_sources.json` |
+| Quarantine | `src/omnisource/quarantine.py` | `data/quarantine/sources.json` |
+| Validation | feed, source, release, metadata validators | rejected candidates never publish |
+| Deduplication | bundle/app/repository/release/binary identity keys | `data/canonical_apps.json` |
+| Registry | lifecycle, classification, history, health and reputation | `data/source_registry.json` |
+| Release tracking | append-only version ledger and rollback planning | `data/release_history.json` |
+| Enrichment | normalized developer, descriptions, icons, screenshots and notes | `data/enriched_apps.json` |
+| Security | SHA-256/SHA-512 coverage, optional streamed binary verification, provenance | `data/security.json`, `security-report.json` |
+| Monitoring | source/feed/download probes and state transitions | `data/status.json` |
+| Intelligence | source growth/decline, app churn, cadence and timelines | `data/source_intelligence.json` |
+| Search | fuzzy, developer/source/category/tag ranking | `feeds/search-index.json`, API v3 |
+| Persistence | JSON adapter now; SQLite and generic DB-API adapters ready | `src/omnisource/repository.py` |
+| Extensibility | typed event bus and reviewed plugin ports | `src/omnisource/events.py`, `plugins/` |
 
----
+## Repository layout
 
-## ⚙️ How It Works
-
+```text
+catalog.json                  hand-maintained application/source declarations
+src/omnisource/                domain services, providers, pipeline and adapters
+scripts/discovery/             scheduled discovery commands
+scripts/validation/            publication gates
+scripts/monitoring/            health and status commands
+scripts/registry/              source registry build
+scripts/intelligence/          source/package intelligence build
+scripts/security/              security report and optional binary scan
+scripts/backup/                verified disaster-recovery snapshots
+feeds/                         canonical generated client and intelligence feeds
+api/                           backward-compatible static API mirrors
+web/                           Next.js 15 + TypeScript + Tailwind PWA
+js/                            zero-dependency GitHub Pages frontend
+schemas/                       machine-readable contracts
+data/quarantine/              isolated untrusted discovery records
+docs/                          architecture, API and operations guides
 ```
-catalog.json → scripts/omnisource.py (src/omnisource/, stdlib only)
-            → feeds/*.json + apps/<slug>/ + api/*
-            → scripts/build_site.py → _site/ → GitHub Pages
-```
 
-1. **Sync** — resolve newest release from declared upstream (GitHub / developer feed)
-2. **Health** — probe every download URL
-3. **Build** — render feeds, RSS, badges, intelligence docs and app pages
-4. **Validate** — `ruff` + `scripts/validate.py` + `check_reproducible.py`
-5. **Publish** — refresh `apps.json`, `/api/`, derived artifacts and deploy
+## Local development
+
+Runtime code uses Python's standard library. Python 3.11 or newer is required.
+Node 22 is used for the modern web application.
 
 ```bash
-make build        # sync + health + build
-make derived      # canonical DB + ledger + enrichment + reputation + client feeds + API v3
-make monitoring   # status + self-heal + mirrors (offline)
-make security     # feed validation + security gate
-make serve        # preview at http://localhost:8000
-make check        # validate + tests
-python3 scripts/omnisource.py --no-sync   # offline rebuild
+# Run from the repository root
+export PYTHONPATH=src
+python3 -m unittest discover -s tests
+python3 scripts/validate.py
+python3 scripts/validation/validate_feed.py feeds/apps.json --allow-duplicates
+python3 scripts/validation/validate_metadata.py feeds/apps.json
+python3 scripts/audit.py
+
+# Offline deterministic pipeline
+make build             # sync configured upstreams and rebuild feeds
+make derived           # canonical, history, enrichment, registry and API
+make monitoring        # status, self-healing and mirrors (offline-safe)
+make security          # validation plus security report
+make check             # lint/validation/tests/smoke checks when tools are installed
+make serve             # build and serve the static site on 0.0.0.0:8000
 ```
 
-Key paths: `catalog.json` source of truth · `src/omnisource/` pipeline · `scripts/` CLIs · `feeds/` output · `data/` operations · `js/` + `assets/design-system/` classic frontend · `web/` modern app
+Do not put IPA payloads, tokens, or HTTP caches in Git. Use `.env` locally
+(`.env.example` documents supported overrides); credentials are scoped to
+provider API hosts and are never attached to download probes.
 
----
+## API and website
 
-## 🔌 API
+The backward-compatible feed/API surface remains available:
 
-- **API v3** (new) — `api/v3/apps`, `/app/{id}`, `/sources`, `/source/{id}`, `/trending`, `/search`, `/status`, `/security`, `/analytics`, `/releases` with pagination, sorting, filtering, ETag/`304`, compression and cache control — static snapshots on Pages + dynamic routes in `web/`. [API v3 docs](docs/API-V3.md)
-- **API v2 / flat docs** (unchanged) — `apps.json`, `catalog.json`, `health.json`, `analytics.json`, `install.json`, `search-index.json`, `sources.json` and more, each with `.gz` and listed in `api/index.json`. [API docs](docs/API.md)
+- `apps.json` — AltStore Source v2 feed;
+- `api/*.json` — flat machine-readable snapshots and gzip twins;
+- `api/v2/` — legacy delta-friendly endpoints;
+- `api/v3/` — versioned pagination, filtering, sorting, fuzzy search, ETags,
+  cache headers, sources, releases, status, security and analytics.
 
-Clients: [`sdk/javascript/`](sdk/javascript/) (`npm i github:iamsmmh/OmniSource/sdk/javascript`) · [`sdk/python/`](sdk/python/) (`python3 -m pip install ./sdk/python`)
+The modern app in `web/` provides Home, Apps, Sources, Collections, Categories,
+Developers, Statistics, Status, Security, Search, About, source timelines,
+source detail pages, and app release/security detail pages. It supports English,
+Bangla, Arabic, Spanish, French, German, Japanese, and Chinese with lazy
+loading and English fallback. The static PWA remains the GitHub Pages safety
+path while `web/` can run on any Node host.
 
-Source-level data lives in [`feeds/sources.json`](feeds/sources.json) and is published as static pages under [`sources/`](sources/) — generated by the build, never hand-edited.
+```bash
+cd web
+npm ci
+npm run typecheck
+npm run lint
+npm run build
+npm run dev
+```
 
----
+See [docs/API-V3.md](docs/API-V3.md) for the contract and
+[web/README.md](web/README.md) for deployment.
 
-## 📖 Documentation
+## Automation
 
-| Guide | Covers |
-|---|---|
-| [audit-report.md](audit-report.md) | Full repository audit: findings, fixes, residual risks |
-| [docs/MODERNIZATION.md](docs/MODERNIZATION.md) | Delivery index: file-by-file changes, verification, readiness 9.0/10 |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | System design + data flow |
-| [docs/API-V3.md](docs/API-V3.md) | API v3 contract + examples |
-| [docs/DISCOVERY.md](docs/DISCOVERY.md) | Autonomous discovery + validation gate |
-| [docs/OPERATIONS.md](docs/OPERATIONS.md) | Monitoring, self-healing, mirrors, analytics, incidents |
-| [docs/SECURITY-REPORT.md](docs/SECURITY-REPORT.md) | Threat model, controls, current posture |
-| [docs/PERFORMANCE-REPORT.md](docs/PERFORMANCE-REPORT.md) | Scale design, measurements, 1k+/10k+ guidance |
-| [docs/MIGRATION.md](docs/MIGRATION.md) | 3.1 → 3.2 upgrade (backward compatible) |
-| [docs/DEPLOYMENT-GUIDE.md](docs/DEPLOYMENT-GUIDE.md) | Deployment |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution guide |
+| Workflow | Schedule | Purpose |
+|---|---:|---|
+| `discovery.yml` | every 12 hours | discover candidates and isolate invalid sources |
+| `sync.yml` | every 6 hours | resolve releases, build and publish feeds |
+| `validation.yml` / `validate.yml` | PR/push | structural, metadata, translation and regression gates |
+| `monitoring.yml` | every 30 minutes | probes, status, self-healing plans and mirrors |
+| `security.yml` | daily + supply-chain changes | security report and fail-closed critical gate |
+| `analytics.yml` | daily | daily/weekly/monthly rollups |
+| `publish.yml` | after feed changes + daily | canonical registry, intelligence, client feeds and API |
+| `backup.yml` | daily/weekly/monthly | verified metadata-only recovery artifacts |
+| `website.yml` | web changes | Next.js typecheck, lint and production build |
 
----
+Every shell block uses strict mode, quoted variables, HTTPS allowlists, least
+privilege permissions, concurrency controls, and an explicit commit allowlist.
+Untrusted workflow inputs are passed through environment variables and
+validated before use.
 
-## 🤝 Contributing
+## Documentation
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Edit **`catalog.json`** only — never generated files. Run `python3 scripts/omnisource.py` and commit regenerated output.
+- [Complete audit](audit-report.md)
+- [Architecture and diagram](docs/ARCHITECTURE.md)
+- [Discovery and quarantine](docs/DISCOVERY.md)
+- [API documentation](docs/API.md) · [API v3](docs/API-V3.md)
+- [Operations and self-healing](docs/OPERATIONS.md)
+- [Security report](docs/SECURITY-REPORT.md)
+- [Performance report](docs/PERFORMANCE-REPORT.md)
+- [Migration guide](docs/MIGRATION.md)
+- [Deployment guide](docs/DEPLOYMENT-GUIDE.md)
+- [Final deliverables and known limitations](docs/FINAL-DELIVERABLES.md)
+- [Contributing](CONTRIBUTING.md)
 
-[Request an app](https://github.com/iamsmmh/OmniSource/issues/new?template=01-app-request.yml) · [Broken upstream](https://github.com/iamsmmh/OmniSource/issues/new?template=02-broken-upstream.yml) · [Bug report](https://github.com/iamsmmh/OmniSource/issues/new?template=03-bug-report.yml) · [Feature idea](https://github.com/iamsmmh/OmniSource/issues/new?template=04-feature-idea.yml)
+## Contribution policy
 
----
+Edit `catalog.json`, schemas, source modules, or documentation—not generated
+feeds, API copies, app pages, or operational snapshots. Add a test for every
+new validator or provider. Run `make check` and the relevant workflow command
+before opening a pull request. New source formats should use a plugin rather
+than modifying core dispatch code.
 
-## ❓ FAQ
+## License
 
-**Can I install two YouTube apps side by side?**
-No — they share a bundle ID. Add only the one you want via its single-app feed. The [compare page](https://iamsmmh.github.io/OmniSource/compare/) helps you choose.
-
-**How do updates work?**
-Refresh sources in your client — upstreams sync every 6h, health is monitored every 30m. Or subscribe to `feeds/<slug>.xml`.
-
-**What do the badges mean?**
-Per app: 🟢 stable · 🟡 beta · 🔵 manual · 🔴 unmaintained — plus *Official* / *Community* build and ✅/⚠️ reachability.
-Per source: **Verified** (valid feed, reachable, updated <180 days ago) · **Community Verified** · **Maintained** · **Warning** (broken entries/links/probes) · **Inactive** (no release in a year) · **Deprecated** (archived).
-Autonomous trust ladder: `verified ≥85 / trusted ≥70 / good ≥50 / warning ≥25 / untrusted <25` (quarantined).
-
-**Is this safe?**
-Metadata only, every entry discloses provenance and hash. The security gate blocks publication on critical findings. Sideloading trusts the app's developer — OmniSource just makes it transparent.
-
----
-
-## ⚖️ License
-
-Independent community project. Apps and trademarks belong to their owners. [GPL-3.0](LICENSE)
-
-<div align="center">
-
-⭐ **Star this repo if it makes sideloading easier** ⭐
-
-[🌐 Website](https://iamsmmh.github.io/OmniSource/) · [📲 Install](https://iamsmmh.github.io/OmniSource/install/) · [🔌 API](docs/API.md)
-
-</div>
+OmniSource is GPL-3.0. App names, icons, trademarks, and upstream releases
+belong to their respective owners. OmniSource aggregates metadata and links to
+public publishers; it does not claim ownership of upstream binaries.

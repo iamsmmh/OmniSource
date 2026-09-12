@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/source-registry.schema.json",
+  "title": "OmniSource global source registry",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "count", "sources"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "generatedAt": { "type": "string" },
+    "count": { "type": "integer", "minimum": 0 },
+    "classifications": { "type": "object" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "source_name", "source_type", "source_url", "classification", "verification_status", "reputation_score", "health_status", "first_seen", "last_seen"],
+        "properties": {
+          "source_id": { "type": "string", "minLength": 1 },
+          "source_name": { "type": "string", "minLength": 1 },
+          "source_type": { "type": "string" },
+          "source_url": { "type": "string", "format": "uri" },
+          "classification": { "enum": ["Official", "Verified", "Community", "Experimental", "Archived"] },
+          "verification_status": { "type": "string" },
+          "reputation_score": { "type": "number", "minimum": 0, "maximum": 100 },
+          "health_status": { "enum": ["online", "degraded", "offline", "unknown"] },
+          "first_seen": { "type": "string" },
+          "last_seen": { "type": "string" },
+          "history": { "type": "array" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

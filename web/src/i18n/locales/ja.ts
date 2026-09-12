@@ -7,6 +7,7 @@ const dict: Dictionary = {
     sources: "ソース",
     collections: "コレクション",
     categories: "カテゴリ",
+    developers: "開発者",
     trending: "トレンド",
     search: "検索",
     status: "ステータス",

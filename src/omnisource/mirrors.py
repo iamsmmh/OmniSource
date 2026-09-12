@@ -94,7 +94,7 @@ def select_mirrors(
         key=lambda item: (
             not item["healthy"],
             item["primary"] is False and item["healthy"] is False,
-            TIER_PRIORITY.get(str(item["type"]), 99),
+            tier_rank(item),
             item["primary"],
         )
     )

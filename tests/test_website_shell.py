@@ -143,10 +143,10 @@ class TestWebsiteShell(unittest.TestCase):
 
     def test_root_carries_no_hand_maintained_json_besides_the_catalog(self) -> None:
         # The publisher owns every root-level *.json/*.xml except the
-        # hand-maintained catalog.json and the published apps.json/sitemap;
-        # it prunes anything else, so a new hand-maintained root document
+        # hand-maintained catalog.json, published apps.json, security report,
+        # and sitemap; it prunes anything else, so an accidental root document
         # would be deleted at the next build.
-        allowed = {"catalog.json", "apps.json", "sitemap.xml"}
+        allowed = {"catalog.json", "apps.json", "security-report.json", "sitemap.xml"}
         for path in sorted(ROOT.glob("*")):
             if path.is_file() and path.suffix.lower() in {".json", ".xml"}:
                 self.assertIn(path.name, allowed, f"unexpected hand-maintained root file: {path.name}")

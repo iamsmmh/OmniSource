@@ -6,7 +6,7 @@ import { getGeneratedAt, getApps, getSources } from "@/lib/data";
 import { getLangDict, isRtl } from "@/lib/lang";
 
 export const metadata: Metadata = {
-  title: { default: "OmniSource — Sideload App Store", template: "%s · OmniSource" },
+  title: { default: "OmniSource — verified source catalog", template: "%s · OmniSource" },
   description: "One feed for AltStore, SideStore, Feather, ESign and LiveContainer. Always current.",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, title: "OmniSource", statusBarStyle: "default" },

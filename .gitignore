@@ -22,3 +22,6 @@ src/omnisource.egg-info/
 
 # Asset / HTTP cache (never commit IPA payloads; this dir is metadata only)
 .cache/
+
+# Local disaster-recovery snapshots (uploaded by CI, never committed)
+.backups/

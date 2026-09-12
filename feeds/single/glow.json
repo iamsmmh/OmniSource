@@ -1,0 +1,118 @@
+{
+  "name": "OmniSource — Glow",
+  "identifier": "com.iamsmmh.omnisource.glow",
+  "apiVersion": "v2",
+  "subtitle": "Single-app source",
+  "description": "Single-app feed for Glow.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+  "apps": [
+    {
+      "name": "Glow",
+      "bundleIdentifier": "com.facebook.Facebook.glow",
+      "developerName": "dayanch96 & IPA Vault",
+      "subtitle": "Clean, powerful Facebook tweak by dayanch96",
+      "localizedDescription": "Glow is a simple, clean and powerful tweak for Facebook by Dayanch96: it removes ads and sponsored content, adds video downloads, unlocks media quality options and hides unwanted UI elements on top of the official Facebook app.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Facebook.webp",
+      "tintColor": "1877F2",
+      "category": "social",
+      "version": "577.1",
+      "versionDate": "2026-09-05",
+      "versionDescription": "Facebook 577.1 | Facebook-577.1-Glow\n\nIPA Vault build for Facebook (Glow), version 577.1",
+      "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+      "size": 226667533,
+      "versions": [
+        {
+          "version": "577.1",
+          "date": "2026-09-05",
+          "localizedDescription": "Facebook 577.1 | Facebook-577.1-Glow\n\nIPA Vault build for Facebook (Glow), version 577.1",
+          "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+          "size": 226667533,
+          "minOSVersion": "15.1",
+          "releaseUrl": null,
+          "source": "altstore",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Facebook-577.1-Glow.ipa",
+              "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Facebook-577.1-Glow.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 226667533,
+              "sha256": null,
+              "downloads": 0,
+              "mimeType": null,
+              "installable": true
+            }
+          ]
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.security.application-groups",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.device-information.user-assigned-device-name",
+          "com.apple.developer.group-session",
+          "keychain-access-groups",
+          "com.apple.developer.networking.multicast",
+          "aps-environment",
+          "com.apple.developer.siri",
+          "com.apple.developer.networking.wifi-info"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+        }
+      },
+      "omnisource": {
+        "slug": "glow",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/dayanch96/Glow",
+        "sourceURL": "https://raw.githubusercontent.com",
+        "verification": {
+          "method": "altstore",
+          "publisher": "927tx/IPA-Vault",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "15.1",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Tracks the ready-to-sideload Glow build from the IPA Vault source (the official dayanch96/Glow repo publishes the tweak as .deb only). Facebook 577.x builds require iOS 15.1 or newer. Uses its own bundle identifier, so it installs alongside the stock App Store Facebook."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 200",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2026-09-05"
+        }
+      }
+    }
+  ],
+  "news": []
+}

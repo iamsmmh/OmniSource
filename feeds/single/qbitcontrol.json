@@ -1,0 +1,95 @@
+{
+  "name": "OmniSource — qBitControl",
+  "identifier": "com.iamsmmh.omnisource.qbitcontrol",
+  "apiVersion": "v2",
+  "subtitle": "Single-app source",
+  "description": "Single-app feed for qBitControl.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/qBitControl.webp",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+  "apps": [
+    {
+      "name": "qBitControl",
+      "bundleIdentifier": "MikeMichael225.qBitControl",
+      "developerName": "Michael-128",
+      "subtitle": "qBittorrent remote control for iOS",
+      "localizedDescription": "qBitControl is a native qBittorrent remote control app for iPhone and iPad. Manage your torrents from anywhere: add, pause, resume and recheck torrents, browse files and set priorities, configure speed and seeding limits, use custom HTTP headers and self-signed certificates, and track RSS feeds — all against your own qBittorrent WebUI.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/qBitControl.webp",
+      "tintColor": "3C76C5",
+      "category": "utilities",
+      "version": "1.4.1",
+      "versionDate": "2026-07-23",
+      "versionDescription": "qBitControl 1.4.1 | qBitControl\n\n## 📊 Performance & Efficiency\n\n- **Reduced Data Usage:** Network traffic reduced by **93%** thanks to optimized data syncing.\n- **Smooth Charts:** Statistics charts now scroll continuously and smoothly instead of updating every two seconds.\n- **Responsive Progress Bars:** Progress indicators now feature fluid animations for a more natural feel.\n\n## 🛠️ Interface & Usability\n\n- **Custom Headers:** Specify custom HTTP headers for server connections—offering seamless support for reverse proxies and zero-trust networks (e.g., Cloudflare Access, Authelia).\n- **Reworked Server Addition:** Redesigned server setup and edit screens with an updated *Advanced* settings page and deferred saving.\n- **Limit Configuration:** Configure precise speed limits, seeding time limits, and share ratios for individual torrents directly in-app.\n- **Cleaner Torrent List:** Torrent rows now adapt dynamically to show the most relevant details depending on whether a transfer is downloading, seeding, or paused.\n- **Repositioned Add Button:** Moved the \"Add Torrent\" button to the toolbar for cleaner, more intuitive access.\n- **Offline Banner:** A clear overlay banner now appears whenever your connection drops.\n- **In-App Logs:** Added a built-in log viewer to review and easily share system events directly inside the app.\n\n## 🐛 Fixes & Refinements\n\n- **Self-Signed Certificate Support:** Full support for untrusted and self-signed SSL certificates, making it easier to connect to home-hosted servers.\n- **Stable RSS Downloads:** Fixed an issue in the RSS view where tapping a row to download a torrent caused the confirmation sheet to glitch and reopen unexpectedly.\n- **Connection Timeouts:** Implemented strict network timeouts to prevent the app from hanging indefinitely on the launch screen if a server is unresponsive.\n- **Clearer Error Alerts:** If adding a `.torrent` file or magnet link fails, a clear error message now pops up explaining what went wrong.",
+      "downloadURL": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
+      "size": 4777720,
+      "versions": [
+        {
+          "version": "1.4.1",
+          "date": "2026-07-23",
+          "localizedDescription": "qBitControl 1.4.1 | qBitControl\n\n## 📊 Performance & Efficiency\n\n- **Reduced Data Usage:** Network traffic reduced by **93%** thanks to optimized data syncing.\n- **Smooth Charts:** Statistics charts now scroll continuously and smoothly instead of updating every two seconds.\n- **Responsive Progress Bars:** Progress indicators now feature fluid animations for a more natural feel.\n\n## 🛠️ Interface & Usability\n\n- **Custom Headers:** Specify custom HTTP headers for server connections—offering seamless support for reverse proxies and zero-trust networks (e.g., Cloudflare Access, Authelia).\n- **Reworked Server Addition:** Redesigned server setup and edit screens with an updated *Advanced* settings page and deferred saving.\n- **Limit Configuration:** Configure precise speed limits, seeding time limits, and share ratios for individual torrents directly in-app.\n- **Cleaner Torrent List:** Torrent rows now adapt dynamically to show the most relevant details depending on whether a transfer is downloading, seeding, or paused.\n- **Repositioned Add Button:** Moved the \"Add Torrent\" button to the toolbar for cleaner, more intuitive access.\n- **Offline Banner:** A clear overlay banner now appears whenever your connection drops.\n- **In-App Logs:** Added a built-in log viewer to review and easily share system events directly inside the app.\n\n## 🐛 Fixes & Refinements\n\n- **Self-Signed Certificate Support:** Full support for untrusted and self-signed SSL certificates, making it easier to connect to home-hosted servers.\n- **Stable RSS Downloads:** Fixed an issue in the RSS view where tapping a row to download a torrent caused the confirmation sheet to glitch and reopen unexpectedly.\n- **Connection Timeouts:** Implemented strict network timeouts to prevent the app from hanging indefinitely on the launch screen if a server is unresponsive.\n- **Clearer Error Alerts:** If adding a `.torrent` file or magnet link fails, a clear error message now pops up explaining what went wrong.",
+          "downloadURL": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
+          "size": 4777720,
+          "minOSVersion": "16.0",
+          "releaseUrl": "https://github.com/Michael-128/qBitControl/releases/tag/release-1.4.1",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "qBitControl.ipa",
+              "downloadUrl": "https://github.com/Michael-128/qBitControl/releases/download/release-1.4.1/qBitControl.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 4777720,
+              "sha256": "4a218f22120e5251fac7383c36169adbbf0503453aac339cc5573df4bb6dc6c3",
+              "downloads": 231,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "sha256": "4a218f22120e5251fac7383c36169adbbf0503453aac339cc5573df4bb6dc6c3",
+          "downloads": 231
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "qbitcontrol",
+        "status": "stable",
+        "featured": false,
+        "upstreamURL": "https://github.com/Michael-128/qBitControl",
+        "sourceURL": "https://github.com/Michael-128/qBitControl",
+        "verification": {
+          "method": "github-release",
+          "publisher": "Michael-128/qBitControl",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "16.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official release IPAs from the developer's GitHub releases (release-* tags, iOS 16+). The developer also publishes newer continuous builds under build-ci-* tags; this feed tracks the stable release channel."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2026-07-23"
+        }
+      }
+    }
+  ],
+  "news": []
+}

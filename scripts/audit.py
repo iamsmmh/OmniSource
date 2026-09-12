@@ -46,7 +46,20 @@ ROOT = Path(__file__).resolve().parents[1]
 REPORTS_DIR = ROOT / "reports"
 
 # Directories that never count as "code" for ownership/usage scans.
-SKIP_DIRS = {".git", "node_modules", "__pycache__", ".cache", "_site", ".ruff_cache", ".mypy_cache"}
+SKIP_DIRS = {
+    ".git",
+    "node_modules",
+    "__pycache__",
+    ".cache",
+    "_site",
+    ".next",
+    ".output",
+    "dist",
+    "build",
+    "coverage",
+    ".ruff_cache",
+    ".mypy_cache",
+}
 # Generated trees: files there are outputs, not hand-maintained code.
 GENERATED_TREES = ("feeds/", "api/", "apps/", "collections/", "compare/", "reports/")
 
@@ -776,7 +789,7 @@ def write_workflows() -> Report:
         rows.append(
             (
                 f"`{path.name}`",
-                name.strip() if isinstance(name, str) else name,
+                name.strip() if isinstance(name, str) else (name.group(1).strip() if hasattr(name, "group") else str(name)),
                 triggers,
                 perms,
                 timeouts,

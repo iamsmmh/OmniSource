@@ -162,24 +162,32 @@ def integrity_errors(doc: dict[str, Any]) -> list[str]:
 # ---------------------------------------------------------------------------
 
 
-def stream_sha256(http: Any, url: str, *, timeout: float = 300.0) -> tuple[int, str]:
-    """Download ``url`` in chunks; return ``(byte_count, sha256_hex)``.
+def stream_hashes(http: Any, url: str, *, timeout: float = 300.0) -> dict[str, Any]:
+    """Download ``url`` in chunks and return byte count, SHA-256, and SHA-512.
 
-    Raises ``OSError`` on transport failure or a zero-byte body so callers can
-    mark the download corrupted instead of publishing a partial verdict.
+    The stream is never retained in memory. Raises ``OSError`` on transport
+    failure or a zero-byte body so callers cannot publish a partial verdict.
     """
-    digest = hashlib.sha256()
+    sha256 = hashlib.sha256()
+    sha512 = hashlib.sha512()
     total = 0
     with http.open_stream(url, timeout=timeout) as response:
         while True:
             data = response.read(1024 * 1024)
             if not data:
                 break
-            digest.update(data)
+            sha256.update(data)
+            sha512.update(data)
             total += len(data)
     if total == 0:
         raise OSError("downloaded asset is zero bytes")
-    return total, digest.hexdigest()
+    return {"bytes": total, "sha256": sha256.hexdigest(), "sha512": sha512.hexdigest()}
+
+
+def stream_sha256(http: Any, url: str, *, timeout: float = 300.0) -> tuple[int, str]:
+    """Backward-compatible SHA-256-only view of :func:`stream_hashes`."""
+    result = stream_hashes(http, url, timeout=timeout)
+    return int(result["bytes"]), str(result["sha256"])
 
 
 def verify_downloads(
@@ -206,22 +214,28 @@ def verify_downloads(
         newest = newest_version(state, app.slug)
         url = str(newest.get("downloadURL") or "")
         expected_sha = newest.get("sha256")
+        expected_sha512 = newest.get("sha512")
         expected_size = newest.get("size")
         started = time.monotonic()
         record: dict[str, Any] = {
             "slug": app.slug,
             "url": url,
             "expectedSha256": str(expected_sha) if expected_sha else None,
+            "expectedSha512": str(expected_sha512) if expected_sha512 else None,
             "expectedSize": int(expected_size) if isinstance(expected_size, (int, float)) else None,
         }
         try:
             timeout = max(60.0, float(container.settings.health_timeout) * 10)
-            size, sha = stream_sha256(container.http, url, timeout=timeout)
+            hashes = stream_hashes(container.http, url, timeout=timeout)
+            size, sha = int(hashes["bytes"]), str(hashes["sha256"])
             record["size"] = size
             record["sha256"] = sha
+            record["sha512"] = str(hashes["sha512"])
             problems = []
             if expected_sha and str(expected_sha).lower() != sha.lower():
-                problems.append("hash mismatch")
+                problems.append("sha256 mismatch")
+            if expected_sha512 and str(expected_sha512).lower() != str(hashes["sha512"]).lower():
+                problems.append("sha512 mismatch")
             if expected_size and int(expected_size) != size:
                 problems.append("size mismatch")
             if not _is_ipa(url):

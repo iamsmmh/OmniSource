@@ -8,7 +8,7 @@ const LINKS: Array<{ href: string; key: keyof Dictionary["nav"] }> = [
   { href: "/sources", key: "sources" },
   { href: "/collections", key: "collections" },
   { href: "/categories", key: "categories" },
-  { href: "/trending", key: "trending" },
+  { href: "/developers", key: "developers" },
   { href: "/search", key: "search" },
   { href: "/status", key: "status" },
   { href: "/security", key: "security" },

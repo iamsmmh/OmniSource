@@ -93,15 +93,29 @@ def new_record(
     extra: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build one discovery record in the canonical store schema."""
+    first_seen = discovered_at or utcnow()
+    normalized_type = feed_type if feed_type in KNOWN_TYPES else "unknown"
+    score = max(0, min(100, int(reputation)))
     record: dict[str, Any] = {
+        # Legacy keys remain part of the public discovery contract.
         "source_id": source_id_for_url(url),
         "name": name or url,
         "url": url,
-        "type": feed_type if feed_type in KNOWN_TYPES else "unknown",
-        "discovered_at": discovered_at or utcnow(),
-        "last_checked": discovered_at or utcnow(),
+        "type": normalized_type,
+        "discovered_at": first_seen,
+        "last_checked": first_seen,
         "health": health,
-        "reputation": max(0, min(100, int(reputation))),
+        "reputation": score,
+        # Canonical registry/quarantine aliases. Keeping both spellings lets
+        # older consumers upgrade without a flag day.
+        "source_name": name or url,
+        "source_type": normalized_type,
+        "source_url": url,
+        "first_seen": first_seen,
+        "last_seen": first_seen,
+        "health_status": health,
+        "verification_status": "unverified",
+        "reputation_score": score,
     }
     if extra:
         record["meta"] = dict(extra)
@@ -422,16 +436,30 @@ def merge_records(existing: list[dict[str, Any]], found: list[dict[str, Any]]) -
         if not url:
             continue
         if url in by_url:
-            by_url[url]["last_checked"] = now
+            current = by_url[url]
+            current["last_checked"] = now
+            current["last_seen"] = now
             if entry.get("health") not in (None, HEALTH_UNKNOWN):
-                by_url[url]["health"] = entry["health"]
-            for key in ("name", "type"):
+                current["health"] = entry["health"]
+                current["health_status"] = entry["health"]
+            for key in ("name", "type", "source_name", "source_type", "verification_status"):
                 if entry.get(key):
-                    by_url[url][key] = entry[key]
+                    current[key] = entry[key]
+            if entry.get("reputation") is not None:
+                current["reputation"] = entry["reputation"]
+                current["reputation_score"] = entry["reputation"]
         else:
             fresh = dict(entry)
             fresh.setdefault("discovered_at", now)
+            fresh.setdefault("first_seen", fresh["discovered_at"])
             fresh["last_checked"] = now
+            fresh["last_seen"] = now
+            fresh.setdefault("source_name", fresh.get("name", url))
+            fresh.setdefault("source_type", fresh.get("type", "unknown"))
+            fresh.setdefault("source_url", url)
+            fresh.setdefault("health_status", fresh.get("health", HEALTH_UNKNOWN))
+            fresh.setdefault("verification_status", "unverified")
+            fresh.setdefault("reputation_score", fresh.get("reputation", 0))
             by_url[url] = fresh
     return [by_url[key] for key in sorted(by_url)]
 

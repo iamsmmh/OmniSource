@@ -27,6 +27,14 @@
         "last_checked": { "type": "string" },
         "health": { "type": "string", "enum": ["unknown", "online", "degraded", "offline"] },
         "reputation": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "source_name": { "type": "string" },
+        "source_type": { "type": "string" },
+        "source_url": { "type": "string", "format": "uri" },
+        "first_seen": { "type": "string" },
+        "last_seen": { "type": "string" },
+        "health_status": { "type": "string" },
+        "verification_status": { "type": "string" },
+        "reputation_score": { "type": "integer", "minimum": 0, "maximum": 100 },
         "meta": { "type": "object" }
       }
     }

@@ -27,7 +27,6 @@ const serverDocs = [
   "discovery.json",
   "sources.json",
   "collections.json",
-  "trending.json",
   "status.json",
   "analytics.json",
   "search-index.json",
@@ -43,7 +42,6 @@ copy("catalog.json", "src/data/catalog.json");
 copy("api/v3/apps.json", "public/data/v3/apps.json");
 copy("api/v3/search-index.json", "public/data/v3/search-index.json");
 copy("api/v3/status.json", "public/data/v3/status.json");
-copy("api/v3/trending.json", "public/data/v3/trending.json");
 
 // Build stamp for the footer / diagnostics.
 const stamp = { syncedAt: new Date().toISOString(), root: "OmniSource" };

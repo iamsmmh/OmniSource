@@ -1,70 +1,69 @@
-# Security Report — OmniSource 3.2.0
+# Security report
 
-## Threat model
+**Assessment date:** 2026-09-12
+**Report artifacts:** `data/security.json` and `security-report.json`
+**Gate:** critical findings block publication
 
-OmniSource aggregates **metadata** (never IPA payloads in-repo). Attack
-surface: (1) malicious upstream feeds/releases, (2) compromised Actions
-inputs or workflows, (3) credential leakage to third-party hosts,
-(4) tampered binaries served upstream.
+## Scope
+
+The security gate covers workflow execution, source/feed inputs, download
+metadata, provenance, release assets, mirrors, and generated outputs. It does
+not claim that an upstream IPA is safe; it makes provenance and integrity
+observable and fails closed on evidence of corruption.
 
 ## Controls
 
-### 1. Workflow hardening (all 12 workflows)
+- GitHub Actions default to least privilege and use job-level permissions.
+- Workflow shell blocks use `set -euo pipefail`, quoted variables, HTTPS URL
+  allowlists, input sanitization, bounded downloads, and explicit commit
+  allow-lists.
+- GitHub API credentials are attached only to the configured API origin.
+- The extension hooks `integrity.stream_sha256()`, `security.verify_file()`,
+  and `mirrors.tier_rank()` are retained as provider/test entry points for
+  deployments that verify local binaries or rank declared mirrors.
+  Anonymous health probes and binary downloads never receive a token.
+- Discovery candidates are isolated in `data/quarantine/` until validation and
+  verification complete. Quarantine is not an input to feed generation.
+- Feed, source, release, and metadata validators reject malformed bundle IDs,
+  versions, dates, URLs, screenshots, icons, sizes, and digests.
+- SHA-256 and SHA-512 metadata is checked for format and coverage. The optional
+  `--verify-downloads` security mode streams each HTTPS binary in bounded
+  chunks, computes both hashes, checks size, and records mismatches as
+  critical findings.
+- Mirror failover uses only declared, recorded URLs and never invents a
+  replacement download.
+- Generated files are written atomically and checked for reproducibility.
+- Events and logs redact common token, secret, password, authorization, and
+  webhook fields before persistence.
 
-- `set -euo pipefail` on every multi-line `run:` block.
-- All variables quoted; arrays for word-splitting (`"${ARGS[@]}"`).
-- **No `${{ }}` interpolation into `run:` scripts** — inputs/step
-  outputs pass through `env:` (fixes the `build-tweak.yml` script
-  injection, the `sync.yml` flag injection and the uYou step-output
-  interpolation found in the audit).
-- Dispatch inputs validated: https-only URL allowlists, bundle-ID
-  character allowlist, sanitized artifact names, path-traversal guards.
-- Minimal `permissions` per job, `concurrency` groups, `timeout-minutes`,
-  pinned action majors (`@v4`/`@v5`), `persist-credentials: false` on
-  read-only checkouts.
+## Current snapshot
 
-### 2. Credential hygiene
+The checked-in report records the current catalog totals, hash coverage,
+duplicate binary findings, download probe state, provenance classification,
+and per-app findings. Missing upstream hashes are low-severity findings; they
+are tracked rather than silently presented as verified. Critical corruption,
+malformed digest data, and failed opt-in binary verification block the gate.
 
-- Tokens attach only to allowlisted API origins (`AuthRule` in
-  `src/omnisource/http.py`); download probes are always anonymous.
-- Discovery/monitoring/security jobs use the ephemeral `github.token`
-  (no long-lived secrets required).
-- `curl --proto '=https'` + `--max-time` on dispatch-driven downloads.
+Regenerate it with:
 
-### 3. Supply-chain validation
+```bash
+python3 scripts/security/scan.py
+# expensive weekly binary verification:
+python3 scripts/security/scan.py --verify-downloads
+```
 
-- `scripts/validation/` — schema, URL, bundle-ID, version, icon,
-  screenshot, duplicate-record and digest-format rules; **invalid feeds
-  never publish** (`discovery.yml` + `security.yml` fail closed).
-- `scripts/security/scan.py` → `data/security.json`: SHA-256/512
-  coverage, duplicate-binary detection, download-integrity rollup,
-  provenance audit. `security.yml` fails on `critical`.
-- Client feeds are validated as AltStore v2 **before** write
-  (`build_client_feeds.py` refuses to emit invalid output).
-- Reproducibility gate: any hand-edit to generated files fails CI.
+## Threat model and residual risk
 
-### 4. Quarantine & least promotion
+| Threat | Control | Residual risk |
+|---|---|---|
+| Malicious discovery URL | HTTPS, schema validation, quarantine | A valid HTTPS publisher can still be malicious |
+| Workflow command injection | env indirection, strict shell, sanitized input | Trusted GitHub actions and upstream tools remain supply-chain dependencies |
+| Token leakage to a CDN | host-scoped auth rules and anonymous probes | A future provider must preserve the rule |
+| Replaced release binary | append-only history, hashes, optional stream verification | No hash cannot prove byte identity |
+| Dead primary download | health probes and declared mirror failover | Real mirrors must be configured and independently trusted |
+| Duplicate/rebranded app | canonical identity and bundle conflict checks | iOS bundle collisions are sometimes intentional tweaks |
+| Corrupt generated output | atomic writes, pre-publication validation, reproducibility check | A compromised CI runner could still alter the workspace |
 
-- Reputation `< 25` → `untrusted`/quarantined: auditable, never
-  auto-published. Promotion into `catalog.json` is always explicit.
-- Self-healing only auto-applies recorded-fallback swaps (to a review
-  file, never in place).
-
-## Current posture (2026-09-12)
-
-From `data/security.json`: verdict **pass** — 64/94 apps with SHA-256,
-0 duplicate binaries, 0 failing downloads, 0 critical/high findings;
-30 `low` hash-missing advisories (upstreams publish no digest).
-
-## Residual risks
-
-1. Upstream binaries are trusted to their developers; OmniSource
-   verifies *recorded* hashes but does not re-host or re-sign IPAs.
-2. `security.yml` gates on `critical` only — `--fail-on high` is opt-in.
-3. Discovery code search depends on GitHub API availability/rate limits
-   (fails open to empty candidates, never to unvalidated publishes).
-
-## Reporting
-
-See `SECURITY.md` for private disclosure. Workflow changes must keep the
-hardening rules (`.github/workflows/README.md`) and pass `actionlint`.
+OmniSource is metadata infrastructure, not a code-signing authority. Users
+must independently evaluate the developer, signing service, and sideloading
+client they choose.

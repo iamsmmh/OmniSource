@@ -24,6 +24,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 
 from omnisource import autodiscovery
+from omnisource.quarantine import QuarantineStore, validate_candidates
 from omnisource.remote_validation import validate_source_record
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -69,22 +70,24 @@ def main(argv: list[str] | None = None) -> int:
     if pages:
         found.extend(autodiscovery.discover_web_catalogs(pages))
 
-    valid, quarantined = [], []
-    for record in found:
-        errors = validate_source_record(record)
-        (valid if not errors else quarantined).append(record)
-    for record in quarantined:
-        record["health"] = "unknown"
-        record["reputation"] = 0
+    quarantine = QuarantineStore(ROOT / "data" / "quarantine")
+    result = validate_candidates(found, validate_source_record, quarantine)
+    valid, quarantined = result.accepted, result.quarantined
 
     store_path = Path(args.store)
     if args.dry_run:
-        print(f"discovery: {len(valid)} valid, {len(quarantined)} quarantined (dry run, store untouched)")
+        print(f"discovery: {len(valid)} validated, {len(quarantined)} quarantined (dry run, stores untouched)")
         return 0
     store = autodiscovery.load_store(store_path)
-    merged = autodiscovery.merge_records(store.get("sources", []), valid + quarantined)
+    # Only structurally valid candidates enter the discovery registry. Invalid
+    # payloads are isolated in data/quarantine/sources.json and cannot reach
+    # feed generation through an accidental merge.
+    merged = autodiscovery.merge_records(store.get("sources", []), valid)
     autodiscovery.save_store(store_path, merged)
-    print(f"discovery: +{len(valid)} valid, +{len(quarantined)} quarantined, {len(merged)} total in {store_path}")
+    print(
+        f"discovery: +{len(valid)} validated, +{len(quarantined)} quarantined, "
+        f"{len(merged)} candidates in {store_path}; quarantine={quarantine.path}"
+    )
     return 0
 
 

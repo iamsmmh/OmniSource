@@ -1,73 +1,78 @@
-# Migration Guide — 3.1.x → 3.2.0
+# Migration guide
 
-3.2.0 is **backward compatible**: every 3.1 URL, feed, API endpoint, page
-and script keeps working. This guide covers what moved, what is new, and
-what (little) you may need to change.
+## From the legacy static catalog
 
-## Nothing breaks
+1. Keep existing `catalog.json` entries. They remain the hand-maintained source
+   declaration and are backward compatible with `apps.json`.
+2. Run `python3 scripts/derived/build_canonical.py` to create canonical app
+   identities and inspect `data/canonical_apps.json`.
+3. Run `python3 scripts/derived/build_release_history.py` to create the
+   append-only release ledger.
+4. Run `python3 scripts/derived/enrich_metadata.py` to normalize metadata.
+5. Build `data/source_registry.json` and intelligence with:
 
-- `apps.json`, `feeds/*.json`, `feeds/*.xml`, `api/*`, `api/v2/*` —
-  byte-identical contracts, same builder (`scripts/omnisource.py`).
-- Static PWA (root `index.html`, `js/`, `src/js/`, locales) — untouched
-  deployment via `sync.yml`.
-- `catalog.json` remains the only hand-edited source of truth.
-- `make build|serve|check` work exactly as before.
+   ```bash
+   python3 scripts/registry/build_registry.py
+   python3 scripts/intelligence/build_intelligence.py
+   ```
 
-## New scheduled writers (all additive)
+6. Generate client, single-app, collection, and API outputs:
 
-| Workflow | Writes | First-run effect |
-|---|---|---|
-| `discovery.yml` | `data/discovered_sources.json` | Empty store (candidates accumulate) |
-| `monitoring.yml` | `data/status.json`, `data/selfheal_report.json`, `data/mirror_status.json` | First probes within 30 min |
-| `security.yml` | `data/security.json` | Initial posture report |
-| `analytics.yml` | `data/analytics_rollup.json` | First windows (history backfills over days) |
-| `publish.yml` | `data/canonical_apps.json`, `data/release_history.json`, `data/enriched_apps.json`, `data/source_reputation.json`, `feeds/clients/*`, `api/v3/*` | One bulk commit |
+   ```bash
+   python3 scripts/build_client_feeds.py
+   python3 scripts/build_api_v3.py
+   ```
 
-`sync.yml`'s `git add` allowlist already covers `*.json`, so scheduled
-writers commit cleanly; each also checks `git diff --cached --quiet`
-before committing (no empty churn except the monitoring time-series).
+7. Validate before replacing a deployment's feed:
 
-## For feed consumers (AltStore/SideStore/Feather/ESign/LiveContainer)
+   ```bash
+   python3 scripts/validation/validate_feed.py feeds/apps.json --allow-duplicates
+   python3 scripts/validation/validate_metadata.py feeds/apps.json
+   python3 -m unittest discover -s tests
+   ```
 
-- Keep using `apps.json`, or switch to the per-client variant that
-  matches your app: `feeds/clients/{altstore,sidestore,feather,esign,
-  livecontainer}.json`. Same AltStore v2 shape, client-appropriate
-  filtering (ESign drops non-direct downloads, Feather drops relative
-  icons).
-- Single-app feeds (`feeds/<slug>.json`) are unchanged.
+The legacy root `apps.json`, `api/`, `feeds/*.json`, and `js/` remain supported
+and are generated from the same catalog. Do not manually migrate by copying
+individual generated records.
 
-## For API consumers
+## Introducing discovery
 
-- v1-style flat docs (`api/apps.json`, …) and **v2 are unchanged**.
-- New: **API v3** — static `api/v3/*.json` on Pages today; dynamic
-  query/pagination/ETag routes when `web/` is hosted. See `docs/API-V3.md`.
-- New documents in `data/` are advisory (canonical DB, ledger,
-  enrichment, reputation labels, security, rollups) — stable schemas,
-  versioned with `schemaVersion`.
+Discovery is additive. Run a dry pass first:
 
-## For contributors
+```bash
+GITHUB_TOKEN=... python3 scripts/discovery/discover_sources.py --dry-run
+```
 
-- New Make targets: `make discovery monitoring security analytics
-  derived web` (all offline-safe; `web` needs `npm`).
-- New tests: `tests/test_{autodiscovery,remote_validation,canonical,
-  release_history,search,api_v3,client_feeds,ops,async_http}.py` —
-  run with `python3 -m unittest discover -s tests`.
-- Workflow hardening rules are now enforced by convention (see
-  `.github/workflows/README.md`): `set -euo pipefail`, quoted vars,
-  `env:`-only inputs. `actionlint` runs in CI.
-- Version is now `3.2.0` (`pyproject.toml` + `src/omnisource/__init__.py`
-  must stay in sync — `tests/test_version.py` guards this).
+Review `data/quarantine/sources.json`. A candidate must pass structural
+validation and explicit verification before it is considered publishable. A
+candidate with a valid shape but no verification evidence remains `VALIDATING`;
+that is intentional.
 
-## For fork operators
+## Repository persistence
 
-1. Merge — no secrets or settings changes required.
-2. Optionally set `DISCORD_/TELEGRAM_/NTFY_` secrets (unchanged behavior).
-3. Optionally configure `data/mirrors.json` with real mirror endpoints.
-4. Optionally host `web/` (Vercel/Cloudflare/self-hosted) — the static
-   site keeps serving Pages either way.
+The domain layer depends on `Repository` rather than files. Existing JSON
+snapshots can continue using `JsonRepository`. For a service deployment,
+bootstrap a SQLite database with the same document keys, then switch the
+adapter through configuration. PostgreSQL/MySQL deployments can implement the
+DB-API contract without changing validators or feed renderers. Preserve
+`data/release_history.json` as an append-only export during the migration.
+
+## Website migration
+
+GitHub Pages deployments continue to use `index.html`, `js/`, and generated
+root assets. Node deployments can build `web/` independently:
+
+```bash
+cd web
+npm ci
+npm run typecheck && npm run lint && npm run build
+```
+
+The app consumes local generated snapshots and uses relative URLs; no
+localhost API endpoint is required in production.
 
 ## Rollback
 
-Every 3.2.0 artifact is additive. To revert to 3.1 behavior, disable the
-six new workflows — `sync.yml`, feeds, APIs and the site keep working
-with zero code changes.
+A publication is a generated commit. Roll back the commit or restore the last
+verified metadata snapshot from `scripts/backup/create_backup.py`. Never
+restore an unreviewed quarantine record directly to a public feed.

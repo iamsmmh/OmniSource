@@ -9,24 +9,27 @@ and every deletion here must go through `src/omnisource/site.py` first.
 
 ## Summary
 
-- Byte-identical generated JSON groups: **104**
-- Identical-function clones across `src/` + `scripts/`: **1**
-- Compressed `.gz` mirror files committed: **120** (625 KiB)
+- Byte-identical generated JSON groups: **129**
+- Identical-function clones across `src/` + `scripts/`: **4**
+- Compressed `.gz` mirror files committed: **137** (725 KiB)
 
 ## Byte-identical JSON mirror groups
 
 | Group | Copies | Role |
 | --- | --- | --- |
-| `feeds/discovery.json` | 4 | mirrors: `api/catalog.json`, `api/discovery.json`, `api/v2/apps.json` |
-| `feeds/apps.json` | 3 | mirrors: `api/apps.json`, `apps.json` |
+| `feeds/discovery.json` | 5 | mirrors: `api/catalog.json`, `api/discovery.json`, `api/v2/apps.json`, `web/src/data/discovery.json` |
+| `feeds/apps.json` | 4 | mirrors: `api/apps.json`, `apps.json`, `web/src/data/apps.json` |
+| `feeds/sources.json` | 4 | mirrors: `api/sources.json`, `api/v2/sources.json`, `web/src/data/sources.json` |
+| `feeds/status.json` | 4 | mirrors: `api/status.json`, `api/v2/status.json`, `web/src/data/status.json` |
+| `feeds/analytics.json` | 3 | mirrors: `api/analytics.json`, `web/src/data/analytics.json` |
+| `feeds/collections.json` | 3 | mirrors: `api/collections.json`, `web/src/data/collections.json` |
 | `feeds/related.json` | 3 | mirrors: `api/related.json`, `api/v2/recommendations.json` |
-| `feeds/sources.json` | 3 | mirrors: `api/sources.json`, `api/v2/sources.json` |
-| `feeds/status.json` | 3 | mirrors: `api/status.json`, `api/v2/status.json` |
+| `feeds/reputation.json` | 3 | mirrors: `api/reputation.json`, `web/src/data/reputation.json` |
+| `feeds/search-index.json` | 3 | mirrors: `api/search-index.json`, `web/src/data/search-index.json` |
 | `feeds/trending.json` | 3 | mirrors: `api/trending.json`, `api/v2/trending.json` |
 | `feeds/verification.json` | 3 | mirrors: `api/v2/trust.json`, `api/verification.json` |
-| `feeds/analytics.json` | 2 | mirrors: `api/analytics.json` |
+| `data/security.json` | 3 | mirrors: `security-report.json`, `web/src/data/security.json` |
 | `feeds/asset-manifest.json` | 2 | mirrors: `api/asset-manifest.json` |
-| `feeds/collections.json` | 2 | mirrors: `api/collections.json` |
 | `feeds/community.json` | 2 | mirrors: `api/community.json` |
 | `feeds/compare.json` | 2 | mirrors: `api/compare.json` |
 | `feeds/dead_apps.json` | 2 | mirrors: `api/dead_apps.json` |
@@ -35,19 +38,21 @@ and every deletion here must go through `src/omnisource/site.py` first.
 | `feeds/health.json` | 2 | mirrors: `api/health.json` |
 | `feeds/install.json` | 2 | mirrors: `api/install.json` |
 | `feeds/integrity_report.json` | 2 | mirrors: `api/integrity_report.json` |
-| `feeds/reputation.json` | 2 | mirrors: `api/reputation.json` |
 | `feeds/screenshots.json` | 2 | mirrors: `api/screenshots.json` |
-| `feeds/search-index.json` | 2 | mirrors: `api/search-index.json` |
 | `feeds/translation-status.json` | 2 | mirrors: `api/translation-status.json` |
 | `feeds/updates.json` | 2 | mirrors: `api/updates.json` |
 | `feeds/api/v2/apps/aidoku.json` | 2 | mirrors: `api/v2/apps/aidoku.json` |
+| `feeds/api/v2/apps/animegen.json` | 2 | mirrors: `api/v2/apps/animegen.json` |
 | `feeds/api/v2/apps/anxreader.json` | 2 | mirrors: `api/v2/apps/anxreader.json` |
 | `feeds/api/v2/apps/anymex.json` | 2 | mirrors: `api/v2/apps/anymex.json` |
 | `feeds/api/v2/apps/apollo.json` | 2 | mirrors: `api/v2/apps/apollo.json` |
 | `feeds/api/v2/apps/bhtwitter.json` | 2 | mirrors: `api/v2/apps/bhtwitter.json` |
 | `feeds/api/v2/apps/bluewallet.json` | 2 | mirrors: `api/v2/apps/bluewallet.json` |
 | `feeds/api/v2/apps/bootstrap.json` | 2 | mirrors: `api/v2/apps/bootstrap.json` |
+| `feeds/api/v2/apps/chan.json` | 2 | mirrors: `api/v2/apps/chan.json` |
+| `feeds/api/v2/apps/chatsen.json` | 2 | mirrors: `api/v2/apps/chatsen.json` |
 | `feeds/api/v2/apps/conduit.json` | 2 | mirrors: `api/v2/apps/conduit.json` |
+| `feeds/api/v2/apps/cosmos.json` | 2 | mirrors: `api/v2/apps/cosmos.json` |
 | `feeds/api/v2/apps/delta.json` | 2 | mirrors: `api/v2/apps/delta.json` |
 | `feeds/api/v2/apps/dolphinish.json` | 2 | mirrors: `api/v2/apps/dolphinish.json` |
 | `feeds/api/v2/apps/dopamine-roothide.json` | 2 | mirrors: `api/v2/apps/dopamine-roothide.json` |
@@ -56,6 +61,7 @@ and every deletion here must go through `src/omnisource/site.py` first.
 | `feeds/api/v2/apps/fladder.json` | 2 | mirrors: `api/v2/apps/fladder.json` |
 | `feeds/api/v2/apps/glow.json` | 2 | mirrors: `api/v2/apps/glow.json` |
 | `feeds/api/v2/apps/gopeed.json` | 2 | mirrors: `api/v2/apps/gopeed.json` |
+| `feeds/api/v2/apps/hanami.json` | 2 | mirrors: `api/v2/apps/hanami.json` |
 | `feeds/api/v2/apps/ime.json` | 2 | mirrors: `api/v2/apps/ime.json` |
 | `feeds/api/v2/apps/infuseplus.json` | 2 | mirrors: `api/v2/apps/infuseplus.json` |
 | `feeds/api/v2/apps/inkillerplus.json` | 2 | mirrors: `api/v2/apps/inkillerplus.json` |
@@ -63,19 +69,29 @@ and every deletion here must go through `src/omnisource/site.py` first.
 | `feeds/api/v2/apps/ish.json` | 2 | mirrors: `api/v2/apps/ish.json` |
 | `feeds/api/v2/apps/itorrent.json` | 2 | mirrors: `api/v2/apps/itorrent.json` |
 | `feeds/api/v2/apps/jellify.json` | 2 | mirrors: `api/v2/apps/jellify.json` |
+| `feeds/api/v2/apps/jellybook.json` | 2 | mirrors: `api/v2/apps/jellybook.json` |
+| `feeds/api/v2/apps/ksign.json` | 2 | mirrors: `api/v2/apps/ksign.json` |
 | `feeds/api/v2/apps/livecontainer.json` | 2 | mirrors: `api/v2/apps/livecontainer.json` |
 | `feeds/api/v2/apps/mame4ios.json` | 2 | mirrors: `api/v2/apps/mame4ios.json` |
+| `feeds/api/v2/apps/mangayomi.json` | 2 | mirrors: `api/v2/apps/mangayomi.json` |
 | `feeds/api/v2/apps/manicemu.json` | 2 | mirrors: `api/v2/apps/manicemu.json` |
 | `feeds/api/v2/apps/maxmusic.json` | 2 | mirrors: `api/v2/apps/maxmusic.json` |
 | `feeds/api/v2/apps/maxtube.json` | 2 | mirrors: `api/v2/apps/maxtube.json` |
 | `feeds/api/v2/apps/messenger-flow.json` | 2 | mirrors: `api/v2/apps/messenger-flow.json` |
 | `feeds/api/v2/apps/minivmac.json` | 2 | mirrors: `api/v2/apps/minivmac.json` |
+| `feeds/api/v2/apps/monal.json` | 2 | mirrors: `api/v2/apps/monal.json` |
 | `feeds/api/v2/apps/msgplusx.json` | 2 | mirrors: `api/v2/apps/msgplusx.json` |
+| `feeds/api/v2/apps/muffinstore.json` | 2 | mirrors: `api/v2/apps/muffinstore.json` |
+| `feeds/api/v2/apps/nebuloiptv.json` | 2 | mirrors: `api/v2/apps/nebuloiptv.json` |
 | `feeds/api/v2/apps/neofreebird.json` | 2 | mirrors: `api/v2/apps/neofreebird.json` |
 | `feeds/api/v2/apps/nexasc.json` | 2 | mirrors: `api/v2/apps/nexasc.json` |
 | `feeds/api/v2/apps/odyssey.json` | 2 | mirrors: `api/v2/apps/odyssey.json` |
+| `feeds/api/v2/apps/otraku.json` | 2 | mirrors: `api/v2/apps/otraku.json` |
+| `feeds/api/v2/apps/pikatorrent.json` | 2 | mirrors: `api/v2/apps/pikatorrent.json` |
+| `feeds/api/v2/apps/playtorrio.json` | 2 | mirrors: `api/v2/apps/playtorrio.json` |
 | `feeds/api/v2/apps/ppsspp.json` | 2 | mirrors: `api/v2/apps/ppsspp.json` |
 | `feeds/api/v2/apps/provenance.json` | 2 | mirrors: `api/v2/apps/provenance.json` |
+| `feeds/api/v2/apps/purekfd.json` | 2 | mirrors: `api/v2/apps/purekfd.json` |
 | `feeds/api/v2/apps/qbitconnect.json` | 2 | mirrors: `api/v2/apps/qbitconnect.json` |
 | `feeds/api/v2/apps/qbitcontrol.json` | 2 | mirrors: `api/v2/apps/qbitcontrol.json` |
 | `feeds/api/v2/apps/qbitcontroller.json` | 2 | mirrors: `api/v2/apps/qbitcontroller.json` |
@@ -96,9 +112,11 @@ and every deletion here must go through `src/omnisource/site.py` first.
 | `feeds/api/v2/apps/stiknes.json` | 2 | mirrors: `api/v2/apps/stiknes.json` |
 | `feeds/api/v2/apps/streamyfin.json` | 2 | mirrors: `api/v2/apps/streamyfin.json` |
 | `feeds/api/v2/apps/swiftgram.json` | 2 | mirrors: `api/v2/apps/swiftgram.json` |
+| `feeds/api/v2/apps/synkplay.json` | 2 | mirrors: `api/v2/apps/synkplay.json` |
 | `feeds/api/v2/apps/taurine.json` | 2 | mirrors: `api/v2/apps/taurine.json` |
 | `feeds/api/v2/apps/telegram-mxgram.json` | 2 | mirrors: `api/v2/apps/telegram-mxgram.json` |
 | `feeds/api/v2/apps/threadsaver.json` | 2 | mirrors: `api/v2/apps/threadsaver.json` |
+| `feeds/api/v2/apps/thunder.json` | 2 | mirrors: `api/v2/apps/thunder.json` |
 | `feeds/api/v2/apps/ttkillerplus.json` | 2 | mirrors: `api/v2/apps/ttkillerplus.json` |
 | `feeds/api/v2/apps/turrit-mxgram.json` | 2 | mirrors: `api/v2/apps/turrit-mxgram.json` |
 | `feeds/api/v2/apps/twitchadblock.json` | 2 | mirrors: `api/v2/apps/twitchadblock.json` |
@@ -121,6 +139,13 @@ and every deletion here must go through `src/omnisource/site.py` first.
 | `feeds/api/v2/featured.json` | 2 | mirrors: `api/v2/featured.json` |
 | `feeds/api/v2/manifest.json` | 2 | mirrors: `api/v2/manifest.json` |
 | `feeds/api/v2/updates.json` | 2 | mirrors: `api/v2/updates.json` |
+| `api/v3/apps.json` | 2 | mirrors: `web/public/data/v3/apps.json` |
+| `api/v3/search-index.json` | 2 | mirrors: `web/public/data/v3/search-index.json` |
+| `api/v3/status.json` | 2 | mirrors: `web/public/data/v3/status.json` |
+| `catalog.json` | 2 | mirrors: `web/src/data/catalog.json` |
+| `data/analytics_rollup.json` | 2 | mirrors: `web/src/data/analytics_rollup.json` |
+| `data/canonical_apps.json` | 2 | mirrors: `web/src/data/canonical_apps.json` |
+| `data/source_reputation.json` | 2 | mirrors: `web/src/data/source_reputation.json` |
 
 **Disposition:** the `feeds/` file is the source of truth; `apps.json`, `api/*` and
 their `.gz` twins are the branch-deployed URL surface and are kept for subscriber/API
@@ -129,10 +154,13 @@ fails CI if any copy ever drifts, so mirrors can never diverge silently.
 
 ## Duplicated functions
 
+- `utcnow()` x9: `src/omnisource/autodiscovery.py:utcnow`, `src/omnisource/canonical.py:utcnow`, `src/omnisource/enrichment.py:utcnow`, `src/omnisource/mirrors.py:utcnow`, `src/omnisource/probes.py:utcnow`, `src/omnisource/release_history.py:utcnow`, `src/omnisource/reputation_labels.py:utcnow`, `src/omnisource/security.py:utcnow`, `src/omnisource/selfheal.py:utcnow`
+- `utcnow()` x5: `src/omnisource/backup.py:utcnow`, `src/omnisource/intelligence.py:utcnow`, `src/omnisource/quarantine.py:utcnow`, `src/omnisource/repository.py:utcnow`, `src/omnisource/source_registry.py:utcnow`
 - `_newest_matching_url()` x3: `src/omnisource/providers/gitea.py:_newest_matching_url`, `src/omnisource/providers/github.py:_newest_matching_url`, `src/omnisource/providers/gitlab.py:_newest_matching_url`
+- `utcnow()` x2: `src/omnisource/events.py:utcnow`, `src/omnisource/observability.py:utcnow`
 
 ## Compression mirrors
 
-- 120 `.gz` files contribute 625 KiB to the checkout.
+- 137 `.gz` files contribute 725 KiB to the checkout.
 - `.br` twins are only written when the optional `brotli` package is installed at build time (CI opt-in).
 - Recommendation: keep; the mirrors are smaller than the savings they provide to clients, and GitHub Pages serves them with `Content-Encoding` for gzip-capable consumers.

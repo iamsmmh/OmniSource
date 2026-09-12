@@ -1,0 +1,94 @@
+{
+  "name": "OmniSource — Delta",
+  "identifier": "com.iamsmmh.omnisource.delta",
+  "apiVersion": "v2",
+  "subtitle": "Single-app source",
+  "description": "Single-app feed for Delta.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Delta.webp",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+  "apps": [
+    {
+      "name": "Delta",
+      "bundleIdentifier": "com.rileytestut.Delta",
+      "developerName": "Riley Testut",
+      "subtitle": "All-in-one retro emulator by Riley Testut",
+      "localizedDescription": "Delta is an all-in-one classic video game emulator for non-jailbroken iOS devices, developed by Riley Testut as the spiritual successor to GBA4iOS. It emulates the Nintendo systems (Game Boy Color, Game Boy Advance, Nintendo DS, Nintendo 64, SNES, NES) plus Sega Genesis and Game Gear, with save states and cheats, controller and Nintendo DS skin support, iCloud sync of saves, and full MFi/Bluetooth controller support.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Delta.webp",
+      "tintColor": "9564D0",
+      "category": "games",
+      "version": "1.6",
+      "versionDate": "2024-07-11",
+      "versionDescription": "Delta 1.6 | Delta_1_6\n\n## New\n\nApp Icon\n* Brand new legally-compliant app icon (thanks Caroline Moore!)\n* Includes alternative app icons designed by community members:\n* \"Halogenide\" by Sebastiaan de With\n* \"Ketchup\" by Ben McCarthy\n* \"Microchip\" by Sean Fletcher\n\niPad Support\n* Play games full screen on iPad's beautiful display\n* Brand new controller skins designed specifically for iPad (thanks Caroline Moore!)\n* Supports multiple windows in Stage Manager and Split View\n* Automatically pauses games when switching windows (optional)\n\nHandoff\n* Seamlessly switch between iPhone and iPad\n* Continues playing exactly where you left off\n* Also supports Delta on Apple Silicon Macs via Mac App Store\n\nmelonDS 0.9.5\n* Improves DS game compatibility & performance\n* BIOS files are now optional!\n* Supports \"inserting\" GBA games into DS dual-slot\n* Increased Fast Forward speed to 3x (A15 processor or later)\n\nMenu Button Gestures\n* Use gestures while holding menu button to perform quick actions\n* Menu + Horizontal Swipe: Fast Forward\n* Menu + Any Button: Hold Button\n* Menu + Double-Tap: Quick Save\n* Menu + Long-Press: Quick Load\n\nExperimental Features\n* New section in Settings for features by third-party contributors\n* Features are WIP and should be used at user’s discretion\n* Available for Patrons on \"Beta Access\" tier or higher\n\nSave States\n* Sort save states by name\n* View all incompatible screenshots on a separate screen\n* Export save states to import into other emulators\n\n“Display Full Screen” AirPlay Setting\n* Control whether Delta shows games full screen on external displays\n* Disable to use multiple windows on external display with Stage Manager\n\nMisc.\n* Supports Game Mode on iOS 18+\n* Increased DS screen size for default edge-to-edge iPhone landscape skin\n\n## Fixed\n\n* Fixed exporting save file without file extension\n* Fixed interface rotating when playing WarioWare: Twisted!\n* Fixed Pokemon Black & White (2) freezing with C-Gear enabled",
+      "downloadURL": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
+      "size": 87734964,
+      "versions": [
+        {
+          "version": "1.6",
+          "date": "2024-07-11",
+          "localizedDescription": "Delta 1.6 | Delta_1_6\n\n## New\n\nApp Icon\n* Brand new legally-compliant app icon (thanks Caroline Moore!)\n* Includes alternative app icons designed by community members:\n* \"Halogenide\" by Sebastiaan de With\n* \"Ketchup\" by Ben McCarthy\n* \"Microchip\" by Sean Fletcher\n\niPad Support\n* Play games full screen on iPad's beautiful display\n* Brand new controller skins designed specifically for iPad (thanks Caroline Moore!)\n* Supports multiple windows in Stage Manager and Split View\n* Automatically pauses games when switching windows (optional)\n\nHandoff\n* Seamlessly switch between iPhone and iPad\n* Continues playing exactly where you left off\n* Also supports Delta on Apple Silicon Macs via Mac App Store\n\nmelonDS 0.9.5\n* Improves DS game compatibility & performance\n* BIOS files are now optional!\n* Supports \"inserting\" GBA games into DS dual-slot\n* Increased Fast Forward speed to 3x (A15 processor or later)\n\nMenu Button Gestures\n* Use gestures while holding menu button to perform quick actions\n* Menu + Horizontal Swipe: Fast Forward\n* Menu + Any Button: Hold Button\n* Menu + Double-Tap: Quick Save\n* Menu + Long-Press: Quick Load\n\nExperimental Features\n* New section in Settings for features by third-party contributors\n* Features are WIP and should be used at user’s discretion\n* Available for Patrons on \"Beta Access\" tier or higher\n\nSave States\n* Sort save states by name\n* View all incompatible screenshots on a separate screen\n* Export save states to import into other emulators\n\n“Display Full Screen” AirPlay Setting\n* Control whether Delta shows games full screen on external displays\n* Disable to use multiple windows on external display with Stage Manager\n\nMisc.\n* Supports Game Mode on iOS 18+\n* Increased DS screen size for default edge-to-edge iPhone landscape skin\n\n## Fixed\n\n* Fixed exporting save file without file extension\n* Fixed interface rotating when playing WarioWare: Twisted!\n* Fixed Pokemon Black & White (2) freezing with C-Gear enabled",
+          "downloadURL": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
+          "size": 87734964,
+          "minOSVersion": "14.0",
+          "releaseUrl": "https://github.com/rileytestut/Delta/releases/tag/v1.6",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Delta_1_6.ipa",
+              "downloadUrl": "https://github.com/rileytestut/Delta/releases/download/v1.6/Delta_1_6.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 87734964,
+              "sha256": null,
+              "downloads": 70626,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "downloads": 70626
+        }
+      ],
+      "screenshotURLs": [],
+      "omnisource": {
+        "slug": "delta",
+        "status": "stable",
+        "featured": true,
+        "upstreamURL": "https://github.com/RileyTestut/Delta",
+        "sourceURL": "https://github.com/RileyTestut/Delta",
+        "verification": {
+          "method": "github-release",
+          "publisher": "RileyTestut/Delta",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "14.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA published by the developer on GitHub Releases. Uses the same bundle identifier as the App Store build of Delta: installing the sideload build replaces the store version. Delta 1.6 targets iOS 14 or newer."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2024-07-11"
+        }
+      }
+    }
+  ],
+  "news": []
+}

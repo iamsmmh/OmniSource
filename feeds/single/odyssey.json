@@ -1,0 +1,98 @@
+{
+  "name": "OmniSource — Odyssey",
+  "identifier": "com.iamsmmh.omnisource.odyssey",
+  "apiVersion": "v2",
+  "subtitle": "Single-app source",
+  "description": "Single-app feed for Odyssey.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Odyssey.webp",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+  "apps": [
+    {
+      "name": "Odyssey",
+      "bundleIdentifier": "org.coolstar.odyssey",
+      "developerName": "Odyssey Team (coolstar)",
+      "subtitle": "Semi-untethered jailbreak for iOS 13",
+      "localizedDescription": "Odyssey is the Odyssey Team's semi-untethered jailbreak for iOS 13.0 – 13.7 on A9 through A13 devices. It uses the same modern approach as Taurine — libhooker tweak injection, Sileo as the package manager and a userspace jailbreak you re-apply after a reboot — and remains the standard choice for iOS 13 firmwares that unc0ver and checkra1n handle less comfortably.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Odyssey.webp",
+      "tintColor": "A855F7",
+      "category": "utilities",
+      "version": "1.4.3",
+      "versionDate": "2023-04-04",
+      "versionDescription": "Odyssey 1.4.3 | Odyssey-1.4.3\n\n- Update Sileo to 2.3-1",
+      "downloadURL": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
+      "size": 27204395,
+      "versions": [
+        {
+          "version": "1.4.3",
+          "date": "2023-04-04",
+          "localizedDescription": "Odyssey 1.4.3 | Odyssey-1.4.3\n\n- Update Sileo to 2.3-1",
+          "downloadURL": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
+          "size": 27204395,
+          "minOSVersion": "13.0",
+          "releaseUrl": "https://github.com/Odyssey-Team/Odyssey/releases/tag/v1.4.3",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "Odyssey-1.4.3.ipa",
+              "downloadUrl": "https://github.com/Odyssey-Team/Odyssey/releases/download/v1.4.3/Odyssey-1.4.3.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 27204395,
+              "sha256": null,
+              "downloads": 563108,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            }
+          ],
+          "downloads": 563108
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "odyssey",
+        "status": "unmaintained",
+        "featured": false,
+        "upstreamURL": "https://github.com/Odyssey-Team/Odyssey",
+        "sourceURL": "https://github.com/Odyssey-Team/Odyssey",
+        "verification": {
+          "method": "github-release",
+          "publisher": "Odyssey-Team/Odyssey",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "13.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official IPA from Odyssey-Team/Odyssey (last release April 2023, kept for iOS 13.0 – 13.7 devices). Sideloaded like any other app and re-signed every 7 days when using a free certificate."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2023-04-04"
+        }
+      }
+    }
+  ],
+  "news": []
+}

@@ -7,6 +7,7 @@ const dict: Dictionary = {
     sources: "软件源",
     collections: "合集",
     categories: "分类",
+    developers: "开发者",
     trending: "趋势",
     search: "搜索",
     status: "状态",

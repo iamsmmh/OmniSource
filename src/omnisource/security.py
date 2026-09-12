@@ -17,9 +17,15 @@ and the latest health / status documents. Nothing here downloads binaries.
 
 from __future__ import annotations
 
+import hashlib
 import re
+import urllib.error
+import urllib.request
+from pathlib import Path
 from datetime import UTC, datetime
 from typing import Any
+
+from omnisource.integrity import stream_sha256
 
 SECURITY_SCHEMA_VERSION = 1
 
@@ -155,6 +161,101 @@ def provenance_audit(catalog_apps: list[dict[str, Any]]) -> dict[str, Any]:
             audit["unknown"].append(str(app.get("slug") or app.get("name") or "?"))
     audit["unknown"] = sorted(audit["unknown"])
     return audit
+
+
+def hash_file(path: Path, *, chunk_size: int = 1024 * 1024) -> dict[str, Any]:
+    """Compute SHA-256 and SHA-512 for a local binary without loading it all."""
+    sha256 = hashlib.sha256()
+    sha512 = hashlib.sha512()
+    total = 0
+    with Path(path).open("rb") as handle:
+        while chunk := handle.read(max(1, chunk_size)):
+            sha256.update(chunk)
+            sha512.update(chunk)
+            total += len(chunk)
+    return {"bytes": total, "sha256": sha256.hexdigest(), "sha512": sha512.hexdigest()}
+
+
+def verify_file(path: Path, *, sha256: str = "", sha512: str = "", expected_size: int | None = None) -> dict[str, Any]:
+    """Verify a local downloaded asset against published digest/size metadata."""
+    try:
+        actual = hash_file(path)
+    except OSError as error:
+        return {"ok": False, "detail": str(error), "path": str(path)}
+    problems: list[str] = []
+    if expected_size is not None and actual["bytes"] != int(expected_size):
+        problems.append("size mismatch")
+    if sha256 and actual["sha256"].casefold() != str(sha256).removeprefix("sha256:").casefold():
+        problems.append("sha256 mismatch")
+    if sha512 and actual["sha512"].casefold() != str(sha512).removeprefix("sha512:").casefold():
+        problems.append("sha512 mismatch")
+    return {**actual, "ok": not problems, "detail": "; ".join(problems) or "ok", "path": str(path)}
+
+
+def verify_url(
+    url: str,
+    *,
+    sha256: str = "",
+    sha512: str = "",
+    expected_size: int | None = None,
+    timeout: float = 300.0,
+    max_bytes: int = 512 * 1024 * 1024,
+    http_stream: Any | None = None,
+) -> dict[str, Any]:
+    """Stream an HTTPS asset and verify published size/digests.
+
+    This opt-in operation is used by the weekly security job, not by normal
+    metadata builds.  It follows redirects through urllib but never attaches
+    API credentials, caps the body size, and computes both modern hashes.
+    """
+    if not isinstance(url, str) or not url.startswith("https://"):
+        return {"ok": False, "detail": "asset URL must be HTTPS", "url": url}
+    if http_stream is not None:
+        try:
+            total, digest = stream_sha256(http_stream, url, timeout=timeout)
+        except (OSError, TimeoutError, ValueError) as error:
+            return {"ok": False, "detail": str(error), "url": url}
+        problems: list[str] = []
+        if expected_size is not None and total != int(expected_size):
+            problems.append("size mismatch")
+        if sha256 and digest.casefold() != str(sha256).removeprefix("sha256:").casefold():
+            problems.append("sha256 mismatch")
+        return {
+            "ok": not problems,
+            "detail": "; ".join(problems) or "ok",
+            "url": url,
+            "bytes": total,
+            "sha256": digest,
+        }
+    sha_a = hashlib.sha256()
+    sha_b = hashlib.sha512()
+    total = 0
+    request = urllib.request.Request(url, headers={"User-Agent": "OmniSource-Security/1"})
+    try:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
+            while chunk := response.read(1024 * 1024):
+                total += len(chunk)
+                if total > max_bytes:
+                    return {"ok": False, "detail": f"asset exceeds {max_bytes} bytes", "url": url}
+                sha_a.update(chunk)
+                sha_b.update(chunk)
+    except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, OSError) as error:
+        return {"ok": False, "detail": str(error), "url": url}
+    problems: list[str] = []
+    if expected_size is not None and total != int(expected_size):
+        problems.append("size mismatch")
+    if sha256 and sha_a.hexdigest().casefold() != str(sha256).removeprefix("sha256:").casefold():
+        problems.append("sha256 mismatch")
+    if sha512 and sha_b.hexdigest().casefold() != str(sha512).removeprefix("sha512:").casefold():
+        problems.append("sha512 mismatch")
+    return {
+        "ok": not problems,
+        "detail": "; ".join(problems) or "ok",
+        "url": url,
+        "bytes": total,
+        "sha256": sha_a.hexdigest(),
+        "sha512": sha_b.hexdigest(),
+    }
 
 
 def build_security_report(

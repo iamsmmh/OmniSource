@@ -1,0 +1,135 @@
+{
+  "name": "OmniSource — XeniOS",
+  "identifier": "com.iamsmmh.omnisource.xenios",
+  "apiVersion": "v2",
+  "subtitle": "Single-app source",
+  "description": "Single-app feed for XeniOS.",
+  "iconURL": "https://iamsmmh.github.io/OmniSource/assets/XeniOS.webp",
+  "tintColor": "5B5BD6",
+  "website": "https://iamsmmh.github.io/OmniSource/",
+  "sourceURL": "https://iamsmmh.github.io/OmniSource/apps.json",
+  "apps": [
+    {
+      "name": "XeniOS",
+      "bundleIdentifier": "com.xenios",
+      "developerName": "XeniOS Project (xenios-jp)",
+      "subtitle": "Xbox 360 emulation for iPhone and iPad",
+      "localizedDescription": "XeniOS is an experimental Apple-focused fork of Xenia, the Xbox 360 emulator research project, built for iPhone, iPad and Apple silicon Macs. The iOS build ships as an unsigned IPA and needs recent, powerful hardware: the upstream CMake configuration sets the iOS deployment target to 18.0, and the emulated PowerPC cores plus the Xbox 360 GPU workload only reach playable frame rates on A17 Pro / M-series class chips. It carries the same edge-line core as upstream Xenia and reports game compatibility on xenios.jp. As with every console emulator, you supply your own game files.",
+      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/XeniOS.webp",
+      "tintColor": "107C10",
+      "category": "games",
+      "version": "2.0.1",
+      "versionDate": "2026-06-08",
+      "versionDescription": "XeniOS 2.0.1 | xenios_ios_iphone_ipad\n\n# 2.0.1-9730\n\n- Channel: release\n- Stage: stable\n- Version: 2.0.1\n- Build number: 9730\n- Commit: 57c3ca140\n- Published at: 2026-06-08T03:28:01Z\n- Source ref: refs/heads/xenios",
+      "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+      "size": 46253576,
+      "versions": [
+        {
+          "version": "2.0.1",
+          "date": "2026-06-08",
+          "localizedDescription": "XeniOS 2.0.1 | xenios_ios_iphone_ipad\n\n# 2.0.1-9730\n\n- Channel: release\n- Stage: stable\n- Version: 2.0.1\n- Build number: 9730\n- Commit: 57c3ca140\n- Published at: 2026-06-08T03:28:01Z\n- Source ref: refs/heads/xenios",
+          "downloadURL": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+          "size": 46253576,
+          "minOSVersion": "18.0",
+          "releaseUrl": "https://github.com/xenios-jp/XeniOS/releases/tag/release-v2.0.1-build-9730",
+          "source": "github",
+          "isPrerelease": false,
+          "isDraft": false,
+          "assets": [
+            {
+              "filename": "xenios_ios_iphone_ipad.ipa",
+              "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_ios_iphone_ipad.ipa",
+              "platform": "ios",
+              "architecture": null,
+              "fileType": "IPA",
+              "size": 46253576,
+              "sha256": "61de6cfc9cf05389161272ceaa70d46662dab77de40ab11fdda3d4a2221621a7",
+              "downloads": 26172,
+              "mimeType": "application/octet-stream",
+              "installable": true
+            },
+            {
+              "filename": "xenios_macos_apple_silicon.dmg",
+              "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_macos_apple_silicon.dmg",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "DMG",
+              "size": 52809681,
+              "sha256": "c87e3cee8758e0a1684f31d4cf8f1d949e17db4aed1de22db4f2fe16ebd5088f",
+              "downloads": 4971,
+              "mimeType": "application/x-apple-diskimage",
+              "installable": true
+            },
+            {
+              "filename": "xenios_macos_intel.dmg",
+              "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_macos_intel.dmg",
+              "platform": "macos",
+              "architecture": null,
+              "fileType": "DMG",
+              "size": 54180623,
+              "sha256": "66504eb4b04a1c0db6d3ee62548c0353e60a166743bfc654545b347b9de03bcf",
+              "downloads": 1050,
+              "mimeType": "application/x-apple-diskimage",
+              "installable": true
+            },
+            {
+              "filename": "xenios_macos_universal.dmg",
+              "downloadUrl": "https://github.com/xenios-jp/XeniOS/releases/download/release-v2.0.1-build-9730/xenios_macos_universal.dmg",
+              "platform": "macos",
+              "architecture": "universal",
+              "fileType": "DMG",
+              "size": 77245617,
+              "sha256": "4aee749e878d8cbe301610372a1f1fcb636253ed93ab24732ed59054f19bc46c",
+              "downloads": 3537,
+              "mimeType": "application/x-apple-diskimage",
+              "installable": true
+            }
+          ],
+          "sha256": "61de6cfc9cf05389161272ceaa70d46662dab77de40ab11fdda3d4a2221621a7",
+          "downloads": 26172
+        }
+      ],
+      "screenshotURLs": [],
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "omnisource": {
+        "slug": "xenios",
+        "status": "beta",
+        "featured": false,
+        "upstreamURL": "https://github.com/xenios-jp/XeniOS",
+        "sourceURL": "https://github.com/xenios-jp/XeniOS",
+        "verification": {
+          "method": "github-release",
+          "publisher": "xenios-jp/XeniOS",
+          "codeSigned": false,
+          "checksumPublished": false
+        },
+        "compatibility": {
+          "minOSVersion": "18.0",
+          "maxOSVersion": null,
+          "devices": [
+            "iphone",
+            "ipad"
+          ],
+          "clients": [
+            "altstore",
+            "sidestore",
+            "feather",
+            "esign",
+            "livecontainer"
+          ],
+          "notes": "Official unsigned IPA from the developer's GitHub releases (xenios_ios_iphone_ipad.ipa). The project publishes a fast-moving preview channel alongside the tagged release line; this feed tracks the stable release-* builds only. Xbox 360 emulation is demanding, so expect low frame rates outside high-end devices, and the upstream currently lists iOS 18.0 as the minimum. No game files are bundled."
+        },
+        "health": {
+          "downloadReachable": true,
+          "detail": "HTTP 302",
+          "statusSince": "2026-09-10",
+          "lastUpdatedAt": "2026-06-08"
+        }
+      }
+    }
+  ],
+  "news": []
+}

@@ -11,14 +11,18 @@ should do before deleting.
 
 ## Summary
 
-- Unused files: **0**
+- Unused files: **3**
 - Dead JS globals: **0**
 - Unreferenced CSS selectors: **0**
 - Uncalled public Python functions: **0**
 
 ## Unused files
 
-None. Every committed script, stylesheet, icon and helper file is referenced.
+| File | Why it is flagged |
+| --- | --- |
+| `sdk/javascript/package.json` | no reference in HTML, JS, CSS, feed data or docs |
+| `web/eslint.config.mjs` | no reference in HTML, JS, CSS, feed data or docs |
+| `web/postcss.config.mjs` | no reference in HTML, JS, CSS, feed data or docs |
 
 ## Dead JS globals
 

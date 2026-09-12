@@ -7,6 +7,7 @@ const dict: Dictionary = {
     sources: "সোর্স",
     collections: "কালেকশন",
     categories: "বিভাগ",
+    developers: "ডেভেলপার",
     trending: "ট্রেন্ডিং",
     search: "খুঁজুন",
     status: "স্ট্যাটাস",

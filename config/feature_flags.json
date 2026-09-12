@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-12",
+  "policy": {
+    "unknownDefaultsTo": false,
+    "rolloutSubject": "source-or-app-id",
+    "userTracking": false
+  },
+  "flags": {
+    "discovery.githubSearch": {
+      "enabled": true,
+      "rollout": 100,
+      "environments": ["production", "staging", "development"]
+    },
+    "discovery.webCatalogs": {
+      "enabled": true,
+      "rollout": 100,
+      "environments": ["production", "staging", "development"]
+    },
+    "quarantine.enforce": {
+      "enabled": true,
+      "rollout": 100,
+      "environments": ["production", "staging", "development"]
+    },
+    "publication.requireSecurityPass": {
+      "enabled": true,
+      "rollout": 100,
+      "environments": ["production", "staging", "development"]
+    },
+    "publication.incrementalBuild": {
+      "enabled": true,
+      "rollout": 100,
+      "environments": ["production", "staging", "development"]
+    },
+    "monitoring.asyncProbes": {
+      "enabled": true,
+      "rollout": 100,
+      "environments": ["production", "staging", "development"]
+    },
+    "plugins.external": {
+      "enabled": false,
+      "rollout": 0,
+      "environments": ["staging", "development"]
+    }
+  }
+}

@@ -85,6 +85,7 @@ const CORE_ASSETS = [
   './js/modules/status.js',
   './js/modules/theme.js',
   './js/modules/sources.js',
+  './js/modules/pwa.js',
   './manifest.webmanifest',
   './assets/design-system/tokens.css',
   './assets/design-system/utilities.css',

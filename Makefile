@@ -1,4 +1,4 @@
-.PHONY: all build publish site serve smoke validate test format lint check audit clean version discovery monitoring security analytics derived web
+.PHONY: all build publish site serve smoke validate metadata test format lint check audit clean version discovery monitoring security analytics derived registry intelligence backup web
 
 PYTHON ?= python3
 PORT ?= 8000
@@ -36,6 +36,19 @@ smoke:
 validate:
 	$(PYTHON) scripts/validate.py
 	bash scripts/validate_jq.sh
+
+metadata:
+	$(PYTHON) scripts/validation/validate_metadata.py feeds/apps.json
+	$(PYTHON) scripts/validation/validate_source.py
+
+registry:
+	$(PYTHON) scripts/registry/build_registry.py
+
+intelligence: registry
+	$(PYTHON) scripts/intelligence/build_intelligence.py
+
+backup:
+	$(PYTHON) scripts/backup/create_backup.py create --label manual --destination .backups
 
 test:
 	$(PYTHON) -m unittest discover -s tests
@@ -85,6 +98,8 @@ derived:
 	$(PYTHON) scripts/reputation/score.py
 	$(PYTHON) scripts/build_client_feeds.py
 	$(PYTHON) scripts/build_api_v3.py
+	$(PYTHON) scripts/registry/build_registry.py
+	$(PYTHON) scripts/intelligence/build_intelligence.py
 
 # Modern website (Next.js): install, typecheck, lint, production build.
 web:

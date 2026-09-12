@@ -37,25 +37,35 @@ jobs:
           python-version: "3.12"
 
       - name: Validate catalog and feeds
-        run: python3 scripts/validate.py
+        run: |
+          set -euo pipefail
+          python3 scripts/validate.py
 
       - name: Validate translations
-        run: node scripts/validate-translations.js
+        run: |
+          set -euo pipefail
+          node scripts/validate-translations.js
 
       # jq-only lint + AltStore v2 structural assertions. Offline and read-only.
       - name: Lint JSON with jq
-        run: bash scripts/validate_jq.sh
+        run: |
+          set -euo pipefail
+          bash scripts/validate_jq.sh
 
       # GitHub Pages serves the branch, so the published flat/API copies in
       # the repository root are the URLs users and installers hit. They must
       # stay byte-identical to feeds/ — this is the fast, explicit gate.
       - name: Verify published root URLs match feeds/
-        run: python3 scripts/publish_root.py --check
+        run: |
+          set -euo pipefail
+          python3 scripts/publish_root.py --check
 
       # Serve the repository tree the way the branch deployment does and
       # request every page, flat feed, API document and gz twin.
       - name: Smoke-test the branch-served site
-        run: python3 scripts/smoke_test.py --root --no-build
+        run: |
+          set -euo pipefail
+          python3 scripts/smoke_test.py --root --no-build
 
       # Guards the invariant that feeds/ and apps/ are generated, never
       # hand-edited: a rebuild from committed state must be a no-op.
@@ -63,7 +73,9 @@ jobs:
       # history) are normalized so a PR opened on a different day still
       # passes; any real content drift fails.
       - name: Verify generated artifacts are reproducible
-        run: python3 scripts/check_reproducible.py --diff
+        run: |
+          set -euo pipefail
+          python3 scripts/check_reproducible.py --diff
 
   tests:
     name: Unit tests (py${{ matrix.python-version }})
@@ -81,7 +93,9 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run unit tests
-        run: python3 -m unittest discover -s tests
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s tests
 
   lint:
     name: Lint (ruff + actionlint)
