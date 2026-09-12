@@ -17,7 +17,7 @@ import re
 import threading
 import uuid
 from collections import defaultdict
-from collections.abc import Callable, Iterable, Iterator
+from collections.abc import Callable, Iterator
 from dataclasses import asdict, dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
@@ -33,8 +33,7 @@ def utcnow() -> str:
 def _scrub(value: Any) -> Any:
     if isinstance(value, dict):
         return {
-            str(key): "[redacted]" if SECRET_KEY_RE.search(str(key)) else _scrub(item)
-            for key, item in value.items()
+            str(key): "[redacted]" if SECRET_KEY_RE.search(str(key)) else _scrub(item) for key, item in value.items()
         }
     if isinstance(value, list):
         return [_scrub(item) for item in value]
@@ -113,6 +112,7 @@ class WebsitePublished(DomainEvent):
     deployment_url: str = ""
     feed_version: str = ""
     page_count: int = 0
+
 
 Event = DomainEvent
 EventHandler = Callable[[DomainEvent], Any]
@@ -227,9 +227,9 @@ EVENT_TYPES: tuple[type[DomainEvent], ...] = (
 )
 
 __all__ = [
+    "EVENT_TYPES",
     "AppUpdated",
     "DomainEvent",
-    "EVENT_TYPES",
     "Event",
     "EventBus",
     "FeedGenerated",

@@ -67,7 +67,9 @@ def find_stale_mirror_files() -> list[str]:
 
     # A root JSON/XML the publisher no longer owns is stale: the publisher
     # prunes it on the next run.
-    owned = {"apps.json", "catalog.json", "sitemap.xml"}
+    # The root security report is a deliberate machine-readable publication
+    # artifact, maintained by the security workflow alongside data/security.json.
+    owned = {"apps.json", "catalog.json", "security-report.json", "sitemap.xml"}
     for path in sorted(REPO_ROOT.glob("*")):
         if path.is_file() and path.suffix.lower() in {".json", ".xml"} and path.name not in owned:
             stale.append(f"{path.name} (stale root copy)")

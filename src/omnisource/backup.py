@@ -43,7 +43,9 @@ def _iter_files(root: Path, include: tuple[str, ...]) -> list[Path]:
 
 
 def _excluded(path: Path) -> bool:
-    return any(part in {".cache", "node_modules", ".git", "__pycache__", "quarantine"} for part in path.parts) or path.suffix in {
+    return any(
+        part in {".cache", "node_modules", ".git", "__pycache__", "quarantine"} for part in path.parts
+    ) or path.suffix in {
         ".ipa",
         ".tipa",
     }

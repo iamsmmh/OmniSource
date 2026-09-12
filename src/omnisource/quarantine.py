@@ -14,10 +14,11 @@ no implicit "best effort" publication path.
 from __future__ import annotations
 
 import hashlib
+from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 from omnisource.io import read_json, write_json
 
@@ -221,11 +222,11 @@ __all__ = [
     "DISCOVERED",
     "PUBLISHED",
     "QUARANTINED",
-    "QuarantineResult",
-    "QuarantineStore",
     "REJECTED",
     "VALIDATING",
     "VERIFIED",
+    "QuarantineResult",
+    "QuarantineStore",
     "can_publish",
     "validate_candidates",
 ]

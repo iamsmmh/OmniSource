@@ -179,9 +179,9 @@ class MetadataCompletenessValidator:
         if not isinstance(payload, dict):
             return ["payload must be an object"]
         errors: list[str] = []
-        for field in ("name", "identifier", "apps"):
-            if not payload.get(field):
-                errors.append(f"missing {field}")
+        for required_field in ("name", "identifier", "apps"):
+            if not payload.get(required_field):
+                errors.append(f"missing {required_field}")
         if not isinstance(payload.get("apps"), list):
             errors.append("apps must be an array")
         return errors

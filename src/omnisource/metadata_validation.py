@@ -83,7 +83,9 @@ def normalize_metadata(app: dict[str, Any], *, source_url: str = "") -> dict[str
     value["website"] = str(value.get("website") or value.get("homepage") or source_url or "").strip()
     value["category"] = str(value.get("category") or "other").strip().casefold()
     tags = value.get("tags")
-    value["tags"] = sorted({str(tag).strip().casefold() for tag in tags if str(tag).strip()}) if isinstance(tags, list) else []
+    value["tags"] = (
+        sorted({str(tag).strip().casefold() for tag in tags if str(tag).strip()}) if isinstance(tags, list) else []
+    )
     value["releaseNotes"] = str(value.get("releaseNotes") or value.get("localizedDescription") or "").strip()
     value["changelog"] = str(value.get("changelog") or value.get("versionDescription") or "").strip()
     return value
@@ -121,9 +123,10 @@ def validate_metadata(app: Any, *, prefix: str = "app", strict: bool = False) ->
         return report
     normalized = normalize_metadata(app)
     report.normalized = normalized
-    for field in ("name", "developerName", "localizedDescription", "bundleIdentifier", "version", "versionDate"):
-        if not normalized[field]:
-            report.error(f"{prefix}: missing {field}")
+    required_fields = ("name", "developerName", "localizedDescription", "bundleIdentifier", "version", "versionDate")
+    for required_field in required_fields:
+        if not normalized[required_field]:
+            report.error(f"{prefix}: missing {required_field}")
     if normalized["bundleIdentifier"] and not BUNDLE_RE.fullmatch(normalized["bundleIdentifier"]):
         report.error(f"{prefix}: invalid bundleIdentifier")
     if normalized["iconURL"] and not _url(normalized["iconURL"]):
@@ -143,9 +146,8 @@ def validate_metadata(app: Any, *, prefix: str = "app", strict: bool = False) ->
     if not category or len(category) > 64:
         report.error(f"{prefix}: category is invalid")
     clients = app.get("clients")
-    if clients is not None:
-        if not isinstance(clients, list) or not set(clients).issubset(CLIENT_TYPES):
-            report.error(f"{prefix}: clients contains an unsupported client")
+    if clients is not None and (not isinstance(clients, list) or not set(clients).issubset(CLIENT_TYPES)):
+        report.error(f"{prefix}: clients contains an unsupported client")
     for index, version in enumerate(_versions(app)):
         release = validate_release_metadata(version, prefix=f"{prefix}.versions[{index}]")
         report.errors.extend(release.errors)
@@ -173,7 +175,9 @@ def validate_feed_metadata(feed: Any, *, strict: bool = False) -> MetadataReport
         if isinstance(app, dict):
             bundle = str(app.get("bundleIdentifier") or "")
             if bundle in seen_bundles:
-                report.warning(f"apps[{index}]: duplicate bundleIdentifier {bundle!r} requires an explicit alternative group")
+                report.warning(
+                    f"apps[{index}]: duplicate bundleIdentifier {bundle!r} requires an explicit alternative group"
+                )
             if bundle:
                 seen_bundles.add(bundle)
     return report

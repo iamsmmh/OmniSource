@@ -11,11 +11,12 @@ from __future__ import annotations
 import json
 import logging
 import time
+from collections.abc import Iterator
 from contextlib import contextmanager
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any
 
 from omnisource.events import _scrub
 

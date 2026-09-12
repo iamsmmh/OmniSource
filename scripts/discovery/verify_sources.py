@@ -19,8 +19,8 @@ import hashlib
 import json
 import sys
 from pathlib import Path
-from urllib.parse import urlsplit
 from typing import Any
+from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 
@@ -150,9 +150,7 @@ def _verify_one(record: dict[str, Any], store: QuarantineStore, args: argparse.N
         verified = {**record, **updates, "status": VERIFIED}
     else:
         current = store.get(source_id)
-        if current and current.get("status") == QUARANTINED:
-            store.transition(source_id, VALIDATING, errors=[])
-        elif current and current.get("status") == DISCOVERED:
+        if (current and current.get("status") == QUARANTINED) or (current and current.get("status") == DISCOVERED):
             store.transition(source_id, VALIDATING, errors=[])
         verified = store.transition(source_id, VERIFIED, **updates)
 
@@ -198,9 +196,7 @@ def main(argv: list[str] | None = None) -> int:
         allowed_statuses = {DISCOVERED, VALIDATING, QUARANTINED}
         if args.publish:
             allowed_statuses.add(VERIFIED)
-        candidates = [
-            item for item in candidates if str(item.get("status") or VALIDATING) in allowed_statuses
-        ]
+        candidates = [item for item in candidates if str(item.get("status") or VALIDATING) in allowed_statuses]
     if args.limit:
         candidates = candidates[: args.limit]
 
@@ -221,7 +217,12 @@ def main(argv: list[str] | None = None) -> int:
         # published projection is consumed by registry/publication builders.
         write_json_stable(
             store_path,
-            {"schemaVersion": 1, "generatedAt": autodiscovery.utcnow(), "count": len(output_records), "sources": output_records},
+            {
+                "schemaVersion": 1,
+                "generatedAt": autodiscovery.utcnow(),
+                "count": len(output_records),
+                "sources": output_records,
+            },
         )
         _write_outputs(output_records, Path(args.published))
 

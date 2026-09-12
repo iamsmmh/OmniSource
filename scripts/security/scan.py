@@ -33,10 +33,16 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--catalog", default=str(ROOT / "catalog.json"))
     parser.add_argument("--health", default=str(ROOT / "feeds" / "health.json"))
     parser.add_argument("--out", default=str(ROOT / "data" / "security.json"))
-    parser.add_argument("--alias", default=str(ROOT / "security-report.json"), help="backward-compatible top-level report copy")
+    parser.add_argument(
+        "--alias", default=str(ROOT / "security-report.json"), help="backward-compatible top-level report copy"
+    )
     parser.add_argument("--fail-on", default="critical", choices=sorted(SEVERITY_RANK))
-    parser.add_argument("--verify-downloads", action="store_true", help="stream and hash newest assets (network and disk intensive)")
-    parser.add_argument("--verify-file", action="append", default=[], help="verify a local binary (repeatable; useful in offline CI)")
+    parser.add_argument(
+        "--verify-downloads", action="store_true", help="stream and hash newest assets (network and disk intensive)"
+    )
+    parser.add_argument(
+        "--verify-file", action="append", default=[], help="verify a local binary (repeatable; useful in offline CI)"
+    )
     parser.add_argument("--verify-timeout", type=float, default=300.0)
     parser.add_argument("--max-download-bytes", type=int, default=512 * 1024 * 1024)
     return parser.parse_args(argv)
@@ -63,7 +69,12 @@ def main(argv: list[str] | None = None) -> int:
             local_results.append(result)
             if not result.get("ok"):
                 report["findings"].append(
-                    {"severity": "critical", "check": "local-binary-integrity", "id": str(filename), "detail": result["detail"]}
+                    {
+                        "severity": "critical",
+                        "check": "local-binary-integrity",
+                        "id": str(filename),
+                        "detail": result["detail"],
+                    }
                 )
         report["localFileVerification"] = local_results
     if args.verify_downloads:
@@ -83,10 +94,17 @@ def main(argv: list[str] | None = None) -> int:
             verification_results.append(result)
             if not result.get("ok"):
                 report["findings"].append(
-                    {"severity": "critical", "check": "binary-integrity", "id": result["id"], "detail": result["detail"]}
+                    {
+                        "severity": "critical",
+                        "check": "binary-integrity",
+                        "id": result["id"],
+                        "detail": result["detail"],
+                    }
                 )
         report["binaryVerification"] = verification_results
-        report["verdict"] = "fail" if any(item["severity"] == "critical" for item in report["findings"]) else report["verdict"]
+        report["verdict"] = (
+            "fail" if any(item["severity"] == "critical" for item in report["findings"]) else report["verdict"]
+        )
     write_json(Path(args.out), report)
     if args.alias and Path(args.alias) != Path(args.out):
         write_json(Path(args.alias), report)

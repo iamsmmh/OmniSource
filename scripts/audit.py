@@ -789,7 +789,9 @@ def write_workflows() -> Report:
         rows.append(
             (
                 f"`{path.name}`",
-                name.strip() if isinstance(name, str) else (name.group(1).strip() if hasattr(name, "group") else str(name)),
+                name.strip()
+                if isinstance(name, str)
+                else (name.group(1).strip() if hasattr(name, "group") else str(name)),
                 triggers,
                 perms,
                 timeouts,

@@ -10,11 +10,10 @@ from omnisource.repository import JsonRepository, MemoryRepository, SQLiteReposi
 class RepositoryTransactionTests(unittest.TestCase):
     def test_memory_rolls_back_batch(self) -> None:
         repo = MemoryRepository()
-        with self.assertRaises(RuntimeError):
-            with repo.transaction():
-                repo.put("apps", "one", {"name": "One"})
-                repo.put("apps", "two", {"name": "Two"})
-                raise RuntimeError("abort")
+        with self.assertRaises(RuntimeError), repo.transaction():
+            repo.put("apps", "one", {"name": "One"})
+            repo.put("apps", "two", {"name": "Two"})
+            raise RuntimeError("abort")
         self.assertEqual(repo.count("apps"), 0)
 
     def test_json_rolls_back_disk_and_memory(self) -> None:
@@ -23,11 +22,10 @@ class RepositoryTransactionTests(unittest.TestCase):
             repo = JsonRepository(root)
             repo.put("apps", "one", {"name": "Before"})
             before = (root / "apps.json").read_text(encoding="utf-8")
-            with self.assertRaises(RuntimeError):
-                with repo.transaction():
-                    repo.put("apps", "one", {"name": "After"})
-                    repo.put("sources", "source", {"name": "New"})
-                    raise RuntimeError("abort")
+            with self.assertRaises(RuntimeError), repo.transaction():
+                repo.put("apps", "one", {"name": "After"})
+                repo.put("sources", "source", {"name": "New"})
+                raise RuntimeError("abort")
             self.assertEqual((root / "apps.json").read_text(encoding="utf-8"), before)
             self.assertFalse((root / "sources.json").exists())
             self.assertEqual(repo.get("apps", "one"), {"name": "Before"})
@@ -46,11 +44,10 @@ class RepositoryTransactionTests(unittest.TestCase):
             repo = SQLiteRepository(Path(directory) / "repo.sqlite")
             try:
                 repo.put("apps", "one", {"name": "Before"})
-                with self.assertRaises(RuntimeError):
-                    with repo.transaction():
-                        repo.put("apps", "one", {"name": "After"})
-                        repo.put("sources", "source", {"name": "New"})
-                        raise RuntimeError("abort")
+                with self.assertRaises(RuntimeError), repo.transaction():
+                    repo.put("apps", "one", {"name": "After"})
+                    repo.put("sources", "source", {"name": "New"})
+                    raise RuntimeError("abort")
                 self.assertEqual(repo.get("apps", "one"), {"name": "Before"})
                 self.assertIsNone(repo.get("sources", "source"))
             finally:

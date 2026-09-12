@@ -106,9 +106,7 @@ def render_collection_feed(
 ) -> dict[str, Any]:
     """Render a collection feed from explicit app IDs (never inferred users)."""
     wanted = {
-        str(item)
-        for item in collection.get("appSlugs", collection.get("apps", []))
-        if isinstance(item, (str, int))
+        str(item) for item in collection.get("appSlugs", collection.get("apps", [])) if isinstance(item, (str, int))
     }
     apps = [item for item in envelope.get("apps", []) if isinstance(item, dict)]
     selected = [

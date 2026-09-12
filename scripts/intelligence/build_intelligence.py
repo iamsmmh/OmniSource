@@ -27,10 +27,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def _apps(path: str) -> list[dict]:
     value = read_json(Path(path))
-    if isinstance(value, dict):
-        values = value.get("apps", [])
-    else:
-        values = value
+    values = value.get("apps", []) if isinstance(value, dict) else value
     return [item for item in values if isinstance(item, dict)] if isinstance(values, list) else []
 
 
@@ -58,7 +55,10 @@ def main(argv: list[str] | None = None) -> int:
         write_json_stable(out_dir / "package_intelligence.json", package),
         write_json_stable(out_dir / "source_timeline.json", timeline),
     ]
-    print(f"intelligence: {insights['count']} sources, {package['count']} apps, {timeline['count']} events; changed={sum(changed)}")
+    print(
+        f"intelligence: {insights['count']} sources, {package['count']} apps, "
+        f"{timeline['count']} events; changed={sum(changed)}"
+    )
     return 0
 
 

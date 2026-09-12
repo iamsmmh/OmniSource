@@ -8,8 +8,8 @@ coverage and release availability, not user activity.
 
 from __future__ import annotations
 
-from collections import defaultdict
 from datetime import UTC, datetime
+from itertools import pairwise
 from typing import Any
 
 SCHEMA_VERSION = 1
@@ -111,7 +111,7 @@ def _cadence_days(source: dict[str, Any], release_history: dict[str, Any] | None
     dates.sort()
     if len(dates) < 2:
         return None
-    gaps = [(right - left).days for left, right in zip(dates, dates[1:]) if (right - left).days >= 0]
+    gaps = [(right - left).days for left, right in pairwise(dates) if (right - left).days >= 0]
     return round(sum(gaps) / len(gaps), 2) if gaps else None
 
 
@@ -139,7 +139,9 @@ def build_package_intelligence(
                 "first_seen": dates[0] if dates else str(app.get("firstSeen") or app.get("versionDate") or ""),
                 "last_updated": dates[-1] if dates else str(app.get("versionDate") or ""),
                 "update_frequency_days": _date_gap(dates),
-                "release_count": len(releases) or len(app.get("versions", [])) if isinstance(app.get("versions"), list) else len(releases),
+                "release_count": len(releases) or len(app.get("versions", []))
+                if isinstance(app.get("versions"), list)
+                else len(releases),
                 "source_count": source_count,
                 "bundle_identifier": str(app.get("bundleIdentifier") or ""),
             }
@@ -162,7 +164,7 @@ def _date_gap(dates: list[str]) -> float | None:
             continue
     if len(values) < 2:
         return None
-    gaps = [(right - left).days for left, right in zip(values, values[1:])]
+    gaps = [(right - left).days for left, right in pairwise(values)]
     return round(sum(gaps) / len(gaps), 2)
 
 
@@ -178,7 +180,9 @@ def build_timeline(registry: dict[str, Any]) -> dict[str, Any]:
             if not isinstance(snapshot, dict):
                 continue
             at = str(snapshot.get("at") or "")
-            events.append({"at": at, "type": "health_changed", "source_id": source_id, "health": snapshot.get("health")})
+            events.append(
+                {"at": at, "type": "health_changed", "source_id": source_id, "health": snapshot.get("health")}
+            )
             events.append(
                 {
                     "at": at,

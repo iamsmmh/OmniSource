@@ -35,7 +35,10 @@ def _score(source: dict[str, Any], reputation: dict[str, Any] | None) -> float:
     if isinstance(reputation, dict):
         source_id = str(source.get("id") or source.get("source_id") or source.get("source") or "")
         for item in reputation.get("sources", []):
-            if isinstance(item, dict) and str(item.get("id") or item.get("source") or "") in {source_id, str(source.get("source"))}:
+            if isinstance(item, dict) and str(item.get("id") or item.get("source") or "") in {
+                source_id,
+                str(source.get("source")),
+            }:
                 value = item.get("score", value)
                 break
     try:
@@ -51,10 +54,15 @@ def classify_source(
     archived: bool = False,
 ) -> str:
     """Classify a source from explicit provenance and observed evidence."""
-    if archived or bool(source.get("archived")) or str(source.get("status", "")).casefold() in {
-        "archived",
-        "deprecated",
-    }:
+    if (
+        archived
+        or bool(source.get("archived"))
+        or str(source.get("status", "")).casefold()
+        in {
+            "archived",
+            "deprecated",
+        }
+    ):
         return "Archived"
     verification = str(source.get("verification_status") or source.get("verification") or "").casefold()
     source_type = str(source.get("type") or source.get("source_type") or "").casefold()
@@ -148,7 +156,13 @@ def build_registry(
         apps = raw.get("apps", [])
         app_count = len(apps) if isinstance(apps, list) else int(raw.get("appCount", 0) or 0)
         old = previous_by_id.get(source_id, {})
-        first_seen = str(old.get("first_seen") or old.get("firstSeen") or raw.get("first_seen") or raw.get("discovered_at") or utcnow())
+        first_seen = str(
+            old.get("first_seen")
+            or old.get("firstSeen")
+            or raw.get("first_seen")
+            or raw.get("discovered_at")
+            or utcnow()
+        )
         record = {
             "source_id": source_id,
             "source_name": str(raw.get("source_name") or raw.get("name") or raw.get("source") or url or source_id),
@@ -201,7 +215,9 @@ def build_registry(
         "schemaVersion": REGISTRY_SCHEMA_VERSION,
         "generatedAt": utcnow(),
         "count": len(records),
-        "classifications": {name: sum(1 for item in records if item.get("classification") == name) for name in CLASSIFICATIONS},
+        "classifications": {
+            name: sum(1 for item in records if item.get("classification") == name) for name in CLASSIFICATIONS
+        },
         "sources": records,
     }
 
