@@ -1,0 +1,19 @@
+{
+  "name": "OmniSource — Sideload App Store",
+  "short_name": "OmniSource",
+  "description": "One feed for AltStore, SideStore, Feather, ESign and LiveContainer.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+# -----------------------------------------------------------------------------
+# Autonomous source discovery.
+#
+# Searches GitHub (code search), candidate feed URLs, release repositories
+# and web catalogs for new AltStore / SideStore / Feather / ESign /
+# LiveContainer sources every 12 hours, validates every candidate, and
+# merges the survivors into data/discovered_sources.json.
+#
+# Discoveries are NEVER auto-published to user-facing feeds: validation
+# failures fail this job before anything is committed, and promotion into
+# catalog.json stays an explicit human (or pinned-policy) step.
+# -----------------------------------------------------------------------------
+name: Discovery
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+    inputs:
+      skip_github:
+        description: "Skip the GitHub code-search pass"
+        type: boolean
+        default: false
+
+concurrency:
+  group: discovery
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  discover:
+    name: Discover and validate sources
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run discovery passes
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SKIP_GITHUB: ${{ inputs.skip_github }}
+        run: |
+          set -euo pipefail
+          ARGS=()
+          if [ "${SKIP_GITHUB}" = "true" ]; then
+            ARGS+=(--skip-github)
+          fi
+          python3 scripts/discovery/discover_sources.py "${ARGS[@]}"
+
+      - name: Validate discoveries (invalid sources never publish)
+        run: |
+          set -euo pipefail
+          python3 scripts/validation/validate_source.py
+
+      - name: Commit discovery store
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/discovered_sources.json
+          if git diff --cached --quiet; then
+            echo "No new discoveries."
+            exit 0
+          fi
+          git commit -m "chore(discovery): autonomous source discovery [skip ci]"
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
+              break
+            fi
+            if [ "${attempt}" -eq 3 ]; then
+              echo "::error::git pull --rebase failed after 3 attempts"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+          done
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              break
+            fi
+            if [ "${attempt}" -eq 3 ]; then
+              echo "::error::git push failed after 3 attempts"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          done

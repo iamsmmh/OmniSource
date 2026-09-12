@@ -1,0 +1,39 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "https://repo.ikghd.me/repo.json",
+    "source": "iKarwan (repo.ikghd.me)",
+    "type": "altstore",
+    "homepage": "https://repo.ikghd.me",
+    "sourceURL": "https://repo.ikghd.me",
+    "publisher": "iKarwan (repo.ikghd.me)",
+    "apps": [
+      {
+        "slug": "inkillerplus",
+        "name": "iNKillerPlus",
+        "version": "446.0.0"
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "version": "46.8.0"
+      }
+    ],
+    "slug": "https-repo-ikghd-me-repo-json",
+    "page": "/sources/https-repo-ikghd-me-repo-json/",
+    "appSlugs": [
+      "inkillerplus",
+      "ttkillerplus"
+    ],
+    "appCount": 2,
+    "verifiedApps": 2,
+    "healthScore": 79.0,
+    "score": 76.4,
+    "status": "Community Verified",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2026-09-09"
+  }
+}

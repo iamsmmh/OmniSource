@@ -1,0 +1,34 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "spotiflacapp/SpotiFLAC-Mobile",
+    "source": "spotiflacapp/SpotiFLAC-Mobile",
+    "type": "github",
+    "homepage": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+    "sourceURL": "https://github.com/spotiflacapp/SpotiFLAC-Mobile",
+    "publisher": "spotiflacapp/SpotiFLAC-Mobile",
+    "apps": [
+      {
+        "slug": "spotiflac",
+        "name": "SpotiFLAC Mobile",
+        "version": "4.9.6"
+      }
+    ],
+    "slug": "spotiflacapp-spotiflac-mobile",
+    "page": "/sources/spotiflacapp-spotiflac-mobile/",
+    "appSlugs": [
+      "spotiflac"
+    ],
+    "appCount": 1,
+    "verifiedApps": 1,
+    "healthScore": 77.0,
+    "score": 73.9,
+    "status": "Community Verified",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2026-09-07",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/spotiflac.json"
+  }
+}

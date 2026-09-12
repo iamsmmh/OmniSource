@@ -1,0 +1,34 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "Odyssey-Team/Odyssey",
+    "source": "Odyssey-Team/Odyssey",
+    "type": "github",
+    "homepage": "https://github.com/Odyssey-Team/Odyssey",
+    "sourceURL": "https://github.com/Odyssey-Team/Odyssey",
+    "publisher": "Odyssey-Team/Odyssey",
+    "apps": [
+      {
+        "slug": "odyssey",
+        "name": "Odyssey",
+        "version": "1.4.3"
+      }
+    ],
+    "slug": "odyssey-team-odyssey",
+    "page": "/sources/odyssey-team-odyssey/",
+    "appSlugs": [
+      "odyssey"
+    ],
+    "appCount": 1,
+    "verifiedApps": 1,
+    "healthScore": 77.0,
+    "score": 71.4,
+    "status": "Deprecated",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2023-04-04",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/odyssey.json"
+  }
+}

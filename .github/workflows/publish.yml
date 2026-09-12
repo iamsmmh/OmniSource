@@ -1,0 +1,109 @@
+# -----------------------------------------------------------------------------
+# Derived-artifact publisher (dedupe → enrich → reputation → feeds → API).
+#
+# Runs after the sync pipeline (and daily as a backstop): rebuilds the
+# canonical app database, the append-only release ledger, enriched
+# metadata, reputation labels, per-client feeds and the static API v3
+# surface, validates every output, and commits what changed.
+#
+# Order in the autonomous pipeline:
+#   sync → publish → (monitoring, security, analytics run on their own cadence)
+# -----------------------------------------------------------------------------
+name: Publish Derived Artifacts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - catalog.json
+      - feeds/**
+      - data/security.json
+      - scripts/build_*.py
+      - scripts/enrich_metadata.py
+      - scripts/analytics_rollup.py
+      - scripts/reputation/**
+      - src/omnisource/canonical.py
+      - src/omnisource/release_history.py
+      - src/omnisource/enrichment.py
+      - src/omnisource/reputation_labels.py
+      - src/omnisource/api_v3.py
+      - src/omnisource/feeds/clients.py
+      - .github/workflows/publish.yml
+  schedule:
+    - cron: "30 6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: publish-derived
+  cancel-in-progress: false
+
+permissions: {}
+
+jobs:
+  publish:
+    name: Rebuild and validate derived artifacts
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Rebuild derived artifacts
+        run: |
+          set -euo pipefail
+          python3 scripts/build_canonical.py
+          python3 scripts/build_release_history.py
+          python3 scripts/enrich_metadata.py
+          python3 scripts/reputation/score.py
+          python3 scripts/build_client_feeds.py
+          python3 scripts/build_api_v3.py
+
+      - name: Validate derived artifacts
+        run: |
+          set -euo pipefail
+          python3 scripts/build_client_feeds.py --check
+          python3 scripts/validate.py
+          bash scripts/validate_jq.sh
+
+      - name: Commit derived artifacts
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/canonical_apps.json data/release_history.json data/enriched_apps.json \
+            data/source_reputation.json feeds/clients/ api/v3/
+          if git diff --cached --quiet; then
+            echo "Derived artifacts unchanged."
+            exit 0
+          fi
+          git commit -m "chore(publish): refresh derived artifacts [skip ci]"
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}"; then
+              break
+            fi
+            if [ "${attempt}" -eq 3 ]; then
+              echo "::error::git pull --rebase failed after 3 attempts"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+          done
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              break
+            fi
+            if [ "${attempt}" -eq 3 ]; then
+              echo "::error::git push failed after 3 attempts"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          done

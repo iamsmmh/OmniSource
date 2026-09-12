@@ -1,0 +1,34 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "saber-notes/saber",
+    "source": "saber-notes/saber",
+    "type": "github",
+    "homepage": "https://github.com/saber-notes/saber",
+    "sourceURL": "https://github.com/saber-notes/saber",
+    "publisher": "saber-notes/saber",
+    "apps": [
+      {
+        "slug": "saber",
+        "name": "Saber",
+        "version": "1.36.1"
+      }
+    ],
+    "slug": "saber-notes-saber",
+    "page": "/sources/saber-notes-saber/",
+    "appSlugs": [
+      "saber"
+    ],
+    "appCount": 1,
+    "verifiedApps": 1,
+    "healthScore": 77.0,
+    "score": 73.9,
+    "status": "Community Verified",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2026-08-30",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/saber.json"
+  }
+}

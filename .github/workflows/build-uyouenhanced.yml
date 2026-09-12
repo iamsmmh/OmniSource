@@ -431,9 +431,17 @@ jobs:
           echo "Normalization complete."
 
       - name: Inject extras with cyan (Azule successor)
+        env:
+          PACKAGE_NAME: ${{ steps.build_package.outputs.package }}
         run: |
           set -euo pipefail
-          IPA_IN="uyouenhanced/packages/${{ steps.build_package.outputs.package }}"
+          case "${PACKAGE_NAME}" in
+            "" | *"/"* | *".."* )
+              echo "::error::unexpected package name from build step"
+              exit 1
+              ;;
+          esac
+          IPA_IN="uyouenhanced/packages/${PACKAGE_NAME}"
           OUTNAME="uYouEnhanced_${YT_VERSION}_v${IN_UYOU_VERSION}.ipa"
 
           tweaks=(OpenYouTubeSafariExtension.appex)

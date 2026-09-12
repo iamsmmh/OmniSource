@@ -1,0 +1,34 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "pwn20wndstuff/Undecimus",
+    "source": "pwn20wndstuff/Undecimus",
+    "type": "github",
+    "homepage": "https://github.com/pwn20wndstuff/Undecimus",
+    "sourceURL": "https://github.com/pwn20wndstuff/Undecimus",
+    "publisher": "pwn20wndstuff/Undecimus",
+    "apps": [
+      {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "version": "5.2.0"
+      }
+    ],
+    "slug": "pwn20wndstuff-undecimus",
+    "page": "/sources/pwn20wndstuff-undecimus/",
+    "appSlugs": [
+      "unc0ver"
+    ],
+    "appCount": 1,
+    "verifiedApps": 1,
+    "healthScore": 77.0,
+    "score": 71.4,
+    "status": "Deprecated",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2020-06-09",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/unc0ver.json"
+  }
+}

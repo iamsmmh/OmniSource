@@ -1,0 +1,34 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "SideStore/SideStore",
+    "source": "SideStore/SideStore",
+    "type": "github",
+    "homepage": "https://github.com/SideStore/SideStore",
+    "sourceURL": "https://github.com/SideStore/SideStore",
+    "publisher": "SideStore/SideStore",
+    "apps": [
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "version": "0.6.4"
+      }
+    ],
+    "slug": "sidestore-sidestore",
+    "page": "/sources/sidestore-sidestore/",
+    "appSlugs": [
+      "sidestore"
+    ],
+    "appCount": 1,
+    "verifiedApps": 1,
+    "healthScore": 79.0,
+    "score": 73.9,
+    "status": "Community Verified",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2026-09-09",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/sidestore.json"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "name": "Winston",
+    "bundleIdentifier": "lo.cafe.winston",
+    "developerName": "lo.cafe",
+    "subtitle": "Open-source Reddit client",
+    "localizedDescription": "Winston is a beautiful open-source Reddit client for iOS built in SwiftUI, with themes, gestures, an inline media viewer and a fast comment thread reader. Because Reddit charges for API access, Winston asks you to create your own free Reddit API credentials on first launch.",
+    "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Winston.webp",
+    "tintColor": "FF4500",
+    "category": "social",
+    "version": "1.1.5",
+    "versionDate": "2024-06-24",
+    "versionDescription": "Winston 1.1.5 | winston\n\n- Fixed placeholder message alignment\n- Fixed Reddit API preferences page\n- Added localization support\n- Cleaned unused code and replaced glitchy book Lottie\n- Removed old, unused TipJar component\n- Added back GlobalLoaderProvider\n- Fixed broken build\n- Improved RedditListingFeed component and cleaned up some files\n- Fixed many UI bugs and stutters; added new NukeUI Opt components\n- Removed redundant code calling setAudioToMixWithOthers three times\n- Provided RedditListingFeed with a force refresh handler; fixed UserView issues\n- Fixed blur flash on app open\n- Fixed cache clear button not working\n- Added support for inline image within comments\n- Improved spoiler handling in selftext\n- Corrected tab bar hit detection in Split View on iPad",
+    "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+    "size": 50003343,
+    "versions": [
+      {
+        "version": "1.1.5",
+        "date": "2024-06-24",
+        "localizedDescription": "Winston 1.1.5 | winston\n\n- Fixed placeholder message alignment\n- Fixed Reddit API preferences page\n- Added localization support\n- Cleaned unused code and replaced glitchy book Lottie\n- Removed old, unused TipJar component\n- Added back GlobalLoaderProvider\n- Fixed broken build\n- Improved RedditListingFeed component and cleaned up some files\n- Fixed many UI bugs and stutters; added new NukeUI Opt components\n- Removed redundant code calling setAudioToMixWithOthers three times\n- Provided RedditListingFeed with a force refresh handler; fixed UserView issues\n- Fixed blur flash on app open\n- Fixed cache clear button not working\n- Added support for inline image within comments\n- Improved spoiler handling in selftext\n- Corrected tab bar hit detection in Split View on iPad",
+        "downloadURL": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+        "size": 50003343,
+        "minOSVersion": "17.0",
+        "releaseUrl": "https://github.com/lo-cafe/winston/releases/tag/v1.1.5",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "winston.ipa",
+            "downloadUrl": "https://github.com/lo-cafe/winston/releases/download/v1.1.5/winston.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 50003343,
+            "sha256": null,
+            "downloads": 12391,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "downloads": 12391
+      }
+    ],
+    "screenshotURLs": [],
+    "omnisource": {
+      "slug": "winston",
+      "status": "unmaintained",
+      "featured": false,
+      "upstreamURL": "https://github.com/lo-cafe/winston",
+      "sourceURL": "https://github.com/lo-cafe/winston",
+      "verification": {
+        "method": "github-release",
+        "publisher": "lo-cafe/winston",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "17.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official GPL-3.0 releases from lo-cafe/winston. The last published build is v1.1.5 (June 2024); the project is on hold, so treat it as archived-but-installable. Requires your own Reddit API credentials."
+      },
+      "health": {
+        "downloadReachable": true,
+        "detail": "HTTP 302",
+        "statusSince": "2026-09-07",
+        "lastUpdatedAt": "2024-06-24"
+      }
+    },
+    "id": "lo.cafe.winston"
+  }
+}

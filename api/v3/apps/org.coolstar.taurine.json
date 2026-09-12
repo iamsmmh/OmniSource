@@ -1,0 +1,90 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "name": "Taurine",
+    "bundleIdentifier": "org.coolstar.taurine",
+    "developerName": "Odyssey Team (coolstar)",
+    "subtitle": "Semi-untethered jailbreak for iOS 14",
+    "localizedDescription": "Taurine is the Odyssey Team's semi-untethered jailbreak for iOS 14.0 – 14.3 on A9 to A14 devices using the cicuta_virosa and amfid exploits. It installs Sileo and a libhooker-based tweak environment, keeps passcode support, and boots into a userspace jailbreak from the app. Useful for keeping vintage firmwares usable on older iPhones and iPads.",
+    "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Taurine.webp",
+    "tintColor": "FF9500",
+    "category": "utilities",
+    "version": "1.1.7",
+    "versionDate": "2023-09-23",
+    "versionDescription": "Taurine 1.1.7 | Taurine.1.1.7-3\n\nFix kfd change being implemented incorrectly",
+    "downloadURL": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+    "size": 32244737,
+    "versions": [
+      {
+        "version": "1.1.7",
+        "date": "2023-09-23",
+        "localizedDescription": "Taurine 1.1.7 | Taurine.1.1.7-3\n\nFix kfd change being implemented incorrectly",
+        "downloadURL": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+        "size": 32244737,
+        "minOSVersion": "14.0",
+        "releaseUrl": "https://github.com/Odyssey-Team/Taurine/releases/tag/1.1.7-3",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Taurine.1.1.7-3.ipa",
+            "downloadUrl": "https://github.com/Odyssey-Team/Taurine/releases/download/1.1.7-3/Taurine.1.1.7-3.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 32244737,
+            "sha256": null,
+            "downloads": 757086,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "downloads": 757086
+      }
+    ],
+    "screenshotURLs": [],
+    "appPermissions": {
+      "entitlements": [],
+      "privacy": {}
+    },
+    "omnisource": {
+      "slug": "taurine",
+      "status": "unmaintained",
+      "featured": false,
+      "upstreamURL": "https://github.com/Odyssey-Team/Taurine",
+      "sourceURL": "https://github.com/Odyssey-Team/Taurine",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Odyssey-Team/Taurine",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official signed-for-sideloading IPA from Odyssey-Team/Taurine, last released in September 2023 — it is the final upstream build, kept here for iOS 14.0 – 14.3 devices. Sideload with AltStore, SideStore, Feather or ESign; a 7-day certificate works because the jailbreak is re-applied from the app."
+      },
+      "health": {
+        "downloadReachable": true,
+        "detail": "HTTP 302",
+        "statusSince": "2026-09-10",
+        "lastUpdatedAt": "2023-09-23"
+      }
+    },
+    "id": "org.coolstar.taurine"
+  }
+}

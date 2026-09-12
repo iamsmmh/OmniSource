@@ -1,0 +1,34 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "cranci1/AnimeGen",
+    "source": "cranci1/AnimeGen",
+    "type": "github",
+    "homepage": "https://github.com/cranci1/AnimeGen",
+    "sourceURL": "https://github.com/cranci1/AnimeGen",
+    "publisher": "cranci1/AnimeGen",
+    "apps": [
+      {
+        "slug": "animegen",
+        "name": "AnimeGen",
+        "version": "3.0.0"
+      }
+    ],
+    "slug": "cranci1-animegen",
+    "page": "/sources/cranci1-animegen/",
+    "appSlugs": [
+      "animegen"
+    ],
+    "appCount": 1,
+    "verifiedApps": 1,
+    "healthScore": 77.0,
+    "score": 71.4,
+    "status": "Inactive",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2025-03-04",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/animegen.json"
+  }
+}

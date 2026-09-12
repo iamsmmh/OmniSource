@@ -1,0 +1,92 @@
+# -----------------------------------------------------------------------------
+# Security gate.
+#
+# Verifies SHA-256 / SHA-512 coverage, duplicate binaries, download
+# integrity and provenance on every push/PR touching the supply chain,
+# and daily on a schedule. A *critical* finding fails the job and blocks
+# publication; the full report is committed as data/security.json.
+# -----------------------------------------------------------------------------
+name: Security
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - catalog.json
+      - feeds/**
+      - scripts/**
+      - src/**
+      - data/mirrors.json
+      - .github/workflows/security.yml
+  pull_request:
+    paths:
+      - catalog.json
+      - feeds/**
+      - scripts/**
+      - src/**
+      - data/mirrors.json
+      - .github/workflows/security.yml
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: security-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  scan:
+    name: Scan and gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate distribution feeds
+        run: |
+          set -euo pipefail
+          python3 scripts/validation/validate_feed.py feeds/apps.json
+          for client in altstore sidestore feather esign livecontainer; do
+            if [ -f "feeds/clients/${client}.json" ]; then
+              python3 scripts/validation/validate_feed.py "feeds/clients/${client}.json"
+            fi
+          done
+
+      - name: Run security scan (fails on critical findings)
+        run: |
+          set -euo pipefail
+          python3 scripts/security/scan.py --fail-on critical
+
+      - name: Upload security report
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-report
+          path: data/security.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit security report
+        if: github.event_name != 'pull_request'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/security.json
+          if git diff --cached --quiet; then
+            echo "Security report unchanged."
+            exit 0
+          fi
+          git commit -m "chore(security): refresh security posture report [skip ci]"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

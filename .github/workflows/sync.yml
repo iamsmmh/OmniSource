@@ -101,15 +101,24 @@ jobs:
           NTFY_URL: ${{ secrets.NTFY_URL }}
           NTFY_TOKEN: ${{ secrets.NTFY_TOKEN }}
           OMNISOURCE_WEBHOOK_URL: ${{ secrets.OMNISOURCE_WEBHOOK_URL }}
+          # Workflow inputs reach the shell through the environment only —
+          # never interpolate ${{ }} expressions into run: scripts.
+          SKIP_SYNC: ${{ inputs.skip_sync }}
+          SKIP_HEALTH: ${{ inputs.skip_health }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
-          EXTRA=""
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            EXTRA="--incremental"
+          set -euo pipefail
+          ARGS=()
+          if [ "${EVENT_NAME}" = "schedule" ]; then
+            ARGS+=(--incremental)
           fi
-          python3 scripts/omnisource.py \
-            ${{ inputs.skip_sync && '--no-sync' || '' }} \
-            ${{ inputs.skip_health && '--no-health' || '' }} \
-            $EXTRA
+          if [ "${SKIP_SYNC}" = "true" ]; then
+            ARGS+=(--no-sync)
+          fi
+          if [ "${SKIP_HEALTH}" = "true" ]; then
+            ARGS+=(--no-health)
+          fi
+          python3 scripts/omnisource.py "${ARGS[@]}"
 
       # Test gate: the commit step below only runs if every check here is
       # green (GitHub Actions skips the rest of the job on any failure). This

@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/security.schema.json",
+  "title": "OmniSource security report",
+  "description": "Security posture report (data/security.json) built by scripts/security/scan.py. A critical finding fails security.yml.",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "verdict", "summary", "findings"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "generatedAt": { "type": "string" },
+    "verdict": { "type": "string", "enum": ["pass", "fail"] },
+    "summary": {
+      "type": "object",
+      "required": ["apps", "sha256", "duplicateBinaries", "downloadsFailing"],
+      "properties": {
+        "apps": { "type": "integer", "minimum": 0 },
+        "sha256": { "type": "integer", "minimum": 0 },
+        "sha512": { "type": "integer", "minimum": 0 },
+        "hashesMissing": { "type": "integer", "minimum": 0 },
+        "hashesInvalid": { "type": "integer", "minimum": 0 },
+        "duplicateBinaries": { "type": "integer", "minimum": 0 },
+        "downloadsFailing": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "check", "id", "detail"],
+        "properties": {
+          "severity": { "type": "string", "enum": ["low", "medium", "high", "critical"] },
+          "check": { "type": "string" },
+          "id": { "type": "string" },
+          "detail": { "type": "string" }
+        }
+      }
+    }
+  }
+}

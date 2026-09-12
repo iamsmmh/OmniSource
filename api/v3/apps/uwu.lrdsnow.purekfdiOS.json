@@ -1,0 +1,114 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "name": "PureKFD",
+    "bundleIdentifier": "uwu.lrdsnow.purekfdiOS",
+    "developerName": "Lrdsnow",
+    "subtitle": "Jailed package manager",
+    "localizedDescription": "PureKFD is an exploit-based jailed package manager for iOS 15.0 through 18.x. It applies Misaka-style tweaks, themes and packages to compatible devices without a full jailbreak.",
+    "iconURL": "https://iamsmmh.github.io/OmniSource/assets/PureKFD.webp",
+    "tintColor": "9C27B0",
+    "category": "utilities",
+    "version": "6.0.2",
+    "versionDate": "2024-11-23",
+    "versionDescription": "PureKFD 6.0.2 | PureKFD\n\n- more optimization\n- more syncing for accents\n- new repo\n- fixed individual tweak restore",
+    "downloadURL": "https://github.com/Lrdsnow/PureKFD/releases/download/6.0.2/PureKFD.ipa",
+    "size": 10806164,
+    "versions": [
+      {
+        "version": "6.0.2",
+        "date": "2024-11-23",
+        "localizedDescription": "PureKFD 6.0.2 | PureKFD\n\n- more optimization\n- more syncing for accents\n- new repo\n- fixed individual tweak restore",
+        "downloadURL": "https://github.com/Lrdsnow/PureKFD/releases/download/6.0.2/PureKFD.ipa",
+        "size": 10806164,
+        "minOSVersion": "15.0",
+        "releaseUrl": "https://github.com/Lrdsnow/PureKFD/releases/tag/6.0.2",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "PureKFD.ipa",
+            "downloadUrl": "https://github.com/Lrdsnow/PureKFD/releases/download/6.0.2/PureKFD.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 10806164,
+            "sha256": null,
+            "downloads": 19364,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "PureKFD.noSparse.ipa",
+            "downloadUrl": "https://github.com/Lrdsnow/PureKFD/releases/download/6.0.2/PureKFD.noSparse.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 3932657,
+            "sha256": null,
+            "downloads": 1848,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "PureKFD.noSparse.ts.ipa",
+            "downloadUrl": "https://github.com/Lrdsnow/PureKFD/releases/download/6.0.2/PureKFD.noSparse.ts.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 4042969,
+            "sha256": null,
+            "downloads": 1322,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "downloads": 19364
+      }
+    ],
+    "screenshotURLs": [],
+    "appPermissions": {
+      "entitlements": [],
+      "privacy": {}
+    },
+    "omnisource": {
+      "slug": "purekfd",
+      "status": "stable",
+      "featured": false,
+      "upstreamURL": "https://github.com/Lrdsnow/PureKFD",
+      "sourceURL": "https://github.com/Lrdsnow/PureKFD",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Lrdsnow/PureKFD",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases. Exploit-based package manager for iOS 15.0–18.x; requires a kernel file descriptor (kfd) compatible device."
+      },
+      "health": {
+        "downloadReachable": true,
+        "detail": "not probed",
+        "statusSince": "2024-11-23",
+        "lastUpdatedAt": "2024-11-23"
+      }
+    },
+    "id": "uwu.lrdsnow.purekfdiOS"
+  }
+}

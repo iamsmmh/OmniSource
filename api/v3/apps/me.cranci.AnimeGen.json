@@ -1,0 +1,90 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "name": "AnimeGen",
+    "bundleIdentifier": "me.cranci.AnimeGen",
+    "developerName": "cranci1",
+    "subtitle": "Anime art generator",
+    "localizedDescription": "AnimeGen is a simple way to enjoy anime art. Generate anime-style images on your device using local AI models, with a gallery and save-to-photos workflow.",
+    "iconURL": "https://iamsmmh.github.io/OmniSource/assets/AnimeGen.webp",
+    "tintColor": "FF4081",
+    "category": "photo-video",
+    "version": "3.0.0",
+    "versionDate": "2025-03-04",
+    "versionDescription": "AnimeGen 3.0.0 | AnimeGen\n\n# Finally AnimeGen v3.0.0. is here!\n\nTook me a bit but i finally recoded the app completely. No new sources but they were all improved a lot. \nSome sources got removed since they were not working at lot for a lot of time.\n\nThe UI now is more simple and made to work all on the bottom of the screen.\nThe app size is now 3 times smaller. The only real issue anyone could find is that it cant save .gif images yet.\n\nYou can either sideload the ipa or install AnimeGen via [TestFlight](https://testflight.apple.com/join/jqx2hEkN)\n\n> [!Important]\n> The NSFW option has been removed and it will **never return back**",
+    "downloadURL": "https://github.com/cranci1/AnimeGen/releases/download/v3.0.0/AnimeGen.ipa",
+    "size": 3026218,
+    "versions": [
+      {
+        "version": "3.0.0",
+        "date": "2025-03-04",
+        "localizedDescription": "AnimeGen 3.0.0 | AnimeGen\n\n# Finally AnimeGen v3.0.0. is here!\n\nTook me a bit but i finally recoded the app completely. No new sources but they were all improved a lot. \nSome sources got removed since they were not working at lot for a lot of time.\n\nThe UI now is more simple and made to work all on the bottom of the screen.\nThe app size is now 3 times smaller. The only real issue anyone could find is that it cant save .gif images yet.\n\nYou can either sideload the ipa or install AnimeGen via [TestFlight](https://testflight.apple.com/join/jqx2hEkN)\n\n> [!Important]\n> The NSFW option has been removed and it will **never return back**",
+        "downloadURL": "https://github.com/cranci1/AnimeGen/releases/download/v3.0.0/AnimeGen.ipa",
+        "size": 3026218,
+        "minOSVersion": "15.2",
+        "releaseUrl": "https://github.com/cranci1/AnimeGen/releases/tag/v3.0.0",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "AnimeGen.ipa",
+            "downloadUrl": "https://github.com/cranci1/AnimeGen/releases/download/v3.0.0/AnimeGen.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 3026218,
+            "sha256": null,
+            "downloads": 344,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "downloads": 344
+      }
+    ],
+    "screenshotURLs": [],
+    "appPermissions": {
+      "entitlements": [],
+      "privacy": {}
+    },
+    "omnisource": {
+      "slug": "animegen",
+      "status": "stable",
+      "featured": false,
+      "upstreamURL": "https://github.com/cranci1/AnimeGen",
+      "sourceURL": "https://github.com/cranci1/AnimeGen",
+      "verification": {
+        "method": "github-release",
+        "publisher": "cranci1/AnimeGen",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "15.2",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA published by the developer on GitHub Releases."
+      },
+      "health": {
+        "downloadReachable": true,
+        "detail": "not probed",
+        "statusSince": "2025-03-04",
+        "lastUpdatedAt": "2025-03-04"
+      }
+    },
+    "id": "me.cranci.AnimeGen"
+  }
+}

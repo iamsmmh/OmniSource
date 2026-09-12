@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "omnisource"
-version = "3.1.0"
+version = "3.2.0"
 description = "Automatically maintained AltStore-compatible iOS app source"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -36,6 +36,7 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "scripts/*.py" = ["E402"]
+"scripts/*/*.py" = ["E402"]
 # The audit generator embeds long markdown/table lines; wrapping them hurts readability.
 "scripts/audit.py" = ["E501"]
 "tests/*.py" = ["E402", "S101", "S105", "S106"]
