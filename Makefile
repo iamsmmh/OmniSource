@@ -1,4 +1,4 @@
-.PHONY: all build publish site serve smoke validate test format lint check audit clean version
+.PHONY: all build publish site serve smoke validate test format lint check audit clean version discovery monitoring security analytics derived web
 
 PYTHON ?= python3
 PORT ?= 8000
@@ -58,6 +58,37 @@ check: lint validate test
 # accessibility, links/SEO) into reports/*.md — read-only over the tree.
 audit:
 	$(PYTHON) scripts/audit.py
+
+# Autonomous pipeline stages (each is offline-safe except live monitoring).
+discovery:
+	$(PYTHON) scripts/discovery/discover_sources.py --dry-run
+	$(PYTHON) scripts/validation/validate_source.py
+
+monitoring:
+	$(PYTHON) scripts/monitoring/report_status.py --offline
+	$(PYTHON) scripts/selfheal.py
+	$(PYTHON) scripts/mirror_check.py --offline
+
+security:
+	$(PYTHON) scripts/validation/validate_feed.py feeds/apps.json --allow-duplicates
+	$(PYTHON) scripts/security/scan.py
+
+analytics:
+	$(PYTHON) scripts/analytics_rollup.py
+
+# Derived artifacts: canonical DB, release ledger, enrichment, reputation,
+# per-client feeds and the static API v3 surface.
+derived:
+	$(PYTHON) scripts/build_canonical.py
+	$(PYTHON) scripts/build_release_history.py
+	$(PYTHON) scripts/enrich_metadata.py
+	$(PYTHON) scripts/reputation/score.py
+	$(PYTHON) scripts/build_client_feeds.py
+	$(PYTHON) scripts/build_api_v3.py
+
+# Modern website (Next.js): install, typecheck, lint, production build.
+web:
+	cd web && npm ci && npm run typecheck && npm run lint && npm run build
 
 clean:
 	rm -rf _site

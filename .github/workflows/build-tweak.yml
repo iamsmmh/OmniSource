@@ -58,29 +58,67 @@ jobs:
 
       - name: Install Cyan & Dependencies
         run: |
+          set -euo pipefail
           brew install ldid dpkg
           python3 -m pip install --upgrade pip
           python3 -m pip install cyan-cli
 
+      # Workflow inputs reach the shell through the environment only — never
+      # interpolate ${{ inputs.* }} into run: scripts (script injection).
+      - name: Sanitize inputs
+        id: sanitize
+        env:
+          IN_TWEAK_NAME: ${{ inputs.tweak_name }}
+          IN_BASE_IPA_URL: ${{ inputs.base_ipa_url }}
+          IN_TWEAK_DEB_URL: ${{ inputs.tweak_deb_url }}
+        run: |
+          set -euo pipefail
+          case "${IN_BASE_IPA_URL}" in
+            https://*) ;;
+            *) echo "::error::base_ipa_url must be an https URL"; exit 1 ;;
+          esac
+          case "${IN_TWEAK_DEB_URL}" in
+            https://*) ;;
+            *) echo "::error::tweak_deb_url must be an https URL"; exit 1 ;;
+          esac
+          SAFE_NAME="$(printf '%s' "${IN_TWEAK_NAME}" | tr -c 'A-Za-z0-9._-' '_' | cut -c1-64)"
+          if [ -z "${SAFE_NAME}" ]; then
+            echo "::error::tweak_name is empty after sanitization"
+            exit 1
+          fi
+          echo "safe_name=${SAFE_NAME}" >> "${GITHUB_OUTPUT}"
+
       - name: Download Base IPA & Deb Tweak
+        env:
+          BASE_IPA_URL: ${{ inputs.base_ipa_url }}
+          TWEAK_DEB_URL: ${{ inputs.tweak_deb_url }}
         run: |
           set -euo pipefail
           mkdir -p workspace
           echo "Downloading base IPA..."
-          curl -L "${{ inputs.base_ipa_url }}" -o workspace/base.ipa
+          curl -fSL --proto '=https' --max-time 600 "${BASE_IPA_URL}" -o workspace/base.ipa
           echo "Downloading tweak .deb..."
-          curl -L "${{ inputs.tweak_deb_url }}" -o workspace/tweak.deb
+          curl -fSL --proto '=https' --max-time 600 "${TWEAK_DEB_URL}" -o workspace/tweak.deb
 
       - name: Inject Tweak using Cyan
+        env:
+          IN_BUNDLE_ID: ${{ inputs.bundle_id }}
+          IN_APP_NAME: ${{ inputs.app_name }}
         run: |
           set -euo pipefail
           cd workspace
           FLAGS=()
-          if [ -n "${{ inputs.bundle_id }}" ]; then
-            FLAGS+=(-b "${{ inputs.bundle_id }}")
+          if [ -n "${IN_BUNDLE_ID}" ]; then
+            case "${IN_BUNDLE_ID}" in
+              *[!A-Za-z0-9.-]*)
+                echo "::error::bundle_id contains invalid characters"
+                exit 1
+                ;;
+            esac
+            FLAGS+=(-b "${IN_BUNDLE_ID}")
           fi
-          if [ -n "${{ inputs.app_name }}" ]; then
-            FLAGS+=(-n "${{ inputs.app_name }}")
+          if [ -n "${IN_APP_NAME}" ]; then
+            FLAGS+=(-n "${IN_APP_NAME}")
           fi
 
           echo "Injecting tweak with Cyan..."
@@ -89,6 +127,6 @@ jobs:
       - name: Upload Patched IPA Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.tweak_name }}-Patched-IPA
+          name: ${{ steps.sanitize.outputs.safe_name }}-Patched-IPA
           path: workspace/output.ipa
           retention-days: 14

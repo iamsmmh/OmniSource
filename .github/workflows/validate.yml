@@ -106,6 +106,7 @@ jobs:
 
       - name: Check Python style
         run: |
+          set -euo pipefail
           python3 -m pip install --quiet --disable-pip-version-check "ruff==0.16.6"
           python3 -m ruff check src/ scripts/ tests/
           python3 -m ruff format --check src/ scripts/ tests/
@@ -116,6 +117,7 @@ jobs:
       # with awk instead of unescaping the file.
       - name: Lint workflows
         run: |
+          set -euo pipefail
           curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_checksums.txt" -o /tmp/actionlint.sha256
           curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz" -o /tmp/actionlint.tar.gz
           EXPECTED=$(awk '/linux/ && /amd64\.tar\.gz$/ {print $1}' /tmp/actionlint.sha256)

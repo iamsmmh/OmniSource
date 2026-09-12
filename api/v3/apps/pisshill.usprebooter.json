@@ -1,0 +1,90 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "name": "Serotonin",
+    "bundleIdentifier": "pisshill.usprebooter",
+    "developerName": "mineek",
+    "subtitle": "Semi-jailbreak for iOS 16.5.1 – 17.0",
+    "localizedDescription": "Serotonin is a semi-untethered 'semi-jailbreak' for iOS 16.5.1 through 16.7 RC and iOS 17.0 on arm64e devices. Built on the Fugu15 code base, it gives you tweak injection and a Procursus bootstrap without a full jailbreak: tweaks load into the apps you patch, and the device keeps working normally everywhere else.",
+    "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Serotonin.webp",
+    "tintColor": "FF6B9A",
+    "category": "utilities",
+    "version": "1.2.1",
+    "versionDate": "2024-01-17",
+    "versionDescription": "Serotonin 1.2.1 | Serotonin.tipa\n\n# Serotonin 1.2.1\n## Changelog\n### Cleanup\n\n- Fixed memory hogger\n- Fixed exploit picker\n- Fixed launchd entitlements\n- Remove a bunch of unused code\n- Slight UI changes",
+    "downloadURL": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+    "size": 14986482,
+    "versions": [
+      {
+        "version": "1.2.1",
+        "date": "2024-01-17",
+        "localizedDescription": "Serotonin 1.2.1 | Serotonin.tipa\n\n# Serotonin 1.2.1\n## Changelog\n### Cleanup\n\n- Fixed memory hogger\n- Fixed exploit picker\n- Fixed launchd entitlements\n- Remove a bunch of unused code\n- Slight UI changes",
+        "downloadURL": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+        "size": 14986482,
+        "minOSVersion": "16.5.1",
+        "releaseUrl": "https://github.com/SerotoninApp/Serotonin/releases/tag/1.2.1",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Serotonin.tipa",
+            "downloadUrl": "https://github.com/SerotoninApp/Serotonin/releases/download/1.2.1/Serotonin.tipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 14986482,
+            "sha256": null,
+            "downloads": 51232,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "downloads": 51232
+      }
+    ],
+    "screenshotURLs": [],
+    "appPermissions": {
+      "entitlements": [],
+      "privacy": {}
+    },
+    "omnisource": {
+      "slug": "serotonin",
+      "status": "unmaintained",
+      "featured": false,
+      "upstreamURL": "https://github.com/mineek/Serotonin",
+      "sourceURL": "https://github.com/mineek/Serotonin",
+      "verification": {
+        "method": "github-release",
+        "publisher": "mineek/Serotonin",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.5.1",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official .tipa from mineek/Serotonin. Supported firmware is iOS 16.5.1 – 16.7 RC and 17.0; the upstream release line stopped in January 2024 and later Dopamine versions cover much of the same range, so treat this as a legacy option for devices that cannot run Dopamine. Upstream ships the TrollStore-named .tipa (identical container to an .ipa); rename it to .ipa if your client rejects the extension."
+      },
+      "health": {
+        "downloadReachable": true,
+        "detail": "HTTP 302",
+        "statusSince": "2026-09-10",
+        "lastUpdatedAt": "2024-01-17"
+      }
+    },
+    "id": "pisshill.usprebooter"
+  }
+}

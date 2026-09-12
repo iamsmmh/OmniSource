@@ -28,6 +28,24 @@ def dumps_pretty(data: Any) -> str:
     return json.dumps(data, indent=2, ensure_ascii=False) + "\n"
 
 
+def write_json_stable(path: Path, data: dict[str, Any], *, volatile: tuple[str, ...] = ("generatedAt",)) -> bool:
+    """Write ``data`` only when non-volatile content differs from disk.
+
+    Derived documents (``data/*``, ``api/v3/*``) stamp ``generatedAt`` on
+    every build. Rewriting them unconditionally would create an empty
+    commit on each scheduled run, so this helper compares the payload
+    without the volatile keys and skips the write when nothing changed.
+    Returns True when the file was (re)written.
+    """
+    previous = read_json(path)
+    if isinstance(previous, dict):
+        old = {key: value for key, value in previous.items() if key not in volatile}
+        new = {key: value for key, value in data.items() if key not in volatile}
+        if old == new:
+            return False
+    return atomic_write_text(path, dumps_pretty(data))
+
+
 def write_json(path: Path, data: Any) -> bool:
     """Atomically write ``data``; return True when the file actually changed."""
     return atomic_write_text(path, dumps_pretty(data))

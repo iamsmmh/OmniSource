@@ -10,6 +10,12 @@ permissions and opts in to exactly what it needs, never more.
 | [`merge.yml`](merge.yml) | `feeds/*.json` changed · manual | `feeds/apps.json` + its published copies | Rebuild the unified master source from modular feeds |
 | [`health-check.yml`](health-check.yml) | schedule (daily) · manual | GitHub Issue | HEAD-probe every download URL + mirror and report broken links via an issue |
 | [`build-uyouenhanced.yml`](build-uyouenhanced.yml) | manual | Release asset | Build and publish the uYouEnhanced IPA, then trigger a feed sync |
+| [`discovery.yml`](discovery.yml) | schedule (12 h) · manual | `data/discovered_sources.json` | Autonomous discovery (GitHub code search, feed probes, release scans, web catalogs) + validation gate |
+| [`monitoring.yml`](monitoring.yml) | schedule (30 min) · manual | `data/status.json`, `data/selfheal_report.json`, `data/mirror_status.json` | Probe sources/downloads, plan self-healing repairs, evaluate mirrors |
+| [`security.yml`](security.yml) | push · PR · schedule (daily) · manual | `data/security.json` | SHA/hash audit, duplicate binaries, integrity rollup; fails on critical findings |
+| [`analytics.yml`](analytics.yml) | schedule (daily) · manual | `data/analytics_rollup.json` | Daily / weekly / monthly analytics windows |
+| [`website.yml`](website.yml) | push · PR · manual | build artifact | Typecheck, lint and production-build the Next.js app in `web/` |
+| [`publish.yml`](publish.yml) | push · schedule (daily) · manual | `data/*`, `feeds/clients/*`, `api/v3/*` | Rebuild + validate derived artifacts (canonical DB, ledger, enrichment, reputation, client feeds, API v3) |
 
 ## How they fit together
 
@@ -34,6 +40,20 @@ build-uyouenhanced.yml   merge.yml (scripts/merge_feeds.py)
 - **`validate.yml`** guards pull requests. It is read-only and network-free, so it
   is safe on forks. The reproducibility step fails a PR that hand-edits a
   generated feed instead of `catalog.json`.
+- **Autonomous pipeline order:** `sync.yml` (upstreams → `feeds/`) →
+  `publish.yml` (derived artifacts) → `security.yml` (gate) →
+  `website.yml` (modern app build). `discovery.yml`, `monitoring.yml` and
+  `analytics.yml` run on their own cadence and only ever write `data/`.
+
+## Hardening rules (all workflows)
+
+- Every multi-line `run:` block starts with `set -euo pipefail`.
+- All shell variables are quoted; word-splitting uses arrays (`"${ARGS[@]}"`).
+- Workflow inputs / step outputs reach the shell through `env:` only — never
+  interpolate `${{ }}` into `run:` scripts (script injection).
+- Dispatch inputs are validated (https-only URLs, character allowlists) and
+  sanitized before use in artifact names.
+- Minimal `permissions`, `concurrency` groups and `timeout-minutes` everywhere.
 
 ## After a fresh fork
 

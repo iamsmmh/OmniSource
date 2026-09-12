@@ -1,0 +1,183 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "name": "Apollo",
+    "bundleIdentifier": "com.christianselig.Apollo",
+    "developerName": "Christian Selig (& Apollo-Reborn contributors)",
+    "subtitle": "The beloved Reddit client, continued by Apollo-Reborn",
+    "localizedDescription": "Apollo was the beloved, award-winning Reddit client for iPhone and iPad known for its beautiful native interface, powerful gestures, jump-to-comments, inline media reading and fanatic attention to detail. After Reddit's API changes ended the original app, the Apollo-Reborn project now publishes official continuation builds that work against Reddit's public API — keeping the classic Apollo experience alive.",
+    "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Apollo.webp",
+    "tintColor": "F0542D",
+    "category": "social",
+    "version": "3.7.0",
+    "versionDate": "2026-09-11",
+    "versionDescription": "Apollo 3.7.0 | Apollo-Reborn-3.7.0\n\n### Features\n\n- Add **Floating Post Tabs** (Posts & Feeds → Floating Tabs, off by default) — keep up to five posts open as draggable bubbles from any post or feed ⋯ menu, and tap one to land exactly where you left off (#984, #1061: @icpryde)\n  - Bubbles snap to the screen edges, tuck away when dragged past them, stack magnetically, and hold-to-preview the post; drop one on the ✕ to close it\n  - Match threads wear the two teams' crests on their bubble, and two text posts from the same subreddit get a big letter each so they don't look like twins\n- Add a **Feed Shortcuts** screen (Features → Subreddits) with Classic, Circle, Tinted, Soft Tile, and Solid Tile icon styles, Rows, Grid, Side-by-Side, and Icon Dock layouts, a live preview, and visibility toggles for Popular, All, and Moderator Posts (#988: @IllIIllIllIllII)\n- Add a **Subreddit Sections** screen (Features → Subreddits) — give followed users their own FOLLOWING section with **Separate Followed Users**, drag Favorites, Multireddits, Moderator, and Following into any order, and watch a pinned live preview follow every change (#997, #1020: @icpryde)\n  - Subreddit List Enhancements, Modern Subreddit Dividers, and Hide Multireddit Descriptions move here, and the A–Z index stays visible and themed with Enhancements off\n- Add **Per-Account Favorites** and **Sort Favorites Alphabetically** (Subreddits → Favorites), so each account can keep its own subreddit favorites and keep them in A–Z order (#1017, #1042: @IllIIllIllIllII)\n- Add Fade, Down, and Off styles to **Hide Bars on Scroll** for the Liquid Glass tab bar alongside Left and Right, plus a **Scroll Behavior** picker that restores Apollo's Classic one-gesture hide next to the Two-Gesture default (#972: @IllIIllIllIllII)\n  - Interface settings regroup into Tab Bar and Display & Navigation, and Profile Layout opens straight from the Apollo Reborn hub\n- Rework **Liquid Glass navigation** around a collapsible action pill — the ⋯ button expands into translate, moderator, sort, and more actions, so titles stay centered and stop resizing between screens (#1035, #1047: @IllIIllIllIllII)\n  - Navigation buttons match the back button and title, moderator controls turn a brighter green with readable menu text, the pill collapses while subreddit search is open, and a cancelled swipe-back no longer jumps the page\n  - Replaces the Center Title Between Buttons setting with automatic placement; standard builds keep their expanded actions\n- Replace the Liquid Glass **feed search bar** with the native glass pill — it activates in place, compresses as you scroll, and reveals on a pull at the top, fixing the feed sliding under the field and the bar floating detached after cancel (#1002, #1026: @icpryde)\n  - Results and the query survive opening a post, the quick-switcher's autocomplete highlight stays legible on near-white accents, and the bar is in place from the first frame when a feed re-appears at its top\n  - Tapping the Posts tab scrolls to the top and a second tap returns to the subreddit list, including from followed-user profiles (#1021, #1040: @IllIIllIllIllII)\n  - The Keep Search Bar Visible setting is retired; in-place activation is simply how glass search works now\n- Add **Bold Post Titles** (Appearance → Posts) — feed post titles in Semibold for large and compact posts, every theme and theme font, Liquid Glass or legacy chrome; flips live without a relaunch (#1033: @icpryde)\n- Show read state on **Community Highlights** — unread dots, a New badge for posts under 24 hours old, a theme-colored +N count for comments added since your last visit, and dimmed titles once a highlight is read (#1041: @IllIIllIllIllII)\n- Add a live **Profile Layout** preview for Immersive, Compact, and a restored Native layout that updates as you change avatar and visibility options, with optional pinning (#1034: @IllIIllIllIllII)\n  - Also fixes copying your username on Immersive and Compact layouts and removes duplicated usernames on profiles\n- Add pinned live previews to **Subreddit Layout** too — a header preview for the Immersive, Compact, and Native **Header Style**, a Community Highlights preview for Full, Partial, and Off, and separate User Flair, Sidebar, Subtitle, and Description toggles that update open subreddits without reopening them (#1019: @IllIIllIllIllII)\n- Add **Microsoft Translator** as a bring-your-own-key translation provider, retry Google through a second endpoint when its free one rate-limits you, and show a Translation Limit Reached notice instead of silently giving up (#998: @icpryde)\n  - Moves off the shut-down default LibreTranslate instance and names dead or redirected instances instead of failing quietly\n- Add a **Source** picker to the Feed and Post **widgets** — Home, Popular, All, or a subreddit — and let every widget's subreddit field take several subreddits at once, a pasted link, or a multireddit (#1051: @icpryde)\n  - Copy Widget Setup Code now offers a with-account code, which is what unlocks Home and your private multireddits\n- Add pinned live previews to the **Inline Media** and **Rich Link Previews** settings screens that follow every control as you scroll, with tap to pin or unpin, and let the size and Apollo AI sliders select a stop from a tap (#1022, #1023, #1025: @icpryde)\n- Add **Forget Forward Swipe After Scrolling** (Posts & Feeds, off by default) so a forward swipe stops reopening a post you backed out of many posts ago; **Swipe Past Gallery to Navigate** now defaults to off (#996: @icpryde)\n- Improve **Find in Comments** — the selected match stays in view while rows load in, a comma-separated query matches any of its terms, and the docked bar follows the theme (#992, #1036: @icpryde)\n  - On Liquid Glass it is now the same native search bar the feed uses: it activates in place, the match count sits inside the field, and the More pill turns into up and down chevrons while a search is live\n- Add nine never-released **Ultra** icons — Safari, Space Paws, Grumpy Space Paws, and sequels to Explorer of Smiles, Gorilla Gus, The Little Prince, Under the Tree, and Wish Maker — move SPCA into Ultra, and list the EverythingApplePro Icons Drop Test icon in Sekrit (#969, #971, #989: @IllIIllIllIllII)\n\n### Fixes\n\n- Fix Apollo **freezing** on a loading spinner or a loaded comments screen when navigating between subreddits or opening posts on iOS 26 and later (#1024: @IllIIllIllIllII)\n- Fix **Gallery View** getting killed for memory on animated GIFs — GIFs now stream instead of holding every frame in RAM, and oversized stills are downsampled (#1001: @icpryde)\n- Fix a launch crash when the trending-subreddits table can't be written (LiveContainer and other read-only setups), and a crash opening a feed on older iOS versions that lack ActivityKit, WeatherKit, or VisionKit (#968: @icpryde)\n- Fix **Live Interactive Posts** — post-match threads render as normal text posts instead of an endless spinner, finished match threads no longer leave a hole in feed cards, the external-link confirmation works, and rotation relays out (#991, #1046: @icpryde)\n  - Opening a live post from the feed hands its already-loaded widget to the thread instead of reloading it, widgets stay warm between feed and thread, and Apollo AI no longer tries to summarize the hidden fallback text under one\n- Fix the in-app **Safari** browser flashing a white page while a link loads in dark mode; it stays black until content paints (#1052: @icpryde)\n- Fix **Liquid Glass** top fades vanishing during tab switches, and make swipe-back track the nav bar so the title and search bar no longer snap to the previous screen the moment a swipe starts (#1018: @icpryde)\n- Fix **Account Switcher** reordering quietly switching the signed-in account, plus drag handles that scrolled the page and rows that overlapped (#1011: @IllIIllIllIllII)\n- Fix duplicate items in **Saved** after a pull-to-refresh (#1005: @Thetromboneman1)\n- Fix the **subreddit list**'s section headers overlapping rows and labels slidin…",
+    "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
+    "size": 96105993,
+    "versions": [
+      {
+        "version": "3.7.0",
+        "date": "2026-09-11",
+        "localizedDescription": "Apollo 3.7.0 | Apollo-Reborn-3.7.0\n\n### Features\n\n- Add **Floating Post Tabs** (Posts & Feeds → Floating Tabs, off by default) — keep up to five posts open as draggable bubbles from any post or feed ⋯ menu, and tap one to land exactly where you left off (#984, #1061: @icpryde)\n  - Bubbles snap to the screen edges, tuck away when dragged past them, stack magnetically, and hold-to-preview the post; drop one on the ✕ to close it\n  - Match threads wear the two teams' crests on their bubble, and two text posts from the same subreddit get a big letter each so they don't look like twins\n- Add a **Feed Shortcuts** screen (Features → Subreddits) with Classic, Circle, Tinted, Soft Tile, and Solid Tile icon styles, Rows, Grid, Side-by-Side, and Icon Dock layouts, a live preview, and visibility toggles for Popular, All, and Moderator Posts (#988: @IllIIllIllIllII)\n- Add a **Subreddit Sections** screen (Features → Subreddits) — give followed users their own FOLLOWING section with **Separate Followed Users**, drag Favorites, Multireddits, Moderator, and Following into any order, and watch a pinned live preview follow every change (#997, #1020: @icpryde)\n  - Subreddit List Enhancements, Modern Subreddit Dividers, and Hide Multireddit Descriptions move here, and the A–Z index stays visible and themed with Enhancements off\n- Add **Per-Account Favorites** and **Sort Favorites Alphabetically** (Subreddits → Favorites), so each account can keep its own subreddit favorites and keep them in A–Z order (#1017, #1042: @IllIIllIllIllII)\n- Add Fade, Down, and Off styles to **Hide Bars on Scroll** for the Liquid Glass tab bar alongside Left and Right, plus a **Scroll Behavior** picker that restores Apollo's Classic one-gesture hide next to the Two-Gesture default (#972: @IllIIllIllIllII)\n  - Interface settings regroup into Tab Bar and Display & Navigation, and Profile Layout opens straight from the Apollo Reborn hub\n- Rework **Liquid Glass navigation** around a collapsible action pill — the ⋯ button expands into translate, moderator, sort, and more actions, so titles stay centered and stop resizing between screens (#1035, #1047: @IllIIllIllIllII)\n  - Navigation buttons match the back button and title, moderator controls turn a brighter green with readable menu text, the pill collapses while subreddit search is open, and a cancelled swipe-back no longer jumps the page\n  - Replaces the Center Title Between Buttons setting with automatic placement; standard builds keep their expanded actions\n- Replace the Liquid Glass **feed search bar** with the native glass pill — it activates in place, compresses as you scroll, and reveals on a pull at the top, fixing the feed sliding under the field and the bar floating detached after cancel (#1002, #1026: @icpryde)\n  - Results and the query survive opening a post, the quick-switcher's autocomplete highlight stays legible on near-white accents, and the bar is in place from the first frame when a feed re-appears at its top\n  - Tapping the Posts tab scrolls to the top and a second tap returns to the subreddit list, including from followed-user profiles (#1021, #1040: @IllIIllIllIllII)\n  - The Keep Search Bar Visible setting is retired; in-place activation is simply how glass search works now\n- Add **Bold Post Titles** (Appearance → Posts) — feed post titles in Semibold for large and compact posts, every theme and theme font, Liquid Glass or legacy chrome; flips live without a relaunch (#1033: @icpryde)\n- Show read state on **Community Highlights** — unread dots, a New badge for posts under 24 hours old, a theme-colored +N count for comments added since your last visit, and dimmed titles once a highlight is read (#1041: @IllIIllIllIllII)\n- Add a live **Profile Layout** preview for Immersive, Compact, and a restored Native layout that updates as you change avatar and visibility options, with optional pinning (#1034: @IllIIllIllIllII)\n  - Also fixes copying your username on Immersive and Compact layouts and removes duplicated usernames on profiles\n- Add pinned live previews to **Subreddit Layout** too — a header preview for the Immersive, Compact, and Native **Header Style**, a Community Highlights preview for Full, Partial, and Off, and separate User Flair, Sidebar, Subtitle, and Description toggles that update open subreddits without reopening them (#1019: @IllIIllIllIllII)\n- Add **Microsoft Translator** as a bring-your-own-key translation provider, retry Google through a second endpoint when its free one rate-limits you, and show a Translation Limit Reached notice instead of silently giving up (#998: @icpryde)\n  - Moves off the shut-down default LibreTranslate instance and names dead or redirected instances instead of failing quietly\n- Add a **Source** picker to the Feed and Post **widgets** — Home, Popular, All, or a subreddit — and let every widget's subreddit field take several subreddits at once, a pasted link, or a multireddit (#1051: @icpryde)\n  - Copy Widget Setup Code now offers a with-account code, which is what unlocks Home and your private multireddits\n- Add pinned live previews to the **Inline Media** and **Rich Link Previews** settings screens that follow every control as you scroll, with tap to pin or unpin, and let the size and Apollo AI sliders select a stop from a tap (#1022, #1023, #1025: @icpryde)\n- Add **Forget Forward Swipe After Scrolling** (Posts & Feeds, off by default) so a forward swipe stops reopening a post you backed out of many posts ago; **Swipe Past Gallery to Navigate** now defaults to off (#996: @icpryde)\n- Improve **Find in Comments** — the selected match stays in view while rows load in, a comma-separated query matches any of its terms, and the docked bar follows the theme (#992, #1036: @icpryde)\n  - On Liquid Glass it is now the same native search bar the feed uses: it activates in place, the match count sits inside the field, and the More pill turns into up and down chevrons while a search is live\n- Add nine never-released **Ultra** icons — Safari, Space Paws, Grumpy Space Paws, and sequels to Explorer of Smiles, Gorilla Gus, The Little Prince, Under the Tree, and Wish Maker — move SPCA into Ultra, and list the EverythingApplePro Icons Drop Test icon in Sekrit (#969, #971, #989: @IllIIllIllIllII)\n\n### Fixes\n\n- Fix Apollo **freezing** on a loading spinner or a loaded comments screen when navigating between subreddits or opening posts on iOS 26 and later (#1024: @IllIIllIllIllII)\n- Fix **Gallery View** getting killed for memory on animated GIFs — GIFs now stream instead of holding every frame in RAM, and oversized stills are downsampled (#1001: @icpryde)\n- Fix a launch crash when the trending-subreddits table can't be written (LiveContainer and other read-only setups), and a crash opening a feed on older iOS versions that lack ActivityKit, WeatherKit, or VisionKit (#968: @icpryde)\n- Fix **Live Interactive Posts** — post-match threads render as normal text posts instead of an endless spinner, finished match threads no longer leave a hole in feed cards, the external-link confirmation works, and rotation relays out (#991, #1046: @icpryde)\n  - Opening a live post from the feed hands its already-loaded widget to the thread instead of reloading it, widgets stay warm between feed and thread, and Apollo AI no longer tries to summarize the hidden fallback text under one\n- Fix the in-app **Safari** browser flashing a white page while a link loads in dark mode; it stays black until content paints (#1052: @icpryde)\n- Fix **Liquid Glass** top fades vanishing during tab switches, and make swipe-back track the nav bar so the title and search bar no longer snap to the previous screen the moment a swipe starts (#1018: @icpryde)\n- Fix **Account Switcher** reordering quietly switching the signed-in account, plus drag handles that scrolled the page and rows that overlapped (#1011: @IllIIllIllIllII)\n- Fix duplicate items in **Saved** after a pull-to-refresh (#1005: @Thetromboneman1)\n- Fix the **subreddit list**'s section headers overlapping rows and labels slidin…",
+        "downloadURL": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
+        "size": 96105993,
+        "minOSVersion": "14.0",
+        "releaseUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/tag/v1.15.11_3.7.0",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Apollo-Reborn-3.7.0-dSYMs.zip",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-dSYMs.zip",
+            "platform": "unknown",
+            "architecture": null,
+            "fileType": "ZIP",
+            "size": 20210832,
+            "sha256": "3e28268abc8bdadb4ff213a560d4a5d119792bfa53c50dbfd47f2ccf98487e95",
+            "downloads": 12,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "Apollo-Reborn-3.7.0-GLASS-NOEXTENSIONS.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASS-NOEXTENSIONS.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 114445492,
+            "sha256": "91cd42e46b9a0adb0198464095bf09d702173c82e57a74633f823caf9c85d552",
+            "downloads": 733,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "Apollo-Reborn-3.7.0-GLASS.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASS.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 124696561,
+            "sha256": "b9af6cb4e17fbb9843487f4c09d1982e61bda511a6eabf82c3da1b98e0e8f18f",
+            "downloads": 1624,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "Apollo-Reborn-3.7.0-GLASSICONS-NOEXTENSIONS.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASSICONS-NOEXTENSIONS.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 114445347,
+            "sha256": "e3c412f1182670f0623361db91cedea82079a9c406674434700e4253bc149a42",
+            "downloads": 26,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "Apollo-Reborn-3.7.0-GLASSICONS.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-GLASSICONS.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 124696417,
+            "sha256": "6c0e463a4f6a6a901a2c8d3a820b11cb41b61fc2e6f0a3b63edacdd33859b78d",
+            "downloads": 81,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "Apollo-Reborn-3.7.0-NOEXTENSIONS.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0-NOEXTENSIONS.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 85854925,
+            "sha256": "54c89328db3397cd62b275c5e99488b678318b4c51e91bc30d91235b888276cb",
+            "downloads": 194,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "Apollo-Reborn-3.7.0.ipa",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/Apollo-Reborn-3.7.0.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 96105993,
+            "sha256": "3435f0c47f299f6f5637600c557ef3790ca75a8fe70d3d456023f97f0fb6ee15",
+            "downloads": 269,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "com.apollo.reborn_3.7.0_iphoneos-arm.deb",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/com.apollo.reborn_3.7.0_iphoneos-arm.deb",
+            "platform": "linux",
+            "architecture": null,
+            "fileType": "DEB",
+            "size": 12176810,
+            "sha256": "26a493edbc53b512f1f08f96aca98b281c74c6a275e351261258ee3be307537c",
+            "downloads": 15,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "com.apollo.reborn_3.7.0_iphoneos-arm64_rootless.deb",
+            "downloadUrl": "https://github.com/Apollo-Reborn/Apollo-Reborn/releases/download/v1.15.11_3.7.0/com.apollo.reborn_3.7.0_iphoneos-arm64_rootless.deb",
+            "platform": "linux",
+            "architecture": "arm64",
+            "fileType": "DEB",
+            "size": 12175314,
+            "sha256": "8f6becdcc3ebb8597d2b6f326196064636fe29951509311660760828b7534ebe",
+            "downloads": 23,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "sha256": "3435f0c47f299f6f5637600c557ef3790ca75a8fe70d3d456023f97f0fb6ee15",
+        "downloads": 269
+      }
+    ],
+    "screenshotURLs": [],
+    "omnisource": {
+      "slug": "apollo",
+      "status": "stable",
+      "featured": false,
+      "upstreamURL": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "sourceURL": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "verification": {
+        "method": "github-release",
+        "publisher": "Apollo-Reborn/Apollo-Reborn",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official Apollo-Reborn builds from the project's own GitHub releases (deployment target iOS 14 per the build config). The standard variant is distributed here; the project also publishes Liquid Glass and icon variants on the same release. The long-standing Balackburn/Apollo AltStore source mirrors these same builds."
+      },
+      "health": {
+        "downloadReachable": true,
+        "detail": "HTTP 302",
+        "statusSince": "2026-09-10",
+        "lastUpdatedAt": "2026-09-11"
+      }
+    },
+    "id": "com.christianselig.Apollo"
+  }
+}

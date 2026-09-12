@@ -1,0 +1,34 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "Manic-EMU/ManicEMU",
+    "source": "Manic-EMU/ManicEMU",
+    "type": "github",
+    "homepage": "https://github.com/Manic-EMU/ManicEMU",
+    "sourceURL": "https://github.com/Manic-EMU/ManicEMU",
+    "publisher": "Manic-EMU/ManicEMU",
+    "apps": [
+      {
+        "slug": "manicemu",
+        "name": "Manic EMU",
+        "version": "2.0.0"
+      }
+    ],
+    "slug": "manic-emu-manicemu",
+    "page": "/sources/manic-emu-manicemu/",
+    "appSlugs": [
+      "manicemu"
+    ],
+    "appCount": 1,
+    "verifiedApps": 1,
+    "healthScore": 77.0,
+    "score": 73.9,
+    "status": "Community Verified",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2026-09-03",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/manicemu.json"
+  }
+}

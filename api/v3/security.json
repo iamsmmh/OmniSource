@@ -1,0 +1,349 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "schemaVersion": 1,
+    "generatedAt": "2026-09-12T17:13:59Z",
+    "verdict": "pass",
+    "summary": {
+      "apps": 94,
+      "sha256": 64,
+      "sha512": 0,
+      "hashesMissing": 30,
+      "hashesInvalid": 0,
+      "duplicateBinaries": 0,
+      "downloadsFailing": 0,
+      "provenanceOfficial": 94,
+      "provenanceCommunity": 0,
+      "provenanceUnknown": 0
+    },
+    "hashes": {
+      "apps": 94,
+      "sha256": 64,
+      "sha512": 0,
+      "missing": [
+        "AnimeGen",
+        "BHTwitter",
+        "Delta",
+        "Glow",
+        "Hanami",
+        "Infuse Plus",
+        "MAME4iOS",
+        "MSGPlusX",
+        "Messenger Flow",
+        "Mini vMac",
+        "NexaSC",
+        "Odyssey",
+        "PureKFD",
+        "RyukGram",
+        "Serotonin",
+        "Sparkle",
+        "StikNES",
+        "Swiftgram",
+        "TTKillerPlus",
+        "Taurine",
+        "Telegram MxGram",
+        "ThreadSaver",
+        "Turrit MxGram",
+        "Winston",
+        "Yattee",
+        "iMe MxGram",
+        "iNKillerPlus",
+        "iQFace",
+        "uYouEnhanced",
+        "unc0ver"
+      ],
+      "invalid": []
+    },
+    "duplicateBinaries": [],
+    "downloads": {
+      "reachable": [],
+      "failing": [],
+      "unknown": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "provenance": {
+      "official": 94,
+      "community": 0,
+      "unknown": [],
+      "total": 94
+    },
+    "findings": [
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "AnimeGen",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "BHTwitter",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Delta",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Glow",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Hanami",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Infuse Plus",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "MAME4iOS",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "MSGPlusX",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Messenger Flow",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Mini vMac",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "NexaSC",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Odyssey",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "PureKFD",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "RyukGram",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Serotonin",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Sparkle",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "StikNES",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Swiftgram",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "TTKillerPlus",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Taurine",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Telegram MxGram",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "ThreadSaver",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Turrit MxGram",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Winston",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "Yattee",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "iMe MxGram",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "iNKillerPlus",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "iQFace",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "uYouEnhanced",
+        "detail": "no SHA-256 recorded for the newest version"
+      },
+      {
+        "severity": "low",
+        "check": "hash-missing",
+        "id": "unc0ver",
+        "detail": "no SHA-256 recorded for the newest version"
+      }
+    ]
+  }
+}

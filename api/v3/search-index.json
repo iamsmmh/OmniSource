@@ -1,0 +1,3529 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "schemaVersion": 2,
+    "generatedAt": "2026-09-12",
+    "count": 94,
+    "fuse": {
+      "keys": [
+        {
+          "name": "name",
+          "weight": 0.32
+        },
+        {
+          "name": "shortDescription",
+          "weight": 0.13
+        },
+        {
+          "name": "description",
+          "weight": 0.09
+        },
+        {
+          "name": "category",
+          "weight": 0.07
+        },
+        {
+          "name": "tags",
+          "weight": 0.09
+        },
+        {
+          "name": "keywords",
+          "weight": 0.1
+        },
+        {
+          "name": "developer",
+          "weight": 0.09
+        },
+        {
+          "name": "bundleId",
+          "weight": 0.11
+        }
+      ],
+      "threshold": 0.38,
+      "ignoreLocation": true,
+      "minMatchCharLength": 2
+    },
+    "documents": [
+      {
+        "id": "spotiflac",
+        "slug": "spotiflac",
+        "name": "SpotiFLAC Mobile",
+        "subtitle": "FLAC Downloader for iOS",
+        "shortDescription": "FLAC Downloader for iOS",
+        "description": "SpotiFLAC Mobile is an open-source Spotify track and playlist metadata downloader and FLAC converter for iOS and Android. Search and download high-quality FLAC and MP3 audio with complete ID3 metadata, embedded album artwork, and synchronized lyrics directly on your device.",
+        "category": "music",
+        "tags": [
+          "music"
+        ],
+        "keywords": [
+          "downloader",
+          "flac",
+          "for",
+          "ios",
+          "mobile",
+          "music",
+          "spotiflac",
+          "zarzet"
+        ],
+        "developer": "zarzet",
+        "bundleId": "com.zarz.spotiflacAndroid",
+        "icon": "assets/SpotiFLAC.webp",
+        "pageURL": "apps/spotiflac/",
+        "version": "4.9.6",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "uyouenhanced",
+        "slug": "uyouenhanced",
+        "name": "uYouEnhanced",
+        "subtitle": "uYouPlus with even more features!",
+        "shortDescription": "uYouPlus with even more features!",
+        "description": "uYou is the best tweak for the YouTube app. uYouEnhanced is a modified version of qnblackcat's uYouPlus & MiRO92's uYou with even more features. Additional features include skipping sponsorships in videos, more PiP options, unlocking higher resolutions, disabling overlays, removing upsell alerts, dimming the UI, enabling the miniplayer, preventing notch issues, configuring A/B settings, and adding a timestamp button.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "arichornlover",
+          "even",
+          "features",
+          "more",
+          "photo",
+          "uyouenhanced",
+          "uyouplus",
+          "video",
+          "with"
+        ],
+        "developer": "arichornlover",
+        "bundleId": "com.google.ios.youtube",
+        "icon": "assets/uYouEnhanced.webp",
+        "pageURL": "apps/uyouenhanced/",
+        "version": "21.14.4",
+        "verificationLevel": "COMMUNITY VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ytlite",
+        "slug": "ytlite",
+        "name": "YouTubePlus",
+        "subtitle": "Lightweight YouTube tweak with no ads and PiP",
+        "shortDescription": "Lightweight YouTube tweak with no ads and PiP",
+        "description": "YouTubePlus (formerly YTLite) is a lightweight enhancer for YouTube developed by Dayanch96. It provides complete ad blocking, background playback, offline video and audio downloads, Picture-in-Picture (PiP), SponsorBlock integration, gesture controls, and customizable interface settings.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "ads",
+          "and",
+          "dayanch96",
+          "lightweight",
+          "no",
+          "photo",
+          "pip",
+          "tweak",
+          "video",
+          "with",
+          "youtube",
+          "youtubeplus"
+        ],
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtube",
+        "icon": "assets/YouTube.webp",
+        "pageURL": "apps/ytlite/",
+        "version": "21.24.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "youpro",
+        "slug": "youpro",
+        "name": "YouPro",
+        "subtitle": "Feature-rich YouTube tweak by alibusut",
+        "shortDescription": "Feature-rich YouTube tweak by alibusut",
+        "description": "YouPro is an advanced YouTube modification tweak developed by alibusut. It features background playback, ad-free streaming, inline download capabilities, OLED true dark theme, SponsorBlock, and enhanced media playback controls.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "alibusut",
+          "by",
+          "feature",
+          "photo",
+          "rich",
+          "tweak",
+          "video",
+          "youpro",
+          "youtube"
+        ],
+        "developer": "alibusut",
+        "bundleId": "com.google.ios.youtube",
+        "icon": "assets/YouTube.webp",
+        "pageURL": "apps/youpro/",
+        "version": "21.36.6",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ytkp",
+        "slug": "ytkp",
+        "name": "YTKillerPlus",
+        "subtitle": "Advanced YouTube tweak with extensive controls",
+        "shortDescription": "Advanced YouTube tweak with extensive controls",
+        "description": "YTKillerPlus is an advanced feature-packed YouTube tweak by iKarwan. It offers comprehensive ad blocking, background playback, high-speed downloads, PiP, custom player actions, OLED dark theme, and granular privacy controls.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "advanced",
+          "controls",
+          "extensive",
+          "ikarwan",
+          "photo",
+          "tweak",
+          "video",
+          "with",
+          "youtube",
+          "ytkillerplus"
+        ],
+        "developer": "iKarwan",
+        "bundleId": "com.google.ios.youtube",
+        "icon": "assets/YouTube.webp",
+        "pageURL": "apps/ytkp/",
+        "version": "21.36.6",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ytkace",
+        "slug": "ytkace",
+        "name": "YTKACE",
+        "subtitle": "YTKACE",
+        "shortDescription": "YTKACE",
+        "description": "YTKACE is a free, open-source YouTube enhancer and downloader for iOS. No ads, background playback, video and audio downloads, SponsorBlock, Picture in Picture, player gestures and deep interface customization.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "itzzace",
+          "photo",
+          "video",
+          "ytkace"
+        ],
+        "developer": "itzzace",
+        "bundleId": "com.google.ios.youtube",
+        "icon": "assets/YouTube.webp",
+        "pageURL": "apps/ytkace/",
+        "version": "21.35.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "youmod",
+        "slug": "youmod",
+        "name": "YouMod",
+        "subtitle": "All-in-one YouTube enhancement tweak",
+        "shortDescription": "All-in-one YouTube enhancement tweak",
+        "description": "YouMod is a customizable YouTube enhancement tweak by Tonwalter888. It includes ad blocking, background playback, PiP support, UI customization, integrated download manager, and sponsor segment skipping.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "all",
+          "enhancement",
+          "in",
+          "one",
+          "photo",
+          "tonwalter888",
+          "tweak",
+          "video",
+          "youmod",
+          "youtube"
+        ],
+        "developer": "Tonwalter888",
+        "bundleId": "com.google.ios.youtube",
+        "icon": "assets/YouTube.webp",
+        "pageURL": "apps/youmod/",
+        "version": "21.36.6",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "maxtube",
+        "slug": "maxtube",
+        "name": "MaxTube",
+        "subtitle": "YTPlus with ten extra tweaks",
+        "shortDescription": "YTPlus with ten extra tweaks",
+        "description": "MaxTube (formerly YTPlusM) is Mark02-2012's fork of YTPlus/YTLite, the enhancer for the YouTube app on iOS. On top of the YTPlus feature set — video/audio/thumbnail downloads, SponsorBlock, PiP, YTUHD, YouQuality, Return YouTube Dislike, YTABConfig, DontEatMyContent and over 100 configurable options without a subscription — MaxTube integrates ten extra tweaks: YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, YTPlaybackFix, YouChooseQuality, YouShare and PleaseDontStopTheMusic. Settings live inside YouTube under Settings.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "2012",
+          "extra",
+          "mark02",
+          "maxtube",
+          "photo",
+          "ten",
+          "tweaks",
+          "video",
+          "with",
+          "ytplus"
+        ],
+        "developer": "Mark02-2012",
+        "bundleId": "com.google.ios.youtube",
+        "icon": "assets/MaxTube.webp",
+        "pageURL": "apps/maxtube/",
+        "version": "21.31.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ytmusic",
+        "slug": "ytmusic",
+        "name": "YTMusicUltimate",
+        "subtitle": "Lightweight YouTube Music tweak",
+        "shortDescription": "Lightweight YouTube Music tweak",
+        "description": "YTMusicUltimate is a lightweight enhancer for YouTube Music by Dayanch96. It unlocks background audio playback, removes in-app advertisements, enables premium audio streaming quality, and provides customizable player themes.",
+        "category": "music",
+        "tags": [
+          "music"
+        ],
+        "keywords": [
+          "dayanch96",
+          "lightweight",
+          "music",
+          "tweak",
+          "youtube",
+          "ytmusicultimate"
+        ],
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtubemusic",
+        "icon": "assets/YouTubeMusic.webp",
+        "pageURL": "apps/ytmusic/",
+        "version": "9.36.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "maxmusic",
+        "slug": "maxmusic",
+        "name": "MaxMusic",
+        "subtitle": "YTMusicUltimate with extra tweaks",
+        "shortDescription": "YTMusicUltimate with extra tweaks",
+        "description": "MaxMusic (formerly YTMUltimate+) is Mark02-2012's fork of Dayanch96's YTMusicUltimate for the YouTube Music app on iOS. It keeps everything YTMusicUltimate provides — no ads, background playback, download manager, audio quality selection — and adds Return YouTube Music Dislike, YouMusicPiP, YTMABConfig and VolumeBoostYT, plus fixed in-app downloads on newer YouTube Music versions. Settings live inside YouTube Music under Settings.",
+        "category": "music",
+        "tags": [
+          "music"
+        ],
+        "keywords": [
+          "2012",
+          "extra",
+          "mark02",
+          "maxmusic",
+          "music",
+          "tweaks",
+          "with",
+          "ytmusicultimate"
+        ],
+        "developer": "Mark02-2012",
+        "bundleId": "com.google.ios.youtubemusic",
+        "icon": "assets/MaxMusic.webp",
+        "pageURL": "apps/maxmusic/",
+        "version": "9.36.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "utm",
+        "slug": "utm",
+        "name": "UTM",
+        "subtitle": "Virtual machines for iOS",
+        "shortDescription": "Virtual machines for iOS",
+        "description": "Run real operating systems on your iPhone or iPad. UTM is an open-source (Apache-2.0) virtualization and emulation platform built on QEMU, capable of running Windows, Linux, classic Mac OS and dozens of other systems alongside your apps.\n\nHighlights:\n- QEMU v10.0.2 backend with support for dozens of CPU architectures (x86_64, ARM64, RISC-V, PowerPC and more)\n- Improved machine wizard with well-tested configurations such as Windows, Ubuntu, RISC-V64 Ubuntu, classic Mac OS 8.x/9.x and Windows 95/98\n- Custom keyboard shortcuts (e.g. Ctrl+Alt+Del) sent directly to the VM from the Keyboard menu\n- App Intents automation with the Shortcuts app\n- Liquid Glass design on iOS 26\n- Import and export .utm virtual machine bundles via the Files app\n- No jailbreak required; highest performance with JIT workarounds on supported iOS versions",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "for",
+          "ios",
+          "machines",
+          "team",
+          "utilities",
+          "utm",
+          "virtual"
+        ],
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "icon": "assets/UTM.webp",
+        "pageURL": "apps/utm/",
+        "version": "4.7.5",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "inkillerplus",
+        "slug": "inkillerplus",
+        "name": "iNKillerPlus",
+        "subtitle": "Instagram with downloads, ghost mode and no ads",
+        "shortDescription": "Instagram with downloads, ghost mode and no ads",
+        "description": "iNKillerPlus is a modified Instagram by iKarwan. Download posts, reels, stories and DM media, save profile pictures, block promoted posts and ads, toggle seen/unseen for stories and DMs, ghost typing, hide tabs, copy comments and bios, confirmation prompts before liking or calling, and a profile analyzer. iPadOS supported.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "ads",
+          "and",
+          "downloads",
+          "ghost",
+          "ikarwan",
+          "inkillerplus",
+          "instagram",
+          "mode",
+          "no",
+          "social",
+          "with"
+        ],
+        "developer": "iKarwan",
+        "bundleId": "com.burbn.instagram",
+        "icon": "assets/Instagram.webp",
+        "pageURL": "apps/inkillerplus/",
+        "version": "446.0.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ttkillerplus",
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "subtitle": "TikTok with downloads, no ads and region switch",
+        "shortDescription": "TikTok with downloads, no ads and region switch",
+        "description": "TTKillerPlus is a modified TikTok by iKarwan. Download videos from the feed, stories and Explore, save photos and profile avatars, merge post photos with their music, block promoted posts and ads, toggle seen/unseen, hide tabs, browse the feed of a specific country, show country flags and post dates, and auto-like in live streams. iPadOS supported.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "ads",
+          "and",
+          "downloads",
+          "ikarwan",
+          "no",
+          "region",
+          "social",
+          "switch",
+          "tiktok",
+          "ttkillerplus",
+          "with"
+        ],
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "icon": "assets/TikTok.webp",
+        "pageURL": "apps/ttkillerplus/",
+        "version": "46.8.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "winston",
+        "slug": "winston",
+        "name": "Winston",
+        "subtitle": "Open-source Reddit client",
+        "shortDescription": "Open-source Reddit client",
+        "description": "Winston is a beautiful open-source Reddit client for iOS built in SwiftUI, with themes, gestures, an inline media viewer and a fast comment thread reader. Because Reddit charges for API access, Winston asks you to create your own free Reddit API credentials on first launch.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "cafe",
+          "client",
+          "lo",
+          "open",
+          "reddit",
+          "social",
+          "source",
+          "winston"
+        ],
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "icon": "assets/Winston.webp",
+        "pageURL": "apps/winston/",
+        "version": "1.1.5",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "itorrent",
+        "slug": "itorrent",
+        "name": "iTorrent",
+        "subtitle": "Torrent client with a built-in player",
+        "shortDescription": "Torrent client with a built-in player",
+        "description": "iTorrent is a fully featured open-source torrent client for iOS. It keeps downloading in the background, integrates with the Files app, supports magnet links, sequential download and per-file selection, and ships a built-in VLC-based player with Picture in Picture, audio and subtitle tracks and playback speed control.",
+        "category": "networking",
+        "tags": [
+          "networking"
+        ],
+        "keywords": [
+          "built",
+          "client",
+          "in",
+          "itorrent",
+          "networking",
+          "player",
+          "torrent",
+          "with",
+          "xitrix"
+        ],
+        "developer": "XITRIX",
+        "bundleId": "com.xitrix.iTorrent2",
+        "icon": "assets/iTorrent.webp",
+        "pageURL": "apps/itorrent/",
+        "version": "2.2.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "stikdebug",
+        "slug": "stikdebug",
+        "name": "StikDebug",
+        "subtitle": "On-device JIT enabler and debugger",
+        "shortDescription": "On-device JIT enabler and debugger",
+        "description": "StikDebug attaches a debugger to your sideloaded apps directly on device, which enables JIT for emulators and other apps that need it. It uses a pairing file and an on-device VPN loop, so no computer is required after the initial setup. Requires iOS 17.4 or newer.",
+        "category": "developer-tools",
+        "tags": [
+          "developer-tools"
+        ],
+        "keywords": [
+          "and",
+          "debugger",
+          "developer",
+          "device",
+          "enabler",
+          "jit",
+          "on",
+          "stikdebug",
+          "tools"
+        ],
+        "developer": "StikDebug",
+        "bundleId": "com.stik.stikdebug",
+        "icon": "assets/StikDebug.webp",
+        "pageURL": "apps/stikdebug/",
+        "version": "3.1.10",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "bhtwitter",
+        "slug": "bhtwitter",
+        "name": "BHTwitter",
+        "subtitle": "X (Twitter) with no ads, downloads and the chronological timeline",
+        "shortDescription": "X (Twitter) with no ads, downloads and the chronological timeline",
+        "description": "BHTwitter is a long-running tweak for X (formerly Twitter), published as a ready-to-sideload IPA. It hides promoted posts and ads, restores the chronological timeline as the default, and lets you download videos, GIFs and images straight from a post. It also adds Face ID / Touch ID app lock, custom fonts, undo posting, inline translation, direct saving of profile pictures and headers, confirmation prompts for likes and reposts, and switches for hiding the tabs and UI elements you never use.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "ads",
+          "and",
+          "bandarhl",
+          "bhtwitter",
+          "chronological",
+          "downloads",
+          "no",
+          "social",
+          "the",
+          "timeline",
+          "twitter",
+          "with"
+        ],
+        "developer": "BandarHL",
+        "bundleId": "com.atebits.Tweetie2",
+        "icon": "assets/X.webp",
+        "pageURL": "apps/bhtwitter/",
+        "version": "4.4",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "livecontainer",
+        "slug": "livecontainer",
+        "name": "LiveContainer",
+        "subtitle": "Run iOS apps without actually installing them",
+        "shortDescription": "Run iOS apps without actually installing them",
+        "description": "LiveContainer runs other iOS apps inside itself instead of installing them, so a single app slot on your certificate can host many sideloaded apps and you stop burning through the 3-app limit. When JIT is available it bypasses codesigning entirely; otherwise guest apps are signed with the same certificate as LiveContainer. It supports multiple data containers per app, tweak injection, adding guest apps to the Home Screen, and multitasking windows on iPadOS 16 and later.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "actually",
+          "apps",
+          "installing",
+          "ios",
+          "livecontainer",
+          "run",
+          "team",
+          "them",
+          "utilities",
+          "without"
+        ],
+        "developer": "LiveContainer Team",
+        "bundleId": "com.kdt.livecontainer",
+        "icon": "assets/LiveContainer.webp",
+        "pageURL": "apps/livecontainer/",
+        "version": "3.8.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "feather",
+        "slug": "feather",
+        "name": "Feather",
+        "subtitle": "On-device app manager, signer and installer",
+        "shortDescription": "On-device app manager, signer and installer",
+        "description": "Feather is a free on-device iOS and iPadOS application manager built with UIKit. Import your own developer or enterprise certificate to sign and install IPAs directly from the device, add AltStore-compatible repositories to browse and update apps, keep a library of signed and imported apps, and tweak bundle identifiers, display names, icons and injected dylibs per app - no computer or AltServer required.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "and",
+          "app",
+          "device",
+          "feather",
+          "installer",
+          "manager",
+          "on",
+          "samara",
+          "signer",
+          "utilities"
+        ],
+        "developer": "Samara",
+        "bundleId": "thewonderofyou.Feather",
+        "icon": "assets/Feather.webp",
+        "pageURL": "apps/feather/",
+        "version": "2.9.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "sidestore",
+        "slug": "sidestore",
+        "name": "SideStore",
+        "subtitle": "AltStore fork that refreshes apps without a computer",
+        "shortDescription": "AltStore fork that refreshes apps without a computer",
+        "description": "SideStore is a fork of AltStore that signs and refreshes sideloaded apps directly on the device. After a one-time pairing-file setup it renews 7-day certificates in the background using your own Apple ID and an anisette server, so apps stop expiring while you are away from a computer. It installs apps from any AltStore-compatible source, keeps them updated, and can back up and restore app data.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "altstore",
+          "apps",
+          "computer",
+          "fork",
+          "refreshes",
+          "sidestore",
+          "team",
+          "that",
+          "utilities",
+          "without"
+        ],
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "icon": "assets/SideStore.webp",
+        "pageURL": "apps/sidestore/",
+        "version": "0.6.4",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "aidoku",
+        "slug": "aidoku",
+        "name": "Aidoku",
+        "subtitle": "Free and open-source manga reader",
+        "shortDescription": "Free and open-source manga reader",
+        "description": "Aidoku is a free and open-source manga reader for iOS and iPadOS with no ads and no tracking. Content comes from community-maintained source lists that you add yourself, so nothing is bundled with the app. It downloads chapters for offline reading, syncs library, history and settings through iCloud, supports external trackers, and offers paged, vertical and continuous reading modes with customisable layouts.",
+        "category": "other",
+        "tags": [
+          "other"
+        ],
+        "keywords": [
+          "aidoku",
+          "and",
+          "free",
+          "manga",
+          "open",
+          "other",
+          "reader",
+          "skitty",
+          "source"
+        ],
+        "developer": "Skitty",
+        "bundleId": "app.aidoku.Aidoku",
+        "icon": "assets/Aidoku.webp",
+        "pageURL": "apps/aidoku/",
+        "version": "0.9",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "provenance",
+        "slug": "provenance",
+        "name": "Provenance",
+        "subtitle": "Multi-system retro game emulator",
+        "shortDescription": "Multi-system retro game emulator",
+        "description": "Provenance is a multi-emulator front-end covering Atari, Bandai, NEC, Nintendo, Sega, SNK and Sony systems from a single library. It handles save states, cheats, MFi and native game controllers, Metal-based scaling filters, per-core settings, and imports your own ROMs and BIOS files through the Files app, iCloud or its built-in web uploader.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "emu",
+          "emulator",
+          "game",
+          "games",
+          "multi",
+          "provenance",
+          "retro",
+          "system"
+        ],
+        "developer": "Provenance Emu",
+        "bundleId": "org.provenance-emu.provenance",
+        "icon": "assets/Provenance.webp",
+        "pageURL": "apps/provenance/",
+        "version": "3.3.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "delta",
+        "slug": "delta",
+        "name": "Delta",
+        "subtitle": "All-in-one retro emulator by Riley Testut",
+        "shortDescription": "All-in-one retro emulator by Riley Testut",
+        "description": "Delta is an all-in-one classic video game emulator for non-jailbroken iOS devices, developed by Riley Testut as the spiritual successor to GBA4iOS. It emulates the Nintendo systems (Game Boy Color, Game Boy Advance, Nintendo DS, Nintendo 64, SNES, NES) plus Sega Genesis and Game Gear, with save states and cheats, controller and Nintendo DS skin support, iCloud sync of saves, and full MFi/Bluetooth controller support.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "all",
+          "by",
+          "delta",
+          "emulator",
+          "games",
+          "in",
+          "one",
+          "retro",
+          "riley",
+          "testut"
+        ],
+        "developer": "Riley Testut",
+        "bundleId": "com.rileytestut.Delta",
+        "icon": "assets/Delta.webp",
+        "pageURL": "apps/delta/",
+        "version": "1.6",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ppsspp",
+        "slug": "ppsspp",
+        "name": "PPSSPP",
+        "subtitle": "Fast PlayStation Portable (PSP) emulator",
+        "shortDescription": "Fast PlayStation Portable (PSP) emulator",
+        "description": "PPSSPP is a fast and portable PlayStation Portable (PSP) emulator developed by Henrik Rydgård. It runs PSP games at up to double native resolution with anisotropic filtering and shader effects, supports save states anywhere, hardware controllers, and needs no BIOS file thanks to its high-level emulation approach.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "emulator",
+          "fast",
+          "games",
+          "henrik",
+          "playstation",
+          "portable",
+          "ppsspp",
+          "psp",
+          "rd",
+          "rydg"
+        ],
+        "developer": "Henrik Rydgård",
+        "bundleId": "org.ppsspp.ppsspp",
+        "icon": "assets/PPSSPP.webp",
+        "pageURL": "apps/ppsspp/",
+        "version": "1.20.4",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "yattee",
+        "slug": "yattee",
+        "name": "Yattee",
+        "subtitle": "Privacy-oriented native video player",
+        "shortDescription": "Privacy-oriented native video player",
+        "description": "Yattee is a privacy-oriented, fully native video player for iPhone, iPad and Apple TV. It plays from user-configured Invidious or Piped backends and local video libraries, with SponsorBlock, chapters, background audio, Picture in Picture, subscriptions, and full keyboard and remote control support.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "native",
+          "oriented",
+          "photo",
+          "player",
+          "privacy",
+          "video",
+          "yattee"
+        ],
+        "developer": "Yattee",
+        "bundleId": "stream.yattee.app",
+        "icon": "assets/Yattee.webp",
+        "pageURL": "apps/yattee/",
+        "version": "1.5.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "streamyfin",
+        "slug": "streamyfin",
+        "name": "Streamyfin",
+        "subtitle": "Open-source Jellyfin client for iOS",
+        "shortDescription": "Open-source Jellyfin client for iOS",
+        "description": "Streamyfin is an open-source Jellyfin client for iPhone and iPad built with Expo and React Native. Stream your Jellyfin server's library with offline downloads, background audio, Picture in Picture, Chromecast, intro skipping, live TV, and an optional MPV-based player — no server plugins required.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "client",
+          "for",
+          "fredrikburmester",
+          "ios",
+          "jellyfin",
+          "open",
+          "photo",
+          "source",
+          "streamyfin",
+          "video"
+        ],
+        "developer": "fredrikburmester",
+        "bundleId": "com.fredrikburmester.streamyfin",
+        "icon": "assets/Streamyfin.webp",
+        "pageURL": "apps/streamyfin/",
+        "version": "0.54.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "spotube",
+        "slug": "spotube",
+        "name": "Spotube",
+        "subtitle": "Open-source Spotify music client",
+        "shortDescription": "Open-source Spotify music client",
+        "description": "Spotube is an open-source, cross-platform music streaming client that combines Spotify's metadata — your playlists, albums, liked songs and recommendations — with community audio sources, so you can play your whole Spotify library without ads or telemetry. Includes lyrics and a plugin system for extending playback sources.",
+        "category": "music",
+        "tags": [
+          "music"
+        ],
+        "keywords": [
+          "client",
+          "krtirtho",
+          "music",
+          "open",
+          "source",
+          "spotify",
+          "spotube"
+        ],
+        "developer": "KRTirtho",
+        "bundleId": "oss.krtirtho.spotube.stable",
+        "icon": "assets/Spotube.webp",
+        "pageURL": "apps/spotube/",
+        "version": "5.1.2",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "jellify",
+        "slug": "jellify",
+        "name": "Jellify",
+        "subtitle": "Native Jellyfin music player for iOS",
+        "shortDescription": "Native Jellyfin music player for iOS",
+        "description": "Jellify is a free and open-source music player for Jellyfin, built with React Native. Browse and stream your Jellyfin music libraries on iPhone and iPad with a native interface, fast search, playlists, favorites and now-playing controls — available on the App Store and as sideload builds.",
+        "category": "music",
+        "tags": [
+          "music"
+        ],
+        "keywords": [
+          "anultravioletaurora",
+          "for",
+          "ios",
+          "jellify",
+          "jellyfin",
+          "music",
+          "native",
+          "player"
+        ],
+        "developer": "anultravioletaurora",
+        "bundleId": "com.cosmonautical.jellify",
+        "icon": "assets/Jellify.webp",
+        "pageURL": "apps/jellify/",
+        "version": "1.2.10",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "zeus",
+        "slug": "zeus",
+        "name": "Zeus",
+        "subtitle": "Self-custodial Bitcoin and Lightning wallet",
+        "shortDescription": "Self-custodial Bitcoin and Lightning wallet",
+        "description": "Zeus is a free and open-source, self-custodial Bitcoin and Lightning wallet for iPhone and iPad. Connect the app to your own node (LND, Core Lightning, c-lightning-REST, BTCPay Server or Lightning Terminal) or use the built-in Olympus LNDHub for a quick start, with contacts, Nostr Wallet Connect, LNURL, point-of-sale and full on-chain and Lightning payment support.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "and",
+          "bitcoin",
+          "custodial",
+          "lightning",
+          "ln",
+          "self",
+          "utilities",
+          "wallet",
+          "zeus"
+        ],
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "icon": "assets/Zeus.webp",
+        "pageURL": "apps/zeus/",
+        "version": "13.2.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "bluewallet",
+        "slug": "bluewallet",
+        "name": "BlueWallet",
+        "subtitle": "Open-source Bitcoin wallet for iOS",
+        "shortDescription": "Open-source Bitcoin wallet for iOS",
+        "description": "BlueWallet is a free and open-source Bitcoin wallet focused on simplicity and power. Create standard on-chain wallets, watch-only wallets with full PSBT and hardware-wallet support, and Lightning wallets backed by the built-in LNDHUB or your own node — with fee control, multisig (Vault) and Tor connectivity.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "bitcoin",
+          "bluewallet",
+          "for",
+          "ios",
+          "open",
+          "source",
+          "utilities",
+          "wallet"
+        ],
+        "developer": "BlueWallet",
+        "bundleId": "io.bluewallet.bluewallet",
+        "icon": "assets/BlueWallet.webp",
+        "pageURL": "apps/bluewallet/",
+        "version": "8.0.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "voyager",
+        "slug": "voyager",
+        "name": "Voyager",
+        "subtitle": "Beautiful open-source client for Lemmy",
+        "shortDescription": "Beautiful open-source client for Lemmy",
+        "description": "Voyager is a free and open-source client for Lemmy and PieFed with an iOS-native feel — swipe gestures, haptics, infinite scroll, rich markdown support, multi-account switching and deep theming. The same project powers the official Voyager App Store release; this feed tracks the developer's own GitHub build.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "aeharding",
+          "beautiful",
+          "client",
+          "for",
+          "lemmy",
+          "open",
+          "social",
+          "source",
+          "voyager"
+        ],
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "icon": "assets/Voyager.webp",
+        "pageURL": "apps/voyager/",
+        "version": "2.49.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "saber",
+        "slug": "saber",
+        "name": "Saber",
+        "subtitle": "Open-source handwritten notes",
+        "shortDescription": "Open-source handwritten notes",
+        "description": "Saber is a free and open-source handwritten notes app built with Flutter. Write with your finger or Apple Pencil as if on paper, organize notes into folders, keep them private with encryption, and sync across devices using its optional Nextcloud-based sync — no vendor lock-in.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "adil",
+          "handwritten",
+          "hanney",
+          "notes",
+          "open",
+          "saber",
+          "source",
+          "utilities"
+        ],
+        "developer": "Adil Hanney",
+        "bundleId": "com.adilhanney.saber",
+        "icon": "assets/Saber.webp",
+        "pageURL": "apps/saber/",
+        "version": "1.36.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "anxreader",
+        "slug": "anxreader",
+        "name": "Anx Reader",
+        "subtitle": "Open-source e-book reader with AI",
+        "shortDescription": "Open-source e-book reader with AI",
+        "description": "Anx Reader is a free and open-source e-book reader for iPhone and iPad. Read EPUB, MOBI and other formats with a polished reader engine, AI-powered summaries and translations (bring your own key), text-to-speech, highlights and notes, reading statistics, and WebDAV sync across devices.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "ai",
+          "anx",
+          "anxcye",
+          "book",
+          "open",
+          "reader",
+          "source",
+          "utilities",
+          "with"
+        ],
+        "developer": "Anxcye",
+        "bundleId": "com.anxcye.anxReader",
+        "icon": "assets/AnxReader.webp",
+        "pageURL": "apps/anxreader/",
+        "version": "1.14.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "apollo",
+        "slug": "apollo",
+        "name": "Apollo",
+        "subtitle": "The beloved Reddit client, continued by Apollo-Reborn",
+        "shortDescription": "The beloved Reddit client, continued by Apollo-Reborn",
+        "description": "Apollo was the beloved, award-winning Reddit client for iPhone and iPad known for its beautiful native interface, powerful gestures, jump-to-comments, inline media reading and fanatic attention to detail. After Reddit's API changes ended the original app, the Apollo-Reborn project now publishes official continuation builds that work against Reddit's public API — keeping the classic Apollo experience alive.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "apollo",
+          "beloved",
+          "by",
+          "christian",
+          "client",
+          "continued",
+          "contributors",
+          "reborn",
+          "reddit",
+          "selig",
+          "social",
+          "the"
+        ],
+        "developer": "Christian Selig (& Apollo-Reborn contributors)",
+        "bundleId": "com.christianselig.Apollo",
+        "icon": "assets/Apollo.webp",
+        "pageURL": "apps/apollo/",
+        "version": "3.7.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "dolphinish",
+        "slug": "dolphinish",
+        "name": "DolphiniOS",
+        "subtitle": "GameCube and Wii emulator for iOS",
+        "shortDescription": "GameCube and Wii emulator for iOS",
+        "description": "DolphiniOS is the Dolphin GameCube and Wii emulator ported to iOS by OatmealDome, requiring no jailbreak. It runs the full Dolphin core with Metal rendering via MoltenVK, supports controllers, save states and high-resolution rendering, and plays your legally dumped GameCube and Wii games.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "and",
+          "dolphinios",
+          "emulator",
+          "for",
+          "gamecube",
+          "games",
+          "ios",
+          "oatmealdome",
+          "wii"
+        ],
+        "developer": "OatmealDome",
+        "bundleId": "me.oatmealdome.DolphiniOS-njb",
+        "icon": "assets/DolphiniOS.webp",
+        "pageURL": "apps/dolphinish/",
+        "version": "5.0.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ish",
+        "slug": "ish",
+        "name": "iSH",
+        "subtitle": "Linux shell on iOS via x86 emulation",
+        "shortDescription": "Linux shell on iOS via x86 emulation",
+        "description": "iSH is an open-source project that runs a Linux shell environment on iOS using a user-mode x86 emulator. It provides Alpine Linux with the APK package manager, so you can install and run familiar command-line tools — ssh, git, python, vim and more — entirely on your iPhone or iPad, no jailbreak required.",
+        "category": "developer-tools",
+        "tags": [
+          "developer-tools"
+        ],
+        "keywords": [
+          "and",
+          "contributors",
+          "developer",
+          "dubois",
+          "emulation",
+          "ios",
+          "ish",
+          "linux",
+          "on",
+          "shell",
+          "theodore",
+          "tools",
+          "via",
+          "x86"
+        ],
+        "developer": "Theodore Dubois and contributors",
+        "bundleId": "app.ish.iSH",
+        "icon": "assets/iSH.webp",
+        "pageURL": "apps/ish/",
+        "version": "813",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "qbitcontrol",
+        "slug": "qbitcontrol",
+        "name": "qBitControl",
+        "subtitle": "qBittorrent remote control for iOS",
+        "shortDescription": "qBittorrent remote control for iOS",
+        "description": "qBitControl is a native qBittorrent remote control app for iPhone and iPad. Manage your torrents from anywhere: add, pause, resume and recheck torrents, browse files and set priorities, configure speed and seeding limits, use custom HTTP headers and self-signed certificates, and track RSS feeds — all against your own qBittorrent WebUI.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "128",
+          "control",
+          "for",
+          "ios",
+          "michael",
+          "qbitcontrol",
+          "qbittorrent",
+          "remote",
+          "utilities"
+        ],
+        "developer": "Michael-128",
+        "bundleId": "MikeMichael225.qBitControl",
+        "icon": "assets/qBitControl.webp",
+        "pageURL": "apps/qbitcontrol/",
+        "version": "1.4.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "qbitconnect",
+        "slug": "qbitconnect",
+        "name": "qBitConnect",
+        "subtitle": "Modern qBittorrent remote client",
+        "shortDescription": "Modern qBittorrent remote client",
+        "description": "qBitConnect is a modern, open-source qBittorrent remote client for iPhone and iPad built with Flutter. Connect to your qBittorrent WebUI to add, manage and monitor torrents with a clean, adaptive interface, push notifications for finished downloads, RSS support and quick actions.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "client",
+          "modern",
+          "qbitconnect",
+          "qbittorrent",
+          "rajnish",
+          "remote",
+          "sharma",
+          "utilities"
+        ],
+        "developer": "Rajnish Sharma",
+        "bundleId": "com.bluematter.qbitconnect",
+        "icon": "assets/qBitConnect.webp",
+        "pageURL": "apps/qbitconnect/",
+        "version": "1.6.6",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "vcmi",
+        "slug": "vcmi",
+        "name": "VCMI",
+        "subtitle": "Open-source Heroes of Might & Magic III engine",
+        "shortDescription": "Open-source Heroes of Might & Magic III engine",
+        "description": "VCMI is an open-source engine that re-implements Heroes of Might and Magic III so the classic turn-based strategy game runs on modern hardware — with widescreen and high-resolution support, extensive modding (including the popular HotA and Era mods), stabilized multiplayer and quality-of-life improvements over the original. Requires a copy of the original game's data files.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "engine",
+          "games",
+          "heroes",
+          "iii",
+          "magic",
+          "might",
+          "of",
+          "open",
+          "source",
+          "team",
+          "vcmi"
+        ],
+        "developer": "VCMI Team",
+        "bundleId": "eu.vcmi.vcmiclient",
+        "icon": "assets/VCMI.webp",
+        "pageURL": "apps/vcmi/",
+        "version": "1.7.5",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "mame4ios",
+        "slug": "mame4ios",
+        "name": "MAME4iOS",
+        "subtitle": "Multi-arcade machine emulator for iOS",
+        "shortDescription": "Multi-arcade machine emulator for iOS",
+        "description": "MAME4iOS brings the Multiple Arcade Machine Emulator to iPhone, iPad and Apple TV, running thousands of classic arcade games from the 70s, 80s, 90s and beyond. Includes an on-screen joystick, full MFi controller support, netplay, and a menu to organize your legally dumped ROM sets.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "arcade",
+          "contributors",
+          "emulator",
+          "for",
+          "games",
+          "ios",
+          "machine",
+          "mame4ios",
+          "multi",
+          "yoshisuga"
+        ],
+        "developer": "Yoshisuga & MAME4iOS Contributors",
+        "bundleId": "com.example.mame4ios",
+        "icon": "assets/MAME4iOS.webp",
+        "pageURL": "apps/mame4ios/",
+        "version": "2022.5",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "qbitcontroller",
+        "slug": "qbitcontroller",
+        "name": "qBitController",
+        "subtitle": "Cross-platform qBittorrent remote (Kotlin)",
+        "shortDescription": "Cross-platform qBittorrent remote (Kotlin)",
+        "description": "qBitController is a free and open-source qBittorrent remote client built with Kotlin Multiplatform and Compose. Control your qBittorrent WebUI from iPhone or iPad: add torrents by URL or file, pause/resume and recheck, browse file lists and set priorities, and manage categories and tags with a clean Material-style interface.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "bartuzen",
+          "cross",
+          "kotlin",
+          "platform",
+          "qbitcontroller",
+          "qbittorrent",
+          "remote",
+          "utilities"
+        ],
+        "developer": "Bartuzen",
+        "bundleId": "dev.bartuzen.qbitcontroller",
+        "icon": "assets/qBitController.webp",
+        "pageURL": "apps/qbitcontroller/",
+        "version": "2.2.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "minivmac",
+        "slug": "minivmac",
+        "name": "Mini vMac",
+        "subtitle": "Early Macintosh emulator for iOS",
+        "shortDescription": "Early Macintosh emulator for iOS",
+        "description": "Mini vMac for iOS emulates the earliest Apple Macintosh computers (128K, 512K, Plus and II), letting you run classic System 1 through System 7 software on modern devices. Load your own ROM and disk images, with support for external keyboards, mice and multiple emulated machine variants.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "early",
+          "emulator",
+          "for",
+          "games",
+          "ios",
+          "macintosh",
+          "mini",
+          "vmac",
+          "zydeco"
+        ],
+        "developer": "zydeco",
+        "bundleId": "net.namedfork.minivmac",
+        "icon": "assets/MiniVMac.webp",
+        "pageURL": "apps/minivmac/",
+        "version": "2.6",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "stiknes",
+        "slug": "stiknes",
+        "name": "StikNES",
+        "subtitle": "NES/Famicom emulator for modern iOS",
+        "shortDescription": "NES/Famicom emulator for modern iOS",
+        "description": "StikNES is a Nintendo Entertainment System / Famicom emulator for iPhone and iPad from the StikEMU team, built for modern iOS with Metal-accelerated rendering, MFi and keyboard controller support, save states and a focus on accuracy and low latency. Load your own legally dumped ROMs.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "emulator",
+          "famicom",
+          "for",
+          "games",
+          "ios",
+          "modern",
+          "nes",
+          "stikemu",
+          "stiknes"
+        ],
+        "developer": "StikEMU",
+        "bundleId": "com.stik.StikNES",
+        "icon": "assets/StikNES.webp",
+        "pageURL": "apps/stiknes/",
+        "version": "2.0.2",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "twitchadblock",
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "subtitle": "Ad blocker for the Twitch app on iOS",
+        "shortDescription": "Ad blocker for the Twitch app on iOS",
+        "description": "TwitchAdBlock is an open-source tweak for the native Twitch iOS app that blocks advert break requests at the network layer, so streams play without ads and without the purple loading screen. This fork by gunnerkidBT keeps the tweak working on the latest Twitch releases (29.x-30.x) and modern iOS versions, and publishes ready-to-sideload IPAs built from the official tweak source.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "ad",
+          "app",
+          "blocker",
+          "by",
+          "dayanch96",
+          "for",
+          "gunnerkidbt",
+          "ios",
+          "on",
+          "original",
+          "social",
+          "the",
+          "twitch",
+          "twitchadblock"
+        ],
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "icon": "assets/TAB.webp",
+        "pageURL": "apps/twitchadblock/",
+        "version": "30.7",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "neofreebird",
+        "slug": "neofreebird",
+        "name": "NeoFreeBird",
+        "subtitle": "Modified Twitter with QoL fixes and reverts",
+        "shortDescription": "Modified Twitter with QoL fixes and reverts",
+        "description": "NeoFreeBird is a modified build of the official Twitter app that reverts unpopular rebranding and interface changes, restores classic features, and bundles quality-of-life modifications including BHTwitter options — built and published automatically from the project's GitHub releases. Shares com.atebits.Tweetie2 with the App Store Twitter/X app and BHTwitter: install one at a time.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "and",
+          "contributors",
+          "fixes",
+          "modified",
+          "neofreebird",
+          "qol",
+          "reverts",
+          "social",
+          "twitter",
+          "with"
+        ],
+        "developer": "NeoFreeBird contributors",
+        "bundleId": "com.atebits.Tweetie2",
+        "icon": "assets/NeoFreeBird.webp",
+        "pageURL": "apps/neofreebird/",
+        "version": "2.2",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "conduit",
+        "slug": "conduit",
+        "name": "Conduit",
+        "subtitle": "Native client for Open WebUI & Ollama",
+        "shortDescription": "Native client for Open WebUI & Ollama",
+        "description": "Conduit is a native, open-source iOS and Android client for Open WebUI, direct OpenAI-compatible endpoints, Ollama and Hermes. Chat with your own self-hosted local models or API-backed ones with a polished SwiftUI interface — conversations stay in sync, code blocks render properly, and your data never touches a third-party server.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "client",
+          "cogwheel0",
+          "conduit",
+          "for",
+          "native",
+          "ollama",
+          "open",
+          "utilities",
+          "webui"
+        ],
+        "developer": "cogwheel0",
+        "bundleId": "app.cogwheel.conduit",
+        "icon": "assets/Conduit.webp",
+        "pageURL": "apps/conduit/",
+        "version": "4.1.4",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "fladder",
+        "slug": "fladder",
+        "name": "Fladder",
+        "subtitle": "Cross-platform Jellyfin frontend",
+        "shortDescription": "Cross-platform Jellyfin frontend",
+        "description": "Fladder is a free and open-source Jellyfin frontend built on Flutter, giving you a beautiful Netflix-style interface over your own media library on iPhone and iPad. Direct play and transcode support, offline viewing with sync, multi-server switching, and full library management — no server plugins required.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "cross",
+          "donutware",
+          "fladder",
+          "frontend",
+          "jellyfin",
+          "photo",
+          "platform",
+          "video"
+        ],
+        "developer": "DonutWare",
+        "bundleId": "nl.jknaapen.fladder",
+        "icon": "assets/Fladder.webp",
+        "pageURL": "apps/fladder/",
+        "version": "0.11.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "anymex",
+        "slug": "anymex",
+        "name": "AnymeX",
+        "subtitle": "Anime, manga, novels & tracking, open source",
+        "shortDescription": "Anime, manga, novels & tracking, open source",
+        "description": "AnymeX is an open-source, cross-platform app for streaming anime and reading manga, manhwa, light and web novels, with deep integration for tracking services (AniList, MyAnimeList, Simkl and Kitsu). Extensions keep sources working, and your library, progress and statistics stay in sync across services.",
+        "category": "other",
+        "tags": [
+          "other"
+        ],
+        "keywords": [
+          "anime",
+          "anymex",
+          "manga",
+          "novels",
+          "open",
+          "other",
+          "ryanyuuki",
+          "source",
+          "tracking"
+        ],
+        "developer": "RyanYuuki",
+        "bundleId": "com.ryan.anymex",
+        "icon": "assets/AnymeX.webp",
+        "pageURL": "apps/anymex/",
+        "version": "3.1.7",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "sora",
+        "slug": "sora",
+        "name": "Sora",
+        "subtitle": "Modular media streaming app for iOS",
+        "shortDescription": "Modular media streaming app for iOS",
+        "description": "Sora is a modular, open-source media player for iPhone, iPad and Mac that streams movies and shows from community-maintained modules, with AniList sync, watching collections, watch-next recommendations, bookmarks and a fast native SwiftUI interface. The current build line is distributed as Sulfur.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "app",
+          "cranci",
+          "for",
+          "ios",
+          "media",
+          "modular",
+          "photo",
+          "sora",
+          "streaming",
+          "video"
+        ],
+        "developer": "cranci",
+        "bundleId": "me.cranci.sulfur",
+        "icon": "assets/Sora.webp",
+        "pageURL": "apps/sora/",
+        "version": "1.3.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "raintweak",
+        "slug": "raintweak",
+        "name": "RainTweak",
+        "subtitle": "Discord client mod with themes and QoL fixes",
+        "shortDescription": "Discord client mod with themes and QoL fixes",
+        "description": "RainTweak injects Rain - the community Discord client mod - into the official Discord iOS app, adding themes, appearance options and quality-of-life fixes on top of a current Discord build. The ready-to-sideload IPA is built and published by the RainTweak project itself, so the download comes straight from the developer's own releases.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "and",
+          "client",
+          "discord",
+          "fixes",
+          "ipa",
+          "mod",
+          "qol",
+          "raincord",
+          "raintweak",
+          "social",
+          "themes",
+          "vault",
+          "with"
+        ],
+        "developer": "raincord & IPA Vault",
+        "bundleId": "com.hammerandchisel.discord",
+        "icon": "assets/Discord.webp",
+        "pageURL": "apps/raintweak/",
+        "version": "0.9.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "infuseplus",
+        "slug": "infuseplus",
+        "name": "Infuse Plus",
+        "subtitle": "Enhancer tweak for the Infuse video player",
+        "shortDescription": "Enhancer tweak for the Infuse video player",
+        "description": "Infuse Plus (by Dayanch96) enhances the Infuse video player with extra appearance options, app icon choices and playback quality-of-life improvements on top of the stock Infuse 8 app. The build follows the latest Infuse release.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "dayanch96",
+          "enhancer",
+          "for",
+          "infuse",
+          "ipa",
+          "photo",
+          "player",
+          "plus",
+          "the",
+          "tweak",
+          "vault",
+          "video"
+        ],
+        "developer": "dayanch96 & IPA Vault",
+        "bundleId": "com.firecore.infuse",
+        "icon": "assets/Infuse.webp",
+        "pageURL": "apps/infuseplus/",
+        "version": "8.5.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "glow",
+        "slug": "glow",
+        "name": "Glow",
+        "subtitle": "Clean, powerful Facebook tweak by dayanch96",
+        "shortDescription": "Clean, powerful Facebook tweak by dayanch96",
+        "description": "Glow is a simple, clean and powerful tweak for Facebook by Dayanch96: it removes ads and sponsored content, adds video downloads, unlocks media quality options and hides unwanted UI elements on top of the official Facebook app.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "by",
+          "clean",
+          "dayanch96",
+          "facebook",
+          "glow",
+          "ipa",
+          "powerful",
+          "social",
+          "tweak",
+          "vault"
+        ],
+        "developer": "dayanch96 & IPA Vault",
+        "bundleId": "com.facebook.Facebook.glow",
+        "icon": "assets/Facebook.webp",
+        "pageURL": "apps/glow/",
+        "version": "577.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "swiftgram",
+        "slug": "swiftgram",
+        "name": "Swiftgram",
+        "subtitle": "Supercharged open-source Telegram fork",
+        "shortDescription": "Supercharged open-source Telegram fork",
+        "description": "Swiftgram is a supercharged, open-source Telegram fork: ghost mode, hide read receipts and online status, save protected media, unlimited account switching and deep interface customization. The project officially ships through the App Store and TestFlight; this entry serves a ready-to-sideload IPA build (Swiftgram base with the MxGram tweak).",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "fork",
+          "ipa",
+          "open",
+          "social",
+          "source",
+          "supercharged",
+          "swiftgram",
+          "telegram",
+          "vault"
+        ],
+        "developer": "Swiftgram & IPA Vault",
+        "bundleId": "app.swiftgram.ios",
+        "icon": "assets/Swiftgram.webp",
+        "pageURL": "apps/swiftgram/",
+        "version": "12.9.2",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "telegram-mxgram",
+        "slug": "telegram-mxgram",
+        "name": "Telegram MxGram",
+        "subtitle": "Official Telegram with the MxGram tweak",
+        "shortDescription": "Official Telegram with the MxGram tweak",
+        "description": "MxGram injects the MxGram tweak into the official Telegram app: ghost mode with per-user exceptions, anti-revoke and anti-edit, saving of protected media, fake GPS, download boost and more, localized in 10 languages.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "ipa",
+          "m1ronx1412",
+          "mxgram",
+          "official",
+          "social",
+          "telegram",
+          "the",
+          "tweak",
+          "vault",
+          "with"
+        ],
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "ph.telegra.Telegraph",
+        "icon": "assets/Telegram.webp",
+        "pageURL": "apps/telegram-mxgram/",
+        "version": "12.9.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "iqface",
+        "slug": "iqface",
+        "name": "iQFace",
+        "subtitle": "Facebook tweak build by 7MD",
+        "shortDescription": "Facebook tweak build by 7MD",
+        "description": "iQFace is a tweaked Facebook build with the iQFace tweak by 7MD, one of the Facebook modifications distributed ready-to-sideload through the IPA Vault source. Feature set is defined by the iQFace tweak.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "7md",
+          "build",
+          "by",
+          "facebook",
+          "ipa",
+          "iqface",
+          "social",
+          "tweak",
+          "vault"
+        ],
+        "developer": "7MD & IPA Vault",
+        "bundleId": "com.facebook.Facebook",
+        "icon": "assets/Facebook.webp",
+        "pageURL": "apps/iqface/",
+        "version": "578.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ryukgram",
+        "slug": "ryukgram",
+        "name": "RyukGram",
+        "subtitle": "Instagram tweak for power users by faroukbmiled",
+        "shortDescription": "Instagram tweak for power users by faroukbmiled",
+        "description": "RyukGram - the Instagram tweak for iOS power users by faroukbmiled - adds media saving, ghost mode, feed cleaning, download buttons and deep customization on top of the official Instagram app.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "by",
+          "faroukbmiled",
+          "for",
+          "instagram",
+          "ipa",
+          "power",
+          "ryukgram",
+          "social",
+          "tweak",
+          "users",
+          "vault"
+        ],
+        "developer": "faroukbmiled & IPA Vault",
+        "bundleId": "com.burbn.instagram",
+        "icon": "assets/Instagram.webp",
+        "pageURL": "apps/ryukgram/",
+        "version": "446.0.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "sparkle",
+        "slug": "sparkle",
+        "name": "Sparkle",
+        "subtitle": "Bring the spark back to Instagram",
+        "shortDescription": "Bring the spark back to Instagram",
+        "description": "Sparkle (by efibalogh) brings the spark back to Instagram: downloads for reels and stories, ghost mode, ad hiding, restored classic behaviours and UI customization on top of the official Instagram app.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "back",
+          "bring",
+          "efibalogh",
+          "instagram",
+          "ipa",
+          "social",
+          "spark",
+          "sparkle",
+          "the",
+          "to",
+          "vault"
+        ],
+        "developer": "efibalogh & IPA Vault",
+        "bundleId": "com.burbn.instagram.sparkle",
+        "icon": "assets/Instagram.webp",
+        "pageURL": "apps/sparkle/",
+        "version": "446.0.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "redditfilter",
+        "slug": "redditfilter",
+        "name": "RedditFilter",
+        "subtitle": "Filter unwanted content from your Reddit feed",
+        "shortDescription": "Filter unwanted content from your Reddit feed",
+        "description": "RedditFilter (by level3tjg) filters unwanted content out of your Reddit feed - hide posts by keyword, subreddit, domain, flair or author, natively on top of the official Reddit app. The project publishes a ready-to-sideload IPA with every release.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "content",
+          "feed",
+          "filter",
+          "from",
+          "level3tjg",
+          "reddit",
+          "redditfilter",
+          "social",
+          "unwanted",
+          "your"
+        ],
+        "developer": "level3tjg",
+        "bundleId": "com.atebits.Tweetie2",
+        "icon": "assets/Reddit.webp",
+        "pageURL": "apps/redditfilter/",
+        "version": "2025.37.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "nexasc",
+        "slug": "nexasc",
+        "name": "NexaSC",
+        "subtitle": "SoundCloud Go+ unlock and ad removal (unofficial build)",
+        "shortDescription": "SoundCloud Go+ unlock and ad removal (unofficial build)",
+        "description": "NexaSC is a community SoundCloud tweak by cielogic: it unlocks SoundCloud Go+ features, removes ads, adds track downloads and can fetch lyrics automatically (via LRCLIB). The tweak is opened by long-pressing the home icon.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "ad",
+          "and",
+          "build",
+          "cielogic",
+          "go",
+          "ipa",
+          "nexasc",
+          "removal",
+          "social",
+          "soundcloud",
+          "unlock",
+          "unofficial",
+          "vault"
+        ],
+        "developer": "cielogic & IPA Vault",
+        "bundleId": "com.soundcloud.TouchApp",
+        "icon": "assets/SoundCloud.webp",
+        "pageURL": "apps/nexasc/",
+        "version": "8.77.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "messenger-flow",
+        "slug": "messenger-flow",
+        "name": "Messenger Flow",
+        "subtitle": "Facebook Messenger tweak by dvntms (unofficial build)",
+        "shortDescription": "Facebook Messenger tweak by dvntms (unofficial build)",
+        "description": "Messenger Flow is a tweaked Facebook Messenger build by dvntms, distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The Flow tweak's feature set is defined by its build; no official public documentation exists.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "build",
+          "by",
+          "dvntms",
+          "facebook",
+          "flow",
+          "ipa",
+          "messenger",
+          "social",
+          "tweak",
+          "unofficial",
+          "vault"
+        ],
+        "developer": "dvntms & IPA Vault",
+        "bundleId": "com.facebook.Messenger.flow",
+        "icon": "assets/Messenger.webp",
+        "pageURL": "apps/messenger-flow/",
+        "version": "578.1.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "msgplusx",
+        "slug": "msgplusx",
+        "name": "MSGPlusX",
+        "subtitle": "Messenger tweak by Dens0r & lucaspedrosa (unofficial build)",
+        "shortDescription": "Messenger tweak by Dens0r & lucaspedrosa (unofficial build)",
+        "description": "MSGPlusX is a tweaked Facebook Messenger build (MessengerPlus lineage by Dens0r and lucaspedrosa), distributed ready-to-sideload through the IPA Vault on a current Messenger base version. The tweak's feature set is defined by its build; no official public documentation exists.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "build",
+          "by",
+          "dens0r",
+          "ipa",
+          "lucaspedrosa",
+          "messenger",
+          "msgplusx",
+          "social",
+          "tweak",
+          "unofficial",
+          "vault"
+        ],
+        "developer": "Dens0r & IPA Vault & lucaspedrosa",
+        "bundleId": "com.facebook.Messenger",
+        "icon": "assets/Messenger.webp",
+        "pageURL": "apps/msgplusx/",
+        "version": "578.1.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "threadsaver",
+        "slug": "threadsaver",
+        "name": "ThreadSaver",
+        "subtitle": "Threads enhancement tweak (unofficial build)",
+        "shortDescription": "Threads enhancement tweak (unofficial build)",
+        "description": "ThreadSaver (by swiftleopard) is a tweaked Threads build distributed ready-to-sideload through the IPA Vault on a current Threads base version. The tweak's feature set is defined by its build; no official public documentation exists.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "build",
+          "enhancement",
+          "ipa",
+          "social",
+          "swiftleopard",
+          "threads",
+          "threadsaver",
+          "tweak",
+          "unofficial",
+          "vault"
+        ],
+        "developer": "swiftleopard & IPA Vault",
+        "bundleId": "com.burbn.barcelona",
+        "icon": "assets/Threads.webp",
+        "pageURL": "apps/threadsaver/",
+        "version": "446.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ime",
+        "slug": "ime",
+        "name": "iMe MxGram",
+        "subtitle": "MxGram-tweaked iMe messenger (unofficial build)",
+        "shortDescription": "MxGram-tweaked iMe messenger (unofficial build)",
+        "description": "iMe MxGram is the third-party iMe messenger with the MxGram tweak (by m1ronx1412) injected: ghost mode with per-user exceptions, anti-revoke, saving of protected media and more, on top of the iMe Telegram client.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "build",
+          "ime",
+          "ipa",
+          "m1ronx1412",
+          "messenger",
+          "mxgram",
+          "social",
+          "tweaked",
+          "unofficial",
+          "vault"
+        ],
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "com.olcorporation.olai",
+        "icon": "assets/iMe.webp",
+        "pageURL": "apps/ime/",
+        "version": "12.8.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "turrit-mxgram",
+        "slug": "turrit-mxgram",
+        "name": "Turrit MxGram",
+        "subtitle": "MxGram-tweaked Turrit client (unofficial build)",
+        "shortDescription": "MxGram-tweaked Turrit client (unofficial build)",
+        "description": "Turrit MxGram is the third-party Turrit messenger with the MxGram tweak (by m1ronx1412) injected: ghost mode with per-user exceptions, anti-revoke, saving of protected media and more, on top of the Turrit Telegram client.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "build",
+          "client",
+          "ipa",
+          "m1ronx1412",
+          "mxgram",
+          "social",
+          "turrit",
+          "tweaked",
+          "unofficial",
+          "vault"
+        ],
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "com.seastar.turrit",
+        "icon": "assets/Turrit.webp",
+        "pageURL": "apps/turrit-mxgram/",
+        "version": "1.5.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ryukgram-ig410",
+        "slug": "ryukgram-ig410",
+        "name": "RyukGram (IG 410)",
+        "subtitle": "RyukGram built on the Instagram 410 app",
+        "shortDescription": "RyukGram built on the Instagram 410 app",
+        "description": "RyukGram (IG 410) is the same enhanced Instagram client ported to the Instagram 410.1.0 app for iOS 15 and later. It carries the full RyukGram feature set — follow-request tracking, read receipts, story-viewer insights, deleted-message logs, device-ID masking, media downloading, custom chat themes and a configurable tab bar — on top of the older Instagram base, which is what you want if the current Instagram builds are unstable on your device or you deliberately stay on an older app version.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "410",
+          "app",
+          "axryuk",
+          "built",
+          "ig",
+          "instagram",
+          "on",
+          "ryuk",
+          "ryukgram",
+          "social",
+          "the"
+        ],
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.burbn.instagram",
+        "icon": "assets/Instagram.webp",
+        "pageURL": "apps/ryukgram-ig410/",
+        "version": "410.1.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ryukgram-sidebyside",
+        "slug": "ryukgram-sidebyside",
+        "name": "RyukGram Side by Side",
+        "subtitle": "RyukGram under its own bundle id, next to Instagram",
+        "shortDescription": "RyukGram under its own bundle id, next to Instagram",
+        "description": "RyukGram Side by Side is the RyukGram build packaged under its own bundle identifier, com.ryuk.ryukgram, so it installs alongside the real Instagram app instead of replacing it. Both apps get their own name, icon and login, so you can stay signed into a stock account and a modded one at the same time. This variant ships the no-plugin-loader build.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "axryuk",
+          "bundle",
+          "by",
+          "id",
+          "instagram",
+          "its",
+          "next",
+          "own",
+          "ryuk",
+          "ryukgram",
+          "side",
+          "social",
+          "to",
+          "under"
+        ],
+        "developer": "Ryuk (@axryuk)",
+        "bundleId": "com.ryuk.ryukgram",
+        "icon": "assets/Instagram.webp",
+        "pageURL": "apps/ryukgram-sidebyside/",
+        "version": "446.0.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "dopamine",
+        "slug": "dopamine",
+        "name": "Dopamine",
+        "subtitle": "Semi-untethered jailbreak for iOS 15 – 26",
+        "shortDescription": "Semi-untethered jailbreak for iOS 15 – 26",
+        "description": "Dopamine is the modern semi-untethered, rootless jailbreak for iOS and iPadOS 15.0 through 26.0.1. It bootstraps a Procursus environment (Sileo and friends) on supported arm64e and arm64 devices, keeps passcode, Touch ID/Face ID and Apple Pay working, and hides its filesystem changes well enough to stay through a userspace reboot. This entry tracks the official Dopamine app the developer publishes on GitHub Releases.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "15",
+          "26",
+          "contributors",
+          "dopamine",
+          "for",
+          "ios",
+          "jailbreak",
+          "opa334",
+          "semi",
+          "untethered",
+          "utilities"
+        ],
+        "developer": "opa334 & contributors",
+        "bundleId": "com.opa334.Dopamine",
+        "icon": "assets/Dopamine.webp",
+        "pageURL": "apps/dopamine/",
+        "version": "3.0.9",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "dopamine-roothide",
+        "slug": "dopamine-roothide",
+        "name": "Dopamine (RootHide)",
+        "subtitle": "Dopamine fork that hides the jailbreak from apps",
+        "shortDescription": "Dopamine fork that hides the jailbreak from apps",
+        "description": "Dopamine (RootHide) is roothide's hardened Dopamine 2 build for iOS 15.0 through 16.7.x. It runs the jailbreak in a hidden, per-app environment: App Store apps do not see the bootstrap or your tweaks unless you explicitly patch them, and extra work is done to hide jailbreak traces from detection. It keeps the usual Dopamine toolchain — Sileo, rootless tweaks and userspace reboots — under a separate bundle identifier so it can sit next to the stock Dopamine app.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "apps",
+          "dopamine",
+          "fork",
+          "from",
+          "hides",
+          "jailbreak",
+          "roothide",
+          "that",
+          "the",
+          "utilities"
+        ],
+        "developer": "roothide",
+        "bundleId": "com.opa334.Dopamine-roothide",
+        "icon": "assets/DopamineRootHide.webp",
+        "pageURL": "apps/dopamine-roothide/",
+        "version": "2.4.9.27",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "bootstrap",
+        "slug": "bootstrap",
+        "name": "Bootstrap",
+        "subtitle": "RootHide bootstrap for iOS 15 – 17",
+        "shortDescription": "RootHide bootstrap for iOS 15 – 17",
+        "description": "Bootstrap is roothide's semi-jailbreak bootstrap for iOS and iPadOS 15.0 through 17.0 on A8 to A17 Pro and M1/M2 devices. Instead of jailbreaking the whole system it builds a hidden environment that boots Sileo, Zebra and rootless tweaks while App Store apps stay untouched — so banking, streaming and game apps that refuse to run on a jailbroken device keep working. Apps are patched one at a time when you want tweaks inside them, and the whole environment can be removed again.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "15",
+          "17",
+          "bootstrap",
+          "for",
+          "ios",
+          "roothide",
+          "utilities"
+        ],
+        "developer": "roothide",
+        "bundleId": "com.roothide.Bootstrap",
+        "icon": "assets/Bootstrap.webp",
+        "pageURL": "apps/bootstrap/",
+        "version": "2.2.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "serotonin",
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "subtitle": "Semi-jailbreak for iOS 16.5.1 – 17.0",
+        "shortDescription": "Semi-jailbreak for iOS 16.5.1 – 17.0",
+        "description": "Serotonin is a semi-untethered 'semi-jailbreak' for iOS 16.5.1 through 16.7 RC and iOS 17.0 on arm64e devices. Built on the Fugu15 code base, it gives you tweak injection and a Procursus bootstrap without a full jailbreak: tweaks load into the apps you patch, and the device keeps working normally everywhere else.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "16",
+          "17",
+          "for",
+          "ios",
+          "jailbreak",
+          "mineek",
+          "semi",
+          "serotonin",
+          "utilities"
+        ],
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "icon": "assets/Serotonin.webp",
+        "pageURL": "apps/serotonin/",
+        "version": "1.2.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "taurine",
+        "slug": "taurine",
+        "name": "Taurine",
+        "subtitle": "Semi-untethered jailbreak for iOS 14",
+        "shortDescription": "Semi-untethered jailbreak for iOS 14",
+        "description": "Taurine is the Odyssey Team's semi-untethered jailbreak for iOS 14.0 – 14.3 on A9 to A14 devices using the cicuta_virosa and amfid exploits. It installs Sileo and a libhooker-based tweak environment, keeps passcode support, and boots into a userspace jailbreak from the app. Useful for keeping vintage firmwares usable on older iPhones and iPads.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "14",
+          "coolstar",
+          "for",
+          "ios",
+          "jailbreak",
+          "odyssey",
+          "semi",
+          "taurine",
+          "team",
+          "untethered",
+          "utilities"
+        ],
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "icon": "assets/Taurine.webp",
+        "pageURL": "apps/taurine/",
+        "version": "1.1.7",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "odyssey",
+        "slug": "odyssey",
+        "name": "Odyssey",
+        "subtitle": "Semi-untethered jailbreak for iOS 13",
+        "shortDescription": "Semi-untethered jailbreak for iOS 13",
+        "description": "Odyssey is the Odyssey Team's semi-untethered jailbreak for iOS 13.0 – 13.7 on A9 through A13 devices. It uses the same modern approach as Taurine — libhooker tweak injection, Sileo as the package manager and a userspace jailbreak you re-apply after a reboot — and remains the standard choice for iOS 13 firmwares that unc0ver and checkra1n handle less comfortably.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "13",
+          "coolstar",
+          "for",
+          "ios",
+          "jailbreak",
+          "odyssey",
+          "semi",
+          "team",
+          "untethered",
+          "utilities"
+        ],
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.odyssey",
+        "icon": "assets/Odyssey.webp",
+        "pageURL": "apps/odyssey/",
+        "version": "1.4.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "unc0ver",
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "subtitle": "Jailbreak for iOS 11 – 14.8.1",
+        "shortDescription": "Jailbreak for iOS 11 – 14.8.1",
+        "description": "unc0ver is the long-running semi-untethered jailbreak by pwn20wnd for iOS 11.0 through 14.8.1. Its final 5.2.0 release covers the widest firmware range of the classic jailbreaks, installing Cydia or Sileo depending on the chosen bootstrap, and it stays useful for the 32-bit era iPhones and iPads that are otherwise stuck without a package manager.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "11",
+          "14",
+          "for",
+          "ios",
+          "jailbreak",
+          "pwn20wnd",
+          "unc0ver",
+          "utilities"
+        ],
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "icon": "assets/unc0ver.webp",
+        "pageURL": "apps/unc0ver/",
+        "version": "5.2.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "sameboy",
+        "slug": "sameboy",
+        "name": "SameBoy",
+        "subtitle": "High-accuracy Game Boy and Game Boy Color emulator",
+        "shortDescription": "High-accuracy Game Boy and Game Boy Color emulator",
+        "description": "SameBoy is a highly accurate Game Boy and Game Boy Color emulator by LIJI32, ported to iPhone and iPad. It emulates the original hardware closely enough to pass hardware test ROMs, supports Super Game Boy palettes and link-cable emulation between its own instances, ships a built-in debugger, rewinding, save states and cheat support, and lets you import your own ROMs from Files.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "accuracy",
+          "and",
+          "boy",
+          "color",
+          "emulator",
+          "game",
+          "games",
+          "high",
+          "liji32",
+          "sameboy"
+        ],
+        "developer": "LIJI32",
+        "bundleId": "com.github.liji32.sameboy.ios",
+        "icon": "assets/SameBoy.webp",
+        "pageURL": "apps/sameboy/",
+        "version": "1.0.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "gopeed",
+        "slug": "gopeed",
+        "name": "Gopeed",
+        "subtitle": "Modern download manager for HTTP, BitTorrent and more",
+        "shortDescription": "Modern download manager for HTTP, BitTorrent and more",
+        "description": "Gopeed is a modern, open-source download manager written in Go with a Flutter interface. On iOS it handles HTTP/HTTPS, BitTorrent and magnet links, splits downloads into multiple connections, resumes interrupted transfers, and lets you queue and manage everything with upload and download limits. It is the maintained alternative to iTorrent when you want torrents plus ordinary file downloads in the same app.",
+        "category": "networking",
+        "tags": [
+          "networking"
+        ],
+        "keywords": [
+          "and",
+          "bittorrent",
+          "download",
+          "for",
+          "gopeed",
+          "gopeedlab",
+          "http",
+          "manager",
+          "modern",
+          "more",
+          "networking"
+        ],
+        "developer": "GopeedLab",
+        "bundleId": "com.gopeed.gopeed",
+        "icon": "assets/Gopeed.webp",
+        "pageURL": "apps/gopeed/",
+        "version": "1.9.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "manicemu",
+        "slug": "manicemu",
+        "name": "Manic EMU",
+        "subtitle": "All-in-one retro game emulator",
+        "shortDescription": "All-in-one retro game emulator",
+        "description": "Manic EMU is an all-in-one retro emulator for iPhone and iPad. One app covers NES, SNES, N64, Game Boy and Game Boy Advance, Nintendo DS and 3DS, PlayStation, PSP, Dreamcast, Arcade and more through libretro cores, with a game library that imports your own ROMs, per-core control mapping, cheat support, save states and controller support. The upstream project is AGPL-3.0 and publishes its own signed-for-testing builds.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "all",
+          "aoshuang",
+          "emu",
+          "emulator",
+          "game",
+          "games",
+          "in",
+          "lee",
+          "manic",
+          "one",
+          "retro"
+        ],
+        "developer": "Aoshuang Lee (Manic EMU)",
+        "bundleId": "com.aoshuang.manicemu",
+        "icon": "assets/ManicEMU.webp",
+        "pageURL": "apps/manicemu/",
+        "version": "2.0.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "xenios",
+        "slug": "xenios",
+        "name": "XeniOS",
+        "subtitle": "Xbox 360 emulation for iPhone and iPad",
+        "shortDescription": "Xbox 360 emulation for iPhone and iPad",
+        "description": "XeniOS is an experimental Apple-focused fork of Xenia, the Xbox 360 emulator research project, built for iPhone, iPad and Apple silicon Macs. The iOS build ships as an unsigned IPA and needs recent, powerful hardware: the upstream CMake configuration sets the iOS deployment target to 18.0, and the emulated PowerPC cores plus the Xbox 360 GPU workload only reach playable frame rates on A17 Pro / M-series class chips. It carries the same edge-line core as upstream Xenia and reports game compatibility on xenios.jp. As with every console emulator, you supply your own game files.",
+        "category": "games",
+        "tags": [
+          "games"
+        ],
+        "keywords": [
+          "360",
+          "and",
+          "emulation",
+          "for",
+          "games",
+          "ipad",
+          "iphone",
+          "jp",
+          "project",
+          "xbox",
+          "xenios"
+        ],
+        "developer": "XeniOS Project (xenios-jp)",
+        "bundleId": "com.xenios",
+        "icon": "assets/XeniOS.webp",
+        "pageURL": "apps/xenios/",
+        "version": "2.0.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "pikatorrent",
+        "slug": "pikatorrent",
+        "name": "PikaTorrent",
+        "subtitle": "BitTorrent client",
+        "shortDescription": "BitTorrent client",
+        "description": "PikaTorrent is a modern cross-platform BitTorrent client for iOS and Android. Pick a torrent and stream or download it on all your devices, with support for magnet links, .torrent files and pairing with a self-hosted bridge.",
+        "category": "networking",
+        "tags": [
+          "networking"
+        ],
+        "keywords": [
+          "bittorrent",
+          "client",
+          "networking",
+          "pikatorrent",
+          "ray"
+        ],
+        "developer": "G-Ray",
+        "bundleId": "com.pikatorrent.PikaTorrent",
+        "icon": "assets/PikaTorrent.webp",
+        "pageURL": "apps/pikatorrent/",
+        "version": "0.15.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "thunder",
+        "slug": "thunder",
+        "name": "Thunder",
+        "subtitle": "Lemmy & PieFed client",
+        "shortDescription": "Lemmy & PieFed client",
+        "description": "Thunder is an open-source, cross-platform Lemmy and PieFed client for iOS and Android built with Flutter. It supports multiple accounts, customizable feeds and gesture-based navigation against any Lemmy or PieFed instance.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "app",
+          "client",
+          "lemmy",
+          "piefed",
+          "social",
+          "thunder"
+        ],
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "icon": "assets/Thunder.webp",
+        "pageURL": "apps/thunder/",
+        "version": "0.8.6",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "chan",
+        "slug": "chan",
+        "name": "Chan",
+        "subtitle": "4chan imageboard browser",
+        "shortDescription": "4chan imageboard browser",
+        "description": "Chan is a Flutter imageboard browser for iOS and Android. Browse 4chan threads and boards with media galleries, saved posts, pass login and a fast, native-feeling interface.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "4chan",
+          "browser",
+          "chan",
+          "imageboard",
+          "moffatman",
+          "social"
+        ],
+        "developer": "moffatman",
+        "bundleId": "com.moffatman.chan",
+        "icon": "assets/Chan.webp",
+        "pageURL": "apps/chan/",
+        "version": "1.2.9",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "monal",
+        "slug": "monal",
+        "name": "Monal",
+        "subtitle": "XMPP instant messenger",
+        "shortDescription": "XMPP instant messenger",
+        "description": "Monal is a free, open-source XMPP (Jabber) instant messenger for iOS and macOS. It offers OMEMO end-to-end encryption, multiple accounts, group chat and push notifications without a central server.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "im",
+          "instant",
+          "messenger",
+          "monal",
+          "social",
+          "xmpp"
+        ],
+        "developer": "Monal IM",
+        "bundleId": "G7YU7X7KRJ.SworIM",
+        "icon": "assets/Monal.webp",
+        "pageURL": "apps/monal/",
+        "version": "6.4.21",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "jellybook",
+        "slug": "jellybook",
+        "name": "JellyBook",
+        "subtitle": "Jellyfin e-book reader",
+        "shortDescription": "Jellyfin e-book reader",
+        "description": "JellyBook is a nice way to read books and comics from Jellyfin. It streams EPUB, CBZ and PDF titles from your Jellyfin server to your iPhone or iPad with a clean reading interface.",
+        "category": "other",
+        "tags": [
+          "other"
+        ],
+        "keywords": [
+          "book",
+          "jellybook",
+          "jellyfin",
+          "other",
+          "reader"
+        ],
+        "developer": "JellyBook",
+        "bundleId": "com.KaraWilson.JellyBook",
+        "icon": "assets/JellyBook.webp",
+        "pageURL": "apps/jellybook/",
+        "version": "1.4.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "hanami",
+        "slug": "hanami",
+        "name": "Hanami",
+        "subtitle": "Manga reader",
+        "shortDescription": "Manga reader",
+        "description": "Hanami is an app for reading and saving manga on iOS and iPadOS. It works with self-hosted Komga and Kavita servers and supports offline downloads, library tracking and a fast native reader.",
+        "category": "other",
+        "tags": [
+          "other"
+        ],
+        "keywords": [
+          "hanami",
+          "manga",
+          "oolxg",
+          "other",
+          "reader"
+        ],
+        "developer": "oolxg",
+        "bundleId": "moe.mkpwnz.Hanami",
+        "icon": "assets/Hanami.webp",
+        "pageURL": "apps/hanami/",
+        "version": "0.28.2",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "otraku",
+        "slug": "otraku",
+        "name": "Otraku",
+        "subtitle": "AniList client",
+        "shortDescription": "AniList client",
+        "description": "Otraku is an unofficial AniList client for Android and iOS built with Flutter. Browse, search and update your anime and manga lists with a polished native interface.",
+        "category": "other",
+        "tags": [
+          "other"
+        ],
+        "keywords": [
+          "anilist",
+          "client",
+          "lotusprey",
+          "other",
+          "otraku"
+        ],
+        "developer": "lotusprey",
+        "bundleId": "com.otraku.app",
+        "icon": "assets/Otraku.webp",
+        "pageURL": "apps/otraku/",
+        "version": "1.12.1",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "purekfd",
+        "slug": "purekfd",
+        "name": "PureKFD",
+        "subtitle": "Jailed package manager",
+        "shortDescription": "Jailed package manager",
+        "description": "PureKFD is an exploit-based jailed package manager for iOS 15.0 through 18.x. It applies Misaka-style tweaks, themes and packages to compatible devices without a full jailbreak.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "jailed",
+          "lrdsnow",
+          "manager",
+          "package",
+          "purekfd",
+          "utilities"
+        ],
+        "developer": "Lrdsnow",
+        "bundleId": "uwu.lrdsnow.purekfdiOS",
+        "icon": "assets/PureKFD.webp",
+        "pageURL": "apps/purekfd/",
+        "version": "6.0.2",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "synkplay",
+        "slug": "synkplay",
+        "name": "Synkplay",
+        "subtitle": "Synced video playback",
+        "shortDescription": "Synced video playback",
+        "description": "Synkplay (Syncplay Mobile) is a Syncplay client for Android and iOS. Watch videos in sync with your friends — playback, pause and seeking are kept synchronized across everyone in the room.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "photo",
+          "playback",
+          "synced",
+          "synkplay",
+          "video",
+          "yuroyami"
+        ],
+        "developer": "yuroyami",
+        "bundleId": "com.yuroyami.syncplay.iosApp",
+        "icon": "assets/Synkplay.webp",
+        "pageURL": "apps/synkplay/",
+        "version": "0.24.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "ksign",
+        "slug": "ksign",
+        "name": "Ksign",
+        "subtitle": "ESign-style app signer",
+        "shortDescription": "ESign-style app signer",
+        "description": "Ksign is a community “cleaner” take on ESign — an iOS app signer and installer. Import IPA files, sign them with your own certificate and install them on device, with Feather-based app-icon styles.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "app",
+          "esign",
+          "ksign",
+          "nyasami",
+          "signer",
+          "style",
+          "utilities"
+        ],
+        "developer": "Nyasami",
+        "bundleId": "nya.asami.ksign",
+        "icon": "assets/Ksign.webp",
+        "pageURL": "apps/ksign/",
+        "version": "1.6",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "cosmos",
+        "slug": "cosmos",
+        "name": "Cosmos Music Player",
+        "subtitle": "Music player",
+        "shortDescription": "Music player",
+        "description": "Cosmos Music Player is a premium music player for iOS built on iCloud Drive and local storage. It gives you a clean, modern player for the music you keep on your device and in iCloud.",
+        "category": "music",
+        "tags": [
+          "music"
+        ],
+        "keywords": [
+          "clquwu",
+          "cosmos",
+          "music",
+          "player"
+        ],
+        "developer": "clquwu",
+        "bundleId": "dev.clq.Cosmos-Music-Player",
+        "icon": "assets/Cosmos.webp",
+        "pageURL": "apps/cosmos/",
+        "version": "1.2.5",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "animegen",
+        "slug": "animegen",
+        "name": "AnimeGen",
+        "subtitle": "Anime art generator",
+        "shortDescription": "Anime art generator",
+        "description": "AnimeGen is a simple way to enjoy anime art. Generate anime-style images on your device using local AI models, with a gallery and save-to-photos workflow.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "anime",
+          "animegen",
+          "art",
+          "cranci1",
+          "generator",
+          "photo",
+          "video"
+        ],
+        "developer": "cranci1",
+        "bundleId": "me.cranci.AnimeGen",
+        "icon": "assets/AnimeGen.webp",
+        "pageURL": "apps/animegen/",
+        "version": "3.0.0",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "muffinstore",
+        "slug": "muffinstore",
+        "name": "MuffinStore",
+        "subtitle": "App Store downgrader",
+        "shortDescription": "App Store downgrader",
+        "description": "MuffinStore is a TrollStore app for downgrading App Store apps. It lets you install older versions of apps from the App Store without a jailbreak, shipped as a TrollStore-named .tipa package.",
+        "category": "utilities",
+        "tags": [
+          "utilities"
+        ],
+        "keywords": [
+          "app",
+          "downgrader",
+          "mineek",
+          "muffinstore",
+          "store",
+          "utilities"
+        ],
+        "developer": "mineek",
+        "bundleId": "dev.mineek.muffinstore",
+        "icon": "assets/MuffinStore.webp",
+        "pageURL": "apps/muffinstore/",
+        "version": "1.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "playtorrio",
+        "slug": "playtorrio",
+        "name": "PlayTorrio",
+        "subtitle": "Streaming client",
+        "shortDescription": "Streaming client",
+        "description": "PlayTorrio is a movies, TV and anime streaming client for iOS. It aggregates content into a browsable home-screen library with a native player.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "ayman708",
+          "client",
+          "photo",
+          "playtorrio",
+          "streaming",
+          "video"
+        ],
+        "developer": "ayman708",
+        "bundleId": "com.example.playtorrio",
+        "icon": "assets/PlayTorrio.webp",
+        "pageURL": "apps/playtorrio/",
+        "version": "1.1.5",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "mangayomi",
+        "slug": "mangayomi",
+        "name": "Mangayomi",
+        "subtitle": "Manga, novel & anime reader",
+        "shortDescription": "Manga, novel & anime reader",
+        "description": "Mangayomi is a free, open-source app for reading manga and novels and watching anime, available on Android, iOS, macOS, Linux and Windows. It supports extensions for a wide range of sources.",
+        "category": "other",
+        "tags": [
+          "other"
+        ],
+        "keywords": [
+          "anime",
+          "kodjodevf",
+          "manga",
+          "mangayomi",
+          "novel",
+          "other",
+          "reader"
+        ],
+        "developer": "kodjodevf",
+        "bundleId": "com.kodjodevf.mangayomi",
+        "icon": "assets/Mangayomi.webp",
+        "pageURL": "apps/mangayomi/",
+        "version": "0.9.2",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "nebuloiptv",
+        "slug": "nebuloiptv",
+        "name": "Nebulo",
+        "subtitle": "IPTV player",
+        "shortDescription": "IPTV player",
+        "description": "Nebulo is a clean IPTV player for iOS with a built-in sports score center. Load your M3U playlists and watch live channels with a simple, focused interface.",
+        "category": "photo-video",
+        "tags": [
+          "photo-video"
+        ],
+        "keywords": [
+          "iptv",
+          "mongoosemonke504",
+          "nebulo",
+          "photo",
+          "player",
+          "video"
+        ],
+        "developer": "mongoosemonke504",
+        "bundleId": "personal.Nebulo-V2-3",
+        "icon": "assets/Nebulo.webp",
+        "pageURL": "apps/nebuloiptv/",
+        "version": "2.3",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      },
+      {
+        "id": "chatsen",
+        "slug": "chatsen",
+        "name": "Chatsen",
+        "subtitle": "Twitch chat client",
+        "shortDescription": "Twitch chat client",
+        "description": "Chatsen is a cross-platform Twitch chat application with third-party addon support. Follow chat in real time with support for BetterTTV, FrankerFaceZ and 7TV emotes and themes.",
+        "category": "social",
+        "tags": [
+          "social"
+        ],
+        "keywords": [
+          "chat",
+          "chatsen",
+          "client",
+          "social",
+          "twitch"
+        ],
+        "developer": "chatsen",
+        "bundleId": "com.chatsen.chatsen",
+        "icon": "assets/Chatsen.webp",
+        "pageURL": "apps/chatsen/",
+        "version": "1.1.107",
+        "verificationLevel": "VERIFIED",
+        "downloadReachable": true,
+        "clientCompatibility": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ]
+      }
+    ]
+  }
+}

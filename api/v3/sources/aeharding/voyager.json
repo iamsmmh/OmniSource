@@ -1,0 +1,34 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "aeharding/voyager",
+    "source": "aeharding/voyager",
+    "type": "github",
+    "homepage": "https://github.com/aeharding/voyager",
+    "sourceURL": "https://github.com/aeharding/voyager",
+    "publisher": "aeharding/voyager",
+    "apps": [
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "version": "2.49.0"
+      }
+    ],
+    "slug": "aeharding-voyager",
+    "page": "/sources/aeharding-voyager/",
+    "appSlugs": [
+      "voyager"
+    ],
+    "appCount": 1,
+    "verifiedApps": 1,
+    "healthScore": 77.0,
+    "score": 73.9,
+    "status": "Community Verified",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2026-09-06",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/voyager.json"
+  }
+}

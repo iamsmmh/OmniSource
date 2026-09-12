@@ -180,3 +180,35 @@ utils.js ── esc / fetchJSON / countUp / translate / localize
 ## Future-ready
 
 The architecture is designed so additional clients (OmniStore iOS/Android/Web, third-party integrations) only need to consume the v2 API surface. The Python pipeline stays stdlib-only and deterministic; the frontend stays zero-build-step. Engines are plain scripts with no module bundler, so they run directly in any browser.
+
+## Autonomous extensions (3.2.0)
+
+The 3.2.0 modernization adds an autonomous operations layer around the
+unchanged core pipeline. Every extension is additive, scheduled, and
+documented; `catalog.json` → `feeds/` → Pages remains the only path to users.
+
+```
+discovery.yml (12h) ──▶ data/discovered_sources.json ──▶ validation gate ──▶ catalog.json (human)
+sync.yml (6h) ──▶ feeds/ ──▶ publish.yml ──▶ data/* + feeds/clients/* + api/v3/*
+monitoring.yml (30m) ──▶ data/status.json + data/selfheal_report.json + data/mirror_status.json
+security.yml ──▶ data/security.json (fails closed) │ analytics.yml ──▶ data/analytics_rollup.json
+website.yml ──▶ web/ (Next.js 15 + TS + Tailwind PWA, dynamic /api/v3/*)
+```
+
+| Module family | Key modules |
+|---|---|
+| Discovery | `omnisource.autodiscovery` + `scripts/discovery/*` |
+| Validation | `omnisource.remote_validation` + `scripts/validation/*` |
+| Dedup / history | `omnisource.canonical`, `omnisource.release_history` |
+| Reputation | `omnisource.reputation` (scores) + `reputation_labels` (public ladder) |
+| Monitoring | `omnisource.probes` + `scripts/monitoring/*` |
+| Enrichment | `omnisource.enrichment` |
+| Security | `omnisource.security` + `scripts/security/scan.py` |
+| Search | `omnisource.search` (+ `web/src/lib/search.ts` twin, `src/js/search-engine.js`) |
+| Self-heal / mirrors | `omnisource.selfheal`, `omnisource.mirrors` |
+| API v3 | `omnisource.api_v3` (+ static `api/v3/`, dynamic `web/` routes) |
+| Client feeds | `omnisource.feeds.clients` → `feeds/clients/*.json` |
+| Scale-out fetch | `omnisource.async_http` (asyncio + optional aiohttp) |
+
+See `docs/MODERNIZATION.md` (delivery index), `audit-report.md`,
+`docs/OPERATIONS.md`, `docs/API-V3.md` and `docs/DISCOVERY.md`.

@@ -1,0 +1,85 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "name": "Infuse Plus",
+    "bundleIdentifier": "com.firecore.infuse",
+    "developerName": "dayanch96 & IPA Vault",
+    "subtitle": "Enhancer tweak for the Infuse video player",
+    "localizedDescription": "Infuse Plus (by Dayanch96) enhances the Infuse video player with extra appearance options, app icon choices and playback quality-of-life improvements on top of the stock Infuse 8 app. The build follows the latest Infuse release.",
+    "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Infuse.webp",
+    "tintColor": "FF6B00",
+    "category": "photo-video",
+    "version": "8.5.3",
+    "versionDate": "2026-09-01",
+    "versionDescription": "Infuse 8.5.3 | Infuse-8.5.3-Infuse-Plus\n\nIPA Vault build for Infuse Plus (8.5.3), version 8.5.3",
+    "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+    "size": 100074036,
+    "versions": [
+      {
+        "version": "8.5.3",
+        "date": "2026-09-01",
+        "localizedDescription": "Infuse 8.5.3 | Infuse-8.5.3-Infuse-Plus\n\nIPA Vault build for Infuse Plus (8.5.3), version 8.5.3",
+        "downloadURL": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+        "size": 100074036,
+        "minOSVersion": "18.0",
+        "releaseUrl": null,
+        "source": "altstore",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "Infuse-8.5.3-Infuse-Plus.ipa",
+            "downloadUrl": "https://pub-dd800571175348b6a2745b3396360028.r2.dev/Infuse-8.5.3-Infuse-Plus.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 100074036,
+            "sha256": null,
+            "downloads": 0,
+            "mimeType": null,
+            "installable": true
+          }
+        ]
+      }
+    ],
+    "screenshotURLs": [],
+    "omnisource": {
+      "slug": "infuseplus",
+      "status": "stable",
+      "featured": false,
+      "upstreamURL": "https://github.com/dayanch96/InfusePlus",
+      "sourceURL": "https://raw.githubusercontent.com",
+      "verification": {
+        "method": "altstore",
+        "publisher": "927tx/IPA-Vault",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "18.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Tracks the ready-to-sideload Infuse Plus build from the IPA Vault source (the official dayanch96/InfusePlus repo publishes the tweak as .deb only). Current Infuse 8.5 builds require iOS 18 or newer; upstream also publishes an iOS 16-era 7.x build that is not tracked here. Shares com.firecore.infuse with a sideloaded stock Infuse - install one at a time."
+      },
+      "health": {
+        "downloadReachable": true,
+        "detail": "HTTP 200",
+        "statusSince": "2026-09-10",
+        "lastUpdatedAt": "2026-09-01"
+      }
+    },
+    "id": "com.firecore.infuse"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "name": "RainTweak",
+    "bundleIdentifier": "com.hammerandchisel.discord",
+    "developerName": "raincord & IPA Vault",
+    "subtitle": "Discord client mod with themes and QoL fixes",
+    "localizedDescription": "RainTweak injects Rain - the community Discord client mod - into the official Discord iOS app, adding themes, appearance options and quality-of-life fixes on top of a current Discord build. The ready-to-sideload IPA is built and published by the RainTweak project itself, so the download comes straight from the developer's own releases.",
+    "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Discord.webp",
+    "tintColor": "5865F2",
+    "category": "social",
+    "version": "0.9.3",
+    "versionDate": "2026-06-19",
+    "versionDescription": "Discord 0.9.3 | RainTweak",
+    "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+    "size": 107515564,
+    "versions": [
+      {
+        "version": "0.9.3",
+        "date": "2026-06-19",
+        "localizedDescription": "Discord 0.9.3 | RainTweak",
+        "downloadURL": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+        "size": 107515564,
+        "minOSVersion": "16.0",
+        "releaseUrl": "https://github.com/ra1ncord/RainTweak/releases/tag/v0.9.3",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "dev.raincord.tweak_1.1.0_iphoneos-arm64.deb",
+            "downloadUrl": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/dev.raincord.tweak_1.1.0_iphoneos-arm64.deb",
+            "platform": "linux",
+            "architecture": "arm64",
+            "fileType": "DEB",
+            "size": 33170,
+            "sha256": "440b2d3be5d1d4d1585efcbc73b97150f03d8b2574afa755237f2c5b502676a6",
+            "downloads": 1096,
+            "mimeType": "application/x-debian-package",
+            "installable": true
+          },
+          {
+            "filename": "RainTweak.ipa",
+            "downloadUrl": "https://github.com/ra1ncord/RainTweak/releases/download/v0.9.3/RainTweak.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 107515564,
+            "sha256": "1ac871154ac2649158eea405f2c79e2e1d36ed7771c9b64748ce9f1c3f97703e",
+            "downloads": 3907,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          }
+        ],
+        "sha256": "1ac871154ac2649158eea405f2c79e2e1d36ed7771c9b64748ce9f1c3f97703e",
+        "downloads": 3907
+      }
+    ],
+    "screenshotURLs": [],
+    "appPermissions": {
+      "entitlements": [
+        "com.apple.security.application-groups",
+        "com.apple.developer.associated-domains",
+        "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+        "com.apple.developer.declared-age-range",
+        "com.apple.developer.storekit.request-data",
+        "com.apple.developer.device-information.user-assigned-device-name",
+        "com.apple.developer.group-session",
+        "keychain-access-groups",
+        "com.apple.developer.networking.multicast",
+        "aps-environment",
+        "com.apple.developer.siri",
+        "com.apple.developer.networking.wifi-info"
+      ],
+      "privacy": {
+        "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+        "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+        "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+        "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+        "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+        "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+        "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+      }
+    },
+    "omnisource": {
+      "slug": "raintweak",
+      "status": "stable",
+      "featured": false,
+      "upstreamURL": "https://codeberg.org/raincord/RainTweak",
+      "sourceURL": "https://codeberg.org/raincord/RainTweak",
+      "verification": {
+        "method": "codeberg-release",
+        "publisher": "raincord/RainTweak (Codeberg)",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official IPA from the RainTweak project's own Codeberg releases (its GitHub mirror is tracked as a failover). Discord 343+ builds require iOS 16 or newer. Shares com.hammerandchisel.discord with any other sideloaded Discord build - install one at a time."
+      },
+      "health": {
+        "downloadReachable": true,
+        "detail": "HTTP 302",
+        "statusSince": "2026-09-10",
+        "lastUpdatedAt": "2026-06-19"
+      }
+    },
+    "id": "com.hammerandchisel.discord"
+  }
+}

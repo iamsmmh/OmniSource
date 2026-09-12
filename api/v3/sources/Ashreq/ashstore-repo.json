@@ -1,0 +1,34 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "Ashreq/ashstore-repo",
+    "source": "Ashreq/ashstore-repo",
+    "type": "github",
+    "homepage": "https://github.com/Ashreq/ashstore-repo",
+    "sourceURL": "https://github.com/Ashreq/ashstore-repo",
+    "publisher": "Ashreq/ashstore-repo",
+    "apps": [
+      {
+        "slug": "maxtube",
+        "name": "MaxTube",
+        "version": "21.31.3"
+      }
+    ],
+    "slug": "ashreq-ashstore-repo",
+    "page": "/sources/ashreq-ashstore-repo/",
+    "appSlugs": [
+      "maxtube"
+    ],
+    "appCount": 1,
+    "verifiedApps": 1,
+    "healthScore": 79.0,
+    "score": 73.9,
+    "status": "Community Verified",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2026-08-03",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/maxtube.json"
+  }
+}

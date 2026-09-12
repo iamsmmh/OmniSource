@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://iamsmmh.github.io/OmniSource/schemas/discovery.schema.json",
+  "title": "OmniSource discovered sources",
+  "description": "Autonomous discovery store (data/discovered_sources.json). Candidates only — never published to feeds without validation and promotion.",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "count", "sources"],
+  "properties": {
+    "schemaVersion": { "type": "integer", "const": 1 },
+    "generatedAt": { "type": "string" },
+    "count": { "type": "integer", "minimum": 0 },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/source" }
+    }
+  },
+  "definitions": {
+    "source": {
+      "type": "object",
+      "required": ["source_id", "name", "url", "type", "discovered_at", "last_checked", "health", "reputation"],
+      "properties": {
+        "source_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{1,79}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "type": { "type": "string", "enum": ["altstore", "sidestore", "feather", "esign", "livecontainer", "unknown"] },
+        "discovered_at": { "type": "string" },
+        "last_checked": { "type": "string" },
+        "health": { "type": "string", "enum": ["unknown", "online", "degraded", "offline"] },
+        "reputation": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "meta": { "type": "object" }
+      }
+    }
+  }
+}

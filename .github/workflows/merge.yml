@@ -55,6 +55,7 @@ jobs:
 
       - name: Validate merged feeds
         run: |
+          set -euo pipefail
           python3 scripts/validate.py
           bash scripts/validate_jq.sh
 

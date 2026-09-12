@@ -1,0 +1,267 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "name": "VCMI",
+    "bundleIdentifier": "eu.vcmi.vcmiclient",
+    "developerName": "VCMI Team",
+    "subtitle": "Open-source Heroes of Might & Magic III engine",
+    "localizedDescription": "VCMI is an open-source engine that re-implements Heroes of Might and Magic III so the classic turn-based strategy game runs on modern hardware — with widescreen and high-resolution support, extensive modding (including the popular HotA and Era mods), stabilized multiplayer and quality-of-life improvements over the original. Requires a copy of the original game's data files.",
+    "iconURL": "https://iamsmmh.github.io/OmniSource/assets/VCMI.webp",
+    "tintColor": "BD8F52",
+    "category": "games",
+    "version": "1.7.5",
+    "versionDate": "2026-08-15",
+    "versionDescription": "VCMI 1.7.5 | VCMI-iOS\n\nNote: saved games from 1.6 release can be loaded in 1.7\n\n### Changelog\n- Player Changelog: [1.7.4 -> 1.7.5](https://github.com/vcmi/vcmi/blob/master/ChangeLog.md#174---175)\n- Full Changelog: https://github.com/vcmi/vcmi/compare/1.7.4..1.7.5\n\n### Additional builds\n<!-- - Android release will be available on Google Play shortly -->\n<!-- - Linux release will be available on Flathub shortly -->\n<!-- - Ubuntu release will be available on VCMI PPA shortly -->\n<!-- - Android release is available on [Google Play](https://play.google.com/store/apps/details?id=is.xyz.vcmi) -->\n<!-- - Linux release is available on [Flathub](https://flathub.org/apps/eu.vcmi.VCMI) -->\n<!-- - Ubuntu release is available on [VCMI PPA](https://launchpad.net/~vcmi/+archive/ubuntu/ppa) -->\n\n- Android release is available on [Google Play](https://play.google.com/store/apps/details?id=is.xyz.vcmi) and [F-Droid](https://f-droid.org/en/packages/is.xyz.vcmi/)\n- iOS release is available on [TestFlight](https://testflight.apple.com/join/pJWHSbmu) (AppStore version coming soon)\n- Linux release is available on [Flathub](https://flathub.org/apps/eu.vcmi.VCMI)\n- Ubuntu release is available on [VCMI PPA](https://launchpad.net/~vcmi/+archive/ubuntu/ppa)\n- macOS release can be installed via Homebrew: `brew install --cask vcmi` (official) or `brew install --cask vcmi/vcmi/vcmi` (from our tap)",
+    "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa",
+    "size": 28187923,
+    "versions": [
+      {
+        "version": "1.7.5",
+        "date": "2026-08-15",
+        "localizedDescription": "VCMI 1.7.5 | VCMI-iOS\n\nNote: saved games from 1.6 release can be loaded in 1.7\n\n### Changelog\n- Player Changelog: [1.7.4 -> 1.7.5](https://github.com/vcmi/vcmi/blob/master/ChangeLog.md#174---175)\n- Full Changelog: https://github.com/vcmi/vcmi/compare/1.7.4..1.7.5\n\n### Additional builds\n<!-- - Android release will be available on Google Play shortly -->\n<!-- - Linux release will be available on Flathub shortly -->\n<!-- - Ubuntu release will be available on VCMI PPA shortly -->\n<!-- - Android release is available on [Google Play](https://play.google.com/store/apps/details?id=is.xyz.vcmi) -->\n<!-- - Linux release is available on [Flathub](https://flathub.org/apps/eu.vcmi.VCMI) -->\n<!-- - Ubuntu release is available on [VCMI PPA](https://launchpad.net/~vcmi/+archive/ubuntu/ppa) -->\n\n- Android release is available on [Google Play](https://play.google.com/store/apps/details?id=is.xyz.vcmi) and [F-Droid](https://f-droid.org/en/packages/is.xyz.vcmi/)\n- iOS release is available on [TestFlight](https://testflight.apple.com/join/pJWHSbmu) (AppStore version coming soon)\n- Linux release is available on [Flathub](https://flathub.org/apps/eu.vcmi.VCMI)\n- Ubuntu release is available on [VCMI PPA](https://launchpad.net/~vcmi/+archive/ubuntu/ppa)\n- macOS release can be installed via Homebrew: `brew install --cask vcmi` (official) or `brew install --cask vcmi/vcmi/vcmi` (from our tap)",
+        "downloadURL": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa",
+        "size": 28187923,
+        "minOSVersion": "13.0",
+        "releaseUrl": "https://github.com/vcmi/vcmi/releases/tag/1.7.5",
+        "source": "github",
+        "isPrerelease": false,
+        "isDraft": false,
+        "assets": [
+          {
+            "filename": "pdb-arm64.zip",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/pdb-arm64.zip",
+            "platform": "unknown",
+            "architecture": "arm64",
+            "fileType": "ZIP",
+            "size": 340218247,
+            "sha256": "89f0d64cc5832ed2a847333d028e2f11864c1418cf30f00c741b088de458ca71",
+            "downloads": 331,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "pdb-x64.zip",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/pdb-x64.zip",
+            "platform": "unknown",
+            "architecture": null,
+            "fileType": "ZIP",
+            "size": 299229022,
+            "sha256": "d21eb8f4fd5cf74e177e5acea82f1d42973ef299e3aa027c03086e82f81b8896",
+            "downloads": 329,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "pdb-x86.zip",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/pdb-x86.zip",
+            "platform": "unknown",
+            "architecture": "x86",
+            "fileType": "ZIP",
+            "size": 296044441,
+            "sha256": "d2068bbd09e02b142dffa48ec247865e0a3d9ad4b852a33f656b4105c1b584a5",
+            "downloads": 195,
+            "mimeType": "application/zip",
+            "installable": false
+          },
+          {
+            "filename": "VCMI-Android-arm64-v8a.apk",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Android-arm64-v8a.apk",
+            "platform": "android",
+            "architecture": "arm64",
+            "fileType": "APK",
+            "size": 37320788,
+            "sha256": "81738076e58c18b050d9b5f46b3dc1455e40afc112292ee439681572f633cbec",
+            "downloads": 2053,
+            "mimeType": "application/vnd.android.package-archive",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-Android-armeabi-v7a.apk",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Android-armeabi-v7a.apk",
+            "platform": "android",
+            "architecture": "armv7",
+            "fileType": "APK",
+            "size": 33618657,
+            "sha256": "7ccec9f182fa23f86cf12942dec32dfbaacfbf749a039d635ac24cd0b392cf6f",
+            "downloads": 581,
+            "mimeType": "application/vnd.android.package-archive",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-Android-x86_64.apk",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Android-x86_64.apk",
+            "platform": "android",
+            "architecture": "x86_64",
+            "fileType": "APK",
+            "size": 39265370,
+            "sha256": "f789e99dd9c1ada463583302753c18935dfab0a070e357985c14eef3920537cb",
+            "downloads": 640,
+            "mimeType": "application/vnd.android.package-archive",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-iOS.ipa",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-iOS.ipa",
+            "platform": "ios",
+            "architecture": null,
+            "fileType": "IPA",
+            "size": 28187923,
+            "sha256": "dd4313a76d79a125ed5405cd0603c34f8ed4155dba22695f1f24a39a7104875c",
+            "downloads": 1470,
+            "mimeType": "application/octet-stream",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-Linux-arm64.AppImage",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Linux-arm64.AppImage",
+            "platform": "linux",
+            "architecture": "arm64",
+            "fileType": "AppImage",
+            "size": 51034632,
+            "sha256": "03761a9e9b13a7a4e5fe9cca577c4fb5ce5abba380a8ba2bf5a03a1393879346",
+            "downloads": 207,
+            "mimeType": "application/vnd.appimage",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-Linux-x64.AppImage",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Linux-x64.AppImage",
+            "platform": "linux",
+            "architecture": null,
+            "fileType": "AppImage",
+            "size": 53463544,
+            "sha256": "a599ff80a83d0f533c41c810de2c20a657c6df20864f8ea8768796a6e8e918c3",
+            "downloads": 509,
+            "mimeType": "application/vnd.appimage",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-macOS-arm.dmg",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-macOS-arm.dmg",
+            "platform": "macos",
+            "architecture": null,
+            "fileType": "DMG",
+            "size": 35462171,
+            "sha256": "b56b55d0671ae604effb12d0394b74a552f203426cafa165f82488505fb465e3",
+            "downloads": 9138,
+            "mimeType": "application/x-apple-diskimage",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-macOS-intel.dmg",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-macOS-intel.dmg",
+            "platform": "macos",
+            "architecture": null,
+            "fileType": "DMG",
+            "size": 38897972,
+            "sha256": "613f7e9c2d515e10ff1eae77bab236308cf5bd08b68ff3d1b65cb7a16cde0ef6",
+            "downloads": 1716,
+            "mimeType": "application/x-apple-diskimage",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-Sources.tar.gz",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Sources.tar.gz",
+            "platform": "unknown",
+            "architecture": null,
+            "fileType": "other",
+            "size": 19251683,
+            "sha256": "e5822c193348534bb25d14e04ebec2d241058d12fa84beaa8234ee016710eb7a",
+            "downloads": 765,
+            "mimeType": "application/gzip",
+            "installable": false
+          },
+          {
+            "filename": "VCMI-Windows-arm64.exe",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Windows-arm64.exe",
+            "platform": "windows",
+            "architecture": "arm64",
+            "fileType": "EXE",
+            "size": 36348093,
+            "sha256": "26b694ae708876edffad5baf746d9978926463a35104530ad1bf6b4de0b495dd",
+            "downloads": 362,
+            "mimeType": "application/x-msdownload",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-Windows-x64.exe",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Windows-x64.exe",
+            "platform": "windows",
+            "architecture": null,
+            "fileType": "EXE",
+            "size": 34381177,
+            "sha256": "3b5fe1fcf74732f22fb07330205b2f02c37333916fc5b01a18d6ed0d55019266",
+            "downloads": 6495,
+            "mimeType": "application/x-msdownload",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-Windows-x86.exe",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Windows-x86.exe",
+            "platform": "windows",
+            "architecture": "x86",
+            "fileType": "EXE",
+            "size": 29912672,
+            "sha256": "74c423a4eb33a4d52f8d9b612de0b905bc2aaaaa15f10c8a40aa1ede1f210c0d",
+            "downloads": 487,
+            "mimeType": "application/x-msdownload",
+            "installable": true
+          },
+          {
+            "filename": "VCMI-Windows.zip",
+            "downloadUrl": "https://github.com/vcmi/vcmi/releases/download/1.7.5/VCMI-Windows.zip",
+            "platform": "windows",
+            "architecture": null,
+            "fileType": "ZIP",
+            "size": 48727777,
+            "sha256": "0a530799085c1a135f9686d49d859beab8741869dcd9fe0877ef428ca0830d88",
+            "downloads": 1392,
+            "mimeType": "application/zip",
+            "installable": false
+          }
+        ],
+        "sha256": "dd4313a76d79a125ed5405cd0603c34f8ed4155dba22695f1f24a39a7104875c",
+        "downloads": 1470
+      }
+    ],
+    "screenshotURLs": [],
+    "omnisource": {
+      "slug": "vcmi",
+      "status": "stable",
+      "featured": false,
+      "upstreamURL": "https://github.com/vcmi/vcmi",
+      "sourceURL": "https://github.com/vcmi/vcmi",
+      "verification": {
+        "method": "github-release",
+        "publisher": "vcmi/vcmi",
+        "codeSigned": false,
+        "checksumPublished": false
+      },
+      "compatibility": {
+        "minOSVersion": "13.0",
+        "maxOSVersion": null,
+        "devices": [
+          "iphone",
+          "ipad"
+        ],
+        "clients": [
+          "altstore",
+          "sidestore",
+          "feather",
+          "esign",
+          "livecontainer"
+        ],
+        "notes": "Official iOS IPA (VCMI-iOS.ipa) built by the VCMI project's release pipeline (iOS 13+ per the CMake configuration). You must supply data files from an original Heroes III (Shadow of Death or Complete edition) copy on first launch."
+      },
+      "health": {
+        "downloadReachable": true,
+        "detail": "HTTP 302",
+        "statusSince": "2026-09-10",
+        "lastUpdatedAt": "2026-08-15"
+      }
+    },
+    "id": "eu.vcmi.vcmiclient"
+  }
+}

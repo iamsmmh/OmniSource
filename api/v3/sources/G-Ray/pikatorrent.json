@@ -1,0 +1,34 @@
+{
+  "apiVersion": "3.0.0",
+  "schemaVersion": 3,
+  "feedVersion": "6eac96bec54d",
+  "data": {
+    "id": "G-Ray/pikatorrent",
+    "source": "G-Ray/pikatorrent",
+    "type": "github",
+    "homepage": "https://github.com/G-Ray/pikatorrent",
+    "sourceURL": "https://github.com/G-Ray/pikatorrent",
+    "publisher": "G-Ray/pikatorrent",
+    "apps": [
+      {
+        "slug": "pikatorrent",
+        "name": "PikaTorrent",
+        "version": "0.15.0"
+      }
+    ],
+    "slug": "g-ray-pikatorrent",
+    "page": "/sources/g-ray-pikatorrent/",
+    "appSlugs": [
+      "pikatorrent"
+    ],
+    "appCount": 1,
+    "verifiedApps": 1,
+    "healthScore": 77.0,
+    "score": 73.9,
+    "status": "Community Verified",
+    "level": "RELIABLE",
+    "updateFrequencyDays": null,
+    "lastUpdate": "2026-01-11",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/pikatorrent.json"
+  }
+}
