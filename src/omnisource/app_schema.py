@@ -165,7 +165,12 @@ def record_from_feed_entry(entry: dict[str, Any], *, slug: str = "") -> dict[str
     pipeline state — are checked against the client contract.
     """
     extension = entry.get("omnisource") if isinstance(entry.get("omnisource"), dict) else {}
+    # `verification` is optional in the extension block, and a feed that omits
+    # or nulls it must be *reported*, not crash the validator with an
+    # AttributeError.
     verification = extension.get("verification") if isinstance(extension, dict) else {}
+    if not isinstance(verification, dict):
+        verification = {}
     versions = entry.get("versions") if isinstance(entry.get("versions"), list) else []
     newest = versions[0] if versions and isinstance(versions[0], dict) else {}
     return {

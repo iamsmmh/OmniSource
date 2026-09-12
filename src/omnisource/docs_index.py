@@ -18,19 +18,24 @@ from omnisource.io import atomic_write_text
 #: Which Markdown files the hub lists, in navigation order. Files present in
 #: docs/ but absent here are still linked at the bottom of the page under
 #: "Archive" so nothing on the site becomes unreachable.
+#:
+#: Reference material only: one-off phase write-ups live in ``docs/archive/``
+#: and are linked in the archive section instead of sitting beside the docs a
+#: reader is expected to trust (ISSUES-REPORT.md #10).
 DOCUMENTS = (
     ("README-FEATURES.md", "Feature map", "What the platform ships: catalog, health, APIs and pages."),
     ("ARCHITECTURE.md", "Architecture", "Modules, data flow and the pipeline stages behind every feed."),
     ("API.md", "API reference", "Every endpoint, schema, gzip twin and versioning rule."),
-    ("REPOSITORY.md", "Repository layout", "Which directory is canonical and which are generated mirrors."),
     ("DEPLOYMENT-GUIDE.md", "Deployment", "GitHub Pages wiring, the sync workflow and rollback notes."),
     ("localization.md", "Localization", "Locale files, coverage policy and the translation pipeline."),
     ("website.md", "Website", "Pages, design system tokens and the client-side module map."),
-    ("FEATURES-P0-P3.md", "Feature tiers", "The P0-P3 breakdown of the modernization roadmap."),
     ("AUDIT.md", "Audit log", "Findings and fixes from the repository audit."),
     ("CHANGES.md", "Changelog", "Notable changes between builds."),
     ("SOURCING-REPORT.md", "Sourcing report", "How upstream sources were selected and validated."),
 )
+
+#: Historical write-ups kept for provenance but not part of the reference set.
+ARCHIVE_DIRECTORY = "archive"
 
 _HEADING = re.compile(r"^#\s+(.+)$", re.M)
 _PARAGRAPH = re.compile(r"^(?!#|>|\||```|<!--|\s*$)(.+)$", re.M)
@@ -73,15 +78,28 @@ def build_docs_index(docs_dir: Path, *, base_url: str) -> Path:
             f"        <code>{html.escape(name)}</code>\n"
             "      </a>"
         )
-    archive = [
+    archive_names = [
         name for name in sorted(p.name for p in docs_dir.glob("*.md")) if name not in listed and name not in seen
     ]
+    archive_dir = docs_dir / ARCHIVE_DIRECTORY
+    archive_entries: list[tuple[str, str]] = []
+    for path in sorted(archive_dir.glob("*")) if archive_dir.is_dir() else []:
+        if not path.is_file():
+            continue
+        if path.suffix == ".md":
+            title = _title(path.read_text(encoding="utf-8", errors="replace"), path.stem)
+        else:
+            title = path.stem
+        archive_entries.append((f"{ARCHIVE_DIRECTORY}/{path.name}", title or path.name))
     archive_html = ""
-    if archive:
-        items = " · ".join(
-            f'<a href="{html.escape(name)}">{html.escape(name.removesuffix(".md"))}</a>' for name in archive
+    if archive_names or archive_entries:
+        items = [f'<a href="{html.escape(name)}">{html.escape(name.removesuffix(".md"))}</a>' for name in archive_names]
+        items += [f'<a href="{html.escape(url)}">{html.escape(title)}</a>' for url, title in archive_entries]
+        archive_html = (
+            '    <p class="docs-archive"><strong>Archive</strong> (historical write-ups, kept for provenance): '
+            + " · ".join(items)
+            + "</p>\n"
         )
-        archive_html = f'    <p class="docs-archive">Archive: {items}</p>\n'
 
     page = "".join(
         [

@@ -37,6 +37,8 @@ if _SRC in sys.path:
 sys.path.insert(0, _SRC)
 
 from omnisource.constants import ALTSTORE_NON_FEED
+from omnisource.domain import Catalog
+from omnisource.duplicates import master_feed_selection
 from omnisource.io import atomic_write_text, dumps_pretty, read_json
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -96,6 +98,34 @@ def per_app_feeds() -> list[Path]:
     return feeds
 
 
+def excluded_from_master(catalog: Any, apps: list[dict[str, Any]]) -> dict[str, str]:
+    """Slugs the unified feed must omit, from the duplicate-collision policy.
+
+    The master source carries exactly one member of each bundle-ID collision
+    group (ISSUES-REPORT.md #7); the rest stay reachable through their own
+    single-app source. The decision is shared with the pipeline so the merge
+    stays byte-identical to a full build. Falls back to the per-app ``masterFeed``
+    annotation written into each feed, then to "exclude nothing".
+    """
+    annotated = {
+        str(app.get("omnisource", {}).get("slug") or app.get("slug") or "")
+        for app in apps
+        if isinstance(app.get("omnisource"), dict) and app["omnisource"].get("masterFeed") is False
+    }
+    annotated.discard("")
+    duplicates_path = FEEDS_DIR / "duplicates.json"
+    if isinstance(catalog, dict) and duplicates_path.exists():
+        duplicates_doc = read_json(duplicates_path)
+        if isinstance(duplicates_doc, dict):
+            try:
+                catalog_model = Catalog.from_dict(catalog)
+            except Exception:
+                catalog_model = None
+            if catalog_model is not None:
+                return master_feed_selection(catalog_model, duplicates_doc)
+    return dict.fromkeys(annotated, "")
+
+
 def gather_apps() -> tuple[dict[str, Any], list[dict[str, Any]]]:
     feeds = per_app_feeds()
 
@@ -103,6 +133,7 @@ def gather_apps() -> tuple[dict[str, Any], list[dict[str, Any]]]:
     envelope = envelope_from_catalog(catalog) if isinstance(catalog, dict) else None
 
     apps: list[dict[str, Any]] = []
+    feed_slugs: dict[int, str] = {}
     for path in feeds:
         feed = read_json(path)
         if not isinstance(feed, dict):
@@ -115,11 +146,25 @@ def gather_apps() -> tuple[dict[str, Any], list[dict[str, Any]]]:
             raise SystemExit(f"merge: {path.name} app entry is missing name/bundleIdentifier")
         if envelope is None:
             envelope = envelope_from_feed(feed)
+        feed_slugs[id(app)] = path.stem
         apps.append(app)
 
     # Match the full pipeline's deterministic ordering (case-insensitive name).
     apps.sort(key=lambda app: str(app.get("name", "")).lower())
+
+    excluded = excluded_from_master(catalog, apps)
+    if excluded:
+        # The per-app feed's filename is its slug; the entry annotation is the
+        # fallback for fixtures and for feeds that predate the extension block.
+        apps = [app for app in apps if _slug_of(app, feed_slugs.get(id(app), "")) not in excluded]
     return envelope, apps
+
+
+def _slug_of(app: dict[str, Any], fallback: str = "") -> str:
+    extension = app.get("omnisource")
+    if isinstance(extension, dict) and extension.get("slug"):
+        return str(extension["slug"])
+    return str(app.get("slug") or fallback)
 
 
 def build_master() -> dict[str, Any]:
@@ -151,6 +196,8 @@ def main(argv: list[str] | None = None) -> int:
         atomic_write_text(target, payload)
         print(f"merge: wrote {target.relative_to(REPO_ROOT)}")
     print(f"merge: apps.json unified from {len(master['apps'])} modular feed(s)")
+    excluded = len(per_app_feeds()) - len(master["apps"])
+    print(f"merge: {excluded} collision member(s) left out of the master source")
     return 0
 
 

@@ -331,6 +331,34 @@
     });
   }
 
+  /* Apps that share a bundle identifier with another catalog app cannot all
+     live in the master source: clients key an installed app on that identifier,
+     so the master feed carries exactly one member of each collision group and
+     publishes the others as single-app sources. They are still part of the
+     catalog, so fetch their one-app feeds and merge them into the browse list
+     (marked omnisource.masterFeed = false) — otherwise they would vanish from
+     the website, the search index and the collision badges. */
+  function loadExcludedApps() {
+    var published = new Set(state.apps.map(slugFor));
+    var catalog = (state.catalog && state.catalog.apps) || [];
+    var missing = catalog.filter(function (app) { return app.slug && !published.has(app.slug); });
+    if (!missing.length) return Promise.resolve();
+    return Promise.all(missing.map(function (app) {
+      return OS.fetchJSON('feeds/' + app.slug + '.json', 6000).then(function (doc) {
+        var entry = doc && doc.apps && doc.apps[0];
+        if (!entry) return null;
+        entry.omnisource = entry.omnisource || {};
+        entry.omnisource.masterFeed = false;
+        return entry;
+      }).catch(function () { return null; });
+    })).then(function (entries) {
+      var extra = entries.filter(Boolean);
+      if (!extra.length) return;
+      state.apps = state.apps.concat(extra);
+      scheduleRefresh();
+    });
+  }
+
   function buildCollisions() {
     var bundles = new Map();
     state.apps.forEach(function (app) {
@@ -461,10 +489,14 @@
     var status = meta.status || 'stable';
     var stale = Boolean(healthFor(app).stale);
     var conflict = collisionInfo(app);
+    var singleAppSource = !!(app.omnisource && app.omnisource.masterFeed === false);
     var collisionBadge = conflict
       ? '<span class="badge warn" title="Bundle ID ' + OS.esc(app.bundleIdentifier) + ' is shared by ' + conflict.count + ' apps: ' + OS.esc(conflict.names) + '. Installing one replaces the others on device.">⚠ Shared bundle ×' + conflict.count + '</span>'
       : '';
     var statusBadge = '<span class="badge ' + (status === 'stable' ? 'stable' : status) + '">' + OS.esc(statusLabel(status)) + '</span>';
+    if (singleAppSource) {
+      statusBadge += '<span class="badge" title="This app shares a bundle ID with another catalog app, so it is published as a single-app source instead of in the master feed (clients cannot install two apps with the same bundle ID side by side).">Single-app source</span>';
+    }
     var healthBadge = online
       ? '<span class="badge ok"><span class="dot"></span>Online</span>'
       : '<span class="badge bad"><span class="dot"></span>Offline</span>';
@@ -1057,6 +1089,9 @@
     if (verification) {
       chips.push('<span class="badge ' + verificationBadgeClass(verification.status) + '">' + OS.esc(VERIFICATION_LABELS[verification.status] || verification.status) + '</span>');
     }
+    if (meta.masterFeed === false) {
+      chips.push('<span class="badge" title="Published as a single-app source: it shares a bundle ID with another catalog app, and a client cannot install two apps with the same bundle ID side by side.">Single-app source</span>');
+    }
     var conflict = collisionInfo(app);
     if (conflict) {
       chips.push('<span class="badge warn" title="Installing this app replaces the others on device.">⚠ Same bundle ID ×' + conflict.count + '</span>');
@@ -1106,6 +1141,11 @@
     var health = healthFor(app);
     var version = (app.versions || [{}])[0];
     var osMajor = minOSMajor(app);
+    // [label, value, isHtml]. Only the two cells that carry a copy button are
+    // pre-built HTML, and they escape their own dynamic values; every other
+    // cell is escaped at the render site below. Values such as `version` and
+    // `developerName` come from upstream release metadata, so treating any of
+    // them as markup would be an injection (ISSUES-REPORT.md #8).
     var cells = [
       ['Version', 'v' + (app.version || '—')],
       ['Updated', OS.fmtDate(app.versionDate)],
@@ -1113,11 +1153,11 @@
       ['Requires iOS', osMajor !== null ? osMajor + '+' : 'Not listed'],
       ['Category', categoryLabel(app.category)],
       ['Developer', app.developerName || '—'],
-      ['Bundle ID', '<button type="button" data-copy="' + OS.esc(app.bundleIdentifier || '') + '">' + OS.esc(app.bundleIdentifier || '—') + ' <svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>'],
+      ['Bundle ID', '<button type="button" data-copy="' + OS.esc(app.bundleIdentifier || '') + '">' + OS.esc(app.bundleIdentifier || '—') + ' <svg viewBox="0 0 24 24"><rect x="8" y="8" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>', true],
       ['Checksum', version.sha256
         ? '<button type="button" data-copy="' + OS.esc(version.sha256) + '">' + OS.esc(version.sha256.slice(0, 16)) + '…</button>'
-        : 'Not published'],
-      ['Health', (health.downloadReachable ? 'Online' : 'Unavailable') + (health.detail ? ' · ' + OS.esc(health.detail) : '')],
+        : 'Not published', !!version.sha256],
+      ['Health', (health.downloadReachable ? 'Online' : 'Unavailable') + (health.detail ? ' · ' + health.detail : '')],
       ['Last release', OS.timeAgo(app.versionDate) + (health.updatedDaysAgo ? ' (' + health.updatedDaysAgo + 'd)' : '')]
     ];
     var sourceNotes = compatibility.notes;
@@ -1132,7 +1172,8 @@
     var privacyEntries = privacy ? Object.entries(privacy) : [];
     var legacyPerms = Array.isArray(app.permissions) ? app.permissions : [];
     return '<div class="info-grid">' + cells.map(function (cell) {
-      return '<div class="info-cell"><span>' + OS.esc(cell[0]) + '</span><strong>' + cell[1] + '</strong></div>';
+      return '<div class="info-cell"><span>' + OS.esc(cell[0]) + '</span><strong>' +
+        (cell[2] ? cell[1] : OS.esc(cell[1])) + '</strong></div>';
     }).join('') + '</div>' +
       '<div class="detail-section"><h3>Build provenance</h3>' +
       '<p class="body">Published by ' + OS.esc(verification.publisher || app.developerName || 'the upstream developer') + ' · ' +
@@ -1973,7 +2014,7 @@
   function boot() {
     var page = document.body.dataset.page;
     if (!page) return;
-    loadData().then(loadCatalogMeta).then(function () {
+    loadData().then(loadCatalogMeta).then(loadExcludedApps).then(function () {
       buildCollisions();
       if (page === 'home') {
         Home.render();

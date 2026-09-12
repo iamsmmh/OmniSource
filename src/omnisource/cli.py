@@ -25,7 +25,24 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument(
         "--verify-downloads",
         action="store_true",
-        help="stream-download and hash every app's newest asset (full integrity; fails on rejection)",
+        help="stream-download and hash app assets (full integrity; fails on rejection)",
+    )
+    parser.add_argument(
+        "--verify-stale-days",
+        type=int,
+        default=None,
+        metavar="N",
+        help=(
+            "with --verify-downloads: only re-verify assets whose recorded verification is older "
+            "than N days (default: verify everything)"
+        ),
+    )
+    parser.add_argument(
+        "--verify-limit",
+        type=int,
+        default=0,
+        metavar="N",
+        help="with --verify-downloads: cap the number of apps verified per run (default: no cap)",
     )
     parser.add_argument("--only", metavar="SLUG", action="append", help="restrict the sync stage to these app slugs")
     parser.add_argument(
@@ -50,6 +67,8 @@ def main(argv: list[str] | None = None) -> int:
             no_sync=args.no_sync,
             no_health=args.no_health,
             verify=args.verify_downloads,
+            verify_stale_days=args.verify_stale_days,
+            verify_limit=args.verify_limit,
             only=set(args.only) if args.only else None,
             incremental=args.incremental,
             workers=args.workers,

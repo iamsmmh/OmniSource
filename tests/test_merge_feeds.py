@@ -8,6 +8,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 _ROOT = Path(__file__).resolve().parents[1]
 _SRC = _ROOT / "src"
@@ -108,3 +109,71 @@ class TestInstallUrl(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestMasterFeedExclusion(unittest.TestCase):
+    """One member of each bundle-ID collision group must not reach apps.json (#7)."""
+
+    def _workspace(self, tmpdir: str) -> Path:
+        root = Path(tmpdir)
+        feeds = root / "feeds"
+        feeds.mkdir(parents=True, exist_ok=True)
+        catalog = {
+            "source": {
+                "name": "OmniSource",
+                "identifier": "com.example.omnisource",
+                "baseURL": "https://example.com",
+                "icon": "Icon.png",
+                "banner": "Icon.png",
+            },
+            "apps": [
+                {"slug": "yt-a", "name": "YT A", "bundleIdentifier": "com.google.ios.youtube"},
+                {"slug": "yt-b", "name": "YT B", "bundleIdentifier": "com.google.ios.youtube"},
+            ],
+        }
+        (root / "catalog.json").write_text(json.dumps(catalog), encoding="utf-8")
+        for slug, name in (("yt-a", "YT A"), ("yt-b", "YT B")):
+            (feeds / f"{slug}.json").write_text(json.dumps(_feed_doc(name, "com.google.ios.youtube")), encoding="utf-8")
+        (feeds / "duplicates.json").write_text(
+            json.dumps(
+                {
+                    "groups": [
+                        {
+                            "key": "com.google.ios.youtube",
+                            "type": "bundle-id",
+                            "replacementRisk": True,
+                            "apps": [{"app": "yt-a"}, {"app": "yt-b"}],
+                            "recommended": {"app": "yt-b"},
+                        }
+                    ]
+                }
+            ),
+            encoding="utf-8",
+        )
+        return root
+
+    def test_recommended_member_wins(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = self._workspace(tmpdir)
+            with (
+                mock.patch.object(MERGE, "REPO_ROOT", root),
+                mock.patch.object(MERGE, "CATALOG_PATH", root / "catalog.json"),
+                mock.patch.object(MERGE, "FEEDS_DIR", root / "feeds"),
+            ):
+                _envelope, apps = MERGE.gather_apps()
+            self.assertEqual([app["name"] for app in apps], ["YT B"])
+
+    def test_annotation_is_used_when_duplicates_doc_is_missing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = self._workspace(tmpdir)
+            (root / "feeds" / "duplicates.json").unlink()
+            entry = _feed_doc("YT A", "com.google.ios.youtube")
+            entry["apps"][0]["omnisource"] = {"slug": "yt-a", "masterFeed": False}
+            (root / "feeds" / "yt-a.json").write_text(json.dumps(entry), encoding="utf-8")
+            with (
+                mock.patch.object(MERGE, "REPO_ROOT", root),
+                mock.patch.object(MERGE, "CATALOG_PATH", root / "catalog.json"),
+                mock.patch.object(MERGE, "FEEDS_DIR", root / "feeds"),
+            ):
+                _envelope, apps = MERGE.gather_apps()
+            self.assertEqual([app["name"] for app in apps], ["YT B"])

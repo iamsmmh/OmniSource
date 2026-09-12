@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from omnisource.domain import App, Catalog
+from omnisource.domain import App, Catalog, today
 
 
 def render_altstore_app(
@@ -55,6 +55,21 @@ def render_altstore_app(
         entry["fallbackDownloadURLs"] = list(fallbacks)
         newest["fallbackDownloadURLs"] = list(fallbacks)
 
+    # Compatibility is collected for every app in catalog.json but was only
+    # ever shown on the website: AltStore / SideStore / Feather / ESign got no
+    # signal at all and would happily offer an app the device cannot run.
+    # AltStore v2 carries the constraint per release, so fill it in whenever
+    # the resolved release does not know its own minimum (manual releases,
+    # upstream feeds that omit it).
+    compatibility = raw.get("compatibility") if isinstance(raw.get("compatibility"), dict) else {}
+    catalog_min_os = str(compatibility.get("minOSVersion") or "").strip()
+    catalog_max_os = str(compatibility.get("maxOSVersion") or "").strip()
+    for version in versions:
+        if catalog_min_os and not version.get("minOSVersion"):
+            version["minOSVersion"] = catalog_min_os
+        if catalog_max_os and not version.get("maxOSVersion"):
+            version["maxOSVersion"] = catalog_max_os
+
     entry["omnisource"] = {
         "slug": app.slug,
         "status": app.status,
@@ -97,13 +112,22 @@ def feed_envelope(
     }
 
 
-def render_health_doc(rendered: list[tuple[App, dict[str, Any]]]) -> dict[str, Any]:
+def render_health_doc(
+    rendered: list[tuple[App, dict[str, Any]]],
+    *,
+    generated_at: str | None = None,
+) -> dict[str, Any]:
     reachable = sum(1 for _, entry in rendered if entry["omnisource"]["health"]["downloadReachable"])
+    # `generatedAt` is the build date, like every sibling document. The newest
+    # release/health date is a different, useful signal and is published under
+    # its own name instead of masquerading as the build time (ISSUES-REPORT.md #9).
+    content_updated_at = max(
+        [entry["omnisource"]["health"]["statusSince"] for _, entry in rendered]
+        + [entry["versionDate"] for _, entry in rendered]
+    )
     return {
-        "generatedAt": max(
-            [entry["omnisource"]["health"]["statusSince"] for _, entry in rendered]
-            + [entry["versionDate"] for _, entry in rendered]
-        ),
+        "generatedAt": generated_at or today(),
+        "contentUpdatedAt": content_updated_at,
         "totals": {
             "apps": len(rendered),
             "reachable": reachable,

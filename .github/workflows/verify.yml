@@ -1,0 +1,157 @@
+# -----------------------------------------------------------------------------
+# Weekly full-integrity verification.
+#
+# The regular sync only checks *metadata*: it surfaces whatever checksum the
+# upstream publishes, but never streams an IPA. This job is the missing second
+# layer (src/omnisource/integrity.py, `--verify-downloads`): it downloads each
+# selected asset in chunks, hashes it, compares the byte count and digest with
+# the metadata in feeds/state.json, and records the outcome in
+# `lastFullVerification` (published through feeds/integrity_report.json).
+#
+# Cost control: the whole catalog is several gigabytes, so the job is
+# incremental. An asset is verified when it was never verified, when the last
+# attempt failed, when the version/size changed, or when the recorded
+# verification is older than `stale_days`. `limit` bounds how many assets one
+# run streams, so a weekly run stays inside the job timeout and still walks
+# the entire catalog within a few weeks.
+# -----------------------------------------------------------------------------
+name: Verify Integrity
+
+on:
+  schedule:
+    # Weekly, Sunday 04:00 UTC — off the 6-hour sync cadence so the two
+    # workflows never contend for the same runner budget.
+    - cron: "0 4 * * 0"
+  workflow_dispatch:
+    inputs:
+      stale_days:
+        description: "Re-verify assets whose last check is older than N days"
+        type: string
+        default: "30"
+      limit:
+        description: "Maximum number of assets to verify in this run (0 = no cap)"
+        type: string
+        default: "30"
+
+# Never let two runs write state.json at the same time; never cancel midway
+# through a long download batch.
+concurrency:
+  group: verify-integrity
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    name: Stream and hash download assets
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Pipeline HTTP cache (metadata only, never IPA payloads).
+      - name: Cache upstream metadata
+        uses: actions/cache@v4
+        with:
+          path: .cache/omnisource
+          key: omnisource-http-${{ runner.os }}
+          restore-keys: |
+            omnisource-http-
+
+      # workflow_dispatch inputs go through the environment, never into the
+      # script text (shell injection).
+      - name: Verify download integrity
+        id: verify
+        continue-on-error: true
+        env:
+          IN_STALE_DAYS: ${{ inputs.stale_days || '30' }}
+          IN_LIMIT: ${{ inputs.limit || '30' }}
+        run: |
+          set -euo pipefail
+          python3 scripts/omnisource.py \
+            --no-sync --no-health --verify-downloads \
+            --verify-stale-days "$IN_STALE_DAYS" \
+            --verify-limit "$IN_LIMIT" \
+            --workers 4
+
+      - name: Validate output
+        run: |
+          python3 scripts/validate.py
+          bash scripts/validate_jq.sh
+
+      # The verification outcome lives in feeds/state.json (and is surfaced by
+      # feeds/integrity_report.json + the api/ mirror), so it must be committed
+      # even when a download was rejected — that is the record users read.
+      - name: Commit verification state
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- '*.json' '*.xml' '*.gz' 'api/**' 'reports/**'
+          if git diff --cached --quiet; then
+            echo "No verification changes."
+            exit 0
+          fi
+          git commit -m "chore(integrity): record full verification results [skip ci]"
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "::error::could not publish verification state after 3 attempts"
+              exit 1
+            fi
+            sleep $((attempt * 5))
+          done
+
+      - name: Summarize results
+        if: always()
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+
+          report = Path("feeds/integrity_report.json")
+          if not report.is_file():
+              print("No integrity report was produced by this run.")
+              raise SystemExit(0)
+          doc = json.loads(report.read_text())
+          totals = doc.get("totals", {})
+          print("### Full integrity verification\n")
+          print(f"- pass: **{totals.get('pass', 0)}**")
+          print(f"- warn: {totals.get('warn', 0)} (no upstream checksum published)")
+          print(f"- fail: **{totals.get('fail', 0)}**")
+          verified = [e for e in doc.get("apps", []) if isinstance(e.get("fullVerification"), dict)]
+          print(f"- assets with a recorded full verification: {len(verified)}/{totals.get('apps', 0)}")
+          rejected = doc.get("rejected") or []
+          if rejected:
+              print("\n| app | reasons |\n| --- | --- |")
+              for entry in rejected:
+                  print(f"| `{entry.get('slug')}` | {', '.join(entry.get('reasons', []))} |")
+          PY
+
+      # The verification result is a hard gate: a rejected download means the
+      # published checksum and the bytes on the wire disagree. The state has
+      # already been committed above, so the failure is actionable.
+      - name: Fail on rejected downloads
+        if: steps.verify.outcome != 'success'
+        run: |
+          echo "::error::full integrity verification failed — see feeds/integrity_report.json"
+          exit 1
+
+      - name: Upload integrity report (debug artifact)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: integrity-report
+          path: |
+            feeds/integrity_report.json
+            feeds/state.json
+          if-no-files-found: warn
+          retention-days: 14

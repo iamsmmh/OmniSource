@@ -87,7 +87,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "descriptionTemplate": "SpotiFLAC {version} | {label}"
       }
     },
@@ -170,7 +170,7 @@
           ".ipa"
         ],
         "maxPages": 2,
-        "keepVersions": 3,
+        "keepVersions": 6,
         "descriptionTemplate": "YouTube {version} | {label}",
         "minOSVersion": "16.0"
       },
@@ -333,7 +333,7 @@
           ".ipa"
         ],
         "maxPages": 10,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "descriptionTemplate": "YouTube {version} | {label}"
       }
     },
@@ -410,7 +410,7 @@
           ".ipa"
         ],
         "maxPages": 10,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "17.0",
         "descriptionTemplate": "YouTube {version} | {label}"
       }
@@ -484,7 +484,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionPattern": "YouTube_(\\d+\\.\\d+(?:\\.\\d+)?)",
         "descriptionTemplate": "YouTube {version} | YTKACE {secondary} | {label}",
         "minOSVersion": "17.0"
@@ -559,7 +559,7 @@
           ".ipa"
         ],
         "maxPages": 10,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "descriptionTemplate": "YouTube {version} | {label}"
       }
     },
@@ -636,7 +636,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "descriptionTemplate": "MaxTube {version} | YTPlus {secondary} | {label}",
         "minOSVersion": "16.0"
       }
@@ -700,7 +700,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "descriptionTemplate": "YTMusicUltimate {version} | YTMusic {secondary} | {label}"
       }
     },
@@ -769,7 +769,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "MaxMusic {version} | YTMusic {secondary} | {label}",
         "minOSVersion": "16.0"
@@ -843,7 +843,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "descriptionTemplate": "{name} {version} | Universal IPA",
         "minOSVersion": "14.0",
         "isoDates": true
@@ -915,7 +915,7 @@
         "provider": "altstore",
         "feedURL": "https://repo.ikghd.me/repo.json",
         "appId": "com.burbn.instagram",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "Instagram {version} | {label}",
         "minOSVersion": "16.3"
@@ -992,7 +992,7 @@
         "provider": "altstore",
         "feedURL": "https://repo.ikghd.me/repo.json",
         "appId": "com.zhiliaoapp.musically",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "TikTok {version} | {label}",
         "minOSVersion": "15.1"
@@ -1048,7 +1048,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "Winston {version} | {label}",
         "minOSVersion": "17.0"
@@ -1096,7 +1096,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "iTorrent {version} | {label}",
         "minOSVersion": "16.0"
@@ -1148,7 +1148,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "descriptionTemplate": "StikDebug {version} | {label}",
         "minOSVersion": "17.4"
       }
@@ -1200,7 +1200,7 @@
           "-sideloaded.ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "BHTwitter {version} | {label}",
         "minOSVersion": "15.0"
@@ -1262,7 +1262,7 @@
           "LiveContainer.ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "LiveContainer {version} | {label}",
         "minOSVersion": "15.0"
@@ -1320,7 +1320,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "Feather {version} | {label}",
         "minOSVersion": "16.0"
@@ -1384,7 +1384,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "SideStore {version} | {label}",
         "minOSVersion": "15.0"
@@ -1436,7 +1436,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "Aidoku {version} | {label}",
         "minOSVersion": "15.0"
@@ -1484,7 +1484,7 @@
           "-iOS.ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionFromTag": true,
         "descriptionTemplate": "Provenance {version} | {label}",
         "minOSVersion": "17.0"
@@ -1532,7 +1532,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "14.0",
         "descriptionTemplate": "Delta {version} | {label}"
       }
@@ -1581,7 +1581,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "12.0",
         "descriptionTemplate": "PPSSPP {version} | {label}"
       }
@@ -1630,7 +1630,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "14.0",
         "descriptionTemplate": "Yattee {version} | {label}"
       }
@@ -1679,7 +1679,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "16.4",
         "descriptionTemplate": "Streamyfin {version} | {label}"
       }
@@ -1728,7 +1728,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "14.0",
         "descriptionTemplate": "Spotube {version} | {label}"
       }
@@ -1776,7 +1776,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "16.4",
         "descriptionTemplate": "Jellify {version} | {label}"
       }
@@ -1825,7 +1825,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.1",
         "descriptionTemplate": "Zeus {version} | {label}"
       }
@@ -1873,7 +1873,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.6",
         "descriptionTemplate": "BlueWallet {version} | {label}"
       }
@@ -1921,7 +1921,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.0",
         "descriptionTemplate": "Voyager {version} | {label}"
       }
@@ -1970,7 +1970,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.0",
         "descriptionTemplate": "Saber {version} | {label}"
       }
@@ -2019,7 +2019,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.2",
         "descriptionTemplate": "Anx Reader {version} | {label}"
       }
@@ -2068,7 +2068,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "14.0",
         "descriptionTemplate": "Apollo {version} | {label}"
       }
@@ -2117,7 +2117,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "includePrereleases": true,
         "minOSVersion": "14.0",
         "descriptionTemplate": "DolphiniOS {version} | {label}"
@@ -2167,7 +2167,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "12.2",
         "descriptionTemplate": "iSH {version} | {label} ({tag})",
         "includePrereleases": true,
@@ -2218,7 +2218,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "16.0",
         "descriptionTemplate": "qBitControl {version} | {label}"
       }
@@ -2267,7 +2267,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.0",
         "descriptionTemplate": "qBitConnect {version} | {label}"
       }
@@ -2315,7 +2315,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "13.0",
         "descriptionTemplate": "VCMI {version} | {label}"
       }
@@ -2363,7 +2363,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "13.4",
         "descriptionTemplate": "MAME4iOS {version} | {label}"
       }
@@ -2412,7 +2412,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "14.0",
         "descriptionTemplate": "qBitController {version} | {label}"
       }
@@ -2461,7 +2461,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "12.0",
         "descriptionTemplate": "Mini vMac {version} | {label}"
       }
@@ -2510,7 +2510,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "17.0",
         "descriptionTemplate": "StikNES {version} | {label}"
       }
@@ -2558,7 +2558,7 @@
           ".ipa"
         ],
         "maxPages": 10,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "14.0",
         "descriptionTemplate": "Twitch {version} | TwitchAdBlock {secondary}",
         "versionPattern": "^tv\\.twitch-([0-9]+\\.[0-9]+)"
@@ -2607,7 +2607,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.0",
         "descriptionTemplate": "Twitter {version} | {label}"
       },
@@ -2657,7 +2657,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "16.0",
         "descriptionTemplate": "Conduit {version} | {label}"
       }
@@ -2706,7 +2706,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "14.0",
         "descriptionTemplate": "Fladder {version} | {label}"
       }
@@ -2755,7 +2755,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "12.0",
         "descriptionTemplate": "AnymeX {version} | {label}"
       }
@@ -2803,7 +2803,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.0",
         "descriptionTemplate": "Sora {version} | {label}"
       }
@@ -2873,7 +2873,7 @@
         "provider": "codeberg",
         "repo": "raincord/RainTweak",
         "assetNamePattern": "^RainTweak\\.ipa$",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "16.0",
         "descriptionTemplate": "Discord {version} | {label}",
         "mirrors": [
@@ -2924,7 +2924,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.firecore.infuse",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "18.0",
         "descriptionTemplate": "Infuse {version} | {label}"
       }
@@ -2995,7 +2995,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.facebook.Facebook.glow",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.1",
         "descriptionTemplate": "Facebook {version} | {label}"
       }
@@ -3066,7 +3066,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "app.swiftgram.ios",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "13.0",
         "descriptionTemplate": "Swiftgram {version} | {label}"
       }
@@ -3137,7 +3137,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "ph.telegra.Telegraph",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "13.0",
         "descriptionTemplate": "Telegram {version} | {label}"
       }
@@ -3208,7 +3208,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.facebook.Facebook",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.1",
         "descriptionTemplate": "Facebook {version} | {label}"
       }
@@ -3279,7 +3279,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.burbn.instagram",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.1",
         "descriptionTemplate": "Instagram {version} | {label}"
       }
@@ -3350,7 +3350,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.burbn.instagram.sparkle",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.1",
         "descriptionTemplate": "Instagram {version} | {label}"
       }
@@ -3421,7 +3421,7 @@
         "provider": "github",
         "repo": "level3tjg/RedditFilter",
         "assetNamePattern": "^RedditFilter_.*\\.ipa$",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.0",
         "descriptionTemplate": "Reddit {version} | {label}"
       }
@@ -3491,7 +3491,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.soundcloud.TouchApp",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "16.4",
         "descriptionTemplate": "SoundCloud {version} | {label}"
       }
@@ -3561,7 +3561,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.facebook.Messenger.flow",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.1",
         "descriptionTemplate": "Messenger {version} | {label}"
       }
@@ -3631,7 +3631,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.facebook.Messenger",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.1",
         "descriptionTemplate": "Messenger {version} | {label}"
       }
@@ -3700,7 +3700,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.burbn.barcelona",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.1",
         "descriptionTemplate": "Threads {version} | {label}"
       }
@@ -3771,7 +3771,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.olcorporation.olai",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "13.0",
         "descriptionTemplate": "iMe {version} | {label}"
       }
@@ -3842,7 +3842,7 @@
         "provider": "altstore",
         "feedURL": "https://raw.githubusercontent.com/927tx/IPA-Vault/main/ipavaultsource.json",
         "appId": "com.seastar.turrit",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "13.0",
         "descriptionTemplate": "Turrit {version} | {label}"
       }
@@ -3893,7 +3893,7 @@
         "provider": "altstore",
         "feedURL": "https://source.ryuksign.com/ig410",
         "appId": "RyukGram (IG 410)",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "descriptionTemplate": "Instagram {version} | RyukGram (IG 410)",
         "minOSVersion": "15.0"
       },
@@ -3951,7 +3951,7 @@
         "provider": "altstore",
         "feedURL": "https://source.ryuksign.com/duplicate",
         "appId": "RyukGram",
-        "keepVersions": 1,
+        "keepVersions": 6,
         "descriptionTemplate": "Instagram {version} | RyukGram Side by Side",
         "minOSVersion": "15.0"
       },
@@ -4011,7 +4011,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.0",
         "descriptionTemplate": "Dopamine {version} | {label}"
       }
@@ -4063,7 +4063,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "versionPattern": "2\\.\\d+\\.\\d+\\.\\d+",
         "minOSVersion": "15.0",
         "descriptionTemplate": "Dopamine (RootHide) {version} | {label}"
@@ -4116,7 +4116,7 @@
           ".tipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.0",
         "descriptionTemplate": "Bootstrap {version} | {label}"
       }
@@ -4168,7 +4168,7 @@
           ".tipa"
         ],
         "maxPages": 2,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "16.5.1",
         "descriptionTemplate": "Serotonin {version} | {label}"
       }
@@ -4220,7 +4220,7 @@
           ".ipa"
         ],
         "maxPages": 2,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "14.0",
         "descriptionTemplate": "Taurine {version} | {label}"
       }
@@ -4272,7 +4272,7 @@
           ".ipa"
         ],
         "maxPages": 2,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "13.0",
         "descriptionTemplate": "Odyssey {version} | {label}"
       }
@@ -4324,7 +4324,7 @@
           ".ipa"
         ],
         "maxPages": 2,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "11.0",
         "descriptionTemplate": "unc0ver {version} | {label}"
       }
@@ -4376,7 +4376,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "11.0",
         "descriptionTemplate": "SameBoy {version} | {label}"
       }
@@ -4428,7 +4428,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "14.0",
         "descriptionTemplate": "Gopeed {version} | {label}"
       }
@@ -4480,7 +4480,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "15.0",
         "descriptionTemplate": "Manic EMU {version} | {label}"
       }
@@ -4534,7 +4534,7 @@
           ".ipa"
         ],
         "maxPages": 3,
-        "keepVersions": 1,
+        "keepVersions": 6,
         "minOSVersion": "18.0",
         "descriptionTemplate": "XeniOS {version} | {label}"
       }

@@ -33,7 +33,7 @@ from typing import Any
 
 from omnisource.discovery import build_sources_doc as _build_base_sources_doc
 from omnisource.io import atomic_write_text
-from omnisource.utils.dates import version_dates
+from omnisource.utils.dates import release_dates
 
 _NON_SLUG = re.compile(r"[^a-z0-9]+")
 
@@ -143,7 +143,7 @@ def build_sources_doc(
             healths.append(float(raw_health or 0))
             if (verification_by_slug.get(slug) or {}).get("status") == "VERIFIED":
                 verified += 1
-            dates = version_dates(state, slug)
+            dates = release_dates(state, slug)
             if dates:
                 last_update = max(last_update, max(dates).isoformat())
             gap = (rep.get("metrics") or {}).get("averageUpdateGapDays")

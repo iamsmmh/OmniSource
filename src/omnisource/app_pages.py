@@ -311,6 +311,14 @@ def _duplicate_banner(app: Any, duplicate: dict[str, Any] | None, feed_url: str 
     # share a bundle ID from the master feed. The per-app feed adds this one
     # app on its own, so offer a one-click copy of that source URL.
     bundle_collision = str(duplicate.get("type") or "").startswith("bundle-id")
+    if bundle_collision and duplicate.get("masterFeed") is False:
+        master_hint = (
+            "<p><b>Not part of the master source.</b> The one-URL master source carries the recommended "
+            "member of this bundle-ID group, so this app is published on its own: add it with the "
+            "single-app source below (or the copy button on this page).</p>"
+        )
+    else:
+        master_hint = ""
     collision_hint = (
         "<p>Clients that identify apps by bundle ID (e.g. SideStore) cannot install these "
         "side by side — adding the new one replaces the old. To add <b>only this app</b> "
@@ -327,6 +335,7 @@ def _duplicate_banner(app: Any, duplicate: dict[str, Any] | None, feed_url: str 
   <div>
     <b>Similar apps detected in the catalog.</b>
     <p>{reason} · {recommendation}</p>
+    {master_hint}
     {collision_hint}
   </div>
 </div>"""

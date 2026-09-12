@@ -6,113 +6,14 @@
     "stale": 180,
     "archived": 365
   },
-  "count": 33,
+  "count": 24,
   "summary": {
     "warning": 7,
     "stale": 6,
     "archived": 11,
-    "critical": 9
+    "critical": 0
   },
   "deadApps": [
-    {
-      "slug": "iqface",
-      "name": "iQFace",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 577.1"
-      ]
-    },
-    {
-      "slug": "messenger-flow",
-      "name": "Messenger Flow",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 577.0.0"
-      ]
-    },
-    {
-      "slug": "msgplusx",
-      "name": "MSGPlusX",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 577.0.0"
-      ]
-    },
-    {
-      "slug": "ryukgram",
-      "name": "RyukGram",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 445.0.0"
-      ]
-    },
-    {
-      "slug": "sparkle",
-      "name": "Sparkle",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 445.0.0"
-      ]
-    },
-    {
-      "slug": "swiftgram",
-      "name": "Swiftgram",
-      "lastUpdate": "2026-09-05",
-      "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 12.9.2"
-      ]
-    },
-    {
-      "slug": "telegram-mxgram",
-      "name": "Telegram MxGram",
-      "lastUpdate": "2026-09-05",
-      "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 12.9.3"
-      ]
-    },
-    {
-      "slug": "threadsaver",
-      "name": "ThreadSaver",
-      "lastUpdate": "2026-09-10",
-      "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 445.1"
-      ]
-    },
-    {
-      "slug": "turrit-mxgram",
-      "name": "Turrit MxGram",
-      "lastUpdate": "2026-09-05",
-      "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
-      "reasons": [
-        "removed upstream release(s): 1.5.3"
-      ]
-    },
     {
       "slug": "bhtwitter",
       "name": "BHTwitter",
@@ -120,6 +21,7 @@
       "daysSinceUpdate": 487,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 487 days (threshold 365)"
       ]
@@ -131,6 +33,7 @@
       "daysSinceUpdate": 793,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 793 days (threshold 365)"
       ]
@@ -142,6 +45,7 @@
       "daysSinceUpdate": 1370,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 1370 days (threshold 365)"
       ]
@@ -153,6 +57,7 @@
       "daysSinceUpdate": 795,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 795 days (threshold 365)"
       ]
@@ -164,6 +69,7 @@
       "daysSinceUpdate": 1257,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 1257 days (threshold 365)"
       ]
@@ -175,6 +81,7 @@
       "daysSinceUpdate": 969,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 969 days (threshold 365)"
       ]
@@ -186,6 +93,7 @@
       "daysSinceUpdate": 566,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 566 days (threshold 365)"
       ]
@@ -197,6 +105,7 @@
       "daysSinceUpdate": 1085,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 1085 days (threshold 365)"
       ]
@@ -208,6 +117,7 @@
       "daysSinceUpdate": 2286,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 2286 days (threshold 365)"
       ]
@@ -219,6 +129,7 @@
       "daysSinceUpdate": 810,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 810 days (threshold 365)"
       ]
@@ -230,6 +141,7 @@
       "daysSinceUpdate": 958,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 958 days (threshold 365)"
       ]
@@ -241,6 +153,7 @@
       "daysSinceUpdate": 313,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 313 days (threshold 180)"
       ]
@@ -252,6 +165,7 @@
       "daysSinceUpdate": 182,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 182 days (threshold 180)"
       ]
@@ -263,6 +177,7 @@
       "daysSinceUpdate": 314,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 314 days (threshold 180)"
       ]
@@ -274,6 +189,7 @@
       "daysSinceUpdate": 351,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 351 days (threshold 180)"
       ]
@@ -285,6 +201,7 @@
       "daysSinceUpdate": 192,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 192 days (threshold 180)"
       ]
@@ -296,6 +213,7 @@
       "daysSinceUpdate": 252,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 252 days (threshold 180)"
       ]
@@ -307,6 +225,7 @@
       "daysSinceUpdate": 177,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 177 days (threshold 90)"
       ]
@@ -318,6 +237,7 @@
       "daysSinceUpdate": 92,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 92 days (threshold 90)"
       ]
@@ -329,6 +249,7 @@
       "daysSinceUpdate": 178,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 178 days (threshold 90)"
       ]
@@ -340,6 +261,7 @@
       "daysSinceUpdate": 119,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 119 days (threshold 90)"
       ]
@@ -351,6 +273,7 @@
       "daysSinceUpdate": 99,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 99 days (threshold 90)"
       ]
@@ -362,6 +285,7 @@
       "daysSinceUpdate": 102,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 102 days (threshold 90)"
       ]
@@ -373,6 +297,7 @@
       "daysSinceUpdate": 96,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 96 days (threshold 90)"
       ]
@@ -386,6 +311,7 @@
       "daysSinceUpdate": 5,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -395,6 +321,7 @@
       "daysSinceUpdate": 21,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -404,6 +331,7 @@
       "daysSinceUpdate": 3,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -413,6 +341,7 @@
       "daysSinceUpdate": 2,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -422,6 +351,7 @@
       "daysSinceUpdate": 3,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -431,6 +361,7 @@
       "daysSinceUpdate": 12,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -440,6 +371,7 @@
       "daysSinceUpdate": 3,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -449,6 +381,7 @@
       "daysSinceUpdate": 40,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -458,6 +391,7 @@
       "daysSinceUpdate": 3,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -467,6 +401,7 @@
       "daysSinceUpdate": 2,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -476,6 +411,7 @@
       "daysSinceUpdate": 252,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 252 days (threshold 180)"
       ]
@@ -487,6 +423,7 @@
       "daysSinceUpdate": 3,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -496,6 +433,7 @@
       "daysSinceUpdate": 3,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -505,6 +443,7 @@
       "daysSinceUpdate": 810,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 810 days (threshold 365)"
       ]
@@ -516,6 +455,7 @@
       "daysSinceUpdate": 55,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -525,6 +465,7 @@
       "daysSinceUpdate": 16,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -534,6 +475,7 @@
       "daysSinceUpdate": 487,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 487 days (threshold 365)"
       ]
@@ -545,6 +487,7 @@
       "daysSinceUpdate": 57,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -554,6 +497,7 @@
       "daysSinceUpdate": 69,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -563,6 +507,7 @@
       "daysSinceUpdate": 3,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -572,6 +517,7 @@
       "daysSinceUpdate": 9,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -581,6 +527,7 @@
       "daysSinceUpdate": 182,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 182 days (threshold 180)"
       ]
@@ -592,6 +539,7 @@
       "daysSinceUpdate": 793,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 793 days (threshold 365)"
       ]
@@ -603,6 +551,7 @@
       "daysSinceUpdate": 119,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 119 days (threshold 90)"
       ]
@@ -614,6 +563,7 @@
       "daysSinceUpdate": 958,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 958 days (threshold 365)"
       ]
@@ -625,6 +575,7 @@
       "daysSinceUpdate": 102,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 102 days (threshold 90)"
       ]
@@ -636,6 +587,7 @@
       "daysSinceUpdate": 99,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 99 days (threshold 90)"
       ]
@@ -647,6 +599,7 @@
       "daysSinceUpdate": 10,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -656,6 +609,7 @@
       "daysSinceUpdate": 10,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -665,6 +619,7 @@
       "daysSinceUpdate": 53,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -674,6 +629,7 @@
       "daysSinceUpdate": 6,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -683,6 +639,7 @@
       "daysSinceUpdate": 13,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -692,6 +649,7 @@
       "daysSinceUpdate": 177,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 177 days (threshold 90)"
       ]
@@ -703,6 +661,7 @@
       "daysSinceUpdate": 1,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -712,6 +671,7 @@
       "daysSinceUpdate": 84,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -721,6 +681,7 @@
       "daysSinceUpdate": 21,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -730,6 +691,7 @@
       "daysSinceUpdate": 51,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -739,6 +701,7 @@
       "daysSinceUpdate": 314,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 314 days (threshold 180)"
       ]
@@ -750,6 +713,7 @@
       "daysSinceUpdate": 28,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -759,6 +723,7 @@
       "daysSinceUpdate": 1370,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 1370 days (threshold 365)"
       ]
@@ -770,6 +735,7 @@
       "daysSinceUpdate": 46,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -779,6 +745,7 @@
       "daysSinceUpdate": 795,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 795 days (threshold 365)"
       ]
@@ -790,6 +757,7 @@
       "daysSinceUpdate": 566,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 566 days (threshold 365)"
       ]
@@ -801,6 +769,7 @@
       "daysSinceUpdate": 29,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -810,6 +779,7 @@
       "daysSinceUpdate": 313,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 313 days (threshold 180)"
       ]
@@ -821,6 +791,7 @@
       "daysSinceUpdate": 11,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -830,6 +801,7 @@
       "daysSinceUpdate": 4,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -839,6 +811,7 @@
       "daysSinceUpdate": 13,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -848,6 +821,7 @@
       "daysSinceUpdate": 23,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -857,6 +831,7 @@
       "daysSinceUpdate": 85,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -866,6 +841,7 @@
       "daysSinceUpdate": 11,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -875,6 +851,7 @@
       "daysSinceUpdate": 7,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -882,10 +859,11 @@
       "name": "Swiftgram",
       "lastUpdate": "2026-09-05",
       "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "replacedReleases": 1,
       "reasons": [
-        "removed upstream release(s): 12.9.2"
+        "1 release(s) republished in place (same version, new URL)"
       ]
     },
     {
@@ -893,10 +871,11 @@
       "name": "Telegram MxGram",
       "lastUpdate": "2026-09-05",
       "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "replacedReleases": 1,
       "reasons": [
-        "removed upstream release(s): 12.9.3"
+        "1 release(s) republished in place (same version, new URL)"
       ]
     },
     {
@@ -904,10 +883,11 @@
       "name": "iQFace",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "replacedReleases": 1,
       "reasons": [
-        "removed upstream release(s): 577.1"
+        "1 release(s) republished in place (same version, new URL)"
       ]
     },
     {
@@ -915,10 +895,11 @@
       "name": "RyukGram",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "replacedReleases": 1,
       "reasons": [
-        "removed upstream release(s): 445.0.0"
+        "1 release(s) republished in place (same version, new URL)"
       ]
     },
     {
@@ -926,10 +907,11 @@
       "name": "Sparkle",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "replacedReleases": 1,
       "reasons": [
-        "removed upstream release(s): 445.0.0"
+        "1 release(s) republished in place (same version, new URL)"
       ]
     },
     {
@@ -939,6 +921,7 @@
       "daysSinceUpdate": 351,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 351 days (threshold 180)"
       ]
@@ -950,6 +933,7 @@
       "daysSinceUpdate": 5,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -957,10 +941,11 @@
       "name": "Messenger Flow",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "replacedReleases": 1,
       "reasons": [
-        "removed upstream release(s): 577.0.0"
+        "1 release(s) republished in place (same version, new URL)"
       ]
     },
     {
@@ -968,10 +953,11 @@
       "name": "MSGPlusX",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "replacedReleases": 1,
       "reasons": [
-        "removed upstream release(s): 577.0.0"
+        "1 release(s) republished in place (same version, new URL)"
       ]
     },
     {
@@ -979,10 +965,11 @@
       "name": "ThreadSaver",
       "lastUpdate": "2026-09-10",
       "daysSinceUpdate": 2,
-      "classification": "critical",
-      "removedReleases": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "replacedReleases": 1,
       "reasons": [
-        "removed upstream release(s): 445.1"
+        "1 release(s) republished in place (same version, new URL)"
       ]
     },
     {
@@ -992,6 +979,7 @@
       "daysSinceUpdate": 11,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -999,10 +987,11 @@
       "name": "Turrit MxGram",
       "lastUpdate": "2026-09-05",
       "daysSinceUpdate": 7,
-      "classification": "critical",
-      "removedReleases": 1,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "replacedReleases": 1,
       "reasons": [
-        "removed upstream release(s): 1.5.3"
+        "1 release(s) republished in place (same version, new URL)"
       ]
     },
     {
@@ -1012,6 +1001,7 @@
       "daysSinceUpdate": 49,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -1021,6 +1011,7 @@
       "daysSinceUpdate": 3,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -1030,6 +1021,7 @@
       "daysSinceUpdate": 21,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -1039,6 +1031,7 @@
       "daysSinceUpdate": 5,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -1048,6 +1041,7 @@
       "daysSinceUpdate": 92,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 92 days (threshold 90)"
       ]
@@ -1059,6 +1053,7 @@
       "daysSinceUpdate": 969,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 969 days (threshold 365)"
       ]
@@ -1070,6 +1065,7 @@
       "daysSinceUpdate": 1085,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 1085 days (threshold 365)"
       ]
@@ -1081,6 +1077,7 @@
       "daysSinceUpdate": 1257,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 1257 days (threshold 365)"
       ]
@@ -1092,6 +1089,7 @@
       "daysSinceUpdate": 2286,
       "classification": "archived",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 2286 days (threshold 365)"
       ]
@@ -1103,6 +1101,7 @@
       "daysSinceUpdate": 192,
       "classification": "stale",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 192 days (threshold 180)"
       ]
@@ -1114,6 +1113,7 @@
       "daysSinceUpdate": 178,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 178 days (threshold 90)"
       ]
@@ -1125,6 +1125,7 @@
       "daysSinceUpdate": 9,
       "classification": "healthy",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": []
     },
     {
@@ -1134,6 +1135,7 @@
       "daysSinceUpdate": 96,
       "classification": "warning",
       "removedReleases": 0,
+      "replacedReleases": 0,
       "reasons": [
         "no update for 96 days (threshold 90)"
       ]

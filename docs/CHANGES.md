@@ -15,8 +15,8 @@ Implemented all **P0 through P3 features** as requested, making them fully funct
 - `website/collections/collection.html` - Single collection detail page
 
 ### Documentation
-- `docs/FEATURES-P0-P3.md` - Comprehensive feature documentation
-- `IMPLEMENTATION-SUMMARY.md` - Implementation summary
+- `docs/archive/FEATURES-P0-P3.md` - Comprehensive feature documentation
+- `docs/archive/IMPLEMENTATION-SUMMARY.md` - Implementation summary
 
 ## Files Modified
 

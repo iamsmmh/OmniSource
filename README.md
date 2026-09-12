@@ -9,7 +9,7 @@ One source URL for **AltStore · SideStore · Feather · ESign · LiveContainer*
 
 <!-- omnisource:stats:start -->
 
-**77** apps · **61** upstream sources · **76** verified · **1** community verified · **77/77** downloads online · last sync **2026-09-11**.
+**77** apps (**66** in the [master source](https://iamsmmh.github.io/OmniSource/apps.json)) · **61** upstream sources · **76** verified · **1** community verified · **77/77** downloads online · last sync **2026-09-11**.
 
 <!-- omnisource:stats:end -->
 
@@ -74,11 +74,12 @@ status (`Verified / Community Verified / Maintained / Warning / Inactive / Depre
 
 Browse the full **77-app catalog** on the [website](https://iamsmmh.github.io/OmniSource/#catalog) — all installable with one tap.
 
-- Combined feeds: [`feeds/apps.json`](./feeds/apps.json), [`feeds/feed.xml`](./feeds/feed.xml), [`Catalog.json`](./Catalog.json)
+- Combined feeds: [`feeds/apps.json`](./feeds/apps.json), [`feeds/feed.xml`](./feeds/feed.xml), [`catalog.json`](./catalog.json)
 - Substrate docs: [`feeds/sources.json`](./feeds/sources.json), [`feeds/discovery.json`](./feeds/discovery.json), [`feeds/health.json`](./feeds/health.json), [`feeds/updates.json`](./feeds/updates.json), [`feeds/verification.json`](./feeds/verification.json)
 - Per-app feeds at `feeds/<slug>.json` and `feeds/<slug>.xml` — e.g. [`feeds/esign.json`](./feeds/esign.json)
+- Apps in a bundle-ID collision group ship as **single-app sources** (11 app(s)): the master source carries the recommended member of each group, because a client cannot install two apps that share a bundle ID side by side.
 
-_Last sync 2026-09-11 · 77/77 downloads reachable._
+_Last sync 2026-09-12 · 77/77 downloads reachable._
 
 <!-- omnisource:catalog:end -->
 

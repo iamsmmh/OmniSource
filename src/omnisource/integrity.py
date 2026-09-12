@@ -37,6 +37,7 @@ from omnisource.constants import INSTALLABLE_SUFFIXES
 from omnisource.discovery import newest_version
 from omnisource.domain import Catalog, today
 from omnisource.logutil import log
+from omnisource.utils.dates import days_since
 
 INTEGRITY_SCHEMA_VERSION = 1
 
@@ -182,6 +183,84 @@ def stream_sha256(http: Any, url: str, *, timeout: float = 300.0) -> tuple[int, 
     return total, digest.hexdigest()
 
 
+def verification_due(
+    app_state: dict[str, Any],
+    newest: dict[str, Any],
+    *,
+    stale_days: int | None,
+    today_iso: str | None = None,
+) -> tuple[bool, int, str]:
+    """Whether an app's newest asset needs a (re-)verification.
+
+    Returns ``(due, priority, reason)`` where the priority orders a bounded
+    run: 0 = never verified or last attempt failed, 1 = the asset changed or
+    carries no digest, 2 = the recorded verification is older than
+    ``stale_days``. ``stale_days=None`` disables the age rule, so every asset
+    is due (the historical ``--verify-downloads`` behaviour).
+
+    The rule keeps the weekly job affordable: the catalog is measured in
+    gigabytes, so only assets that changed or aged out are streamed again.
+    """
+    record = app_state.get("lastFullVerification")
+    if not isinstance(record, dict) or not record.get("at"):
+        return True, 0, "never verified"
+    if record.get("ok") is False:
+        return True, 0, "last attempt failed"
+    version = str(newest.get("version") or "")
+    if record.get("version") and str(record["version"]) != version:
+        return True, 1, f"asset changed ({record.get('version')} -> {version})"
+    recorded_size = record.get("size") or record.get("expectedSize")
+    live_size = newest.get("size")
+    if (
+        isinstance(recorded_size, (int, float))
+        and isinstance(live_size, (int, float))
+        and int(recorded_size) != int(live_size)
+    ):
+        return True, 1, "asset size changed"
+    if newest.get("sha256") and not record.get("sha256"):
+        return True, 1, "no digest recorded"
+    if stale_days is None:
+        return True, 2, "stale window disabled"
+    age = days_since(record.get("at"), today_iso=today_iso or today())
+    if age >= int(stale_days):
+        return True, 2, f"verified {age} day(s) ago"
+    return False, 3, f"verified {age} day(s) ago"
+
+
+def select_verification_targets(
+    catalog: Catalog,
+    state: dict[str, Any],
+    *,
+    only: set[str] | None = None,
+    stale_days: int | None = None,
+    limit: int = 0,
+    today_iso: str | None = None,
+) -> list[tuple[str, str]]:
+    """App slugs to verify, most urgent first, capped at ``limit``.
+
+    Returns ``(slug, reason)`` pairs. Ordering is deterministic: never/failed
+    verifications, then changed assets, then the oldest records — so a bounded
+    run always makes progress and eventually covers the whole catalog.
+    """
+    due: list[tuple[int, str, str]] = []
+    for app in catalog.apps:
+        if only and app.slug not in only:
+            continue
+        app_state = state.get(app.slug) if isinstance(state.get(app.slug), dict) else {}
+        newest = newest_version(state, app.slug)
+        if not newest or not str(newest.get("downloadURL") or ""):
+            continue
+        needed, priority, reason = verification_due(app_state, newest, stale_days=stale_days, today_iso=today_iso)
+        if not needed:
+            continue
+        record = app_state.get("lastFullVerification")
+        recorded_at = str(record.get("at") or "") if isinstance(record, dict) else ""
+        due.append((priority, recorded_at, f"{app.slug}\t{reason}"))
+    due.sort()
+    ordered = [tuple(item.split("\t", 1)) for _priority, _at, item in due]  # type: ignore[misc]
+    return ordered[:limit] if limit and limit > 0 else ordered
+
+
 def verify_downloads(
     container: Any,
     catalog: Catalog,
@@ -211,6 +290,7 @@ def verify_downloads(
         record: dict[str, Any] = {
             "slug": app.slug,
             "url": url,
+            "version": str(newest.get("version") or ""),
             "expectedSha256": str(expected_sha) if expected_sha else None,
             "expectedSize": int(expected_size) if isinstance(expected_size, (int, float)) else None,
         }

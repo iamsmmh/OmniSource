@@ -965,7 +965,14 @@ def validate_api_v2(catalog: Any, paths: Paths) -> Report:
 
 
 def validate_published_app_records(catalog: Any, paths: Paths) -> Report:
-    """Validate the *published* master feed against the client contract."""
+    """Validate the *published* master feed against the client contract.
+
+    The master feed is the URL the project markets, so it must be *installable*:
+    no two entries may share a bundle identifier (clients key an installed app
+    on it, so a shared id makes the install arbitrary), and every catalog app
+    must be reachable either from the master feed or from its own single-app
+    feed — which is how apps in a bundle-ID collision group are published.
+    """
     from omnisource.app_schema import (
         record_from_feed_entry,
         validate_app_records,
@@ -980,8 +987,45 @@ def validate_published_app_records(catalog: Any, paths: Paths) -> Report:
         return report
     slugs = _catalog_slugs(catalog) or set()
     records = [record_from_feed_entry(entry) for entry in apps if isinstance(entry, dict)]
-    if len(records) != len(slugs):
-        report.warn(f"feeds/apps.json: {len(records)} published app(s) for {len(slugs)} catalog app(s)")
+
+    # Bundle identifiers are unique inside the master feed.
+    bundles: dict[str, list[str]] = {}
+    for entry in apps:
+        if not isinstance(entry, dict):
+            continue
+        bundle = str(entry.get("bundleIdentifier") or "")
+        if not bundle:
+            continue
+        bundles.setdefault(bundle, []).append(str(entry.get("name") or "?"))
+    for bundle, names in sorted(bundles.items()):
+        if len(names) > 1:
+            report.error(
+                f"feeds/apps.json: {len(names)} apps share bundleIdentifier '{bundle}' "
+                f"({', '.join(names)}) - clients install one and replace the other"
+            )
+
+    # Collision groups legitimately keep their other members out of the master
+    # feed; anything else missing is a build bug.
+    published = {str(((entry.get("omnisource") or {}).get("slug")) or "") for entry in apps if isinstance(entry, dict)}
+    duplicates = load_json(paths.feeds / "duplicates.json", report, root=paths.root)
+    excluded: dict[str, str] = {}
+    if isinstance(duplicates, dict):
+        for group in duplicates.get("groups", []):
+            if not isinstance(group, dict) or not group.get("replacementRisk"):
+                continue
+            for member in group.get("apps", []):
+                slug = str(member.get("app") or "") if isinstance(member, dict) else ""
+                if slug and slug not in published:
+                    excluded[slug] = str(group.get("key") or "")
+    for slug in sorted(excluded):
+        if not (paths.feeds / f"{slug}.json").is_file():
+            report.error(f"feeds/apps.json: {slug} is excluded from the master feed but has no single-app feed")
+    missing = sorted(slugs - published - set(excluded))
+    if missing:
+        report.error(
+            f"feeds/apps.json: {len(missing)} catalog app(s) are in neither the master feed nor a "
+            f"bundle-ID collision group: {', '.join(missing[:5])}"
+        )
     report.extend(validate_app_records(records, catalog, prefix="apps"))
     return report
 

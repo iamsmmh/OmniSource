@@ -762,7 +762,10 @@ def write_workflows() -> Report:
             summary_step = "yes" if "$GITHUB_STEP_SUMMARY" in text else "**no**"
             shellcheck = "yes" if "shellcheck" in text.lower() else "—"
         else:
-            name = re.search(r"^name:\s*(.+)$", text, re.MULTILINE)
+            # Regex fallback when PyYAML is unavailable: take the capture group,
+            # not the Match object (which would later be joined into Markdown).
+            name_match = re.search(r"^name:\s*(.+)$", text, re.MULTILINE)
+            name = name_match.group(1).strip() if name_match else path.stem
             triggers = ", ".join(
                 re.findall(
                     r"^  (schedule|push|pull_request|workflow_dispatch|repository_dispatch):", text, re.MULTILINE

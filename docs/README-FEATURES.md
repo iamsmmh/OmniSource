@@ -163,7 +163,7 @@ git push origin main
 #### 10. Mobile App Architecture
 - **Design**: Complete React Native (Expo) architecture
 - **Features**: All web features + native capabilities
-- **Documentation**: See `docs/FEATURES-P0-P3.md`
+- **Documentation**: See `docs/archive/FEATURES-P0-P3.md`
 - **Status**: Architecture designed, not implemented
 
 #### 11. Multi-Language Support (i18n)
@@ -186,8 +186,8 @@ website/favorites/index.html        # Favorites page
 website/collections/index.html      # Collections list
 website/collections/collection.html # Collection detail
 
-docs/FEATURES-P0-P3.md              # Full documentation
-IMPLEMENTATION-SUMMARY.md           # Implementation details
+docs/archive/FEATURES-P0-P3.md              # Full documentation
+docs/archive/IMPLEMENTATION-SUMMARY.md           # Implementation details
 DEPLOYMENT-GUIDE.md                 # Deployment instructions
 CHANGES.md                         # Change log
 README-FEATURES.md                 # This file
@@ -283,8 +283,8 @@ os:push-subscription # Push subscription object
 ## 🎓 Learning Resources
 
 ### Documentation
-- **📖 Full Documentation**: `docs/FEATURES-P0-P3.md` - Everything you need to know
-- **📖 Implementation**: `IMPLEMENTATION-SUMMARY.md` - How it was built
+- **📖 Full Documentation**: `docs/archive/FEATURES-P0-P3.md` - Everything you need to know
+- **📖 Implementation**: `docs/archive/IMPLEMENTATION-SUMMARY.md` - How it was built
 - **📖 Deployment**: `DEPLOYMENT-GUIDE.md` - How to deploy
 - **📖 Changes**: `CHANGES.md` - What changed
 
@@ -327,7 +327,7 @@ OS.I18n.setLanguage('es');
 
 ### For Developers
 1. ✅ Review the code in `website/js/features.js`
-2. ✅ Read the documentation in `docs/FEATURES-P0-P3.md`
+2. ✅ Read the documentation in `docs/archive/FEATURES-P0-P3.md`
 3. ✅ Consider implementing backend for webhooks, ratings, notifications
 
 ### For Maintainers

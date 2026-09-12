@@ -236,3 +236,192 @@ class TestIntegrityReportValidation(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestMasterFeedContract(unittest.TestCase):
+    """The marketed source URL must be installable (ISSUES-REPORT.md #7)."""
+
+    def _paths(self, tmpdir: str):
+        from omnisource.constants import Paths
+
+        root = Path(tmpdir)
+        (root / "feeds").mkdir(parents=True, exist_ok=True)
+        return Paths.from_root(root)
+
+    def _catalog(self):
+        return {
+            "apps": [
+                {"slug": "yt-a", "name": "YT A", "bundleIdentifier": "com.google.ios.youtube"},
+                {"slug": "yt-b", "name": "YT B", "bundleIdentifier": "com.google.ios.youtube"},
+                {"slug": "solo", "name": "Solo", "bundleIdentifier": "com.example.solo"},
+            ]
+        }
+
+    def _write(self, feeds: Path, payload: dict) -> None:
+        import json
+
+        for name, doc in payload.items():
+            (feeds / name).write_text(json.dumps(doc), encoding="utf-8")
+
+    def test_duplicate_bundle_identifier_in_master_feed_is_an_error(self) -> None:
+        from omnisource.validation import validate_published_app_records
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            paths = self._paths(tmpdir)
+            self._write(
+                paths.feeds,
+                {
+                    "apps.json": {
+                        "apps": [
+                            {
+                                "name": "YT A",
+                                "bundleIdentifier": "com.google.ios.youtube",
+                                "omnisource": {
+                                    "slug": "yt-a",
+                                    "status": "stable",
+                                    "verification": {"publisher": "Dev"},
+                                },
+                            },
+                            {
+                                "name": "YT B",
+                                "bundleIdentifier": "com.google.ios.youtube",
+                                "omnisource": {
+                                    "slug": "yt-b",
+                                    "status": "stable",
+                                    "verification": {"publisher": "Dev"},
+                                },
+                            },
+                        ]
+                    },
+                    "duplicates.json": {"groups": []},
+                },
+            )
+            report = validate_published_app_records(self._catalog(), paths)
+            self.assertTrue(any("share bundleIdentifier" in e for e in report.errors), report.errors)
+
+    def test_collision_member_without_single_app_feed_is_an_error(self) -> None:
+        from omnisource.validation import validate_published_app_records
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            paths = self._paths(tmpdir)
+            self._write(
+                paths.feeds,
+                {
+                    "apps.json": {
+                        "apps": [
+                            {
+                                "name": "YT B",
+                                "bundleIdentifier": "com.google.ios.youtube",
+                                "omnisource": {
+                                    "slug": "yt-b",
+                                    "status": "stable",
+                                    "verification": {"publisher": "Dev"},
+                                },
+                            },
+                            {
+                                "name": "Solo",
+                                "bundleIdentifier": "com.example.solo",
+                                "omnisource": {
+                                    "slug": "solo",
+                                    "status": "stable",
+                                    "verification": {"publisher": "Dev"},
+                                },
+                            },
+                        ]
+                    },
+                    "duplicates.json": {
+                        "groups": [
+                            {
+                                "key": "com.google.ios.youtube",
+                                "replacementRisk": True,
+                                "apps": [{"app": "yt-a"}, {"app": "yt-b"}],
+                                "recommended": {"app": "yt-b"},
+                            }
+                        ]
+                    },
+                },
+            )
+            report = validate_published_app_records(self._catalog(), paths)
+            self.assertTrue(any("no single-app feed" in e for e in report.errors), report.errors)
+
+    def test_unexplained_missing_app_is_an_error(self) -> None:
+        from omnisource.validation import validate_published_app_records
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            paths = self._paths(tmpdir)
+            self._write(
+                paths.feeds,
+                {
+                    "apps.json": {
+                        "apps": [
+                            {
+                                "name": "YT B",
+                                "bundleIdentifier": "com.google.ios.youtube",
+                                "omnisource": {
+                                    "slug": "yt-b",
+                                    "status": "stable",
+                                    "verification": {"publisher": "Dev"},
+                                },
+                            },
+                            {
+                                "name": "Solo",
+                                "bundleIdentifier": "com.example.solo",
+                                "omnisource": {
+                                    "slug": "solo",
+                                    "status": "stable",
+                                    "verification": {"publisher": "Dev"},
+                                },
+                            },
+                        ]
+                    },
+                    "duplicates.json": {"groups": []},
+                },
+            )
+            report = validate_published_app_records(self._catalog(), paths)
+            self.assertTrue(any("neither the master feed nor" in e for e in report.errors), report.errors)
+
+    def test_collision_group_member_is_accepted_when_its_feed_exists(self) -> None:
+        from omnisource.validation import validate_published_app_records
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            paths = self._paths(tmpdir)
+            self._write(
+                paths.feeds,
+                {
+                    "apps.json": {
+                        "apps": [
+                            {
+                                "name": "YT B",
+                                "bundleIdentifier": "com.google.ios.youtube",
+                                "omnisource": {
+                                    "slug": "yt-b",
+                                    "status": "stable",
+                                    "verification": {"publisher": "Dev"},
+                                },
+                            },
+                            {
+                                "name": "Solo",
+                                "bundleIdentifier": "com.example.solo",
+                                "omnisource": {
+                                    "slug": "solo",
+                                    "status": "stable",
+                                    "verification": {"publisher": "Dev"},
+                                },
+                            },
+                        ]
+                    },
+                    "duplicates.json": {
+                        "groups": [
+                            {
+                                "key": "com.google.ios.youtube",
+                                "replacementRisk": True,
+                                "apps": [{"app": "yt-a"}, {"app": "yt-b"}],
+                                "recommended": {"app": "yt-b"},
+                            }
+                        ]
+                    },
+                    "yt-a.json": {"apps": [{"name": "YT A"}]},
+                },
+            )
+            report = validate_published_app_records(self._catalog(), paths)
+            self.assertEqual([e for e in report.errors if "feeds/apps.json" in e], [])

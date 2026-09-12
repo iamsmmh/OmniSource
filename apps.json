@@ -92,7 +92,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-03"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -281,7 +282,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-03-19"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -494,7 +496,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-30"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -671,128 +674,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-11"
-        }
-      }
-    },
-    {
-      "name": "BHTwitter",
-      "bundleIdentifier": "com.atebits.Tweetie2",
-      "developerName": "BandarHL",
-      "subtitle": "X (Twitter) with no ads, downloads and the chronological timeline",
-      "localizedDescription": "BHTwitter is a long-running tweak for X (formerly Twitter), published as a ready-to-sideload IPA. It hides promoted posts and ads, restores the chronological timeline as the default, and lets you download videos, GIFs and images straight from a post. It also adds Face ID / Touch ID app lock, custom fonts, undo posting, inline translation, direct saving of profile pictures and headers, confirmation prompts for likes and reposts, and switches for hiding the tabs and UI elements you never use.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/X.webp",
-      "tintColor": "1D9BF0",
-      "category": "social",
-      "version": "4.4",
-      "versionDate": "2025-05-13",
-      "versionDescription": "BHTwitter 4.4 | BHTwitter-sideloaded\n\nUpdate BHTwitter 4.4:\n- Fix all the crashes in the newer versions.\n- Add the new tabs to the hide page.\n- New feature: DM replay later page and tags.\n- New feature: Upload 4K media.\n- New feature: Voice feature in posts and replies.\n- Update the localizations.\n- Remove unnecessary options.\n\nThanks for:\n- @actuallyaridan\n- @Tulugaak",
-      "downloadURL": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-sideloaded.ipa",
-      "size": 167001383,
-      "versions": [
-        {
-          "version": "4.4",
-          "date": "2025-05-13",
-          "localizedDescription": "BHTwitter 4.4 | BHTwitter-sideloaded\n\nUpdate BHTwitter 4.4:\n- Fix all the crashes in the newer versions.\n- Add the new tabs to the hide page.\n- New feature: DM replay later page and tags.\n- New feature: Upload 4K media.\n- New feature: Voice feature in posts and replies.\n- Update the localizations.\n- Remove unnecessary options.\n\nThanks for:\n- @actuallyaridan\n- @Tulugaak",
-          "downloadURL": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-sideloaded.ipa",
-          "size": 167001383,
-          "minOSVersion": "15.0",
-          "releaseUrl": "https://github.com/BandarHL/BHTwitter/releases/tag/4.4",
-          "source": "github",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "BHTwitter-sideloaded.ipa",
-              "downloadUrl": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-sideloaded.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 167001383,
-              "sha256": null,
-              "downloads": 16770,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            },
-            {
-              "filename": "BHTwitter-trollstore.tipa",
-              "downloadUrl": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/BHTwitter-trollstore.tipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 166994432,
-              "sha256": null,
-              "downloads": 4597,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            },
-            {
-              "filename": "com.bandarhl.bhtwitter_4.4-1+debug_iphoneos-arm.deb",
-              "downloadUrl": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/com.bandarhl.bhtwitter_4.4-1%2Bdebug_iphoneos-arm.deb",
-              "platform": "linux",
-              "architecture": null,
-              "fileType": "DEB",
-              "size": 7336848,
-              "sha256": null,
-              "downloads": 2459,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            },
-            {
-              "filename": "com.bandarhl.bhtwitter_4.4-1+debug_iphoneos-arm64.deb",
-              "downloadUrl": "https://github.com/BandarHL/BHTwitter/releases/download/4.4/com.bandarhl.bhtwitter_4.4-1%2Bdebug_iphoneos-arm64.deb",
-              "platform": "linux",
-              "architecture": "arm64",
-              "fileType": "DEB",
-              "size": 7336826,
-              "sha256": null,
-              "downloads": 2564,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            }
-          ],
-          "downloads": 16770
-        }
-      ],
-      "screenshotURLs": [
-        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/1.png",
-        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/2.png",
-        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/3.png",
-        "https://raw.githubusercontent.com/BandarHL/BHTwitter/master/4.png"
-      ],
-      "omnisource": {
-        "slug": "bhtwitter",
-        "status": "stable",
-        "featured": false,
-        "upstreamURL": "https://github.com/BandarHL/BHTwitter",
-        "sourceURL": "https://github.com/BandarHL/BHTwitter",
-        "verification": {
-          "method": "github-release",
-          "publisher": "BandarHL/BHTwitter",
-          "codeSigned": false,
-          "checksumPublished": false
         },
-        "compatibility": {
-          "minOSVersion": "15.0",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "Official sideloaded build from BandarHL/BHTwitter. The release also ships a TrollStore .tipa, which OmniSource skips - only the -sideloaded.ipa is tracked. The bundled X app is whichever decrypted build the maintainer packaged for that tweak release. Shares com.atebits.Tweetie2 with NeoFreeBird: install one at a time."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 302",
-          "statusSince": "2026-09-07",
-          "lastUpdatedAt": "2025-05-13"
-        }
+        "masterFeed": true
       }
     },
     {
@@ -909,7 +792,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-07-21"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -994,7 +878,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-06-12"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -1123,7 +1008,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-01"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -1203,7 +1089,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2024-07-11"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -1320,7 +1207,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-06-20"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -1417,7 +1305,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-22"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -1514,7 +1403,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-07"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -1617,7 +1507,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-07-05"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -1842,7 +1733,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-08"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -1946,7 +1838,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-05"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -2379,7 +2272,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-03-18"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -2483,7 +2377,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-01"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -2562,111 +2457,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-01"
-        }
-      }
-    },
-    {
-      "name": "iNKillerPlus",
-      "bundleIdentifier": "com.burbn.instagram",
-      "developerName": "iKarwan",
-      "subtitle": "Instagram with downloads, ghost mode and no ads",
-      "localizedDescription": "iNKillerPlus is a modified Instagram by iKarwan. Download posts, reels, stories and DM media, save profile pictures, block promoted posts and ads, toggle seen/unseen for stories and DMs, ghost typing, hide tabs, copy comments and bios, confirmation prompts before liking or calling, and a profile analyzer. iPadOS supported.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
-      "tintColor": "E1306C",
-      "category": "social",
-      "version": "446.0.0",
-      "versionDate": "2026-09-09",
-      "versionDescription": "Instagram 446.0.0 | Instagram_446.0_iNKillerPlus_5.2\n\n• Fix profile bio long press to copy detect email and links\n• Fix read DM icon\n• Fix user exception for direct message\n• Add roothide & relaxin JB support\n• Add full compatibility with IG v440+\n• Add tab configuration for hide & launch\n• Fix swipe between tabs\n• Fix story mention button crashes on v440+\n• Fix story download button\n• Fix eye long-press user exception on v440+\n• Fix follow confirmation toggle\n• Fix long-press profile picture expand & download\n• Fix grid button in main navbar\n• Fix 2x2 grid handling in 3x3 position style\n• Fix photo picker with music on multiple posts for iOS 27 Liquid Glass\n• Other fixes & improvements\n• Updated base IPA to Instagram v446.0",
-      "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa",
-      "size": 247800840,
-      "versions": [
-        {
-          "version": "446.0.0",
-          "date": "2026-09-09",
-          "localizedDescription": "Instagram 446.0.0 | Instagram_446.0_iNKillerPlus_5.2\n\n• Fix profile bio long press to copy detect email and links\n• Fix read DM icon\n• Fix user exception for direct message\n• Add roothide & relaxin JB support\n• Add full compatibility with IG v440+\n• Add tab configuration for hide & launch\n• Fix swipe between tabs\n• Fix story mention button crashes on v440+\n• Fix story download button\n• Fix eye long-press user exception on v440+\n• Fix follow confirmation toggle\n• Fix long-press profile picture expand & download\n• Fix grid button in main navbar\n• Fix 2x2 grid handling in 3x3 position style\n• Fix photo picker with music on multiple posts for iOS 27 Liquid Glass\n• Other fixes & improvements\n• Updated base IPA to Instagram v446.0",
-          "downloadURL": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa",
-          "size": 247800840,
-          "minOSVersion": "16.3",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "Instagram_446.0_iNKillerPlus_5.2.ipa",
-              "downloadUrl": "https://ikghd.site/ipa/Instagram_446.0_iNKillerPlus_5.2.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 247800840,
-              "sha256": null,
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ]
-        }
-      ],
-      "screenshotURLs": [
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/1.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/2.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.inkplus/screenshots/4.PNG"
-      ],
-      "appPermissions": {
-        "entitlements": [
-          "application-identifier",
-          "aps-environment",
-          "com.apple.developer.associated-domains",
-          "com.apple.security.application-groups",
-          "com.apple.developer.usernotifications.communication",
-          "com.apple.developer.usernotifications.time-sensitive",
-          "keychain-access-groups",
-          "com.apple.developer.team-identifier"
-        ],
-        "privacy": {
-          "NSCameraUsageDescription": "Instagram uses your device's camera to do things like help you take photos, record videos and use effects.",
-          "NSMicrophoneUsageDescription": "Instagram uses your device's microphone to do things like help you record videos and preview audio effects.",
-          "NSPhotoLibraryUsageDescription": "Instagram uses access to your camera roll to do things like help you share photos and videos to Instagram, apply effects and suggest photos and videos to share.",
-          "NSPhotoLibraryAddUsageDescription": "This lets you save photos and videos to your Camera Roll.",
-          "NSContactsUsageDescription": "Instagram will use your contacts to suggest people and things you care about, and offer a better service.",
-          "NSFaceIDUsageDescription": "Enable Face ID for quick and secure authentication on Instagram.",
-          "NSLocationWhenInUseUsageDescription": "Instagram uses this to make some features work, personalize content and help people find places."
-        }
-      },
-      "omnisource": {
-        "slug": "inkillerplus",
-        "status": "stable",
-        "featured": false,
-        "upstreamURL": "https://github.com/iKarwan/iNKillerPlus",
-        "sourceURL": "https://repo.ikghd.me",
-        "verification": {
-          "method": "altstore",
-          "publisher": "iKarwan (repo.ikghd.me)",
-          "codeSigned": false,
-          "checksumPublished": false
         },
-        "compatibility": {
-          "minOSVersion": "16.3",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "Resolved from the developer's own AltStore source at repo.ikghd.me."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 200",
-          "statusSince": "2026-09-07",
-          "lastUpdatedAt": "2026-09-09"
-        }
+        "masterFeed": true
       }
     },
     {
@@ -2770,7 +2562,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-11",
           "lastUpdatedAt": "2026-09-10"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -2863,7 +2656,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-22"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -2968,7 +2762,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-07-19"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -3109,7 +2904,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-02"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -3215,7 +3011,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-07-17"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -3355,7 +3152,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2022-12-12"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -3440,7 +3238,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-03"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -3541,129 +3340,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-10"
-        }
-      }
-    },
-    {
-      "name": "MaxTube",
-      "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "Mark02-2012",
-      "subtitle": "YTPlus with ten extra tweaks",
-      "localizedDescription": "MaxTube (formerly YTPlusM) is Mark02-2012's fork of YTPlus/YTLite, the enhancer for the YouTube app on iOS. On top of the YTPlus feature set — video/audio/thumbnail downloads, SponsorBlock, PiP, YTUHD, YouQuality, Return YouTube Dislike, YTABConfig, DontEatMyContent and over 100 configurable options without a subscription — MaxTube integrates ten extra tweaks: YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, YTPlaybackFix, YouChooseQuality, YouShare and PleaseDontStopTheMusic. Settings live inside YouTube under Settings.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/MaxTube.webp",
-      "tintColor": "EFA5A5",
-      "category": "photo-video",
-      "version": "21.31.3",
-      "versionDate": "2026-08-03",
-      "versionDescription": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
-      "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
-      "size": 133357787,
-      "versions": [
-        {
-          "version": "21.31.3",
-          "date": "2026-08-03",
-          "localizedDescription": "MaxTube 21.31.3 | YTPlus 5.2.2 | YTPlusM_21.31.3_5.2.2.tg@tubevault\n\n[YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault]\n\nDescription: \nYTPlus 5.2.2 Cracked by zarzel\nYouTube v21.31.3\n\nVersion Description:\nDownloading does not work on this version of YouTube\nNo Bonus Tweaks\nSidestore is supported\n\n[YTPlusM_21.31.3_5.2.2.tg@tubevault]\n\nDescription: \nYTPlusM v1.4.2\nYouTube v21.31.3\n\nVersion Description:\nBonus Tweaks:\nYouPiP, YTUHD, YouQuality, RYD, YTABConfig, DontEatMyContent, YTweaks, Gonerino, YouSpeed, YTLowContrastMode, VolumeBoostYT, YouGetCaption, Mark's Tweak YTPlaybackFix, YouChooseQuality, YouShare, PleaseDontStopTheMusic and OpenYouTubeInSafari.",
-          "downloadURL": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
-          "size": 133357787,
-          "minOSVersion": "16.0",
-          "releaseUrl": "https://github.com/Ashreq/ashstore-repo/releases/tag/v1.0.8",
-          "source": "github",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg@tubevault.ipa",
-              "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YouTube_v21.31.3_YTPlus_v5.2.2_cracked.tg%40tubevault.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 142219559,
-              "sha256": "99d3847be6653d58723d1465c0fc4ab87079d341b3a80973e9c1647d4cffdb38",
-              "downloads": 5,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            },
-            {
-              "filename": "YTPlusM_21.31.3_5.2.2.tg@tubevault.ipa",
-              "downloadUrl": "https://github.com/Ashreq/ashstore-repo/releases/download/v1.0.8/YTPlusM_21.31.3_5.2.2.tg%40tubevault.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 133357787,
-              "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-              "downloads": 122,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            }
-          ],
-          "sha256": "8d4fe82447fe35056ebc9a2962b9ce531fd581926f471c4bca88146fc5aae22f",
-          "downloads": 122
-        }
-      ],
-      "screenshotURLs": [
-        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr1.jpg",
-        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr2.jpg",
-        "https://raw.githubusercontent.com/Mark02-2012/MaxTube/main/Resources/scr3.jpg"
-      ],
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.security.application-groups",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.declared-age-range",
-          "com.apple.developer.storekit.request-data",
-          "com.apple.developer.device-information.user-assigned-device-name",
-          "com.apple.developer.group-session",
-          "keychain-access-groups",
-          "com.apple.developer.networking.multicast",
-          "aps-environment",
-          "com.apple.developer.siri",
-          "com.apple.developer.networking.wifi-info"
-        ],
-        "privacy": {
-          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
-          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
-          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
-          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
-          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
-          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
-        }
-      },
-      "omnisource": {
-        "slug": "maxtube",
-        "status": "manual",
-        "featured": false,
-        "upstreamURL": "https://github.com/Mark02-2012/MaxTube",
-        "sourceURL": "https://github.com/Ashreq/ashstore-repo",
-        "verification": {
-          "method": "github-release",
-          "publisher": "Ashreq/ashstore-repo",
-          "codeSigned": false,
-          "checksumPublished": true
         },
-        "compatibility": {
-          "minOSVersion": "16.0",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "The upstream repository removed its IPA release assets for legal reasons and now publishes builds on Telegram/TubeVault, so this entry tracks the GitHub mirror of the TubeVault build (MaxTube 1.4.2, YouTube 21.31.3, YTPlus 5.2.2), which publishes a SHA-256. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 302",
-          "statusSince": "2026-09-07",
-          "lastUpdatedAt": "2026-08-03"
-        }
+        "masterFeed": true
       }
     },
     {
@@ -3767,7 +3445,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-11",
           "lastUpdatedAt": "2026-09-10"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -3859,7 +3538,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2024-07-09"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -3963,100 +3643,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-11",
           "lastUpdatedAt": "2026-09-10"
-        }
-      }
-    },
-    {
-      "name": "NeoFreeBird",
-      "bundleIdentifier": "com.atebits.Tweetie2",
-      "developerName": "NeoFreeBird contributors",
-      "subtitle": "Modified Twitter with QoL fixes and reverts",
-      "localizedDescription": "NeoFreeBird is a modified build of the official Twitter app that reverts unpopular rebranding and interface changes, restores classic features, and bundles quality-of-life modifications including BHTwitter options — built and published automatically from the project's GitHub releases. Shares com.atebits.Tweetie2 with the App Store Twitter/X app and BHTwitter: install one at a time.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/NeoFreeBird.webp",
-      "tintColor": "1D9BF0",
-      "category": "social",
-      "version": "2.2",
-      "versionDate": "2025-11-03",
-      "versionDescription": "Twitter 2.2 | NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin\n\nNeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\n\n### Change log:\n\n**Twitter, version 11.35:**\n- Updated the Twitter build to 11.35\n\n**NeoFreeBird, version 2.2:**\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\n- Localized the Post > Tweet replacer\n- Improved the Open in Twitter extension\n- Minor bug fixes and other minor improvements\n\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\n\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
-      "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
-      "size": 158452402,
-      "versions": [
-        {
-          "version": "2.2",
-          "date": "2025-11-03",
-          "localizedDescription": "Twitter 2.2 | NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin\n\nNeoFreeBird is a modified Twitter app with branding reverts, BHTwitter and other QoL modifications. It also seems to be faster compared to the official Twitter app, which says something.\n\n### Change log:\n\n**Twitter, version 11.35:**\n- Updated the Twitter build to 11.35\n\n**NeoFreeBird, version 2.2:**\n- Fixed log in issues using new sign in flow (you can only sign in to one account at once but better than nothing) [#78]\n- Localized the Post > Tweet replacer\n- Improved the Open in Twitter extension\n- Minor bug fixes and other minor improvements\n\nThere are two versions, one with FixTwitterLogin dylib (standard) and one without. Try the regular one first, and if you’re unable to install it, try the one without. Both have the new sign in flow, the one with FixTwitterLogin just has the same dylib injected as 2.1 rev 2 to trick Attestation in some cases, allowing some users to sign in to multiple accounts. It works for some and not for others.\n\nIf you are already signed in to two accounts, you will still stay signed in to them, you just can't add more.",
-          "downloadURL": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
-          "size": 158452402,
-          "minOSVersion": "15.0",
-          "releaseUrl": "https://github.com/NeoFreeBird/app/releases/tag/2.2",
-          "source": "github",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
-              "downloadUrl": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35-noFixTwitterLogin.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 158452402,
-              "sha256": "e5592371a53e770a0ac99242a44b4f6ea27a521058470491f18e1ed661acdaa2",
-              "downloads": 22323,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            },
-            {
-              "filename": "NeoFreeBird-2.2-Twitter-11.35.ipa",
-              "downloadUrl": "https://github.com/NeoFreeBird/app/releases/download/2.2/NeoFreeBird-2.2-Twitter-11.35.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 153108663,
-              "sha256": "964d8e009113dea7c29924a746bebbf5f50c29d61c1fd8656a91a8a765231db0",
-              "downloads": 21618,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            }
-          ],
-          "sha256": "e5592371a53e770a0ac99242a44b4f6ea27a521058470491f18e1ed661acdaa2",
-          "downloads": 22323
-        }
-      ],
-      "screenshotURLs": [],
-      "omnisource": {
-        "slug": "neofreebird",
-        "status": "stable",
-        "featured": false,
-        "upstreamURL": "https://github.com/NeoFreeBird/app",
-        "sourceURL": "https://github.com/NeoFreeBird/app",
-        "verification": {
-          "method": "github-release",
-          "publisher": "NeoFreeBird/app",
-          "codeSigned": false,
-          "checksumPublished": false
         },
-        "compatibility": {
-          "minOSVersion": "15.0",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "Official IPAs from the project's GitHub releases (its own AltStore source mirrors them). The plain build is distributed here; the -noFixTwitterLogin variant on the same release is a troubleshooting fallback. Twitter 11.x builds require iOS 15+. Shares the Twitter bundle identifier with BHTwitter in this catalog — install one at a time."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 302",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2025-11-03"
-        }
+        "masterFeed": true
       }
     },
     {
@@ -4160,7 +3748,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-07"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -4244,7 +3833,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2023-04-04"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -4433,7 +4023,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-05-16"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -4526,7 +4117,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-03-14"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -4631,7 +4223,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2025-11-02"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -4712,7 +4305,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-07-23"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -4877,7 +4471,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-07-28"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -4995,7 +4590,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-06-19"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -5125,7 +4721,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2025-09-26"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -5229,91 +4826,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-11",
           "lastUpdatedAt": "2026-09-10"
-        }
-      }
-    },
-    {
-      "name": "RyukGram (IG 410)",
-      "bundleIdentifier": "com.burbn.instagram",
-      "developerName": "Ryuk (@axryuk)",
-      "subtitle": "RyukGram built on the Instagram 410 app",
-      "localizedDescription": "RyukGram (IG 410) is the same enhanced Instagram client ported to the Instagram 410.1.0 app for iOS 15 and later. It carries the full RyukGram feature set — follow-request tracking, read receipts, story-viewer insights, deleted-message logs, device-ID masking, media downloading, custom chat themes and a configurable tab bar — on top of the older Instagram base, which is what you want if the current Instagram builds are unstable on your device or you deliberately stay on an older app version.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/Instagram.webp",
-      "tintColor": "C13584",
-      "category": "social",
-      "version": "410.1.0",
-      "versionDate": "2026-07-25",
-      "versionDescription": "Instagram 410.1.0 | RyukGram (IG 410)\n\nUpdated for Instagram 439.0.0.\n\n### ✨ Highlights\n- **Call recording** — record voice and video calls, with auto-record, smart video grids and a per-person browser to play them back\n- **Activity notifications** — one log for who read your messages plus who came online, went offline or started typing, per person, with an accurate green dot\n- **Grid feed** — turn your home feed into a tappable grid of thumbnails with stats and author overlays, per account\n- **Stories archive** — saves every story you post before it expires, with its media and full viewer list, per account\n- **Story viewers list** — a searchable, filterable, sortable and pinnable \"who viewed my story\", with each viewer's reaction shown\n- **Instagram Plus** — turn on some Instagram's paid subscriber features inside the app\n- **Custom button icons** — pick any Instagram icon or iOS symbol for the action and home-shortcut buttons\n\n### 🆕 New features\n\n#### Messages\n- Activity notifications and Activity log — records who read your messages plus who came online, went offline or started typing, as a per-person timeline. Set each event to log silently, notify you, or both, and hold anyone to customise or mute them. A new accurate active-status option turns the green dot off the moment someone leaves. Filter by type and date, swipe or multi-select to delete, and lock the log behind your passcode\n- A dot in the DMs inbox to turn your active status on or off without opening settings\n- Keep deleted messages can now also keep the ones you unsend yourself, shown faded in chat and added to the deleted log\n- Mark chats seen locally — with read-receipt blocking on, opened chats look read on your device while the sender still gets no receipt; the eye button turns orange until you really mark seen\n- Hold the account name at the top of Direct to show or hide your hidden chats, with an optional passcode/Face ID lock\n- Messages-only mode is now its own menu, can turn on automatically during a daily window, and adds a notifications shortcut plus an optional home-shortcut button in the inbox header\n- Adding someone to a list (read-receipt blocking, hidden or locked chats, chat backgrounds, story viewer pins) now opens a picker of recent DMs with username search, instead of typing it in blind\n- The DM Draw feature can now send an image as your doodle — from the gallery, Photos, your Instagram or iOS stickers, or a pasted image — with an editor to crop, resize and remove the background\n- Custom chat backgrounds can now be videos or GIFs, framed with pan-zoom and trim, with the same opacity, blur and dim controls, and re-editable later\n- Hide suggested accounts and channels in Direct messages search\n\n#### Stories\n- Stories archive saves every story you post before it expires, with its media and full viewer list, per account. Browse by date in a grid, see who viewed, liked or reacted, with filter, sort, pinned viewers, an unread badge, optional alerts and its own backup and storage entry\n- The \"who viewed my story\" list is now searchable — filter (mutuals, following, follows you, verified, reacted, pinned), sort, and pin anyone to the top. Shows avatars, verified badges and each viewer's reaction, loads every viewer, and can switch back to Instagram's own list. Pick which one opens first\n- Marked-seen indicator — stories you already marked as seen hide the eye button or fill it green for 48 hours, per account\n- New \"Save image (no music)\" story download option for photo stories that have Instagram music on them\n- Story tray long-press \"Profile picture\" now also works in Instagram's new subscriber story preview menu\n\n#### Reels\n- New reels playback menu — hold the ⋯ or audio button for speed, seek (skip back/forward by a custom amount) and auto-scroll controls\n- Auto-scroll reels is back — Instagram default or RyukGram mode that keeps advancing after you swipe back\n- Filter reels by engagement — set a minimum for likes, comments, views or reposts and reels below it never show, plus an option to hide reels whose author hides their counts. Only the Reels tab is filtered by default, so reels you open from a post, profile or share stay untouched\n- Show when a reel was reposted — an optional date on the \"reposted this reel\" header\n\n#### Feed & Explore\n- New Grid feed — turn your home feed into a grid of post thumbnails showing likes, comments, views, shares and the author. Pinch to change columns, pull to refresh, tap a post to open it, or hold for a menu to like, follow, view profile, expand, share or copy the link. Choose which stats show, square or taller tiles, and how you switch back to Instagram's feed. Loads instantly, works per account and remembers where you left off\n- Search and explore grids now show stat pills on posts and reels — views, likes, comments, shares, reposts and date — with a page to pick which appear, reorder them and toggle them\n- New date format options — swap Instagram's relative timestamps on posts, notes, comments, stories and DMs for a fixed date, a preset like dd/MM/yyyy, or your own template, with a relative-time threshold\n- New \"Block surveys\" toggle — hides Instagram's in-app surveys and feedback prompts, including the \"Interested in this post?\" cards\n- Confirm feed refresh — an optional alert before a pull-to-refresh reloads the home feed\n- Refresh stories only — pull-to-refresh reloads just the stories tray and leaves the feed where it is\n\n#### Instants\n- Instants download now works on videos too — expand, save, share and download-all all handle video instants\n- Send a video from your gallery as an Instant — frame it square, trim any 7 seconds on a scrollable timeline, then hold to record\n- Confirm before capturing an Instant — an optional alert on a photo tap or held video, plus a confirm before tapping to switch Instants\n- Auto close the Instants viewer once you've seen them all\n\n#### Downloads & Gallery\n- Download manager got a rebuild — thumbnails for finished media, live size, speed and time left, a filter row, and swipe a row to cancel, retry or remove\n- Downloads now stay listed after you close the app and can be downloaded again from the history — kept from 12 hours up to forever, and cleared or exported from Backup and Storage\n- Download quality picker has an advanced view — download a video with no audio, or pick any of its audio tracks\n- Gallery — import your own photos, videos and files from the ••• menu, saved under an Imported filter\n- Gallery browsing got more controls — combine a sort with images, videos or favorites first, filter by date, pick 2 to 5 columns, and long-press a user section to select all their media\n- The gallery now uses Instagram icons throughout, grid tiles show a date chip, and long-pressing an item shows its date, source and size\n\n#### Profile\n- Profile card details now also show comment, share and repost counts, with a page to pick which stats appear, reorder them and toggle them\n- Followers and Following lists get a filter and sort button on Instagram's search bar — mutuals, following, follows you or verified, sorted by name or relationship\n- Profile Analyzer's badge now shows gains and losses — a green +N when a list grew, a red −N when it shrank\n- Profile Analyzer is out of beta\n\n#### Interface & notifications\n- Action button and home-shortcut icons are now fully customisable — a searchable browser for any Instagram icon or iOS symbol, per button or shared, including Instagram's colourful pet stickers\n- Tab bar icon order is now a live tab bar preview — drag to reorder, drag one up to hide, tap a hidden icon to add it back\n- Story and disappearing-media overlay buttons can be repositioned by dragging them on a preview\n- The notification pill can be placed anywhere on a phone preview, not just top or bottom\n- Notifications mirrored to the iOS notification centre can now also show as system banners while you're using the app\n- The home shortcut button shows a red dot for new deleted messages, read receipts or call recordings, with a count next…",
-      "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
-      "size": 267074754,
-      "versions": [
-        {
-          "version": "410.1.0",
-          "date": "2026-07-25",
-          "localizedDescription": "Instagram 410.1.0 | RyukGram (IG 410)\n\nUpdated for Instagram 439.0.0.\n\n### ✨ Highlights\n- **Call recording** — record voice and video calls, with auto-record, smart video grids and a per-person browser to play them back\n- **Activity notifications** — one log for who read your messages plus who came online, went offline or started typing, per person, with an accurate green dot\n- **Grid feed** — turn your home feed into a tappable grid of thumbnails with stats and author overlays, per account\n- **Stories archive** — saves every story you post before it expires, with its media and full viewer list, per account\n- **Story viewers list** — a searchable, filterable, sortable and pinnable \"who viewed my story\", with each viewer's reaction shown\n- **Instagram Plus** — turn on some Instagram's paid subscriber features inside the app\n- **Custom button icons** — pick any Instagram icon or iOS symbol for the action and home-shortcut buttons\n\n### 🆕 New features\n\n#### Messages\n- Activity notifications and Activity log — records who read your messages plus who came online, went offline or started typing, as a per-person timeline. Set each event to log silently, notify you, or both, and hold anyone to customise or mute them. A new accurate active-status option turns the green dot off the moment someone leaves. Filter by type and date, swipe or multi-select to delete, and lock the log behind your passcode\n- A dot in the DMs inbox to turn your active status on or off without opening settings\n- Keep deleted messages can now also keep the ones you unsend yourself, shown faded in chat and added to the deleted log\n- Mark chats seen locally — with read-receipt blocking on, opened chats look read on your device while the sender still gets no receipt; the eye button turns orange until you really mark seen\n- Hold the account name at the top of Direct to show or hide your hidden chats, with an optional passcode/Face ID lock\n- Messages-only mode is now its own menu, can turn on automatically during a daily window, and adds a notifications shortcut plus an optional home-shortcut button in the inbox header\n- Adding someone to a list (read-receipt blocking, hidden or locked chats, chat backgrounds, story viewer pins) now opens a picker of recent DMs with username search, instead of typing it in blind\n- The DM Draw feature can now send an image as your doodle — from the gallery, Photos, your Instagram or iOS stickers, or a pasted image — with an editor to crop, resize and remove the background\n- Custom chat backgrounds can now be videos or GIFs, framed with pan-zoom and trim, with the same opacity, blur and dim controls, and re-editable later\n- Hide suggested accounts and channels in Direct messages search\n\n#### Stories\n- Stories archive saves every story you post before it expires, with its media and full viewer list, per account. Browse by date in a grid, see who viewed, liked or reacted, with filter, sort, pinned viewers, an unread badge, optional alerts and its own backup and storage entry\n- The \"who viewed my story\" list is now searchable — filter (mutuals, following, follows you, verified, reacted, pinned), sort, and pin anyone to the top. Shows avatars, verified badges and each viewer's reaction, loads every viewer, and can switch back to Instagram's own list. Pick which one opens first\n- Marked-seen indicator — stories you already marked as seen hide the eye button or fill it green for 48 hours, per account\n- New \"Save image (no music)\" story download option for photo stories that have Instagram music on them\n- Story tray long-press \"Profile picture\" now also works in Instagram's new subscriber story preview menu\n\n#### Reels\n- New reels playback menu — hold the ⋯ or audio button for speed, seek (skip back/forward by a custom amount) and auto-scroll controls\n- Auto-scroll reels is back — Instagram default or RyukGram mode that keeps advancing after you swipe back\n- Filter reels by engagement — set a minimum for likes, comments, views or reposts and reels below it never show, plus an option to hide reels whose author hides their counts. Only the Reels tab is filtered by default, so reels you open from a post, profile or share stay untouched\n- Show when a reel was reposted — an optional date on the \"reposted this reel\" header\n\n#### Feed & Explore\n- New Grid feed — turn your home feed into a grid of post thumbnails showing likes, comments, views, shares and the author. Pinch to change columns, pull to refresh, tap a post to open it, or hold for a menu to like, follow, view profile, expand, share or copy the link. Choose which stats show, square or taller tiles, and how you switch back to Instagram's feed. Loads instantly, works per account and remembers where you left off\n- Search and explore grids now show stat pills on posts and reels — views, likes, comments, shares, reposts and date — with a page to pick which appear, reorder them and toggle them\n- New date format options — swap Instagram's relative timestamps on posts, notes, comments, stories and DMs for a fixed date, a preset like dd/MM/yyyy, or your own template, with a relative-time threshold\n- New \"Block surveys\" toggle — hides Instagram's in-app surveys and feedback prompts, including the \"Interested in this post?\" cards\n- Confirm feed refresh — an optional alert before a pull-to-refresh reloads the home feed\n- Refresh stories only — pull-to-refresh reloads just the stories tray and leaves the feed where it is\n\n#### Instants\n- Instants download now works on videos too — expand, save, share and download-all all handle video instants\n- Send a video from your gallery as an Instant — frame it square, trim any 7 seconds on a scrollable timeline, then hold to record\n- Confirm before capturing an Instant — an optional alert on a photo tap or held video, plus a confirm before tapping to switch Instants\n- Auto close the Instants viewer once you've seen them all\n\n#### Downloads & Gallery\n- Download manager got a rebuild — thumbnails for finished media, live size, speed and time left, a filter row, and swipe a row to cancel, retry or remove\n- Downloads now stay listed after you close the app and can be downloaded again from the history — kept from 12 hours up to forever, and cleared or exported from Backup and Storage\n- Download quality picker has an advanced view — download a video with no audio, or pick any of its audio tracks\n- Gallery — import your own photos, videos and files from the ••• menu, saved under an Imported filter\n- Gallery browsing got more controls — combine a sort with images, videos or favorites first, filter by date, pick 2 to 5 columns, and long-press a user section to select all their media\n- The gallery now uses Instagram icons throughout, grid tiles show a date chip, and long-pressing an item shows its date, source and size\n\n#### Profile\n- Profile card details now also show comment, share and repost counts, with a page to pick which stats appear, reorder them and toggle them\n- Followers and Following lists get a filter and sort button on Instagram's search bar — mutuals, following, follows you or verified, sorted by name or relationship\n- Profile Analyzer's badge now shows gains and losses — a green +N when a list grew, a red −N when it shrank\n- Profile Analyzer is out of beta\n\n#### Interface & notifications\n- Action button and home-shortcut icons are now fully customisable — a searchable browser for any Instagram icon or iOS symbol, per button or shared, including Instagram's colourful pet stickers\n- Tab bar icon order is now a live tab bar preview — drag to reorder, drag one up to hide, tap a hidden icon to add it back\n- Story and disappearing-media overlay buttons can be repositioned by dragging them on a preview\n- The notification pill can be placed anywhere on a phone preview, not just top or bottom\n- Notifications mirrored to the iOS notification centre can now also show as system banners while you're using the app\n- The home shortcut button shows a red dot for new deleted messages, read receipts or call recordings, with a count next…",
-          "downloadURL": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
-          "size": 267074754,
-          "minOSVersion": "15.0",
-          "releaseUrl": null,
-          "source": "altstore",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "959abf1407579dbd3f46.ipa",
-              "downloadUrl": "https://source.ryuksign.com/ipas/959abf1407579dbd3f46.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 267074754,
-              "sha256": "5e365019d7bf29b3a4ee3064b45f86876c878c52c960daa370b2092328871f9d",
-              "downloads": 0,
-              "mimeType": null,
-              "installable": true
-            }
-          ],
-          "sha256": "5e365019d7bf29b3a4ee3064b45f86876c878c52c960daa370b2092328871f9d"
-        }
-      ],
-      "screenshotURLs": [],
-      "appPermissions": {
-        "entitlements": [],
-        "privacy": {}
-      },
-      "omnisource": {
-        "slug": "ryukgram-ig410",
-        "status": "stable",
-        "featured": false,
-        "upstreamURL": "https://store.ryuksign.com/",
-        "sourceURL": "https://source.ryuksign.com/ig410",
-        "verification": {
-          "method": "altstore",
-          "publisher": "Ryuk / RyukSign (source.ryuksign.com)",
-          "codeSigned": false,
-          "checksumPublished": false
         },
-        "compatibility": {
-          "minOSVersion": "15.0",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "The IG 410 line from the developer's own source (source.ryuksign.com/ig410); versions track the Instagram base build rather than the RyukGram tweak version. Shares com.burbn.instagram with RyukGram, RyukGram Side by Side's sibling builds and iNKillerPlus — install one Instagram mod at a time."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 200",
-          "statusSince": "2026-09-10",
-          "lastUpdatedAt": "2026-07-25"
-        }
+        "masterFeed": true
       }
     },
     {
@@ -5397,7 +4911,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-09"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -5586,7 +5101,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-30"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -5719,7 +5235,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-03-04"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -5803,7 +5320,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2024-01-17"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -5924,7 +5442,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-09"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -6005,7 +5524,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-20"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -6109,7 +5629,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-11",
           "lastUpdatedAt": "2026-09-10"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -6214,7 +5735,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-07"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -6463,7 +5985,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-06-05"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -6548,7 +6071,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-08-27"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -6628,7 +6152,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2025-02-23"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -6757,7 +6282,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-06-02"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -6861,7 +6387,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-05"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -6945,7 +6472,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2023-09-23"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -7049,7 +6577,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-05"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -7153,7 +6682,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-11",
           "lastUpdatedAt": "2026-09-10"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -7255,7 +6785,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-09"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -7359,7 +6890,8 @@
           "detail": "HTTP 200",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-05"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -7452,7 +6984,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-14"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -7536,7 +7069,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2020-06-09"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -7736,108 +7270,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-01-03T17:51:54Z"
-        }
-      }
-    },
-    {
-      "name": "uYouEnhanced",
-      "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "arichornlover",
-      "subtitle": "uYouPlus with even more features!",
-      "localizedDescription": "uYou is the best tweak for the YouTube app. uYouEnhanced is a modified version of qnblackcat's uYouPlus & MiRO92's uYou with even more features. Additional features include skipping sponsorships in videos, more PiP options, unlocking higher resolutions, disabling overlays, removing upsell alerts, dimming the UI, enabling the miniplayer, preventing notch issues, configuring A/B settings, and adding a timestamp button.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/uYouEnhanced.webp",
-      "tintColor": "E81E8A",
-      "category": "photo-video",
-      "version": "21.14.4",
-      "versionDate": "2026-08-22",
-      "versionDescription": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
-      "downloadURL": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
-      "size": 135840058,
-      "versions": [
-        {
-          "version": "21.14.4",
-          "date": "2026-08-22",
-          "localizedDescription": "Current YouTube IPA: \"21.14.4\"\nCurrent uYou Version: \"3.0.5 (Unofficial)\"\n\nRELEASE 21.14.4 - 3.0.5: (2026-08-22)\n\n• Updated for YouTube 21.14.4\n• uYou Downloads fixed for modern YouTube (fixes infinite \"Downloading...\")\n• Fixed iSponsorBlock startup crash on 21.x\n• App Icons now actually work + fresh grid picker UI\n• Notifications Tab is now reorderable\n• iPad & landscape UI fixes across all custom menus\n• uYou rebranded to 3.0.5 (Unofficial build)",
-          "downloadURL": "https://archive.org/download/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa",
-          "fallbackDownloadURLs": [
-            "https://dn720705.ca.archive.org/0/items/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
-          ],
-          "size": 135840058,
-          "minOSVersion": "16.0"
-        }
-      ],
-      "screenshotURLs": [
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus1.jpeg?raw=true",
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus2.jpeg?raw=true",
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus3.jpeg?raw=true",
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus4.jpeg?raw=true",
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus5.jpeg?raw=true",
-        "https://github.com/therealFoxster/AltSource/blob/master/assets/screenshots/uYouPlus/uyouplus6.jpeg?raw=true"
-      ],
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.security.application-groups",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.usernotifications.time-sensitive",
-          "get-task-allow",
-          "com.apple.developer.device-information.user-assigned-device-name",
-          "com.apple.developer.group-session",
-          "keychain-access-groups",
-          "com.apple.developer.networking.multicast",
-          "aps-environment",
-          "com.apple.developer.siri",
-          "com.apple.developer.networking.wifi-info"
-        ],
-        "privacy": {
-          "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
-          "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices.",
-          "NSCameraUsageDescription": "This lets you create videos using the app.",
-          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
-          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
-          "NSLocationWhenInUseUsageDescription": "Makes it easier for you to attach location information to your videos and live streams and allows for features such as improved recommendations and ads.",
-          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
-          "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created.",
-          "NSUserTrackingUsageDescription": "A message that informs the user why an app is requesting permission to use data for tracking the user or the device."
-        }
-      },
-      "fallbackDownloadURLs": [
-        "https://dn720705.ca.archive.org/0/items/YouTubeRebornPlus_19.10.5-4.2.6/yt-uYE-21144-305.ipa"
-      ],
-      "omnisource": {
-        "slug": "uyouenhanced",
-        "status": "manual",
-        "featured": true,
-        "upstreamURL": "https://github.com/arichornlover/uYouEnhanced",
-        "sourceURL": "https://archive.org/details/YouTubeRebornPlus_19.10.5-4.2.6",
-        "verification": {
-          "method": "manual-mirror",
-          "publisher": "Community build of arichornlover/uYouEnhanced, mirrored on archive.org",
-          "codeSigned": false,
-          "checksumPublished": true
         },
-        "compatibility": {
-          "minOSVersion": "16.0",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "uYouEnhanced's official GitHub releases publish release notes only - no .ipa assets - so the IPA served here is a community build of the official release tag (YouTube 21.14.4 / uYou 3.0.5), mirrored on archive.org. Once a 'Build uYouEnhanced' run publishes an IPA in this repository (tag uyouenhanced-v*), the self-built artifact takes over automatically."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 302",
-          "statusSince": "2026-09-07",
-          "lastUpdatedAt": "2026-08-22"
-        }
+        "masterFeed": true
       }
     },
     {
@@ -8098,7 +7532,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-08-15"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -8299,7 +7734,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-06"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -8379,7 +7815,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2024-06-24"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -8500,7 +7937,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-06-08"
-        }
+        },
+        "masterFeed": true
       }
     },
     {
@@ -8604,113 +8042,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2024-01-28"
-        }
-      }
-    },
-    {
-      "name": "YouMod",
-      "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "Tonwalter888",
-      "subtitle": "All-in-one YouTube enhancement tweak",
-      "localizedDescription": "YouMod is a customizable YouTube enhancement tweak by Tonwalter888. It includes ad blocking, background playback, PiP support, UI customization, integrated download manager, and sponsor segment skipping.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
-      "tintColor": "FF0000",
-      "category": "photo-video",
-      "version": "21.36.6",
-      "versionDate": "2026-09-09",
-      "versionDescription": "YouTube 21.36.6 | YouMod_21.36.6_2.0.0\n\n### Latest Release, ENJOY!!\n\n> [!NOTE]\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - [v2.0.0 release notes](https://github.com/Tonwalter888/YouMod/releases/tag/v2.0.0)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
-      "size": 128845098,
-      "versions": [
-        {
-          "version": "21.36.6",
-          "date": "2026-09-09",
-          "localizedDescription": "YouTube 21.36.6 | YouMod_21.36.6_2.0.0\n\n### Latest Release, ENJOY!!\n\n> [!NOTE]\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - [v2.0.0 release notes](https://github.com/Tonwalter888/YouMod/releases/tag/v2.0.0)\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
-          "size": 128845098,
-          "minOSVersion": "16.0",
-          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/youmod-ipa1",
-          "source": "github",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "YouMod_21.36.6_2.0.0.ipa",
-              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.36.6_2.0.0.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 128845098,
-              "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-              "downloads": 96,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            }
-          ],
-          "sha256": "c739026f467aa3c0dc57fc73844eebfe58e8209f658e1c11635d4175fc0e6386",
-          "downloads": 96
-        }
-      ],
-      "screenshotURLs": [],
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.security.application-groups",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.declared-age-range",
-          "com.apple.developer.storekit.request-data",
-          "com.apple.developer.device-information.user-assigned-device-name",
-          "com.apple.developer.group-session",
-          "keychain-access-groups",
-          "com.apple.developer.networking.multicast",
-          "aps-environment",
-          "com.apple.developer.siri",
-          "com.apple.developer.networking.wifi-info"
-        ],
-        "privacy": {
-          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
-          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
-          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
-          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
-          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
-          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
-        }
-      },
-      "omnisource": {
-        "slug": "youmod",
-        "status": "stable",
-        "featured": false,
-        "upstreamURL": "https://github.com/Tonwalter888/YouMod",
-        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
-        "verification": {
-          "method": "github-release",
-          "publisher": "mrdrvt99/YouProEXTRA",
-          "codeSigned": false,
-          "checksumPublished": false
         },
-        "compatibility": {
-          "minOSVersion": "16.0",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "Official project: Tonwalter888/YouMod. The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 302",
-          "statusSince": "2026-09-07",
-          "lastUpdatedAt": "2026-09-09"
-        }
+        "masterFeed": true
       }
     },
     {
@@ -8816,518 +8149,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-07",
           "lastUpdatedAt": "2026-09-10"
-        }
-      }
-    },
-    {
-      "name": "YouTubePlus",
-      "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "dayanch96",
-      "subtitle": "Lightweight YouTube tweak with no ads and PiP",
-      "localizedDescription": "YouTubePlus (formerly YTLite) is a lightweight enhancer for YouTube developed by Dayanch96. It provides complete ad blocking, background playback, offline video and audio downloads, Picture-in-Picture (PiP), SponsorBlock integration, gesture controls, and customizable interface settings.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
-      "tintColor": "FF0000",
-      "category": "photo-video",
-      "version": "21.24.3",
-      "versionDate": "2026-09-09",
-      "versionDescription": "YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - :key: no subscription required\n> - ✅ Working Download Manager, switch to overlay button before downloading.\n> - 🎥 Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - 🔧 Updated Gonerino and YT Headers\n> - Enable \"**Both** Download button placement\" under Downloading setting\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.24.3_5.2.2.ipa",
-      "size": 129031075,
-      "versions": [
-        {
-          "version": "21.24.3",
-          "date": "2026-09-09",
-          "localizedDescription": "YouTube 21.24.3 | YouTubePlus_21.24.3_5.2.2\n\n### Latest Stable Release, ENJOY!!\n##### Cracked by [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - :key: no subscription required\n> - ✅ Working Download Manager, switch to overlay button before downloading.\n> - 🎥 Bundled with **YTUHD**. it is broken in +21.25.5 versions as of now. max resolution is 1080p60. devices with native AV1 can still see 4K.\n> - 🔧 Updated Gonerino and YT Headers\n> - Enable \"**Both** Download button placement\" under Downloading setting\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Versions **+21.25.5 and newer** are **not recommended** right now.  \n> - Extra tweaks that are bundled with main tweak are currently unstable on newer versions.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.24.3_5.2.2.ipa",
-          "size": 129031075,
-          "minOSVersion": "16.0",
-          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytl-ipa5",
-          "source": "github",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "YouTubePlus_21.24.3_5.2.2.ipa",
-              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.24.3_5.2.2.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 129031075,
-              "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba",
-              "downloads": 577,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            }
-          ],
-          "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba",
-          "downloads": 577
         },
-        {
-          "version": "20.21.6",
-          "date": "2026-09-10",
-          "localizedDescription": "YouTube 20.21.6 | YouTubePlus_20.21.6_5.2.2\n\n### iOS15+ build, ENJOY!!\n\n**Cracked by** [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - VolumeBoostYT is not included. \n> - YTUHD has more options than latest releases. 4K60HDR full support.\n> - Updated Gonerino\n>\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino` `PleaseDontStopTheMusic`  \n\n> [!WARNING]\n> -  build may break in future when YT update backend.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa1/YouTubePlus_20.21.6_5.2.2.ipa",
-          "size": 115566999,
-          "minOSVersion": "15.0",
-          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytl-ipa1",
-          "source": "github",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "YouTubePlus_20.21.6_5.2.2.ipa",
-              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa1/YouTubePlus_20.21.6_5.2.2.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 115566999,
-              "sha256": "9b97fdef5a336ef784621efa8f6afa8e30eff6dbe414a4924ef8020409628355",
-              "downloads": 13,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            }
-          ],
-          "sha256": "9b97fdef5a336ef784621efa8f6afa8e30eff6dbe414a4924ef8020409628355",
-          "downloads": 13
-        },
-        {
-          "version": "19.20.2",
-          "date": "2026-09-10",
-          "localizedDescription": "YouTube 19.20.2 | YouTubePlus_19.20.2_5.2.2\n\n### iOS14+ build, ENJOY!!\n\n**Cracked by** [zarzelworkshop](https://t.me/zarzelworkshop)\n\n> [!NOTE]\n> - VolumeBoostYT, Gonerino and YTweaks are not included. \n> - YTUHD has more options than latest releases. 4K60HDR full support.\n> - Full reinstall is recommended if you're downgrading from YT v21 to v19. \n>\n> - - -\n> #### Extra Tweaks: \n> - `YouPip` `YTUHD` `YTABConfig` `YouQuality` `YouChooseQuality` `YouGetCaption` `YTHoldForSpeed`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `PleaseDontStopTheMusic` \n\n> [!WARNING]\n> -  build may break in future when YT update backend.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa0/YouTubePlus_19.20.2_5.2.2.ipa",
-          "size": 106247621,
-          "minOSVersion": "14.0",
-          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytl-ipa0",
-          "source": "github",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "YouTubePlus_19.20.2_5.2.2.ipa",
-              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa0/YouTubePlus_19.20.2_5.2.2.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 106247621,
-              "sha256": "f77d827ff61a44fa9a995c5a2aaa0f97968aed7f254cba9d06761b23b70cf1b6",
-              "downloads": 8,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            }
-          ],
-          "sha256": "f77d827ff61a44fa9a995c5a2aaa0f97968aed7f254cba9d06761b23b70cf1b6",
-          "downloads": 8
-        }
-      ],
-      "screenshotURLs": [],
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.security.application-groups",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.declared-age-range",
-          "com.apple.developer.storekit.request-data",
-          "com.apple.developer.device-information.user-assigned-device-name",
-          "com.apple.developer.group-session",
-          "keychain-access-groups",
-          "com.apple.developer.networking.multicast",
-          "aps-environment",
-          "com.apple.developer.siri",
-          "com.apple.developer.networking.wifi-info"
-        ],
-        "privacy": {
-          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
-          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
-          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
-          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
-          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
-          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
-        }
-      },
-      "omnisource": {
-        "slug": "ytlite",
-        "status": "stable",
-        "featured": true,
-        "upstreamURL": "https://github.com/Dayanch96/YTLite",
-        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
-        "verification": {
-          "method": "github-release",
-          "publisher": "mrdrvt99/YouProEXTRA",
-          "codeSigned": false,
-          "checksumPublished": false
-        },
-        "compatibility": {
-          "minOSVersion": "16.0",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "Official project: dayanch96/YTLite ('YouTube Plus'). The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by mrdrvt99/YouProEXTRA. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 302",
-          "statusSince": "2026-09-07",
-          "lastUpdatedAt": "2026-09-09"
-        }
-      }
-    },
-    {
-      "name": "YTKACE",
-      "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "itzzace",
-      "subtitle": "YTKACE",
-      "localizedDescription": "YTKACE is a free, open-source YouTube enhancer and downloader for iOS. No ads, background playback, video and audio downloads, SponsorBlock, Picture in Picture, player gestures and deep interface customization.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
-      "tintColor": "FF0000",
-      "category": "photo-video",
-      "version": "21.35.3",
-      "versionDate": "2026-08-31",
-      "versionDescription": "YouTube 21.35.3 | YTKACE 0.9.2 | YTKACE_0.9.2_YouTube_21.35.3\n\nby @itzzace0\n\nWhat’s new:\n• Updated for YouTube 21.35.3\n• Added a save button to community post images, saved at full resolution\n• Added Posts to the tab bar, so it can be shown as a tab or set as the startup tab\n• Added a choice of where downloads are saved, between the YTKACE library, Photos, or asking each time\n• Added a custom hold speed with a slider from 0.25x to 5x, and the speed pill now shows the speed you set\n• Added a toggle to remove the ⋯ button from the action bar\n• Added a toggle to remove the row of buttons under the progress bar in fullscreen\n• Added a toggle to limit gestures to landscape only\n\nFixed:\n• Fixed the app freezing while saving large videos to Photos\n• Fixed tapping an image in the comments opening the share sheet\n• Fixed a crash when rotating the player\n• Fixed a crash when leaving the app while a message was on screen\n\nYouTube 21.35.3 requires iOS 17, so there are two IPAs:\n• `YTKACE_0.9.2_YouTube_21.35.3.ipa` for iOS 17 and newer\n• `YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa` for iOS 16",
-      "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
-      "size": 134278975,
-      "versions": [
-        {
-          "version": "21.35.3",
-          "date": "2026-08-31",
-          "localizedDescription": "YouTube 21.35.3 | YTKACE 0.9.2 | YTKACE_0.9.2_YouTube_21.35.3\n\nby @itzzace0\n\nWhat’s new:\n• Updated for YouTube 21.35.3\n• Added a save button to community post images, saved at full resolution\n• Added Posts to the tab bar, so it can be shown as a tab or set as the startup tab\n• Added a choice of where downloads are saved, between the YTKACE library, Photos, or asking each time\n• Added a custom hold speed with a slider from 0.25x to 5x, and the speed pill now shows the speed you set\n• Added a toggle to remove the ⋯ button from the action bar\n• Added a toggle to remove the row of buttons under the progress bar in fullscreen\n• Added a toggle to limit gestures to landscape only\n\nFixed:\n• Fixed the app freezing while saving large videos to Photos\n• Fixed tapping an image in the comments opening the share sheet\n• Fixed a crash when rotating the player\n• Fixed a crash when leaving the app while a message was on screen\n\nYouTube 21.35.3 requires iOS 17, so there are two IPAs:\n• `YTKACE_0.9.2_YouTube_21.35.3.ipa` for iOS 17 and newer\n• `YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa` for iOS 16",
-          "downloadURL": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
-          "size": 134278975,
-          "minOSVersion": "17.0",
-          "releaseUrl": "https://github.com/itzzace/ytkace/releases/tag/v0.9.2",
-          "source": "github",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "com.itzzace.ytkace_0.9.2_roothide.deb",
-              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/com.itzzace.ytkace_0.9.2_roothide.deb",
-              "platform": "linux",
-              "architecture": null,
-              "fileType": "DEB",
-              "size": 877834,
-              "sha256": "1021efd74bb20e6388f37fb13a12b0cfed08c275820bfc0d5843cdce9d38449a",
-              "downloads": 62,
-              "mimeType": "application/x-debian-package",
-              "installable": true
-            },
-            {
-              "filename": "com.itzzace.ytkace_0.9.2_rootless.deb",
-              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/com.itzzace.ytkace_0.9.2_rootless.deb",
-              "platform": "linux",
-              "architecture": null,
-              "fileType": "DEB",
-              "size": 878030,
-              "sha256": "43a8efa81448a66587106f449e128bf7a03d11a28e70c60f60925e19cbace38c",
-              "downloads": 96,
-              "mimeType": "application/x-debian-package",
-              "installable": true
-            },
-            {
-              "filename": "YTKACE_0.9.2_YouTube_21.35.3.ipa",
-              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_21.35.3.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 134278975,
-              "sha256": "ca8579d26a89d6b00009df92aa55d08571b0ceca7632eccbb5903c51e803adbd",
-              "downloads": 2255,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            },
-            {
-              "filename": "YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa",
-              "downloadUrl": "https://github.com/itzzace/ytkace/releases/download/v0.9.2/YTKACE_0.9.2_YouTube_iOS16_21.33.6.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 132496316,
-              "sha256": "261c9df7d96c0691cbe198d04bcfbca4e8ce1ccf081b022a6c064a0d0f500575",
-              "downloads": 275,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            }
-          ],
-          "sha256": "ca8579d26a89d6b00009df92aa55d08571b0ceca7632eccbb5903c51e803adbd",
-          "downloads": 2255
-        }
-      ],
-      "screenshotURLs": [],
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.security.application-groups",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.declared-age-range",
-          "com.apple.developer.storekit.request-data",
-          "com.apple.developer.device-information.user-assigned-device-name",
-          "com.apple.developer.group-session",
-          "keychain-access-groups",
-          "com.apple.developer.networking.multicast",
-          "aps-environment",
-          "com.apple.developer.siri",
-          "com.apple.developer.networking.wifi-info"
-        ],
-        "privacy": {
-          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
-          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
-          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
-          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
-          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
-          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
-        }
-      },
-      "omnisource": {
-        "slug": "ytkace",
-        "status": "stable",
-        "featured": false,
-        "upstreamURL": "https://github.com/itzzace/ytkace",
-        "sourceURL": "https://github.com/itzzace/ytkace",
-        "verification": {
-          "method": "github-release",
-          "publisher": "itzzace/ytkace",
-          "codeSigned": false,
-          "checksumPublished": false
-        },
-        "compatibility": {
-          "minOSVersion": "17.0",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "Tracks the official itzzace/ytkace releases. The published build follows the latest YouTube release and needs iOS 17 or newer; upstream also ships a separate iOS 16 IPA (YTKACE_<version>_YouTube_iOS16_<youtube>.ipa) on the same release page."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 302",
-          "statusSince": "2026-09-07",
-          "lastUpdatedAt": "2026-08-31"
-        }
-      }
-    },
-    {
-      "name": "YTKillerPlus",
-      "bundleIdentifier": "com.google.ios.youtube",
-      "developerName": "iKarwan",
-      "subtitle": "Advanced YouTube tweak with extensive controls",
-      "localizedDescription": "YTKillerPlus is an advanced feature-packed YouTube tweak by iKarwan. It offers comprehensive ad blocking, background playback, high-speed downloads, PiP, custom player actions, OLED dark theme, and granular privacy controls.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
-      "tintColor": "FF0000",
-      "category": "photo-video",
-      "version": "21.36.6",
-      "versionDate": "2026-09-09",
-      "versionDescription": "YouTube 21.36.6 | YTKillerPlus_21.36.6_6.1\n\n### Latest Release, ENJOY!!\n\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\n\n> [!NOTE]\n> - **Sidestore is no longer supported!!.**\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
-      "size": 142497148,
-      "versions": [
-        {
-          "version": "21.36.6",
-          "date": "2026-09-09",
-          "localizedDescription": "YouTube 21.36.6 | YTKillerPlus_21.36.6_6.1\n\n### Latest Release, ENJOY!!\n\n- **Cracked by** [u/lowiqentity](https://www.reddit.com/user/lowiqentity/)\n\n> [!NOTE]\n> - **Sidestore is no longer supported!!.**\n> - **YTUHD** is not included. 4K is available for A16+ devices.\n> - use **YTKACE** for downloading. dev intentionally broke download feature.\n> - - -\n> #### Extra Tweaks:\n> - `YouPip` `YTABConfig` `YouQuality` `YouChooseQuality`  `YouGetCaption` `YTHoldForSpeed` `YTNativeShare` `YTweaks`\n> -  `Return-YouTube-Dislikes` `DontEatMyContent` `Open in YouTube (Safari Extension)` `Gonerino`  `VolumeBoostYT` `PleaseDontStopTheMusic`\n\n> [!WARNING]\n> - Extra tweaks that are bundled may be unstable on newer versions.\n\n> [!WARNING]\n> - 21.34.3+ builds require iOS 17+ now.",
-          "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
-          "size": 142497148,
-          "minOSVersion": "17.0",
-          "releaseUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/tag/ytkp-ipa1",
-          "source": "github",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "YTKillerPlus_21.36.6_6.1.ipa",
-              "downloadUrl": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.36.6_6.1.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 142497148,
-              "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
-              "downloads": 61,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            }
-          ],
-          "sha256": "7157d2400f8597e98d5ac0223f35b81e18195d3b89737f1d40ce2c381f193e99",
-          "downloads": 61
-        }
-      ],
-      "screenshotURLs": [
-        "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/1.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/2.PNG",
-        "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/3.PNG"
-      ],
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.security.application-groups",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.declared-age-range",
-          "com.apple.developer.storekit.request-data",
-          "com.apple.developer.device-information.user-assigned-device-name",
-          "com.apple.developer.group-session",
-          "keychain-access-groups",
-          "com.apple.developer.networking.multicast",
-          "aps-environment",
-          "com.apple.developer.siri",
-          "com.apple.developer.networking.wifi-info"
-        ],
-        "privacy": {
-          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
-          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
-          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
-          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
-          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
-          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
-        }
-      },
-      "omnisource": {
-        "slug": "ytkp",
-        "status": "stable",
-        "featured": false,
-        "upstreamURL": "https://github.com/iKarwan/YTKillerPlus",
-        "sourceURL": "https://github.com/mrdrvt99/YouProEXTRA",
-        "verification": {
-          "method": "github-release",
-          "publisher": "mrdrvt99/YouProEXTRA",
-          "codeSigned": false,
-          "checksumPublished": false
-        },
-        "compatibility": {
-          "minOSVersion": "17.0",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "The developer's own AltStore source (repo.ikghd.me) has been unreachable, so this feed resolves from the ready-to-sideload community build of the official tweak at mrdrvt99/YouProEXTRA. YouTube 21.34+ requires iOS 17. Shares com.google.ios.youtube with the other YouTube mods: install one at a time."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 302",
-          "statusSince": "2026-09-07",
-          "lastUpdatedAt": "2026-09-09"
-        }
-      }
-    },
-    {
-      "name": "YTMusicUltimate",
-      "bundleIdentifier": "com.google.ios.youtubemusic",
-      "developerName": "dayanch96",
-      "subtitle": "Lightweight YouTube Music tweak",
-      "localizedDescription": "YTMusicUltimate is a lightweight enhancer for YouTube Music by Dayanch96. It unlocks background audio playback, removes in-app advertisements, enables premium audio streaming quality, and provides customizable player themes.",
-      "iconURL": "https://iamsmmh.github.io/OmniSource/assets/YouTubeMusic.webp",
-      "tintColor": "FF0000",
-      "category": "music",
-      "version": "9.36.1",
-      "versionDate": "2026-09-09",
-      "versionDescription": "YTMusicUltimate 9.36.1 | YTMusic 2.4.1 | YTMusicUltimate_9.36.1_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
-      "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa29/YTMusicUltimate_9.36.1_2.4.1.ipa",
-      "size": 104992686,
-      "versions": [
-        {
-          "version": "9.36.1",
-          "date": "2026-09-09",
-          "localizedDescription": "YTMusicUltimate 9.36.1 | YTMusic 2.4.1 | YTMusicUltimate_9.36.1_2.4.1\n\n> [!NOTE]\n> ### Extra tweaks:\n> - Return YouTubeMusic Dislikes\n> - YTMABConfig\n> - VolumeBoostYT\n- - -\n- YouMusicPiP is only available in custom build\n- iOS14+ build is available in releases page",
-          "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa29/YTMusicUltimate_9.36.1_2.4.1.ipa",
-          "size": 104992686,
-          "minOSVersion": "16.0",
-          "releaseUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/tag/ytmu-ipa29",
-          "source": "github",
-          "isPrerelease": false,
-          "isDraft": false,
-          "assets": [
-            {
-              "filename": "YTMusicUltimate_9.36.1_2.4.1.ipa",
-              "downloadUrl": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa29/YTMusicUltimate_9.36.1_2.4.1.ipa",
-              "platform": "ios",
-              "architecture": null,
-              "fileType": "IPA",
-              "size": 104992686,
-              "sha256": "c098eb3877d4e6526af83cfb1ff2e3eaa547c3e266dd01770a87acd2f9cf3944",
-              "downloads": 68,
-              "mimeType": "application/octet-stream",
-              "installable": true
-            }
-          ],
-          "sha256": "c098eb3877d4e6526af83cfb1ff2e3eaa547c3e266dd01770a87acd2f9cf3944",
-          "downloads": 68
-        }
-      ],
-      "screenshotURLs": [],
-      "appPermissions": {
-        "entitlements": [
-          "com.apple.security.application-groups",
-          "com.apple.developer.associated-domains",
-          "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
-          "com.apple.developer.storekit.request-data",
-          "keychain-access-groups",
-          "com.apple.developer.networking.multicast",
-          "com.apple.developer.networking.wifi-info"
-        ],
-        "privacy": {
-          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth headphones and audio devices.",
-          "NSLocalNetworkUsageDescription": "Used to discover and cast audio to devices on your local network."
-        }
-      },
-      "omnisource": {
-        "slug": "ytmusic",
-        "status": "stable",
-        "featured": true,
-        "upstreamURL": "https://github.com/Dayanch96/YTMusicUltimate",
-        "sourceURL": "https://github.com/mrdrvt99/YTMusicUltimate",
-        "verification": {
-          "method": "github-release",
-          "publisher": "mrdrvt99/YTMusicUltimate",
-          "codeSigned": false,
-          "checksumPublished": false
-        },
-        "compatibility": {
-          "minOSVersion": "16.0",
-          "maxOSVersion": null,
-          "devices": [
-            "iphone",
-            "ipad"
-          ],
-          "clients": [
-            "altstore",
-            "sidestore",
-            "feather",
-            "esign",
-            "livecontainer"
-          ],
-          "notes": "Official project: dayanch96/YTMusicUltimate. The upstream repo publishes the tweak as a .deb only; this source serves a ready-to-sideload IPA built from the official tweak by the mrdrvt99/YTMusicUltimate build fork. Shares com.google.ios.youtubemusic with MaxMusic: install one at a time."
-        },
-        "health": {
-          "downloadReachable": true,
-          "detail": "HTTP 302",
-          "statusSince": "2026-09-07",
-          "lastUpdatedAt": "2026-09-09"
-        }
+        "masterFeed": true
       }
     },
     {
@@ -9492,7 +8315,8 @@
           "detail": "HTTP 302",
           "statusSince": "2026-09-10",
           "lastUpdatedAt": "2026-09-02"
-        }
+        },
+        "masterFeed": true
       }
     }
   ],

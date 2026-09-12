@@ -11,7 +11,7 @@ and every deletion here must go through `src/omnisource/site.py` first.
 
 - Byte-identical generated JSON groups: **104**
 - Identical-function clones across `src/` + `scripts/`: **1**
-- Compressed `.gz` mirror files committed: **120** (625 KiB)
+- Compressed `.gz` mirror files committed: **120** (600 KiB)
 
 ## Byte-identical JSON mirror groups
 
@@ -133,6 +133,6 @@ fails CI if any copy ever drifts, so mirrors can never diverge silently.
 
 ## Compression mirrors
 
-- 120 `.gz` files contribute 625 KiB to the checkout.
+- 120 `.gz` files contribute 600 KiB to the checkout.
 - `.br` twins are only written when the optional `brotli` package is installed at build time (CI opt-in).
 - Recommendation: keep; the mirrors are smaller than the savings they provide to clients, and GitHub Pages serves them with `Content-Encoding` for gzip-capable consumers.
