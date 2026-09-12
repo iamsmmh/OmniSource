@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PlayTorrio — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/playtorrio.json</link>
+    <description>Release feed for PlayTorrio within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Sep 2026 14:49:11 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/playtorrio.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>PlayTorrio v1.1.5</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/playtorrio.json</link>
+      <guid isPermaLink="false">playtorrio-1.1.5</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[PlayTorrio 1.1.5 | PlayTorrio-iOS
+
+Downloader enhancements
+Fixed streaming issues
+Fixed audiobook generation
+Added fullscreen mode
+UI Fixes]]></description>
+      <enclosure url="https://github.com/ayman708-UX/PlayTorrioV3/releases/download/v1.1.5/PlayTorrio-iOS.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

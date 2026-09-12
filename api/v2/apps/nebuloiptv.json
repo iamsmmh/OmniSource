@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12",
+  "feedVersion": "248817408e19",
+  "app": {
+    "id": "nebuloiptv",
+    "name": "Nebulo",
+    "developer": "mongoosemonke504",
+    "subtitle": "IPTV player",
+    "bundleIdentifier": "personal.Nebulo-V2-3",
+    "version": "2.3",
+    "versionDate": "2026-02-01",
+    "description": "Nebulo is a clean IPTV player for iOS with a built-in sports score center. Load your M3U playlists and watch live channels with a simple, focused interface.",
+    "shortDescription": "IPTV player",
+    "category": "photo-video",
+    "tags": [
+      "photo-video"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Nebulo.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/mongoosemonke504/NebuloIPTV/releases/download/V2.3/Nebulo_V2.3.ipa",
+    "size": 56279112,
+    "source": "mongoosemonke504/NebuloIPTV",
+    "sourceURL": "https://github.com/mongoosemonke504/NebuloIPTV",
+    "checksum": "e174466ca2d39a1229e3b52a4d3ef28b1dcd74cc4f8438777bf3526c3eef88e4",
+    "checksumPublished": false,
+    "minOSVersion": "26.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/nebuloiptv/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/nebuloiptv.json",
+    "health": {
+      "reachable": true,
+      "detail": "not probed",
+      "updatedAt": "2026-02-01"
+    }
+  },
+  "newest": {
+    "version": "2.3",
+    "date": "2026-02-01",
+    "downloadURL": "https://github.com/mongoosemonke504/NebuloIPTV/releases/download/V2.3/Nebulo_V2.3.ipa",
+    "size": 56279112,
+    "sha256": "e174466ca2d39a1229e3b52a4d3ef28b1dcd74cc4f8438777bf3526c3eef88e4"
+  },
+  "versions": [
+    {
+      "version": "2.3",
+      "date": "2026-02-01",
+      "downloadURL": "https://github.com/mongoosemonke504/NebuloIPTV/releases/download/V2.3/Nebulo_V2.3.ipa",
+      "size": 56279112,
+      "sha256": "e174466ca2d39a1229e3b52a4d3ef28b1dcd74cc4f8438777bf3526c3eef88e4"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

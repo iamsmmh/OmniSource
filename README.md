@@ -9,7 +9,7 @@ One source URL for **AltStore · SideStore · Feather · ESign · LiveContainer*
 
 <!-- omnisource:stats:start -->
 
-**77** apps · **61** upstream sources · **76** verified · **1** community verified · **77/77** downloads online · last sync **2026-09-11**.
+**94** apps · **78** upstream sources · **93** verified · **1** community verified · **94/94** downloads online · last sync **2026-09-12**.
 
 <!-- omnisource:stats:end -->
 
@@ -72,13 +72,13 @@ status (`Verified / Community Verified / Maintained / Warning / Inactive / Depre
 
 <!-- omnisource:catalog:start -->
 
-Browse the full **77-app catalog** on the [website](https://iamsmmh.github.io/OmniSource/#catalog) — all installable with one tap.
+Browse the full **94-app catalog** on the [website](https://iamsmmh.github.io/OmniSource/#catalog) — all installable with one tap.
 
 - Combined feeds: [`feeds/apps.json`](./feeds/apps.json), [`feeds/feed.xml`](./feeds/feed.xml), [`Catalog.json`](./Catalog.json)
 - Substrate docs: [`feeds/sources.json`](./feeds/sources.json), [`feeds/discovery.json`](./feeds/discovery.json), [`feeds/health.json`](./feeds/health.json), [`feeds/updates.json`](./feeds/updates.json), [`feeds/verification.json`](./feeds/verification.json)
 - Per-app feeds at `feeds/<slug>.json` and `feeds/<slug>.xml` — e.g. [`feeds/esign.json`](./feeds/esign.json)
 
-_Last sync 2026-09-11 · 77/77 downloads reachable._
+_Last sync 2026-09-12 · 94/94 downloads reachable._
 
 <!-- omnisource:catalog:end -->
 

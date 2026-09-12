@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-09-12",
-  "count": 61,
+  "count": 78,
   "feed": {
     "name": "OmniSource",
     "identifier": "com.iamsmmh.omnisource",
@@ -287,6 +287,35 @@
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/maxtube.json"
     },
     {
+      "id": "ayman708-UX/PlayTorrioV3",
+      "source": "ayman708-UX/PlayTorrioV3",
+      "type": "github",
+      "homepage": "https://github.com/ayman708-UX/PlayTorrioV3",
+      "sourceURL": "https://github.com/ayman708-UX/PlayTorrioV3",
+      "publisher": "ayman708-UX/PlayTorrioV3",
+      "apps": [
+        {
+          "slug": "playtorrio",
+          "name": "PlayTorrio",
+          "version": "1.1.5"
+        }
+      ],
+      "slug": "ayman708-ux-playtorriov3",
+      "page": "/sources/ayman708-ux-playtorriov3/",
+      "appSlugs": [
+        "playtorrio"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-09-09",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/playtorrio.json"
+    },
+    {
       "id": "BandarHL/BHTwitter",
       "source": "BandarHL/BHTwitter",
       "type": "github",
@@ -374,6 +403,35 @@
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/bluewallet.json"
     },
     {
+      "id": "chatsen/chatsen",
+      "source": "chatsen/chatsen",
+      "type": "github",
+      "homepage": "https://github.com/chatsen/chatsen",
+      "sourceURL": "https://github.com/chatsen/chatsen",
+      "publisher": "chatsen/chatsen",
+      "apps": [
+        {
+          "slug": "chatsen",
+          "name": "Chatsen",
+          "version": "1.1.107"
+        }
+      ],
+      "slug": "chatsen-chatsen",
+      "page": "/sources/chatsen-chatsen/",
+      "appSlugs": [
+        "chatsen"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-08-12",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/chatsen.json"
+    },
+    {
       "id": "claration/Feather",
       "source": "claration/Feather",
       "type": "github",
@@ -401,6 +459,35 @@
       "updateFrequencyDays": null,
       "lastUpdate": "2026-07-05",
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/feather.json"
+    },
+    {
+      "id": "clquwu/Cosmos-Music-Player",
+      "source": "clquwu/Cosmos-Music-Player",
+      "type": "github",
+      "homepage": "https://github.com/clquwu/Cosmos-Music-Player",
+      "sourceURL": "https://github.com/clquwu/Cosmos-Music-Player",
+      "publisher": "clquwu/Cosmos-Music-Player",
+      "apps": [
+        {
+          "slug": "cosmos",
+          "name": "Cosmos Music Player",
+          "version": "1.2.5"
+        }
+      ],
+      "slug": "clquwu-cosmos-music-player",
+      "page": "/sources/clquwu-cosmos-music-player/",
+      "appSlugs": [
+        "cosmos"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-09-08",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/cosmos.json"
     },
     {
       "id": "cogwheel0/conduit",
@@ -459,6 +546,35 @@
       "updateFrequencyDays": null,
       "lastUpdate": "2026-08-22",
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/uyouenhanced.json"
+    },
+    {
+      "id": "cranci1/AnimeGen",
+      "source": "cranci1/AnimeGen",
+      "type": "github",
+      "homepage": "https://github.com/cranci1/AnimeGen",
+      "sourceURL": "https://github.com/cranci1/AnimeGen",
+      "publisher": "cranci1/AnimeGen",
+      "apps": [
+        {
+          "slug": "animegen",
+          "name": "AnimeGen",
+          "version": "3.0.0"
+        }
+      ],
+      "slug": "cranci1-animegen",
+      "page": "/sources/cranci1-animegen/",
+      "appSlugs": [
+        "animegen"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 71.4,
+      "status": "Inactive",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2025-03-04",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/animegen.json"
     },
     {
       "id": "cranci1/Sora",
@@ -546,6 +662,35 @@
       "updateFrequencyDays": null,
       "lastUpdate": "2026-06-02",
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/streamyfin.json"
+    },
+    {
+      "id": "G-Ray/pikatorrent",
+      "source": "G-Ray/pikatorrent",
+      "type": "github",
+      "homepage": "https://github.com/G-Ray/pikatorrent",
+      "sourceURL": "https://github.com/G-Ray/pikatorrent",
+      "publisher": "G-Ray/pikatorrent",
+      "apps": [
+        {
+          "slug": "pikatorrent",
+          "name": "PikaTorrent",
+          "version": "0.15.0"
+        }
+      ],
+      "slug": "g-ray-pikatorrent",
+      "page": "/sources/g-ray-pikatorrent/",
+      "appSlugs": [
+        "pikatorrent"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-01-11",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/pikatorrent.json"
     },
     {
       "id": "GopeedLab/gopeed",
@@ -756,6 +901,64 @@
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/jellify.json"
     },
     {
+      "id": "JellyBookOrg/JellyBook",
+      "source": "JellyBookOrg/JellyBook",
+      "type": "github",
+      "homepage": "https://github.com/JellyBookOrg/JellyBook",
+      "sourceURL": "https://github.com/JellyBookOrg/JellyBook",
+      "publisher": "JellyBookOrg/JellyBook",
+      "apps": [
+        {
+          "slug": "jellybook",
+          "name": "JellyBook",
+          "version": "1.4.1"
+        }
+      ],
+      "slug": "jellybookorg-jellybook",
+      "page": "/sources/jellybookorg-jellybook/",
+      "appSlugs": [
+        "jellybook"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-09-09",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/jellybook.json"
+    },
+    {
+      "id": "kodjodevf/mangayomi",
+      "source": "kodjodevf/mangayomi",
+      "type": "github",
+      "homepage": "https://github.com/kodjodevf/mangayomi",
+      "sourceURL": "https://github.com/kodjodevf/mangayomi",
+      "publisher": "kodjodevf/mangayomi",
+      "apps": [
+        {
+          "slug": "mangayomi",
+          "name": "Mangayomi",
+          "version": "0.9.2"
+        }
+      ],
+      "slug": "kodjodevf-mangayomi",
+      "page": "/sources/kodjodevf-mangayomi/",
+      "appSlugs": [
+        "mangayomi"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-09-03",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/mangayomi.json"
+    },
+    {
       "id": "KRTirtho/spotube",
       "source": "KRTirtho/spotube",
       "type": "github",
@@ -901,6 +1104,64 @@
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/winston.json"
     },
     {
+      "id": "lotusprey/otraku",
+      "source": "lotusprey/otraku",
+      "type": "github",
+      "homepage": "https://github.com/lotusprey/otraku",
+      "sourceURL": "https://github.com/lotusprey/otraku",
+      "publisher": "lotusprey/otraku",
+      "apps": [
+        {
+          "slug": "otraku",
+          "name": "Otraku",
+          "version": "1.12.1"
+        }
+      ],
+      "slug": "lotusprey-otraku",
+      "page": "/sources/lotusprey-otraku/",
+      "appSlugs": [
+        "otraku"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-03-20",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/otraku.json"
+    },
+    {
+      "id": "Lrdsnow/PureKFD",
+      "source": "Lrdsnow/PureKFD",
+      "type": "github",
+      "homepage": "https://github.com/Lrdsnow/PureKFD",
+      "sourceURL": "https://github.com/Lrdsnow/PureKFD",
+      "publisher": "Lrdsnow/PureKFD",
+      "apps": [
+        {
+          "slug": "purekfd",
+          "name": "PureKFD",
+          "version": "6.0.2"
+        }
+      ],
+      "slug": "lrdsnow-purekfd",
+      "page": "/sources/lrdsnow-purekfd/",
+      "appSlugs": [
+        "purekfd"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 71.4,
+      "status": "Inactive",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2024-11-23",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/purekfd.json"
+    },
+    {
       "id": "Manic-EMU/ManicEMU",
       "source": "Manic-EMU/ManicEMU",
       "type": "github",
@@ -988,6 +1249,35 @@
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/qbitcontrol.json"
     },
     {
+      "id": "mineek/MuffinStore",
+      "source": "mineek/MuffinStore",
+      "type": "github",
+      "homepage": "https://github.com/mineek/MuffinStore",
+      "sourceURL": "https://github.com/mineek/MuffinStore",
+      "publisher": "mineek/MuffinStore",
+      "apps": [
+        {
+          "slug": "muffinstore",
+          "name": "MuffinStore",
+          "version": "1.3"
+        }
+      ],
+      "slug": "mineek-muffinstore",
+      "page": "/sources/mineek-muffinstore/",
+      "appSlugs": [
+        "muffinstore"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-07-12",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/muffinstore.json"
+    },
+    {
       "id": "mineek/Serotonin",
       "source": "mineek/Serotonin",
       "type": "github",
@@ -1015,6 +1305,93 @@
       "updateFrequencyDays": null,
       "lastUpdate": "2024-01-17",
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/serotonin.json"
+    },
+    {
+      "id": "moffatman/chan",
+      "source": "moffatman/chan",
+      "type": "github",
+      "homepage": "https://github.com/moffatman/chan",
+      "sourceURL": "https://github.com/moffatman/chan",
+      "publisher": "moffatman/chan",
+      "apps": [
+        {
+          "slug": "chan",
+          "name": "Chan",
+          "version": "1.2.9"
+        }
+      ],
+      "slug": "moffatman-chan",
+      "page": "/sources/moffatman-chan/",
+      "appSlugs": [
+        "chan"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-08-28",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/chan.json"
+    },
+    {
+      "id": "monal-im/Monal",
+      "source": "monal-im/Monal",
+      "type": "github",
+      "homepage": "https://github.com/monal-im/Monal",
+      "sourceURL": "https://github.com/monal-im/Monal",
+      "publisher": "monal-im/Monal",
+      "apps": [
+        {
+          "slug": "monal",
+          "name": "Monal",
+          "version": "6.4.21"
+        }
+      ],
+      "slug": "monal-im-monal",
+      "page": "/sources/monal-im-monal/",
+      "appSlugs": [
+        "monal"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-05-27",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/monal.json"
+    },
+    {
+      "id": "mongoosemonke504/NebuloIPTV",
+      "source": "mongoosemonke504/NebuloIPTV",
+      "type": "github",
+      "homepage": "https://github.com/mongoosemonke504/NebuloIPTV",
+      "sourceURL": "https://github.com/mongoosemonke504/NebuloIPTV",
+      "publisher": "mongoosemonke504/NebuloIPTV",
+      "apps": [
+        {
+          "slug": "nebuloiptv",
+          "name": "Nebulo",
+          "version": "2.3"
+        }
+      ],
+      "slug": "mongoosemonke504-nebuloiptv",
+      "page": "/sources/mongoosemonke504-nebuloiptv/",
+      "appSlugs": [
+        "nebuloiptv"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-02-01",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/nebuloiptv.json"
     },
     {
       "id": "mrdrvt99/YouProEXTRA",
@@ -1121,6 +1498,35 @@
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/neofreebird.json"
     },
     {
+      "id": "Nyasami/Ksign",
+      "source": "Nyasami/Ksign",
+      "type": "github",
+      "homepage": "https://github.com/Nyasami/Ksign",
+      "sourceURL": "https://github.com/Nyasami/Ksign",
+      "publisher": "Nyasami/Ksign",
+      "apps": [
+        {
+          "slug": "ksign",
+          "name": "Ksign",
+          "version": "1.6"
+        }
+      ],
+      "slug": "nyasami-ksign",
+      "page": "/sources/nyasami-ksign/",
+      "appSlugs": [
+        "ksign"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-05-24",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/ksign.json"
+    },
+    {
       "id": "OatmealDome/dolphin-ios",
       "source": "OatmealDome/dolphin-ios",
       "type": "github",
@@ -1206,6 +1612,35 @@
       "updateFrequencyDays": null,
       "lastUpdate": "2023-09-23",
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/taurine.json"
+    },
+    {
+      "id": "oolxg/Hanami",
+      "source": "oolxg/Hanami",
+      "type": "github",
+      "homepage": "https://github.com/oolxg/Hanami",
+      "sourceURL": "https://github.com/oolxg/Hanami",
+      "publisher": "oolxg/Hanami",
+      "apps": [
+        {
+          "slug": "hanami",
+          "name": "Hanami",
+          "version": "0.28.2"
+        }
+      ],
+      "slug": "oolxg-hanami",
+      "page": "/sources/oolxg-hanami/",
+      "appSlugs": [
+        "hanami"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 71.4,
+      "status": "Inactive",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2024-06-03",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/hanami.json"
     },
     {
       "id": "opa334/Dopamine",
@@ -1421,7 +1856,7 @@
         {
           "slug": "dopamine-roothide",
           "name": "Dopamine (RootHide)",
-          "version": "2.4.9.26"
+          "version": "2.4.9.27"
         }
       ],
       "slug": "roothide-dopamine2-roothide",
@@ -1436,7 +1871,7 @@
       "status": "Community Verified",
       "level": "RELIABLE",
       "updateFrequencyDays": null,
-      "lastUpdate": "2026-09-07",
+      "lastUpdate": "2026-09-12",
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/dopamine-roothide.json"
     },
     {
@@ -1672,6 +2107,35 @@
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/stiknes.json"
     },
     {
+      "id": "thunder-app/thunder",
+      "source": "thunder-app/thunder",
+      "type": "github",
+      "homepage": "https://github.com/thunder-app/thunder",
+      "sourceURL": "https://github.com/thunder-app/thunder",
+      "publisher": "thunder-app/thunder",
+      "apps": [
+        {
+          "slug": "thunder",
+          "name": "Thunder",
+          "version": "0.8.6"
+        }
+      ],
+      "slug": "thunder-app-thunder",
+      "page": "/sources/thunder-app-thunder/",
+      "appSlugs": [
+        "thunder"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-01-07",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/thunder.json"
+    },
+    {
       "id": "utmapp/UTM",
       "source": "utmapp/UTM",
       "type": "github",
@@ -1846,6 +2310,35 @@
       "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/mame4ios.json"
     },
     {
+      "id": "yuroyami/syncplay-mobile",
+      "source": "yuroyami/syncplay-mobile",
+      "type": "github",
+      "homepage": "https://github.com/yuroyami/syncplay-mobile",
+      "sourceURL": "https://github.com/yuroyami/syncplay-mobile",
+      "publisher": "yuroyami/syncplay-mobile",
+      "apps": [
+        {
+          "slug": "synkplay",
+          "name": "Synkplay",
+          "version": "0.24.0"
+        }
+      ],
+      "slug": "yuroyami-syncplay-mobile",
+      "page": "/sources/yuroyami-syncplay-mobile/",
+      "appSlugs": [
+        "synkplay"
+      ],
+      "appCount": 1,
+      "verifiedApps": 1,
+      "healthScore": 77.0,
+      "score": 73.9,
+      "status": "Community Verified",
+      "level": "RELIABLE",
+      "updateFrequencyDays": null,
+      "lastUpdate": "2026-09-06",
+      "feedURL": "https://iamsmmh.github.io/OmniSource/feeds/synkplay.json"
+    },
+    {
       "id": "ZeusLN/zeus",
       "source": "ZeusLN/zeus",
       "type": "github",
@@ -1905,8 +2398,8 @@
     }
   ],
   "statuses": {
-    "Community Verified": 49,
-    "Inactive": 6,
+    "Community Verified": 63,
+    "Inactive": 9,
     "Deprecated": 5,
     "Warning": 1
   }

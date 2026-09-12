@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12",
+  "feedVersion": "248817408e19",
+  "app": {
+    "id": "jellybook",
+    "name": "JellyBook",
+    "developer": "JellyBook",
+    "subtitle": "Jellyfin e-book reader",
+    "bundleIdentifier": "com.KaraWilson.JellyBook",
+    "version": "1.4.1",
+    "versionDate": "2026-09-09",
+    "description": "JellyBook is a nice way to read books and comics from Jellyfin. It streams EPUB, CBZ and PDF titles from your Jellyfin server to your iPhone or iPad with a clean reading interface.",
+    "shortDescription": "Jellyfin e-book reader",
+    "category": "other",
+    "tags": [
+      "other"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/JellyBook.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/JellyBookOrg/JellyBook/releases/download/v1.4.1/JellyBook-Release.ipa",
+    "size": 14640159,
+    "source": "JellyBookOrg/JellyBook",
+    "sourceURL": "https://github.com/JellyBookOrg/JellyBook",
+    "checksum": "7c33defdbb852b2e91b79740afb5360bd4a7f8713abcb6a5f0a3fe7ad83dacfd",
+    "checksumPublished": false,
+    "minOSVersion": "15.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/jellybook/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/jellybook.json",
+    "health": {
+      "reachable": true,
+      "detail": "not probed",
+      "updatedAt": "2026-09-09"
+    }
+  },
+  "newest": {
+    "version": "1.4.1",
+    "date": "2026-09-09",
+    "downloadURL": "https://github.com/JellyBookOrg/JellyBook/releases/download/v1.4.1/JellyBook-Release.ipa",
+    "size": 14640159,
+    "sha256": "7c33defdbb852b2e91b79740afb5360bd4a7f8713abcb6a5f0a3fe7ad83dacfd"
+  },
+  "versions": [
+    {
+      "version": "1.4.1",
+      "date": "2026-09-09",
+      "downloadURL": "https://github.com/JellyBookOrg/JellyBook/releases/download/v1.4.1/JellyBook-Release.ipa",
+      "size": 14640159,
+      "sha256": "7c33defdbb852b2e91b79740afb5360bd4a7f8713abcb6a5f0a3fe7ad83dacfd"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

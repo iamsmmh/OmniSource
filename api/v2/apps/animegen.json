@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12",
+  "feedVersion": "248817408e19",
+  "app": {
+    "id": "animegen",
+    "name": "AnimeGen",
+    "developer": "cranci1",
+    "subtitle": "Anime art generator",
+    "bundleIdentifier": "me.cranci.AnimeGen",
+    "version": "3.0.0",
+    "versionDate": "2025-03-04",
+    "description": "AnimeGen is a simple way to enjoy anime art. Generate anime-style images on your device using local AI models, with a gallery and save-to-photos workflow.",
+    "shortDescription": "Anime art generator",
+    "category": "photo-video",
+    "tags": [
+      "photo-video"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/AnimeGen.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/cranci1/AnimeGen/releases/download/v3.0.0/AnimeGen.ipa",
+    "size": 3026218,
+    "source": "cranci1/AnimeGen",
+    "sourceURL": "https://github.com/cranci1/AnimeGen",
+    "checksum": null,
+    "checksumPublished": false,
+    "minOSVersion": "15.2",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/animegen/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/animegen.json",
+    "health": {
+      "reachable": true,
+      "detail": "not probed",
+      "updatedAt": "2025-03-04"
+    }
+  },
+  "newest": {
+    "version": "3.0.0",
+    "date": "2025-03-04",
+    "downloadURL": "https://github.com/cranci1/AnimeGen/releases/download/v3.0.0/AnimeGen.ipa",
+    "size": 3026218,
+    "sha256": null
+  },
+  "versions": [
+    {
+      "version": "3.0.0",
+      "date": "2025-03-04",
+      "downloadURL": "https://github.com/cranci1/AnimeGen/releases/download/v3.0.0/AnimeGen.ipa",
+      "size": 3026218,
+      "sha256": null
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

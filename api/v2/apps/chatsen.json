@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12",
+  "feedVersion": "248817408e19",
+  "app": {
+    "id": "chatsen",
+    "name": "Chatsen",
+    "developer": "chatsen",
+    "subtitle": "Twitch chat client",
+    "bundleIdentifier": "com.chatsen.chatsen",
+    "version": "1.1.107",
+    "versionDate": "2026-08-12",
+    "description": "Chatsen is a cross-platform Twitch chat application with third-party addon support. Follow chat in real time with support for BetterTTV, FrankerFaceZ and 7TV emotes and themes.",
+    "shortDescription": "Twitch chat client",
+    "category": "social",
+    "tags": [
+      "social"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Chatsen.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/chatsen/chatsen/releases/download/1.1.107%2B107/iOS.ipa",
+    "size": 10009593,
+    "source": "chatsen/chatsen",
+    "sourceURL": "https://github.com/chatsen/chatsen",
+    "checksum": "b258794c5f34317eb9f725081537f3f8cbeadb0f950dba25d058f23640ff2bcd",
+    "checksumPublished": false,
+    "minOSVersion": "13.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/chatsen/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/chatsen.json",
+    "health": {
+      "reachable": true,
+      "detail": "not probed",
+      "updatedAt": "2026-08-12"
+    }
+  },
+  "newest": {
+    "version": "1.1.107",
+    "date": "2026-08-12",
+    "downloadURL": "https://github.com/chatsen/chatsen/releases/download/1.1.107%2B107/iOS.ipa",
+    "size": 10009593,
+    "sha256": "b258794c5f34317eb9f725081537f3f8cbeadb0f950dba25d058f23640ff2bcd"
+  },
+  "versions": [
+    {
+      "version": "1.1.107",
+      "date": "2026-08-12",
+      "downloadURL": "https://github.com/chatsen/chatsen/releases/download/1.1.107%2B107/iOS.ipa",
+      "size": 10009593,
+      "sha256": "b258794c5f34317eb9f725081537f3f8cbeadb0f950dba25d058f23640ff2bcd"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

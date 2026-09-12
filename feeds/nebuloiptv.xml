@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nebulo — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/nebuloiptv.json</link>
+    <description>Release feed for Nebulo within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Sep 2026 14:49:11 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/nebuloiptv.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Nebulo v2.3</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/nebuloiptv.json</link>
+      <guid isPermaLink="false">nebuloiptv-2.3</guid>
+      <pubDate>Sun, 01 Feb 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Nebulo 2.3 | Nebulo_V2.3
+
+### **What's New in V2.3?**
+
+### **If the main ipa does is unable to be verified, try the backup it will work with users using signing apps**
+
+### **Major Improvements**
+- **Expanded Sports Section:** New categories for soccer and more sports added
+       - Settings to customize sports tabs, press and hold on a game for more options, language and resolution tags added, improved the searching for game.
+
+- **Stronger recording abilities:** The user can now record in the background when the phone is off, can now watch another stream while one is recording, recording will start again if app is force quit, replaced the recording function with one that can fill in any gaps leading to a much more stable experience.
+
+- **Fixed KSPlayer bug:** KSPlayer is much more reliable now with some bug fixes.
+
+- **Increased Multi-view reliability:** Multi-view should now work smoother with bug fixed. Made the layout much cleaner and more optimized
+
+### **UI/UX Improvements**
+- **Significantly Quicker Startup:** After logging in for the first time, loading is much faster and the epg updates either manually or once every 24 hours.
+
+- **Smart Progress Bar:** Progress bar is accurate after the first time it loads.
+
+- **Settings Upgrades:** 
+       - Added a "System Up to Date" confirmation for manual update checks.
+       - Consolidated EPG loading status into the main overlay.
+       - Added a "System Up to Date" confirmation for manual update checks.
+
+### **Bug Fixes and Stability**
+- **EPG Parsing:** EPG parsing is faster and more efficient.
+- **KSPlayer Stalling:** KSPlayer would stop working after 30 seconds but it is much more stable now
+- **Memory Optimization:** Fixed memory leaks in the recording manager that would mess things up and crash app.
+
+### **Under the Hood**
+- **Update Checker Connected to GitHub:** Checks github to see if any updates have been released.
+- **FFmpegKit:** Switched to a more stable and up to date version of FFmpegKit which helped to fix KSPlayer's stability issues.]]></description>
+      <enclosure url="https://github.com/mongoosemonke504/NebuloIPTV/releases/download/V2.3/Nebulo_V2.3.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

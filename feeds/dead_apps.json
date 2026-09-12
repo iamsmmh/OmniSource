@@ -6,14 +6,25 @@
     "stale": 180,
     "archived": 365
   },
-  "count": 33,
+  "count": 43,
   "summary": {
-    "warning": 7,
-    "stale": 6,
-    "archived": 11,
-    "critical": 9
+    "warning": 10,
+    "stale": 9,
+    "archived": 14,
+    "critical": 10
   },
   "deadApps": [
+    {
+      "slug": "dopamine-roothide",
+      "name": "Dopamine (RootHide)",
+      "lastUpdate": "2026-09-12",
+      "daysSinceUpdate": 0,
+      "classification": "critical",
+      "removedReleases": 1,
+      "reasons": [
+        "removed upstream release(s): 2.4.9.26"
+      ]
+    },
     {
       "slug": "iqface",
       "name": "iQFace",
@@ -114,6 +125,17 @@
       ]
     },
     {
+      "slug": "animegen",
+      "name": "AnimeGen",
+      "lastUpdate": "2025-03-04",
+      "daysSinceUpdate": 557,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 557 days (threshold 365)"
+      ]
+    },
+    {
       "slug": "bhtwitter",
       "name": "BHTwitter",
       "lastUpdate": "2025-05-13",
@@ -133,6 +155,17 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 793 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "hanami",
+      "name": "Hanami",
+      "lastUpdate": "2024-06-03",
+      "daysSinceUpdate": 831,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 831 days (threshold 365)"
       ]
     },
     {
@@ -166,6 +199,17 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 1257 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "purekfd",
+      "name": "PureKFD",
+      "lastUpdate": "2024-11-23",
+      "daysSinceUpdate": 658,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 658 days (threshold 365)"
       ]
     },
     {
@@ -235,6 +279,17 @@
       ]
     },
     {
+      "slug": "nebuloiptv",
+      "name": "Nebulo",
+      "lastUpdate": "2026-02-01",
+      "daysSinceUpdate": 223,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 223 days (threshold 180)"
+      ]
+    },
+    {
       "slug": "neofreebird",
       "name": "NeoFreeBird",
       "lastUpdate": "2025-11-03",
@@ -243,6 +298,17 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 313 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "pikatorrent",
+      "name": "PikaTorrent",
+      "lastUpdate": "2026-01-11",
+      "daysSinceUpdate": 244,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 244 days (threshold 180)"
       ]
     },
     {
@@ -290,6 +356,17 @@
       ]
     },
     {
+      "slug": "thunder",
+      "name": "Thunder",
+      "lastUpdate": "2026-01-07",
+      "daysSinceUpdate": 248,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 248 days (threshold 180)"
+      ]
+    },
+    {
       "slug": "utm",
       "name": "UTM",
       "lastUpdate": "2026-01-03T17:51:54Z",
@@ -331,6 +408,39 @@
       "removedReleases": 0,
       "reasons": [
         "no update for 178 days (threshold 90)"
+      ]
+    },
+    {
+      "slug": "ksign",
+      "name": "Ksign",
+      "lastUpdate": "2026-05-24",
+      "daysSinceUpdate": 111,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 111 days (threshold 90)"
+      ]
+    },
+    {
+      "slug": "monal",
+      "name": "Monal",
+      "lastUpdate": "2026-05-27",
+      "daysSinceUpdate": 108,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 108 days (threshold 90)"
+      ]
+    },
+    {
+      "slug": "otraku",
+      "name": "Otraku",
+      "lastUpdate": "2026-03-20",
+      "daysSinceUpdate": 176,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 176 days (threshold 90)"
       ]
     },
     {
@@ -1035,11 +1145,13 @@
     {
       "slug": "dopamine-roothide",
       "name": "Dopamine (RootHide)",
-      "lastUpdate": "2026-09-07",
-      "daysSinceUpdate": 5,
-      "classification": "healthy",
-      "removedReleases": 0,
-      "reasons": []
+      "lastUpdate": "2026-09-12",
+      "daysSinceUpdate": 0,
+      "classification": "critical",
+      "removedReleases": 1,
+      "reasons": [
+        "removed upstream release(s): 2.4.9.26"
+      ]
     },
     {
       "slug": "bootstrap",
@@ -1137,6 +1249,177 @@
       "reasons": [
         "no update for 96 days (threshold 90)"
       ]
+    },
+    {
+      "slug": "pikatorrent",
+      "name": "PikaTorrent",
+      "lastUpdate": "2026-01-11",
+      "daysSinceUpdate": 244,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 244 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "thunder",
+      "name": "Thunder",
+      "lastUpdate": "2026-01-07",
+      "daysSinceUpdate": 248,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 248 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "chan",
+      "name": "Chan",
+      "lastUpdate": "2026-08-28",
+      "daysSinceUpdate": 15,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "monal",
+      "name": "Monal",
+      "lastUpdate": "2026-05-27",
+      "daysSinceUpdate": 108,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 108 days (threshold 90)"
+      ]
+    },
+    {
+      "slug": "jellybook",
+      "name": "JellyBook",
+      "lastUpdate": "2026-09-09",
+      "daysSinceUpdate": 3,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "hanami",
+      "name": "Hanami",
+      "lastUpdate": "2024-06-03",
+      "daysSinceUpdate": 831,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 831 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "otraku",
+      "name": "Otraku",
+      "lastUpdate": "2026-03-20",
+      "daysSinceUpdate": 176,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 176 days (threshold 90)"
+      ]
+    },
+    {
+      "slug": "purekfd",
+      "name": "PureKFD",
+      "lastUpdate": "2024-11-23",
+      "daysSinceUpdate": 658,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 658 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "synkplay",
+      "name": "Synkplay",
+      "lastUpdate": "2026-09-06",
+      "daysSinceUpdate": 6,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "ksign",
+      "name": "Ksign",
+      "lastUpdate": "2026-05-24",
+      "daysSinceUpdate": 111,
+      "classification": "warning",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 111 days (threshold 90)"
+      ]
+    },
+    {
+      "slug": "cosmos",
+      "name": "Cosmos Music Player",
+      "lastUpdate": "2026-09-08",
+      "daysSinceUpdate": 4,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "animegen",
+      "name": "AnimeGen",
+      "lastUpdate": "2025-03-04",
+      "daysSinceUpdate": 557,
+      "classification": "archived",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 557 days (threshold 365)"
+      ]
+    },
+    {
+      "slug": "muffinstore",
+      "name": "MuffinStore",
+      "lastUpdate": "2026-07-12",
+      "daysSinceUpdate": 62,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "playtorrio",
+      "name": "PlayTorrio",
+      "lastUpdate": "2026-09-09",
+      "daysSinceUpdate": 3,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "mangayomi",
+      "name": "Mangayomi",
+      "lastUpdate": "2026-09-03",
+      "daysSinceUpdate": 9,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
+    },
+    {
+      "slug": "nebuloiptv",
+      "name": "Nebulo",
+      "lastUpdate": "2026-02-01",
+      "daysSinceUpdate": 223,
+      "classification": "stale",
+      "removedReleases": 0,
+      "reasons": [
+        "no update for 223 days (threshold 180)"
+      ]
+    },
+    {
+      "slug": "chatsen",
+      "name": "Chatsen",
+      "lastUpdate": "2026-08-12",
+      "daysSinceUpdate": 31,
+      "classification": "healthy",
+      "removedReleases": 0,
+      "reasons": []
     }
   ]
 }

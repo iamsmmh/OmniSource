@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "generatedAt": "2026-09-12",
   "totals": {
-    "apps": 77,
-    "pass": 50,
-    "warn": 27,
+    "apps": 94,
+    "pass": 64,
+    "warn": 30,
     "fail": 0,
     "rejected": 0
   },
@@ -27,6 +27,24 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "animegen",
+      "name": "AnimeGen",
+      "asset": {
+        "sha256": null,
+        "size": 3026218,
+        "releaseId": "3.0.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/cranci1/AnimeGen/releases/download/v3.0.0/AnimeGen.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "anxreader",
@@ -137,6 +155,42 @@
       "status": "pass"
     },
     {
+      "slug": "chan",
+      "name": "Chan",
+      "asset": {
+        "sha256": "1a6ad6d5a90025ae81c7b77fa0039d37d4e06c6684989cd47fe526d14682f8e8",
+        "size": 32710607,
+        "releaseId": "1.2.9",
+        "source": "github",
+        "downloadUrl": "https://github.com/moffatman/chan/releases/download/v1.2.9%2B124-forked-engine/Chance.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "chatsen",
+      "name": "Chatsen",
+      "asset": {
+        "sha256": "b258794c5f34317eb9f725081537f3f8cbeadb0f950dba25d058f23640ff2bcd",
+        "size": 10009593,
+        "releaseId": "1.1.107",
+        "source": "github",
+        "downloadUrl": "https://github.com/chatsen/chatsen/releases/download/1.1.107%2B107/iOS.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "conduit",
       "name": "Conduit",
       "asset": {
@@ -145,6 +199,24 @@
         "releaseId": "4.1.4",
         "source": "github",
         "downloadUrl": "https://github.com/cogwheel0/conduit/releases/download/v4.1.4/conduit.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "cosmos",
+      "name": "Cosmos Music Player",
+      "asset": {
+        "sha256": "e8e2862e1b3a900e96569faf87c9c3e02d90b2c5b52ad854f6710d0ea36c91e9",
+        "size": 12056869,
+        "releaseId": "1.2.5",
+        "source": "github",
+        "downloadUrl": "https://github.com/clquwu/Cosmos-Music-Player/releases/download/1.2.5/Cosmos-Music-Player.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -212,11 +284,11 @@
       "slug": "dopamine-roothide",
       "name": "Dopamine (RootHide)",
       "asset": {
-        "sha256": "38d02ec6167772011e4f58aaf31566c7be4db86302962aeedc601f9b4795cc1f",
-        "size": 54859511,
-        "releaseId": "2.4.9.26",
+        "sha256": "761b668671b7724a856b9103a919f13e60a554a91ef74f0b32b90aa7385e045e",
+        "size": 54863273,
+        "releaseId": "2.4.9.27",
         "source": "github",
-        "downloadUrl": "https://github.com/roothide/Dopamine2-roothide/releases/download/26/Dopamine.ipa"
+        "downloadUrl": "https://github.com/roothide/Dopamine2-roothide/releases/download/27/Dopamine.ipa"
       },
       "checks": {
         "sizePositive": true,
@@ -297,6 +369,24 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "hanami",
+      "name": "Hanami",
+      "asset": {
+        "sha256": null,
+        "size": 6305751,
+        "releaseId": "0.28.2",
+        "source": "github",
+        "downloadUrl": "https://github.com/oolxg/Hanami/releases/download/v0.28.2/Hanami.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "ime",
@@ -425,6 +515,42 @@
       "status": "pass"
     },
     {
+      "slug": "jellybook",
+      "name": "JellyBook",
+      "asset": {
+        "sha256": "7c33defdbb852b2e91b79740afb5360bd4a7f8713abcb6a5f0a3fe7ad83dacfd",
+        "size": 14640159,
+        "releaseId": "1.4.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/JellyBookOrg/JellyBook/releases/download/v1.4.1/JellyBook-Release.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "ksign",
+      "name": "Ksign",
+      "asset": {
+        "sha256": "57fbab135bdcd584faf095099f0913df634ce17081bc164ce82f3d91e3978483",
+        "size": 16394645,
+        "releaseId": "1.6",
+        "source": "github",
+        "downloadUrl": "https://github.com/Nyasami/Ksign/releases/download/v1.6/Ksign.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "livecontainer",
       "name": "LiveContainer",
       "asset": {
@@ -459,6 +585,24 @@
         "reachable": true
       },
       "status": "warn"
+    },
+    {
+      "slug": "mangayomi",
+      "name": "Mangayomi",
+      "asset": {
+        "sha256": "840470f2146171d6cccb6c9d9a310fe0686b8012dd07369d7dd1b669ffab56c6",
+        "size": 114010180,
+        "releaseId": "0.9.2",
+        "source": "github",
+        "downloadUrl": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.2/Mangayomi-v0.9.2-ios.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
     },
     {
       "slug": "manicemu",
@@ -551,6 +695,24 @@
       "status": "warn"
     },
     {
+      "slug": "monal",
+      "name": "Monal",
+      "asset": {
+        "sha256": "73c1d4e53ed347094ef2240574f8006b740ef33b896869bcdf94b4c099ce2d50",
+        "size": 38349660,
+        "releaseId": "6.4.21",
+        "source": "github",
+        "downloadUrl": "https://github.com/monal-im/Monal/releases/download/Build_iOS_1092/Monal.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "msgplusx",
       "name": "MSGPlusX",
       "asset": {
@@ -567,6 +729,42 @@
         "reachable": true
       },
       "status": "warn"
+    },
+    {
+      "slug": "muffinstore",
+      "name": "MuffinStore",
+      "asset": {
+        "sha256": "af8afb433ce4822a2307b09fa4ad0b0f12c3ca5d8876f9e58ab2f65dd9783a00",
+        "size": 126091,
+        "releaseId": "1.3",
+        "source": "github",
+        "downloadUrl": "https://github.com/mineek/MuffinStore/releases/download/1.3/MuffinStore_v1.3.tipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "nebuloiptv",
+      "name": "Nebulo",
+      "asset": {
+        "sha256": "e174466ca2d39a1229e3b52a4d3ef28b1dcd74cc4f8438777bf3526c3eef88e4",
+        "size": 56279112,
+        "releaseId": "2.3",
+        "source": "github",
+        "downloadUrl": "https://github.com/mongoosemonke504/NebuloIPTV/releases/download/V2.3/Nebulo_V2.3.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
     },
     {
       "slug": "neofreebird",
@@ -623,6 +821,60 @@
       "status": "warn"
     },
     {
+      "slug": "otraku",
+      "name": "Otraku",
+      "asset": {
+        "sha256": "bc01541c26bf6fd8bbc3fdec7c989bf8d5cff60e041b7a1b3cc63573b5f68b15",
+        "size": 9414861,
+        "releaseId": "1.12.1",
+        "source": "github",
+        "downloadUrl": "https://github.com/lotusprey/otraku/releases/download/v.1.12.1/Otraku-v.1.12.1-ios15%2B.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "pikatorrent",
+      "name": "PikaTorrent",
+      "asset": {
+        "sha256": "0c02f3de181df9c77a03bfa8326449feddf66bc1b1508f65ffde6b86eb72cd89",
+        "size": 38053348,
+        "releaseId": "0.15.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/G-Ray/pikatorrent/releases/download/v0.15.0/PikaTorrent-v0.15.0-ios.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
+      "slug": "playtorrio",
+      "name": "PlayTorrio",
+      "asset": {
+        "sha256": "3d6568b6f872fe089cdc3a8692f187abab004e178555bc861a3d6c6c5623aeda",
+        "size": 48421258,
+        "releaseId": "1.1.5",
+        "source": "github",
+        "downloadUrl": "https://github.com/ayman708-UX/PlayTorrioV3/releases/download/v1.1.5/PlayTorrio-iOS.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "ppsspp",
       "name": "PPSSPP",
       "asset": {
@@ -657,6 +909,24 @@
         "reachable": true
       },
       "status": "pass"
+    },
+    {
+      "slug": "purekfd",
+      "name": "PureKFD",
+      "asset": {
+        "sha256": null,
+        "size": 10806164,
+        "releaseId": "6.0.2",
+        "source": "github",
+        "downloadUrl": "https://github.com/Lrdsnow/PureKFD/releases/download/6.0.2/PureKFD.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "warn"
     },
     {
       "slug": "qbitconnect",
@@ -1019,6 +1289,24 @@
       "status": "warn"
     },
     {
+      "slug": "synkplay",
+      "name": "Synkplay",
+      "asset": {
+        "sha256": "44c7f63bf911ee4f0495226551df91cebf6b1c46bf7a81bbe319454bcb613e52",
+        "size": 89476842,
+        "releaseId": "0.24.0",
+        "source": "github",
+        "downloadUrl": "https://github.com/yuroyami/syncplay-mobile/releases/download/v0.24.0/synkplay-0.24.0-ios.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
+    },
+    {
       "slug": "taurine",
       "name": "Taurine",
       "asset": {
@@ -1071,6 +1359,24 @@
         "reachable": true
       },
       "status": "warn"
+    },
+    {
+      "slug": "thunder",
+      "name": "Thunder",
+      "asset": {
+        "sha256": "d5f28944d00224afc600ce8a34bdcb8503c380d5b0ec891d98ef71dec4e8541d",
+        "size": 17830940,
+        "releaseId": "0.8.6",
+        "source": "github",
+        "downloadUrl": "https://github.com/thunder-app/thunder/releases/download/0.8.6/thunder-v0.8.6.ipa"
+      },
+      "checks": {
+        "sizePositive": true,
+        "installable": true,
+        "digestFormat": true,
+        "reachable": true
+      },
+      "status": "pass"
     },
     {
       "slug": "ttkillerplus",

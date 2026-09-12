@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AnimeGen — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/animegen.json</link>
+    <description>Release feed for AnimeGen within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Sep 2026 14:49:11 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/animegen.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>AnimeGen v3.0.0</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/animegen.json</link>
+      <guid isPermaLink="false">animegen-3.0.0</guid>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 +0000</pubDate>
+      <description><![CDATA[AnimeGen 3.0.0 | AnimeGen
+
+# Finally AnimeGen v3.0.0. is here!
+
+Took me a bit but i finally recoded the app completely. No new sources but they were all improved a lot. 
+Some sources got removed since they were not working at lot for a lot of time.
+
+The UI now is more simple and made to work all on the bottom of the screen.
+The app size is now 3 times smaller. The only real issue anyone could find is that it cant save .gif images yet.
+
+You can either sideload the ipa or install AnimeGen via [TestFlight](https://testflight.apple.com/join/jqx2hEkN)
+
+> [!Important]
+> The NSFW option has been removed and it will **never return back**]]></description>
+      <enclosure url="https://github.com/cranci1/AnimeGen/releases/download/v3.0.0/AnimeGen.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

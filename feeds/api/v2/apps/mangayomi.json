@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12",
+  "feedVersion": "248817408e19",
+  "app": {
+    "id": "mangayomi",
+    "name": "Mangayomi",
+    "developer": "kodjodevf",
+    "subtitle": "Manga, novel & anime reader",
+    "bundleIdentifier": "com.kodjodevf.mangayomi",
+    "version": "0.9.2",
+    "versionDate": "2026-09-03",
+    "description": "Mangayomi is a free, open-source app for reading manga and novels and watching anime, available on Android, iOS, macOS, Linux and Windows. It supports extensions for a wide range of sources.",
+    "shortDescription": "Manga, novel & anime reader",
+    "category": "other",
+    "tags": [
+      "other"
+    ],
+    "icon": "https://iamsmmh.github.io/OmniSource/assets/Mangayomi.webp",
+    "screenshots": [],
+    "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.2/Mangayomi-v0.9.2-ios.ipa",
+    "size": 114010180,
+    "source": "kodjodevf/mangayomi",
+    "sourceURL": "https://github.com/kodjodevf/mangayomi",
+    "checksum": "840470f2146171d6cccb6c9d9a310fe0686b8012dd07369d7dd1b669ffab56c6",
+    "checksumPublished": false,
+    "minOSVersion": "15.0",
+    "status": "stable",
+    "featured": false,
+    "pageURL": "https://iamsmmh.github.io/OmniSource/apps/mangayomi/",
+    "feedURL": "https://iamsmmh.github.io/OmniSource/mangayomi.json",
+    "health": {
+      "reachable": true,
+      "detail": "not probed",
+      "updatedAt": "2026-09-03"
+    }
+  },
+  "newest": {
+    "version": "0.9.2",
+    "date": "2026-09-03",
+    "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.2/Mangayomi-v0.9.2-ios.ipa",
+    "size": 114010180,
+    "sha256": "840470f2146171d6cccb6c9d9a310fe0686b8012dd07369d7dd1b669ffab56c6"
+  },
+  "versions": [
+    {
+      "version": "0.9.2",
+      "date": "2026-09-03",
+      "downloadURL": "https://github.com/kodjodevf/mangayomi/releases/download/v0.9.2/Mangayomi-v0.9.2-ios.ipa",
+      "size": 114010180,
+      "sha256": "840470f2146171d6cccb6c9d9a310fe0686b8012dd07369d7dd1b669ffab56c6"
+    }
+  ],
+  "verification": {
+    "status": "VERIFIED",
+    "level": "VERIFIED",
+    "method": "github-release"
+  }
+}

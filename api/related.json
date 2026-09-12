@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generatedAt": "2026-09-12",
-  "count": 77,
+  "count": 94,
   "weights": {
     "bundle": 0.55,
     "category": 0.2,
@@ -56,6 +56,19 @@
         "developer": "anultravioletaurora",
         "bundleId": "com.cosmonautical.jellify",
         "version": "1.2.10",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "cosmos",
+        "name": "Cosmos Music Player",
+        "category": "music",
+        "developer": "clquwu",
+        "bundleId": "dev.clq.Cosmos-Music-Player",
+        "version": "1.2.5",
         "score": 0.2333,
         "reasons": [
           "Same category (music)",
@@ -720,6 +733,19 @@
         ]
       },
       {
+        "slug": "cosmos",
+        "name": "Cosmos Music Player",
+        "category": "music",
+        "developer": "clquwu",
+        "bundleId": "dev.clq.Cosmos-Music-Player",
+        "version": "1.2.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
         "slug": "ytlite",
         "name": "YouTubePlus",
         "category": "photo-video",
@@ -780,6 +806,19 @@
         "developer": "anultravioletaurora",
         "bundleId": "com.cosmonautical.jellify",
         "version": "1.2.10",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "cosmos",
+        "name": "Cosmos Music Player",
+        "category": "music",
+        "developer": "clquwu",
+        "bundleId": "dev.clq.Cosmos-Music-Player",
+        "version": "1.2.5",
         "score": 0.2333,
         "reasons": [
           "Same category (music)",
@@ -1030,12 +1069,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -1097,6 +1136,19 @@
         ]
       },
       {
+        "slug": "thunder",
+        "name": "Thunder",
+        "category": "social",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
         "slug": "threadsaver",
         "name": "ThreadSaver",
         "category": "social",
@@ -1108,22 +1160,22 @@
           "Same category (social)",
           "Shared tags: social"
         ]
-      },
-      {
-        "slug": "telegram-mxgram",
-        "name": "Telegram MxGram",
-        "category": "social",
-        "developer": "m1ronx1412 & IPA Vault",
-        "bundleId": "ph.telegra.Telegraph",
-        "version": "12.9.3",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (social)",
-          "Shared tags: social"
-        ]
       }
     ],
     "itorrent": [
+      {
+        "slug": "pikatorrent",
+        "name": "PikaTorrent",
+        "category": "networking",
+        "developer": "G-Ray",
+        "bundleId": "com.pikatorrent.PikaTorrent",
+        "version": "0.15.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (networking)",
+          "Shared tags: networking"
+        ]
+      },
       {
         "slug": "gopeed",
         "name": "Gopeed",
@@ -1476,6 +1528,58 @@
       }
     ],
     "aidoku": [
+      {
+        "slug": "otraku",
+        "name": "Otraku",
+        "category": "other",
+        "developer": "lotusprey",
+        "bundleId": "com.otraku.app",
+        "version": "1.12.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "mangayomi",
+        "name": "Mangayomi",
+        "category": "other",
+        "developer": "kodjodevf",
+        "bundleId": "com.kodjodevf.mangayomi",
+        "version": "0.9.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "jellybook",
+        "name": "JellyBook",
+        "category": "other",
+        "developer": "JellyBook",
+        "bundleId": "com.KaraWilson.JellyBook",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "hanami",
+        "name": "Hanami",
+        "category": "other",
+        "developer": "oolxg",
+        "bundleId": "moe.mkpwnz.Hanami",
+        "version": "0.28.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
       {
         "slug": "anymex",
         "name": "AnymeX",
@@ -1942,6 +2046,19 @@
           "Same category (music)",
           "Shared tags: music"
         ]
+      },
+      {
+        "slug": "cosmos",
+        "name": "Cosmos Music Player",
+        "category": "music",
+        "developer": "clquwu",
+        "bundleId": "dev.clq.Cosmos-Music-Player",
+        "version": "1.2.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
       }
     ],
     "jellify": [
@@ -1991,6 +2108,19 @@
         "developer": "Mark02-2012",
         "bundleId": "com.google.ios.youtubemusic",
         "version": "9.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "cosmos",
+        "name": "Cosmos Music Player",
+        "category": "music",
+        "developer": "clquwu",
+        "bundleId": "dev.clq.Cosmos-Music-Player",
+        "version": "1.2.5",
         "score": 0.2333,
         "reasons": [
           "Same category (music)",
@@ -2212,12 +2342,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -2225,12 +2355,12 @@
         ]
       },
       {
-        "slug": "telegram-mxgram",
-        "name": "Telegram MxGram",
+        "slug": "threadsaver",
+        "name": "ThreadSaver",
         "category": "social",
-        "developer": "m1ronx1412 & IPA Vault",
-        "bundleId": "ph.telegra.Telegraph",
-        "version": "12.9.3",
+        "developer": "swiftleopard & IPA Vault",
+        "bundleId": "com.burbn.barcelona",
+        "version": "446.1",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -2465,12 +2595,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3187,12 +3317,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3200,12 +3330,12 @@
         ]
       },
       {
-        "slug": "telegram-mxgram",
-        "name": "Telegram MxGram",
+        "slug": "threadsaver",
+        "name": "ThreadSaver",
         "category": "social",
-        "developer": "m1ronx1412 & IPA Vault",
-        "bundleId": "ph.telegra.Telegraph",
-        "version": "12.9.3",
+        "developer": "swiftleopard & IPA Vault",
+        "bundleId": "com.burbn.barcelona",
+        "version": "446.1",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3457,6 +3587,58 @@
     ],
     "anymex": [
       {
+        "slug": "otraku",
+        "name": "Otraku",
+        "category": "other",
+        "developer": "lotusprey",
+        "bundleId": "com.otraku.app",
+        "version": "1.12.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "mangayomi",
+        "name": "Mangayomi",
+        "category": "other",
+        "developer": "kodjodevf",
+        "bundleId": "com.kodjodevf.mangayomi",
+        "version": "0.9.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "jellybook",
+        "name": "JellyBook",
+        "category": "other",
+        "developer": "JellyBook",
+        "bundleId": "com.KaraWilson.JellyBook",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "hanami",
+        "name": "Hanami",
+        "category": "other",
+        "developer": "oolxg",
+        "bundleId": "moe.mkpwnz.Hanami",
+        "version": "0.28.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
         "slug": "aidoku",
         "name": "Aidoku",
         "category": "other",
@@ -3617,12 +3799,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3777,12 +3959,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -3857,12 +4039,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -4019,12 +4201,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -4181,12 +4363,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -4343,12 +4525,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -4423,12 +4605,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -4503,12 +4685,12 @@
         ]
       },
       {
-        "slug": "threadsaver",
-        "name": "ThreadSaver",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "swiftleopard & IPA Vault",
-        "bundleId": "com.burbn.barcelona",
-        "version": "446.1",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -4583,12 +4765,12 @@
         ]
       },
       {
-        "slug": "telegram-mxgram",
-        "name": "Telegram MxGram",
+        "slug": "thunder",
+        "name": "Thunder",
         "category": "social",
-        "developer": "m1ronx1412 & IPA Vault",
-        "bundleId": "ph.telegra.Telegraph",
-        "version": "12.9.3",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
         "score": 0.2333,
         "reasons": [
           "Same category (social)",
@@ -5092,7 +5274,7 @@
         "category": "utilities",
         "developer": "roothide",
         "bundleId": "com.opa334.Dopamine-roothide",
-        "version": "2.4.9.26",
+        "version": "2.4.9.27",
         "score": 0.3833,
         "reasons": [
           "Same category (utilities)",
@@ -5168,6 +5350,20 @@
     ],
     "serotonin": [
       {
+        "slug": "muffinstore",
+        "name": "MuffinStore",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "dev.mineek.muffinstore",
+        "version": "1.3",
+        "score": 0.3833,
+        "reasons": [
+          "Same category (utilities)",
+          "Same developer (mineek)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
         "slug": "zeus",
         "name": "Zeus",
         "category": "utilities",
@@ -5226,19 +5422,6 @@
         "developer": "SideStore Team",
         "bundleId": "com.SideStore.SideStore",
         "version": "0.6.4",
-        "score": 0.2333,
-        "reasons": [
-          "Same category (utilities)",
-          "Shared tags: utilities"
-        ]
-      },
-      {
-        "slug": "saber",
-        "name": "Saber",
-        "category": "utilities",
-        "developer": "Adil Hanney",
-        "bundleId": "com.adilhanney.saber",
-        "version": "1.36.1",
         "score": 0.2333,
         "reasons": [
           "Same category (utilities)",
@@ -5570,6 +5753,19 @@
     ],
     "gopeed": [
       {
+        "slug": "pikatorrent",
+        "name": "PikaTorrent",
+        "category": "networking",
+        "developer": "G-Ray",
+        "bundleId": "com.pikatorrent.PikaTorrent",
+        "version": "0.15.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (networking)",
+          "Shared tags: networking"
+        ]
+      },
+      {
         "slug": "itorrent",
         "name": "iTorrent",
         "category": "networking",
@@ -5740,6 +5936,1250 @@
         "reasons": [
           "Same category (games)",
           "Shared tags: games"
+        ]
+      }
+    ],
+    "pikatorrent": [
+      {
+        "slug": "itorrent",
+        "name": "iTorrent",
+        "category": "networking",
+        "developer": "XITRIX",
+        "bundleId": "com.xitrix.iTorrent2",
+        "version": "2.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (networking)",
+          "Shared tags: networking"
+        ]
+      },
+      {
+        "slug": "gopeed",
+        "name": "Gopeed",
+        "category": "networking",
+        "developer": "GopeedLab",
+        "bundleId": "com.gopeed.gopeed",
+        "version": "1.9.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (networking)",
+          "Shared tags: networking"
+        ]
+      }
+    ],
+    "thunder": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "turrit-mxgram",
+        "name": "Turrit MxGram",
+        "category": "social",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "com.seastar.turrit",
+        "version": "1.5.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "threadsaver",
+        "name": "ThreadSaver",
+        "category": "social",
+        "developer": "swiftleopard & IPA Vault",
+        "bundleId": "com.burbn.barcelona",
+        "version": "446.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "chan": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "turrit-mxgram",
+        "name": "Turrit MxGram",
+        "category": "social",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "com.seastar.turrit",
+        "version": "1.5.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "thunder",
+        "name": "Thunder",
+        "category": "social",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "monal": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "turrit-mxgram",
+        "name": "Turrit MxGram",
+        "category": "social",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "com.seastar.turrit",
+        "version": "1.5.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "thunder",
+        "name": "Thunder",
+        "category": "social",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      }
+    ],
+    "jellybook": [
+      {
+        "slug": "otraku",
+        "name": "Otraku",
+        "category": "other",
+        "developer": "lotusprey",
+        "bundleId": "com.otraku.app",
+        "version": "1.12.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "mangayomi",
+        "name": "Mangayomi",
+        "category": "other",
+        "developer": "kodjodevf",
+        "bundleId": "com.kodjodevf.mangayomi",
+        "version": "0.9.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "hanami",
+        "name": "Hanami",
+        "category": "other",
+        "developer": "oolxg",
+        "bundleId": "moe.mkpwnz.Hanami",
+        "version": "0.28.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "anymex",
+        "name": "AnymeX",
+        "category": "other",
+        "developer": "RyanYuuki",
+        "bundleId": "com.ryan.anymex",
+        "version": "3.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "aidoku",
+        "name": "Aidoku",
+        "category": "other",
+        "developer": "Skitty",
+        "bundleId": "app.aidoku.Aidoku",
+        "version": "0.9",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      }
+    ],
+    "hanami": [
+      {
+        "slug": "otraku",
+        "name": "Otraku",
+        "category": "other",
+        "developer": "lotusprey",
+        "bundleId": "com.otraku.app",
+        "version": "1.12.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "mangayomi",
+        "name": "Mangayomi",
+        "category": "other",
+        "developer": "kodjodevf",
+        "bundleId": "com.kodjodevf.mangayomi",
+        "version": "0.9.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "jellybook",
+        "name": "JellyBook",
+        "category": "other",
+        "developer": "JellyBook",
+        "bundleId": "com.KaraWilson.JellyBook",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "anymex",
+        "name": "AnymeX",
+        "category": "other",
+        "developer": "RyanYuuki",
+        "bundleId": "com.ryan.anymex",
+        "version": "3.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "aidoku",
+        "name": "Aidoku",
+        "category": "other",
+        "developer": "Skitty",
+        "bundleId": "app.aidoku.Aidoku",
+        "version": "0.9",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      }
+    ],
+    "otraku": [
+      {
+        "slug": "mangayomi",
+        "name": "Mangayomi",
+        "category": "other",
+        "developer": "kodjodevf",
+        "bundleId": "com.kodjodevf.mangayomi",
+        "version": "0.9.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "jellybook",
+        "name": "JellyBook",
+        "category": "other",
+        "developer": "JellyBook",
+        "bundleId": "com.KaraWilson.JellyBook",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "hanami",
+        "name": "Hanami",
+        "category": "other",
+        "developer": "oolxg",
+        "bundleId": "moe.mkpwnz.Hanami",
+        "version": "0.28.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "anymex",
+        "name": "AnymeX",
+        "category": "other",
+        "developer": "RyanYuuki",
+        "bundleId": "com.ryan.anymex",
+        "version": "3.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "aidoku",
+        "name": "Aidoku",
+        "category": "other",
+        "developer": "Skitty",
+        "bundleId": "app.aidoku.Aidoku",
+        "version": "0.9",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      }
+    ],
+    "purekfd": [
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "synkplay": [
+      {
+        "slug": "ytkp",
+        "name": "YTKillerPlus",
+        "category": "photo-video",
+        "developer": "iKarwan",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytkace",
+        "name": "YTKACE",
+        "category": "photo-video",
+        "developer": "itzzace",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.35.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytlite",
+        "name": "YouTubePlus",
+        "category": "photo-video",
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.24.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youpro",
+        "name": "YouPro",
+        "category": "photo-video",
+        "developer": "alibusut",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youmod",
+        "name": "YouMod",
+        "category": "photo-video",
+        "developer": "Tonwalter888",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "yattee",
+        "name": "Yattee",
+        "category": "photo-video",
+        "developer": "Yattee",
+        "bundleId": "stream.yattee.app",
+        "version": "1.5.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      }
+    ],
+    "ksign": [
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "cosmos": [
+      {
+        "slug": "ytmusic",
+        "name": "YTMusicUltimate",
+        "category": "music",
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtubemusic",
+        "version": "9.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "spotube",
+        "name": "Spotube",
+        "category": "music",
+        "developer": "KRTirtho",
+        "bundleId": "oss.krtirtho.spotube.stable",
+        "version": "5.1.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "spotiflac",
+        "name": "SpotiFLAC Mobile",
+        "category": "music",
+        "developer": "zarzet",
+        "bundleId": "com.zarz.spotiflacAndroid",
+        "version": "4.9.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "maxmusic",
+        "name": "MaxMusic",
+        "category": "music",
+        "developer": "Mark02-2012",
+        "bundleId": "com.google.ios.youtubemusic",
+        "version": "9.36.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      },
+      {
+        "slug": "jellify",
+        "name": "Jellify",
+        "category": "music",
+        "developer": "anultravioletaurora",
+        "bundleId": "com.cosmonautical.jellify",
+        "version": "1.2.10",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (music)",
+          "Shared tags: music"
+        ]
+      }
+    ],
+    "animegen": [
+      {
+        "slug": "ytkp",
+        "name": "YTKillerPlus",
+        "category": "photo-video",
+        "developer": "iKarwan",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytkace",
+        "name": "YTKACE",
+        "category": "photo-video",
+        "developer": "itzzace",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.35.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytlite",
+        "name": "YouTubePlus",
+        "category": "photo-video",
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.24.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youpro",
+        "name": "YouPro",
+        "category": "photo-video",
+        "developer": "alibusut",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youmod",
+        "name": "YouMod",
+        "category": "photo-video",
+        "developer": "Tonwalter888",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "yattee",
+        "name": "Yattee",
+        "category": "photo-video",
+        "developer": "Yattee",
+        "bundleId": "stream.yattee.app",
+        "version": "1.5.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      }
+    ],
+    "muffinstore": [
+      {
+        "slug": "serotonin",
+        "name": "Serotonin",
+        "category": "utilities",
+        "developer": "mineek",
+        "bundleId": "pisshill.usprebooter",
+        "version": "1.2.1",
+        "score": 0.3833,
+        "reasons": [
+          "Same category (utilities)",
+          "Same developer (mineek)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "zeus",
+        "name": "Zeus",
+        "category": "utilities",
+        "developer": "Zeus LN",
+        "bundleId": "com.zeusln.zeus",
+        "version": "13.2.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "utm",
+        "name": "UTM",
+        "category": "utilities",
+        "developer": "UTM Team",
+        "bundleId": "com.utmapp.UTM",
+        "version": "4.7.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "unc0ver",
+        "name": "unc0ver",
+        "category": "utilities",
+        "developer": "pwn20wnd",
+        "bundleId": "science.xnu.undecimus",
+        "version": "5.2.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "taurine",
+        "name": "Taurine",
+        "category": "utilities",
+        "developer": "Odyssey Team (coolstar)",
+        "bundleId": "org.coolstar.taurine",
+        "version": "1.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      },
+      {
+        "slug": "sidestore",
+        "name": "SideStore",
+        "category": "utilities",
+        "developer": "SideStore Team",
+        "bundleId": "com.SideStore.SideStore",
+        "version": "0.6.4",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (utilities)",
+          "Shared tags: utilities"
+        ]
+      }
+    ],
+    "playtorrio": [
+      {
+        "slug": "ytkp",
+        "name": "YTKillerPlus",
+        "category": "photo-video",
+        "developer": "iKarwan",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytkace",
+        "name": "YTKACE",
+        "category": "photo-video",
+        "developer": "itzzace",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.35.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytlite",
+        "name": "YouTubePlus",
+        "category": "photo-video",
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.24.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youpro",
+        "name": "YouPro",
+        "category": "photo-video",
+        "developer": "alibusut",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youmod",
+        "name": "YouMod",
+        "category": "photo-video",
+        "developer": "Tonwalter888",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "yattee",
+        "name": "Yattee",
+        "category": "photo-video",
+        "developer": "Yattee",
+        "bundleId": "stream.yattee.app",
+        "version": "1.5.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      }
+    ],
+    "mangayomi": [
+      {
+        "slug": "otraku",
+        "name": "Otraku",
+        "category": "other",
+        "developer": "lotusprey",
+        "bundleId": "com.otraku.app",
+        "version": "1.12.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "jellybook",
+        "name": "JellyBook",
+        "category": "other",
+        "developer": "JellyBook",
+        "bundleId": "com.KaraWilson.JellyBook",
+        "version": "1.4.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "hanami",
+        "name": "Hanami",
+        "category": "other",
+        "developer": "oolxg",
+        "bundleId": "moe.mkpwnz.Hanami",
+        "version": "0.28.2",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "anymex",
+        "name": "AnymeX",
+        "category": "other",
+        "developer": "RyanYuuki",
+        "bundleId": "com.ryan.anymex",
+        "version": "3.1.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      },
+      {
+        "slug": "aidoku",
+        "name": "Aidoku",
+        "category": "other",
+        "developer": "Skitty",
+        "bundleId": "app.aidoku.Aidoku",
+        "version": "0.9",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (other)",
+          "Shared tags: other"
+        ]
+      }
+    ],
+    "nebuloiptv": [
+      {
+        "slug": "ytkp",
+        "name": "YTKillerPlus",
+        "category": "photo-video",
+        "developer": "iKarwan",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytkace",
+        "name": "YTKACE",
+        "category": "photo-video",
+        "developer": "itzzace",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.35.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "ytlite",
+        "name": "YouTubePlus",
+        "category": "photo-video",
+        "developer": "dayanch96",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.24.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youpro",
+        "name": "YouPro",
+        "category": "photo-video",
+        "developer": "alibusut",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "youmod",
+        "name": "YouMod",
+        "category": "photo-video",
+        "developer": "Tonwalter888",
+        "bundleId": "com.google.ios.youtube",
+        "version": "21.36.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      },
+      {
+        "slug": "yattee",
+        "name": "Yattee",
+        "category": "photo-video",
+        "developer": "Yattee",
+        "bundleId": "stream.yattee.app",
+        "version": "1.5.1",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (photo-video)",
+          "Shared tags: photo-video"
+        ]
+      }
+    ],
+    "chatsen": [
+      {
+        "slug": "winston",
+        "name": "Winston",
+        "category": "social",
+        "developer": "lo.cafe",
+        "bundleId": "lo.cafe.winston",
+        "version": "1.1.5",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "voyager",
+        "name": "Voyager",
+        "category": "social",
+        "developer": "aeharding",
+        "bundleId": "app.vger.voyager",
+        "version": "2.49.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "twitchadblock",
+        "name": "TwitchAdBlock",
+        "category": "social",
+        "developer": "gunnerkidBT (original by dayanch96)",
+        "bundleId": "tv.twitch",
+        "version": "30.7",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "turrit-mxgram",
+        "name": "Turrit MxGram",
+        "category": "social",
+        "developer": "m1ronx1412 & IPA Vault",
+        "bundleId": "com.seastar.turrit",
+        "version": "1.5.3",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "ttkillerplus",
+        "name": "TTKillerPlus",
+        "category": "social",
+        "developer": "iKarwan",
+        "bundleId": "com.zhiliaoapp.musically",
+        "version": "46.8.0",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
+        ]
+      },
+      {
+        "slug": "thunder",
+        "name": "Thunder",
+        "category": "social",
+        "developer": "Thunder App",
+        "bundleId": "com.hjiangsu.thunder",
+        "version": "0.8.6",
+        "score": 0.2333,
+        "reasons": [
+          "Same category (social)",
+          "Shared tags: social"
         ]
       }
     ]

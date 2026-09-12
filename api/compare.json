@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-09-12",
-  "count": 77,
+  "count": 94,
   "apps": [
     {
       "slug": "spotiflac",
@@ -1348,8 +1348,8 @@
       "name": "Dopamine (RootHide)",
       "icon": "assets/DopamineRootHide.webp",
       "category": "utilities",
-      "version": "2.4.9.26",
-      "releaseDate": "2026-09-07",
+      "version": "2.4.9.27",
+      "releaseDate": "2026-09-12",
       "source": "roothide/Dopamine2-roothide",
       "sourceURL": "https://github.com/roothide/Dopamine2-roothide",
       "verificationLevel": "VERIFIED",
@@ -1537,6 +1537,346 @@
       "downloadReachable": true,
       "compatibility": {
         "minOSVersion": "18.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "pikatorrent",
+      "name": "PikaTorrent",
+      "icon": "assets/PikaTorrent.webp",
+      "category": "networking",
+      "version": "0.15.0",
+      "releaseDate": "2026-01-11",
+      "source": "G-Ray/pikatorrent",
+      "sourceURL": "https://github.com/G-Ray/pikatorrent",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "12.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "thunder",
+      "name": "Thunder",
+      "icon": "assets/Thunder.webp",
+      "category": "social",
+      "version": "0.8.6",
+      "releaseDate": "2026-01-07",
+      "source": "thunder-app/thunder",
+      "sourceURL": "https://github.com/thunder-app/thunder",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "chan",
+      "name": "Chan",
+      "icon": "assets/Chan.webp",
+      "category": "social",
+      "version": "1.2.9",
+      "releaseDate": "2026-08-28",
+      "source": "moffatman/chan",
+      "sourceURL": "https://github.com/moffatman/chan",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "13.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "monal",
+      "name": "Monal",
+      "icon": "assets/Monal.webp",
+      "category": "social",
+      "version": "6.4.21",
+      "releaseDate": "2026-05-27",
+      "source": "monal-im/Monal",
+      "sourceURL": "https://github.com/monal-im/Monal",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "16.1",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "jellybook",
+      "name": "JellyBook",
+      "icon": "assets/JellyBook.webp",
+      "category": "other",
+      "version": "1.4.1",
+      "releaseDate": "2026-09-09",
+      "source": "JellyBookOrg/JellyBook",
+      "sourceURL": "https://github.com/JellyBookOrg/JellyBook",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "hanami",
+      "name": "Hanami",
+      "icon": "assets/Hanami.webp",
+      "category": "other",
+      "version": "0.28.2",
+      "releaseDate": "2024-06-03",
+      "source": "oolxg/Hanami",
+      "sourceURL": "https://github.com/oolxg/Hanami",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "otraku",
+      "name": "Otraku",
+      "icon": "assets/Otraku.webp",
+      "category": "other",
+      "version": "1.12.1",
+      "releaseDate": "2026-03-20",
+      "source": "lotusprey/otraku",
+      "sourceURL": "https://github.com/lotusprey/otraku",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "purekfd",
+      "name": "PureKFD",
+      "icon": "assets/PureKFD.webp",
+      "category": "utilities",
+      "version": "6.0.2",
+      "releaseDate": "2024-11-23",
+      "source": "Lrdsnow/PureKFD",
+      "sourceURL": "https://github.com/Lrdsnow/PureKFD",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "synkplay",
+      "name": "Synkplay",
+      "icon": "assets/Synkplay.webp",
+      "category": "photo-video",
+      "version": "0.24.0",
+      "releaseDate": "2026-09-06",
+      "source": "yuroyami/syncplay-mobile",
+      "sourceURL": "https://github.com/yuroyami/syncplay-mobile",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "14.1",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "ksign",
+      "name": "Ksign",
+      "icon": "assets/Ksign.webp",
+      "category": "utilities",
+      "version": "1.6",
+      "releaseDate": "2026-05-24",
+      "source": "Nyasami/Ksign",
+      "sourceURL": "https://github.com/Nyasami/Ksign",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "16.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "cosmos",
+      "name": "Cosmos Music Player",
+      "icon": "assets/Cosmos.webp",
+      "category": "music",
+      "version": "1.2.5",
+      "releaseDate": "2026-09-08",
+      "source": "clquwu/Cosmos-Music-Player",
+      "sourceURL": "https://github.com/clquwu/Cosmos-Music-Player",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "18.5",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "animegen",
+      "name": "AnimeGen",
+      "icon": "assets/AnimeGen.webp",
+      "category": "photo-video",
+      "version": "3.0.0",
+      "releaseDate": "2025-03-04",
+      "source": "cranci1/AnimeGen",
+      "sourceURL": "https://github.com/cranci1/AnimeGen",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "15.2",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "muffinstore",
+      "name": "MuffinStore",
+      "icon": "assets/MuffinStore.webp",
+      "category": "utilities",
+      "version": "1.3",
+      "releaseDate": "2026-07-12",
+      "source": "mineek/MuffinStore",
+      "sourceURL": "https://github.com/mineek/MuffinStore",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "playtorrio",
+      "name": "PlayTorrio",
+      "icon": "assets/PlayTorrio.webp",
+      "category": "photo-video",
+      "version": "1.1.5",
+      "releaseDate": "2026-09-09",
+      "source": "ayman708-UX/PlayTorrioV3",
+      "sourceURL": "https://github.com/ayman708-UX/PlayTorrioV3",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "14.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "mangayomi",
+      "name": "Mangayomi",
+      "icon": "assets/Mangayomi.webp",
+      "category": "other",
+      "version": "0.9.2",
+      "releaseDate": "2026-09-03",
+      "source": "kodjodevf/mangayomi",
+      "sourceURL": "https://github.com/kodjodevf/mangayomi",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "15.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "nebuloiptv",
+      "name": "Nebulo",
+      "icon": "assets/Nebulo.webp",
+      "category": "photo-video",
+      "version": "2.3",
+      "releaseDate": "2026-02-01",
+      "source": "mongoosemonke504/NebuloIPTV",
+      "sourceURL": "https://github.com/mongoosemonke504/NebuloIPTV",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "26.0",
+        "devices": [
+          "iphone",
+          "ipad"
+        ]
+      }
+    },
+    {
+      "slug": "chatsen",
+      "name": "Chatsen",
+      "icon": "assets/Chatsen.webp",
+      "category": "social",
+      "version": "1.1.107",
+      "releaseDate": "2026-08-12",
+      "source": "chatsen/chatsen",
+      "sourceURL": "https://github.com/chatsen/chatsen",
+      "verificationLevel": "VERIFIED",
+      "updateFrequencyDays": 0.0,
+      "downloadReachable": true,
+      "compatibility": {
+        "minOSVersion": "13.0",
         "devices": [
           "iphone",
           "ipad"

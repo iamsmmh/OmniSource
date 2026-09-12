@@ -2,408 +2,493 @@
   "schemaVersion": 2,
   "generatedAt": "2026-09-12",
   "minimumClientVersion": "2.0.0",
-  "feedVersion": "ee6398e4f19f",
-  "appCount": 77,
+  "feedVersion": "248817408e19",
+  "appCount": 94,
   "documents": [
     {
       "path": "/api/v2/apps/aidoku.json",
-      "sha256": "3f9c52abf4f2d251d808bc8648bd3f0ffe24ce5cccfc184e882521420f910fca",
+      "sha256": "6a2fbd814f53e2c3fcc0fa3ceb34876a2a4f0326a9250f9eb4d77907f1f19091",
       "bytes": 2396
     },
     {
+      "path": "/api/v2/apps/animegen.json",
+      "sha256": "ad7bbdca65aa5409d5eeccc529336d155eec912de153afdf0efcab23acff81b4",
+      "bytes": 1838
+    },
+    {
       "path": "/api/v2/apps/anxreader.json",
-      "sha256": "6b344a993d401ed0c2385b03af712f10841eb9df2a819d5e7b65afee2a2edfaa",
+      "sha256": "bc578fea67cc532018d8d846c6d870c43eee83513d394d94767261788e1eefcf",
       "bytes": 2265
     },
     {
       "path": "/api/v2/apps/anymex.json",
-      "sha256": "de870d043783380a91f1e055e263552688954ba3a6829b1f4143f83304d57193",
+      "sha256": "95e5cd129249ad98d8bdbe75e2b9141ac35f2673d1b3dc2fc1eb3de00462f523",
       "bytes": 2228
     },
     {
       "path": "/api/v2/apps/apollo.json",
-      "sha256": "5f62acbae38f03ec930f7d0140ceec3b9b799222c774ff01b1a3aa68a165b46e",
+      "sha256": "cd567cfbc6c11f702d6ef8882822f3a1957bb528dec9a6cc8efbdb94f9eff032",
       "bytes": 2488
     },
     {
       "path": "/api/v2/apps/bhtwitter.json",
-      "sha256": "6055b3dd29dc1de2b18126b01a15545ea5d35451b3ca941aaf5565c420053e13",
+      "sha256": "9d72c833b581b4958684ee94f32796a7595bb0d75d88370db6ef3708badcb25b",
       "bytes": 2600
     },
     {
       "path": "/api/v2/apps/bluewallet.json",
-      "sha256": "d6cc5c75d816bc3d599dd59ff06297c52f450097da812ecc7f4f168a96a80bf5",
+      "sha256": "39a2b68114a81654bbce0262f6df4e095d7b22c8fd378c78d78fc71870a15152",
       "bytes": 2306
     },
     {
       "path": "/api/v2/apps/bootstrap.json",
-      "sha256": "e6827714e4459bf8b3d1ac91fd111f677215573b7eebfec3ac33696923001f74",
+      "sha256": "666badc0e75cba9f89252c1f0acab37f25e255508efc277debf14a76c975a914",
       "bytes": 2406
     },
     {
+      "path": "/api/v2/apps/chan.json",
+      "sha256": "64d949c7cdb48d358f9ad94bdd417231aef1b1550ccfe425adf4dcba00865af2",
+      "bytes": 2072
+    },
+    {
+      "path": "/api/v2/apps/chatsen.json",
+      "sha256": "b42020190b83c5e25abde35af01bff2bc9a95b8f8fa61367dd623afe957458f6",
+      "bytes": 2040
+    },
+    {
       "path": "/api/v2/apps/conduit.json",
-      "sha256": "dce27dc5b7ae23a38f6da2838a6f42b925fa2c8fa88d0bb9c85a351096cc963e",
+      "sha256": "e46142983d8c1f9da8152c76146122617c7b75ae48cd4b3498b3c7cbea362324",
       "bytes": 2238
     },
     {
+      "path": "/api/v2/apps/cosmos.json",
+      "sha256": "7679197cbba746de6ba2c5248964049536591757cbc342b544289c15dea5dd45",
+      "bytes": 2121
+    },
+    {
       "path": "/api/v2/apps/delta.json",
-      "sha256": "07a5578de670f69fd238f3116956082a23489e9f9b4bc5269c4e19c6d3d10eb5",
+      "sha256": "0c86690e224ea5aecff8ebcd76d3e3c7550ef51a66be6f9e4d2e1c317f23f029",
       "bytes": 2125
     },
     {
       "path": "/api/v2/apps/dolphinish.json",
-      "sha256": "6c456b3d0cd2c850b6f7ca50cb40ac68f3befbab6712b7a4194e9169ef152554",
+      "sha256": "6fbd2ae47b1ecb498d0d1db0bcc35c303dbbb78fd87cbf1b4e615b5dec60aae7",
       "bytes": 2258
     },
     {
       "path": "/api/v2/apps/dopamine-roothide.json",
-      "sha256": "9d7ae40e957e4ce54698f6f40552665df7d2504b3cde44b74b034a30cbe21e99",
+      "sha256": "957666e372fe19e147a096ca9cca3251fe276522161bf92713f9e509ccb4c02b",
       "bytes": 2503
     },
     {
       "path": "/api/v2/apps/dopamine.json",
-      "sha256": "0dbc0abc331c5fa753489da85683aadc3f29318f67afef925589260377a6a21e",
+      "sha256": "ffb60258814072bdf8b14e5911d0333cafa1fafc9501ee7b0f460067c29d6a95",
       "bytes": 2342
     },
     {
       "path": "/api/v2/apps/feather.json",
-      "sha256": "663c015e601bcd1d74ef54b30c3efe4954fe48738192c390b9f2e0138cfe7544",
+      "sha256": "f1c7cafe20c64ba0c4a198624243a1040d9f338667a15e82f65c021e816416d6",
       "bytes": 2576
     },
     {
       "path": "/api/v2/apps/fladder.json",
-      "sha256": "473da3a6fc7b1d68a6cf3630a00cb13a9903d7aa0deb08fb664ea0b3c37e32fa",
+      "sha256": "f08eda9998fe0d184ed09edbc67ae31f1563660ef22505af841e7826f3a857ce",
       "bytes": 2246
     },
     {
       "path": "/api/v2/apps/glow.json",
-      "sha256": "1b2cb18face687ed0190b1cc4fbde22e2158d38d9c3c8dd017b81c66e187e13e",
+      "sha256": "b23aa5420b5b8409a8d59d63abf6e36e42eab9df0a8353724b6a16e756ac4205",
       "bytes": 1956
     },
     {
       "path": "/api/v2/apps/gopeed.json",
-      "sha256": "891b37b0b7563f28b062f57700fd0f8263e0053653436710f14d56d53632fc52",
+      "sha256": "6a434ddc5561f4ecb2ec1ae06026ccb2cb0f202b9699b313797cd42382bb4fe8",
       "bytes": 2365
     },
     {
+      "path": "/api/v2/apps/hanami.json",
+      "sha256": "38398d9cd551c83f5a10a8f926277b5fdbd7f9f44e16014f05e55975cd7656f2",
+      "bytes": 1815
+    },
+    {
       "path": "/api/v2/apps/ime.json",
-      "sha256": "ec98ca4ec89eaeb3dee452fdec20daaad906165db0391eae3ecf79de8ea097ed",
+      "sha256": "d417a1c105adb909ce47fba995ed9d1cc0d61c8e0c2f1f7b858cd84a4d7d964d",
       "bytes": 1944
     },
     {
       "path": "/api/v2/apps/infuseplus.json",
-      "sha256": "ae3055a1ac2d5059314cedb05e26fdc4a1326f06a20b487daf36372d97d57bcf",
+      "sha256": "387f913437202b1d30f64793bb65d223a8ef9d7c9c82ae6febc39cad9d6379a3",
       "bytes": 2002
     },
     {
       "path": "/api/v2/apps/inkillerplus.json",
-      "sha256": "5ef60575773332b15a26fb8dc10460bdaabf2d8e3ba9020471f4322c857d5551",
+      "sha256": "0482ff21cd25d65883668d363816b5d2a45372f0077689657ea83fa50766e824",
       "bytes": 2280
     },
     {
       "path": "/api/v2/apps/iqface.json",
-      "sha256": "0b5391634c7eebb18205154d331737034ed1f2db470c6a4bf80f47eb107e6f40",
+      "sha256": "1d08f49d0d582a5ba01c686ff1203a98ee4a14591b3af31ac869798c210a114f",
       "bytes": 1903
     },
     {
       "path": "/api/v2/apps/ish.json",
-      "sha256": "17228bf79e7ca237bf1f06ed84e0f2c37f69538861f8ad5e948906dcb323cfd5",
+      "sha256": "61c0558445c8ecd2fe4dfe0987fc28b00481f247f336f19b9873804ca8173f8e",
       "bytes": 2176
     },
     {
       "path": "/api/v2/apps/itorrent.json",
-      "sha256": "4973ef4831ce330f8fd86244d1f47d4ef9def096a0bb878d60f7141cafdb29be",
+      "sha256": "676a50449675be438f1222eb105d2f2c62f309b4834802914a9424addf1fe6bb",
       "bytes": 2226
     },
     {
       "path": "/api/v2/apps/jellify.json",
-      "sha256": "67e1184b16b74d660bf77e660a10fe5ce68df36dc67d1fdde8214bb821f1d1ec",
+      "sha256": "ca9731b548ee08efda1501d227c03ff85a3922bdb203261c2d7b82bf9379c30a",
       "bytes": 2224
     },
     {
+      "path": "/api/v2/apps/jellybook.json",
+      "sha256": "dffd8dee662119b487d1f5a52c29a7c72235d631551611f2e0c45f7f61834b12",
+      "bytes": 2117
+    },
+    {
+      "path": "/api/v2/apps/ksign.json",
+      "sha256": "5fd4e7dcbb6d66fa79b262f50d91e594c6510a2be30cf1d990d12712918098d9",
+      "bytes": 2024
+    },
+    {
       "path": "/api/v2/apps/livecontainer.json",
-      "sha256": "733835bb90501053ef3ccc6950d5abc48b410e0339402d07380cb945a174423e",
+      "sha256": "fb1f72e8db153d17c16be310eac134499ecec40e8aa8325a42aee28f2e283a1c",
       "bytes": 2594
     },
     {
       "path": "/api/v2/apps/mame4ios.json",
-      "sha256": "c6fe2afa12e3e47f53bccb12395cb55d0d21eedeab57697776d598be96346f78",
+      "sha256": "1bcbb50691f96ded7c0f98f63fc31c7d22536a47b727e7bc9269c9cfc11fdc84",
       "bytes": 2065
     },
     {
+      "path": "/api/v2/apps/mangayomi.json",
+      "sha256": "ac61db5ada91f31274df8e93122f6076f56367925f38f4021d9941638e9bc6ef",
+      "bytes": 2133
+    },
+    {
       "path": "/api/v2/apps/manicemu.json",
-      "sha256": "e2799380c754990b36a8182260e3eccc5df106d7e58b289f82a39011e528a403",
+      "sha256": "f59d889a53d94621a58fefc33f20a7c13f681c8598a7c821bcb87f7c8de84b54",
       "bytes": 2393
     },
     {
       "path": "/api/v2/apps/maxmusic.json",
-      "sha256": "1d11f60f410f7b12080c99f1a731951f160b99b07c97d6b4743ebeac3a551d38",
+      "sha256": "1070b27b82c008ae29ddc9916c229c4571d7742c15d5489f3da4667729e43a22",
       "bytes": 2752
     },
     {
       "path": "/api/v2/apps/maxtube.json",
-      "sha256": "1fdc72870bab75fd69e1bbb199caa4d753dccd3ac42e3e1e635371e940327817",
+      "sha256": "efca8f62fd09ee053732068c20e4ca5aeb77f23da1e0454b0e4b16b776c26cf1",
       "bytes": 2827
     },
     {
       "path": "/api/v2/apps/messenger-flow.json",
-      "sha256": "fa7e2aa16f6a19ac8fee15d410468f896962f3c26aa5bb78a0c3e7c759edb377",
+      "sha256": "a4167a135850db50972b4b2ab2d6b77c66ba5e963746a12d5322778ce55c0580",
       "bytes": 2017
     },
     {
       "path": "/api/v2/apps/minivmac.json",
-      "sha256": "443d8221e78dcd818c4b9e9cf4933e0cfe02db33cbdb886b6901536050a60a98",
+      "sha256": "566ae65ba069e6d28b4950657bd9ad68cdf1da573218bb617c23dc100361997f",
       "bytes": 2011
     },
     {
+      "path": "/api/v2/apps/monal.json",
+      "sha256": "7fabd5e7a15cb65c034b454fbcea810364f2e88cb5ba2228cf85029f7761181f",
+      "bytes": 2059
+    },
+    {
       "path": "/api/v2/apps/msgplusx.json",
-      "sha256": "17dfb8ff42e14a6d69d5c8a6c4a7942b5fd16582b6e240b7b3aac13361e835bb",
+      "sha256": "35593f1d9c20e80c1790fb39f9928bc959917c409fa3675a642d2569603604ea",
       "bytes": 2057
     },
     {
+      "path": "/api/v2/apps/muffinstore.json",
+      "sha256": "c981444c57bc86e2e83f7ea536ee95d9ae7c97a449f80fb0bc9279766efa09d5",
+      "bytes": 2096
+    },
+    {
+      "path": "/api/v2/apps/nebuloiptv.json",
+      "sha256": "9cd52f5f072a4f4c9c67c3de10fbaf06a9c4ff9ca66843cd05f3dbd54da75dba",
+      "bytes": 2078
+    },
+    {
       "path": "/api/v2/apps/neofreebird.json",
-      "sha256": "03c12e68071528ab380dd645a7f6f800c282f315b5afbd0861d62d1ca4dc4146",
+      "sha256": "50fd78d211188110d0531828c56f1bde99a5d1cdd47cee12d78ee212f0b2b682",
       "bytes": 2429
     },
     {
       "path": "/api/v2/apps/nexasc.json",
-      "sha256": "713ba347e218bf9874fd423205331ffa1baac7301bebf9ff7834dc0b6c6407cb",
+      "sha256": "72c1923b331e94c7895b59b04de6d095a8ae8d1b789a7763ddd1cdf4d874fd00",
       "bytes": 1964
     },
     {
       "path": "/api/v2/apps/odyssey.json",
-      "sha256": "186df627fda32ddd13076094d83ff14dd3b5709d003f3ac5e7c5e3bcb75a0e7f",
+      "sha256": "8ce60ab8fab537250e0ba8c4d7f1db5d3086ee80930d9490bccc8acf9545f77a",
       "bytes": 2140
     },
     {
+      "path": "/api/v2/apps/otraku.json",
+      "sha256": "0fb1c188ef87a12154f3936c0c86f8a3d14f4d7b3bd728ef64aad69306bcce44",
+      "bytes": 2058
+    },
+    {
+      "path": "/api/v2/apps/pikatorrent.json",
+      "sha256": "28aee0a41e8b1092ad9e0320d494007fbd905a97f2954ec5721c808922a6f43b",
+      "bytes": 2169
+    },
+    {
+      "path": "/api/v2/apps/playtorrio.json",
+      "sha256": "0fe0e3e8ab63481a8e65e70e45922413d9f689fcef640d509a45b0d3e144d075",
+      "bytes": 2083
+    },
+    {
       "path": "/api/v2/apps/ppsspp.json",
-      "sha256": "9e2794bf1f9a1cded918c540f6232dd892a7ec59d1e3a995d97e46084e3c92e9",
+      "sha256": "6a48035fb68c40cbdb6bf80813ad012fb8916ccad07435f46ce418adc56145a0",
       "bytes": 2244
     },
     {
       "path": "/api/v2/apps/provenance.json",
-      "sha256": "0f16e61edf55607b3bdcce16c65929e48afa150cf2da4f74b4a2f0d99d61693c",
+      "sha256": "1e655b8811f70ffb03b4cec2ae88051c06a1a3bb6975f290ca8173faf1ed0588",
       "bytes": 2340
     },
     {
+      "path": "/api/v2/apps/purekfd.json",
+      "sha256": "69f40636a5330e9e93277aaa3e9d427ddd91d62254f635e4a4db22c6a9853691",
+      "bytes": 1854
+    },
+    {
       "path": "/api/v2/apps/qbitconnect.json",
-      "sha256": "67459955f4f1f30daf9c1884d098a7b310ef11ad0cb0002b2fadc706244093b1",
+      "sha256": "e215701e54b46d0d0abeaf44d31e560ab277729771ecc38b378198fae8773a33",
       "bytes": 2242
     },
     {
       "path": "/api/v2/apps/qbitcontrol.json",
-      "sha256": "b41d5359eb419c29a962cd2c7562f3f3270c07e3b82465f9c9770a1ceeb9d587",
+      "sha256": "5861f83f585d81d436c7ef7f1e70f3c6281f8e62a63b7e12c78791f8e6d50add",
       "bytes": 2325
     },
     {
       "path": "/api/v2/apps/qbitcontroller.json",
-      "sha256": "f508018d2e2c351d7da171209f46b83e06d412fadfa6e93fe21a71a93e60e79c",
+      "sha256": "edc5a6232c0007f74e600faf8da9d5c8dec59883a7e867b782b1b2017fd257ff",
       "bytes": 2362
     },
     {
       "path": "/api/v2/apps/raintweak.json",
-      "sha256": "80b7e61a04aaca23913d613c95d8b24d7164b6e603b9529ee1e492585822410f",
+      "sha256": "324b5ce6089f63df297a1c0c657e46b53e864686bd1c5949ee182910aa0b9ed6",
       "bytes": 2304
     },
     {
       "path": "/api/v2/apps/redditfilter.json",
-      "sha256": "d92f6b8db0fa1e9edf6015e4a4cc969f6e727c9821a337f667b6173ebe786169",
+      "sha256": "942a2d984f5dc96442eb0ddf86a22a572a03d0b1b8e526e938c2890d8ee84b2e",
       "bytes": 2313
     },
     {
       "path": "/api/v2/apps/ryukgram-ig410.json",
-      "sha256": "fac47b0beae727f09bb07df6ac98a93ab0bfc58654e76bc948442ce7ad71535f",
+      "sha256": "d34a5c8d472bcbceb0574bd413670a569f1533e0f385f6db0e9cbb6831264c5e",
       "bytes": 2405
     },
     {
       "path": "/api/v2/apps/ryukgram-sidebyside.json",
-      "sha256": "4c461ef2467566468ba7b70b72aa79881430a9ad0e441f6833564291e33b0aaa",
+      "sha256": "9801e62cc3561e64d30eb2ddd186b460c1be84f88762dfc78e062c432a61f426",
       "bytes": 2295
     },
     {
       "path": "/api/v2/apps/ryukgram.json",
-      "sha256": "78f0371c09ff20651ed29a21c828bc21f68a596deacae1423c2ac08ec4fc5b81",
+      "sha256": "39d6a165173156b06fbcaa46cf7048eabd3aae85c57407f3a55ae2e02708f1f5",
       "bytes": 1976
     },
     {
       "path": "/api/v2/apps/saber.json",
-      "sha256": "74c58b563c0ca75f58b755a16bf51f40ee71ac9c8a142f21423d502a09937da3",
+      "sha256": "da2c0732aa9b4191b8e104d38de0c0629a0b206980030253a34276564b9cebdf",
       "bytes": 2183
     },
     {
       "path": "/api/v2/apps/sameboy.json",
-      "sha256": "a6ff6e373e00232c034a4cb752993017f81a6173fa38796cc841933528396a54",
+      "sha256": "d5e280bb013da9b3daec13bc684563a3c638027723d4906a8e0ed897658e928b",
       "bytes": 2323
     },
     {
       "path": "/api/v2/apps/serotonin.json",
-      "sha256": "990598519cbafceec5661803dc0adcb774f3f22752412941531014acc64d840a",
+      "sha256": "f631c9d710de7d48eb529615cc1984bb9124158e6192b3fc1d662f7001bd07da",
       "bytes": 2068
     },
     {
       "path": "/api/v2/apps/sidestore.json",
-      "sha256": "8fb35fa359dbafac0195ef4267c20a8d4eb08bc5cba6e199bf9c600939ec554b",
+      "sha256": "1fa40b1b8b0f9de626de636b2305dcb82e8f28bcf54faba8fbe766289055fedd",
       "bytes": 2581
     },
     {
       "path": "/api/v2/apps/sora.json",
-      "sha256": "fd6a85770ef38c4c29d44f4785f7b13561fdac3c9757755ef96cac55ddee7cbf",
+      "sha256": "7467795e9974c3018ae0672af67dcde64ac9054831076fd9c2e5219508bf7e2e",
       "bytes": 2146
     },
     {
       "path": "/api/v2/apps/sparkle.json",
-      "sha256": "d2e6e894792710c81b8098db67097a40ccee5be679929e9e528f7d90809085dd",
+      "sha256": "ad178e9bc32f377c81d826151fa2875622bb8e8b192a358d079dbcf0bb327de7",
       "bytes": 1954
     },
     {
       "path": "/api/v2/apps/spotiflac.json",
-      "sha256": "79de874f2bdb96dabd118352fc0810bbfc4fbd23f5d0ffc03c74a0f9d129faf7",
+      "sha256": "6cd4624036108615167db75b2ac0f7d4013f77918d023534fa653f32df80a2ee",
       "bytes": 2286
     },
     {
       "path": "/api/v2/apps/spotube.json",
-      "sha256": "a115da0f28520cf9a4e5396cacf34974956981d77ef6f1d0c36f0329b799eb0f",
+      "sha256": "0c41ef10863b5ee49d4bd5e370f17f939b0dc96bf2cb14a7edea614409e3739b",
       "bytes": 2226
     },
     {
       "path": "/api/v2/apps/stikdebug.json",
-      "sha256": "2da4aaec11212e00ca25d679df7226fb5e0e7a21556bd2325204a2f85947bd02",
+      "sha256": "c64661772fe04acaaf4789b298849c7ac46517848352aed06238488e6b381868",
       "bytes": 2525
     },
     {
       "path": "/api/v2/apps/stiknes.json",
-      "sha256": "a29ce23fcf943c3fc07cbad2d582317cfd683caf3e6f9c704192e1dc7689048a",
+      "sha256": "40e361a3337bb37c3ccdf64e24fa950ab4e91a0ba89f84e18537953967f07040",
       "bytes": 1991
     },
     {
       "path": "/api/v2/apps/streamyfin.json",
-      "sha256": "5f0b05f09ffeb68e26f7d1afd10de4256092c5dbaec78cfec9d24ca356a6dd99",
+      "sha256": "54bc89cdde69718ba7316bb9cbe7d0356a3212366efe85062b3d026e4e036c9b",
       "bytes": 2296
     },
     {
       "path": "/api/v2/apps/swiftgram.json",
-      "sha256": "4c6369906e7904cb5926a48214aee8ca267baf1d09f3931690a13e7881ccfd4c",
+      "sha256": "8c7224e802ee7e8ee251fb911e9a9cfaa8695ce1a84d0bddd605867fcea5f07b",
       "bytes": 2095
     },
     {
+      "path": "/api/v2/apps/synkplay.json",
+      "sha256": "83ff90a1d7cb92e297a5757d0e9a6b91452a0a6524c15bed697a222c80e48184",
+      "bytes": 2157
+    },
+    {
       "path": "/api/v2/apps/taurine.json",
-      "sha256": "0b4e9f0d9e7f37dac65769f9b38ec60ab12b5e0fd45632ba2743b13b8ea8283b",
+      "sha256": "c63ffa4012b73dcb1df94951d48c4b6578810e06968f7ba9bd958374c330c894",
       "bytes": 2126
     },
     {
       "path": "/api/v2/apps/telegram-mxgram.json",
-      "sha256": "7d1cc0e13d1cd6eee7e74d8978e5186dd833622a502bb2da438af2df653d1321",
+      "sha256": "39941defe0efa6207371d054db529b3d2b4325caca3049f94837b2a55366e3bf",
       "bytes": 1988
     },
     {
       "path": "/api/v2/apps/threadsaver.json",
-      "sha256": "01c307b9ec4a55be0a6a32a0249877b06bcfc757477a6788be538b5ed723ddae",
+      "sha256": "633de8a0a663b02c7eaa2afc7868201908566fa0ad68a5611af8fa7907e64ba4",
       "bytes": 1972
     },
     {
+      "path": "/api/v2/apps/thunder.json",
+      "sha256": "00ad4b7781245f76fdad997f3deeac801f2ae331f00bff26292a8aed9745d05e",
+      "bytes": 2120
+    },
+    {
       "path": "/api/v2/apps/ttkillerplus.json",
-      "sha256": "54fc0934b5be5c526cb512c38688463481f057668d58e3de7acbbe0431701295",
+      "sha256": "93a0842b25eddf84415f967e06de2e64a22444ae669a1567727521354ea4993b",
       "bytes": 2293
     },
     {
       "path": "/api/v2/apps/turrit-mxgram.json",
-      "sha256": "d4d1c0eafc242354b9700ee2025d63c8a6eea39232f2c76e5adb82d45fee944a",
+      "sha256": "c6248cfd12eb1da2555e8f5702402a4483807181a48a0203b3e407b28ed38647",
       "bytes": 1985
     },
     {
       "path": "/api/v2/apps/twitchadblock.json",
-      "sha256": "9d6e178e7f8770a5e1a49f3492b6443cd733d3502d3a9c127d95e69b34f16786",
+      "sha256": "1de39308d3b5b10c52bbfb03ebc9ea8eb24193ccdce1e2ca725da26be2bdf18f",
       "bytes": 2454
     },
     {
       "path": "/api/v2/apps/unc0ver.json",
-      "sha256": "bf64359fcc1a1fbaa616aa646d20cf9ed2e11c8d251d3708fa2ed58b9e7b0e48",
+      "sha256": "63b0e9241a30f4083f5185790047ed33407528deee9a74757b2cdce34f010222",
       "bytes": 2108
     },
     {
       "path": "/api/v2/apps/utm.json",
-      "sha256": "064fb8ae49f655793c4fb554666933c2e275a87b5b0a827b64991f2b35af704b",
+      "sha256": "f749f00ca7ff2b3323d005856da4e429f5ccbb9e70114adc0b5c1442446bf2be",
       "bytes": 2691
     },
     {
       "path": "/api/v2/apps/uyouenhanced.json",
-      "sha256": "d25e63a2ab2417913b42fb369283ac899767c814e2044c05039a829a5500bf87",
+      "sha256": "1238803c2d12dcb18b466a002b8aa52eb735bc940dd1f8da33ed49c67bf9ab4f",
       "bytes": 2983
     },
     {
       "path": "/api/v2/apps/vcmi.json",
-      "sha256": "90a88e51dcf94040c5b15e0b9b929da0b3af9f4d1dafeb24840d927fd4807cdc",
+      "sha256": "036a0898d69c3cc716e4988f8e12017402e91d1fe98b8031154c4b84b8691ba7",
       "bytes": 2235
     },
     {
       "path": "/api/v2/apps/voyager.json",
-      "sha256": "e447cd291cb30154f6b6ea243e73a41794c2d0b9ef13956fd6db77a0ce632040",
+      "sha256": "8646d6bdf0acf69d4984f92b1d9a11dab9cdad80739e6909be2d6d216029f783",
       "bytes": 2240
     },
     {
       "path": "/api/v2/apps/winston.json",
-      "sha256": "166caf22ee26e34a314c690e2c20400343970983d3c13a701d7ec70436e3a6be",
+      "sha256": "19a3090228d9f04c2cbe40fcb150dcec01be56a9aa61eb00ffd9b02c4ce129cd",
       "bytes": 1951
     },
     {
       "path": "/api/v2/apps/xenios.json",
-      "sha256": "136621ea1a5341088158a0b9133957b64b74e3a446dd2a57c1e9dd711a58c098",
+      "sha256": "243d987c316a876cdcb46adae0517d46461ea86448cdbcc9a3b3d50661281be6",
       "bytes": 2576
     },
     {
       "path": "/api/v2/apps/yattee.json",
-      "sha256": "54aee2aa9934b49a518f3c2a36253dcf764f7504819ef93b9b6f0b526478672f",
+      "sha256": "b086fb280f93a36b97981d23fc1104b3280d22756f68839a95a36bab6649bfda",
       "bytes": 2015
     },
     {
       "path": "/api/v2/apps/youmod.json",
-      "sha256": "995f1da23ebe3bfe70ebb99b5841a1cc8059b320956cd91c0448f1ed1c318fa1",
+      "sha256": "6b16723fe426990cb14e82daa96962fa7549c66725c03814feb4bb668f6d3e62",
       "bytes": 2187
     },
     {
       "path": "/api/v2/apps/youpro.json",
-      "sha256": "75bcf7a1162dfb635cd650cb0db31925caeb8852c74a077cce3e82b8a62fdea0",
+      "sha256": "f90684c5240151fd549261a85c43ad96614c0cf7ad5a33a1a7c13bfdec5c07c7",
       "bytes": 2241
     },
     {
       "path": "/api/v2/apps/ytkace.json",
-      "sha256": "dd1e72d3b2ed58efd405de7ff2e22c839728da49bd92eee25cf1f57db5f49c62",
+      "sha256": "c839e6dc54048d10f91a205ab28ea4c12556125270d4c20435b0e8ec1a42fdd2",
       "bytes": 2109
     },
     {
       "path": "/api/v2/apps/ytkp.json",
-      "sha256": "22a1bb0800477b3e43454b2fcaceebf67e848a83ba1279ea49bd292663055c32",
+      "sha256": "b86ffb93ba39eb4d5f6d92ed51d7ef94485e02124ac2e3b0a2a827ad05a3c239",
       "bytes": 2465
     },
     {
       "path": "/api/v2/apps/ytlite.json",
-      "sha256": "8a9f08d91d8e51be96d049666cc48ac71b26286fa99db8725661b73c7d941b0e",
+      "sha256": "38a04bad03444149db0c45e1d848b030fc580727250e062a03292019148bc15e",
       "bytes": 2890
     },
     {
       "path": "/api/v2/apps/ytmusic.json",
-      "sha256": "6bdb71b76fcad031423a5dc617b2cd9f93e5fc62947ef4ae77449d98c54c044a",
+      "sha256": "8c3afe6f6b863fcffe9d07b5ad1eab08cbfc575f7baadc1d993fabb39292cc5a",
       "bytes": 2244
     },
     {
       "path": "/api/v2/apps/zeus.json",
-      "sha256": "f7b08a45a4c4d76a159cf47b2f8eab15af9b18804ac54d679ee461a5f9e2a22c",
+      "sha256": "d63f5aa9c6a7f63c3a0f3b20becafb56157b6452aa725568dcdbc31e2008dbb8",
       "bytes": 2252
     },
     {
       "path": "/api/v2/categories.json",
-      "sha256": "07c53a3c8337c4501aad36b6572130d615813cc290cae4849a3ef983c450f01a",
-      "bytes": 3226
+      "sha256": "b740ceeb855ae01e517fa7fda74aa2e13cf8d32268b5b6338c29f5aa19842eea",
+      "bytes": 3559
     },
     {
       "path": "/api/v2/featured.json",
-      "sha256": "c832c8f9ac58c44f0dd42aae2e8713a16038756a15f17c7ff2bb39f81ae170e0",
+      "sha256": "0ae6462541a9671deaeaeddbd64009536e42ce47f3b6a01d2b3463add2c971d1",
       "bytes": 3579
     },
     {
       "path": "/api/v2/updates.json",
-      "sha256": "9cbc165602f09ee3f54c2328b01bcb8206ce1d318810696bcef24cbed843776d",
-      "bytes": 35355
+      "sha256": "9383c8307a86578214672696b0cec50c5f8da6f99038d803cc1a7bfd6e5b6905",
+      "bytes": 37525
     }
   ],
   "endpoints": [

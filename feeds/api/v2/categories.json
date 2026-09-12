@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-09-12",
-  "feedVersion": "ee6398e4f19f",
+  "feedVersion": "248817408e19",
   "count": 8,
   "categories": [
     {
@@ -36,9 +36,10 @@
     {
       "id": "music",
       "name": "Music",
-      "count": 5,
+      "count": 6,
       "icon": "https://iamsmmh.github.io/OmniSource/assets/placeholders/category.svg",
       "apps": [
+        "cosmos",
         "jellify",
         "maxmusic",
         "spotiflac",
@@ -49,34 +50,43 @@
     {
       "id": "networking",
       "name": "Networking",
-      "count": 2,
+      "count": 3,
       "icon": "https://iamsmmh.github.io/OmniSource/assets/placeholders/category.svg",
       "apps": [
         "gopeed",
-        "itorrent"
+        "itorrent",
+        "pikatorrent"
       ]
     },
     {
       "id": "other",
       "name": "Other",
-      "count": 2,
+      "count": 6,
       "icon": "https://iamsmmh.github.io/OmniSource/assets/placeholders/category.svg",
       "apps": [
         "aidoku",
-        "anymex"
+        "anymex",
+        "hanami",
+        "jellybook",
+        "mangayomi",
+        "otraku"
       ]
     },
     {
       "id": "photo-video",
       "name": "Photo Video",
-      "count": 12,
+      "count": 16,
       "icon": "https://iamsmmh.github.io/OmniSource/assets/placeholders/category.svg",
       "apps": [
+        "animegen",
         "fladder",
         "infuseplus",
         "maxtube",
+        "nebuloiptv",
+        "playtorrio",
         "sora",
         "streamyfin",
+        "synkplay",
         "uyouenhanced",
         "yattee",
         "youmod",
@@ -89,16 +99,19 @@
     {
       "id": "social",
       "name": "Social",
-      "count": 24,
+      "count": 28,
       "icon": "https://iamsmmh.github.io/OmniSource/assets/placeholders/category.svg",
       "apps": [
         "apollo",
         "bhtwitter",
+        "chan",
+        "chatsen",
         "glow",
         "ime",
         "inkillerplus",
         "iqface",
         "messenger-flow",
+        "monal",
         "msgplusx",
         "neofreebird",
         "nexasc",
@@ -111,6 +124,7 @@
         "swiftgram",
         "telegram-mxgram",
         "threadsaver",
+        "thunder",
         "ttkillerplus",
         "turrit-mxgram",
         "twitchadblock",
@@ -121,7 +135,7 @@
     {
       "id": "utilities",
       "name": "Utilities",
-      "count": 19,
+      "count": 22,
       "icon": "https://iamsmmh.github.io/OmniSource/assets/placeholders/category.svg",
       "apps": [
         "anxreader",
@@ -131,8 +145,11 @@
         "dopamine",
         "dopamine-roothide",
         "feather",
+        "ksign",
         "livecontainer",
+        "muffinstore",
         "odyssey",
+        "purekfd",
         "qbitconnect",
         "qbitcontrol",
         "qbitcontroller",

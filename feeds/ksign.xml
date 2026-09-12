@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ksign — Releases</title>
+    <link>https://iamsmmh.github.io/OmniSource/feeds/ksign.json</link>
+    <description>Release feed for Ksign within OmniSource, curated from official upstream sources.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Sep 2026 14:49:11 +0000</lastBuildDate>
+    <atom:link href="https://iamsmmh.github.io/OmniSource/feeds/ksign.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Ksign v1.6</title>
+      <link>https://iamsmmh.github.io/OmniSource/feeds/ksign.json</link>
+      <guid isPermaLink="false">ksign-1.6</guid>
+      <pubDate>Sun, 24 May 2026 00:00:00 +0000</pubDate>
+      <description><![CDATA[Ksign 1.6 | Ksign
+
+Hawoo everywan its been half a year since the last release I'm really sorry because ever since beta build I got lazy from release a new version, anyways 
+
+## What's Changed
+* fix: handle empty display name in info.plist
+* fix: url scheme for ksign
+* fix: signing on a few apps with weird bundles
+* feat: injection path & inject into extensions
+* feat: optimized for iOS 26 by @Nyasami in https://github.com/Nyasami/Ksign/pull/87
+* feat: bulk install by @Nyasami in https://github.com/Nyasami/Ksign/pull/88
+* feat: idevice installation method by @Nyasami in https://github.com/Nyasami/Ksign/pull/96
+* feat: Add support for .bundle files as tweaks (copy into .app) by @Mikasa-san in https://github.com/Nyasami/Ksign/pull/112
+* chore: update language: German, Russian by @MrCookie-For-Programmers in https://github.com/Nyasami/Ksign/pull/105
+* chore: update Arabic translation by @mohammed1d1 in https://github.com/Nyasami/Ksign/pull/108
+* chore: update Vietnamese localizations by @Astear17 in https://github.com/Nyasami/Ksign/pull/109
+* feat: rsd support by @claration in https://github.com/Nyasami/Ksign/pull/117
+
+## New Contributors
+* @MrCookie-For-Programmers made their first contribution in https://github.com/Nyasami/Ksign/pull/76
+* @mohammed1d1 made their first contribution in https://github.com/Nyasami/Ksign/pull/108
+* @Mikasa-san made their first contribution in https://github.com/Nyasami/Ksign/pull/112
+* @Astear17 made their first contribution in https://github.com/Nyasami/Ksign/pull/109
+* @claration made their first contribution in https://github.com/Nyasami/Ksign/pull/117
+
+**Full Changelog**: https://github.com/Nyasami/Ksign/compare/v1.5.1...v1.6]]></description>
+      <enclosure url="https://github.com/Nyasami/Ksign/releases/download/v1.6/Ksign.ipa" length="0" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>
