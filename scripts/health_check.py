@@ -155,17 +155,20 @@ def ensure_label(gh_bin: str, env: dict[str, str], *, repo: str, label: str) -> 
     )
 
 
-def report_issue(report: str, *, repo: str, label: str, title: str) -> None:
-    """File a new issue, or append to the most recent open one with the label."""
+def _gh_environment() -> tuple[str, dict[str, str]]:
+    """The gh binary and an environment carrying the workflow token."""
     gh_bin = shutil.which("gh")
     if not gh_bin:
         raise SystemExit("health-check: --report-issue requires the 'gh' CLI to be installed")
-
     env = dict(os.environ, GH_TOKEN=os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN", ""))
     if not env["GH_TOKEN"]:
         raise SystemExit("health-check: --report-issue requires GH_TOKEN/GITHUB_TOKEN")
+    return gh_bin, env
 
-    list_proc = subprocess.run(
+
+def open_issue_numbers(gh_bin: str, env: dict[str, str], *, repo: str, label: str) -> list[str]:
+    """Every open issue carrying ``label``, oldest first."""
+    proc = subprocess.run(
         [
             gh_bin,
             "issue",
@@ -179,25 +182,50 @@ def report_issue(report: str, *, repo: str, label: str, title: str) -> None:
             "--json",
             "number",
             "--jq",
-            ".[0].number",
+            ".[].number",
         ],
         env=env,
         capture_output=True,
         text=True,
         check=False,
     )
-    number = list_proc.stdout.strip()
-    if number and number.isdigit():
+    return [line.strip() for line in proc.stdout.splitlines() if line.strip().isdigit()]
+
+
+def resolve_issues(report: str, *, repo: str, label: str) -> None:
+    """Close open tracking issues once every download URL is reachable again.
+
+    The checker creates the issue on the first failure; without this, a link
+    that recovered (or was removed from the feeds) left the issue open forever.
+    """
+    gh_bin, env = _gh_environment()
+    for number in open_issue_numbers(gh_bin, env, repo=repo, label=label):
         subprocess.run([gh_bin, "issue", "comment", "--repo", repo, number, "--body", report], env=env, check=True)
-        print(f"health-check: appended report to existing issue #{number}")
-    else:
-        ensure_label(gh_bin, env, repo=repo, label=label)
         subprocess.run(
-            [gh_bin, "issue", "create", "--repo", repo, "--title", title, "--label", label, "--body", report],
+            [gh_bin, "issue", "close", "--repo", repo, number, "--reason", "completed"],
             env=env,
             check=True,
         )
-        print("health-check: filed a new broken-link issue")
+        print(f"health-check: closed issue #{number} - every link is reachable again")
+
+
+def report_issue(report: str, *, repo: str, label: str, title: str) -> None:
+    """File a new issue, or append to the most recent open one with the label."""
+    gh_bin, env = _gh_environment()
+    numbers = open_issue_numbers(gh_bin, env, repo=repo, label=label)
+    if numbers:
+        number = numbers[-1]
+        subprocess.run([gh_bin, "issue", "comment", "--repo", repo, number, "--body", report], env=env, check=True)
+        print(f"health-check: appended report to existing issue #{number}")
+        return
+    ensure_label(gh_bin, env, repo=repo, label=label)
+    subprocess.run(
+        [gh_bin, "issue", "create", "--repo", repo, "--title", title, "--label", label, "--body", report],
+        env=env,
+        check=True,
+    )
+    print("health-check: filed a new broken-link issue")
+    return
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -235,6 +263,14 @@ def main(argv: list[str] | None = None) -> int:
             handle.write(report + "\n")
 
     if not broken:
+        if args.report_issue and args.repo:
+            # Recovery closes the tracker: without this the issue filed for a
+            # since-removed URL stayed open forever (issue #33).
+            resolve_issues(
+                f"{report}\n\nAll previously reported links are reachable again.",
+                repo=args.repo,
+                label=args.label,
+            )
         return 0
 
     if args.report_issue:

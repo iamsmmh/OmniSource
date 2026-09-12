@@ -102,7 +102,7 @@ Website conventions introduced by the modernization pass:
       mirror matches `feeds/`).
 - [ ] `make check` passes locally (or the equivalent commands).
 - [ ] Added/updated tests under `tests/` for new behaviour.
-- [ ] Updated docs (`README.md`, `docs/website.md`, `docs/REPOSITORY.md`)
+- [ ] Updated docs (`README.md`, `docs/website.md`, `docs/archive/REPOSITORY.md`)
       when the layout, outputs or commands changed.
 
 ## Code of conduct

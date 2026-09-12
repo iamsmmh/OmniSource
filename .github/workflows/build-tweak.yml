@@ -39,8 +39,10 @@ on:
         type: string
         default: ""
 
+# This job only reads the repository and uploads an artifact: no step writes
+# to the repository, so the token never needs write scope.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
@@ -48,8 +50,19 @@ jobs:
     runs-on: macos-14
     timeout-minutes: 30
 
+    env:
+      # workflow_dispatch inputs are passed through the environment rather than
+      # interpolated into `run:` scripts, which would allow shell injection.
+      # See build-uyouenhanced.yml for the same rule.
+      IN_BASE_IPA_URL: ${{ inputs.base_ipa_url }}
+      IN_TWEAK_DEB_URL: ${{ inputs.tweak_deb_url }}
+      IN_APP_NAME: ${{ inputs.app_name }}
+      IN_BUNDLE_ID: ${{ inputs.bundle_id }}
+
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -67,20 +80,20 @@ jobs:
           set -euo pipefail
           mkdir -p workspace
           echo "Downloading base IPA..."
-          curl -L "${{ inputs.base_ipa_url }}" -o workspace/base.ipa
+          curl -fL "$IN_BASE_IPA_URL" -o workspace/base.ipa
           echo "Downloading tweak .deb..."
-          curl -L "${{ inputs.tweak_deb_url }}" -o workspace/tweak.deb
+          curl -fL "$IN_TWEAK_DEB_URL" -o workspace/tweak.deb
 
       - name: Inject Tweak using Cyan
         run: |
           set -euo pipefail
           cd workspace
           FLAGS=()
-          if [ -n "${{ inputs.bundle_id }}" ]; then
-            FLAGS+=(-b "${{ inputs.bundle_id }}")
+          if [ -n "$IN_BUNDLE_ID" ]; then
+            FLAGS+=(-b "$IN_BUNDLE_ID")
           fi
-          if [ -n "${{ inputs.app_name }}" ]; then
-            FLAGS+=(-n "${{ inputs.app_name }}")
+          if [ -n "$IN_APP_NAME" ]; then
+            FLAGS+=(-n "$IN_APP_NAME")
           fi
 
           echo "Injecting tweak with Cyan..."

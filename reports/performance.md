@@ -9,7 +9,7 @@ sizes are listed. Budgets are the Lighthouse-95 targets from the modernization b
 ## Summary
 
 - Design-system CSS (source): **166 KiB** (deployed copies ship minified)
-- Site JS (deferred, non-blocking): **307 KiB**
+- Site JS (deferred, non-blocking): **309 KiB**
 - Blocking script tags without defer/async: **0**
 - Images over 40 KiB without an immediate smaller twin: **0**
 
@@ -21,9 +21,9 @@ sizes are listed. Budgets are the Lighthouse-95 targets from the modernization b
 | `feeds/anymex.json` | 25 KiB | — (root mirror only) |
 | `feeds/api/v2/updates.json` | 35 KiB | — (root mirror only) |
 | `feeds/apollo.json` | 25 KiB | — (root mirror only) |
-| `feeds/apps.json` | 679 KiB | — (root mirror only) |
+| `feeds/apps.json` | 594 KiB | — (root mirror only) |
 | `feeds/asset-manifest.json` | 29 KiB | — (root mirror only) |
-| `feeds/bluewallet.json` | 21 KiB | — (root mirror only) |
+| `feeds/bluewallet.json` | 22 KiB | — (root mirror only) |
 | `feeds/compare.json` | 110 KiB | — (root mirror only) |
 | `feeds/dead_apps.json` | 27 KiB | — (root mirror only) |
 | `feeds/discovery.json` | 134 KiB | — (root mirror only) |
@@ -44,7 +44,7 @@ sizes are listed. Budgets are the Lighthouse-95 targets from the modernization b
 | `feeds/status.json` | 176 KiB | — (root mirror only) |
 | `feeds/trending.json` | 43 KiB | — (root mirror only) |
 | `feeds/updates.json` | 207 KiB | — (root mirror only) |
-| `feeds/utm.json` | 25 KiB | — (root mirror only) |
+| `feeds/utm.json` | 26 KiB | — (root mirror only) |
 | `feeds/verification.json` | 46 KiB | — (root mirror only) |
 | `feeds/zeus.json` | 23 KiB | — (root mirror only) |
 

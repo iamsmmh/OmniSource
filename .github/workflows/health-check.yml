@@ -5,8 +5,10 @@
 # distributable feeds with HTTP HEAD requests, and files a GitHub Issue listing
 # any broken links. The issue is created on first failure and appended to on
 # subsequent runs, so there is exactly one durable, linkable record to work
-# from. A green run means "the checker ran and reported" — use the dynamic
-# apps/downloads badges in the README for the live availability signal.
+# from; once every link is reachable again the checker closes it (a recovered
+# link must not leave a stale issue open — see issue #33). A green run means
+# "the checker ran and reported" — use the dynamic apps/downloads badges in
+# the README for the live availability signal.
 # -----------------------------------------------------------------------------
 name: Health Check
 
@@ -29,6 +31,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-python@v5
         with:

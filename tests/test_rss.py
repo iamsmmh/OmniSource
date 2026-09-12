@@ -14,9 +14,10 @@ from omnisource.domain import Catalog
 from omnisource.feeds.rss import render_app_rss_feed, render_rss_feed
 
 
-class TestRssFeed(unittest.TestCase):
-    def setUp(self) -> None:
-        self.raw_catalog = {
+def _demo_catalog() -> Catalog:
+    """The minimal catalog the RSS test classes render against."""
+    return Catalog.from_dict(
+        {
             "source": {
                 "name": "OmniSource",
                 "identifier": "com.iamsmmh.omnisource",
@@ -38,7 +39,12 @@ class TestRssFeed(unittest.TestCase):
                 }
             ],
         }
-        self.catalog = Catalog.from_dict(self.raw_catalog)
+    )
+
+
+class TestRssFeed(unittest.TestCase):
+    def setUp(self) -> None:
+        self.catalog = _demo_catalog()
 
     def test_render_rss_feed(self) -> None:
         state = {
@@ -147,3 +153,34 @@ class TestAppRssFeed(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestRssDeterminism(unittest.TestCase):
+    """RSS must not stamp the build clock (ISSUES-REPORT.md #6)."""
+
+    def setUp(self) -> None:
+        self.catalog = _demo_catalog()
+
+    def test_last_build_date_comes_from_the_newest_item(self) -> None:
+        state = {
+            "spotiflac": {
+                "versions": [
+                    {
+                        "version": "4.9.6",
+                        "date": "2026-09-07",
+                        "downloadURL": "https://example.com/SpotiFLAC.ipa",
+                        "size": 34171700,
+                        "localizedDescription": "Release.",
+                    }
+                ]
+            }
+        }
+        first = render_rss_feed(self.catalog, state)
+        second = render_rss_feed(self.catalog, state)
+        self.assertEqual(first, second)
+        self.assertIn("<lastBuildDate>Mon, 07 Sep 2026 00:00:00 +0000</lastBuildDate>", first)
+        self.assertEqual(first.count("<lastBuildDate>"), 1)
+
+    def test_empty_feed_uses_a_fixed_epoch(self) -> None:
+        rendered = render_rss_feed(self.catalog, {})
+        self.assertIn("<lastBuildDate>Thu, 01 Jan 1970 00:00:00 +0000</lastBuildDate>", rendered)

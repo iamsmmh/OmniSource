@@ -47,7 +47,7 @@ from typing import Any
 from omnisource.discovery import source_label
 from omnisource.domain import App, Catalog, today
 from omnisource.utils.dates import average_update_gap_days as _update_frequency
-from omnisource.utils.dates import days_since, parse_date, version_dates
+from omnisource.utils.dates import days_since, parse_date, release_dates
 from omnisource.utils.health import WINDOW_DAYS
 from omnisource.utils.health import probe_window as _health_window
 
@@ -90,9 +90,9 @@ def _broken_releases(state: dict[str, Any], slug: str) -> int:
     # Fall back to a heuristic: count the number of times a release was
     # published and then superseded within 48 hours. This is rare but
     # usually indicates a bad release.
-    if len(state.get(slug, {}).get("versions") or []) < 2:
+    if len(release_dates(state, slug)) < 2:
         return 0
-    dates = version_dates(state, slug)[::-1]
+    dates = release_dates(state, slug)[::-1]
     rolled = 0
     for i in range(1, len(dates)):
         delta = (dates[i - 1] - dates[i]).days
@@ -107,7 +107,7 @@ def _releases_in_window(state: dict[str, Any], slug: str, *, within_days: int, t
     if start is None:
         return 0
     floor = start - timedelta(days=within_days)
-    return sum(1 for when in version_dates(state, slug) if floor <= when <= start)
+    return sum(1 for when in release_dates(state, slug) if floor <= when <= start)
 
 
 def _app_has_valid_entry(app: App, state: dict[str, Any]) -> bool:
@@ -286,7 +286,7 @@ def build_reputation_doc(
         active_deltas = [d for d in deltas if d > 0]
         avg_delta = sum(active_deltas) / len(active_deltas) if active_deltas else 0.0
         # Newest release age across the source.
-        ages = [days_since(max(version_dates(state, slug), default=None), today_iso=today_iso) for slug in app_slugs]
+        ages = [days_since(max(release_dates(state, slug), default=None), today_iso=today_iso) for slug in app_slugs]
         ages = [age for age in ages if age < 3650]
         last_release_age = min(ages) if ages else 3650
         broken = sum(_broken_releases(state, slug) for slug in app_slugs)

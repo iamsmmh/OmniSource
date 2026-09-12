@@ -37,13 +37,13 @@ from omnisource.collections import build_collection_pages, build_collections_doc
 from omnisource.community import build_community_doc
 from omnisource.compare import build_compare_doc
 from omnisource.constants import README_MARKERS, README_STATS_MARKERS
-from omnisource.dead_apps import build_dead_apps_doc
+from omnisource.dead_apps import build_dead_apps_doc, prune_superseded_removals, release_change
 from omnisource.di import Container, build_container
 from omnisource.discovery import build_discovery_doc
 from omnisource.docs_index import build_docs_index
 from omnisource.domain import App, Catalog, SyncReport, UpdateEvent, today
 from omnisource.download_intel import build_download_intel_doc
-from omnisource.duplicates import build_duplicates_doc
+from omnisource.duplicates import build_duplicates_doc, master_feed_selection
 from omnisource.errors import ConfigurationError, ProviderError, SyncError
 from omnisource.feeds.altstore import (
     feed_envelope,
@@ -57,7 +57,7 @@ from omnisource.feeds.updates import render_updates_doc
 from omnisource.health_score import annotate_health_doc, build_health_scores
 from omnisource.http import ProbeResult
 from omnisource.install import build_install_doc
-from omnisource.integrity import build_integrity_doc, verify_downloads
+from omnisource.integrity import build_integrity_doc, select_verification_targets, verify_downloads
 from omnisource.io import atomic_write_many, atomic_write_text, read_json, write_json
 from omnisource.logutil import Group, log
 from omnisource.monitor import build_status_doc, remember_probe
@@ -278,35 +278,42 @@ def stage_sync(
             previous_version = None
             if isinstance(previous_versions, list) and previous_versions:
                 previous_version = str(previous_versions[0].get("version") or "") or None
-            # Phase 8 signal: the upstream no longer offers the previously
-            # newest version (deleted release, or policy change) — the dead-app
-            # engine classifies such apps as critical.
+            # Phase 8 signal: classify how the previously newest release
+            # moved. Only a genuine takedown (upstream publishes nothing now,
+            # or rolled back to an older version) is recorded as a removal; an
+            # ordinary version bump is a supersession and a same-version URL
+            # change is a republished build. Recording every bump as a removal
+            # published healthy apps as "critical" (ISSUES-REPORT.md #2).
             if isinstance(previous_versions, list) and previous_versions and isinstance(versions, list):
-                previous_latest = previous_versions[0]
-                current_keys = {
-                    (str(v.get("version") or ""), str(v.get("downloadURL") or ""))
-                    for v in versions
-                    if isinstance(v, dict)
-                }
-                previous_key = (
-                    str(previous_latest.get("version") or ""),
-                    str(previous_latest.get("downloadURL") or ""),
-                )
-                if previous_key not in current_keys:
+                change = release_change(previous_versions[0], versions)
+                if change is None:
+                    entry.pop("removedReleases", None)
+                elif change["kind"] == "removed":
                     removed = entry.setdefault("removedReleases", [])
                     if not isinstance(removed, list):
                         removed = []
                         entry["removedReleases"] = removed
-                    removed.append(
-                        {
-                            "version": str(previous_latest.get("version") or ""),
-                            "downloadURL": str(previous_latest.get("downloadURL") or ""),
-                            "at": today(),
-                        }
-                    )
+                    removed.append(change)
                     del removed[:-10]
-                    log.warning("%s: previous latest %s no longer published upstream", app.slug, previous_version)
-                else:
+                    log.warning(
+                        "%s: release %s removed upstream (%s)",
+                        app.slug,
+                        change["version"],
+                        change["reason"],
+                    )
+                elif change["kind"] == "replaced":
+                    replaced = entry.setdefault("supersededReleases", [])
+                    if not isinstance(replaced, list):
+                        replaced = []
+                        entry["supersededReleases"] = replaced
+                    replaced.append(change)
+                    del replaced[:-10]
+                    log.info(
+                        "%s: release %s republished under a new URL (same version)",
+                        app.slug,
+                        change["version"],
+                    )
+                else:  # superseded by a newer version: the normal release path
                     entry.pop("removedReleases", None)
             entry["versions"] = versions
             entry["syncedAt"] = today()
@@ -442,6 +449,30 @@ def stage_build(
         feed["news"] = []
         documents[feeds_dir / f"{app.slug}.json"] = feed
 
+    # Duplicate groups are needed before the master feed is assembled: clients
+    # identify an installed app by bundle identifier, so the master source can
+    # only offer one member of each bundle-ID collision group. Every excluded
+    # app keeps its own single-app source below (feeds/<slug>.json), which is
+    # what the app pages and the site link to (ISSUES-REPORT.md #7).
+    duplicates_doc = build_duplicates_doc(catalog, state)
+    excluded_from_master = master_feed_selection(catalog, duplicates_doc)
+    by_slug = duplicates_doc.get("bySlug") if isinstance(duplicates_doc.get("bySlug"), dict) else {}
+    for app, entry in rendered:
+        # Published on every entry (also the single-app feeds) so a client or
+        # reader can tell whether adding the master source installs this app.
+        block = entry.setdefault("omnisource", {})
+        block["masterFeed"] = app.slug not in excluded_from_master
+        if app.slug in excluded_from_master:
+            block["collisionGroup"] = excluded_from_master[app.slug]
+            peer = (by_slug.get(app.slug) or {}).get("recommended")
+            if isinstance(peer, dict) and peer.get("app"):
+                block["recommendedPeer"] = str(peer["app"])
+    for slug, info in by_slug.items():
+        if isinstance(info, dict):
+            # The static app pages render the same "is this in the master
+            # source?" note from the duplicates document.
+            info["masterFeed"] = slug not in excluded_from_master
+
     master = feed_envelope(
         catalog,
         name=str(catalog.source.get("name", "OmniSource")),
@@ -449,11 +480,20 @@ def stage_build(
         subtitle=str(catalog.source.get("subtitle", "")),
         description=str(catalog.source.get("description", "")),
     )
-    master["apps"] = [entry for _, entry in sorted(rendered, key=lambda item: item[0].name.casefold())]
+    master["apps"] = [
+        entry
+        for app, entry in sorted(rendered, key=lambda item: item[0].name.casefold())
+        if app.slug not in excluded_from_master
+    ]
     master["news"] = render_news_items(catalog, state, limit=10)
     documents[feeds_dir / "apps.json"] = master
 
     health_doc = render_health_doc(rendered)
+    # Coverage of the one-URL master source, published with the health totals
+    # (and rendered in the README stats block) so the difference between the
+    # catalog size and the master source is never a silent surprise.
+    health_doc["totals"]["masterFeedApps"] = len(master["apps"])
+    health_doc["totals"]["singleAppSourceApps"] = len(excluded_from_master)
     _annotate_staleness(health_doc, stale_after_days=container.settings.stale_after_days)
     documents[feeds_dir / "health.json"] = health_doc
 
@@ -494,7 +534,7 @@ def stage_build(
     # base grouping stays owned by omnisource.discovery.
     sources_doc = build_sources_doc(catalog, state, health_doc=health_doc, verification_doc=verification_doc)
     status_doc = build_status_doc(catalog, state, health_doc)
-    duplicates_doc = build_duplicates_doc(catalog, state)
+    # duplicates_doc was built before the master feed (it decides membership).
     analytics_doc = build_analytics_doc(catalog, state, health_doc, verification_doc)
     # Rolling analytics snapshot lives in pipeline state (no external DB).
     # Record it before publishing so the document carries today's entry too.
@@ -555,6 +595,12 @@ def stage_build(
         verification_doc=verification_doc,
     )
     integrity_doc = build_integrity_doc(catalog, state, health_doc)
+    # Self-heal removal records written by older builds (or by a sync that saw
+    # an ordinary version bump) before classifying: a superseded release is not
+    # a takedown, and must not be published as one.
+    demoted = prune_superseded_removals(state)
+    if demoted:
+        log.info("dead-apps: demoted %d stale removal record(s) to supersession", demoted)
     dead_apps_doc = build_dead_apps_doc(catalog, state)
     # Phase 10 curated collections (YouTube, Music, Emulators, Utilities,
     # Productivity) — static JSON plus generated pages in the site builder.
@@ -730,12 +776,18 @@ def stage_readme(
             f"all installable with one tap.",
             "",
             "- Combined feeds: [`feeds/apps.json`](./feeds/apps.json), "
-            "[`feeds/feed.xml`](./feeds/feed.xml), [`Catalog.json`](./Catalog.json)",
+            "[`feeds/feed.xml`](./feeds/feed.xml), [`catalog.json`](./catalog.json)",
             "- Substrate docs: [`feeds/sources.json`](./feeds/sources.json), "
             "[`feeds/discovery.json`](./feeds/discovery.json), [`feeds/health.json`](./feeds/health.json), "
             "[`feeds/updates.json`](./feeds/updates.json), [`feeds/verification.json`](./feeds/verification.json)",
             "- Per-app feeds at `feeds/<slug>.json` and `feeds/<slug>.xml` — e.g. "
             "[`feeds/esign.json`](./feeds/esign.json)",
+            (
+                f"- Apps in a bundle-ID collision group ship as **single-app sources** "
+                f"({health_doc['totals'].get('singleAppSourceApps', 0)} app(s)): the master source carries "
+                "the recommended member of each group, because a client cannot install two apps that "
+                "share a bundle ID side by side."
+            ),
             "",
             f"_Last sync {health_doc['generatedAt']} · {totals['reachable']}/{totals['apps']} downloads reachable._",
             "",
@@ -751,7 +803,9 @@ def stage_readme(
         [
             README_STATS_MARKERS[0],
             "",
-            f"**{analytics_totals['apps']}** apps · **{analytics_totals['sources']}** upstream sources · "
+            f"**{analytics_totals['apps']}** apps (**{health_doc['totals'].get('masterFeedApps', 0)}** in the "
+            f"[master source]({catalog.base_url}/apps.json)) · "
+            f"**{analytics_totals['sources']}** upstream sources · "
             f"**{analytics_totals['verifiedApps']}** verified · "
             f"**{analytics_totals['communityVerifiedApps']}** community verified · "
             f"**{analytics_totals['downloadsReachable']}/{analytics_totals['apps']}** downloads online · "
@@ -828,6 +882,8 @@ def run(
     no_sync: bool = False,
     no_health: bool = False,
     verify: bool = False,
+    verify_stale_days: int | None = None,
+    verify_limit: int = 0,
     only: set[str] | None = None,
     incremental: bool = False,
     workers: int = 8,
@@ -838,6 +894,11 @@ def run(
     SHA-256 + size check of every app's newest asset) and makes the run fail
     when any download is rejected. Used by the weekly ``verify.yml`` job; the
     regular sync only performs the metadata-level checks.
+
+    ``verify_stale_days`` / ``verify_limit`` keep that weekly job affordable:
+    only assets that changed or whose recorded verification aged out are
+    streamed again, newest-risk first, and ``verify_limit`` bounds how many
+    are downloaded per run (``0`` = no cap).
     """
     container = container or build_container()
     report = SyncReport(started_at=today())
@@ -870,7 +931,23 @@ def run(
     verify_failed: list[dict[str, Any]] = []
     if verify:
         with Group("Verify downloads (full integrity)"):
-            records = verify_downloads(container, catalog, state, workers=max(1, min(workers, 4)))
+            targets = select_verification_targets(
+                catalog,
+                state,
+                stale_days=verify_stale_days,
+                limit=verify_limit,
+            )
+            selected = {slug for slug, _reason in targets}
+            skipped = len(catalog.apps) - len(targets)
+            if verify_stale_days is not None or verify_limit:
+                log.info(
+                    "full verification: %d app(s) due, %d skipped by the freshness budget",
+                    len(targets),
+                    skipped if skipped > 0 else 0,
+                )
+            for slug, reason in targets[:20]:
+                log.info("verify target %s (%s)", slug, reason)
+            records = verify_downloads(container, catalog, state, only=selected, workers=max(1, min(workers, 4)))
             verify_failed = [record for record in records if not record.get("ok")]
             report.broken_assets += len(verify_failed)
             for record in verify_failed:

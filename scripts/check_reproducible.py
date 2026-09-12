@@ -81,13 +81,14 @@ TRACKED_PATTERNS = (
 # the scheduler runs a real sync, so it is intentionally not compared.
 
 # (pattern, replacement): values that are date-derived and therefore differ
-# between two builds on different days without indicating drift.
+# between two builds on different days without indicating drift. RSS
+# <lastBuildDate> is deliberately *not* normalised: it is derived from the
+# newest item, so a value that changes between builds now means real churn.
 NORMALIZERS = (
     (re.compile(rb'"generatedAt":\s*"[^"]*"'), b'"generatedAt": "<DATE>"'),
     (re.compile(rb'"lastSync":\s*"[^"]*"'), b'"lastSync": "<DATE>"'),
     (re.compile(rb"last sync \*\*[\d-]+\*\*"), b"last sync **<DATE>**"),
     (re.compile(rb"last sync \d{4}-\d{2}-\d{2}"), b"last sync <DATE>"),
-    (re.compile(rb"<lastBuildDate>[^<]*</lastBuildDate>"), b"<lastBuildDate>DATE</lastBuildDate>"),
     (re.compile(rb"<lastmod>[^<]*</lastmod>"), b"<lastmod>DATE</lastmod>"),
     # Analytics history gains an entry per day; its dates are derived from the
     # snapshot date, not from content.

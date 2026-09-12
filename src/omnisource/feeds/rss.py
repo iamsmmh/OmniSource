@@ -23,11 +23,21 @@ def _rfc822_date(date_str: str) -> str:
             dt = datetime.strptime(date_str[:10], "%Y-%m-%d").replace(tzinfo=UTC)
         return dt.strftime("%a, %d %b %Y %H:%M:%S +0000")
     except Exception:
-        return datetime.now(UTC).strftime("%a, %d %b %Y %H:%M:%S +0000")
+        # Never fall back to the clock: a wall-clock value would make the
+        # committed XML feeds differ on every build (ISSUES-REPORT.md #6).
+        return "Thu, 01 Jan 1970 00:00:00 +0000"
 
 
-def _now_rfc822() -> str:
-    return datetime.now(UTC).strftime("%a, %d %b %Y %H:%M:%S +0000")
+def _last_build_date(items: list[dict[str, Any]]) -> str:
+    """The channel build date, derived from the content rather than the clock.
+
+    RSS 2.0 defines ``lastBuildDate`` as when the content last changed, so the
+    newest item's ``pubDate`` is both the correct value and a deterministic one.
+    A wall-clock stamp made every build rewrite all ~80 committed XML files and
+    defeated the reproducibility gate (ISSUES-REPORT.md #6).
+    """
+    dates = sorted(str(item.get("date") or "") for item in items if item.get("date"))
+    return dates[-1] if dates else "Thu, 01 Jan 1970 00:00:00 +0000"
 
 
 def _collect_items(
@@ -149,7 +159,7 @@ def _render_channel(
     <link>{html.escape(link)}</link>
     <description>{html.escape(description)}</description>
     <language>en-us</language>
-    <lastBuildDate>{_now_rfc822()}</lastBuildDate>
+    <lastBuildDate>{_last_build_date(items)}</lastBuildDate>
     <atom:link href="{html.escape(self_link)}" rel="self" type="application/rss+xml"/>
 {chr(10).join(item_xml_lines)}
   </channel>

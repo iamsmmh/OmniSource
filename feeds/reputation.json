@@ -38,17 +38,17 @@
         "ytkp",
         "youmod"
       ],
-      "score": 96.9,
+      "score": 96.2,
       "level": "TRUSTED",
       "status": "Warning",
       "lastUpdate": "2026-09-10",
       "signals": {
         "jsonValidity": 100.0,
         "uptime": 100.0,
-        "updateFrequencyDays": 1.0,
+        "updateFrequencyDays": 11.9,
         "lastReleaseDaysAgo": 2,
-        "brokenLinks": 2,
-        "releasesPastYear": 6,
+        "brokenLinks": 1,
+        "releasesPastYear": 9,
         "metadataCompleteness": 96,
         "probes": 120
       },
@@ -56,10 +56,10 @@
         "uptime": 100.0,
         "probes": 120,
         "averageLatencyMs": 220.5,
-        "averageUpdateGapDays": 1.0,
-        "brokenReleases": 2,
+        "averageUpdateGapDays": 11.9,
+        "brokenReleases": 1,
         "currentlyReachable": "4/4",
-        "legacyScore": 78.17
+        "legacyScore": 81.32
       }
     },
     {
@@ -83,17 +83,17 @@
         "ime",
         "turrit-mxgram"
       ],
-      "score": 82.2,
-      "level": "RELIABLE",
-      "status": "Community Verified",
+      "score": 95.2,
+      "level": "TRUSTED",
+      "status": "Verified",
       "lastUpdate": "2026-09-10",
       "signals": {
         "jsonValidity": 100.0,
         "uptime": 83.22,
-        "updateFrequencyDays": null,
+        "updateFrequencyDays": 6.4,
         "lastReleaseDaysAgo": 2,
         "brokenLinks": 0,
-        "releasesPastYear": 13,
+        "releasesPastYear": 22,
         "metadataCompleteness": 96,
         "probes": 143
       },
@@ -101,10 +101,10 @@
         "uptime": 83.22,
         "probes": 143,
         "averageLatencyMs": 154.0,
-        "averageUpdateGapDays": null,
+        "averageUpdateGapDays": 6.4,
         "brokenReleases": 0,
         "currentlyReachable": "13/13",
-        "legacyScore": 51.61
+        "legacyScore": 76.53
       }
     },
     {
@@ -117,17 +117,17 @@
         "inkillerplus",
         "ttkillerplus"
       ],
-      "score": 76.4,
-      "level": "RELIABLE",
-      "status": "Community Verified",
+      "score": 92.4,
+      "level": "TRUSTED",
+      "status": "Verified",
       "lastUpdate": "2026-09-09",
       "signals": {
         "jsonValidity": 100.0,
         "uptime": 100.0,
-        "updateFrequencyDays": null,
+        "updateFrequencyDays": 8.0,
         "lastReleaseDaysAgo": 3,
         "brokenLinks": 0,
-        "releasesPastYear": 2,
+        "releasesPastYear": 4,
         "metadataCompleteness": 96,
         "probes": 60
       },
@@ -135,10 +135,175 @@
         "uptime": 100.0,
         "probes": 60,
         "averageLatencyMs": 635.0,
-        "averageUpdateGapDays": null,
+        "averageUpdateGapDays": 8.0,
         "brokenReleases": 0,
         "currentlyReachable": "2/2",
-        "legacyScore": 60.0
+        "legacyScore": 84.86
+      }
+    },
+    {
+      "id": "mrdrvt99/YTMusicUltimate",
+      "source": "mrdrvt99/YTMusicUltimate",
+      "publisher": "mrdrvt99/YTMusicUltimate",
+      "homepage": "https://github.com/mrdrvt99/YTMusicUltimate",
+      "sourceURL": "https://github.com/mrdrvt99/YTMusicUltimate",
+      "apps": [
+        "ytmusic"
+      ],
+      "score": 87.4,
+      "level": "TRUSTED",
+      "status": "Verified",
+      "lastUpdate": "2026-09-09",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": 8.0,
+        "lastReleaseDaysAgo": 3,
+        "brokenLinks": 0,
+        "releasesPastYear": 2,
+        "metadataCompleteness": 96,
+        "probes": 30
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 30,
+        "averageLatencyMs": 233.0,
+        "averageUpdateGapDays": 8.0,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 84.86
+      }
+    },
+    {
+      "id": "Mark02-2012/MaxMusic",
+      "source": "Mark02-2012/MaxMusic",
+      "publisher": "Mark02-2012/MaxMusic",
+      "homepage": "https://github.com/Mark02-2012/MaxMusic",
+      "sourceURL": "https://github.com/Mark02-2012/MaxMusic",
+      "apps": [
+        "maxmusic"
+      ],
+      "score": 87.4,
+      "level": "TRUSTED",
+      "status": "Verified",
+      "lastUpdate": "2026-09-10",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": 9.0,
+        "lastReleaseDaysAgo": 2,
+        "brokenLinks": 0,
+        "releasesPastYear": 2,
+        "metadataCompleteness": 96,
+        "probes": 30
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 30,
+        "averageLatencyMs": 215.0,
+        "averageUpdateGapDays": 9.0,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 84.72
+      }
+    },
+    {
+      "id": "Apollo-Reborn/Apollo-Reborn",
+      "source": "Apollo-Reborn/Apollo-Reborn",
+      "publisher": "Apollo-Reborn/Apollo-Reborn",
+      "homepage": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "sourceURL": "https://github.com/Apollo-Reborn/Apollo-Reborn",
+      "apps": [
+        "apollo"
+      ],
+      "score": 87.4,
+      "level": "TRUSTED",
+      "status": "Verified",
+      "lastUpdate": "2026-09-11",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": 24.0,
+        "lastReleaseDaysAgo": 1,
+        "brokenLinks": 0,
+        "releasesPastYear": 2,
+        "metadataCompleteness": 96,
+        "probes": 18
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 18,
+        "averageLatencyMs": 199.0,
+        "averageUpdateGapDays": 24.0,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 77.64
+      }
+    },
+    {
+      "id": "gunnerkidBT/TwitchAdBlock",
+      "source": "gunnerkidBT/TwitchAdBlock",
+      "publisher": "gunnerkidBT/TwitchAdBlock",
+      "homepage": "https://github.com/gunnerkidBT/TwitchAdBlock",
+      "sourceURL": "https://github.com/gunnerkidBT/TwitchAdBlock",
+      "apps": [
+        "twitchadblock"
+      ],
+      "score": 83.4,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-08-14",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": 90.0,
+        "lastReleaseDaysAgo": 29,
+        "brokenLinks": 0,
+        "releasesPastYear": 2,
+        "metadataCompleteness": 96,
+        "probes": 18
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 18,
+        "averageLatencyMs": 479.0,
+        "averageUpdateGapDays": 90.0,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 68.47
+      }
+    },
+    {
+      "id": "SideStore/SideStore",
+      "source": "SideStore/SideStore",
+      "publisher": "SideStore/SideStore",
+      "homepage": "https://github.com/SideStore/SideStore",
+      "sourceURL": "https://github.com/SideStore/SideStore",
+      "apps": [
+        "sidestore"
+      ],
+      "score": 78.4,
+      "level": "RELIABLE",
+      "status": "Community Verified",
+      "lastUpdate": "2026-09-09",
+      "signals": {
+        "jsonValidity": 100.0,
+        "uptime": 100.0,
+        "updateFrequencyDays": 127.0,
+        "lastReleaseDaysAgo": 3,
+        "brokenLinks": 0,
+        "releasesPastYear": 2,
+        "metadataCompleteness": 96,
+        "probes": 30
+      },
+      "metrics": {
+        "uptime": 100.0,
+        "probes": 30,
+        "averageLatencyMs": 173.0,
+        "averageUpdateGapDays": 127.0,
+        "brokenReleases": 0,
+        "currentlyReachable": "1/1",
+        "legacyScore": 68.33
       }
     },
     {
@@ -366,39 +531,6 @@
         "uptime": 100.0,
         "probes": 30,
         "averageLatencyMs": 194.0,
-        "averageUpdateGapDays": null,
-        "brokenReleases": 0,
-        "currentlyReachable": "1/1",
-        "legacyScore": 60.0
-      }
-    },
-    {
-      "id": "SideStore/SideStore",
-      "source": "SideStore/SideStore",
-      "publisher": "SideStore/SideStore",
-      "homepage": "https://github.com/SideStore/SideStore",
-      "sourceURL": "https://github.com/SideStore/SideStore",
-      "apps": [
-        "sidestore"
-      ],
-      "score": 73.9,
-      "level": "RELIABLE",
-      "status": "Community Verified",
-      "lastUpdate": "2026-09-09",
-      "signals": {
-        "jsonValidity": 100.0,
-        "uptime": 100.0,
-        "updateFrequencyDays": null,
-        "lastReleaseDaysAgo": 3,
-        "brokenLinks": 0,
-        "releasesPastYear": 1,
-        "metadataCompleteness": 96,
-        "probes": 30
-      },
-      "metrics": {
-        "uptime": 100.0,
-        "probes": 30,
-        "averageLatencyMs": 173.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
@@ -802,39 +934,6 @@
       }
     },
     {
-      "id": "mrdrvt99/YTMusicUltimate",
-      "source": "mrdrvt99/YTMusicUltimate",
-      "publisher": "mrdrvt99/YTMusicUltimate",
-      "homepage": "https://github.com/mrdrvt99/YTMusicUltimate",
-      "sourceURL": "https://github.com/mrdrvt99/YTMusicUltimate",
-      "apps": [
-        "ytmusic"
-      ],
-      "score": 73.9,
-      "level": "RELIABLE",
-      "status": "Community Verified",
-      "lastUpdate": "2026-09-09",
-      "signals": {
-        "jsonValidity": 100.0,
-        "uptime": 100.0,
-        "updateFrequencyDays": null,
-        "lastReleaseDaysAgo": 3,
-        "brokenLinks": 0,
-        "releasesPastYear": 1,
-        "metadataCompleteness": 96,
-        "probes": 30
-      },
-      "metrics": {
-        "uptime": 100.0,
-        "probes": 30,
-        "averageLatencyMs": 233.0,
-        "averageUpdateGapDays": null,
-        "brokenReleases": 0,
-        "currentlyReachable": "1/1",
-        "legacyScore": 60.0
-      }
-    },
-    {
       "id": "Michael-128/qBitControl",
       "source": "Michael-128/qBitControl",
       "publisher": "Michael-128/qBitControl",
@@ -865,39 +964,6 @@
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
         "legacyScore": 55.0
-      }
-    },
-    {
-      "id": "Mark02-2012/MaxMusic",
-      "source": "Mark02-2012/MaxMusic",
-      "publisher": "Mark02-2012/MaxMusic",
-      "homepage": "https://github.com/Mark02-2012/MaxMusic",
-      "sourceURL": "https://github.com/Mark02-2012/MaxMusic",
-      "apps": [
-        "maxmusic"
-      ],
-      "score": 73.9,
-      "level": "RELIABLE",
-      "status": "Community Verified",
-      "lastUpdate": "2026-09-10",
-      "signals": {
-        "jsonValidity": 100.0,
-        "uptime": 100.0,
-        "updateFrequencyDays": null,
-        "lastReleaseDaysAgo": 2,
-        "brokenLinks": 0,
-        "releasesPastYear": 1,
-        "metadataCompleteness": 96,
-        "probes": 30
-      },
-      "metrics": {
-        "uptime": 100.0,
-        "probes": 30,
-        "averageLatencyMs": 215.0,
-        "averageUpdateGapDays": null,
-        "brokenReleases": 0,
-        "currentlyReachable": "1/1",
-        "legacyScore": 60.0
       }
     },
     {
@@ -1191,39 +1257,6 @@
         "uptime": 100.0,
         "probes": 18,
         "averageLatencyMs": 202.0,
-        "averageUpdateGapDays": null,
-        "brokenReleases": 0,
-        "currentlyReachable": "1/1",
-        "legacyScore": 55.0
-      }
-    },
-    {
-      "id": "gunnerkidBT/TwitchAdBlock",
-      "source": "gunnerkidBT/TwitchAdBlock",
-      "publisher": "gunnerkidBT/TwitchAdBlock",
-      "homepage": "https://github.com/gunnerkidBT/TwitchAdBlock",
-      "sourceURL": "https://github.com/gunnerkidBT/TwitchAdBlock",
-      "apps": [
-        "twitchadblock"
-      ],
-      "score": 73.9,
-      "level": "RELIABLE",
-      "status": "Community Verified",
-      "lastUpdate": "2026-08-14",
-      "signals": {
-        "jsonValidity": 100.0,
-        "uptime": 100.0,
-        "updateFrequencyDays": null,
-        "lastReleaseDaysAgo": 29,
-        "brokenLinks": 0,
-        "releasesPastYear": 1,
-        "metadataCompleteness": 96,
-        "probes": 18
-      },
-      "metrics": {
-        "uptime": 100.0,
-        "probes": 18,
-        "averageLatencyMs": 479.0,
         "averageUpdateGapDays": null,
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
@@ -1558,39 +1591,6 @@
         "brokenReleases": 0,
         "currentlyReachable": "1/1",
         "legacyScore": 60.0
-      }
-    },
-    {
-      "id": "Apollo-Reborn/Apollo-Reborn",
-      "source": "Apollo-Reborn/Apollo-Reborn",
-      "publisher": "Apollo-Reborn/Apollo-Reborn",
-      "homepage": "https://github.com/Apollo-Reborn/Apollo-Reborn",
-      "sourceURL": "https://github.com/Apollo-Reborn/Apollo-Reborn",
-      "apps": [
-        "apollo"
-      ],
-      "score": 73.9,
-      "level": "RELIABLE",
-      "status": "Community Verified",
-      "lastUpdate": "2026-09-11",
-      "signals": {
-        "jsonValidity": 100.0,
-        "uptime": 100.0,
-        "updateFrequencyDays": null,
-        "lastReleaseDaysAgo": 1,
-        "brokenLinks": 0,
-        "releasesPastYear": 1,
-        "metadataCompleteness": 96,
-        "probes": 18
-      },
-      "metrics": {
-        "uptime": 100.0,
-        "probes": 18,
-        "averageLatencyMs": 199.0,
-        "averageUpdateGapDays": null,
-        "brokenReleases": 0,
-        "currentlyReachable": "1/1",
-        "legacyScore": 55.0
       }
     },
     {

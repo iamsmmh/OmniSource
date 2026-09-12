@@ -11,16 +11,19 @@ report never guesses — missing keys are reported as gaps.
 
 | File | Name | Triggers | Permissions | Timeout | Retention | Step summary | shellcheck |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `build-tweak.yml` | Build & Inject Tweak | workflow_dispatch | {"contents": "write"} | yes | yes | **no** | — |
+| `build-tweak.yml` | Build & Inject Tweak | workflow_dispatch | {"contents": "read"} | yes | yes | **no** | — |
 | `build-uyouenhanced.yml` | Build uYouEnhanced | workflow_dispatch | {"contents": "write"} | yes | yes | yes | yes |
 | `health-check.yml` | Health Check | schedule, workflow_dispatch | {"contents": "read", "issues": "write"} | yes | — | **no** | — |
-| `merge.yml` | Merge Feeds | pull_request, push, workflow_dispatch | {"contents": "write"} | yes | — | **no** | — |
+| `merge.yml` | Merge Feeds | pull_request, push, workflow_dispatch | {"contents": "read"} | yes | — | **no** | — |
 | `sync.yml` | Sync & Publish | push, schedule, workflow_dispatch | {} | yes | yes | **no** | — |
 | `validate.yml` | Validate | pull_request, push, workflow_dispatch | {"contents": "read"} | yes | — | **no** | — |
+| `verify.yml` | Verify Integrity | schedule, workflow_dispatch | {"contents": "write"} | yes | yes | yes | — |
 
 ## Pipeline ↔ workflow drift
 
-- No drift: every directory the pipeline publishes (`feeds/`, `api/`, `apps/`, `collections/`, `compare/`, `reports/`, `sources/`) is covered by the sync commit allowlist.
+- ⚠️ pipeline writes into `collections/` but sync.yml commit allowlist does not cover it — scheduled builds would silently fail to publish.
+- ⚠️ pipeline writes into `compare/` but sync.yml commit allowlist does not cover it — scheduled builds would silently fail to publish.
+- ⚠️ pipeline writes into `sources/` but sync.yml commit allowlist does not cover it — scheduled builds would silently fail to publish.
 
 ## Obsolescence review
 

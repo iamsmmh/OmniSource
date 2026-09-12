@@ -411,5 +411,5 @@ catalog.json (hand-edited)
 
 All artifacts are deterministic for a given `catalog.json` and
 `state.json`, so the build is reproducible across CI and local
-environments. See `docs/REPOSITORY.md` for the full pipeline and
+environments. See `docs/archive/REPOSITORY.md` for the full pipeline and
 `docs/AUDIT.md` for the trust model.

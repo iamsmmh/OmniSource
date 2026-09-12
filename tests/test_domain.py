@@ -185,3 +185,37 @@ class TestDomainModel(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestReleaseHistory(unittest.TestCase):
+    """Cadence must survive ``keepVersions: 1`` (ISSUES-REPORT.md #4)."""
+
+    def test_release_dates_merge_versions_and_history(self) -> None:
+        from omnisource.utils.dates import release_dates
+
+        state = {
+            "demo": {"versions": [{"version": "2.0", "date": "2026-09-01"}]},
+            "updateHistory": [
+                {"appId": "demo", "version": "1.0", "releaseDate": "2026-07-01"},
+                {"appId": "other", "version": "9.0", "releaseDate": "2026-08-01"},
+            ],
+        }
+        self.assertEqual([d.isoformat() for d in release_dates(state, "demo")], ["2026-07-01", "2026-09-01"])
+
+    def test_average_gap_uses_the_recorded_history(self) -> None:
+        from omnisource.utils.dates import average_update_gap_days
+
+        state = {
+            "demo": {"versions": [{"version": "2.0", "date": "2026-09-01"}]},
+            "updateHistory": [
+                {"appId": "demo", "version": "1.0", "releaseDate": "2026-08-01"},
+                {"appId": "demo", "version": "2.0", "releaseDate": "2026-09-01"},
+            ],
+        }
+        self.assertAlmostEqual(average_update_gap_days(state, "demo"), 31.0, places=3)
+
+    def test_average_gap_without_history_is_zero(self) -> None:
+        from omnisource.utils.dates import average_update_gap_days
+
+        state = {"demo": {"versions": [{"version": "1.0", "date": "2026-09-01"}]}}
+        self.assertEqual(average_update_gap_days(state, "demo"), 0.0)

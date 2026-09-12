@@ -41,9 +41,9 @@ All Priority 0 through Priority 3 features have been successfully implemented an
 ### New Files (7)
 ```
 CHANGES.md                          # Change log
-IMPLEMENTATION-SUMMARY.md           # Implementation summary
+docs/archive/IMPLEMENTATION-SUMMARY.md           # Implementation summary
 DEPLOYMENT-GUIDE.md                 # This file
-docs/FEATURES-P0-P3.md              # Comprehensive feature documentation
+docs/archive/FEATURES-P0-P3.md              # Comprehensive feature documentation
 website/js/features.js              # Core feature module (88KB)
 website/favorites/index.html        # Favorites page
 website/collections/index.html      # Collections list page
@@ -106,7 +106,7 @@ If you prefer manual deployment:
 cp website/js/features.js /path/to/production/website/js/
 cp -r website/favorites /path/to/production/website/
 cp -r website/collections /path/to/production/website/
-cp docs/FEATURES-P0-P3.md /path/to/production/docs/
+cp docs/archive/FEATURES-P0-P3.md /path/to/production/docs/
 
 # Update existing files
 # (Use diff/merge tool to apply changes from modified files)
@@ -371,7 +371,7 @@ git push origin main
 rm website/js/features.js
 rm -rf website/favorites
 rm -rf website/collections
-rm docs/FEATURES-P0-P3.md
+rm docs/archive/FEATURES-P0-P3.md
 
 # Restore modified files from backup
 git checkout HEAD -- website/index.html
@@ -408,8 +408,8 @@ git checkout HEAD -- website/index.html
 ## Support
 
 ### Documentation
-- **Full Documentation**: `docs/FEATURES-P0-P3.md`
-- **Implementation Summary**: `IMPLEMENTATION-SUMMARY.md`
+- **Full Documentation**: `docs/archive/FEATURES-P0-P3.md`
+- **Implementation Summary**: `docs/archive/IMPLEMENTATION-SUMMARY.md`
 - **Change Log**: `CHANGES.md`
 
 ### Issues

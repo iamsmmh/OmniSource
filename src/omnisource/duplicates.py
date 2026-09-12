@@ -209,3 +209,49 @@ def group_for_app(duplicates_doc: dict[str, Any], slug: str) -> dict[str, Any] |
     by_slug = duplicates_doc.get("bySlug", {})
     item = by_slug.get(slug) if isinstance(by_slug, dict) else None
     return item if isinstance(item, dict) and item.get("groupKey") is not None else None
+
+
+def master_feed_selection(catalog: Catalog, duplicates_doc: dict[str, Any]) -> dict[str, str]:
+    """Slugs the master feed must leave out, mapped to their collision key.
+
+    Sideloading clients key an installed app on its ``bundleIdentifier``, so a
+    single source that offers several apps sharing one identifier cannot
+    install them predictably: the client keeps one and installing another
+    replaces it. The master source (``apps.json``, the URL the project markets)
+    therefore carries exactly one member of each bundle-ID collision group —
+    the group's recommended app, or whichever member the maintainer pins with
+    ``"masterFeed": true`` in ``catalog.json``.
+
+    Every excluded app stays fully installable: it keeps its own single-app
+    source (``feeds/<slug>.json``) and its app page, which the site links to.
+    Name-only duplicate groups are *not* excluded — those are alternatives with
+    distinct bundle identifiers and can coexist on a device.
+    """
+    pinned: dict[str, bool] = {}
+    for app in catalog.apps:
+        flag = app.raw.get("masterFeed")
+        if isinstance(flag, bool):
+            pinned[app.slug] = flag
+
+    excluded: dict[str, str] = {}
+    for group in duplicates_doc.get("groups", []):
+        if not isinstance(group, dict) or not group.get("replacementRisk"):
+            continue
+        key = str(group.get("key") or "")
+        members = [
+            str(member.get("app")) for member in group.get("apps", []) if isinstance(member, dict) and member.get("app")
+        ]
+        chosen = [slug for slug in members if pinned.get(slug) is True]
+        if chosen:
+            keep = set(chosen)
+        else:
+            recommended = (group.get("recommended") or {}).get("app")
+            keep = {recommended} if recommended in members else set(members[:1])
+        for slug in members:
+            if slug not in keep and pinned.get(slug) is not False:
+                excluded[slug] = key
+
+    for slug, flag in pinned.items():
+        if flag is False:
+            excluded.setdefault(slug, "")
+    return excluded

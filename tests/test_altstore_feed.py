@@ -181,3 +181,81 @@ class TestAltStoreFeed(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestCompatibilityEmission(unittest.TestCase):
+    """Compatibility must reach the clients, not just the website (#Tier1-2)."""
+
+    def setUp(self) -> None:
+        self.catalog = Catalog.from_dict(
+            {
+                "source": {
+                    "name": "OmniSource",
+                    "identifier": "com.iamsmmh.omnisource",
+                    "baseURL": "https://iamsmmh.github.io/OmniSource",
+                    "icon": "OmniSource.png",
+                    "banner": "OmniSource.png",
+                },
+                "apps": [
+                    {
+                        "slug": "demo",
+                        "name": "Demo",
+                        "bundleIdentifier": "com.example.demo",
+                        "developerName": "Dev",
+                        "icon": "Demo.png",
+                        "status": "stable",
+                        "compatibility": {
+                            "minOSVersion": "17.0",
+                            "maxOSVersion": "18.2",
+                            "clients": ["altstore"],
+                        },
+                    }
+                ],
+            }
+        )
+        self.app = self.catalog.apps[0]
+
+    def test_versions_inherit_the_catalog_minimum(self) -> None:
+        versions = [
+            {
+                "version": "2.0",
+                "date": "2026-09-01",
+                "downloadURL": "https://e.com/2.ipa",
+                "size": 10,
+                "localizedDescription": "Release 2.0",
+            },
+            {
+                "version": "1.0",
+                "date": "2026-08-01",
+                "downloadURL": "https://e.com/1.ipa",
+                "size": 9,
+                "minOSVersion": "16.0",
+                "localizedDescription": "Release 1.0",
+            },
+        ]
+        entry = render_altstore_app(self.catalog, self.app, versions, {})
+        self.assertEqual(entry["versions"][0]["minOSVersion"], "17.0")
+        # An upstream-declared minimum is authoritative and never overwritten.
+        self.assertEqual(entry["versions"][1]["minOSVersion"], "16.0")
+        for version in entry["versions"]:
+            self.assertEqual(version["maxOSVersion"], "18.2")
+
+    def test_health_document_reports_the_build_date(self) -> None:
+        entry = render_altstore_app(
+            self.catalog,
+            self.app,
+            [
+                {
+                    "version": "2.0",
+                    "date": "2026-09-01",
+                    "downloadURL": "https://e.com/2.ipa",
+                    "size": 10,
+                    "localizedDescription": "Release 2.0",
+                }
+            ],
+            {"reachable": True, "detail": "HTTP 200", "since": "2026-08-20"},
+        )
+        doc = render_health_doc([(self.app, entry)], generated_at="2026-09-12")
+        self.assertEqual(doc["generatedAt"], "2026-09-12")
+        self.assertEqual(doc["contentUpdatedAt"], "2026-09-01")
+        self.assertEqual(doc["totals"]["apps"], 1)
