@@ -1,14 +1,14 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-09-26",
-  "feedVersion": "2f842e55d488",
+  "feedVersion": "fb577135ee76",
   "app": {
     "id": "ytlite",
     "name": "YouTubePlus",
     "developer": "dayanch96",
     "subtitle": "Lightweight YouTube tweak with no ads and PiP",
     "bundleIdentifier": "com.google.ios.youtube",
-    "version": "21.38.2",
+    "version": "21.38.3",
     "versionDate": "2026-09-26",
     "description": "YouTubePlus (formerly YTLite) is a lightweight enhancer for YouTube developed by Dayanch96. It provides complete ad blocking, background playback, offline video and audio downloads, Picture-in-Picture (PiP), SponsorBlock integration, gesture controls, and customizable interface settings.",
     "shortDescription": "Lightweight YouTube tweak with no ads and PiP",
@@ -22,11 +22,11 @@
       "https://raw.githubusercontent.com/Dayanch96/ytlite/main/Resources/scr2.jpg",
       "https://raw.githubusercontent.com/Dayanch96/ytlite/main/Resources/scr3.jpg"
     ],
-    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa6/YouTubePlus_21.38.2_6.0b1.ipa",
-    "size": 148259412,
+    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa6/YouTubePlus_21.38.3_6.0b1.ipa",
+    "size": 148257460,
     "source": "mrdrvt99/YouProEXTRA",
     "sourceURL": "https://github.com/Dayanch96/YTLite",
-    "checksum": "64d77ca242e843d2f328cde8dcf10d90783373fdafd7b652bd520bee8b146fc8",
+    "checksum": "8b44a86d07a21de15ce86d743fd7b531bb164d7276b0d89a52ff02525d760205",
     "checksumPublished": false,
     "minOSVersion": "16.0",
     "status": "stable",
@@ -40,24 +40,31 @@
     }
   },
   "newest": {
-    "version": "21.38.2",
+    "version": "21.38.3",
     "date": "2026-09-26",
-    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa6/YouTubePlus_21.38.2_6.0b1.ipa",
-    "size": 148259412,
-    "sha256": "64d77ca242e843d2f328cde8dcf10d90783373fdafd7b652bd520bee8b146fc8"
+    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa6/YouTubePlus_21.38.3_6.0b1.ipa",
+    "size": 148257460,
+    "sha256": "8b44a86d07a21de15ce86d743fd7b531bb164d7276b0d89a52ff02525d760205"
   },
   "versions": [
     {
-      "version": "21.38.2",
+      "version": "21.38.3",
       "date": "2026-09-26",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa6/YouTubePlus_21.38.2_6.0b1.ipa",
-      "size": 148259412,
-      "sha256": "64d77ca242e843d2f328cde8dcf10d90783373fdafd7b652bd520bee8b146fc8"
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa6/YouTubePlus_21.38.3_6.0b1.ipa",
+      "size": 148257460,
+      "sha256": "8b44a86d07a21de15ce86d743fd7b531bb164d7276b0d89a52ff02525d760205"
+    },
+    {
+      "version": "21.33.6",
+      "date": "2026-09-26",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.33.6_6.0b1.ipa",
+      "size": 144982240,
+      "sha256": "99d8d5b48677d25e2f260057f7db110278254064404114f33ebda3f424cdeaaa"
     },
     {
       "version": "21.24.3",
       "date": "2026-09-09",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa5/YouTubePlus_21.24.3_5.2.2.ipa",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytl-ipa3/YouTubePlus_21.24.3_5.2.2.ipa",
       "size": 129031075,
       "sha256": "37b4f9a4390c909205a0c93928c941587aa0994eddc99a29097d54ae6be477ba"
     },

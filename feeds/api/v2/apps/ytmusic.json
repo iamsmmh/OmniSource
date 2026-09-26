@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-09-26",
-  "feedVersion": "2f842e55d488",
+  "feedVersion": "fb577135ee76",
   "app": {
     "id": "ytmusic",
     "name": "YTMusicUltimate",
     "developer": "dayanch96",
     "subtitle": "Lightweight YouTube Music tweak",
     "bundleIdentifier": "com.google.ios.youtubemusic",
-    "version": "9.38.1",
-    "versionDate": "2026-09-22",
+    "version": "9.39.2",
+    "versionDate": "2026-09-26",
     "description": "YTMusicUltimate is a lightweight enhancer for YouTube Music by Dayanch96. It unlocks background audio playback, removes in-app advertisements, enables premium audio streaming quality, and provides customizable player themes.",
     "shortDescription": "Lightweight YouTube Music tweak",
     "category": "music",
@@ -22,11 +22,11 @@
       "https://raw.githubusercontent.com/Dayanch96/YTMusicUltimate/main/Resources/scrn2.png",
       "https://raw.githubusercontent.com/Dayanch96/YTMusicUltimate/main/Resources/scrn3.png"
     ],
-    "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa31/YTMusicUltimate_9.38.1_2.4.1.ipa",
-    "size": 105863052,
+    "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa32/YTMusicUltimate_9.39.2_2.4.1.ipa",
+    "size": 105625853,
     "source": "mrdrvt99/YTMusicUltimate",
     "sourceURL": "https://github.com/Dayanch96/YTMusicUltimate",
-    "checksum": "3f5ee3b422de83ae099891bc55e338fbf2f0918a512f6af0c6f3d46a484800a8",
+    "checksum": "83ff221fc230831b3b71d5a32f976ccf6775b85f1c5a01a6b8c6cc7ca7c946b8",
     "checksumPublished": false,
     "minOSVersion": "16.0",
     "status": "stable",
@@ -36,23 +36,23 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "updatedAt": "2026-09-22"
+      "updatedAt": "2026-09-26"
     }
   },
   "newest": {
-    "version": "9.38.1",
-    "date": "2026-09-22",
-    "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa31/YTMusicUltimate_9.38.1_2.4.1.ipa",
-    "size": 105863052,
-    "sha256": "3f5ee3b422de83ae099891bc55e338fbf2f0918a512f6af0c6f3d46a484800a8"
+    "version": "9.39.2",
+    "date": "2026-09-26",
+    "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa32/YTMusicUltimate_9.39.2_2.4.1.ipa",
+    "size": 105625853,
+    "sha256": "83ff221fc230831b3b71d5a32f976ccf6775b85f1c5a01a6b8c6cc7ca7c946b8"
   },
   "versions": [
     {
-      "version": "9.38.1",
-      "date": "2026-09-22",
-      "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa31/YTMusicUltimate_9.38.1_2.4.1.ipa",
-      "size": 105863052,
-      "sha256": "3f5ee3b422de83ae099891bc55e338fbf2f0918a512f6af0c6f3d46a484800a8"
+      "version": "9.39.2",
+      "date": "2026-09-26",
+      "downloadURL": "https://github.com/mrdrvt99/YTMusicUltimate/releases/download/ytmu-ipa32/YTMusicUltimate_9.39.2_2.4.1.ipa",
+      "size": 105625853,
+      "sha256": "83ff221fc230831b3b71d5a32f976ccf6775b85f1c5a01a6b8c6cc7ca7c946b8"
     }
   ],
   "verification": {

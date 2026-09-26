@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-09-26",
-  "feedVersion": "2f842e55d488",
+  "feedVersion": "fb577135ee76",
   "app": {
     "id": "ytkp",
     "name": "YTKillerPlus",
     "developer": "iKarwan",
     "subtitle": "Advanced YouTube tweak with extensive controls",
     "bundleIdentifier": "com.google.ios.youtube",
-    "version": "21.38.2",
-    "versionDate": "2026-09-21",
+    "version": "21.38.3",
+    "versionDate": "2026-09-26",
     "description": "YTKillerPlus is an advanced feature-packed YouTube tweak by iKarwan. It offers comprehensive ad blocking, background playback, high-speed downloads, PiP, custom player actions, OLED dark theme, and granular privacy controls.",
     "shortDescription": "Advanced YouTube tweak with extensive controls",
     "category": "photo-video",
@@ -22,11 +22,11 @@
       "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/2.PNG",
       "https://repo.ikghd.me/depictions/me.ikghd.ytkplus/screenshots/3.PNG"
     ],
-    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa2/YTKillerPlus_21.38.2_6.1.ipa",
-    "size": 143560582,
+    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.38.3_6.1.ipa",
+    "size": 143635824,
     "source": "mrdrvt99/YouProEXTRA",
     "sourceURL": "https://github.com/iKarwan/YTKillerPlus",
-    "checksum": "89fa1d1564e6ed8e06c5696b6c8d87d558189161e1ba53287849c814d468670c",
+    "checksum": "72575d6a80aef206c72cbb63136fe292e29e5bfef223f593d96a697f03343895",
     "checksumPublished": false,
     "minOSVersion": "17.0",
     "status": "stable",
@@ -36,23 +36,23 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "updatedAt": "2026-09-21"
+      "updatedAt": "2026-09-26"
     }
   },
   "newest": {
-    "version": "21.38.2",
-    "date": "2026-09-21",
-    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa2/YTKillerPlus_21.38.2_6.1.ipa",
-    "size": 143560582,
-    "sha256": "89fa1d1564e6ed8e06c5696b6c8d87d558189161e1ba53287849c814d468670c"
+    "version": "21.38.3",
+    "date": "2026-09-26",
+    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.38.3_6.1.ipa",
+    "size": 143635824,
+    "sha256": "72575d6a80aef206c72cbb63136fe292e29e5bfef223f593d96a697f03343895"
   },
   "versions": [
     {
-      "version": "21.38.2",
-      "date": "2026-09-21",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa2/YTKillerPlus_21.38.2_6.1.ipa",
-      "size": 143560582,
-      "sha256": "89fa1d1564e6ed8e06c5696b6c8d87d558189161e1ba53287849c814d468670c"
+      "version": "21.38.3",
+      "date": "2026-09-26",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/ytkp-ipa1/YTKillerPlus_21.38.3_6.1.ipa",
+      "size": 143635824,
+      "sha256": "72575d6a80aef206c72cbb63136fe292e29e5bfef223f593d96a697f03343895"
     }
   ],
   "verification": {

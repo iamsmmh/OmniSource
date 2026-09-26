@@ -33,7 +33,41 @@
       "slug": "ytlite",
       "name": "YouTubePlus",
       "category": "photo-video",
-      "version": "21.38.2",
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "youpro",
+      "name": "YouPro",
+      "category": "photo-video",
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "youmod",
+      "name": "uPro Plus",
+      "category": "photo-video",
+      "version": "21.38.3",
       "releaseDate": "2026-09-26",
       "score": 1.0,
       "signals": {
@@ -50,11 +84,11 @@
       "slug": "ytmusic",
       "name": "YTMusicUltimate",
       "category": "music",
-      "version": "9.38.1",
-      "releaseDate": "2026-09-22",
-      "score": 0.9733,
+      "version": "9.39.2",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
       "signals": {
-        "recency": 0.9333,
+        "recency": 1.0,
         "availability": 1.0,
         "featured": 1.0,
         "verification": 1.0
@@ -64,37 +98,20 @@
       "downloadReachable": true
     },
     {
-      "slug": "youpro",
-      "name": "YouPro",
+      "slug": "ytkp",
+      "name": "YTKillerPlus",
       "category": "photo-video",
-      "version": "21.38.2",
-      "releaseDate": "2026-09-21",
-      "score": 0.9667,
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 0.8,
       "signals": {
-        "recency": 0.9167,
+        "recency": 1.0,
         "availability": 1.0,
-        "featured": 1.0,
+        "featured": 0.0,
         "verification": 1.0
       },
       "verificationLevel": "VERIFIED",
-      "featured": true,
-      "downloadReachable": true
-    },
-    {
-      "slug": "youmod",
-      "name": "uPro Plus",
-      "category": "photo-video",
-      "version": "21.38.2",
-      "releaseDate": "2026-09-21",
-      "score": 0.9667,
-      "signals": {
-        "recency": 0.9167,
-        "availability": 1.0,
-        "featured": 1.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": true,
+      "featured": false,
       "downloadReachable": true
     },
     {
@@ -153,23 +170,6 @@
       "name": "Glow",
       "category": "social",
       "version": "2026.38.0",
-      "releaseDate": "2026-09-24",
-      "score": 0.7867,
-      "signals": {
-        "recency": 0.9667,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "iqface",
-      "name": "iQFace",
-      "category": "social",
-      "version": "580.0.0",
       "releaseDate": "2026-09-24",
       "score": 0.7867,
       "signals": {
@@ -205,7 +205,7 @@
       "slug": "ytlite",
       "name": "YouTubePlus",
       "category": "photo-video",
-      "version": "21.38.2",
+      "version": "21.38.3",
       "releaseDate": "2026-09-26",
       "score": 1.0,
       "signals": {
@@ -216,6 +216,74 @@
       },
       "verificationLevel": "VERIFIED",
       "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "youpro",
+      "name": "YouPro",
+      "category": "photo-video",
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "youmod",
+      "name": "uPro Plus",
+      "category": "photo-video",
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "ytmusic",
+      "name": "YTMusicUltimate",
+      "category": "music",
+      "version": "9.39.2",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "ytkp",
+      "name": "YTKillerPlus",
+      "category": "photo-video",
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 0.8,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
       "downloadReachable": true
     },
     {
@@ -274,74 +342,6 @@
       "name": "Glow",
       "category": "social",
       "version": "2026.38.0",
-      "releaseDate": "2026-09-24",
-      "score": 0.7867,
-      "signals": {
-        "recency": 0.9667,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "iqface",
-      "name": "iQFace",
-      "category": "social",
-      "version": "580.0.0",
-      "releaseDate": "2026-09-24",
-      "score": 0.7867,
-      "signals": {
-        "recency": 0.9667,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "messenger-flow",
-      "name": "Messenger Flow",
-      "category": "social",
-      "version": "580.0.0",
-      "releaseDate": "2026-09-24",
-      "score": 0.7867,
-      "signals": {
-        "recency": 0.9667,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "msgplusx",
-      "name": "MSGPlusX",
-      "category": "social",
-      "version": "580.0.0",
-      "releaseDate": "2026-09-24",
-      "score": 0.7867,
-      "signals": {
-        "recency": 0.9667,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "monal",
-      "name": "Monal",
-      "category": "social",
-      "version": "6.4.22",
       "releaseDate": "2026-09-24",
       "score": 0.7867,
       "signals": {
@@ -377,7 +377,7 @@
       "slug": "ytlite",
       "name": "YouTubePlus",
       "category": "photo-video",
-      "version": "21.38.2",
+      "version": "21.38.3",
       "releaseDate": "2026-09-26",
       "score": 1.0,
       "signals": {
@@ -388,6 +388,74 @@
       },
       "verificationLevel": "VERIFIED",
       "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "youpro",
+      "name": "YouPro",
+      "category": "photo-video",
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "youmod",
+      "name": "uPro Plus",
+      "category": "photo-video",
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "ytmusic",
+      "name": "YTMusicUltimate",
+      "category": "music",
+      "version": "9.39.2",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "ytkp",
+      "name": "YTKillerPlus",
+      "category": "photo-video",
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 0.8,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 0.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": false,
       "downloadReachable": true
     },
     {
@@ -457,74 +525,6 @@
       "verificationLevel": "VERIFIED",
       "featured": false,
       "downloadReachable": true
-    },
-    {
-      "slug": "iqface",
-      "name": "iQFace",
-      "category": "social",
-      "version": "580.0.0",
-      "releaseDate": "2026-09-24",
-      "score": 0.7867,
-      "signals": {
-        "recency": 0.9667,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "messenger-flow",
-      "name": "Messenger Flow",
-      "category": "social",
-      "version": "580.0.0",
-      "releaseDate": "2026-09-24",
-      "score": 0.7867,
-      "signals": {
-        "recency": 0.9667,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "msgplusx",
-      "name": "MSGPlusX",
-      "category": "social",
-      "version": "580.0.0",
-      "releaseDate": "2026-09-24",
-      "score": 0.7867,
-      "signals": {
-        "recency": 0.9667,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "monal",
-      "name": "Monal",
-      "category": "social",
-      "version": "6.4.22",
-      "releaseDate": "2026-09-24",
-      "score": 0.7867,
-      "signals": {
-        "recency": 0.9667,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
     }
   ],
   "all": [
@@ -549,7 +549,41 @@
       "slug": "ytlite",
       "name": "YouTubePlus",
       "category": "photo-video",
-      "version": "21.38.2",
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "youpro",
+      "name": "YouPro",
+      "category": "photo-video",
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
+      "signals": {
+        "recency": 1.0,
+        "availability": 1.0,
+        "featured": 1.0,
+        "verification": 1.0
+      },
+      "verificationLevel": "VERIFIED",
+      "featured": true,
+      "downloadReachable": true
+    },
+    {
+      "slug": "youmod",
+      "name": "uPro Plus",
+      "category": "photo-video",
+      "version": "21.38.3",
       "releaseDate": "2026-09-26",
       "score": 1.0,
       "signals": {
@@ -566,11 +600,11 @@
       "slug": "ytmusic",
       "name": "YTMusicUltimate",
       "category": "music",
-      "version": "9.38.1",
-      "releaseDate": "2026-09-22",
-      "score": 0.9733,
+      "version": "9.39.2",
+      "releaseDate": "2026-09-26",
+      "score": 1.0,
       "signals": {
-        "recency": 0.9333,
+        "recency": 1.0,
         "availability": 1.0,
         "featured": 1.0,
         "verification": 1.0
@@ -580,37 +614,20 @@
       "downloadReachable": true
     },
     {
-      "slug": "youpro",
-      "name": "YouPro",
+      "slug": "ytkp",
+      "name": "YTKillerPlus",
       "category": "photo-video",
-      "version": "21.38.2",
-      "releaseDate": "2026-09-21",
-      "score": 0.9667,
+      "version": "21.38.3",
+      "releaseDate": "2026-09-26",
+      "score": 0.8,
       "signals": {
-        "recency": 0.9167,
+        "recency": 1.0,
         "availability": 1.0,
-        "featured": 1.0,
+        "featured": 0.0,
         "verification": 1.0
       },
       "verificationLevel": "VERIFIED",
-      "featured": true,
-      "downloadReachable": true
-    },
-    {
-      "slug": "youmod",
-      "name": "uPro Plus",
-      "category": "photo-video",
-      "version": "21.38.2",
-      "releaseDate": "2026-09-21",
-      "score": 0.9667,
-      "signals": {
-        "recency": 0.9167,
-        "availability": 1.0,
-        "featured": 1.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": true,
+      "featured": false,
       "downloadReachable": true
     },
     {
@@ -894,23 +911,6 @@
       "score": 0.7733,
       "signals": {
         "recency": 0.9333,
-        "availability": 1.0,
-        "featured": 0.0,
-        "verification": 1.0
-      },
-      "verificationLevel": "VERIFIED",
-      "featured": false,
-      "downloadReachable": true
-    },
-    {
-      "slug": "ytkp",
-      "name": "YTKillerPlus",
-      "category": "photo-video",
-      "version": "21.38.2",
-      "releaseDate": "2026-09-21",
-      "score": 0.7667,
-      "signals": {
-        "recency": 0.9167,
         "availability": 1.0,
         "featured": 0.0,
         "verification": 1.0

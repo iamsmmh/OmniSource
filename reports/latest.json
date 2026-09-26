@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-09-26",
-  "feedVersion": "2f842e55d488",
+  "feedVersion": "fb577135ee76",
   "apps": {
     "total": 130,
     "reachable": 130,
@@ -9,8 +9,8 @@
   },
   "sync": {
     "synced": 130,
-    "incrementalHits": 117,
-    "updated": 1,
+    "incrementalHits": 116,
+    "updated": 5,
     "failed": 0,
     "apiRequests": 113
   },
@@ -19,8 +19,36 @@
     {
       "slug": "ytlite",
       "name": "YouTubePlus",
-      "previousVersion": "21.24.3",
-      "version": "21.38.2",
+      "previousVersion": "21.38.2",
+      "version": "21.38.3",
+      "kind": "updated"
+    },
+    {
+      "slug": "youpro",
+      "name": "YouPro",
+      "previousVersion": "21.38.2",
+      "version": "21.38.3",
+      "kind": "updated"
+    },
+    {
+      "slug": "ytkp",
+      "name": "YTKillerPlus",
+      "previousVersion": "21.38.2",
+      "version": "21.38.3",
+      "kind": "updated"
+    },
+    {
+      "slug": "youmod",
+      "name": "uPro Plus",
+      "previousVersion": "21.38.2",
+      "version": "21.38.3",
+      "kind": "updated"
+    },
+    {
+      "slug": "ytmusic",
+      "name": "YTMusicUltimate",
+      "previousVersion": "9.38.1",
+      "version": "9.39.2",
       "kind": "updated"
     }
   ],

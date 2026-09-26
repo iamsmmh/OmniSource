@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-09-26",
-  "feedVersion": "2f842e55d488",
+  "feedVersion": "fb577135ee76",
   "app": {
     "id": "youmod",
     "name": "uPro Plus",
     "developer": "Tonwalter888",
     "subtitle": "YouTube 21.37.4 extra-tweaks build (YouMod + player stack)",
     "bundleIdentifier": "com.google.ios.youtube",
-    "version": "21.38.2",
-    "versionDate": "2026-09-21",
+    "version": "21.38.3",
+    "versionDate": "2026-09-26",
     "description": "uPro Plus is OmniSource's featured YouTube 21.37.4 extra-tweaks IPA. It is the YouProEXTRA YouMod 2.0.0 line on YouTube 21.37.4 with the extra player stack that release publishes: YouPip (Picture-in-Picture), YouQuality and YouChooseQuality, YTHoldForSpeed, YouGetCaption, YTABConfig, YTNativeShare, YTweaks, Return YouTube Dislike, DontEatMyContent, Gonerino, VolumeBoostYT and PleaseDontStopTheMusic. 120 Hz display refresh is used when the device supports it. Native 4K is available on A16+ devices; YTUHD is not bundled on this YouTube version. Requires iOS 17.0+. Shares com.google.ios.youtube with the other YouTube mods: install one at a time. YTLite, YTKACE and YouMod are competing main tweaks; stacking all three in one IPA is unstable, so this listing follows the extra-tweaks YouMod 21.37.4 release.",
     "shortDescription": "YouTube 21.37.4 extra-tweaks build (YouMod + player stack)",
     "category": "photo-video",
@@ -18,11 +18,11 @@
     ],
     "icon": "https://iamsmmh.github.io/OmniSource/assets/YouTube.webp",
     "screenshots": [],
-    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa2/YouMod_21.38.2_2.0.0.ipa",
-    "size": 129928188,
+    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.38.3_2.0.0.ipa",
+    "size": 130002394,
     "source": "mrdrvt99/YouProEXTRA",
     "sourceURL": "https://github.com/Tonwalter888/YouMod",
-    "checksum": "64106690f2e6b28afda9a175070f8fcd0be26662edb9b2f64f0fdf6c507d5bc2",
+    "checksum": "7dfa3891767a313f0b5bf88d5f0b035c65c91f963b329df2b31baf796c27a7b9",
     "checksumPublished": false,
     "minOSVersion": "17.0",
     "status": "stable",
@@ -32,23 +32,23 @@
     "health": {
       "reachable": true,
       "detail": "HTTP 302",
-      "updatedAt": "2026-09-21"
+      "updatedAt": "2026-09-26"
     }
   },
   "newest": {
-    "version": "21.38.2",
-    "date": "2026-09-21",
-    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa2/YouMod_21.38.2_2.0.0.ipa",
-    "size": 129928188,
-    "sha256": "64106690f2e6b28afda9a175070f8fcd0be26662edb9b2f64f0fdf6c507d5bc2"
+    "version": "21.38.3",
+    "date": "2026-09-26",
+    "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.38.3_2.0.0.ipa",
+    "size": 130002394,
+    "sha256": "7dfa3891767a313f0b5bf88d5f0b035c65c91f963b329df2b31baf796c27a7b9"
   },
   "versions": [
     {
-      "version": "21.38.2",
-      "date": "2026-09-21",
-      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa2/YouMod_21.38.2_2.0.0.ipa",
-      "size": 129928188,
-      "sha256": "64106690f2e6b28afda9a175070f8fcd0be26662edb9b2f64f0fdf6c507d5bc2"
+      "version": "21.38.3",
+      "date": "2026-09-26",
+      "downloadURL": "https://github.com/mrdrvt99/YouProEXTRA/releases/download/youmod-ipa1/YouMod_21.38.3_2.0.0.ipa",
+      "size": 130002394,
+      "sha256": "7dfa3891767a313f0b5bf88d5f0b035c65c91f963b329df2b31baf796c27a7b9"
     }
   ],
   "verification": {
